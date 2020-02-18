@@ -9,3 +9,6 @@ get:
 
 publish:
 	./scripts/publish.sh
+
+build:
+	go build -o bin/job ./cmd/get

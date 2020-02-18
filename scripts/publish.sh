@@ -1,3 +1,5 @@
+#!/bin/bash
+
 git reset -q HEAD -- .
 git add edmx/*.xml
 if [[ $(git diff --name-only --cached) != "" ]]; then
