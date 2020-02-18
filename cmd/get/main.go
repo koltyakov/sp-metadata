@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"regexp"
 	"strings"
 
 	"github.com/go-xmlfmt/xmlfmt"
@@ -63,7 +64,13 @@ func envFlow(env *meta.Environment) error {
 		return err
 	}
 
-	x := strings.TrimSpace(xmlfmt.FormatXML(fmt.Sprintf("%s\n", rsp), "", "  "))
+	x := strings.TrimSpace(
+		xmlfmt.FormatXML(
+			cleanEDMX(fmt.Sprintf("%s\n", rsp)),
+			"",
+			"  ",
+		),
+	)
 
 	if err := ioutil.WriteFile(fmt.Sprintf("./edmx/%s.xml", env.Code), []byte(x), 0644); err != nil {
 		return err
@@ -78,4 +85,10 @@ func fileExists(filename string) bool {
 		return false
 	}
 	return !info.IsDir()
+}
+
+func cleanEDMX(edmx string) string {
+	re := regexp.MustCompile(`(<Schema Namespace="SP\.Data".*<\/Schema>)`)
+	edmx = re.ReplaceAllString(edmx, "")
+	return edmx
 }
