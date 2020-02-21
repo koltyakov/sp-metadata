@@ -10,7 +10,7 @@ type Environment struct {
 // Environments configuration
 var Environments = []*Environment{
 	{
-		Name:   "SPO (Standard)",
+		Name:   "SPO",
 		Code:   "spo",
 		Config: "./config/private.spo.json",
 	},

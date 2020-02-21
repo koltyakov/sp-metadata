@@ -2,8 +2,8 @@
 
 ## Available namespaces across versions matrix
 
-Namespace | SPO (Standard) | SPO (Target) | SP 2016 | SP 2013
-----------|----------------|--------------|---------|--------
+Namespace | SPO | SPO (Target) | SP 2016 | SP 2013
+----------|-----|--------------|---------|--------
 EDU | ✖ | ✖ | ✖ | ✔
 MS.FileServices | ✔ | ✔ | ✔ | ✖
 Microsoft.AppServices | ✔ | ✔ | ✖ | ✖
