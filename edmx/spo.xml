@@ -317,6 +317,7 @@
       <ComplexType Name="CopyMigrationOptions">
         <Property Name="AllowSchemaMismatch" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowSmallerVersionLimitOnDestination" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="BypassSharedLock" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IgnoreVersionHistory" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IncludeItemPermissions" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsMoveMode" Type="Edm.Boolean" Nullable="false" />
@@ -1649,6 +1650,7 @@
         <Property Name="FooterLayout" Type="Edm.Int32" Nullable="false" />
         <Property Name="HeaderEmphasis" Type="Edm.Int32" Nullable="false" />
         <Property Name="HeaderLayout" Type="Edm.Int32" Nullable="false" />
+        <Property Name="HideTitleInHeader" Type="Edm.Boolean" Nullable="false" />
         <Property Name="HorizontalQuickLaunch" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
         <Property Name="IsHomepageModernized" Type="Edm.Boolean" Nullable="false" />
@@ -8230,6 +8232,31 @@
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.SiteLinkingManager" />
           <Parameter Name="groupId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Portal_MySiteRecommendations_FetchCacheBlob" ReturnType="Microsoft.SharePoint.Portal.Project.MyRecsCacheBlob">
+          <Parameter Name="category" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="personalSiteUri" Type="Edm.String" />
+          <Parameter Name="forceRefresh" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Portal_MySiteRecommendations_FetchCacheBlobV2" ReturnType="Microsoft.SharePoint.Portal.Project.MyRecsCacheBlob">
+          <Parameter Name="category" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="personalSiteUri" Type="Edm.String" />
+          <Parameter Name="forceRefresh" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Portal_MySiteRecommendations_FetchCachedBlobForRecentSites" ReturnType="Microsoft.SharePoint.Portal.Project.MyRecsCacheBlob">
+          <Parameter Name="category" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="personalSiteUri" Type="Edm.String" />
+          <Parameter Name="forceRefresh" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Portal_MySiteRecommendations_FollowItem" ReturnType="Edm.Boolean">
+          <Parameter Name="uri" Type="Edm.String" />
+          <Parameter Name="personalSiteUri" Type="Edm.String" />
+          <Parameter Name="category" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Portal_MySiteRecommendations_StopFollowingItem" ReturnType="Edm.Boolean">
+          <Parameter Name="uri" Type="Edm.String" />
+          <Parameter Name="personalSiteUri" Type="Edm.String" />
+          <Parameter Name="category" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Portal_UserProfiles_MySiteLinks_GetMySiteLinks" ReturnType="Microsoft.SharePoint.Portal.UserProfiles.MySiteLinks" IsComposable="true" EntitySet="MySiteLinkss" />
         <FunctionImport Name="Microsoft_SharePoint_Portal_UserProfiles_MySiteDismissStatusText_DismissStatusText" />
         <FunctionImport Name="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithMe_GetFoldersSharedWithMeListDataScript" ReturnType="Edm.String">
@@ -8320,31 +8347,6 @@
           <Parameter Name="title" Type="Edm.String" />
           <Parameter Name="description" Type="Edm.String" />
           <Parameter Name="imageUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="Microsoft_SharePoint_Portal_MySiteRecommendations_FetchCacheBlob" ReturnType="Microsoft.SharePoint.Portal.Project.MyRecsCacheBlob">
-          <Parameter Name="category" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="personalSiteUri" Type="Edm.String" />
-          <Parameter Name="forceRefresh" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="Microsoft_SharePoint_Portal_MySiteRecommendations_FetchCacheBlobV2" ReturnType="Microsoft.SharePoint.Portal.Project.MyRecsCacheBlob">
-          <Parameter Name="category" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="personalSiteUri" Type="Edm.String" />
-          <Parameter Name="forceRefresh" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="Microsoft_SharePoint_Portal_MySiteRecommendations_FetchCachedBlobForRecentSites" ReturnType="Microsoft.SharePoint.Portal.Project.MyRecsCacheBlob">
-          <Parameter Name="category" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="personalSiteUri" Type="Edm.String" />
-          <Parameter Name="forceRefresh" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="Microsoft_SharePoint_Portal_MySiteRecommendations_FollowItem" ReturnType="Edm.Boolean">
-          <Parameter Name="uri" Type="Edm.String" />
-          <Parameter Name="personalSiteUri" Type="Edm.String" />
-          <Parameter Name="category" Type="Edm.Int32" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="Microsoft_SharePoint_Portal_MySiteRecommendations_StopFollowingItem" ReturnType="Edm.Boolean">
-          <Parameter Name="uri" Type="Edm.String" />
-          <Parameter Name="personalSiteUri" Type="Edm.String" />
-          <Parameter Name="category" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="CreateCollectionInstance" IsBindable="true">
           <Parameter Name="this" Type="SP.BusinessData.Runtime.EntityInstance" />
@@ -8538,6 +8540,9 @@
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ExecuteSiteScriptAction" ReturnType="Collection(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptActionResult)">
           <Parameter Name="actionDefinition" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ExecuteTemplateScript" ReturnType="Collection(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptActionResult)">
+          <Parameter Name="script" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetDefaultSiteDesignForWebTemplate" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignMetadata">
           <Parameter Name="webTemplate" Type="Edm.String" />
@@ -11774,6 +11779,15 @@
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="description" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="SetChromeOptions" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="headerLayout" Type="Edm.Int32" />
+          <Parameter Name="headerEmphasis" Type="Edm.Int32" />
+          <Parameter Name="megaMenuEnabled" Type="Edm.Boolean" />
+          <Parameter Name="footerEnabled" Type="Edm.Boolean" />
+          <Parameter Name="footerLayout" Type="Edm.Int32" />
+          <Parameter Name="footerEmphasis" Type="Edm.Int32" />
+        </FunctionImport>
         <FunctionImport Name="SetDefaultNewPageTemplateId" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="defaultNewPageTemplateId" Type="Edm.Guid" Nullable="false" />
@@ -14857,6 +14871,15 @@
       <Annotations Target="Microsoft.SharePoint.Portal.GroupSiteConversionInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Portal.M365TabItem">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Portal.PinToTeamParams">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Portal.PinToTeamResponse">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Portal.Home.SharePointHomeDataCacheCollection">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -14972,15 +14995,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Portal.Home.SharePointHomePageContext/VideoPlayerUrlTemplate">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Portal.M365TabItem">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Portal.PinToTeamParams">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Portal.PinToTeamResponse">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Webhooks.SubscriptionInformation">
@@ -15311,6 +15325,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ListItemComplianceInfo">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.CopyMigrationOptions/BypassSharedLock">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.CopyMigrationOptions/IncludeItemPermissions">
@@ -15779,6 +15796,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/ModelId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/ModelName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/ModelUniqueId">
@@ -18037,6 +18057,9 @@
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ExecuteSiteScriptAction(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ExecuteTemplateScript(Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetDefaultSiteDesignForWebTemplate(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18761,6 +18784,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetAccessRequestSiteDescriptionAndUpdate(SP.Web, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetChromeOptions(SP.Web, Edm.Int32, Edm.Int32, Edm.Boolean, Edm.Boolean, Edm.Int32, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetDefaultNewPageTemplateId(SP.Web, Edm.Guid)">
@@ -23803,51 +23829,23 @@
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
     </Schema>
-    <Schema Namespace="Microsoft.SharePoint.Portal.Home" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-      <ComplexType Name="SharePointHomeDataCacheCollection">
-        <Property Name="Items" Type="Collection(Microsoft.SharePoint.Portal.Home.SharePointHomeDataCache)" />
+    <Schema Namespace="Microsoft.SharePoint.Portal.Project" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="MyRecsCacheBlob">
+        <Property Name="DateCached" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="FillInQuery" Type="Edm.String" />
+        <Property Name="FillInSortBy" Type="Edm.String" />
+        <Property Name="Query" Type="Edm.String" />
+        <Property Name="QueryInfo" Type="Microsoft.SharePoint.Portal.Project.MyRecsQueryInfo" />
+        <Property Name="Result" Type="Edm.String" />
+        <Property Name="SortBy" Type="Edm.String" />
       </ComplexType>
-      <ComplexType Name="SharePointHomeDataCache">
-        <Property Name="Key" Type="Edm.String" />
-        <Property Name="Value" Type="Microsoft.SharePoint.Portal.Home.SharePointHomeDataCacheEntry" />
-      </ComplexType>
-      <ComplexType Name="SharePointHomeDataCacheEntry">
-        <Property Name="CacheContext" Type="Microsoft.SharePoint.Portal.Home.SharePointHomeDataCacheContext" />
-        <Property Name="CacheValue" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="SharePointHomeDataCacheContext">
-        <Property Name="Hash" Type="Edm.String" />
-        <Property Name="ListItemId" Type="Edm.Int32" Nullable="false" />
-        <Property Name="MySiteUrl" Type="Edm.String" />
-        <Property Name="Time" Type="Edm.String" />
-        <Property Name="Version" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="SharePointHomePageContext">
-        <Property Name="ActiveFlights" Type="Collection(Edm.String)" />
-        <Property Name="AlternateWebAppHost" Type="Edm.String" />
-        <Property Name="ExperienceState" Type="Edm.Int64" Nullable="false" />
-        <Property Name="IsGraphEnabled" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsGroupCreationNewUXEnabled" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsLoggingUploadEnabled" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsMobile" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsModernSearchEnabled" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsOrgLinksProvisioned" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsRtl" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsSelfServiceSiteCreationEnabled" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsUserVoiceEnabled" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="LoadSuiteNav" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="MicroserviceFlights" Type="Collection(Edm.String)" />
-        <Property Name="MicroserviceUrl" Type="Edm.String" />
-        <Property Name="MySiteUrl" Type="Edm.String" />
-        <Property Name="SearchCenterUrl" Type="Edm.String" />
-        <Property Name="ShowCreateNewsTeachingBubble" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="ShowFirstRunExperience" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="ShowMobileUpsell" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="UserAcronym" Type="Edm.String" />
-        <Property Name="UserBannerColor" Type="Edm.String" />
-        <Property Name="UserPhotoCdnBaseUrl" Type="Edm.String" />
-        <Property Name="VideoChannelUrlTemplate" Type="Edm.String" />
-        <Property Name="VideoPlayerUrlTemplate" Type="Edm.String" />
+      <ComplexType Name="MyRecsQueryInfo">
+        <Property Name="Category" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ExpertiseTags" Type="Collection(Edm.String)" />
+        <Property Name="FollowedUrls" Type="Collection(Edm.String)" />
+        <Property Name="InterestTags" Type="Collection(Edm.String)" />
+        <Property Name="QueryInfoExists" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SuggestedTags" Type="Collection(Edm.String)" />
       </ComplexType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.Portal.UserProfiles" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -23957,23 +23955,51 @@
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
     </Schema>
-    <Schema Namespace="Microsoft.SharePoint.Portal.Project" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-      <ComplexType Name="MyRecsCacheBlob">
-        <Property Name="DateCached" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="FillInQuery" Type="Edm.String" />
-        <Property Name="FillInSortBy" Type="Edm.String" />
-        <Property Name="Query" Type="Edm.String" />
-        <Property Name="QueryInfo" Type="Microsoft.SharePoint.Portal.Project.MyRecsQueryInfo" />
-        <Property Name="Result" Type="Edm.String" />
-        <Property Name="SortBy" Type="Edm.String" />
+    <Schema Namespace="Microsoft.SharePoint.Portal.Home" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="SharePointHomeDataCacheCollection">
+        <Property Name="Items" Type="Collection(Microsoft.SharePoint.Portal.Home.SharePointHomeDataCache)" />
       </ComplexType>
-      <ComplexType Name="MyRecsQueryInfo">
-        <Property Name="Category" Type="Edm.Int32" Nullable="false" />
-        <Property Name="ExpertiseTags" Type="Collection(Edm.String)" />
-        <Property Name="FollowedUrls" Type="Collection(Edm.String)" />
-        <Property Name="InterestTags" Type="Collection(Edm.String)" />
-        <Property Name="QueryInfoExists" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="SuggestedTags" Type="Collection(Edm.String)" />
+      <ComplexType Name="SharePointHomeDataCache">
+        <Property Name="Key" Type="Edm.String" />
+        <Property Name="Value" Type="Microsoft.SharePoint.Portal.Home.SharePointHomeDataCacheEntry" />
+      </ComplexType>
+      <ComplexType Name="SharePointHomeDataCacheEntry">
+        <Property Name="CacheContext" Type="Microsoft.SharePoint.Portal.Home.SharePointHomeDataCacheContext" />
+        <Property Name="CacheValue" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SharePointHomeDataCacheContext">
+        <Property Name="Hash" Type="Edm.String" />
+        <Property Name="ListItemId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="MySiteUrl" Type="Edm.String" />
+        <Property Name="Time" Type="Edm.String" />
+        <Property Name="Version" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SharePointHomePageContext">
+        <Property Name="ActiveFlights" Type="Collection(Edm.String)" />
+        <Property Name="AlternateWebAppHost" Type="Edm.String" />
+        <Property Name="ExperienceState" Type="Edm.Int64" Nullable="false" />
+        <Property Name="IsGraphEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsGroupCreationNewUXEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsLoggingUploadEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsMobile" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsModernSearchEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsOrgLinksProvisioned" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsRtl" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsSelfServiceSiteCreationEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsUserVoiceEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="LoadSuiteNav" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="MicroserviceFlights" Type="Collection(Edm.String)" />
+        <Property Name="MicroserviceUrl" Type="Edm.String" />
+        <Property Name="MySiteUrl" Type="Edm.String" />
+        <Property Name="SearchCenterUrl" Type="Edm.String" />
+        <Property Name="ShowCreateNewsTeachingBubble" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ShowFirstRunExperience" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ShowMobileUpsell" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="UserAcronym" Type="Edm.String" />
+        <Property Name="UserBannerColor" Type="Edm.String" />
+        <Property Name="UserPhotoCdnBaseUrl" Type="Edm.String" />
+        <Property Name="VideoChannelUrlTemplate" Type="Edm.String" />
+        <Property Name="VideoPlayerUrlTemplate" Type="Edm.String" />
       </ComplexType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.Webhooks" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -24018,6 +24044,7 @@
       <ComplexType Name="SiteScriptActionResult">
         <Property Name="Outcome" Type="Edm.Int64" Nullable="false" />
         <Property Name="OutcomeText" Type="Edm.String" />
+        <Property Name="Target" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SiteScriptCreationInfo">
@@ -26006,6 +26033,7 @@
         <Property Name="DriveId" Type="Edm.String" Nullable="false" />
         <Property Name="ID" Type="Edm.Int32" Nullable="false" />
         <Property Name="ModelId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ModelName" Type="Edm.String" />
         <Property Name="ModelUniqueId" Type="Edm.Guid" Nullable="false" />
         <Property Name="ModelVersion" Type="Edm.String" />
         <Property Name="ObjectId" Type="Edm.String" />
