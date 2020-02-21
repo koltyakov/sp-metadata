@@ -11,4 +11,5 @@ publish:
 	./scripts/publish.sh
 
 build:
-	go build -o bin/job ./cmd/get
+	go build -o bin/get ./cmd/get
+	go build -o bin/compare ./cmd/compare

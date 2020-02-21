@@ -93,7 +93,7 @@ func main() {
 		table += "\n"
 	}
 
-	ns, err := ioutil.ReadFile("./templates/ns.md")
+	ns, err := ioutil.ReadFile("./pkg/templates/ns.md")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -119,10 +119,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	file, _ := os.OpenFile("./api/ns.md", os.O_RDONLY|os.O_CREATE, 0644)
+	file, _ := os.OpenFile("./sp/ns.md", os.O_RDONLY|os.O_CREATE, 0644)
 	_ = file.Close()
 
-	if err := ioutil.WriteFile("./api/ns.md", res, 0644); err != nil {
+	if err := ioutil.WriteFile("./sp/ns.md", res, 0644); err != nil {
 		log.Fatal(err)
 	}
 

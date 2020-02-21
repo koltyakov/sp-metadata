@@ -1,5 +1,5 @@
 # SharePoint API Namespaces
 
-## Available namespaces across versions matrix
+**Availability matrix**
 
 {{.NamespacesTable}}

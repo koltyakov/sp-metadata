@@ -6,7 +6,6 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
-	"regexp"
 	"strings"
 
 	"github.com/go-xmlfmt/xmlfmt"
@@ -14,12 +13,13 @@ import (
 	"github.com/koltyakov/gosip-sandbox/samples/dynauth"
 	"github.com/koltyakov/gosip/api"
 
-	meta "github.com/koltyakov/sp-metadata/config"
+	"github.com/koltyakov/sp-metadata/config"
+	"github.com/koltyakov/sp-metadata/pkg/edmx"
 )
 
 func main() {
 
-	for _, env := range meta.Environments {
+	for _, env := range config.Environments {
 		if err := envFlow(env); err != nil {
 			log.Printf("Error while processing \"%s\": %v.\n", env.Name, err)
 		}
@@ -27,7 +27,7 @@ func main() {
 
 }
 
-func envFlow(env *meta.Environment) error {
+func envFlow(env *config.Environment) error {
 	if !fileExists(env.Config) {
 		log.Printf("Warning: Config \"%s\" doesn't exist, skipping.\n", env.Config)
 		return nil
@@ -67,7 +67,7 @@ func envFlow(env *meta.Environment) error {
 
 	x := strings.TrimSpace(
 		xmlfmt.FormatXML(
-			cleanEDMX(fmt.Sprintf("%s\n", rsp)),
+			edmx.Clean(fmt.Sprintf("%s\n", rsp)),
 			"",
 			"  ",
 		),
@@ -86,15 +86,4 @@ func fileExists(filename string) bool {
 		return false
 	}
 	return !info.IsDir()
-}
-
-func cleanEDMX(edmx string) string {
-	re := []*regexp.Regexp{
-		regexp.MustCompile(`(<Schema Namespace="SP\.Data".*</Schema>)`),
-		regexp.MustCompile(`(<EntityContainer Name="ListData".*</EntityContainer>)`),
-	}
-	for _, r := range re {
-		edmx = r.ReplaceAllString(edmx, "")
-	}
-	return edmx
 }
