@@ -125,4 +125,6 @@ func main() {
 	if err := ioutil.WriteFile("./api/ns.md", res, 0644); err != nil {
 		log.Fatal(err)
 	}
+
+	fmt.Println("Done")
 }

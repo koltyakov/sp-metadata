@@ -89,7 +89,12 @@ func fileExists(filename string) bool {
 }
 
 func cleanEDMX(edmx string) string {
-	re := regexp.MustCompile(`(<Schema Namespace="SP\.Data".*</Schema>)`)
-	edmx = re.ReplaceAllString(edmx, "")
+	re := []*regexp.Regexp{
+		regexp.MustCompile(`(<Schema Namespace="SP\.Data".*</Schema>)`),
+		regexp.MustCompile(`(<EntityContainer Name="ListData".*</EntityContainer>)`),
+	}
+	for _, r := range re {
+		edmx = r.ReplaceAllString(edmx, "")
+	}
 	return edmx
 }
