@@ -4,6 +4,6 @@ The Metadata Tracker collects SharePoint API entity definitions (`/_api/$metadat
 
 Entity definitions (`edmx` models) are stored in `./edmx`.
 
-Schema comparison allows tracking "what's new in SharePoint Online" in comparison to previous releases and On-Prem versions.
+Schema comparison allows tracking "what's new in SharePoint Online" in comparison to previous releases and On-Premise versions.
 
 SharePoint Online is tracked for Standard and Target Releases which allows detecting what potential changes API-terms would be applied shortly.

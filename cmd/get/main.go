@@ -13,6 +13,7 @@ import (
 	"github.com/koltyakov/gosip"
 	"github.com/koltyakov/gosip-sandbox/samples/dynauth"
 	"github.com/koltyakov/gosip/api"
+
 	meta "github.com/koltyakov/sp-metadata/config"
 )
 
@@ -88,7 +89,7 @@ func fileExists(filename string) bool {
 }
 
 func cleanEDMX(edmx string) string {
-	re := regexp.MustCompile(`(<Schema Namespace="SP\.Data".*<\/Schema>)`)
+	re := regexp.MustCompile(`(<Schema Namespace="SP\.Data".*</Schema>)`)
 	edmx = re.ReplaceAllString(edmx, "")
 	return edmx
 }
