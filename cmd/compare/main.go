@@ -72,10 +72,15 @@ func main() {
 	// Constructing MD table
 	table := "Namespace"
 	for _, m := range models {
-		table += " | " + m.Environment.Name
+		if m.Environment.Code != "spo.target" {
+			table += " | " + m.Environment.Name
+		}
 	}
 	table += "\n---------"
 	for _, m := range models {
+		if m.Environment.Code == "spo.target" {
+			continue
+		}
 		table += "-|-" + strings.Repeat("-", utf8.RuneCountInString(m.Environment.Name))
 	}
 	table += "\n"
@@ -83,10 +88,16 @@ func main() {
 	for _, namespace := range namespacesKeys {
 		table += namespace
 		presence := namespaces[namespace]
-		for _, m := range models {
+		for i, m := range models {
 			status := "✖"
 			if presence[m.Environment.Code] {
 				status = "✔"
+			}
+			if m.Environment.Code == "spo.target" && i > 0 && models[i-1].Environment.Code == "spo" {
+				if presence["spo"] != presence["spo.target"] {
+					table += " (" + status + ")"
+				}
+				continue
 			}
 			table += " | " + status
 		}
