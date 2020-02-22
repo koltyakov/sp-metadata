@@ -5,11 +5,11 @@ git reset -q HEAD -- .
 git add edmx/*.xml
 if [[ $(git diff --name-only --cached) != "" ]]; then
   git commit -m "api metadata update, $(date +'%Y-%m-%d')"
-  put push
+  git push
 fi
 
 git add sp/*.md
 if [[ $(git diff --name-only --cached) != "" ]]; then
   git commit -m "comparison update, $(date +'%Y-%m-%d')"
-  put push
+  git push
 fi
