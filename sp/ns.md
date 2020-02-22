@@ -1,4 +1,4 @@
-# SharePoint API Namespaces
+# SharePoint REST API Namespaces
 
 **Availability matrix**
 
