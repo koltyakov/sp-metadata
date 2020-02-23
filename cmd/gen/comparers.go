@@ -25,6 +25,7 @@ func rootNamespacesTable(models []*ModelMeta) string {
 	for _, key := range getNamespaces(models) {
 		compareMatrix = append(compareMatrix, &ComparisonVector{
 			Name:     key,
+			Link:     "./" + key,
 			Presence: keyPresenceMap[key],
 		})
 	}

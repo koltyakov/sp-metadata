@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"strings"
 	"unicode/utf8"
 
@@ -10,6 +11,7 @@ import (
 // ComparisonVector ...
 type ComparisonVector struct {
 	Name     string
+	Link     string
 	Presence map[string]bool
 }
 
@@ -33,7 +35,11 @@ func genMDTable(parameter string, envCodes []string, compareMatrix []*Comparison
 	table += "\n"
 
 	for _, vector := range compareMatrix {
-		table += vector.Name
+		if vector.Link == "" {
+			table += vector.Name
+		} else {
+			table += fmt.Sprintf("[%s](%s)", vector.Name, vector.Link)
+		}
 		for i, envCode := range envCodes {
 			status := "✖"
 			if vector.Presence[envCode] {
