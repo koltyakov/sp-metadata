@@ -26,7 +26,7 @@ func main() {
 
 	// Reading models
 	for _, e := range config.Environments {
-		edmxFilePath := fmt.Sprintf("./edmx/%s.xml", e.Code)
+		edmxFilePath := fmt.Sprintf("./meta/%s.xml", e.Code)
 
 		reader, err := os.Open(edmxFilePath)
 		if err != nil {
@@ -45,6 +45,46 @@ func main() {
 		})
 	}
 
+	// Constructing MD table
+	table := generateTable(models)
+
+	ns, err := ioutil.ReadFile("./pkg/templates/namespaces.md")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	t, err := template.New("ns").Parse(fmt.Sprintf("%s", ns))
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	nsData := &struct {
+		Table string
+	}{
+		Table: table,
+	}
+
+	var b bytes.Buffer
+	if err := t.Execute(&b, nsData); err != nil {
+		log.Fatal(err)
+	}
+
+	res, err := ioutil.ReadAll(&b)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	file, _ := os.OpenFile("./docs/namespaces.md", os.O_RDONLY|os.O_CREATE, 0644)
+	_ = file.Close()
+
+	if err := ioutil.WriteFile("./docs/namespaces.md", res, 0644); err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println("Done")
+}
+
+func generateTable(models []*Metadata) string {
 	// Namespaces in platform versions
 	namespaces := map[string]map[string]bool{}
 	var namespacesKeys []string
@@ -103,39 +143,5 @@ func main() {
 		}
 		table += "\n"
 	}
-
-	ns, err := ioutil.ReadFile("./pkg/templates/ns.md")
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	t, err := template.New("ns").Parse(fmt.Sprintf("%s", ns))
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	nsData := &struct {
-		NamespacesTable string
-	}{
-		NamespacesTable: table,
-	}
-
-	var b bytes.Buffer
-	if err := t.Execute(&b, nsData); err != nil {
-		log.Fatal(err)
-	}
-
-	res, err := ioutil.ReadAll(&b)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	file, _ := os.OpenFile("./sp/ns.md", os.O_RDONLY|os.O_CREATE, 0644)
-	_ = file.Close()
-
-	if err := ioutil.WriteFile("./sp/ns.md", res, 0644); err != nil {
-		log.Fatal(err)
-	}
-
-	fmt.Println("Done")
+	return table
 }

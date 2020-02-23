@@ -7,6 +7,9 @@ format:
 get:
 	go run ./cmd/get
 
+compare:
+	go run ./cmd/compare
+
 publish:
 	./scripts/publish.sh
 

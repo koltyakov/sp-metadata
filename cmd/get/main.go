@@ -18,13 +18,11 @@ import (
 )
 
 func main() {
-
 	for _, env := range config.Environments {
 		if err := envFlow(env); err != nil {
 			log.Printf("Error while processing \"%s\": %v.\n", env.Name, err)
 		}
 	}
-
 }
 
 func envFlow(env *config.Environment) error {
@@ -73,7 +71,7 @@ func envFlow(env *config.Environment) error {
 		),
 	)
 
-	if err := ioutil.WriteFile(fmt.Sprintf("./edmx/%s.xml", env.Code), []byte(x), 0644); err != nil {
+	if err := ioutil.WriteFile(fmt.Sprintf("./meta/%s.xml", env.Code), []byte(x), 0644); err != nil {
 		return err
 	}
 
