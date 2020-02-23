@@ -189,7 +189,7 @@ func functionsImportsTable(models []*ModelMeta, namespace string) string {
 				name += " (" + strings.Replace(key, "_", " ", -1) + ")"
 			}
 		}
-		name = fmt.Sprintf("[%s](./%s.md)", name, key)
+		name = fmt.Sprintf("[%s](./Functions/%s.md)", name, key)
 		compareMatrix = append(compareMatrix, &ComparisonVector{
 			Name:     name,
 			Presence: keyPresenceMap[key],
