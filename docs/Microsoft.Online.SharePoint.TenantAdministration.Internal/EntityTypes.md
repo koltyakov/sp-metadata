@@ -5,7 +5,7 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-SPO3rdPartyAADPermissionGrant | ✔ | ✖ | ✖ | ✖
-SPOWebAppServicePrincipal | ✔ | ✖ | ✖ | ✖
-SPOWebAppServicePrincipalPermissionGrant | ✔ | ✖ | ✖ | ✖
-SPOWebAppServicePrincipalPermissionRequest | ✔ | ✖ | ✖ | ✖
+[SPO3rdPartyAADPermissionGrant](./EntityTypes/SPO3rdPartyAADPermissionGrant) | ✔ | ✖ | ✖ | ✖
+[SPOWebAppServicePrincipal](./EntityTypes/SPOWebAppServicePrincipal) | ✔ | ✖ | ✖ | ✖
+[SPOWebAppServicePrincipalPermissionGrant](./EntityTypes/SPOWebAppServicePrincipalPermissionGrant) | ✔ | ✖ | ✖ | ✖
+[SPOWebAppServicePrincipalPermissionRequest](./EntityTypes/SPOWebAppServicePrincipalPermissionRequest) | ✔ | ✖ | ✖ | ✖

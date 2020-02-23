@@ -5,8 +5,8 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-ChangeInformation | ✖ | ✖ | ✖ | ✔
-CustomPropertyMatchInformation | ✖ | ✖ | ✖ | ✔
-LabelMatchInformation | ✖ | ✖ | ✖ | ✔
-TaxonomyField | ✔ | ✔ | ✖ | ✔
-TaxonomyFieldValueCollection | ✖ | ✖ | ✖ | ✔
+[ChangeInformation](./EntityTypes/ChangeInformation) | ✖ | ✖ | ✖ | ✔
+[CustomPropertyMatchInformation](./EntityTypes/CustomPropertyMatchInformation) | ✖ | ✖ | ✖ | ✔
+[LabelMatchInformation](./EntityTypes/LabelMatchInformation) | ✖ | ✖ | ✖ | ✔
+[TaxonomyField](./EntityTypes/TaxonomyField) | ✔ | ✔ | ✖ | ✔
+[TaxonomyFieldValueCollection](./EntityTypes/TaxonomyFieldValueCollection) | ✖ | ✖ | ✖ | ✔

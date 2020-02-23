@@ -50,6 +50,27 @@ func main() {
 			if err := genDoc("./pkg/templates/EntityTypes.md", filePath, data); err != nil {
 				log.Fatal(err)
 			}
+
+			// Entity types drill-down
+			for _, entityType := range entityTypes {
+				propsTable := entityTypePropsTable(models, namespace, entityType)
+				navPropsTable := entityTypeNavPropsTable(models, namespace, entityType)
+				data := &struct {
+					PropsTable    string
+					NavPropsTable string
+					Namespace     string
+					EntityType    string
+				}{
+					PropsTable:    propsTable,
+					NavPropsTable: navPropsTable,
+					Namespace:     namespace,
+					EntityType:    entityType,
+				}
+				filePath := filepath.Join(folderPath, "EntityTypes", entityType+".md")
+				if err := genDoc("./pkg/templates/EntityType.md", filePath, data); err != nil {
+					log.Fatal(err)
+				}
+			}
 		}
 
 		// Entity sets comparison

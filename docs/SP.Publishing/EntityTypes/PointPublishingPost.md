@@ -1,0 +1,27 @@
+# Namespace: SP.Publishing
+## Entity Type: PointPublishingPost
+
+### Properties
+
+**Availability matrix**
+
+Property | SPO | SP 2019 | SP 2016 | SP 2013
+----------|-----|---------|---------|--------
+CreatedDate (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
+ModifiedDate (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
+OperationType (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+UserIsAuthor (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+Version (Edm.String) | ✔ | ✖ | ✖ | ✖
+Author (Edm.String) | ✔ | ✖ | ✖ | ✖
+Content (Edm.String) | ✔ | ✖ | ✖ | ✖
+FriendlyUrlFileName (Edm.String) | ✔ | ✖ | ✖ | ✖
+Id (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+Title (Edm.String) | ✔ | ✖ | ✖ | ✖
+
+### Navigation Properties
+
+**Availability matrix**
+
+Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
+----------|-----|---------|---------|--------
+images | ✔ | ✖ | ✖ | ✖

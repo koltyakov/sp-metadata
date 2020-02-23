@@ -5,16 +5,16 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-HubSiteProperties | ✔ | ✖ | ✖ | ✖
-Office365CommsMessagesServiceProxy | ✔ | ✖ | ✖ | ✖
-ResponseMessageCenter | ✔ | ✖ | ✖ | ✖
-ResponseServiceHealth | ✔ | ✖ | ✖ | ✖
-SPOGroup | ✔ | ✖ | ✖ | ✖
-SPOTenantCdnPolicy | ✔ | ✖ | ✖ | ✖
-SPOTenantWebTemplateCollection | ✔ | ✖ | ✖ | ✖
-SiteCollectionManagementService | ✔ | ✖ | ✖ | ✖
-SiteProperties | ✔ | ✖ | ✖ | ✖
-SpoOperation | ✔ | ✖ | ✖ | ✖
-Tenant | ✔ | ✖ | ✖ | ✖
-TenantAdminEndpoints | ✔ | ✖ | ✖ | ✖
-TenantAdminSettingsService | ✔ | ✖ | ✖ | ✖
+[HubSiteProperties](./EntityTypes/HubSiteProperties) | ✔ | ✖ | ✖ | ✖
+[Office365CommsMessagesServiceProxy](./EntityTypes/Office365CommsMessagesServiceProxy) | ✔ | ✖ | ✖ | ✖
+[ResponseMessageCenter](./EntityTypes/ResponseMessageCenter) | ✔ | ✖ | ✖ | ✖
+[ResponseServiceHealth](./EntityTypes/ResponseServiceHealth) | ✔ | ✖ | ✖ | ✖
+[SPOGroup](./EntityTypes/SPOGroup) | ✔ | ✖ | ✖ | ✖
+[SPOTenantCdnPolicy](./EntityTypes/SPOTenantCdnPolicy) | ✔ | ✖ | ✖ | ✖
+[SPOTenantWebTemplateCollection](./EntityTypes/SPOTenantWebTemplateCollection) | ✔ | ✖ | ✖ | ✖
+[SiteCollectionManagementService](./EntityTypes/SiteCollectionManagementService) | ✔ | ✖ | ✖ | ✖
+[SiteProperties](./EntityTypes/SiteProperties) | ✔ | ✖ | ✖ | ✖
+[SpoOperation](./EntityTypes/SpoOperation) | ✔ | ✖ | ✖ | ✖
+[Tenant](./EntityTypes/Tenant) | ✔ | ✖ | ✖ | ✖
+[TenantAdminEndpoints](./EntityTypes/TenantAdminEndpoints) | ✔ | ✖ | ✖ | ✖
+[TenantAdminSettingsService](./EntityTypes/TenantAdminSettingsService) | ✔ | ✖ | ✖ | ✖

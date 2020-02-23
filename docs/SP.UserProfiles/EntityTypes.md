@@ -5,14 +5,14 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-CrossGeoSync | ✔ | ✖ | ✖ | ✖
-FollowedContent | ✔ | ✔ | ✔ | ✔
-FollowedItemData | ✔ | ✔ | ✔ | ✔
-HashTagCollection | ✔ | ✔ | ✔ | ✔
-PeopleManager | ✔ | ✔ | ✔ | ✔
-PersonProperties | ✔ | ✔ | ✔ | ✔
-PersonalCache | ✔ | ✔ | ✖ | ✖
-ProfileImageStore | ✔ | ✔ | ✔ | ✔
-ProfileLoader | ✔ | ✔ | ✔ | ✔
-UserProfile | ✔ | ✔ | ✔ | ✔
-UserProfilePropertiesForUser | ✔ | ✔ | ✔ | ✔
+[CrossGeoSync](./EntityTypes/CrossGeoSync) | ✔ | ✖ | ✖ | ✖
+[FollowedContent](./EntityTypes/FollowedContent) | ✔ | ✔ | ✔ | ✔
+[FollowedItemData](./EntityTypes/FollowedItemData) | ✔ | ✔ | ✔ | ✔
+[HashTagCollection](./EntityTypes/HashTagCollection) | ✔ | ✔ | ✔ | ✔
+[PeopleManager](./EntityTypes/PeopleManager) | ✔ | ✔ | ✔ | ✔
+[PersonProperties](./EntityTypes/PersonProperties) | ✔ | ✔ | ✔ | ✔
+[PersonalCache](./EntityTypes/PersonalCache) | ✔ | ✔ | ✖ | ✖
+[ProfileImageStore](./EntityTypes/ProfileImageStore) | ✔ | ✔ | ✔ | ✔
+[ProfileLoader](./EntityTypes/ProfileLoader) | ✔ | ✔ | ✔ | ✔
+[UserProfile](./EntityTypes/UserProfile) | ✔ | ✔ | ✔ | ✔
+[UserProfilePropertiesForUser](./EntityTypes/UserProfilePropertiesForUser) | ✔ | ✔ | ✔ | ✔

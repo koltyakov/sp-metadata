@@ -5,6 +5,6 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-LikesAPI | ✔ | ✔ | ✖ | ✖
-likedByInformation | ✔ | ✔ | ✖ | ✖
-userEntity | ✔ | ✔ | ✖ | ✖
+[LikesAPI](./EntityTypes/LikesAPI) | ✔ | ✔ | ✖ | ✖
+[likedByInformation](./EntityTypes/likedByInformation) | ✔ | ✔ | ✖ | ✖
+[userEntity](./EntityTypes/userEntity) | ✔ | ✔ | ✖ | ✖

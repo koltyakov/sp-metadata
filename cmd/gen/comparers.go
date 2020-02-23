@@ -24,6 +24,10 @@ func rootNamespacesTable(models []*ModelMeta) string {
 		}
 	}
 
+	if len(keyPresenceMap) == 0 {
+		return ""
+	}
+
 	// Map to comparison matrix
 	for _, key := range getNamespaces(models) {
 		compareMatrix = append(compareMatrix, &ComparisonVector{
@@ -56,6 +60,10 @@ func complexTypesTable(models []*ModelMeta, namespace string) string {
 				}
 			}
 		}
+	}
+
+	if len(keyPresenceMap) == 0 {
+		return ""
 	}
 
 	// Map to comparison matrix
@@ -91,10 +99,15 @@ func entityTypesTable(models []*ModelMeta, namespace string) string {
 		}
 	}
 
+	if len(keyPresenceMap) == 0 {
+		return ""
+	}
+
 	// Map to comparison matrix
 	for _, key := range getEntityTypes(models, namespace) {
 		compareMatrix = append(compareMatrix, &ComparisonVector{
 			Name:     key,
+			Link:     "./EntityTypes/" + key,
 			Presence: keyPresenceMap[key],
 		})
 	}
@@ -122,6 +135,10 @@ func entitySetsTable(models []*ModelMeta, namespace string) string {
 				}
 			}
 		}
+	}
+
+	if len(keyPresenceMap) == 0 {
+		return ""
 	}
 
 	// Map to comparison matrix
@@ -157,6 +174,10 @@ func functionsImportsTable(models []*ModelMeta, namespace string) string {
 		}
 	}
 
+	if len(keyPresenceMap) == 0 {
+		return ""
+	}
+
 	// Map to comparison matrix
 	for _, key := range getFunctionsImports(models, namespace) {
 		name := key
@@ -175,4 +196,89 @@ func functionsImportsTable(models []*ModelMeta, namespace string) string {
 
 	// Constructing MD table
 	return genMDTable("Functions Imports", envCodes, compareMatrix)
+}
+
+func entityTypePropsTable(models []*ModelMeta, namespace string, entityType string) string {
+	envCodes := config.GetEnvironmentsCodes()
+	var compareMatrix []*ComparisonVector
+
+	// Namespaces in platform versions
+	keyPresenceMap := map[string]map[string]bool{}
+	for _, m := range models {
+		for _, s := range m.Model.Services.Schemas {
+			if s.Namespace == namespace {
+				for _, ent := range s.EntityTypes {
+					if ent.Name == entityType {
+						for _, prop := range ent.Properties {
+							key := prop.Name + " (" + prop.Type + ")"
+							n, ok := keyPresenceMap[key]
+							if !ok {
+								n = map[string]bool{}
+							}
+							n[m.Environment.Code] = true
+							keyPresenceMap[key] = n
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if len(keyPresenceMap) == 0 {
+		return ""
+	}
+
+	// Map to comparison matrix
+	for key, presence := range keyPresenceMap {
+		name := key
+		compareMatrix = append(compareMatrix, &ComparisonVector{
+			Name:     name,
+			Presence: presence,
+		})
+	}
+
+	// Constructing MD table
+	return genMDTable("Property", envCodes, compareMatrix)
+}
+
+func entityTypeNavPropsTable(models []*ModelMeta, namespace string, entityType string) string {
+	envCodes := config.GetEnvironmentsCodes()
+	var compareMatrix []*ComparisonVector
+
+	// Namespaces in platform versions
+	keyPresenceMap := map[string]map[string]bool{}
+	for _, m := range models {
+		for _, s := range m.Model.Services.Schemas {
+			if s.Namespace == namespace {
+				for _, ent := range s.EntityTypes {
+					if ent.Name == entityType {
+						for _, prop := range ent.NavigationProperties {
+							n, ok := keyPresenceMap[prop.Name]
+							if !ok {
+								n = map[string]bool{}
+							}
+							n[m.Environment.Code] = true
+							keyPresenceMap[prop.Name] = n
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if len(keyPresenceMap) == 0 {
+		return ""
+	}
+
+	// Map to comparison matrix
+	for key, presence := range keyPresenceMap {
+		name := key
+		compareMatrix = append(compareMatrix, &ComparisonVector{
+			Name:     name,
+			Presence: presence,
+		})
+	}
+
+	// Constructing MD table
+	return genMDTable("Navigation Property", envCodes, compareMatrix)
 }

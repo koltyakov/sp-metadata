@@ -5,5 +5,5 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-ModuleLink | ✔ | ✔ | ✔ | ✖
-ResourceManifestInformation | ✔ | ✔ | ✔ | ✖
+[ModuleLink](./EntityTypes/ModuleLink) | ✔ | ✔ | ✔ | ✖
+[ResourceManifestInformation](./EntityTypes/ResourceManifestInformation) | ✔ | ✔ | ✔ | ✖

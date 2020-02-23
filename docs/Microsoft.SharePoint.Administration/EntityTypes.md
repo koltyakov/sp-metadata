@@ -5,10 +5,10 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-FeatureDefinition | ✔ | ✖ | ✖ | ✖
-SPAnalyticsUsageService | ✔ | ✔ | ✔ | ✔
-SPAppStateQueryJobDefinition | ✔ | ✖ | ✖ | ✖
-SPFarm | ✔ | ✖ | ✖ | ✖
-SPTenantAppInstanceData | ✔ | ✖ | ✖ | ✖
-SPWebApplication | ✔ | ✖ | ✖ | ✖
-SPWebService | ✔ | ✖ | ✖ | ✖
+[FeatureDefinition](./EntityTypes/FeatureDefinition) | ✔ | ✖ | ✖ | ✖
+[SPAnalyticsUsageService](./EntityTypes/SPAnalyticsUsageService) | ✔ | ✔ | ✔ | ✔
+[SPAppStateQueryJobDefinition](./EntityTypes/SPAppStateQueryJobDefinition) | ✔ | ✖ | ✖ | ✖
+[SPFarm](./EntityTypes/SPFarm) | ✔ | ✖ | ✖ | ✖
+[SPTenantAppInstanceData](./EntityTypes/SPTenantAppInstanceData) | ✔ | ✖ | ✖ | ✖
+[SPWebApplication](./EntityTypes/SPWebApplication) | ✔ | ✖ | ✖ | ✖
+[SPWebService](./EntityTypes/SPWebService) | ✔ | ✖ | ✖ | ✖

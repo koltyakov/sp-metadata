@@ -5,6 +5,6 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-HostedApp | ✔ | ✖ | ✖ | ✖
-HostedAppsManager | ✔ | ✖ | ✖ | ✖
-StorageEntity | ✔ | ✔ | ✖ | ✖
+[HostedApp](./EntityTypes/HostedApp) | ✔ | ✖ | ✖ | ✖
+[HostedAppsManager](./EntityTypes/HostedAppsManager) | ✔ | ✖ | ✖ | ✖
+[StorageEntity](./EntityTypes/StorageEntity) | ✔ | ✔ | ✖ | ✖

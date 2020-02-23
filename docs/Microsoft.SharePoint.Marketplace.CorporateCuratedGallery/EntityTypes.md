@@ -5,9 +5,9 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-CorporateCatalogAppMetadata | ✔ | ✔ | ✖ | ✖
-SPCorporateCuratedGallerySettingsBase | ✔ | ✖ | ✖ | ✖
-SPCorporateCuratedGallerySettingsFactory | ✔ | ✖ | ✖ | ✖
-SiteCollectionAppCatalogAllowedItem | ✔ | ✔ | ✖ | ✖
-SiteCollectionCorporateCatalogAccessor | ✔ | ✔ | ✖ | ✖
-TenantCorporateCatalogAccessor | ✔ | ✔ | ✖ | ✖
+[CorporateCatalogAppMetadata](./EntityTypes/CorporateCatalogAppMetadata) | ✔ | ✔ | ✖ | ✖
+[SPCorporateCuratedGallerySettingsBase](./EntityTypes/SPCorporateCuratedGallerySettingsBase) | ✔ | ✖ | ✖ | ✖
+[SPCorporateCuratedGallerySettingsFactory](./EntityTypes/SPCorporateCuratedGallerySettingsFactory) | ✔ | ✖ | ✖ | ✖
+[SiteCollectionAppCatalogAllowedItem](./EntityTypes/SiteCollectionAppCatalogAllowedItem) | ✔ | ✔ | ✖ | ✖
+[SiteCollectionCorporateCatalogAccessor](./EntityTypes/SiteCollectionCorporateCatalogAccessor) | ✔ | ✔ | ✖ | ✖
+[TenantCorporateCatalogAccessor](./EntityTypes/TenantCorporateCatalogAccessor) | ✔ | ✔ | ✖ | ✖
