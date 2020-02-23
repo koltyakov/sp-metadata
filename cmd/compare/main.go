@@ -46,7 +46,7 @@ func main() {
 	}
 
 	// Constructing MD table
-	table := generateTable(models)
+	table := generateTable("Namespace", models)
 
 	ns, err := ioutil.ReadFile("./pkg/templates/namespaces.md")
 	if err != nil {
@@ -84,7 +84,7 @@ func main() {
 	fmt.Println("Done")
 }
 
-func generateTable(models []*Metadata) string {
+func generateTable(name string, models []*Metadata) string {
 	// Namespaces in platform versions
 	namespaces := map[string]map[string]bool{}
 	var namespacesKeys []string
@@ -110,7 +110,7 @@ func generateTable(models []*Metadata) string {
 	sort.Strings(namespacesKeys)
 
 	// Constructing MD table
-	table := "Namespace"
+	table := name
 	for _, m := range models {
 		if m.Environment.Code != "spo.target" {
 			table += " | " + m.Environment.Name
