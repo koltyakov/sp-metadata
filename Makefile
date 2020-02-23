@@ -7,12 +7,12 @@ format:
 get:
 	go run ./cmd/get
 
-compare:
-	go run ./cmd/compare
+gen:
+	go run ./cmd/gen
 
 publish:
 	./scripts/publish.sh
 
 build:
 	go build -o bin/get ./cmd/get
-	go build -o bin/compare ./cmd/compare
+	go build -o bin/gen ./cmd/gen
