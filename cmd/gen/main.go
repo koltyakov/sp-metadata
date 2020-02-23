@@ -66,6 +66,20 @@ func main() {
 			}
 		}
 
+		// Functions imports comparison
+		functionsImports := getFunctionsImports(models, namespace)
+		if len(functionsImports) > 0 {
+			table = functionsImportsTable(models, namespace)
+			data := &struct {
+				Table     string
+				Namespace string
+			}{table, namespace}
+			filePath := filepath.Join(folderPath, "FunctionsImports.md")
+			if err := genDoc("./pkg/templates/FunctionsImports.md", filePath, data); err != nil {
+				log.Fatal(err)
+			}
+		}
+
 	}
 
 	fmt.Println("Done")

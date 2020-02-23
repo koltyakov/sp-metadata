@@ -132,3 +132,36 @@ func entitySetsTable(models []*ModelMeta, namespace string) string {
 	// Constructing MD table
 	return genMDTable("Entity Set", envCodes, compareMatrix)
 }
+
+func functionsImportsTable(models []*ModelMeta, namespace string) string {
+	envCodes := config.GetEnvironmentsCodes()
+	var compareMatrix []*ComparisonVector
+
+	// Namespaces in platform versions
+	keyPresenceMap := map[string]map[string]bool{}
+	for _, m := range models {
+		for _, s := range m.Model.Services.Schemas {
+			if s.Namespace == namespace {
+				for _, ent := range s.EntityContainer.FunctionImports {
+					n, ok := keyPresenceMap[ent.Name]
+					if !ok {
+						n = map[string]bool{}
+					}
+					n[m.Environment.Code] = true
+					keyPresenceMap[ent.Name] = n
+				}
+			}
+		}
+	}
+
+	// Map to comparison matrix
+	for _, key := range getFunctionsImports(models, namespace) {
+		compareMatrix = append(compareMatrix, &ComparisonVector{
+			Name:     key,
+			Presence: keyPresenceMap[key],
+		})
+	}
+
+	// Constructing MD table
+	return genMDTable("Functions Imports", envCodes, compareMatrix)
+}
