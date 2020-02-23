@@ -1,0 +1,18 @@
+# Namespace: Microsoft.Online.SharePoint.MultiGeo.Service
+## Entity Type: SiteMoveJobEntityData
+
+### Properties
+
+**Availability matrix**
+
+Property | SPO | SP 2019 | SP 2016 | SP 2013
+----------|-----|---------|---------|--------
+TargetInstanceId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+TargetSiteSubscriptionId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+TargetSiteUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
+SourceCompanyId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+SourceInstanceId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+SourceSiteSubscriptionId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+SourceSiteUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
+TargetCompanyId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+
