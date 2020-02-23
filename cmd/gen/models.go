@@ -131,25 +131,25 @@ func getEntitySets(models []*ModelMeta, namespace string) []string {
 	return keys
 }
 
-func getFunctionsImports(models []*ModelMeta, namespace string) []string {
-	var keys []string
-	for _, m := range models {
-		for _, s := range m.Model.Services.Schemas {
-			if s.Namespace == namespace {
-				for _, ent := range s.EntityContainer.FunctionImports {
-					found := false
-					for _, nn := range keys {
-						if nn == ent.Name {
-							found = true
-						}
-					}
-					if !found {
-						keys = append(keys, ent.Name)
-					}
-				}
-			}
-		}
-	}
-	sort.Strings(keys)
-	return keys
-}
+// func getFunctionsImports(models []*ModelMeta, namespace string) []string {
+// 	var keys []string
+// 	for _, m := range models {
+// 		for _, s := range m.Model.Services.Schemas {
+// 			if s.Namespace == namespace {
+// 				for _, ent := range s.EntityContainer.FunctionImports {
+// 					found := false
+// 					for _, nn := range keys {
+// 						if nn == ent.Name {
+// 							found = true
+// 						}
+// 					}
+// 					if !found {
+// 						keys = append(keys, ent.Name)
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// 	sort.Strings(keys)
+// 	return keys
+// }

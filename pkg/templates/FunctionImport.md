@@ -7,8 +7,8 @@
 - IsBindable: {{.IsBindable}}
 {{ if (ne .EntitySet "") }}- EntitySet: {{.EntitySet}}{{ end }}
 
-## Parameters
+{{ if (ne .ParamsTable "") }}### Parameters
 
 **Availability matrix**
 
-{{.ParamsTable}}
+{{.ParamsTable}}{{ end }}

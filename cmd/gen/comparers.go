@@ -1,9 +1,7 @@
 package main
 
 import (
-	"fmt"
 	"sort"
-	"strings"
 
 	"github.com/koltyakov/sp-metadata/config"
 )
@@ -154,51 +152,51 @@ func entitySetsTable(models []*ModelMeta, namespace string) string {
 	return genMDTable("Entity Set", envCodes, compareMatrix)
 }
 
-func functionsImportsTable(models []*ModelMeta, namespace string) string {
-	envCodes := config.GetEnvironmentsCodes()
-	var compareMatrix []*ComparisonVector
+// func functionsImportsTable(models []*ModelMeta, namespace string) string {
+// 	envCodes := config.GetEnvironmentsCodes()
+// 	var compareMatrix []*ComparisonVector
 
-	// Namespaces in platform versions
-	keyPresenceMap := map[string]map[string]bool{}
-	for _, m := range models {
-		for _, s := range m.Model.Services.Schemas {
-			if s.Namespace == namespace {
-				for _, ent := range s.EntityContainer.FunctionImports {
-					n, ok := keyPresenceMap[ent.Name]
-					if !ok {
-						n = map[string]bool{}
-					}
-					n[m.Environment.Code] = true
-					keyPresenceMap[ent.Name] = n
-				}
-			}
-		}
-	}
+// 	// Namespaces in platform versions
+// 	keyPresenceMap := map[string]map[string]bool{}
+// 	for _, m := range models {
+// 		for _, s := range m.Model.Services.Schemas {
+// 			if s.Namespace == namespace {
+// 				for _, ent := range s.EntityContainer.FunctionImports {
+// 					n, ok := keyPresenceMap[ent.Name]
+// 					if !ok {
+// 						n = map[string]bool{}
+// 					}
+// 					n[m.Environment.Code] = true
+// 					keyPresenceMap[ent.Name] = n
+// 				}
+// 			}
+// 		}
+// 	}
 
-	if len(keyPresenceMap) == 0 {
-		return ""
-	}
+// 	if len(keyPresenceMap) == 0 {
+// 		return ""
+// 	}
 
-	// Map to comparison matrix
-	for _, key := range getFunctionsImports(models, namespace) {
-		name := key
-		if len(name) > 50 {
-			runes := []rune(name)
-			name = fmt.Sprintf("<span title=\"%s\">%s</span>", name, strings.Trim(string(runes[0:50]), "_")+"...")
-			if strings.Contains(key, "_") {
-				name += " (" + strings.Replace(key, "_", " ", -1) + ")"
-			}
-		}
-		name = fmt.Sprintf("[%s](./Functions/%s.md)", name, key)
-		compareMatrix = append(compareMatrix, &ComparisonVector{
-			Name:     name,
-			Presence: keyPresenceMap[key],
-		})
-	}
+// 	// Map to comparison matrix
+// 	for _, key := range getFunctionsImports(models, namespace) {
+// 		name := key
+// 		if len(name) > 50 {
+// 			runes := []rune(name)
+// 			name = fmt.Sprintf("<span title=\"%s\">%s</span>", name, strings.Trim(string(runes[0:50]), "_")+"...")
+// 			if strings.Contains(key, "_") {
+// 				name += " (" + strings.Replace(key, "_", " ", -1) + ")"
+// 			}
+// 		}
+// 		name = fmt.Sprintf("[%s](./Functions/%s.md)", name, key)
+// 		compareMatrix = append(compareMatrix, &ComparisonVector{
+// 			Name:     name,
+// 			Presence: keyPresenceMap[key],
+// 		})
+// 	}
 
-	// Constructing MD table
-	return genMDTable("Functions Imports", envCodes, compareMatrix)
-}
+// 	// Constructing MD table
+// 	return genMDTable("Functions Imports", envCodes, compareMatrix)
+// }
 
 func entityTypePropsTable(models []*ModelMeta, namespace string, entityType string) string {
 	envCodes := config.GetEnvironmentsCodes()
@@ -297,51 +295,64 @@ func entityTypeNavPropsTable(models []*ModelMeta, namespace string, entityType s
 	return genMDTable("Navigation Property", envCodes, compareMatrix)
 }
 
-func functionPropsTable(models []*ModelMeta, namespace string, functionImport string) string {
-	envCodes := config.GetEnvironmentsCodes()
-	var compareMatrix []*ComparisonVector
+// func functionPropsTable(models []*ModelMeta, namespace string, functionImport string, entityType string) string {
+// 	envCodes := config.GetEnvironmentsCodes()
+// 	var compareMatrix []*ComparisonVector
 
-	// Namespaces in platform versions
-	keyPresenceMap := map[string]map[string]bool{}
-	for _, m := range models {
-		for _, s := range m.Model.Services.Schemas {
-			if s.Namespace == namespace {
-				for _, functionImp := range s.EntityContainer.FunctionImports {
-					if functionImp.Name == functionImport {
-						for _, par := range functionImp.Parameters {
-							key := par.Name + " (" + par.Type + ")"
-							n, ok := keyPresenceMap[key]
-							if !ok {
-								n = map[string]bool{}
-							}
-							n[m.Environment.Code] = true
-							keyPresenceMap[key] = n
-						}
-					}
-				}
-			}
-		}
-	}
+// 	// Namespaces in platform versions
+// 	keyPresenceMap := map[string]map[string]bool{}
+// 	for _, m := range models {
+// 		for _, s := range m.Model.Services.Schemas {
+// 			if s.Namespace == namespace {
+// 				for _, functionImp := range s.EntityContainer.FunctionImports {
+// 					if functionImp.Name == functionImport {
+// 						useFunction := false
+// 						for _, par := range functionImp.Parameters {
+// 							if par.Name == "this" {
+// 								if par.Type == entityType {
+// 									useFunction == true
+// 								}
+// 							}
+// 						}
+// 						if !useFunction {
+// 							continue
+// 						}
+// 						for _, par := range functionImp.Parameters {
+// 							if par.Name != "this" {
+// 								key := par.Name + " (" + par.Type + ")"
+// 								n, ok := keyPresenceMap[key]
+// 								if !ok {
+// 									n = map[string]bool{}
+// 								}
+// 								n[m.Environment.Code] = true
+// 								keyPresenceMap[key] = n
+// 							}
+// 						}
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
 
-	if len(keyPresenceMap) == 0 {
-		return ""
-	}
+// 	if len(keyPresenceMap) == 0 {
+// 		return ""
+// 	}
 
-	var keys []string
-	for key := range keyPresenceMap {
-		keys = append(keys, key)
-	}
-	sort.Strings(keys)
+// 	var keys []string
+// 	for key := range keyPresenceMap {
+// 		keys = append(keys, key)
+// 	}
+// 	sort.Strings(keys)
 
-	// Map to comparison matrix
-	for _, key := range keys {
-		name := key
-		compareMatrix = append(compareMatrix, &ComparisonVector{
-			Name:     name,
-			Presence: keyPresenceMap[key],
-		})
-	}
+// 	// Map to comparison matrix
+// 	for _, key := range keys {
+// 		name := key
+// 		compareMatrix = append(compareMatrix, &ComparisonVector{
+// 			Name:     name,
+// 			Presence: keyPresenceMap[key],
+// 		})
+// 	}
 
-	// Constructing MD table
-	return genMDTable("Navigation Property", envCodes, compareMatrix)
-}
+// 	// Constructing MD table
+// 	return genMDTable("Navigation Property", envCodes, compareMatrix)
+// }

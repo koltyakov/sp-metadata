@@ -4,8 +4,6 @@ import (
 	"fmt"
 	"log"
 	"path/filepath"
-
-	"github.com/koltyakov/sp-metadata/pkg/edmx"
 )
 
 func main() {
@@ -92,58 +90,58 @@ func main() {
 		}
 
 		// Functions imports comparison
-		functionsImports := getFunctionsImports(models, namespace)
-		if len(functionsImports) > 0 {
-			table = functionsImportsTable(models, namespace)
-			data := &struct {
-				Table     string
-				Namespace string
-			}{table, namespace}
-			filePath := filepath.Join(folderPath, "FunctionsImports.md")
-			if err := genDoc("./pkg/templates/FunctionsImports.md", filePath, data); err != nil {
-				log.Fatal(err)
-			}
+		// functionsImports := getFunctionsImports(models, namespace)
+		// if len(functionsImports) > 0 {
+		// 	table = functionsImportsTable(models, namespace)
+		// 	data := &struct {
+		// 		Table     string
+		// 		Namespace string
+		// 	}{table, namespace}
+		// 	filePath := filepath.Join(folderPath, "FunctionsImports.md")
+		// 	if err := genDoc("./pkg/templates/FunctionsImports.md", filePath, data); err != nil {
+		// 		log.Fatal(err)
+		// 	}
 
-			// Functions imports drill-down
-			for _, functionImport := range functionsImports {
+		// 	// Functions imports drill-down
+		// 	for _, functionImport := range functionsImports {
 
-				var functionDef edmx.FunctionImport
-				for _, s := range models[0].Model.Services.Schemas {
-					if s.Namespace == namespace {
-						for _, functionImp := range s.EntityContainer.FunctionImports {
-							if functionImp.Name == functionImport {
-								functionDef = functionImp
-							}
-						}
-					}
-				}
+		// 		var functionDef edmx.FunctionImport
+		// 		for _, s := range models[0].Model.Services.Schemas {
+		// 			if s.Namespace == namespace {
+		// 				for _, functionImp := range s.EntityContainer.FunctionImports {
+		// 					if functionImp.Name == functionImport {
+		// 						functionDef = functionImp
+		// 					}
+		// 				}
+		// 			}
+		// 		}
 
-				propsTable := functionPropsTable(models, namespace, functionImport)
-				data := &struct {
-					ParamsTable  string
-					Namespace    string
-					EntityType   string
-					Function     string
-					ReturnType   string
-					IsComposable bool
-					IsBindable   bool
-					EntitySet    string
-				}{
-					ParamsTable:  propsTable,
-					Namespace:    namespace,
-					EntityType:   functionImport,
-					Function:     functionImport,
-					ReturnType:   functionDef.ReturnType,
-					IsComposable: functionDef.IsComposable,
-					IsBindable:   functionDef.IsBindable,
-					EntitySet:    functionDef.EntitySet,
-				}
-				filePath := filepath.Join(folderPath, "Functions", functionImport+".md")
-				if err := genDoc("./pkg/templates/FunctionImport.md", filePath, data); err != nil {
-					log.Fatal(err)
-				}
-			}
-		}
+		// 		propsTable := functionPropsTable(models, namespace, functionImport)
+		// 		data := &struct {
+		// 			ParamsTable  string
+		// 			Namespace    string
+		// 			EntityType   string
+		// 			Function     string
+		// 			ReturnType   string
+		// 			IsComposable bool
+		// 			IsBindable   bool
+		// 			EntitySet    string
+		// 		}{
+		// 			ParamsTable:  propsTable,
+		// 			Namespace:    namespace,
+		// 			EntityType:   functionImport,
+		// 			Function:     functionImport,
+		// 			ReturnType:   functionDef.ReturnType,
+		// 			IsComposable: functionDef.IsComposable,
+		// 			IsBindable:   functionDef.IsBindable,
+		// 			EntitySet:    functionDef.EntitySet,
+		// 		}
+		// 		filePath := filepath.Join(folderPath, "Functions", functionImport+".md")
+		// 		if err := genDoc("./pkg/templates/FunctionImport.md", filePath, data); err != nil {
+		// 			log.Fatal(err)
+		// 		}
+		// 	}
+		// }
 
 	}
 
