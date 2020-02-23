@@ -712,184 +712,184 @@ MenuNodeKey | ✔ | ✔ | ✔ | ✔
 MenuState | ✔ | ✔ | ✔ | ✔
 MessageCenterMessages | ✔ | ✖ | ✖ | ✖
 Microsoft_AppServices_AppCollection | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_BusinessData_Infrastructure_SecureStore_ConnectionSettings">Microsoft_BusinessData_Infrastructure_Se...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Office_Education_QuizOM_QuizUtilities_GetSafeHtmlText">Microsoft_Office_Education_QuizOM_QuizUt...</span> | ✖ | ✖ | ✖ | ✔
-<span title="Microsoft_Office_SecureStoreService_Server_TargetApplication">Microsoft_Office_SecureStoreService_Serv...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Office_SecureStoreService_Server_TargetApplicationField">Microsoft_Office_SecureStoreService_Serv...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub">Microsoft_Office_Server_ContentCenter_SP...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningModelEntityData">Microsoft_Office_Server_ContentCenter_SP...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningPublicationsEntityData">Microsoft_Office_Server_ContentCenter_SP...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningSampleEntityData">Microsoft_Office_Server_ContentCenter_SP...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Office_Server_ReputationModel_Reputation_SetLike">Microsoft_Office_Server_ReputationModel...</span> | ✔ | ✔ | ✔ | ✔
-<span title="Microsoft_Office_Server_ReputationModel_Reputation_SetRating">Microsoft_Office_Server_ReputationModel...</span> | ✔ | ✔ | ✔ | ✔
-<span title="Microsoft_Office_Server_Search_REST_SearchService">Microsoft_Office_Server_Search_REST_Sear...</span> | ✔ | ✔ | ✔ | ✔
-<span title="Microsoft_Office_Server_Search_REST_SearchSetting">Microsoft_Office_Server_Search_REST_Sear...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_AppLauncher_AppLauncher">Microsoft_Online_SharePoint_AppLauncher...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MigrationCenter_Common_DeviceEntityData">Microsoft_Online_SharePoint_MigrationCen...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MigrationCenter_Common_MigrationCredentialEntityData">Microsoft_Online_SharePoint_MigrationCen...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MigrationCenter_Common_MigrationTaskEntityData">Microsoft_Online_SharePoint_MigrationCen...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MigrationCenter_Service_Device">Microsoft_Online_SharePoint_MigrationCen...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices">Microsoft_Online_SharePoint_MigrationCen...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterStorage">Microsoft_Online_SharePoint_MigrationCen...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCredential">Microsoft_Online_SharePoint_MigrationCen...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationTask">Microsoft_Online_SharePoint_MigrationCen...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_AllowedDataLocation">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmGroupMoveJob">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmSiteMoveJob">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmSiteMoveJobEntityData">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmUserMoveJob">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmUserMoveJobEntityData">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoTenantBYOK">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoTenantCompatibility">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoTenantProperty">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoTenantPropertyEntityData">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_DBSchemaCompatibilityCheck">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_GeoAdministrator">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_GeoExperience">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_GeoMoveCompatibilityChecks">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_GeoTenantInstanceInformation">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_GeoTenantInstanceInformationEntityData">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_GroupMoveJob">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_GroupMoveJobEntityData">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoApiVersions">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_SiteMoveJob">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_SiteMoveJobEntityData">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_StorageQuota">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_TaxonomyReplicationParameters">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_UnifiedGroup">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserMoveJob">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserMoveJobEntityData">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserPersonalSiteId">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserPersonalSiteLocation">Microsoft_Online_SharePoint_MultiGeo_Ser...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_Onboarding_RestService_OnboardingServicesBeta">Microsoft_Online_SharePoint_Onboarding_R...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_Onboarding_RestService_Service_SiteRenameJob">Microsoft_Online_SharePoint_Onboarding_R...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_Onboarding_RestService_TenantRename_TenantRenameJob">Microsoft_Online_SharePoint_Onboarding_R...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_PointPublishing_PointPublishingAdmin">Microsoft_Online_SharePoint_PointPublish...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_SPLogger_LogExport">Microsoft_Online_SharePoint_SPLogger_Log...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_TenantAdmin_MiddleTier_DDIAdapter">Microsoft_Online_SharePoint_TenantAdmin...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_TenantAdministration_Internal_SPOWebAppServicePrincipal">Microsoft_Online_SharePoint_TenantAdmini...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_TenantAdministration_Office365CommsMessagesServiceProxy">Microsoft_Online_SharePoint_TenantAdmini...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_TenantAdministration_ResponseMessageCenter">Microsoft_Online_SharePoint_TenantAdmini...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_TenantAdministration_ResponseServiceHealth">Microsoft_Online_SharePoint_TenantAdmini...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_TenantAdministration_SPOGroup">Microsoft_Online_SharePoint_TenantAdmini...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_TenantAdministration_SiteCollectionManagementService">Microsoft_Online_SharePoint_TenantAdmini...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_TenantAdministration_SiteProperties">Microsoft_Online_SharePoint_TenantAdmini...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_TenantAdministration_Tenant">Microsoft_Online_SharePoint_TenantAdmini...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_TenantAdministration_TenantAdminEndpoints">Microsoft_Online_SharePoint_TenantAdmini...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_TenantAdministration_TenantAdminSettingsService">Microsoft_Online_SharePoint_TenantAdmini...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_TenantManagement_GroupCreationParams">Microsoft_Online_SharePoint_TenantManage...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_Online_SharePoint_TenantManagement_Office365Tenant">Microsoft_Online_SharePoint_TenantManage...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_AddToOneDrive_MountService_GetRemoteItemInfo">Microsoft_SharePoint_AddToOneDrive_Mount...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_AddToOneDrive_MountService_UpdateMountPoints">Microsoft_SharePoint_AddToOneDrive_Mount...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Administration_SPAnalyticsUsageService">Microsoft_SharePoint_Administration_SPAn...</span> | ✔ | ✔ | ✔ | ✔
-<span title="Microsoft_SharePoint_Administration_SPFarm_Local">Microsoft_SharePoint_Administration_SPFa...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Administration_SPWebApplication_Lookup">Microsoft_SharePoint_Administration_SPWe...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Administration_SPWebService_ContentService">Microsoft_SharePoint_Administration_SPWe...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_AppManagement_SPAppPrincipalInfo_GetClientIdFromAppPrincipalEncodedClaim">Microsoft_SharePoint_AppManagement_SPApp...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_AuthPolicy_Events_SPAuthEvent">Microsoft_SharePoint_AuthPolicy_Events_S...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_AuthPolicy_Events_SPAuthEvents">Microsoft_SharePoint_AuthPolicy_Events_S...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Client_Search_Administration_DocumentCrawlLog">Microsoft_SharePoint_Client_Search_Admin...</span> | ✖ | ✖ | ✖ | ✔
-<span title="Microsoft_SharePoint_Client_Search_Administration_SearchObjectOwner">Microsoft_SharePoint_Client_Search_Admin...</span> | ✖ | ✖ | ✖ | ✔
-<span title="Microsoft_SharePoint_Client_Search_Analytics_SignalStore">Microsoft_SharePoint_Client_Search_Analy...</span> | ✔ | ✔ | ✔ | ✖
-<span title="Microsoft_SharePoint_Client_Search_Analytics_UsageAnalytics">Microsoft_SharePoint_Client_Search_Analy...</span> | ✖ | ✖ | ✖ | ✔
-<span title="Microsoft_SharePoint_Client_Search_ContentPush_PushTenantManager">Microsoft_SharePoint_Client_Search_Conte...</span> | ✖ | ✖ | ✖ | ✔
-<span title="Microsoft_SharePoint_Client_Search_Portability_SearchConfigurationPortability">Microsoft_SharePoint_Client_Search_Porta...</span> | ✖ | ✖ | ✖ | ✔
-<span title="Microsoft_SharePoint_Client_Search_Query_KeywordQuery">Microsoft_SharePoint_Client_Search_Query...</span> | ✖ | ✖ | ✖ | ✔
-<span title="Microsoft_SharePoint_Client_Search_Query_QueryPersonalizationData">Microsoft_SharePoint_Client_Search_Query...</span> | ✔ | ✔ | ✔ | ✔
-<span title="Microsoft_SharePoint_Client_Search_Query_RankingLabeling">Microsoft_SharePoint_Client_Search_Query...</span> | ✔ | ✔ | ✔ | ✔
-<span title="Microsoft_SharePoint_Client_Search_Query_SearchExecutor">Microsoft_SharePoint_Client_Search_Query...</span> | ✖ | ✖ | ✖ | ✔
-<span title="Microsoft_SharePoint_Client_Search_Query_StringCollection">Microsoft_SharePoint_Client_Search_Query...</span> | ✔ | ✔ | ✔ | ✔
-<span title="Microsoft_SharePoint_Internal_ClientSideComponent_ComponentContextInfo">Microsoft_SharePoint_Internal_ClientSide...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Internal_ClientSideComponent_Token_AcquireOBOToken">Microsoft_SharePoint_Internal_ClientSide...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Internal_TrackedItemService_GetTrackedItemUpdatesForUser">Microsoft_SharePoint_Internal_TrackedIte...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Navigation_REST_NavigationServiceRest">Microsoft_SharePoint_Navigation_REST_Nav...</span> | ✔ | ✔ | ✔ | ✔
-<span title="Microsoft_SharePoint_OrgNewsSite_OrgNewsSiteApi">Microsoft_SharePoint_OrgNewsSite_OrgNews...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Portal_CollaborationMailbox_GetCollabMailboxViewInfo">Microsoft_SharePoint_Portal_Collaboratio...</span> | ✔ | ✔ | ✔ | ✔
-<span title="Microsoft_SharePoint_Portal_CommunityModeration_ApproveReportedItems">Microsoft_SharePoint_Portal_CommunityMod...</span> | ✔ | ✔ | ✔ | ✔
-<span title="Microsoft_SharePoint_Portal_CommunityModeration_ReportAbuse">Microsoft_SharePoint_Portal_CommunityMod...</span> | ✔ | ✔ | ✔ | ✔
+<span title="Microsoft_BusinessData_Infrastructure_SecureStore_ConnectionSettings">Microsoft_BusinessData_Infrastructure_SecureStore...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Office_Education_QuizOM_QuizUtilities_GetSafeHtmlText">Microsoft_Office_Education_QuizOM_QuizUtilities_Ge...</span> | ✖ | ✖ | ✖ | ✔
+<span title="Microsoft_Office_SecureStoreService_Server_TargetApplication">Microsoft_Office_SecureStoreService_Server_TargetA...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Office_SecureStoreService_Server_TargetApplicationField">Microsoft_Office_SecureStoreService_Server_TargetA...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub">Microsoft_Office_Server_ContentCenter_SPMachineLea...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningModelEntityData">Microsoft_Office_Server_ContentCenter_SPMachineLea...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningPublicationsEntityData">Microsoft_Office_Server_ContentCenter_SPMachineLea...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningSampleEntityData">Microsoft_Office_Server_ContentCenter_SPMachineLea...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Office_Server_ReputationModel_Reputation_SetLike">Microsoft_Office_Server_ReputationModel_Reputation...</span> | ✔ | ✔ | ✔ | ✔
+<span title="Microsoft_Office_Server_ReputationModel_Reputation_SetRating">Microsoft_Office_Server_ReputationModel_Reputation...</span> | ✔ | ✔ | ✔ | ✔
+Microsoft_Office_Server_Search_REST_SearchService | ✔ | ✔ | ✔ | ✔
+Microsoft_Office_Server_Search_REST_SearchSetting | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_AppLauncher_AppLauncher">Microsoft_Online_SharePoint_AppLauncher_AppLaunche...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MigrationCenter_Common_DeviceEntityData">Microsoft_Online_SharePoint_MigrationCenter_Common...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MigrationCenter_Common_MigrationCredentialEntityData">Microsoft_Online_SharePoint_MigrationCenter_Common...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MigrationCenter_Common_MigrationTaskEntityData">Microsoft_Online_SharePoint_MigrationCenter_Common...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MigrationCenter_Service_Device">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterStorage">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCredential">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationTask">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_AllowedDataLocation">Microsoft_Online_SharePoint_MultiGeo_Service_Allow...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmGroupMoveJob">Microsoft_Online_SharePoint_MultiGeo_Service_Cross...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmSiteMoveJob">Microsoft_Online_SharePoint_MultiGeo_Service_Cross...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmSiteMoveJobEntityData">Microsoft_Online_SharePoint_MultiGeo_Service_Cross...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmUserMoveJob">Microsoft_Online_SharePoint_MultiGeo_Service_Cross...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmUserMoveJobEntityData">Microsoft_Online_SharePoint_MultiGeo_Service_Cross...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoTenantBYOK">Microsoft_Online_SharePoint_MultiGeo_Service_Cross...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoTenantCompatibility">Microsoft_Online_SharePoint_MultiGeo_Service_Cross...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoTenantProperty">Microsoft_Online_SharePoint_MultiGeo_Service_Cross...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoTenantPropertyEntityData">Microsoft_Online_SharePoint_MultiGeo_Service_Cross...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_DBSchemaCompatibilityCheck">Microsoft_Online_SharePoint_MultiGeo_Service_DBSch...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_GeoAdministrator">Microsoft_Online_SharePoint_MultiGeo_Service_GeoAd...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_GeoExperience">Microsoft_Online_SharePoint_MultiGeo_Service_GeoEx...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_GeoMoveCompatibilityChecks">Microsoft_Online_SharePoint_MultiGeo_Service_GeoMo...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_GeoTenantInstanceInformation">Microsoft_Online_SharePoint_MultiGeo_Service_GeoTe...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_GeoTenantInstanceInformationEntityData">Microsoft_Online_SharePoint_MultiGeo_Service_GeoTe...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_GroupMoveJob">Microsoft_Online_SharePoint_MultiGeo_Service_Group...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_GroupMoveJobEntityData">Microsoft_Online_SharePoint_MultiGeo_Service_Group...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoApiVersions">Microsoft_Online_SharePoint_MultiGeo_Service_Multi...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta">Microsoft_Online_SharePoint_MultiGeo_Service_Multi...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_SiteMoveJob">Microsoft_Online_SharePoint_MultiGeo_Service_SiteM...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_SiteMoveJobEntityData">Microsoft_Online_SharePoint_MultiGeo_Service_SiteM...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_StorageQuota">Microsoft_Online_SharePoint_MultiGeo_Service_Stora...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_TaxonomyReplicationParameters">Microsoft_Online_SharePoint_MultiGeo_Service_Taxon...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_UnifiedGroup">Microsoft_Online_SharePoint_MultiGeo_Service_Unifi...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserMoveJob">Microsoft_Online_SharePoint_MultiGeo_Service_UserM...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserMoveJobEntityData">Microsoft_Online_SharePoint_MultiGeo_Service_UserM...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserPersonalSiteId">Microsoft_Online_SharePoint_MultiGeo_Service_UserP...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserPersonalSiteLocation">Microsoft_Online_SharePoint_MultiGeo_Service_UserP...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_Onboarding_RestService_OnboardingServicesBeta">Microsoft_Online_SharePoint_Onboarding_RestService...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_Onboarding_RestService_Service_SiteRenameJob">Microsoft_Online_SharePoint_Onboarding_RestService...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_Onboarding_RestService_TenantRename_TenantRenameJob">Microsoft_Online_SharePoint_Onboarding_RestService...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_PointPublishing_PointPublishingAdmin">Microsoft_Online_SharePoint_PointPublishing_PointP...</span> | ✔ | ✖ | ✖ | ✖
+Microsoft_Online_SharePoint_SPLogger_LogExport | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_TenantAdmin_MiddleTier_DDIAdapter">Microsoft_Online_SharePoint_TenantAdmin_MiddleTier...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_TenantAdministration_Internal_SPOWebAppServicePrincipal">Microsoft_Online_SharePoint_TenantAdministration_I...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_TenantAdministration_Office365CommsMessagesServiceProxy">Microsoft_Online_SharePoint_TenantAdministration_O...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_TenantAdministration_ResponseMessageCenter">Microsoft_Online_SharePoint_TenantAdministration_R...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_TenantAdministration_ResponseServiceHealth">Microsoft_Online_SharePoint_TenantAdministration_R...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_TenantAdministration_SPOGroup">Microsoft_Online_SharePoint_TenantAdministration_S...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_TenantAdministration_SiteCollectionManagementService">Microsoft_Online_SharePoint_TenantAdministration_S...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_TenantAdministration_SiteProperties">Microsoft_Online_SharePoint_TenantAdministration_S...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_TenantAdministration_Tenant">Microsoft_Online_SharePoint_TenantAdministration_T...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_TenantAdministration_TenantAdminEndpoints">Microsoft_Online_SharePoint_TenantAdministration_T...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_TenantAdministration_TenantAdminSettingsService">Microsoft_Online_SharePoint_TenantAdministration_T...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_TenantManagement_GroupCreationParams">Microsoft_Online_SharePoint_TenantManagement_Group...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_Online_SharePoint_TenantManagement_Office365Tenant">Microsoft_Online_SharePoint_TenantManagement_Offic...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_AddToOneDrive_MountService_GetRemoteItemInfo">Microsoft_SharePoint_AddToOneDrive_MountService_Ge...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_AddToOneDrive_MountService_UpdateMountPoints">Microsoft_SharePoint_AddToOneDrive_MountService_Up...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Administration_SPAnalyticsUsageService">Microsoft_SharePoint_Administration_SPAnalyticsUsa...</span> | ✔ | ✔ | ✔ | ✔
+Microsoft_SharePoint_Administration_SPFarm_Local | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Administration_SPWebApplication_Lookup">Microsoft_SharePoint_Administration_SPWebApplicati...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Administration_SPWebService_ContentService">Microsoft_SharePoint_Administration_SPWebService_C...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_AppManagement_SPAppPrincipalInfo_GetClientIdFromAppPrincipalEncodedClaim">Microsoft_SharePoint_AppManagement_SPAppPrincipalI...</span> | ✔ | ✖ | ✖ | ✖
+Microsoft_SharePoint_AuthPolicy_Events_SPAuthEvent | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_AuthPolicy_Events_SPAuthEvents">Microsoft_SharePoint_AuthPolicy_Events_SPAuthEvent...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Client_Search_Administration_DocumentCrawlLog">Microsoft_SharePoint_Client_Search_Administration...</span> | ✖ | ✖ | ✖ | ✔
+<span title="Microsoft_SharePoint_Client_Search_Administration_SearchObjectOwner">Microsoft_SharePoint_Client_Search_Administration...</span> | ✖ | ✖ | ✖ | ✔
+<span title="Microsoft_SharePoint_Client_Search_Analytics_SignalStore">Microsoft_SharePoint_Client_Search_Analytics_Signa...</span> | ✔ | ✔ | ✔ | ✖
+<span title="Microsoft_SharePoint_Client_Search_Analytics_UsageAnalytics">Microsoft_SharePoint_Client_Search_Analytics_Usage...</span> | ✖ | ✖ | ✖ | ✔
+<span title="Microsoft_SharePoint_Client_Search_ContentPush_PushTenantManager">Microsoft_SharePoint_Client_Search_ContentPush_Pus...</span> | ✖ | ✖ | ✖ | ✔
+<span title="Microsoft_SharePoint_Client_Search_Portability_SearchConfigurationPortability">Microsoft_SharePoint_Client_Search_Portability_Sea...</span> | ✖ | ✖ | ✖ | ✔
+<span title="Microsoft_SharePoint_Client_Search_Query_KeywordQuery">Microsoft_SharePoint_Client_Search_Query_KeywordQu...</span> | ✖ | ✖ | ✖ | ✔
+<span title="Microsoft_SharePoint_Client_Search_Query_QueryPersonalizationData">Microsoft_SharePoint_Client_Search_Query_QueryPers...</span> | ✔ | ✔ | ✔ | ✔
+<span title="Microsoft_SharePoint_Client_Search_Query_RankingLabeling">Microsoft_SharePoint_Client_Search_Query_RankingLa...</span> | ✔ | ✔ | ✔ | ✔
+<span title="Microsoft_SharePoint_Client_Search_Query_SearchExecutor">Microsoft_SharePoint_Client_Search_Query_SearchExe...</span> | ✖ | ✖ | ✖ | ✔
+<span title="Microsoft_SharePoint_Client_Search_Query_StringCollection">Microsoft_SharePoint_Client_Search_Query_StringCol...</span> | ✔ | ✔ | ✔ | ✔
+<span title="Microsoft_SharePoint_Internal_ClientSideComponent_ComponentContextInfo">Microsoft_SharePoint_Internal_ClientSideComponent...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Internal_ClientSideComponent_Token_AcquireOBOToken">Microsoft_SharePoint_Internal_ClientSideComponent...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Internal_TrackedItemService_GetTrackedItemUpdatesForUser">Microsoft_SharePoint_Internal_TrackedItemService_G...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Navigation_REST_NavigationServiceRest">Microsoft_SharePoint_Navigation_REST_NavigationSer...</span> | ✔ | ✔ | ✔ | ✔
+Microsoft_SharePoint_OrgNewsSite_OrgNewsSiteApi | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Portal_CollaborationMailbox_GetCollabMailboxViewInfo">Microsoft_SharePoint_Portal_CollaborationMailbox_G...</span> | ✔ | ✔ | ✔ | ✔
+<span title="Microsoft_SharePoint_Portal_CommunityModeration_ApproveReportedItems">Microsoft_SharePoint_Portal_CommunityModeration_Ap...</span> | ✔ | ✔ | ✔ | ✔
+<span title="Microsoft_SharePoint_Portal_CommunityModeration_ReportAbuse">Microsoft_SharePoint_Portal_CommunityModeration_Re...</span> | ✔ | ✔ | ✔ | ✔
 Microsoft_SharePoint_Portal_GroupService | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Portal_GroupSiteManager">Microsoft_SharePoint_Portal_GroupSiteMan...</span> | ✔ | ✔ | ✔ | ✖
-<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_FetchCacheBlob">Microsoft_SharePoint_Portal_MySiteRecomm...</span> | ✔ | ✔ | ✔ | ✔
-<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_FetchCacheBlobV2">Microsoft_SharePoint_Portal_MySiteRecomm...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_FetchCachedBlobForRecentSites">Microsoft_SharePoint_Portal_MySiteRecomm...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_FollowItem">Microsoft_SharePoint_Portal_MySiteRecomm...</span> | ✔ | ✔ | ✔ | ✔
-<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_StopFollowingItem">Microsoft_SharePoint_Portal_MySiteRecomm...</span> | ✔ | ✔ | ✔ | ✔
-<span title="Microsoft_SharePoint_Portal_SPHubSitesUtility">Microsoft_SharePoint_Portal_SPHubSitesUt...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Portal_SPSiteManager">Microsoft_SharePoint_Portal_SPSiteManage...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Portal_SharePointHomeServiceContext">Microsoft_SharePoint_Portal_SharePointHo...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Portal_SharePointHomeServiceContextBuilder">Microsoft_SharePoint_Portal_SharePointHo...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Portal_SiteIconManager">Microsoft_SharePoint_Portal_SiteIconMana...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Portal_SiteLinkingManager">Microsoft_SharePoint_Portal_SiteLinkingM...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Portal_SuiteNavData_GetSuiteNavData">Microsoft_SharePoint_Portal_SuiteNavData...</span> | ✔ | ✔ | ✔ | ✔
-<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetListDataScript">Microsoft_SharePoint_Portal_UserProfiles...</span> | ✔ | ✔ | ✔ | ✖
-<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetListHighlightsData">Microsoft_SharePoint_Portal_UserProfiles...</span> | ✔ | ✔ | ✔ | ✖
-<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetListHighlightsDataScript">Microsoft_SharePoint_Portal_UserProfiles...</span> | ✔ | ✔ | ✔ | ✖
-<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetSharedWithGroupDocs">Microsoft_SharePoint_Portal_UserProfiles...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithMe_GetFoldersSharedWithMeListDataScript">Microsoft_SharePoint_Portal_UserProfiles...</span> | ✔ | ✔ | ✔ | ✖
-<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithMe_GetListData">Microsoft_SharePoint_Portal_UserProfiles...</span> | ✔ | ✔ | ✔ | ✖
-<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithMe_GetListDataScript">Microsoft_SharePoint_Portal_UserProfiles...</span> | ✔ | ✔ | ✔ | ✔
-<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithPerson_GetListData">Microsoft_SharePoint_Portal_UserProfiles...</span> | ✔ | ✔ | ✔ | ✖
-<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithPerson_GetListDataScript">Microsoft_SharePoint_Portal_UserProfiles...</span> | ✔ | ✔ | ✔ | ✖
-<span title="Microsoft_SharePoint_Portal_UserProfiles_MySiteDismissStatusText_DismissStatusText">Microsoft_SharePoint_Portal_UserProfiles...</span> | ✔ | ✔ | ✔ | ✔
-<span title="Microsoft_SharePoint_Portal_UserProfiles_MySiteDocumentMoveUtility_FirstRunDocumentMove">Microsoft_SharePoint_Portal_UserProfiles...</span> | ✖ | ✖ | ✖ | ✔
-<span title="Microsoft_SharePoint_Portal_UserProfiles_MySiteLinks_GetMySiteLinks">Microsoft_SharePoint_Portal_UserProfiles...</span> | ✔ | ✔ | ✔ | ✖
-<span title="Microsoft_SharePoint_Portal_UserProfiles_PromotedSites_AddSiteLink">Microsoft_SharePoint_Portal_UserProfiles...</span> | ✔ | ✔ | ✔ | ✔
-<span title="Microsoft_SharePoint_Portal_UserProfiles_PromotedSites_DeleteSiteLink">Microsoft_SharePoint_Portal_UserProfiles...</span> | ✔ | ✔ | ✔ | ✔
-<span title="Microsoft_SharePoint_Portal_UserProfiles_PromotedSites_GetPromotedLinksAsTiles">Microsoft_SharePoint_Portal_UserProfiles...</span> | ✔ | ✔ | ✔ | ✔
-<span title="Microsoft_SharePoint_Portal_UserProfiles_PromotedSites_UpdateSiteLink">Microsoft_SharePoint_Portal_UserProfiles...</span> | ✔ | ✔ | ✔ | ✔
-<span title="Microsoft_SharePoint_TenantCdn_TenantCdnApi">Microsoft_SharePoint_TenantCdn_TenantCdn...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_CreateFormula">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✖ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_CreateRecipe">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✖ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_DeleteFormula">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✖ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_DeleteRecipe">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✖ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_GetFormulaMetadata">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✖ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_GetFormulas">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✖ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_GetRecipeMetadata">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✖ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_GetRecipes">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✖ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_ValidatePendingWebTemplateExtension">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✖ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_AddSiteDesignTask">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_AddSiteDesignTaskToCurrentWeb">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplyImplicitSiteDesign">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplySiteDesign">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplySiteDesignGetRunId">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteDesign">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteScript">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteScriptPackage">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_DeleteSiteDesign">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_DeleteSiteScript">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ExecuteSiteScriptAction">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ExecuteTemplateScript">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetDefaultSiteDesignForWebTemplate">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetDesignPackageMenuContents">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetHiddenBuiltInDesignPackages">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignMetadata">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignRights">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignRun">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignRunStatus">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignRunStatusAndSchema">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignStages">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignTask">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignTasks">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesigns">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteScriptFromList">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteScriptFromWeb">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteScriptMetadata">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteScripts">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GrantSiteDesignRights">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoteCreateSiteScript">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoveSiteDesignTask">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RevokeSiteDesignRights">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_SetBuiltInDesignPackageVisibility">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_SetSiteScriptStageOutcome">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_UpdateSiteDesign">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_UpdateSiteScript">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_UpdateSiteScriptContent">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_UpdateSiteScriptPackage">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ValidatePendingWebTemplateExtension">Microsoft_SharePoint_Utilities_WebTempla...</span> | ✔ | ✔ | ✖ | ✖
-<span title="Microsoft_SharePoint_Yammer_WacApi_AddUserToSiteCollection">Microsoft_SharePoint_Yammer_WacApi_AddUs...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Yammer_WacApi_ConfigureSiteForShadowTenant">Microsoft_SharePoint_Yammer_WacApi_Confi...</span> | ✔ | ✖ | ✖ | ✖
-<span title="Microsoft_SharePoint_Yammer_WacApi_GetWacToken">Microsoft_SharePoint_Yammer_WacApi_GetWa...</span> | ✔ | ✖ | ✖ | ✖
+Microsoft_SharePoint_Portal_GroupSiteManager | ✔ | ✔ | ✔ | ✖
+<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_FetchCacheBlob">Microsoft_SharePoint_Portal_MySiteRecommendations...</span> | ✔ | ✔ | ✔ | ✔
+<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_FetchCacheBlobV2">Microsoft_SharePoint_Portal_MySiteRecommendations...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_FetchCachedBlobForRecentSites">Microsoft_SharePoint_Portal_MySiteRecommendations...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_FollowItem">Microsoft_SharePoint_Portal_MySiteRecommendations...</span> | ✔ | ✔ | ✔ | ✔
+<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_StopFollowingItem">Microsoft_SharePoint_Portal_MySiteRecommendations...</span> | ✔ | ✔ | ✔ | ✔
+Microsoft_SharePoint_Portal_SPHubSitesUtility | ✔ | ✔ | ✖ | ✖
+Microsoft_SharePoint_Portal_SPSiteManager | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Portal_SharePointHomeServiceContext">Microsoft_SharePoint_Portal_SharePointHomeServiceC...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Portal_SharePointHomeServiceContextBuilder">Microsoft_SharePoint_Portal_SharePointHomeServiceC...</span> | ✔ | ✔ | ✖ | ✖
+Microsoft_SharePoint_Portal_SiteIconManager | ✔ | ✖ | ✖ | ✖
+Microsoft_SharePoint_Portal_SiteLinkingManager | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Portal_SuiteNavData_GetSuiteNavData">Microsoft_SharePoint_Portal_SuiteNavData_GetSuiteN...</span> | ✔ | ✔ | ✔ | ✔
+<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetListDataScript">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> | ✔ | ✔ | ✔ | ✖
+<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetListHighlightsData">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> | ✔ | ✔ | ✔ | ✖
+<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetListHighlightsDataScript">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> | ✔ | ✔ | ✔ | ✖
+<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetSharedWithGroupDocs">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithMe_GetFoldersSharedWithMeListDataScript">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> | ✔ | ✔ | ✔ | ✖
+<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithMe_GetListData">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> | ✔ | ✔ | ✔ | ✖
+<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithMe_GetListDataScript">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> | ✔ | ✔ | ✔ | ✔
+<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithPerson_GetListData">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> | ✔ | ✔ | ✔ | ✖
+<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithPerson_GetListDataScript">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> | ✔ | ✔ | ✔ | ✖
+<span title="Microsoft_SharePoint_Portal_UserProfiles_MySiteDismissStatusText_DismissStatusText">Microsoft_SharePoint_Portal_UserProfiles_MySiteDis...</span> | ✔ | ✔ | ✔ | ✔
+<span title="Microsoft_SharePoint_Portal_UserProfiles_MySiteDocumentMoveUtility_FirstRunDocumentMove">Microsoft_SharePoint_Portal_UserProfiles_MySiteDoc...</span> | ✖ | ✖ | ✖ | ✔
+<span title="Microsoft_SharePoint_Portal_UserProfiles_MySiteLinks_GetMySiteLinks">Microsoft_SharePoint_Portal_UserProfiles_MySiteLin...</span> | ✔ | ✔ | ✔ | ✖
+<span title="Microsoft_SharePoint_Portal_UserProfiles_PromotedSites_AddSiteLink">Microsoft_SharePoint_Portal_UserProfiles_PromotedS...</span> | ✔ | ✔ | ✔ | ✔
+<span title="Microsoft_SharePoint_Portal_UserProfiles_PromotedSites_DeleteSiteLink">Microsoft_SharePoint_Portal_UserProfiles_PromotedS...</span> | ✔ | ✔ | ✔ | ✔
+<span title="Microsoft_SharePoint_Portal_UserProfiles_PromotedSites_GetPromotedLinksAsTiles">Microsoft_SharePoint_Portal_UserProfiles_PromotedS...</span> | ✔ | ✔ | ✔ | ✔
+<span title="Microsoft_SharePoint_Portal_UserProfiles_PromotedSites_UpdateSiteLink">Microsoft_SharePoint_Portal_UserProfiles_PromotedS...</span> | ✔ | ✔ | ✔ | ✔
+Microsoft_SharePoint_TenantCdn_TenantCdnApi | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_CreateFormula">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✖ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_CreateRecipe">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✖ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_DeleteFormula">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✖ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_DeleteRecipe">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✖ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_GetFormulaMetadata">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✖ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_GetFormulas">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✖ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_GetRecipeMetadata">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✖ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_GetRecipes">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✖ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_ValidatePendingWebTemplateExtension">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✖ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_AddSiteDesignTask">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_AddSiteDesignTaskToCurrentWeb">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplyImplicitSiteDesign">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplySiteDesign">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplySiteDesignGetRunId">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteDesign">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteScript">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteScriptPackage">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_DeleteSiteDesign">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_DeleteSiteScript">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ExecuteSiteScriptAction">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ExecuteTemplateScript">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetDefaultSiteDesignForWebTemplate">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetDesignPackageMenuContents">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetHiddenBuiltInDesignPackages">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignMetadata">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignRights">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignRun">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignRunStatus">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignRunStatusAndSchema">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignStages">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignTask">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignTasks">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesigns">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteScriptFromList">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteScriptFromWeb">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteScriptMetadata">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteScripts">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GrantSiteDesignRights">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoteCreateSiteScript">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoveSiteDesignTask">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RevokeSiteDesignRights">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_SetBuiltInDesignPackageVisibility">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_SetSiteScriptStageOutcome">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_UpdateSiteDesign">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_UpdateSiteScript">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_UpdateSiteScriptContent">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_UpdateSiteScriptPackage">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ValidatePendingWebTemplateExtension">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> | ✔ | ✔ | ✖ | ✖
+<span title="Microsoft_SharePoint_Yammer_WacApi_AddUserToSiteCollection">Microsoft_SharePoint_Yammer_WacApi_AddUserToSiteCo...</span> | ✔ | ✖ | ✖ | ✖
+<span title="Microsoft_SharePoint_Yammer_WacApi_ConfigureSiteForShadowTenant">Microsoft_SharePoint_Yammer_WacApi_ConfigureSiteFo...</span> | ✔ | ✖ | ✖ | ✖
+Microsoft_SharePoint_Yammer_WacApi_GetWacToken | ✔ | ✖ | ✖ | ✖
 MoveAfter | ✔ | ✔ | ✔ | ✔
 MoveAllToSecondStage | ✔ | ✔ | ✔ | ✖
 MovePersonalTaskToLocation | ✔ | ✔ | ✔ | ✔
@@ -1065,7 +1065,7 @@ Reset | ✔ | ✔ | ✔ | ✔
 ResetDocIdByServerRelativePath | ✔ | ✔ | ✖ | ✖
 ResetDocIdsInLibrary | ✔ | ✔ | ✖ | ✖
 ResetRoleInheritance | ✔ | ✔ | ✔ | ✔
-ResetTimestampUpdateOffice365ProvidedSharepointSiteActivityData | ✔ | ✖ | ✖ | ✖
+<span title="ResetTimestampUpdateOffice365ProvidedSharepointSiteActivityData">ResetTimestampUpdateOffice365ProvidedSharepointSit...</span> | ✔ | ✖ | ✖ | ✖
 RestartWorkflow | ✔ | ✔ | ✖ | ✖
 RestartWorkflowSkipToStage | ✔ | ✔ | ✖ | ✖
 RestfulDelete | ✔ | ✔ | ✔ | ✖
@@ -1088,7 +1088,7 @@ RollTenantBringYourOwnKey | ✔ | ✔ | ✖ | ✖
 RunHealthCheck | ✔ | ✔ | ✔ | ✔
 RunUpgradeSiteSession | ✔ | ✔ | ✔ | ✔
 SPHSite | ✔ | ✖ | ✖ | ✖
-<span title="SPO_Identity_SPOIdentityHelper_DoesSessionSupportIssuingWebDavCookies">SPO_Identity_SPOIdentityHelper_DoesSessi...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SPO_Identity_SPOIdentityHelper_DoesSessionSupportIssuingWebDavCookies">SPO_Identity_SPOIdentityHelper_DoesSessionSupportI...</span> | ✔ | ✖ | ✖ | ✖
 SP_APIHubConnector_CreateListItem | ✔ | ✔ | ✖ | ✖
 SP_APIHubConnector_DeleteListItem | ✔ | ✔ | ✖ | ✖
 SP_APIHubConnector_GetDeletedListItems | ✔ | ✔ | ✖ | ✖
@@ -1105,67 +1105,67 @@ SP_APIHubConnector_ResolveEntityValue | ✔ | ✔ | ✖ | ✖
 SP_APIHubConnector_SetApprovalStatus | ✔ | ✔ | ✖ | ✖
 SP_APIHubConnector_UpdateListItem | ✔ | ✔ | ✖ | ✖
 SP_AccessRequests_ChangeRequestStatus | ✔ | ✔ | ✔ | ✔
-<span title="SP_AccessRequests_ChangeRequestStatusBulk">SP_AccessRequests_ChangeRequestStatusBul...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Analytics_AnalyticsUsageEntry_LogAnalyticsAppEvent">SP_Analytics_AnalyticsUsageEntry_LogAnal...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Analytics_AnalyticsUsageEntry_LogAnalyticsAppEvent2">SP_Analytics_AnalyticsUsageEntry_LogAnal...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Analytics_AnalyticsUsageEntry_LogAnalyticsEvent">SP_Analytics_AnalyticsUsageEntry_LogAnal...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Analytics_AnalyticsUsageEntry_LogAnalyticsEvent2">SP_Analytics_AnalyticsUsageEntry_LogAnal...</span> | ✔ | ✔ | ✔ | ✔
+SP_AccessRequests_ChangeRequestStatusBulk | ✔ | ✔ | ✔ | ✔
+<span title="SP_Analytics_AnalyticsUsageEntry_LogAnalyticsAppEvent">SP_Analytics_AnalyticsUsageEntry_LogAnalyticsAppEv...</span> | ✔ | ✔ | ✔ | ✔
+<span title="SP_Analytics_AnalyticsUsageEntry_LogAnalyticsAppEvent2">SP_Analytics_AnalyticsUsageEntry_LogAnalyticsAppEv...</span> | ✔ | ✔ | ✔ | ✔
+SP_Analytics_AnalyticsUsageEntry_LogAnalyticsEvent | ✔ | ✔ | ✔ | ✔
+<span title="SP_Analytics_AnalyticsUsageEntry_LogAnalyticsEvent2">SP_Analytics_AnalyticsUsageEntry_LogAnalyticsEvent...</span> | ✔ | ✔ | ✔ | ✔
 SP_ApiMetadata_Current | ✔ | ✔ | ✔ | ✔
 SP_AppCatalog_GetAppInstances | ✖ | ✖ | ✖ | ✔
-<span title="SP_AppCatalog_GetDeveloperSiteAppInstancesByIds">SP_AppCatalog_GetDeveloperSiteAppInstanc...</span> | ✖ | ✖ | ✖ | ✔
+SP_AppCatalog_GetDeveloperSiteAppInstancesByIds | ✖ | ✖ | ✖ | ✔
 SP_AppCatalog_IsAppSideloadingEnabled | ✔ | ✔ | ✔ | ✔
 SP_AppContextSite | ✔ | ✔ | ✔ | ✔
-<span title="SP_AppInstance_RetrieveAppDatabaseConnectionString">SP_AppInstance_RetrieveAppDatabaseConnec...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_AppPrincipalCredential_CreateFromKeyGroup">SP_AppPrincipalCredential_CreateFromKeyG...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_AppPrincipalCredential_CreateFromSymmetricKey">SP_AppPrincipalCredential_CreateFromSymm...</span> | ✔ | ✔ | ✔ | ✔
+SP_AppInstance_RetrieveAppDatabaseConnectionString | ✔ | ✔ | ✔ | ✔
+SP_AppPrincipalCredential_CreateFromKeyGroup | ✔ | ✔ | ✔ | ✔
+SP_AppPrincipalCredential_CreateFromSymmetricKey | ✔ | ✔ | ✔ | ✔
 SP_AppPrincipalIdentityProvider_External | ✔ | ✔ | ✔ | ✔
 SP_AppPrincipalManager_GetManager | ✖ | ✖ | ✖ | ✔
-<span title="SP_AppPrincipalName_CreateFromAppPrincipalIdentifier">SP_AppPrincipalName_CreateFromAppPrincip...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_AppPrincipalName_CreateFromNameIdentifier">SP_AppPrincipalName_CreateFromNameIdenti...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_AppSiteContextUtility_GetAppSiteContextCollection">SP_AppSiteContextUtility_GetAppSiteConte...</span> | ✔ | ✔ | ✖ | ✖
+<span title="SP_AppPrincipalName_CreateFromAppPrincipalIdentifier">SP_AppPrincipalName_CreateFromAppPrincipalIdentifi...</span> | ✔ | ✔ | ✔ | ✔
+SP_AppPrincipalName_CreateFromNameIdentifier | ✔ | ✔ | ✔ | ✔
+<span title="SP_AppSiteContextUtility_GetAppSiteContextCollection">SP_AppSiteContextUtility_GetAppSiteContextCollecti...</span> | ✔ | ✔ | ✖ | ✖
 SP_AppTileProperties_GetAppProperties | ✔ | ✔ | ✖ | ✖
-<span title="SP_BusinessData_Infrastructure_ExternalSubscriptionStore">SP_BusinessData_Infrastructure_ExternalS...</span> | ✖ | ✖ | ✖ | ✔
-<span title="SP_BusinessData_Runtime_NotificationCallback">SP_BusinessData_Runtime_NotificationCall...</span> | ✔ | ✔ | ✔ | ✔
+<span title="SP_BusinessData_Infrastructure_ExternalSubscriptionStore">SP_BusinessData_Infrastructure_ExternalSubscriptio...</span> | ✖ | ✖ | ✖ | ✔
+SP_BusinessData_Runtime_NotificationCallback | ✔ | ✔ | ✔ | ✔
 SP_BusinessData_Runtime_Subscription | ✔ | ✔ | ✔ | ✔
-<span title="SP_CompliancePolicy_SPPolicyStoreProxy_ApplyDlpActions">SP_CompliancePolicy_SPPolicyStoreProxy_A...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_CompliancePolicy_SPPolicyStoreProxy_ApplyLabelOnBulkItems">SP_CompliancePolicy_SPPolicyStoreProxy_A...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_CompliancePolicy_SPPolicyStoreProxy_CheckSiteIsDeletableById">SP_CompliancePolicy_SPPolicyStoreProxy_C...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_CompliancePolicy_SPPolicyStoreProxy_GetAvailableTagsForSite">SP_CompliancePolicy_SPPolicyStoreProxy_G...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_CompliancePolicy_SPPolicyStoreProxy_GetAvailableTagsForSiteLabel">SP_CompliancePolicy_SPPolicyStoreProxy_G...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_CompliancePolicy_SPPolicyStoreProxy_GetHoldGracePeriodInDays">SP_CompliancePolicy_SPPolicyStoreProxy_G...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_CompliancePolicy_SPPolicyStoreProxy_GetListComplianceTag">SP_CompliancePolicy_SPPolicyStoreProxy_G...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_CompliancePolicy_SPPolicyStoreProxy_GetPolicyEvaluationInfo">SP_CompliancePolicy_SPPolicyStoreProxy_G...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_CompliancePolicy_SPPolicyStoreProxy_IsSiteDeletable">SP_CompliancePolicy_SPPolicyStoreProxy_I...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_CompliancePolicy_SPPolicyStoreProxy_LockRecordItem">SP_CompliancePolicy_SPPolicyStoreProxy_L...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_CompliancePolicy_SPPolicyStoreProxy_OverridePolicyTip">SP_CompliancePolicy_SPPolicyStoreProxy_O...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_CompliancePolicy_SPPolicyStoreProxy_SetComplianceTagOnBulkItems">SP_CompliancePolicy_SPPolicyStoreProxy_S...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_CompliancePolicy_SPPolicyStoreProxy_SetHoldGracePeriodInDays">SP_CompliancePolicy_SPPolicyStoreProxy_S...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_CompliancePolicy_SPPolicyStoreProxy_SetListComplianceTag">SP_CompliancePolicy_SPPolicyStoreProxy_S...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_CompliancePolicy_SPPolicyStoreProxy_SetListComplianceTagWithMetaInfo">SP_CompliancePolicy_SPPolicyStoreProxy_S...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_CompliancePolicy_SPPolicyStoreProxy_UnlockRecordItem">SP_CompliancePolicy_SPPolicyStoreProxy_U...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_CompliancePolicy_SPSitePreservationUtility_PlaceOnHold">SP_CompliancePolicy_SPSitePreservationUt...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_ApplyDlpActions">SP_CompliancePolicy_SPPolicyStoreProxy_ApplyDlpAct...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_ApplyLabelOnBulkItems">SP_CompliancePolicy_SPPolicyStoreProxy_ApplyLabelO...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_CheckSiteIsDeletableById">SP_CompliancePolicy_SPPolicyStoreProxy_CheckSiteIs...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_GetAvailableTagsForSite">SP_CompliancePolicy_SPPolicyStoreProxy_GetAvailabl...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_GetAvailableTagsForSiteLabel">SP_CompliancePolicy_SPPolicyStoreProxy_GetAvailabl...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_GetHoldGracePeriodInDays">SP_CompliancePolicy_SPPolicyStoreProxy_GetHoldGrac...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_GetListComplianceTag">SP_CompliancePolicy_SPPolicyStoreProxy_GetListComp...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_GetPolicyEvaluationInfo">SP_CompliancePolicy_SPPolicyStoreProxy_GetPolicyEv...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_IsSiteDeletable">SP_CompliancePolicy_SPPolicyStoreProxy_IsSiteDelet...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_LockRecordItem">SP_CompliancePolicy_SPPolicyStoreProxy_LockRecordI...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_OverridePolicyTip">SP_CompliancePolicy_SPPolicyStoreProxy_OverridePol...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_SetComplianceTagOnBulkItems">SP_CompliancePolicy_SPPolicyStoreProxy_SetComplian...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_SetHoldGracePeriodInDays">SP_CompliancePolicy_SPPolicyStoreProxy_SetHoldGrac...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_SetListComplianceTag">SP_CompliancePolicy_SPPolicyStoreProxy_SetListComp...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_SetListComplianceTagWithMetaInfo">SP_CompliancePolicy_SPPolicyStoreProxy_SetListComp...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_UnlockRecordItem">SP_CompliancePolicy_SPPolicyStoreProxy_UnlockRecor...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_CompliancePolicy_SPSitePreservationUtility_PlaceOnHold">SP_CompliancePolicy_SPSitePreservationUtility_Plac...</span> | ✔ | ✖ | ✖ | ✖
 SP_CurrencyList_GetList | ✔ | ✔ | ✖ | ✖
 SP_Directory_DirectorySession | ✔ | ✔ | ✔ | ✖
-<span title="SP_Directory_Provider_DirectoryNotification">SP_Directory_Provider_DirectoryNotificat...</span> | ✔ | ✔ | ✖ | ✖
-<span title="SP_Directory_Provider_SharePointDirectoryProvider">SP_Directory_Provider_SharePointDirector...</span> | ✔ | ✔ | ✔ | ✖
+SP_Directory_Provider_DirectoryNotification | ✔ | ✔ | ✖ | ✖
+SP_Directory_Provider_SharePointDirectoryProvider | ✔ | ✔ | ✔ | ✖
 SP_Directory_SPHelper_AddMember | ✔ | ✔ | ✔ | ✖
-<span title="SP_Directory_SPHelper_CheckAliasAndSiteAvailability">SP_Directory_SPHelper_CheckAliasAndSiteA...</span> | ✔ | ✔ | ✔ | ✖
-<span title="SP_Directory_SPHelper_CheckSiteAvailability">SP_Directory_SPHelper_CheckSiteAvailabil...</span> | ✔ | ✔ | ✔ | ✖
-<span title="SP_Directory_SPHelper_GetGroupAndUserStatus">SP_Directory_SPHelper_GetGroupAndUserSta...</span> | ✔ | ✔ | ✔ | ✖
+<span title="SP_Directory_SPHelper_CheckAliasAndSiteAvailability">SP_Directory_SPHelper_CheckAliasAndSiteAvailabilit...</span> | ✔ | ✔ | ✔ | ✖
+SP_Directory_SPHelper_CheckSiteAvailability | ✔ | ✔ | ✔ | ✖
+SP_Directory_SPHelper_GetGroupAndUserStatus | ✔ | ✔ | ✔ | ✖
 SP_Directory_SPHelper_GetMembers | ✔ | ✔ | ✔ | ✖
 SP_Directory_SPHelper_GetMembersInBatch | ✔ | ✔ | ✔ | ✖
 SP_Directory_SPHelper_GetMembersInfo | ✔ | ✔ | ✔ | ✖
 SP_Directory_SPHelper_GetMembership | ✔ | ✔ | ✔ | ✖
-<span title="SP_Directory_SPHelper_GetMembershipInBatch">SP_Directory_SPHelper_GetMembershipInBat...</span> | ✔ | ✔ | ✔ | ✖
-<span title="SP_Directory_SPHelper_GetMembershipStatus">SP_Directory_SPHelper_GetMembershipStatu...</span> | ✔ | ✔ | ✔ | ✖
+SP_Directory_SPHelper_GetMembershipInBatch | ✔ | ✔ | ✔ | ✖
+SP_Directory_SPHelper_GetMembershipStatus | ✔ | ✔ | ✔ | ✖
 SP_Directory_SPHelper_GetMyGroups | ✔ | ✔ | ✔ | ✖
 SP_Directory_SPHelper_GetOwners | ✔ | ✔ | ✔ | ✖
 SP_Directory_SPHelper_GetOwnersInBatch | ✔ | ✔ | ✔ | ✖
 SP_Directory_SPHelper_GetUser | ✔ | ✔ | ✔ | ✖
 SP_Directory_SPHelper_IsMemberOf | ✔ | ✔ | ✔ | ✖
-<span title="SP_Directory_SPHelper_ProvisionPointPublishingPersonalSite">SP_Directory_SPHelper_ProvisionPointPubl...</span> | ✖ | ✖ | ✔ | ✖
+<span title="SP_Directory_SPHelper_ProvisionPointPublishingPersonalSite">SP_Directory_SPHelper_ProvisionPointPublishingPers...</span> | ✖ | ✖ | ✔ | ✖
 SP_Directory_SPHelper_ProvisionSite | ✔ | ✔ | ✔ | ✖
-<span title="SP_Directory_SPHelper_RemoveExternalMembers">SP_Directory_SPHelper_RemoveExternalMemb...</span> | ✔ | ✔ | ✔ | ✖
+SP_Directory_SPHelper_RemoveExternalMembers | ✔ | ✔ | ✔ | ✖
 SP_Directory_SPHelper_RemoveMember | ✔ | ✔ | ✔ | ✖
 SP_Directory_SPHelper_SyncGroup | ✔ | ✔ | ✔ | ✖
 SP_Directory_UserRequestSchema | ✖ | ✖ | ✔ | ✖
@@ -1178,28 +1178,28 @@ SP_FavoriteLists_GetIsListFavorite | ✔ | ✖ | ✖ | ✖
 SP_FavoriteLists_RemoveFavoriteList | ✔ | ✖ | ✖ | ✖
 SP_File_GetContentVerFromTag | ✔ | ✔ | ✔ | ✔
 SP_HashtagStoreManager_CallOLS | ✔ | ✔ | ✖ | ✖
-<span title="SP_HashtagStoreManager_GetBlockedHashtags">SP_HashtagStoreManager_GetBlockedHashtag...</span> | ✔ | ✔ | ✖ | ✖
-<span title="SP_HashtagStoreManager_GetHashtagsByPrefix">SP_HashtagStoreManager_GetHashtagsByPref...</span> | ✔ | ✔ | ✖ | ✖
-<span title="SP_HashtagStoreManager_SetBlockedHashtags">SP_HashtagStoreManager_SetBlockedHashtag...</span> | ✔ | ✔ | ✖ | ✖
+SP_HashtagStoreManager_GetBlockedHashtags | ✔ | ✔ | ✖ | ✖
+SP_HashtagStoreManager_GetHashtagsByPrefix | ✔ | ✔ | ✖ | ✖
+SP_HashtagStoreManager_SetBlockedHashtags | ✔ | ✔ | ✖ | ✖
 SP_HubSites | ✔ | ✔ | ✖ | ✖
 SP_HubSites_CanCreate | ✖ | ✔ | ✖ | ✖
 SP_HubSites_Load | ✔ | ✔ | ✖ | ✖
-<span title="SP_Internal_FlowPermissions_GetFlowPermissionLevelOnList">SP_Internal_FlowPermissions_GetFlowPermi...</span> | ✔ | ✔ | ✖ | ✖
-<span title="SP_Internal_FormsCustomization_ActivateApp">SP_Internal_FormsCustomization_ActivateA...</span> | ✔ | ✔ | ✖ | ✖
-<span title="SP_Internal_FormsCustomization_CanCustomizeForms">SP_Internal_FormsCustomization_CanCustom...</span> | ✔ | ✔ | ✖ | ✖
+<span title="SP_Internal_FlowPermissions_GetFlowPermissionLevelOnList">SP_Internal_FlowPermissions_GetFlowPermissionLevel...</span> | ✔ | ✔ | ✖ | ✖
+SP_Internal_FormsCustomization_ActivateApp | ✔ | ✔ | ✖ | ✖
+SP_Internal_FormsCustomization_CanCustomizeForms | ✔ | ✔ | ✖ | ✖
 SP_Internal_FormsCustomization_ClearApp | ✔ | ✔ | ✖ | ✖
-<span title="SP_Internal_FormsCustomization_DeactivateApp">SP_Internal_FormsCustomization_Deactivat...</span> | ✔ | ✔ | ✖ | ✖
-<span title="SP_Internal_FormsCustomization_GetPowerAppsFormDesignUrl">SP_Internal_FormsCustomization_GetPowerA...</span> | ✔ | ✔ | ✖ | ✖
+SP_Internal_FormsCustomization_DeactivateApp | ✔ | ✔ | ✖ | ✖
+<span title="SP_Internal_FormsCustomization_GetPowerAppsFormDesignUrl">SP_Internal_FormsCustomization_GetPowerAppsFormDes...</span> | ✔ | ✔ | ✖ | ✖
 SP_Internal_FormsCustomization_SetApp | ✔ | ✔ | ✖ | ✖
 SP_KnowledgeHub | ✔ | ✖ | ✖ | ✖
 SP_List_GetListDataAsStream | ✔ | ✔ | ✖ | ✖
-<span title="SP_MetadataNavigation_MetadataNavigationSettings_GetConfiguredSettings">SP_MetadataNavigation_MetadataNavigation...</span> | ✔ | ✔ | ✖ | ✖
+<span title="SP_MetadataNavigation_MetadataNavigationSettings_GetConfiguredSettings">SP_MetadataNavigation_MetadataNavigationSettings_G...</span> | ✔ | ✔ | ✖ | ✖
 SP_MicroService_MicroServiceManager | ✔ | ✔ | ✖ | ✖
 SP_Microfeed_MicrofeedAttachmentStore | ✔ | ✔ | ✔ | ✔
 SP_Microfeed_MicrofeedData | ✖ | ✖ | ✖ | ✔
 SP_Microfeed_MicrofeedManager | ✔ | ✔ | ✔ | ✔
-<span title="SP_Microfeed_MicrofeedPostDefinitionManager">SP_Microfeed_MicrofeedPostDefinitionMana...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Microfeed_MicrofeedPostOptionCollection">SP_Microfeed_MicrofeedPostOptionCollecti...</span> | ✔ | ✔ | ✔ | ✔
+SP_Microfeed_MicrofeedPostDefinitionManager | ✔ | ✔ | ✔ | ✔
+SP_Microfeed_MicrofeedPostOptionCollection | ✔ | ✔ | ✔ | ✔
 SP_Microfeed_MicrofeedStore | ✔ | ✔ | ✔ | ✔
 SP_MountPoint_GetMountedFolderInfo | ✔ | ✔ | ✔ | ✖
 SP_MoveCopyUtil_CopyFile | ✔ | ✔ | ✔ | ✖
@@ -1213,63 +1213,63 @@ SP_MoveCopyUtil_MoveFolderByPath | ✔ | ✔ | ✖ | ✖
 SP_MultilingualSettings | ✔ | ✖ | ✖ | ✖
 SP_OAuth_NativeClient | ✔ | ✔ | ✔ | ✖
 SP_OAuth_Token | ✔ | ✖ | ✖ | ✖
-<span title="SP_ObjectSharingInformation_CanCurrentUserShare">SP_ObjectSharingInformation_CanCurrentUs...</span> | ✔ | ✔ | ✔ | ✖
-<span title="SP_ObjectSharingInformation_CanCurrentUserShareRemote">SP_ObjectSharingInformation_CanCurrentUs...</span> | ✔ | ✔ | ✔ | ✖
-<span title="SP_ObjectSharingInformation_GetListItemSharingInformation">SP_ObjectSharingInformation_GetListItemS...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_ObjectSharingInformation_GetObjectSharingInformation">SP_ObjectSharingInformation_GetObjectSha...</span> | ✖ | ✖ | ✖ | ✔
-<span title="SP_ObjectSharingInformation_GetObjectSharingInformationByUrl">SP_ObjectSharingInformation_GetObjectSha...</span> | ✔ | ✔ | ✔ | ✖
-<span title="SP_ObjectSharingInformation_GetWebSharingInformation">SP_ObjectSharingInformation_GetWebSharin...</span> | ✔ | ✔ | ✔ | ✔
+SP_ObjectSharingInformation_CanCurrentUserShare | ✔ | ✔ | ✔ | ✖
+<span title="SP_ObjectSharingInformation_CanCurrentUserShareRemote">SP_ObjectSharingInformation_CanCurrentUserShareRem...</span> | ✔ | ✔ | ✔ | ✖
+<span title="SP_ObjectSharingInformation_GetListItemSharingInformation">SP_ObjectSharingInformation_GetListItemSharingInfo...</span> | ✔ | ✔ | ✔ | ✔
+<span title="SP_ObjectSharingInformation_GetObjectSharingInformation">SP_ObjectSharingInformation_GetObjectSharingInform...</span> | ✖ | ✖ | ✖ | ✔
+<span title="SP_ObjectSharingInformation_GetObjectSharingInformationByUrl">SP_ObjectSharingInformation_GetObjectSharingInform...</span> | ✔ | ✔ | ✔ | ✖
+<span title="SP_ObjectSharingInformation_GetWebSharingInformation">SP_ObjectSharingInformation_GetWebSharingInformati...</span> | ✔ | ✔ | ✔ | ✔
 SP_OrganizationNews | ✔ | ✖ | ✖ | ✖
 SP_OrganizationNews_GetSiteReference | ✔ | ✖ | ✖ | ✖
-<span title="SP_PageInstrumentation_ClickManager_RecordClick">SP_PageInstrumentation_ClickManager_Reco...</span> | ✔ | ✖ | ✖ | ✖
+SP_PageInstrumentation_ClickManager_RecordClick | ✔ | ✖ | ✖ | ✖
 SP_Publishing_AddinPlugin | ✖ | ✖ | ✖ | ✔
 SP_Publishing_AddinSettings | ✖ | ✖ | ✖ | ✔
 SP_Publishing_CommunicationSite | ✔ | ✔ | ✖ | ✖
 SP_Publishing_EmbedService | ✔ | ✔ | ✖ | ✖
-<span title="SP_Publishing_Navigation_NavigationTermSetView">SP_Publishing_Navigation_NavigationTermS...</span> | ✖ | ✖ | ✖ | ✔
-<span title="SP_Publishing_Navigation_PortalNavigationCacheWrapper">SP_Publishing_Navigation_PortalNavigatio...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_Publishing_Navigation_WebNavigationSettings">SP_Publishing_Navigation_WebNavigationSe...</span> | ✖ | ✖ | ✖ | ✔
+SP_Publishing_Navigation_NavigationTermSetView | ✖ | ✖ | ✖ | ✔
+<span title="SP_Publishing_Navigation_PortalNavigationCacheWrapper">SP_Publishing_Navigation_PortalNavigationCacheWrap...</span> | ✔ | ✖ | ✖ | ✖
+SP_Publishing_Navigation_WebNavigationSettings | ✖ | ✖ | ✖ | ✔
 SP_Publishing_PageDiagnosticsController | ✔ | ✖ | ✖ | ✖
 SP_Publishing_PersonMagazine_GetDirects | ✔ | ✖ | ✖ | ✖
 SP_Publishing_PersonMagazine_GetManagers | ✔ | ✖ | ✖ | ✖
-<span title="SP_Publishing_PersonMagazine_GetPersonMagazineUserProfileDataForUser">SP_Publishing_PersonMagazine_GetPersonMa...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_Publishing_PersonMagazine_GetPersonMagazineUserProfileDirectsDataForUser">SP_Publishing_PersonMagazine_GetPersonMa...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_Publishing_PersonMagazine_GetPersonMagazineUserProfileDataForUser">SP_Publishing_PersonMagazine_GetPersonMagazineUser...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_Publishing_PersonMagazine_GetPersonMagazineUserProfileDirectsDataForUser">SP_Publishing_PersonMagazine_GetPersonMagazineUser...</span> | ✔ | ✖ | ✖ | ✖
 SP_Publishing_PersonMagazine_GetPrimary | ✔ | ✖ | ✖ | ✖
-<span title="SP_Publishing_PersonMagazine_GetPrimaryCore">SP_Publishing_PersonMagazine_GetPrimaryC...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_Publishing_PersonMagazine_GetProfileCustomProperties">SP_Publishing_PersonMagazine_GetProfileC...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_Publishing_PersonMagazine_GetProfileDataForUser">SP_Publishing_PersonMagazine_GetProfileD...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_Publishing_PersonMagazine_GetProfileDirectsDataForUser">SP_Publishing_PersonMagazine_GetProfileD...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_Publishing_PersonMagazine_GetTaxonomicPropertiesForPrimary">SP_Publishing_PersonMagazine_GetTaxonomi...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_Publishing_PersonMagazine_GetTaxonomySuggestionDetails">SP_Publishing_PersonMagazine_GetTaxonomy...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_Publishing_PersonMagazine_GetViewEditPoliciesForPrimary">SP_Publishing_PersonMagazine_GetViewEdit...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_Publishing_PointPublishingPostServiceManager">SP_Publishing_PointPublishingPostService...</span> | ✔ | ✖ | ✖ | ✖
+SP_Publishing_PersonMagazine_GetPrimaryCore | ✔ | ✖ | ✖ | ✖
+<span title="SP_Publishing_PersonMagazine_GetProfileCustomProperties">SP_Publishing_PersonMagazine_GetProfileCustomPrope...</span> | ✔ | ✖ | ✖ | ✖
+SP_Publishing_PersonMagazine_GetProfileDataForUser | ✔ | ✖ | ✖ | ✖
+<span title="SP_Publishing_PersonMagazine_GetProfileDirectsDataForUser">SP_Publishing_PersonMagazine_GetProfileDirectsData...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_Publishing_PersonMagazine_GetTaxonomicPropertiesForPrimary">SP_Publishing_PersonMagazine_GetTaxonomicPropertie...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_Publishing_PersonMagazine_GetTaxonomySuggestionDetails">SP_Publishing_PersonMagazine_GetTaxonomySuggestion...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_Publishing_PersonMagazine_GetViewEditPoliciesForPrimary">SP_Publishing_PersonMagazine_GetViewEditPoliciesFo...</span> | ✔ | ✖ | ✖ | ✖
+SP_Publishing_PointPublishingPostServiceManager | ✔ | ✖ | ✖ | ✖
 SP_Publishing_PointPublishingSiteManager | ✔ | ✖ | ✖ | ✖
-<span title="SP_Publishing_PointPublishingTenantManager">SP_Publishing_PointPublishingTenantManag...</span> | ✔ | ✖ | ✖ | ✖
+SP_Publishing_PointPublishingTenantManager | ✔ | ✖ | ✖ | ✖
 SP_Publishing_RepostPageCollection | ✔ | ✖ | ✖ | ✖
 SP_Publishing_RichSharing | ✔ | ✔ | ✖ | ✖
-<span title="SP_Publishing_SharePointHomeServiceManager">SP_Publishing_SharePointHomeServiceManag...</span> | ✔ | ✔ | ✖ | ✖
+SP_Publishing_SharePointHomeServiceManager | ✔ | ✔ | ✖ | ✖
 SP_Publishing_SitePage3DCollection | ✔ | ✖ | ✖ | ✖
 SP_Publishing_SitePageCollection | ✔ | ✔ | ✖ | ✖
 SP_Publishing_SitePageMetadataCollection | ✔ | ✔ | ✖ | ✖
 SP_Publishing_SitePageService | ✔ | ✔ | ✖ | ✖
-<span title="SP_Publishing_SitePageService_ComputeFileName">SP_Publishing_SitePageService_ComputeFil...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_Publishing_SitePageService_FilePickerTabOptions">SP_Publishing_SitePageService_FilePicker...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_Publishing_SitePageService_GetAvailableFullPageApplications">SP_Publishing_SitePageService_GetAvailab...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_Publishing_SitePageService_GetCurrentUserMemberships">SP_Publishing_SitePageService_GetCurrent...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_Publishing_SitePageService_GetTimeZone">SP_Publishing_SitePageService_GetTimeZon...</span> | ✔ | ✔ | ✖ | ✖
-<span title="SP_Publishing_SitePageService_IsFilePickerExternalImageSearchEnabled">SP_Publishing_SitePageService_IsFilePick...</span> | ✔ | ✔ | ✖ | ✖
+SP_Publishing_SitePageService_ComputeFileName | ✔ | ✖ | ✖ | ✖
+SP_Publishing_SitePageService_FilePickerTabOptions | ✔ | ✖ | ✖ | ✖
+<span title="SP_Publishing_SitePageService_GetAvailableFullPageApplications">SP_Publishing_SitePageService_GetAvailableFullPage...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_Publishing_SitePageService_GetCurrentUserMemberships">SP_Publishing_SitePageService_GetCurrentUserMember...</span> | ✔ | ✖ | ✖ | ✖
+SP_Publishing_SitePageService_GetTimeZone | ✔ | ✔ | ✖ | ✖
+<span title="SP_Publishing_SitePageService_IsFilePickerExternalImageSearchEnabled">SP_Publishing_SitePageService_IsFilePickerExternal...</span> | ✔ | ✔ | ✖ | ✖
 SP_Publishing_SitePageService_OrgAssets | ✔ | ✖ | ✖ | ✖
 SP_Publishing_TopicPageCollection | ✔ | ✖ | ✖ | ✖
 SP_Publishing_VideoServiceDiscoverer | ✔ | ✖ | ✖ | ✖
 SP_Publishing_VideoServiceManager | ✔ | ✖ | ✖ | ✖
 SP_RecentListCollection_GetRecentLists | ✔ | ✖ | ✖ | ✖
-<span title="SP_RecentListCollection_GetRecentListsWithPageContextInfo">SP_RecentListCollection_GetRecentListsWi...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_RecentListCollection_UpdateRecentLists">SP_RecentListCollection_UpdateRecentList...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_RecentListCollection_GetRecentListsWithPageContextInfo">SP_RecentListCollection_GetRecentListsWithPageCont...</span> | ✔ | ✖ | ✖ | ✖
+SP_RecentListCollection_UpdateRecentLists | ✔ | ✖ | ✖ | ✖
 SP_RelatedItemManager_AddSingleLink | ✔ | ✔ | ✔ | ✔
-<span title="SP_RelatedItemManager_AddSingleLinkFromUrl">SP_RelatedItemManager_AddSingleLinkFromU...</span> | ✔ | ✔ | ✔ | ✔
+SP_RelatedItemManager_AddSingleLinkFromUrl | ✔ | ✔ | ✔ | ✔
 SP_RelatedItemManager_AddSingleLinkToUrl | ✔ | ✔ | ✔ | ✔
 SP_RelatedItemManager_DeleteSingleLink | ✔ | ✔ | ✔ | ✔
-<span title="SP_RelatedItemManager_GetPageOneRelatedItems">SP_RelatedItemManager_GetPageOneRelatedI...</span> | ✔ | ✔ | ✔ | ✔
+SP_RelatedItemManager_GetPageOneRelatedItems | ✔ | ✔ | ✔ | ✔
 SP_RelatedItemManager_GetRelatedItems | ✔ | ✔ | ✔ | ✔
 SP_RemoteWeb | ✔ | ✔ | ✔ | ✖
 SP_RequestContext_Current | ✔ | ✔ | ✔ | ✔
@@ -1284,25 +1284,25 @@ SP_SPHSite_GetSPHSiteXGeo | ✔ | ✖ | ✖ | ✖
 SP_SPHSite_IsModernSiteWithHorizontalNav | ✔ | ✖ | ✖ | ✖
 SP_SPHSite_IsValidHomeSite | ✔ | ✖ | ✖ | ✖
 SP_SPHSite_SetSPHSite | ✔ | ✖ | ✖ | ✖
-<span title="SP_ServerSettings_GetBlockedFileExtensions">SP_ServerSettings_GetBlockedFileExtensio...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_ServerSettings_GetGlobalInstalledLanguages">SP_ServerSettings_GetGlobalInstalledLang...</span> | ✔ | ✔ | ✔ | ✔
+SP_ServerSettings_GetBlockedFileExtensions | ✔ | ✔ | ✔ | ✔
+SP_ServerSettings_GetGlobalInstalledLanguages | ✔ | ✔ | ✔ | ✔
 SP_ServerSettings_IsSharePointOnline | ✔ | ✔ | ✔ | ✖
-<span title="SP_SharingUtility_GetUserDirectoryInfoByEmail">SP_SharingUtility_GetUserDirectoryInfoBy...</span> | ✔ | ✔ | ✖ | ✖
+SP_SharingUtility_GetUserDirectoryInfoByEmail | ✔ | ✔ | ✖ | ✖
 SP_SharingUtility_ValidateSameUserEmails | ✔ | ✔ | ✖ | ✖
-<span title="SP_Sharing_DocumentSharingManager_GetRoleDefinition">SP_Sharing_DocumentSharingManager_GetRol...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Sharing_DocumentSharingManager_IsDocumentSharingEnabled">SP_Sharing_DocumentSharingManager_IsDocu...</span> | ✖ | ✖ | ✖ | ✔
-<span title="SP_Sharing_DocumentSharingManager_RemoveItemsFromSharedWithMeView">SP_Sharing_DocumentSharingManager_Remove...</span> | ✔ | ✔ | ✔ | ✖
-<span title="SP_Sharing_DocumentSharingManager_RemoveItemsFromSharedWithMeViewByPath">SP_Sharing_DocumentSharingManager_Remove...</span> | ✔ | ✔ | ✖ | ✖
-<span title="SP_Sharing_DocumentSharingManager_UpdateDocumentSharingInfo">SP_Sharing_DocumentSharingManager_Update...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Sharing_PersonalWeb_FixPermissionInheritance">SP_Sharing_PersonalWeb_FixPermissionInhe...</span> | ✔ | ✔ | ✖ | ✖
-<span title="SP_Sharing_PersonalWeb_GetOversharedWebInfo">SP_Sharing_PersonalWeb_GetOversharedWebI...</span> | ✔ | ✔ | ✖ | ✖
-<span title="SP_Sharing_PersonalWeb_RemovePermissionForUsers">SP_Sharing_PersonalWeb_RemovePermissionF...</span> | ✔ | ✔ | ✖ | ✖
-<span title="SP_Sharing_SiteSharingReportHelper_CancelSharingReportJob">SP_Sharing_SiteSharingReportHelper_Cance...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_Sharing_SiteSharingReportHelper_CreateSharingReportJob">SP_Sharing_SiteSharingReportHelper_Creat...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_Sharing_SiteSharingReportHelper_GetSiteSharingReportCapabilities">SP_Sharing_SiteSharingReportHelper_GetSi...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_Sharing_DocumentSharingManager_GetRoleDefinition">SP_Sharing_DocumentSharingManager_GetRoleDefinitio...</span> | ✔ | ✔ | ✔ | ✔
+<span title="SP_Sharing_DocumentSharingManager_IsDocumentSharingEnabled">SP_Sharing_DocumentSharingManager_IsDocumentSharin...</span> | ✖ | ✖ | ✖ | ✔
+<span title="SP_Sharing_DocumentSharingManager_RemoveItemsFromSharedWithMeView">SP_Sharing_DocumentSharingManager_RemoveItemsFromS...</span> | ✔ | ✔ | ✔ | ✖
+<span title="SP_Sharing_DocumentSharingManager_RemoveItemsFromSharedWithMeViewByPath">SP_Sharing_DocumentSharingManager_RemoveItemsFromS...</span> | ✔ | ✔ | ✖ | ✖
+<span title="SP_Sharing_DocumentSharingManager_UpdateDocumentSharingInfo">SP_Sharing_DocumentSharingManager_UpdateDocumentSh...</span> | ✔ | ✔ | ✔ | ✔
+SP_Sharing_PersonalWeb_FixPermissionInheritance | ✔ | ✔ | ✖ | ✖
+SP_Sharing_PersonalWeb_GetOversharedWebInfo | ✔ | ✔ | ✖ | ✖
+SP_Sharing_PersonalWeb_RemovePermissionForUsers | ✔ | ✔ | ✖ | ✖
+<span title="SP_Sharing_SiteSharingReportHelper_CancelSharingReportJob">SP_Sharing_SiteSharingReportHelper_CancelSharingRe...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_Sharing_SiteSharingReportHelper_CreateSharingReportJob">SP_Sharing_SiteSharingReportHelper_CreateSharingRe...</span> | ✔ | ✖ | ✖ | ✖
+<span title="SP_Sharing_SiteSharingReportHelper_GetSiteSharingReportCapabilities">SP_Sharing_SiteSharingReportHelper_GetSiteSharingR...</span> | ✔ | ✖ | ✖ | ✖
 SP_Site_Exists | ✔ | ✔ | ✖ | ✖
 SP_Site_GetUrlById | ✔ | ✖ | ✖ | ✖
-<span title="SP_Social_SocialAnnouncementManager_GetCurrentAnnouncements">SP_Social_SocialAnnouncementManager_GetC...</span> | ✔ | ✔ | ✔ | ✖
+<span title="SP_Social_SocialAnnouncementManager_GetCurrentAnnouncements">SP_Social_SocialAnnouncementManager_GetCurrentAnno...</span> | ✔ | ✔ | ✔ | ✖
 SP_Social_SocialFeedManager | ✔ | ✔ | ✔ | ✔
 SP_Social_SocialFollowingManager | ✔ | ✔ | ✔ | ✔
 SP_Social_SocialRestActor | ✔ | ✔ | ✔ | ✔
@@ -1311,82 +1311,82 @@ SP_Social_SocialRestFeedManager | ✔ | ✔ | ✔ | ✔
 SP_Social_SocialRestFollowingManager | ✔ | ✔ | ✔ | ✔
 SP_Social_SocialRestThread | ✔ | ✔ | ✔ | ✔
 SP_Taxonomy_ChangeInformation | ✖ | ✖ | ✖ | ✔
-<span title="SP_Taxonomy_CustomPropertyMatchInformation">SP_Taxonomy_CustomPropertyMatchInformati...</span> | ✖ | ✖ | ✖ | ✔
+SP_Taxonomy_CustomPropertyMatchInformation | ✖ | ✖ | ✖ | ✔
 SP_Taxonomy_LabelMatchInformation | ✖ | ✖ | ✖ | ✔
 SP_Taxonomy_TaxonomyFieldValueCollection | ✖ | ✖ | ✖ | ✔
 SP_TeamChannelManager_AddTeamChannel | ✔ | ✔ | ✖ | ✖
-<span title="SP_TeamChannelManager_DemoteTeamChannelById">SP_TeamChannelManager_DemoteTeamChannelB...</span> | ✔ | ✔ | ✖ | ✖
-<span title="SP_TeamChannelManager_DemoteTeamChannelByPath">SP_TeamChannelManager_DemoteTeamChannelB...</span> | ✔ | ✔ | ✖ | ✖
-<span title="SP_TeamChannelManager_PromoteToTeamChannelById">SP_TeamChannelManager_PromoteToTeamChann...</span> | ✔ | ✔ | ✖ | ✖
-<span title="SP_TeamChannelManager_PromoteToTeamChannelByPath">SP_TeamChannelManager_PromoteToTeamChann...</span> | ✔ | ✔ | ✖ | ✖
+SP_TeamChannelManager_DemoteTeamChannelById | ✔ | ✔ | ✖ | ✖
+SP_TeamChannelManager_DemoteTeamChannelByPath | ✔ | ✔ | ✖ | ✖
+SP_TeamChannelManager_PromoteToTeamChannelById | ✔ | ✔ | ✖ | ✖
+SP_TeamChannelManager_PromoteToTeamChannelByPath | ✔ | ✔ | ✖ | ✖
 SP_TenantSettings_Current | ✔ | ✔ | ✔ | ✔
 SP_TranslationStatusCollection | ✔ | ✖ | ✖ | ✖
 SP_Translation_SyncTranslator | ✔ | ✔ | ✔ | ✔
 SP_Translation_TranslationJob | ✔ | ✔ | ✔ | ✔
 SP_Translation_TranslationJobStatus | ✔ | ✔ | ✔ | ✔
-<span title="SP_Translation_TranslationJobStatus_GetAllActiveJobs">SP_Translation_TranslationJobStatus_GetA...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Translation_TranslationJobStatus_GetAllJobs">SP_Translation_TranslationJobStatus_GetA...</span> | ✔ | ✔ | ✔ | ✔
+<span title="SP_Translation_TranslationJobStatus_GetAllActiveJobs">SP_Translation_TranslationJobStatus_GetAllActiveJo...</span> | ✔ | ✔ | ✔ | ✔
+SP_Translation_TranslationJobStatus_GetAllJobs | ✔ | ✔ | ✔ | ✔
 SP_Translation_TranslationJob_CancelJob | ✔ | ✔ | ✔ | ✔
-<span title="SP_Translation_TranslationJob_EnumerateSupportedFileExtensions">SP_Translation_TranslationJob_EnumerateS...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Translation_TranslationJob_EnumerateSupportedLanguages">SP_Translation_TranslationJob_EnumerateS...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Translation_TranslationJob_GetMaximumFileSize">SP_Translation_TranslationJob_GetMaximum...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Translation_TranslationJob_IsFileExtensionSupported">SP_Translation_TranslationJob_IsFileExte...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Translation_TranslationJob_IsLanguageSupported">SP_Translation_TranslationJob_IsLanguage...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Translation_TranslationJob_IsServiceEnabled">SP_Translation_TranslationJob_IsServiceE...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Translation_VariationsTranslationTimerJob_ExportItems">SP_Translation_VariationsTranslationTime...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Translation_VariationsTranslationTimerJob_ExportItemsRequiringTranslation">SP_Translation_VariationsTranslationTime...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Translation_VariationsTranslationTimerJob_ImportTranslationPackage">SP_Translation_VariationsTranslationTime...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Translation_VariationsTranslationTimerJob_MachineTranslateItems">SP_Translation_VariationsTranslationTime...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Translation_VariationsTranslationTimerJob_MachineTranslateItemsRequiringTranslation">SP_Translation_VariationsTranslationTime...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_UI_ApplicationPages_ClientPeoplePickerWebServiceInterface_ClientPeoplePickerResolveUser">SP_UI_ApplicationPages_ClientPeoplePicke...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_UI_ApplicationPages_ClientPeoplePickerWebServiceInterface_ClientPeoplePickerSearchUser">SP_UI_ApplicationPages_ClientPeoplePicke...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_UI_ApplicationPages_ClientPeoplePickerWebServiceInterface_GetPickerEntityInformation">SP_UI_ApplicationPages_ClientPeoplePicke...</span> | ✔ | ✔ | ✖ | ✖
-<span title="SP_UI_ApplicationPages_PeoplePickerWebServiceInterface_GetSearchResults">SP_UI_ApplicationPages_PeoplePickerWebSe...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_UI_ApplicationPages_PeoplePickerWebServiceInterface_GetSearchResultsByHierarchy">SP_UI_ApplicationPages_PeoplePickerWebSe...</span> | ✔ | ✔ | ✔ | ✔
+<span title="SP_Translation_TranslationJob_EnumerateSupportedFileExtensions">SP_Translation_TranslationJob_EnumerateSupportedFi...</span> | ✔ | ✔ | ✔ | ✔
+<span title="SP_Translation_TranslationJob_EnumerateSupportedLanguages">SP_Translation_TranslationJob_EnumerateSupportedLa...</span> | ✔ | ✔ | ✔ | ✔
+SP_Translation_TranslationJob_GetMaximumFileSize | ✔ | ✔ | ✔ | ✔
+<span title="SP_Translation_TranslationJob_IsFileExtensionSupported">SP_Translation_TranslationJob_IsFileExtensionSuppo...</span> | ✔ | ✔ | ✔ | ✔
+SP_Translation_TranslationJob_IsLanguageSupported | ✔ | ✔ | ✔ | ✔
+SP_Translation_TranslationJob_IsServiceEnabled | ✔ | ✔ | ✔ | ✔
+<span title="SP_Translation_VariationsTranslationTimerJob_ExportItems">SP_Translation_VariationsTranslationTimerJob_Expor...</span> | ✔ | ✔ | ✔ | ✔
+<span title="SP_Translation_VariationsTranslationTimerJob_ExportItemsRequiringTranslation">SP_Translation_VariationsTranslationTimerJob_Expor...</span> | ✔ | ✔ | ✔ | ✔
+<span title="SP_Translation_VariationsTranslationTimerJob_ImportTranslationPackage">SP_Translation_VariationsTranslationTimerJob_Impor...</span> | ✔ | ✔ | ✔ | ✔
+<span title="SP_Translation_VariationsTranslationTimerJob_MachineTranslateItems">SP_Translation_VariationsTranslationTimerJob_Machi...</span> | ✔ | ✔ | ✔ | ✔
+<span title="SP_Translation_VariationsTranslationTimerJob_MachineTranslateItemsRequiringTranslation">SP_Translation_VariationsTranslationTimerJob_Machi...</span> | ✔ | ✔ | ✔ | ✔
+<span title="SP_UI_ApplicationPages_ClientPeoplePickerWebServiceInterface_ClientPeoplePickerResolveUser">SP_UI_ApplicationPages_ClientPeoplePickerWebServic...</span> | ✔ | ✔ | ✔ | ✔
+<span title="SP_UI_ApplicationPages_ClientPeoplePickerWebServiceInterface_ClientPeoplePickerSearchUser">SP_UI_ApplicationPages_ClientPeoplePickerWebServic...</span> | ✔ | ✔ | ✔ | ✔
+<span title="SP_UI_ApplicationPages_ClientPeoplePickerWebServiceInterface_GetPickerEntityInformation">SP_UI_ApplicationPages_ClientPeoplePickerWebServic...</span> | ✔ | ✔ | ✖ | ✖
+<span title="SP_UI_ApplicationPages_PeoplePickerWebServiceInterface_GetSearchResults">SP_UI_ApplicationPages_PeoplePickerWebServiceInter...</span> | ✔ | ✔ | ✔ | ✔
+<span title="SP_UI_ApplicationPages_PeoplePickerWebServiceInterface_GetSearchResultsByHierarchy">SP_UI_ApplicationPages_PeoplePickerWebServiceInter...</span> | ✔ | ✔ | ✔ | ✔
 SP_UI_MySiteLinks_GetMySiteLinks | ✖ | ✖ | ✖ | ✔
-<span title="SP_UserProfiles_CrossGeoSync_ReadFullChangesBatch">SP_UserProfiles_CrossGeoSync_ReadFullCha...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_UserProfiles_CrossGeoSync_ReadIncrementalChangesBatch">SP_UserProfiles_CrossGeoSync_ReadIncreme...</span> | ✔ | ✖ | ✖ | ✖
+SP_UserProfiles_CrossGeoSync_ReadFullChangesBatch | ✔ | ✖ | ✖ | ✖
+<span title="SP_UserProfiles_CrossGeoSync_ReadIncrementalChangesBatch">SP_UserProfiles_CrossGeoSync_ReadIncrementalChange...</span> | ✔ | ✖ | ✖ | ✖
 SP_UserProfiles_FollowedContent | ✔ | ✔ | ✔ | ✔
 SP_UserProfiles_FollowedItemData | ✔ | ✔ | ✔ | ✔
 SP_UserProfiles_PeopleManager | ✔ | ✔ | ✔ | ✔
-<span title="SP_UserProfiles_PeopleManager_GetTrendingTags">SP_UserProfiles_PeopleManager_GetTrendin...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_UserProfiles_PeopleManager_IsFollowing">SP_UserProfiles_PeopleManager_IsFollowin...</span> | ✔ | ✔ | ✔ | ✔
+SP_UserProfiles_PeopleManager_GetTrendingTags | ✔ | ✔ | ✔ | ✔
+SP_UserProfiles_PeopleManager_IsFollowing | ✔ | ✔ | ✔ | ✔
 SP_UserProfiles_PersonalCache | ✔ | ✔ | ✖ | ✖
 SP_UserProfiles_ProfileImageStore | ✔ | ✔ | ✔ | ✔
-<span title="SP_UserProfiles_ProfileLoader_GetOwnerUserProfile">SP_UserProfiles_ProfileLoader_GetOwnerUs...</span> | ✔ | ✔ | ✔ | ✖
-<span title="SP_UserProfiles_ProfileLoader_GetProfileLoader">SP_UserProfiles_ProfileLoader_GetProfile...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_UserProfiles_UserProfilePropertiesForUser">SP_UserProfiles_UserProfilePropertiesFor...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_UserProfiles_UserProfile_CreatePersonalSiteSyncFromWorkItem">SP_UserProfiles_UserProfile_CreatePerson...</span> | ✔ | ✔ | ✔ | ✖
-<span title="SP_Utilities_NewsUtility_CreateOrUpdateNewsItem">SP_Utilities_NewsUtility_CreateOrUpdateN...</span> | ✔ | ✔ | ✖ | ✖
+SP_UserProfiles_ProfileLoader_GetOwnerUserProfile | ✔ | ✔ | ✔ | ✖
+SP_UserProfiles_ProfileLoader_GetProfileLoader | ✔ | ✔ | ✔ | ✔
+SP_UserProfiles_UserProfilePropertiesForUser | ✔ | ✔ | ✔ | ✔
+<span title="SP_UserProfiles_UserProfile_CreatePersonalSiteSyncFromWorkItem">SP_UserProfiles_UserProfile_CreatePersonalSiteSync...</span> | ✔ | ✔ | ✔ | ✖
+SP_Utilities_NewsUtility_CreateOrUpdateNewsItem | ✔ | ✔ | ✖ | ✖
 SP_Utilities_NewsUtility_DeleteNewsItem | ✔ | ✔ | ✖ | ✖
-<span title="SP_Utilities_NewsUtility_GetMetadataForUrl">SP_Utilities_NewsUtility_GetMetadataForU...</span> | ✔ | ✔ | ✖ | ✖
-<span title="SP_Utilities_SPSocialSwitch_IsFollowingFeatureEnabled">SP_Utilities_SPSocialSwitch_IsFollowingF...</span> | ✔ | ✔ | ✖ | ✖
-<span title="SP_Utilities_ShortcutLink_GetShortcutLink">SP_Utilities_ShortcutLink_GetShortcutLin...</span> | ✔ | ✔ | ✖ | ✖
-<span title="SP_Utilities_ThemeManager_ContextThemeManager">SP_Utilities_ThemeManager_ContextThemeMa...</span> | ✔ | ✔ | ✖ | ✖
-<span title="SP_Utilities_Utility_CreateEmailBodyForInvitation">SP_Utilities_Utility_CreateEmailBodyForI...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Utilities_Utility_CreateNewDiscussionItem">SP_Utilities_Utility_CreateNewDiscussion...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Utilities_Utility_CreateWikiPageInContextWeb">SP_Utilities_Utility_CreateWikiPageInCon...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Utilities_Utility_ExpandGroupsToPrincipals">SP_Utilities_Utility_ExpandGroupsToPrinc...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Utilities_Utility_GetAppLicenseDeploymentId">SP_Utilities_Utility_GetAppLicenseDeploy...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Utilities_Utility_GetAppLicenseInformation">SP_Utilities_Utility_GetAppLicenseInform...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Utilities_Utility_GetCurrentUserEmailAddresses">SP_Utilities_Utility_GetCurrentUserEmail...</span> | ✔ | ✔ | ✔ | ✔
+SP_Utilities_NewsUtility_GetMetadataForUrl | ✔ | ✔ | ✖ | ✖
+<span title="SP_Utilities_SPSocialSwitch_IsFollowingFeatureEnabled">SP_Utilities_SPSocialSwitch_IsFollowingFeatureEnab...</span> | ✔ | ✔ | ✖ | ✖
+SP_Utilities_ShortcutLink_GetShortcutLink | ✔ | ✔ | ✖ | ✖
+SP_Utilities_ThemeManager_ContextThemeManager | ✔ | ✔ | ✖ | ✖
+SP_Utilities_Utility_CreateEmailBodyForInvitation | ✔ | ✔ | ✔ | ✔
+SP_Utilities_Utility_CreateNewDiscussionItem | ✔ | ✔ | ✔ | ✔
+SP_Utilities_Utility_CreateWikiPageInContextWeb | ✔ | ✔ | ✔ | ✔
+SP_Utilities_Utility_ExpandGroupsToPrincipals | ✔ | ✔ | ✔ | ✔
+SP_Utilities_Utility_GetAppLicenseDeploymentId | ✔ | ✔ | ✔ | ✔
+SP_Utilities_Utility_GetAppLicenseInformation | ✔ | ✔ | ✔ | ✔
+SP_Utilities_Utility_GetCurrentUserEmailAddresses | ✔ | ✔ | ✔ | ✔
 SP_Utilities_Utility_GetLocalizedString | ✔ | ✔ | ✔ | ✔
 SP_Utilities_Utility_GetLowerCaseString | ✔ | ✔ | ✔ | ✔
-<span title="SP_Utilities_Utility_GetUserPermissionLevels">SP_Utilities_Utility_GetUserPermissionLe...</span> | ✔ | ✔ | ✔ | ✖
+SP_Utilities_Utility_GetUserPermissionLevels | ✔ | ✔ | ✔ | ✖
 SP_Utilities_Utility_ImportAppLicense | ✔ | ✔ | ✔ | ✔
-<span title="SP_Utilities_Utility_IsUserLicensedForEntityInContext">SP_Utilities_Utility_IsUserLicensedForEn...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Utilities_Utility_LocalizeWebPartGallery">SP_Utilities_Utility_LocalizeWebPartGall...</span> | ✖ | ✖ | ✖ | ✔
+<span title="SP_Utilities_Utility_IsUserLicensedForEntityInContext">SP_Utilities_Utility_IsUserLicensedForEntityInCont...</span> | ✔ | ✔ | ✔ | ✔
+SP_Utilities_Utility_LocalizeWebPartGallery | ✖ | ✖ | ✖ | ✔
 SP_Utilities_Utility_LogCustomAppError | ✔ | ✔ | ✔ | ✔
-<span title="SP_Utilities_Utility_LogCustomRemoteAppError">SP_Utilities_Utility_LogCustomRemoteAppE...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Utilities_Utility_MarkDiscussionAsFeatured">SP_Utilities_Utility_MarkDiscussionAsFea...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Utilities_Utility_ResolvePrincipalInCurrentContext">SP_Utilities_Utility_ResolvePrincipalInC...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Utilities_Utility_SearchPrincipalsUsingContextWeb">SP_Utilities_Utility_SearchPrincipalsUsi...</span> | ✔ | ✔ | ✔ | ✔
+SP_Utilities_Utility_LogCustomRemoteAppError | ✔ | ✔ | ✔ | ✔
+SP_Utilities_Utility_MarkDiscussionAsFeatured | ✔ | ✔ | ✔ | ✔
+<span title="SP_Utilities_Utility_ResolvePrincipalInCurrentContext">SP_Utilities_Utility_ResolvePrincipalInCurrentCont...</span> | ✔ | ✔ | ✔ | ✔
+<span title="SP_Utilities_Utility_SearchPrincipalsUsingContextWeb">SP_Utilities_Utility_SearchPrincipalsUsingContextW...</span> | ✔ | ✔ | ✔ | ✔
 SP_Utilities_Utility_SendEmail | ✔ | ✔ | ✔ | ✔
-<span title="SP_Utilities_Utility_UnmarkDiscussionAsFeatured">SP_Utilities_Utility_UnmarkDiscussionAsF...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_Utilities_WopiHostUtility_GetFileHandlerWopiTargetPropertiesByUrl">SP_Utilities_WopiHostUtility_GetFileHand...</span> | ✔ | ✔ | ✖ | ✖
-<span title="SP_Utilities_WopiHostUtility_GetWebApplicationUrls">SP_Utilities_WopiHostUtility_GetWebAppli...</span> | ✔ | ✔ | ✖ | ✖
-<span title="SP_Utilities_WopiHostUtility_GetWopiOrigins">SP_Utilities_WopiHostUtility_GetWopiOrig...</span> | ✔ | ✖ | ✖ | ✖
-<span title="SP_Utilities_WopiHostUtility_GetWopiTargetPropertiesByUrl">SP_Utilities_WopiHostUtility_GetWopiTarg...</span> | ✔ | ✔ | ✔ | ✖
+SP_Utilities_Utility_UnmarkDiscussionAsFeatured | ✔ | ✔ | ✔ | ✔
+<span title="SP_Utilities_WopiHostUtility_GetFileHandlerWopiTargetPropertiesByUrl">SP_Utilities_WopiHostUtility_GetFileHandlerWopiTar...</span> | ✔ | ✔ | ✖ | ✖
+SP_Utilities_WopiHostUtility_GetWebApplicationUrls | ✔ | ✔ | ✖ | ✖
+SP_Utilities_WopiHostUtility_GetWopiOrigins | ✔ | ✖ | ✖ | ✖
+<span title="SP_Utilities_WopiHostUtility_GetWopiTargetPropertiesByUrl">SP_Utilities_WopiHostUtility_GetWopiTargetProperti...</span> | ✔ | ✔ | ✔ | ✖
 SP_WebProxy_Invoke | ✔ | ✔ | ✔ | ✔
 SP_Web_CreateAnonymousLink | ✔ | ✔ | ✔ | ✖
 SP_Web_CreateAnonymousLinkWithExpiration | ✔ | ✔ | ✔ | ✖
@@ -1406,31 +1406,31 @@ SP_Web_GetWebUrlFromPageUrl | ✔ | ✔ | ✔ | ✔
 SP_Web_ShareObject | ✔ | ✔ | ✔ | ✖
 SP_Web_UnshareObject | ✔ | ✔ | ✔ | ✖
 SP_WorkManagement_OM_BooleanCriterion | ✔ | ✔ | ✔ | ✔
-<span title="SP_WorkManagement_OM_CustomAttributeFilter">SP_WorkManagement_OM_CustomAttributeFilt...</span> | ✔ | ✔ | ✔ | ✔
+SP_WorkManagement_OM_CustomAttributeFilter | ✔ | ✔ | ✔ | ✔
 SP_WorkManagement_OM_DateRangeCriterion | ✔ | ✔ | ✔ | ✔
 SP_WorkManagement_OM_Location | ✔ | ✔ | ✔ | ✔
 SP_WorkManagement_OM_LocationFilter | ✔ | ✔ | ✔ | ✔
-<span title="SP_WorkManagement_OM_LocationGroupClientCollection">SP_WorkManagement_OM_LocationGroupClient...</span> | ✔ | ✔ | ✔ | ✔
+SP_WorkManagement_OM_LocationGroupClientCollection | ✔ | ✔ | ✔ | ✔
 SP_WorkManagement_OM_NameCriterion | ✔ | ✔ | ✔ | ✔
 SP_WorkManagement_OM_OrderInfo | ✔ | ✔ | ✔ | ✔
 SP_WorkManagement_OM_PersistedProperties | ✔ | ✔ | ✔ | ✔
-<span title="SP_WorkManagement_OM_SortableSessionManager">SP_WorkManagement_OM_SortableSessionMana...</span> | ✔ | ✔ | ✔ | ✔
+SP_WorkManagement_OM_SortableSessionManager | ✔ | ✔ | ✔ | ✔
 SP_WorkManagement_OM_SortableTaskQuery | ✔ | ✔ | ✔ | ✔
 SP_WorkManagement_OM_Task | ✔ | ✔ | ✔ | ✔
-<span title="SP_WorkManagement_OM_TaskClientCollection">SP_WorkManagement_OM_TaskClientCollectio...</span> | ✔ | ✔ | ✔ | ✔
+SP_WorkManagement_OM_TaskClientCollection | ✔ | ✔ | ✔ | ✔
 SP_WorkManagement_OM_TaskFilter | ✔ | ✔ | ✔ | ✔
 SP_WorkManagement_OM_TaskQuery | ✔ | ✔ | ✔ | ✔
-<span title="SP_WorkManagement_OM_UserOrderedSessionManager">SP_WorkManagement_OM_UserOrderedSessionM...</span> | ✔ | ✔ | ✔ | ✔
+SP_WorkManagement_OM_UserOrderedSessionManager | ✔ | ✔ | ✔ | ✔
 SP_WorkManagement_OM_UserSettings | ✔ | ✔ | ✔ | ✔
 SP_WorkManagement_OM_UserSettingsManager | ✔ | ✔ | ✔ | ✔
 SP_WorkManagement_OM_ViewSelectionInfo | ✔ | ✔ | ✔ | ✔
-<span title="SP_WorkflowServices_InteropService_Current">SP_WorkflowServices_InteropService_Curre...</span> | ✔ | ✔ | ✔ | ✔
+SP_WorkflowServices_InteropService_Current | ✔ | ✔ | ✔ | ✔
 SP_WorkflowServices_WorkflowDefinition | ✔ | ✔ | ✔ | ✔
-<span title="SP_WorkflowServices_WorkflowInstanceService_Current">SP_WorkflowServices_WorkflowInstanceServ...</span> | ✔ | ✔ | ✔ | ✔
-<span title="SP_WorkflowServices_WorkflowServicesManager">SP_WorkflowServices_WorkflowServicesMana...</span> | ✖ | ✖ | ✖ | ✔
-<span title="SP_WorkflowServices_WorkflowServicesManager_Current">SP_WorkflowServices_WorkflowServicesMana...</span> | ✔ | ✔ | ✔ | ✔
+<span title="SP_WorkflowServices_WorkflowInstanceService_Current">SP_WorkflowServices_WorkflowInstanceService_Curren...</span> | ✔ | ✔ | ✔ | ✔
+SP_WorkflowServices_WorkflowServicesManager | ✖ | ✖ | ✖ | ✔
+<span title="SP_WorkflowServices_WorkflowServicesManager_Current">SP_WorkflowServices_WorkflowServicesManager_Curren...</span> | ✔ | ✔ | ✔ | ✔
 SP_WorkflowServices_WorkflowSubscription | ✔ | ✔ | ✔ | ✔
-<span title="SP_WorkflowServices_WorkflowSubscriptionService_Current">SP_WorkflowServices_WorkflowSubscription...</span> | ✔ | ✔ | ✔ | ✔
+<span title="SP_WorkflowServices_WorkflowSubscriptionService_Current">SP_WorkflowServices_WorkflowSubscriptionService_Cu...</span> | ✔ | ✔ | ✔ | ✔
 Save | ✔ | ✖ | ✖ | ✖
 SaveAsNewView | ✔ | ✔ | ✔ | ✔
 SaveAsTemplate | ✔ | ✔ | ✖ | ✖
@@ -1575,7 +1575,7 @@ UpdateAppPage | ✔ | ✖ | ✖ | ✖
 UpdateBooleanProperty | ✔ | ✔ | ✔ | ✖
 UpdateCache | ✔ | ✔ | ✖ | ✖
 UpdateClaimsAccount | ✔ | ✖ | ✖ | ✖
-UpdateClientObjectModelUseRemoteAPIsPermissionSetting | ✔ | ✔ | ✔ | ✔
+<span title="UpdateClientObjectModelUseRemoteAPIsPermissionSetting">UpdateClientObjectModelUseRemoteAPIsPermissionSett...</span> | ✔ | ✔ | ✔ | ✔
 UpdateContainerSetting | ✔ | ✖ | ✖ | ✖
 UpdateCreatePDP | ✔ | ✖ | ✔ | ✖
 UpdateCurrencyProperty | ✔ | ✔ | ✔ | ✖

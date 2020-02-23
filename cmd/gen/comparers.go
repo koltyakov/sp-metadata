@@ -160,9 +160,9 @@ func functionsImportsTable(models []*ModelMeta, namespace string) string {
 	// Map to comparison matrix
 	for _, key := range getFunctionsImports(models, namespace) {
 		name := key
-		if len(name) > 40 && strings.Contains(name, "_") {
+		if len(name) > 50 {
 			runes := []rune(name)
-			name = fmt.Sprintf("<span title=\"%s\">%s</span>", name, strings.Trim(string(runes[0:40]), "_")+"...")
+			name = fmt.Sprintf("<span title=\"%s\">%s</span>", name, strings.Trim(string(runes[0:50]), "_")+"...")
 		}
 		compareMatrix = append(compareMatrix, &ComparisonVector{
 			Name:     name,
