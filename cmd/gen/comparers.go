@@ -69,12 +69,62 @@ func complexTypesTable(models []*ModelMeta, namespace string) string {
 	for _, key := range getComplexTypes(models, namespace) {
 		compareMatrix = append(compareMatrix, &ComparisonVector{
 			Name:     key,
+			Link:     "./ComplexTypes/" + key + ".md",
 			Presence: keyPresenceMap[key],
 		})
 	}
 
 	// Constructing MD table
 	return genMDTable("Complex Type", envCodes, compareMatrix)
+}
+
+func complexTypePropsTable(models []*ModelMeta, namespace string, complexType string) string {
+	envCodes := config.GetEnvironmentsCodes()
+	var compareMatrix []*ComparisonVector
+
+	// Namespaces in platform versions
+	keyPresenceMap := map[string]map[string]bool{}
+	for _, m := range models {
+		for _, s := range m.Model.Services.Schemas {
+			if s.Namespace == namespace {
+				for _, ct := range s.ComplexTypes {
+					if ct.Name == complexType {
+						for _, prop := range ct.Properties {
+							key := prop.Name + " (" + prop.Type + ")"
+							n, ok := keyPresenceMap[key]
+							if !ok {
+								n = map[string]bool{}
+							}
+							n[m.Environment.Code] = true
+							keyPresenceMap[key] = n
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if len(keyPresenceMap) == 0 {
+		return ""
+	}
+
+	var keys []string
+	for key := range keyPresenceMap {
+		keys = append(keys, key)
+	}
+	sort.Strings(keys)
+
+	// Map to comparison matrix
+	for _, key := range keys {
+		name := key
+		compareMatrix = append(compareMatrix, &ComparisonVector{
+			Name:     name,
+			Presence: keyPresenceMap[key],
+		})
+	}
+
+	// Constructing MD table
+	return genMDTable("Property", envCodes, compareMatrix)
 }
 
 func entityTypesTable(models []*ModelMeta, namespace string) string {

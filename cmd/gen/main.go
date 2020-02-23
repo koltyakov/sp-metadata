@@ -36,6 +36,26 @@ func main() {
 			if err := genDoc("./pkg/templates/ComplexTypes.md", filePath, data); err != nil {
 				log.Fatal(err)
 			}
+
+			// Complex types drill-down
+			for _, complexType := range complexTypes {
+				propsTable := complexTypePropsTable(models, namespace, complexType)
+				if propsTable != "" {
+					data := &struct {
+						Table       string
+						Namespace   string
+						ComplexType string
+					}{
+						Table:       propsTable,
+						Namespace:   namespace,
+						ComplexType: complexType,
+					}
+					filePath := filepath.Join(folderPath, "ComplexTypes", complexType+".md")
+					if err := genDoc("./pkg/templates/ComplexType.md", filePath, data); err != nil {
+						log.Fatal(err)
+					}
+				}
+			}
 		}
 
 		// Entity types comparison

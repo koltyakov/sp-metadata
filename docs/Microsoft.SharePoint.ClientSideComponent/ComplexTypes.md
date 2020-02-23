@@ -6,5 +6,5 @@
 
 Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-SPClientSideComponentIdentifier | ✔ | ✔ | ✖ | ✖
-SPClientSideComponentQueryResult | ✔ | ✔ | ✔ | ✖
+[SPClientSideComponentIdentifier](./ComplexTypes/SPClientSideComponentIdentifier.md) | ✔ | ✔ | ✖ | ✖
+[SPClientSideComponentQueryResult](./ComplexTypes/SPClientSideComponentQueryResult.md) | ✔ | ✔ | ✔ | ✖
