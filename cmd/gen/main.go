@@ -16,7 +16,7 @@ func main() {
 	// Namespaces root comparison
 	table := rootNamespacesTable(models)
 	data := &struct{ Table string }{table}
-	if err := genDoc("./pkg/templates/namespaces.md", "./docs/namespaces.md", data); err != nil {
+	if err := genDoc("./pkg/templates/Namespaces.md", "./docs/README.md", data); err != nil {
 		log.Fatal(err)
 	}
 
@@ -32,8 +32,8 @@ func main() {
 				Table     string
 				Namespace string
 			}{table, namespace}
-			filePath := filepath.Join(folderPath, "complexTypes.md")
-			if err := genDoc("./pkg/templates/complexTypes.md", filePath, data); err != nil {
+			filePath := filepath.Join(folderPath, "ComplexTypes.md")
+			if err := genDoc("./pkg/templates/ComplexTypes.md", filePath, data); err != nil {
 				log.Fatal(err)
 			}
 		}
@@ -46,8 +46,8 @@ func main() {
 				Table     string
 				Namespace string
 			}{table, namespace}
-			filePath := filepath.Join(folderPath, "entityTypes.md")
-			if err := genDoc("./pkg/templates/entityTypes.md", filePath, data); err != nil {
+			filePath := filepath.Join(folderPath, "EntityTypes.md")
+			if err := genDoc("./pkg/templates/EntityTypes.md", filePath, data); err != nil {
 				log.Fatal(err)
 			}
 		}
