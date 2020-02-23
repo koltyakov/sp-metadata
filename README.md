@@ -14,4 +14,4 @@ Check out [REST APIs Namespaces](./docs/Namespaces.md) availability then drill-d
 
 ## Similar projects
 
-In a contract to [SharePoint REST API Metadata Explorer](https://github.com/s-KaiNet/sp-rest-explorer) by [Sergei Sergeev](https://github.com/s-KaiNet), SharePoint Metadata Tracker aims to compare APIs availability with previous versions.
+In a contract to [SharePoint REST API Metadata Explorer](https://github.com/s-KaiNet/sp-rest-explorer) by [Sergei Sergeev](https://github.com/s-KaiNet), SharePoint Metadata Tracker aims to compare APIs availability with the previous SharePoint versions.
