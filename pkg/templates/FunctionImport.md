@@ -2,10 +2,10 @@
 
 ## Function Import: {{.Function}}
 
-- ReturnType: {{.ReturnType}}
+{{ if (ne .ReturnType "") }}- ReturnType: {{.ReturnType}}{{ end }}
 - IsComposable: {{.IsComposable}}
 - IsBindable: {{.IsBindable}}
-- EntitySet: {{.EntitySet}}
+{{ if (ne .EntitySet "") }}- EntitySet: {{.EntitySet}}{{ end }}
 
 ## Parameters
 

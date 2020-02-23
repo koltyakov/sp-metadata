@@ -309,12 +309,13 @@ func functionPropsTable(models []*ModelMeta, namespace string, functionImport st
 				for _, functionImp := range s.EntityContainer.FunctionImports {
 					if functionImp.Name == functionImport {
 						for _, par := range functionImp.Parameters {
-							n, ok := keyPresenceMap[par.Name]
+							key := par.Name + " (" + par.Type + ")"
+							n, ok := keyPresenceMap[key]
 							if !ok {
 								n = map[string]bool{}
 							}
 							n[m.Environment.Code] = true
-							keyPresenceMap[par.Name] = n
+							keyPresenceMap[key] = n
 						}
 					}
 				}
