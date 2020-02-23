@@ -1,6 +1,8 @@
 package main
 
 import (
+	"strings"
+
 	"github.com/koltyakov/sp-metadata/config"
 )
 
@@ -156,8 +158,13 @@ func functionsImportsTable(models []*ModelMeta, namespace string) string {
 
 	// Map to comparison matrix
 	for _, key := range getFunctionsImports(models, namespace) {
+		name := key
+		if len(name) > 40 && strings.Contains(name, "_") {
+			runes := []rune(name)
+			name = strings.Trim(string(runes[0:40]), "_") + "... (" + strings.Replace(name, "_", " ", -1) + ")"
+		}
 		compareMatrix = append(compareMatrix, &ComparisonVector{
-			Name:     key,
+			Name:     name,
 			Presence: keyPresenceMap[key],
 		})
 	}
