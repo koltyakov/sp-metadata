@@ -16,7 +16,7 @@ func main() {
 	// Namespaces root comparison
 	table := rootNamespacesTable(models)
 	data := &struct{ Table string }{table}
-	if err := genDoc("./pkg/templates/Namespaces.md", "./docs/README.md", data); err != nil {
+	if err := genDoc("./pkg/templates/Namespaces.md", "./docs/Namespaces.md", data); err != nil {
 		log.Fatal(err)
 	}
 

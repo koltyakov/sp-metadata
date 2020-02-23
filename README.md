@@ -10,4 +10,4 @@ SharePoint Online is tracked for Standard and Target Releases which allows detec
 
 ## Entry point
 
-- [Namespaces](./docs/namespaces.md)
+- [Namespaces](./docs/Namespaces.md)
