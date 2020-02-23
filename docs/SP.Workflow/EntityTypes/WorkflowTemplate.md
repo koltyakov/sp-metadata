@@ -1,4 +1,5 @@
 # Namespace: SP.Workflow
+
 ## Entity Type: WorkflowTemplate
 
 ### Properties
@@ -7,13 +8,13 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-PermissionsManual (SP.BasePermissions) | ✔ | ✔ | ✔ | ✔
+AllowManual (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 AssociationUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
 AutoStartChange (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+AutoStartCreate (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 Description (Edm.String) | ✔ | ✔ | ✔ | ✔
 Id (Edm.Guid) | ✔ | ✔ | ✔ | ✔
-AllowManual (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-AutoStartCreate (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 IsDeclarative (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 Name (Edm.String) | ✔ | ✔ | ✔ | ✔
+PermissionsManual (SP.BasePermissions) | ✔ | ✔ | ✔ | ✔
 

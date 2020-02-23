@@ -1,4 +1,5 @@
 # Namespace: SP.Publishing
+
 ## Complex Types
 
 **Availability matrix**

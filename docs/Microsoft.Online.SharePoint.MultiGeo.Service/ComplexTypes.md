@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Online.SharePoint.MultiGeo.Service
+
 ## Complex Types
 
 **Availability matrix**

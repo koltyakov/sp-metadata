@@ -1,4 +1,5 @@
 # Namespace: SP.Directory.Provider
+
 ## Complex Types
 
 **Availability matrix**

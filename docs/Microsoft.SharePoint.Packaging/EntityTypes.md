@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Packaging
+
 ## Entity Types
 
 **Availability matrix**

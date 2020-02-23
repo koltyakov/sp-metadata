@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Online.SharePoint.Onboarding.RestService.Service
+
 ## Entity Types
 
 **Availability matrix**

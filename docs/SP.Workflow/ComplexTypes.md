@@ -1,4 +1,5 @@
 # Namespace: SP.Workflow
+
 ## Complex Types
 
 **Availability matrix**

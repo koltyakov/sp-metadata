@@ -1,4 +1,5 @@
 # Namespace: SP.MicroService
+
 ## Complex Types
 
 **Availability matrix**

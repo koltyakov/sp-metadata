@@ -1,4 +1,5 @@
 # Namespace: SP.Social
+
 ## Entity Type: SocialRestFeed
 
 ### Properties

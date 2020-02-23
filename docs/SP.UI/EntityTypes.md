@@ -1,4 +1,5 @@
 # Namespace: SP.UI
+
 ## Entity Types
 
 **Availability matrix**

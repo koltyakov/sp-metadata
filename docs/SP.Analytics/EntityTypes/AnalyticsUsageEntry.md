@@ -1,4 +1,5 @@
 # Namespace: SP.Analytics
+
 ## Entity Type: AnalyticsUsageEntry
 
 ### Properties

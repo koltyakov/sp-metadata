@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Utilities.WebTemplateExtensions
+
 ## Complex Types
 
 **Availability matrix**

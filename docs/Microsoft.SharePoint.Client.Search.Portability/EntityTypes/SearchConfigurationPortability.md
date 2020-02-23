@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Client.Search.Portability
+
 ## Entity Type: SearchConfigurationPortability
 
 ### Properties

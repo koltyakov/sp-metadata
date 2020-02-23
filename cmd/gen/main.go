@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"log"
 	"path/filepath"
+
+	"github.com/koltyakov/sp-metadata/pkg/edmx"
 )
 
 func main() {
@@ -100,6 +102,46 @@ func main() {
 			filePath := filepath.Join(folderPath, "FunctionsImports.md")
 			if err := genDoc("./pkg/templates/FunctionsImports.md", filePath, data); err != nil {
 				log.Fatal(err)
+			}
+
+			// Functions imports drill-down
+			for _, functionImport := range functionsImports {
+
+				var functionDef edmx.FunctionImport
+				for _, s := range models[0].Model.Services.Schemas {
+					if s.Namespace == namespace {
+						for _, functionImp := range s.EntityContainer.FunctionImports {
+							if functionImp.Name == functionImport {
+								functionDef = functionImp
+							}
+						}
+					}
+				}
+
+				propsTable := functionPropsTable(models, namespace, functionImport)
+				data := &struct {
+					ParamsTable  string
+					Namespace    string
+					EntityType   string
+					Function     string
+					ReturnType   string
+					IsComposable bool
+					IsBindable   bool
+					EntitySet    string
+				}{
+					ParamsTable:  propsTable,
+					Namespace:    namespace,
+					EntityType:   functionImport,
+					Function:     functionImport,
+					ReturnType:   functionDef.ReturnType,
+					IsComposable: functionDef.IsComposable,
+					IsBindable:   functionDef.IsBindable,
+					EntitySet:    functionDef.EntitySet,
+				}
+				filePath := filepath.Join(folderPath, "Functions", functionImport+".md")
+				if err := genDoc("./pkg/templates/FunctionImport.md", filePath, data); err != nil {
+					log.Fatal(err)
+				}
 			}
 		}
 

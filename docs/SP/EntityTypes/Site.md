@@ -1,4 +1,5 @@
 # Namespace: SP
+
 ## Entity Type: Site
 
 ### Properties
@@ -7,65 +8,65 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-IsHubSite (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-StatusBarText (Edm.String) | ✔ | ✔ | ✖ | ✖
-AllowRevertFromTemplate (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-CommentsOnSitePagesDisabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-CurrentChangeToken (SP.ChangeToken) | ✔ | ✔ | ✔ | ✖
-LockIssue (Edm.String) | ✔ | ✔ | ✔ | ✔
-DisableAppViews (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-GeoLocation (Edm.String) | ✔ | ✔ | ✖ | ✖
-MaxItemsPerThrottledOperation (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-RelatedGroupId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
-UpgradeInfo (SP.UpgradeInfo) | ✔ | ✔ | ✔ | ✔
 AllowCreateDeclarativeWorkflow (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-NeedsB2BUpgrade (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-PrimaryUri (Edm.String) | ✔ | ✔ | ✔ | ✔
-ShowUrlStructure (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-UpgradeScheduledDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+AllowDesigner (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+AllowExternalEmbeddingWrapper (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+AllowMasterPageEditing (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+AllowRevertFromTemplate (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+AllowSaveDeclarativeWorkflowAsTemplate (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+AllowSavePublishDeclarativeWorkflow (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+AllowSelfServiceUpgrade (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 AllowSelfServiceUpgradeEvaluation (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+AuditLogTrimmingRetention (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+CanSyncHubSitePermissions (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+CanUpgrade (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+Classification (Edm.String) | ✔ | ✔ | ✖ | ✖
+CommentsOnSitePagesDisabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 CompatibilityLevel (Edm.Int32) | ✔ | ✔ | ✔ | ✔
 ComplianceAttribute (Edm.String) | ✔ | ✖ | ✖ | ✖
+CurrentChangeToken (SP.ChangeToken) | ✔ | ✔ | ✔ | ✖
+DisableAppViews (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 DisableCompanyWideSharingLinks (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+DisableFlows (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+ExternalSharingTipsEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+ExternalUserExpirationInDays (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+GeoLocation (Edm.String) | ✔ | ✔ | ✖ | ✖
 GroupId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
 HubSiteId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
-Usage (SP.UsageInfo) | ✔ | ✔ | ✔ | ✔
-CanSyncHubSitePermissions (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-SearchBoxPlaceholderText (Edm.String) | ✔ | ✖ | ✖ | ✖
-ServerRelativePath (SP.ResourcePath) | ✔ | ✔ | ✖ | ✖
-ShowPeoplePickerSuggestionsForGuestUsers (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-ThicketSupportDisabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-Url (Edm.String) | ✔ | ✔ | ✔ | ✔
-AllowMasterPageEditing (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-AllowSavePublishDeclarativeWorkflow (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-UpgradeReminderDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
-Classification (Edm.String) | ✔ | ✔ | ✖ | ✖
-ExternalUserExpirationInDays (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-TrimAuditLog (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-Upgrading (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-SensitivityLabelId (Edm.String) | ✔ | ✖ | ✖ | ✖
+Id (Edm.Guid) | ✔ | ✔ | ✔ | ✔
+IsHubSite (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+LockIssue (Edm.String) | ✔ | ✔ | ✔ | ✔
+MaxItemsPerThrottledOperation (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+NeedsB2BUpgrade (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+PrimaryUri (Edm.String) | ✔ | ✔ | ✔ | ✔
+ReadOnly (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+RelatedGroupId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+RequiredDesignerVersion (Edm.String) | ✔ | ✔ | ✔ | ✔
+ResourcePath (SP.ResourcePath) | ✔ | ✔ | ✖ | ✖
 SandboxedCodeActivationCapability (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+SearchBoxInNavBar (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+SearchBoxPlaceholderText (Edm.String) | ✔ | ✖ | ✖ | ✖
+SensitivityLabel (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+SensitivityLabelId (Edm.String) | ✔ | ✖ | ✖ | ✖
+ServerRelativePath (SP.ResourcePath) | ✔ | ✔ | ✖ | ✖
 ServerRelativeUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
 ShareByEmailEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-AllowDesigner (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-AuditLogTrimmingRetention (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-ResourcePath (SP.ResourcePath) | ✔ | ✔ | ✖ | ✖
-SearchBoxInNavBar (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-StatusBarLink (Edm.String) | ✔ | ✔ | ✖ | ✖
-ExternalSharingTipsEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-RequiredDesignerVersion (Edm.String) | ✔ | ✔ | ✔ | ✔
-SocialBarOnSitePagesDisabled (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-AllowSaveDeclarativeWorkflowAsTemplate (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-CanUpgrade (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-SensitivityLabel (Edm.Guid) | ✔ | ✖ | ✖ | ✖
-UIVersionConfigurationEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-UpgradeScheduled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-AllowExternalEmbeddingWrapper (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-AllowSelfServiceUpgrade (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-Id (Edm.Guid) | ✔ | ✔ | ✔ | ✔
-ReadOnly (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 ShareByLinkEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-DisableFlows (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+ShowPeoplePickerSuggestionsForGuestUsers (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+ShowUrlStructure (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+SocialBarOnSitePagesDisabled (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+StatusBarLink (Edm.String) | ✔ | ✔ | ✖ | ✖
+StatusBarText (Edm.String) | ✔ | ✔ | ✖ | ✖
+ThicketSupportDisabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+TrimAuditLog (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+UIVersionConfigurationEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+UpgradeInfo (SP.UpgradeInfo) | ✔ | ✔ | ✔ | ✔
+UpgradeReminderDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
+UpgradeScheduled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+UpgradeScheduledDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+Upgrading (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+Url (Edm.String) | ✔ | ✔ | ✔ | ✔
+Usage (SP.UsageInfo) | ✔ | ✔ | ✔ | ✔
 
 ### Navigation Properties
 
@@ -74,12 +75,12 @@ DisableFlows (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
 Audit | ✔ | ✔ | ✔ | ✔
-EventReceivers | ✔ | ✔ | ✔ | ✔
-Owner | ✔ | ✔ | ✔ | ✔
-RecycleBin | ✔ | ✔ | ✔ | ✔
-UserCustomActions | ✔ | ✔ | ✔ | ✔
 CustomScriptSafeDomains | ✔ | ✔ | ✖ | ✖
+EventReceivers | ✔ | ✔ | ✔ | ✔
 Features | ✔ | ✔ | ✔ | ✔
 HubSiteSynchronizableVisitorGroup | ✔ | ✖ | ✖ | ✖
+Owner | ✔ | ✔ | ✔ | ✔
+RecycleBin | ✔ | ✔ | ✔ | ✔
 RootWeb | ✔ | ✔ | ✔ | ✔
 SecondaryContact | ✔ | ✔ | ✔ | ✔
+UserCustomActions | ✔ | ✔ | ✔ | ✔

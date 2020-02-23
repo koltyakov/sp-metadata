@@ -1,4 +1,5 @@
 # Namespace: PS
+
 ## Entity Type: DraftProjectResource
 
 ### Properties
@@ -7,23 +8,23 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Initials (Edm.String) | ✔ | ✔ | ✔ | ✖
-StandardRate (Edm.Double) | ✔ | ✔ | ✔ | ✖
-StandardRateUnits (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+CanLevel (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 Code (Edm.String) | ✔ | ✔ | ✔ | ✖
 CostAccrual (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 CostCenter (Edm.String) | ✔ | ✔ | ✔ | ✖
-Group (Edm.String) | ✔ | ✔ | ✔ | ✖
-MaterialLabel (Edm.String) | ✔ | ✔ | ✔ | ✖
-OvertimeRateUnits (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-Phonetics (Edm.String) | ✔ | ✔ | ✔ | ✖
-CanLevel (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-OvertimeRate (Edm.Double) | ✔ | ✔ | ✔ | ✖
-MaximumCapacity (Edm.Double) | ✔ | ✔ | ✔ | ✖
+CostPerUse (Edm.Double) | ✔ | ✔ | ✔ | ✖
 DefaultBookingType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 Email (Edm.String) | ✔ | ✔ | ✔ | ✖
+Group (Edm.String) | ✔ | ✔ | ✔ | ✖
+Initials (Edm.String) | ✔ | ✔ | ✔ | ✖
+MaterialLabel (Edm.String) | ✔ | ✔ | ✔ | ✖
+MaximumCapacity (Edm.Double) | ✔ | ✔ | ✔ | ✖
 Name (Edm.String) | ✔ | ✔ | ✔ | ✖
-CostPerUse (Edm.Double) | ✔ | ✔ | ✔ | ✖
+OvertimeRate (Edm.Double) | ✔ | ✔ | ✔ | ✖
+OvertimeRateUnits (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+Phonetics (Edm.String) | ✔ | ✔ | ✔ | ✖
+StandardRate (Edm.Double) | ✔ | ✔ | ✔ | ✖
+StandardRateUnits (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 
 ### Navigation Properties
 

@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Portal
+
 ## Entity Type: CollaborationMailbox
 
 ### Properties

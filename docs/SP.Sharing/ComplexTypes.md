@@ -1,4 +1,5 @@
 # Namespace: SP.Sharing
+
 ## Complex Types
 
 **Availability matrix**

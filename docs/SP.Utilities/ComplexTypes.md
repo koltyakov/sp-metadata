@@ -1,4 +1,5 @@
 # Namespace: SP.Utilities
+
 ## Complex Types
 
 **Availability matrix**

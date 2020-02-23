@@ -1,4 +1,5 @@
 # Namespace: PS
+
 ## Entity Type: DraftAssignment
 
 ### Properties
@@ -7,46 +8,46 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-ActualWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-Cost (Edm.Double) | ✔ | ✔ | ✔ | ✖
-OvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-RegularWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-ActualOvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-ActualStart (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-IsLockedByManager (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-OvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-PercentWorkComplete (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-RemainingOvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-RemainingOvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-RemainingWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-ResourceCapacity (Edm.Double) | ✔ | ✔ | ✔ | ✖
-WorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-ActualOvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-DefaultBookingType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-DelayTimeSpan (Edm.Time) | ✔ | ✔ | ✖ | ✖
-RegularWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-RemainingOvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-RemainingWork (Edm.String) | ✔ | ✔ | ✔ | ✖
 ActualCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
 ActualFinish (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+ActualOvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+ActualOvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 ActualOvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-BudgetedWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-TaskId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
-WorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+ActualStart (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+ActualWork (Edm.String) | ✔ | ✔ | ✔ | ✖
 ActualWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+ActualWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
 BudgetedCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
+BudgetedWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+BudgetedWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+BudgetedWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+Cost (Edm.Double) | ✔ | ✔ | ✔ | ✖
+CostRateTable (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+DefaultBookingType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 Delay (Edm.String) | ✔ | ✔ | ✖ | ✖
 DelayMilliseconds (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-RemainingWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-BudgetedWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-BudgetedWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-OvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-ActualWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+DelayTimeSpan (Edm.Time) | ✔ | ✔ | ✖ | ✖
+IsLockedByManager (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 IsWorkResource (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+OvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+OvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+OvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+PercentWorkComplete (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+RegularWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+RegularWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 RegularWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+RemainingOvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+RemainingOvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+RemainingOvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+RemainingWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+RemainingWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+RemainingWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+ResourceCapacity (Edm.Double) | ✔ | ✔ | ✔ | ✖
 ResourceId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
-CostRateTable (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+TaskId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
 Work (Edm.String) | ✔ | ✔ | ✔ | ✖
+WorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+WorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
 
 ### Navigation Properties
 

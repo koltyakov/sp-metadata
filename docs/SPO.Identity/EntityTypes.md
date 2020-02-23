@@ -1,4 +1,5 @@
 # Namespace: SPO.Identity
+
 ## Entity Types
 
 **Availability matrix**

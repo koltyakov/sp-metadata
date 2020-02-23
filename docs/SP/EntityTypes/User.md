@@ -1,4 +1,5 @@
 # Namespace: SP
+
 ## Entity Type: User
 
 ### Properties
@@ -7,14 +8,14 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-IsShareByEmailGuestUser (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-IsSiteAdmin (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-UserId (SP.UserIdInfo) | ✔ | ✔ | ✔ | ✔
-UserPrincipalName (Edm.String) | ✔ | ✖ | ✖ | ✖
 AadObjectId (SP.UserIdInfo) | ✔ | ✖ | ✖ | ✖
 Email (Edm.String) | ✔ | ✔ | ✔ | ✔
 Expiration (Edm.String) | ✔ | ✖ | ✖ | ✖
 IsEmailAuthenticationGuestUser (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+IsShareByEmailGuestUser (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+IsSiteAdmin (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+UserId (SP.UserIdInfo) | ✔ | ✔ | ✔ | ✔
+UserPrincipalName (Edm.String) | ✔ | ✖ | ✖ | ✖
 
 ### Navigation Properties
 

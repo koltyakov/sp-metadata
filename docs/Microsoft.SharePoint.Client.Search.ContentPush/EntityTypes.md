@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Client.Search.ContentPush
+
 ## Entity Types
 
 **Availability matrix**

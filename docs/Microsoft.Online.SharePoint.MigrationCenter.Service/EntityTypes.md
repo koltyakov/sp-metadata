@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Online.SharePoint.MigrationCenter.Service
+
 ## Entity Types
 
 **Availability matrix**

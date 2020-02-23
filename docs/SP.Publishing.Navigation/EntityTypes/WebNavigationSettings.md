@@ -1,4 +1,5 @@
 # Namespace: SP.Publishing.Navigation
+
 ## Entity Type: WebNavigationSettings
 
 ### Properties
@@ -16,5 +17,5 @@ CreateFriendlyUrlsForNewPages (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-GlobalNavigation | ✖ | ✖ | ✖ | ✔
 CurrentNavigation | ✖ | ✖ | ✖ | ✔
+GlobalNavigation | ✖ | ✖ | ✖ | ✔

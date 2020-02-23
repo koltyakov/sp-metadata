@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Likes
+
 ## Entity Types
 
 **Availability matrix**

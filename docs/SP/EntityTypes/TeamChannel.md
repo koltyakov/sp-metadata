@@ -1,4 +1,5 @@
 # Namespace: SP
+
 ## Entity Type: TeamChannel
 
 ### Properties
@@ -7,6 +8,6 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-groupId (Edm.Int32) | ✔ | ✖ | ✖ | ✖
 folderId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+groupId (Edm.Int32) | ✔ | ✖ | ✖ | ✖
 

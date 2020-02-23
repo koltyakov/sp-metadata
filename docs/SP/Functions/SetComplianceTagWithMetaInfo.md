@@ -1,0 +1,22 @@
+# Namespace: SP
+
+## Function Import: SetComplianceTagWithMetaInfo
+
+- ReturnType: 
+- IsComposable: false
+- IsBindable: true
+- EntitySet: 
+
+## Parameters
+
+**Availability matrix**
+
+Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
+----------|-----|---------|---------|--------
+blockDelete | ✔ | ✖ | ✖ | ✖
+blockEdit | ✔ | ✖ | ✖ | ✖
+complianceTag | ✔ | ✖ | ✖ | ✖
+complianceTagWrittenTime | ✔ | ✖ | ✖ | ✖
+isTagSuperLock | ✔ | ✖ | ✖ | ✖
+this | ✔ | ✖ | ✖ | ✖
+userEmailAddress | ✔ | ✖ | ✖ | ✖

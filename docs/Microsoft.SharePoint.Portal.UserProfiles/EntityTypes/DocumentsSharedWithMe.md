@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Portal.UserProfiles
+
 ## Entity Type: DocumentsSharedWithMe
 
 ### Properties

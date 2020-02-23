@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.ClientSideComponent
+
 ## Entity Type: HostedAppsManager
 
 ### Properties

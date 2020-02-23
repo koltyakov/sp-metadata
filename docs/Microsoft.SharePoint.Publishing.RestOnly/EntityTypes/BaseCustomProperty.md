@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Publishing.RestOnly
+
 ## Entity Type: BaseCustomProperty
 
 ### Properties

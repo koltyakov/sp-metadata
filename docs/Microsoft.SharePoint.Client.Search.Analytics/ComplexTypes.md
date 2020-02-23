@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Client.Search.Analytics
+
 ## Complex Types
 
 **Availability matrix**

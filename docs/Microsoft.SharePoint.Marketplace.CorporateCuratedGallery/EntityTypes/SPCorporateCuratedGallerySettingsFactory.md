@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery
+
 ## Entity Type: SPCorporateCuratedGallerySettingsFactory
 
 ### Properties

@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Office.Server.ContentCenter
+
 ## Entity Type: SPMachineLearningModelEntityData
 
 ### Properties
@@ -7,13 +8,13 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-ContentTypeName (Edm.String) | ✔ | ✖ | ✖ | ✖
+Accuracy (Edm.Single) | ✔ | ✖ | ✖ | ✖
 ColumnId (Edm.String) | ✔ | ✖ | ✖ | ✖
 ColumnName (Edm.String) | ✔ | ✖ | ✖ | ✖
+ContentTypeGroup (Edm.String) | ✔ | ✖ | ✖ | ✖
 ContentTypeId (Edm.String) | ✔ | ✖ | ✖ | ✖
+ContentTypeName (Edm.String) | ✔ | ✖ | ✖ | ✖
 Explanations (Edm.String) | ✔ | ✖ | ✖ | ✖
 LastTrained (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
 Schemas (Edm.String) | ✔ | ✖ | ✖ | ✖
-Accuracy (Edm.Single) | ✔ | ✖ | ✖ | ✖
-ContentTypeGroup (Edm.String) | ✔ | ✖ | ✖ | ✖
 

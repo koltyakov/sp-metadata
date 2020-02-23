@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Online.SharePoint.TenantAdministration
+
 ## Entity Type: TenantAdminEndpoints
 
 ### Properties

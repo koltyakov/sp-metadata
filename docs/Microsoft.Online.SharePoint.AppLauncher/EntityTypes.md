@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Online.SharePoint.AppLauncher
+
 ## Entity Types
 
 **Availability matrix**

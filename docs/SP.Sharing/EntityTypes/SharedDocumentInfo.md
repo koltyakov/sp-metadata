@@ -1,4 +1,5 @@
 # Namespace: SP.Sharing
+
 ## Entity Type: SharedDocumentInfo
 
 ### Properties
@@ -7,37 +8,37 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
+Author (SP.Sharing.Principal) | ✔ | ✔ | ✖ | ✖
+CallerStack (Edm.String) | ✔ | ✔ | ✖ | ✖
+ContentTypeId (SP.ContentTypeId) | ✔ | ✔ | ✖ | ✖
+DriveAccessToken (Edm.String) | ✔ | ✖ | ✖ | ✖
+DriveAccessTokenV21 (Edm.String) | ✔ | ✖ | ✖ | ✖
+DriveUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
+Editor (SP.Sharing.Principal) | ✔ | ✔ | ✖ | ✖
+Extension (Edm.String) | ✔ | ✔ | ✖ | ✖
 FileLeafRef (Edm.String) | ✔ | ✔ | ✖ | ✖
+FileRef (Edm.String) | ✔ | ✔ | ✖ | ✖
+IsContainer (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+LinkingUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
 ListId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
 ListItemId (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-SiteUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-ThumbnailUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-VideoManifestUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-DriveUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
-ProgId (Edm.String) | ✔ | ✔ | ✖ | ✖
-WebId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
-CallerStack (Edm.String) | ✔ | ✔ | ✖ | ✖
-DriveAccessTokenV21 (Edm.String) | ✔ | ✖ | ✖ | ✖
-LinkingUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-ServerRedirectedEmbedUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-SpItemUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
-UrlPath (Edm.String) | ✔ | ✔ | ✖ | ✖
+MediaBaseUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
+Modified (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
 OfficeBundleGenerate (Edm.String) | ✔ | ✔ | ✖ | ✖
 OfficeBundleGetFragment (Edm.String) | ✔ | ✔ | ✖ | ✖
 PdfConversionUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-UniqueId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
-DriveAccessToken (Edm.String) | ✔ | ✖ | ✖ | ✖
-MediaBaseUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-Modified (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
-SpResourceUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-ServerRedirectedUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-Author (SP.Sharing.Principal) | ✔ | ✔ | ✖ | ✖
-ContentTypeId (SP.ContentTypeId) | ✔ | ✔ | ✖ | ✖
-Extension (Edm.String) | ✔ | ✔ | ✖ | ✖
-FileRef (Edm.String) | ✔ | ✔ | ✖ | ✖
-IsContainer (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+ProgId (Edm.String) | ✔ | ✔ | ✖ | ✖
+ServerRedirectedEmbedUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
 ServerRedirectedPreviewUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-Editor (SP.Sharing.Principal) | ✔ | ✔ | ✖ | ✖
+ServerRedirectedUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
 SiteId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
+SiteUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
+SpItemUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
+SpResourceUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
+ThumbnailUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
 Title (Edm.String) | ✔ | ✔ | ✖ | ✖
+UniqueId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
+UrlPath (Edm.String) | ✔ | ✔ | ✖ | ✖
+VideoManifestUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
+WebId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
 

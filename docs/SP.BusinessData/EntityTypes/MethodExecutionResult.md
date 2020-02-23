@@ -1,4 +1,5 @@
 # Namespace: SP.BusinessData
+
 ## Entity Type: MethodExecutionResult
 
 ### Properties

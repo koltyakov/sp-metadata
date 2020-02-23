@@ -1,4 +1,5 @@
 # Namespace: SP
+
 ## Entity Type: ObjectSharingInformation
 
 ### Properties
@@ -8,16 +9,16 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
 AnonymousEditLink (Edm.String) | ✔ | ✔ | ✔ | ✔
-CanBeShared (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 AnonymousViewLink (Edm.String) | ✔ | ✔ | ✔ | ✔
+CanBeShared (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 CanBeUnshared (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-IsFolder (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+CanManagePermissions (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 HasPendingAccessRequests (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+HasPermissionLevels (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+IsFolder (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+IsSharedWithCurrentUser (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 IsSharedWithGuest (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 IsSharedWithMany (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-CanManagePermissions (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-HasPermissionLevels (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-IsSharedWithCurrentUser (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 IsSharedWithSecurityGroup (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 PendingAccessRequestsLink (Edm.String) | ✔ | ✔ | ✔ | ✔
 SharingLinks (Collection(SP.SharingLinkInfo)) | ✔ | ✔ | ✔ | ✖

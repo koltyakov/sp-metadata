@@ -1,4 +1,5 @@
 # Namespace: SP.MetadataNavigation
+
 ## Entity Type: MetadataNavigationSettings
 
 ### Properties

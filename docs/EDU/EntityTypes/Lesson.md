@@ -1,4 +1,5 @@
 # Namespace: EDU
+
 ## Entity Type: Lesson
 
 ### Properties
@@ -15,8 +16,8 @@ Order (Edm.Int32) | ✖ | ✖ | ✖ | ✔
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Resources | ✖ | ✖ | ✖ | ✔
 Assignments | ✖ | ✖ | ✖ | ✔
 Events | ✖ | ✖ | ✖ | ✔
 Lessons | ✖ | ✖ | ✖ | ✔
 ParentLesson | ✖ | ✖ | ✖ | ✔
+Resources | ✖ | ✖ | ✖ | ✔

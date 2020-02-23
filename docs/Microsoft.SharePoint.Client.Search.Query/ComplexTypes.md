@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Client.Search.Query
+
 ## Complex Types
 
 **Availability matrix**

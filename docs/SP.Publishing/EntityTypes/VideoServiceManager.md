@@ -1,4 +1,5 @@
 # Namespace: SP.Publishing
+
 ## Entity Type: VideoServiceManager
 
 ### Properties
@@ -7,12 +8,12 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-UploadGuidelinesLink (Edm.String) | ✔ | ✖ | ✖ | ✖
-VideoGuidelinesLink (Edm.String) | ✔ | ✖ | ✖ | ✖
 AutomaticMigrationType (Edm.String) | ✔ | ✖ | ✖ | ✖
 CanAdministratePortalByCurrent (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
 CanCreateChannelsByCurrent (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
 CanViewPortalByCurrent (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+UploadGuidelinesLink (Edm.String) | ✔ | ✖ | ✖ | ✖
+VideoGuidelinesLink (Edm.String) | ✔ | ✖ | ✖ | ✖
 
 ### Navigation Properties
 

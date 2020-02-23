@@ -1,4 +1,5 @@
 # Namespace: SP.WebParts
+
 ## Entity Type: LimitedWebPartManager
 
 ### Properties

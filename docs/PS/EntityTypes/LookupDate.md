@@ -1,4 +1,5 @@
 # Namespace: PS
+
 ## Entity Type: LookupDate
 
 ### Properties

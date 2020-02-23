@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Office.Server.ReputationModel
+
 ## Entity Type: Reputation
 
 ### Properties

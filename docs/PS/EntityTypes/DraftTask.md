@@ -1,4 +1,5 @@
 # Namespace: PS
+
 ## Entity Type: DraftTask
 
 ### Properties
@@ -7,51 +8,51 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Name (Edm.String) | ✔ | ✔ | ✔ | ✖
+ActualCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
+ActualFinish (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+ActualStart (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+ActualWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+ActualWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+ActualWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+AddAfterId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
+BudgetWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+BudgetWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+BudgetWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+Completion (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+ConstraintStartEnd (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+ConstraintType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+Cost (Edm.Double) | ✔ | ✔ | ✔ | ✖
+Deadline (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+Duration (Edm.String) | ✔ | ✔ | ✔ | ✖
 DurationMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 DurationTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+Finish (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+FinishText (Edm.String) | ✔ | ✔ | ✔ | ✖
+FixedCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
 IsActive (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 IsEffortDriven (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 IsLockedByManager (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-ActualWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-Cost (Edm.Double) | ✔ | ✔ | ✔ | ✖
-Finish (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-FixedCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
-StartText (Edm.String) | ✔ | ✔ | ✔ | ✖
-TaskType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+IsManual (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+IsMarked (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+IsMilestone (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+LevelingAdjustsAssignments (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+LevelingCanSplit (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+Name (Edm.String) | ✔ | ✔ | ✔ | ✖
 OutlineLevel (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+ParentId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
+PercentComplete (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+PercentPhysicalWorkComplete (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+Priority (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 RemainingDuration (Edm.String) | ✔ | ✔ | ✔ | ✖
 RemainingDurationMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-Start (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-LevelingAdjustsAssignments (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-ParentId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
-Priority (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 RemainingDurationTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-ActualFinish (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-BudgetWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-Deadline (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-Duration (Edm.String) | ✔ | ✔ | ✔ | ✖
+Start (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+StartText (Edm.String) | ✔ | ✔ | ✔ | ✖
+TaskType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 UsePercentPhysicalWorkComplete (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-BudgetWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-IsManual (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-PercentComplete (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-WorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-LevelingCanSplit (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 Work (Edm.String) | ✔ | ✔ | ✔ | ✖
-ActualCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
-ConstraintStartEnd (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-ConstraintType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-IsMarked (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-PercentPhysicalWorkComplete (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 WorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-ActualWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-AddAfterId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
-Completion (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-IsMilestone (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-ActualStart (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-ActualWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-BudgetWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-FinishText (Edm.String) | ✔ | ✔ | ✔ | ✖
+WorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
 
 ### Navigation Properties
 
@@ -59,9 +60,9 @@ FinishText (Edm.String) | ✔ | ✔ | ✔ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
+Assignments | ✔ | ✔ | ✔ | ✖
 Calendar | ✔ | ✔ | ✔ | ✖
 Parent | ✔ | ✔ | ✔ | ✖
 Predecessors | ✔ | ✔ | ✔ | ✖
 StatusManager | ✔ | ✔ | ✔ | ✖
 Successors | ✔ | ✔ | ✔ | ✖
-Assignments | ✔ | ✔ | ✔ | ✖

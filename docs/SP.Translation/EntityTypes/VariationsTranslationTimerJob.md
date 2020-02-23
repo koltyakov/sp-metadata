@@ -1,4 +1,5 @@
 # Namespace: SP.Translation
+
 ## Entity Type: VariationsTranslationTimerJob
 
 ### Properties

@@ -1,4 +1,5 @@
 # Namespace: SP.PageInstrumentation
+
 ## Complex Types
 
 **Availability matrix**

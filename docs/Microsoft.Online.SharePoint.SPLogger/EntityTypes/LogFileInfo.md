@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Online.SharePoint.SPLogger
+
 ## Entity Type: LogFileInfo
 
 ### Properties

@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Online.SharePoint.TenantManagement
+
 ## Entity Types
 
 **Availability matrix**

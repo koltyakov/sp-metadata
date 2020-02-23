@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Webhooks
+
 ## Complex Types
 
 **Availability matrix**

@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.OrgNewsSite
+
 ## Entity Type: OrgNewsSiteApi
 
 ### Properties

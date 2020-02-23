@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Online.SharePoint.TenantAdministration.Internal
+
 ## Entity Type: SPOWebAppServicePrincipalPermissionRequest
 
 ### Properties
@@ -7,13 +8,13 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-PackageApproverName (Edm.String) | ✔ | ✖ | ✖ | ✖
-Scope (Edm.String) | ✔ | ✖ | ✖ | ✖
-TimeRequested (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
 Id (Edm.Guid) | ✔ | ✖ | ✖ | ✖
 IsDomainIsolated (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-Resource (Edm.String) | ✔ | ✖ | ✖ | ✖
-ResourceId (Edm.String) | ✔ | ✖ | ✖ | ✖
+PackageApproverName (Edm.String) | ✔ | ✖ | ✖ | ✖
 PackageName (Edm.String) | ✔ | ✖ | ✖ | ✖
 PackageVersion (Edm.String) | ✔ | ✖ | ✖ | ✖
+Resource (Edm.String) | ✔ | ✖ | ✖ | ✖
+ResourceId (Edm.String) | ✔ | ✖ | ✖ | ✖
+Scope (Edm.String) | ✔ | ✖ | ✖ | ✖
+TimeRequested (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
 

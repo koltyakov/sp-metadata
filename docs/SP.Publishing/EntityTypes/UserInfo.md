@@ -1,4 +1,5 @@
 # Namespace: SP.Publishing
+
 ## Entity Type: UserInfo
 
 ### Properties

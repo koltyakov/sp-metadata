@@ -1,4 +1,5 @@
 # Namespace: SP.Translation
+
 ## Complex Types
 
 **Availability matrix**

@@ -1,4 +1,5 @@
 # Namespace: SP.SiteHealth
+
 ## Complex Types
 
 **Availability matrix**

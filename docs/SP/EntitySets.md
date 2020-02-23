@@ -1,4 +1,5 @@
 # Namespace: SP
+
 ## Entity Sets
 
 **Availability matrix**

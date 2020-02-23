@@ -84,6 +84,7 @@ type FunctionImport struct {
 	Name         string     `xml:"Name,attr"`
 	ReturnType   string     `xml:"ReturnType,attr"`
 	IsComposable bool       `xml:"IsComposable,attr"`
+	IsBindable   bool       `xml:"IsBindable,attr"`
 	EntitySet    string     `xml:"EntitySet,attr"`
 	Parameters   []Property `xml:"Parameter"`
 }

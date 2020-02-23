@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Yammer
+
 ## Entity Types
 
 **Availability matrix**

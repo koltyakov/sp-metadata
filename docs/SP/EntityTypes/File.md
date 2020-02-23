@@ -1,4 +1,5 @@
 # Namespace: SP
+
 ## Entity Type: File
 
 ### Properties
@@ -8,32 +9,32 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
 ActivityCapabilities (Microsoft.SharePoint.Activities.ActivityCapabilities) | ✔ | ✔ | ✖ | ✖
-ETag (Edm.String) | ✔ | ✔ | ✔ | ✔
-PageRenderType (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-ListId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
-LinkingUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
-Title (Edm.String) | ✔ | ✔ | ✔ | ✔
-UniqueId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
 CheckInComment (Edm.String) | ✔ | ✔ | ✔ | ✔
 CheckOutType (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-LinkingUri (Edm.String) | ✔ | ✔ | ✖ | ✖
-ServerRelativePath (SP.ResourcePath) | ✔ | ✔ | ✖ | ✖
-CustomizedPageStatus (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-MajorVersion (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-UIVersion (Edm.Int32) | ✔ | ✔ | ✔ | ✔
 ContentTag (Edm.String) | ✔ | ✔ | ✔ | ✔
-Level (Edm.Byte) | ✔ | ✔ | ✔ | ✔
-ServerRelativeUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
-TimeLastModified (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
-MinorVersion (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-UIVersionLabel (Edm.String) | ✔ | ✔ | ✔ | ✔
-WebId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
-SiteId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
-TimeCreated (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
+CustomizedPageStatus (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+ETag (Edm.String) | ✔ | ✔ | ✔ | ✔
 Exists (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 IrmEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 Length (Edm.Int64) | ✔ | ✔ | ✔ | ✔
+Level (Edm.Byte) | ✔ | ✔ | ✔ | ✔
+LinkingUri (Edm.String) | ✔ | ✔ | ✖ | ✖
+LinkingUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
+ListId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
+MajorVersion (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+MinorVersion (Edm.Int32) | ✔ | ✔ | ✔ | ✔
 Name (Edm.String) | ✔ | ✔ | ✔ | ✔
+PageRenderType (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+ServerRelativePath (SP.ResourcePath) | ✔ | ✔ | ✖ | ✖
+ServerRelativeUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+SiteId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
+TimeCreated (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
+TimeLastModified (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
+Title (Edm.String) | ✔ | ✔ | ✔ | ✔
+UIVersion (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+UIVersionLabel (Edm.String) | ✔ | ✔ | ✔ | ✔
+UniqueId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
+WebId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
 
 ### Navigation Properties
 
@@ -41,13 +42,13 @@ Name (Edm.String) | ✔ | ✔ | ✔ | ✔
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-VersionEvents | ✔ | ✔ | ✖ | ✖
-EffectiveInformationRightsManagementSettings | ✔ | ✔ | ✔ | ✖
-ListItemAllFields | ✔ | ✔ | ✔ | ✔
-ModifiedBy | ✔ | ✔ | ✔ | ✔
-LockedByUser | ✔ | ✔ | ✔ | ✔
-Properties | ✔ | ✔ | ✔ | ✖
-Versions | ✔ | ✔ | ✔ | ✔
 Author | ✔ | ✔ | ✔ | ✔
 CheckedOutByUser | ✔ | ✔ | ✔ | ✔
+EffectiveInformationRightsManagementSettings | ✔ | ✔ | ✔ | ✖
 InformationRightsManagementSettings | ✔ | ✔ | ✔ | ✖
+ListItemAllFields | ✔ | ✔ | ✔ | ✔
+LockedByUser | ✔ | ✔ | ✔ | ✔
+ModifiedBy | ✔ | ✔ | ✔ | ✔
+Properties | ✔ | ✔ | ✔ | ✖
+VersionEvents | ✔ | ✔ | ✖ | ✖
+Versions | ✔ | ✔ | ✔ | ✔

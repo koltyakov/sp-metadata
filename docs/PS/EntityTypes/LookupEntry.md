@@ -1,4 +1,5 @@
 # Namespace: PS
+
 ## Entity Type: LookupEntry
 
 ### Properties

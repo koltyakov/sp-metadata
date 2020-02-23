@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Client.Search.ContentPush
+
 ## Entity Type: PushTenantManager
 
 ### Properties

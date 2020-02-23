@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Client.Search.Analytics
+
 ## Entity Types
 
 **Availability matrix**

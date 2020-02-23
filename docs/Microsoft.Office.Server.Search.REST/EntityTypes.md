@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Office.Server.Search.REST
+
 ## Entity Types
 
 **Availability matrix**

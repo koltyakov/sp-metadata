@@ -1,4 +1,5 @@
 # Namespace: PS
+
 ## Entity Type: StatusAssignment
 
 ### Properties
@@ -7,38 +8,38 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-RemainingWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-ActualOvertimeMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-RemainingOvertimeMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-RegularWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-RemainingWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-Comments (Edm.String) | ✔ | ✔ | ✔ | ✖
-OvertimeMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
-Name (Edm.String) | ✔ | ✔ | ✔ | ✖
-PercentComplete (Edm.Int16) | ✔ | ✔ | ✔ | ✖
-RemainingOvertime (Edm.String) | ✔ | ✔ | ✔ | ✖
-RemainingOvertimeTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-Start (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-ActualOvertimeTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-ActualWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-ActualOvertime (Edm.String) | ✔ | ✔ | ✔ | ✖
-WorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-Overtime (Edm.String) | ✔ | ✔ | ✔ | ✖
-OvertimeTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-RegularWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 ActualFinish (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-ActualWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-Work (Edm.String) | ✔ | ✔ | ✔ | ✖
+ActualOvertime (Edm.String) | ✔ | ✔ | ✔ | ✖
+ActualOvertimeMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+ActualOvertimeTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
 ActualStart (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-IsConfirmed (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-Finish (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-Modified (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-RegularWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-RemainingWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-WorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+ActualWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+ActualWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 ActualWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
 ApprovalStatus (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+Comments (Edm.String) | ✔ | ✔ | ✔ | ✖
+Finish (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
+IsConfirmed (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+Modified (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+Name (Edm.String) | ✔ | ✔ | ✔ | ✖
+Overtime (Edm.String) | ✔ | ✔ | ✔ | ✖
+OvertimeMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+OvertimeTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+PercentComplete (Edm.Int16) | ✔ | ✔ | ✔ | ✖
+RegularWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+RegularWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+RegularWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+RemainingOvertime (Edm.String) | ✔ | ✔ | ✔ | ✖
+RemainingOvertimeMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+RemainingOvertimeTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+RemainingWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+RemainingWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+RemainingWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+Start (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+Work (Edm.String) | ✔ | ✔ | ✔ | ✖
+WorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+WorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
 
 ### Navigation Properties
 
@@ -46,8 +47,8 @@ ApprovalStatus (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
+CustomFields | ✔ | ✔ | ✔ | ✖
+History | ✔ | ✔ | ✔ | ✖
 Project | ✔ | ✔ | ✔ | ✖
 Resource | ✔ | ✔ | ✔ | ✖
 Task | ✔ | ✔ | ✔ | ✖
-CustomFields | ✔ | ✔ | ✔ | ✖
-History | ✔ | ✔ | ✔ | ✖

@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Client.Search.Administration
+
 ## Entity Type: SearchObjectOwner
 
 ### Properties

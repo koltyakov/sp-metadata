@@ -1,4 +1,5 @@
 # Namespace: PS
+
 ## Entity Types
 
 **Availability matrix**

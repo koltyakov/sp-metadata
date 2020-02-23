@@ -1,4 +1,5 @@
 # Namespace: SP.MetadataNavigation
+
 ## Complex Types
 
 **Availability matrix**

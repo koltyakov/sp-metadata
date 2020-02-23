@@ -1,4 +1,5 @@
 # Namespace: SP.Workflow
+
 ## Entity Type: SPWorkflowManager
 
 ### Properties

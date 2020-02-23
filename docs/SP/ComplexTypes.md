@@ -1,4 +1,5 @@
 # Namespace: SP
+
 ## Complex Types
 
 **Availability matrix**

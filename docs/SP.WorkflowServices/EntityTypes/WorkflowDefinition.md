@@ -1,4 +1,5 @@
 # Namespace: SP.WorkflowServices
+
 ## Entity Type: WorkflowDefinition
 
 ### Properties
@@ -7,18 +8,18 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-DisplayName (Edm.String) | ✔ | ✔ | ✔ | ✔
-RestrictToType (Edm.String) | ✔ | ✔ | ✔ | ✔
-Xaml (Edm.String) | ✔ | ✔ | ✔ | ✔
+AssociationUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
 Description (Edm.String) | ✔ | ✔ | ✔ | ✔
-RestrictToScope (Edm.String) | ✔ | ✔ | ✔ | ✔
+DisplayName (Edm.String) | ✔ | ✔ | ✔ | ✔
 DraftVersion (Edm.String) | ✔ | ✔ | ✔ | ✔
-RequiresAssociationForm (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+FormField (Edm.String) | ✔ | ✔ | ✔ | ✔
 Id (Edm.Guid) | ✔ | ✔ | ✔ | ✔
 InitiationUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
 Properties (Collection(SP.KeyValue)) | ✔ | ✔ | ✔ | ✔
 Published (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+RequiresAssociationForm (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 RequiresInitiationForm (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-AssociationUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
-FormField (Edm.String) | ✔ | ✔ | ✔ | ✔
+RestrictToScope (Edm.String) | ✔ | ✔ | ✔ | ✔
+RestrictToType (Edm.String) | ✔ | ✔ | ✔ | ✔
+Xaml (Edm.String) | ✔ | ✔ | ✔ | ✔
 

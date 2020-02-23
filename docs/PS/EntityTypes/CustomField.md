@@ -1,4 +1,5 @@
 # Namespace: PS
+
 ## Entity Type: CustomField
 
 ### Properties
@@ -7,30 +8,30 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
+AppAlternateId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
+DepartmentId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
+Description (Edm.String) | ✔ | ✔ | ✔ | ✖
+EntityTypeId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
+FieldType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 Formula (Edm.String) | ✔ | ✔ | ✔ | ✖
+GraphicalIndicatorNonSummary (Edm.String) | ✔ | ✖ | ✔ | ✖
+GraphicalIndicatorProjectSummary (Edm.String) | ✔ | ✖ | ✔ | ✖
+GraphicalIndicatorSummary (Edm.String) | ✔ | ✖ | ✔ | ✖
 Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
+InternalName (Edm.String) | ✔ | ✔ | ✔ | ✖
 IsEditableInVisibility (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+IsLeafOnly (Edm.Boolean) | ✔ | ✖ | ✔ | ✖
 IsMultilineText (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+IsRequired (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 IsWorkflowControlled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 LookupAllowMultiSelect (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-AppAlternateId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
-EntityTypeId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
-UseFieldForMatching (Edm.Boolean) | ✔ | ✖ | ✔ | ✖
 LookupDefaultValue (Edm.Guid) | ✔ | ✔ | ✔ | ✖
 LookupTableId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
+Name (Edm.String) | ✔ | ✔ | ✔ | ✖
 RollsDownToAssignments (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 RollupType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-Description (Edm.String) | ✔ | ✔ | ✔ | ✖
-GraphicalIndicatorSummary (Edm.String) | ✔ | ✖ | ✔ | ✖
-Name (Edm.String) | ✔ | ✔ | ✔ | ✖
-DepartmentId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
-GraphicalIndicatorNonSummary (Edm.String) | ✔ | ✖ | ✔ | ✖
-InternalName (Edm.String) | ✔ | ✔ | ✔ | ✖
-IsLeafOnly (Edm.Boolean) | ✔ | ✖ | ✔ | ✖
-IsRequired (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 ShowToolTip (Edm.Boolean) | ✔ | ✖ | ✔ | ✖
-FieldType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-GraphicalIndicatorProjectSummary (Edm.String) | ✔ | ✖ | ✔ | ✖
+UseFieldForMatching (Edm.Boolean) | ✔ | ✖ | ✔ | ✖
 
 ### Navigation Properties
 

@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.TenantCdn
+
 ## Entity Type: TenantCdnApi
 
 ### Properties

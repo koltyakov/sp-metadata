@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Office.Server.ReputationModel
+
 ## Entity Types
 
 **Availability matrix**

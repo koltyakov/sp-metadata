@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.ClientSideComponent
+
 ## Complex Types
 
 **Availability matrix**

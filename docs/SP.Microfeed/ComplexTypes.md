@@ -1,4 +1,5 @@
 # Namespace: SP.Microfeed
+
 ## Complex Types
 
 **Availability matrix**

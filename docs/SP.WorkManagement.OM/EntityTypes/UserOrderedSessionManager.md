@@ -1,4 +1,5 @@
 # Namespace: SP.WorkManagement.OM
+
 ## Entity Type: UserOrderedSessionManager
 
 ### Properties

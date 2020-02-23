@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Activities
+
 ## Complex Types
 
 **Availability matrix**

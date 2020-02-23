@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Comments
+
 ## Entity Types
 
 **Availability matrix**

@@ -1,4 +1,5 @@
 # Namespace: SP.SiteHealth
+
 ## Entity Type: SiteHealthSummary
 
 ### Properties

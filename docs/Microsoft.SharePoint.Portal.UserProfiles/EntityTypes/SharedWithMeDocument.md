@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Portal.UserProfiles
+
 ## Entity Type: SharedWithMeDocument
 
 ### Properties
@@ -7,52 +8,52 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-FileRef (Edm.String) | ✔ | ✔ | ✔ | ✖
-ListItemId (Edm.String) | ✔ | ✔ | ✔ | ✖
-ServerRedirectedUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
-SharedDateTimeUTC (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
-SiteId (Edm.String) | ✔ | ✔ | ✔ | ✖
-Title (Edm.String) | ✔ | ✔ | ✔ | ✖
-WebTemplateId (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-CallerStack (Edm.String) | ✔ | ✖ | ✖ | ✖
-ModifiedDateTimeUTC (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
-ThumbnailUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
-VideoManifestUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
-MediaBaseUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
-Editors (Collection(Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocumentUser)) | ✔ | ✔ | ✔ | ✖
-Modified (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-ParentId (Edm.String) | ✔ | ✔ | ✖ | ✖
-SpResourceUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
-WebUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
 Authors (Collection(Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocumentUser)) | ✔ | ✔ | ✔ | ✖
-Id (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-IsContainer (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-OfficeBundleGenerate (Edm.String) | ✔ | ✖ | ✖ | ✖
-ParentLink (Edm.String) | ✔ | ✔ | ✔ | ✖
-TenantId (Edm.String) | ✔ | ✔ | ✖ | ✖
-CreatedDateTimeUTC (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
+CallerStack (Edm.String) | ✔ | ✖ | ✖ | ✖
+ChildCount (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+ClickThroughId (Edm.String) | ✔ | ✔ | ✖ | ✖
 ContentTypeId (SP.ContentTypeId) | ✔ | ✔ | ✔ | ✖
 CreatedDateTime (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
+CreatedDateTimeUTC (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
 DocId (Edm.String) | ✔ | ✔ | ✔ | ✖
-PdfConversionUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
-ServerRedirectedPreviewUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
-ClickThroughId (Edm.String) | ✔ | ✔ | ✖ | ✖
-ProgId (Edm.String) | ✔ | ✔ | ✔ | ✖
-SiteUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
-TenantName (Edm.String) | ✔ | ✔ | ✖ | ✖
-UrlPath (Edm.String) | ✔ | ✔ | ✔ | ✖
-WebId (Edm.String) | ✔ | ✔ | ✔ | ✖
-IsMyDocument (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-ListId (Edm.String) | ✔ | ✔ | ✔ | ✖
-ServerRedirectedEmbedUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
-SharedWithInternal (Collection(Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocumentUser)) | ✔ | ✔ | ✔ | ✖
-UniqueId (Edm.String) | ✔ | ✔ | ✔ | ✖
-ChildCount (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+Editors (Collection(Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocumentUser)) | ✔ | ✔ | ✔ | ✖
+Extension (Edm.String) | ✔ | ✔ | ✔ | ✖
 FileLeafRef (Edm.String) | ✔ | ✔ | ✔ | ✖
+FileRef (Edm.String) | ✔ | ✔ | ✔ | ✖
+Id (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+IsContainer (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+IsMyDocument (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 ItemSize (Edm.Double) | ✔ | ✔ | ✖ | ✖
 LinkingUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
+ListId (Edm.String) | ✔ | ✔ | ✔ | ✖
+ListItemId (Edm.String) | ✔ | ✔ | ✔ | ✖
 LocalItemUniqueId (Edm.String) | ✔ | ✖ | ✖ | ✖
+MediaBaseUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
+Modified (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+ModifiedDateTimeUTC (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
+OfficeBundleGenerate (Edm.String) | ✔ | ✖ | ✖ | ✖
 OfficeBundleGetFragment (Edm.String) | ✔ | ✖ | ✖ | ✖
+ParentId (Edm.String) | ✔ | ✔ | ✖ | ✖
+ParentLink (Edm.String) | ✔ | ✔ | ✔ | ✖
+PdfConversionUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
+ProgId (Edm.String) | ✔ | ✔ | ✔ | ✖
 SWMSourceFlag (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-Extension (Edm.String) | ✔ | ✔ | ✔ | ✖
+ServerRedirectedEmbedUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
+ServerRedirectedPreviewUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
+ServerRedirectedUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
+SharedDateTimeUTC (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
+SharedWithInternal (Collection(Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocumentUser)) | ✔ | ✔ | ✔ | ✖
+SiteId (Edm.String) | ✔ | ✔ | ✔ | ✖
+SiteUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
+SpResourceUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
+TenantId (Edm.String) | ✔ | ✔ | ✖ | ✖
+TenantName (Edm.String) | ✔ | ✔ | ✖ | ✖
+ThumbnailUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
+Title (Edm.String) | ✔ | ✔ | ✔ | ✖
+UniqueId (Edm.String) | ✔ | ✔ | ✔ | ✖
+UrlPath (Edm.String) | ✔ | ✔ | ✔ | ✖
+VideoManifestUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
+WebId (Edm.String) | ✔ | ✔ | ✔ | ✖
+WebTemplateId (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+WebUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
 

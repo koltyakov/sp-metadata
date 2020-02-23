@@ -1,4 +1,5 @@
 # Namespace: SP.Taxonomy
+
 ## Complex Types
 
 **Availability matrix**

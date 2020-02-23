@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.WebControls
+
 ## Entity Type: ResourceManifestInformation
 
 ### Properties

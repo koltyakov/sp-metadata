@@ -1,4 +1,5 @@
 # Namespace: PS
+
 ## Entity Type: ProjectServer
 
 ### Properties
@@ -19,21 +20,21 @@ ProjectsPageSize (Edm.Int32) | ✔ | ✔ | ✖ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-EnterpriseProjectTypes | ✔ | ✔ | ✔ | ✖
-Events | ✔ | ✔ | ✔ | ✖
-WorkflowDesigner | ✔ | ✔ | ✔ | ✖
-EntityTypes | ✔ | ✔ | ✔ | ✖
-ProjectDetailPages | ✔ | ✔ | ✔ | ✖
-Settings | ✔ | ✔ | ✖ | ✖
 Calendars | ✔ | ✔ | ✔ | ✖
+CustomFields | ✔ | ✔ | ✔ | ✖
+EnterpriseProjectTypes | ✔ | ✔ | ✔ | ✖
 EnterpriseResources | ✔ | ✔ | ✔ | ✖
+EntityTypes | ✔ | ✔ | ✔ | ✖
+EventHandlers | ✔ | ✔ | ✔ | ✖
+Events | ✔ | ✔ | ✔ | ✖
 LookupTables | ✔ | ✔ | ✔ | ✖
-Projects | ✔ | ✔ | ✔ | ✖
+Phases | ✔ | ✔ | ✔ | ✖
+ProjectDetailPages | ✔ | ✔ | ✔ | ✖
 ProjectWorkflowInstances | ✔ | ✔ | ✖ | ✖
+Projects | ✔ | ✔ | ✔ | ✖
+Settings | ✔ | ✔ | ✖ | ✖
 Stages | ✔ | ✔ | ✔ | ✖
 TimeSheetPeriods | ✔ | ✔ | ✔ | ✖
-WorkflowActivities | ✔ | ✔ | ✔ | ✖
-CustomFields | ✔ | ✔ | ✔ | ✖
-EventHandlers | ✔ | ✔ | ✔ | ✖
-Phases | ✔ | ✔ | ✔ | ✖
 UserPermissions | ✔ | ✔ | ✖ | ✖
+WorkflowActivities | ✔ | ✔ | ✔ | ✖
+WorkflowDesigner | ✔ | ✔ | ✔ | ✖

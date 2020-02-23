@@ -1,4 +1,5 @@
 # Namespace: SP.SiteHealth
+
 ## Entity Types
 
 **Availability matrix**

@@ -1,4 +1,5 @@
 # Namespace: SP
+
 ## Entity Type: List
 
 ### Properties
@@ -7,83 +8,83 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-DefaultContentApprovalWorkflowId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
-DraftVersionVisibility (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+AdditionalUXProperties (Edm.String) | ✔ | ✖ | ✖ | ✖
+AllowContentTypes (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+AllowDeletion (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+BaseTemplate (Edm.Int32) | ✔ | ✔ | ✔ | ✔
 BaseType (Edm.Int32) | ✔ | ✔ | ✔ | ✔
 BrowserFileHandling (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+Color (Edm.String) | ✔ | ✖ | ✖ | ✖
+ContentTypesEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+CrawlNonDefaultViews (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+Created (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
+CurrentChangeToken (SP.ChangeToken) | ✔ | ✔ | ✔ | ✖
+CustomActionElements (SP.CustomActionElementCollection) | ✔ | ✔ | ✖ | ✖
+DataSource (SP.ListDataSource) | ✔ | ✔ | ✔ | ✔
+DefaultContentApprovalWorkflowId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
+DefaultDisplayFormUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+DefaultEditFormUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+DefaultItemOpenUseListSetting (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+DefaultNewFormUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+DefaultViewPath (SP.ResourcePath) | ✔ | ✔ | ✖ | ✖
+DefaultViewUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
 Description (Edm.String) | ✔ | ✔ | ✔ | ✔
-EnableAssignToEmail (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-EnableModeration (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-Hidden (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-ListExperienceOptions (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-ListItemEntityTypeFullName (Edm.String) | ✔ | ✔ | ✔ | ✔
-AdditionalUXProperties (Edm.String) | ✔ | ✖ | ✖ | ✖
-ServerTemplateCanCreateFolders (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-ImageUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
-ParentWebPath (SP.ResourcePath) | ✔ | ✔ | ✖ | ✖
-TemplateFeatureId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
-Title (Edm.String) | ✔ | ✔ | ✔ | ✔
-WriteSecurity (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-EntityTypeName (Edm.String) | ✔ | ✔ | ✔ | ✔
-IsApplicationList (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-ReadSecurity (Edm.Int32) | ✔ | ✔ | ✖ | ✖
 Direction (Edm.String) | ✔ | ✔ | ✔ | ✔
+DisableGridEditing (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+DocumentTemplateUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+DraftVersionVisibility (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+EffectiveBasePermissions (SP.BasePermissions) | ✔ | ✔ | ✔ | ✔
 EffectiveBasePermissionsForUI (SP.BasePermissions) | ✔ | ✔ | ✔ | ✔
+EnableAssignToEmail (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+EnableAttachments (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+EnableFolderCreation (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+EnableMinorVersions (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+EnableModeration (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+EnableRequestSignOff (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+EnableVersioning (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+EntityTypeName (Edm.String) | ✔ | ✔ | ✔ | ✔
+ExcludeFromOfflineClient (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+ExemptFromBlockDownloadOfNonViewableFiles (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 FileSavePostProcessingEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+ForceCheckout (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+HasExternalDataSource (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+Hidden (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+Icon (Edm.String) | ✔ | ✖ | ✖ | ✖
+Id (Edm.Guid) | ✔ | ✔ | ✔ | ✔
+ImagePath (SP.ResourcePath) | ✔ | ✔ | ✖ | ✖
+ImageUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+IrmEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+IrmExpire (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+IrmReject (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+IsApplicationList (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+IsCatalog (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+IsEnterpriseGalleryLibrary (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+IsPrivate (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 IsSiteAssetsLibrary (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 IsSystemList (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-DefaultViewUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
-AllowContentTypes (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-Icon (Edm.String) | ✔ | ✖ | ✖ | ✖
-ImagePath (SP.ResourcePath) | ✔ | ✔ | ✖ | ✖
-IrmReject (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 ItemCount (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-NoCrawl (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-OnQuickLaunch (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-EnableFolderCreation (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-DisableGridEditing (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-EnableRequestSignOff (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-PageRenderType (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-ValidationMessage (Edm.String) | ✔ | ✔ | ✔ | ✔
-DefaultNewFormUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
-ContentTypesEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-CurrentChangeToken (SP.ChangeToken) | ✔ | ✔ | ✔ | ✖
-DefaultItemOpenUseListSetting (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-EffectiveBasePermissions (SP.BasePermissions) | ✔ | ✔ | ✔ | ✔
-EnableAttachments (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-EnableMinorVersions (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-IrmExpire (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-AllowDeletion (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-MajorWithMinorVersionsLimit (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-IsCatalog (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-ParserDisabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-ExemptFromBlockDownloadOfNonViewableFiles (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-DefaultEditFormUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
-ForceCheckout (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-DefaultDisplayFormUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
-DataSource (SP.ListDataSource) | ✔ | ✔ | ✔ | ✔
-Created (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
-EnableVersioning (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-HasExternalDataSource (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-ParentWebUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
-Color (Edm.String) | ✔ | ✖ | ✖ | ✖
-CrawlNonDefaultViews (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-CustomActionElements (SP.CustomActionElementCollection) | ✔ | ✔ | ✖ | ✖
-DefaultViewPath (SP.ResourcePath) | ✔ | ✔ | ✖ | ✖
-IsEnterpriseGalleryLibrary (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-LastItemUserModifiedDate (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
-BaseTemplate (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-ExcludeFromOfflineClient (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-Id (Edm.Guid) | ✔ | ✔ | ✔ | ✔
-IsPrivate (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 LastItemDeletedDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
 LastItemModifiedDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
-MultipleDataList (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-SchemaXml (Edm.String) | ✔ | ✔ | ✔ | ✔
-DocumentTemplateUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+LastItemUserModifiedDate (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
+ListExperienceOptions (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+ListItemEntityTypeFullName (Edm.String) | ✔ | ✔ | ✔ | ✔
 MajorVersionLimit (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+MajorWithMinorVersionsLimit (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+MultipleDataList (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+NoCrawl (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+OnQuickLaunch (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+PageRenderType (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+ParentWebPath (SP.ResourcePath) | ✔ | ✔ | ✖ | ✖
+ParentWebUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+ParserDisabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+ReadSecurity (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+SchemaXml (Edm.String) | ✔ | ✔ | ✔ | ✔
+ServerTemplateCanCreateFolders (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+TemplateFeatureId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
+Title (Edm.String) | ✔ | ✔ | ✔ | ✔
 ValidationFormula (Edm.String) | ✔ | ✔ | ✔ | ✔
-IrmEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+ValidationMessage (Edm.String) | ✔ | ✔ | ✔ | ✔
+WriteSecurity (Edm.Int32) | ✔ | ✔ | ✖ | ✖
 
 ### Navigation Properties
 
@@ -91,21 +92,21 @@ IrmEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Forms | ✔ | ✔ | ✔ | ✔
-WorkflowAssociations | ✔ | ✔ | ✔ | ✔
-EventReceivers | ✔ | ✔ | ✔ | ✔
-InformationRightsManagementSettings | ✔ | ✔ | ✔ | ✔
-Items | ✔ | ✔ | ✔ | ✔
-TitleResource | ✔ | ✔ | ✔ | ✖
-UserCustomActions | ✔ | ✔ | ✔ | ✔
-Views | ✔ | ✔ | ✔ | ✔
 Activities | ✖ | ✔ | ✖ | ✖
+Author | ✔ | ✖ | ✖ | ✖
+ContentTypes | ✔ | ✔ | ✔ | ✔
 CreatablesInfo | ✔ | ✔ | ✔ | ✖
-Fields | ✔ | ✔ | ✔ | ✔
 DefaultView | ✔ | ✔ | ✔ | ✔
 DescriptionResource | ✔ | ✔ | ✔ | ✖
+EventReceivers | ✔ | ✔ | ✔ | ✔
+Fields | ✔ | ✔ | ✔ | ✔
+Forms | ✔ | ✔ | ✔ | ✔
+InformationRightsManagementSettings | ✔ | ✔ | ✔ | ✔
+Items | ✔ | ✔ | ✔ | ✔
 ParentWeb | ✔ | ✔ | ✔ | ✔
 RootFolder | ✔ | ✔ | ✔ | ✔
 Subscriptions | ✔ | ✔ | ✖ | ✖
-Author | ✔ | ✖ | ✖ | ✖
-ContentTypes | ✔ | ✔ | ✔ | ✔
+TitleResource | ✔ | ✔ | ✔ | ✖
+UserCustomActions | ✔ | ✔ | ✔ | ✔
+Views | ✔ | ✔ | ✔ | ✔
+WorkflowAssociations | ✔ | ✔ | ✔ | ✔

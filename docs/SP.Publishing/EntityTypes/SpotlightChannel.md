@@ -1,4 +1,5 @@
 # Namespace: SP.Publishing
+
 ## Entity Type: SpotlightChannel
 
 ### Properties
@@ -7,11 +8,11 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Title (Edm.String) | ✔ | ✖ | ✖ | ✖
-VideoLibraryServerRelativeUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
 ChannelId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
 Id (Edm.Int32) | ✔ | ✖ | ✖ | ✖
 TileHtmlColor (Edm.String) | ✔ | ✖ | ✖ | ✖
+Title (Edm.String) | ✔ | ✖ | ✖ | ✖
+VideoLibraryServerRelativeUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
 
 ### Navigation Properties
 

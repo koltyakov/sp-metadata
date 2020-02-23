@@ -1,4 +1,5 @@
 # Namespace: SP.MicroService
+
 ## Entity Type: MicroServiceUtilities
 
 ### Properties

@@ -1,4 +1,5 @@
 # Namespace: MS.FileServices
+
 ## Entity Type: Folder
 
 ### Properties

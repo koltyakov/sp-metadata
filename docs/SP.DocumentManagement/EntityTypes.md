@@ -1,4 +1,5 @@
 # Namespace: SP.DocumentManagement
+
 ## Entity Types
 
 **Availability matrix**

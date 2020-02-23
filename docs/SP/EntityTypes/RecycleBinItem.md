@@ -1,4 +1,5 @@
 # Namespace: SP
+
 ## Entity Type: RecycleBinItem
 
 ### Properties
@@ -7,21 +8,21 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-DeletedDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
-LeafName (Edm.String) | ✔ | ✔ | ✔ | ✔
-Title (Edm.String) | ✔ | ✔ | ✔ | ✔
+AuthorEmail (Edm.String) | ✔ | ✔ | ✔ | ✖
 AuthorName (Edm.String) | ✔ | ✔ | ✔ | ✖
 DeletedByEmail (Edm.String) | ✔ | ✔ | ✔ | ✖
+DeletedByName (Edm.String) | ✔ | ✔ | ✔ | ✖
+DeletedDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
 DeletedDateLocalFormatted (Edm.String) | ✔ | ✔ | ✔ | ✖
-ItemType (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-Size (Edm.Int64) | ✔ | ✔ | ✔ | ✔
 DirName (Edm.String) | ✔ | ✔ | ✔ | ✔
 DirNamePath (SP.ResourcePath) | ✔ | ✔ | ✖ | ✖
-AuthorEmail (Edm.String) | ✔ | ✔ | ✔ | ✖
-DeletedByName (Edm.String) | ✔ | ✔ | ✔ | ✖
 Id (Edm.Guid) | ✔ | ✔ | ✔ | ✔
 ItemState (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+ItemType (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+LeafName (Edm.String) | ✔ | ✔ | ✔ | ✔
 LeafNamePath (SP.ResourcePath) | ✔ | ✔ | ✖ | ✖
+Size (Edm.Int64) | ✔ | ✔ | ✔ | ✔
+Title (Edm.String) | ✔ | ✔ | ✔ | ✔
 
 ### Navigation Properties
 

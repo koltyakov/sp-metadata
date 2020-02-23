@@ -1,4 +1,5 @@
 # Namespace: SP.Internal
+
 ## Entity Type: FlowPermissions
 
 ### Properties

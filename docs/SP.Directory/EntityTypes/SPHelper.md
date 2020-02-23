@@ -1,4 +1,5 @@
 # Namespace: SP.Directory
+
 ## Entity Type: SPHelper
 
 ### Properties

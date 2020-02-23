@@ -1,4 +1,5 @@
 # Namespace: SP.Directory.Provider
+
 ## Entity Type: DirectoryNotification
 
 ### Properties

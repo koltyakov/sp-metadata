@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Internal
+
 ## Complex Types
 
 **Availability matrix**

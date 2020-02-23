@@ -1,4 +1,5 @@
 # Namespace: OBA.Server.ServerWrapper
+
 ## Entity Types
 
 **Availability matrix**

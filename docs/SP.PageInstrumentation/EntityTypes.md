@@ -1,4 +1,5 @@
 # Namespace: SP.PageInstrumentation
+
 ## Entity Types
 
 **Availability matrix**

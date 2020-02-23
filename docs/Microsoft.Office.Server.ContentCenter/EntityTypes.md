@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Office.Server.ContentCenter
+
 ## Entity Types
 
 **Availability matrix**

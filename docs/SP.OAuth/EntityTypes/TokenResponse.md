@@ -1,4 +1,5 @@
 # Namespace: SP.OAuth
+
 ## Entity Type: TokenResponse
 
 ### Properties

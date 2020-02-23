@@ -1,4 +1,5 @@
 # Namespace: SP
+
 ## Entity Type: AppInstance
 
 ### Properties
@@ -7,19 +8,19 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-ImageFallbackUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
-PackageFingerprint (Edm.Binary) | ✔ | ✔ | ✔ | ✖
+AppPrincipalId (Edm.String) | ✔ | ✔ | ✔ | ✔
 AppWebFullUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+Id (Edm.Guid) | ✔ | ✔ | ✔ | ✔
+ImageFallbackUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
 ImageUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
 InError (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-StartPage (Edm.String) | ✔ | ✔ | ✔ | ✔
+PackageFingerprint (Edm.Binary) | ✔ | ✔ | ✔ | ✖
 ProductId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
-WebId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
-Id (Edm.Guid) | ✔ | ✔ | ✔ | ✔
 RemoteAppUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
-Status (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-Title (Edm.String) | ✔ | ✔ | ✔ | ✔
-AppPrincipalId (Edm.String) | ✔ | ✔ | ✔ | ✔
 SettingsPageUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
 SiteId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
+StartPage (Edm.String) | ✔ | ✔ | ✔ | ✔
+Status (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+Title (Edm.String) | ✔ | ✔ | ✔ | ✔
+WebId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
 

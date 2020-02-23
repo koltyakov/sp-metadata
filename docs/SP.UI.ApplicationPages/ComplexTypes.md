@@ -1,4 +1,5 @@
 # Namespace: SP.UI.ApplicationPages
+
 ## Complex Types
 
 **Availability matrix**

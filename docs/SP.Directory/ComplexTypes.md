@@ -1,4 +1,5 @@
 # Namespace: SP.Directory
+
 ## Complex Types
 
 **Availability matrix**

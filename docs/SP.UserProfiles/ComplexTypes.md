@@ -1,4 +1,5 @@
 # Namespace: SP.UserProfiles
+
 ## Complex Types
 
 **Availability matrix**

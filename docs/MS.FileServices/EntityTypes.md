@@ -1,4 +1,5 @@
 # Namespace: MS.FileServices
+
 ## Entity Types
 
 **Availability matrix**

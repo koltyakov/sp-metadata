@@ -1,4 +1,5 @@
 # Namespace: SP.Sharing
+
 ## Entity Type: WebSharingManager
 
 ### Properties

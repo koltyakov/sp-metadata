@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Comments
+
 ## Entity Type: CommentsAPI
 
 ### Properties

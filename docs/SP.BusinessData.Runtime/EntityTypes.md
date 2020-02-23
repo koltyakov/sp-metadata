@@ -1,4 +1,5 @@
 # Namespace: SP.BusinessData.Runtime
+
 ## Entity Types
 
 **Availability matrix**

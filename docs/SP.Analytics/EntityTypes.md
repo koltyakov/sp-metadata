@@ -1,4 +1,5 @@
 # Namespace: SP.Analytics
+
 ## Entity Types
 
 **Availability matrix**

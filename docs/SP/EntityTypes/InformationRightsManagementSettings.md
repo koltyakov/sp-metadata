@@ -1,4 +1,5 @@
 # Namespace: SP
+
 ## Entity Type: InformationRightsManagementSettings
 
 ### Properties
@@ -7,19 +8,19 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
+AllowPrint (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+AllowScript (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 AllowWriteCopy (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 DisableDocumentBrowserView (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-EnableDocumentAccessExpire (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-EnableGroupProtection (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-GroupName (Edm.String) | ✔ | ✔ | ✔ | ✔
-AllowScript (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 DocumentAccessExpireDays (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-EnableDocumentBrowserPublishingView (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-LicenseCacheExpireDays (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-TemplateId (Edm.String) | ✔ | ✔ | ✖ | ✖
-AllowPrint (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-EnableLicenseCacheExpire (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-PolicyTitle (Edm.String) | ✔ | ✔ | ✔ | ✔
 DocumentLibraryProtectionExpireDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
+EnableDocumentAccessExpire (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+EnableDocumentBrowserPublishingView (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+EnableGroupProtection (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+EnableLicenseCacheExpire (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+GroupName (Edm.String) | ✔ | ✔ | ✔ | ✔
+LicenseCacheExpireDays (Edm.Int32) | ✔ | ✔ | ✔ | ✔
 PolicyDescription (Edm.String) | ✔ | ✔ | ✔ | ✔
+PolicyTitle (Edm.String) | ✔ | ✔ | ✔ | ✔
+TemplateId (Edm.String) | ✔ | ✔ | ✖ | ✖
 

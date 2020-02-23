@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Webhooks
+
 ## Entity Types
 
 **Availability matrix**

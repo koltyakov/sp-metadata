@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Client.Search.Query
+
 ## Entity Type: StringCollection
 
 ### Properties

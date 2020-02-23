@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Online.SharePoint.MigrationCenter.Common
+
 ## Entity Type: DeviceEntityData
 
 ### Properties

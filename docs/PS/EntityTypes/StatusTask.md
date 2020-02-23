@@ -1,4 +1,5 @@
 # Namespace: PS
+
 ## Entity Type: StatusTask
 
 ### Properties
@@ -7,39 +8,39 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-RemainingWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-WorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+ActualWork (Edm.String) | ✔ | ✔ | ✔ | ✖
 ActualWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+ActualWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+Deadline (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+Duration (Edm.String) | ✔ | ✔ | ✔ | ✖
+DurationMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+DurationTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
 Finish (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-RemainingDurationTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
+Name (Edm.String) | ✔ | ✔ | ✔ | ✖
+Overtime (Edm.String) | ✔ | ✔ | ✔ | ✖
+OvertimeMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+OvertimeTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+PercentComplete (Edm.Int16) | ✔ | ✔ | ✔ | ✖
+PercentWorkComplete (Edm.Int16) | ✔ | ✔ | ✔ | ✖
+PhysicalPercentComplete (Edm.Int16) | ✔ | ✔ | ✔ | ✖
 ProjectTaskId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
 RegularWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+RegularWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 RegularWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-RemainingOvertimeTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-Resume (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-ActualWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-DurationTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-PhysicalPercentComplete (Edm.Int16) | ✔ | ✔ | ✔ | ✖
-PercentComplete (Edm.Int16) | ✔ | ✔ | ✔ | ✖
+RemainingDuration (Edm.String) | ✔ | ✔ | ✔ | ✖
+RemainingDurationMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+RemainingDurationTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
 RemainingOvertime (Edm.String) | ✔ | ✔ | ✔ | ✖
+RemainingOvertimeMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+RemainingOvertimeTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+RemainingWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+RemainingWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+RemainingWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+Resume (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
 Start (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
 Work (Edm.String) | ✔ | ✔ | ✔ | ✖
-Duration (Edm.String) | ✔ | ✔ | ✔ | ✖
-Overtime (Edm.String) | ✔ | ✔ | ✔ | ✖
-OvertimeTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-RemainingWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-Name (Edm.String) | ✔ | ✔ | ✔ | ✖
-PercentWorkComplete (Edm.Int16) | ✔ | ✔ | ✔ | ✖
-RemainingOvertimeMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-ActualWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-OvertimeMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-RemainingWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-Deadline (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-RegularWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
-RemainingDuration (Edm.String) | ✔ | ✔ | ✔ | ✖
-DurationMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-RemainingDurationMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+WorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 WorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
 
 ### Navigation Properties

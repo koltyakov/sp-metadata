@@ -1,4 +1,5 @@
 # Namespace: SP.CompliancePolicy
+
 ## Complex Types
 
 **Availability matrix**

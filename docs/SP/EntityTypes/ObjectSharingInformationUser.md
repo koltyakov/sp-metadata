@@ -1,4 +1,5 @@
 # Namespace: SP
+
 ## Entity Type: ObjectSharingInformationUser
 
 ### Properties
@@ -7,22 +8,22 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
+CustomRoleNames (Edm.String) | ✔ | ✔ | ✔ | ✔
 Department (Edm.String) | ✔ | ✔ | ✔ | ✔
-LoginName (Edm.String) | ✔ | ✔ | ✔ | ✔
-Picture (Edm.String) | ✔ | ✔ | ✔ | ✔
-Id (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-IsSiteAdmin (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-JobTitle (Edm.String) | ✔ | ✔ | ✔ | ✔
-Name (Edm.String) | ✔ | ✔ | ✔ | ✔
 Email (Edm.String) | ✔ | ✔ | ✔ | ✔
 HasEditPermission (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+HasReviewPermission (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 HasViewPermission (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+Id (Edm.Int32) | ✔ | ✔ | ✔ | ✔
 IsDomainGroup (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 IsExternalUser (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 IsMemberOfGroup (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+IsSiteAdmin (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+JobTitle (Edm.String) | ✔ | ✔ | ✔ | ✔
+LoginName (Edm.String) | ✔ | ✔ | ✔ | ✔
+Name (Edm.String) | ✔ | ✔ | ✔ | ✔
+Picture (Edm.String) | ✔ | ✔ | ✔ | ✔
 SipAddress (Edm.String) | ✔ | ✔ | ✔ | ✔
-CustomRoleNames (Edm.String) | ✔ | ✔ | ✔ | ✔
-HasReviewPermission (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 
 ### Navigation Properties
 
@@ -30,5 +31,5 @@ HasReviewPermission (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-User | ✔ | ✔ | ✔ | ✔
 Principal | ✔ | ✔ | ✔ | ✔
+User | ✔ | ✔ | ✔ | ✔

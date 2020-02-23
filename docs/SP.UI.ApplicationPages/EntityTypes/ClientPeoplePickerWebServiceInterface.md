@@ -1,4 +1,5 @@
 # Namespace: SP.UI.ApplicationPages
+
 ## Entity Type: ClientPeoplePickerWebServiceInterface
 
 ### Properties

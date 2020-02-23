@@ -1,4 +1,5 @@
 # Namespace: SP.Discovery
+
 ## Entity Types
 
 **Availability matrix**

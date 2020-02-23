@@ -1,4 +1,5 @@
 # Namespace: SP
+
 ## Entity Type: CurrencyList
 
 ### Properties

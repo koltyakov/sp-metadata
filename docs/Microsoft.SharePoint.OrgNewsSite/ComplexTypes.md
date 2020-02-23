@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.OrgNewsSite
+
 ## Complex Types
 
 **Availability matrix**

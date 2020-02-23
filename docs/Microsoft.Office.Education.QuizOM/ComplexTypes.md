@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Office.Education.QuizOM
+
 ## Complex Types
 
 **Availability matrix**

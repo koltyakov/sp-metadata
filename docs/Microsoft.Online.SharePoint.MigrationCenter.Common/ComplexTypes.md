@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Online.SharePoint.MigrationCenter.Common
+
 ## Complex Types
 
 **Availability matrix**

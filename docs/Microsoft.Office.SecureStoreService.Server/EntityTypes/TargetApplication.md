@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Office.SecureStoreService.Server
+
 ## Entity Type: TargetApplication
 
 ### Properties

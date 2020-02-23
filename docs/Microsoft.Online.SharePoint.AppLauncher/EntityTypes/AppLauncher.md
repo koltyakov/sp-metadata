@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Online.SharePoint.AppLauncher
+
 ## Entity Type: AppLauncher
 
 ### Properties

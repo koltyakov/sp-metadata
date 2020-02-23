@@ -1,4 +1,5 @@
 # Namespace: SP.Utilities
+
 ## Entity Type: ThemeManager
 
 ### Properties

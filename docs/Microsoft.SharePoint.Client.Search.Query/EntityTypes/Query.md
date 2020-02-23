@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Client.Search.Query
+
 ## Entity Type: Query
 
 ### Properties
@@ -7,41 +8,41 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-ImpressionID (Edm.String) | ✖ | ✖ | ✖ | ✔
-QueryTag (Edm.String) | ✖ | ✖ | ✖ | ✔
-SafeQueryPropertiesTemplateUrl (Edm.String) | ✖ | ✖ | ✖ | ✔
-StartRow (Edm.Int32) | ✖ | ✖ | ✖ | ✔
-Timeout (Edm.Int32) | ✖ | ✖ | ✖ | ✔
-ClientType (Edm.String) | ✖ | ✖ | ✖ | ✔
-GenerateBlockRankLog (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
-IgnoreSafeQueryPropertiesTemplateUrl (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
-RowsPerPage (Edm.Int32) | ✖ | ✖ | ✖ | ✔
-SummaryLength (Edm.Int32) | ✖ | ✖ | ✖ | ✔
-TrimDuplicates (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
 BlockDedupeMode (Edm.Int32) | ✖ | ✖ | ✖ | ✔
-EnablePhonetic (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
-ResultsUrl (Edm.String) | ✖ | ✖ | ✖ | ✔
-QueryTemplate (Edm.String) | ✖ | ✖ | ✖ | ✔
-QueryTemplateParameters (Collection(SP.KeyValue)) | ✖ | ✖ | ✖ | ✔
-ShowPeopleNameSuggestions (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
-EnableOrderingHitHighlightedProperty (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
-MaxSnippetLength (Edm.Int32) | ✖ | ✖ | ✖ | ✔
-UILanguage (Edm.Int32) | ✖ | ✖ | ✖ | ✔
-RankingModelId (Edm.String) | ✖ | ✖ | ✖ | ✔
-SourceId (Edm.Guid) | ✖ | ✖ | ✖ | ✔
-TotalRowsExactMinimum (Edm.Int32) | ✖ | ✖ | ✖ | ✔
 BypassResultTypes (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
-EnableInterleaving (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
-ProcessBestBets (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
-EnableQueryRules (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
-HitHighlightedMultivaluePropertyLimit (Edm.Int32) | ✖ | ✖ | ✖ | ✔
-ProcessPersonalFavorites (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
-RowLimit (Edm.Int32) | ✖ | ✖ | ✖ | ✔
+ClientType (Edm.String) | ✖ | ✖ | ✖ | ✔
 Culture (Edm.Int32) | ✖ | ✖ | ✖ | ✔
 DesiredSnippetLength (Edm.Int32) | ✖ | ✖ | ✖ | ✔
+EnableInterleaving (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
 EnableNicknames (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
+EnableOrderingHitHighlightedProperty (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
+EnablePhonetic (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
+EnableQueryRules (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
 EnableStemming (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
+GenerateBlockRankLog (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
+HitHighlightedMultivaluePropertyLimit (Edm.Int32) | ✖ | ✖ | ✖ | ✔
+IgnoreSafeQueryPropertiesTemplateUrl (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
+ImpressionID (Edm.String) | ✖ | ✖ | ✖ | ✔
+MaxSnippetLength (Edm.Int32) | ✖ | ✖ | ✖ | ✔
+ProcessBestBets (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
+ProcessPersonalFavorites (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
+QueryTag (Edm.String) | ✖ | ✖ | ✖ | ✔
+QueryTemplate (Edm.String) | ✖ | ✖ | ✖ | ✔
+QueryTemplateParameters (Collection(SP.KeyValue)) | ✖ | ✖ | ✖ | ✔
 QueryText (Edm.String) | ✖ | ✖ | ✖ | ✔
+RankingModelId (Edm.String) | ✖ | ✖ | ✖ | ✔
+ResultsUrl (Edm.String) | ✖ | ✖ | ✖ | ✔
+RowLimit (Edm.Int32) | ✖ | ✖ | ✖ | ✔
+RowsPerPage (Edm.Int32) | ✖ | ✖ | ✖ | ✔
+SafeQueryPropertiesTemplateUrl (Edm.String) | ✖ | ✖ | ✖ | ✔
+ShowPeopleNameSuggestions (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
+SourceId (Edm.Guid) | ✖ | ✖ | ✖ | ✔
+StartRow (Edm.Int32) | ✖ | ✖ | ✖ | ✔
+SummaryLength (Edm.Int32) | ✖ | ✖ | ✖ | ✔
+Timeout (Edm.Int32) | ✖ | ✖ | ✖ | ✔
+TotalRowsExactMinimum (Edm.Int32) | ✖ | ✖ | ✖ | ✔
+TrimDuplicates (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
+UILanguage (Edm.Int32) | ✖ | ✖ | ✖ | ✔
 
 ### Navigation Properties
 

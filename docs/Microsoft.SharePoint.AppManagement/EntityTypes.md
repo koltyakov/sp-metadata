@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.AppManagement
+
 ## Entity Types
 
 **Availability matrix**

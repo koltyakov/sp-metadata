@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Office.Server.Search.REST
+
 ## Entity Type: SearchSetting
 
 ### Properties

@@ -1,4 +1,5 @@
 # Namespace: SP.WebParts
+
 ## Entity Type: WebPartDefinition
 
 ### Properties

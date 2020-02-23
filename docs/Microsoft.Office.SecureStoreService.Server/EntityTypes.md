@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Office.SecureStoreService.Server
+
 ## Entity Types
 
 **Availability matrix**

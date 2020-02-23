@@ -1,4 +1,5 @@
 # Namespace: SP.UI.ApplicationPages
+
 ## Entity Type: PickerEntityInformation
 
 ### Properties

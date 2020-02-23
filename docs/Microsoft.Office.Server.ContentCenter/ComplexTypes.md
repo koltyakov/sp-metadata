@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Office.Server.ContentCenter
+
 ## Complex Types
 
 **Availability matrix**

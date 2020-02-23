@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Administration
+
 ## Entity Type: SPFarm
 
 ### Properties

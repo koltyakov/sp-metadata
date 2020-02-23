@@ -1,4 +1,5 @@
 # Namespace: SP
+
 ## Entity Type: Field
 
 ### Properties
@@ -7,46 +8,46 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Required (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-FieldTypeKind (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-ValidationFormula (Edm.String) | ✔ | ✔ | ✔ | ✔
-EnforceUniqueValues (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-Filterable (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-IndexStatus (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-InternalName (Edm.String) | ✔ | ✔ | ✔ | ✔
-ReadOnlyField (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 AutoIndexed (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-Group (Edm.String) | ✔ | ✔ | ✔ | ✔
-Indexed (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-SchemaXmlWithResourceTokens (Edm.String) | ✔ | ✔ | ✔ | ✔
-Sealed (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-ShowInFiltersPane (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-StaticName (Edm.String) | ✔ | ✔ | ✔ | ✔
-ClientValidationFormula (Edm.String) | ✔ | ✖ | ✖ | ✖
-CustomFormatter (Edm.String) | ✔ | ✔ | ✖ | ✖
-DefaultFormula (Edm.String) | ✔ | ✔ | ✖ | ✖
-TypeShortDescription (Edm.String) | ✔ | ✔ | ✔ | ✔
-FromBaseType (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-Scope (Edm.String) | ✔ | ✔ | ✔ | ✔
-Title (Edm.String) | ✔ | ✔ | ✔ | ✔
-PinnedToFiltersPane (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-TypeAsString (Edm.String) | ✔ | ✔ | ✔ | ✔
-ClientValidationMessage (Edm.String) | ✔ | ✖ | ✖ | ✖
-Direction (Edm.String) | ✔ | ✔ | ✔ | ✔
-EntityPropertyName (Edm.String) | ✔ | ✔ | ✔ | ✔
 CanBeDeleted (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 ClientSideComponentId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
+ClientSideComponentProperties (Edm.String) | ✔ | ✔ | ✖ | ✖
+ClientValidationFormula (Edm.String) | ✔ | ✖ | ✖ | ✖
+ClientValidationMessage (Edm.String) | ✔ | ✖ | ✖ | ✖
+CustomFormatter (Edm.String) | ✔ | ✔ | ✖ | ✖
+DefaultFormula (Edm.String) | ✔ | ✔ | ✖ | ✖
+DefaultValue (Edm.String) | ✔ | ✔ | ✔ | ✔
 Description (Edm.String) | ✔ | ✔ | ✔ | ✔
+Direction (Edm.String) | ✔ | ✔ | ✔ | ✔
+EnforceUniqueValues (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+EntityPropertyName (Edm.String) | ✔ | ✔ | ✔ | ✔
+FieldTypeKind (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+Filterable (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+FromBaseType (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+Group (Edm.String) | ✔ | ✔ | ✔ | ✔
 Hidden (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+Id (Edm.Guid) | ✔ | ✔ | ✔ | ✔
+IndexStatus (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+Indexed (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+InternalName (Edm.String) | ✔ | ✔ | ✔ | ✔
 JSLink (Edm.String) | ✔ | ✔ | ✔ | ✔
 NoCrawl (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+PinnedToFiltersPane (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+ReadOnlyField (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+Required (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 SchemaXml (Edm.String) | ✔ | ✔ | ✔ | ✔
+SchemaXmlWithResourceTokens (Edm.String) | ✔ | ✔ | ✔ | ✔
+Scope (Edm.String) | ✔ | ✔ | ✔ | ✔
+Sealed (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+ShowInFiltersPane (Edm.Int32) | ✔ | ✔ | ✖ | ✖
 Sortable (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+StaticName (Edm.String) | ✔ | ✔ | ✔ | ✔
+Title (Edm.String) | ✔ | ✔ | ✔ | ✔
+TypeAsString (Edm.String) | ✔ | ✔ | ✔ | ✔
 TypeDisplayName (Edm.String) | ✔ | ✔ | ✔ | ✔
+TypeShortDescription (Edm.String) | ✔ | ✔ | ✔ | ✔
+ValidationFormula (Edm.String) | ✔ | ✔ | ✔ | ✔
 ValidationMessage (Edm.String) | ✔ | ✔ | ✔ | ✔
-ClientSideComponentProperties (Edm.String) | ✔ | ✔ | ✖ | ✖
-DefaultValue (Edm.String) | ✔ | ✔ | ✔ | ✔
-Id (Edm.Guid) | ✔ | ✔ | ✔ | ✔
 
 ### Navigation Properties
 

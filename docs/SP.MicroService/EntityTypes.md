@@ -1,4 +1,5 @@
 # Namespace: SP.MicroService
+
 ## Entity Types
 
 **Availability matrix**

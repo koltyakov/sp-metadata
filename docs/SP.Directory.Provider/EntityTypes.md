@@ -1,4 +1,5 @@
 # Namespace: SP.Directory.Provider
+
 ## Entity Types
 
 **Availability matrix**

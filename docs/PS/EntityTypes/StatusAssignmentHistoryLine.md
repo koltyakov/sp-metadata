@@ -1,4 +1,5 @@
 # Namespace: PS
+
 ## Entity Type: StatusAssignmentHistoryLine
 
 ### Properties
@@ -7,17 +8,17 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-ReassignmentDate (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
-State (Edm.Int32) | ✔ | ✖ | ✖ | ✖
 ApproverId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
-Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
-ReassignedResourceId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
-Submitted (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-SubmitterId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
-UpdateType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 Comment (Edm.String) | ✔ | ✔ | ✔ | ✖
 Decision (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 DecisionDate (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
+Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
+ReassignedResourceId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+ReassignmentDate (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
+State (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+Submitted (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+SubmitterId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+UpdateType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 
 ### Navigation Properties
 

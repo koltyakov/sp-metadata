@@ -1,4 +1,5 @@
 # Namespace: PS
+
 ## Entity Type: EnterpriseResource
 
 ### Properties
@@ -7,33 +8,33 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-HyperlinkUrl (Edm.String) | ✔ | ✖ | ✔ | ✖
-IsBudget (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-MaterialLabel (Edm.String) | ✔ | ✔ | ✔ | ✖
-Email (Edm.String) | ✔ | ✔ | ✔ | ✖
-HireDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-Name (Edm.String) | ✔ | ✔ | ✔ | ✖
-Created (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
-Phonetics (Edm.String) | ✔ | ✔ | ✔ | ✖
+CanLevel (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+Code (Edm.String) | ✔ | ✔ | ✔ | ✖
 CostAccrual (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+CostCenter (Edm.String) | ✔ | ✔ | ✔ | ✖
+Created (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
 DefaultBookingType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-IsTeam (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+Email (Edm.String) | ✔ | ✔ | ✔ | ✖
+ExternalId (Edm.String) | ✔ | ✔ | ✔ | ✖
+Group (Edm.String) | ✔ | ✔ | ✔ | ✖
+HireDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+HyperlinkName (Edm.String) | ✔ | ✖ | ✔ | ✖
+HyperlinkUrl (Edm.String) | ✔ | ✖ | ✔ | ✖
+Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
+Initials (Edm.String) | ✔ | ✔ | ✔ | ✖
+IsActive (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+IsBudget (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 IsCheckedOut (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 IsGeneric (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-RequiresEngagements (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-TerminationDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-Code (Edm.String) | ✔ | ✔ | ✔ | ✖
-ExternalId (Edm.String) | ✔ | ✔ | ✔ | ✖
-IsActive (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-HyperlinkName (Edm.String) | ✔ | ✖ | ✔ | ✖
-Initials (Edm.String) | ✔ | ✔ | ✔ | ✖
+IsTeam (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+MaterialLabel (Edm.String) | ✔ | ✔ | ✔ | ✖
 Modified (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-ResourceType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-CanLevel (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-CostCenter (Edm.String) | ✔ | ✔ | ✔ | ✖
-Group (Edm.String) | ✔ | ✔ | ✔ | ✖
+Name (Edm.String) | ✔ | ✔ | ✔ | ✖
+Phonetics (Edm.String) | ✔ | ✔ | ✔ | ✖
+RequiresEngagements (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 ResourceIdentifier (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+ResourceType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+TerminationDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
 
 ### Navigation Properties
 
@@ -43,12 +44,12 @@ Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
 Assignments | ✔ | ✔ | ✔ | ✖
 BaseCalendar | ✔ | ✔ | ✔ | ✖
-CustomFields | ✔ | ✔ | ✔ | ✖
-UserPermissions | ✔ | ✔ | ✖ | ✖
-ResourceCalendarExceptions | ✔ | ✔ | ✔ | ✖
-User | ✔ | ✔ | ✔ | ✖
 CostRateTables | ✔ | ✔ | ✔ | ✖
+CustomFields | ✔ | ✔ | ✔ | ✖
 DefaultAssignmentOwner | ✔ | ✔ | ✔ | ✖
 Engagements | ✔ | ✔ | ✖ | ✖
+ResourceCalendarExceptions | ✔ | ✔ | ✔ | ✖
 Self | ✔ | ✔ | ✔ | ✖
 TimesheetManager | ✔ | ✔ | ✔ | ✖
+User | ✔ | ✔ | ✔ | ✖
+UserPermissions | ✔ | ✔ | ✖ | ✖

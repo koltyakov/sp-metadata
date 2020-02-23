@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Navigation.REST
+
 ## Entity Types
 
 **Availability matrix**

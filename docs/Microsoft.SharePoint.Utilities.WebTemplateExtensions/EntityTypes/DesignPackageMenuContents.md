@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Utilities.WebTemplateExtensions
+
 ## Entity Type: DesignPackageMenuContents
 
 ### Properties

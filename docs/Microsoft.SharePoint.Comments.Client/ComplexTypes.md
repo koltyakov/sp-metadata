@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Comments.Client
+
 ## Complex Types
 
 **Availability matrix**

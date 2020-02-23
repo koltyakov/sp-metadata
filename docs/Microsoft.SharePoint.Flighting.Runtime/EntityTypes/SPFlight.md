@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Flighting.Runtime
+
 ## Entity Type: SPFlight
 
 ### Properties

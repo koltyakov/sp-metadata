@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Online.SharePoint.PointPublishing
+
 ## Entity Types
 
 **Availability matrix**

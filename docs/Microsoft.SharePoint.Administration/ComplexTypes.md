@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Administration
+
 ## Complex Types
 
 **Availability matrix**

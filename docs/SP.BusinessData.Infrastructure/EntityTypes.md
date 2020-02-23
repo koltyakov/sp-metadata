@@ -1,4 +1,5 @@
 # Namespace: SP.BusinessData.Infrastructure
+
 ## Entity Types
 
 **Availability matrix**

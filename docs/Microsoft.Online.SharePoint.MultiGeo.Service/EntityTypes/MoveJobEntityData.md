@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Online.SharePoint.MultiGeo.Service
+
 ## Entity Type: MoveJobEntityData
 
 ### Properties
@@ -7,23 +8,23 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-JobPhase (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-SiteId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+ApiVersion (Edm.String) | ✔ | ✖ | ✖ | ✖
 BatchId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+CancelTriggeredBy (Edm.String) | ✔ | ✖ | ✖ | ✖
+DestinationDataLocation (Edm.String) | ✔ | ✖ | ✖ | ✖
+Direction (Edm.Int32) | ✔ | ✖ | ✖ | ✖
 ErrorMessage (Edm.String) | ✔ | ✖ | ✖ | ✖
 FinishedDateInUtc (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
-TriggeredBy (Edm.String) | ✔ | ✖ | ✖ | ✖
-CancelTriggeredBy (Edm.String) | ✔ | ✖ | ✖ | ✖
+Id (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+JobPhase (Edm.Int32) | ✔ | ✖ | ✖ | ✖
 Notify (Edm.String) | ✔ | ✖ | ✖ | ✖
-SourceDataLocation (Edm.String) | ✔ | ✖ | ✖ | ✖
 Option (Edm.Int32) | ✔ | ✖ | ✖ | ✖
 PreferredMoveBeginDateInUtc (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
-Reserve (Edm.String) | ✔ | ✖ | ✖ | ✖
-ApiVersion (Edm.String) | ✔ | ✖ | ✖ | ✖
-DestinationDataLocation (Edm.String) | ✔ | ✖ | ✖ | ✖
-Id (Edm.Guid) | ✔ | ✖ | ✖ | ✖
-Type (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-Direction (Edm.Int32) | ✔ | ✖ | ✖ | ✖
 PreferredMoveEndDateInUtc (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
+Reserve (Edm.String) | ✔ | ✖ | ✖ | ✖
+SiteId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+SourceDataLocation (Edm.String) | ✔ | ✖ | ✖ | ✖
 State (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+TriggeredBy (Edm.String) | ✔ | ✖ | ✖ | ✖
+Type (Edm.Int32) | ✔ | ✖ | ✖ | ✖
 

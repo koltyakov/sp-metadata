@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 	"strings"
 
 	"github.com/koltyakov/sp-metadata/config"
@@ -228,12 +229,18 @@ func entityTypePropsTable(models []*ModelMeta, namespace string, entityType stri
 		return ""
 	}
 
+	var keys []string
+	for key := range keyPresenceMap {
+		keys = append(keys, key)
+	}
+	sort.Strings(keys)
+
 	// Map to comparison matrix
-	for key, presence := range keyPresenceMap {
+	for _, key := range keys {
 		name := key
 		compareMatrix = append(compareMatrix, &ComparisonVector{
 			Name:     name,
-			Presence: presence,
+			Presence: keyPresenceMap[key],
 		})
 	}
 
@@ -270,12 +277,66 @@ func entityTypeNavPropsTable(models []*ModelMeta, namespace string, entityType s
 		return ""
 	}
 
+	var keys []string
+	for key := range keyPresenceMap {
+		keys = append(keys, key)
+	}
+	sort.Strings(keys)
+
 	// Map to comparison matrix
-	for key, presence := range keyPresenceMap {
+	for _, key := range keys {
 		name := key
 		compareMatrix = append(compareMatrix, &ComparisonVector{
 			Name:     name,
-			Presence: presence,
+			Presence: keyPresenceMap[key],
+		})
+	}
+
+	// Constructing MD table
+	return genMDTable("Navigation Property", envCodes, compareMatrix)
+}
+
+func functionPropsTable(models []*ModelMeta, namespace string, functionImport string) string {
+	envCodes := config.GetEnvironmentsCodes()
+	var compareMatrix []*ComparisonVector
+
+	// Namespaces in platform versions
+	keyPresenceMap := map[string]map[string]bool{}
+	for _, m := range models {
+		for _, s := range m.Model.Services.Schemas {
+			if s.Namespace == namespace {
+				for _, functionImp := range s.EntityContainer.FunctionImports {
+					if functionImp.Name == functionImport {
+						for _, par := range functionImp.Parameters {
+							n, ok := keyPresenceMap[par.Name]
+							if !ok {
+								n = map[string]bool{}
+							}
+							n[m.Environment.Code] = true
+							keyPresenceMap[par.Name] = n
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if len(keyPresenceMap) == 0 {
+		return ""
+	}
+
+	var keys []string
+	for key := range keyPresenceMap {
+		keys = append(keys, key)
+	}
+	sort.Strings(keys)
+
+	// Map to comparison matrix
+	for _, key := range keys {
+		name := key
+		compareMatrix = append(compareMatrix, &ComparisonVector{
+			Name:     name,
+			Presence: keyPresenceMap[key],
 		})
 	}
 

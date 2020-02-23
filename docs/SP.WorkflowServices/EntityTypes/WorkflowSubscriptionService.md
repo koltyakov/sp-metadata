@@ -1,4 +1,5 @@
 # Namespace: SP.WorkflowServices
+
 ## Entity Type: WorkflowSubscriptionService
 
 ### Properties

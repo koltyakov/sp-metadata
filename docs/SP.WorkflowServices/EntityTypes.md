@@ -1,4 +1,5 @@
 # Namespace: SP.WorkflowServices
+
 ## Entity Types
 
 **Availability matrix**

@@ -1,4 +1,5 @@
 # Namespace: SP.Publishing.Navigation
+
 ## Entity Type: PortalNavigationCacheWrapper
 
 ### Properties

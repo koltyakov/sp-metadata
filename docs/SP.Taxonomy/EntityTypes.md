@@ -1,4 +1,5 @@
 # Namespace: SP.Taxonomy
+
 ## Entity Types
 
 **Availability matrix**

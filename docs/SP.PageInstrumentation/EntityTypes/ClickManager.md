@@ -1,4 +1,5 @@
 # Namespace: SP.PageInstrumentation
+
 ## Entity Type: ClickManager
 
 ### Properties

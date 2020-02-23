@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Online.SharePoint.MigrationCenter.Common
+
 ## Entity Type: MigrationTaskEntityData
 
 ### Properties
@@ -7,41 +8,41 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
+AzureActiveDirectoryLkp (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+CustomAzureAccessKey (Edm.String) | ✔ | ✖ | ✖ | ✖
 CustomAzureDeletionAfterMig (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+CustomAzureStorageAccount (Edm.String) | ✔ | ✖ | ✖ | ✖
+DateCreated (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
+DateModified (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
+EnableIncremental (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
 EnableUserMappings (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+Encrypted (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+FilterOutHiddenFiles (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+FilterOutPathSpecialCharacters (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+IgnoredFileExtensions (Edm.String) | ✔ | ✖ | ✖ | ✖
 MigrateAllWebStructures (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+MigrateOneNoteNotebook (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+MigrateSchema (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+Name (Edm.String) | ✔ | ✖ | ✖ | ✖
+PreservePermissionForFileShare (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+PreserveUserPermissionForOnPrem (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
 ScanOnly (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
 ScheduledStartTimeUTC (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
-StartMigrationAutomaticallyWhenNoScanIssue (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-UseCustomAzureStorage (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-AzureActiveDirectoryLkp (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-DateCreated (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
-Encrypted (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-MigrateOneNoteNotebook (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-PreservePermissionForFileShare (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+SkipListWithAudienceEnabled (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+SourceListName (Edm.String) | ✔ | ✖ | ✖ | ✖
+SourceListRelativePath (Edm.String) | ✔ | ✖ | ✖ | ✖
 SourceUri (Edm.String) | ✔ | ✖ | ✖ | ✖
+SourceUserName (Edm.String) | ✔ | ✖ | ✖ | ✖
+StartMigrationAutomaticallyWhenNoScanIssue (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+TargetListName (Edm.String) | ✔ | ✖ | ✖ | ✖
 TargetListRelativePath (Edm.String) | ✔ | ✖ | ✖ | ✖
 TargetSiteUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
-TurnOnDateModifiedFilter (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-CustomAzureStorageAccount (Edm.String) | ✔ | ✖ | ✖ | ✖
-DateModified (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
-MigrateSchema (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-SourceListRelativePath (Edm.String) | ✔ | ✖ | ✖ | ✖
-TargetListName (Edm.String) | ✔ | ✖ | ✖ | ✖
-Type (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-FilterOutPathSpecialCharacters (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-SourceListName (Edm.String) | ✔ | ✖ | ✖ | ✖
-SourceUserName (Edm.String) | ✔ | ✖ | ✖ | ✖
-TurnOnExtensionFilter (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-EnableIncremental (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-TurnOnDateCreatedFilter (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-FilterOutHiddenFiles (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-IgnoredFileExtensions (Edm.String) | ✔ | ✖ | ✖ | ✖
-SkipListWithAudienceEnabled (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
 TargetUserName (Edm.String) | ✔ | ✖ | ✖ | ✖
+TurnOnDateCreatedFilter (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+TurnOnDateModifiedFilter (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+TurnOnExtensionFilter (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+Type (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+UseCustomAzureStorage (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
 UserMappingCSVFile (Edm.String) | ✔ | ✖ | ✖ | ✖
 VersionNumsPreserved (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-CustomAzureAccessKey (Edm.String) | ✔ | ✖ | ✖ | ✖
-Name (Edm.String) | ✔ | ✖ | ✖ | ✖
-PreserveUserPermissionForOnPrem (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
 

@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Portal
+
 ## Entity Types
 
 **Availability matrix**

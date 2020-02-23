@@ -1,4 +1,5 @@
 # Namespace: SP.Publishing
+
 ## Entity Types
 
 **Availability matrix**

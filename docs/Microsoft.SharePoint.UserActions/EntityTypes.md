@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.UserActions
+
 ## Entity Types
 
 **Availability matrix**

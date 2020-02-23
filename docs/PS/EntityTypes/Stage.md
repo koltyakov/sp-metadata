@@ -1,4 +1,5 @@
 # Namespace: PS
+
 ## Entity Type: Stage
 
 ### Properties
@@ -7,12 +8,12 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Name (Edm.String) | ✔ | ✔ | ✔ | ✖
-SubmitDescription (Edm.String) | ✔ | ✔ | ✔ | ✖
 Behavior (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 CheckInRequired (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 Description (Edm.String) | ✔ | ✔ | ✔ | ✖
 Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
+Name (Edm.String) | ✔ | ✔ | ✔ | ✖
+SubmitDescription (Edm.String) | ✔ | ✔ | ✔ | ✖
 
 ### Navigation Properties
 
@@ -20,7 +21,7 @@ Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-WorkflowStatusPage | ✔ | ✔ | ✔ | ✖
 CustomFields | ✔ | ✔ | ✔ | ✖
 Phase | ✔ | ✔ | ✔ | ✖
 ProjectDetailPages | ✔ | ✔ | ✔ | ✖
+WorkflowStatusPage | ✔ | ✔ | ✔ | ✖

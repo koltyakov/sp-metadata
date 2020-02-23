@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Portal.Project
+
 ## Complex Types
 
 **Availability matrix**

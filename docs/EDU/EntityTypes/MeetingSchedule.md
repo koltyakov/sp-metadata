@@ -1,4 +1,5 @@
 # Namespace: EDU
+
 ## Entity Type: MeetingSchedule
 
 ### Properties

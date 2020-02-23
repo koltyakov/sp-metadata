@@ -1,4 +1,5 @@
 # Namespace: Microsoft.AppServices
+
 ## Entity Type: AppCollection
 
 ### Properties

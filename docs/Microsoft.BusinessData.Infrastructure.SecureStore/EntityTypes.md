@@ -1,4 +1,5 @@
 # Namespace: Microsoft.BusinessData.Infrastructure.SecureStore
+
 ## Entity Types
 
 **Availability matrix**

@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Office.Education.QuizOM
+
 ## Entity Type: UserResponse
 
 ### Properties

@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Internal.ClientSideComponent
+
 ## Entity Type: ComponentContextInfo
 
 ### Properties

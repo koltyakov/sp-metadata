@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Office.Server.ContentCenter
+
 ## Entity Type: SPMachineLearningHub
 
 ### Properties

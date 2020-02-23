@@ -1,4 +1,5 @@
 # Namespace: SP.Sharing
+
 ## Entity Type: SharingInformation
 
 ### Properties
@@ -7,39 +8,39 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-showExternalSharingWarning (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-canUseSimplifiedRoles (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-sharedObjectType (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-shareUiUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
 accessRequestSettings (SP.Sharing.AccessRequestSettings) | ✔ | ✔ | ✖ | ✖
-defaultShareLinkPermission (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-hasUniquePermissions (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-permissionsInformation (SP.Sharing.PermissionCollection) | ✔ | ✔ | ✖ | ✖
-canRequestAccessForGrantAccess (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-defaultLinkKind (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-effectiveLimitedAccessFileType (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-fileExtension (Edm.String) | ✔ | ✖ | ✖ | ✖
-sharingLinkTemplates (SP.Sharing.SharingLinkDefaultTemplatesCollection) | ✔ | ✖ | ✖ | ✖
 addressBarLinkSettings (SP.Sharing.AddressBarLinkSettings) | ✔ | ✖ | ✖ | ✖
+anonymousLinkExpirationRestrictionDays (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+blockPeoplePickerAndSharing (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 canAddExternalPrincipal (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+canAddInternalPrincipal (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+canRequestAccessForGrantAccess (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+canSendEmail (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+canUseSimplifiedRoles (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 currentRole (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+customizedExternalSharingServiceUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
+defaultLinkKind (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+defaultShareLinkPermission (Edm.Int32) | ✔ | ✔ | ✖ | ✖
 defaultShareLinkScope (Edm.Int32) | ✔ | ✖ | ✖ | ✖
 defaultShareLinkToExistingAccess (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-doesUserHaveIBSegment (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-microserviceShareUiUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-sharingAbilities (SP.Sharing.SharingAbilities) | ✔ | ✔ | ✖ | ✖
-anonymousLinkExpirationRestrictionDays (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-canSendEmail (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-customizedExternalSharingServiceUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
-webUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-blockPeoplePickerAndSharing (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 directUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-webTemplateId (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-sharingStatus (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-siteIBSegmentIDs (Collection(Edm.String)) | ✔ | ✖ | ✖ | ✖
-canAddInternalPrincipal (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+doesUserHaveIBSegment (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
 domainRestrictionSettings (SP.Sharing.DomainRestrictionSettings) | ✔ | ✔ | ✖ | ✖
+effectiveLimitedAccessFileType (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+fileExtension (Edm.String) | ✔ | ✖ | ✖ | ✖
+hasUniquePermissions (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 itemUniqueId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+microserviceShareUiUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
+permissionsInformation (SP.Sharing.PermissionCollection) | ✔ | ✔ | ✖ | ✖
+shareUiUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
+sharedObjectType (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+sharingAbilities (SP.Sharing.SharingAbilities) | ✔ | ✔ | ✖ | ✖
+sharingLinkTemplates (SP.Sharing.SharingLinkDefaultTemplatesCollection) | ✔ | ✖ | ✖ | ✖
+sharingStatus (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+showExternalSharingWarning (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+siteIBSegmentIDs (Collection(Edm.String)) | ✔ | ✖ | ✖ | ✖
+webTemplateId (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+webUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
 
 ### Navigation Properties
 

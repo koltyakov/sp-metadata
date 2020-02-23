@@ -1,4 +1,5 @@
 # Namespace: PS
+
 ## Entity Type: PublishedProject
 
 ### Properties
@@ -7,41 +8,41 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-MinutesPerDay (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+CurrencyCode (Edm.String) | ✔ | ✔ | ✔ | ✖
+CurrencyDigits (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 CurrencyPosition (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-DefaultTaskType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-IsEnterpriseProject (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-DefaultEffortDriven (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-Description (Edm.String) | ✔ | ✔ | ✔ | ✖
-NewTasksAreManual (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-WinprojVersion (Edm.Decimal) | ✔ | ✔ | ✔ | ✖
-DefaultOvertimeRate (Edm.Double) | ✔ | ✔ | ✔ | ✖
-ProjectIdentifier (Edm.String) | ✔ | ✔ | ✔ | ✖
-UtilizationDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-FinishDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
 CurrencySymbol (Edm.String) | ✔ | ✔ | ✔ | ✖
 CurrentDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-Name (Edm.String) | ✔ | ✔ | ✔ | ✖
+DaysPerMonth (Edm.Int16) | ✔ | ✔ | ✔ | ✖
+DefaultEffortDriven (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+DefaultEstimatedDuration (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+DefaultFixedCostAccrual (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+DefaultOvertimeRate (Edm.Double) | ✔ | ✔ | ✔ | ✖
+DefaultStandardRate (Edm.Double) | ✔ | ✔ | ✔ | ✖
+DefaultTaskType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+DefaultWorkFormat (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+Description (Edm.String) | ✔ | ✔ | ✔ | ✖
 EnterpriseProjectTypeId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
+FinishDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
 FiscalYearStartMonth (Edm.Int16) | ✔ | ✔ | ✔ | ✖
+IsEnterpriseProject (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+MinutesPerDay (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+MinutesPerWeek (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+Name (Edm.String) | ✔ | ✔ | ✔ | ✖
+NewTasksAreManual (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+NumberFiscalYearFromStart (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 OwnerId (Edm.String) | ✔ | ✔ | ✖ | ✖
+ProjectIdentifier (Edm.String) | ✔ | ✔ | ✔ | ✖
+ProtectedActualsSynch (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+ScheduledFromStart (Edm.Boolean) | ✔ | ✖ | ✔ | ✖
+ShowEstimatedDurations (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 StartDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
 StatusDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-CurrencyDigits (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-DaysPerMonth (Edm.Int16) | ✔ | ✔ | ✔ | ✖
-DefaultEstimatedDuration (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-ShowEstimatedDurations (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+TrackingMode (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+UtilizationDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
 UtilizationType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 WeekStartDay (Edm.Int16) | ✔ | ✔ | ✔ | ✖
-DefaultFixedCostAccrual (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-DefaultStandardRate (Edm.Double) | ✔ | ✔ | ✔ | ✖
-ProtectedActualsSynch (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-NumberFiscalYearFromStart (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-ScheduledFromStart (Edm.Boolean) | ✔ | ✖ | ✔ | ✖
-TrackingMode (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-CurrencyCode (Edm.String) | ✔ | ✔ | ✔ | ✖
-DefaultWorkFormat (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-MinutesPerWeek (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+WinprojVersion (Edm.Decimal) | ✔ | ✔ | ✔ | ✖
 
 ### Navigation Properties
 
@@ -49,13 +50,13 @@ MinutesPerWeek (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Calendar | ✔ | ✔ | ✔ | ✖
-Owner | ✔ | ✔ | ✔ | ✖
-TaskLinks | ✔ | ✔ | ✔ | ✖
-ProjectWorkflowInstance | ✔ | ✔ | ✖ | ✖
-Tasks | ✔ | ✔ | ✔ | ✖
 Assignments | ✔ | ✔ | ✔ | ✖
+Calendar | ✔ | ✔ | ✔ | ✖
 Draft | ✔ | ✔ | ✔ | ✖
 EntityLinks | ✔ | ✔ | ✖ | ✖
 IncludeCustomFields | ✔ | ✔ | ✔ | ✖
+Owner | ✔ | ✔ | ✔ | ✖
 ProjectResources | ✔ | ✔ | ✔ | ✖
+ProjectWorkflowInstance | ✔ | ✔ | ✖ | ✖
+TaskLinks | ✔ | ✔ | ✔ | ✖
+Tasks | ✔ | ✔ | ✔ | ✖

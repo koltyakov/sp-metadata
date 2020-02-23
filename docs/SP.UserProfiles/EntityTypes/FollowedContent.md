@@ -1,4 +1,5 @@
 # Namespace: SP.UserProfiles
+
 ## Entity Type: FollowedContent
 
 ### Properties

@@ -1,4 +1,5 @@
 # Namespace: SP.CompliancePolicy
+
 ## Entity Type: SPPolicyStoreProxy
 
 ### Properties

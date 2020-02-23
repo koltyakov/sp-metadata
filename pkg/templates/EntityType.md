@@ -1,4 +1,5 @@
 # Namespace: {{.Namespace}}
+
 ## Entity Type: {{.EntityType}}
 
 {{ if (ne .PropsTable "") }}### Properties

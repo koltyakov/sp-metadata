@@ -1,4 +1,5 @@
 # Namespace: PS
+
 ## Entity Type: TimeSheetWork
 
 ### Properties
@@ -7,23 +8,23 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-NonBillableOvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-PlannedWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-PlannedWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-Start (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
 ActualWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-NonBillableWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-NonBillableWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-PlannedWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-OvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
 ActualWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 ActualWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+Comment (Edm.String) | ✔ | ✔ | ✔ | ✖
 End (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
 Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
-NonBillableWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-OvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-Comment (Edm.String) | ✔ | ✔ | ✔ | ✖
 NonBillableOvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+NonBillableOvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 NonBillableOvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+NonBillableWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+NonBillableWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+NonBillableWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+OvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
 OvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+OvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+PlannedWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+PlannedWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+PlannedWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+Start (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
 

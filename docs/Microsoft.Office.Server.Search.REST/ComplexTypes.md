@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Office.Server.Search.REST
+
 ## Complex Types
 
 **Availability matrix**

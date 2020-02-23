@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.TenantCdn
+
 ## Complex Types
 
 **Availability matrix**

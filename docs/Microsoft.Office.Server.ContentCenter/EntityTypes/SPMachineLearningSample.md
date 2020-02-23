@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Office.Server.ContentCenter
+
 ## Entity Type: SPMachineLearningSample
 
 ### Properties
@@ -7,11 +8,11 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-UniqueId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
 DriveId (Edm.String) | ✔ | ✖ | ✖ | ✖
 ExtractedText (Edm.String) | ✔ | ✖ | ✖ | ✖
 ID (Edm.Int32) | ✔ | ✖ | ✖ | ✖
 ListID (Edm.Guid) | ✔ | ✖ | ✖ | ✖
 Markups (Edm.String) | ✔ | ✖ | ✖ | ✖
 ObjectId (Edm.String) | ✔ | ✖ | ✖ | ✖
+UniqueId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
 

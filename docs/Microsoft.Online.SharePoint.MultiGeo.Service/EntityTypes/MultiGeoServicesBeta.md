@@ -1,4 +1,5 @@
 # Namespace: Microsoft.Online.SharePoint.MultiGeo.Service
+
 ## Entity Type: MultiGeoServicesBeta
 
 ### Properties
@@ -15,22 +16,22 @@ Id4a81de82eeb94d6080ea5bf63e27023a (Edm.String) | ✔ | ✖ | ✖ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-CrossFarmUserMoveJobs | ✔ | ✖ | ✖ | ✖
-GeoAdministrators | ✔ | ✖ | ✖ | ✖
-TenantInformationCollection | ✔ | ✖ | ✖ | ✖
 AllowedDataLocations | ✔ | ✖ | ✖ | ✖
-CrossFarmGroupMoveJobs | ✔ | ✖ | ✖ | ✖
-CrossGeoTenantProperties | ✔ | ✖ | ✖ | ✖
-GlobalAdminCheck | ✔ | ✖ | ✖ | ✖
-GroupMoveJobs | ✔ | ✖ | ✖ | ✖
-UserMoveJobs | ✔ | ✖ | ✖ | ✖
 ContentDbSchemaVersion | ✔ | ✖ | ✖ | ✖
+CrossFarmGroupMoveJobs | ✔ | ✖ | ✖ | ✖
 CrossFarmSiteMoveJobs | ✔ | ✖ | ✖ | ✖
-GeoExperience | ✔ | ✖ | ✖ | ✖
-TaxonomyReplicationParameters | ✔ | ✖ | ✖ | ✖
+CrossFarmUserMoveJobs | ✔ | ✖ | ✖ | ✖
 CrossGeoTenantBYOK | ✔ | ✖ | ✖ | ✖
 CrossGeoTenantCompatibility | ✔ | ✖ | ✖ | ✖
+CrossGeoTenantProperties | ✔ | ✖ | ✖ | ✖
+GeoAdministrators | ✔ | ✖ | ✖ | ✖
+GeoExperience | ✔ | ✖ | ✖ | ✖
 GeoTenantInstanceInformationCollection | ✔ | ✖ | ✖ | ✖
+GlobalAdminCheck | ✔ | ✖ | ✖ | ✖
+GroupMoveJobs | ✔ | ✖ | ✖ | ✖
 SiteMoveJobs | ✔ | ✖ | ✖ | ✖
 StorageQuotas | ✔ | ✖ | ✖ | ✖
+TaxonomyReplicationParameters | ✔ | ✖ | ✖ | ✖
+TenantInformationCollection | ✔ | ✖ | ✖ | ✖
 UnifiedGroups | ✔ | ✖ | ✖ | ✖
+UserMoveJobs | ✔ | ✖ | ✖ | ✖

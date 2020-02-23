@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.QuickActionMessageCard
+
 ## Complex Types
 
 **Availability matrix**

@@ -1,4 +1,5 @@
 # Namespace: SP.Microfeed
+
 ## Entity Type: MicrofeedManager
 
 ### Properties

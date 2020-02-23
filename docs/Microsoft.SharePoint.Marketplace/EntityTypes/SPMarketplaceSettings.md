@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Marketplace
+
 ## Entity Type: SPMarketplaceSettings
 
 ### Properties

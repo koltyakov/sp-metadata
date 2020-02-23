@@ -1,4 +1,5 @@
 # Namespace: Microsoft.SharePoint.Portal.WebControls
+
 ## Entity Types
 
 **Availability matrix**
