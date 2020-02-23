@@ -7,20 +7,20 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-YammerEnabled (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-Description (Edm.String) | ✔ | ✖ | ✖ | ✖
 FullUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
 ServerRelativeUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
-TileHtmlColor (Edm.String) | ✔ | ✖ | ✖ | ✖
-Id (Edm.Guid) | ✔ | ✖ | ✖ | ✖
 ShareByEmailEnabled (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-YammerDefaultGroupId (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+TileHtmlColor (Edm.String) | ✔ | ✖ | ✖ | ✖
 CanAdministrateByCurrent (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
 CanEditByCurrent (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
 CanViewByCurrent (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-ChannelPageUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
 DownloadUrlVisibleMinPermission (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+Id (Edm.Guid) | ✔ | ✖ | ✖ | ✖
 Title (Edm.String) | ✔ | ✖ | ✖ | ✖
+YammerDefaultGroupId (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+ChannelPageUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
+Description (Edm.String) | ✔ | ✖ | ✖ | ✖
+YammerEnabled (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
 
 ### Navigation Properties
 
@@ -28,6 +28,6 @@ Title (Edm.String) | ✔ | ✖ | ✖ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
+Search | ✔ | ✖ | ✖ | ✖
 SpotlightVideos | ✔ | ✖ | ✖ | ✖
 Videos | ✔ | ✖ | ✖ | ✖
-Search | ✔ | ✖ | ✖ | ✖

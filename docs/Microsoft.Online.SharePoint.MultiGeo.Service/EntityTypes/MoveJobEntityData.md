@@ -7,23 +7,23 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-JobPhase (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-Reserve (Edm.String) | ✔ | ✖ | ✖ | ✖
-State (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+DestinationDataLocation (Edm.String) | ✔ | ✖ | ✖ | ✖
+Id (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+SiteId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+SourceDataLocation (Edm.String) | ✔ | ✖ | ✖ | ✖
 TriggeredBy (Edm.String) | ✔ | ✖ | ✖ | ✖
-BatchId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+ApiVersion (Edm.String) | ✔ | ✖ | ✖ | ✖
 CancelTriggeredBy (Edm.String) | ✔ | ✖ | ✖ | ✖
 ErrorMessage (Edm.String) | ✔ | ✖ | ✖ | ✖
 FinishedDateInUtc (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
-DestinationDataLocation (Edm.String) | ✔ | ✖ | ✖ | ✖
-PreferredMoveBeginDateInUtc (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
-SiteId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
-Type (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-SourceDataLocation (Edm.String) | ✔ | ✖ | ✖ | ✖
-ApiVersion (Edm.String) | ✔ | ✖ | ✖ | ✖
-Direction (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-Id (Edm.Guid) | ✔ | ✖ | ✖ | ✖
 Notify (Edm.String) | ✔ | ✖ | ✖ | ✖
+Reserve (Edm.String) | ✔ | ✖ | ✖ | ✖
+State (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+Type (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+JobPhase (Edm.Int32) | ✔ | ✖ | ✖ | ✖
 Option (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+PreferredMoveBeginDateInUtc (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
+BatchId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+Direction (Edm.Int32) | ✔ | ✖ | ✖ | ✖
 PreferredMoveEndDateInUtc (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
 

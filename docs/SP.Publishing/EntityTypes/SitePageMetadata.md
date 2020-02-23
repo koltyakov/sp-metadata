@@ -7,36 +7,36 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-PublishStartDate (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
-IsPageCheckedOutToCurrentUser (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-PromotedState (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-FirstPublishedRelativeTime (Edm.String) | ✔ | ✔ | ✖ | ✖
-ModifiedRelativeTime (Edm.String) | ✔ | ✔ | ✖ | ✖
-BannerThumbnailUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
-CommentCount (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-SocialBarOnSitePagesDisabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 AbsoluteUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-ListId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
-Url (Edm.String) | ✔ | ✔ | ✖ | ✖
-ContentTypeId (Edm.String) | ✔ | ✔ | ✖ | ✖
-Path (SP.ResourcePath) | ✔ | ✔ | ✖ | ✖
-DoesUserHaveEditPermission (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-TopicHeader (Edm.String) | ✔ | ✖ | ✖ | ✖
-VersionInfo (SP.Publishing.SitePageVersionInfo) | ✔ | ✔ | ✖ | ✖
-Id (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-PageLayoutType (Edm.String) | ✔ | ✔ | ✖ | ✖
-LikeCount (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-Title (Edm.String) | ✔ | ✔ | ✖ | ✖
+ModifiedRelativeTime (Edm.String) | ✔ | ✔ | ✖ | ✖
 Version (Edm.String) | ✔ | ✔ | ✖ | ✖
-FileName (Edm.String) | ✔ | ✔ | ✖ | ✖
-IsWebWelcomePage (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+ContentTypeId (Edm.String) | ✔ | ✔ | ✖ | ✖
+ListId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
+FirstPublishedRelativeTime (Edm.String) | ✔ | ✔ | ✖ | ✖
+Url (Edm.String) | ✔ | ✔ | ✖ | ✖
+BannerImageUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
+BannerThumbnailUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
 CommentsDisabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 Description (Edm.String) | ✔ | ✔ | ✖ | ✖
-FirstPublished (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
-Modified (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
-UniqueId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
+Id (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+Path (SP.ResourcePath) | ✔ | ✔ | ✖ | ✖
+PublishStartDate (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
+TopicHeader (Edm.String) | ✔ | ✖ | ✖ | ✖
 AuthorByline (Collection(Edm.String)) | ✔ | ✖ | ✖ | ✖
-BannerImageUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
+CommentCount (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+FileName (Edm.String) | ✔ | ✔ | ✖ | ✖
+FirstPublished (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
+IsWebWelcomePage (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+PageLayoutType (Edm.String) | ✔ | ✔ | ✖ | ✖
+VersionInfo (SP.Publishing.SitePageVersionInfo) | ✔ | ✔ | ✖ | ✖
+DoesUserHaveEditPermission (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+LikeCount (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+PromotedState (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+Title (Edm.String) | ✔ | ✔ | ✖ | ✖
+IsPageCheckedOutToCurrentUser (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+Modified (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
+SocialBarOnSitePagesDisabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+UniqueId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
 
 ### Navigation Properties
 

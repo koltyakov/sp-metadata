@@ -7,9 +7,9 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
+FullName (Edm.String) | ✔ | ✔ | ✔ | ✔
+IsValueObject (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 Methods (Collection(SP.MethodInformation)) | ✔ | ✔ | ✔ | ✔
 Properties (Collection(SP.PropertyInformation)) | ✔ | ✔ | ✔ | ✔
 BaseTypeFullName (Edm.String) | ✔ | ✔ | ✔ | ✔
-FullName (Edm.String) | ✔ | ✔ | ✔ | ✔
-IsValueObject (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 

@@ -7,92 +7,92 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-CommentsOnSitePagesDisabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-ExcludeFromOfflineClient (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-NavAudienceTargetingEnabled (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-AccessRequestSiteDescription (Edm.String) | ✔ | ✖ | ✖ | ✖
 CustomSiteActionsDisabled (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-MegaMenuEnabled (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-ObjectCacheEnabled (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-SiteLogoUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
-TreeViewEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-AllowDesignerForCurrentUser (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-AllowMasterPageEditingForCurrentUser (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-ClassicWelcomePage (Edm.String) | ✔ | ✖ | ✖ | ✖
-Description (Edm.String) | ✔ | ✔ | ✔ | ✔
-MembersCanShare (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-TenantTagPolicyEnabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-UIVersionConfigurationEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-AppInstanceId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
-DisableRecommendedItems (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-FooterEmphasis (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-IsHomepageModernized (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
 EnableMinimalDownload (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-HeaderEmphasis (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-Id (Edm.Guid) | ✔ | ✔ | ✔ | ✔
-NoCrawl (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-PrimaryColor (Edm.String) | ✔ | ✖ | ✖ | ✖
-ThemeData (Edm.String) | ✔ | ✔ | ✔ | ✖
-Title (Edm.String) | ✔ | ✔ | ✔ | ✔
-Url (Edm.String) | ✔ | ✔ | ✔ | ✔
-WebTemplate (Edm.String) | ✔ | ✔ | ✔ | ✔
-AllowRevertFromTemplateForCurrentUser (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-AllowSaveDeclarativeWorkflowAsTemplateForCurrentUser (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-Created (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
 IsProvisioningComplete (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-NotificationsInSharePointEnabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-SearchScope (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-DisableFlows (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-FooterLayout (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-NotificationsInOneDriveForBusinessEnabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-TenantAdminMembersCanShare (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-AllowRssFeeds (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-AlternateCssUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
-CustomMasterUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
-FooterEnabled (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-HideTitleInHeader (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-LastItemUserModifiedDate (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
-PreviewFeaturesEnabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-DesignerDownloadUrlForCurrentUser (Edm.String) | ✔ | ✔ | ✔ | ✔
-HeaderLayout (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-IsMultilingual (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-MasterUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
-SaveSiteAsTemplateEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-EffectiveBasePermissions (SP.BasePermissions) | ✔ | ✔ | ✔ | ✔
-Language (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-SearchBoxPlaceholderText (Edm.String) | ✔ | ✖ | ✖ | ✖
-WelcomePage (Edm.String) | ✔ | ✔ | ✖ | ✖
-AccessRequestListUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
-Configuration (Edm.Int16) | ✔ | ✔ | ✔ | ✔
-DisableAppViews (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-ResourcePath (SP.ResourcePath) | ✔ | ✔ | ✖ | ✖
-ThemedCssFolderUrl (Edm.String) | ✔ | ✔ | ✖ | ✔
-UIVersion (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-DefaultNewPageTemplateId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
-HorizontalQuickLaunch (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-RecycleBinEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-ServerRelativePath (SP.ResourcePath) | ✔ | ✔ | ✖ | ✖
-SiteLogoDescription (Edm.String) | ✔ | ✔ | ✖ | ✖
-DepartmentData (Edm.String) | ✖ | ✔ | ✖ | ✖
-DesignPackageId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
-IsRevertHomepageLinkHidden (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-AllowSavePublishDeclarativeWorkflowForCurrentUser (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-LastItemModifiedDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
-QuickLaunchEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-RequestAccessEmail (Edm.String) | ✔ | ✔ | ✔ | ✔
-SearchBoxInNavBar (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-ShowUrlStructureForCurrentUser (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-SyndicationEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-ThirdPartyMdmEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-UseAccessRequestDefault (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-AllowCreateDeclarativeWorkflowForCurrentUser (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-ContainsConfidentialInfo (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 OverwriteTranslationsOnChange (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-ServerRelativeUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+ResourcePath (SP.ResourcePath) | ✔ | ✔ | ✖ | ✖
 AllowAutomaticASPXPageIndexing (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-CurrentChangeToken (SP.ChangeToken) | ✔ | ✔ | ✔ | ✖
-DocumentLibraryCalloutOfficeWebAppPreviewersDisabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+AllowCreateDeclarativeWorkflowForCurrentUser (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+ClassicWelcomePage (Edm.String) | ✔ | ✖ | ✖ | ✖
+ServerRelativeUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+ObjectCacheEnabled (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+PreviewFeaturesEnabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+AllowRssFeeds (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+Configuration (Edm.Int16) | ✔ | ✔ | ✔ | ✔
+IsHomepageModernized (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+WebTemplate (Edm.String) | ✔ | ✔ | ✔ | ✔
+AllowMasterPageEditingForCurrentUser (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+AlternateCssUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+ThemedCssFolderUrl (Edm.String) | ✔ | ✔ | ✖ | ✔
+PrimaryColor (Edm.String) | ✔ | ✖ | ✖ | ✖
+SearchBoxPlaceholderText (Edm.String) | ✔ | ✖ | ✖ | ✖
+HideTitleInHeader (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+UIVersion (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+Description (Edm.String) | ✔ | ✔ | ✔ | ✔
+EffectiveBasePermissions (SP.BasePermissions) | ✔ | ✔ | ✔ | ✔
+FooterEnabled (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+TenantAdminMembersCanShare (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+ThirdPartyMdmEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+AccessRequestSiteDescription (Edm.String) | ✔ | ✖ | ✖ | ✖
+AllowRevertFromTemplateForCurrentUser (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+DesignerDownloadUrlForCurrentUser (Edm.String) | ✔ | ✔ | ✔ | ✔
+RequestAccessEmail (Edm.String) | ✔ | ✔ | ✔ | ✔
+ServerRelativePath (SP.ResourcePath) | ✔ | ✔ | ✖ | ✖
+TenantTagPolicyEnabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+UseAccessRequestDefault (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+ContainsConfidentialInfo (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+HeaderLayout (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+MasterUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+SiteLogoDescription (Edm.String) | ✔ | ✔ | ✖ | ✖
 SupportedUILanguageIds (Collection(Edm.Int32)) | ✔ | ✔ | ✔ | ✔
+SyndicationEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+ThemeData (Edm.String) | ✔ | ✔ | ✔ | ✖
+DepartmentData (Edm.String) | ✖ | ✔ | ✖ | ✖
+MegaMenuEnabled (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+NotificationsInSharePointEnabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+SearchBoxInNavBar (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+SaveSiteAsTemplateEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+SearchScope (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+CurrentChangeToken (SP.ChangeToken) | ✔ | ✔ | ✔ | ✖
+CustomMasterUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+MembersCanShare (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+AppInstanceId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
+Created (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
+IsMultilingual (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+DisableFlows (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+FooterEmphasis (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+IsRevertHomepageLinkHidden (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+LastItemModifiedDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
+UIVersionConfigurationEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+AllowSaveDeclarativeWorkflowAsTemplateForCurrentUser (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+AllowSavePublishDeclarativeWorkflowForCurrentUser (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+DisableAppViews (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+Url (Edm.String) | ✔ | ✔ | ✔ | ✔
+TreeViewEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+DefaultNewPageTemplateId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+NoCrawl (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+QuickLaunchEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+AllowDesignerForCurrentUser (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+NotificationsInOneDriveForBusinessEnabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+RecycleBinEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+ShowUrlStructureForCurrentUser (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+Title (Edm.String) | ✔ | ✔ | ✔ | ✔
+WelcomePage (Edm.String) | ✔ | ✔ | ✖ | ✖
+HorizontalQuickLaunch (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+Id (Edm.Guid) | ✔ | ✔ | ✔ | ✔
+LastItemUserModifiedDate (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
+NavAudienceTargetingEnabled (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+DesignPackageId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
+DocumentLibraryCalloutOfficeWebAppPreviewersDisabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+Language (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+ExcludeFromOfflineClient (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+FooterLayout (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+HeaderEmphasis (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+SiteLogoUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+AccessRequestListUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
+CommentsOnSitePagesDisabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+DisableRecommendedItems (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
 
 ### Navigation Properties
 
@@ -100,48 +100,48 @@ SupportedUILanguageIds (Collection(Edm.Int32)) | ✔ | ✔ | ✔ | ✔
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-AssociatedVisitorGroup | ✔ | ✔ | ✔ | ✔
-DataLeakagePreventionStatusInfo | ✔ | ✔ | ✔ | ✖
-Fields | ✔ | ✔ | ✔ | ✔
-Navigation | ✔ | ✔ | ✔ | ✔
-OneDriveSharedItems | ✔ | ✔ | ✖ | ✖
-SiteUsers | ✔ | ✔ | ✔ | ✔
-Webs | ✔ | ✔ | ✔ | ✔
-WorkflowAssociations | ✔ | ✔ | ✔ | ✔
-PushNotificationSubscribers | ✔ | ✔ | ✔ | ✔
-RootFolder | ✔ | ✔ | ✔ | ✔
-Activities | ✔ | ✔ | ✖ | ✖
-AllProperties | ✔ | ✔ | ✔ | ✔
-SiteGroups | ✔ | ✔ | ✔ | ✔
+WorkflowTemplates | ✔ | ✔ | ✔ | ✔
+HostedApps | ✔ | ✖ | ✖ | ✖
+ListTemplates | ✔ | ✔ | ✔ | ✔
 TenantAppCatalog | ✔ | ✔ | ✖ | ✖
-AssociatedMemberGroup | ✔ | ✔ | ✔ | ✔
-AvailableContentTypes | ✔ | ✔ | ✔ | ✔
-AvailableFields | ✔ | ✔ | ✔ | ✔
+TitleResource | ✔ | ✔ | ✔ | ✖
+ThemeInfo | ✔ | ✔ | ✔ | ✔
+WorkflowAssociations | ✔ | ✔ | ✔ | ✔
+ClientWebParts | ✔ | ✔ | ✖ | ✖
+Folders | ✔ | ✔ | ✔ | ✔
+OneDriveSharedItems | ✔ | ✔ | ✖ | ✖
+RootFolder | ✔ | ✔ | ✔ | ✔
+Navigation | ✔ | ✔ | ✔ | ✔
+WebInfos | ✔ | ✔ | ✔ | ✔
+AllProperties | ✔ | ✔ | ✔ | ✔
+AssociatedVisitorGroup | ✔ | ✔ | ✔ | ✔
+ContentTypes | ✔ | ✔ | ✔ | ✔
 CurrentUser | ✔ | ✔ | ✔ | ✔
-Features | ✔ | ✔ | ✔ | ✔
-Lists | ✔ | ✔ | ✔ | ✔
-SiteCollectionAppCatalog | ✔ | ✔ | ✖ | ✖
 UserCustomActions | ✔ | ✔ | ✔ | ✔
-Author | ✔ | ✔ | ✖ | ✖
-MultilingualSettings | ✔ | ✖ | ✖ | ✖
+BingMapsInformation | ✖ | ✔ | ✖ | ✖
+AssociatedOwnerGroup | ✔ | ✔ | ✔ | ✔
+Fields | ✔ | ✔ | ✔ | ✔
+PushNotificationSubscribers | ✔ | ✔ | ✔ | ✔
+RecycleBin | ✔ | ✔ | ✔ | ✔
+Lists | ✔ | ✔ | ✔ | ✔
+Webs | ✔ | ✔ | ✔ | ✔
+Activities | ✔ | ✔ | ✖ | ✖
+AppTiles | ✔ | ✔ | ✔ | ✖
+AssociatedMemberGroup | ✔ | ✔ | ✔ | ✔
+EventReceivers | ✔ | ✔ | ✔ | ✔
+RoleDefinitions | ✔ | ✔ | ✔ | ✔
+SiteCollectionAppCatalog | ✔ | ✔ | ✖ | ✖
 SiteUserInfoList | ✔ | ✔ | ✔ | ✔
 ActivityLogger | ✔ | ✔ | ✖ | ✖
-AppTiles | ✔ | ✔ | ✔ | ✖
-AssociatedOwnerGroup | ✔ | ✔ | ✔ | ✔
-Folders | ✔ | ✔ | ✔ | ✔
-ThemeInfo | ✔ | ✔ | ✔ | ✔
-BingMapsInformation | ✖ | ✔ | ✖ | ✖
-ClientWebParts | ✔ | ✔ | ✖ | ✖
-ContentTypes | ✔ | ✔ | ✔ | ✔
 DescriptionResource | ✔ | ✔ | ✔ | ✖
-ListTemplates | ✔ | ✔ | ✔ | ✔
+MultilingualSettings | ✔ | ✖ | ✖ | ✖
 RegionalSettings | ✔ | ✔ | ✔ | ✔
-WebInfos | ✔ | ✔ | ✔ | ✔
 Alerts | ✔ | ✔ | ✖ | ✖
-EventReceivers | ✔ | ✔ | ✔ | ✔
-HostedApps | ✔ | ✖ | ✖ | ✖
+AvailableContentTypes | ✔ | ✔ | ✔ | ✔
+AvailableFields | ✔ | ✔ | ✔ | ✔
 ParentWeb | ✔ | ✔ | ✔ | ✔
-RecycleBin | ✔ | ✔ | ✔ | ✔
-RoleDefinitions | ✔ | ✔ | ✔ | ✔
-TitleResource | ✔ | ✔ | ✔ | ✖
-WorkflowTemplates | ✔ | ✔ | ✔ | ✔
+SiteUsers | ✔ | ✔ | ✔ | ✔
+Author | ✔ | ✔ | ✖ | ✖
+DataLeakagePreventionStatusInfo | ✔ | ✔ | ✔ | ✖
+Features | ✔ | ✔ | ✔ | ✔
+SiteGroups | ✔ | ✔ | ✔ | ✔

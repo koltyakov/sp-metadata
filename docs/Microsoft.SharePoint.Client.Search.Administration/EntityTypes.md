@@ -5,5 +5,5 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-[DocumentCrawlLog](./EntityTypes/DocumentCrawlLog) | ✔ | ✔ | ✔ | ✔
-[SearchObjectOwner](./EntityTypes/SearchObjectOwner) | ✖ | ✖ | ✖ | ✔
+[DocumentCrawlLog](./EntityTypes/DocumentCrawlLog.md) | ✔ | ✔ | ✔ | ✔
+[SearchObjectOwner](./EntityTypes/SearchObjectOwner.md) | ✖ | ✖ | ✖ | ✔

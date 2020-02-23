@@ -7,23 +7,23 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-ActualWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-NonBillableOvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-NonBillableOvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-NonBillableWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-OvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-NonBillableWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-OvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-PlannedWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-PlannedWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-Start (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-ActualWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-ActualWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
 Comment (Edm.String) | ✔ | ✔ | ✔ | ✖
-End (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
-NonBillableOvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-NonBillableWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
 OvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+Start (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+ActualWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+End (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+NonBillableWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+OvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+OvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+PlannedWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+PlannedWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+ActualWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
+NonBillableOvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+NonBillableWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+NonBillableWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
 PlannedWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+ActualWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+NonBillableOvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+NonBillableOvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
 

@@ -7,25 +7,25 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-ActualWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-Cost (Edm.Double) | ✔ | ✔ | ✔ | ✖
-PercentComplete (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+BudgetWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+DurationTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+Finish (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+WorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+Start (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
 Work (Edm.String) | ✔ | ✔ | ✔ | ✖
 ActualWork (Edm.String) | ✔ | ✔ | ✔ | ✖
 BudgetWork (Edm.String) | ✔ | ✔ | ✔ | ✖
 BudgetWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-Duration (Edm.String) | ✔ | ✔ | ✔ | ✖
-DurationTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-Priority (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-StartText (Edm.String) | ✔ | ✔ | ✔ | ✖
+DurationMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+Name (Edm.String) | ✔ | ✔ | ✔ | ✖
 ActualCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
 ActualWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-Name (Edm.String) | ✔ | ✔ | ✔ | ✖
-BudgetWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-DurationMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-Finish (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+Cost (Edm.Double) | ✔ | ✔ | ✔ | ✖
+PercentComplete (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+Priority (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+ActualWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+Duration (Edm.String) | ✔ | ✔ | ✔ | ✖
 FinishText (Edm.String) | ✔ | ✔ | ✔ | ✖
-Start (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-WorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+StartText (Edm.String) | ✔ | ✔ | ✔ | ✖
 WorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
 

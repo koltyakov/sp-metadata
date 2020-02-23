@@ -7,19 +7,19 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
+EnableDocumentBrowserPublishingView (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+PolicyTitle (Edm.String) | ✔ | ✔ | ✔ | ✔
+AllowPrint (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 EnableDocumentAccessExpire (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+EnableGroupProtection (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+TemplateId (Edm.String) | ✔ | ✔ | ✖ | ✖
+DocumentAccessExpireDays (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+EnableLicenseCacheExpire (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+GroupName (Edm.String) | ✔ | ✔ | ✔ | ✔
 PolicyDescription (Edm.String) | ✔ | ✔ | ✔ | ✔
 AllowScript (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-EnableGroupProtection (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-EnableLicenseCacheExpire (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-LicenseCacheExpireDays (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-GroupName (Edm.String) | ✔ | ✔ | ✔ | ✔
-PolicyTitle (Edm.String) | ✔ | ✔ | ✔ | ✔
-TemplateId (Edm.String) | ✔ | ✔ | ✖ | ✖
 AllowWriteCopy (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 DisableDocumentBrowserView (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-DocumentAccessExpireDays (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-EnableDocumentBrowserPublishingView (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-AllowPrint (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 DocumentLibraryProtectionExpireDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
+LicenseCacheExpireDays (Edm.Int32) | ✔ | ✔ | ✔ | ✔
 

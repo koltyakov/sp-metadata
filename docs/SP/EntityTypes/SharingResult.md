@@ -8,12 +8,12 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
 ErrorMessage (Edm.String) | ✔ | ✔ | ✔ | ✖
+InvitedUsers (Collection(SP.SPInvitationCreationResult)) | ✔ | ✔ | ✔ | ✖
 Name (Edm.String) | ✔ | ✔ | ✔ | ✖
-StatusCode (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 UsersAddedToGroup (Collection(SP.Sharing.UserSharingResult)) | ✔ | ✔ | ✔ | ✖
 IconUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
-InvitedUsers (Collection(SP.SPInvitationCreationResult)) | ✔ | ✔ | ✔ | ✖
 PermissionsPageRelativeUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
+StatusCode (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 UniquelyPermissionedUsers (Collection(SP.Sharing.UserSharingResult)) | ✔ | ✔ | ✔ | ✖
 Url (Edm.String) | ✔ | ✔ | ✔ | ✖
 

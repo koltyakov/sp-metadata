@@ -7,12 +7,12 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-DeviceAppInstanceId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
-LastModifiedTimeStamp (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
-RegistrationTimeStamp (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
 ServiceToken (Edm.String) | ✔ | ✔ | ✔ | ✔
 SubscriberType (Edm.String) | ✔ | ✔ | ✔ | ✔
 CustomArgs (Edm.String) | ✔ | ✔ | ✔ | ✔
+DeviceAppInstanceId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
+LastModifiedTimeStamp (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
+RegistrationTimeStamp (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
 
 ### Navigation Properties
 

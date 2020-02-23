@@ -5,11 +5,11 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-[SocialAnnouncementManager](./EntityTypes/SocialAnnouncementManager) | ✔ | ✔ | ✔ | ✖
-[SocialFeedManager](./EntityTypes/SocialFeedManager) | ✔ | ✔ | ✔ | ✔
-[SocialFollowingManager](./EntityTypes/SocialFollowingManager) | ✔ | ✔ | ✔ | ✔
-[SocialRestActor](./EntityTypes/SocialRestActor) | ✔ | ✔ | ✔ | ✔
-[SocialRestFeed](./EntityTypes/SocialRestFeed) | ✔ | ✔ | ✔ | ✔
-[SocialRestFeedManager](./EntityTypes/SocialRestFeedManager) | ✔ | ✔ | ✔ | ✔
-[SocialRestFollowingManager](./EntityTypes/SocialRestFollowingManager) | ✔ | ✔ | ✔ | ✔
-[SocialRestThread](./EntityTypes/SocialRestThread) | ✔ | ✔ | ✔ | ✔
+[SocialAnnouncementManager](./EntityTypes/SocialAnnouncementManager.md) | ✔ | ✔ | ✔ | ✖
+[SocialFeedManager](./EntityTypes/SocialFeedManager.md) | ✔ | ✔ | ✔ | ✔
+[SocialFollowingManager](./EntityTypes/SocialFollowingManager.md) | ✔ | ✔ | ✔ | ✔
+[SocialRestActor](./EntityTypes/SocialRestActor.md) | ✔ | ✔ | ✔ | ✔
+[SocialRestFeed](./EntityTypes/SocialRestFeed.md) | ✔ | ✔ | ✔ | ✔
+[SocialRestFeedManager](./EntityTypes/SocialRestFeedManager.md) | ✔ | ✔ | ✔ | ✔
+[SocialRestFollowingManager](./EntityTypes/SocialRestFollowingManager.md) | ✔ | ✔ | ✔ | ✔
+[SocialRestThread](./EntityTypes/SocialRestThread.md) | ✔ | ✔ | ✔ | ✔

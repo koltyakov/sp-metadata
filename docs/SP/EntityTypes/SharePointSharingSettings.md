@@ -7,22 +7,22 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-GroupNameLines (Collection(Edm.String)) | ✔ | ✔ | ✔ | ✖
 GroupRoleDefinitionNamesLines (Collection(Edm.String)) | ✔ | ✔ | ✔ | ✖
-RequiredScriptFileLinks (Collection(Edm.String)) | ✔ | ✔ | ✔ | ✖
+SelectedGroup (Edm.String) | ✔ | ✔ | ✔ | ✖
+txtEmailSubjectText (Edm.String) | ✔ | ✔ | ✔ | ✖
 UserDisplayUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
-SharedWithEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-SharingCssLink (Edm.String) | ✔ | ✔ | ✔ | ✖
-TabToShow (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 AddToGroupModeName (Edm.String) | ✔ | ✔ | ✔ | ✖
 IsMobileView (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 PanelShowHideMoreOptionsVisible (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-PanelSimplifiedRoleSelectorVisible (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-SelectedGroup (Edm.String) | ✔ | ✔ | ✔ | ✖
-PanelGivePermissionsVisible (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+SharingCssLink (Edm.String) | ✔ | ✔ | ✔ | ✖
+GroupNameLines (Collection(Edm.String)) | ✔ | ✔ | ✔ | ✖
 RoleDefinitionNameLines (Collection(Edm.String)) | ✔ | ✔ | ✔ | ✖
+SharedWithEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 TabbedDialogEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-txtEmailSubjectText (Edm.String) | ✔ | ✔ | ✔ | ✖
+PanelSimplifiedRoleSelectorVisible (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+RequiredScriptFileLinks (Collection(Edm.String)) | ✔ | ✔ | ✔ | ✖
+TabToShow (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+PanelGivePermissionsVisible (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 
 ### Navigation Properties
 

@@ -7,7 +7,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
+Rights (Edm.Int64) | ✔ | ✔ | ✖ | ✖
 DisplayName (Edm.String) | ✔ | ✔ | ✖ | ✖
 PrincipalName (Edm.String) | ✔ | ✔ | ✖ | ✖
-Rights (Edm.Int64) | ✔ | ✔ | ✖ | ✖
 

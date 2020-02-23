@@ -7,38 +7,38 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-ActualFinish (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-RegularWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-RemainingOvertime (Edm.String) | ✔ | ✔ | ✔ | ✖
+RemainingWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 RemainingOvertimeTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-RemainingWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-WorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-ActualWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-ActualWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-ApprovalStatus (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-Finish (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
 Name (Edm.String) | ✔ | ✔ | ✔ | ✖
-PercentComplete (Edm.Int16) | ✔ | ✔ | ✔ | ✖
+OvertimeTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+RemainingOvertimeMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+RemainingOvertime (Edm.String) | ✔ | ✔ | ✔ | ✖
 RemainingWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+WorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+ActualOvertimeTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+Finish (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+IsConfirmed (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+RegularWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+RemainingWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+Start (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+WorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+ActualWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+ApprovalStatus (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+RegularWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+OvertimeMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+ActualOvertime (Edm.String) | ✔ | ✔ | ✔ | ✖
+ActualStart (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+Overtime (Edm.String) | ✔ | ✔ | ✔ | ✖
+Modified (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+RegularWork (Edm.String) | ✔ | ✔ | ✔ | ✖
 Work (Edm.String) | ✔ | ✔ | ✔ | ✖
+ActualFinish (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+ActualWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
+PercentComplete (Edm.Int16) | ✔ | ✔ | ✔ | ✖
+ActualOvertimeMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 ActualWork (Edm.String) | ✔ | ✔ | ✔ | ✖
 Comments (Edm.String) | ✔ | ✔ | ✔ | ✖
-Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
-RemainingWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-ActualOvertime (Edm.String) | ✔ | ✔ | ✔ | ✖
-Overtime (Edm.String) | ✔ | ✔ | ✔ | ✖
-RegularWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-Start (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-Modified (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-OvertimeMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-OvertimeTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-WorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-ActualOvertimeMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-ActualOvertimeTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-ActualStart (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-IsConfirmed (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-RegularWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-RemainingOvertimeMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 
 ### Navigation Properties
 

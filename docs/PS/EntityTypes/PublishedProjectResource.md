@@ -7,23 +7,23 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
+StandardRateUnits (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+CostCenter (Edm.String) | ✔ | ✔ | ✔ | ✖
+CostPerUse (Edm.Double) | ✔ | ✔ | ✔ | ✖
+MaterialLabel (Edm.String) | ✔ | ✔ | ✔ | ✖
+MaximumCapacity (Edm.Double) | ✔ | ✔ | ✔ | ✖
+CostAccrual (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+Phonetics (Edm.String) | ✔ | ✔ | ✔ | ✖
 OvertimeRateUnits (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+Group (Edm.String) | ✔ | ✔ | ✔ | ✖
+Initials (Edm.String) | ✔ | ✔ | ✔ | ✖
+Name (Edm.String) | ✔ | ✔ | ✔ | ✖
+OvertimeRate (Edm.Double) | ✔ | ✔ | ✔ | ✖
+StandardRate (Edm.Double) | ✔ | ✔ | ✔ | ✖
 CanLevel (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 Code (Edm.String) | ✔ | ✔ | ✔ | ✖
-CostCenter (Edm.String) | ✔ | ✔ | ✔ | ✖
-Email (Edm.String) | ✔ | ✔ | ✔ | ✖
-Group (Edm.String) | ✔ | ✔ | ✔ | ✖
-MaterialLabel (Edm.String) | ✔ | ✔ | ✔ | ✖
-StandardRateUnits (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-CostAccrual (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-OvertimeRate (Edm.Double) | ✔ | ✔ | ✔ | ✖
-Name (Edm.String) | ✔ | ✔ | ✔ | ✖
-Phonetics (Edm.String) | ✔ | ✔ | ✔ | ✖
-StandardRate (Edm.Double) | ✔ | ✔ | ✔ | ✖
-CostPerUse (Edm.Double) | ✔ | ✔ | ✔ | ✖
 DefaultBookingType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-Initials (Edm.String) | ✔ | ✔ | ✔ | ✖
-MaximumCapacity (Edm.Double) | ✔ | ✔ | ✔ | ✖
+Email (Edm.String) | ✔ | ✔ | ✔ | ✖
 
 ### Navigation Properties
 

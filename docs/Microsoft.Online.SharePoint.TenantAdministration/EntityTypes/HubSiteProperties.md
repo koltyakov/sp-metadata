@@ -7,16 +7,16 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
+EnablePermissionsSync (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+ID (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+LogoUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
 ParentHubSiteId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
 Permissions (Collection(Microsoft.Online.SharePoint.TenantAdministration.HubSitePermission)) | ✔ | ✖ | ✖ | ✖
-SiteUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
-HideNameInNavigation (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-LogoUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
-ID (Edm.Guid) | ✔ | ✖ | ✖ | ✖
-RequiresJoinApproval (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
 SiteDesignId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
 SiteId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
-Title (Edm.String) | ✔ | ✖ | ✖ | ✖
 Description (Edm.String) | ✔ | ✖ | ✖ | ✖
-EnablePermissionsSync (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+Title (Edm.String) | ✔ | ✖ | ✖ | ✖
+RequiresJoinApproval (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+SiteUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
+HideNameInNavigation (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
 

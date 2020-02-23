@@ -7,46 +7,46 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-OvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-RegularWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-RemainingWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-ResourceId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
-ActualFinish (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-ActualWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-DefaultBookingType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-IsWorkResource (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-ActualWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-PercentWorkComplete (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-RemainingOvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
 RegularWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-RegularWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-RemainingWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-Work (Edm.String) | ✔ | ✔ | ✔ | ✖
-ActualOvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-BudgetedWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-DelayTimeSpan (Edm.Time) | ✔ | ✔ | ✖ | ✖
-OvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-DelayMilliseconds (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-ResourceCapacity (Edm.Double) | ✔ | ✔ | ✔ | ✖
-WorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-ActualOvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-ActualStart (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-BudgetedWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-Delay (Edm.String) | ✔ | ✔ | ✖ | ✖
-Cost (Edm.Double) | ✔ | ✔ | ✔ | ✖
-IsLockedByManager (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-OvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
 RemainingOvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-ActualWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-RemainingOvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+ResourceCapacity (Edm.Double) | ✔ | ✔ | ✔ | ✖
 TaskId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
-RemainingWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-WorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-ActualCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
 ActualOvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 BudgetedCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
 BudgetedWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+Cost (Edm.Double) | ✔ | ✔ | ✔ | ✖
+BudgetedWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+DelayTimeSpan (Edm.Time) | ✔ | ✔ | ✖ | ✖
+WorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+WorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+ActualWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+OvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+RemainingWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+ActualCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
+ActualOvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+PercentWorkComplete (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+RemainingOvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+ResourceId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
+ActualFinish (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+ActualOvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+IsLockedByManager (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+RegularWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+RegularWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+Work (Edm.String) | ✔ | ✔ | ✔ | ✖
+ActualStart (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+ActualWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+Delay (Edm.String) | ✔ | ✔ | ✖ | ✖
+DelayMilliseconds (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+OvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+ActualWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 CostRateTable (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+DefaultBookingType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+IsWorkResource (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+RemainingWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+BudgetedWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+OvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+RemainingOvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+RemainingWork (Edm.String) | ✔ | ✔ | ✔ | ✖
 
 ### Navigation Properties
 
@@ -54,7 +54,7 @@ CostRateTable (Edm.Int32) | ✔ | ✔ | ✖ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Resource | ✔ | ✔ | ✔ | ✖
-Task | ✔ | ✔ | ✔ | ✖
 Owner | ✔ | ✔ | ✔ | ✖
 Parent | ✔ | ✔ | ✔ | ✖
+Resource | ✔ | ✔ | ✔ | ✖
+Task | ✔ | ✔ | ✔ | ✖

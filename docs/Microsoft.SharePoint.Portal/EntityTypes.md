@@ -5,15 +5,15 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-[CollaborationMailbox](./EntityTypes/CollaborationMailbox) | ✔ | ✔ | ✔ | ✔
-[CommunityModeration](./EntityTypes/CommunityModeration) | ✔ | ✔ | ✔ | ✔
-[GroupService](./EntityTypes/GroupService) | ✔ | ✔ | ✖ | ✖
-[GroupSiteManager](./EntityTypes/GroupSiteManager) | ✔ | ✔ | ✔ | ✖
-[MySiteRecommendations](./EntityTypes/MySiteRecommendations) | ✔ | ✔ | ✔ | ✔
-[SPHubSitesUtility](./EntityTypes/SPHubSitesUtility) | ✔ | ✔ | ✖ | ✖
-[SPSiteManager](./EntityTypes/SPSiteManager) | ✔ | ✔ | ✖ | ✖
-[SharePointHomeServiceContext](./EntityTypes/SharePointHomeServiceContext) | ✔ | ✔ | ✖ | ✖
-[SharePointHomeServiceContextBuilder](./EntityTypes/SharePointHomeServiceContextBuilder) | ✔ | ✔ | ✖ | ✖
-[SiteIconManager](./EntityTypes/SiteIconManager) | ✔ | ✖ | ✖ | ✖
-[SiteLinkingManager](./EntityTypes/SiteLinkingManager) | ✔ | ✔ | ✖ | ✖
-[SuiteNavData](./EntityTypes/SuiteNavData) | ✔ | ✔ | ✔ | ✔
+[CollaborationMailbox](./EntityTypes/CollaborationMailbox.md) | ✔ | ✔ | ✔ | ✔
+[CommunityModeration](./EntityTypes/CommunityModeration.md) | ✔ | ✔ | ✔ | ✔
+[GroupService](./EntityTypes/GroupService.md) | ✔ | ✔ | ✖ | ✖
+[GroupSiteManager](./EntityTypes/GroupSiteManager.md) | ✔ | ✔ | ✔ | ✖
+[MySiteRecommendations](./EntityTypes/MySiteRecommendations.md) | ✔ | ✔ | ✔ | ✔
+[SPHubSitesUtility](./EntityTypes/SPHubSitesUtility.md) | ✔ | ✔ | ✖ | ✖
+[SPSiteManager](./EntityTypes/SPSiteManager.md) | ✔ | ✔ | ✖ | ✖
+[SharePointHomeServiceContext](./EntityTypes/SharePointHomeServiceContext.md) | ✔ | ✔ | ✖ | ✖
+[SharePointHomeServiceContextBuilder](./EntityTypes/SharePointHomeServiceContextBuilder.md) | ✔ | ✔ | ✖ | ✖
+[SiteIconManager](./EntityTypes/SiteIconManager.md) | ✔ | ✖ | ✖ | ✖
+[SiteLinkingManager](./EntityTypes/SiteLinkingManager.md) | ✔ | ✔ | ✖ | ✖
+[SuiteNavData](./EntityTypes/SuiteNavData.md) | ✔ | ✔ | ✔ | ✔

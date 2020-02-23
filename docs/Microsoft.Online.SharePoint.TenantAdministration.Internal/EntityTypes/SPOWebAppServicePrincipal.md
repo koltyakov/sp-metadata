@@ -19,6 +19,6 @@ ServicePrincipalObjectIds (Collection(Edm.Guid)) | ✔ | ✖ | ✖ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
+PermissionRequests | ✔ | ✖ | ✖ | ✖
 GrantManager | ✔ | ✖ | ✖ | ✖
 PermissionGrants | ✔ | ✖ | ✖ | ✖
-PermissionRequests | ✔ | ✖ | ✖ | ✖

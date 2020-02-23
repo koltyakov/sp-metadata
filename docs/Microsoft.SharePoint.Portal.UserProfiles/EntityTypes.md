@@ -5,11 +5,11 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-[DocumentsSharedWithGroup](./EntityTypes/DocumentsSharedWithGroup) | ✔ | ✔ | ✔ | ✖
-[DocumentsSharedWithMe](./EntityTypes/DocumentsSharedWithMe) | ✔ | ✔ | ✔ | ✔
-[DocumentsSharedWithPerson](./EntityTypes/DocumentsSharedWithPerson) | ✔ | ✔ | ✔ | ✖
-[MySiteDismissStatusText](./EntityTypes/MySiteDismissStatusText) | ✔ | ✔ | ✔ | ✔
-[MySiteDocumentMoveUtility](./EntityTypes/MySiteDocumentMoveUtility) | ✔ | ✔ | ✔ | ✔
-[MySiteLinks](./EntityTypes/MySiteLinks) | ✔ | ✔ | ✔ | ✖
-[PromotedSites](./EntityTypes/PromotedSites) | ✔ | ✔ | ✔ | ✔
-[SharedWithMeDocument](./EntityTypes/SharedWithMeDocument) | ✔ | ✔ | ✔ | ✖
+[DocumentsSharedWithGroup](./EntityTypes/DocumentsSharedWithGroup.md) | ✔ | ✔ | ✔ | ✖
+[DocumentsSharedWithMe](./EntityTypes/DocumentsSharedWithMe.md) | ✔ | ✔ | ✔ | ✔
+[DocumentsSharedWithPerson](./EntityTypes/DocumentsSharedWithPerson.md) | ✔ | ✔ | ✔ | ✖
+[MySiteDismissStatusText](./EntityTypes/MySiteDismissStatusText.md) | ✔ | ✔ | ✔ | ✔
+[MySiteDocumentMoveUtility](./EntityTypes/MySiteDocumentMoveUtility.md) | ✔ | ✔ | ✔ | ✔
+[MySiteLinks](./EntityTypes/MySiteLinks.md) | ✔ | ✔ | ✔ | ✖
+[PromotedSites](./EntityTypes/PromotedSites.md) | ✔ | ✔ | ✔ | ✔
+[SharedWithMeDocument](./EntityTypes/SharedWithMeDocument.md) | ✔ | ✔ | ✔ | ✖

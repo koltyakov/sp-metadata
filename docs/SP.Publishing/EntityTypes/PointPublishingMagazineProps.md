@@ -7,13 +7,13 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Description (Edm.String) | ✔ | ✖ | ✖ | ✖
+BannerImageUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
+BannerPattern (Edm.String) | ✔ | ✖ | ✖ | ✖
 IsUserContributor (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
 IsUserOwner (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+MagazineType (Edm.Int32) | ✔ | ✖ | ✖ | ✖
 PublishedDate (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
 BannerColor (Edm.String) | ✔ | ✖ | ✖ | ✖
-BannerPattern (Edm.String) | ✔ | ✖ | ✖ | ✖
+Description (Edm.String) | ✔ | ✖ | ✖ | ✖
 Title (Edm.String) | ✔ | ✖ | ✖ | ✖
-BannerImageUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
-MagazineType (Edm.Int32) | ✔ | ✖ | ✖ | ✖
 

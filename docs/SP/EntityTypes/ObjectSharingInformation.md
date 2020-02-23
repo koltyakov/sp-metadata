@@ -7,21 +7,21 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
+PendingAccessRequestsLink (Edm.String) | ✔ | ✔ | ✔ | ✔
+CanManagePermissions (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 HasPendingAccessRequests (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+IsFolder (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+IsSharedWithGuest (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+IsSharedWithMany (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+AnonymousEditLink (Edm.String) | ✔ | ✔ | ✔ | ✔
 HasPermissionLevels (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 IsSharedWithCurrentUser (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-IsSharedWithMany (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-TotalFileCount (Edm.Int64) | ✔ | ✔ | ✔ | ✖
-AnonymousEditLink (Edm.String) | ✔ | ✔ | ✔ | ✔
+SharingLinks (Collection(SP.SharingLinkInfo)) | ✔ | ✔ | ✔ | ✖
+AnonymousViewLink (Edm.String) | ✔ | ✔ | ✔ | ✔
 CanBeShared (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 CanBeUnshared (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 IsSharedWithSecurityGroup (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-AnonymousViewLink (Edm.String) | ✔ | ✔ | ✔ | ✔
-CanManagePermissions (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-IsFolder (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-PendingAccessRequestsLink (Edm.String) | ✔ | ✔ | ✔ | ✔
-SharingLinks (Collection(SP.SharingLinkInfo)) | ✔ | ✔ | ✔ | ✖
-IsSharedWithGuest (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+TotalFileCount (Edm.Int64) | ✔ | ✔ | ✔ | ✖
 
 ### Navigation Properties
 

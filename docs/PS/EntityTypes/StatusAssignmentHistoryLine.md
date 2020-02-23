@@ -7,16 +7,16 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Comment (Edm.String) | ✔ | ✔ | ✔ | ✖
+Submitted (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+ApproverId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
 Decision (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 DecisionDate (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
 Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
 ReassignedResourceId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
 ReassignmentDate (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
-SubmitterId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
-ApproverId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
 State (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-Submitted (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+Comment (Edm.String) | ✔ | ✔ | ✔ | ✖
+SubmitterId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
 UpdateType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 
 ### Navigation Properties

@@ -7,44 +7,44 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-CanCurrentUserRetrieveOrganizationReadWriteLink (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-IsGuestUser (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-PermissionsOnlyMode (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-Roles (Collection(SP.KeyValue)) | ✔ | ✔ | ✔ | ✖
-CanCurrentUserManageOrganizationReadonlyLink (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-CanCurrentUserManageOrganizationReadWriteLink (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-CanCurrentUserManageReadWriteLink (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-ShareByEmailEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-SupportsAclPropagation (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 CanCurrentUserRetrieveReadWriteLink (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-CanSendLink (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-GroupsList (Collection(SP.KeyValue)) | ✔ | ✔ | ✔ | ✖
-SiteIBSegmentIDs (Collection(Edm.String)) | ✔ | ✖ | ✖ | ✖
-ListId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
-RequiredAnonymousLinkExpirationInDays (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-SimplifiedRoles (Collection(SP.KeyValue)) | ✔ | ✔ | ✔ | ✖
-BlockPeoplePickerAndSharing (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-CanCurrentUserRetrieveReadonlyLink (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-DefaultShareLinkPermission (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+HasReadRole (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 InheritingWebLink (Edm.String) | ✔ | ✔ | ✔ | ✖
-IsPictureLibrary (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+Roles (Collection(SP.KeyValue)) | ✔ | ✔ | ✔ | ✖
+SupportsAclPropagation (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+SiteIBSegmentIDs (Collection(Edm.String)) | ✔ | ✖ | ✖ | ✖
+CanCurrentUserManageOrganizationReadWriteLink (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+CanCurrentUserShareInternally (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+DoesUserHaveIBSegment (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+ItemId (Edm.String) | ✔ | ✔ | ✔ | ✖
+ListId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
+PermissionsOnlyMode (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 ShowExternalSharingWarning (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-AccessRequestMode (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+CanCurrentUserShareExternally (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+CanSendLink (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+DefaultShareLinkPermission (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+ShareByEmailEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+BlockPeoplePickerAndSharing (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+CanCurrentUserRetrieveOrganizationReadWriteLink (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+IsUserSiteAdmin (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+RequiredAnonymousLinkExpirationInDays (Edm.Int32) | ✔ | ✔ | ✖ | ✖
 CanCurrentUserManageReadonlyLink (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 CanSendEmail (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-ItemName (Edm.String) | ✔ | ✔ | ✔ | ✖
-CanCurrentUserRetrieveOrganizationReadonlyLink (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-CanCurrentUserShareInternally (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-CanShareFolder (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-DoesUserHaveIBSegment (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-HasEditRole (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-IsUserSiteAdmin (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 ItemUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
 WebUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
-CanCurrentUserShareExternally (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+AccessRequestMode (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+CanCurrentUserRetrieveOrganizationReadonlyLink (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+IsPictureLibrary (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+SimplifiedRoles (Collection(SP.KeyValue)) | ✔ | ✔ | ✔ | ✖
+CanCurrentUserManageReadWriteLink (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+CanCurrentUserRetrieveReadonlyLink (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+CanShareFolder (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 DefaultShareLinkType (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-HasReadRole (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-ItemId (Edm.String) | ✔ | ✔ | ✔ | ✖
+GroupsList (Collection(SP.KeyValue)) | ✔ | ✔ | ✔ | ✖
+HasEditRole (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+IsGuestUser (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+CanCurrentUserManageOrganizationReadonlyLink (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+ItemName (Edm.String) | ✔ | ✔ | ✔ | ✖
 
 ### Navigation Properties
 
@@ -52,6 +52,6 @@ ItemId (Edm.String) | ✔ | ✔ | ✔ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-SharingPermissions | ✔ | ✔ | ✔ | ✖
 ObjectSharingInformation | ✔ | ✔ | ✔ | ✖
 SharePointSettings | ✔ | ✔ | ✔ | ✖
+SharingPermissions | ✔ | ✔ | ✔ | ✖

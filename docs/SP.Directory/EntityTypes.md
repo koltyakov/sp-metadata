@@ -5,16 +5,16 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-[Conversation](./EntityTypes/Conversation) | ✖ | ✖ | ✔ | ✖
-[DirectorySession](./EntityTypes/DirectorySession) | ✔ | ✔ | ✔ | ✖
-[Group](./EntityTypes/Group) | ✔ | ✔ | ✔ | ✖
-[GroupAndUserStatus](./EntityTypes/GroupAndUserStatus) | ✔ | ✔ | ✔ | ✖
-[Link](./EntityTypes/Link) | ✔ | ✔ | ✖ | ✖
-[MembersInfo](./EntityTypes/MembersInfo) | ✔ | ✔ | ✔ | ✖
-[MembershipResult](./EntityTypes/MembershipResult) | ✔ | ✔ | ✔ | ✖
-[MyGroupsResult](./EntityTypes/MyGroupsResult) | ✔ | ✔ | ✔ | ✖
-[Property](./EntityTypes/Property) | ✖ | ✖ | ✔ | ✖
-[PropertyDictionary](./EntityTypes/PropertyDictionary) | ✖ | ✖ | ✔ | ✖
-[SPHelper](./EntityTypes/SPHelper) | ✖ | ✖ | ✔ | ✖
-[User](./EntityTypes/User) | ✔ | ✔ | ✔ | ✖
-[UserRequestSchema](./EntityTypes/UserRequestSchema) | ✖ | ✖ | ✔ | ✖
+[Conversation](./EntityTypes/Conversation.md) | ✖ | ✖ | ✔ | ✖
+[DirectorySession](./EntityTypes/DirectorySession.md) | ✔ | ✔ | ✔ | ✖
+[Group](./EntityTypes/Group.md) | ✔ | ✔ | ✔ | ✖
+[GroupAndUserStatus](./EntityTypes/GroupAndUserStatus.md) | ✔ | ✔ | ✔ | ✖
+[Link](./EntityTypes/Link.md) | ✔ | ✔ | ✖ | ✖
+[MembersInfo](./EntityTypes/MembersInfo.md) | ✔ | ✔ | ✔ | ✖
+[MembershipResult](./EntityTypes/MembershipResult.md) | ✔ | ✔ | ✔ | ✖
+[MyGroupsResult](./EntityTypes/MyGroupsResult.md) | ✔ | ✔ | ✔ | ✖
+[Property](./EntityTypes/Property.md) | ✖ | ✖ | ✔ | ✖
+[PropertyDictionary](./EntityTypes/PropertyDictionary.md) | ✖ | ✖ | ✔ | ✖
+[SPHelper](./EntityTypes/SPHelper.md) | ✖ | ✖ | ✔ | ✖
+[User](./EntityTypes/User.md) | ✔ | ✔ | ✔ | ✖
+[UserRequestSchema](./EntityTypes/UserRequestSchema.md) | ✖ | ✖ | ✔ | ✖

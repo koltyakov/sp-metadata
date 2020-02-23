@@ -7,17 +7,17 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-RequestedMaxUnits (Edm.Double) | ✔ | ✔ | ✖ | ✖
-RequestedStart (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
-RequestedWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✖ | ✖
+ApprovedFinish (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
 ApprovedMaxUnits (Edm.Double) | ✔ | ✔ | ✖ | ✖
+ApprovedWork (Edm.String) | ✔ | ✔ | ✖ | ✖
+RequestedWorkMilliseconds (Edm.Int64) | ✔ | ✔ | ✖ | ✖
+RequestedWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✖ | ✖
 ApprovedStart (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
 ApprovedWorkMilliseconds (Edm.Int64) | ✔ | ✔ | ✖ | ✖
 ApprovedWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✖ | ✖
-RequestedFinish (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
-ApprovedFinish (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
-ApprovedWork (Edm.String) | ✔ | ✔ | ✖ | ✖
 HasUnsubmittedChanges (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+RequestedFinish (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
+RequestedMaxUnits (Edm.Double) | ✔ | ✔ | ✖ | ✖
+RequestedStart (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
 RequestedWork (Edm.String) | ✔ | ✔ | ✖ | ✖
-RequestedWorkMilliseconds (Edm.Int64) | ✔ | ✔ | ✖ | ✖
 

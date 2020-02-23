@@ -7,21 +7,21 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Id (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-IsMemberOfGroup (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-LoginName (Edm.String) | ✔ | ✔ | ✔ | ✔
-Email (Edm.String) | ✔ | ✔ | ✔ | ✔
-IsDomainGroup (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-IsSiteAdmin (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-JobTitle (Edm.String) | ✔ | ✔ | ✔ | ✔
-Picture (Edm.String) | ✔ | ✔ | ✔ | ✔
-SipAddress (Edm.String) | ✔ | ✔ | ✔ | ✔
-HasReviewPermission (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-Department (Edm.String) | ✔ | ✔ | ✔ | ✔
-HasEditPermission (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-HasViewPermission (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-IsExternalUser (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 CustomRoleNames (Edm.String) | ✔ | ✔ | ✔ | ✔
+Email (Edm.String) | ✔ | ✔ | ✔ | ✔
+HasReviewPermission (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+Id (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+IsSiteAdmin (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+LoginName (Edm.String) | ✔ | ✔ | ✔ | ✔
+SipAddress (Edm.String) | ✔ | ✔ | ✔ | ✔
+Department (Edm.String) | ✔ | ✔ | ✔ | ✔
+IsMemberOfGroup (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+HasEditPermission (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+IsDomainGroup (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+IsExternalUser (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+Picture (Edm.String) | ✔ | ✔ | ✔ | ✔
+HasViewPermission (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+JobTitle (Edm.String) | ✔ | ✔ | ✔ | ✔
 Name (Edm.String) | ✔ | ✔ | ✔ | ✔
 
 ### Navigation Properties

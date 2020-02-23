@@ -107,7 +107,7 @@ func entityTypesTable(models []*ModelMeta, namespace string) string {
 	for _, key := range getEntityTypes(models, namespace) {
 		compareMatrix = append(compareMatrix, &ComparisonVector{
 			Name:     key,
-			Link:     "./EntityTypes/" + key,
+			Link:     "./EntityTypes/" + key + ".md",
 			Presence: keyPresenceMap[key],
 		})
 	}

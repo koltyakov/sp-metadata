@@ -7,9 +7,9 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
+Message (Edm.String) | ✔ | ✔ | ✖ | ✖
 Created (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
 Id (Edm.Guid) | ✔ | ✔ | ✖ | ✖
-Message (Edm.String) | ✔ | ✔ | ✖ | ✖
 
 ### Navigation Properties
 

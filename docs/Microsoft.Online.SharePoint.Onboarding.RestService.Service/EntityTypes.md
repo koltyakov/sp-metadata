@@ -5,5 +5,5 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-[SiteRenameJob](./EntityTypes/SiteRenameJob) | ✔ | ✖ | ✖ | ✖
-[SiteRenameJobEntityData](./EntityTypes/SiteRenameJobEntityData) | ✔ | ✖ | ✖ | ✖
+[SiteRenameJob](./EntityTypes/SiteRenameJob.md) | ✔ | ✖ | ✖ | ✖
+[SiteRenameJobEntityData](./EntityTypes/SiteRenameJobEntityData.md) | ✔ | ✖ | ✖ | ✖

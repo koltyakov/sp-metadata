@@ -7,23 +7,23 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-AadAppId (Edm.String) | ✔ | ✖ | ✖ | ✖
-AadPermissions (Edm.String) | ✔ | ✖ | ✖ | ✖
-ContainsTenantWideExtension (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-Deployed (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-Title (Edm.String) | ✔ | ✔ | ✖ | ✖
-CDNLocation (Edm.String) | ✔ | ✖ | ✖ | ✖
-ID (Edm.String) | ✔ | ✔ | ✖ | ✖
-IsClientSideSolution (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-IsEnabled (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-IsValidAppPackage (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-CurrentVersionDeployed (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-InstalledVersion (Edm.String) | ✔ | ✔ | ✖ | ✖
-ThumbnailUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
-SkipDeploymentFeature (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
 AppCatalogVersion (Edm.String) | ✔ | ✔ | ✖ | ✖
 CanUpgrade (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+CDNLocation (Edm.String) | ✔ | ✖ | ✖ | ✖
+ContainsTenantWideExtension (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+Deployed (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+AadAppId (Edm.String) | ✔ | ✖ | ✖ | ✖
+CurrentVersionDeployed (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 ErrorMessage (Edm.String) | ✔ | ✖ | ✖ | ✖
+IsEnabled (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
 ProductId (Edm.String) | ✔ | ✖ | ✖ | ✖
+ID (Edm.String) | ✔ | ✔ | ✖ | ✖
+InstalledVersion (Edm.String) | ✔ | ✔ | ✖ | ✖
+IsClientSideSolution (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 ShortDescription (Edm.String) | ✔ | ✖ | ✖ | ✖
+SkipDeploymentFeature (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+AadPermissions (Edm.String) | ✔ | ✖ | ✖ | ✖
+IsValidAppPackage (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+ThumbnailUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
+Title (Edm.String) | ✔ | ✔ | ✖ | ✖
 

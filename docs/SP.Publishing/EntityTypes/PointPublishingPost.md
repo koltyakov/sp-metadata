@@ -7,16 +7,16 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-CreatedDate (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
-ModifiedDate (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
-OperationType (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-UserIsAuthor (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-Version (Edm.String) | ✔ | ✖ | ✖ | ✖
 Author (Edm.String) | ✔ | ✖ | ✖ | ✖
-Content (Edm.String) | ✔ | ✖ | ✖ | ✖
+CreatedDate (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
 FriendlyUrlFileName (Edm.String) | ✔ | ✖ | ✖ | ✖
 Id (Edm.Int32) | ✔ | ✖ | ✖ | ✖
 Title (Edm.String) | ✔ | ✖ | ✖ | ✖
+UserIsAuthor (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+Content (Edm.String) | ✔ | ✖ | ✖ | ✖
+ModifiedDate (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
+OperationType (Edm.Int32) | ✔ | ✖ | ✖ | ✖
+Version (Edm.String) | ✔ | ✖ | ✖ | ✖
 
 ### Navigation Properties
 

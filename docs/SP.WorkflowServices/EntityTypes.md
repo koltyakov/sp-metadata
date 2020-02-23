@@ -5,12 +5,12 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-[InteropService](./EntityTypes/InteropService) | ✔ | ✔ | ✔ | ✔
-[WorkflowDefinition](./EntityTypes/WorkflowDefinition) | ✔ | ✔ | ✔ | ✔
-[WorkflowDeploymentService](./EntityTypes/WorkflowDeploymentService) | ✔ | ✔ | ✔ | ✔
-[WorkflowInstance](./EntityTypes/WorkflowInstance) | ✔ | ✔ | ✔ | ✔
-[WorkflowInstanceService](./EntityTypes/WorkflowInstanceService) | ✔ | ✔ | ✔ | ✔
-[WorkflowMessagingService](./EntityTypes/WorkflowMessagingService) | ✔ | ✖ | ✖ | ✖
-[WorkflowServicesManager](./EntityTypes/WorkflowServicesManager) | ✔ | ✔ | ✔ | ✔
-[WorkflowSubscription](./EntityTypes/WorkflowSubscription) | ✔ | ✔ | ✔ | ✔
-[WorkflowSubscriptionService](./EntityTypes/WorkflowSubscriptionService) | ✔ | ✔ | ✔ | ✔
+[InteropService](./EntityTypes/InteropService.md) | ✔ | ✔ | ✔ | ✔
+[WorkflowDefinition](./EntityTypes/WorkflowDefinition.md) | ✔ | ✔ | ✔ | ✔
+[WorkflowDeploymentService](./EntityTypes/WorkflowDeploymentService.md) | ✔ | ✔ | ✔ | ✔
+[WorkflowInstance](./EntityTypes/WorkflowInstance.md) | ✔ | ✔ | ✔ | ✔
+[WorkflowInstanceService](./EntityTypes/WorkflowInstanceService.md) | ✔ | ✔ | ✔ | ✔
+[WorkflowMessagingService](./EntityTypes/WorkflowMessagingService.md) | ✔ | ✖ | ✖ | ✖
+[WorkflowServicesManager](./EntityTypes/WorkflowServicesManager.md) | ✔ | ✔ | ✔ | ✔
+[WorkflowSubscription](./EntityTypes/WorkflowSubscription.md) | ✔ | ✔ | ✔ | ✔
+[WorkflowSubscriptionService](./EntityTypes/WorkflowSubscriptionService.md) | ✔ | ✔ | ✔ | ✔

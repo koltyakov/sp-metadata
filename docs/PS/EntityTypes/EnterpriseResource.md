@@ -7,33 +7,33 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-HireDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
-IsCheckedOut (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-MaterialLabel (Edm.String) | ✔ | ✔ | ✔ | ✖
-RequiresEngagements (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-ResourceType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-CostAccrual (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-IsActive (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-IsTeam (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-TerminationDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-Code (Edm.String) | ✔ | ✔ | ✔ | ✖
-Group (Edm.String) | ✔ | ✔ | ✔ | ✖
-HyperlinkName (Edm.String) | ✔ | ✖ | ✔ | ✖
-Initials (Edm.String) | ✔ | ✔ | ✔ | ✖
-Modified (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-ResourceIdentifier (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 CanLevel (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+IsTeam (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+CostCenter (Edm.String) | ✔ | ✔ | ✔ | ✖
+TerminationDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+CostAccrual (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 DefaultBookingType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+MaterialLabel (Edm.String) | ✔ | ✔ | ✔ | ✖
+Phonetics (Edm.String) | ✔ | ✔ | ✔ | ✖
+Email (Edm.String) | ✔ | ✔ | ✔ | ✖
 ExternalId (Edm.String) | ✔ | ✔ | ✔ | ✖
+Group (Edm.String) | ✔ | ✔ | ✔ | ✖
+Initials (Edm.String) | ✔ | ✔ | ✔ | ✖
+IsActive (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+Code (Edm.String) | ✔ | ✔ | ✔ | ✖
+IsGeneric (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+Modified (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+ResourceType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+IsCheckedOut (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+Name (Edm.String) | ✔ | ✔ | ✔ | ✖
+ResourceIdentifier (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+HyperlinkName (Edm.String) | ✔ | ✖ | ✔ | ✖
+Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
 IsBudget (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 Created (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-Email (Edm.String) | ✔ | ✔ | ✔ | ✖
-IsGeneric (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-CostCenter (Edm.String) | ✔ | ✔ | ✔ | ✖
-Name (Edm.String) | ✔ | ✔ | ✔ | ✖
+HireDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
 HyperlinkUrl (Edm.String) | ✔ | ✖ | ✔ | ✖
-Phonetics (Edm.String) | ✔ | ✔ | ✔ | ✖
+RequiresEngagements (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 
 ### Navigation Properties
 
@@ -41,14 +41,14 @@ Phonetics (Edm.String) | ✔ | ✔ | ✔ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-CostRateTables | ✔ | ✔ | ✔ | ✖
-CustomFields | ✔ | ✔ | ✔ | ✖
-Engagements | ✔ | ✔ | ✖ | ✖
-UserPermissions | ✔ | ✔ | ✖ | ✖
 ResourceCalendarExceptions | ✔ | ✔ | ✔ | ✖
 TimesheetManager | ✔ | ✔ | ✔ | ✖
 BaseCalendar | ✔ | ✔ | ✔ | ✖
+CostRateTables | ✔ | ✔ | ✔ | ✖
 DefaultAssignmentOwner | ✔ | ✔ | ✔ | ✖
-Self | ✔ | ✔ | ✔ | ✖
+Engagements | ✔ | ✔ | ✖ | ✖
 User | ✔ | ✔ | ✔ | ✖
 Assignments | ✔ | ✔ | ✔ | ✖
+CustomFields | ✔ | ✔ | ✔ | ✖
+UserPermissions | ✔ | ✔ | ✖ | ✖
+Self | ✔ | ✔ | ✔ | ✖

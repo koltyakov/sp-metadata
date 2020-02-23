@@ -7,68 +7,68 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-sharePointFollowedDocumentsMigrated (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-sharePointLibrariesFirstRun (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-Birthday (Edm.DateTime) | ✖ | ✖ | ✔ | ✖
-sharePointOneDriveBusinessFirstRun (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-userType (Edm.String) | ✔ | ✔ | ✖ | ✖
-alias (Edm.String) | ✔ | ✔ | ✖ | ✖
-sharePointModernDocSetsFirstRun (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+sharePointSaveForLaterTeachingBubble (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
 Interests (Collection(Edm.String)) | ✖ | ✖ | ✔ | ✖
-Alias (Edm.String) | ✖ | ✖ | ✔ | ✖
-PrincipalName (Edm.String) | ✖ | ✖ | ✔ | ✖
-displayName (Edm.String) | ✔ | ✔ | ✖ | ✖
-netId (Edm.String) | ✔ | ✔ | ✖ | ✖
+Tags (Collection(Edm.String)) | ✖ | ✖ | ✔ | ✖
+alias (Edm.String) | ✔ | ✔ | ✖ | ✖
+hireDate (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
+pastProjects (Collection(Edm.String)) | ✔ | ✔ | ✖ | ✖
+sharePointLibrariesFirstRun (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+id (Edm.Guid) | ✔ | ✔ | ✖ | ✖
+officeGraphEnabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 preferredName (Edm.String) | ✔ | ✔ | ✖ | ✖
-principalName (Edm.String) | ✔ | ✔ | ✖ | ✖
-sharePointHomeCreateNewsTeachingBubble (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-tenantInstanceId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
-sharePointHomeMobileUpsell (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-TenantInstanceId (Edm.Guid) | ✖ | ✖ | ✔ | ✖
-schools (Collection(Edm.String)) | ✔ | ✔ | ✖ | ✖
-sharePointNewsDigestTeachingBubble (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 sharePointPictureUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
 Schools (Collection(Edm.String)) | ✖ | ✖ | ✔ | ✖
-mail (Edm.String) | ✔ | ✔ | ✖ | ✖
-tags (Collection(Edm.String)) | ✔ | ✔ | ✖ | ✖
-Mail (Edm.String) | ✖ | ✖ | ✔ | ✖
-accountEnabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-id (Edm.Guid) | ✔ | ✔ | ✖ | ✖
-sharePointHomeRefreshFirstRun (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-interests (Collection(Edm.String)) | ✔ | ✔ | ✖ | ✖
-officeGraphEnabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-sharePointModernHomepageFirstRun (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-sharePointSaveForLaterTeachingBubble (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-skills (Collection(Edm.String)) | ✔ | ✔ | ✖ | ✖
-pastProjects (Collection(Edm.String)) | ✔ | ✔ | ✖ | ✖
-pointPublishingPersonalSiteUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-AboutMe (Edm.String) | ✖ | ✖ | ✔ | ✖
-PastProjects (Collection(Edm.String)) | ✖ | ✖ | ✔ | ✖
-Id (Edm.Guid) | ✖ | ✖ | ✔ | ✖
-Skills (Collection(Edm.String)) | ✖ | ✖ | ✔ | ✖
-hireDate (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
-responsibilities (Collection(Edm.String)) | ✔ | ✔ | ✖ | ✖
-sharePointConversationsLinkFirstRun (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 sharePointFiltersPaneFirstRun (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 sharePointFollowedSitesMigrated (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-sharePointTeamsTeachingBubble (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-aboutMe (Edm.String) | ✔ | ✔ | ✖ | ✖
-Tags (Collection(Edm.String)) | ✖ | ✖ | ✔ | ✖
-sharePointPageAuthoringFirstRun (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-MySite (Edm.String) | ✖ | ✖ | ✔ | ✖
+sharePointContentBarViewsTeachingBubble (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+sharePointHomeRefreshFirstRun (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+tenantInstanceId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
+AboutMe (Edm.String) | ✖ | ✖ | ✔ | ✖
+schools (Collection(Edm.String)) | ✔ | ✔ | ✖ | ✖
+Birthday (Edm.DateTime) | ✖ | ✖ | ✔ | ✖
+displayName (Edm.String) | ✔ | ✔ | ✖ | ✖
+sharePointHomeFirstRun (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+sharePointHomeMobileUpsell (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+skills (Collection(Edm.String)) | ✔ | ✔ | ✖ | ✖
+Id (Edm.Guid) | ✖ | ✖ | ✔ | ✖
+PointPublishingPersonalSiteUrl (Edm.String) | ✖ | ✖ | ✔ | ✖
+HireDate (Edm.DateTime) | ✖ | ✖ | ✔ | ✖
 PreferredName (Edm.String) | ✖ | ✖ | ✔ | ✖
 birthday (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
-sharePointContentBarViewsTeachingBubble (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-HireDate (Edm.DateTime) | ✖ | ✖ | ✔ | ✖
-PointPublishingPersonalSiteUrl (Edm.String) | ✖ | ✖ | ✔ | ✖
-Responsibilities (Collection(Edm.String)) | ✖ | ✖ | ✔ | ✖
-DisplayName (Edm.String) | ✖ | ✖ | ✔ | ✖
+interests (Collection(Edm.String)) | ✔ | ✔ | ✖ | ✖
 mySite (Edm.String) | ✔ | ✔ | ✖ | ✖
-sharePointFollowedSitesMigrated2 (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
-sharePointHomeFirstRun (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+netId (Edm.String) | ✔ | ✔ | ✖ | ✖
+sharePointPageAuthoringFirstRun (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+tags (Collection(Edm.String)) | ✔ | ✔ | ✖ | ✖
+principalName (Edm.String) | ✔ | ✔ | ✖ | ✖
 sharePointListsFirstRun (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-sharePointNewsDigestTeachingBubbleHomePage (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+sharePointOneDriveBusinessFirstRun (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+Alias (Edm.String) | ✖ | ✖ | ✔ | ✖
+Mail (Edm.String) | ✖ | ✖ | ✔ | ✖
+sharePointModernHomepageFirstRun (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+PastProjects (Collection(Edm.String)) | ✖ | ✖ | ✔ | ✖
+mail (Edm.String) | ✔ | ✔ | ✖ | ✖
+accountEnabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+sharePointHomeCreateNewsTeachingBubble (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 sharePointProfileId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
+PrincipalName (Edm.String) | ✖ | ✖ | ✔ | ✖
+Skills (Collection(Edm.String)) | ✖ | ✖ | ✔ | ✖
+sharePointModernDocSetsFirstRun (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+sharePointNewsDigestTeachingBubble (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+MySite (Edm.String) | ✖ | ✖ | ✔ | ✖
+TenantInstanceId (Edm.Guid) | ✖ | ✖ | ✔ | ✖
+responsibilities (Collection(Edm.String)) | ✔ | ✔ | ✖ | ✖
+sharePointConversationsLinkFirstRun (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+sharePointFollowedSitesMigrated2 (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+sharePointTeamsTeachingBubble (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+DisplayName (Edm.String) | ✖ | ✖ | ✔ | ✖
+Responsibilities (Collection(Edm.String)) | ✖ | ✖ | ✔ | ✖
+sharePointFollowedDocumentsMigrated (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+sharePointNewsDigestTeachingBubbleHomePage (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+aboutMe (Edm.String) | ✔ | ✔ | ✖ | ✖
+pointPublishingPersonalSiteUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
+userType (Edm.String) | ✔ | ✔ | ✖ | ✖
 
 ### Navigation Properties
 
@@ -76,9 +76,9 @@ sharePointProfileId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-rankedMembership | ✔ | ✔ | ✖ | ✖
-Membership | ✖ | ✖ | ✔ | ✖
 Properties | ✖ | ✖ | ✔ | ✖
 RankedMembership | ✖ | ✖ | ✔ | ✖
 membership | ✔ | ✔ | ✖ | ✖
 ownership | ✔ | ✔ | ✖ | ✖
+rankedMembership | ✔ | ✔ | ✖ | ✖
+Membership | ✖ | ✖ | ✔ | ✖

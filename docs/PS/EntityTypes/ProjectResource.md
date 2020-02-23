@@ -7,68 +7,68 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-BudetCostWorkPerformed (Edm.Double) | ✔ | ✔ | ✔ | ✖
-RemainingWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-WorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-WorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-RegularWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+RemainingOvertimeCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
+Notes (Edm.String) | ✔ | ✔ | ✔ | ✖
+RemainingOvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
 Start (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-BaselineWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-BudgetedWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-BudgetedWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+BaselineWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+BaselineCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
+IsGenericResource (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+WorkVariance (Edm.String) | ✔ | ✔ | ✔ | ✖
+ActualOvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+BudgetedWork (Edm.String) | ✔ | ✔ | ✔ | ✖
 CostVariance (Edm.Double) | ✔ | ✔ | ✔ | ✖
-ActualOvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-BaselineWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+Created (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+Finish (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+PeakWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+RemainingOvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+Work (Edm.String) | ✔ | ✔ | ✔ | ✖
+ActualCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
+Cost (Edm.Double) | ✔ | ✔ | ✔ | ✖
+CostVarianceAtCompletion (Edm.Double) | ✔ | ✔ | ✔ | ✖
+RemainingCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
+BudetCostWorkPerformed (Edm.Double) | ✔ | ✔ | ✔ | ✖
+ActualWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+OvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+ScheduleCostVariance (Edm.Double) | ✔ | ✔ | ✔ | ✖
+WorkVarianceMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+ActualOvertimeCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
+BudgetedWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+Modified (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+RemainingWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+ActualCostWorkPerformed (Edm.String) | ✔ | ✔ | ✔ | ✖
+BaselineWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+AvailableFrom (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+BudgetedCostWorkScheduled (Edm.Double) | ✔ | ✔ | ✔ | ✖
+BudgetedWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
 OvertimeCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
-ActualOvertimeCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
-RemainingOvertimeCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
-RemainingCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
-Work (Edm.String) | ✔ | ✔ | ✔ | ✖
-ActualWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+RegularWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 AvailableTo (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-IsBudgeted (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-RegularWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-ActualWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-BaselineCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
-PeakWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-PeakWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-ActualCostWorkPerformed (Edm.String) | ✔ | ✔ | ✔ | ✖
-ActualCostWorkPerformedTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-BudgetedCostWorkScheduled (Edm.Double) | ✔ | ✔ | ✔ | ✖
-ScheduleCostVariance (Edm.Double) | ✔ | ✔ | ✔ | ✖
-ActualOvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-OvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
 RemainingWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-IsGenericResource (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-RemainingOvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-ActualCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
-BudgetedCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
-CostVarianceAtCompletion (Edm.Double) | ✔ | ✔ | ✔ | ✖
-Created (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-WorkVarianceTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-AvailableFrom (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-BudgetedWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-Cost (Edm.Double) | ✔ | ✔ | ✔ | ✖
-PeakWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-RemainingWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+OvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+ActualOvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 ActualWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-BaselineWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-Notes (Edm.String) | ✔ | ✔ | ✔ | ✖
-PercentWorkComplete (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-ActualOvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-OvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-RegularWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
-WorkVariance (Edm.String) | ✔ | ✔ | ✔ | ✖
-ActualCostWorkPerformedMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+BaselineWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+PeakWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+RegularWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+ActualCostWorkPerformedTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+WorkVarianceTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+RemainingOvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+ActualOvertimeWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+ActualWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
 CurrentCostVariance (Edm.Double) | ✔ | ✔ | ✔ | ✖
 IsOverAllocated (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-Modified (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-WorkVarianceMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-Finish (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-OvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-RemainingOvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
-RemainingOvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+WorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+ActualCostWorkPerformedMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+IsBudgeted (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+RemainingWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+WorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+BudgetedCost (Edm.Double) | ✔ | ✔ | ✔ | ✖
+OvertimeWork (Edm.String) | ✔ | ✔ | ✔ | ✖
+PercentWorkComplete (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+RegularWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
+PeakWorkTimeSpan (Edm.Time) | ✔ | ✔ | ✔ | ✖
 
 ### Navigation Properties
 
@@ -76,5 +76,5 @@ RemainingOvertimeWorkMilliseconds (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-CustomFields | ✔ | ✔ | ✔ | ✖
 EnterpriseResource | ✔ | ✔ | ✔ | ✖
+CustomFields | ✔ | ✔ | ✔ | ✖

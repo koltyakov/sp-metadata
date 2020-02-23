@@ -7,10 +7,10 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-CustomData (Edm.String) | ✖ | ✖ | ✖ | ✔
-Department (Edm.String) | ✖ | ✖ | ✖ | ✔
 Code (Edm.String) | ✖ | ✖ | ✖ | ✔
 CourseGradesPublished (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
+CustomData (Edm.String) | ✖ | ✖ | ✖ | ✔
+Department (Edm.String) | ✖ | ✖ | ✖ | ✔
 
 ### Navigation Properties
 
@@ -18,13 +18,13 @@ CourseGradesPublished (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Submissions | ✖ | ✖ | ✖ | ✔
+ResourceLibrary | ✖ | ✖ | ✖ | ✔
 Announcements | ✖ | ✖ | ✖ | ✔
 AssignedAssignments | ✖ | ✖ | ✖ | ✔
 AssignmentCategories | ✖ | ✖ | ✖ | ✔
 Assignments | ✖ | ✖ | ✖ | ✔
+EventSchedules | ✖ | ✖ | ✖ | ✔
 Grades | ✖ | ✖ | ✖ | ✔
 Lessons | ✖ | ✖ | ✖ | ✔
 Events | ✖ | ✖ | ✖ | ✔
-EventSchedules | ✖ | ✖ | ✖ | ✔
-ResourceLibrary | ✖ | ✖ | ✖ | ✔
+Submissions | ✖ | ✖ | ✖ | ✔

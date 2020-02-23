@@ -7,18 +7,18 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-CommentsDisabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-CommentsDisabledScope (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-Client_Title (Edm.String) | ✔ | ✔ | ✔ | ✔
-ServerRedirectedEmbedUri (Edm.String) | ✔ | ✔ | ✖ | ✖
-ComplianceInfo (SP.ListItemComplianceInfo) | ✔ | ✖ | ✖ | ✖
-DisplayName (Edm.String) | ✔ | ✔ | ✔ | ✔
-EffectiveBasePermissions (SP.BasePermissions) | ✔ | ✔ | ✔ | ✔
 EffectiveBasePermissionsForUI (SP.BasePermissions) | ✔ | ✔ | ✔ | ✔
+Id (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+EffectiveBasePermissions (SP.BasePermissions) | ✔ | ✔ | ✔ | ✔
 FileSystemObjectType (Edm.Int32) | ✔ | ✔ | ✔ | ✔
 IconOverlay (Edm.String) | ✔ | ✔ | ✖ | ✖
-Id (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+ServerRedirectedEmbedUri (Edm.String) | ✔ | ✔ | ✖ | ✖
+CommentsDisabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+CommentsDisabledScope (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+ComplianceInfo (SP.ListItemComplianceInfo) | ✔ | ✖ | ✖ | ✖
+DisplayName (Edm.String) | ✔ | ✔ | ✔ | ✔
 ServerRedirectedEmbedUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
+Client_Title (Edm.String) | ✔ | ✔ | ✔ | ✔
 
 ### Navigation Properties
 
@@ -26,16 +26,16 @@ ServerRedirectedEmbedUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
+AttachmentFiles | ✔ | ✔ | ✔ | ✔
+ContentType | ✔ | ✔ | ✔ | ✔
+GetDlpPolicyTip | ✔ | ✔ | ✔ | ✖
 FieldValuesAsText | ✔ | ✔ | ✔ | ✔
 Folder | ✔ | ✔ | ✔ | ✔
 LikedByInformation | ✔ | ✔ | ✖ | ✖
-ParentList | ✔ | ✔ | ✔ | ✔
 Properties | ✔ | ✔ | ✖ | ✖
-Versions | ✔ | ✔ | ✖ | ✖
-GetDlpPolicyTip | ✔ | ✔ | ✔ | ✖
 FieldValuesAsHtml | ✔ | ✔ | ✔ | ✔
-Activities | ✖ | ✔ | ✖ | ✖
 FieldValuesForEdit | ✔ | ✔ | ✔ | ✔
 File | ✔ | ✔ | ✔ | ✔
-AttachmentFiles | ✔ | ✔ | ✔ | ✔
-ContentType | ✔ | ✔ | ✔ | ✔
+ParentList | ✔ | ✔ | ✔ | ✔
+Versions | ✔ | ✔ | ✖ | ✖
+Activities | ✖ | ✔ | ✖ | ✖

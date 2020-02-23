@@ -8,22 +8,22 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
 UniqueId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
-ContentTypeId (SP.ContentTypeId) | ✔ | ✔ | ✖ | ✖
-EditorLoginName (Edm.String) | ✔ | ✔ | ✖ | ✖
+Editor (Edm.String) | ✔ | ✔ | ✔ | ✖
+ItemId (Edm.Int32) | ✔ | ✔ | ✔ | ✔
 ListTemplate (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+ListTitle (Edm.String) | ✔ | ✔ | ✖ | ✖
+ActivityType (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+ContentTypeId (SP.ContentTypeId) | ✔ | ✔ | ✖ | ✖
+FileType (Edm.String) | ✔ | ✔ | ✖ | ✖
 SharedWithUsers (SP.SharedWithUserCollection) | ✔ | ✔ | ✖ | ✖
-FileSystemObjectType (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-Hidden (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+WebId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
+EditorEmailHint (Edm.String) | ✔ | ✔ | ✖ | ✖
+EditorLoginName (Edm.String) | ✔ | ✔ | ✖ | ✖
 ServerRelativeUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
+ListId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
 SharedByUser (SP.SharedWithUser) | ✔ | ✔ | ✖ | ✖
 Title (Edm.String) | ✔ | ✔ | ✖ | ✖
-EditorEmailHint (Edm.String) | ✔ | ✔ | ✖ | ✖
-FileType (Edm.String) | ✔ | ✔ | ✖ | ✖
-ItemId (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-ListTitle (Edm.String) | ✔ | ✔ | ✖ | ✖
-WebId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
-ActivityType (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-Editor (Edm.String) | ✔ | ✔ | ✔ | ✖
+FileSystemObjectType (Edm.Int32) | ✔ | ✔ | ✖ | ✖
 Hashtag (Edm.String) | ✔ | ✔ | ✖ | ✖
-ListId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
+Hidden (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 

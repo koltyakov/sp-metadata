@@ -5,8 +5,8 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-[SPWorkflow](./EntityTypes/SPWorkflow) | ✔ | ✖ | ✖ | ✖
-[SPWorkflowManager](./EntityTypes/SPWorkflowManager) | ✔ | ✖ | ✖ | ✖
-[SPWorkflowTask](./EntityTypes/SPWorkflowTask) | ✔ | ✖ | ✖ | ✖
-[WorkflowAssociation](./EntityTypes/WorkflowAssociation) | ✔ | ✔ | ✔ | ✔
-[WorkflowTemplate](./EntityTypes/WorkflowTemplate) | ✔ | ✔ | ✔ | ✔
+[SPWorkflow](./EntityTypes/SPWorkflow.md) | ✔ | ✖ | ✖ | ✖
+[SPWorkflowManager](./EntityTypes/SPWorkflowManager.md) | ✔ | ✖ | ✖ | ✖
+[SPWorkflowTask](./EntityTypes/SPWorkflowTask.md) | ✔ | ✖ | ✖ | ✖
+[WorkflowAssociation](./EntityTypes/WorkflowAssociation.md) | ✔ | ✔ | ✔ | ✔
+[WorkflowTemplate](./EntityTypes/WorkflowTemplate.md) | ✔ | ✔ | ✔ | ✔

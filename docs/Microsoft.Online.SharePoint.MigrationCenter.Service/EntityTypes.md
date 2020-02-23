@@ -5,8 +5,8 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-[Device](./EntityTypes/Device) | ✔ | ✖ | ✖ | ✖
-[MigrationCenterServices](./EntityTypes/MigrationCenterServices) | ✔ | ✖ | ✖ | ✖
-[MigrationCenterStorage](./EntityTypes/MigrationCenterStorage) | ✔ | ✖ | ✖ | ✖
-[MigrationCredential](./EntityTypes/MigrationCredential) | ✔ | ✖ | ✖ | ✖
-[MigrationTask](./EntityTypes/MigrationTask) | ✔ | ✖ | ✖ | ✖
+[Device](./EntityTypes/Device.md) | ✔ | ✖ | ✖ | ✖
+[MigrationCenterServices](./EntityTypes/MigrationCenterServices.md) | ✔ | ✖ | ✖ | ✖
+[MigrationCenterStorage](./EntityTypes/MigrationCenterStorage.md) | ✔ | ✖ | ✖ | ✖
+[MigrationCredential](./EntityTypes/MigrationCredential.md) | ✔ | ✖ | ✖ | ✖
+[MigrationTask](./EntityTypes/MigrationTask.md) | ✔ | ✖ | ✖ | ✖

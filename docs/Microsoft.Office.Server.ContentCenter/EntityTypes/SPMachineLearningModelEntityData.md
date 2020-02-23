@@ -7,13 +7,13 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-LastTrained (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
+Explanations (Edm.String) | ✔ | ✖ | ✖ | ✖
 Accuracy (Edm.Single) | ✔ | ✖ | ✖ | ✖
 ColumnId (Edm.String) | ✔ | ✖ | ✖ | ✖
+ContentTypeId (Edm.String) | ✔ | ✖ | ✖ | ✖
+LastTrained (Edm.DateTime) | ✔ | ✖ | ✖ | ✖
+Schemas (Edm.String) | ✔ | ✖ | ✖ | ✖
 ColumnName (Edm.String) | ✔ | ✖ | ✖ | ✖
 ContentTypeGroup (Edm.String) | ✔ | ✖ | ✖ | ✖
-ContentTypeId (Edm.String) | ✔ | ✖ | ✖ | ✖
 ContentTypeName (Edm.String) | ✔ | ✖ | ✖ | ✖
-Explanations (Edm.String) | ✔ | ✖ | ✖ | ✖
-Schemas (Edm.String) | ✔ | ✖ | ✖ | ✖
 

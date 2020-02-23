@@ -7,8 +7,8 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-location (Edm.String) | ✔ | ✖ | ✖ | ✖
 appId (Edm.String) | ✔ | ✖ | ✖ | ✖
 domain (Edm.String) | ✔ | ✖ | ✖ | ✖
 isDefault (Edm.Boolean) | ✔ | ✖ | ✖ | ✖
+location (Edm.String) | ✔ | ✖ | ✖ | ✖
 

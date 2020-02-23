@@ -7,18 +7,18 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-LastModified (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
+IsCompleted (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+IsPersonal (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+CustomAttributes (Collection(Edm.String)) | ✔ | ✔ | ✔ | ✔
+DueDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
 LocationId (Edm.Int32) | ✔ | ✔ | ✔ | ✔
 PinAge (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-IsPersonal (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-IsReadOnly (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-SerializedCustomDataForClient (Edm.String) | ✔ | ✔ | ✔ | ✔
-CustomAttributes (Collection(Edm.String)) | ✔ | ✔ | ✔ | ✔
 Description (Edm.String) | ✔ | ✔ | ✔ | ✔
-StartDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
-DueDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
 EditUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
-Id (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-IsCompleted (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 Name (Edm.String) | ✔ | ✔ | ✔ | ✔
+Id (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+IsReadOnly (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+LastModified (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
+SerializedCustomDataForClient (Edm.String) | ✔ | ✔ | ✔ | ✔
+StartDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
 

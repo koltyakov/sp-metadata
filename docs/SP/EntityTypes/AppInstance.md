@@ -7,19 +7,19 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-PackageFingerprint (Edm.Binary) | ✔ | ✔ | ✔ | ✖
-ProductId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
-RemoteAppUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
-AppWebFullUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
-ImageUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
-InError (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 StartPage (Edm.String) | ✔ | ✔ | ✔ | ✔
-Status (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-WebId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
-Title (Edm.String) | ✔ | ✔ | ✔ | ✔
-AppPrincipalId (Edm.String) | ✔ | ✔ | ✔ | ✔
-Id (Edm.Guid) | ✔ | ✔ | ✔ | ✔
+ProductId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
 SiteId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
-ImageFallbackUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
+Id (Edm.Guid) | ✔ | ✔ | ✔ | ✔
+InError (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+WebId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
+AppPrincipalId (Edm.String) | ✔ | ✔ | ✔ | ✔
+PackageFingerprint (Edm.Binary) | ✔ | ✔ | ✔ | ✖
 SettingsPageUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+Status (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+AppWebFullUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+ImageFallbackUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
+ImageUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
+RemoteAppUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+Title (Edm.String) | ✔ | ✔ | ✔ | ✔
 

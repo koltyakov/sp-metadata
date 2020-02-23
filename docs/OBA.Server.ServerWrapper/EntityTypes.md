@@ -5,6 +5,6 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-[Diagnostics](./EntityTypes/Diagnostics) | ✔ | ✖ | ✖ | ✖
-[Reporting](./EntityTypes/Reporting) | ✔ | ✖ | ✖ | ✖
-[Taskflow](./EntityTypes/Taskflow) | ✔ | ✖ | ✖ | ✖
+[Diagnostics](./EntityTypes/Diagnostics.md) | ✔ | ✖ | ✖ | ✖
+[Reporting](./EntityTypes/Reporting.md) | ✔ | ✖ | ✖ | ✖
+[Taskflow](./EntityTypes/Taskflow.md) | ✔ | ✖ | ✖ | ✖

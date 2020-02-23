@@ -15,22 +15,22 @@ Id4a81de82eeb94d6080ea5bf63e27023a (Edm.String) | ✔ | ✖ | ✖ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-GroupMoveJobs | ✔ | ✖ | ✖ | ✖
-StorageQuotas | ✔ | ✖ | ✖ | ✖
+CrossGeoTenantBYOK | ✔ | ✖ | ✖ | ✖
+GeoExperience | ✔ | ✖ | ✖ | ✖
+SiteMoveJobs | ✔ | ✖ | ✖ | ✖
 ContentDbSchemaVersion | ✔ | ✖ | ✖ | ✖
+CrossFarmGroupMoveJobs | ✔ | ✖ | ✖ | ✖
+UnifiedGroups | ✔ | ✖ | ✖ | ✖
 CrossFarmUserMoveJobs | ✔ | ✖ | ✖ | ✖
-GeoTenantInstanceInformationCollection | ✔ | ✖ | ✖ | ✖
+GeoAdministrators | ✔ | ✖ | ✖ | ✖
+TenantInformationCollection | ✔ | ✖ | ✖ | ✖
+AllowedDataLocations | ✔ | ✖ | ✖ | ✖
+GroupMoveJobs | ✔ | ✖ | ✖ | ✖
 CrossGeoTenantProperties | ✔ | ✖ | ✖ | ✖
+GeoTenantInstanceInformationCollection | ✔ | ✖ | ✖ | ✖
+GlobalAdminCheck | ✔ | ✖ | ✖ | ✖
+StorageQuotas | ✔ | ✖ | ✖ | ✖
 TaxonomyReplicationParameters | ✔ | ✖ | ✖ | ✖
 UserMoveJobs | ✔ | ✖ | ✖ | ✖
-CrossFarmGroupMoveJobs | ✔ | ✖ | ✖ | ✖
 CrossFarmSiteMoveJobs | ✔ | ✖ | ✖ | ✖
 CrossGeoTenantCompatibility | ✔ | ✖ | ✖ | ✖
-SiteMoveJobs | ✔ | ✖ | ✖ | ✖
-AllowedDataLocations | ✔ | ✖ | ✖ | ✖
-GeoAdministrators | ✔ | ✖ | ✖ | ✖
-GeoExperience | ✔ | ✖ | ✖ | ✖
-UnifiedGroups | ✔ | ✖ | ✖ | ✖
-CrossGeoTenantBYOK | ✔ | ✖ | ✖ | ✖
-GlobalAdminCheck | ✔ | ✖ | ✖ | ✖
-TenantInformationCollection | ✔ | ✖ | ✖ | ✖

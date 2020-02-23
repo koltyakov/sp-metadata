@@ -7,42 +7,42 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-alias (Edm.String) | ✔ | ✔ | ✖ | ✖
-calendarUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-peopleUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-inboxUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
+notebookUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
 Mail (Edm.String) | ✖ | ✖ | ✔ | ✖
-displayName (Edm.String) | ✔ | ✔ | ✖ | ✖
-editGroupUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-isDynamic (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-Alias (Edm.String) | ✖ | ✖ | ✔ | ✖
+PictureUrl (Edm.String) | ✖ | ✖ | ✔ | ✖
 allowToAddGuests (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 isPublic (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-DirectoryObjectType (Edm.Int32) | ✖ | ✖ | ✔ | ✖
-PictureUrl (Edm.String) | ✖ | ✖ | ✔ | ✖
-mail (Edm.String) | ✔ | ✔ | ✖ | ✖
-IsPublic (Edm.Boolean) | ✖ | ✖ | ✔ | ✖
-SiteUrl (Edm.String) | ✖ | ✖ | ✔ | ✖
-Description (Edm.String) | ✖ | ✖ | ✔ | ✖
-PeopleUrl (Edm.String) | ✖ | ✖ | ✔ | ✖
-PrincipalName (Edm.String) | ✖ | ✖ | ✔ | ✖
-id (Edm.Guid) | ✔ | ✔ | ✖ | ✖
-notebookUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-principalName (Edm.String) | ✔ | ✔ | ✖ | ✖
-teamsResources (Collection(SP.KeyValue)) | ✔ | ✔ | ✖ | ✖
-yammerResources (Collection(SP.KeyValue)) | ✔ | ✔ | ✖ | ✖
-CalendarUrl (Edm.String) | ✖ | ✖ | ✔ | ✖
-Id (Edm.Guid) | ✖ | ✖ | ✔ | ✖
-classification (Edm.String) | ✔ | ✔ | ✖ | ✖
-description (Edm.String) | ✔ | ✔ | ✖ | ✖
-pictureUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-siteUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-EditGroupUrl (Edm.String) | ✖ | ✖ | ✔ | ✖
-InboxUrl (Edm.String) | ✖ | ✖ | ✔ | ✖
-assignedLabels (Edm.String) | ✔ | ✖ | ✖ | ✖
-documentsUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
+Alias (Edm.String) | ✖ | ✖ | ✔ | ✖
 DisplayName (Edm.String) | ✖ | ✖ | ✔ | ✖
+assignedLabels (Edm.String) | ✔ | ✖ | ✖ | ✖
+inboxUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
+IsPublic (Edm.Boolean) | ✖ | ✖ | ✔ | ✖
+PeopleUrl (Edm.String) | ✖ | ✖ | ✔ | ✖
+calendarUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
+siteUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
+displayName (Edm.String) | ✔ | ✔ | ✖ | ✖
+id (Edm.Guid) | ✔ | ✔ | ✖ | ✖
+Description (Edm.String) | ✖ | ✖ | ✔ | ✖
+DirectoryObjectType (Edm.Int32) | ✖ | ✖ | ✔ | ✖
 DocumentsUrl (Edm.String) | ✖ | ✖ | ✔ | ✖
+classification (Edm.String) | ✔ | ✔ | ✖ | ✖
+mail (Edm.String) | ✔ | ✔ | ✖ | ✖
+Id (Edm.Guid) | ✖ | ✖ | ✔ | ✖
+InboxUrl (Edm.String) | ✖ | ✖ | ✔ | ✖
+alias (Edm.String) | ✔ | ✔ | ✖ | ✖
+isDynamic (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+principalName (Edm.String) | ✔ | ✔ | ✖ | ✖
+yammerResources (Collection(SP.KeyValue)) | ✔ | ✔ | ✖ | ✖
+documentsUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
+editGroupUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
+peopleUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
+pictureUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
+teamsResources (Collection(SP.KeyValue)) | ✔ | ✔ | ✖ | ✖
+CalendarUrl (Edm.String) | ✖ | ✖ | ✔ | ✖
+EditGroupUrl (Edm.String) | ✖ | ✖ | ✔ | ✖
+PrincipalName (Edm.String) | ✖ | ✖ | ✔ | ✖
+description (Edm.String) | ✔ | ✔ | ✖ | ✖
+SiteUrl (Edm.String) | ✖ | ✖ | ✔ | ✖
 
 ### Navigation Properties
 

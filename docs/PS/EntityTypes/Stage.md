@@ -7,12 +7,12 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
 Name (Edm.String) | ✔ | ✔ | ✔ | ✖
 SubmitDescription (Edm.String) | ✔ | ✔ | ✔ | ✖
 Behavior (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 CheckInRequired (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 Description (Edm.String) | ✔ | ✔ | ✔ | ✖
+Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
 
 ### Navigation Properties
 
@@ -20,7 +20,7 @@ Description (Edm.String) | ✔ | ✔ | ✔ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
+WorkflowStatusPage | ✔ | ✔ | ✔ | ✖
 CustomFields | ✔ | ✔ | ✔ | ✖
 Phase | ✔ | ✔ | ✔ | ✖
 ProjectDetailPages | ✔ | ✔ | ✔ | ✖
-WorkflowStatusPage | ✔ | ✔ | ✔ | ✖

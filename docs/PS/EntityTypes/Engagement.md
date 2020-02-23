@@ -7,14 +7,14 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
+Modified (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
+ReviewedDate (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
+Status (Edm.Int32) | ✔ | ✔ | ✖ | ✖
 SubmittedDate (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
 TimephasedEditsOnly (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 CreatedDate (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
 Description (Edm.String) | ✔ | ✔ | ✖ | ✖
 Id (Edm.Guid) | ✔ | ✔ | ✖ | ✖
-Modified (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
-ReviewedDate (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
-Status (Edm.Int32) | ✔ | ✔ | ✖ | ✖
 
 ### Navigation Properties
 

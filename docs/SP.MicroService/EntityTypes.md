@@ -5,5 +5,5 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-[MicroServiceManager](./EntityTypes/MicroServiceManager) | ✔ | ✔ | ✖ | ✖
-[MicroServiceUtilities](./EntityTypes/MicroServiceUtilities) | ✔ | ✔ | ✖ | ✖
+[MicroServiceManager](./EntityTypes/MicroServiceManager.md) | ✔ | ✔ | ✖ | ✖
+[MicroServiceUtilities](./EntityTypes/MicroServiceUtilities.md) | ✔ | ✔ | ✖ | ✖

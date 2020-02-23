@@ -7,23 +7,23 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
+IsCorporateCatalogSite (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+LastModified (Edm.String) | ✔ | ✔ | ✔ | ✖
 ProductId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
-Target (Edm.String) | ✔ | ✔ | ✔ | ✖
+AssetId (Edm.String) | ✔ | ✔ | ✖ | ✖
 AppSource (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-AppStatus (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-BaseTemplate (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-ChildCount (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+AppPrincipalId (Edm.String) | ✔ | ✔ | ✖ | ✖
+CustomSettingsUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
+LastModifiedDate (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
+Target (Edm.String) | ✔ | ✔ | ✔ | ✖
 Thumbnail (Edm.String) | ✔ | ✔ | ✔ | ✖
 Title (Edm.String) | ✔ | ✔ | ✔ | ✖
-AppId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
-AppPrincipalId (Edm.String) | ✔ | ✔ | ✖ | ✖
+AppStatus (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+AppType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+BaseTemplate (Edm.Int32) | ✔ | ✔ | ✖ | ✖
+ChildCount (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 ContentMarket (Edm.String) | ✔ | ✔ | ✖ | ✖
 Description (Edm.String) | ✔ | ✔ | ✖ | ✖
-CustomSettingsUrl (Edm.String) | ✔ | ✔ | ✖ | ✖
-IsCorporateCatalogSite (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
-LastModifiedDate (Edm.DateTime) | ✔ | ✔ | ✖ | ✖
 Version (Edm.String) | ✔ | ✔ | ✖ | ✖
-AppType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-AssetId (Edm.String) | ✔ | ✔ | ✖ | ✖
-LastModified (Edm.String) | ✔ | ✔ | ✔ | ✖
+AppId (Edm.Guid) | ✔ | ✔ | ✖ | ✖
 

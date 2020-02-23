@@ -7,29 +7,29 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Hidden (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+MobileEditFormUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+EditFormUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+MobileDisplayFormUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+MobileNewFormUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+ReadOnly (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 Sealed (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 Description (Edm.String) | ✔ | ✔ | ✔ | ✔
-EditFormUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
-Id (SP.ContentTypeId) | ✔ | ✔ | ✔ | ✔
-Name (Edm.String) | ✔ | ✔ | ✔ | ✔
-SchemaXml (Edm.String) | ✔ | ✔ | ✔ | ✔
-Scope (Edm.String) | ✔ | ✔ | ✔ | ✔
-StringId (Edm.String) | ✔ | ✔ | ✔ | ✔
-DisplayFormTemplateName (Edm.String) | ✔ | ✔ | ✔ | ✔
-EditFormTemplateName (Edm.String) | ✔ | ✔ | ✔ | ✔
-MobileDisplayFormUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
-NewFormTemplateName (Edm.String) | ✔ | ✔ | ✔ | ✔
-DocumentTemplate (Edm.String) | ✔ | ✔ | ✔ | ✔
-Group (Edm.String) | ✔ | ✔ | ✔ | ✔
 JSLink (Edm.String) | ✔ | ✔ | ✔ | ✔
-MobileEditFormUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
-MobileNewFormUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+DocumentTemplate (Edm.String) | ✔ | ✔ | ✔ | ✔
+EditFormTemplateName (Edm.String) | ✔ | ✔ | ✔ | ✔
+Group (Edm.String) | ✔ | ✔ | ✔ | ✔
+Id (SP.ContentTypeId) | ✔ | ✔ | ✔ | ✔
 NewFormUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
-ReadOnly (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
-SchemaXmlWithResourceTokens (Edm.String) | ✔ | ✔ | ✔ | ✔
+SchemaXml (Edm.String) | ✔ | ✔ | ✔ | ✔
+DisplayFormTemplateName (Edm.String) | ✔ | ✔ | ✔ | ✔
 DisplayFormUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+SchemaXmlWithResourceTokens (Edm.String) | ✔ | ✔ | ✔ | ✔
+Scope (Edm.String) | ✔ | ✔ | ✔ | ✔
+Name (Edm.String) | ✔ | ✔ | ✔ | ✔
+NewFormTemplateName (Edm.String) | ✔ | ✔ | ✔ | ✔
+StringId (Edm.String) | ✔ | ✔ | ✔ | ✔
 DocumentTemplateUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+Hidden (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 
 ### Navigation Properties
 
@@ -37,9 +37,9 @@ DocumentTemplateUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-FieldLinks | ✔ | ✔ | ✔ | ✔
 Fields | ✔ | ✔ | ✔ | ✔
 NameResource | ✔ | ✔ | ✔ | ✖
 Parent | ✔ | ✔ | ✔ | ✔
 WorkflowAssociations | ✔ | ✔ | ✔ | ✔
 DescriptionResource | ✔ | ✔ | ✔ | ✖
+FieldLinks | ✔ | ✔ | ✔ | ✔
