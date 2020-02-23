@@ -163,6 +163,9 @@ func functionsImportsTable(models []*ModelMeta, namespace string) string {
 		if len(name) > 50 {
 			runes := []rune(name)
 			name = fmt.Sprintf("<span title=\"%s\">%s</span>", name, strings.Trim(string(runes[0:50]), "_")+"...")
+			if strings.Contains(key, "_") {
+				name += " (" + strings.Replace(key, "_", " ", -1) + ")"
+			}
 		}
 		compareMatrix = append(compareMatrix, &ComparisonVector{
 			Name:     name,
