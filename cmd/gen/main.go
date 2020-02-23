@@ -55,20 +55,22 @@ func main() {
 			for _, entityType := range entityTypes {
 				propsTable := entityTypePropsTable(models, namespace, entityType)
 				navPropsTable := entityTypeNavPropsTable(models, namespace, entityType)
-				data := &struct {
-					PropsTable    string
-					NavPropsTable string
-					Namespace     string
-					EntityType    string
-				}{
-					PropsTable:    propsTable,
-					NavPropsTable: navPropsTable,
-					Namespace:     namespace,
-					EntityType:    entityType,
-				}
-				filePath := filepath.Join(folderPath, "EntityTypes", entityType+".md")
-				if err := genDoc("./pkg/templates/EntityType.md", filePath, data); err != nil {
-					log.Fatal(err)
+				if propsTable != "" || navPropsTable != "" {
+					data := &struct {
+						PropsTable    string
+						NavPropsTable string
+						Namespace     string
+						EntityType    string
+					}{
+						PropsTable:    propsTable,
+						NavPropsTable: navPropsTable,
+						Namespace:     namespace,
+						EntityType:    entityType,
+					}
+					filePath := filepath.Join(folderPath, "EntityTypes", entityType+".md")
+					if err := genDoc("./pkg/templates/EntityType.md", filePath, data); err != nil {
+						log.Fatal(err)
+					}
 				}
 			}
 		}
