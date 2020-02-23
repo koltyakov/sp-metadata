@@ -52,6 +52,20 @@ func main() {
 			}
 		}
 
+		// Entity sets comparison
+		entitySets := getEntitySets(models, namespace)
+		if len(entitySets) > 0 {
+			table = entitySetsTable(models, namespace)
+			data := &struct {
+				Table     string
+				Namespace string
+			}{table, namespace}
+			filePath := filepath.Join(folderPath, "EntitySets.md")
+			if err := genDoc("./pkg/templates/EntitySets.md", filePath, data); err != nil {
+				log.Fatal(err)
+			}
+		}
+
 	}
 
 	fmt.Println("Done")
