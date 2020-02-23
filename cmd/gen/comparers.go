@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"strings"
 
 	"github.com/koltyakov/sp-metadata/config"
@@ -161,7 +162,7 @@ func functionsImportsTable(models []*ModelMeta, namespace string) string {
 		name := key
 		if len(name) > 40 && strings.Contains(name, "_") {
 			runes := []rune(name)
-			name = strings.Trim(string(runes[0:40]), "_") + "... (" + strings.Replace(name, "_", " ", -1) + ")"
+			name = fmt.Sprintf("<span title=\"%s\">%s</span>", name, strings.Trim(string(runes[0:40]), "_")+"...")
 		}
 		compareMatrix = append(compareMatrix, &ComparisonVector{
 			Name:     name,
