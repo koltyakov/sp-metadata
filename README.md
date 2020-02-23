@@ -8,5 +8,6 @@ Schema comparison allows tracking "what's new in SharePoint Online" in compariso
 
 SharePoint Online is tracked for Standard and Target Releases which allows detecting what potential changes API-terms would be applied shortly.
 
-Entry point:
+## Entry point
+
 - [Namespaces](./docs/namespaces.md)
