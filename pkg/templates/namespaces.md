@@ -2,4 +2,4 @@
 
 **Availability matrix**
 
-{{.NamespacesTable}}
+{{.Table}}
