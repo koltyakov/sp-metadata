@@ -44,7 +44,6 @@ func complexTypesTable(models []*ModelMeta, namespace string) string {
 	envCodes := config.GetEnvironmentsCodes()
 	var compareMatrix []*ComparisonVector
 
-	// Namespaces in platform versions
 	keyPresenceMap := map[string]map[string]bool{}
 	for _, m := range models {
 		for _, s := range m.Model.Services.Schemas {
@@ -82,7 +81,6 @@ func complexTypePropsTable(models []*ModelMeta, namespace string, complexType st
 	envCodes := config.GetEnvironmentsCodes()
 	var compareMatrix []*ComparisonVector
 
-	// Namespaces in platform versions
 	keyPresenceMap := map[string]map[string]bool{}
 	for _, m := range models {
 		for _, s := range m.Model.Services.Schemas {
@@ -131,7 +129,6 @@ func entityTypesTable(models []*ModelMeta, namespace string) string {
 	envCodes := config.GetEnvironmentsCodes()
 	var compareMatrix []*ComparisonVector
 
-	// Namespaces in platform versions
 	keyPresenceMap := map[string]map[string]bool{}
 	for _, m := range models {
 		for _, s := range m.Model.Services.Schemas {
@@ -169,7 +166,6 @@ func entitySetsTable(models []*ModelMeta, namespace string) string {
 	envCodes := config.GetEnvironmentsCodes()
 	var compareMatrix []*ComparisonVector
 
-	// Namespaces in platform versions
 	keyPresenceMap := map[string]map[string]bool{}
 	for _, m := range models {
 		for _, s := range m.Model.Services.Schemas {
@@ -201,52 +197,6 @@ func entitySetsTable(models []*ModelMeta, namespace string) string {
 	// Constructing MD table
 	return genMDTable("Entity Set", envCodes, compareMatrix)
 }
-
-// func functionsImportsTable(models []*ModelMeta, namespace string) string {
-// 	envCodes := config.GetEnvironmentsCodes()
-// 	var compareMatrix []*ComparisonVector
-
-// 	// Namespaces in platform versions
-// 	keyPresenceMap := map[string]map[string]bool{}
-// 	for _, m := range models {
-// 		for _, s := range m.Model.Services.Schemas {
-// 			if s.Namespace == namespace {
-// 				for _, ent := range s.EntityContainer.FunctionImports {
-// 					n, ok := keyPresenceMap[ent.Name]
-// 					if !ok {
-// 						n = map[string]bool{}
-// 					}
-// 					n[m.Environment.Code] = true
-// 					keyPresenceMap[ent.Name] = n
-// 				}
-// 			}
-// 		}
-// 	}
-
-// 	if len(keyPresenceMap) == 0 {
-// 		return ""
-// 	}
-
-// 	// Map to comparison matrix
-// 	for _, key := range getFunctionsImports(models, namespace) {
-// 		name := key
-// 		if len(name) > 50 {
-// 			runes := []rune(name)
-// 			name = fmt.Sprintf("<span title=\"%s\">%s</span>", name, strings.Trim(string(runes[0:50]), "_")+"...")
-// 			if strings.Contains(key, "_") {
-// 				name += " (" + strings.Replace(key, "_", " ", -1) + ")"
-// 			}
-// 		}
-// 		name = fmt.Sprintf("[%s](./Functions/%s.md)", name, key)
-// 		compareMatrix = append(compareMatrix, &ComparisonVector{
-// 			Name:     name,
-// 			Presence: keyPresenceMap[key],
-// 		})
-// 	}
-
-// 	// Constructing MD table
-// 	return genMDTable("Functions Imports", envCodes, compareMatrix)
-// }
 
 func entityTypePropsTable(models []*ModelMeta, namespace string, entityType string) string {
 	envCodes := config.GetEnvironmentsCodes()
@@ -301,7 +251,6 @@ func entityTypeNavPropsTable(models []*ModelMeta, namespace string, entityType s
 	envCodes := config.GetEnvironmentsCodes()
 	var compareMatrix []*ComparisonVector
 
-	// Namespaces in platform versions
 	keyPresenceMap := map[string]map[string]bool{}
 	for _, m := range models {
 		for _, s := range m.Model.Services.Schemas {
