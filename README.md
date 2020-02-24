@@ -2,7 +2,7 @@
 
 The Metadata Tracker collects SharePoint API entity definitions (`/_api/$metadata`).
 
-Entity definitions (`edmx` models) are stored in `./meta` folder.
+[Entity definitions](./meta/README.md) (`edmx` models) are stored in `./meta` folder.
 
 Schema comparison allows tracking "what's new in SharePoint Online" in comparison to previous releases and On-Premise versions.
 
