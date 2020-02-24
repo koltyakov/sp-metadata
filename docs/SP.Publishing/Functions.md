@@ -43,14 +43,12 @@ DemoteFromNews (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 DemoteFromNews (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
 DemoteFromNews (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 DemoteFromNews (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
-Disable (SP.Publishing.Navigation.PortalNavigationCacheWrapper) | ✅ | ❌ | ❌ | ❌
 DiscardPage (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 DiscardPage (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
 DiscardPage (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 DiscardPage (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 EmbedData (SP.Publishing.EmbedService) | ✅ | ✅ | ❌ | ❌
 Enable (SP.Publishing.CommunicationSite) | ✅ | ❌ | ❌ | ❌
-Enable (SP.Publishing.Navigation.PortalNavigationCacheWrapper) | ✅ | ❌ | ❌ | ❌
 EnsureTitleResource (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
 Feed (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
 FeedTargeted (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
@@ -101,7 +99,6 @@ IsSitePage (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
 Newest (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
 PageDiagnostics | ✅ | ❌ | ❌ | ❌
 Popular (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
-PortalNavigationCache | ✅ | ❌ | ❌ | ❌
 PromoteToNews (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 PromoteToNews (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
 PromoteToNews (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
@@ -113,13 +110,11 @@ Publish (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 Query (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
 QueryChannels (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
 QueryGroupNames (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | ❌ | ❌
-Refresh (SP.Publishing.Navigation.PortalNavigationCacheWrapper) | ✅ | ❌ | ❌ | ❌
 Related (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
 Remove (Collection(SP.Publishing.SubtitleFile)) | ✅ | ❌ | ❌ | ❌
 SP_Publishing_AddinPlugin | ❌ | ❌ | ❌ | ✅
 SP_Publishing_CommunicationSite | ✅ | ✅ | ❌ | ❌
 SP_Publishing_EmbedService | ✅ | ✅ | ❌ | ❌
-<span title="SP_Publishing_Navigation_PortalNavigationCacheWrapper">SP_Publishing_Navigation_PortalNavigationCacheWrap...</span> (SP Publishing Navigation PortalNavigationCacheWrapper) | ✅ | ❌ | ❌ | ❌
 SP_Publishing_PageDiagnosticsController | ✅ | ❌ | ❌ | ❌
 SP_Publishing_PointPublishingPostServiceManager | ✅ | ❌ | ❌ | ❌
 SP_Publishing_PointPublishingSiteManager | ✅ | ❌ | ❌ | ❌

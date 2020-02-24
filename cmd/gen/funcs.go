@@ -25,8 +25,11 @@ func getFunctionsImports(models []*ModelMeta) map[string]map[string][]edmx.Funct
 		for _, s := range m.Model.Services.Schemas {
 			if s.Namespace == "SP" { // all FunctionsImports are in SP namespace
 				for _, fnImp := range s.EntityContainer.FunctionImports {
+					contains := false
 					for _, ns := range namespaces {
-						contains := false
+						if contains {
+							continue
+						}
 						for _, par := range fnImp.Parameters {
 							if par.Name == "this" {
 								nss := strings.Replace(strings.Replace(par.Type, "Collection(", "", 1), ")", "", 1)
@@ -46,6 +49,12 @@ func getFunctionsImports(models []*ModelMeta) map[string]map[string][]edmx.Funct
 							}
 							funcs[ns][m.Environment.Code] = append(funcs[ns][m.Environment.Code], fnImp)
 						}
+					}
+					if !contains {
+						if _, ok := funcs["SP"][m.Environment.Code]; !ok {
+							funcs["SP"][m.Environment.Code] = []edmx.FunctionImport{}
+						}
+						funcs["SP"][m.Environment.Code] = append(funcs["SP"][m.Environment.Code], fnImp)
 					}
 				}
 			}

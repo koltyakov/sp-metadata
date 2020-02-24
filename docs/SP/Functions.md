@@ -6,47 +6,26 @@
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-Acquire (SP.OAuth.Token) | ✅ | ❌ | ❌ | ❌
-Actor (SP.Social.SocialRestFeedManager) | ✅ | ✅ | ✅ | ✅
 Add (Collection(SP.Alert)) | ✅ | ✅ | ❌ | ❌
 Add (Collection(SP.Attachment)) | ✅ | ✅ | ✅ | ✅
-Add (Collection(SP.Directory.Group)) | ✅ | ✅ | ✅ | ❌
-Add (Collection(SP.Directory.User)) | ✅ | ✅ | ✅ | ❌
 Add (Collection(SP.EventReceiverDefinition)) | ✅ | ✅ | ✅ | ✅
 Add (Collection(SP.Feature)) | ✅ | ✅ | ✅ | ✅
 Add (Collection(SP.File)) | ✅ | ✅ | ✅ | ✅
 Add (Collection(SP.Folder)) | ✅ | ✅ | ✅ | ✅
 Add (Collection(SP.List)) | ✅ | ✅ | ✅ | ❌
-Add (Collection(SP.Publishing.SubtitleFile)) | ✅ | ❌ | ❌ | ❌
 Add (Collection(SP.UserSolution)) | ✅ | ❌ | ❌ | ❌
 Add (Collection(SP.View)) | ✅ | ✅ | ❌ | ❌
 Add (Collection(SP.Web)) | ✅ | ✅ | ✅ | ✅
 Add (Collection(SP.WebInformation)) | ✅ | ✅ | ✅ | ✅
-Add (Collection(SP.Workflow.WorkflowAssociation)) | ✅ | ✅ | ✅ | ✅
 AddActivities (SP.File) | ❌ | ✅ | ❌ | ❌
 AddAppPrincipalCredential (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
-AddAttachment (SP.Microfeed.MicrofeedData) | ✅ | ✅ | ✅ | ✅
-AddAttributeToTask (SP.WorkManagement.OM.BaseSession) | ✅ | ✅ | ✅ | ✅
-AddAttributeToTask (SP.WorkManagement.OM.LocationOrientedSortableSession) | ✅ | ✅ | ✅ | ✅
-AddAttributeToTask (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ✅ | ✅ | ✅ | ✅
-AddAttributeToTask (SP.WorkManagement.OM.SortableSession) | ✅ | ✅ | ✅ | ✅
-AddAttributeToTask (SP.WorkManagement.OM.UserOrderedSession) | ✅ | ✅ | ✅ | ✅
 AddAvailableContentType (Collection(SP.ContentType)) | ✅ | ✅ | ✅ | ✅
-AddBannerImageFromUrl (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | ❌ | ❌
 AddClientActivities (SP.File) | ✅ | ✅ | ❌ | ❌
 AddCrossFarmMessage (SP.Web) | ✅ | ❌ | ❌ | ❌
-AddData (SP.Microfeed.MicrofeedStore) | ✅ | ✅ | ✅ | ✅
-AddDataAsStream (SP.Microfeed.MicrofeedStore) | ✅ | ✅ | ✅ | ❌
 AddDependentLookupField (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
-AddDynamicScopeBinding (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
 AddField (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
-AddImage (SP.Publishing.SitePageService) | ✅ | ✅ | ❌ | ❌
-AddImageFromExternalUrl (SP.Publishing.SitePageService) | ✅ | ✅ | ❌ | ❌
-AddImageFromUrl (SP.Publishing.PointPublishingPost) | ✅ | ❌ | ❌ | ❌
 AddItem (SP.List) | ✅ | ✅ | ✅ | ✅
 AddItemUsingPath (SP.List) | ✅ | ✅ | ❌ | ❌
-AddMicroserviceWorkItem (SP.MicroService.MicroServiceManager) | ✅ | ✅ | ❌ | ❌
-AddOrUpdateUser (Collection(SP.Publishing.PointPublishingUser)) | ✅ | ❌ | ❌ | ❌
 AddRoleAssignment (Collection(SP.RoleAssignment)) | ✅ | ✅ | ✅ | ✅
 AddStub (Collection(SP.File)) | ✅ | ✅ | ✅ | ❌
 AddStubUsingPath (Collection(SP.File)) | ✅ | ✅ | ❌ | ❌
@@ -54,9 +33,7 @@ AddSubFolder (SP.Folder) | ✅ | ✅ | ❌ | ❌
 AddSubFolderUsingPath (SP.Folder) | ✅ | ✅ | ❌ | ❌
 AddSupportedUILanguage (SP.Web) | ✅ | ✅ | ✅ | ✅
 AddTemplateFile (Collection(SP.File)) | ✅ | ✅ | ✅ | ✅
-AddTenantTheme (SP.Utilities.ThemeManager) | ✅ | ✅ | ❌ | ❌
 AddToSpotlight (SP.View) | ✅ | ✅ | ❌ | ❌
-AddUserToPostPeopleList (SP.Microfeed.MicrofeedManager) | ✅ | ✅ | ✅ | ✅
 AddUsingPath (Collection(SP.Attachment)) | ✅ | ✅ | ❌ | ❌
 AddUsingPath (Collection(SP.File)) | ✅ | ✅ | ❌ | ❌
 AddUsingPath (Collection(SP.Folder)) | ✅ | ✅ | ❌ | ❌
@@ -64,147 +41,60 @@ AddValidateUpdateItem (SP.List) | ✅ | ✅ | ❌ | ❌
 AddValidateUpdateItemUsingPath (SP.List) | ✅ | ✅ | ❌ | ❌
 AddViewField (SP.ViewFieldCollection) | ✅ | ✅ | ✅ | ✅
 AddWithOverwrite (Collection(SP.Folder)) | ✅ | ✅ | ✅ | ❌
-AmIFollowedBy (SP.UserProfiles.PeopleManager) | ✅ | ✅ | ✅ | ✅
-AmIFollowing (SP.UserProfiles.PeopleManager) | ✅ | ✅ | ✅ | ✅
 Append (SP.RequestVariable) | ❌ | ❌ | ❌ | ✅
-ApplyTheme (SP.Utilities.ThemeManager) | ✅ | ✅ | ❌ | ❌
 ApplyTheme (SP.Web) | ✅ | ✅ | ✅ | ✅
 ApplyWebTemplate (SP.Web) | ✅ | ✅ | ✅ | ✅
 Approve (SP.File) | ✅ | ✅ | ✅ | ✅
-Authenticate (SP.OAuth.NativeClient) | ✅ | ✅ | ✅ | ❌
-BeginCacheRefresh (SP.WorkManagement.OM.BaseSession) | ✅ | ✅ | ✅ | ✅
-BeginCacheRefresh (SP.WorkManagement.OM.LocationOrientedSortableSession) | ✅ | ✅ | ✅ | ✅
-BeginCacheRefresh (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ✅ | ✅ | ✅ | ✅
-BeginCacheRefresh (SP.WorkManagement.OM.SortableSession) | ✅ | ✅ | ✅ | ✅
-BeginCacheRefresh (SP.WorkManagement.OM.UserOrderedSession) | ✅ | ✅ | ✅ | ✅
-BeginExchangeSync (SP.WorkManagement.OM.BaseSession) | ✅ | ✅ | ✅ | ✅
-BeginExchangeSync (SP.WorkManagement.OM.LocationOrientedSortableSession) | ✅ | ✅ | ✅ | ✅
-BeginExchangeSync (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ✅ | ✅ | ✅ | ✅
-BeginExchangeSync (SP.WorkManagement.OM.SortableSession) | ✅ | ✅ | ✅ | ✅
-BeginExchangeSync (SP.WorkManagement.OM.UserOrderedSession) | ✅ | ✅ | ✅ | ✅
+AttachAssignmentToQuiz | ❌ | ❌ | ❌ | ✅
 BreakRoleInheritance (SP.List) | ✅ | ✅ | ✅ | ✅
 BreakRoleInheritance (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 BreakRoleInheritance (SP.SecurableObject) | ✅ | ✅ | ✅ | ✅
 BreakRoleInheritance (SP.Web) | ✅ | ✅ | ✅ | ✅
-BreakRoleInheritance (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
-BulkUpdateDynamicScopeBindings (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
 BulkValidateUpdateListItems (SP.List) | ✅ | ✅ | ❌ | ❌
-CanCreatePromotedPage (SP.Publishing.SitePageService) | ✅ | ✅ | ❌ | ❌
 CancelAllJobs (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
 CancelUpload (SP.File) | ✅ | ✅ | ✅ | ❌
-CancelWorkflow (SP.WorkflowServices.InteropService) | ✅ | ✅ | ✅ | ✅
-CancelWorkflow (SP.WorkflowServices.WorkflowInstanceService) | ❌ | ❌ | ❌ | ✅
 CheckAccessAndPostViewAuditEvent (SP.File) | ✅ | ❌ | ❌ | ❌
 CheckIn (SP.File) | ✅ | ✅ | ✅ | ✅
 CheckLicense (SP.SPAppLicenseManager) | ✅ | ❌ | ❌ | ❌
 CheckOut (SP.File) | ✅ | ✅ | ✅ | ✅
-CheckOut (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
-CheckOut (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
-CheckOut (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
-CheckOut (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
-CheckoutPage (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
-CheckoutPage (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
-CheckoutPage (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
-CheckoutPage (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 Clear (Collection(SP.UserCustomAction)) | ✅ | ✅ | ✅ | ✅
 ClearCorporateCatalog (SP.TenantSettings) | ✅ | ❌ | ❌ | ❌
-ClearUnReadMentionCount (SP.Social.SocialRestFeed) | ✅ | ✅ | ✅ | ✅
-ClearUnreadMentionsCount (SP.Microfeed.MicrofeedManager) | ✅ | ✅ | ✅ | ✅
-CloseWebPart (SP.WebParts.WebPartDefinition) | ✅ | ✅ | ✅ | ✅
-Commit (SP.Directory.User) | ❌ | ❌ | ✅ | ❌
 Contains (Collection(SP.Alert)) | ✅ | ✅ | ❌ | ❌
-ContainsLocalizedDisplayName (SP.BusinessData.EntityIdentifier) | ✅ | ✅ | ✅ | ✅
-ContainsLocalizedDisplayName (SP.BusinessData.TypeDescriptor) | ✅ | ✅ | ✅ | ✅
 ContinueUpload (SP.File) | ✅ | ✅ | ✅ | ❌
-Copy (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
-Copy (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
-Copy (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
-Copy (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+CopyQuizDefinition | ❌ | ❌ | ❌ | ✅
 CopyTo (SP.File) | ✅ | ✅ | ✅ | ✅
 CopyToUsingPath (SP.File) | ✅ | ✅ | ❌ | ❌
-CountInstances (SP.WorkflowServices.WorkflowInstanceService) | ❌ | ❌ | ❌ | ✅
-CountInstancesWithStatus (SP.WorkflowServices.WorkflowInstanceService) | ❌ | ❌ | ❌ | ✅
 Create (Collection(SP.ScriptSafeDomain)) | ✅ | ✅ | ❌ | ❌
-Create (SP.BusinessData.Entity) | ❌ | ❌ | ❌ | ✅
-Create (SP.Publishing.CommunicationSite) | ✅ | ✅ | ❌ | ❌
-Create (SP.Publishing.PointPublishingSiteManager) | ✅ | ❌ | ❌ | ❌
-Create (SP.TranslationStatusCollection) | ✅ | ❌ | ❌ | ❌
-CreateAppPage (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
 CreateAppPrincipal (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
-CreateCollectionInstance (SP.BusinessData.Runtime.EntityFieldValueDictionary) | ✅ | ✅ | ✅ | ✅
-CreateCollectionInstance (SP.BusinessData.Runtime.EntityInstance) | ✅ | ✅ | ✅ | ✅
 CreateCopyJob (SP.Site) | ✅ | ✅ | ❌ | ❌
 CreateCopyJobs (SP.Site) | ✅ | ✅ | ❌ | ❌
 CreateDefaultAssociatedGroups (SP.Web) | ✅ | ✅ | ❌ | ❌
-CreateDirectoryObject (SP.Directory.Provider.SharePointDirectoryProvider) | ✅ | ✅ | ✅ | ❌
 CreateDocumentAndGetEditLink (SP.List) | ✅ | ✅ | ✅ | ❌
 CreateDocumentWithDefaultName (SP.List) | ✅ | ✅ | ❌ | ❌
 CreateFieldAsXml (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
-CreateFileAttachment (SP.Social.SocialFeedManager) | ✅ | ✅ | ✅ | ❌
-CreateGroup (SP.Directory.DirectorySession) | ❌ | ❌ | ✅ | ❌
-CreateImageAttachment (SP.Social.SocialFeedManager) | ✅ | ✅ | ✅ | ✅
-CreateInstance (SP.BusinessData.Runtime.EntityFieldValueDictionary) | ✅ | ✅ | ✅ | ✅
-CreateInstance (SP.BusinessData.Runtime.EntityInstance) | ✅ | ✅ | ✅ | ✅
-CreateLocationOrientedSession (SP.WorkManagement.OM.SortableSessionManager) | ✅ | ✅ | ✅ | ✅
-CreateLocationOrientedSession (SP.WorkManagement.OM.UserOrderedSessionManager) | ✅ | ✅ | ✅ | ✅
 CreateMappedView (SP.List) | ✅ | ✅ | ❌ | ❌
 CreateMigrationIngestionJob (SP.Site) | ✅ | ✅ | ✅ | ❌
 CreateMigrationJob (SP.Site) | ✅ | ✅ | ✅ | ❌
 CreateMigrationJobEncrypted (SP.Site) | ✅ | ✅ | ❌ | ❌
-CreateNewsCopy (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
-CreateNewsCopy (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
-CreateNewsCopy (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
-CreateNewsCopy (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
-CreatePersonalSite (SP.UserProfiles.UserProfile) | ✅ | ✅ | ✅ | ✅
-CreatePersonalSiteEnque (SP.UserProfiles.UserProfile) | ✅ | ✅ | ✅ | ✅
-CreatePersonalSiteEnqueueBulk (SP.UserProfiles.ProfileLoader) | ✅ | ✅ | ✅ | ❌
-CreatePersonalSiteFromWorkItem (SP.UserProfiles.UserProfile) | ✅ | ✅ | ✅ | ❌
-CreatePersonalTaskAndPromoteToProviderTask (SP.WorkManagement.OM.BaseSession) | ✅ | ✅ | ✅ | ✅
-CreatePersonalTaskAndPromoteToProviderTask (SP.WorkManagement.OM.LocationOrientedSortableSession) | ✅ | ✅ | ✅ | ✅
-CreatePersonalTaskAndPromoteToProviderTask (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ✅ | ✅ | ✅ | ✅
-CreatePersonalTaskAndPromoteToProviderTask (SP.WorkManagement.OM.SortableSession) | ✅ | ✅ | ✅ | ✅
-CreatePersonalTaskAndPromoteToProviderTask (SP.WorkManagement.OM.UserOrderedSession) | ✅ | ✅ | ✅ | ✅
-CreatePost (SP.Social.SocialFeedManager) | ✅ | ✅ | ✅ | ✅
 CreatePreviewSPSite (SP.Site) | ✅ | ✅ | ✅ | ✅
+CreateQuiz | ❌ | ❌ | ❌ | ✅
+CreateQuizWithTitleTemplate | ❌ | ❌ | ❌ | ✅
 CreateSPAsyncReadJob (SP.Site) | ✅ | ❌ | ❌ | ❌
 CreateSPAsyncReadJobWithMultiUrl (SP.Site) | ✅ | ❌ | ❌ | ❌
-CreateSession (SP.WorkManagement.OM.SortableSessionManager) | ✅ | ✅ | ✅ | ✅
-CreateSession (SP.WorkManagement.OM.UserOrderedSessionManager) | ✅ | ✅ | ✅ | ✅
-CreateTask (SP.WorkManagement.OM.BaseSession) | ✅ | ✅ | ✅ | ✅
-CreateTask (SP.WorkManagement.OM.LocationOrientedSortableSession) | ✅ | ✅ | ✅ | ✅
-CreateTask (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ✅ | ✅ | ✅ | ✅
-CreateTask (SP.WorkManagement.OM.SortableSession) | ✅ | ✅ | ✅ | ✅
-CreateTask (SP.WorkManagement.OM.UserOrderedSession) | ✅ | ✅ | ✅ | ✅
-CustomThumbnail (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 DefaultDocumentLibrary (SP.Web) | ✅ | ✅ | ✅ | ❌
-Delete (SP.Directory.Group) | ✅ | ✅ | ❌ | ❌
 Delete (SP.HubSite) | ✅ | ✅ | ❌ | ❌
-Delete (SP.Social.SocialRestThread) | ✅ | ✅ | ✅ | ✅
 DeleteAlert (Collection(SP.Alert)) | ✅ | ✅ | ❌ | ❌
 DeleteAlertAtIndex (Collection(SP.Alert)) | ✅ | ✅ | ❌ | ❌
 DeleteAll (Collection(SP.FileVersion)) | ✅ | ✅ | ✅ | ✅
-DeleteAll (Collection(SP.Microfeed.MicrofeedData)) | ✅ | ✅ | ✅ | ✅
 DeleteAll (Collection(SP.RecycleBinItem)) | ✅ | ✅ | ✅ | ✅
 DeleteAllSecondStageItems (Collection(SP.RecycleBinItem)) | ✅ | ✅ | ✅ | ❌
 DeleteAppPrincipal (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
 DeleteAppPrincipalCredential (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
 DeleteByID (Collection(SP.FileVersion)) | ✅ | ✅ | ✅ | ✅
-DeleteById (SP.Microfeed.MicrofeedManager) | ✅ | ✅ | ✅ | ✅
 DeleteByIds (Collection(SP.RecycleBinItem)) | ✅ | ❌ | ❌ | ❌
 DeleteByLabel (Collection(SP.FileVersion)) | ✅ | ✅ | ✅ | ✅
-DeleteCacheItemsAsync (SP.UserProfiles.PersonalCache) | ✅ | ✅ | ❌ | ❌
-DeleteCacheItemsAsync2 (SP.UserProfiles.PersonalCache) | ✅ | ❌ | ❌ | ❌
-DeleteCollateral (SP.WorkflowServices.WorkflowDeploymentService) | ✅ | ✅ | ✅ | ✅
-DeleteDefinition (SP.WorkflowServices.WorkflowDeploymentService) | ✅ | ✅ | ✅ | ✅
-DeleteDirectoryObject (SP.Directory.Provider.SharePointDirectoryProvider) | ✅ | ✅ | ✅ | ❌
-DeleteDynamicScopeBinding (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
-DeleteMagazine (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | ❌ | ❌
-DeleteMicrofeedPostDefinition (SP.Microfeed.MicrofeedPostDefinitionManager) | ✅ | ✅ | ✅ | ✅
-DeleteMicroserviceWorkItem (SP.MicroService.MicroServiceManager) | ✅ | ✅ | ❌ | ❌
-DeleteMicroserviceWorkItemByContentDbId (SP.MicroService.MicroServiceManager) | ✅ | ❌ | ❌ | ❌
 DeleteMigrationJob (SP.Site) | ✅ | ✅ | ✅ | ❌
 DeleteObject (SP.Attachment) | ✅ | ✅ | ✅ | ✅
-DeleteObject (SP.BusinessData.Runtime.EntityInstance) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.ContentType) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.EventReceiverDefinition) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.Field) | ✅ | ✅ | ✅ | ✅
@@ -233,45 +123,20 @@ DeleteObject (SP.List) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.ListItemVersion) | ✅ | ✅ | ❌ | ❌
 DeleteObject (SP.NavigationNode) | ✅ | ✅ | ✅ | ✅
-DeleteObject (SP.Publishing.PointPublishingPost) | ✅ | ❌ | ❌ | ❌
-DeleteObject (SP.Publishing.SpotlightChannel) | ✅ | ❌ | ❌ | ❌
-DeleteObject (SP.Publishing.SpotlightVideo) | ✅ | ❌ | ❌ | ❌
-DeleteObject (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 DeleteObject (SP.RecycleBinItem) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.RoleAssignment) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.RoleDefinition) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.ScriptSafeDomain) | ✅ | ✅ | ❌ | ❌
-DeleteObject (SP.Taxonomy.TaxonomyField) | ✅ | ✅ | ❌ | ✅
 DeleteObject (SP.UserCustomAction) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.View) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.Web) | ✅ | ✅ | ✅ | ✅
-DeleteObject (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
-DeleteObject (SP.Workflow.WorkflowAssociation) | ✅ | ✅ | ✅ | ✅
-DeletePost (SP.Social.SocialFeedManager) | ✅ | ✅ | ✅ | ✅
-DeletePreProcessedAttachment (SP.Microfeed.MicrofeedAttachmentStore) | ✅ | ✅ | ✅ | ❌
-DeleteSubscription (SP.WorkflowServices.WorkflowSubscriptionService) | ✅ | ✅ | ✅ | ✅
-DeleteTask (SP.WorkManagement.OM.BaseSession) | ✅ | ✅ | ✅ | ✅
-DeleteTask (SP.WorkManagement.OM.LocationOrientedSortableSession) | ✅ | ✅ | ✅ | ✅
-DeleteTask (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ✅ | ✅ | ✅ | ✅
-DeleteTask (SP.WorkManagement.OM.SortableSession) | ✅ | ✅ | ✅ | ✅
-DeleteTask (SP.WorkManagement.OM.UserOrderedSession) | ✅ | ✅ | ✅ | ✅
-DeleteTenantTheme (SP.Utilities.ThemeManager) | ✅ | ✅ | ❌ | ❌
-DeleteUserFromContainerGroup (SP.Publishing.PointPublishingUser) | ✅ | ❌ | ❌ | ❌
-DeleteUserFromPostPeopleList (SP.Microfeed.MicrofeedManager) | ✅ | ✅ | ✅ | ✅
-DeleteWebPart (SP.WebParts.WebPartDefinition) | ✅ | ✅ | ✅ | ✅
+DeleteQuiz | ❌ | ❌ | ❌ | ✅
 DeleteWithParameters (SP.File) | ✅ | ❌ | ❌ | ❌
 DeleteWithParameters (SP.Folder) | ✅ | ❌ | ❌ | ❌
 DeleteWithParameters (SP.ListItem) | ✅ | ❌ | ❌ | ❌
-DeleteWithParameters (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
-DemoteFromNews (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
-DemoteFromNews (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
-DemoteFromNews (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
-DemoteFromNews (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 Deny (SP.File) | ✅ | ✅ | ✅ | ✅
-DeprecateDefinition (SP.WorkflowServices.WorkflowDeploymentService) | ✅ | ✅ | ✅ | ✅
+DetachAssignmentFromQuiz | ❌ | ❌ | ❌ | ✅
 Details (SP.SPHSite) | ✅ | ❌ | ❌ | ❌
-Disable (SP.Publishing.Navigation.PortalNavigationCacheWrapper) | ✅ | ❌ | ❌ | ❌
-DisableEvents (SP.WorkflowServices.InteropService) | ✅ | ✅ | ✅ | ✅
 DisableIndex (SP.Field) | ✅ | ❌ | ❌ | ❌
 DisableIndex (SP.FieldCalculated) | ✅ | ❌ | ❌ | ❌
 DisableIndex (SP.FieldChoice) | ✅ | ❌ | ❌ | ❌
@@ -290,17 +155,27 @@ DisableIndex (SP.FieldText) | ✅ | ❌ | ❌ | ❌
 DisableIndex (SP.FieldThumbnail) | ✅ | ❌ | ❌ | ❌
 DisableIndex (SP.FieldUrl) | ✅ | ❌ | ❌ | ❌
 DisableIndex (SP.FieldUser) | ✅ | ❌ | ❌ | ❌
-DisableIndex (SP.Taxonomy.TaxonomyField) | ✅ | ❌ | ❌ | ❌
-DiscardPage (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
-DiscardPage (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
-DiscardPage (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
-DiscardPage (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 DoesPushNotificationSubscriberExist (SP.Web) | ✅ | ✅ | ✅ | ✅
 DoesUserHavePermissions (SP.Web) | ✅ | ✅ | ✅ | ✅
-EmbedData (SP.Publishing.EmbedService) | ✅ | ✅ | ❌ | ❌
-Enable (SP.Publishing.CommunicationSite) | ✅ | ❌ | ❌ | ❌
-Enable (SP.Publishing.Navigation.PortalNavigationCacheWrapper) | ✅ | ❌ | ❌ | ❌
-EnableEvents (SP.WorkflowServices.InteropService) | ✅ | ✅ | ✅ | ✅
+EDU_Announcements | ❌ | ❌ | ❌ | ✅
+EDU_AssignedAssignments | ❌ | ❌ | ❌ | ✅
+EDU_AssignmentCategories | ❌ | ❌ | ❌ | ✅
+EDU_Assignments | ❌ | ❌ | ❌ | ✅
+EDU_Communities | ❌ | ❌ | ❌ | ✅
+EDU_CommunityEntities | ❌ | ❌ | ❌ | ✅
+EDU_EduChange_GetChanges | ❌ | ❌ | ❌ | ✅
+EDU_EduChange_GetCurrentChangeId | ❌ | ❌ | ❌ | ✅
+EDU_EduChange_GetCurrentChangeIds | ❌ | ❌ | ❌ | ✅
+EDU_EduChange_GetEduContentModel | ❌ | ❌ | ❌ | ✅
+EDU_EduChange_SchemaVersionHash | ❌ | ❌ | ❌ | ✅
+EDU_EventSchedules | ❌ | ❌ | ❌ | ✅
+EDU_Events | ❌ | ❌ | ❌ | ✅
+EDU_Grades | ❌ | ❌ | ❌ | ✅
+EDU_LearningEntities | ❌ | ❌ | ❌ | ✅
+EDU_Lessons | ❌ | ❌ | ❌ | ✅
+EDU_Memberships | ❌ | ❌ | ❌ | ✅
+EDU_Resources | ❌ | ❌ | ❌ | ✅
+EDU_Submissions | ❌ | ❌ | ❌ | ✅
 EnableIndex (SP.Field) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldCalculated) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldChoice) | ✅ | ❌ | ❌ | ❌
@@ -319,66 +194,19 @@ EnableIndex (SP.FieldText) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldThumbnail) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldUrl) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldUser) | ✅ | ❌ | ❌ | ❌
-EnableIndex (SP.Taxonomy.TaxonomyField) | ✅ | ❌ | ❌ | ❌
 EnsureClientRenderedSitePagesLibrary (Collection(SP.List)) | ✅ | ✅ | ❌ | ❌
 EnsureEventsList (Collection(SP.List)) | ✅ | ✅ | ❌ | ❌
 EnsureSignoffStatusField (SP.List) | ✅ | ❌ | ❌ | ❌
 EnsureSiteAssetsLibrary (Collection(SP.List)) | ✅ | ✅ | ✅ | ✅
 EnsureSitePagesLibrary (Collection(SP.List)) | ✅ | ✅ | ✅ | ✅
-EnsureTitleResource (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
 EnsureUser (SP.Web) | ✅ | ✅ | ✅ | ✅
-Enumerate (SP.WorkflowServices.WorkflowInstanceService) | ❌ | ❌ | ❌ | ✅
-EnumerateDefinitions (SP.WorkflowServices.WorkflowDeploymentService) | ✅ | ✅ | ✅ | ✅
-EnumerateInstancesForListItem (SP.WorkflowServices.WorkflowInstanceService) | ✅ | ✅ | ✅ | ✅
-EnumerateInstancesForListItemWithOffset (SP.WorkflowServices.WorkflowInstanceService) | ✅ | ✅ | ✅ | ✅
-EnumerateInstancesForSite (SP.WorkflowServices.WorkflowInstanceService) | ✅ | ✅ | ✅ | ✅
-EnumerateInstancesForSiteWithOffset (SP.WorkflowServices.WorkflowInstanceService) | ✅ | ✅ | ✅ | ✅
-EnumerateIntegratedApps (SP.WorkflowServices.WorkflowDeploymentService) | ✅ | ✅ | ✅ | ❌
-EnumerateSubscriptions (SP.WorkflowServices.WorkflowSubscriptionService) | ✅ | ✅ | ✅ | ✅
-EnumerateSubscriptionsByDefinition (SP.WorkflowServices.WorkflowSubscriptionService) | ✅ | ✅ | ✅ | ✅
-EnumerateSubscriptionsByEventSource (SP.WorkflowServices.WorkflowSubscriptionService) | ✅ | ✅ | ✅ | ✅
-EnumerateSubscriptionsByList (SP.WorkflowServices.WorkflowSubscriptionService) | ✅ | ✅ | ✅ | ✅
-EnumerateSubscriptionsByListAndParentContentType (SP.WorkflowServices.WorkflowSubscriptionService) | ✅ | ✅ | ✅ | ❌
-EnumerateSubscriptionsByListWithContentType (SP.WorkflowServices.WorkflowSubscriptionService) | ✅ | ✅ | ✅ | ❌
-EnumerateWithOffset (SP.WorkflowServices.WorkflowInstanceService) | ❌ | ❌ | ❌ | ✅
 ExecuteCobaltRequest (SP.File) | ✅ | ✅ | ✅ | ❌
-ExecutePendingOperations (SP.Microfeed.MicrofeedStore) | ✅ | ✅ | ✅ | ✅
 ExecuteRemoteLOB (SP.Web) | ✅ | ✅ | ✅ | ✅
 Expire (SP.User) | ✅ | ❌ | ❌ | ❌
-ExportWebPart (SP.WebParts.LimitedWebPartManager) | ✅ | ✅ | ❌ | ❌
-ExtendReviewItemsRetention (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
 ExtendUpgradeReminderDate (SP.Site) | ✅ | ✅ | ✅ | ✅
-Feed (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
-Feed (SP.Social.SocialRestActor) | ✅ | ✅ | ✅ | ✅
-FeedTargeted (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
-FindAndUpdateFollowedGroup (SP.UserProfiles.FollowedContent) | ✅ | ✅ | ✅ | ❌
-FindAndUpdateFollowedItem (SP.UserProfiles.FollowedContent) | ✅ | ✅ | ✅ | ✅
-FindAssociated (SP.BusinessData.Entity) | ❌ | ❌ | ❌ | ✅
-FindFiltered (SP.BusinessData.Entity) | ❌ | ❌ | ❌ | ✅
-FindSpecific (SP.BusinessData.Entity) | ❌ | ❌ | ❌ | ✅
-FindSpecificByBdcId (SP.BusinessData.Entity) | ❌ | ❌ | ❌ | ✅
-FindSpecificDefault (SP.BusinessData.Entity) | ❌ | ❌ | ❌ | ✅
-FindSpecificDefaultByBdcId (SP.BusinessData.Entity) | ❌ | ❌ | ❌ | ✅
 FinishUpload (SP.File) | ✅ | ✅ | ✅ | ❌
 FinishUploadWithChecksum (SP.File) | ✅ | ❌ | ❌ | ❌
-Follow (SP.Social.SocialFollowingManager) | ✅ | ✅ | ✅ | ✅
-Follow (SP.Social.SocialRestFollowingManager) | ✅ | ✅ | ✅ | ✅
-Follow (SP.UserProfiles.FollowedContent) | ❌ | ❌ | ❌ | ✅
-Follow (SP.UserProfiles.PeopleManager) | ✅ | ✅ | ✅ | ✅
-FollowItem (SP.UserProfiles.FollowedContent) | ✅ | ✅ | ✅ | ✅
-FollowTag (SP.UserProfiles.PeopleManager) | ✅ | ✅ | ✅ | ✅
-Followed (SP.Social.SocialRestFollowingManager) | ✅ | ✅ | ✅ | ✅
-FollowedCount (SP.Social.SocialRestFollowingManager) | ✅ | ✅ | ✅ | ✅
-Followers (SP.Social.SocialRestFollowingManager) | ✅ | ✅ | ✅ | ✅
-FromXml (SP.BusinessData.Runtime.EntityFieldValueDictionary) | ✅ | ✅ | ✅ | ✅
-FromXml (SP.BusinessData.Runtime.EntityInstance) | ✅ | ✅ | ✅ | ✅
-GetAcronymsAndColors (SP.Publishing.SharePointHomeServiceManager) | ✅ | ✅ | ❌ | ❌
-GetActivitySignatures (SP.WorkflowServices.WorkflowDeploymentService) | ✅ | ✅ | ✅ | ✅
 GetAllClientSideComponents (SP.Web) | ✅ | ❌ | ❌ | ❌
-GetAllItems (SP.Translation.TranslationJobStatus) | ✅ | ✅ | ✅ | ✅
-GetAllLikers (SP.Social.SocialFeedManager) | ✅ | ✅ | ✅ | ✅
-GetAllLocations (SP.WorkManagement.OM.UserSettingsManager) | ✅ | ✅ | ✅ | ✅
-GetAllVideos (SP.Publishing.VideoChannel) | ✅ | ❌ | ❌ | ❌
 GetAppBdcCatalog (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetAppBdcCatalogForAppInstance (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetAppDatabaseConnectionString (SP.AppInstance) | ✅ | ✅ | ✅ | ❌
@@ -386,14 +214,11 @@ GetAppInstanceById (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetAppInstancesByProductId (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetAppPrincipalConfiguration (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
 GetAppPrincipalCredentials (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
-GetAssociationView (SP.BusinessData.Entity) | ✅ | ✅ | ✅ | ✅
-GetAvailableThemes (SP.Utilities.ThemeManager) | ✅ | ✅ | ❌ | ❌
 GetAvailableWebTemplates (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetBloomFilter (SP.List) | ✅ | ✅ | ❌ | ❌
 GetBloomFilterWithCustomFields (SP.List) | ✅ | ✅ | ❌ | ❌
 GetBringYourOwnKeySiteStatus (SP.Site) | ✅ | ✅ | ❌ | ❌
 GetBringYourOwnKeyTenantStatus (SP.Site) | ✅ | ✅ | ❌ | ❌
-GetByControlId (Collection(SP.WebParts.WebPartDefinition)) | ✅ | ✅ | ✅ | ✅
 GetByDomainName (Collection(SP.ScriptSafeDomain)) | ✅ | ✅ | ❌ | ❌
 GetByEmail (Collection(SP.User)) | ✅ | ✅ | ✅ | ✅
 GetByFieldId (Collection(SP.RelatedField)) | ✅ | ✅ | ✅ | ✅
@@ -414,14 +239,6 @@ GetById (Collection(SP.List)) | ✅ | ✅ | ✅ | ✅
 GetById (Collection(SP.ListItem)) | ✅ | ✅ | ✅ | ✅
 GetById (Collection(SP.ListItemVersion)) | ✅ | ✅ | ❌ | ❌
 GetById (Collection(SP.NavigationNode)) | ✅ | ✅ | ✅ | ✅
-GetById (Collection(SP.Publishing.PointPublishingPost)) | ✅ | ❌ | ❌ | ❌
-GetById (Collection(SP.Publishing.PointPublishingUser)) | ✅ | ❌ | ❌ | ❌
-GetById (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
-GetById (Collection(SP.Publishing.SitePageMetadata)) | ✅ | ✅ | ❌ | ❌
-GetById (Collection(SP.Publishing.SpotlightChannel)) | ✅ | ❌ | ❌ | ❌
-GetById (Collection(SP.Publishing.SpotlightVideo)) | ✅ | ❌ | ❌ | ❌
-GetById (Collection(SP.Publishing.VideoChannel)) | ✅ | ❌ | ❌ | ❌
-GetById (Collection(SP.Publishing.VideoItem)) | ✅ | ❌ | ❌ | ❌
 GetById (Collection(SP.RecycleBinItem)) | ✅ | ✅ | ✅ | ✅
 GetById (Collection(SP.RoleDefinition)) | ✅ | ✅ | ✅ | ✅
 GetById (Collection(SP.TimeZone)) | ✅ | ✅ | ✅ | ✅
@@ -429,21 +246,14 @@ GetById (Collection(SP.User)) | ✅ | ✅ | ✅ | ✅
 GetById (Collection(SP.UserCustomAction)) | ✅ | ✅ | ✅ | ✅
 GetById (Collection(SP.View)) | ✅ | ✅ | ✅ | ✅
 GetById (Collection(SP.WebInformation)) | ✅ | ✅ | ✅ | ✅
-GetById (Collection(SP.WebParts.WebPartDefinition)) | ✅ | ✅ | ✅ | ✅
-GetById (Collection(SP.Workflow.WorkflowAssociation)) | ✅ | ✅ | ✅ | ✅
-GetById (Collection(SP.Workflow.WorkflowTemplate)) | ✅ | ✅ | ✅ | ✅
 GetById (SP.LanguageCollection) | ✅ | ✅ | ❌ | ❌
 GetByIndex (Collection(SP.NavigationNode)) | ✅ | ✅ | ✅ | ✅
-GetByIndex (Collection(SP.Publishing.VideoThumbnail)) | ✅ | ❌ | ❌ | ❌
 GetByInternalNameOrTitle (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
 GetByLoginName (Collection(SP.User)) | ✅ | ✅ | ✅ | ✅
 GetByName (Collection(SP.Group)) | ✅ | ✅ | ✅ | ✅
 GetByName (Collection(SP.ListTemplate)) | ✅ | ✅ | ✅ | ✅
-GetByName (Collection(SP.Publishing.PointPublishingPost)) | ✅ | ❌ | ❌ | ❌
 GetByName (Collection(SP.RoleDefinition)) | ✅ | ✅ | ✅ | ✅
 GetByName (Collection(SP.WebTemplate)) | ✅ | ✅ | ✅ | ✅
-GetByName (Collection(SP.Workflow.WorkflowAssociation)) | ✅ | ✅ | ✅ | ✅
-GetByName (Collection(SP.Workflow.WorkflowTemplate)) | ✅ | ✅ | ✅ | ✅
 GetByPageType (Collection(SP.Form)) | ✅ | ✅ | ✅ | ✅
 GetByPath (Collection(SP.CheckedOutFile)) | ✅ | ✅ | ❌ | ❌
 GetByPath (Collection(SP.Folder)) | ✅ | ✅ | ❌ | ❌
@@ -455,16 +265,9 @@ GetByTitle (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
 GetByTitle (Collection(SP.List)) | ✅ | ✅ | ✅ | ✅
 GetByTitle (Collection(SP.View)) | ✅ | ✅ | ✅ | ✅
 GetByType (Collection(SP.RoleDefinition)) | ✅ | ✅ | ✅ | ✅
-GetByUniqueId (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
 GetByUrl (Collection(SP.File)) | ✅ | ✅ | ✅ | ✅
 GetByUrl (Collection(SP.Folder)) | ✅ | ✅ | ✅ | ✅
-GetByUrl (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
 GetByUrlOrAddStub (Collection(SP.File)) | ✅ | ✅ | ✅ | ❌
-GetCalloutInfo (SP.WorkManagement.OM.BaseSession) | ✅ | ✅ | ✅ | ✅
-GetCalloutInfo (SP.WorkManagement.OM.LocationOrientedSortableSession) | ✅ | ✅ | ✅ | ✅
-GetCalloutInfo (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ✅ | ✅ | ✅ | ✅
-GetCalloutInfo (SP.WorkManagement.OM.SortableSession) | ✅ | ✅ | ✅ | ✅
-GetCalloutInfo (SP.WorkManagement.OM.UserOrderedSession) | ✅ | ✅ | ✅ | ✅
 GetCatalog (SP.Site) | ✅ | ✅ | ✅ | ✅
 GetCatalog (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetChanges (SP.Folder) | ✅ | ✅ | ❌ | ❌
@@ -472,41 +275,16 @@ GetChanges (SP.List) | ✅ | ✅ | ✅ | ✅
 GetChanges (SP.ListItem) | ✅ | ✅ | ✅ | ❌
 GetChanges (SP.Site) | ✅ | ✅ | ✅ | ✅
 GetChanges (SP.Web) | ✅ | ✅ | ✅ | ✅
-GetChanges (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
-GetChannelPageUrl (SP.Publishing.VideoChannel) | ✅ | ❌ | ❌ | ❌
-GetChannels (SP.Publishing.VideoServiceManager) | ✅ | ❌ | ❌ | ❌
 GetCheckedOutFiles (SP.List) | ✅ | ✅ | ❌ | ❌
-GetChildTypeDescriptors (SP.BusinessData.TypeDescriptor) | ✅ | ✅ | ✅ | ✅
 GetClientPersistedCacheKey (SP.Site) | ✅ | ❌ | ❌ | ❌
 GetClientSideComponents (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetClientSideComponentsById (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetClientSideWebParts (SP.Web) | ✅ | ✅ | ✅ | ❌
-GetCollateralUri (SP.WorkflowServices.WorkflowDeploymentService) | ✅ | ✅ | ✅ | ✅
-GetCollectionSize (SP.BusinessData.Runtime.EntityFieldValueDictionary) | ✅ | ✅ | ✅ | ✅
 GetConnectedHubs (Collection(SP.HubSite)) | ✅ | ❌ | ❌ | ❌
-GetConnectionId (SP.BusinessData.AppBdcCatalog) | ✅ | ✅ | ✅ | ✅
 GetCopyJobProgress (SP.Site) | ✅ | ✅ | ❌ | ❌
-GetCreatorView (SP.BusinessData.Entity) | ✅ | ✅ | ✅ | ✅
 GetCustomListTemplates (SP.Web) | ✅ | ✅ | ✅ | ✅
-GetDebugInfo (SP.WorkflowServices.WorkflowInstanceService) | ❌ | ❌ | ❌ | ✅
-GetDefaultDisplayName (SP.BusinessData.EntityIdentifier) | ✅ | ✅ | ✅ | ✅
-GetDefaultDisplayName (SP.BusinessData.TypeDescriptor) | ✅ | ✅ | ✅ | ✅
-GetDefaultDocumentLibrary (SP.UserProfiles.PeopleManager) | ✅ | ✅ | ✅ | ❌
-GetDefaultSpecificFinderView (SP.BusinessData.Entity) | ✅ | ✅ | ✅ | ✅
-GetDefaultValues (SP.BusinessData.EntityView) | ✅ | ✅ | ✅ | ✅
-GetDefinition (SP.WorkflowServices.WorkflowDeploymentService) | ✅ | ✅ | ✅ | ✅
-GetDesignerActions (SP.WorkflowServices.WorkflowDeploymentService) | ❌ | ❌ | ❌ | ✅
-GetDocProps (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | ❌ | ❌
-GetDynamicScopeBindingBySiteId (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
-GetEntity (SP.BusinessData.AppBdcCatalog) | ✅ | ✅ | ✅ | ✅
 GetEntity (SP.Web) | ✅ | ✅ | ✅ | ✅
-GetEnumerator (SP.Directory.PropertyDictionary) | ❌ | ❌ | ✅ | ❌
 GetErrorDetails (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
-GetExchangeSyncInfo (SP.WorkManagement.OM.UserSettingsManager) | ✅ | ✅ | ✅ | ✅
-GetExternalVariable (SP.WorkflowServices.WorkflowSubscription) | ✅ | ✅ | ✅ | ✅
-GetFeed (SP.Social.SocialFeedManager) | ✅ | ✅ | ✅ | ✅
-GetFeedFor (SP.Social.SocialFeedManager) | ✅ | ✅ | ✅ | ✅
-GetFile (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 GetFileByGuestUrl (SP.Web) | ✅ | ✅ | ✅ | ❌
 GetFileByGuestUrlEnsureAccess (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetFileByGuestUrlExtended (SP.Web) | ✅ | ✅ | ❌ | ❌
@@ -520,46 +298,22 @@ GetFileByUrl (SP.RemoteWeb) | ✅ | ✅ | ❌ | ❌
 GetFileByUrl (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetFileByWOPIFrameUrl (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetFileUserValue (SP.File) | ✅ | ❌ | ❌ | ❌
-GetFilters (SP.BusinessData.Entity) | ✅ | ✅ | ✅ | ✅
-GetFinderView (SP.BusinessData.Entity) | ✅ | ✅ | ✅ | ✅
 GetFolderByGuestUrl (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetFolderByGuestUrlExtended (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetFolderById (SP.Web) | ✅ | ✅ | ✅ | ❌
 GetFolderByServerRelativePath (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetFolderByServerRelativeUrl (SP.RemoteWeb) | ✅ | ✅ | ✅ | ❌
 GetFolderByServerRelativeUrl (SP.Web) | ✅ | ✅ | ✅ | ✅
-GetFollowed (SP.Social.SocialFollowingManager) | ✅ | ✅ | ✅ | ✅
-GetFollowedCount (SP.Social.SocialFollowingManager) | ✅ | ✅ | ✅ | ✅
-GetFollowedStatus (SP.UserProfiles.FollowedContent) | ✅ | ✅ | ✅ | ✅
-GetFollowedTags (SP.UserProfiles.PeopleManager) | ✅ | ✅ | ✅ | ✅
-GetFollowers (SP.Social.SocialFollowingManager) | ✅ | ✅ | ✅ | ✅
-GetFollowersFor (SP.UserProfiles.PeopleManager) | ✅ | ✅ | ✅ | ✅
-GetFullThread (SP.Social.SocialFeedManager) | ✅ | ✅ | ✅ | ✅
 GetGlobalSchemaXml (SP.ListTemplate) | ✅ | ✅ | ✅ | ❌
-GetGraphUser (SP.Directory.DirectorySession) | ✅ | ✅ | ✅ | ❌
-GetGroup (SP.Directory.DirectorySession) | ❌ | ❌ | ✅ | ❌
 GetGroupById (SP.RemoteWeb) | ✅ | ✅ | ✅ | ❌
-GetGroups (SP.UserProfiles.FollowedContent) | ✅ | ✅ | ✅ | ❌
-GetGuestUserId (SP.Directory.DirectorySession) | ❌ | ❌ | ✅ | ❌
 GetHashtags (SP.ListItem) | ✅ | ✅ | ❌ | ❌
-GetHashtags (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
-GetHideDefaultThemes (SP.Utilities.ThemeManager) | ✅ | ✅ | ❌ | ❌
 GetHubSiteJoinApprovalCorrelationId (SP.Site) | ✅ | ❌ | ❌ | ❌
-GetIdentifierCount (SP.BusinessData.Entity) | ✅ | ✅ | ✅ | ✅
-GetIdentifiers (SP.BusinessData.Entity) | ✅ | ✅ | ✅ | ✅
-GetIdentity (SP.BusinessData.Runtime.EntityInstance) | ✅ | ✅ | ✅ | ✅
-GetImage (SP.Microfeed.MicrofeedAttachmentStore) | ✅ | ✅ | ✅ | ✅
 GetImagePreviewUri (SP.File) | ✅ | ✅ | ❌ | ❌
 GetImagePreviewUrl (SP.File) | ✅ | ✅ | ✅ | ❌
-GetImportantLocations (SP.WorkManagement.OM.UserSettingsManager) | ✅ | ✅ | ✅ | ✅
-GetInstance (SP.WorkflowServices.WorkflowInstanceService) | ✅ | ✅ | ✅ | ✅
-GetItem (SP.Microfeed.MicrofeedStore) | ✅ | ✅ | ✅ | ✅
-GetItem (SP.UserProfiles.FollowedContent) | ✅ | ✅ | ✅ | ✅
 GetItemById (SP.List) | ✅ | ✅ | ✅ | ✅
 GetItemByStringId (SP.List) | ✅ | ✅ | ✅ | ✅
 GetItemByUniqueId (SP.List) | ✅ | ✅ | ❌ | ❌
 GetItems (SP.List) | ✅ | ✅ | ✅ | ✅
-GetItems (SP.UserProfiles.FollowedContent) | ✅ | ✅ | ✅ | ✅
 GetLimitedWebPartManager (SP.File) | ✅ | ✅ | ✅ | ✅
 GetList (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetListById (SP.RemoteWeb) | ✅ | ✅ | ✅ | ❌
@@ -570,201 +324,163 @@ GetListItemChanges (SP.Folder) | ✅ | ✅ | ✅ | ❌
 GetListItemChangesSinceToken (SP.List) | ✅ | ✅ | ✅ | ✅
 GetListItemUsingPath (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetListUsingPath (SP.Web) | ✅ | ✅ | ❌ | ❌
-GetLobSystem (SP.BusinessData.Entity) | ✅ | ✅ | ✅ | ✅
-GetLobSystemInstanceProperty (SP.BusinessData.AppBdcCatalog) | ✅ | ✅ | ✅ | ✅
-GetLobSystemInstances (SP.BusinessData.LobSystem) | ✅ | ✅ | ✅ | ✅
-GetLobSystemProperty (SP.BusinessData.AppBdcCatalog) | ✅ | ✅ | ✅ | ✅
-GetLocalizedDisplayName (SP.BusinessData.EntityIdentifier) | ✅ | ✅ | ✅ | ✅
-GetLocalizedDisplayName (SP.BusinessData.TypeDescriptor) | ✅ | ✅ | ✅ | ✅
-GetLocations (SP.WorkManagement.OM.UserSettingsManager) | ✅ | ✅ | ✅ | ✅
 GetMappedApp (SP.List) | ✅ | ✅ | ❌ | ❌
 GetMappedApps (SP.List) | ✅ | ✅ | ❌ | ❌
-GetMentions (SP.Social.SocialFeedManager) | ✅ | ✅ | ✅ | ✅
-GetMicrofeedPostDefinition (SP.Microfeed.MicrofeedPostDefinitionManager) | ✅ | ✅ | ✅ | ✅
-GetMicrofeedPostDefinitions (SP.Microfeed.MicrofeedPostDefinitionManager) | ✅ | ✅ | ✅ | ✅
 GetMigrationJobStatus (SP.Site) | ✅ | ✅ | ✅ | ❌
 GetMigrationStatus (SP.Site) | ✅ | ✅ | ✅ | ❌
-GetMyCategoricalFeed (SP.Microfeed.MicrofeedManager) | ✅ | ✅ | ✅ | ✅
-GetMyConsolidatedFeed (SP.Microfeed.MicrofeedManager) | ✅ | ✅ | ✅ | ✅
-GetMyFollowers (SP.UserProfiles.PeopleManager) | ✅ | ✅ | ✅ | ✅
-GetMyProperties (SP.UserProfiles.PeopleManager) | ✅ | ✅ | ✅ | ✅
-GetMyPublishedFeed (SP.Microfeed.MicrofeedManager) | ✅ | ✅ | ✅ | ✅
-GetMySuggestions (SP.UserProfiles.PeopleManager) | ✅ | ✅ | ✅ | ✅
-GetMyVideos (SP.Publishing.VideoChannel) | ✅ | ❌ | ❌ | ❌
 GetNewsList (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetNodeById (SP.Navigation) | ✅ | ✅ | ✅ | ✅
 GetOnePageContextAsStream (SP.Web) | ❌ | ✅ | ❌ | ❌
-GetOrCreateUnifiedGroupTenantInstanceId (SP.Directory.Provider.SharePointDirectoryProvider) | ✅ | ✅ | ❌ | ❌
-GetOrCreateUnifiedGroupWithPreferredDataLocation (SP.Directory.Provider.SharePointDirectoryProvider) | ✅ | ❌ | ❌ | ❌
-GetPageColumnState (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
-GetParentTypeDescriptor (SP.BusinessData.TypeDescriptor) | ✅ | ✅ | ✅ | ✅
-GetPeopleFollowedBy (SP.UserProfiles.PeopleManager) | ✅ | ✅ | ✅ | ✅
-GetPeopleFollowedByMe (SP.UserProfiles.PeopleManager) | ✅ | ✅ | ✅ | ✅
-GetPermissibleConnections (SP.BusinessData.AppBdcCatalog) | ✅ | ✅ | ✅ | ✅
-GetPermissionGroup (SP.Publishing.VideoChannel) | ✅ | ❌ | ❌ | ❌
-GetPermissionGroup (SP.Publishing.VideoServiceManager) | ✅ | ❌ | ❌ | ❌
-GetPersistedProperties (SP.WorkManagement.OM.UserSettingsManager) | ✅ | ✅ | ✅ | ✅
-GetPlaybackMetadata (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
-GetPlaybackUrl (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
-GetPostsQuery (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | ❌ | ❌
 GetPreAuthorizedAccessUrl (SP.File) | ✅ | ✅ | ✅ | ❌
 GetPreAuthorizedAccessUrl2 (SP.File) | ✅ | ❌ | ❌ | ❌
-GetPreview (SP.Social.SocialFeedManager) | ✅ | ✅ | ✅ | ✅
-GetPreviewImage (SP.Social.SocialFeedManager) | ✅ | ✅ | ✅ | ✅
 GetPreviousAppVersion (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
-GetPropertiesFor (SP.UserProfiles.PeopleManager) | ✅ | ✅ | ✅ | ✅
-GetPropertyNames (SP.UserProfiles.UserProfilePropertiesForUser) | ✅ | ✅ | ✅ | ✅
-GetPublishedFeed (SP.Microfeed.MicrofeedManager) | ✅ | ✅ | ✅ | ✅
 GetPushNotificationSubscriber (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetPushNotificationSubscribersByArgs (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetPushNotificationSubscribersByUser (SP.Web) | ✅ | ✅ | ✅ | ✅
+GetQuizInfo | ❌ | ❌ | ❌ | ✅
+GetQuizzes | ❌ | ❌ | ❌ | ✅
 GetRecycleBinItems (SP.Site) | ✅ | ✅ | ✅ | ❌
 GetRecycleBinItems (SP.Web) | ✅ | ✅ | ✅ | ❌
 GetRecycleBinItemsByQueryInfo (SP.Web) | ✅ | ✅ | ❌ | ❌
-GetRefreshHealthInfo (SP.WorkManagement.OM.BaseSession) | ✅ | ✅ | ✅ | ✅
-GetRefreshHealthInfo (SP.WorkManagement.OM.LocationOrientedSortableSession) | ✅ | ✅ | ✅ | ✅
-GetRefreshHealthInfo (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ✅ | ✅ | ✅ | ✅
-GetRefreshHealthInfo (SP.WorkManagement.OM.SortableSession) | ✅ | ✅ | ✅ | ✅
-GetRefreshHealthInfo (SP.WorkManagement.OM.UserOrderedSession) | ✅ | ✅ | ✅ | ✅
-GetRefreshHistory (SP.WorkManagement.OM.BaseSession) | ✅ | ✅ | ✅ | ✅
-GetRefreshHistory (SP.WorkManagement.OM.LocationOrientedSortableSession) | ✅ | ✅ | ✅ | ✅
-GetRefreshHistory (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ✅ | ✅ | ✅ | ✅
-GetRefreshHistory (SP.WorkManagement.OM.SortableSession) | ✅ | ✅ | ✅ | ✅
-GetRefreshHistory (SP.WorkManagement.OM.UserOrderedSession) | ✅ | ✅ | ✅ | ✅
-GetRefreshStatus (SP.WorkManagement.OM.BaseSession) | ✅ | ✅ | ✅ | ✅
-GetRefreshStatus (SP.WorkManagement.OM.LocationOrientedSortableSession) | ✅ | ✅ | ✅ | ✅
-GetRefreshStatus (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ✅ | ✅ | ✅ | ✅
-GetRefreshStatus (SP.WorkManagement.OM.SortableSession) | ✅ | ✅ | ✅ | ✅
-GetRefreshStatus (SP.WorkManagement.OM.UserOrderedSession) | ✅ | ✅ | ✅ | ✅
 GetRegionalDateTimeSchema (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetRelatedFields (SP.List) | ✅ | ✅ | ✅ | ✅
 GetRemoteContext (SP.RequestContext) | ✅ | ✅ | ✅ | ❌
+GetResponseData | ❌ | ❌ | ❌ | ✅
 GetSPAppContextAsStream (SP.Web) | ✅ | ❌ | ❌ | ❌
-GetSPUserInformation (SP.UserProfiles.PeopleManager) | ✅ | ❌ | ❌ | ❌
-GetServiceInternalUrls (SP.MicroService.MicroServiceManager) | ✅ | ✅ | ❌ | ❌
-GetServiceUrls (SP.MicroService.MicroServiceManager) | ✅ | ✅ | ❌ | ❌
-GetSharePointDataForUser (SP.Directory.DirectorySession) | ✅ | ✅ | ✅ | ❌
 GetSharedWithUsers (SP.ObjectSharingInformation) | ✅ | ✅ | ✅ | ✅
 GetSharingLinkData (SP.Web) | ✅ | ✅ | ❌ | ❌
-GetSiteStatus (SP.Publishing.PointPublishingSiteManager) | ✅ | ❌ | ❌ | ❌
 GetSiteUrlByHubSiteId (Collection(SP.HubSite)) | ✅ | ❌ | ❌ | ❌
-GetSocialProperties (SP.Microfeed.MicrofeedStore) | ✅ | ✅ | ✅ | ✅
 GetSpecialFolderUrl (SP.List) | ✅ | ✅ | ✅ | ❌
-GetSpecificFinderView (SP.BusinessData.Entity) | ✅ | ✅ | ✅ | ✅
 GetStorageEntity (SP.Web) | ✅ | ✅ | ❌ | ❌
-GetStreamingKeyAccessToken (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
-GetSubscription (SP.WorkflowServices.WorkflowSubscriptionService) | ✅ | ✅ | ✅ | ✅
-GetSubtitleFile (Collection(SP.Publishing.SubtitleFile)) | ✅ | ❌ | ❌ | ❌
 GetSubwebsFilteredForCurrentUser (SP.Web) | ✅ | ✅ | ✅ | ✅
-GetSuggestions (SP.Social.SocialFollowingManager) | ✅ | ✅ | ✅ | ✅
-GetTenantTheme (SP.Utilities.ThemeManager) | ✅ | ✅ | ❌ | ❌
-GetTenantThemingOptions (SP.Utilities.ThemeManager) | ✅ | ✅ | ❌ | ❌
 GetThemeFontByName (SP.ThemeInfo) | ✅ | ✅ | ✅ | ✅
 GetThemeShadeByName (SP.ThemeInfo) | ✅ | ✅ | ✅ | ✅
-GetThread (SP.Microfeed.MicrofeedManager) | ✅ | ✅ | ✅ | ✅
-GetTopAuthors (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | ❌ | ❌
-GetType (SP.BusinessData.EntityView) | ✅ | ✅ | ✅ | ✅
-GetTypeDescriptor (SP.BusinessData.EntityView) | ✅ | ✅ | ✅ | ✅
-GetUnreadMentionCount (SP.Social.SocialFeedManager) | ✅ | ✅ | ✅ | ✅
-GetUnreadMentionsCount (SP.Microfeed.MicrofeedManager) | ✅ | ✅ | ✅ | ✅
-GetUpdaterView (SP.BusinessData.Entity) | ✅ | ✅ | ✅ | ✅
 GetUploadStatus (SP.File) | ✅ | ✅ | ❌ | ❌
 GetUserById (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetUserEffectivePermissions (SP.List) | ✅ | ✅ | ✅ | ✅
 GetUserEffectivePermissions (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 GetUserEffectivePermissions (SP.Web) | ✅ | ✅ | ✅ | ✅
-GetUserEffectivePermissions (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
-GetUserLinks (SP.Directory.User) | ✅ | ✅ | ❌ | ❌
-GetUserProfile (SP.UserProfiles.ProfileLoader) | ✅ | ✅ | ✅ | ✅
-GetUserProfileProperties (SP.UserProfiles.PeopleManager) | ✅ | ❌ | ❌ | ❌
-GetUserProfilePropertiesFor (SP.UserProfiles.PeopleManager) | ❌ | ❌ | ❌ | ✅
-GetUserProfilePropertyFor (SP.UserProfiles.PeopleManager) | ✅ | ✅ | ✅ | ✅
-GetUserSettings (SP.WorkManagement.OM.UserSettingsManager) | ✅ | ✅ | ✅ | ✅
 GetValueForUICulture (SP.UserResource) | ✅ | ✅ | ✅ | ❌
-GetVersion (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
-GetVersion (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
-GetVersion (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
-GetVersion (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
-GetVideoCount (SP.Publishing.VideoChannel) | ✅ | ❌ | ❌ | ❌
-GetVideoDetailedViewCount (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
-GetVideoEmbedCode (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
-GetVideoViewProgressCount (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 GetView (SP.List) | ✅ | ✅ | ✅ | ✅
 GetViewFromPath (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetViewFromUrl (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetWOPIFrameUrl (SP.File) | ✅ | ✅ | ✅ | ❌
 GetWOPIFrameUrl (SP.ListItem) | ✅ | ✅ | ✅ | ✅
-GetWOPIFrameUrl (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 GetWebDavUrl (SP.List) | ✅ | ✅ | ✅ | ❌
 GetWebPath (SP.Site) | ✅ | ✅ | ❌ | ❌
 GetWebTemplates (SP.Site) | ✅ | ✅ | ✅ | ✅
-GetWorkflowDeploymentService (SP.WorkflowServices.WorkflowServicesManager) | ✅ | ✅ | ✅ | ✅
-GetWorkflowInstanceService (SP.WorkflowServices.WorkflowServicesManager) | ✅ | ✅ | ✅ | ✅
-GetWorkflowInteropService (SP.WorkflowServices.WorkflowServicesManager) | ✅ | ✅ | ✅ | ✅
-GetWorkflowSubscriptionService (SP.WorkflowServices.WorkflowServicesManager) | ✅ | ✅ | ✅ | ✅
-GetXmlSchema (SP.BusinessData.EntityView) | ✅ | ✅ | ✅ | ✅
-Group (SP.Directory.DirectorySession) | ✅ | ✅ | ✅ | ❌
-HardDeleteUserProfile (SP.UserProfiles.PeopleManager) | ✅ | ❌ | ❌ | ❌
-HasCurrentUser (SP.Publishing.VideoPermissionGroup) | ✅ | ❌ | ❌ | ❌
-HasGroupMembershipChangedAndSyncChanges (SP.UserProfiles.FollowedContent) | ✅ | ✅ | ✅ | ❌
-HideSuggestion (SP.UserProfiles.PeopleManager) | ✅ | ✅ | ✅ | ✅
 HubSiteData (SP.Web) | ✅ | ✅ | ❌ | ❌
 HubSiteDataAsStream (SP.Web) | ✅ | ❌ | ❌ | ❌
-ImportWebPart (SP.WebParts.LimitedWebPartManager) | ✅ | ✅ | ✅ | ✅
 IncrementSiteClientTag (SP.Web) | ✅ | ✅ | ✅ | ❌
-IncrementUnreadAtMentionCount (SP.Microfeed.MicrofeedStore) | ✅ | ✅ | ✅ | ✅
-IncrementVideoViewProgressCount (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
-IncrementViewCount (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
-IndexStore (SP.BusinessData.Infrastructure.ExternalSubscriptionStore) | ✅ | ✅ | ✅ | ✅
 Install (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
 Invalidate (SP.Site) | ✅ | ✅ | ✅ | ✅
-IsBlogEnabled (SP.Publishing.PointPublishingTenantManager) | ✅ | ❌ | ❌ | ❌
-IsContentTypeAvailable (Collection(SP.Publishing.RepostPage)) | ✅ | ❌ | ❌ | ❌
-IsContentTypeAvailable (Collection(SP.Publishing.TopicSitePage)) | ✅ | ❌ | ❌ | ❌
-IsExchangeJobPending (SP.WorkManagement.OM.BaseSession) | ✅ | ✅ | ✅ | ✅
-IsExchangeJobPending (SP.WorkManagement.OM.LocationOrientedSortableSession) | ✅ | ✅ | ✅ | ✅
-IsExchangeJobPending (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ✅ | ✅ | ✅ | ✅
-IsExchangeJobPending (SP.WorkManagement.OM.SortableSession) | ✅ | ✅ | ✅ | ✅
-IsExchangeJobPending (SP.WorkManagement.OM.UserOrderedSession) | ✅ | ✅ | ✅ | ✅
-IsExchangeJobPending (SP.WorkManagement.OM.UserSettingsManager) | ✅ | ✅ | ✅ | ✅
-IsFollowed (SP.Social.SocialFollowingManager) | ✅ | ✅ | ✅ | ✅
-IsFollowed (SP.Social.SocialRestFollowingManager) | ✅ | ✅ | ✅ | ✅
-IsFollowed (SP.UserProfiles.FollowedContent) | ✅ | ✅ | ✅ | ✅
-IsIntegratedApp (SP.WorkflowServices.WorkflowDeploymentService) | ✅ | ✅ | ✅ | ❌
-IsIntegratedApp (SP.WorkflowServices.WorkflowServicesManager) | ✅ | ✅ | ✅ | ❌
-IsLeaf (SP.BusinessData.TypeDescriptor) | ✅ | ✅ | ✅ | ✅
-IsRoot (SP.BusinessData.TypeDescriptor) | ✅ | ✅ | ✅ | ✅
-IsSitePage (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
-JoinGroup (SP.Directory.DirectorySession) | ✅ | ✅ | ❌ | ❌
 JoinHubSite (SP.Site) | ✅ | ✅ | ❌ | ❌
 KnowledgeHub | ✅ | ❌ | ❌ | ❌
-Like (SP.Microfeed.MicrofeedManager) | ✅ | ✅ | ✅ | ✅
-Like (SP.Social.SocialRestThread) | ✅ | ✅ | ✅ | ✅
-LikePost (SP.Social.SocialFeedManager) | ✅ | ✅ | ✅ | ✅
-Likers (SP.Social.SocialRestThread) | ✅ | ✅ | ✅ | ✅
-Likes (SP.Social.SocialRestActor) | ✅ | ✅ | ✅ | ✅
 LoadAndInstallApp (SP.Web) | ✅ | ✅ | ✅ | ✅
 LoadAndInstallAppInSpecifiedLocale (SP.Web) | ✅ | ✅ | ✅ | ✅
 LoadApp (SP.Web) | ✅ | ✅ | ✅ | ✅
-LoadUserProfile (SP.UserProfiles.PersonalCache) | ✅ | ✅ | ❌ | ❌
 LocalTimeToUTC (SP.TimeZone) | ✅ | ✅ | ✅ | ✅
-Lock (SP.Social.SocialRestThread) | ✅ | ✅ | ✅ | ✅
-LockThread (SP.Social.SocialFeedManager) | ✅ | ✅ | ✅ | ✅
-LockThreadById (SP.Microfeed.MicrofeedManager) | ✅ | ✅ | ✅ | ✅
 LookupAppPrincipal (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
 MakeHubSite (SP.Site) | ❌ | ✅ | ❌ | ❌
 MapToIcon (SP.Web) | ✅ | ✅ | ✅ | ✅
-MarkReviewItemsForDeletion (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
-Me (SP.Directory.DirectorySession) | ✅ | ✅ | ❌ | ❌
 MediaServiceUpdate (SP.ListItem) | ✅ | ❌ | ❌ | ❌
-MediaServiceUpdate (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 MediaServiceUpdateV2 (SP.ListItem) | ✅ | ❌ | ❌ | ❌
-MediaServiceUpdateV2 (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
-MentionFeed (SP.Social.SocialRestActor) | ✅ | ✅ | ✅ | ✅
+<span title="Microsoft_BusinessData_Infrastructure_SecureStore_ConnectionSettings">Microsoft_BusinessData_Infrastructure_SecureStore...</span> (Microsoft BusinessData Infrastructure SecureStore ConnectionSettings) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Office_Education_QuizOM_QuizUtilities_GetSafeHtmlText">Microsoft_Office_Education_QuizOM_QuizUtilities_Ge...</span> (Microsoft Office Education QuizOM QuizUtilities GetSafeHtmlText) | ❌ | ❌ | ❌ | ✅
+<span title="Microsoft_Office_SecureStoreService_Server_TargetApplication">Microsoft_Office_SecureStoreService_Server_TargetA...</span> (Microsoft Office SecureStoreService Server TargetApplication) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Office_SecureStoreService_Server_TargetApplicationField">Microsoft_Office_SecureStoreService_Server_TargetA...</span> (Microsoft Office SecureStoreService Server TargetApplicationField) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Office_Server_ReputationModel_Reputation_SetLike">Microsoft_Office_Server_ReputationModel_Reputation...</span> (Microsoft Office Server ReputationModel Reputation SetLike) | ✅ | ✅ | ✅ | ✅
+<span title="Microsoft_Office_Server_ReputationModel_Reputation_SetRating">Microsoft_Office_Server_ReputationModel_Reputation...</span> (Microsoft Office Server ReputationModel Reputation SetRating) | ✅ | ✅ | ✅ | ✅
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_GeoMoveCompatibilityChecks">Microsoft_Online_SharePoint_MultiGeo_Service_GeoMo...</span> (Microsoft Online SharePoint MultiGeo Service GeoMoveCompatibilityChecks) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserPersonalSiteId">Microsoft_Online_SharePoint_MultiGeo_Service_UserP...</span> (Microsoft Online SharePoint MultiGeo Service UserPersonalSiteId) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserPersonalSiteLocation">Microsoft_Online_SharePoint_MultiGeo_Service_UserP...</span> (Microsoft Online SharePoint MultiGeo Service UserPersonalSiteLocation) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Online_SharePoint_TenantAdministration_SiteProperties">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SiteProperties) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_AddToOneDrive_MountService_GetRemoteItemInfo">Microsoft_SharePoint_AddToOneDrive_MountService_Ge...</span> (Microsoft SharePoint AddToOneDrive MountService GetRemoteItemInfo) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_AddToOneDrive_MountService_UpdateMountPoints">Microsoft_SharePoint_AddToOneDrive_MountService_Up...</span> (Microsoft SharePoint AddToOneDrive MountService UpdateMountPoints) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Administration_SPWebApplication_Lookup">Microsoft_SharePoint_Administration_SPWebApplicati...</span> (Microsoft SharePoint Administration SPWebApplication Lookup) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_AppManagement_SPAppPrincipalInfo_GetClientIdFromAppPrincipalEncodedClaim">Microsoft_SharePoint_AppManagement_SPAppPrincipalI...</span> (Microsoft SharePoint AppManagement SPAppPrincipalInfo GetClientIdFromAppPrincipalEncodedClaim) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_AuthPolicy_Events_SPAuthEvents">Microsoft_SharePoint_AuthPolicy_Events_SPAuthEvent...</span> (Microsoft SharePoint AuthPolicy Events SPAuthEvents) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Client_Search_Administration_DocumentCrawlLog">Microsoft_SharePoint_Client_Search_Administration...</span> (Microsoft SharePoint Client Search Administration DocumentCrawlLog) | ❌ | ❌ | ❌ | ✅
+<span title="Microsoft_SharePoint_Client_Search_Administration_SearchObjectOwner">Microsoft_SharePoint_Client_Search_Administration...</span> (Microsoft SharePoint Client Search Administration SearchObjectOwner) | ❌ | ❌ | ❌ | ✅
+<span title="Microsoft_SharePoint_Client_Search_Analytics_UsageAnalytics">Microsoft_SharePoint_Client_Search_Analytics_Usage...</span> (Microsoft SharePoint Client Search Analytics UsageAnalytics) | ❌ | ❌ | ❌ | ✅
+<span title="Microsoft_SharePoint_Client_Search_Query_QueryPersonalizationData">Microsoft_SharePoint_Client_Search_Query_QueryPers...</span> (Microsoft SharePoint Client Search Query QueryPersonalizationData) | ✅ | ✅ | ✅ | ✅
+<span title="Microsoft_SharePoint_Internal_ClientSideComponent_Token_AcquireOBOToken">Microsoft_SharePoint_Internal_ClientSideComponent...</span> (Microsoft SharePoint Internal ClientSideComponent Token AcquireOBOToken) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Internal_TrackedItemService_GetTrackedItemUpdatesForUser">Microsoft_SharePoint_Internal_TrackedItemService_G...</span> (Microsoft SharePoint Internal TrackedItemService GetTrackedItemUpdatesForUser) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Portal_CommunityModeration_ApproveReportedItems">Microsoft_SharePoint_Portal_CommunityModeration_Ap...</span> (Microsoft SharePoint Portal CommunityModeration ApproveReportedItems) | ✅ | ✅ | ✅ | ✅
+<span title="Microsoft_SharePoint_Portal_CommunityModeration_ReportAbuse">Microsoft_SharePoint_Portal_CommunityModeration_Re...</span> (Microsoft SharePoint Portal CommunityModeration ReportAbuse) | ✅ | ✅ | ✅ | ✅
+<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_FetchCacheBlob">Microsoft_SharePoint_Portal_MySiteRecommendations...</span> (Microsoft SharePoint Portal MySiteRecommendations FetchCacheBlob) | ✅ | ✅ | ✅ | ✅
+<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_FetchCacheBlobV2">Microsoft_SharePoint_Portal_MySiteRecommendations...</span> (Microsoft SharePoint Portal MySiteRecommendations FetchCacheBlobV2) | ✅ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_FetchCachedBlobForRecentSites">Microsoft_SharePoint_Portal_MySiteRecommendations...</span> (Microsoft SharePoint Portal MySiteRecommendations FetchCachedBlobForRecentSites) | ✅ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_FollowItem">Microsoft_SharePoint_Portal_MySiteRecommendations...</span> (Microsoft SharePoint Portal MySiteRecommendations FollowItem) | ✅ | ✅ | ✅ | ✅
+<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_StopFollowingItem">Microsoft_SharePoint_Portal_MySiteRecommendations...</span> (Microsoft SharePoint Portal MySiteRecommendations StopFollowingItem) | ✅ | ✅ | ✅ | ✅
+<span title="Microsoft_SharePoint_Portal_SuiteNavData_GetSuiteNavData">Microsoft_SharePoint_Portal_SuiteNavData_GetSuiteN...</span> (Microsoft SharePoint Portal SuiteNavData GetSuiteNavData) | ✅ | ✅ | ✅ | ✅
+<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetListDataScript">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> (Microsoft SharePoint Portal UserProfiles DocumentsSharedWithGroup GetListDataScript) | ✅ | ✅ | ✅ | ❌
+<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetListHighlightsData">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> (Microsoft SharePoint Portal UserProfiles DocumentsSharedWithGroup GetListHighlightsData) | ✅ | ✅ | ✅ | ❌
+<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetListHighlightsDataScript">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> (Microsoft SharePoint Portal UserProfiles DocumentsSharedWithGroup GetListHighlightsDataScript) | ✅ | ✅ | ✅ | ❌
+<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetSharedWithGroupDocs">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> (Microsoft SharePoint Portal UserProfiles DocumentsSharedWithGroup GetSharedWithGroupDocs) | ✅ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithMe_GetFoldersSharedWithMeListDataScript">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> (Microsoft SharePoint Portal UserProfiles DocumentsSharedWithMe GetFoldersSharedWithMeListDataScript) | ✅ | ✅ | ✅ | ❌
+<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithMe_GetListData">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> (Microsoft SharePoint Portal UserProfiles DocumentsSharedWithMe GetListData) | ✅ | ✅ | ✅ | ❌
+<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithMe_GetListDataScript">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> (Microsoft SharePoint Portal UserProfiles DocumentsSharedWithMe GetListDataScript) | ✅ | ✅ | ✅ | ✅
+<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithPerson_GetListData">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> (Microsoft SharePoint Portal UserProfiles DocumentsSharedWithPerson GetListData) | ✅ | ✅ | ✅ | ❌
+<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithPerson_GetListDataScript">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> (Microsoft SharePoint Portal UserProfiles DocumentsSharedWithPerson GetListDataScript) | ✅ | ✅ | ✅ | ❌
+<span title="Microsoft_SharePoint_Portal_UserProfiles_MySiteDismissStatusText_DismissStatusText">Microsoft_SharePoint_Portal_UserProfiles_MySiteDis...</span> (Microsoft SharePoint Portal UserProfiles MySiteDismissStatusText DismissStatusText) | ✅ | ✅ | ✅ | ✅
+<span title="Microsoft_SharePoint_Portal_UserProfiles_MySiteDocumentMoveUtility_FirstRunDocumentMove">Microsoft_SharePoint_Portal_UserProfiles_MySiteDoc...</span> (Microsoft SharePoint Portal UserProfiles MySiteDocumentMoveUtility FirstRunDocumentMove) | ❌ | ❌ | ❌ | ✅
+<span title="Microsoft_SharePoint_Portal_UserProfiles_PromotedSites_AddSiteLink">Microsoft_SharePoint_Portal_UserProfiles_PromotedS...</span> (Microsoft SharePoint Portal UserProfiles PromotedSites AddSiteLink) | ✅ | ✅ | ✅ | ✅
+<span title="Microsoft_SharePoint_Portal_UserProfiles_PromotedSites_DeleteSiteLink">Microsoft_SharePoint_Portal_UserProfiles_PromotedS...</span> (Microsoft SharePoint Portal UserProfiles PromotedSites DeleteSiteLink) | ✅ | ✅ | ✅ | ✅
+<span title="Microsoft_SharePoint_Portal_UserProfiles_PromotedSites_GetPromotedLinksAsTiles">Microsoft_SharePoint_Portal_UserProfiles_PromotedS...</span> (Microsoft SharePoint Portal UserProfiles PromotedSites GetPromotedLinksAsTiles) | ✅ | ✅ | ✅ | ✅
+<span title="Microsoft_SharePoint_Portal_UserProfiles_PromotedSites_UpdateSiteLink">Microsoft_SharePoint_Portal_UserProfiles_PromotedS...</span> (Microsoft SharePoint Portal UserProfiles PromotedSites UpdateSiteLink) | ✅ | ✅ | ✅ | ✅
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_CreateFormula">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions RecipeUtility CreateFormula) | ❌ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_CreateRecipe">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions RecipeUtility CreateRecipe) | ❌ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_DeleteFormula">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions RecipeUtility DeleteFormula) | ❌ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_DeleteRecipe">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions RecipeUtility DeleteRecipe) | ❌ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_GetFormulaMetadata">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions RecipeUtility GetFormulaMetadata) | ❌ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_GetFormulas">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions RecipeUtility GetFormulas) | ❌ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_GetRecipeMetadata">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions RecipeUtility GetRecipeMetadata) | ❌ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_GetRecipes">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions RecipeUtility GetRecipes) | ❌ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_RecipeUtility_ValidatePendingWebTemplateExtension">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions RecipeUtility ValidatePendingWebTemplateExtension) | ❌ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_AddSiteDesignTask">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility AddSiteDesignTask) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_AddSiteDesignTaskToCurrentWeb">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility AddSiteDesignTaskToCurrentWeb) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplyImplicitSiteDesign">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility ApplyImplicitSiteDesign) | ✅ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplySiteDesign">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility ApplySiteDesign) | ✅ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplySiteDesignGetRunId">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility ApplySiteDesignGetRunId) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteDesign">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility CreateSiteDesign) | ✅ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteScript">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility CreateSiteScript) | ✅ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteScriptPackage">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility CreateSiteScriptPackage) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_DeleteSiteDesign">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility DeleteSiteDesign) | ✅ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_DeleteSiteScript">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility DeleteSiteScript) | ✅ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ExecuteSiteScriptAction">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility ExecuteSiteScriptAction) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ExecuteTemplateScript">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility ExecuteTemplateScript) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetDefaultSiteDesignForWebTemplate">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility GetDefaultSiteDesignForWebTemplate) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetHiddenBuiltInDesignPackages">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility GetHiddenBuiltInDesignPackages) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignMetadata">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility GetSiteDesignMetadata) | ✅ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignRights">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility GetSiteDesignRights) | ✅ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignRun">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility GetSiteDesignRun) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignRunStatus">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility GetSiteDesignRunStatus) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignRunStatusAndSchema">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility GetSiteDesignRunStatusAndSchema) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignStages">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility GetSiteDesignStages) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignTask">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility GetSiteDesignTask) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignTasks">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility GetSiteDesignTasks) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesigns">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility GetSiteDesigns) | ✅ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteScriptFromList">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility GetSiteScriptFromList) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteScriptFromWeb">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility GetSiteScriptFromWeb) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteScriptMetadata">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility GetSiteScriptMetadata) | ✅ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteScripts">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility GetSiteScripts) | ✅ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GrantSiteDesignRights">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility GrantSiteDesignRights) | ✅ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoteCreateSiteScript">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility RemoteCreateSiteScript) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoveSiteDesignTask">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility RemoveSiteDesignTask) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RevokeSiteDesignRights">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility RevokeSiteDesignRights) | ✅ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_SetBuiltInDesignPackageVisibility">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility SetBuiltInDesignPackageVisibility) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_SetSiteScriptStageOutcome">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility SetSiteScriptStageOutcome) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_UpdateSiteDesign">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility UpdateSiteDesign) | ✅ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_UpdateSiteScript">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility UpdateSiteScript) | ✅ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_UpdateSiteScriptContent">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility UpdateSiteScriptContent) | ✅ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_UpdateSiteScriptPackage">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility UpdateSiteScriptPackage) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ValidatePendingWebTemplateExtension">Microsoft_SharePoint_Utilities_WebTemplateExtensio...</span> (Microsoft SharePoint Utilities WebTemplateExtensions SiteScriptUtility ValidatePendingWebTemplateExtension) | ✅ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Yammer_WacApi_AddUserToSiteCollection">Microsoft_SharePoint_Yammer_WacApi_AddUserToSiteCo...</span> (Microsoft SharePoint Yammer WacApi AddUserToSiteCollection) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_SharePoint_Yammer_WacApi_ConfigureSiteForShadowTenant">Microsoft_SharePoint_Yammer_WacApi_ConfigureSiteFo...</span> (Microsoft SharePoint Yammer WacApi ConfigureSiteForShadowTenant) | ✅ | ❌ | ❌ | ❌
+Microsoft_SharePoint_Yammer_WacApi_GetWacToken | ✅ | ❌ | ❌ | ❌
 MoveAfter (Collection(SP.NavigationNode)) | ✅ | ✅ | ✅ | ✅
 MoveAllToSecondStage (Collection(SP.RecycleBinItem)) | ✅ | ✅ | ✅ | ❌
-MovePersonalTaskToLocation (SP.WorkManagement.OM.LocationOrientedSortableSession) | ✅ | ✅ | ✅ | ✅
-MovePersonalTaskToLocation (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ✅ | ✅ | ✅ | ✅
 MoveTo (SP.File) | ✅ | ✅ | ✅ | ✅
 MoveTo (SP.Folder) | ✅ | ✅ | ✅ | ❌
 MoveToSecondStage (SP.RecycleBinItem) | ✅ | ✅ | ✅ | ❌
@@ -772,100 +488,31 @@ MoveToSecondStageByIds (Collection(SP.RecycleBinItem)) | ✅ | ❌ | ❌ | ❌
 MoveToUsingPath (SP.File) | ✅ | ✅ | ❌ | ❌
 MoveToUsingPath (SP.Folder) | ✅ | ✅ | ❌ | ❌
 MoveViewFieldTo (SP.ViewFieldCollection) | ✅ | ✅ | ✅ | ✅
-MoveWebPartTo (SP.WebParts.WebPartDefinition) | ✅ | ✅ | ✅ | ✅
 MultiGeoCopyJob (SP.Site) | ✅ | ✅ | ❌ | ❌
-My (SP.Social.SocialRestFeedManager) | ✅ | ✅ | ✅ | ✅
-My (SP.Social.SocialRestFollowingManager) | ✅ | ✅ | ✅ | ✅
 NeedsUpgradeByType (SP.Site) | ✅ | ✅ | ✅ | ✅
-NewItem (SP.Microfeed.MicrofeedStore) | ✅ | ✅ | ✅ | ✅
-NewMicrofeedPostDefinition (SP.Microfeed.MicrofeedPostDefinitionManager) | ✅ | ✅ | ✅ | ✅
-Newest (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
-News (SP.Social.SocialRestActor) | ✅ | ✅ | ✅ | ✅
-NotifyChanges (SP.Directory.Provider.DirectoryNotification) | ✅ | ✅ | ❌ | ❌
-NotifyDataChanges (SP.Directory.Provider.SharePointDirectoryProvider) | ✅ | ✅ | ✅ | ❌
 OnHubSiteJoinRequestApproved (SP.Site) | ✅ | ❌ | ❌ | ❌
 OnHubSiteJoinRequestCanceled (SP.Site) | ✅ | ❌ | ❌ | ❌
 OnHubSiteJoinRequestStarted (SP.Site) | ✅ | ❌ | ❌ | ❌
 OnboardTenantForBringYourOwnKey (SP.Site) | ✅ | ✅ | ❌ | ❌
 OpenBinaryStream (SP.File) | ✅ | ✅ | ✅ | ✅
 OpenBinaryStream (SP.FileVersion) | ✅ | ✅ | ✅ | ❌
-OpenBinaryStreamForOriginalItem (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
 OpenBinaryStreamWithOptions (SP.File) | ✅ | ✅ | ❌ | ❌
+OpenQuiz | ❌ | ❌ | ❌ | ✅
 OpenWeb (SP.Site) | ✅ | ✅ | ✅ | ✅
 OpenWebById (SP.Site) | ✅ | ✅ | ✅ | ✅
-OpenWebPart (SP.WebParts.WebPartDefinition) | ✅ | ✅ | ✅ | ✅
 OpenWebUsingPath (SP.Site) | ✅ | ✅ | ❌ | ❌
-OptIntoExchangeSync (SP.WorkManagement.OM.UserSettingsManager) | ✅ | ✅ | ✅ | ✅
-OptOutOfExchangeSync (SP.WorkManagement.OM.UserSettingsManager) | ✅ | ✅ | ✅ | ✅
 OrgNews | ✅ | ❌ | ❌ | ❌
-OrganizationFeed (SP.Social.SocialRestActor) | ✅ | ✅ | ✅ | ✅
 OverridePolicyTip (SP.ListItem) | ✅ | ✅ | ✅ | ❌
-OverridePolicyTip (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
-PackageDefinition (SP.WorkflowServices.WorkflowDeploymentService) | ✅ | ✅ | ✅ | ✅
+PS_LookupTables_InvalidNameCharacters | ✅ | ✅ | ✅ | ❌
 PageContextCore (SP.Web) | ✅ | ❌ | ❌ | ❌
 PageContextInfo (SP.Web) | ✅ | ❌ | ❌ | ❌
-PageDiagnostics | ✅ | ❌ | ❌ | ❌
 ParseAndSetFieldValue (SP.ListItem) | ✅ | ✅ | ✅ | ✅
-ParseAndSetFieldValue (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 ParseDateTime (SP.Web) | ✅ | ✅ | ❌ | ❌
-PinTask (SP.WorkManagement.OM.BaseSession) | ✅ | ✅ | ✅ | ✅
-PinTask (SP.WorkManagement.OM.LocationOrientedSortableSession) | ✅ | ✅ | ✅ | ✅
-PinTask (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ✅ | ✅ | ✅ | ✅
-PinTask (SP.WorkManagement.OM.SortableSession) | ✅ | ✅ | ✅ | ✅
-PinTask (SP.WorkManagement.OM.UserOrderedSession) | ✅ | ✅ | ✅ | ✅
-Popular (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
-PortalNavigationCache | ✅ | ❌ | ❌ | ❌
-Post (SP.Microfeed.MicrofeedManager) | ✅ | ✅ | ✅ | ✅
-Post (SP.Social.SocialRestFeed) | ✅ | ✅ | ✅ | ✅
-Post (SP.Social.SocialRestFeedManager) | ✅ | ✅ | ✅ | ✅
-PostReply (SP.Microfeed.MicrofeedManager) | ✅ | ✅ | ✅ | ✅
-PreProcessAttachment (SP.Microfeed.MicrofeedAttachmentStore) | ✅ | ✅ | ✅ | ❌
 ProcessExternalNotification (SP.Web) | ✅ | ✅ | ✅ | ✅
-PromotePersonalTaskToProviderTaskInLocation (SP.WorkManagement.OM.BaseSession) | ✅ | ✅ | ✅ | ✅
-PromotePersonalTaskToProviderTaskInLocation (SP.WorkManagement.OM.LocationOrientedSortableSession) | ✅ | ✅ | ✅ | ✅
-PromotePersonalTaskToProviderTaskInLocation (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ✅ | ✅ | ✅ | ✅
-PromotePersonalTaskToProviderTaskInLocation (SP.WorkManagement.OM.SortableSession) | ✅ | ✅ | ✅ | ✅
-PromotePersonalTaskToProviderTaskInLocation (SP.WorkManagement.OM.UserOrderedSession) | ✅ | ✅ | ✅ | ✅
-PromoteToNews (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
-PromoteToNews (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
-PromoteToNews (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
-PromoteToNews (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 ProvisionMigrationContainers (SP.Site) | ✅ | ✅ | ❌ | ❌
 ProvisionMigrationQueue (SP.Site) | ✅ | ✅ | ❌ | ❌
 Publish (SP.File) | ✅ | ✅ | ✅ | ✅
-Publish (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
-Publish (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
-Publish (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
-Publish (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
-PublishCustomEvent (SP.WorkflowServices.WorkflowInstanceService) | ❌ | ❌ | ❌ | ✅
-PublishDefinition (SP.WorkflowServices.WorkflowDeploymentService) | ✅ | ✅ | ✅ | ✅
-PublishEvent (SP.WorkflowServices.WorkflowMessagingService) | ✅ | ❌ | ❌ | ❌
 PublishMappedView (SP.List) | ✅ | ✅ | ❌ | ❌
-PublishSubscription (SP.WorkflowServices.WorkflowSubscriptionService) | ❌ | ❌ | ❌ | ✅
-PublishSubscriptionForList (SP.WorkflowServices.WorkflowSubscriptionService) | ❌ | ❌ | ❌ | ✅
-PutFile (SP.Microfeed.MicrofeedAttachmentStore) | ✅ | ✅ | ✅ | ❌
-PutImage (SP.Microfeed.MicrofeedAttachmentStore) | ✅ | ✅ | ✅ | ✅
-Query (SP.Microfeed.MicrofeedStore) | ✅ | ✅ | ✅ | ✅
-Query (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
-QueryChannels (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
-QueryGroupNames (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | ❌ | ❌
-ReadAllNonTaskData (SP.WorkManagement.OM.BaseSession) | ✅ | ✅ | ✅ | ✅
-ReadAllNonTaskData (SP.WorkManagement.OM.LocationOrientedSortableSession) | ✅ | ✅ | ✅ | ✅
-ReadAllNonTaskData (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ✅ | ✅ | ✅ | ✅
-ReadAllNonTaskData (SP.WorkManagement.OM.SortableSession) | ✅ | ✅ | ✅ | ✅
-ReadAllNonTaskData (SP.WorkManagement.OM.UserOrderedSession) | ✅ | ✅ | ✅ | ✅
-ReadCache (SP.UserProfiles.PersonalCache) | ✅ | ✅ | ❌ | ❌
-ReadCache2 (SP.UserProfiles.PersonalCache) | ✅ | ❌ | ❌ | ❌
-ReadCacheOrCreate (SP.UserProfiles.PersonalCache) | ✅ | ✅ | ❌ | ❌
-ReadCacheOrCreate2 (SP.UserProfiles.PersonalCache) | ✅ | ❌ | ❌ | ❌
-ReadCacheOrCreateOrderById (SP.UserProfiles.PersonalCache) | ✅ | ✅ | ❌ | ❌
-ReadCacheOrCreateOrderById2 (SP.UserProfiles.PersonalCache) | ✅ | ❌ | ❌ | ❌
-ReadDirectoryObject (SP.Directory.Provider.SharePointDirectoryProvider) | ✅ | ✅ | ✅ | ❌
-ReadDirectoryObjectBatch (SP.Directory.Provider.SharePointDirectoryProvider) | ✅ | ✅ | ✅ | ❌
-ReadTasks (SP.WorkManagement.OM.LocationOrientedSortableSession) | ❌ | ❌ | ❌ | ✅
-ReadTasks (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ❌ | ❌ | ❌ | ✅
-ReadTasks (SP.WorkManagement.OM.SortableSession) | ❌ | ❌ | ❌ | ✅
-ReadTasks (SP.WorkManagement.OM.UserOrderedSession) | ❌ | ❌ | ❌ | ✅
 RecoverTenantForBringYourOwnKey (SP.Site) | ✅ | ✅ | ❌ | ❌
 RecreateMissingDefaultRoleDefinitions (Collection(SP.RoleDefinition)) | ✅ | ✅ | ✅ | ❌
 Recycle (SP.AppInstance) | ✅ | ✅ | ✅ | ❌
@@ -873,7 +520,6 @@ Recycle (SP.File) | ✅ | ✅ | ✅ | ✅
 Recycle (SP.Folder) | ✅ | ✅ | ✅ | ✅
 Recycle (SP.List) | ✅ | ✅ | ✅ | ✅
 Recycle (SP.ListItem) | ✅ | ✅ | ✅ | ✅
-Recycle (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 RecycleByID (Collection(SP.FileVersion)) | ✅ | ✅ | ❌ | ❌
 RecycleByLabel (Collection(SP.FileVersion)) | ✅ | ✅ | ❌ | ❌
 RecycleObject (SP.Attachment) | ✅ | ✅ | ❌ | ❌
@@ -881,46 +527,18 @@ RecycleWithETag (SP.File) | ✅ | ✅ | ❌ | ❌
 RecycleWithParameters (SP.File) | ✅ | ❌ | ❌ | ❌
 RecycleWithParameters (SP.Folder) | ✅ | ❌ | ❌ | ❌
 RecycleWithParameters (SP.ListItem) | ✅ | ❌ | ❌ | ❌
-RecycleWithParameters (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
-Refresh (SP.Publishing.Navigation.PortalNavigationCacheWrapper) | ✅ | ❌ | ❌ | ❌
-RefreshFollowedItem (SP.UserProfiles.FollowedContent) | ✅ | ✅ | ✅ | ✅
-RefreshSingleTask (SP.WorkManagement.OM.BaseSession) | ✅ | ✅ | ✅ | ✅
-RefreshSingleTask (SP.WorkManagement.OM.LocationOrientedSortableSession) | ✅ | ✅ | ✅ | ✅
-RefreshSingleTask (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ✅ | ✅ | ✅ | ✅
-RefreshSingleTask (SP.WorkManagement.OM.SortableSession) | ✅ | ✅ | ✅ | ✅
-RefreshSingleTask (SP.WorkManagement.OM.UserOrderedSession) | ✅ | ✅ | ✅ | ✅
 RegisterHubSite (SP.Site) | ✅ | ✅ | ❌ | ❌
-RegisterInterestInHostWebList (SP.WorkflowServices.WorkflowSubscriptionService) | ✅ | ✅ | ✅ | ❌
-RegisterInterestInList (SP.WorkflowServices.WorkflowSubscriptionService) | ✅ | ✅ | ✅ | ✅
 RegisterPushNotificationSubscriber (SP.Web) | ✅ | ✅ | ✅ | ✅
-Related (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
-Remove (Collection(SP.Directory.Group)) | ✅ | ✅ | ✅ | ❌
-Remove (Collection(SP.Directory.User)) | ✅ | ✅ | ✅ | ❌
 Remove (Collection(SP.Feature)) | ✅ | ✅ | ✅ | ✅
-Remove (Collection(SP.Publishing.SubtitleFile)) | ✅ | ❌ | ❌ | ❌
 RemoveAll (Collection(SP.RoleDefinition)) | ✅ | ✅ | ✅ | ✅
 RemoveAllViewFields (SP.ViewFieldCollection) | ✅ | ✅ | ✅ | ✅
-RemoveAttributeFromTask (SP.WorkManagement.OM.BaseSession) | ✅ | ✅ | ✅ | ✅
-RemoveAttributeFromTask (SP.WorkManagement.OM.LocationOrientedSortableSession) | ✅ | ✅ | ✅ | ✅
-RemoveAttributeFromTask (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ✅ | ✅ | ✅ | ✅
-RemoveAttributeFromTask (SP.WorkManagement.OM.SortableSession) | ✅ | ✅ | ✅ | ✅
-RemoveAttributeFromTask (SP.WorkManagement.OM.UserOrderedSession) | ✅ | ✅ | ✅ | ✅
 RemoveById (Collection(SP.Group)) | ✅ | ✅ | ✅ | ✅
 RemoveById (Collection(SP.User)) | ✅ | ✅ | ✅ | ✅
 RemoveByLoginName (Collection(SP.Group)) | ✅ | ✅ | ✅ | ✅
 RemoveByLoginName (Collection(SP.User)) | ✅ | ✅ | ✅ | ✅
-RemoveContainerRetentionPolicy (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
-RemoveContainerSettings (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
 RemoveFromSpotlight (SP.View) | ✅ | ✅ | ❌ | ❌
-RemoveGroup (SP.Directory.DirectorySession) | ❌ | ❌ | ✅ | ❌
 RemoveHubSite (SP.Site) | ❌ | ✅ | ❌ | ❌
-RemovePinOnTask (SP.WorkManagement.OM.BaseSession) | ✅ | ✅ | ✅ | ✅
-RemovePinOnTask (SP.WorkManagement.OM.LocationOrientedSortableSession) | ✅ | ✅ | ✅ | ✅
-RemovePinOnTask (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ✅ | ✅ | ✅ | ✅
-RemovePinOnTask (SP.WorkManagement.OM.SortableSession) | ✅ | ✅ | ✅ | ✅
-RemovePinOnTask (SP.WorkManagement.OM.UserOrderedSession) | ✅ | ✅ | ✅ | ✅
 RemoveRoleAssignment (Collection(SP.RoleAssignment)) | ✅ | ✅ | ✅ | ✅
-RemoveSPUserInformation (SP.UserProfiles.PeopleManager) | ✅ | ❌ | ❌ | ❌
 RemoveStorageEntity (SP.Web) | ✅ | ✅ | ❌ | ❌
 RemoveSupportedUILanguage (SP.Web) | ✅ | ✅ | ✅ | ✅
 RemoveViewField (SP.ViewFieldCollection) | ✅ | ✅ | ✅ | ✅
@@ -934,187 +552,312 @@ RenderListFilterData (SP.List) | ✅ | ✅ | ✅ | ❌
 RenderListFormData (SP.List) | ✅ | ✅ | ✅ | ✅
 Reorder (Collection(SP.FieldLink)) | ✅ | ✅ | ✅ | ✅
 ReorderFields (SP.ContentType) | ✅ | ❌ | ❌ | ❌
-ReorderTask (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ✅ | ✅ | ✅ | ✅
-ReorderTask (SP.WorkManagement.OM.UserOrderedSession) | ✅ | ✅ | ✅ | ✅
-Reply (SP.Social.SocialRestThread) | ✅ | ✅ | ✅ | ✅
-RepopulateLMT (SP.Microfeed.MicrofeedManager) | ✅ | ✅ | ✅ | ✅
 ReserveListItemId (SP.List) | ✅ | ✅ | ✅ | ✅
 Reset (SP.InformationRightsManagementFileSettings) | ✅ | ✅ | ✅ | ❌
 Reset (SP.InformationRightsManagementSettings) | ✅ | ✅ | ✅ | ✅
-ResetDocIdByServerRelativePath (SP.DocumentManagement.DocumentId) | ✅ | ✅ | ❌ | ❌
-ResetDocIdsInLibrary (SP.DocumentManagement.DocumentId) | ✅ | ✅ | ❌ | ❌
 ResetRoleInheritance (SP.List) | ✅ | ✅ | ✅ | ✅
 ResetRoleInheritance (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 ResetRoleInheritance (SP.SecurableObject) | ✅ | ✅ | ✅ | ✅
 ResetRoleInheritance (SP.Web) | ✅ | ✅ | ✅ | ✅
-ResetRoleInheritance (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 Restore (SP.AppInstance) | ✅ | ✅ | ✅ | ❌
 Restore (SP.RecycleBinItem) | ✅ | ✅ | ✅ | ✅
 RestoreAll (Collection(SP.RecycleBinItem)) | ✅ | ✅ | ✅ | ✅
 RestoreByIds (Collection(SP.RecycleBinItem)) | ✅ | ❌ | ❌ | ❌
 RestoreByLabel (Collection(SP.FileVersion)) | ✅ | ✅ | ✅ | ✅
-ResumeWorkflow (SP.WorkflowServices.WorkflowInstanceService) | ❌ | ❌ | ❌ | ✅
-RetagReviewItems (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
-RetagReviewItemsWithMetas (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
 RetryAllJobs (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
 RollTenantBringYourOwnKey (SP.Site) | ✅ | ✅ | ❌ | ❌
 RunHealthCheck (SP.Site) | ✅ | ✅ | ✅ | ✅
 RunUpgradeSiteSession (SP.Site) | ✅ | ✅ | ✅ | ✅
 SPHSite | ✅ | ❌ | ❌ | ❌
+<span title="SPO_Identity_SPOIdentityHelper_DoesSessionSupportIssuingWebDavCookies">SPO_Identity_SPOIdentityHelper_DoesSessionSupportI...</span> (SPO Identity SPOIdentityHelper DoesSessionSupportIssuingWebDavCookies) | ✅ | ❌ | ❌ | ❌
+SP_APIHubConnector_CreateListItem | ✅ | ✅ | ❌ | ❌
+SP_APIHubConnector_DeleteListItem | ✅ | ✅ | ❌ | ❌
+SP_APIHubConnector_GetDeletedListItems | ✅ | ✅ | ❌ | ❌
+SP_APIHubConnector_GetEntities | ✅ | ✅ | ❌ | ❌
+SP_APIHubConnector_GetEntityValues | ✅ | ✅ | ❌ | ❌
+SP_APIHubConnector_GetListItem | ✅ | ✅ | ❌ | ❌
+SP_APIHubConnector_GetListItems | ✅ | ✅ | ❌ | ❌
+SP_APIHubConnector_GetNewListItems | ✅ | ✅ | ❌ | ❌
+SP_APIHubConnector_GetTableMetadata | ✅ | ✅ | ❌ | ❌
 SP_APIHubConnector_GetTables | ✅ | ✅ | ❌ | ❌
+SP_APIHubConnector_GetUpdatedListItems | ✅ | ✅ | ❌ | ❌
+SP_APIHubConnector_InvokeQuery | ✅ | ❌ | ❌ | ❌
+SP_APIHubConnector_ResolveEntityValue | ✅ | ✅ | ❌ | ❌
+SP_APIHubConnector_SetApprovalStatus | ✅ | ✅ | ❌ | ❌
+SP_APIHubConnector_UpdateListItem | ✅ | ✅ | ❌ | ❌
+SP_AccessRequests_ChangeRequestStatus | ✅ | ✅ | ✅ | ✅
+SP_AccessRequests_ChangeRequestStatusBulk | ✅ | ✅ | ✅ | ✅
+<span title="SP_Analytics_AnalyticsUsageEntry_LogAnalyticsAppEvent">SP_Analytics_AnalyticsUsageEntry_LogAnalyticsAppEv...</span> (SP Analytics AnalyticsUsageEntry LogAnalyticsAppEvent) | ✅ | ✅ | ✅ | ✅
+<span title="SP_Analytics_AnalyticsUsageEntry_LogAnalyticsAppEvent2">SP_Analytics_AnalyticsUsageEntry_LogAnalyticsAppEv...</span> (SP Analytics AnalyticsUsageEntry LogAnalyticsAppEvent2) | ✅ | ✅ | ✅ | ✅
+SP_Analytics_AnalyticsUsageEntry_LogAnalyticsEvent | ✅ | ✅ | ✅ | ✅
+<span title="SP_Analytics_AnalyticsUsageEntry_LogAnalyticsEvent2">SP_Analytics_AnalyticsUsageEntry_LogAnalyticsEvent...</span> (SP Analytics AnalyticsUsageEntry LogAnalyticsEvent2) | ✅ | ✅ | ✅ | ✅
 SP_ApiMetadata_Current | ✅ | ✅ | ✅ | ✅
+SP_AppCatalog_GetAppInstances | ❌ | ❌ | ❌ | ✅
+SP_AppCatalog_GetDeveloperSiteAppInstancesByIds | ❌ | ❌ | ❌ | ✅
+SP_AppCatalog_IsAppSideloadingEnabled | ✅ | ✅ | ✅ | ✅
+SP_AppContextSite | ✅ | ✅ | ✅ | ✅
+SP_AppInstance_RetrieveAppDatabaseConnectionString | ✅ | ✅ | ✅ | ✅
+SP_AppPrincipalCredential_CreateFromKeyGroup | ✅ | ✅ | ✅ | ✅
+SP_AppPrincipalCredential_CreateFromSymmetricKey | ✅ | ✅ | ✅ | ✅
 SP_AppPrincipalIdentityProvider_External | ✅ | ✅ | ✅ | ✅
+SP_AppPrincipalManager_GetManager | ❌ | ❌ | ❌ | ✅
+<span title="SP_AppPrincipalName_CreateFromAppPrincipalIdentifier">SP_AppPrincipalName_CreateFromAppPrincipalIdentifi...</span> (SP AppPrincipalName CreateFromAppPrincipalIdentifier) | ✅ | ✅ | ✅ | ✅
+SP_AppPrincipalName_CreateFromNameIdentifier | ✅ | ✅ | ✅ | ✅
+<span title="SP_AppSiteContextUtility_GetAppSiteContextCollection">SP_AppSiteContextUtility_GetAppSiteContextCollecti...</span> (SP AppSiteContextUtility GetAppSiteContextCollection) | ✅ | ✅ | ❌ | ❌
+SP_AppTileProperties_GetAppProperties | ✅ | ✅ | ❌ | ❌
+<span title="SP_BusinessData_Infrastructure_ExternalSubscriptionStore">SP_BusinessData_Infrastructure_ExternalSubscriptio...</span> (SP BusinessData Infrastructure ExternalSubscriptionStore) | ❌ | ❌ | ❌ | ✅
+SP_BusinessData_Runtime_NotificationCallback | ✅ | ✅ | ✅ | ✅
+SP_BusinessData_Runtime_Subscription | ✅ | ✅ | ✅ | ✅
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_ApplyDlpActions">SP_CompliancePolicy_SPPolicyStoreProxy_ApplyDlpAct...</span> (SP CompliancePolicy SPPolicyStoreProxy ApplyDlpActions) | ✅ | ❌ | ❌ | ❌
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_ApplyLabelOnBulkItems">SP_CompliancePolicy_SPPolicyStoreProxy_ApplyLabelO...</span> (SP CompliancePolicy SPPolicyStoreProxy ApplyLabelOnBulkItems) | ✅ | ❌ | ❌ | ❌
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_CheckSiteIsDeletableById">SP_CompliancePolicy_SPPolicyStoreProxy_CheckSiteIs...</span> (SP CompliancePolicy SPPolicyStoreProxy CheckSiteIsDeletableById) | ✅ | ❌ | ❌ | ❌
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_GetAvailableTagsForSite">SP_CompliancePolicy_SPPolicyStoreProxy_GetAvailabl...</span> (SP CompliancePolicy SPPolicyStoreProxy GetAvailableTagsForSite) | ✅ | ❌ | ❌ | ❌
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_GetAvailableTagsForSiteLabel">SP_CompliancePolicy_SPPolicyStoreProxy_GetAvailabl...</span> (SP CompliancePolicy SPPolicyStoreProxy GetAvailableTagsForSiteLabel) | ✅ | ❌ | ❌ | ❌
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_GetHoldGracePeriodInDays">SP_CompliancePolicy_SPPolicyStoreProxy_GetHoldGrac...</span> (SP CompliancePolicy SPPolicyStoreProxy GetHoldGracePeriodInDays) | ✅ | ❌ | ❌ | ❌
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_GetListComplianceTag">SP_CompliancePolicy_SPPolicyStoreProxy_GetListComp...</span> (SP CompliancePolicy SPPolicyStoreProxy GetListComplianceTag) | ✅ | ❌ | ❌ | ❌
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_GetPolicyEvaluationInfo">SP_CompliancePolicy_SPPolicyStoreProxy_GetPolicyEv...</span> (SP CompliancePolicy SPPolicyStoreProxy GetPolicyEvaluationInfo) | ✅ | ❌ | ❌ | ❌
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_IsSiteDeletable">SP_CompliancePolicy_SPPolicyStoreProxy_IsSiteDelet...</span> (SP CompliancePolicy SPPolicyStoreProxy IsSiteDeletable) | ✅ | ❌ | ❌ | ❌
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_LockRecordItem">SP_CompliancePolicy_SPPolicyStoreProxy_LockRecordI...</span> (SP CompliancePolicy SPPolicyStoreProxy LockRecordItem) | ✅ | ❌ | ❌ | ❌
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_OverridePolicyTip">SP_CompliancePolicy_SPPolicyStoreProxy_OverridePol...</span> (SP CompliancePolicy SPPolicyStoreProxy OverridePolicyTip) | ✅ | ❌ | ❌ | ❌
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_SetComplianceTagOnBulkItems">SP_CompliancePolicy_SPPolicyStoreProxy_SetComplian...</span> (SP CompliancePolicy SPPolicyStoreProxy SetComplianceTagOnBulkItems) | ✅ | ❌ | ❌ | ❌
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_SetHoldGracePeriodInDays">SP_CompliancePolicy_SPPolicyStoreProxy_SetHoldGrac...</span> (SP CompliancePolicy SPPolicyStoreProxy SetHoldGracePeriodInDays) | ✅ | ❌ | ❌ | ❌
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_SetListComplianceTag">SP_CompliancePolicy_SPPolicyStoreProxy_SetListComp...</span> (SP CompliancePolicy SPPolicyStoreProxy SetListComplianceTag) | ✅ | ❌ | ❌ | ❌
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_SetListComplianceTagWithMetaInfo">SP_CompliancePolicy_SPPolicyStoreProxy_SetListComp...</span> (SP CompliancePolicy SPPolicyStoreProxy SetListComplianceTagWithMetaInfo) | ✅ | ❌ | ❌ | ❌
+<span title="SP_CompliancePolicy_SPPolicyStoreProxy_UnlockRecordItem">SP_CompliancePolicy_SPPolicyStoreProxy_UnlockRecor...</span> (SP CompliancePolicy SPPolicyStoreProxy UnlockRecordItem) | ✅ | ❌ | ❌ | ❌
+<span title="SP_CompliancePolicy_SPSitePreservationUtility_PlaceOnHold">SP_CompliancePolicy_SPSitePreservationUtility_Plac...</span> (SP CompliancePolicy SPSitePreservationUtility PlaceOnHold) | ✅ | ❌ | ❌ | ❌
 SP_CurrencyList_GetList | ✅ | ✅ | ❌ | ❌
-SP_Directory_DirectorySession | ✅ | ✅ | ✅ | ❌
-SP_Directory_Provider_DirectoryNotification | ✅ | ✅ | ❌ | ❌
-SP_Directory_Provider_SharePointDirectoryProvider | ✅ | ✅ | ✅ | ❌
-SP_Directory_UserRequestSchema | ❌ | ❌ | ✅ | ❌
-SP_DocumentManagement_DocumentId | ✅ | ✅ | ❌ | ❌
+SP_Directory_SPHelper_AddMember | ✅ | ✅ | ✅ | ❌
+<span title="SP_Directory_SPHelper_CheckAliasAndSiteAvailability">SP_Directory_SPHelper_CheckAliasAndSiteAvailabilit...</span> (SP Directory SPHelper CheckAliasAndSiteAvailability) | ✅ | ✅ | ✅ | ❌
+SP_Directory_SPHelper_CheckSiteAvailability | ✅ | ✅ | ✅ | ❌
+SP_Directory_SPHelper_GetGroupAndUserStatus | ✅ | ✅ | ✅ | ❌
+SP_Directory_SPHelper_GetMembers | ✅ | ✅ | ✅ | ❌
+SP_Directory_SPHelper_GetMembersInBatch | ✅ | ✅ | ✅ | ❌
+SP_Directory_SPHelper_GetMembersInfo | ✅ | ✅ | ✅ | ❌
+SP_Directory_SPHelper_GetMembership | ✅ | ✅ | ✅ | ❌
+SP_Directory_SPHelper_GetMembershipInBatch | ✅ | ✅ | ✅ | ❌
+SP_Directory_SPHelper_GetMembershipStatus | ✅ | ✅ | ✅ | ❌
+SP_Directory_SPHelper_GetMyGroups | ✅ | ✅ | ✅ | ❌
+SP_Directory_SPHelper_GetOwners | ✅ | ✅ | ✅ | ❌
+SP_Directory_SPHelper_GetOwnersInBatch | ✅ | ✅ | ✅ | ❌
+SP_Directory_SPHelper_GetUser | ✅ | ✅ | ✅ | ❌
+SP_Directory_SPHelper_IsMemberOf | ✅ | ✅ | ✅ | ❌
+<span title="SP_Directory_SPHelper_ProvisionPointPublishingPersonalSite">SP_Directory_SPHelper_ProvisionPointPublishingPers...</span> (SP Directory SPHelper ProvisionPointPublishingPersonalSite) | ❌ | ❌ | ✅ | ❌
+SP_Directory_SPHelper_ProvisionSite | ✅ | ✅ | ✅ | ❌
+SP_Directory_SPHelper_RemoveExternalMembers | ✅ | ✅ | ✅ | ❌
+SP_Directory_SPHelper_RemoveMember | ✅ | ✅ | ✅ | ❌
+SP_Directory_SPHelper_SyncGroup | ✅ | ✅ | ✅ | ❌
+SP_Discovery_Case | ❌ | ❌ | ❌ | ✅
+SP_Discovery_Export | ❌ | ❌ | ❌ | ✅
+SP_FavoriteLists_AddFavoriteList | ✅ | ❌ | ❌ | ❌
+SP_FavoriteLists_GetFavoriteLists | ✅ | ❌ | ❌ | ❌
+SP_FavoriteLists_GetIsListFavorite | ✅ | ❌ | ❌ | ❌
+SP_FavoriteLists_RemoveFavoriteList | ✅ | ❌ | ❌ | ❌
+SP_File_GetContentVerFromTag | ✅ | ✅ | ✅ | ✅
+SP_HashtagStoreManager_CallOLS | ✅ | ✅ | ❌ | ❌
+SP_HashtagStoreManager_GetBlockedHashtags | ✅ | ✅ | ❌ | ❌
+SP_HashtagStoreManager_GetHashtagsByPrefix | ✅ | ✅ | ❌ | ❌
+SP_HashtagStoreManager_SetBlockedHashtags | ✅ | ✅ | ❌ | ❌
+SP_HubSites | ✅ | ✅ | ❌ | ❌
+SP_HubSites_CanCreate | ❌ | ✅ | ❌ | ❌
+SP_HubSites_Load | ✅ | ✅ | ❌ | ❌
+<span title="SP_Internal_FlowPermissions_GetFlowPermissionLevelOnList">SP_Internal_FlowPermissions_GetFlowPermissionLevel...</span> (SP Internal FlowPermissions GetFlowPermissionLevelOnList) | ✅ | ✅ | ❌ | ❌
+SP_Internal_FormsCustomization_ActivateApp | ✅ | ✅ | ❌ | ❌
+SP_Internal_FormsCustomization_CanCustomizeForms | ✅ | ✅ | ❌ | ❌
+SP_Internal_FormsCustomization_ClearApp | ✅ | ✅ | ❌ | ❌
+SP_Internal_FormsCustomization_DeactivateApp | ✅ | ✅ | ❌ | ❌
+<span title="SP_Internal_FormsCustomization_GetPowerAppsFormDesignUrl">SP_Internal_FormsCustomization_GetPowerAppsFormDes...</span> (SP Internal FormsCustomization GetPowerAppsFormDesignUrl) | ✅ | ✅ | ❌ | ❌
+SP_Internal_FormsCustomization_SetApp | ✅ | ✅ | ❌ | ❌
 SP_KnowledgeHub | ✅ | ❌ | ❌ | ❌
-SP_MicroService_MicroServiceManager | ✅ | ✅ | ❌ | ❌
-SP_Microfeed_MicrofeedAttachmentStore | ✅ | ✅ | ✅ | ✅
-SP_Microfeed_MicrofeedManager | ✅ | ✅ | ✅ | ✅
-SP_Microfeed_MicrofeedPostDefinitionManager | ✅ | ✅ | ✅ | ✅
-SP_Microfeed_MicrofeedPostOptionCollection | ✅ | ✅ | ✅ | ✅
-SP_Microfeed_MicrofeedStore | ✅ | ✅ | ✅ | ✅
+SP_List_GetListDataAsStream | ✅ | ✅ | ❌ | ❌
+<span title="SP_MetadataNavigation_MetadataNavigationSettings_GetConfiguredSettings">SP_MetadataNavigation_MetadataNavigationSettings_G...</span> (SP MetadataNavigation MetadataNavigationSettings GetConfiguredSettings) | ✅ | ✅ | ❌ | ❌
+SP_Microfeed_MicrofeedData | ❌ | ❌ | ❌ | ✅
+SP_MountPoint_GetMountedFolderInfo | ✅ | ✅ | ✅ | ❌
+SP_MoveCopyUtil_CopyFile | ✅ | ✅ | ✅ | ❌
+SP_MoveCopyUtil_CopyFileByPath | ✅ | ✅ | ❌ | ❌
+SP_MoveCopyUtil_CopyFolder | ✅ | ✅ | ✅ | ❌
+SP_MoveCopyUtil_CopyFolderByPath | ✅ | ✅ | ❌ | ❌
+SP_MoveCopyUtil_MoveFile | ✅ | ✅ | ✅ | ❌
+SP_MoveCopyUtil_MoveFileByPath | ✅ | ✅ | ❌ | ❌
+SP_MoveCopyUtil_MoveFolder | ✅ | ✅ | ✅ | ❌
+SP_MoveCopyUtil_MoveFolderByPath | ✅ | ✅ | ❌ | ❌
 SP_MultilingualSettings | ✅ | ❌ | ❌ | ❌
-SP_OAuth_NativeClient | ✅ | ✅ | ✅ | ❌
-SP_OAuth_Token | ✅ | ❌ | ❌ | ❌
+SP_ObjectSharingInformation_CanCurrentUserShare | ✅ | ✅ | ✅ | ❌
+<span title="SP_ObjectSharingInformation_CanCurrentUserShareRemote">SP_ObjectSharingInformation_CanCurrentUserShareRem...</span> (SP ObjectSharingInformation CanCurrentUserShareRemote) | ✅ | ✅ | ✅ | ❌
+<span title="SP_ObjectSharingInformation_GetListItemSharingInformation">SP_ObjectSharingInformation_GetListItemSharingInfo...</span> (SP ObjectSharingInformation GetListItemSharingInformation) | ✅ | ✅ | ✅ | ✅
+<span title="SP_ObjectSharingInformation_GetObjectSharingInformation">SP_ObjectSharingInformation_GetObjectSharingInform...</span> (SP ObjectSharingInformation GetObjectSharingInformation) | ❌ | ❌ | ❌ | ✅
+<span title="SP_ObjectSharingInformation_GetObjectSharingInformationByUrl">SP_ObjectSharingInformation_GetObjectSharingInform...</span> (SP ObjectSharingInformation GetObjectSharingInformationByUrl) | ✅ | ✅ | ✅ | ❌
+<span title="SP_ObjectSharingInformation_GetWebSharingInformation">SP_ObjectSharingInformation_GetWebSharingInformati...</span> (SP ObjectSharingInformation GetWebSharingInformation) | ✅ | ✅ | ✅ | ✅
 SP_OrganizationNews | ✅ | ❌ | ❌ | ❌
-SP_Publishing_AddinPlugin | ❌ | ❌ | ❌ | ✅
-SP_Publishing_CommunicationSite | ✅ | ✅ | ❌ | ❌
-SP_Publishing_EmbedService | ✅ | ✅ | ❌ | ❌
-<span title="SP_Publishing_Navigation_PortalNavigationCacheWrapper">SP_Publishing_Navigation_PortalNavigationCacheWrap...</span> (SP Publishing Navigation PortalNavigationCacheWrapper) | ✅ | ❌ | ❌ | ❌
-SP_Publishing_PageDiagnosticsController | ✅ | ❌ | ❌ | ❌
-SP_Publishing_PointPublishingPostServiceManager | ✅ | ❌ | ❌ | ❌
-SP_Publishing_PointPublishingSiteManager | ✅ | ❌ | ❌ | ❌
-SP_Publishing_PointPublishingTenantManager | ✅ | ❌ | ❌ | ❌
-SP_Publishing_RichSharing | ✅ | ✅ | ❌ | ❌
-SP_Publishing_SharePointHomeServiceManager | ✅ | ✅ | ❌ | ❌
-SP_Publishing_SitePageService | ✅ | ✅ | ❌ | ❌
-SP_Publishing_SitePageService_FilePickerTabOptions | ✅ | ❌ | ❌ | ❌
-SP_Publishing_VideoServiceDiscoverer | ✅ | ❌ | ❌ | ❌
-SP_Publishing_VideoServiceManager | ✅ | ❌ | ❌ | ❌
+SP_OrganizationNews_GetSiteReference | ✅ | ❌ | ❌ | ❌
+SP_PageInstrumentation_ClickManager_RecordClick | ✅ | ❌ | ❌ | ❌
+SP_Publishing_AddinSettings | ❌ | ❌ | ❌ | ✅
+SP_Publishing_Navigation_NavigationTermSetView | ❌ | ❌ | ❌ | ✅
+SP_Publishing_Navigation_WebNavigationSettings | ❌ | ❌ | ❌ | ✅
+SP_Publishing_PersonMagazine_GetDirects | ✅ | ❌ | ❌ | ❌
+SP_Publishing_PersonMagazine_GetManagers | ✅ | ❌ | ❌ | ❌
+<span title="SP_Publishing_PersonMagazine_GetPersonMagazineUserProfileDataForUser">SP_Publishing_PersonMagazine_GetPersonMagazineUser...</span> (SP Publishing PersonMagazine GetPersonMagazineUserProfileDataForUser) | ✅ | ❌ | ❌ | ❌
+<span title="SP_Publishing_PersonMagazine_GetPersonMagazineUserProfileDirectsDataForUser">SP_Publishing_PersonMagazine_GetPersonMagazineUser...</span> (SP Publishing PersonMagazine GetPersonMagazineUserProfileDirectsDataForUser) | ✅ | ❌ | ❌ | ❌
+SP_Publishing_PersonMagazine_GetPrimary | ✅ | ❌ | ❌ | ❌
+SP_Publishing_PersonMagazine_GetPrimaryCore | ✅ | ❌ | ❌ | ❌
+<span title="SP_Publishing_PersonMagazine_GetProfileCustomProperties">SP_Publishing_PersonMagazine_GetProfileCustomPrope...</span> (SP Publishing PersonMagazine GetProfileCustomProperties) | ✅ | ❌ | ❌ | ❌
+SP_Publishing_PersonMagazine_GetProfileDataForUser | ✅ | ❌ | ❌ | ❌
+<span title="SP_Publishing_PersonMagazine_GetProfileDirectsDataForUser">SP_Publishing_PersonMagazine_GetProfileDirectsData...</span> (SP Publishing PersonMagazine GetProfileDirectsDataForUser) | ✅ | ❌ | ❌ | ❌
+<span title="SP_Publishing_PersonMagazine_GetTaxonomicPropertiesForPrimary">SP_Publishing_PersonMagazine_GetTaxonomicPropertie...</span> (SP Publishing PersonMagazine GetTaxonomicPropertiesForPrimary) | ✅ | ❌ | ❌ | ❌
+<span title="SP_Publishing_PersonMagazine_GetTaxonomySuggestionDetails">SP_Publishing_PersonMagazine_GetTaxonomySuggestion...</span> (SP Publishing PersonMagazine GetTaxonomySuggestionDetails) | ✅ | ❌ | ❌ | ❌
+<span title="SP_Publishing_PersonMagazine_GetViewEditPoliciesForPrimary">SP_Publishing_PersonMagazine_GetViewEditPoliciesFo...</span> (SP Publishing PersonMagazine GetViewEditPoliciesForPrimary) | ✅ | ❌ | ❌ | ❌
+SP_Publishing_RepostPageCollection | ✅ | ❌ | ❌ | ❌
+SP_Publishing_SitePage3DCollection | ✅ | ❌ | ❌ | ❌
+SP_Publishing_SitePageCollection | ✅ | ✅ | ❌ | ❌
+SP_Publishing_SitePageMetadataCollection | ✅ | ✅ | ❌ | ❌
+SP_Publishing_SitePageService_ComputeFileName | ✅ | ❌ | ❌ | ❌
+<span title="SP_Publishing_SitePageService_GetAvailableFullPageApplications">SP_Publishing_SitePageService_GetAvailableFullPage...</span> (SP Publishing SitePageService GetAvailableFullPageApplications) | ✅ | ❌ | ❌ | ❌
+<span title="SP_Publishing_SitePageService_GetCurrentUserMemberships">SP_Publishing_SitePageService_GetCurrentUserMember...</span> (SP Publishing SitePageService GetCurrentUserMemberships) | ✅ | ❌ | ❌ | ❌
+SP_Publishing_SitePageService_GetTimeZone | ✅ | ✅ | ❌ | ❌
+<span title="SP_Publishing_SitePageService_IsFilePickerExternalImageSearchEnabled">SP_Publishing_SitePageService_IsFilePickerExternal...</span> (SP Publishing SitePageService IsFilePickerExternalImageSearchEnabled) | ✅ | ✅ | ❌ | ❌
+SP_Publishing_TopicPageCollection | ✅ | ❌ | ❌ | ❌
+SP_RecentListCollection_GetRecentLists | ✅ | ❌ | ❌ | ❌
+<span title="SP_RecentListCollection_GetRecentListsWithPageContextInfo">SP_RecentListCollection_GetRecentListsWithPageCont...</span> (SP RecentListCollection GetRecentListsWithPageContextInfo) | ✅ | ❌ | ❌ | ❌
+SP_RecentListCollection_UpdateRecentLists | ✅ | ❌ | ❌ | ❌
+SP_RelatedItemManager_AddSingleLink | ✅ | ✅ | ✅ | ✅
+SP_RelatedItemManager_AddSingleLinkFromUrl | ✅ | ✅ | ✅ | ✅
+SP_RelatedItemManager_AddSingleLinkToUrl | ✅ | ✅ | ✅ | ✅
+SP_RelatedItemManager_DeleteSingleLink | ✅ | ✅ | ✅ | ✅
+SP_RelatedItemManager_GetPageOneRelatedItems | ✅ | ✅ | ✅ | ✅
+SP_RelatedItemManager_GetRelatedItems | ✅ | ✅ | ✅ | ✅
+SP_RemoteWeb | ✅ | ✅ | ✅ | ❌
 SP_RequestContext_Current | ✅ | ✅ | ✅ | ✅
 SP_RequestUserContext_Current | ✅ | ✅ | ✅ | ❌
 SP_RequestVariable | ❌ | ❌ | ❌ | ✅
+SP_RoleDefinitionBindingCollection | ✅ | ✅ | ✅ | ✅
 SP_SPHSite | ✅ | ❌ | ❌ | ❌
+SP_SPHSite_AddOrgNewsSite | ✅ | ❌ | ❌ | ❌
+SP_SPHSite_AddSPHomeNavNode | ✅ | ❌ | ❌ | ❌
+SP_SPHSite_BuildCompanyPortalContext | ✅ | ❌ | ❌ | ❌
 SP_SPHSite_GetSPHSiteXGeo | ✅ | ❌ | ❌ | ❌
-SP_Sharing_PersonalWeb_GetOversharedWebInfo | ✅ | ✅ | ❌ | ❌
-<span title="SP_Sharing_SiteSharingReportHelper_CancelSharingReportJob">SP_Sharing_SiteSharingReportHelper_CancelSharingRe...</span> (SP Sharing SiteSharingReportHelper CancelSharingReportJob) | ✅ | ❌ | ❌ | ❌
-<span title="SP_Sharing_SiteSharingReportHelper_GetSiteSharingReportCapabilities">SP_Sharing_SiteSharingReportHelper_GetSiteSharingR...</span> (SP Sharing SiteSharingReportHelper GetSiteSharingReportCapabilities) | ✅ | ❌ | ❌ | ❌
-SP_Social_SocialFeedManager | ✅ | ✅ | ✅ | ✅
-SP_Social_SocialFollowingManager | ✅ | ✅ | ✅ | ✅
-SP_Social_SocialRestActor | ✅ | ✅ | ✅ | ✅
-SP_Social_SocialRestFeed | ✅ | ✅ | ✅ | ✅
-SP_Social_SocialRestFeedManager | ✅ | ✅ | ✅ | ✅
-SP_Social_SocialRestFollowingManager | ✅ | ✅ | ✅ | ✅
-SP_Social_SocialRestThread | ✅ | ✅ | ✅ | ✅
-SP_Taxonomy_ChangeInformation | ❌ | ❌ | ❌ | ✅
-SP_Taxonomy_CustomPropertyMatchInformation | ❌ | ❌ | ❌ | ✅
-SP_Taxonomy_LabelMatchInformation | ❌ | ❌ | ❌ | ✅
+SP_SPHSite_IsModernSiteWithHorizontalNav | ✅ | ❌ | ❌ | ❌
+SP_SPHSite_IsValidHomeSite | ✅ | ❌ | ❌ | ❌
+SP_SPHSite_SetSPHSite | ✅ | ❌ | ❌ | ❌
+SP_ServerSettings_GetBlockedFileExtensions | ✅ | ✅ | ✅ | ✅
+SP_ServerSettings_GetGlobalInstalledLanguages | ✅ | ✅ | ✅ | ✅
+SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌
+SP_SharingUtility_GetUserDirectoryInfoByEmail | ✅ | ✅ | ❌ | ❌
+SP_SharingUtility_ValidateSameUserEmails | ✅ | ✅ | ❌ | ❌
+<span title="SP_Sharing_DocumentSharingManager_GetRoleDefinition">SP_Sharing_DocumentSharingManager_GetRoleDefinitio...</span> (SP Sharing DocumentSharingManager GetRoleDefinition) | ✅ | ✅ | ✅ | ✅
+<span title="SP_Sharing_DocumentSharingManager_IsDocumentSharingEnabled">SP_Sharing_DocumentSharingManager_IsDocumentSharin...</span> (SP Sharing DocumentSharingManager IsDocumentSharingEnabled) | ❌ | ❌ | ❌ | ✅
+<span title="SP_Sharing_DocumentSharingManager_RemoveItemsFromSharedWithMeView">SP_Sharing_DocumentSharingManager_RemoveItemsFromS...</span> (SP Sharing DocumentSharingManager RemoveItemsFromSharedWithMeView) | ✅ | ✅ | ✅ | ❌
+<span title="SP_Sharing_DocumentSharingManager_RemoveItemsFromSharedWithMeViewByPath">SP_Sharing_DocumentSharingManager_RemoveItemsFromS...</span> (SP Sharing DocumentSharingManager RemoveItemsFromSharedWithMeViewByPath) | ✅ | ✅ | ❌ | ❌
+<span title="SP_Sharing_DocumentSharingManager_UpdateDocumentSharingInfo">SP_Sharing_DocumentSharingManager_UpdateDocumentSh...</span> (SP Sharing DocumentSharingManager UpdateDocumentSharingInfo) | ✅ | ✅ | ✅ | ✅
+SP_Sharing_PersonalWeb_FixPermissionInheritance | ✅ | ✅ | ❌ | ❌
+SP_Sharing_PersonalWeb_RemovePermissionForUsers | ✅ | ✅ | ❌ | ❌
+<span title="SP_Sharing_SiteSharingReportHelper_CreateSharingReportJob">SP_Sharing_SiteSharingReportHelper_CreateSharingRe...</span> (SP Sharing SiteSharingReportHelper CreateSharingReportJob) | ✅ | ❌ | ❌ | ❌
+SP_Site_Exists | ✅ | ✅ | ❌ | ❌
+SP_Site_GetUrlById | ✅ | ❌ | ❌ | ❌
+<span title="SP_Social_SocialAnnouncementManager_GetCurrentAnnouncements">SP_Social_SocialAnnouncementManager_GetCurrentAnno...</span> (SP Social SocialAnnouncementManager GetCurrentAnnouncements) | ✅ | ✅ | ✅ | ❌
+SP_Taxonomy_TaxonomyFieldValueCollection | ❌ | ❌ | ❌ | ✅
+SP_TeamChannelManager_AddTeamChannel | ✅ | ✅ | ❌ | ❌
+SP_TeamChannelManager_DemoteTeamChannelById | ✅ | ✅ | ❌ | ❌
+SP_TeamChannelManager_DemoteTeamChannelByPath | ✅ | ✅ | ❌ | ❌
+SP_TeamChannelManager_PromoteToTeamChannelById | ✅ | ✅ | ❌ | ❌
+SP_TeamChannelManager_PromoteToTeamChannelByPath | ✅ | ✅ | ❌ | ❌
 SP_TenantSettings_Current | ✅ | ✅ | ✅ | ✅
-SP_TranslationStatusCollection | ✅ | ❌ | ❌ | ❌
-SP_UI_MySiteLinks_GetMySiteLinks | ❌ | ❌ | ❌ | ✅
-SP_UserProfiles_FollowedContent | ✅ | ✅ | ✅ | ✅
-SP_UserProfiles_PeopleManager | ✅ | ✅ | ✅ | ✅
-SP_UserProfiles_PeopleManager_GetTrendingTags | ✅ | ✅ | ✅ | ✅
-SP_UserProfiles_PersonalCache | ✅ | ✅ | ❌ | ❌
-SP_UserProfiles_ProfileImageStore | ✅ | ✅ | ✅ | ✅
-SP_UserProfiles_ProfileLoader_GetOwnerUserProfile | ✅ | ✅ | ✅ | ❌
-SP_UserProfiles_ProfileLoader_GetProfileLoader | ✅ | ✅ | ✅ | ✅
-SP_Utilities_ThemeManager_ContextThemeManager | ✅ | ✅ | ❌ | ❌
+SP_Translation_SyncTranslator | ✅ | ✅ | ✅ | ✅
+SP_Translation_TranslationJob | ✅ | ✅ | ✅ | ✅
+SP_Translation_TranslationJobStatus | ✅ | ✅ | ✅ | ✅
+<span title="SP_Translation_TranslationJobStatus_GetAllActiveJobs">SP_Translation_TranslationJobStatus_GetAllActiveJo...</span> (SP Translation TranslationJobStatus GetAllActiveJobs) | ✅ | ✅ | ✅ | ✅
+SP_Translation_TranslationJobStatus_GetAllJobs | ✅ | ✅ | ✅ | ✅
+SP_Translation_TranslationJob_CancelJob | ✅ | ✅ | ✅ | ✅
+<span title="SP_Translation_TranslationJob_EnumerateSupportedFileExtensions">SP_Translation_TranslationJob_EnumerateSupportedFi...</span> (SP Translation TranslationJob EnumerateSupportedFileExtensions) | ✅ | ✅ | ✅ | ✅
+<span title="SP_Translation_TranslationJob_EnumerateSupportedLanguages">SP_Translation_TranslationJob_EnumerateSupportedLa...</span> (SP Translation TranslationJob EnumerateSupportedLanguages) | ✅ | ✅ | ✅ | ✅
+SP_Translation_TranslationJob_GetMaximumFileSize | ✅ | ✅ | ✅ | ✅
+<span title="SP_Translation_TranslationJob_IsFileExtensionSupported">SP_Translation_TranslationJob_IsFileExtensionSuppo...</span> (SP Translation TranslationJob IsFileExtensionSupported) | ✅ | ✅ | ✅ | ✅
+SP_Translation_TranslationJob_IsLanguageSupported | ✅ | ✅ | ✅ | ✅
+SP_Translation_TranslationJob_IsServiceEnabled | ✅ | ✅ | ✅ | ✅
+<span title="SP_Translation_VariationsTranslationTimerJob_ExportItems">SP_Translation_VariationsTranslationTimerJob_Expor...</span> (SP Translation VariationsTranslationTimerJob ExportItems) | ✅ | ✅ | ✅ | ✅
+<span title="SP_Translation_VariationsTranslationTimerJob_ExportItemsRequiringTranslation">SP_Translation_VariationsTranslationTimerJob_Expor...</span> (SP Translation VariationsTranslationTimerJob ExportItemsRequiringTranslation) | ✅ | ✅ | ✅ | ✅
+<span title="SP_Translation_VariationsTranslationTimerJob_ImportTranslationPackage">SP_Translation_VariationsTranslationTimerJob_Impor...</span> (SP Translation VariationsTranslationTimerJob ImportTranslationPackage) | ✅ | ✅ | ✅ | ✅
+<span title="SP_Translation_VariationsTranslationTimerJob_MachineTranslateItems">SP_Translation_VariationsTranslationTimerJob_Machi...</span> (SP Translation VariationsTranslationTimerJob MachineTranslateItems) | ✅ | ✅ | ✅ | ✅
+<span title="SP_Translation_VariationsTranslationTimerJob_MachineTranslateItemsRequiringTranslation">SP_Translation_VariationsTranslationTimerJob_Machi...</span> (SP Translation VariationsTranslationTimerJob MachineTranslateItemsRequiringTranslation) | ✅ | ✅ | ✅ | ✅
+<span title="SP_UI_ApplicationPages_ClientPeoplePickerWebServiceInterface_ClientPeoplePickerResolveUser">SP_UI_ApplicationPages_ClientPeoplePickerWebServic...</span> (SP UI ApplicationPages ClientPeoplePickerWebServiceInterface ClientPeoplePickerResolveUser) | ✅ | ✅ | ✅ | ✅
+<span title="SP_UI_ApplicationPages_ClientPeoplePickerWebServiceInterface_ClientPeoplePickerSearchUser">SP_UI_ApplicationPages_ClientPeoplePickerWebServic...</span> (SP UI ApplicationPages ClientPeoplePickerWebServiceInterface ClientPeoplePickerSearchUser) | ✅ | ✅ | ✅ | ✅
+<span title="SP_UI_ApplicationPages_ClientPeoplePickerWebServiceInterface_GetPickerEntityInformation">SP_UI_ApplicationPages_ClientPeoplePickerWebServic...</span> (SP UI ApplicationPages ClientPeoplePickerWebServiceInterface GetPickerEntityInformation) | ✅ | ✅ | ❌ | ❌
+<span title="SP_UI_ApplicationPages_PeoplePickerWebServiceInterface_GetSearchResults">SP_UI_ApplicationPages_PeoplePickerWebServiceInter...</span> (SP UI ApplicationPages PeoplePickerWebServiceInterface GetSearchResults) | ✅ | ✅ | ✅ | ✅
+<span title="SP_UI_ApplicationPages_PeoplePickerWebServiceInterface_GetSearchResultsByHierarchy">SP_UI_ApplicationPages_PeoplePickerWebServiceInter...</span> (SP UI ApplicationPages PeoplePickerWebServiceInterface GetSearchResultsByHierarchy) | ✅ | ✅ | ✅ | ✅
+SP_UserProfiles_CrossGeoSync_ReadFullChangesBatch | ✅ | ❌ | ❌ | ❌
+<span title="SP_UserProfiles_CrossGeoSync_ReadIncrementalChangesBatch">SP_UserProfiles_CrossGeoSync_ReadIncrementalChange...</span> (SP UserProfiles CrossGeoSync ReadIncrementalChangesBatch) | ✅ | ❌ | ❌ | ❌
+SP_UserProfiles_FollowedItemData | ✅ | ✅ | ✅ | ✅
+SP_UserProfiles_PeopleManager_IsFollowing | ✅ | ✅ | ✅ | ✅
+SP_UserProfiles_UserProfilePropertiesForUser | ✅ | ✅ | ✅ | ✅
+<span title="SP_UserProfiles_UserProfile_CreatePersonalSiteSyncFromWorkItem">SP_UserProfiles_UserProfile_CreatePersonalSiteSync...</span> (SP UserProfiles UserProfile CreatePersonalSiteSyncFromWorkItem) | ✅ | ✅ | ✅ | ❌
+SP_Utilities_NewsUtility_CreateOrUpdateNewsItem | ✅ | ✅ | ❌ | ❌
+SP_Utilities_NewsUtility_DeleteNewsItem | ✅ | ✅ | ❌ | ❌
+SP_Utilities_NewsUtility_GetMetadataForUrl | ✅ | ✅ | ❌ | ❌
+<span title="SP_Utilities_SPSocialSwitch_IsFollowingFeatureEnabled">SP_Utilities_SPSocialSwitch_IsFollowingFeatureEnab...</span> (SP Utilities SPSocialSwitch IsFollowingFeatureEnabled) | ✅ | ✅ | ❌ | ❌
+SP_Utilities_ShortcutLink_GetShortcutLink | ✅ | ✅ | ❌ | ❌
+SP_Utilities_Utility_CreateEmailBodyForInvitation | ✅ | ✅ | ✅ | ✅
+SP_Utilities_Utility_CreateNewDiscussionItem | ✅ | ✅ | ✅ | ✅
+SP_Utilities_Utility_CreateWikiPageInContextWeb | ✅ | ✅ | ✅ | ✅
+SP_Utilities_Utility_ExpandGroupsToPrincipals | ✅ | ✅ | ✅ | ✅
+SP_Utilities_Utility_GetAppLicenseDeploymentId | ✅ | ✅ | ✅ | ✅
+SP_Utilities_Utility_GetAppLicenseInformation | ✅ | ✅ | ✅ | ✅
+SP_Utilities_Utility_GetCurrentUserEmailAddresses | ✅ | ✅ | ✅ | ✅
+SP_Utilities_Utility_GetLocalizedString | ✅ | ✅ | ✅ | ✅
+SP_Utilities_Utility_GetLowerCaseString | ✅ | ✅ | ✅ | ✅
+SP_Utilities_Utility_GetUserPermissionLevels | ✅ | ✅ | ✅ | ❌
+SP_Utilities_Utility_ImportAppLicense | ✅ | ✅ | ✅ | ✅
+<span title="SP_Utilities_Utility_IsUserLicensedForEntityInContext">SP_Utilities_Utility_IsUserLicensedForEntityInCont...</span> (SP Utilities Utility IsUserLicensedForEntityInContext) | ✅ | ✅ | ✅ | ✅
+SP_Utilities_Utility_LocalizeWebPartGallery | ❌ | ❌ | ❌ | ✅
+SP_Utilities_Utility_LogCustomAppError | ✅ | ✅ | ✅ | ✅
+SP_Utilities_Utility_LogCustomRemoteAppError | ✅ | ✅ | ✅ | ✅
+SP_Utilities_Utility_MarkDiscussionAsFeatured | ✅ | ✅ | ✅ | ✅
+<span title="SP_Utilities_Utility_ResolvePrincipalInCurrentContext">SP_Utilities_Utility_ResolvePrincipalInCurrentCont...</span> (SP Utilities Utility ResolvePrincipalInCurrentContext) | ✅ | ✅ | ✅ | ✅
+<span title="SP_Utilities_Utility_SearchPrincipalsUsingContextWeb">SP_Utilities_Utility_SearchPrincipalsUsingContextW...</span> (SP Utilities Utility SearchPrincipalsUsingContextWeb) | ✅ | ✅ | ✅ | ✅
+SP_Utilities_Utility_SendEmail | ✅ | ✅ | ✅ | ✅
+SP_Utilities_Utility_UnmarkDiscussionAsFeatured | ✅ | ✅ | ✅ | ✅
+<span title="SP_Utilities_WopiHostUtility_GetFileHandlerWopiTargetPropertiesByUrl">SP_Utilities_WopiHostUtility_GetFileHandlerWopiTar...</span> (SP Utilities WopiHostUtility GetFileHandlerWopiTargetPropertiesByUrl) | ✅ | ✅ | ❌ | ❌
+SP_Utilities_WopiHostUtility_GetWebApplicationUrls | ✅ | ✅ | ❌ | ❌
+SP_Utilities_WopiHostUtility_GetWopiOrigins | ✅ | ❌ | ❌ | ❌
+<span title="SP_Utilities_WopiHostUtility_GetWopiTargetPropertiesByUrl">SP_Utilities_WopiHostUtility_GetWopiTargetProperti...</span> (SP Utilities WopiHostUtility GetWopiTargetPropertiesByUrl) | ✅ | ✅ | ✅ | ❌
+SP_WebProxy_Invoke | ✅ | ✅ | ✅ | ✅
+SP_Web_CreateAnonymousLink | ✅ | ✅ | ✅ | ❌
+SP_Web_CreateAnonymousLinkWithExpiration | ✅ | ✅ | ✅ | ❌
+SP_Web_CreateOrganizationSharingLink | ✅ | ✅ | ✅ | ❌
+SP_Web_DefaultDocumentLibraryUrl | ✅ | ✅ | ❌ | ❌
+SP_Web_DeleteAllAnonymousLinksForObject | ✅ | ✅ | ✅ | ❌
+SP_Web_DeleteAnonymousLinkForObject | ✅ | ✅ | ✅ | ❌
+SP_Web_DestroyOrganizationSharingLink | ✅ | ✅ | ✅ | ❌
+SP_Web_ForwardObjectLink | ✅ | ✅ | ✅ | ❌
 SP_Web_GetContextWebInformation | ✅ | ✅ | ✅ | ✅
-SP_WorkManagement_OM_BooleanCriterion | ✅ | ✅ | ✅ | ✅
-SP_WorkManagement_OM_CustomAttributeFilter | ✅ | ✅ | ✅ | ✅
-SP_WorkManagement_OM_DateRangeCriterion | ✅ | ✅ | ✅ | ✅
-SP_WorkManagement_OM_Location | ✅ | ✅ | ✅ | ✅
-SP_WorkManagement_OM_LocationFilter | ✅ | ✅ | ✅ | ✅
-SP_WorkManagement_OM_NameCriterion | ✅ | ✅ | ✅ | ✅
-SP_WorkManagement_OM_OrderInfo | ✅ | ✅ | ✅ | ✅
-SP_WorkManagement_OM_PersistedProperties | ✅ | ✅ | ✅ | ✅
-SP_WorkManagement_OM_SortableSessionManager | ✅ | ✅ | ✅ | ✅
-SP_WorkManagement_OM_SortableTaskQuery | ✅ | ✅ | ✅ | ✅
-SP_WorkManagement_OM_Task | ✅ | ✅ | ✅ | ✅
-SP_WorkManagement_OM_TaskFilter | ✅ | ✅ | ✅ | ✅
-SP_WorkManagement_OM_TaskQuery | ✅ | ✅ | ✅ | ✅
-SP_WorkManagement_OM_UserOrderedSessionManager | ✅ | ✅ | ✅ | ✅
-SP_WorkManagement_OM_UserSettings | ✅ | ✅ | ✅ | ✅
-SP_WorkManagement_OM_UserSettingsManager | ✅ | ✅ | ✅ | ✅
-SP_WorkManagement_OM_ViewSelectionInfo | ✅ | ✅ | ✅ | ✅
-SP_WorkflowServices_InteropService_Current | ✅ | ✅ | ✅ | ✅
-SP_WorkflowServices_WorkflowDefinition | ✅ | ✅ | ✅ | ✅
-<span title="SP_WorkflowServices_WorkflowInstanceService_Current">SP_WorkflowServices_WorkflowInstanceService_Curren...</span> (SP WorkflowServices WorkflowInstanceService Current) | ✅ | ✅ | ✅ | ✅
-<span title="SP_WorkflowServices_WorkflowServicesManager_Current">SP_WorkflowServices_WorkflowServicesManager_Curren...</span> (SP WorkflowServices WorkflowServicesManager Current) | ✅ | ✅ | ✅ | ✅
-SP_WorkflowServices_WorkflowSubscription | ✅ | ✅ | ✅ | ✅
-<span title="SP_WorkflowServices_WorkflowSubscriptionService_Current">SP_WorkflowServices_WorkflowSubscriptionService_Cu...</span> (SP WorkflowServices WorkflowSubscriptionService Current) | ✅ | ✅ | ✅ | ✅
-Save (SP.Publishing.PageDiagnosticsController) | ✅ | ❌ | ❌ | ❌
+SP_Web_GetContextWebThemeData | ✅ | ✅ | ✅ | ❌
+SP_Web_GetDocumentAndMediaLibraries | ✅ | ✅ | ❌ | ❌
+SP_Web_GetDocumentLibraries | ✅ | ✅ | ✅ | ❌
+SP_Web_GetObjectSharingSettings | ✅ | ✅ | ✅ | ❌
+SP_Web_GetSharingLinkKind | ✅ | ✅ | ❌ | ❌
+SP_Web_GetWebUrlFromPageUrl | ✅ | ✅ | ✅ | ✅
+SP_Web_ShareObject | ✅ | ✅ | ✅ | ❌
+SP_Web_UnshareObject | ✅ | ✅ | ✅ | ❌
+SP_WorkManagement_OM_LocationGroupClientCollection | ✅ | ✅ | ✅ | ✅
+SP_WorkManagement_OM_TaskClientCollection | ✅ | ✅ | ✅ | ✅
+SP_WorkflowServices_WorkflowServicesManager | ❌ | ❌ | ❌ | ✅
 SaveAsNewView (SP.List) | ✅ | ✅ | ✅ | ✅
 SaveAsTemplate (SP.List) | ✅ | ✅ | ❌ | ❌
 SaveBinaryStream (SP.File) | ✅ | ✅ | ✅ | ✅
-SaveCollateral (SP.WorkflowServices.WorkflowDeploymentService) | ✅ | ✅ | ✅ | ✅
-SaveDefinition (SP.WorkflowServices.WorkflowDeploymentService) | ❌ | ❌ | ❌ | ✅
-SaveDraft (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
-SaveDraft (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
-SaveDraft (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
-SaveDraft (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
-SavePage (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
-SavePage (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
-SavePage (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
-SavePage (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
-SavePageAsDraft (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
-SavePageAsDraft (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
-SavePageAsDraft (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
-SavePageAsDraft (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
-SavePageAsTemplate (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
-SavePageAsTemplate (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
-SavePageAsTemplate (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
-SavePageAsTemplate (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
-SaveUploadedFile (SP.UserProfiles.ProfileImageStore) | ✅ | ✅ | ✅ | ✅
-SaveWebPartChanges (SP.WebParts.WebPartDefinition) | ✅ | ✅ | ✅ | ✅
-SchedulePublish (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
-SchedulePublish (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
-SchedulePublish (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
-SchedulePublish (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 Set (SP.RequestVariable) | ❌ | ❌ | ❌ | ✅
 SetAccessRequestSiteDescriptionAndUpdate (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetAppPrincipalConfiguration (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
 SetChromeOptions (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetCommentsDisabled (SP.ListItem) | ✅ | ✅ | ❌ | ❌
-SetCommentsDisabled (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 SetComplianceTag (SP.ListItem) | ✅ | ❌ | ❌ | ❌
-SetComplianceTag (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 SetComplianceTagWithExplicitMetasUpdate (SP.ListItem) | ✅ | ❌ | ❌ | ❌
-SetComplianceTagWithExplicitMetasUpdate (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 SetComplianceTagWithHold (SP.ListItem) | ✅ | ❌ | ❌ | ❌
-SetComplianceTagWithHold (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 SetComplianceTagWithMetaInfo (SP.ListItem) | ✅ | ❌ | ❌ | ❌
-SetComplianceTagWithMetaInfo (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 SetComplianceTagWithNoHold (SP.ListItem) | ✅ | ❌ | ❌ | ❌
-SetComplianceTagWithNoHold (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 SetComplianceTagWithRecord (SP.ListItem) | ✅ | ❌ | ❌ | ❌
-SetComplianceTagWithRecord (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
-SetConnectionId (SP.BusinessData.AppBdcCatalog) | ✅ | ✅ | ✅ | ✅
-SetContainerRetentionPolicy (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
 SetCorporateCatalog (SP.TenantSettings) | ✅ | ❌ | ❌ | ❌
 SetDefaultNewPageTemplateId (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetExemptFromBlockDownloadOfNonViewableFiles (SP.List) | ✅ | ✅ | ❌ | ❌
-SetExternalVariable (SP.WorkflowServices.WorkflowSubscription) | ✅ | ✅ | ✅ | ✅
 SetFileUserValue (SP.File) | ✅ | ❌ | ❌ | ❌
-SetHideDefaultThemes (SP.Utilities.ThemeManager) | ✅ | ✅ | ❌ | ❌
-SetItemPinState (SP.UserProfiles.FollowedContent) | ✅ | ✅ | ✅ | ❌
-SetLobSystemInstanceProperty (SP.BusinessData.AppBdcCatalog) | ✅ | ✅ | ✅ | ✅
-SetLobSystemProperty (SP.BusinessData.AppBdcCatalog) | ✅ | ✅ | ✅ | ✅
-SetMagazineProperties (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | ❌ | ❌
-SetMultiValuedProfileProperty (SP.UserProfiles.PeopleManager) | ✅ | ✅ | ✅ | ❌
-SetMyProfilePicture (SP.UserProfiles.PeopleManager) | ✅ | ✅ | ✅ | ✅
-SetMySiteFirstRunExperience (SP.UserProfiles.UserProfile) | ✅ | ✅ | ✅ | ❌
 SetNotificationRecipients (SP.MultilingualSettings) | ✅ | ❌ | ❌ | ❌
-SetPeopleInMedia (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
-SetPersistedProperties (SP.WorkManagement.OM.UserSettingsManager) | ❌ | ❌ | ❌ | ✅
-SetPostLikeStatus (SP.Microfeed.MicrofeedStore) | ✅ | ✅ | ✅ | ✅
-SetProperty (SP.WorkflowServices.WorkflowDefinition) | ✅ | ✅ | ✅ | ✅
-SetProperty (SP.WorkflowServices.WorkflowSubscription) | ✅ | ✅ | ✅ | ✅
+SetQuizState | ❌ | ❌ | ❌ | ✅
 SetShowInDisplayForm (SP.Field) | ✅ | ✅ | ✅ | ✅
 SetShowInDisplayForm (SP.FieldCalculated) | ✅ | ✅ | ✅ | ✅
 SetShowInDisplayForm (SP.FieldChoice) | ✅ | ✅ | ✅ | ✅
@@ -1133,7 +876,6 @@ SetShowInDisplayForm (SP.FieldText) | ✅ | ✅ | ✅ | ✅
 SetShowInDisplayForm (SP.FieldThumbnail) | ✅ | ❌ | ❌ | ❌
 SetShowInDisplayForm (SP.FieldUrl) | ✅ | ✅ | ✅ | ✅
 SetShowInDisplayForm (SP.FieldUser) | ✅ | ✅ | ✅ | ✅
-SetShowInDisplayForm (SP.Taxonomy.TaxonomyField) | ✅ | ✅ | ❌ | ✅
 SetShowInEditForm (SP.Field) | ✅ | ✅ | ✅ | ✅
 SetShowInEditForm (SP.FieldCalculated) | ✅ | ✅ | ✅ | ✅
 SetShowInEditForm (SP.FieldChoice) | ✅ | ✅ | ✅ | ✅
@@ -1152,7 +894,6 @@ SetShowInEditForm (SP.FieldText) | ✅ | ✅ | ✅ | ✅
 SetShowInEditForm (SP.FieldThumbnail) | ✅ | ❌ | ❌ | ❌
 SetShowInEditForm (SP.FieldUrl) | ✅ | ✅ | ✅ | ✅
 SetShowInEditForm (SP.FieldUser) | ✅ | ✅ | ✅ | ✅
-SetShowInEditForm (SP.Taxonomy.TaxonomyField) | ✅ | ✅ | ❌ | ✅
 SetShowInNewForm (SP.Field) | ✅ | ✅ | ✅ | ✅
 SetShowInNewForm (SP.FieldCalculated) | ✅ | ✅ | ✅ | ✅
 SetShowInNewForm (SP.FieldChoice) | ✅ | ✅ | ✅ | ✅
@@ -1171,41 +912,14 @@ SetShowInNewForm (SP.FieldText) | ✅ | ✅ | ✅ | ✅
 SetShowInNewForm (SP.FieldThumbnail) | ✅ | ❌ | ❌ | ❌
 SetShowInNewForm (SP.FieldUrl) | ✅ | ✅ | ✅ | ✅
 SetShowInNewForm (SP.FieldUser) | ✅ | ✅ | ✅ | ✅
-SetShowInNewForm (SP.Taxonomy.TaxonomyField) | ✅ | ✅ | ❌ | ✅
-SetSingleValueProfileProperty (SP.UserProfiles.PeopleManager) | ✅ | ✅ | ✅ | ❌
 SetStorageEntity (SP.Web) | ✅ | ✅ | ❌ | ❌
 SetUseAccessRequestDefaultAndUpdate (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetUserAsOwner (SP.Group) | ✅ | ❌ | ❌ | ❌
-SetUserSettings (SP.WorkManagement.OM.UserSettingsManager) | ❌ | ❌ | ❌ | ✅
 SetValueForUICulture (SP.UserResource) | ✅ | ✅ | ✅ | ❌
-SetVideoOwner (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 SetViewXml (SP.View) | ✅ | ✅ | ❌ | ❌
-ShareAllSocialData (SP.UserProfiles.UserProfile) | ✅ | ✅ | ✅ | ✅
-SharePageByEmail (SP.Publishing.RichSharing) | ✅ | ✅ | ❌ | ❌
-SharePagePreviewByEmail (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
-SharePagePreviewByEmail (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
-SharePagePreviewByEmail (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
-SharePagePreviewByEmail (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
-ShareSiteByEmail (SP.Publishing.RichSharing) | ✅ | ✅ | ❌ | ❌
 SiteReference (SP.KnowledgeHub) | ✅ | ❌ | ❌ | ❌
 SitesReference (SP.OrganizationNews) | ✅ | ❌ | ❌ | ❌
-Sort (Collection(SP.WorkflowServices.WorkflowDefinition)) | ✅ | ✅ | ✅ | ❌
-Sort (Collection(SP.WorkflowServices.WorkflowSubscription)) | ✅ | ✅ | ✅ | ❌
 StartUpload (SP.File) | ✅ | ✅ | ✅ | ❌
-StartWorkflow (SP.WorkflowServices.InteropService) | ✅ | ✅ | ✅ | ✅
-StartWorkflow (SP.WorkflowServices.WorkflowInstanceService) | ❌ | ❌ | ❌ | ✅
-StartWorkflowOnListItemBySubscriptionId (SP.WorkflowServices.WorkflowInstanceService) | ✅ | ✅ | ✅ | ✅
-Status (SP.Publishing.CommunicationSite) | ✅ | ✅ | ❌ | ❌
-StopFollowing (SP.Social.SocialFollowingManager) | ✅ | ✅ | ✅ | ✅
-StopFollowing (SP.Social.SocialRestFollowingManager) | ✅ | ✅ | ✅ | ✅
-StopFollowing (SP.UserProfiles.FollowedContent) | ✅ | ✅ | ✅ | ✅
-StopFollowing (SP.UserProfiles.PeopleManager) | ✅ | ✅ | ✅ | ✅
-StopFollowingTag (SP.UserProfiles.PeopleManager) | ✅ | ✅ | ✅ | ✅
-Subscribe (SP.BusinessData.Entity) | ❌ | ❌ | ❌ | ✅
-Subtitles (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
-Suggestions (SP.Social.SocialRestFollowingManager) | ✅ | ✅ | ✅ | ✅
-SuppressThreadNotifications (SP.Social.SocialFeedManager) | ✅ | ✅ | ✅ | ✅
-SuspendWorkflow (SP.WorkflowServices.WorkflowInstanceService) | ❌ | ❌ | ❌ | ✅
 SyncFlowCallbackUrl (SP.List) | ✅ | ✅ | ❌ | ❌
 SyncFlowInstance (SP.List) | ✅ | ✅ | ❌ | ❌
 SyncFlowInstances (SP.List) | ✅ | ✅ | ❌ | ❌
@@ -1214,41 +928,15 @@ SyncFlowTemplates (SP.List) | ✅ | ✅ | ❌ | ❌
 SyncFlowTemplates (SP.Web) | ✅ | ❌ | ❌ | ❌
 SyncHubSiteTheme (SP.Web) | ✅ | ✅ | ❌ | ❌
 SystemUpdate (SP.ListItem) | ✅ | ✅ | ❌ | ❌
-SystemUpdate (SP.Microfeed.MicrofeedData) | ✅ | ✅ | ✅ | ✅
-SystemUpdate (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 TakeOverCheckOut (SP.CheckedOutFile) | ✅ | ✅ | ❌ | ❌
-Templates (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
-TerminateWorkflow (SP.WorkflowServices.WorkflowInstanceService) | ❌ | ❌ | ❌ | ✅
-ThumbnailStream (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
-Thumbnails (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
-TimelineFeed (SP.Social.SocialRestActor) | ✅ | ✅ | ✅ | ✅
-ToXml (SP.BusinessData.Runtime.EntityFieldValueDictionary) | ✅ | ✅ | ✅ | ✅
-ToXml (SP.BusinessData.Runtime.EntityInstance) | ✅ | ✅ | ✅ | ✅
-Translate (SP.Translation.SyncTranslator) | ✅ | ✅ | ✅ | ✅
-TranslateFile (SP.Translation.TranslationJob) | ✅ | ✅ | ✅ | ✅
-TranslateFolder (SP.Translation.TranslationJob) | ✅ | ✅ | ✅ | ✅
-TranslateLibrary (SP.Translation.TranslationJob) | ✅ | ✅ | ✅ | ✅
-TranslateStream (SP.Translation.SyncTranslator) | ✅ | ✅ | ✅ | ✅
 UTCToLocalTime (SP.TimeZone) | ✅ | ✅ | ✅ | ✅
-UnLike (SP.Microfeed.MicrofeedManager) | ✅ | ✅ | ✅ | ✅
-UnLike (SP.Social.SocialRestThread) | ✅ | ✅ | ✅ | ✅
-UnLock (SP.Social.SocialRestThread) | ✅ | ✅ | ✅ | ✅
-UnLockThreadById (SP.Microfeed.MicrofeedManager) | ✅ | ✅ | ✅ | ✅
 UnPublish (SP.File) | ✅ | ✅ | ✅ | ✅
 UndoCheckOut (SP.File) | ✅ | ✅ | ✅ | ✅
 Uninstall (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
-UnlikePost (SP.Social.SocialFeedManager) | ✅ | ✅ | ✅ | ✅
-UnlockThread (SP.Social.SocialFeedManager) | ✅ | ✅ | ✅ | ✅
 UnpublishMappedView (SP.List) | ✅ | ✅ | ❌ | ❌
-UnreadMentionCount (SP.Social.SocialRestActor) | ✅ | ✅ | ✅ | ✅
 UnregisterHubSite (SP.Site) | ✅ | ✅ | ❌ | ❌
-UnregisterInterestInHostWebList (SP.WorkflowServices.WorkflowSubscriptionService) | ✅ | ✅ | ✅ | ❌
-UnregisterInterestInList (SP.WorkflowServices.WorkflowSubscriptionService) | ✅ | ✅ | ✅ | ✅
 UnregisterPushNotificationSubscriber (SP.Web) | ✅ | ✅ | ✅ | ✅
-Unsubscribe (SP.BusinessData.Entity) | ❌ | ❌ | ❌ | ✅
-UnsubscribeFromEMail (SP.Microfeed.MicrofeedManager) | ✅ | ✅ | ✅ | ✅
 Update (SP.Audit) | ✅ | ✅ | ✅ | ✅
-Update (SP.BusinessData.Runtime.EntityInstance) | ✅ | ✅ | ✅ | ✅
 Update (SP.ContentType) | ✅ | ✅ | ✅ | ✅
 Update (SP.EventReceiverDefinition) | ✅ | ✅ | ✅ | ✅
 Update (SP.Field) | ✅ | ✅ | ✅ | ✅
@@ -1276,17 +964,7 @@ Update (SP.InformationRightsManagementFileSettings) | ✅ | ✅ | ✅ | ❌
 Update (SP.InformationRightsManagementSettings) | ✅ | ✅ | ✅ | ✅
 Update (SP.List) | ✅ | ✅ | ✅ | ✅
 Update (SP.ListItem) | ✅ | ✅ | ✅ | ✅
-Update (SP.Microfeed.MicrofeedData) | ✅ | ✅ | ✅ | ✅
 Update (SP.NavigationNode) | ✅ | ✅ | ✅ | ✅
-Update (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
-Update (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
-Update (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
-Update (SP.Publishing.SitePageService) | ✅ | ✅ | ❌ | ❌
-Update (SP.Publishing.SpotlightChannel) | ✅ | ❌ | ❌ | ❌
-Update (SP.Publishing.SpotlightVideo) | ✅ | ❌ | ❌ | ❌
-Update (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
-Update (SP.Publishing.VideoChannel) | ✅ | ❌ | ❌ | ❌
-Update (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 Update (SP.PushNotificationSubscriber) | ✅ | ✅ | ✅ | ✅
 Update (SP.RegionalSettings) | ✅ | ✅ | ✅ | ✅
 Update (SP.RoleAssignment) | ✅ | ✅ | ✅ | ✅
@@ -1295,39 +973,15 @@ Update (SP.User) | ✅ | ✅ | ✅ | ✅
 Update (SP.UserCustomAction) | ✅ | ✅ | ✅ | ✅
 Update (SP.View) | ✅ | ✅ | ✅ | ✅
 Update (SP.Web) | ✅ | ✅ | ✅ | ✅
-Update (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
-Update (SP.Workflow.WorkflowAssociation) | ✅ | ✅ | ✅ | ✅
 UpdateAlert (SP.Alert) | ✅ | ✅ | ❌ | ❌
-UpdateAppPage (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
-UpdateCache (SP.Directory.Provider.SharePointDirectoryProvider) | ✅ | ✅ | ❌ | ❌
 <span title="UpdateClientObjectModelUseRemoteAPIsPermissionSetting (SP.Site)">UpdateClientObjectModelUseRemoteAPIsPermissionSett...</span> | ✅ | ✅ | ✅ | ✅
-UpdateContainerSetting (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
-UpdateData (SP.UserProfiles.FollowedContent) | ❌ | ❌ | ❌ | ✅
-UpdateDirectoryObject (SP.Directory.Provider.SharePointDirectoryProvider) | ✅ | ✅ | ✅ | ❌
 UpdateEx (SP.ListItem) | ✅ | ❌ | ❌ | ❌
-UpdateEx (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
-UpdateFollowedGroupForUser (SP.UserProfiles.FollowedContent) | ✅ | ✅ | ✅ | ❌
-UpdateFullPageApp (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
 UpdateHashtags (SP.ListItem) | ✅ | ✅ | ❌ | ❌
-UpdateHashtags (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
-UpdateMicrofeedPostDefinition (SP.Microfeed.MicrofeedPostDefinitionManager) | ✅ | ✅ | ✅ | ✅
 UpdateOverwriteVersion (SP.ListItem) | ✅ | ✅ | ❌ | ❌
-UpdateOverwriteVersion (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
-UpdateTaskWithLocalizedValue (SP.WorkManagement.OM.BaseSession) | ✅ | ✅ | ✅ | ✅
-UpdateTaskWithLocalizedValue (SP.WorkManagement.OM.LocationOrientedSortableSession) | ✅ | ✅ | ✅ | ✅
-UpdateTaskWithLocalizedValue (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ✅ | ✅ | ✅ | ✅
-UpdateTaskWithLocalizedValue (SP.WorkManagement.OM.SortableSession) | ✅ | ✅ | ✅ | ✅
-UpdateTaskWithLocalizedValue (SP.WorkManagement.OM.UserOrderedSession) | ✅ | ✅ | ✅ | ✅
-UpdateTenantTheme (SP.Utilities.ThemeManager) | ✅ | ✅ | ❌ | ❌
-UpdateTranslationLanguages (SP.TranslationStatusCollection) | ✅ | ❌ | ❌ | ❌
 UpdateVirusInfo (SP.File) | ✅ | ✅ | ❌ | ❌
 Upgrade (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
-UploadCustomThumbnail (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 UploadImage (SP.Web) | ✅ | ❌ | ❌ | ❌
-User (SP.Directory.DirectorySession) | ✅ | ✅ | ❌ | ❌
-ValidateActivity (SP.WorkflowServices.WorkflowDeploymentService) | ✅ | ✅ | ✅ | ✅
 ValidateAppName (SP.List) | ✅ | ✅ | ❌ | ❌
-ValidateGroupName (SP.Directory.DirectorySession) | ✅ | ✅ | ❌ | ❌
 ValidateHubSiteJoinApprovalToken (SP.Site) | ✅ | ❌ | ❌ | ❌
 ValidateSetValue (SP.Field) | ❌ | ❌ | ❌ | ✅
 ValidateSetValue (SP.FieldCalculated) | ❌ | ❌ | ❌ | ✅
@@ -1345,15 +999,14 @@ ValidateSetValue (SP.FieldRatingScale) | ❌ | ❌ | ❌ | ✅
 ValidateSetValue (SP.FieldText) | ❌ | ❌ | ❌ | ✅
 ValidateSetValue (SP.FieldUrl) | ❌ | ❌ | ❌ | ✅
 ValidateSetValue (SP.FieldUser) | ❌ | ❌ | ❌ | ✅
-ValidateSetValue (SP.Taxonomy.TaxonomyField) | ❌ | ❌ | ❌ | ✅
 ValidateUpdateListItem (SP.ListItem) | ✅ | ✅ | ✅ | ✅
-ValidateUpdateListItem (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
-WriteCache (SP.UserProfiles.PersonalCache) | ✅ | ✅ | ❌ | ❌
-WriteCache2 (SP.UserProfiles.PersonalCache) | ✅ | ❌ | ❌ | ❌
 contextinfo | ✅ | ✅ | ✅ | ✅
+files | ✅ | ✅ | ✅ | ❌
 getFileExtendedActivities (SP.List) | ❌ | ✅ | ❌ | ❌
+hubsites | ✅ | ✅ | ❌ | ❌
+lists | ✅ | ✅ | ✅ | ✅
 me | ✅ | ✅ | ✅ | ❌
-microservicemanager | ✅ | ✅ | ❌ | ❌
+models | ✅ | ❌ | ❌ | ❌
+publications | ✅ | ❌ | ❌ | ❌
 site | ✅ | ✅ | ✅ | ✅
-thememanager | ✅ | ✅ | ❌ | ❌
 web | ✅ | ✅ | ✅ | ✅

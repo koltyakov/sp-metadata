@@ -43,7 +43,6 @@ Microsoft_SharePoint_Portal_SPSiteManager | ✅ | ✅ | ❌ | ❌
 <span title="Microsoft_SharePoint_Portal_SharePointHomeServiceContextBuilder">Microsoft_SharePoint_Portal_SharePointHomeServiceC...</span> (Microsoft SharePoint Portal SharePointHomeServiceContextBuilder) | ✅ | ✅ | ❌ | ❌
 Microsoft_SharePoint_Portal_SiteIconManager | ✅ | ❌ | ❌ | ❌
 Microsoft_SharePoint_Portal_SiteLinkingManager | ✅ | ✅ | ❌ | ❌
-<span title="Microsoft_SharePoint_Portal_UserProfiles_MySiteLinks_GetMySiteLinks">Microsoft_SharePoint_Portal_UserProfiles_MySiteLin...</span> (Microsoft SharePoint Portal UserProfiles MySiteLinks GetMySiteLinks) | ✅ | ✅ | ✅ | ❌
 Notebook (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ✅ | ❌
 PinToTeam (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 RestoreTeamsChannelSite (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
