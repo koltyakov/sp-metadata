@@ -41,6 +41,7 @@ PutImage (SP.Microfeed.MicrofeedAttachmentStore) | ✅ | ✅ | ✅ | ✅
 Query (SP.Microfeed.MicrofeedStore) | ✅ | ✅ | ✅ | ✅
 RepopulateLMT (SP.Microfeed.MicrofeedManager) | ✅ | ✅ | ✅ | ✅
 SP_Microfeed_MicrofeedAttachmentStore | ✅ | ✅ | ✅ | ✅
+SP_Microfeed_MicrofeedData | ❌ | ❌ | ❌ | ✅
 SP_Microfeed_MicrofeedManager | ✅ | ✅ | ✅ | ✅
 SP_Microfeed_MicrofeedPostDefinitionManager | ✅ | ✅ | ✅ | ✅
 SP_Microfeed_MicrofeedPostOptionCollection | ✅ | ✅ | ✅ | ✅

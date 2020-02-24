@@ -30,17 +30,22 @@ func getFunctionsImports(models []*ModelMeta) map[string]map[string][]edmx.Funct
 						if contains {
 							continue
 						}
-						for _, par := range fnImp.Parameters {
-							if par.Name == "this" {
-								nss := strings.Replace(strings.Replace(par.Type, "Collection(", "", 1), ")", "", 1)
+						thisType := getFuncImportThisType(fnImp)
+						if thisType != "" {
+							nss := strings.Replace(strings.Replace(thisType, "Collection(", "", 1), ")", "", 1)
+							if strings.HasPrefix(nss, ns) {
+								contains = true
+							}
+						}
+						if thisType == "" {
+							if strings.HasPrefix(fnImp.ReturnType, ns) {
+								contains = true
+							}
+							if !contains && strings.Contains(fnImp.Name, "_") {
+								nss := strings.Replace(fnImp.Name, "_", ".", -1)
 								if strings.HasPrefix(nss, ns) {
 									contains = true
 								}
-							}
-						}
-						if len(fnImp.Parameters) == 0 {
-							if strings.HasPrefix(fnImp.ReturnType, ns) {
-								contains = true
 							}
 						}
 						if contains {

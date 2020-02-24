@@ -12,6 +12,7 @@ EnableIndex (SP.Taxonomy.TaxonomyField) | ✅ | ❌ | ❌ | ❌
 SP_Taxonomy_ChangeInformation | ❌ | ❌ | ❌ | ✅
 SP_Taxonomy_CustomPropertyMatchInformation | ❌ | ❌ | ❌ | ✅
 SP_Taxonomy_LabelMatchInformation | ❌ | ❌ | ❌ | ✅
+SP_Taxonomy_TaxonomyFieldValueCollection | ❌ | ❌ | ❌ | ✅
 SetShowInDisplayForm (SP.Taxonomy.TaxonomyField) | ✅ | ✅ | ❌ | ✅
 SetShowInEditForm (SP.Taxonomy.TaxonomyField) | ✅ | ✅ | ❌ | ✅
 SetShowInNewForm (SP.Taxonomy.TaxonomyField) | ✅ | ✅ | ❌ | ✅

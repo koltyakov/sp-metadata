@@ -20,6 +20,7 @@ GetQueryPropertyValue (Microsoft.SharePoint.Client.Search.Query.KeywordQueryProp
 GetQuerySuggestionsWithResults (Microsoft.SharePoint.Client.Search.Query.KeywordQuery) | ❌ | ❌ | ❌ | ✅
 GetQuerySuggestionsWithResults (Microsoft.SharePoint.Client.Search.Query.Query) | ❌ | ❌ | ❌ | ✅
 <span title="Microsoft_SharePoint_Client_Search_Query_KeywordQuery">Microsoft_SharePoint_Client_Search_Query_KeywordQu...</span> (Microsoft SharePoint Client Search Query KeywordQuery) | ❌ | ❌ | ❌ | ✅
+<span title="Microsoft_SharePoint_Client_Search_Query_QueryPersonalizationData">Microsoft_SharePoint_Client_Search_Query_QueryPers...</span> (Microsoft SharePoint Client Search Query QueryPersonalizationData) | ✅ | ✅ | ✅ | ✅
 <span title="Microsoft_SharePoint_Client_Search_Query_RankingLabeling">Microsoft_SharePoint_Client_Search_Query_RankingLa...</span> (Microsoft SharePoint Client Search Query RankingLabeling) | ✅ | ✅ | ✅ | ✅
 <span title="Microsoft_SharePoint_Client_Search_Query_SearchExecutor">Microsoft_SharePoint_Client_Search_Query_SearchExe...</span> (Microsoft SharePoint Client Search Query SearchExecutor) | ❌ | ❌ | ❌ | ✅
 <span title="Microsoft_SharePoint_Client_Search_Query_StringCollection">Microsoft_SharePoint_Client_Search_Query_StringCol...</span> (Microsoft SharePoint Client Search Query StringCollection) | ✅ | ✅ | ✅ | ✅

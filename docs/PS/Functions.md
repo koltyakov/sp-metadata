@@ -168,6 +168,7 @@ LeaveProjectStage (PS.Project) | ✅ | ✅ | ✅ | ❌
 LeaveProjectStage (PS.PublishedProject) | ✅ | ✅ | ✅ | ❌
 LeaveProjectStage (PS.WorkflowActivities) | ✅ | ✅ | ✅ | ❌
 PS_EnterpriseResource_Self | ✅ | ✅ | ✅ | ❌
+PS_LookupTables_InvalidNameCharacters | ✅ | ✅ | ✅ | ❌
 PS_ProjectServer | ✅ | ✅ | ✅ | ❌
 PS_ProjectServerData | ✅ | ✅ | ✅ | ❌
 Publish (PS.DraftProject) | ❌ | ✅ | ✅ | ❌

@@ -52,6 +52,7 @@ GetMoveReport (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJ
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_DBSchemaCompatibilityCheck">Microsoft_Online_SharePoint_MultiGeo_Service_DBSch...</span> (Microsoft Online SharePoint MultiGeo Service DBSchemaCompatibilityCheck) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_GeoAdministrator">Microsoft_Online_SharePoint_MultiGeo_Service_GeoAd...</span> (Microsoft Online SharePoint MultiGeo Service GeoAdministrator) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_GeoExperience">Microsoft_Online_SharePoint_MultiGeo_Service_GeoEx...</span> (Microsoft Online SharePoint MultiGeo Service GeoExperience) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_GeoMoveCompatibilityChecks">Microsoft_Online_SharePoint_MultiGeo_Service_GeoMo...</span> (Microsoft Online SharePoint MultiGeo Service GeoMoveCompatibilityChecks) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_GeoTenantInstanceInformation">Microsoft_Online_SharePoint_MultiGeo_Service_GeoTe...</span> (Microsoft Online SharePoint MultiGeo Service GeoTenantInstanceInformation) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_GeoTenantInstanceInformationEntityData">Microsoft_Online_SharePoint_MultiGeo_Service_GeoTe...</span> (Microsoft Online SharePoint MultiGeo Service GeoTenantInstanceInformationEntityData) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_GroupMoveJob">Microsoft_Online_SharePoint_MultiGeo_Service_Group...</span> (Microsoft Online SharePoint MultiGeo Service GroupMoveJob) | ✅ | ❌ | ❌ | ❌
@@ -65,6 +66,8 @@ GetMoveReport (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJ
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_UnifiedGroup">Microsoft_Online_SharePoint_MultiGeo_Service_Unifi...</span> (Microsoft Online SharePoint MultiGeo Service UnifiedGroup) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserMoveJob">Microsoft_Online_SharePoint_MultiGeo_Service_UserM...</span> (Microsoft Online SharePoint MultiGeo Service UserMoveJob) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserMoveJobEntityData">Microsoft_Online_SharePoint_MultiGeo_Service_UserM...</span> (Microsoft Online SharePoint MultiGeo Service UserMoveJobEntityData) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserPersonalSiteId">Microsoft_Online_SharePoint_MultiGeo_Service_UserP...</span> (Microsoft Online SharePoint MultiGeo Service UserPersonalSiteId) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserPersonalSiteLocation">Microsoft_Online_SharePoint_MultiGeo_Service_UserP...</span> (Microsoft Online SharePoint MultiGeo Service UserPersonalSiteLocation) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJob) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJob) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty) | ✅ | ❌ | ❌ | ❌

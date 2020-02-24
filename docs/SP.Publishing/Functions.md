@@ -113,16 +113,40 @@ QueryGroupNames (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | 
 Related (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
 Remove (Collection(SP.Publishing.SubtitleFile)) | ✅ | ❌ | ❌ | ❌
 SP_Publishing_AddinPlugin | ❌ | ❌ | ❌ | ✅
+SP_Publishing_AddinSettings | ❌ | ❌ | ❌ | ✅
 SP_Publishing_CommunicationSite | ✅ | ✅ | ❌ | ❌
 SP_Publishing_EmbedService | ✅ | ✅ | ❌ | ❌
 SP_Publishing_PageDiagnosticsController | ✅ | ❌ | ❌ | ❌
+SP_Publishing_PersonMagazine_GetDirects | ✅ | ❌ | ❌ | ❌
+SP_Publishing_PersonMagazine_GetManagers | ✅ | ❌ | ❌ | ❌
+<span title="SP_Publishing_PersonMagazine_GetPersonMagazineUserProfileDataForUser">SP_Publishing_PersonMagazine_GetPersonMagazineUser...</span> (SP Publishing PersonMagazine GetPersonMagazineUserProfileDataForUser) | ✅ | ❌ | ❌ | ❌
+<span title="SP_Publishing_PersonMagazine_GetPersonMagazineUserProfileDirectsDataForUser">SP_Publishing_PersonMagazine_GetPersonMagazineUser...</span> (SP Publishing PersonMagazine GetPersonMagazineUserProfileDirectsDataForUser) | ✅ | ❌ | ❌ | ❌
+SP_Publishing_PersonMagazine_GetPrimary | ✅ | ❌ | ❌ | ❌
+SP_Publishing_PersonMagazine_GetPrimaryCore | ✅ | ❌ | ❌ | ❌
+<span title="SP_Publishing_PersonMagazine_GetProfileCustomProperties">SP_Publishing_PersonMagazine_GetProfileCustomPrope...</span> (SP Publishing PersonMagazine GetProfileCustomProperties) | ✅ | ❌ | ❌ | ❌
+SP_Publishing_PersonMagazine_GetProfileDataForUser | ✅ | ❌ | ❌ | ❌
+<span title="SP_Publishing_PersonMagazine_GetProfileDirectsDataForUser">SP_Publishing_PersonMagazine_GetProfileDirectsData...</span> (SP Publishing PersonMagazine GetProfileDirectsDataForUser) | ✅ | ❌ | ❌ | ❌
+<span title="SP_Publishing_PersonMagazine_GetTaxonomicPropertiesForPrimary">SP_Publishing_PersonMagazine_GetTaxonomicPropertie...</span> (SP Publishing PersonMagazine GetTaxonomicPropertiesForPrimary) | ✅ | ❌ | ❌ | ❌
+<span title="SP_Publishing_PersonMagazine_GetTaxonomySuggestionDetails">SP_Publishing_PersonMagazine_GetTaxonomySuggestion...</span> (SP Publishing PersonMagazine GetTaxonomySuggestionDetails) | ✅ | ❌ | ❌ | ❌
+<span title="SP_Publishing_PersonMagazine_GetViewEditPoliciesForPrimary">SP_Publishing_PersonMagazine_GetViewEditPoliciesFo...</span> (SP Publishing PersonMagazine GetViewEditPoliciesForPrimary) | ✅ | ❌ | ❌ | ❌
 SP_Publishing_PointPublishingPostServiceManager | ✅ | ❌ | ❌ | ❌
 SP_Publishing_PointPublishingSiteManager | ✅ | ❌ | ❌ | ❌
 SP_Publishing_PointPublishingTenantManager | ✅ | ❌ | ❌ | ❌
+SP_Publishing_RepostPageCollection | ✅ | ❌ | ❌ | ❌
 SP_Publishing_RichSharing | ✅ | ✅ | ❌ | ❌
 SP_Publishing_SharePointHomeServiceManager | ✅ | ✅ | ❌ | ❌
+SP_Publishing_SitePage3DCollection | ✅ | ❌ | ❌ | ❌
+SP_Publishing_SitePageCollection | ✅ | ✅ | ❌ | ❌
+SP_Publishing_SitePageMetadataCollection | ✅ | ✅ | ❌ | ❌
 SP_Publishing_SitePageService | ✅ | ✅ | ❌ | ❌
+SP_Publishing_SitePageService_ComputeFileName | ✅ | ❌ | ❌ | ❌
 SP_Publishing_SitePageService_FilePickerTabOptions | ✅ | ❌ | ❌ | ❌
+<span title="SP_Publishing_SitePageService_GetAvailableFullPageApplications">SP_Publishing_SitePageService_GetAvailableFullPage...</span> (SP Publishing SitePageService GetAvailableFullPageApplications) | ✅ | ❌ | ❌ | ❌
+<span title="SP_Publishing_SitePageService_GetCurrentUserMemberships">SP_Publishing_SitePageService_GetCurrentUserMember...</span> (SP Publishing SitePageService GetCurrentUserMemberships) | ✅ | ❌ | ❌ | ❌
+SP_Publishing_SitePageService_GetTimeZone | ✅ | ✅ | ❌ | ❌
+<span title="SP_Publishing_SitePageService_IsFilePickerExternalImageSearchEnabled">SP_Publishing_SitePageService_IsFilePickerExternal...</span> (SP Publishing SitePageService IsFilePickerExternalImageSearchEnabled) | ✅ | ✅ | ❌ | ❌
+SP_Publishing_SitePageService_OrgAssets | ✅ | ❌ | ❌ | ❌
+SP_Publishing_TopicPageCollection | ✅ | ❌ | ❌ | ❌
 SP_Publishing_VideoServiceDiscoverer | ✅ | ❌ | ❌ | ❌
 SP_Publishing_VideoServiceManager | ✅ | ❌ | ❌ | ❌
 Save (SP.Publishing.PageDiagnosticsController) | ✅ | ❌ | ❌ | ❌

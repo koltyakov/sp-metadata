@@ -45,30 +45,49 @@ DeleteEntity (EDU.Resource) | ❌ | ❌ | ❌ | ✅
 DeleteEntity (EDU.ResourceRef) | ❌ | ❌ | ❌ | ✅
 DeleteEntity (EDU.Submission) | ❌ | ❌ | ❌ | ✅
 EDU_Announcement | ❌ | ❌ | ❌ | ✅
+EDU_Announcements | ❌ | ❌ | ❌ | ✅
 EDU_AssignedAssignment | ❌ | ❌ | ❌ | ✅
+EDU_AssignedAssignments | ❌ | ❌ | ❌ | ✅
 EDU_Assignment | ❌ | ❌ | ❌ | ✅
+EDU_AssignmentCategories | ❌ | ❌ | ❌ | ✅
 EDU_AssignmentCategory | ❌ | ❌ | ❌ | ✅
 EDU_AssignmentGrade | ❌ | ❌ | ❌ | ✅
+EDU_Assignments | ❌ | ❌ | ❌ | ✅
+EDU_Communities | ❌ | ❌ | ❌ | ✅
 EDU_Community | ❌ | ❌ | ❌ | ✅
+EDU_CommunityEntities | ❌ | ❌ | ❌ | ✅
 EDU_CommunityEntity | ❌ | ❌ | ❌ | ✅
 EDU_Course | ❌ | ❌ | ❌ | ✅
 EDU_CourseGrade | ❌ | ❌ | ❌ | ✅
 EDU_DataService | ❌ | ❌ | ❌ | ✅
 EDU_Document | ❌ | ❌ | ❌ | ✅
+EDU_EduChange_GetChanges | ❌ | ❌ | ❌ | ✅
+EDU_EduChange_GetCurrentChangeId | ❌ | ❌ | ❌ | ✅
+EDU_EduChange_GetCurrentChangeIds | ❌ | ❌ | ❌ | ✅
+EDU_EduChange_GetEduContentModel | ❌ | ❌ | ❌ | ✅
+EDU_EduChange_SchemaVersionHash | ❌ | ❌ | ❌ | ✅
 EDU_Entity | ❌ | ❌ | ❌ | ✅
 EDU_Event | ❌ | ❌ | ❌ | ✅
 EDU_EventSchedule | ❌ | ❌ | ❌ | ✅
+EDU_EventSchedules | ❌ | ❌ | ❌ | ✅
+EDU_Events | ❌ | ❌ | ❌ | ✅
 EDU_FeedbackDocument | ❌ | ❌ | ❌ | ✅
 EDU_Grade | ❌ | ❌ | ❌ | ✅
+EDU_Grades | ❌ | ❌ | ❌ | ✅
+EDU_LearningEntities | ❌ | ❌ | ❌ | ✅
 EDU_LearningEntity | ❌ | ❌ | ❌ | ✅
 EDU_Lesson | ❌ | ❌ | ❌ | ✅
+EDU_Lessons | ❌ | ❌ | ❌ | ✅
 EDU_Link | ❌ | ❌ | ❌ | ✅
 EDU_Meeting | ❌ | ❌ | ❌ | ✅
 EDU_MeetingSchedule | ❌ | ❌ | ❌ | ✅
 EDU_Membership | ❌ | ❌ | ❌ | ✅
+EDU_Memberships | ❌ | ❌ | ❌ | ✅
 EDU_Resource | ❌ | ❌ | ❌ | ✅
 EDU_ResourceRef | ❌ | ❌ | ❌ | ✅
+EDU_Resources | ❌ | ❌ | ❌ | ✅
 EDU_Submission | ❌ | ❌ | ❌ | ✅
+EDU_Submissions | ❌ | ❌ | ❌ | ✅
 GetById (Collection(EDU.Announcement)) | ❌ | ❌ | ❌ | ✅
 GetById (Collection(EDU.AssignedAssignment)) | ❌ | ❌ | ❌ | ✅
 GetById (Collection(EDU.Assignment)) | ❌ | ❌ | ❌ | ✅

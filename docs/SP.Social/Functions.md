@@ -47,6 +47,7 @@ OrganizationFeed (SP.Social.SocialRestActor) | ✅ | ✅ | ✅ | ✅
 Post (SP.Social.SocialRestFeed) | ✅ | ✅ | ✅ | ✅
 Post (SP.Social.SocialRestFeedManager) | ✅ | ✅ | ✅ | ✅
 Reply (SP.Social.SocialRestThread) | ✅ | ✅ | ✅ | ✅
+<span title="SP_Social_SocialAnnouncementManager_GetCurrentAnnouncements">SP_Social_SocialAnnouncementManager_GetCurrentAnno...</span> (SP Social SocialAnnouncementManager GetCurrentAnnouncements) | ✅ | ✅ | ✅ | ❌
 SP_Social_SocialFeedManager | ✅ | ✅ | ✅ | ✅
 SP_Social_SocialFollowingManager | ✅ | ✅ | ✅ | ✅
 SP_Social_SocialRestActor | ✅ | ✅ | ✅ | ✅

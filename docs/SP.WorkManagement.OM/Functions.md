@@ -117,12 +117,14 @@ SP_WorkManagement_OM_CustomAttributeFilter | ✅ | ✅ | ✅ | ✅
 SP_WorkManagement_OM_DateRangeCriterion | ✅ | ✅ | ✅ | ✅
 SP_WorkManagement_OM_Location | ✅ | ✅ | ✅ | ✅
 SP_WorkManagement_OM_LocationFilter | ✅ | ✅ | ✅ | ✅
+SP_WorkManagement_OM_LocationGroupClientCollection | ✅ | ✅ | ✅ | ✅
 SP_WorkManagement_OM_NameCriterion | ✅ | ✅ | ✅ | ✅
 SP_WorkManagement_OM_OrderInfo | ✅ | ✅ | ✅ | ✅
 SP_WorkManagement_OM_PersistedProperties | ✅ | ✅ | ✅ | ✅
 SP_WorkManagement_OM_SortableSessionManager | ✅ | ✅ | ✅ | ✅
 SP_WorkManagement_OM_SortableTaskQuery | ✅ | ✅ | ✅ | ✅
 SP_WorkManagement_OM_Task | ✅ | ✅ | ✅ | ✅
+SP_WorkManagement_OM_TaskClientCollection | ✅ | ✅ | ✅ | ✅
 SP_WorkManagement_OM_TaskFilter | ✅ | ✅ | ✅ | ✅
 SP_WorkManagement_OM_TaskQuery | ✅ | ✅ | ✅ | ✅
 SP_WorkManagement_OM_UserOrderedSessionManager | ✅ | ✅ | ✅ | ✅

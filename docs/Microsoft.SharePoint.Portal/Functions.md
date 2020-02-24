@@ -35,14 +35,19 @@ HubSitesUtility | ✅ | ✅ | ❌ | ❌
 IsTeamifyPromptHidden (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 LinkGroup (Microsoft.SharePoint.Portal.SiteLinkingManager) | ✅ | ✅ | ❌ | ❌
 <span title="Microsoft_SharePoint_Portal_CollaborationMailbox_GetCollabMailboxViewInfo">Microsoft_SharePoint_Portal_CollaborationMailbox_G...</span> (Microsoft SharePoint Portal CollaborationMailbox GetCollabMailboxViewInfo) | ✅ | ✅ | ✅ | ✅
+<span title="Microsoft_SharePoint_Portal_CommunityModeration_ApproveReportedItems">Microsoft_SharePoint_Portal_CommunityModeration_Ap...</span> (Microsoft SharePoint Portal CommunityModeration ApproveReportedItems) | ✅ | ✅ | ✅ | ✅
+<span title="Microsoft_SharePoint_Portal_CommunityModeration_ReportAbuse">Microsoft_SharePoint_Portal_CommunityModeration_Re...</span> (Microsoft SharePoint Portal CommunityModeration ReportAbuse) | ✅ | ✅ | ✅ | ✅
 Microsoft_SharePoint_Portal_GroupService | ✅ | ✅ | ❌ | ❌
 Microsoft_SharePoint_Portal_GroupSiteManager | ✅ | ✅ | ✅ | ❌
+<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_FollowItem">Microsoft_SharePoint_Portal_MySiteRecommendations...</span> (Microsoft SharePoint Portal MySiteRecommendations FollowItem) | ✅ | ✅ | ✅ | ✅
+<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_StopFollowingItem">Microsoft_SharePoint_Portal_MySiteRecommendations...</span> (Microsoft SharePoint Portal MySiteRecommendations StopFollowingItem) | ✅ | ✅ | ✅ | ✅
 Microsoft_SharePoint_Portal_SPHubSitesUtility | ✅ | ✅ | ❌ | ❌
 Microsoft_SharePoint_Portal_SPSiteManager | ✅ | ✅ | ❌ | ❌
 <span title="Microsoft_SharePoint_Portal_SharePointHomeServiceContext">Microsoft_SharePoint_Portal_SharePointHomeServiceC...</span> (Microsoft SharePoint Portal SharePointHomeServiceContext) | ✅ | ✅ | ❌ | ❌
 <span title="Microsoft_SharePoint_Portal_SharePointHomeServiceContextBuilder">Microsoft_SharePoint_Portal_SharePointHomeServiceC...</span> (Microsoft SharePoint Portal SharePointHomeServiceContextBuilder) | ✅ | ✅ | ❌ | ❌
 Microsoft_SharePoint_Portal_SiteIconManager | ✅ | ❌ | ❌ | ❌
 Microsoft_SharePoint_Portal_SiteLinkingManager | ✅ | ✅ | ❌ | ❌
+<span title="Microsoft_SharePoint_Portal_SuiteNavData_GetSuiteNavData">Microsoft_SharePoint_Portal_SuiteNavData_GetSuiteN...</span> (Microsoft SharePoint Portal SuiteNavData GetSuiteNavData) | ✅ | ✅ | ✅ | ✅
 Notebook (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ✅ | ❌
 PinToTeam (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 RestoreTeamsChannelSite (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
