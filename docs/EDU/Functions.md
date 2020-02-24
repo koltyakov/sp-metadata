@@ -61,9 +61,9 @@ EDU_Course | ❌ | ❌ | ❌ | ✅
 EDU_CourseGrade | ❌ | ❌ | ❌ | ✅
 EDU_DataService | ❌ | ❌ | ❌ | ✅
 EDU_Document | ❌ | ❌ | ❌ | ✅
-EDU_EduChange_GetChanges | ❌ | ❌ | ❌ | ✅
-EDU_EduChange_GetCurrentChangeId | ❌ | ❌ | ❌ | ✅
-EDU_EduChange_GetCurrentChangeIds | ❌ | ❌ | ❌ | ✅
+[EDU_EduChange_GetChanges](./Functions/EDU_EduChange_GetChanges.md) | ❌ | ❌ | ❌ | ✅
+[EDU_EduChange_GetCurrentChangeId](./Functions/EDU_EduChange_GetCurrentChangeId.md) | ❌ | ❌ | ❌ | ✅
+[EDU_EduChange_GetCurrentChangeIds](./Functions/EDU_EduChange_GetCurrentChangeIds.md) | ❌ | ❌ | ❌ | ✅
 EDU_EduChange_GetEduContentModel | ❌ | ❌ | ❌ | ✅
 EDU_EduChange_SchemaVersionHash | ❌ | ❌ | ❌ | ✅
 EDU_Entity | ❌ | ❌ | ❌ | ✅

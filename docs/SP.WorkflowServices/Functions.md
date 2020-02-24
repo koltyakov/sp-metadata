@@ -56,7 +56,7 @@ ResumeWorkflow (SP.WorkflowServices.WorkflowInstanceService) | ❌ | ❌ | ❌ |
 SP_WorkflowServices_InteropService_Current | ✅ | ✅ | ✅ | ✅
 SP_WorkflowServices_WorkflowDefinition | ✅ | ✅ | ✅ | ✅
 <span title="SP_WorkflowServices_WorkflowInstanceService_Current">SP_WorkflowServices_WorkflowInstanceService_Curren...</span> (SP WorkflowServices WorkflowInstanceService Current) | ✅ | ✅ | ✅ | ✅
-SP_WorkflowServices_WorkflowServicesManager | ❌ | ❌ | ❌ | ✅
+[SP_WorkflowServices_WorkflowServicesManager](./Functions/SP_WorkflowServices_WorkflowServicesManager.md) | ❌ | ❌ | ❌ | ✅
 <span title="SP_WorkflowServices_WorkflowServicesManager_Current">SP_WorkflowServices_WorkflowServicesManager_Curren...</span> (SP WorkflowServices WorkflowServicesManager Current) | ✅ | ✅ | ✅ | ✅
 SP_WorkflowServices_WorkflowSubscription | ✅ | ✅ | ✅ | ✅
 <span title="SP_WorkflowServices_WorkflowSubscriptionService_Current">SP_WorkflowServices_WorkflowSubscriptionService_Cu...</span> (SP WorkflowServices WorkflowSubscriptionService Current) | ✅ | ✅ | ✅ | ✅

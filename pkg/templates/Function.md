@@ -2,13 +2,12 @@
 
 ## Function Import: {{.Function}}
 
-{{ if (ne .ReturnType "") }}- ReturnType: {{.ReturnType}}{{ end }}
-- IsComposable: {{.IsComposable}}
-- IsBindable: {{.IsBindable}}
-{{ if (ne .EntitySet "") }}- EntitySet: {{.EntitySet}}{{ end }}
+{{ if (ne .EntityType "") }}- Entity type: {{.EntityType}}
+{{ end }}{{ if (ne .ReturnType "") }}- Return type: {{.ReturnType}}
+{{ end }}{{ if (ne .EntitySet "") }}- Entity set: {{.EntitySet}}
+{{ end }}- Is composable: {{.IsComposable}}
+- Is bindable: {{.IsBindable}}
 
 {{ if (ne .ParamsTable "") }}### Parameters
-
-**Availability matrix**
 
 {{.ParamsTable}}{{ end }}

@@ -35,12 +35,12 @@ HubSitesUtility | ✅ | ✅ | ❌ | ❌
 IsTeamifyPromptHidden (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 LinkGroup (Microsoft.SharePoint.Portal.SiteLinkingManager) | ✅ | ✅ | ❌ | ❌
 <span title="Microsoft_SharePoint_Portal_CollaborationMailbox_GetCollabMailboxViewInfo">Microsoft_SharePoint_Portal_CollaborationMailbox_G...</span> (Microsoft SharePoint Portal CollaborationMailbox GetCollabMailboxViewInfo) | ✅ | ✅ | ✅ | ✅
-<span title="Microsoft_SharePoint_Portal_CommunityModeration_ApproveReportedItems">Microsoft_SharePoint_Portal_CommunityModeration_Ap...</span> (Microsoft SharePoint Portal CommunityModeration ApproveReportedItems) | ✅ | ✅ | ✅ | ✅
-<span title="Microsoft_SharePoint_Portal_CommunityModeration_ReportAbuse">Microsoft_SharePoint_Portal_CommunityModeration_Re...</span> (Microsoft SharePoint Portal CommunityModeration ReportAbuse) | ✅ | ✅ | ✅ | ✅
+[<span title="Microsoft_SharePoint_Portal_CommunityModeration_ApproveReportedItems">Microsoft_SharePoint_Portal_CommunityModeration_Ap...</span> (Microsoft SharePoint Portal CommunityModeration ApproveReportedItems)](./Functions/Microsoft_SharePoint_Portal_CommunityModeration_ApproveReportedItems.md) | ✅ | ✅ | ✅ | ✅
+[<span title="Microsoft_SharePoint_Portal_CommunityModeration_ReportAbuse">Microsoft_SharePoint_Portal_CommunityModeration_Re...</span> (Microsoft SharePoint Portal CommunityModeration ReportAbuse)](./Functions/Microsoft_SharePoint_Portal_CommunityModeration_ReportAbuse.md) | ✅ | ✅ | ✅ | ✅
 Microsoft_SharePoint_Portal_GroupService | ✅ | ✅ | ❌ | ❌
 Microsoft_SharePoint_Portal_GroupSiteManager | ✅ | ✅ | ✅ | ❌
-<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_FollowItem">Microsoft_SharePoint_Portal_MySiteRecommendations...</span> (Microsoft SharePoint Portal MySiteRecommendations FollowItem) | ✅ | ✅ | ✅ | ✅
-<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_StopFollowingItem">Microsoft_SharePoint_Portal_MySiteRecommendations...</span> (Microsoft SharePoint Portal MySiteRecommendations StopFollowingItem) | ✅ | ✅ | ✅ | ✅
+[<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_FollowItem">Microsoft_SharePoint_Portal_MySiteRecommendations...</span> (Microsoft SharePoint Portal MySiteRecommendations FollowItem)](./Functions/Microsoft_SharePoint_Portal_MySiteRecommendations_FollowItem.md) | ✅ | ✅ | ✅ | ✅
+[<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_StopFollowingItem">Microsoft_SharePoint_Portal_MySiteRecommendations...</span> (Microsoft SharePoint Portal MySiteRecommendations StopFollowingItem)](./Functions/Microsoft_SharePoint_Portal_MySiteRecommendations_StopFollowingItem.md) | ✅ | ✅ | ✅ | ✅
 Microsoft_SharePoint_Portal_SPHubSitesUtility | ✅ | ✅ | ❌ | ❌
 Microsoft_SharePoint_Portal_SPSiteManager | ✅ | ✅ | ❌ | ❌
 <span title="Microsoft_SharePoint_Portal_SharePointHomeServiceContext">Microsoft_SharePoint_Portal_SharePointHomeServiceC...</span> (Microsoft SharePoint Portal SharePointHomeServiceContext) | ✅ | ✅ | ❌ | ❌

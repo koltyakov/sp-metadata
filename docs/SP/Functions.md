@@ -45,7 +45,7 @@ Append (SP.RequestVariable) | ❌ | ❌ | ❌ | ✅
 ApplyTheme (SP.Web) | ✅ | ✅ | ✅ | ✅
 ApplyWebTemplate (SP.Web) | ✅ | ✅ | ✅ | ✅
 Approve (SP.File) | ✅ | ✅ | ✅ | ✅
-AttachAssignmentToQuiz | ❌ | ❌ | ❌ | ✅
+[AttachAssignmentToQuiz](./Functions/AttachAssignmentToQuiz.md) | ❌ | ❌ | ❌ | ✅
 BreakRoleInheritance (SP.List) | ✅ | ✅ | ✅ | ✅
 BreakRoleInheritance (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 BreakRoleInheritance (SP.SecurableObject) | ✅ | ✅ | ✅ | ✅
@@ -61,7 +61,7 @@ Clear (Collection(SP.UserCustomAction)) | ✅ | ✅ | ✅ | ✅
 ClearCorporateCatalog (SP.TenantSettings) | ✅ | ❌ | ❌ | ❌
 Contains (Collection(SP.Alert)) | ✅ | ✅ | ❌ | ❌
 ContinueUpload (SP.File) | ✅ | ✅ | ✅ | ❌
-CopyQuizDefinition | ❌ | ❌ | ❌ | ✅
+[CopyQuizDefinition](./Functions/CopyQuizDefinition.md) | ❌ | ❌ | ❌ | ✅
 CopyTo (SP.File) | ✅ | ✅ | ✅ | ✅
 CopyToUsingPath (SP.File) | ✅ | ✅ | ❌ | ❌
 Create (Collection(SP.ScriptSafeDomain)) | ✅ | ✅ | ❌ | ❌
@@ -128,12 +128,12 @@ DeleteObject (SP.ScriptSafeDomain) | ✅ | ✅ | ❌ | ❌
 DeleteObject (SP.UserCustomAction) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.View) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.Web) | ✅ | ✅ | ✅ | ✅
-DeleteQuiz | ❌ | ❌ | ❌ | ✅
+[DeleteQuiz](./Functions/DeleteQuiz.md) | ❌ | ❌ | ❌ | ✅
 DeleteWithParameters (SP.File) | ✅ | ❌ | ❌ | ❌
 DeleteWithParameters (SP.Folder) | ✅ | ❌ | ❌ | ❌
 DeleteWithParameters (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 Deny (SP.File) | ✅ | ✅ | ✅ | ✅
-DetachAssignmentFromQuiz | ❌ | ❌ | ❌ | ✅
+[DetachAssignmentFromQuiz](./Functions/DetachAssignmentFromQuiz.md) | ❌ | ❌ | ❌ | ✅
 Details (SP.SPHSite) | ✅ | ❌ | ❌ | ❌
 DisableIndex (SP.Field) | ✅ | ❌ | ❌ | ❌
 DisableIndex (SP.FieldCalculated) | ✅ | ❌ | ❌ | ❌
@@ -316,14 +316,14 @@ GetPreviousAppVersion (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
 GetPushNotificationSubscriber (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetPushNotificationSubscribersByArgs (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetPushNotificationSubscribersByUser (SP.Web) | ✅ | ✅ | ✅ | ✅
-GetQuizzes | ❌ | ❌ | ❌ | ✅
+[GetQuizzes](./Functions/GetQuizzes.md) | ❌ | ❌ | ❌ | ✅
 GetRecycleBinItems (SP.Site) | ✅ | ✅ | ✅ | ❌
 GetRecycleBinItems (SP.Web) | ✅ | ✅ | ✅ | ❌
 GetRecycleBinItemsByQueryInfo (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetRegionalDateTimeSchema (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetRelatedFields (SP.List) | ✅ | ✅ | ✅ | ✅
 GetRemoteContext (SP.RequestContext) | ✅ | ✅ | ✅ | ❌
-GetResponseData | ❌ | ❌ | ❌ | ✅
+[GetResponseData](./Functions/GetResponseData.md) | ❌ | ❌ | ❌ | ✅
 GetSPAppContextAsStream (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetSharedWithUsers (SP.ObjectSharingInformation) | ✅ | ✅ | ✅ | ✅
 GetSharingLinkData (SP.Web) | ✅ | ✅ | ❌ | ❌
@@ -363,7 +363,7 @@ MakeHubSite (SP.Site) | ❌ | ✅ | ❌ | ❌
 MapToIcon (SP.Web) | ✅ | ✅ | ✅ | ✅
 MediaServiceUpdate (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 MediaServiceUpdateV2 (SP.ListItem) | ✅ | ❌ | ❌ | ❌
-<span title="Microsoft_SharePoint_Yammer_WacApi_AddUserToSiteCollection">Microsoft_SharePoint_Yammer_WacApi_AddUserToSiteCo...</span> (Microsoft SharePoint Yammer WacApi AddUserToSiteCollection) | ✅ | ❌ | ❌ | ❌
+[<span title="Microsoft_SharePoint_Yammer_WacApi_AddUserToSiteCollection">Microsoft_SharePoint_Yammer_WacApi_AddUserToSiteCo...</span> (Microsoft SharePoint Yammer WacApi AddUserToSiteCollection)](./Functions/Microsoft_SharePoint_Yammer_WacApi_AddUserToSiteCollection.md) | ✅ | ❌ | ❌ | ❌
 MoveAfter (Collection(SP.NavigationNode)) | ✅ | ✅ | ✅ | ✅
 MoveAllToSecondStage (Collection(SP.RecycleBinItem)) | ✅ | ✅ | ✅ | ❌
 MoveTo (SP.File) | ✅ | ✅ | ✅ | ✅
@@ -452,118 +452,118 @@ RollTenantBringYourOwnKey (SP.Site) | ✅ | ✅ | ❌ | ❌
 RunHealthCheck (SP.Site) | ✅ | ✅ | ✅ | ✅
 RunUpgradeSiteSession (SP.Site) | ✅ | ✅ | ✅ | ✅
 SPHSite | ✅ | ❌ | ❌ | ❌
-SP_APIHubConnector_CreateListItem | ✅ | ✅ | ❌ | ❌
-SP_APIHubConnector_DeleteListItem | ✅ | ✅ | ❌ | ❌
-SP_APIHubConnector_GetDeletedListItems | ✅ | ✅ | ❌ | ❌
-SP_APIHubConnector_GetEntities | ✅ | ✅ | ❌ | ❌
-SP_APIHubConnector_GetEntityValues | ✅ | ✅ | ❌ | ❌
-SP_APIHubConnector_GetListItem | ✅ | ✅ | ❌ | ❌
-SP_APIHubConnector_GetListItems | ✅ | ✅ | ❌ | ❌
-SP_APIHubConnector_GetNewListItems | ✅ | ✅ | ❌ | ❌
-SP_APIHubConnector_GetTableMetadata | ✅ | ✅ | ❌ | ❌
+[SP_APIHubConnector_CreateListItem](./Functions/SP_APIHubConnector_CreateListItem.md) | ✅ | ✅ | ❌ | ❌
+[SP_APIHubConnector_DeleteListItem](./Functions/SP_APIHubConnector_DeleteListItem.md) | ✅ | ✅ | ❌ | ❌
+[SP_APIHubConnector_GetDeletedListItems](./Functions/SP_APIHubConnector_GetDeletedListItems.md) | ✅ | ✅ | ❌ | ❌
+[SP_APIHubConnector_GetEntities](./Functions/SP_APIHubConnector_GetEntities.md) | ✅ | ✅ | ❌ | ❌
+[SP_APIHubConnector_GetEntityValues](./Functions/SP_APIHubConnector_GetEntityValues.md) | ✅ | ✅ | ❌ | ❌
+[SP_APIHubConnector_GetListItem](./Functions/SP_APIHubConnector_GetListItem.md) | ✅ | ✅ | ❌ | ❌
+[SP_APIHubConnector_GetListItems](./Functions/SP_APIHubConnector_GetListItems.md) | ✅ | ✅ | ❌ | ❌
+[SP_APIHubConnector_GetNewListItems](./Functions/SP_APIHubConnector_GetNewListItems.md) | ✅ | ✅ | ❌ | ❌
+[SP_APIHubConnector_GetTableMetadata](./Functions/SP_APIHubConnector_GetTableMetadata.md) | ✅ | ✅ | ❌ | ❌
 SP_APIHubConnector_GetTables | ✅ | ✅ | ❌ | ❌
-SP_APIHubConnector_GetUpdatedListItems | ✅ | ✅ | ❌ | ❌
+[SP_APIHubConnector_GetUpdatedListItems](./Functions/SP_APIHubConnector_GetUpdatedListItems.md) | ✅ | ✅ | ❌ | ❌
 SP_APIHubConnector_InvokeQuery | ✅ | ❌ | ❌ | ❌
-SP_APIHubConnector_ResolveEntityValue | ✅ | ✅ | ❌ | ❌
-SP_APIHubConnector_SetApprovalStatus | ✅ | ✅ | ❌ | ❌
-SP_APIHubConnector_UpdateListItem | ✅ | ✅ | ❌ | ❌
-SP_AccessRequests_ChangeRequestStatus | ✅ | ✅ | ✅ | ✅
-SP_AccessRequests_ChangeRequestStatusBulk | ✅ | ✅ | ✅ | ✅
+[SP_APIHubConnector_ResolveEntityValue](./Functions/SP_APIHubConnector_ResolveEntityValue.md) | ✅ | ✅ | ❌ | ❌
+[SP_APIHubConnector_SetApprovalStatus](./Functions/SP_APIHubConnector_SetApprovalStatus.md) | ✅ | ✅ | ❌ | ❌
+[SP_APIHubConnector_UpdateListItem](./Functions/SP_APIHubConnector_UpdateListItem.md) | ✅ | ✅ | ❌ | ❌
+[SP_AccessRequests_ChangeRequestStatus](./Functions/SP_AccessRequests_ChangeRequestStatus.md) | ✅ | ✅ | ✅ | ✅
+[SP_AccessRequests_ChangeRequestStatusBulk](./Functions/SP_AccessRequests_ChangeRequestStatusBulk.md) | ✅ | ✅ | ✅ | ✅
 SP_ApiMetadata_Current | ✅ | ✅ | ✅ | ✅
-SP_AppCatalog_GetAppInstances | ❌ | ❌ | ❌ | ✅
-SP_AppCatalog_GetDeveloperSiteAppInstancesByIds | ❌ | ❌ | ❌ | ✅
+[SP_AppCatalog_GetAppInstances](./Functions/SP_AppCatalog_GetAppInstances.md) | ❌ | ❌ | ❌ | ✅
+[SP_AppCatalog_GetDeveloperSiteAppInstancesByIds](./Functions/SP_AppCatalog_GetDeveloperSiteAppInstancesByIds.md) | ❌ | ❌ | ❌ | ✅
 SP_AppCatalog_IsAppSideloadingEnabled | ✅ | ✅ | ✅ | ✅
-SP_AppContextSite | ✅ | ✅ | ✅ | ✅
+[SP_AppContextSite](./Functions/SP_AppContextSite.md) | ✅ | ✅ | ✅ | ✅
 SP_AppInstance_RetrieveAppDatabaseConnectionString | ✅ | ✅ | ✅ | ✅
-SP_AppPrincipalCredential_CreateFromKeyGroup | ✅ | ✅ | ✅ | ✅
-SP_AppPrincipalCredential_CreateFromSymmetricKey | ✅ | ✅ | ✅ | ✅
+[SP_AppPrincipalCredential_CreateFromKeyGroup](./Functions/SP_AppPrincipalCredential_CreateFromKeyGroup.md) | ✅ | ✅ | ✅ | ✅
+[SP_AppPrincipalCredential_CreateFromSymmetricKey](./Functions/SP_AppPrincipalCredential_CreateFromSymmetricKey.md) | ✅ | ✅ | ✅ | ✅
 SP_AppPrincipalIdentityProvider_External | ✅ | ✅ | ✅ | ✅
-SP_AppPrincipalManager_GetManager | ❌ | ❌ | ❌ | ✅
-<span title="SP_AppPrincipalName_CreateFromAppPrincipalIdentifier">SP_AppPrincipalName_CreateFromAppPrincipalIdentifi...</span> (SP AppPrincipalName CreateFromAppPrincipalIdentifier) | ✅ | ✅ | ✅ | ✅
-SP_AppPrincipalName_CreateFromNameIdentifier | ✅ | ✅ | ✅ | ✅
+[SP_AppPrincipalManager_GetManager](./Functions/SP_AppPrincipalManager_GetManager.md) | ❌ | ❌ | ❌ | ✅
+[<span title="SP_AppPrincipalName_CreateFromAppPrincipalIdentifier">SP_AppPrincipalName_CreateFromAppPrincipalIdentifi...</span> (SP AppPrincipalName CreateFromAppPrincipalIdentifier)](./Functions/SP_AppPrincipalName_CreateFromAppPrincipalIdentifier.md) | ✅ | ✅ | ✅ | ✅
+[SP_AppPrincipalName_CreateFromNameIdentifier](./Functions/SP_AppPrincipalName_CreateFromNameIdentifier.md) | ✅ | ✅ | ✅ | ✅
 <span title="SP_AppSiteContextUtility_GetAppSiteContextCollection">SP_AppSiteContextUtility_GetAppSiteContextCollecti...</span> (SP AppSiteContextUtility GetAppSiteContextCollection) | ✅ | ✅ | ❌ | ❌
-SP_AppTileProperties_GetAppProperties | ✅ | ✅ | ❌ | ❌
+[SP_AppTileProperties_GetAppProperties](./Functions/SP_AppTileProperties_GetAppProperties.md) | ✅ | ✅ | ❌ | ❌
 SP_CurrencyList_GetList | ✅ | ✅ | ❌ | ❌
-SP_FavoriteLists_AddFavoriteList | ✅ | ❌ | ❌ | ❌
+[SP_FavoriteLists_AddFavoriteList](./Functions/SP_FavoriteLists_AddFavoriteList.md) | ✅ | ❌ | ❌ | ❌
 SP_FavoriteLists_GetFavoriteLists | ✅ | ❌ | ❌ | ❌
-SP_FavoriteLists_GetIsListFavorite | ✅ | ❌ | ❌ | ❌
-SP_FavoriteLists_RemoveFavoriteList | ✅ | ❌ | ❌ | ❌
-SP_File_GetContentVerFromTag | ✅ | ✅ | ✅ | ✅
-SP_HashtagStoreManager_CallOLS | ✅ | ✅ | ❌ | ❌
-SP_HashtagStoreManager_GetBlockedHashtags | ✅ | ✅ | ❌ | ❌
-SP_HashtagStoreManager_GetHashtagsByPrefix | ✅ | ✅ | ❌ | ❌
-SP_HashtagStoreManager_SetBlockedHashtags | ✅ | ✅ | ❌ | ❌
+[SP_FavoriteLists_GetIsListFavorite](./Functions/SP_FavoriteLists_GetIsListFavorite.md) | ✅ | ❌ | ❌ | ❌
+[SP_FavoriteLists_RemoveFavoriteList](./Functions/SP_FavoriteLists_RemoveFavoriteList.md) | ✅ | ❌ | ❌ | ❌
+[SP_File_GetContentVerFromTag](./Functions/SP_File_GetContentVerFromTag.md) | ✅ | ✅ | ✅ | ✅
+[SP_HashtagStoreManager_CallOLS](./Functions/SP_HashtagStoreManager_CallOLS.md) | ✅ | ✅ | ❌ | ❌
+[SP_HashtagStoreManager_GetBlockedHashtags](./Functions/SP_HashtagStoreManager_GetBlockedHashtags.md) | ✅ | ✅ | ❌ | ❌
+[SP_HashtagStoreManager_GetHashtagsByPrefix](./Functions/SP_HashtagStoreManager_GetHashtagsByPrefix.md) | ✅ | ✅ | ❌ | ❌
+[SP_HashtagStoreManager_SetBlockedHashtags](./Functions/SP_HashtagStoreManager_SetBlockedHashtags.md) | ✅ | ✅ | ❌ | ❌
 SP_HubSites | ✅ | ✅ | ❌ | ❌
 SP_HubSites_CanCreate | ❌ | ✅ | ❌ | ❌
 SP_HubSites_Load | ✅ | ✅ | ❌ | ❌
 SP_KnowledgeHub | ✅ | ❌ | ❌ | ❌
-SP_List_GetListDataAsStream | ✅ | ✅ | ❌ | ❌
-SP_MountPoint_GetMountedFolderInfo | ✅ | ✅ | ✅ | ❌
-SP_MoveCopyUtil_CopyFile | ✅ | ✅ | ✅ | ❌
-SP_MoveCopyUtil_CopyFileByPath | ✅ | ✅ | ❌ | ❌
-SP_MoveCopyUtil_CopyFolder | ✅ | ✅ | ✅ | ❌
-SP_MoveCopyUtil_CopyFolderByPath | ✅ | ✅ | ❌ | ❌
-SP_MoveCopyUtil_MoveFile | ✅ | ✅ | ✅ | ❌
-SP_MoveCopyUtil_MoveFileByPath | ✅ | ✅ | ❌ | ❌
-SP_MoveCopyUtil_MoveFolder | ✅ | ✅ | ✅ | ❌
-SP_MoveCopyUtil_MoveFolderByPath | ✅ | ✅ | ❌ | ❌
+[SP_List_GetListDataAsStream](./Functions/SP_List_GetListDataAsStream.md) | ✅ | ✅ | ❌ | ❌
+[SP_MountPoint_GetMountedFolderInfo](./Functions/SP_MountPoint_GetMountedFolderInfo.md) | ✅ | ✅ | ✅ | ❌
+[SP_MoveCopyUtil_CopyFile](./Functions/SP_MoveCopyUtil_CopyFile.md) | ✅ | ✅ | ✅ | ❌
+[SP_MoveCopyUtil_CopyFileByPath](./Functions/SP_MoveCopyUtil_CopyFileByPath.md) | ✅ | ✅ | ❌ | ❌
+[SP_MoveCopyUtil_CopyFolder](./Functions/SP_MoveCopyUtil_CopyFolder.md) | ✅ | ✅ | ✅ | ❌
+[SP_MoveCopyUtil_CopyFolderByPath](./Functions/SP_MoveCopyUtil_CopyFolderByPath.md) | ✅ | ✅ | ❌ | ❌
+[SP_MoveCopyUtil_MoveFile](./Functions/SP_MoveCopyUtil_MoveFile.md) | ✅ | ✅ | ✅ | ❌
+[SP_MoveCopyUtil_MoveFileByPath](./Functions/SP_MoveCopyUtil_MoveFileByPath.md) | ✅ | ✅ | ❌ | ❌
+[SP_MoveCopyUtil_MoveFolder](./Functions/SP_MoveCopyUtil_MoveFolder.md) | ✅ | ✅ | ✅ | ❌
+[SP_MoveCopyUtil_MoveFolderByPath](./Functions/SP_MoveCopyUtil_MoveFolderByPath.md) | ✅ | ✅ | ❌ | ❌
 SP_MultilingualSettings | ✅ | ❌ | ❌ | ❌
-SP_ObjectSharingInformation_CanCurrentUserShare | ✅ | ✅ | ✅ | ❌
-<span title="SP_ObjectSharingInformation_CanCurrentUserShareRemote">SP_ObjectSharingInformation_CanCurrentUserShareRem...</span> (SP ObjectSharingInformation CanCurrentUserShareRemote) | ✅ | ✅ | ✅ | ❌
-<span title="SP_ObjectSharingInformation_GetListItemSharingInformation">SP_ObjectSharingInformation_GetListItemSharingInfo...</span> (SP ObjectSharingInformation GetListItemSharingInformation) | ✅ | ✅ | ✅ | ✅
-<span title="SP_ObjectSharingInformation_GetObjectSharingInformation">SP_ObjectSharingInformation_GetObjectSharingInform...</span> (SP ObjectSharingInformation GetObjectSharingInformation) | ❌ | ❌ | ❌ | ✅
-<span title="SP_ObjectSharingInformation_GetObjectSharingInformationByUrl">SP_ObjectSharingInformation_GetObjectSharingInform...</span> (SP ObjectSharingInformation GetObjectSharingInformationByUrl) | ✅ | ✅ | ✅ | ❌
-<span title="SP_ObjectSharingInformation_GetWebSharingInformation">SP_ObjectSharingInformation_GetWebSharingInformati...</span> (SP ObjectSharingInformation GetWebSharingInformation) | ✅ | ✅ | ✅ | ✅
+[SP_ObjectSharingInformation_CanCurrentUserShare](./Functions/SP_ObjectSharingInformation_CanCurrentUserShare.md) | ✅ | ✅ | ✅ | ❌
+[<span title="SP_ObjectSharingInformation_CanCurrentUserShareRemote">SP_ObjectSharingInformation_CanCurrentUserShareRem...</span> (SP ObjectSharingInformation CanCurrentUserShareRemote)](./Functions/SP_ObjectSharingInformation_CanCurrentUserShareRemote.md) | ✅ | ✅ | ✅ | ❌
+[<span title="SP_ObjectSharingInformation_GetListItemSharingInformation">SP_ObjectSharingInformation_GetListItemSharingInfo...</span> (SP ObjectSharingInformation GetListItemSharingInformation)](./Functions/SP_ObjectSharingInformation_GetListItemSharingInformation.md) | ✅ | ✅ | ✅ | ✅
+[<span title="SP_ObjectSharingInformation_GetObjectSharingInformation">SP_ObjectSharingInformation_GetObjectSharingInform...</span> (SP ObjectSharingInformation GetObjectSharingInformation)](./Functions/SP_ObjectSharingInformation_GetObjectSharingInformation.md) | ❌ | ❌ | ❌ | ✅
+[<span title="SP_ObjectSharingInformation_GetObjectSharingInformationByUrl">SP_ObjectSharingInformation_GetObjectSharingInform...</span> (SP ObjectSharingInformation GetObjectSharingInformationByUrl)](./Functions/SP_ObjectSharingInformation_GetObjectSharingInformationByUrl.md) | ✅ | ✅ | ✅ | ❌
+[<span title="SP_ObjectSharingInformation_GetWebSharingInformation">SP_ObjectSharingInformation_GetWebSharingInformati...</span> (SP ObjectSharingInformation GetWebSharingInformation)](./Functions/SP_ObjectSharingInformation_GetWebSharingInformation.md) | ✅ | ✅ | ✅ | ✅
 SP_OrganizationNews | ✅ | ❌ | ❌ | ❌
-SP_OrganizationNews_GetSiteReference | ✅ | ❌ | ❌ | ❌
-SP_RecentListCollection_GetRecentLists | ✅ | ❌ | ❌ | ❌
-<span title="SP_RecentListCollection_GetRecentListsWithPageContextInfo">SP_RecentListCollection_GetRecentListsWithPageCont...</span> (SP RecentListCollection GetRecentListsWithPageContextInfo) | ✅ | ❌ | ❌ | ❌
-SP_RecentListCollection_UpdateRecentLists | ✅ | ❌ | ❌ | ❌
-SP_RelatedItemManager_AddSingleLink | ✅ | ✅ | ✅ | ✅
-SP_RelatedItemManager_AddSingleLinkFromUrl | ✅ | ✅ | ✅ | ✅
-SP_RelatedItemManager_AddSingleLinkToUrl | ✅ | ✅ | ✅ | ✅
-SP_RelatedItemManager_DeleteSingleLink | ✅ | ✅ | ✅ | ✅
-SP_RelatedItemManager_GetPageOneRelatedItems | ✅ | ✅ | ✅ | ✅
-SP_RelatedItemManager_GetRelatedItems | ✅ | ✅ | ✅ | ✅
-SP_RemoteWeb | ✅ | ✅ | ✅ | ❌
+[SP_OrganizationNews_GetSiteReference](./Functions/SP_OrganizationNews_GetSiteReference.md) | ✅ | ❌ | ❌ | ❌
+[SP_RecentListCollection_GetRecentLists](./Functions/SP_RecentListCollection_GetRecentLists.md) | ✅ | ❌ | ❌ | ❌
+[<span title="SP_RecentListCollection_GetRecentListsWithPageContextInfo">SP_RecentListCollection_GetRecentListsWithPageCont...</span> (SP RecentListCollection GetRecentListsWithPageContextInfo)](./Functions/SP_RecentListCollection_GetRecentListsWithPageContextInfo.md) | ✅ | ❌ | ❌ | ❌
+[SP_RecentListCollection_UpdateRecentLists](./Functions/SP_RecentListCollection_UpdateRecentLists.md) | ✅ | ❌ | ❌ | ❌
+[SP_RelatedItemManager_AddSingleLink](./Functions/SP_RelatedItemManager_AddSingleLink.md) | ✅ | ✅ | ✅ | ✅
+[SP_RelatedItemManager_AddSingleLinkFromUrl](./Functions/SP_RelatedItemManager_AddSingleLinkFromUrl.md) | ✅ | ✅ | ✅ | ✅
+[SP_RelatedItemManager_AddSingleLinkToUrl](./Functions/SP_RelatedItemManager_AddSingleLinkToUrl.md) | ✅ | ✅ | ✅ | ✅
+[SP_RelatedItemManager_DeleteSingleLink](./Functions/SP_RelatedItemManager_DeleteSingleLink.md) | ✅ | ✅ | ✅ | ✅
+[SP_RelatedItemManager_GetPageOneRelatedItems](./Functions/SP_RelatedItemManager_GetPageOneRelatedItems.md) | ✅ | ✅ | ✅ | ✅
+[SP_RelatedItemManager_GetRelatedItems](./Functions/SP_RelatedItemManager_GetRelatedItems.md) | ✅ | ✅ | ✅ | ✅
+[SP_RemoteWeb](./Functions/SP_RemoteWeb.md) | ✅ | ✅ | ✅ | ❌
 SP_RequestContext_Current | ✅ | ✅ | ✅ | ✅
 SP_RequestUserContext_Current | ✅ | ✅ | ✅ | ❌
 SP_RequestVariable | ❌ | ❌ | ❌ | ✅
 SP_RoleDefinitionBindingCollection | ✅ | ✅ | ✅ | ✅
 SP_SPHSite | ✅ | ❌ | ❌ | ❌
-SP_SPHSite_AddOrgNewsSite | ✅ | ❌ | ❌ | ❌
-SP_SPHSite_AddSPHomeNavNode | ✅ | ❌ | ❌ | ❌
-SP_SPHSite_BuildCompanyPortalContext | ✅ | ❌ | ❌ | ❌
+[SP_SPHSite_AddOrgNewsSite](./Functions/SP_SPHSite_AddOrgNewsSite.md) | ✅ | ❌ | ❌ | ❌
+[SP_SPHSite_AddSPHomeNavNode](./Functions/SP_SPHSite_AddSPHomeNavNode.md) | ✅ | ❌ | ❌ | ❌
+[SP_SPHSite_BuildCompanyPortalContext](./Functions/SP_SPHSite_BuildCompanyPortalContext.md) | ✅ | ❌ | ❌ | ❌
 SP_SPHSite_GetSPHSiteXGeo | ✅ | ❌ | ❌ | ❌
-SP_SPHSite_IsModernSiteWithHorizontalNav | ✅ | ❌ | ❌ | ❌
-SP_SPHSite_IsValidHomeSite | ✅ | ❌ | ❌ | ❌
-SP_SPHSite_SetSPHSite | ✅ | ❌ | ❌ | ❌
+[SP_SPHSite_IsModernSiteWithHorizontalNav](./Functions/SP_SPHSite_IsModernSiteWithHorizontalNav.md) | ✅ | ❌ | ❌ | ❌
+[SP_SPHSite_IsValidHomeSite](./Functions/SP_SPHSite_IsValidHomeSite.md) | ✅ | ❌ | ❌ | ❌
+[SP_SPHSite_SetSPHSite](./Functions/SP_SPHSite_SetSPHSite.md) | ✅ | ❌ | ❌ | ❌
 SP_ServerSettings_GetBlockedFileExtensions | ✅ | ✅ | ✅ | ✅
-SP_ServerSettings_GetGlobalInstalledLanguages | ✅ | ✅ | ✅ | ✅
+[SP_ServerSettings_GetGlobalInstalledLanguages](./Functions/SP_ServerSettings_GetGlobalInstalledLanguages.md) | ✅ | ✅ | ✅ | ✅
 SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌
-SP_Site_Exists | ✅ | ✅ | ❌ | ❌
-SP_Site_GetUrlById | ✅ | ❌ | ❌ | ❌
-SP_TeamChannelManager_AddTeamChannel | ✅ | ✅ | ❌ | ❌
-SP_TeamChannelManager_DemoteTeamChannelById | ✅ | ✅ | ❌ | ❌
-SP_TeamChannelManager_DemoteTeamChannelByPath | ✅ | ✅ | ❌ | ❌
-SP_TeamChannelManager_PromoteToTeamChannelById | ✅ | ✅ | ❌ | ❌
-SP_TeamChannelManager_PromoteToTeamChannelByPath | ✅ | ✅ | ❌ | ❌
+[SP_Site_Exists](./Functions/SP_Site_Exists.md) | ✅ | ✅ | ❌ | ❌
+[SP_Site_GetUrlById](./Functions/SP_Site_GetUrlById.md) | ✅ | ❌ | ❌ | ❌
+[SP_TeamChannelManager_AddTeamChannel](./Functions/SP_TeamChannelManager_AddTeamChannel.md) | ✅ | ✅ | ❌ | ❌
+[SP_TeamChannelManager_DemoteTeamChannelById](./Functions/SP_TeamChannelManager_DemoteTeamChannelById.md) | ✅ | ✅ | ❌ | ❌
+[SP_TeamChannelManager_DemoteTeamChannelByPath](./Functions/SP_TeamChannelManager_DemoteTeamChannelByPath.md) | ✅ | ✅ | ❌ | ❌
+[SP_TeamChannelManager_PromoteToTeamChannelById](./Functions/SP_TeamChannelManager_PromoteToTeamChannelById.md) | ✅ | ✅ | ❌ | ❌
+[SP_TeamChannelManager_PromoteToTeamChannelByPath](./Functions/SP_TeamChannelManager_PromoteToTeamChannelByPath.md) | ✅ | ✅ | ❌ | ❌
 SP_TenantSettings_Current | ✅ | ✅ | ✅ | ✅
-SP_WebProxy_Invoke | ✅ | ✅ | ✅ | ✅
-SP_Web_CreateAnonymousLink | ✅ | ✅ | ✅ | ❌
-SP_Web_CreateAnonymousLinkWithExpiration | ✅ | ✅ | ✅ | ❌
-SP_Web_CreateOrganizationSharingLink | ✅ | ✅ | ✅ | ❌
-SP_Web_DefaultDocumentLibraryUrl | ✅ | ✅ | ❌ | ❌
-SP_Web_DeleteAllAnonymousLinksForObject | ✅ | ✅ | ✅ | ❌
-SP_Web_DeleteAnonymousLinkForObject | ✅ | ✅ | ✅ | ❌
-SP_Web_DestroyOrganizationSharingLink | ✅ | ✅ | ✅ | ❌
+[SP_WebProxy_Invoke](./Functions/SP_WebProxy_Invoke.md) | ✅ | ✅ | ✅ | ✅
+[SP_Web_CreateAnonymousLink](./Functions/SP_Web_CreateAnonymousLink.md) | ✅ | ✅ | ✅ | ❌
+[SP_Web_CreateAnonymousLinkWithExpiration](./Functions/SP_Web_CreateAnonymousLinkWithExpiration.md) | ✅ | ✅ | ✅ | ❌
+[SP_Web_CreateOrganizationSharingLink](./Functions/SP_Web_CreateOrganizationSharingLink.md) | ✅ | ✅ | ✅ | ❌
+[SP_Web_DefaultDocumentLibraryUrl](./Functions/SP_Web_DefaultDocumentLibraryUrl.md) | ✅ | ✅ | ❌ | ❌
+[SP_Web_DeleteAllAnonymousLinksForObject](./Functions/SP_Web_DeleteAllAnonymousLinksForObject.md) | ✅ | ✅ | ✅ | ❌
+[SP_Web_DeleteAnonymousLinkForObject](./Functions/SP_Web_DeleteAnonymousLinkForObject.md) | ✅ | ✅ | ✅ | ❌
+[SP_Web_DestroyOrganizationSharingLink](./Functions/SP_Web_DestroyOrganizationSharingLink.md) | ✅ | ✅ | ✅ | ❌
 SP_Web_GetContextWebInformation | ✅ | ✅ | ✅ | ✅
 SP_Web_GetContextWebThemeData | ✅ | ✅ | ✅ | ❌
-SP_Web_GetDocumentAndMediaLibraries | ✅ | ✅ | ❌ | ❌
-SP_Web_GetDocumentLibraries | ✅ | ✅ | ✅ | ❌
-SP_Web_GetObjectSharingSettings | ✅ | ✅ | ✅ | ❌
-SP_Web_GetSharingLinkKind | ✅ | ✅ | ❌ | ❌
-SP_Web_GetWebUrlFromPageUrl | ✅ | ✅ | ✅ | ✅
+[SP_Web_GetDocumentAndMediaLibraries](./Functions/SP_Web_GetDocumentAndMediaLibraries.md) | ✅ | ✅ | ❌ | ❌
+[SP_Web_GetDocumentLibraries](./Functions/SP_Web_GetDocumentLibraries.md) | ✅ | ✅ | ✅ | ❌
+[SP_Web_GetObjectSharingSettings](./Functions/SP_Web_GetObjectSharingSettings.md) | ✅ | ✅ | ✅ | ❌
+[SP_Web_GetSharingLinkKind](./Functions/SP_Web_GetSharingLinkKind.md) | ✅ | ✅ | ❌ | ❌
+[SP_Web_GetWebUrlFromPageUrl](./Functions/SP_Web_GetWebUrlFromPageUrl.md) | ✅ | ✅ | ✅ | ✅
 SaveAsNewView (SP.List) | ✅ | ✅ | ✅ | ✅
 SaveAsTemplate (SP.List) | ✅ | ✅ | ❌ | ❌
 SaveBinaryStream (SP.File) | ✅ | ✅ | ✅ | ✅
@@ -583,7 +583,7 @@ SetDefaultNewPageTemplateId (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetExemptFromBlockDownloadOfNonViewableFiles (SP.List) | ✅ | ✅ | ❌ | ❌
 SetFileUserValue (SP.File) | ✅ | ❌ | ❌ | ❌
 SetNotificationRecipients (SP.MultilingualSettings) | ✅ | ❌ | ❌ | ❌
-SetQuizState | ❌ | ❌ | ❌ | ✅
+[SetQuizState](./Functions/SetQuizState.md) | ❌ | ❌ | ❌ | ✅
 SetShowInDisplayForm (SP.Field) | ✅ | ✅ | ✅ | ✅
 SetShowInDisplayForm (SP.FieldCalculated) | ✅ | ✅ | ✅ | ✅
 SetShowInDisplayForm (SP.FieldChoice) | ✅ | ✅ | ✅ | ✅

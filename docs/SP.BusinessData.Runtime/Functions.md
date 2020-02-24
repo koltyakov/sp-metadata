@@ -15,8 +15,8 @@ FromXml (SP.BusinessData.Runtime.EntityFieldValueDictionary) | ✅ | ✅ | ✅ |
 FromXml (SP.BusinessData.Runtime.EntityInstance) | ✅ | ✅ | ✅ | ✅
 GetCollectionSize (SP.BusinessData.Runtime.EntityFieldValueDictionary) | ✅ | ✅ | ✅ | ✅
 GetIdentity (SP.BusinessData.Runtime.EntityInstance) | ✅ | ✅ | ✅ | ✅
-SP_BusinessData_Runtime_NotificationCallback | ✅ | ✅ | ✅ | ✅
-SP_BusinessData_Runtime_Subscription | ✅ | ✅ | ✅ | ✅
+[SP_BusinessData_Runtime_NotificationCallback](./Functions/SP_BusinessData_Runtime_NotificationCallback.md) | ✅ | ✅ | ✅ | ✅
+[SP_BusinessData_Runtime_Subscription](./Functions/SP_BusinessData_Runtime_Subscription.md) | ✅ | ✅ | ✅ | ✅
 ToXml (SP.BusinessData.Runtime.EntityFieldValueDictionary) | ✅ | ✅ | ✅ | ✅
 ToXml (SP.BusinessData.Runtime.EntityInstance) | ✅ | ✅ | ✅ | ✅
 Update (SP.BusinessData.Runtime.EntityInstance) | ✅ | ✅ | ✅ | ✅

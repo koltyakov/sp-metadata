@@ -78,6 +78,24 @@ func getFuncImportThisType(fnImp edmx.FunctionImport) string {
 	return ""
 }
 
+func getAllFunctionsImports(fnImps map[string][]edmx.FunctionImport) map[string]edmx.FunctionImport {
+	funcs := map[string]edmx.FunctionImport{}
+	for _, fnImpArr := range fnImps {
+		for _, fnImp := range fnImpArr {
+			key := fnImp.Name
+			thisType := getFuncImportThisType(fnImp)
+			if thisType != "" {
+				nss := strings.Replace(strings.Replace(thisType, "Collection(", "", 1), ")", "", 1)
+				key = nss + "__" + key
+			}
+			if _, ok := funcs[key]; !ok {
+				funcs[key] = fnImp
+			}
+		}
+	}
+	return funcs
+}
+
 func functionsImportsTable(fnImps map[string][]edmx.FunctionImport) string {
 	envCodes := config.GetEnvironmentsCodes()
 	var compareMatrix []*ComparisonVector
@@ -119,7 +137,80 @@ func functionsImportsTable(fnImps map[string][]edmx.FunctionImport) string {
 				name += " (" + strings.Replace(key, "_", " ", -1) + ")"
 			}
 		}
+
+		nArr := strings.Split(key, " ")
+		link := "./Functions/" + nArr[0] + ".md"
+		if len(nArr) > 1 {
+			ns := strings.Replace(strings.Replace(strings.Replace(nArr[1], "Collection(", "", -1), "(", "", -1), ")", "", -1)
+			link = "./Functions/" + ns + "__" + nArr[0] + ".md"
+		}
+
+		if functionParamsTable(fnImps, key) == "" {
+			link = ""
+		}
+
 		// name = fmt.Sprintf("[%s](./Functions/%s.md)", name, key)
+		compareMatrix = append(compareMatrix, &ComparisonVector{
+			Name:     name,
+			Link:     link,
+			Presence: keyPresenceMap[key],
+		})
+	}
+
+	// Constructing MD table
+	return genMDTable("Functions Imports", envCodes, compareMatrix)
+}
+
+func functionParamsTable(envFnMap map[string][]edmx.FunctionImport, key string) string {
+	envCodes := config.GetEnvironmentsCodes()
+	var compareMatrix []*ComparisonVector
+
+	keyArr := strings.Split(key, "__")
+	fnName := keyArr[0]
+	thisType := ""
+	if len(keyArr) > 1 {
+		fnName = keyArr[1]
+		thisType = keyArr[0]
+	}
+
+	keyPresenceMap := map[string]map[string]bool{}
+	var keys []string
+	for envCode, fnArr := range envFnMap {
+		for _, functionImp := range fnArr {
+			if functionImp.Name == fnName {
+				if thisType == getFuncImportThisType(functionImp) {
+					for _, par := range functionImp.Parameters {
+						if par.Name != "this" {
+							key := par.Name + " (" + par.Type + ")"
+							n, ok := keyPresenceMap[key]
+							if !ok {
+								n = map[string]bool{}
+							}
+							n[envCode] = true
+							keyPresenceMap[key] = n
+							newKey := true
+							for _, k := range keys {
+								if k == key {
+									newKey = false
+								}
+							}
+							if newKey {
+								keys = append(keys, key)
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if len(keyPresenceMap) == 0 {
+		return ""
+	}
+
+	// Map to comparison matrix
+	for _, key := range keys {
+		name := key
 		compareMatrix = append(compareMatrix, &ComparisonVector{
 			Name:     name,
 			Presence: keyPresenceMap[key],
@@ -127,5 +218,5 @@ func functionsImportsTable(fnImps map[string][]edmx.FunctionImport) string {
 	}
 
 	// Constructing MD table
-	return genMDTable("Functions Imports", envCodes, compareMatrix)
+	return genMDTable("Parameter", envCodes, compareMatrix)
 }

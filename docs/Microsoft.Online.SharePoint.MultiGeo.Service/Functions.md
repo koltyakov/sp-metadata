@@ -66,8 +66,8 @@ GetMoveReport (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJ
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_UnifiedGroup">Microsoft_Online_SharePoint_MultiGeo_Service_Unifi...</span> (Microsoft Online SharePoint MultiGeo Service UnifiedGroup) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserMoveJob">Microsoft_Online_SharePoint_MultiGeo_Service_UserM...</span> (Microsoft Online SharePoint MultiGeo Service UserMoveJob) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserMoveJobEntityData">Microsoft_Online_SharePoint_MultiGeo_Service_UserM...</span> (Microsoft Online SharePoint MultiGeo Service UserMoveJobEntityData) | ✅ | ❌ | ❌ | ❌
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserPersonalSiteId">Microsoft_Online_SharePoint_MultiGeo_Service_UserP...</span> (Microsoft Online SharePoint MultiGeo Service UserPersonalSiteId) | ✅ | ❌ | ❌ | ❌
-<span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserPersonalSiteLocation">Microsoft_Online_SharePoint_MultiGeo_Service_UserP...</span> (Microsoft Online SharePoint MultiGeo Service UserPersonalSiteLocation) | ✅ | ❌ | ❌ | ❌
+[<span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserPersonalSiteId">Microsoft_Online_SharePoint_MultiGeo_Service_UserP...</span> (Microsoft Online SharePoint MultiGeo Service UserPersonalSiteId)](./Functions/Microsoft_Online_SharePoint_MultiGeo_Service_UserPersonalSiteId.md) | ✅ | ❌ | ❌ | ❌
+[<span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserPersonalSiteLocation">Microsoft_Online_SharePoint_MultiGeo_Service_UserP...</span> (Microsoft Online SharePoint MultiGeo Service UserPersonalSiteLocation)](./Functions/Microsoft_Online_SharePoint_MultiGeo_Service_UserPersonalSiteLocation.md) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJob) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJob) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty) | ✅ | ❌ | ❌ | ❌
