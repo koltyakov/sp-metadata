@@ -10,6 +10,8 @@ SharePoint Online is tracked for Standard and Target Releases which allows detec
 
 One of the main goals of the project is providing an easily accessible entry point when planning any backward compatibility of an application to support some of the On-Premise targets or at least verify that some methods/props might require workarounds.
 
+The project should not be treated as documentation as EDMX doesn't provide the corresponding level of details, e.g you can't know GET or POST should be used for a method. And I also do not map everything from EDMX models to `.md`s, it's mostly flat entities and presence comparison within the versions.
+
 ## APIs drill-down entry point
 
 Check out [REST APIs Namespaces](./docs/Namespaces.md) availability then drill-down to a specific API.
