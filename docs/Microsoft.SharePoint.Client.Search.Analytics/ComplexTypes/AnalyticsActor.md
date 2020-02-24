@@ -8,6 +8,6 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Id (Edm.String) | ✔ | ✔ | ✔ | ✖
-Properties (Collection(SP.KeyValue)) | ✔ | ✔ | ✔ | ✖
-TenantId (Edm.Guid) | ✔ | ✔ | ✔ | ✖
+Id (Edm.String) | ✅ | ✅ | ✅ | ❌
+Properties (Collection(SP.KeyValue)) | ✅ | ✅ | ✅ | ❌
+TenantId (Edm.Guid) | ✅ | ✅ | ✅ | ❌

@@ -8,7 +8,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Name (Edm.Int32) | ✔ | ✔ | ✔ | ✖
+Name (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 
 ### Navigation Properties
 
@@ -16,4 +16,4 @@ Name (Edm.Int32) | ✔ | ✔ | ✔ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-CostRates | ✔ | ✔ | ✔ | ✖
+CostRates | ✅ | ✅ | ✅ | ❌

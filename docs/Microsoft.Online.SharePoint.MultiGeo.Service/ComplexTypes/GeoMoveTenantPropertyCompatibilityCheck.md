@@ -8,5 +8,5 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-GeoMoveTenantPropertyCheckResult (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-PropertyName (Edm.String) | ✔ | ✖ | ✖ | ✖
+GeoMoveTenantPropertyCheckResult (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+PropertyName (Edm.String) | ✅ | ❌ | ❌ | ❌

@@ -8,7 +8,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-HasUniqueRoleAssignments (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
+HasUniqueRoleAssignments (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 
 ### Navigation Properties
 
@@ -16,5 +16,5 @@ HasUniqueRoleAssignments (Edm.Boolean) | ✔ | ✔ | ✔ | ✔
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-FirstUniqueAncestorSecurableObject | ✔ | ✔ | ✔ | ✔
-RoleAssignments | ✔ | ✔ | ✔ | ✔
+FirstUniqueAncestorSecurableObject | ✅ | ✅ | ✅ | ✅
+RoleAssignments | ✅ | ✅ | ✅ | ✅

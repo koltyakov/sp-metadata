@@ -8,7 +8,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-EventData (Edm.String) | ✔ | ✖ | ✖ | ✖
-EventSource (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-TenantId (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+EventData (Edm.String) | ✅ | ❌ | ❌ | ❌
+EventSource (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+TenantId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 

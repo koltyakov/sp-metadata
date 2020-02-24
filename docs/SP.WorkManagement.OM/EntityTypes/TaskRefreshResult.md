@@ -8,8 +8,8 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-ErrorCorrelationId (Edm.String) | ✔ | ✔ | ✔ | ✔
-RefreshState (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+ErrorCorrelationId (Edm.String) | ✅ | ✅ | ✅ | ✅
+RefreshState (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 
 ### Navigation Properties
 
@@ -17,4 +17,4 @@ RefreshState (Edm.Int32) | ✔ | ✔ | ✔ | ✔
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Result | ✔ | ✔ | ✔ | ✔
+Result | ✅ | ✅ | ✅ | ✅

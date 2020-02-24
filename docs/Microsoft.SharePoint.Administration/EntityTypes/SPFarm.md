@@ -8,7 +8,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Id (Edm.Guid) | ✔ | ✖ | ✖ | ✖
+Id (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 
 ### Navigation Properties
 
@@ -16,4 +16,4 @@ Id (Edm.Guid) | ✔ | ✖ | ✖ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Local | ✔ | ✖ | ✖ | ✖
+Local | ✅ | ❌ | ❌ | ❌

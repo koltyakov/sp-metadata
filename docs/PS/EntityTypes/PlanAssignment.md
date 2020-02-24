@@ -8,19 +8,19 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-BookingType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-CanLevel (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-Code (Edm.String) | ✔ | ✔ | ✔ | ✖
-CostCenter (Edm.String) | ✔ | ✔ | ✔ | ✖
-Email (Edm.String) | ✔ | ✔ | ✔ | ✖
-Group (Edm.String) | ✔ | ✔ | ✔ | ✖
-HireDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-Id (Edm.Guid) | ✔ | ✔ | ✔ | ✖
-IsTeam (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-Name (Edm.String) | ✔ | ✔ | ✔ | ✖
-Phonetics (Edm.String) | ✔ | ✔ | ✔ | ✖
-ResourceType (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-TerminationDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+BookingType (Edm.Int32) | ✅ | ✅ | ✅ | ❌
+CanLevel (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
+Code (Edm.String) | ✅ | ✅ | ✅ | ❌
+CostCenter (Edm.String) | ✅ | ✅ | ✅ | ❌
+Email (Edm.String) | ✅ | ✅ | ✅ | ❌
+Group (Edm.String) | ✅ | ✅ | ✅ | ❌
+HireDate (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
+Id (Edm.Guid) | ✅ | ✅ | ✅ | ❌
+IsTeam (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
+Name (Edm.String) | ✅ | ✅ | ✅ | ❌
+Phonetics (Edm.String) | ✅ | ✅ | ✅ | ❌
+ResourceType (Edm.Int32) | ✅ | ✅ | ✅ | ❌
+TerminationDate (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 
 ### Navigation Properties
 
@@ -28,6 +28,6 @@ TerminationDate (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-CustomFields | ✔ | ✔ | ✔ | ✖
-Intervals | ✔ | ✔ | ✔ | ✖
-Resource | ✔ | ✔ | ✔ | ✖
+CustomFields | ✅ | ✅ | ✅ | ❌
+Intervals | ✅ | ✅ | ✅ | ❌
+Resource | ✅ | ✅ | ✅ | ❌

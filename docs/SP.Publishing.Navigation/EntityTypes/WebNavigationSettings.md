@@ -8,8 +8,8 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-AddNewPagesToNavigation (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
-CreateFriendlyUrlsForNewPages (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
+AddNewPagesToNavigation (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
+CreateFriendlyUrlsForNewPages (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
 
 ### Navigation Properties
 
@@ -17,5 +17,5 @@ CreateFriendlyUrlsForNewPages (Edm.Boolean) | ✖ | ✖ | ✖ | ✔
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-CurrentNavigation | ✖ | ✖ | ✖ | ✔
-GlobalNavigation | ✖ | ✖ | ✖ | ✔
+CurrentNavigation | ❌ | ❌ | ❌ | ✅
+GlobalNavigation | ❌ | ❌ | ❌ | ✅

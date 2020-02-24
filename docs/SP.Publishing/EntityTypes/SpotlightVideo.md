@@ -8,9 +8,9 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Id (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-ServerRelativeUrl (Edm.String) | ✔ | ✖ | ✖ | ✖
-Url (Edm.String) | ✔ | ✖ | ✖ | ✖
+Id (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+ServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+Url (Edm.String) | ✅ | ❌ | ❌ | ❌
 
 ### Navigation Properties
 
@@ -18,4 +18,4 @@ Url (Edm.String) | ✔ | ✖ | ✖ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Video | ✔ | ✖ | ✖ | ✖
+Video | ✅ | ❌ | ❌ | ❌

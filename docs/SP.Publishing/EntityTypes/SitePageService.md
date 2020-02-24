@@ -8,7 +8,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-CustomContentApprovalEnabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
+CustomContentApprovalEnabled (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 
 ### Navigation Properties
 
@@ -16,5 +16,5 @@ CustomContentApprovalEnabled (Edm.Boolean) | ✔ | ✔ | ✖ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-CommunicationSite | ✔ | ✔ | ✖ | ✖
-Pages | ✔ | ✔ | ✖ | ✖
+CommunicationSite | ✅ | ✅ | ❌ | ❌
+Pages | ✅ | ✅ | ❌ | ❌

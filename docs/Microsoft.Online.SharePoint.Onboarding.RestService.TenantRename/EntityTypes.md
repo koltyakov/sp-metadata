@@ -6,5 +6,5 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-[TenantRenameJob](./EntityTypes/TenantRenameJob.md) | ✔ | ✖ | ✖ | ✖
-[TenantRenameJobEntityData](./EntityTypes/TenantRenameJobEntityData.md) | ✔ | ✖ | ✖ | ✖
+[TenantRenameJob](./EntityTypes/TenantRenameJob.md) | ✅ | ❌ | ❌ | ❌
+[TenantRenameJobEntityData](./EntityTypes/TenantRenameJobEntityData.md) | ✅ | ❌ | ❌ | ❌

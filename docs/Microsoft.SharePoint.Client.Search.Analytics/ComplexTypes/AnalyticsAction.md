@@ -8,7 +8,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-ActionType (Edm.String) | ✔ | ✔ | ✔ | ✖
-ExpireTime (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-Properties (Collection(SP.KeyValue)) | ✔ | ✔ | ✔ | ✖
-UserTime (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+ActionType (Edm.String) | ✅ | ✅ | ✅ | ❌
+ExpireTime (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
+Properties (Collection(SP.KeyValue)) | ✅ | ✅ | ✅ | ❌
+UserTime (Edm.DateTime) | ✅ | ✅ | ✅ | ❌

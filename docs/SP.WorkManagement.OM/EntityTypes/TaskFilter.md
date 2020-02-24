@@ -8,8 +8,8 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-CriterionConcatType (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-IdsToFilterBy (Collection(Edm.Int32)) | ✔ | ✔ | ✔ | ✔
+CriterionConcatType (Edm.Int32) | ✅ | ✅ | ✅ | ✅
+IdsToFilterBy (Collection(Edm.Int32)) | ✅ | ✅ | ✅ | ✅
 
 ### Navigation Properties
 
@@ -17,8 +17,8 @@ IdsToFilterBy (Collection(Edm.Int32)) | ✔ | ✔ | ✔ | ✔
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-CompletedCriterion | ✔ | ✔ | ✔ | ✔
-DueDateRangeCriterion | ✔ | ✔ | ✔ | ✔
-IsNewCriterion | ✔ | ✔ | ✔ | ✔
-NameCriterion | ✔ | ✔ | ✔ | ✔
-StartDateRangeCriterion | ✔ | ✔ | ✔ | ✔
+CompletedCriterion | ✅ | ✅ | ✅ | ✅
+DueDateRangeCriterion | ✅ | ✅ | ✅ | ✅
+IsNewCriterion | ✅ | ✅ | ✅ | ✅
+NameCriterion | ✅ | ✅ | ✅ | ✅
+StartDateRangeCriterion | ✅ | ✅ | ✅ | ✅

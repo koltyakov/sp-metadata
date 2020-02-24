@@ -8,7 +8,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Order (Edm.Int32) | ✖ | ✖ | ✖ | ✔
+Order (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 
 ### Navigation Properties
 
@@ -16,8 +16,8 @@ Order (Edm.Int32) | ✖ | ✖ | ✖ | ✔
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Assignments | ✖ | ✖ | ✖ | ✔
-Events | ✖ | ✖ | ✖ | ✔
-Lessons | ✖ | ✖ | ✖ | ✔
-ParentLesson | ✖ | ✖ | ✖ | ✔
-Resources | ✖ | ✖ | ✖ | ✔
+Assignments | ❌ | ❌ | ❌ | ✅
+Events | ❌ | ❌ | ❌ | ✅
+Lessons | ❌ | ❌ | ❌ | ✅
+ParentLesson | ❌ | ❌ | ❌ | ✅
+Resources | ❌ | ❌ | ❌ | ✅

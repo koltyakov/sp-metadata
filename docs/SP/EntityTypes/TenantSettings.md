@@ -8,7 +8,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-CorporateCatalogUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
+CorporateCatalogUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
 
 ### Navigation Properties
 
@@ -16,4 +16,4 @@ CorporateCatalogUrl (Edm.String) | ✔ | ✔ | ✔ | ✔
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Current | ✔ | ✔ | ✔ | ✔
+Current | ✅ | ✅ | ✅ | ✅

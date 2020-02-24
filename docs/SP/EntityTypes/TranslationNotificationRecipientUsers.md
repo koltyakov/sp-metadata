@@ -8,7 +8,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-LanguageCode (Edm.String) | ✔ | ✖ | ✖ | ✖
+LanguageCode (Edm.String) | ✅ | ❌ | ❌ | ❌
 
 ### Navigation Properties
 
@@ -16,4 +16,4 @@ LanguageCode (Edm.String) | ✔ | ✖ | ✖ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Recipients | ✔ | ✖ | ✖ | ✖
+Recipients | ✅ | ❌ | ❌ | ❌

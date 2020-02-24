@@ -6,5 +6,5 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-[SearchService](./EntityTypes/SearchService.md) | ✔ | ✔ | ✔ | ✔
-[SearchSetting](./EntityTypes/SearchSetting.md) | ✔ | ✔ | ✖ | ✖
+[SearchService](./EntityTypes/SearchService.md) | ✅ | ✅ | ✅ | ✅
+[SearchSetting](./EntityTypes/SearchSetting.md) | ✅ | ✅ | ❌ | ❌

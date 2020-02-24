@@ -8,5 +8,5 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-QueryState (Edm.Int32) | ✔ | ✔ | ✖ | ✖
-SearchEndpoints (Collection(Microsoft.Office.Server.Search.REST.SearchEndpoints)) | ✔ | ✔ | ✖ | ✖
+QueryState (Edm.Int32) | ✅ | ✅ | ❌ | ❌
+SearchEndpoints (Collection(Microsoft.Office.Server.Search.REST.SearchEndpoints)) | ✅ | ✅ | ❌ | ❌

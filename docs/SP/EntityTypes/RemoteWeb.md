@@ -8,9 +8,9 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-CanSendEmail (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-ShareByEmailEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-ShareByLinkEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
+CanSendEmail (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
+ShareByEmailEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
+ShareByLinkEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 
 ### Navigation Properties
 
@@ -18,4 +18,4 @@ ShareByLinkEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Web | ✔ | ✔ | ✖ | ✖
+Web | ✅ | ✅ | ❌ | ❌

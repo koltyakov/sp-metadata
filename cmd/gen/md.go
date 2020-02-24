@@ -41,9 +41,9 @@ func genMDTable(parameter string, envCodes []string, compareMatrix []*Comparison
 			table += fmt.Sprintf("[%s](%s)", vector.Name, vector.Link)
 		}
 		for i, envCode := range envCodes {
-			status := "✖"
+			status := "❌"
 			if vector.Presence[envCode] {
-				status = "✔"
+				status = "✅"
 			}
 			if envCode == "spo.target" && i > 0 && envCodes[i-1] == "spo" {
 				if vector.Presence["spo"] != vector.Presence["spo.target"] {

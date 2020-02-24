@@ -8,11 +8,11 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-DisplayName (Edm.String) | ✔ | ✖ | ✖ | ✖
-Id (Edm.Guid) | ✔ | ✖ | ✖ | ✖
-OutboundMailPort (Edm.Int32) | ✔ | ✖ | ✖ | ✖
-OutboundMailReplyToAddress (Edm.String) | ✔ | ✖ | ✖ | ✖
-OutboundMailSenderAddress (Edm.String) | ✔ | ✖ | ✖ | ✖
+DisplayName (Edm.String) | ✅ | ❌ | ❌ | ❌
+Id (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+OutboundMailPort (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+OutboundMailReplyToAddress (Edm.String) | ✅ | ❌ | ❌ | ❌
+OutboundMailSenderAddress (Edm.String) | ✅ | ❌ | ❌ | ❌
 
 ### Navigation Properties
 
@@ -20,4 +20,4 @@ OutboundMailSenderAddress (Edm.String) | ✔ | ✖ | ✖ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Sites | ✔ | ✖ | ✖ | ✖
+Sites | ✅ | ❌ | ❌ | ❌

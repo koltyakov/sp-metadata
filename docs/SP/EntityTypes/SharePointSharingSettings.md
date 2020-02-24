@@ -8,22 +8,22 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-AddToGroupModeName (Edm.String) | ✔ | ✔ | ✔ | ✖
-GroupNameLines (Collection(Edm.String)) | ✔ | ✔ | ✔ | ✖
-GroupRoleDefinitionNamesLines (Collection(Edm.String)) | ✔ | ✔ | ✔ | ✖
-IsMobileView (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-PanelGivePermissionsVisible (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-PanelShowHideMoreOptionsVisible (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-PanelSimplifiedRoleSelectorVisible (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-RequiredScriptFileLinks (Collection(Edm.String)) | ✔ | ✔ | ✔ | ✖
-RoleDefinitionNameLines (Collection(Edm.String)) | ✔ | ✔ | ✔ | ✖
-SelectedGroup (Edm.String) | ✔ | ✔ | ✔ | ✖
-SharedWithEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-SharingCssLink (Edm.String) | ✔ | ✔ | ✔ | ✖
-TabToShow (Edm.Int32) | ✔ | ✔ | ✔ | ✖
-TabbedDialogEnabled (Edm.Boolean) | ✔ | ✔ | ✔ | ✖
-UserDisplayUrl (Edm.String) | ✔ | ✔ | ✔ | ✖
-txtEmailSubjectText (Edm.String) | ✔ | ✔ | ✔ | ✖
+AddToGroupModeName (Edm.String) | ✅ | ✅ | ✅ | ❌
+GroupNameLines (Collection(Edm.String)) | ✅ | ✅ | ✅ | ❌
+GroupRoleDefinitionNamesLines (Collection(Edm.String)) | ✅ | ✅ | ✅ | ❌
+IsMobileView (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
+PanelGivePermissionsVisible (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
+PanelShowHideMoreOptionsVisible (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
+PanelSimplifiedRoleSelectorVisible (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
+RequiredScriptFileLinks (Collection(Edm.String)) | ✅ | ✅ | ✅ | ❌
+RoleDefinitionNameLines (Collection(Edm.String)) | ✅ | ✅ | ✅ | ❌
+SelectedGroup (Edm.String) | ✅ | ✅ | ✅ | ❌
+SharedWithEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
+SharingCssLink (Edm.String) | ✅ | ✅ | ✅ | ❌
+TabToShow (Edm.Int32) | ✅ | ✅ | ✅ | ❌
+TabbedDialogEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
+UserDisplayUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
+txtEmailSubjectText (Edm.String) | ✅ | ✅ | ✅ | ❌
 
 ### Navigation Properties
 
@@ -31,4 +31,4 @@ txtEmailSubjectText (Edm.String) | ✔ | ✔ | ✔ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-PickerProperties | ✔ | ✔ | ✔ | ✖
+PickerProperties | ✅ | ✅ | ✅ | ❌

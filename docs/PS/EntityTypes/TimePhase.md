@@ -8,8 +8,8 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-End (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
-Start (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
+End (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
+Start (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 
 ### Navigation Properties
 
@@ -17,4 +17,4 @@ Start (Edm.DateTime) | ✔ | ✔ | ✔ | ✖
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Assignments | ✔ | ✔ | ✔ | ✖
+Assignments | ✅ | ✅ | ✅ | ❌

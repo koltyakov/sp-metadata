@@ -8,8 +8,8 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Error (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-ErrorMessage (Edm.String) | ✔ | ✔ | ✔ | ✔
+Error (Edm.Int32) | ✅ | ✅ | ✅ | ✅
+ErrorMessage (Edm.String) | ✅ | ✅ | ✅ | ✅
 
 ### Navigation Properties
 
@@ -17,4 +17,4 @@ ErrorMessage (Edm.String) | ✔ | ✔ | ✔ | ✔
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Results | ✔ | ✔ | ✔ | ✔
+Results | ✅ | ✅ | ✅ | ✅

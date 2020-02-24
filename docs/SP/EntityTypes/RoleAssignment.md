@@ -8,7 +8,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-PrincipalId (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+PrincipalId (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 
 ### Navigation Properties
 
@@ -16,5 +16,5 @@ PrincipalId (Edm.Int32) | ✔ | ✔ | ✔ | ✔
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-Member | ✔ | ✔ | ✔ | ✔
-RoleDefinitionBindings | ✔ | ✔ | ✔ | ✔
+Member | ✅ | ✅ | ✅ | ✅
+RoleDefinitionBindings | ✅ | ✅ | ✅ | ✅

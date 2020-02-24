@@ -8,10 +8,10 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-FieldId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
-ListId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
-RelationshipDeleteBehavior (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-WebId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
+FieldId (Edm.Guid) | ✅ | ✅ | ✅ | ✅
+ListId (Edm.Guid) | ✅ | ✅ | ✅ | ✅
+RelationshipDeleteBehavior (Edm.Int32) | ✅ | ✅ | ✅ | ✅
+WebId (Edm.Guid) | ✅ | ✅ | ✅ | ✅
 
 ### Navigation Properties
 
@@ -19,4 +19,4 @@ WebId (Edm.Guid) | ✔ | ✔ | ✔ | ✔
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-LookupList | ✔ | ✔ | ✔ | ✔
+LookupList | ✅ | ✅ | ✅ | ✅

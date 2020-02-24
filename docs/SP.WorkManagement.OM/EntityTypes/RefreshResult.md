@@ -8,10 +8,10 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-AggregatorRefreshState (Edm.Int32) | ✔ | ✔ | ✔ | ✔
-CorrelationId (Edm.String) | ✔ | ✔ | ✔ | ✔
-RefreshFinished (Edm.DateTime) | ✔ | ✔ | ✔ | ✔
-RefreshId (Edm.Int32) | ✔ | ✔ | ✔ | ✔
+AggregatorRefreshState (Edm.Int32) | ✅ | ✅ | ✅ | ✅
+CorrelationId (Edm.String) | ✅ | ✅ | ✅ | ✅
+RefreshFinished (Edm.DateTime) | ✅ | ✅ | ✅ | ✅
+RefreshId (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 
 ### Navigation Properties
 
@@ -19,5 +19,5 @@ RefreshId (Edm.Int32) | ✔ | ✔ | ✔ | ✔
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|-----|---------|---------|--------
-ProviderStatuses | ✔ | ✔ | ✔ | ✔
-TaskChangesByLocation | ✔ | ✔ | ✔ | ✔
+ProviderStatuses | ✅ | ✅ | ✅ | ✅
+TaskChangesByLocation | ✅ | ✅ | ✅ | ✅
