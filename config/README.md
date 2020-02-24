@@ -4,11 +4,11 @@ The folder contains environment configuration and connection files:
 
 File | Description
 -----|------------
-[private.spo.json](./private.spo.json) | SharePoint Online (Standard Release) environment connection file
-[private.spo.target.json](./private.spo.target.json) | SharePoint Online (Target Release) environment connection file
-[private.2019.json](./private.2019.json) | SharePoint 2019 (On-Premise) environment connection file
-[private.2016.json](./private.2016.json) | SharePoint 2016 (On-Premise) environment connection file
-[private.2013.json](./private.2013.json) | SharePoint 2013 (On-Premise) environment connection file
+private.spo.json | SharePoint Online (Standard Release) environment connection file
+private.spo.target.json | SharePoint Online (Target Release) environment connection file
+private.2019.json | SharePoint 2019 (On-Premise) environment connection file
+private.2016.json | SharePoint 2016 (On-Premise) environment connection file
+private.2013.json | SharePoint 2013 (On-Premise) environment connection file
 
 `private.json` files are JSON auth configs representation of [gosip](https://github.com/koltyakov/gosip) SharePoint client. The only exception is that `"strategy"` property is required. Strategy is the explicit name of the auth strategy to use with the environment.
 
