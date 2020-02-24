@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Comments (Edm.String) | ✅ | ✅ | ✅ | ❌
 EntryMode (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 Id (Edm.Guid) | ✅ | ✅ | ✅ | ❌
@@ -37,7 +37,7 @@ WeekStartsOn (Edm.Byte) | ✅ | ✅ | ✅ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Creator | ✅ | ✅ | ✅ | ❌
 Lines | ✅ | ✅ | ✅ | ❌
 Manager | ✅ | ✅ | ✅ | ❌

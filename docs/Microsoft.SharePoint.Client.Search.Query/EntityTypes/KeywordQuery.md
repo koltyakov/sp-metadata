@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 CollapseSpecification (Edm.String) | ❌ | ❌ | ❌ | ✅
 EnableSorting (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
 HiddenConstraints (Edm.String) | ❌ | ❌ | ❌ | ✅
@@ -20,7 +20,7 @@ TrimDuplicatesIncludeId (Edm.Int64) | ❌ | ❌ | ❌ | ✅
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Properties | ❌ | ❌ | ❌ | ✅
 RefinementFilters | ❌ | ❌ | ❌ | ✅
 ReorderingRules | ❌ | ❌ | ❌ | ✅

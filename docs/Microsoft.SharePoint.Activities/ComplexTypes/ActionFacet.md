@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 checkin (Microsoft.SharePoint.Activities.CheckinFacet) | ✅ | ✅ | ❌ | ❌
 checkout (Microsoft.SharePoint.Activities.CheckoutFacet) | ✅ | ✅ | ❌ | ❌
 comment (Microsoft.SharePoint.Activities.GetCommentFacet) | ✅ | ✅ | ❌ | ❌

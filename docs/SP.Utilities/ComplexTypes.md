@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 [EmailProperties](./ComplexTypes/EmailProperties.md) | ✅ | ✅ | ✅ | ✅
 [JsonTheme](./ComplexTypes/JsonTheme.md) | ✅ | ✅ | ❌ | ❌
 [NewsItem](./ComplexTypes/NewsItem.md) | ✅ | ✅ | ❌ | ❌

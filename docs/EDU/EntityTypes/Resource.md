@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 FolderUrl (Edm.String) | ❌ | ❌ | ❌ | ✅
 IsVisibleToStudent (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
 Order (Edm.Int32) | ❌ | ❌ | ❌ | ✅
@@ -19,6 +19,6 @@ ResourceType (Edm.String) | ❌ | ❌ | ❌ | ✅
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Event | ❌ | ❌ | ❌ | ✅
 Parent | ❌ | ❌ | ❌ | ✅

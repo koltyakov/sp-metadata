@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 ClickAction (SP.Microfeed.MicrofeedLinkAction) | ✅ | ✅ | ✅ | ✅
 ContentUri (Edm.String) | ✅ | ✅ | ✅ | ✅
 Description (Edm.String) | ✅ | ✅ | ✅ | ✅

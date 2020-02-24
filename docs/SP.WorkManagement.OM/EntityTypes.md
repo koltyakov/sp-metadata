@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 [BaseSession](./EntityTypes/BaseSession.md) | ✅ | ✅ | ✅ | ✅
 [BooleanCriterion](./EntityTypes/BooleanCriterion.md) | ✅ | ✅ | ✅ | ✅
 [CalloutInfo](./EntityTypes/CalloutInfo.md) | ✅ | ✅ | ✅ | ✅

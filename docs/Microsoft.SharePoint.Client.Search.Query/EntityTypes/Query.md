@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 BlockDedupeMode (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 BypassResultTypes (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
 ClientType (Edm.String) | ❌ | ❌ | ❌ | ✅
@@ -49,6 +49,6 @@ UILanguage (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 HitHighlightedProperties | ❌ | ❌ | ❌ | ✅
 PersonalizationData | ❌ | ❌ | ❌ | ✅

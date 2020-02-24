@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Finish (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 Id (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 Name (Edm.String) | ✅ | ✅ | ✅ | ❌
@@ -34,5 +34,5 @@ Start (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Calendar | ✅ | ✅ | ✅ | ❌

@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 AreManuallyScheduledTasksDefault (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 AreManuallyScheduledTasksPublishedToTeamMember (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 CanUsersOverrideScheduleMode (Edm.Boolean) | ✅ | ✅ | ❌ | ❌

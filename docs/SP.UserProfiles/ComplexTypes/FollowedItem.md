@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Data (Collection(SP.KeyValue)) | ✅ | ✅ | ✅ | ✅
 FileType (Edm.String) | ✅ | ✅ | ✅ | ✅
 FileTypeProgid (Edm.String) | ✅ | ✅ | ✅ | ✅

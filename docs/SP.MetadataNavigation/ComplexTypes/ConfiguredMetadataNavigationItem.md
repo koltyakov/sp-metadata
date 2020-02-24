@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 FieldDisplayName (Edm.String) | ✅ | ✅ | ❌ | ❌
 FieldTitle (Edm.String) | ✅ | ✅ | ❌ | ❌
 FieldTypeAsString (Edm.String) | ✅ | ✅ | ❌ | ❌

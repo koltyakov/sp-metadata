@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 CreatedDate (Edm.DateTime) | ✅ | ✅ | ❌ | ❌
 Id (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 LastSubmittedDate (Edm.DateTime) | ✅ | ✅ | ❌ | ❌
@@ -20,7 +20,7 @@ WorkflowState (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Project | ✅ | ✅ | ❌ | ❌
 WorkflowInstance | ✅ | ✅ | ❌ | ❌
 WorkflowInstanceOwner | ✅ | ✅ | ❌ | ❌

@@ -26,11 +26,15 @@ func genMDTable(parameter string, envCodes []string, compareMatrix []*Comparison
 		}
 	}
 	table += "\n---------"
-	for _, envCode := range envCodes {
+	for i, envCode := range envCodes {
 		if envCode == "spo.target" {
 			continue
 		}
-		table += "-|-" + strings.Repeat("-", utf8.RuneCountInString(eMap[envCode].Name))
+		if i == 0 {
+			table += "-|:" + strings.Repeat("-", utf8.RuneCountInString(eMap[envCode].Name))
+		} else {
+			table += ":|:" + strings.Repeat("-", utf8.RuneCountInString(eMap[envCode].Name))
+		}
 	}
 	table += "\n"
 

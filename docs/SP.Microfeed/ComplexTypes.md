@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 [MicroBlogEntity](./ComplexTypes/MicroBlogEntity.md) | ✅ | ✅ | ✅ | ✅
 [MicroBlogEntityCollection](./ComplexTypes/MicroBlogEntityCollection.md) | ✅ | ✅ | ✅ | ✅
 [MicrofeedDataLink](./ComplexTypes/MicrofeedDataLink.md) | ✅ | ✅ | ✅ | ✅

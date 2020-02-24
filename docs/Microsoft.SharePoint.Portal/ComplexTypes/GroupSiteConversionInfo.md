@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 GroupType (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 IsGroupifyDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsRegionRestricted (Edm.Boolean) | ✅ | ✅ | ❌ | ❌

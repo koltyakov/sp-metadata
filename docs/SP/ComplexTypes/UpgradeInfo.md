@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 ErrorFile (Edm.String) | ✅ | ✅ | ✅ | ✅
 Errors (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 LastUpdated (Edm.DateTime) | ✅ | ✅ | ✅ | ✅

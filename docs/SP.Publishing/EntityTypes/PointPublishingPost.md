@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Author (Edm.String) | ✅ | ❌ | ❌ | ❌
 Content (Edm.String) | ✅ | ❌ | ❌ | ❌
 CreatedDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
@@ -24,5 +24,5 @@ Version (Edm.String) | ✅ | ❌ | ❌ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 images | ✅ | ❌ | ❌ | ❌

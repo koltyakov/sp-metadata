@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Id (Edm.Guid) | ✅ | ✅ | ✅ | ❌
 JobState (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 MessageType (Edm.Int32) | ✅ | ✅ | ✅ | ❌
@@ -20,6 +20,6 @@ WaitTime (Edm.Time) | ✅ | ✅ | ✅ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Project | ✅ | ✅ | ✅ | ❌
 Submitter | ✅ | ✅ | ✅ | ❌

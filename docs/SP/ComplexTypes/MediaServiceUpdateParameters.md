@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 ClassificationResult (SP.ClassificationResult) | ✅ | ❌ | ❌ | ❌
 ContentVersion (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MachineLearningSampleMeta (SP.MachineLearningSampleMeta) | ✅ | ❌ | ❌ | ❌

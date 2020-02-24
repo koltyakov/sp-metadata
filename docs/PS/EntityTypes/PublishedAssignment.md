@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 ActualCost (Edm.Double) | ✅ | ✅ | ✅ | ❌
 ActualFinish (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 ActualOvertimeWork (Edm.String) | ✅ | ✅ | ✅ | ❌
@@ -52,7 +52,7 @@ WorkTimeSpan (Edm.Time) | ✅ | ✅ | ✅ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Owner | ✅ | ✅ | ✅ | ❌
 Parent | ✅ | ✅ | ✅ | ❌
 Resource | ✅ | ✅ | ✅ | ❌

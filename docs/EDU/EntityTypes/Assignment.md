@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 AssignedUsers (Edm.String) | ❌ | ❌ | ❌ | ✅
 EndDate (Edm.DateTime) | ❌ | ❌ | ❌ | ✅
 Format (Edm.Int32) | ❌ | ❌ | ❌ | ✅
@@ -24,7 +24,7 @@ Status (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 AssignedAssignments | ❌ | ❌ | ❌ | ✅
 Category | ❌ | ❌ | ❌ | ✅
 Events | ❌ | ❌ | ❌ | ✅

@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 GetPublishingNavigationProviderType (Microsoft.SharePoint.Navigation.REST.NavigationServiceRest) | ✅ | ✅ | ❌ | ❌
 MenuNodeKey (Microsoft.SharePoint.Navigation.REST.NavigationServiceRest) | ✅ | ✅ | ✅ | ✅
 MenuState (Microsoft.SharePoint.Navigation.REST.NavigationServiceRest) | ✅ | ✅ | ✅ | ✅

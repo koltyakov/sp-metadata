@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 author (SP.Sharing.Principal) | ✅ | ✅ | ❌ | ❌
 createdDate (Edm.DateTime) | ✅ | ✅ | ❌ | ❌
 id (Edm.String) | ✅ | ✅ | ❌ | ❌
@@ -27,6 +27,6 @@ text (Edm.String) | ✅ | ✅ | ❌ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 likedBy | ✅ | ✅ | ❌ | ❌
 replies | ✅ | ✅ | ❌ | ❌

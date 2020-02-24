@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Description (Edm.String) | ✅ | ✅ | ✅ | ✅
 DisplayFormTemplateName (Edm.String) | ✅ | ✅ | ✅ | ✅
 DisplayFormUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
@@ -37,7 +37,7 @@ StringId (Edm.String) | ✅ | ✅ | ✅ | ✅
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 DescriptionResource | ✅ | ✅ | ✅ | ❌
 FieldLinks | ✅ | ✅ | ✅ | ✅
 Fields | ✅ | ✅ | ✅ | ✅

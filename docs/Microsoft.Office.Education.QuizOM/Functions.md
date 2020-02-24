@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 AddOrUpdateResponse (Microsoft.Office.Education.QuizOM.UserResponse) | ❌ | ❌ | ❌ | ✅
 AddQuestion (Microsoft.Office.Education.QuizOM.Quiz) | ❌ | ❌ | ❌ | ✅
 CreateUserResponse (Microsoft.Office.Education.QuizOM.Quiz) | ❌ | ❌ | ❌ | ✅

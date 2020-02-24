@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 AssemblyName (Edm.String) | ✅ | ✅ | ✅ | ❌
 ClassName (Edm.String) | ✅ | ✅ | ✅ | ❌
 Description (Edm.String) | ✅ | ✅ | ✅ | ❌
@@ -22,5 +22,5 @@ Order (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Event | ✅ | ✅ | ✅ | ❌

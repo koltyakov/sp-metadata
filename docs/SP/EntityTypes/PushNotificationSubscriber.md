@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 CustomArgs (Edm.String) | ✅ | ✅ | ✅ | ✅
 DeviceAppInstanceId (Edm.Guid) | ✅ | ✅ | ✅ | ✅
 LastModifiedTimeStamp (Edm.DateTime) | ✅ | ✅ | ✅ | ✅
@@ -20,5 +20,5 @@ SubscriberType (Edm.String) | ✅ | ✅ | ✅ | ✅
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 User | ✅ | ✅ | ✅ | ✅

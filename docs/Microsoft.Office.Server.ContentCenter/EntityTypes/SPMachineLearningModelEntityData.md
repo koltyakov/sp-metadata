@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Accuracy (Edm.Single) | ✅ | ❌ | ❌ | ❌
 ColumnId (Edm.String) | ✅ | ❌ | ❌ | ❌
 ColumnName (Edm.String) | ✅ | ❌ | ❌ | ❌

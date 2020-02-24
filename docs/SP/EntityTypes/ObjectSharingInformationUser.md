@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 CustomRoleNames (Edm.String) | ✅ | ✅ | ✅ | ✅
 Department (Edm.String) | ✅ | ✅ | ✅ | ✅
 Email (Edm.String) | ✅ | ✅ | ✅ | ✅
@@ -30,6 +30,6 @@ SipAddress (Edm.String) | ✅ | ✅ | ✅ | ✅
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Principal | ✅ | ✅ | ✅ | ✅
 User | ✅ | ✅ | ✅ | ✅

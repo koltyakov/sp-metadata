@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 AllowedRoles (Collection(Edm.Int32)) | ✅ | ✅ | ✅ | ✅
 CurrentRole (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 DisplayName (Edm.String) | ✅ | ✅ | ✅ | ❌

@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Content (Edm.String) | ✅ | ✅ | ✅ | ✅
 ContentFormattingOption (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 DataLinks (SP.Microfeed.MicrofeedDataLinkCollection) | ✅ | ✅ | ✅ | ✅

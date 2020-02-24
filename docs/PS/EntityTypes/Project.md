@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 ApprovedEnd (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 ApprovedStart (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 CalculateActualCosts (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
@@ -51,7 +51,7 @@ WebId (Edm.Guid) | ✅ | ✅ | ✅ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 CheckedOutBy | ✅ | ✅ | ✅ | ❌
 CustomFields | ✅ | ✅ | ✅ | ❌
 Engagements | ✅ | ✅ | ❌ | ❌

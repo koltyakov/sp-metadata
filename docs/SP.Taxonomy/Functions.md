@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 DeleteObject (SP.Taxonomy.TaxonomyField) | ✅ | ✅ | ❌ | ✅
 DisableIndex (SP.Taxonomy.TaxonomyField) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.Taxonomy.TaxonomyField) | ✅ | ❌ | ❌ | ❌

@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 [Assignment](./EntityTypes/Assignment.md) | ✅ | ✅ | ✅ | ❌
 [BaseCalendarException](./EntityTypes/BaseCalendarException.md) | ✅ | ✅ | ✅ | ❌
 [Calendar](./EntityTypes/Calendar.md) | ✅ | ✅ | ✅ | ❌

@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 CancelWorkflow (SP.WorkflowServices.InteropService) | ✅ | ✅ | ✅ | ✅
 CancelWorkflow (SP.WorkflowServices.WorkflowInstanceService) | ❌ | ❌ | ❌ | ✅
 CountInstances (SP.WorkflowServices.WorkflowInstanceService) | ❌ | ❌ | ❌ | ✅

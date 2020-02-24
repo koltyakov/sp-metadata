@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 BaseTemplate (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 Editor (Edm.String) | ✅ | ✅ | ❌ | ❌
 Hidden (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
@@ -21,5 +21,5 @@ WebId (Edm.Guid) | ✅ | ✅ | ✅ | ✅
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Creator | ✅ | ✅ | ❌ | ❌

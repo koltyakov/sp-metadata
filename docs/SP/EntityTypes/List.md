@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 AdditionalUXProperties (Edm.String) | ✅ | ❌ | ❌ | ❌
 AllowContentTypes (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 AllowDeletion (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
@@ -91,7 +91,7 @@ WriteSecurity (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Activities | ❌ | ✅ | ❌ | ❌
 Author | ✅ | ❌ | ❌ | ❌
 ContentTypes | ✅ | ✅ | ✅ | ✅

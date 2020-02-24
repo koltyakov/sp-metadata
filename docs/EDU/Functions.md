@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 AddEntity (Collection(EDU.Announcement)) | ❌ | ❌ | ❌ | ✅
 AddEntity (Collection(EDU.AssignedAssignment)) | ❌ | ❌ | ❌ | ✅
 AddEntity (Collection(EDU.Assignment)) | ❌ | ❌ | ❌ | ✅

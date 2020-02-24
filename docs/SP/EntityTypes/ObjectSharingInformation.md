@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 AnonymousEditLink (Edm.String) | ✅ | ✅ | ✅ | ✅
 AnonymousViewLink (Edm.String) | ✅ | ✅ | ✅ | ✅
 CanBeShared (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
@@ -29,5 +29,5 @@ TotalFileCount (Edm.Int64) | ✅ | ✅ | ✅ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 SharedWithUsersCollection | ✅ | ✅ | ✅ | ❌

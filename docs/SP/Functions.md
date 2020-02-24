@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Acquire (SP.OAuth.Token) | ✅ | ❌ | ❌ | ❌
 Actor (SP.Social.SocialRestFeedManager) | ✅ | ✅ | ✅ | ✅
 Add (Collection(SP.Alert)) | ✅ | ✅ | ❌ | ❌

@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 [CrossGeoSync](./EntityTypes/CrossGeoSync.md) | ✅ | ❌ | ❌ | ❌
 [FollowedContent](./EntityTypes/FollowedContent.md) | ✅ | ✅ | ✅ | ✅
 [FollowedItemData](./EntityTypes/FollowedItemData.md) | ✅ | ✅ | ✅ | ✅

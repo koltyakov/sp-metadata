@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 [InteropService](./EntityTypes/InteropService.md) | ✅ | ✅ | ✅ | ✅
 [WorkflowDefinition](./EntityTypes/WorkflowDefinition.md) | ✅ | ✅ | ✅ | ✅
 [WorkflowDeploymentService](./EntityTypes/WorkflowDeploymentService.md) | ✅ | ✅ | ✅ | ✅

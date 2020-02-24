@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 AM (Edm.String) | ✅ | ✅ | ✅ | ✅
 AdjustHijriDays (Edm.Int16) | ✅ | ✅ | ✅ | ✅
 AlternateCalendarType (Edm.Int16) | ✅ | ✅ | ✅ | ✅
@@ -43,7 +43,7 @@ WorkDays (Edm.Int16) | ✅ | ✅ | ✅ | ✅
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 InstalledLanguages | ✅ | ✅ | ❌ | ❌
 TimeZone | ✅ | ✅ | ✅ | ✅
 TimeZones | ✅ | ✅ | ✅ | ✅

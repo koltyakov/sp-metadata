@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 GetBySiteUrl (Collection(Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJob)) | ✅ | ❌ | ❌ | ❌
 GetJobById (Collection(Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob)) | ✅ | ❌ | ❌ | ❌
 GetJobsByParentId (Collection(Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJob)) | ✅ | ❌ | ❌ | ❌

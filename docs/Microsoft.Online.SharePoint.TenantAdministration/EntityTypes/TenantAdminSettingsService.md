@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 AutoQuotaEnabled (Microsoft.Online.SharePoint.TenantAdministration.AutoQuotaEnabled) | ✅ | ❌ | ❌ | ❌
 AvailableManagedPathsForSiteCreation (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 CustomFormUrl (Microsoft.Online.SharePoint.TenantAdministration.CustomFormUrl) | ✅ | ❌ | ❌ | ❌

@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Add (Microsoft.SharePoint.Client.Search.Query.ReorderingRuleCollection) | ✅ | ✅ | ✅ | ✅
 Add (Microsoft.SharePoint.Client.Search.Query.SortCollection) | ✅ | ✅ | ✅ | ✅
 Add (Microsoft.SharePoint.Client.Search.Query.StringCollection) | ✅ | ✅ | ✅ | ✅

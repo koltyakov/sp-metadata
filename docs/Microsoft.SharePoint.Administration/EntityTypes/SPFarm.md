@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Id (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 
 ### Navigation Properties
@@ -15,5 +15,5 @@ Id (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Local | ✅ | ❌ | ❌ | ❌

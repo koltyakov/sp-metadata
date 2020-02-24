@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 CanAdministrateByCurrent (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CanEditByCurrent (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CanViewByCurrent (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -28,7 +28,7 @@ YammerEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 Search | ✅ | ❌ | ❌ | ❌
 SpotlightVideos | ✅ | ❌ | ❌ | ❌
 Videos | ✅ | ❌ | ❌ | ❌

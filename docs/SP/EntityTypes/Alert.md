@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 AlertFrequency (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 AlertTemplateName (Edm.String) | ✅ | ✅ | ❌ | ❌
 AlertTime (Edm.DateTime) | ✅ | ✅ | ❌ | ❌
@@ -30,7 +30,7 @@ UserId (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 AllProperties | ✅ | ✅ | ❌ | ❌
 Item | ✅ | ✅ | ❌ | ❌
 List | ✅ | ✅ | ❌ | ❌

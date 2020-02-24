@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 AbsoluteUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 AuthorByline (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 BannerImageUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
@@ -44,6 +44,6 @@ VersionInfo (SP.Publishing.SitePageVersionInfo) | ✅ | ✅ | ❌ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 CreatedBy | ✅ | ✅ | ❌ | ❌
 LastModifiedBy | ✅ | ✅ | ❌ | ❌

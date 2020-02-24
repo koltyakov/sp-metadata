@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 KeywordFilter (Edm.String) | ✅ | ✅ | ✅ | ✅
 LastQueryTime (Edm.DateTime) | ✅ | ✅ | ✅ | ✅
 PinnedFilter (Edm.Int32) | ✅ | ✅ | ✅ | ✅
@@ -17,7 +17,7 @@ PinnedFilter (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|-----|---------|---------|--------
+----------|:---:|:-------:|:-------:|:-------
 CustomAttributeFilter | ✅ | ✅ | ✅ | ✅
 FieldFilter | ✅ | ✅ | ✅ | ✅
 LastModifiedDateRangeFilter | ✅ | ✅ | ✅ | ✅
