@@ -8,7 +8,7 @@ if [[ $(git diff --name-only --cached) != "" ]]; then
   git push
 fi
 
-git add docs/*.md
+git add docs/**/*.md
 if [[ $(git diff --name-only --cached) != "" ]]; then
   git commit -m "comparison update, $(date +'%Y-%m-%d')"
   git push
