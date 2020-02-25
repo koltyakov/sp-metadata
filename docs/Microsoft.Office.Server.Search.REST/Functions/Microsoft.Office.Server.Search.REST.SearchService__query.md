@@ -31,6 +31,7 @@ enableNicknames (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 enablePhonetic (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 enableFQL (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 hitHighlightedProperties (Edm.String) | ✅ | ✅ | ✅ | ✅
+propertiesToGenerateAcronyms (Edm.String) | ✅ | ❌ | ❌ | ❌
 bypassResultTypes (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 processBestBets (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 clientType (Edm.String) | ✅ | ✅ | ✅ | ✅
@@ -57,4 +58,3 @@ queryTemplatePropertiesUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
 timeZoneId (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 useOLSQuery (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 OLSQuerySession (Edm.String) | ✅ | ✅ | ❌ | ❌
-propertiesToGenerateAcronyms (Edm.String) | ✅ | ❌ | ❌ | ❌

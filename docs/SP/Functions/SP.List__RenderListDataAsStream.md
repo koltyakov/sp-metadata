@@ -107,7 +107,9 @@ OverrideScope (Edm.String) | ✅ | ✅ | ✅ | ❌
 OverrideSelectCommand (Edm.String) | ✅ | ✅ | ✅ | ❌
 PageFirstRow (Edm.String) | ✅ | ✅ | ✅ | ❌
 PageLastRow (Edm.String) | ✅ | ✅ | ✅ | ❌
+QueryParams (Collection(SP.KeyValue)) | ✅ | ❌ | ❌ | ❌
 RootFolder (Edm.String) | ✅ | ✅ | ✅ | ❌
+RootFolderUniqueId (Edm.String) | ✅ | ❌ | ❌ | ❌
 SortDir (Edm.String) | ✅ | ✅ | ✅ | ❌
 SortDir1 (Edm.String) | ✅ | ✅ | ✅ | ❌
 SortDir10 (Edm.String) | ✅ | ✅ | ✅ | ❌
@@ -135,7 +137,5 @@ SortFieldValues (Edm.String) | ✅ | ✅ | ✅ | ❌
 View (Edm.String) | ✅ | ✅ | ✅ | ❌
 ViewCount (Edm.String) | ✅ | ✅ | ✅ | ❌
 ViewId (Edm.String) | ✅ | ✅ | ✅ | ❌
-WebPartId (Edm.String) | ✅ | ✅ | ✅ | ❌
-QueryParams (Collection(SP.KeyValue)) | ✅ | ❌ | ❌ | ❌
-RootFolderUniqueId (Edm.String) | ✅ | ❌ | ❌ | ❌
 ViewPath (Edm.String) | ✅ | ✅ | ❌ | ❌
+WebPartId (Edm.String) | ✅ | ✅ | ✅ | ❌

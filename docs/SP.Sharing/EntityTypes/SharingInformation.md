@@ -24,9 +24,9 @@ defaultShareLinkPermission (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 defaultShareLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 defaultShareLinkToExistingAccess (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 directUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
-doesUserHaveIBSegment (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 domainRestrictionSettings (SP.Sharing.DomainRestrictionSettings) | ✅ | ✅ | ❌ | ❌
 effectiveLimitedAccessFileType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+enforceIBSegmentFiltering (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 fileExtension (Edm.String) | ✅ | ❌ | ❌ | ❌
 hasUniquePermissions (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 itemUniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

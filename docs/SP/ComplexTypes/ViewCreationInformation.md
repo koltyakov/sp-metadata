@@ -14,6 +14,7 @@ Query (Edm.String) | ✅ | ✅ | ✅ | ✅
 RowLimit (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 SetAsDefaultView (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 Title (Edm.String) | ✅ | ✅ | ✅ | ✅
+ViewData (Edm.String) | ✅ | ❌ | ❌ | ❌
 ViewFields (Collection(Edm.String)) | ✅ | ✅ | ✅ | ✅
 ViewTypeKind (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 baseViewId (Edm.Int32) | ✅ | ✅ | ❌ | ❌
