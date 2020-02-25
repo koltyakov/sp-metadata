@@ -2,8 +2,6 @@
 
 ## Functions Imports
 
-**Availability matrix**
-
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 OBA_Server_ServerWrapper_Diagnostics | ✅ | ❌ | ❌ | ❌

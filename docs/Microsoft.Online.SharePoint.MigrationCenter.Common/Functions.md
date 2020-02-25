@@ -2,8 +2,6 @@
 
 ## Functions Imports
 
-**Availability matrix**
-
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Common_DeviceEntityData">Microsoft_Online_SharePoint_MigrationCenter_Common...</span> (Microsoft Online SharePoint MigrationCenter Common DeviceEntityData) | ✅ | ❌ | ❌ | ❌

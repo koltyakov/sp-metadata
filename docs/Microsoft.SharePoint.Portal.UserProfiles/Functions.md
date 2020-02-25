@@ -2,8 +2,6 @@
 
 ## Functions Imports
 
-**Availability matrix**
-
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetListDataScript">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> (Microsoft SharePoint Portal UserProfiles DocumentsSharedWithGroup GetListDataScript)](./Functions/Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetListDataScript.md) | ✅ | ✅ | ✅ | ❌
