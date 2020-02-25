@@ -15,4 +15,3 @@ JobState (Edm.String) | ✅ | ❌ | ❌ | ❌
 ParentId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 SiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 TriggeredBy (Edm.String) | ✅ | ❌ | ❌ | ❌
-

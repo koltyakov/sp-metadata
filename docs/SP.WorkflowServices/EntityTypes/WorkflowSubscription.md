@@ -18,4 +18,3 @@ Name (Edm.String) | ✅ | ✅ | ✅ | ✅
 ParentContentTypeId (Edm.String) | ✅ | ✅ | ✅ | ❌
 PropertyDefinitions (Collection(SP.KeyValue)) | ✅ | ✅ | ✅ | ✅
 StatusFieldName (Edm.String) | ✅ | ✅ | ✅ | ✅
-

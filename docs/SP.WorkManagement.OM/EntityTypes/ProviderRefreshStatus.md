@@ -13,4 +13,3 @@ ProviderLocalizedName (Edm.String) | ✅ | ✅ | ✅ | ✅
 RefreshFinished (Edm.DateTime) | ✅ | ✅ | ✅ | ✅
 RefreshStarted (Edm.DateTime) | ✅ | ✅ | ✅ | ✅
 RootLocationId (Edm.Int32) | ✅ | ✅ | ✅ | ✅
-

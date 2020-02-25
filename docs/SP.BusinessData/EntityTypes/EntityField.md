@@ -12,4 +12,3 @@ ContainsLocalizedDisplayName (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 DefaultDisplayName (Edm.String) | ✅ | ✅ | ✅ | ✅
 LocalizedDisplayName (Edm.String) | ✅ | ✅ | ✅ | ✅
 Name (Edm.String) | ✅ | ✅ | ✅ | ✅
-

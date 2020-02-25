@@ -20,4 +20,3 @@ TargetTemplate (Edm.String) | ✅ | ✅ | ❌ | ✅
 TermSetId (Edm.Guid) | ✅ | ✅ | ❌ | ✅
 TextField (Edm.Guid) | ✅ | ✅ | ❌ | ✅
 UserCreated (Edm.Boolean) | ✅ | ✅ | ❌ | ✅
-

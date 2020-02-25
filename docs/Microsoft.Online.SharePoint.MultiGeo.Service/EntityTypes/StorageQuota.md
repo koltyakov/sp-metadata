@@ -14,4 +14,3 @@ GeoLocation (Edm.String) | ✅ | ❌ | ❌ | ❌
 GeoUsedStorageMB (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 QuotaType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 TenantStorageMB (Edm.Int64) | ✅ | ❌ | ❌ | ❌
-

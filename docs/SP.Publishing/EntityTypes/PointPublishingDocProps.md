@@ -21,4 +21,3 @@ Title (Edm.String) | ✅ | ❌ | ❌ | ❌
 UniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 Url (Edm.String) | ✅ | ❌ | ❌ | ❌
 WebId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-

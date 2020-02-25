@@ -17,4 +17,3 @@ Id (Edm.Guid) | ✅ | ✅ | ✅ | ✅
 IsDeclarative (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 Name (Edm.String) | ✅ | ✅ | ✅ | ✅
 PermissionsManual (SP.BasePermissions) | ✅ | ✅ | ✅ | ✅
-

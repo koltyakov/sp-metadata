@@ -16,4 +16,3 @@ Name (Edm.String) | ✅ | ✅ | ✅ | ✅
 ReadOnly (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 Required (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 ShowInDisplayForm (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
-

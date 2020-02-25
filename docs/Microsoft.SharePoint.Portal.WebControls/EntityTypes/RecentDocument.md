@@ -15,4 +15,3 @@ Id (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 IsPinned (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 LinkLocation (Edm.String) | ✅ | ✅ | ✅ | ❌
 TimeStamp (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
-

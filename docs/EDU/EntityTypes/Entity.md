@@ -16,4 +16,3 @@ ListItemId (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 ModifiedBy (Edm.String) | ❌ | ❌ | ❌ | ✅
 ModifiedDate (Edm.DateTime) | ❌ | ❌ | ❌ | ✅
 Name (Edm.String) | ❌ | ❌ | ❌ | ✅
-

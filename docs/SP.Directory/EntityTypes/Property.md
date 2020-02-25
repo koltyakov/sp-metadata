@@ -12,4 +12,3 @@ IsInitialized (Edm.Boolean) | ❌ | ❌ | ✅ | ❌
 IsModified (Edm.Boolean) | ❌ | ❌ | ✅ | ❌
 Name (Edm.String) | ❌ | ❌ | ✅ | ❌
 Value (Edm.String) | ❌ | ❌ | ✅ | ❌
-

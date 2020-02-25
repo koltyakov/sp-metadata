@@ -17,4 +17,3 @@ IsUserOwner (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MagazineType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 PublishedDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ❌ | ❌ | ❌
-

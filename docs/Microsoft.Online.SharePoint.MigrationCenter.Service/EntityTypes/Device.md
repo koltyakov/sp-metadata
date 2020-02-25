@@ -20,4 +20,3 @@ LastHeartbeatTimeUtc (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 LastModifiedTimeUtc (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 LinkedTaskId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 Status (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-

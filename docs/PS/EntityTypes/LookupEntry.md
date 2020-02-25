@@ -14,4 +14,3 @@ FullValue (Edm.String) | ✅ | ✅ | ✅ | ❌
 Id (Edm.Guid) | ✅ | ✅ | ✅ | ❌
 InternalName (Edm.String) | ✅ | ✅ | ✅ | ❌
 SortIndex (Edm.Decimal) | ✅ | ✅ | ✅ | ❌
-

@@ -12,4 +12,3 @@ DisplayName (Edm.String) | ❌ | ❌ | ❌ | ✅
 EndpointAuthorities (Collection(Edm.String)) | ❌ | ❌ | ❌ | ✅
 NameIdentifier (Edm.String) | ❌ | ❌ | ❌ | ✅
 RedirectAddresses (Collection(Edm.String)) | ❌ | ❌ | ❌ | ✅
-

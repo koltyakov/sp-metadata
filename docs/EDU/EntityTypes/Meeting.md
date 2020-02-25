@@ -15,4 +15,3 @@ ConferenceUrl (Edm.String) | ❌ | ❌ | ❌ | ✅
 IsOnline (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
 IsRecorded (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
 RecordingUrl (Edm.String) | ❌ | ❌ | ❌ | ✅
-

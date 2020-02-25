@@ -14,4 +14,3 @@ Start (Edm.DateTime) | ✅ | ✅ | ❌ | ❌
 Work (Edm.String) | ✅ | ✅ | ❌ | ❌
 WorkMilliseconds (Edm.Int64) | ✅ | ✅ | ❌ | ❌
 WorkTimeSpan (Edm.Time) | ✅ | ✅ | ❌ | ❌
-

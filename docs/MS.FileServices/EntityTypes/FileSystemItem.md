@@ -17,4 +17,3 @@ Size (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 TimeCreated (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 TimeLastModified (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 Url (Edm.String) | ✅ | ✅ | ✅ | ❌
-

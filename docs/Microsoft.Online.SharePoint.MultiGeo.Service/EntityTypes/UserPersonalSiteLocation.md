@@ -12,4 +12,3 @@ Location (Edm.String) | ✅ | ❌ | ❌ | ❌
 MySiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 SiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 UserPrincipalName (Edm.String) | ✅ | ❌ | ❌ | ❌
-

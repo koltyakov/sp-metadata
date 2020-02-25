@@ -12,4 +12,3 @@ AssociationId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 InstanceId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 IsCompleted (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 StatusText (Edm.String) | ✅ | ❌ | ❌ | ❌
-

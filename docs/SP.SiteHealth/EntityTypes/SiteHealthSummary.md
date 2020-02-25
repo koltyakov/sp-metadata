@@ -12,4 +12,3 @@ FailedErrorCount (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 FailedWarningCount (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 PassedCount (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 Results (Collection(SP.SiteHealth.SiteHealthResult)) | ✅ | ✅ | ✅ | ✅
-

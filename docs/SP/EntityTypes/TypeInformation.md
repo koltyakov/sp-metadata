@@ -13,4 +13,3 @@ FullName (Edm.String) | ✅ | ✅ | ✅ | ✅
 IsValueObject (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 Methods (Collection(SP.MethodInformation)) | ✅ | ✅ | ✅ | ✅
 Properties (Collection(SP.PropertyInformation)) | ✅ | ✅ | ✅ | ✅
-

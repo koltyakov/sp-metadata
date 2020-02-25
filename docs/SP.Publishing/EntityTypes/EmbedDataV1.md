@@ -26,4 +26,3 @@ UniqueId (Edm.String) | ✅ | ✅ | ❌ | ❌
 Url (Edm.String) | ✅ | ✅ | ❌ | ❌
 VideoId (Edm.String) | ✅ | ✅ | ❌ | ❌
 WebId (Edm.String) | ✅ | ✅ | ❌ | ❌
-

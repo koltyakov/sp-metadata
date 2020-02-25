@@ -13,4 +13,3 @@ FollowedSitesUri (Edm.String) | ✅ | ✅ | ✅ | ✅
 MyFollowedDocumentsUri (Edm.String) | ✅ | ✅ | ✅ | ✅
 MyFollowedSitesUri (Edm.String) | ✅ | ✅ | ✅ | ✅
 SocialActor (SP.Social.SocialActor) | ✅ | ✅ | ✅ | ✅
-

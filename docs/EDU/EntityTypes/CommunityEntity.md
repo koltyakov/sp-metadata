@@ -2,7 +2,6 @@
 
 ## Entity Type: CommunityEntity
 
-
 ### Navigation Properties
 
 **Availability matrix**

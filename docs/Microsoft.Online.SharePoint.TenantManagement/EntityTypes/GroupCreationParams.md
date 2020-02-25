@@ -12,4 +12,3 @@ Classification (Edm.String) | ✅ | ❌ | ❌ | ❌
 CreationOptions (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 Description (Edm.String) | ✅ | ❌ | ❌ | ❌
 Owners (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
-

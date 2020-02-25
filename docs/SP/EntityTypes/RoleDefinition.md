@@ -15,4 +15,3 @@ Id (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 Name (Edm.String) | ✅ | ✅ | ✅ | ✅
 Order (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 RoleTypeKind (Edm.Int32) | ✅ | ✅ | ✅ | ✅
-

@@ -15,4 +15,3 @@ ItemType (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 Modified (Edm.DateTime) | ✅ | ✅ | ✅ | ✅
 TargetIdentifier (Edm.String) | ✅ | ✅ | ✅ | ✅
 Version (Edm.String) | ✅ | ✅ | ✅ | ✅
-

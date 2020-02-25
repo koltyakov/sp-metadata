@@ -12,4 +12,3 @@ AccountName (Edm.String) | ✅ | ✅ | ❌ | ❌
 Acronym (Edm.String) | ✅ | ✅ | ❌ | ❌
 Color (Edm.String) | ✅ | ✅ | ❌ | ❌
 Name (Edm.String) | ✅ | ✅ | ❌ | ❌
-

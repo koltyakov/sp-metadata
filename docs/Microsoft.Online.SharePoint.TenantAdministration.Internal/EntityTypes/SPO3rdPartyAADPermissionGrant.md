@@ -15,4 +15,3 @@ ObjectId (Edm.String) | ✅ | ❌ | ❌ | ❌
 PackageName (Edm.String) | ✅ | ❌ | ❌ | ❌
 Resource (Edm.String) | ✅ | ❌ | ❌ | ❌
 Scope (Edm.String) | ✅ | ❌ | ❌ | ❌
-

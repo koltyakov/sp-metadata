@@ -8,7 +8,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-ClientFormCustomFormatter (Edm.String) | ✅ | ❌ | ❌ | ❌
+ClientFormCustomFormatter (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
 Description (Edm.String) | ✅ | ✅ | ✅ | ✅
 DisplayFormTemplateName (Edm.String) | ✅ | ✅ | ✅ | ✅
 DisplayFormUrl (Edm.String) | ✅ | ✅ | ✅ | ✅

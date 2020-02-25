@@ -14,4 +14,3 @@ AppIconUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
 ErrorMessageToDisplay (Edm.String) | ✅ | ✅ | ✅ | ❌
 RedirectUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
 WebApplicationUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
-

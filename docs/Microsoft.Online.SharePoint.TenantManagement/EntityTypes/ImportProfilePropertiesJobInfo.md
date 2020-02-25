@@ -14,4 +14,3 @@ JobId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 LogFolderUri (Edm.String) | ✅ | ❌ | ❌ | ❌
 SourceUri (Edm.String) | ✅ | ❌ | ❌ | ❌
 State (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-

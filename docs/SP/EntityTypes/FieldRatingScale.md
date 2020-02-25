@@ -15,4 +15,3 @@ GridTextRangeAverage (Edm.String) | ✅ | ✅ | ✅ | ✅
 GridTextRangeHigh (Edm.String) | ✅ | ✅ | ✅ | ✅
 GridTextRangeLow (Edm.String) | ✅ | ✅ | ✅ | ✅
 RangeCount (Edm.Int32) | ✅ | ✅ | ✅ | ✅
-

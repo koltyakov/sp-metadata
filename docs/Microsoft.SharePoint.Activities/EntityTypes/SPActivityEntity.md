@@ -15,4 +15,3 @@ id (Edm.String) | ✅ | ✅ | ❌ | ❌
 isCoalesced (Microsoft.SharePoint.Activities.CoalescedFacet) | ✅ | ✅ | ❌ | ❌
 resource (Microsoft.SharePoint.Activities.ResourceFacet) | ✅ | ✅ | ❌ | ❌
 times (Microsoft.SharePoint.Activities.ActivityTimeFacet) | ✅ | ✅ | ❌ | ❌
-

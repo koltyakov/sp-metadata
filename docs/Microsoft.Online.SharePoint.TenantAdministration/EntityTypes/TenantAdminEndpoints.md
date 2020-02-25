@@ -13,4 +13,3 @@ MiniMavenEndpoint (Edm.String) | ✅ | ❌ | ❌ | ❌
 O365AdminCenterEndpoint (Edm.String) | ✅ | ❌ | ❌ | ❌
 O365MessageCenterEndpoint (Edm.String) | ✅ | ❌ | ❌ | ❌
 OneDriveAdminCenterEndpoint (Edm.String) | ✅ | ❌ | ❌ | ❌
-

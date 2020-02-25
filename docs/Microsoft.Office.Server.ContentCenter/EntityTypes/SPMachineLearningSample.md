@@ -15,4 +15,3 @@ ListID (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 Markups (Edm.String) | ✅ | ❌ | ❌ | ❌
 ObjectId (Edm.String) | ✅ | ❌ | ❌ | ❌
 UniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-

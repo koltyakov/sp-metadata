@@ -56,4 +56,3 @@ VideoManifestUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 WebId (Edm.String) | ✅ | ✅ | ✅ | ❌
 WebTemplateId (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 WebUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
-

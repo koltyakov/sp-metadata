@@ -19,4 +19,3 @@ ServerRelativeUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
 Title (Edm.String) | ✅ | ✅ | ✅ | ✅
 WebTemplate (Edm.String) | ✅ | ✅ | ✅ | ✅
 WebTemplateId (Edm.Int32) | ✅ | ✅ | ✅ | ✅
-

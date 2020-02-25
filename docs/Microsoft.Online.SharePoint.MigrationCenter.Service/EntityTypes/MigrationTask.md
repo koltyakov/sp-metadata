@@ -37,4 +37,3 @@ TotalBytes (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 TotalBytesMigrated (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 UpdateStatusOnly (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 WorkflowId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-

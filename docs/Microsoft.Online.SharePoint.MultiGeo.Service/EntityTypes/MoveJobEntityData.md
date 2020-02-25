@@ -27,4 +27,3 @@ SourceDataLocation (Edm.String) | ✅ | ❌ | ❌ | ❌
 State (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 TriggeredBy (Edm.String) | ✅ | ❌ | ❌ | ❌
 Type (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-

@@ -12,4 +12,3 @@ FileGetUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 FileId (Edm.String) | ✅ | ✅ | ❌ | ❌
 FilePutUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 ResourceId (Edm.String) | ✅ | ✅ | ❌ | ❌
-

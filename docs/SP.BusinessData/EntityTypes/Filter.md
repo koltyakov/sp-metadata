@@ -14,4 +14,3 @@ FilterType (Edm.String) | ✅ | ✅ | ✅ | ✅
 LocalizedDisplayName (Edm.String) | ✅ | ✅ | ✅ | ✅
 Name (Edm.String) | ✅ | ✅ | ✅ | ✅
 ValueCount (Edm.Int32) | ✅ | ✅ | ✅ | ✅
-

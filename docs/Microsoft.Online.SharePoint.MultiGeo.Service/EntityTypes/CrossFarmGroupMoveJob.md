@@ -12,4 +12,3 @@ IsContentMoved (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LastModified (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 StartedDateInUtc (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 StateName (Edm.String) | ✅ | ❌ | ❌ | ❌
-

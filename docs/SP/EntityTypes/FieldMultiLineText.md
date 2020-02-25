@@ -15,4 +15,3 @@ RestrictedMode (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 RichText (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 UnlimitedLengthInDocumentLibrary (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 WikiLinking (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
-

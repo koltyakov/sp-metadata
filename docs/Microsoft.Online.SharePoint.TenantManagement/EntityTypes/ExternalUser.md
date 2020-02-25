@@ -15,4 +15,3 @@ InvitedBy (Edm.String) | ✅ | ❌ | ❌ | ❌
 UniqueId (Edm.String) | ✅ | ❌ | ❌ | ❌
 UserId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 WhenCreated (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
-

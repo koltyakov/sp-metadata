@@ -14,4 +14,3 @@ id_token (Edm.String) | ✅ | ❌ | ❌ | ❌
 resource (Edm.String) | ✅ | ❌ | ❌ | ❌
 scope (Edm.String) | ✅ | ❌ | ❌ | ❌
 token_type (Edm.String) | ✅ | ❌ | ❌ | ❌
-

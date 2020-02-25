@@ -12,4 +12,3 @@ siteId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 uniqueId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 url (Edm.String) | ✅ | ✅ | ❌ | ❌
 webId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
-

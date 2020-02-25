@@ -13,4 +13,3 @@ OriginalSourceListId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 OriginalSourceSiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 OriginalSourceUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 OriginalSourceWebId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-

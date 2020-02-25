@@ -12,4 +12,3 @@ AllowDisplay (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 Presence (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 SelectionGroup (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 SelectionMode (Edm.Int32) | ✅ | ✅ | ✅ | ✅
-

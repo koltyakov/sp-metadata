@@ -13,4 +13,3 @@ EventCategory (Edm.String) | ❌ | ❌ | ❌ | ✅
 Location (Edm.String) | ❌ | ❌ | ❌ | ✅
 RecurrenceData (Edm.String) | ❌ | ❌ | ❌ | ✅
 StartDate (Edm.DateTime) | ❌ | ❌ | ❌ | ✅
-

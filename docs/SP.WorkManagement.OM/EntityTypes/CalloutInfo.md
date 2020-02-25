@@ -16,4 +16,3 @@ Predecessors (Collection(Edm.String)) | ✅ | ✅ | ✅ | ✅
 Successors (Collection(Edm.String)) | ✅ | ✅ | ✅ | ✅
 Title (Edm.String) | ✅ | ✅ | ✅ | ✅
 Url (Edm.String) | ✅ | ✅ | ✅ | ✅
-

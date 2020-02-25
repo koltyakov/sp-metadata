@@ -15,4 +15,3 @@ DefaultCurrency (Edm.String) | ✅ | ✅ | ❌ | ❌
 Id (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 IsAutoPublishOn (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 ReportingTimephasedMode (Edm.String) | ✅ | ✅ | ❌ | ❌
-

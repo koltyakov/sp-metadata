@@ -14,4 +14,3 @@ id (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 notificationUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 resource (Edm.String) | ✅ | ✅ | ❌ | ❌
 resourceData (Edm.String) | ✅ | ✅ | ❌ | ❌
-

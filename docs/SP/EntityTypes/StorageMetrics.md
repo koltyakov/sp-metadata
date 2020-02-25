@@ -12,4 +12,3 @@ LastModified (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 TotalFileCount (Edm.Int64) | ✅ | ✅ | ✅ | ❌
 TotalFileStreamSize (Edm.Int64) | ✅ | ✅ | ✅ | ❌
 TotalSize (Edm.Int64) | ✅ | ✅ | ✅ | ❌
-

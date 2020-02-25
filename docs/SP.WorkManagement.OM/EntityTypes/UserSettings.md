@@ -17,4 +17,3 @@ InactiveMonthsBeforeLocationExpiration (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 LateTasksLimit (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 OldTasksLimit (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 UpcomingTasksLimit (Edm.Int32) | ✅ | ✅ | ✅ | ✅
-

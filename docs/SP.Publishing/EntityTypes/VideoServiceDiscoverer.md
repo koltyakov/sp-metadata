@@ -18,4 +18,3 @@ O365VideoPageUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 PlayerUrlTemplate (Edm.String) | ✅ | ❌ | ❌ | ❌
 VideoPortalLayoutsUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 VideoPortalUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
-

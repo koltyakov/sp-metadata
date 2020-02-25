@@ -14,4 +14,3 @@ DisplayFormat (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 Formula (Edm.String) | ✅ | ✅ | ✅ | ✅
 OutputType (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 ShowAsPercentage (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
-

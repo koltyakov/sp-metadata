@@ -26,4 +26,3 @@ Modified (Edm.DateTime) | ✅ | ✅ | ✅ | ✅
 Name (Edm.String) | ✅ | ✅ | ✅ | ✅
 TaskListTitle (Edm.String) | ✅ | ✅ | ✅ | ✅
 WebId (Edm.Guid) | ✅ | ✅ | ✅ | ✅
-

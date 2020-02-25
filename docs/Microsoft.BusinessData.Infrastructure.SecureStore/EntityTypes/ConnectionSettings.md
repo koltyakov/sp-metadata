@@ -18,4 +18,3 @@ ProxyTarget (Edm.String) | ✅ | ❌ | ❌ | ❌
 SSOApplicationId (Edm.String) | ✅ | ❌ | ❌ | ❌
 SSOProviderImplId (Edm.String) | ✅ | ❌ | ❌ | ❌
 Target (Edm.String) | ✅ | ❌ | ❌ | ❌
-

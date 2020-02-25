@@ -23,4 +23,3 @@ StartPage (Edm.String) | ✅ | ✅ | ✅ | ✅
 Status (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 Title (Edm.String) | ✅ | ✅ | ✅ | ✅
 WebId (Edm.Guid) | ✅ | ✅ | ✅ | ✅
-

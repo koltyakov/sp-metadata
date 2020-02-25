@@ -16,4 +16,3 @@ SchedulerInformation (Microsoft.Online.SharePoint.MigrationCenter.Common.TaskSch
 SchemaVersion (Edm.String) | ✅ | ❌ | ❌ | ❌
 TotalDevicesAdded (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 TotalTasksAdded (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-

@@ -15,4 +15,3 @@ OriginalSourceSiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 OriginalSourceUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 OriginalSourceWebId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 ShouldSaveAsDraft (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-

@@ -21,4 +21,3 @@ QuizState (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 QuizTakers (Edm.String) | ❌ | ❌ | ❌ | ✅
 ShowHints (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
 Title (Edm.String) | ❌ | ❌ | ❌ | ✅
-

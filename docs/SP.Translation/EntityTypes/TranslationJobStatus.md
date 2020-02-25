@@ -15,4 +15,3 @@ InProgress (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 Name (Edm.String) | ✅ | ✅ | ✅ | ✅
 NotStarted (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 Succeeded (Edm.Int32) | ✅ | ✅ | ✅ | ✅
-

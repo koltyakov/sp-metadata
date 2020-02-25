@@ -25,4 +25,3 @@ PolicyDescription (Edm.String) | ✅ | ✅ | ✅ | ❌
 PolicyTitle (Edm.String) | ✅ | ✅ | ✅ | ❌
 SettingSource (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 TemplateId (Edm.String) | ✅ | ✅ | ❌ | ❌
-

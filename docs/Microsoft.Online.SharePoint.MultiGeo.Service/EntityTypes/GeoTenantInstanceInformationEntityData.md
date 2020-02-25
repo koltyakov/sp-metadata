@@ -19,4 +19,3 @@ PortalDomain (Edm.String) | ✅ | ❌ | ❌ | ❌
 RegularSiteCount (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 RootSiteDomain (Edm.String) | ✅ | ❌ | ❌ | ❌
 TenantAdminDomain (Edm.String) | ✅ | ❌ | ❌ | ❌
-

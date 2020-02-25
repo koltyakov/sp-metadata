@@ -29,4 +29,3 @@ StartText (Edm.String) | ✅ | ✅ | ✅ | ❌
 Work (Edm.String) | ✅ | ✅ | ✅ | ❌
 WorkMilliseconds (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 WorkTimeSpan (Edm.Time) | ✅ | ✅ | ✅ | ❌
-

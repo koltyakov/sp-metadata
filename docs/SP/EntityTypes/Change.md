@@ -13,4 +13,3 @@ ChangeType (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 RelativeTime (Edm.String) | ✅ | ✅ | ❌ | ❌
 SiteId (Edm.Guid) | ✅ | ✅ | ✅ | ✅
 Time (Edm.DateTime) | ✅ | ✅ | ✅ | ✅
-

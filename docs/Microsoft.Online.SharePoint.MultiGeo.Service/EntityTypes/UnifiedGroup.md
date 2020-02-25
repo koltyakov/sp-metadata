@@ -14,4 +14,3 @@ Mail (Edm.String) | ✅ | ❌ | ❌ | ❌
 ObjectId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 PreferredDataLocation (Edm.String) | ✅ | ❌ | ❌ | ❌
 SiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
-

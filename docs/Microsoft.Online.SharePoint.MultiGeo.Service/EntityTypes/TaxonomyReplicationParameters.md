@@ -12,4 +12,3 @@ IsReplicateAllContentTypes (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsReplicateAllGroups (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ReplicatedContentTypes (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 ReplicatedGroups (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
-

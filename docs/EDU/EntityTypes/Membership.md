@@ -12,4 +12,3 @@ CommunityId (Edm.String) | ❌ | ❌ | ❌ | ✅
 Role (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 UserId (Edm.String) | ❌ | ❌ | ❌ | ✅
 UserName (Edm.String) | ❌ | ❌ | ❌ | ✅
-

@@ -12,4 +12,3 @@ AbsCredentialsCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DbExtensionSchemaNames (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 DbExtensionSchemaVersions (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 DbSchemaVersion (Edm.String) | ✅ | ❌ | ❌ | ❌
-

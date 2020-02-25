@@ -20,4 +20,3 @@ SiteDesignId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 SiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 SiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ❌ | ❌ | ❌
-

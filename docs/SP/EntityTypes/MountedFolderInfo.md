@@ -14,4 +14,3 @@ ItemId (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 ListTemplateType (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 ListViewUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
 WebUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
-

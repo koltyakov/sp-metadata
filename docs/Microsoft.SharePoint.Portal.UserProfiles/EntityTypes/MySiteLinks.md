@@ -14,4 +14,3 @@ AllDocumentsLinkTarget (Edm.String) | ✅ | ✅ | ✅ | ❌
 AllSitesLink (Edm.String) | ✅ | ✅ | ✅ | ❌
 AllSitesLinkHref (Edm.String) | ✅ | ✅ | ✅ | ❌
 AllSitesLinkTarget (Edm.String) | ✅ | ✅ | ✅ | ❌
-

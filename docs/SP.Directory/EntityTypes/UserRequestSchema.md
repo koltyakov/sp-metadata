@@ -12,4 +12,3 @@ Id4a81de82eeb94d6080ea5bf63e27023a (Edm.String) | ❌ | ❌ | ✅ | ❌
 Links (Collection(SP.Directory.LinkRequestSchema)) | ❌ | ❌ | ✅ | ❌
 Properties (Collection(Edm.String)) | ❌ | ❌ | ✅ | ❌
 Resources (Collection(Edm.String)) | ❌ | ❌ | ✅ | ❌
-

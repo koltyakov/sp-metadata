@@ -14,4 +14,3 @@ DecryptionKey (Edm.Binary) | ✅ | ❌ | ❌ | ❌
 Exception (Edm.String) | ✅ | ❌ | ❌ | ❌
 FileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 Url (Edm.String) | ✅ | ❌ | ❌ | ❌
-

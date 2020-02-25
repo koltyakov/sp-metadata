@@ -41,4 +41,3 @@ UniqueId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 UrlPath (Edm.String) | ✅ | ✅ | ❌ | ❌
 VideoManifestUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 WebId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
-

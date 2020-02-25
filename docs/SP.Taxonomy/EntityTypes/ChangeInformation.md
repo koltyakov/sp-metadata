@@ -12,4 +12,3 @@ ItemType (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 OperationType (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 StartTime (Edm.DateTime) | ❌ | ❌ | ❌ | ✅
 WithinTimeSpan (Edm.Time) | ❌ | ❌ | ❌ | ✅
-

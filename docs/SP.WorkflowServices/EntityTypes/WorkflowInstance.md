@@ -16,4 +16,3 @@ Properties (Collection(SP.KeyValue)) | ✅ | ✅ | ✅ | ✅
 Status (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 UserStatus (Edm.String) | ✅ | ✅ | ✅ | ✅
 WorkflowSubscriptionId (Edm.Guid) | ✅ | ✅ | ✅ | ✅
-

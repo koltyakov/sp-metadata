@@ -12,4 +12,3 @@ AreAllQuestionsGraded (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
 Id (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 Questions (Collection(Microsoft.Office.Education.QuizOM.GradedQuestion)) | ❌ | ❌ | ❌ | ✅
 TotalPointsForGradedQuestions (Edm.Int32) | ❌ | ❌ | ❌ | ✅
-

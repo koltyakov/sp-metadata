@@ -13,4 +13,3 @@ EffectiveStarting (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 EffectiveUntil (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 OvertimeRate (Edm.Double) | ✅ | ✅ | ✅ | ❌
 StandardRate (Edm.Double) | ✅ | ✅ | ✅ | ❌
-

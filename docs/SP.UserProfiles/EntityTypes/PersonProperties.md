@@ -30,4 +30,3 @@ sharePointLibrariesFirstRun (Edm.Boolean) | ❌ | ✅ | ❌ | ❌
 sharePointListsFirstRun (Edm.Boolean) | ❌ | ✅ | ❌ | ❌
 sharePointOneDriveBusinessFirstRun (Edm.Boolean) | ❌ | ✅ | ❌ | ❌
 sharePointPageAuthoringFirstRun (Edm.Boolean) | ❌ | ✅ | ❌ | ❌
-

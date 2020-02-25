@@ -20,4 +20,3 @@ RequestedStart (Edm.DateTime) | ✅ | ✅ | ❌ | ❌
 RequestedWork (Edm.String) | ✅ | ✅ | ❌ | ❌
 RequestedWorkMilliseconds (Edm.Int64) | ✅ | ✅ | ❌ | ❌
 RequestedWorkTimeSpan (Edm.Time) | ✅ | ✅ | ❌ | ❌
-

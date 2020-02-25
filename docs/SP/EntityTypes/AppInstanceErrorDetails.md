@@ -15,4 +15,3 @@ ErrorTypeName (Edm.String) | ✅ | ✅ | ✅ | ✅
 ExceptionMessage (Edm.String) | ✅ | ✅ | ✅ | ✅
 Source (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 SourceName (Edm.String) | ✅ | ✅ | ✅ | ✅
-

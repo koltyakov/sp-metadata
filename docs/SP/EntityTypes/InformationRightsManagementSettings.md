@@ -23,4 +23,3 @@ LicenseCacheExpireDays (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 PolicyDescription (Edm.String) | ✅ | ✅ | ✅ | ✅
 PolicyTitle (Edm.String) | ✅ | ✅ | ✅ | ✅
 TemplateId (Edm.String) | ✅ | ✅ | ❌ | ❌
-

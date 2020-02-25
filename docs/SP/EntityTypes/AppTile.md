@@ -27,4 +27,3 @@ Target (Edm.String) | ✅ | ✅ | ✅ | ❌
 Thumbnail (Edm.String) | ✅ | ✅ | ✅ | ❌
 Title (Edm.String) | ✅ | ✅ | ✅ | ❌
 Version (Edm.String) | ✅ | ✅ | ❌ | ❌
-

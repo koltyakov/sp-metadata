@@ -12,4 +12,3 @@ DestinationDataLocation (Edm.String) | ✅ | ❌ | ❌ | ❌
 GeoMoveTenantCompatibilityResult (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 GeoMoveTenantPropertyCompatibilityChecks (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.GeoMoveTenantPropertyCompatibilityCheck)) | ✅ | ❌ | ❌ | ❌
 SourceDataLocation (Edm.String) | ✅ | ❌ | ❌ | ❌
-

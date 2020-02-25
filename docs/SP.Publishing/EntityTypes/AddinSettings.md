@@ -17,4 +17,3 @@ Id (Edm.Guid) | ❌ | ❌ | ❌ | ✅
 MetaTagPagePropertyMappings (Collection(SP.KeyValue)) | ❌ | ❌ | ❌ | ✅
 Namespace (Edm.String) | ❌ | ❌ | ❌ | ✅
 Title (Edm.String) | ❌ | ❌ | ❌ | ✅
-

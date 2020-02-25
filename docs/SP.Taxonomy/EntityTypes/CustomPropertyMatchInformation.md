@@ -13,4 +13,3 @@ CustomPropertyValue (Edm.String) | ❌ | ❌ | ❌ | ✅
 ResultCollectionSize (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 StringMatchOption (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 TrimUnavailable (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
-

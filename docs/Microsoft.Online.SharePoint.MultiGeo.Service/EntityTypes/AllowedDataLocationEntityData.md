@@ -12,4 +12,3 @@ appId (Edm.String) | ✅ | ❌ | ❌ | ❌
 domain (Edm.String) | ✅ | ❌ | ❌ | ❌
 isDefault (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 location (Edm.String) | ✅ | ❌ | ❌ | ❌
-

@@ -14,4 +14,3 @@ DurationTimeSpan (Edm.Time) | ✅ | ✅ | ✅ | ❌
 End (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 Name (Edm.String) | ✅ | ✅ | ✅ | ❌
 Start (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
-

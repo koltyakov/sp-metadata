@@ -12,4 +12,3 @@ DisplayFormat (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 MaximumValue (Edm.Double) | ✅ | ✅ | ✅ | ✅
 MinimumValue (Edm.Double) | ✅ | ✅ | ✅ | ✅
 ShowAsPercentage (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
-

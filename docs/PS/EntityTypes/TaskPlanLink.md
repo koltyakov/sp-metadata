@@ -14,4 +14,3 @@ Id (Edm.String) | ✅ | ✅ | ❌ | ❌
 PlanId (Edm.String) | ✅ | ✅ | ❌ | ❌
 ProjectId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 TaskId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
-

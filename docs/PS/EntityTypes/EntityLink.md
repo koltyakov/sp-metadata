@@ -13,4 +13,3 @@ EntityLinkType (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 Id (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 Label (Edm.String) | ✅ | ✅ | ❌ | ❌
 Url (Edm.String) | ✅ | ✅ | ❌ | ❌
-

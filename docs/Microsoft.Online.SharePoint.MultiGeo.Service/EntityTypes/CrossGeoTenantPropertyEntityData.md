@@ -12,4 +12,3 @@ GeoLocation (Edm.String) | ✅ | ❌ | ❌ | ❌
 IsDeleted (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Name (Edm.String) | ✅ | ❌ | ❌ | ❌
 Value (Edm.String) | ✅ | ❌ | ❌ | ❌
-

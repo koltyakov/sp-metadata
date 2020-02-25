@@ -13,4 +13,3 @@ email (Edm.String) | ✅ | ✅ | ❌ | ❌
 id (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 loginName (Edm.String) | ✅ | ✅ | ❌ | ❌
 name (Edm.String) | ✅ | ✅ | ❌ | ❌
-

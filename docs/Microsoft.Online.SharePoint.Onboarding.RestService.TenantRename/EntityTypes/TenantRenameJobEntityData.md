@@ -19,4 +19,3 @@ TargetDomainPrefix (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetMySiteHostUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetRootSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 UseV2TenantRename (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-

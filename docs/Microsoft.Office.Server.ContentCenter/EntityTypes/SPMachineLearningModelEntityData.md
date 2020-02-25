@@ -17,4 +17,3 @@ ContentTypeName (Edm.String) | ✅ | ❌ | ❌ | ❌
 Explanations (Edm.String) | ✅ | ❌ | ❌ | ❌
 LastTrained (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 Schemas (Edm.String) | ✅ | ❌ | ❌ | ❌
-

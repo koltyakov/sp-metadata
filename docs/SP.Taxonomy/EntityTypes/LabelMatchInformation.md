@@ -16,4 +16,3 @@ StringMatchOption (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 TermLabel (Edm.String) | ❌ | ❌ | ❌ | ✅
 TrimDeprecated (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
 TrimUnavailable (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
-

@@ -12,4 +12,3 @@ ProviderKey (Edm.String) | ✅ | ✅ | ✅ | ✅
 ScriptClass (Edm.String) | ✅ | ✅ | ✅ | ✅
 ScriptData (Edm.String) | ✅ | ✅ | ✅ | ✅
 ScriptFiles (Collection(Edm.String)) | ✅ | ✅ | ✅ | ✅
-

@@ -13,4 +13,3 @@ IsCollection (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 IsReadOnly (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 Name (Edm.String) | ✅ | ✅ | ✅ | ✅
 TypeName (Edm.String) | ✅ | ✅ | ✅ | ✅
-

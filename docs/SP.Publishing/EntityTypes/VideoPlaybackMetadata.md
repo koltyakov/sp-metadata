@@ -12,4 +12,3 @@ HLSUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 SdnPlaybackMetadata (Edm.String) | ✅ | ❌ | ❌ | ❌
 StreamingUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 Token (Edm.String) | ✅ | ❌ | ❌ | ❌
-

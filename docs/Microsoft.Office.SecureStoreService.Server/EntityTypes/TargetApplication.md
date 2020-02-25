@@ -12,4 +12,3 @@ ApplicationId (Edm.String) | ✅ | ❌ | ❌ | ❌
 ContactEmail (Edm.String) | ✅ | ❌ | ❌ | ❌
 FriendlyName (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetAppType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-

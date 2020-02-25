@@ -14,4 +14,3 @@ PortalDomain (Edm.String) | ✅ | ❌ | ❌ | ❌
 RootSiteDomain (Edm.String) | ✅ | ❌ | ❌ | ❌
 TenantAdminDomain (Edm.String) | ✅ | ❌ | ❌ | ❌
 VanityDomains (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
-

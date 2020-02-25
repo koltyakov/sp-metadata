@@ -45,4 +45,3 @@ Type (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 UseCustomAzureStorage (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UserMappingCSVFile (Edm.String) | ✅ | ❌ | ❌ | ❌
 VersionNumsPreserved (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-

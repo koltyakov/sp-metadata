@@ -16,4 +16,3 @@ ServerRelativeWebUrl (Edm.String) | ❌ | ❌ | ❌ | ✅
 SiteMapProviderName (Edm.String) | ❌ | ❌ | ❌ | ✅
 WebId (Edm.Guid) | ❌ | ❌ | ❌ | ✅
 WebTitle (Edm.String) | ❌ | ❌ | ❌ | ✅
-

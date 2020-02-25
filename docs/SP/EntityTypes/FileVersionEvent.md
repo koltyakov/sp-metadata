@@ -14,4 +14,3 @@ EventType (Edm.Int16) | ✅ | ✅ | ❌ | ❌
 SharedByUser (SP.SharedWithUser) | ✅ | ✅ | ❌ | ❌
 SharedWithUsers (SP.SharedWithUserCollection) | ✅ | ✅ | ❌ | ❌
 Time (Edm.DateTime) | ✅ | ✅ | ❌ | ❌
-

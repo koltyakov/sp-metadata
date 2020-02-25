@@ -15,4 +15,3 @@ SiteDesignVersion (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SiteID (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 StartTime (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 WebID (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-

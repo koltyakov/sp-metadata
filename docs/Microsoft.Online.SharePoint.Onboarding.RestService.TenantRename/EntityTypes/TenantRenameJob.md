@@ -15,4 +15,3 @@ QueuedSitesCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SuccessSitesCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SuspendedSitesCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 TriggeredBy (Edm.String) | ✅ | ❌ | ❌ | ❌
-

@@ -13,4 +13,3 @@ IsHiddenInUI (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 LoginName (Edm.String) | ✅ | ✅ | ✅ | ✅
 PrincipalType (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 Title (Edm.String) | ✅ | ✅ | ✅ | ✅
-

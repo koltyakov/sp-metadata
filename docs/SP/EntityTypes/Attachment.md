@@ -12,4 +12,3 @@ FileName (Edm.String) | ✅ | ✅ | ✅ | ✅
 FileNameAsPath (SP.ResourcePath) | ✅ | ✅ | ❌ | ❌
 ServerRelativePath (SP.ResourcePath) | ✅ | ✅ | ❌ | ❌
 ServerRelativeUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
-

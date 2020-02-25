@@ -16,4 +16,3 @@ TargetCompanyId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 TargetInstanceId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 TargetSiteSubscriptionId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 TargetSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
-

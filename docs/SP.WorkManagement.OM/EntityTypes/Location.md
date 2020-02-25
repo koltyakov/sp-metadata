@@ -15,4 +15,3 @@ Name (Edm.String) | ✅ | ✅ | ✅ | ✅
 ParentId (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 RootProviderKey (Edm.String) | ✅ | ✅ | ✅ | ✅
 Url (Edm.String) | ✅ | ✅ | ✅ | ✅
-

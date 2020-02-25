@@ -16,4 +16,3 @@ PackageName (Edm.String) | ✅ | ❌ | ❌ | ❌
 Resource (Edm.String) | ✅ | ❌ | ❌ | ❌
 ResourceId (Edm.String) | ✅ | ❌ | ❌ | ❌
 Scope (Edm.String) | ✅ | ❌ | ❌ | ❌
-

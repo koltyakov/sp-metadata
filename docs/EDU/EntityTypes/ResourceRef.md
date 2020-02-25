@@ -2,7 +2,6 @@
 
 ## Entity Type: ResourceRef
 
-
 ### Navigation Properties
 
 **Availability matrix**

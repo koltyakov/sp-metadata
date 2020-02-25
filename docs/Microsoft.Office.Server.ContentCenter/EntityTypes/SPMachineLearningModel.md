@@ -20,4 +20,3 @@ ListID (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 ObjectId (Edm.String) | ✅ | ❌ | ❌ | ❌
 Schemas (Edm.String) | ✅ | ❌ | ❌ | ❌
 UniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-

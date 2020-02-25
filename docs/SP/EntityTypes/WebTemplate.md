@@ -18,4 +18,3 @@ IsSubWebOnly (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 Lcid (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 Name (Edm.String) | ✅ | ✅ | ✅ | ✅
 Title (Edm.String) | ✅ | ✅ | ✅ | ✅
-

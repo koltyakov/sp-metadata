@@ -12,4 +12,3 @@ FriendlyUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 SiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 SiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 Status (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-

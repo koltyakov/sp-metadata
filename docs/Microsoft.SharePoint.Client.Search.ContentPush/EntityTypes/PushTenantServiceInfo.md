@@ -14,4 +14,3 @@ ServiceProperties (Collection(SP.KeyValue)) | ❌ | ❌ | ❌ | ✅
 TenantId (Edm.String) | ❌ | ❌ | ❌ | ✅
 ValidContentEncryptionCertificates (Collection(Edm.Binary)) | ❌ | ❌ | ❌ | ✅
 ValidUntil (Edm.DateTime) | ❌ | ❌ | ❌ | ✅
-

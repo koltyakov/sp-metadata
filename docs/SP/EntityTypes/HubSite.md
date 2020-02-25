@@ -21,4 +21,3 @@ SiteUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 Targets (Edm.String) | ✅ | ✅ | ❌ | ❌
 TenantInstanceId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 Title (Edm.String) | ✅ | ✅ | ❌ | ❌
-

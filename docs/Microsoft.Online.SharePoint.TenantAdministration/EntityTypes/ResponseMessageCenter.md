@@ -14,4 +14,3 @@ Id (Edm.String) | ✅ | ❌ | ❌ | ❌
 MessageType (Edm.String) | ✅ | ❌ | ❌ | ❌
 StartTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ❌ | ❌ | ❌
-

@@ -14,4 +14,3 @@ PermissionId (Edm.String) | ✅ | ✅ | ✅ | ❌
 PermissionKind (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 PermissionName (Edm.String) | ✅ | ✅ | ✅ | ❌
 PermissionRoleType (Edm.Int32) | ✅ | ✅ | ❌ | ❌
-

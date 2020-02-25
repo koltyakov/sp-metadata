@@ -27,4 +27,3 @@ PlannedWork (Edm.String) | ✅ | ✅ | ✅ | ❌
 PlannedWorkMilliseconds (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 PlannedWorkTimeSpan (Edm.Time) | ✅ | ✅ | ✅ | ❌
 Start (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
-

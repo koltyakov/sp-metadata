@@ -30,4 +30,3 @@ SiteCreationDefaultStorageQuota (Microsoft.Online.SharePoint.TenantAdministratio
 SiteCreationNewUX (Microsoft.Online.SharePoint.TenantAdministration.SiteCreationNewUX) | ✅ | ❌ | ❌ | ❌
 SmtpServer (Microsoft.Online.SharePoint.TenantAdministration.SmtpServer) | ✅ | ❌ | ❌ | ❌
 TenantDefaultTimeZoneId (Microsoft.Online.SharePoint.TenantAdministration.TenantDefaultTimeZoneId) | ✅ | ❌ | ❌ | ❌
-

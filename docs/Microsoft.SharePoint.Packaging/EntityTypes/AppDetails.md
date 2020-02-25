@@ -13,4 +13,3 @@ PrivacyUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
 Publisher (Edm.String) | ✅ | ✅ | ✅ | ❌
 ShortDescription (Edm.String) | ✅ | ✅ | ✅ | ❌
 SupportUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
-

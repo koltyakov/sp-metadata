@@ -12,4 +12,3 @@ IsRead (Edm.Boolean) | ❌ | ❌ | ✅ | ❌
 Preview (Edm.String) | ❌ | ❌ | ✅ | ❌
 Sent (Edm.DateTime) | ❌ | ❌ | ✅ | ❌
 Subject (Edm.String) | ❌ | ❌ | ✅ | ❌
-

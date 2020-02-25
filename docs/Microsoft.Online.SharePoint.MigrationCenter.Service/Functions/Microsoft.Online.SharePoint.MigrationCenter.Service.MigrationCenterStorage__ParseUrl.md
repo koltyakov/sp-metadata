@@ -10,7 +10,7 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-destinationUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
-retrieveAllLists (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-retrieveFoldersForAllLists (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-forceMySiteDefaultList (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+destinationUrl (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
+retrieveAllLists (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
+retrieveFoldersForAllLists (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
+forceMySiteDefaultList (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌

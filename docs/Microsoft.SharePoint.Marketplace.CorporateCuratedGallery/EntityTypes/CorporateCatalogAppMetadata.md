@@ -27,4 +27,3 @@ ShortDescription (Edm.String) | ✅ | ❌ | ❌ | ❌
 SkipDeploymentFeature (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ThumbnailUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ✅ | ❌ | ❌
-

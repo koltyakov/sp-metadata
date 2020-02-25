@@ -20,4 +20,3 @@ ListTemplateTypeKind (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 Name (Edm.String) | ✅ | ✅ | ✅ | ✅
 OnQuickLaunch (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 Unique (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
-

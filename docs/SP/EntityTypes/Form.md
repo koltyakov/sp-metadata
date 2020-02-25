@@ -12,4 +12,3 @@ FormType (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 Id (Edm.Guid) | ✅ | ✅ | ✅ | ✅
 ResourcePath (SP.ResourcePath) | ✅ | ✅ | ❌ | ❌
 ServerRelativeUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
-

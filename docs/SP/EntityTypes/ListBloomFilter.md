@@ -16,4 +16,3 @@ ItemProcessedCount (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 K (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 LastListItemIdProcessed (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 MaxItemCount (Edm.Int32) | ✅ | ✅ | ❌ | ❌
-

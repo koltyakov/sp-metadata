@@ -12,4 +12,3 @@ AllDocumentsLink (Edm.String) | ❌ | ❌ | ❌ | ✅
 AllDocumentsLinkTarget (Edm.String) | ❌ | ❌ | ❌ | ✅
 AllSitesLink (Edm.String) | ❌ | ❌ | ❌ | ✅
 AllSitesLinkTarget (Edm.String) | ❌ | ❌ | ❌ | ✅
-

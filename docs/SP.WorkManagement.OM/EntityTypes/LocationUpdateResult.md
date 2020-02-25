@@ -13,4 +13,3 @@ AddedCount (Edm.Int64) | ✅ | ✅ | ✅ | ✅
 RemovedCount (Edm.Int64) | ✅ | ✅ | ✅ | ✅
 RootLocationId (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 UpdatedCount (Edm.Int64) | ✅ | ✅ | ✅ | ✅
-

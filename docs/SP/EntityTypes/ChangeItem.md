@@ -27,4 +27,3 @@ SharedWithUsers (SP.SharedWithUserCollection) | ✅ | ✅ | ❌ | ❌
 Title (Edm.String) | ✅ | ✅ | ❌ | ❌
 UniqueId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 WebId (Edm.Guid) | ✅ | ✅ | ✅ | ✅
-

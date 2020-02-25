@@ -12,4 +12,3 @@ ContainsConfidentialInfo (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 ContainsConfidentialInfoLearnMoreUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
 ExternalSharingTipsEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 ExternalSharingTipsLearnMoreUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
-

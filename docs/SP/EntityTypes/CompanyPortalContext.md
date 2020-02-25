@@ -31,4 +31,3 @@ WebLogoUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 WebServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 WebTitle (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
-

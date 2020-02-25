@@ -14,4 +14,3 @@ PrincipalAccountType (Edm.String) | ✅ | ✅ | ✅ | ❌
 PrincipalSource (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 QuerySettings (SP.UI.ApplicationPages.PeoplePickerQuerySettings) | ✅ | ✅ | ❌ | ❌
 VisibleSuggestions (Edm.Int32) | ✅ | ✅ | ✅ | ❌
-

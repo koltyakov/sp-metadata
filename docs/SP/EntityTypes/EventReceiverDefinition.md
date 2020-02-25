@@ -16,4 +16,3 @@ ReceiverName (Edm.String) | ✅ | ✅ | ✅ | ✅
 ReceiverUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
 SequenceNumber (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 Synchronization (Edm.Int32) | ✅ | ✅ | ✅ | ✅
-

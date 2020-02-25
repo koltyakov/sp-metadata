@@ -19,4 +19,3 @@ LoginName (Edm.String) | ✅ | ❌ | ❌ | ❌
 Name (Edm.String) | ✅ | ❌ | ❌ | ❌
 PictureUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 SipAddress (Edm.String) | ✅ | ❌ | ❌ | ❌
-

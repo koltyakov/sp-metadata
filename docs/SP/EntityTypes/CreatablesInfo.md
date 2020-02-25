@@ -12,4 +12,3 @@ CanCreateFolders (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 CanCreateItems (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 CanUploadFiles (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 CreatablesCollection (SP.CreatableItemInfoCollection) | ✅ | ✅ | ✅ | ❌
-

@@ -74,4 +74,3 @@ Url (Edm.String) | ✅ | ❌ | ❌ | ❌
 UserCodeMaximumLevel (Edm.Double) | ✅ | ❌ | ❌ | ❌
 UserCodeWarningLevel (Edm.Double) | ✅ | ❌ | ❌ | ❌
 WebsCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-

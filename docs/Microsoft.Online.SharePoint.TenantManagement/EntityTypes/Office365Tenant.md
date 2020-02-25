@@ -96,4 +96,3 @@ UseFindPeopleInPeoplePicker (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UsePersistentCookiesForExplorerView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UserVoiceForFeedbackEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 WhoCanShareAllowList (Edm.String) | ✅ | ❌ | ❌ | ❌
-

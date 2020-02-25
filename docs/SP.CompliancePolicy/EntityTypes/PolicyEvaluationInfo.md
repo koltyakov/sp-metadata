@@ -12,4 +12,3 @@ ApplicablePolicies (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 DlpAccessScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MatchedRules (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 OverriddenRules (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
-

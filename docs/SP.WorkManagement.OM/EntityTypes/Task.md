@@ -22,4 +22,3 @@ Name (Edm.String) | ✅ | ✅ | ✅ | ✅
 PinAge (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 SerializedCustomDataForClient (Edm.String) | ✅ | ✅ | ✅ | ✅
 StartDate (Edm.DateTime) | ✅ | ✅ | ✅ | ✅
-

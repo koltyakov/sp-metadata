@@ -22,4 +22,3 @@ RequiresInitiationForm (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 RestrictToScope (Edm.String) | ✅ | ✅ | ✅ | ✅
 RestrictToType (Edm.String) | ✅ | ✅ | ✅ | ✅
 Xaml (Edm.String) | ✅ | ✅ | ✅ | ✅
-

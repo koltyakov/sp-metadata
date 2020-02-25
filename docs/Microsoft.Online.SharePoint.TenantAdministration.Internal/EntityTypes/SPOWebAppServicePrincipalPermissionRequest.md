@@ -17,4 +17,3 @@ Resource (Edm.String) | ✅ | ❌ | ❌ | ❌
 ResourceId (Edm.String) | ✅ | ❌ | ❌ | ❌
 Scope (Edm.String) | ✅ | ❌ | ❌ | ❌
 TimeRequested (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
-

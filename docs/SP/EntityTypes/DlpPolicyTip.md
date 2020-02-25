@@ -15,4 +15,3 @@ LastProcessedTime (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 MatchedConditionDescriptions (Collection(Edm.String)) | ✅ | ✅ | ✅ | ❌
 OverrideOptions (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 TwoLetterISOLanguageName (Edm.String) | ✅ | ✅ | ❌ | ❌
-

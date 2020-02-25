@@ -12,4 +12,3 @@ AccountName (Edm.String) | ✅ | ❌ | ❌ | ❌
 Description (Edm.String) | ✅ | ❌ | ❌ | ❌
 Password (Edm.String) | ✅ | ❌ | ❌ | ❌
 Type (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-

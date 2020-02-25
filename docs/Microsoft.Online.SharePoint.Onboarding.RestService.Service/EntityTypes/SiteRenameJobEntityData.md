@@ -13,4 +13,3 @@ SkipGestures (Edm.String) | ✅ | ❌ | ❌ | ❌
 SourceSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetSiteTitle (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
-

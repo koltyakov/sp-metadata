@@ -13,4 +13,3 @@ GroupByProjects (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 HasShownMarkAsImportantCallout (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 HasShownTaskListTooLongNotification (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 QuickLaunchLandingPage (Edm.String) | ✅ | ✅ | ✅ | ✅
-

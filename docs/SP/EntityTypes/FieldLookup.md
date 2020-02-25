@@ -18,4 +18,3 @@ LookupWebId (Edm.Guid) | ✅ | ✅ | ✅ | ✅
 PrimaryFieldId (Edm.String) | ✅ | ✅ | ✅ | ✅
 RelationshipDeleteBehavior (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 UnlimitedLengthInDocumentLibrary (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
-

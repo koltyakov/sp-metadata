@@ -13,4 +13,3 @@ GeoLocation (Edm.String) | ✅ | ❌ | ❌ | ❌
 LoginName (Edm.String) | ✅ | ❌ | ❌ | ❌
 MemberType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ObjectId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-
