@@ -87,6 +87,8 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [LanguageCollection](./EntityTypes/LanguageCollection.md) | ✅ | ✅ | ❌ | ❌
 [List](./EntityTypes/List.md) | ✅ | ✅ | ✅ | ✅
 [ListBloomFilter](./EntityTypes/ListBloomFilter.md) | ✅ | ✅ | ❌ | ❌
+[ListHomeItem](./EntityTypes/ListHomeItem.md) | ✅ | ❌ | ❌ | ❌
+[ListHomeItemCollection](./EntityTypes/ListHomeItemCollection.md) | ✅ | ❌ | ❌ | ❌
 [ListItem](./EntityTypes/ListItem.md) | ✅ | ✅ | ✅ | ✅
 [ListItemVersion](./EntityTypes/ListItemVersion.md) | ✅ | ✅ | ❌ | ❌
 [ListTemplate](./EntityTypes/ListTemplate.md) | ✅ | ✅ | ✅ | ✅

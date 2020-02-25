@@ -193,6 +193,8 @@ LikesAPIs | ✅ | ✅ | ❌ | ❌
 LimitedWebPartManagers | ✅ | ✅ | ✅ | ✅
 Links | ✅ | ✅ | ❌ | ✅
 ListBloomFilters | ✅ | ✅ | ❌ | ❌
+ListHomeItemCollections | ✅ | ❌ | ❌ | ❌
+ListHomeItems | ✅ | ❌ | ❌ | ❌
 ListItemVersions | ✅ | ✅ | ❌ | ❌
 ListItems | ✅ | ✅ | ✅ | ✅
 ListTemplates | ✅ | ✅ | ✅ | ✅
@@ -470,6 +472,7 @@ StorageMetricss | ✅ | ✅ | ✅ | ❌
 StorageQuotaEntityDatas | ✅ | ❌ | ❌ | ❌
 StorageQuotas | ✅ | ❌ | ❌ | ❌
 StringCollections | ✅ | ✅ | ✅ | ✅
+StructuralNavigationCaches | ✅ | ❌ | ❌ | ❌
 Subscriptions | ✅ | ✅ | ✅ | ✅
 Subscriptions1 | ✅ | ✅ | ❌ | ❌
 SubtitleFiles | ✅ | ❌ | ❌ | ❌
@@ -523,6 +526,7 @@ TypeDescriptors | ✅ | ✅ | ✅ | ✅
 TypeInformations | ✅ | ✅ | ✅ | ✅
 UnifiedGroups | ✅ | ❌ | ❌ | ❌
 UploadStatuss | ✅ | ✅ | ❌ | ❌
+UrlParseResults | ✅ | ❌ | ❌ | ❌
 UsageAnalyticss | ❌ | ❌ | ❌ | ✅
 UserActionAPIs | ✅ | ✅ | ❌ | ❌
 UserCustomActions | ✅ | ✅ | ✅ | ✅

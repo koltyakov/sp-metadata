@@ -14,6 +14,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ActivityIdentity](./ComplexTypes/ActivityIdentity.md) | ✅ | ✅ | ❌ | ❌
 [ActivityIdentityItem](./ComplexTypes/ActivityIdentityItem.md) | ✅ | ❌ | ❌ | ❌
 [ActivityTimeFacet](./ComplexTypes/ActivityTimeFacet.md) | ✅ | ✅ | ❌ | ❌
+[AddToOneDriveFacet](./ComplexTypes/AddToOneDriveFacet.md) | ✅ | ❌ | ❌ | ❌
 [CheckinFacet](./ComplexTypes/CheckinFacet.md) | ✅ | ✅ | ❌ | ❌
 [CheckoutFacet](./ComplexTypes/CheckoutFacet.md) | ✅ | ✅ | ❌ | ❌
 [CoalescedFacet](./ComplexTypes/CoalescedFacet.md) | ✅ | ✅ | ❌ | ❌
