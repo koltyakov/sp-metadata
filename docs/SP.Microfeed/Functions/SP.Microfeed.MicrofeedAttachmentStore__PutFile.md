@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: PutFile
 
-## Function Import: PutFile
+> Namespace: SP.Microfeed
 
 - Entity type: SP.Microfeed.MicrofeedAttachmentStore
 - Is composable: false

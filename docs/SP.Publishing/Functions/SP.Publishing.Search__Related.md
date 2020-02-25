@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: Related
 
-## Function Import: Related
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.Search
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery
+# Function Import: Add
 
-## Function Import: Add
+> Namespace: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery
 
 - Entity type: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor
 - Is composable: false

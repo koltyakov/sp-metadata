@@ -1,6 +1,6 @@
-# Namespace: SP.Directory.Provider
+# Function Import: UpdateCache
 
-## Function Import: UpdateCache
+> Namespace: SP.Directory.Provider
 
 - Entity type: SP.Directory.Provider.SharePointDirectoryProvider
 - Is composable: false

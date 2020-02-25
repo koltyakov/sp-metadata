@@ -1,6 +1,6 @@
-# Namespace: SP.Social
+# Function Import: UnlikePost
 
-## Function Import: UnlikePost
+> Namespace: SP.Social
 
 - Entity type: SP.Social.SocialFeedManager
 - Is composable: false

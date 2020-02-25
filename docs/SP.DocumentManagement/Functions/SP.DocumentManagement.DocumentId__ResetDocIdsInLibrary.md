@@ -1,6 +1,6 @@
-# Namespace: SP.DocumentManagement
+# Function Import: ResetDocIdsInLibrary
 
-## Function Import: ResetDocIdsInLibrary
+> Namespace: SP.DocumentManagement
 
 - Entity type: SP.DocumentManagement.DocumentId
 - Is composable: false

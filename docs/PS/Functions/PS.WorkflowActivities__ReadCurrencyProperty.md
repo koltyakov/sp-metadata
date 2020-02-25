@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: ReadCurrencyProperty
 
-## Function Import: ReadCurrencyProperty
+> Namespace: PS
 
 - Entity type: PS.WorkflowActivities
 - Is composable: false

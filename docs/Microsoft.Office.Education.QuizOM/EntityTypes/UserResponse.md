@@ -1,10 +1,8 @@
-# Namespace: Microsoft.Office.Education.QuizOM
+# Entity Type: UserResponse
 
-## Entity Type: UserResponse
+> Namespace: Microsoft.Office.Education.QuizOM
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -15,8 +13,6 @@ ResponseDate (Edm.DateTime) | ❌ | ❌ | ❌ | ✅
 Responses (Collection(SP.KeyValue)) | ❌ | ❌ | ❌ | ✅
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

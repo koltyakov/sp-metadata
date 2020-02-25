@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: UnPublish
 
-## Function Import: UnPublish
+> Namespace: SP
 
 - Entity type: SP.File
 - Is composable: false

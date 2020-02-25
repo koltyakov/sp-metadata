@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: SP_UserProfiles_PeopleManager_IsFollowing
 
-## Function Import: SP_UserProfiles_PeopleManager_IsFollowing
+> Namespace: SP.UserProfiles
 
 - Is composable: false
 - Is bindable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.Workflow
+# Function Import: DeleteWithParameters
 
-## Function Import: DeleteWithParameters
+> Namespace: SP.Workflow
 
 - Entity type: SP.Workflow.SPWorkflowTask
 - Is composable: false

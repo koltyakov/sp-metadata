@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Portal.UserProfiles
+# Function Import: Microsoft_SharePoint_Portal_UserProfiles_MySiteDocumentMoveUtility_FirstRunDocumentMove
 
-## Function Import: Microsoft_SharePoint_Portal_UserProfiles_MySiteDocumentMoveUtility_FirstRunDocumentMove
+> Namespace: Microsoft.SharePoint.Portal.UserProfiles
 
 - Is composable: false
 - Is bindable: false

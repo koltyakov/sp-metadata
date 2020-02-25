@@ -1,10 +1,8 @@
-# Namespace: SP.WorkflowServices
+# Entity Type: WorkflowServicesManager
 
-## Entity Type: WorkflowServicesManager
+> Namespace: SP.WorkflowServices
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -14,8 +12,6 @@ ScopePath (Edm.String) | ✅ | ✅ | ✅ | ✅
 ServiceHealthStatus (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

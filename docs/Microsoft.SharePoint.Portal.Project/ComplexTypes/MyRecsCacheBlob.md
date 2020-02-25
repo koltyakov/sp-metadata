@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Portal.Project
+# Complex Type: MyRecsCacheBlob
 
-## Complex Type: MyRecsCacheBlob
+> Namespace: Microsoft.SharePoint.Portal.Project
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

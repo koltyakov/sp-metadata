@@ -1,10 +1,8 @@
-# Namespace: Microsoft.Office.Server.ContentCenter
+# Entity Type: SPMachineLearningSample
 
-## Entity Type: SPMachineLearningSample
+> Namespace: Microsoft.Office.Server.ContentCenter
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

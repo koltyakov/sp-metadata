@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: SavePage
 
-## Function Import: SavePage
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.TopicSitePage
 - Is composable: false

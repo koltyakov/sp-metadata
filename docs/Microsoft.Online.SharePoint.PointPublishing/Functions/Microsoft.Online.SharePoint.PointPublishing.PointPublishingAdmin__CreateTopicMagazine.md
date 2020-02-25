@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Online.SharePoint.PointPublishing
+# Function Import: CreateTopicMagazine
 
-## Function Import: CreateTopicMagazine
+> Namespace: Microsoft.Online.SharePoint.PointPublishing
 
 - Entity type: Microsoft.Online.SharePoint.PointPublishing.PointPublishingAdmin
 - Is composable: false

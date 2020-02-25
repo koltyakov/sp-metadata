@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: StartWorkflowOnListItemBySubscriptionId
 
-## Function Import: StartWorkflowOnListItemBySubscriptionId
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowInstanceService
 - Is composable: false

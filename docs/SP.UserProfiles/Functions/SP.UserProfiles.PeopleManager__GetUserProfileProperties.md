@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: GetUserProfileProperties
 
-## Function Import: GetUserProfileProperties
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.PeopleManager
 - Is composable: false

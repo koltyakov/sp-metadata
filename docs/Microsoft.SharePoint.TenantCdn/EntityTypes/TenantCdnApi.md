@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.TenantCdn
+# Entity Type: TenantCdnApi
 
-## Entity Type: TenantCdnApi
+> Namespace: Microsoft.SharePoint.TenantCdn
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

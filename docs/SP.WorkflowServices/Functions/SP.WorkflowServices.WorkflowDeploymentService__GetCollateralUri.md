@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: GetCollateralUri
 
-## Function Import: GetCollateralUri
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowDeploymentService
 - Is composable: false

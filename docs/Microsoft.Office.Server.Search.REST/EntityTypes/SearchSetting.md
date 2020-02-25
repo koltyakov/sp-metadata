@@ -1,10 +1,8 @@
-# Namespace: Microsoft.Office.Server.Search.REST
+# Entity Type: SearchSetting
 
-## Entity Type: SearchSetting
+> Namespace: Microsoft.Office.Server.Search.REST
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_AppPrincipalCredential_CreateFromKeyGroup
 
-## Function Import: SP_AppPrincipalCredential_CreateFromKeyGroup
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

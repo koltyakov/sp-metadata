@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: UpdateCreatePDP
 
-## Function Import: UpdateCreatePDP
+> Namespace: PS
 
 - Entity type: PS.EnterpriseProjectType
 - Is composable: false

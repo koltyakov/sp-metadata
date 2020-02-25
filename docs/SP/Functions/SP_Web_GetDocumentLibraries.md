@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_Web_GetDocumentLibraries
 
-## Function Import: SP_Web_GetDocumentLibraries
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

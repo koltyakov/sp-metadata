@@ -1,10 +1,8 @@
-# Namespace: SP.UserProfiles
+# Complex Type: PersonalCacheItem
 
-## Complex Type: PersonalCacheItem
+> Namespace: SP.UserProfiles
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

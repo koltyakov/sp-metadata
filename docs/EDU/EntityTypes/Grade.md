@@ -1,10 +1,8 @@
-# Namespace: EDU
+# Entity Type: Grade
 
-## Entity Type: Grade
+> Namespace: EDU
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

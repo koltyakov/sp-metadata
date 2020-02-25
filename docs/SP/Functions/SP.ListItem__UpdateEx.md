@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: UpdateEx
 
-## Function Import: UpdateEx
+> Namespace: SP
 
 - Entity type: SP.ListItem
 - Is composable: false

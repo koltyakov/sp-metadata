@@ -1,10 +1,8 @@
-# Namespace: MS.FileServices
+# Entity Type: FileSystemItem
 
-## Entity Type: FileSystemItem
+> Namespace: MS.FileServices
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

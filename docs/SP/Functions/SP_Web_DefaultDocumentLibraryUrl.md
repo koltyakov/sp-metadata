@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_Web_DefaultDocumentLibraryUrl
 
-## Function Import: SP_Web_DefaultDocumentLibraryUrl
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

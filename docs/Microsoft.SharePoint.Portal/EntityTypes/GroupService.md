@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Portal
+# Entity Type: GroupService
 
-## Entity Type: GroupService
+> Namespace: Microsoft.SharePoint.Portal
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetChanges
 
-## Function Import: GetChanges
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

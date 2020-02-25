@@ -1,10 +1,8 @@
-# Namespace: SP.Publishing
+# Complex Type: TaxonomicProperties
 
-## Complex Type: TaxonomicProperties
+> Namespace: SP.Publishing
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: BreakRoleInheritance
 
-## Function Import: BreakRoleInheritance
+> Namespace: SP
 
 - Entity type: SP.ListItem
 - Is composable: false

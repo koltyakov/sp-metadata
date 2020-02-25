@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.OrgNewsSite
+# Complex Type: OrgNewsSiteInfo
 
-## Complex Type: OrgNewsSiteInfo
+> Namespace: Microsoft.SharePoint.OrgNewsSite
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

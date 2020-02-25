@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: SetPeopleInMedia
 
-## Function Import: SetPeopleInMedia
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.VideoItem
 - Is composable: false

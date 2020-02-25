@@ -1,6 +1,6 @@
-# Namespace: SP.MetadataNavigation
+# Function Import: SP_MetadataNavigation_MetadataNavigationSettings_GetConfiguredSettings
 
-## Function Import: SP_MetadataNavigation_MetadataNavigationSettings_GetConfiguredSettings
+> Namespace: SP.MetadataNavigation
 
 - Is composable: false
 - Is bindable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.Social
+# Function Import: LockThread
 
-## Function Import: LockThread
+> Namespace: SP.Social
 
 - Entity type: SP.Social.SocialFeedManager
 - Is composable: false

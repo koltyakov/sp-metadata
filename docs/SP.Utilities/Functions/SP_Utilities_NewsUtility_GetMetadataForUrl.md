@@ -1,6 +1,6 @@
-# Namespace: SP.Utilities
+# Function Import: SP_Utilities_NewsUtility_GetMetadataForUrl
 
-## Function Import: SP_Utilities_NewsUtility_GetMetadataForUrl
+> Namespace: SP.Utilities
 
 - Is composable: false
 - Is bindable: false

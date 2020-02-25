@@ -1,10 +1,8 @@
-# Namespace: SP.Publishing
+# Entity Type: SitePage3D
 
-## Entity Type: SitePage3D
+> Namespace: SP.Publishing
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

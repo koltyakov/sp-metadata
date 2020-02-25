@@ -1,6 +1,6 @@
-# Namespace: Microsoft.BusinessData.Infrastructure.SecureStore
+# Function Import: Microsoft_BusinessData_Infrastructure_SecureStore_ConnectionSettings
 
-## Function Import: Microsoft_BusinessData_Infrastructure_SecureStore_ConnectionSettings
+> Namespace: Microsoft.BusinessData.Infrastructure.SecureStore
 
 - Is composable: false
 - Is bindable: false

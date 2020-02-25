@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: ResetUserOneDriveQuotaToDefault
 
-## Function Import: ResetUserOneDriveQuotaToDefault
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.PeopleManager
 - Is composable: false

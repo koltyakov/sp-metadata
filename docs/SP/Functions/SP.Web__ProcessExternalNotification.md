@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: ProcessExternalNotification
 
-## Function Import: ProcessExternalNotification
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

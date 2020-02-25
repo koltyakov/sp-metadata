@@ -1,6 +1,6 @@
-# Namespace: SP.CompliancePolicy
+# Function Import: OpenBinaryStreamForOriginalItem
 
-## Function Import: OpenBinaryStreamForOriginalItem
+> Namespace: SP.CompliancePolicy
 
 - Entity type: SP.CompliancePolicy.SPPolicyStoreProxy
 - Is composable: false

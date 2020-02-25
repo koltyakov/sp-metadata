@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: CreatePersonalSiteEnqueueBulk
 
-## Function Import: CreatePersonalSiteEnqueueBulk
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.ProfileLoader
 - Is composable: false

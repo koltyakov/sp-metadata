@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SyncFlowCallbackUrl
 
-## Function Import: SyncFlowCallbackUrl
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

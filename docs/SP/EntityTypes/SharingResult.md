@@ -1,10 +1,8 @@
-# Namespace: SP
+# Entity Type: SharingResult
 
-## Entity Type: SharingResult
+> Namespace: SP
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -19,8 +17,6 @@ Url (Edm.String) | ✅ | ✅ | ✅ | ❌
 UsersAddedToGroup (Collection(SP.Sharing.UserSharingResult)) | ✅ | ✅ | ✅ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: SharePagePreviewByEmail
 
-## Function Import: SharePagePreviewByEmail
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.TopicSitePage
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: QueryChannels
 
-## Function Import: QueryChannels
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.Search
 - Is composable: false

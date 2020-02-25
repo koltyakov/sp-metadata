@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SetComplianceTagWithMetaInfo
 
-## Function Import: SetComplianceTagWithMetaInfo
+> Namespace: SP
 
 - Entity type: SP.ListItem
 - Is composable: false

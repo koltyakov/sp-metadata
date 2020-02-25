@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetListByServerRelativeUrl
 
-## Function Import: GetListByServerRelativeUrl
+> Namespace: SP
 
 - Entity type: SP.RemoteWeb
 - Is composable: false

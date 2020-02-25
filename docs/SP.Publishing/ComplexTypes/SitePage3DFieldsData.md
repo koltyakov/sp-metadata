@@ -1,10 +1,8 @@
-# Namespace: SP.Publishing
+# Complex Type: SitePage3DFieldsData
 
-## Complex Type: SitePage3DFieldsData
+> Namespace: SP.Publishing
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

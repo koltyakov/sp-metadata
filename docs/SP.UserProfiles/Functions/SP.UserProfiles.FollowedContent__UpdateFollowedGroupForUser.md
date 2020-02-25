@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: UpdateFollowedGroupForUser
 
-## Function Import: UpdateFollowedGroupForUser
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.FollowedContent
 - Is composable: false

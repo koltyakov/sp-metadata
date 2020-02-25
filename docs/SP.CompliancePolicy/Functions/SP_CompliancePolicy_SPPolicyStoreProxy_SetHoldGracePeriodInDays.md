@@ -1,6 +1,6 @@
-# Namespace: SP.CompliancePolicy
+# Function Import: SP_CompliancePolicy_SPPolicyStoreProxy_SetHoldGracePeriodInDays
 
-## Function Import: SP_CompliancePolicy_SPPolicyStoreProxy_SetHoldGracePeriodInDays
+> Namespace: SP.CompliancePolicy
 
 - Is composable: false
 - Is bindable: false

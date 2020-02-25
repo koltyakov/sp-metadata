@@ -1,6 +1,6 @@
-# Namespace: SP.Workflow
+# Function Import: SetComplianceTagWithNoHold
 
-## Function Import: SetComplianceTagWithNoHold
+> Namespace: SP.Workflow
 
 - Entity type: SP.Workflow.SPWorkflowTask
 - Is composable: false

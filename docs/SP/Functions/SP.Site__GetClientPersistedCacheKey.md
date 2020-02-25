@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetClientPersistedCacheKey
 
-## Function Import: GetClientPersistedCacheKey
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

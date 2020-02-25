@@ -1,6 +1,6 @@
-# Namespace: SP.Social
+# Function Import: Likes
 
-## Function Import: Likes
+> Namespace: SP.Social
 
 - Entity type: SP.Social.SocialRestActor
 - Is composable: false

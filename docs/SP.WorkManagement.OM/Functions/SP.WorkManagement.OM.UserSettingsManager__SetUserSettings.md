@@ -1,6 +1,6 @@
-# Namespace: SP.WorkManagement.OM
+# Function Import: SetUserSettings
 
-## Function Import: SetUserSettings
+> Namespace: SP.WorkManagement.OM
 
 - Entity type: SP.WorkManagement.OM.UserSettingsManager
 - Is composable: false

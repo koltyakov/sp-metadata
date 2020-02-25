@@ -1,6 +1,6 @@
-# Namespace: SP.WorkManagement.OM
+# Function Import: GetRefreshStatus
 
-## Function Import: GetRefreshStatus
+> Namespace: SP.WorkManagement.OM
 
 - Entity type: SP.WorkManagement.OM.LocationOrientedSortableSession
 - Is composable: false

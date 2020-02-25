@@ -1,10 +1,8 @@
-# Namespace: PS
+# Complex Type: PhaseCreationInformation
 
-## Complex Type: PhaseCreationInformation
+> Namespace: PS
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

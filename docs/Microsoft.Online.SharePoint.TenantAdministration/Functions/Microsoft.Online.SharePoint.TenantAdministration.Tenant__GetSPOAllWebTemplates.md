@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Online.SharePoint.TenantAdministration
+# Function Import: GetSPOAllWebTemplates
 
-## Function Import: GetSPOAllWebTemplates
+> Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
 - Entity type: Microsoft.Online.SharePoint.TenantAdministration.Tenant
 - Is composable: false

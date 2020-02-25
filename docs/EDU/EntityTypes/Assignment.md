@@ -1,10 +1,8 @@
-# Namespace: EDU
+# Entity Type: Assignment
 
-## Entity Type: Assignment
+> Namespace: EDU
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -20,8 +18,6 @@ StartDate (Edm.DateTime) | ❌ | ❌ | ❌ | ✅
 Status (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

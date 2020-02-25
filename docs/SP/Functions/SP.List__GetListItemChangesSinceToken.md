@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetListItemChangesSinceToken
 
-## Function Import: GetListItemChangesSinceToken
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

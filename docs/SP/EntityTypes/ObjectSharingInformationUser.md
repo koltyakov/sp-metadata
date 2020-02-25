@@ -1,10 +1,8 @@
-# Namespace: SP
+# Entity Type: ObjectSharingInformationUser
 
-## Entity Type: ObjectSharingInformationUser
+> Namespace: SP
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -26,8 +24,6 @@ Picture (Edm.String) | ✅ | ✅ | ✅ | ✅
 SipAddress (Edm.String) | ✅ | ✅ | ✅ | ✅
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

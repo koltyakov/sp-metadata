@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: OnHubSiteJoinRequestCanceled
 
-## Function Import: OnHubSiteJoinRequestCanceled
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

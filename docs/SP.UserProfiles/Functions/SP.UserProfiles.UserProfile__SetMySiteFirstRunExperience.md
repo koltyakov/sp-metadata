@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: SetMySiteFirstRunExperience
 
-## Function Import: SetMySiteFirstRunExperience
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.UserProfile
 - Is composable: false

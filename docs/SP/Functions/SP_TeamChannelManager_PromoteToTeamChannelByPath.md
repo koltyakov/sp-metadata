@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_TeamChannelManager_PromoteToTeamChannelByPath
 
-## Function Import: SP_TeamChannelManager_PromoteToTeamChannelByPath
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

@@ -1,10 +1,8 @@
-# Namespace: Microsoft.Office.Education.QuizOM
+# Complex Type: GradedQuestion
 
-## Complex Type: GradedQuestion
+> Namespace: Microsoft.Office.Education.QuizOM
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

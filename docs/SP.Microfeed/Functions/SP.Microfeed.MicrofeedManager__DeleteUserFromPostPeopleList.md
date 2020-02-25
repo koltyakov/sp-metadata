@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: DeleteUserFromPostPeopleList
 
-## Function Import: DeleteUserFromPostPeopleList
+> Namespace: SP.Microfeed
 
 - Entity type: SP.Microfeed.MicrofeedManager
 - Is composable: false

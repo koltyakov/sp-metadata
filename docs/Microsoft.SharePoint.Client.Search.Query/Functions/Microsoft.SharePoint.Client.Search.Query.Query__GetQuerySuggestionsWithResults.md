@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Client.Search.Query
+# Function Import: GetQuerySuggestionsWithResults
 
-## Function Import: GetQuerySuggestionsWithResults
+> Namespace: Microsoft.SharePoint.Client.Search.Query
 
 - Entity type: Microsoft.SharePoint.Client.Search.Query.Query
 - Is composable: false

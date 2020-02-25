@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: EnumerateSubscriptionsByListWithContentType
 
-## Function Import: EnumerateSubscriptionsByListWithContentType
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowSubscriptionService
 - Is composable: false

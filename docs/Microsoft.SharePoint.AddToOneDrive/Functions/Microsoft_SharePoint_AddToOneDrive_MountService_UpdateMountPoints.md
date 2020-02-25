@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.AddToOneDrive
+# Function Import: Microsoft_SharePoint_AddToOneDrive_MountService_UpdateMountPoints
 
-## Function Import: Microsoft_SharePoint_AddToOneDrive_MountService_UpdateMountPoints
+> Namespace: Microsoft.SharePoint.AddToOneDrive
 
 - Is composable: false
 - Is bindable: false

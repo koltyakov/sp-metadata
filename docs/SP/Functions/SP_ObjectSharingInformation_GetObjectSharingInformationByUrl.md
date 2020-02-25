@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_ObjectSharingInformation_GetObjectSharingInformationByUrl
 
-## Function Import: SP_ObjectSharingInformation_GetObjectSharingInformationByUrl
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

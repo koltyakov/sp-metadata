@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: RemoveViewField
 
-## Function Import: RemoveViewField
+> Namespace: SP
 
 - Entity type: SP.ViewFieldCollection
 - Is composable: false

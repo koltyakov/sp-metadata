@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Portal
+# Function Import: HideTeamifyPrompt
 
-## Function Import: HideTeamifyPrompt
+> Namespace: Microsoft.SharePoint.Portal
 
 - Entity type: Microsoft.SharePoint.Portal.GroupSiteManager
 - Is composable: false

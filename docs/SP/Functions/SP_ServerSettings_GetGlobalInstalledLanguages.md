@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_ServerSettings_GetGlobalInstalledLanguages
 
-## Function Import: SP_ServerSettings_GetGlobalInstalledLanguages
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

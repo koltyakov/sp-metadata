@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Publishing.RestOnly
+# Entity Type: StringCustomProperty
 
-## Entity Type: StringCustomProperty
+> Namespace: Microsoft.SharePoint.Publishing.RestOnly
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

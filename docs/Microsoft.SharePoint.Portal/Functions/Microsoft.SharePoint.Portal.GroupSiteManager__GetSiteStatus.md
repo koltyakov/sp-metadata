@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Portal
+# Function Import: GetSiteStatus
 
-## Function Import: GetSiteStatus
+> Namespace: Microsoft.SharePoint.Portal
 
 - Entity type: Microsoft.SharePoint.Portal.GroupSiteManager
 - Is composable: false

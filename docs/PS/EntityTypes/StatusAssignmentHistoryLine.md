@@ -1,10 +1,8 @@
-# Namespace: PS
+# Entity Type: StatusAssignmentHistoryLine
 
-## Entity Type: StatusAssignmentHistoryLine
+> Namespace: PS
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -21,8 +19,6 @@ SubmitterId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 UpdateType (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

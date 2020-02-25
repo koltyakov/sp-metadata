@@ -1,6 +1,6 @@
-# Namespace: SP.Workflow
+# Function Import: UpdateEx
 
-## Function Import: UpdateEx
+> Namespace: SP.Workflow
 
 - Entity type: SP.Workflow.SPWorkflowTask
 - Is composable: false

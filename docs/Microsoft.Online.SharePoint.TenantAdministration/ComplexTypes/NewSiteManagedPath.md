@@ -1,10 +1,8 @@
-# Namespace: Microsoft.Online.SharePoint.TenantAdministration
+# Complex Type: NewSiteManagedPath
 
-## Complex Type: NewSiteManagedPath
+> Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

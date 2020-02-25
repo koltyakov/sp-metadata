@@ -1,6 +1,6 @@
-# Namespace: SP.BusinessData.Infrastructure
+# Function Import: SP_BusinessData_Infrastructure_ExternalSubscriptionStore
 
-## Function Import: SP_BusinessData_Infrastructure_ExternalSubscriptionStore
+> Namespace: SP.BusinessData.Infrastructure
 
 - Is composable: false
 - Is bindable: false

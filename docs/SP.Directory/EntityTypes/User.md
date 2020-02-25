@@ -1,10 +1,8 @@
-# Namespace: SP.Directory
+# Entity Type: User
 
-## Entity Type: User
+> Namespace: SP.Directory
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -72,8 +70,6 @@ tenantInstanceId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 userType (Edm.String) | ✅ | ✅ | ❌ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

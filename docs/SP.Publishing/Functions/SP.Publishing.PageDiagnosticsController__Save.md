@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: Save
 
-## Function Import: Save
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.PageDiagnosticsController
 - Is composable: false

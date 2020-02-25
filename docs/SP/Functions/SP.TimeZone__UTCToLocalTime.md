@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: UTCToLocalTime
 
-## Function Import: UTCToLocalTime
+> Namespace: SP
 
 - Entity type: SP.TimeZone
 - Is composable: false

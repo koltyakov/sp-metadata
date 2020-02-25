@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: LookupAppPrincipal
 
-## Function Import: LookupAppPrincipal
+> Namespace: SP
 
 - Entity type: SP.AppPrincipalManager
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.Social
+# Function Import: MentionFeed
 
-## Function Import: MentionFeed
+> Namespace: SP.Social
 
 - Entity type: SP.Social.SocialRestActor
 - Is composable: false

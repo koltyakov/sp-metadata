@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetSubwebsFilteredForCurrentUser
 
-## Function Import: GetSubwebsFilteredForCurrentUser
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

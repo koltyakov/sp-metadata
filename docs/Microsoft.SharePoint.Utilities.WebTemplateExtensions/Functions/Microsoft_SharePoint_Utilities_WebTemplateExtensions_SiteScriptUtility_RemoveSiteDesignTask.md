@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Utilities.WebTemplateExtensions
+# Function Import: Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoveSiteDesignTask
 
-## Function Import: Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoveSiteDesignTask
+> Namespace: Microsoft.SharePoint.Utilities.WebTemplateExtensions
 
 - Is composable: false
 - Is bindable: false

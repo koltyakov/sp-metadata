@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Yammer
+# Function Import: Microsoft_SharePoint_Yammer_WacApi_GetWacToken
 
-## Function Import: Microsoft_SharePoint_Yammer_WacApi_GetWacToken
+> Namespace: Microsoft.SharePoint.Yammer
 
 - Is composable: false
 - Is bindable: false

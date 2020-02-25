@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Likes
+# Entity Type: userEntity
 
-## Entity Type: userEntity
+> Namespace: Microsoft.SharePoint.Likes
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

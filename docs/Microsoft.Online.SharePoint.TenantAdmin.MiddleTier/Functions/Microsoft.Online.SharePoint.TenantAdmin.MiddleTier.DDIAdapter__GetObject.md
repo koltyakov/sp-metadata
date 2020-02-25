@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Online.SharePoint.TenantAdmin.MiddleTier
+# Function Import: GetObject
 
-## Function Import: GetObject
+> Namespace: Microsoft.Online.SharePoint.TenantAdmin.MiddleTier
 
 - Entity type: Microsoft.Online.SharePoint.TenantAdmin.MiddleTier.DDIAdapter
 - Is composable: false

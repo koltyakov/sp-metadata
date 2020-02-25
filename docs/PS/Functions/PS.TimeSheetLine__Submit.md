@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: Submit
 
-## Function Import: Submit
+> Namespace: PS
 
 - Entity type: PS.TimeSheetLine
 - Is composable: false

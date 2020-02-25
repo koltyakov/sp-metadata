@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetThemeFontByName
 
-## Function Import: GetThemeFontByName
+> Namespace: SP
 
 - Entity type: SP.ThemeInfo
 - Is composable: false

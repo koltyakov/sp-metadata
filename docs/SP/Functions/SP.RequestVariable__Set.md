@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: Set
 
-## Function Import: Set
+> Namespace: SP
 
 - Entity type: SP.RequestVariable
 - Is composable: false

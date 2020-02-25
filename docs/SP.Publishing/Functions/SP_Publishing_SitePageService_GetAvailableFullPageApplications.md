@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: SP_Publishing_SitePageService_GetAvailableFullPageApplications
 
-## Function Import: SP_Publishing_SitePageService_GetAvailableFullPageApplications
+> Namespace: SP.Publishing
 
 - Is composable: false
 - Is bindable: false

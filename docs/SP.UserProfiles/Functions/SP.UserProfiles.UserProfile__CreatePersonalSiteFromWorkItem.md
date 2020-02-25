@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: CreatePersonalSiteFromWorkItem
 
-## Function Import: CreatePersonalSiteFromWorkItem
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.UserProfile
 - Is composable: false

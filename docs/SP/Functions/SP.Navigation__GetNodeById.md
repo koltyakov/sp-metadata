@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetNodeById
 
-## Function Import: GetNodeById
+> Namespace: SP
 
 - Entity type: SP.Navigation
 - Is composable: false

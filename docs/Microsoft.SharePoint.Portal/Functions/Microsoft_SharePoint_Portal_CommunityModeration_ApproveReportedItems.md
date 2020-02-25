@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Portal
+# Function Import: Microsoft_SharePoint_Portal_CommunityModeration_ApproveReportedItems
 
-## Function Import: Microsoft_SharePoint_Portal_CommunityModeration_ApproveReportedItems
+> Namespace: Microsoft.SharePoint.Portal
 
 - Is composable: false
 - Is bindable: false

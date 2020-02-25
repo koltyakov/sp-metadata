@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: GetChanges
 
-## Function Import: GetChanges
+> Namespace: PS
 
 - Entity type: PS.DraftProject
 - Is composable: false

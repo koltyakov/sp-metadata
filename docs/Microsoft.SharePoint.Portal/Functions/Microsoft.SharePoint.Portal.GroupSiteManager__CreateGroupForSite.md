@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Portal
+# Function Import: CreateGroupForSite
 
-## Function Import: CreateGroupForSite
+> Namespace: Microsoft.SharePoint.Portal
 
 - Entity type: Microsoft.SharePoint.Portal.GroupSiteManager
 - Is composable: false

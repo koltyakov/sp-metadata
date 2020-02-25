@@ -1,10 +1,8 @@
-# Namespace: SP.Utilities
+# Entity Type: SpotlightResult
 
-## Entity Type: SpotlightResult
+> Namespace: SP.Utilities
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Portal.UserProfiles
+# Function Import: Microsoft_SharePoint_Portal_UserProfiles_PromotedSites_UpdateSiteLink
 
-## Function Import: Microsoft_SharePoint_Portal_UserProfiles_PromotedSites_UpdateSiteLink
+> Namespace: Microsoft.SharePoint.Portal.UserProfiles
 
 - Is composable: false
 - Is bindable: false

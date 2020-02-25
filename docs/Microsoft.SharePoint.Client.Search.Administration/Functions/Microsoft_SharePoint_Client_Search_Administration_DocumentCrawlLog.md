@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Client.Search.Administration
+# Function Import: Microsoft_SharePoint_Client_Search_Administration_DocumentCrawlLog
 
-## Function Import: Microsoft_SharePoint_Client_Search_Administration_DocumentCrawlLog
+> Namespace: Microsoft.SharePoint.Client.Search.Administration
 
 - Is composable: false
 - Is bindable: false

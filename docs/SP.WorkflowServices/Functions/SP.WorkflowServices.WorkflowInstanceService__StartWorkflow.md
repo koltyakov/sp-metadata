@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: StartWorkflow
 
-## Function Import: StartWorkflow
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowInstanceService
 - Is composable: false

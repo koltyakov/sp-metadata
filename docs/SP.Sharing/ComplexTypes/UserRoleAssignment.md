@@ -1,10 +1,8 @@
-# Namespace: SP.Sharing
+# Complex Type: UserRoleAssignment
 
-## Complex Type: UserRoleAssignment
+> Namespace: SP.Sharing
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

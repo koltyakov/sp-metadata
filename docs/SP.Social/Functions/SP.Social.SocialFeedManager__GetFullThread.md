@@ -1,6 +1,6 @@
-# Namespace: SP.Social
+# Function Import: GetFullThread
 
-## Function Import: GetFullThread
+> Namespace: SP.Social
 
 - Entity type: SP.Social.SocialFeedManager
 - Is composable: false

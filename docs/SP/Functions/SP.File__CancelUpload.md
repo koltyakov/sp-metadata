@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: CancelUpload
 
-## Function Import: CancelUpload
+> Namespace: SP
 
 - Entity type: SP.File
 - Is composable: false

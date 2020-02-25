@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Online.SharePoint.TenantManagement
+# Function Import: SetTenantCdnEnabled
 
-## Function Import: SetTenantCdnEnabled
+> Namespace: Microsoft.Online.SharePoint.TenantManagement
 
 - Entity type: Microsoft.Online.SharePoint.TenantManagement.Office365Tenant
 - Is composable: false

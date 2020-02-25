@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: CheckInWithJobId
 
-## Function Import: CheckInWithJobId
+> Namespace: PS
 
 - Entity type: PS.WorkflowActivities
 - Is composable: false

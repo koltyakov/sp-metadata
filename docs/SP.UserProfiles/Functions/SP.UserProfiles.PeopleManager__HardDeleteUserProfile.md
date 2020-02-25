@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: HardDeleteUserProfile
 
-## Function Import: HardDeleteUserProfile
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.PeopleManager
 - Is composable: false

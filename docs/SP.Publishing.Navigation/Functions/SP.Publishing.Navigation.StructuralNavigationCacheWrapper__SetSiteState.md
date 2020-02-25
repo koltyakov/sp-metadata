@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing.Navigation
+# Function Import: SetSiteState
 
-## Function Import: SetSiteState
+> Namespace: SP.Publishing.Navigation
 
 - Entity type: SP.Publishing.Navigation.StructuralNavigationCacheWrapper
 - Is composable: false

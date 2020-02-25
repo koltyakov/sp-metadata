@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetQuizzes
 
-## Function Import: GetQuizzes
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

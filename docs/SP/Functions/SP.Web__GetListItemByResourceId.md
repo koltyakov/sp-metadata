@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetListItemByResourceId
 
-## Function Import: GetListItemByResourceId
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: Upgrade
 
-## Function Import: Upgrade
+> Namespace: SP
 
 - Entity type: SP.AppInstance
 - Is composable: false

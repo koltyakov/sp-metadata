@@ -1,10 +1,8 @@
-# Namespace: PS
+# Entity Type: DraftProject
 
-## Entity Type: DraftProject
+> Namespace: PS
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -43,8 +41,6 @@ WeekStartDay (Edm.Int16) | ✅ | ✅ | ✅ | ❌
 WinprojVersion (Edm.Decimal) | ✅ | ✅ | ✅ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

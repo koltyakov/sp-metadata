@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Administration
+# Function Import: Microsoft_SharePoint_Administration_SPWebApplication_Lookup
 
-## Function Import: Microsoft_SharePoint_Administration_SPWebApplication_Lookup
+> Namespace: Microsoft.SharePoint.Administration
 
 - Is composable: false
 - Is bindable: false

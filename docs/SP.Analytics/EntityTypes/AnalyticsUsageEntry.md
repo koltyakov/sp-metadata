@@ -1,10 +1,8 @@
-# Namespace: SP.Analytics
+# Entity Type: AnalyticsUsageEntry
 
-## Entity Type: AnalyticsUsageEntry
+> Namespace: SP.Analytics
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

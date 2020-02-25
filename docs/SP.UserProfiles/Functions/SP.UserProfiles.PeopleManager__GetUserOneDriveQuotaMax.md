@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: GetUserOneDriveQuotaMax
 
-## Function Import: GetUserOneDriveQuotaMax
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.PeopleManager
 - Is composable: false

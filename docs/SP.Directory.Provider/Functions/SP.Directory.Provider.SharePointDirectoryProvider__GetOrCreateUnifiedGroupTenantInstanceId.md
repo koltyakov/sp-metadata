@@ -1,6 +1,6 @@
-# Namespace: SP.Directory.Provider
+# Function Import: GetOrCreateUnifiedGroupTenantInstanceId
 
-## Function Import: GetOrCreateUnifiedGroupTenantInstanceId
+> Namespace: SP.Directory.Provider
 
 - Entity type: SP.Directory.Provider.SharePointDirectoryProvider
 - Is composable: false

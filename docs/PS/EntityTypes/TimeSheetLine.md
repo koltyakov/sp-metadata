@@ -1,10 +1,8 @@
-# Namespace: PS
+# Entity Type: TimeSheetLine
 
-## Entity Type: TimeSheetLine
+> Namespace: PS
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -20,8 +18,6 @@ TotalWorkTimeSpan (Edm.Time) | ✅ | ✅ | ✅ | ❌
 ValidationType (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

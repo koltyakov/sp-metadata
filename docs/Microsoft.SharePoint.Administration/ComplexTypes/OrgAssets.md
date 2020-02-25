@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Administration
+# Complex Type: OrgAssets
 
-## Complex Type: OrgAssets
+> Namespace: Microsoft.SharePoint.Administration
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

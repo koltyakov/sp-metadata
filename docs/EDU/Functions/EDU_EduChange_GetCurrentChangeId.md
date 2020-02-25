@@ -1,6 +1,6 @@
-# Namespace: EDU
+# Function Import: EDU_EduChange_GetCurrentChangeId
 
-## Function Import: EDU_EduChange_GetCurrentChangeId
+> Namespace: EDU
 
 - Is composable: false
 - Is bindable: false

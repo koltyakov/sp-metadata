@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: SetPostLikeStatus
 
-## Function Import: SetPostLikeStatus
+> Namespace: SP.Microfeed
 
 - Entity type: SP.Microfeed.MicrofeedStore
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_SPHSite_AddSPHomeNavNode
 
-## Function Import: SP_SPHSite_AddSPHomeNavNode
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

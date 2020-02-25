@@ -1,6 +1,6 @@
-# Namespace: SP.Workflow
+# Function Import: GetUserEffectivePermissions
 
-## Function Import: GetUserEffectivePermissions
+> Namespace: SP.Workflow
 
 - Entity type: SP.Workflow.SPWorkflowTask
 - Is composable: false

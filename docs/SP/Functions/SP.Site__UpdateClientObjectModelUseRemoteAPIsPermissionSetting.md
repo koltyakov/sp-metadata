@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: UpdateClientObjectModelUseRemoteAPIsPermissionSetting
 
-## Function Import: UpdateClientObjectModelUseRemoteAPIsPermissionSetting
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

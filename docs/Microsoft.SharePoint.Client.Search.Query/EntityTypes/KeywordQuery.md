@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Client.Search.Query
+# Entity Type: KeywordQuery
 
-## Entity Type: KeywordQuery
+> Namespace: Microsoft.SharePoint.Client.Search.Query
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -16,8 +14,6 @@ TimeZoneId (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 TrimDuplicatesIncludeId (Edm.Int64) | ❌ | ❌ | ❌ | ✅
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

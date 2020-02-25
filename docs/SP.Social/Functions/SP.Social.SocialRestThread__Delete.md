@@ -1,6 +1,6 @@
-# Namespace: SP.Social
+# Function Import: Delete
 
-## Function Import: Delete
+> Namespace: SP.Social
 
 - Entity type: SP.Social.SocialRestThread
 - Is composable: false

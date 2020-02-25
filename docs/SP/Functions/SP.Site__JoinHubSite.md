@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: JoinHubSite
 
-## Function Import: JoinHubSite
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

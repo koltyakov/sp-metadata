@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Webhooks
+# Function Import: Update
 
-## Function Import: Update
+> Namespace: Microsoft.SharePoint.Webhooks
 
 - Entity type: Microsoft.SharePoint.Webhooks.Subscription
 - Is composable: false

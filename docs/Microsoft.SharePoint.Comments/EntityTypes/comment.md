@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Comments
+# Entity Type: comment
 
-## Entity Type: comment
+> Namespace: Microsoft.SharePoint.Comments
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -23,8 +21,6 @@ replyCount (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 text (Edm.String) | ✅ | ✅ | ❌ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

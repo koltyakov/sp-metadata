@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetViewFromPath
 
-## Function Import: GetViewFromPath
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: DeprecateDefinition
 
-## Function Import: DeprecateDefinition
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowDeploymentService
 - Is composable: false

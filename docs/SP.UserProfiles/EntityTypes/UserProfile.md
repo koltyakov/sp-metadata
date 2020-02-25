@@ -1,10 +1,8 @@
-# Namespace: SP.UserProfiles
+# Entity Type: UserProfile
 
-## Entity Type: UserProfile
+> Namespace: SP.UserProfiles
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -32,8 +30,6 @@ SipAddress (Edm.String) | ✅ | ✅ | ✅ | ❌
 UrlToCreatePersonalSite (Edm.String) | ✅ | ✅ | ✅ | ✅
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

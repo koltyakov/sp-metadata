@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Portal.UserProfiles
+# Entity Type: MySiteLinks
 
-## Entity Type: MySiteLinks
+> Namespace: Microsoft.SharePoint.Portal.UserProfiles
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

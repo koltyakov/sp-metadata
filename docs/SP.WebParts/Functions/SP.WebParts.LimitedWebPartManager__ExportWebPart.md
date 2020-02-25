@@ -1,6 +1,6 @@
-# Namespace: SP.WebParts
+# Function Import: ExportWebPart
 
-## Function Import: ExportWebPart
+> Namespace: SP.WebParts
 
 - Entity type: SP.WebParts.LimitedWebPartManager
 - Is composable: false

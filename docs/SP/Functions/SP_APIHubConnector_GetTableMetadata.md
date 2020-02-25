@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_APIHubConnector_GetTableMetadata
 
-## Function Import: SP_APIHubConnector_GetTableMetadata
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

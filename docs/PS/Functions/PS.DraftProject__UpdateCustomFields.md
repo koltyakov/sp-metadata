@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: UpdateCustomFields
 
-## Function Import: UpdateCustomFields
+> Namespace: PS
 
 - Entity type: PS.DraftProject
 - Is composable: false

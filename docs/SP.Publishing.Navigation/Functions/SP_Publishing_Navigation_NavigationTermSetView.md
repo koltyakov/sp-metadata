@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing.Navigation
+# Function Import: SP_Publishing_Navigation_NavigationTermSetView
 
-## Function Import: SP_Publishing_Navigation_NavigationTermSetView
+> Namespace: SP.Publishing.Navigation
 
 - Is composable: false
 - Is bindable: false

@@ -1,10 +1,8 @@
-# Namespace: Microsoft.BusinessData.Infrastructure.SecureStore
+# Entity Type: ConnectionSettings
 
-## Entity Type: ConnectionSettings
+> Namespace: Microsoft.BusinessData.Infrastructure.SecureStore
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

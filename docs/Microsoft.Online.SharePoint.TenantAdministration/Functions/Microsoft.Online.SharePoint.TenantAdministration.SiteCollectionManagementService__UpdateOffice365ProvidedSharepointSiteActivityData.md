@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Online.SharePoint.TenantAdministration
+# Function Import: UpdateOffice365ProvidedSharepointSiteActivityData
 
-## Function Import: UpdateOffice365ProvidedSharepointSiteActivityData
+> Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
 - Entity type: Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService
 - Is composable: false

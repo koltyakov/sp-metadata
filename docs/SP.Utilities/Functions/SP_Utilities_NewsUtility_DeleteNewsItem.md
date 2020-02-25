@@ -1,6 +1,6 @@
-# Namespace: SP.Utilities
+# Function Import: SP_Utilities_NewsUtility_DeleteNewsItem
 
-## Function Import: SP_Utilities_NewsUtility_DeleteNewsItem
+> Namespace: SP.Utilities
 
 - Is composable: false
 - Is bindable: false

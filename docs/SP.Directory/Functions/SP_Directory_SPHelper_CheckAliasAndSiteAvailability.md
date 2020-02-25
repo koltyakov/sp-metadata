@@ -1,6 +1,6 @@
-# Namespace: SP.Directory
+# Function Import: SP_Directory_SPHelper_CheckAliasAndSiteAvailability
 
-## Function Import: SP_Directory_SPHelper_CheckAliasAndSiteAvailability
+> Namespace: SP.Directory
 
 - Is composable: false
 - Is bindable: false

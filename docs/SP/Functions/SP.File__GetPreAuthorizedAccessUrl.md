@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetPreAuthorizedAccessUrl
 
-## Function Import: GetPreAuthorizedAccessUrl
+> Namespace: SP
 
 - Entity type: SP.File
 - Is composable: false

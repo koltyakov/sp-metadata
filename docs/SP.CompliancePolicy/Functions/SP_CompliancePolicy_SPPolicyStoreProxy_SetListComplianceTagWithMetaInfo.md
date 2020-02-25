@@ -1,6 +1,6 @@
-# Namespace: SP.CompliancePolicy
+# Function Import: SP_CompliancePolicy_SPPolicyStoreProxy_SetListComplianceTagWithMetaInfo
 
-## Function Import: SP_CompliancePolicy_SPPolicyStoreProxy_SetListComplianceTagWithMetaInfo
+> Namespace: SP.CompliancePolicy
 
 - Is composable: false
 - Is bindable: false

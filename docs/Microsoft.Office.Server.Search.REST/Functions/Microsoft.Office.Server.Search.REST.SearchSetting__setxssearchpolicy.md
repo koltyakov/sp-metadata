@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Office.Server.Search.REST
+# Function Import: setxssearchpolicy
 
-## Function Import: setxssearchpolicy
+> Namespace: Microsoft.Office.Server.Search.REST
 
 - Entity type: Microsoft.Office.Server.Search.REST.SearchSetting
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: AddAttachment
 
-## Function Import: AddAttachment
+> Namespace: SP.Microfeed
 
 - Entity type: SP.Microfeed.MicrofeedData
 - Is composable: false

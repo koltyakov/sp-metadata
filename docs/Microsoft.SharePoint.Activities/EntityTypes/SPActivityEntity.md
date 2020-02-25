@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Activities
+# Entity Type: SPActivityEntity
 
-## Entity Type: SPActivityEntity
+> Namespace: Microsoft.SharePoint.Activities
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

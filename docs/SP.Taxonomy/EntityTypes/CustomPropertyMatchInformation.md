@@ -1,10 +1,8 @@
-# Namespace: SP.Taxonomy
+# Entity Type: CustomPropertyMatchInformation
 
-## Entity Type: CustomPropertyMatchInformation
+> Namespace: SP.Taxonomy
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

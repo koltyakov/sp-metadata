@@ -1,6 +1,6 @@
-# Namespace: SP.Social
+# Function Import: CreateFileAttachment
 
-## Function Import: CreateFileAttachment
+> Namespace: SP.Social
 
 - Entity type: SP.Social.SocialFeedManager
 - Is composable: false

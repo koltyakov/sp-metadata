@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Client.Search.Query
+# Function Import: RecordPageClick
 
-## Function Import: RecordPageClick
+> Namespace: Microsoft.SharePoint.Client.Search.Query
 
 - Entity type: Microsoft.SharePoint.Client.Search.Query.SearchExecutor
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SetChromeOptions
 
-## Function Import: SetChromeOptions
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

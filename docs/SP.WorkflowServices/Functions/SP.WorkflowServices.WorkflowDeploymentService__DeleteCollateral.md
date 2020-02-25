@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: DeleteCollateral
 
-## Function Import: DeleteCollateral
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowDeploymentService
 - Is composable: false

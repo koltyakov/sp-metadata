@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetThemeShadeByName
 
-## Function Import: GetThemeShadeByName
+> Namespace: SP
 
 - Entity type: SP.ThemeInfo
 - Is composable: false

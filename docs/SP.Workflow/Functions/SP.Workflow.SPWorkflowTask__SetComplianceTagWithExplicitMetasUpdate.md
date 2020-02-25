@@ -1,6 +1,6 @@
-# Namespace: SP.Workflow
+# Function Import: SetComplianceTagWithExplicitMetasUpdate
 
-## Function Import: SetComplianceTagWithExplicitMetasUpdate
+> Namespace: SP.Workflow
 
 - Entity type: SP.Workflow.SPWorkflowTask
 - Is composable: false

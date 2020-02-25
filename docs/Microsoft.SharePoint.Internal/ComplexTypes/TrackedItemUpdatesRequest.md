@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Internal
+# Complex Type: TrackedItemUpdatesRequest
 
-## Complex Type: TrackedItemUpdatesRequest
+> Namespace: Microsoft.SharePoint.Internal
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

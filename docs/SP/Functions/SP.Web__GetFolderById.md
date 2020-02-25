@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetFolderById
 
-## Function Import: GetFolderById
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

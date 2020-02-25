@@ -1,10 +1,8 @@
-# Namespace: SP.Microfeed
+# Complex Type: MicroBlogEntity
 
-## Complex Type: MicroBlogEntity
+> Namespace: SP.Microfeed
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

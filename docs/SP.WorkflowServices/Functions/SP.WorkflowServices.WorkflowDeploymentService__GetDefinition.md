@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: GetDefinition
 
-## Function Import: GetDefinition
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowDeploymentService
 - Is composable: false

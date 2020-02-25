@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Office.Server.Search.REST
+# Function Import: getpromotedresultqueryrules
 
-## Function Import: getpromotedresultqueryrules
+> Namespace: Microsoft.Office.Server.Search.REST
 
 - Entity type: Microsoft.Office.Server.Search.REST.SearchSetting
 - Is composable: false

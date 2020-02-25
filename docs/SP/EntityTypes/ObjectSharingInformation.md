@@ -1,10 +1,8 @@
-# Namespace: SP
+# Entity Type: ObjectSharingInformation
 
-## Entity Type: ObjectSharingInformation
+> Namespace: SP
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -25,8 +23,6 @@ SharingLinks (Collection(SP.SharingLinkInfo)) | ✅ | ✅ | ✅ | ❌
 TotalFileCount (Edm.Int64) | ✅ | ✅ | ✅ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

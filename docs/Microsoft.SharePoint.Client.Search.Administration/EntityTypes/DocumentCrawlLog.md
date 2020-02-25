@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Client.Search.Administration
+# Entity Type: DocumentCrawlLog
 
-## Entity Type: DocumentCrawlLog
+> Namespace: Microsoft.SharePoint.Client.Search.Administration
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Internal
+# Entity Type: ActivityLogger
 
-## Entity Type: ActivityLogger
+> Namespace: Microsoft.SharePoint.Internal
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

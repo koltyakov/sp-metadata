@@ -1,6 +1,6 @@
-# Namespace: SP.Utilities
+# Function Import: SP_Utilities_Utility_ImportAppLicense
 
-## Function Import: SP_Utilities_Utility_ImportAppLicense
+> Namespace: SP.Utilities
 
 - Is composable: false
 - Is bindable: false

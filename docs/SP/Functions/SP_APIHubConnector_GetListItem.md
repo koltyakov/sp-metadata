@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_APIHubConnector_GetListItem
 
-## Function Import: SP_APIHubConnector_GetListItem
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

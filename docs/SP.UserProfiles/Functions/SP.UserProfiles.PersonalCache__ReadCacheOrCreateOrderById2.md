@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: ReadCacheOrCreateOrderById2
 
-## Function Import: ReadCacheOrCreateOrderById2
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.PersonalCache
 - Is composable: false

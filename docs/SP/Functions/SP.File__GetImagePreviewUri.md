@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetImagePreviewUri
 
-## Function Import: GetImagePreviewUri
+> Namespace: SP
 
 - Entity type: SP.File
 - Is composable: false

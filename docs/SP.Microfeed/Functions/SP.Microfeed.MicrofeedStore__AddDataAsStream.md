@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: AddDataAsStream
 
-## Function Import: AddDataAsStream
+> Namespace: SP.Microfeed
 
 - Entity type: SP.Microfeed.MicrofeedStore
 - Is composable: false

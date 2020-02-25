@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_AppPrincipalName_CreateFromAppPrincipalIdentifier
 
-## Function Import: SP_AppPrincipalName_CreateFromAppPrincipalIdentifier
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

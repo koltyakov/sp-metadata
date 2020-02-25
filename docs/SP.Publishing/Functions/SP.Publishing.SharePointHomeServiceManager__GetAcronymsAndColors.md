@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: GetAcronymsAndColors
 
-## Function Import: GetAcronymsAndColors
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.SharePointHomeServiceManager
 - Is composable: false

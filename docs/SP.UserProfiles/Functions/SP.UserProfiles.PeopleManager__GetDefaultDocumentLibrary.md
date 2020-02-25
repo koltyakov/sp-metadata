@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: GetDefaultDocumentLibrary
 
-## Function Import: GetDefaultDocumentLibrary
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.PeopleManager
 - Is composable: false

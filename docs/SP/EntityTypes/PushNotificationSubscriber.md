@@ -1,10 +1,8 @@
-# Namespace: SP
+# Entity Type: PushNotificationSubscriber
 
-## Entity Type: PushNotificationSubscriber
+> Namespace: SP
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -16,8 +14,6 @@ ServiceToken (Edm.String) | ✅ | ✅ | ✅ | ✅
 SubscriberType (Edm.String) | ✅ | ✅ | ✅ | ✅
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

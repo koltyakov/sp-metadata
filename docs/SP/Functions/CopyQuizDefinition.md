@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: CopyQuizDefinition
 
-## Function Import: CopyQuizDefinition
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

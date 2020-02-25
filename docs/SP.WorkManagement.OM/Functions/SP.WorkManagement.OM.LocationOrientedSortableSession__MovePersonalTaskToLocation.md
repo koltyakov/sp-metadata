@@ -1,6 +1,6 @@
-# Namespace: SP.WorkManagement.OM
+# Function Import: MovePersonalTaskToLocation
 
-## Function Import: MovePersonalTaskToLocation
+> Namespace: SP.WorkManagement.OM
 
 - Entity type: SP.WorkManagement.OM.LocationOrientedSortableSession
 - Is composable: false

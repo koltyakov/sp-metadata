@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Online.SharePoint.TenantManagement
+# Function Import: SetHideDefaultThemes
 
-## Function Import: SetHideDefaultThemes
+> Namespace: Microsoft.Online.SharePoint.TenantManagement
 
 - Entity type: Microsoft.Online.SharePoint.TenantManagement.Office365Tenant
 - Is composable: false

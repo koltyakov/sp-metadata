@@ -1,10 +1,8 @@
-# Namespace: SP.MicroService
+# Entity Type: MicroServiceUtilities
 
-## Entity Type: MicroServiceUtilities
+> Namespace: SP.MicroService
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

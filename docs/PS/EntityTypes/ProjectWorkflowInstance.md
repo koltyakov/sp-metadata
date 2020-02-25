@@ -1,10 +1,8 @@
-# Namespace: PS
+# Entity Type: ProjectWorkflowInstance
 
-## Entity Type: ProjectWorkflowInstance
+> Namespace: PS
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -16,8 +14,6 @@ WorkflowErrorResponseCode (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 WorkflowState (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

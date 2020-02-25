@@ -1,10 +1,8 @@
-# Namespace: SP.Social
+# Complex Type: SocialPostDefinitionData
 
-## Complex Type: SocialPostDefinitionData
+> Namespace: SP.Social
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

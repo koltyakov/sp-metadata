@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetBloomFilterWithCustomFields
 
-## Function Import: GetBloomFilterWithCustomFields
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

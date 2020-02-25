@@ -1,6 +1,6 @@
-# Namespace: SP.Utilities
+# Function Import: SetHideDefaultThemes
 
-## Function Import: SetHideDefaultThemes
+> Namespace: SP.Utilities
 
 - Entity type: SP.Utilities.ThemeManager
 - Is composable: false

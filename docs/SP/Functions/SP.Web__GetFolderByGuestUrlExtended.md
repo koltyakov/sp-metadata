@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetFolderByGuestUrlExtended
 
-## Function Import: GetFolderByGuestUrlExtended
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

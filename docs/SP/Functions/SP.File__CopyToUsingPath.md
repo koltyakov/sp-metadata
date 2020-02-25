@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: CopyToUsingPath
 
-## Function Import: CopyToUsingPath
+> Namespace: SP
 
 - Entity type: SP.File
 - Is composable: false

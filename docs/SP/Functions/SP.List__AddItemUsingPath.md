@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: AddItemUsingPath
 
-## Function Import: AddItemUsingPath
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

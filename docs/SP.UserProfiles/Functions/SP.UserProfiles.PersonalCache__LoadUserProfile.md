@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: LoadUserProfile
 
-## Function Import: LoadUserProfile
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.PersonalCache
 - Is composable: false

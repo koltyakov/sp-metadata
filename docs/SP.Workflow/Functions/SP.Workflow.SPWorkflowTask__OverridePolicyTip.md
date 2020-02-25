@@ -1,6 +1,6 @@
-# Namespace: SP.Workflow
+# Function Import: OverridePolicyTip
 
-## Function Import: OverridePolicyTip
+> Namespace: SP.Workflow
 
 - Entity type: SP.Workflow.SPWorkflowTask
 - Is composable: false

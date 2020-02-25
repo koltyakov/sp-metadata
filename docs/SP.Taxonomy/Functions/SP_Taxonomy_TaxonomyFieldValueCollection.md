@@ -1,6 +1,6 @@
-# Namespace: SP.Taxonomy
+# Function Import: SP_Taxonomy_TaxonomyFieldValueCollection
 
-## Function Import: SP_Taxonomy_TaxonomyFieldValueCollection
+> Namespace: SP.Taxonomy
 
 - Is composable: false
 - Is bindable: false

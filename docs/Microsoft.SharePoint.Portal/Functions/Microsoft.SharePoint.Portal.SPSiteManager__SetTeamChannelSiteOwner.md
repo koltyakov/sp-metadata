@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Portal
+# Function Import: SetTeamChannelSiteOwner
 
-## Function Import: SetTeamChannelSiteOwner
+> Namespace: Microsoft.SharePoint.Portal
 
 - Entity type: Microsoft.SharePoint.Portal.SPSiteManager
 - Is composable: false

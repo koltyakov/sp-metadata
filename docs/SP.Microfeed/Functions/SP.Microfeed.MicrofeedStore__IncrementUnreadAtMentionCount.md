@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: IncrementUnreadAtMentionCount
 
-## Function Import: IncrementUnreadAtMentionCount
+> Namespace: SP.Microfeed
 
 - Entity type: SP.Microfeed.MicrofeedStore
 - Is composable: false

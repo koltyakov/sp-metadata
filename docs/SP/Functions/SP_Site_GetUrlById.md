@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_Site_GetUrlById
 
-## Function Import: SP_Site_GetUrlById
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

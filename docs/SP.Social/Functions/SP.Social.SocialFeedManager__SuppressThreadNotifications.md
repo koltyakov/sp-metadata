@@ -1,6 +1,6 @@
-# Namespace: SP.Social
+# Function Import: SuppressThreadNotifications
 
-## Function Import: SuppressThreadNotifications
+> Namespace: SP.Social
 
 - Entity type: SP.Social.SocialFeedManager
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: Microsoft.AppServices
+# Function Import: GetAppsFromStore
 
-## Function Import: GetAppsFromStore
+> Namespace: Microsoft.AppServices
 
 - Entity type: Microsoft.AppServices.AppCollection
 - Is composable: false

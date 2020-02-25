@@ -1,6 +1,6 @@
-# Namespace: SP.CompliancePolicy
+# Function Import: GetDynamicScopeBindingBySiteId
 
-## Function Import: GetDynamicScopeBindingBySiteId
+> Namespace: SP.CompliancePolicy
 
 - Entity type: SP.CompliancePolicy.SPPolicyStoreProxy
 - Is composable: false

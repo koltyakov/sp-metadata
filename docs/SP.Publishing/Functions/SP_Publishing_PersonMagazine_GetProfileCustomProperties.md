@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: SP_Publishing_PersonMagazine_GetProfileCustomProperties
 
-## Function Import: SP_Publishing_PersonMagazine_GetProfileCustomProperties
+> Namespace: SP.Publishing
 
 - Is composable: false
 - Is bindable: false

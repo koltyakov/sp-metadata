@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Activities
+# Complex Type: ActivityIdentityItem
 
-## Complex Type: ActivityIdentityItem
+> Namespace: Microsoft.SharePoint.Activities
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

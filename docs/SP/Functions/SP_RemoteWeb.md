@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_RemoteWeb
 
-## Function Import: SP_RemoteWeb
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: GetImage
 
-## Function Import: GetImage
+> Namespace: SP.Microfeed
 
 - Entity type: SP.Microfeed.MicrofeedAttachmentStore
 - Is composable: false

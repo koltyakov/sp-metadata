@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: CreateAppPrincipal
 
-## Function Import: CreateAppPrincipal
+> Namespace: SP
 
 - Entity type: SP.AppPrincipalManager
 - Is composable: false

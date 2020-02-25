@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: RecycleWithETag
 
-## Function Import: RecycleWithETag
+> Namespace: SP
 
 - Entity type: SP.File
 - Is composable: false

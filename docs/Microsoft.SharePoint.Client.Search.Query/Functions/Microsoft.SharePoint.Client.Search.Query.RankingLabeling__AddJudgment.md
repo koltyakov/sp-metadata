@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Client.Search.Query
+# Function Import: AddJudgment
 
-## Function Import: AddJudgment
+> Namespace: Microsoft.SharePoint.Client.Search.Query
 
 - Entity type: Microsoft.SharePoint.Client.Search.Query.RankingLabeling
 - Is composable: false

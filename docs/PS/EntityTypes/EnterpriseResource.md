@@ -1,10 +1,8 @@
-# Namespace: PS
+# Entity Type: EnterpriseResource
 
-## Entity Type: EnterpriseResource
+> Namespace: PS
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -37,8 +35,6 @@ ResourceType (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 TerminationDate (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

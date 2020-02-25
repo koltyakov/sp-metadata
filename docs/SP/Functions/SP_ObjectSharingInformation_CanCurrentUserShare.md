@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_ObjectSharingInformation_CanCurrentUserShare
 
-## Function Import: SP_ObjectSharingInformation_CanCurrentUserShare
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

@@ -1,10 +1,8 @@
-# Namespace: SP
+# Entity Type: App
 
-## Entity Type: App
+> Namespace: SP
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

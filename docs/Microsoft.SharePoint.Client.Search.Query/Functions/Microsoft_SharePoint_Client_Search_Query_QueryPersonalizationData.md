@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Client.Search.Query
+# Function Import: Microsoft_SharePoint_Client_Search_Query_QueryPersonalizationData
 
-## Function Import: Microsoft_SharePoint_Client_Search_Query_QueryPersonalizationData
+> Namespace: Microsoft.SharePoint.Client.Search.Query
 
 - Is composable: false
 - Is bindable: false

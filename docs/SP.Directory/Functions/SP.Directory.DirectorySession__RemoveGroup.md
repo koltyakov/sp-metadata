@@ -1,6 +1,6 @@
-# Namespace: SP.Directory
+# Function Import: RemoveGroup
 
-## Function Import: RemoveGroup
+> Namespace: SP.Directory
 
 - Entity type: SP.Directory.DirectorySession
 - Is composable: false

@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.WebControls
+# Entity Type: ModuleLink
 
-## Entity Type: ModuleLink
+> Namespace: Microsoft.SharePoint.WebControls
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

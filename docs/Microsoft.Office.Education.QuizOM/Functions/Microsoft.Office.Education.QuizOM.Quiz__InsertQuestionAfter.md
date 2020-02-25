@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Office.Education.QuizOM
+# Function Import: InsertQuestionAfter
 
-## Function Import: InsertQuestionAfter
+> Namespace: Microsoft.Office.Education.QuizOM
 
 - Entity type: Microsoft.Office.Education.QuizOM.Quiz
 - Is composable: false

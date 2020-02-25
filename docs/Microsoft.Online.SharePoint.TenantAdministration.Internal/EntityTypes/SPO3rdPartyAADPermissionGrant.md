@@ -1,10 +1,8 @@
-# Namespace: Microsoft.Online.SharePoint.TenantAdministration.Internal
+# Entity Type: SPO3rdPartyAADPermissionGrant
 
-## Entity Type: SPO3rdPartyAADPermissionGrant
+> Namespace: Microsoft.Online.SharePoint.TenantAdministration.Internal
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

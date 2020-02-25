@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: GetPublishedFeed
 
-## Function Import: GetPublishedFeed
+> Namespace: SP.Microfeed
 
 - Entity type: SP.Microfeed.MicrofeedManager
 - Is composable: false

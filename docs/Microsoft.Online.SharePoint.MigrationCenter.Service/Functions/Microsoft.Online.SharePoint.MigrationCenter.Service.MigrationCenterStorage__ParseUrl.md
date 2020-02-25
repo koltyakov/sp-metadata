@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Online.SharePoint.MigrationCenter.Service
+# Function Import: ParseUrl
 
-## Function Import: ParseUrl
+> Namespace: Microsoft.Online.SharePoint.MigrationCenter.Service
 
 - Entity type: Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage
 - Is composable: false

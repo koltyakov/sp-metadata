@@ -1,10 +1,8 @@
-# Namespace: SP.UserProfiles
+# Complex Type: HashTag
 
-## Complex Type: HashTag
+> Namespace: SP.UserProfiles
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,10 +1,8 @@
-# Namespace: SP.CompliancePolicy
+# Entity Type: SPSitePreservationUtility
 
-## Entity Type: SPSitePreservationUtility
+> Namespace: SP.CompliancePolicy
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

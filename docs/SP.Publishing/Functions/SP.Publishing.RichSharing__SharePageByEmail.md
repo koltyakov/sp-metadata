@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: SharePageByEmail
 
-## Function Import: SharePageByEmail
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.RichSharing
 - Is composable: false

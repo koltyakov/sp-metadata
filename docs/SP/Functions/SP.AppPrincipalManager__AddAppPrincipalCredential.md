@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: AddAppPrincipalCredential
 
-## Function Import: AddAppPrincipalCredential
+> Namespace: SP
 
 - Entity type: SP.AppPrincipalManager
 - Is composable: false

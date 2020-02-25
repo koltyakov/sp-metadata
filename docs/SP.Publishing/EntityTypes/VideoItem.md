@@ -1,10 +1,8 @@
-# Namespace: SP.Publishing
+# Entity Type: VideoItem
 
-## Entity Type: VideoItem
+> Namespace: SP.Publishing
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -29,8 +27,6 @@ ViewCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 YammerObjectUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

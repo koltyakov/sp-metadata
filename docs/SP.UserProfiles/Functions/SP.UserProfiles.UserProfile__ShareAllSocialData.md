@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: ShareAllSocialData
 
-## Function Import: ShareAllSocialData
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.UserProfile
 - Is composable: false

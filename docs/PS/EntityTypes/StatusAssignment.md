@@ -1,10 +1,8 @@
-# Namespace: PS
+# Entity Type: StatusAssignment
 
-## Entity Type: StatusAssignment
+> Namespace: PS
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -42,8 +40,6 @@ WorkMilliseconds (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 WorkTimeSpan (Edm.Time) | ✅ | ✅ | ✅ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

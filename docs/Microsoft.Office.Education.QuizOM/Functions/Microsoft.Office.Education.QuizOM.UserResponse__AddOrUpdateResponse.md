@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Office.Education.QuizOM
+# Function Import: AddOrUpdateResponse
 
-## Function Import: AddOrUpdateResponse
+> Namespace: Microsoft.Office.Education.QuizOM
 
 - Entity type: Microsoft.Office.Education.QuizOM.UserResponse
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Portal
+# Function Import: SetRectSiteLogo
 
-## Function Import: SetRectSiteLogo
+> Namespace: Microsoft.SharePoint.Portal
 
 - Entity type: Microsoft.SharePoint.Portal.SiteIconManager
 - Is composable: false

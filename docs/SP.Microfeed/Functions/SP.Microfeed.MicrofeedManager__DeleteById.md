@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: DeleteById
 
-## Function Import: DeleteById
+> Namespace: SP.Microfeed
 
 - Entity type: SP.Microfeed.MicrofeedManager
 - Is composable: false

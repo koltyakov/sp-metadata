@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: GetPermissionGroup
 
-## Function Import: GetPermissionGroup
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.VideoServiceManager
 - Is composable: false

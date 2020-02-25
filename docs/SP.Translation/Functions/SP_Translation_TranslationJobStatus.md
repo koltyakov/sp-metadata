@@ -1,6 +1,6 @@
-# Namespace: SP.Translation
+# Function Import: SP_Translation_TranslationJobStatus
 
-## Function Import: SP_Translation_TranslationJobStatus
+> Namespace: SP.Translation
 
 - Is composable: false
 - Is bindable: false

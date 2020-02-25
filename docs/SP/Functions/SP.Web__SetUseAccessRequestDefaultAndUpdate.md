@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SetUseAccessRequestDefaultAndUpdate
 
-## Function Import: SetUseAccessRequestDefaultAndUpdate
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

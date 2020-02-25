@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: BulkValidateUpdateListItems
 
-## Function Import: BulkValidateUpdateListItems
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

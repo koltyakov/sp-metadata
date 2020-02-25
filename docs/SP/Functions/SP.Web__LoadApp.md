@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: LoadApp
 
-## Function Import: LoadApp
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

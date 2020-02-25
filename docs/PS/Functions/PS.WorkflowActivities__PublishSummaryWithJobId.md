@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: PublishSummaryWithJobId
 
-## Function Import: PublishSummaryWithJobId
+> Namespace: PS
 
 - Entity type: PS.WorkflowActivities
 - Is composable: false

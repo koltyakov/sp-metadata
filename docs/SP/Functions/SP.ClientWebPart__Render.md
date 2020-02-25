@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: Render
 
-## Function Import: Render
+> Namespace: SP
 
 - Entity type: SP.ClientWebPart
 - Is composable: false

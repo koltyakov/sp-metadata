@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: MapToIcon
 
-## Function Import: MapToIcon
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

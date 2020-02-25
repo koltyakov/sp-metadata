@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: AddImageFromUrl
 
-## Function Import: AddImageFromUrl
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.PointPublishingPost
 - Is composable: false

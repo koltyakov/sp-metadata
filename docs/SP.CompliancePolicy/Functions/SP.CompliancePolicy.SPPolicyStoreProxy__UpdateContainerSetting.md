@@ -1,6 +1,6 @@
-# Namespace: SP.CompliancePolicy
+# Function Import: UpdateContainerSetting
 
-## Function Import: UpdateContainerSetting
+> Namespace: SP.CompliancePolicy
 
 - Entity type: SP.CompliancePolicy.SPPolicyStoreProxy
 - Is composable: false

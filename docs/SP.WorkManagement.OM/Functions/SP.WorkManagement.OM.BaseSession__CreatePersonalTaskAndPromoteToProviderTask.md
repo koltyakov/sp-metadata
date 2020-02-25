@@ -1,6 +1,6 @@
-# Namespace: SP.WorkManagement.OM
+# Function Import: CreatePersonalTaskAndPromoteToProviderTask
 
-## Function Import: CreatePersonalTaskAndPromoteToProviderTask
+> Namespace: SP.WorkManagement.OM
 
 - Entity type: SP.WorkManagement.OM.BaseSession
 - Is composable: false

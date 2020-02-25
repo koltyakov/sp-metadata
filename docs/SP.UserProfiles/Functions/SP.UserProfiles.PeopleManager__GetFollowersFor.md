@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: GetFollowersFor
 
-## Function Import: GetFollowersFor
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.PeopleManager
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Client.Search.Query
+# Function Import: ExportPopularQueries
 
-## Function Import: ExportPopularQueries
+> Namespace: Microsoft.SharePoint.Client.Search.Query
 
 - Entity type: Microsoft.SharePoint.Client.Search.Query.SearchExecutor
 - Is composable: false

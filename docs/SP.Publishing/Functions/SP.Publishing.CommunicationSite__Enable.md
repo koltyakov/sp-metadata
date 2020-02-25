@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: Enable
 
-## Function Import: Enable
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.CommunicationSite
 - Is composable: false

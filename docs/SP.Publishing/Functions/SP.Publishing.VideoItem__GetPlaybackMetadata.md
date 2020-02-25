@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: GetPlaybackMetadata
 
-## Function Import: GetPlaybackMetadata
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.VideoItem
 - Is composable: false

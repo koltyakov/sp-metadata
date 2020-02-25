@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: ValidateUpdateListItem
 
-## Function Import: ValidateUpdateListItem
+> Namespace: SP
 
 - Entity type: SP.ListItem
 - Is composable: false

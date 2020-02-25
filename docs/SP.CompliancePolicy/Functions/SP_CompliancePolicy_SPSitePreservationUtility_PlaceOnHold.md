@@ -1,6 +1,6 @@
-# Namespace: SP.CompliancePolicy
+# Function Import: SP_CompliancePolicy_SPSitePreservationUtility_PlaceOnHold
 
-## Function Import: SP_CompliancePolicy_SPSitePreservationUtility_PlaceOnHold
+> Namespace: SP.CompliancePolicy
 
 - Is composable: false
 - Is bindable: false

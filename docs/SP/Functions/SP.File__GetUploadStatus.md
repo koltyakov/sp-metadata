@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetUploadStatus
 
-## Function Import: GetUploadStatus
+> Namespace: SP
 
 - Entity type: SP.File
 - Is composable: false

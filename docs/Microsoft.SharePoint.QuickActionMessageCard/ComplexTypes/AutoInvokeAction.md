@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.QuickActionMessageCard
+# Complex Type: AutoInvokeAction
 
-## Complex Type: AutoInvokeAction
+> Namespace: Microsoft.SharePoint.QuickActionMessageCard
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

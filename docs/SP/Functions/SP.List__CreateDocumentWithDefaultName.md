@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: CreateDocumentWithDefaultName
 
-## Function Import: CreateDocumentWithDefaultName
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

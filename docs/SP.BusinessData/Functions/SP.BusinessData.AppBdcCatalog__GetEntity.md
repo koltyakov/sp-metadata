@@ -1,6 +1,6 @@
-# Namespace: SP.BusinessData
+# Function Import: GetEntity
 
-## Function Import: GetEntity
+> Namespace: SP.BusinessData
 
 - Entity type: SP.BusinessData.AppBdcCatalog
 - Is composable: false

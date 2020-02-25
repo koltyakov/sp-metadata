@@ -1,6 +1,6 @@
-# Namespace: SP.BusinessData.Runtime
+# Function Import: SP_BusinessData_Runtime_Subscription
 
-## Function Import: SP_BusinessData_Runtime_Subscription
+> Namespace: SP.BusinessData.Runtime
 
 - Is composable: false
 - Is bindable: false

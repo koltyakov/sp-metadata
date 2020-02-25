@@ -1,6 +1,6 @@
-# Namespace: SP.Social
+# Function Import: UnLock
 
-## Function Import: UnLock
+> Namespace: SP.Social
 
 - Entity type: SP.Social.SocialRestThread
 - Is composable: false

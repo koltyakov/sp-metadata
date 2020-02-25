@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Yammer
+# Entity Type: WacApi
 
-## Entity Type: WacApi
+> Namespace: Microsoft.SharePoint.Yammer
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

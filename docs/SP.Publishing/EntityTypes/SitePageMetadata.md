@@ -1,10 +1,8 @@
-# Namespace: SP.Publishing
+# Entity Type: SitePageMetadata
 
-## Entity Type: SitePageMetadata
+> Namespace: SP.Publishing
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -40,8 +38,6 @@ Version (Edm.String) | ✅ | ✅ | ❌ | ❌
 VersionInfo (SP.Publishing.SitePageVersionInfo) | ✅ | ✅ | ❌ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

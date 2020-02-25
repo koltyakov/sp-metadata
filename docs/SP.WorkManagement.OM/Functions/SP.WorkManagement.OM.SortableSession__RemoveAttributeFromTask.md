@@ -1,6 +1,6 @@
-# Namespace: SP.WorkManagement.OM
+# Function Import: RemoveAttributeFromTask
 
-## Function Import: RemoveAttributeFromTask
+> Namespace: SP.WorkManagement.OM
 
 - Entity type: SP.WorkManagement.OM.SortableSession
 - Is composable: false

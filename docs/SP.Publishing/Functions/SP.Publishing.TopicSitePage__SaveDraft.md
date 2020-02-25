@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: SaveDraft
 
-## Function Import: SaveDraft
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.TopicSitePage
 - Is composable: false

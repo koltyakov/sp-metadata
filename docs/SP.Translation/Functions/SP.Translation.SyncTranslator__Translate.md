@@ -1,6 +1,6 @@
-# Namespace: SP.Translation
+# Function Import: Translate
 
-## Function Import: Translate
+> Namespace: SP.Translation
 
 - Entity type: SP.Translation.SyncTranslator
 - Is composable: false

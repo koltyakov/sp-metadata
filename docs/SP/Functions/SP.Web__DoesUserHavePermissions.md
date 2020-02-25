@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: DoesUserHavePermissions
 
-## Function Import: DoesUserHavePermissions
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

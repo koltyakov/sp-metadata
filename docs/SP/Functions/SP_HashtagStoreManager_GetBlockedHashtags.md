@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_HashtagStoreManager_GetBlockedHashtags
 
-## Function Import: SP_HashtagStoreManager_GetBlockedHashtags
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

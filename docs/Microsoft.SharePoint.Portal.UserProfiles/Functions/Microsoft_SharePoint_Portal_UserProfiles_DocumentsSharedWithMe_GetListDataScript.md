@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Portal.UserProfiles
+# Function Import: Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithMe_GetListDataScript
 
-## Function Import: Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithMe_GetListDataScript
+> Namespace: Microsoft.SharePoint.Portal.UserProfiles
 
 - Is composable: false
 - Is bindable: false

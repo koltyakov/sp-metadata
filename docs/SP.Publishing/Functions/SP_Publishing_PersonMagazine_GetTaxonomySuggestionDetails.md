@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: SP_Publishing_PersonMagazine_GetTaxonomySuggestionDetails
 
-## Function Import: SP_Publishing_PersonMagazine_GetTaxonomySuggestionDetails
+> Namespace: SP.Publishing
 
 - Is composable: false
 - Is bindable: false

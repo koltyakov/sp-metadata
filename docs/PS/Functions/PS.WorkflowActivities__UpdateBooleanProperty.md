@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: UpdateBooleanProperty
 
-## Function Import: UpdateBooleanProperty
+> Namespace: PS
 
 - Entity type: PS.WorkflowActivities
 - Is composable: false

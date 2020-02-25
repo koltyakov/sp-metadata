@@ -1,10 +1,8 @@
-# Namespace: SP
+# Entity Type: File
 
-## Entity Type: File
+> Namespace: SP
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -37,8 +35,6 @@ UniqueId (Edm.Guid) | ✅ | ✅ | ✅ | ❌
 WebId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

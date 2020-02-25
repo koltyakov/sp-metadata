@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: GetSocialProperties
 
-## Function Import: GetSocialProperties
+> Namespace: SP.Microfeed
 
 - Entity type: SP.Microfeed.MicrofeedStore
 - Is composable: false

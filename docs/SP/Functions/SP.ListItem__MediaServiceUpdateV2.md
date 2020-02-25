@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: MediaServiceUpdateV2
 
-## Function Import: MediaServiceUpdateV2
+> Namespace: SP
 
 - Entity type: SP.ListItem
 - Is composable: false

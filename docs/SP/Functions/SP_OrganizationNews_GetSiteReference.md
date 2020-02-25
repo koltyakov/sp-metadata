@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_OrganizationNews_GetSiteReference
 
-## Function Import: SP_OrganizationNews_GetSiteReference
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

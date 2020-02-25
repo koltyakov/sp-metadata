@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Portal.Project
+# Function Import: Microsoft_SharePoint_Portal_MySiteRecommendations_FetchCachedBlobForRecentSites
 
-## Function Import: Microsoft_SharePoint_Portal_MySiteRecommendations_FetchCachedBlobForRecentSites
+> Namespace: Microsoft.SharePoint.Portal.Project
 
 - Is composable: false
 - Is bindable: false

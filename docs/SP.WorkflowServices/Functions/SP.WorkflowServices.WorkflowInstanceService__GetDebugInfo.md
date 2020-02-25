@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: GetDebugInfo
 
-## Function Import: GetDebugInfo
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowInstanceService
 - Is composable: false

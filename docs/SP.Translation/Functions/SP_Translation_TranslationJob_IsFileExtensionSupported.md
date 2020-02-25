@@ -1,6 +1,6 @@
-# Namespace: SP.Translation
+# Function Import: SP_Translation_TranslationJob_IsFileExtensionSupported
 
-## Function Import: SP_Translation_TranslationJob_IsFileExtensionSupported
+> Namespace: SP.Translation
 
 - Is composable: false
 - Is bindable: false

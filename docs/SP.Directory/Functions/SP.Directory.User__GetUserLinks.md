@@ -1,6 +1,6 @@
-# Namespace: SP.Directory
+# Function Import: GetUserLinks
 
-## Function Import: GetUserLinks
+> Namespace: SP.Directory
 
 - Entity type: SP.Directory.User
 - Is composable: false

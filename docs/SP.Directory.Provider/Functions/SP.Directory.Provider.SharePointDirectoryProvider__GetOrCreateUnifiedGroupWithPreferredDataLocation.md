@@ -1,6 +1,6 @@
-# Namespace: SP.Directory.Provider
+# Function Import: GetOrCreateUnifiedGroupWithPreferredDataLocation
 
-## Function Import: GetOrCreateUnifiedGroupWithPreferredDataLocation
+> Namespace: SP.Directory.Provider
 
 - Entity type: SP.Directory.Provider.SharePointDirectoryProvider
 - Is composable: false

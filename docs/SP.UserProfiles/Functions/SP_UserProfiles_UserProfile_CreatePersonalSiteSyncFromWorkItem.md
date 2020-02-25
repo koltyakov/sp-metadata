@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: SP_UserProfiles_UserProfile_CreatePersonalSiteSyncFromWorkItem
 
-## Function Import: SP_UserProfiles_UserProfile_CreatePersonalSiteSyncFromWorkItem
+> Namespace: SP.UserProfiles
 
 - Is composable: false
 - Is bindable: false

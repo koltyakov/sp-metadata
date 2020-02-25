@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SetQuizState
 
-## Function Import: SetQuizState
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Internal.ClientSideComponent
+# Entity Type: ComponentContextInfo
 
-## Entity Type: ComponentContextInfo
+> Namespace: Microsoft.SharePoint.Internal.ClientSideComponent
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

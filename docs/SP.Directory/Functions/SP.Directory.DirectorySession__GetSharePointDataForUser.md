@@ -1,6 +1,6 @@
-# Namespace: SP.Directory
+# Function Import: GetSharePointDataForUser
 
-## Function Import: GetSharePointDataForUser
+> Namespace: SP.Directory
 
 - Entity type: SP.Directory.DirectorySession
 - Is composable: false

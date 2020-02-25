@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_RelatedItemManager_AddSingleLink
 
-## Function Import: SP_RelatedItemManager_AddSingleLink
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

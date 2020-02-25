@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Online.SharePoint.TenantAdministration
+# Function Import: RegisterHubSiteWithCreationInformation
 
-## Function Import: RegisterHubSiteWithCreationInformation
+> Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
 - Entity type: Microsoft.Online.SharePoint.TenantAdministration.Tenant
 - Is composable: false

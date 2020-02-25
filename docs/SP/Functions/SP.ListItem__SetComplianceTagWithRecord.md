@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SetComplianceTagWithRecord
 
-## Function Import: SetComplianceTagWithRecord
+> Namespace: SP
 
 - Entity type: SP.ListItem
 - Is composable: false

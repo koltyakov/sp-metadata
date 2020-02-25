@@ -1,6 +1,6 @@
-# Namespace: SP.Internal
+# Function Import: SP_Internal_FormsCustomization_SetApp
 
-## Function Import: SP_Internal_FormsCustomization_SetApp
+> Namespace: SP.Internal
 
 - Is composable: false
 - Is bindable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.Sharing
+# Function Import: SP_Web_ShareObject
 
-## Function Import: SP_Web_ShareObject
+> Namespace: SP.Sharing
 
 - Is composable: false
 - Is bindable: false

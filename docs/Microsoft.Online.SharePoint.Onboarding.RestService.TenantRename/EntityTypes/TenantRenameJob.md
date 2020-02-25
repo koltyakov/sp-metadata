@@ -1,10 +1,8 @@
-# Namespace: Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename
+# Entity Type: TenantRenameJob
 
-## Entity Type: TenantRenameJob
+> Namespace: Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

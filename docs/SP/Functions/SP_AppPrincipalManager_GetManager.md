@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_AppPrincipalManager_GetManager
 
-## Function Import: SP_AppPrincipalManager_GetManager
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

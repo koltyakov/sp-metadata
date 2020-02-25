@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Portal
+# Function Import: Microsoft_SharePoint_Portal_MySiteRecommendations_FollowItem
 
-## Function Import: Microsoft_SharePoint_Portal_MySiteRecommendations_FollowItem
+> Namespace: Microsoft.SharePoint.Portal
 
 - Is composable: false
 - Is bindable: false

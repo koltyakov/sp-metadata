@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: DeleteQuiz
 
-## Function Import: DeleteQuiz
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_AppPrincipalCredential_CreateFromSymmetricKey
 
-## Function Import: SP_AppPrincipalCredential_CreateFromSymmetricKey
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

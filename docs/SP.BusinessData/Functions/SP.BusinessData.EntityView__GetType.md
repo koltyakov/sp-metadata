@@ -1,6 +1,6 @@
-# Namespace: SP.BusinessData
+# Function Import: GetType
 
-## Function Import: GetType
+> Namespace: SP.BusinessData
 
 - Entity type: SP.BusinessData.EntityView
 - Is composable: false

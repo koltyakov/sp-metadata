@@ -1,10 +1,8 @@
-# Namespace: SP.Sharing
+# Complex Type: SiteSharingReportCapabilities
 
-## Complex Type: SiteSharingReportCapabilities
+> Namespace: SP.Sharing
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: MoveTo
 
-## Function Import: MoveTo
+> Namespace: SP
 
 - Entity type: SP.Folder
 - Is composable: false

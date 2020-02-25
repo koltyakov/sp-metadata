@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: RestartWorkflowSkipToStage
 
-## Function Import: RestartWorkflowSkipToStage
+> Namespace: PS
 
 - Entity type: PS.ProjectWorkflowInstance
 - Is composable: false

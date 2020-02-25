@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: OpenWebById
 
-## Function Import: OpenWebById
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

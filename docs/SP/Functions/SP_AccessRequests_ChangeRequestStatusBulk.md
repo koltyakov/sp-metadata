@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_AccessRequests_ChangeRequestStatusBulk
 
-## Function Import: SP_AccessRequests_ChangeRequestStatusBulk
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_Web_DeleteAllAnonymousLinksForObject
 
-## Function Import: SP_Web_DeleteAllAnonymousLinksForObject
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

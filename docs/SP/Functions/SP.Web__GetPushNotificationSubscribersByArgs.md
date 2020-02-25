@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetPushNotificationSubscribersByArgs
 
-## Function Import: GetPushNotificationSubscribersByArgs
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

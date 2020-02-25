@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Portal.Home
+# Complex Type: SharePointHomeDataCache
 
-## Complex Type: SharePointHomeDataCache
+> Namespace: Microsoft.SharePoint.Portal.Home
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

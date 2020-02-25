@@ -1,10 +1,8 @@
-# Namespace: SP.WebParts
+# Complex Type: TileData
 
-## Complex Type: TileData
+> Namespace: SP.WebParts
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_MoveCopyUtil_MoveFolder
 
-## Function Import: SP_MoveCopyUtil_MoveFolder
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

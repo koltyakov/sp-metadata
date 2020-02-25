@@ -1,6 +1,6 @@
-# Namespace: SP.Discovery
+# Function Import: SP_Discovery_Case
 
-## Function Import: SP_Discovery_Case
+> Namespace: SP.Discovery
 
 - Is composable: false
 - Is bindable: false

@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Portal.UserProfiles
+# Entity Type: PromotedSites
 
-## Entity Type: PromotedSites
+> Namespace: Microsoft.SharePoint.Portal.UserProfiles
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

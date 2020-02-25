@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: NewMicrofeedPostDefinition
 
-## Function Import: NewMicrofeedPostDefinition
+> Namespace: SP.Microfeed
 
 - Entity type: SP.Microfeed.MicrofeedPostDefinitionManager
 - Is composable: false

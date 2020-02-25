@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Online.SharePoint.TenantManagement
+# Function Import: RevokeAllUserSessionsByPuid
 
-## Function Import: RevokeAllUserSessionsByPuid
+> Namespace: Microsoft.Online.SharePoint.TenantManagement
 
 - Entity type: Microsoft.Online.SharePoint.TenantManagement.Office365Tenant
 - Is composable: false

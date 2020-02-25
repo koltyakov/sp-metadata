@@ -1,6 +1,6 @@
-# Namespace: SP.Workflow
+# Function Import: SetCommentsDisabled
 
-## Function Import: SetCommentsDisabled
+> Namespace: SP.Workflow
 
 - Entity type: SP.Workflow.SPWorkflowTask
 - Is composable: false

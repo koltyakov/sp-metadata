@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: CreatePersonalSiteEnque
 
-## Function Import: CreatePersonalSiteEnque
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.UserProfile
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.CompliancePolicy
+# Function Import: MarkReviewItemsForDeletion
 
-## Function Import: MarkReviewItemsForDeletion
+> Namespace: SP.CompliancePolicy
 
 - Entity type: SP.CompliancePolicy.SPPolicyStoreProxy
 - Is composable: false

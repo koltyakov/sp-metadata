@@ -1,10 +1,8 @@
-# Namespace: Microsoft.Online.SharePoint.TenantManagement
+# Entity Type: Office365Tenant
 
-## Entity Type: Office365Tenant
+> Namespace: Microsoft.Online.SharePoint.TenantManagement
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: FinishUploadWithChecksum
 
-## Function Import: FinishUploadWithChecksum
+> Namespace: SP
 
 - Entity type: SP.File
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: SaveCollateral
 
-## Function Import: SaveCollateral
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowDeploymentService
 - Is composable: false

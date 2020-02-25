@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_APIHubConnector_GetEntities
 
-## Function Import: SP_APIHubConnector_GetEntities
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

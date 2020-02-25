@@ -1,10 +1,8 @@
-# Namespace: Microsoft.Online.SharePoint.TenantAdministration.Internal
+# Entity Type: SPOWebAppServicePrincipal
 
-## Entity Type: SPOWebAppServicePrincipal
+> Namespace: Microsoft.Online.SharePoint.TenantAdministration.Internal
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -15,8 +13,6 @@ ReplyUrls (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 ServicePrincipalObjectIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

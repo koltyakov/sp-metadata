@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: DeleteSubscription
 
-## Function Import: DeleteSubscription
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowSubscriptionService
 - Is composable: false

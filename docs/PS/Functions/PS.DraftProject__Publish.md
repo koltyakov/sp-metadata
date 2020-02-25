@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: Publish
 
-## Function Import: Publish
+> Namespace: PS
 
 - Entity type: PS.DraftProject
 - Is composable: false

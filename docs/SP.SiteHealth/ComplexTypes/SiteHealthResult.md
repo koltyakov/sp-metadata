@@ -1,10 +1,8 @@
-# Namespace: SP.SiteHealth
+# Complex Type: SiteHealthResult
 
-## Complex Type: SiteHealthResult
+> Namespace: SP.SiteHealth
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

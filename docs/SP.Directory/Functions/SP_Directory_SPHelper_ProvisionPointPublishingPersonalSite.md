@@ -1,6 +1,6 @@
-# Namespace: SP.Directory
+# Function Import: SP_Directory_SPHelper_ProvisionPointPublishingPersonalSite
 
-## Function Import: SP_Directory_SPHelper_ProvisionPointPublishingPersonalSite
+> Namespace: SP.Directory
 
 - Is composable: false
 - Is bindable: false

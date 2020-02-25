@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SyncFlowInstance
 
-## Function Import: SyncFlowInstance
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetMigrationJobStatus
 
-## Function Import: GetMigrationJobStatus
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

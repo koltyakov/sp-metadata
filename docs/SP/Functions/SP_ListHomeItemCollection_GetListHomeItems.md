@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_ListHomeItemCollection_GetListHomeItems
 
-## Function Import: SP_ListHomeItemCollection_GetListHomeItems
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

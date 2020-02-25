@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_SPHSite_SetSPHSite
 
-## Function Import: SP_SPHSite_SetSPHSite
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

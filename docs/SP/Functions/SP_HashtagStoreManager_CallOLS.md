@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_HashtagStoreManager_CallOLS
 
-## Function Import: SP_HashtagStoreManager_CallOLS
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

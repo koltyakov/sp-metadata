@@ -1,10 +1,8 @@
-# Namespace: SP.Directory.Provider
+# Complex Type: LinkTarget
 
-## Complex Type: LinkTarget
+> Namespace: SP.Directory.Provider
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

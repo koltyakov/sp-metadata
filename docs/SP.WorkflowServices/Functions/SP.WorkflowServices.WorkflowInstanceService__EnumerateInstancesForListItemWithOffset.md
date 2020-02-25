@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: EnumerateInstancesForListItemWithOffset
 
-## Function Import: EnumerateInstancesForListItemWithOffset
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowInstanceService
 - Is composable: false

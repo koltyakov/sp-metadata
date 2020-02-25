@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: GetAllVideos
 
-## Function Import: GetAllVideos
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.VideoChannel
 - Is composable: false

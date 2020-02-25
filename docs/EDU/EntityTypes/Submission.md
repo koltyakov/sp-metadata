@@ -1,10 +1,8 @@
-# Namespace: EDU
+# Entity Type: Submission
 
-## Entity Type: Submission
+> Namespace: EDU
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -13,8 +11,6 @@ IsSubmitted (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
 SubmissionDate (Edm.DateTime) | ❌ | ❌ | ❌ | ✅
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,10 +1,8 @@
-# Namespace: SP
+# Entity Type: FileVersion
 
-## Entity Type: FileVersion
+> Namespace: SP
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -18,8 +16,6 @@ Url (Edm.String) | ✅ | ✅ | ✅ | ✅
 VersionLabel (Edm.String) | ✅ | ✅ | ✅ | ✅
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

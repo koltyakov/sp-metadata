@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Online.SharePoint.AppLauncher
+# Function Import: GetData
 
-## Function Import: GetData
+> Namespace: Microsoft.Online.SharePoint.AppLauncher
 
 - Entity type: Microsoft.Online.SharePoint.AppLauncher.AppLauncher
 - Is composable: false

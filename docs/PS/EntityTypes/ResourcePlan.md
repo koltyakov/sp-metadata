@@ -1,10 +1,8 @@
-# Namespace: PS
+# Entity Type: ResourcePlan
 
-## Entity Type: ResourcePlan
+> Namespace: PS
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -15,8 +13,6 @@ UtilizationDate (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 UtilizationType (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

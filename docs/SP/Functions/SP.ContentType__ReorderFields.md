@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: ReorderFields
 
-## Function Import: ReorderFields
+> Namespace: SP
 
 - Entity type: SP.ContentType
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.ClientSideComponent
+# Function Import: UpdateWebPartData
 
-## Function Import: UpdateWebPartData
+> Namespace: Microsoft.SharePoint.ClientSideComponent
 
 - Entity type: Microsoft.SharePoint.ClientSideComponent.HostedApp
 - Is composable: false

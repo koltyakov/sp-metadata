@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Administration
+# Function Import: logevent
 
-## Function Import: logevent
+> Namespace: Microsoft.SharePoint.Administration
 
 - Entity type: Microsoft.SharePoint.Administration.SPAnalyticsUsageService
 - Is composable: false

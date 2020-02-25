@@ -1,6 +1,6 @@
-# Namespace: SP.Translation
+# Function Import: SP_Translation_VariationsTranslationTimerJob_MachineTranslateItemsRequiringTranslation
 
-## Function Import: SP_Translation_VariationsTranslationTimerJob_MachineTranslateItemsRequiringTranslation
+> Namespace: SP.Translation
 
 - Is composable: false
 - Is bindable: false

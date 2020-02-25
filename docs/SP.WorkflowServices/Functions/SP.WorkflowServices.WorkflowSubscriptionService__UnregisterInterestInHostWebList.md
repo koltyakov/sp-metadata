@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: UnregisterInterestInHostWebList
 
-## Function Import: UnregisterInterestInHostWebList
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowSubscriptionService
 - Is composable: false

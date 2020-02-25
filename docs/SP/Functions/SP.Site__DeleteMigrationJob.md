@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: DeleteMigrationJob
 
-## Function Import: DeleteMigrationJob
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

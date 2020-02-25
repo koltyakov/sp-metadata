@@ -1,6 +1,6 @@
-# Namespace: SP.Directory.Provider
+# Function Import: NotifyDataChanges
 
-## Function Import: NotifyDataChanges
+> Namespace: SP.Directory.Provider
 
 - Entity type: SP.Directory.Provider.SharePointDirectoryProvider
 - Is composable: false

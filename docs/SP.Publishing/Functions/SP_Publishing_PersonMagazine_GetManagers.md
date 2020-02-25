@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: SP_Publishing_PersonMagazine_GetManagers
 
-## Function Import: SP_Publishing_PersonMagazine_GetManagers
+> Namespace: SP.Publishing
 
 - Is composable: false
 - Is bindable: false

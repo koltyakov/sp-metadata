@@ -1,6 +1,6 @@
-# Namespace: SP.Social
+# Function Import: StopFollowing
 
-## Function Import: StopFollowing
+> Namespace: SP.Social
 
 - Entity type: SP.Social.SocialRestFollowingManager
 - Is composable: false

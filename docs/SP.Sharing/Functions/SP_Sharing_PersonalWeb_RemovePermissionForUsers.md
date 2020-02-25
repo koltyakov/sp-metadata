@@ -1,6 +1,6 @@
-# Namespace: SP.Sharing
+# Function Import: SP_Sharing_PersonalWeb_RemovePermissionForUsers
 
-## Function Import: SP_Sharing_PersonalWeb_RemovePermissionForUsers
+> Namespace: SP.Sharing
 
 - Is composable: false
 - Is bindable: false

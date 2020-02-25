@@ -1,6 +1,6 @@
-# Namespace: SP.Utilities
+# Function Import: SP_Utilities_WopiHostUtility_GetWebApplicationUrls
 
-## Function Import: SP_Utilities_WopiHostUtility_GetWebApplicationUrls
+> Namespace: SP.Utilities
 
 - Is composable: false
 - Is bindable: false

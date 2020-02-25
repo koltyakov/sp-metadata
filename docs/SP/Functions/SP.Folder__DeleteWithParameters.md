@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: DeleteWithParameters
 
-## Function Import: DeleteWithParameters
+> Namespace: SP
 
 - Entity type: SP.Folder
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: PreProcessAttachment
 
-## Function Import: PreProcessAttachment
+> Namespace: SP.Microfeed
 
 - Entity type: SP.Microfeed.MicrofeedAttachmentStore
 - Is composable: false

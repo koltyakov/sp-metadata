@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SetExemptFromBlockDownloadOfNonViewableFiles
 
-## Function Import: SetExemptFromBlockDownloadOfNonViewableFiles
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

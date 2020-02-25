@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Marketplace
+# Entity Type: SPMarketplaceSettings
 
-## Entity Type: SPMarketplaceSettings
+> Namespace: Microsoft.SharePoint.Marketplace
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

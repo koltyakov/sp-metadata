@@ -1,10 +1,8 @@
-# Namespace: EDU
+# Entity Type: Community
 
-## Entity Type: Community
+> Namespace: EDU
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -15,8 +13,6 @@ Url (Edm.String) | ❌ | ❌ | ❌ | ✅
 WebPath (Edm.String) | ❌ | ❌ | ❌ | ✅
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

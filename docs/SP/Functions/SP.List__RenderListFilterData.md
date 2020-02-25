@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: RenderListFilterData
 
-## Function Import: RenderListFilterData
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

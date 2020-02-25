@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: RegisterInterestInList
 
-## Function Import: RegisterInterestInList
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowSubscriptionService
 - Is composable: false

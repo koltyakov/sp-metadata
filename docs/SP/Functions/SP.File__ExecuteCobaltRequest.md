@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: ExecuteCobaltRequest
 
-## Function Import: ExecuteCobaltRequest
+> Namespace: SP
 
 - Entity type: SP.File
 - Is composable: false

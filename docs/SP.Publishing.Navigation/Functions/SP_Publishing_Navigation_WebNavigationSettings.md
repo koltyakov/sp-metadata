@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing.Navigation
+# Function Import: SP_Publishing_Navigation_WebNavigationSettings
 
-## Function Import: SP_Publishing_Navigation_WebNavigationSettings
+> Namespace: SP.Publishing.Navigation
 
 - Is composable: false
 - Is bindable: false

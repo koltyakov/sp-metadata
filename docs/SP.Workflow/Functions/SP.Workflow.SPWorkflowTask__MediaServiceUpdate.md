@@ -1,6 +1,6 @@
-# Namespace: SP.Workflow
+# Function Import: MediaServiceUpdate
 
-## Function Import: MediaServiceUpdate
+> Namespace: SP.Workflow
 
 - Entity type: SP.Workflow.SPWorkflowTask
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Utilities.WebTemplateExtensions
+# Function Import: Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignMetadata
 
-## Function Import: Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignMetadata
+> Namespace: Microsoft.SharePoint.Utilities.WebTemplateExtensions
 
 - Is composable: false
 - Is bindable: false

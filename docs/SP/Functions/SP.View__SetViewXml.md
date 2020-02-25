@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SetViewXml
 
-## Function Import: SetViewXml
+> Namespace: SP
 
 - Entity type: SP.View
 - Is composable: false

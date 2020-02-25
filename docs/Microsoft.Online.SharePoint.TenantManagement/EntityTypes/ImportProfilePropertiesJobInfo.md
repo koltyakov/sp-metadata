@@ -1,10 +1,8 @@
-# Namespace: Microsoft.Online.SharePoint.TenantManagement
+# Entity Type: ImportProfilePropertiesJobInfo
 
-## Entity Type: ImportProfilePropertiesJobInfo
+> Namespace: Microsoft.Online.SharePoint.TenantManagement
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

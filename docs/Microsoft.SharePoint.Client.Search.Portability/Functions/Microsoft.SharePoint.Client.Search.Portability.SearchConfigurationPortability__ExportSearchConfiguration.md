@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Client.Search.Portability
+# Function Import: ExportSearchConfiguration
 
-## Function Import: ExportSearchConfiguration
+> Namespace: Microsoft.SharePoint.Client.Search.Portability
 
 - Entity type: Microsoft.SharePoint.Client.Search.Portability.SearchConfigurationPortability
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Client.Search.Query
+# Function Import: ExecuteQuery
 
-## Function Import: ExecuteQuery
+> Namespace: Microsoft.SharePoint.Client.Search.Query
 
 - Entity type: Microsoft.SharePoint.Client.Search.Query.SearchExecutor
 - Is composable: false

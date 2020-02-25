@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetListUsingPath
 
-## Function Import: GetListUsingPath
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: FollowTag
 
-## Function Import: FollowTag
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.PeopleManager
 - Is composable: false

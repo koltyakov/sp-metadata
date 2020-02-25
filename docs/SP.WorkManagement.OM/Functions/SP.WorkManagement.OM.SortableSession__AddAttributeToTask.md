@@ -1,6 +1,6 @@
-# Namespace: SP.WorkManagement.OM
+# Function Import: AddAttributeToTask
 
-## Function Import: AddAttributeToTask
+> Namespace: SP.WorkManagement.OM
 
 - Entity type: SP.WorkManagement.OM.SortableSession
 - Is composable: false

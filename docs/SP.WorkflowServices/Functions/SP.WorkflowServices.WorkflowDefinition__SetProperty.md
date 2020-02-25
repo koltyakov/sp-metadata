@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: SetProperty
 
-## Function Import: SetProperty
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowDefinition
 - Is composable: false

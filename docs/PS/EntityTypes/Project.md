@@ -1,10 +1,8 @@
-# Namespace: PS
+# Entity Type: Project
 
-## Entity Type: Project
+> Namespace: PS
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -47,8 +45,6 @@ TaskListId (Edm.Guid) | ✅ | ✅ | ✅ | ❌
 WebId (Edm.Guid) | ✅ | ✅ | ✅ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

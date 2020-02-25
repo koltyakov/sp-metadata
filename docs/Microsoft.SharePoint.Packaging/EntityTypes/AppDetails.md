@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Packaging
+# Entity Type: AppDetails
 
-## Entity Type: AppDetails
+> Namespace: Microsoft.SharePoint.Packaging
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

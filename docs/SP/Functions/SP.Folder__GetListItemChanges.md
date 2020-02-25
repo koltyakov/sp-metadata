@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetListItemChanges
 
-## Function Import: GetListItemChanges
+> Namespace: SP
 
 - Entity type: SP.Folder
 - Is composable: false

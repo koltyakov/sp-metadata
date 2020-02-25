@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: OpenBinaryStreamWithOptions
 
-## Function Import: OpenBinaryStreamWithOptions
+> Namespace: SP
 
 - Entity type: SP.File
 - Is composable: false

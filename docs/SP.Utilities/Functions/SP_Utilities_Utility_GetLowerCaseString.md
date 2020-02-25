@@ -1,6 +1,6 @@
-# Namespace: SP.Utilities
+# Function Import: SP_Utilities_Utility_GetLowerCaseString
 
-## Function Import: SP_Utilities_Utility_GetLowerCaseString
+> Namespace: SP.Utilities
 
 - Is composable: false
 - Is bindable: false

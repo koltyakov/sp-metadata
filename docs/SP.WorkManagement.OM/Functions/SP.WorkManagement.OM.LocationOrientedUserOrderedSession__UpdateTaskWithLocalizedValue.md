@@ -1,6 +1,6 @@
-# Namespace: SP.WorkManagement.OM
+# Function Import: UpdateTaskWithLocalizedValue
 
-## Function Import: UpdateTaskWithLocalizedValue
+> Namespace: SP.WorkManagement.OM
 
 - Entity type: SP.WorkManagement.OM.LocationOrientedUserOrderedSession
 - Is composable: false

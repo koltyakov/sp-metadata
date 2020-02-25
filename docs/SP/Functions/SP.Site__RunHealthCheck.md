@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: RunHealthCheck
 
-## Function Import: RunHealthCheck
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

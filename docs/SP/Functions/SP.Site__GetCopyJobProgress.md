@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetCopyJobProgress
 
-## Function Import: GetCopyJobProgress
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

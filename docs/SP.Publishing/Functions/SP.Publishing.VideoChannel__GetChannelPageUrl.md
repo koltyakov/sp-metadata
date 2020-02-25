@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: GetChannelPageUrl
 
-## Function Import: GetChannelPageUrl
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.VideoChannel
 - Is composable: false

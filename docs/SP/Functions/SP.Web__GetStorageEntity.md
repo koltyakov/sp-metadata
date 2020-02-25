@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetStorageEntity
 
-## Function Import: GetStorageEntity
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

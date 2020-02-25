@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_Web_CreateAnonymousLinkWithExpiration
 
-## Function Import: SP_Web_CreateAnonymousLinkWithExpiration
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

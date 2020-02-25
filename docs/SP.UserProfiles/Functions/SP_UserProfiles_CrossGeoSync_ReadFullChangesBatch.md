@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: SP_UserProfiles_CrossGeoSync_ReadFullChangesBatch
 
-## Function Import: SP_UserProfiles_CrossGeoSync_ReadFullChangesBatch
+> Namespace: SP.UserProfiles
 
 - Is composable: false
 - Is bindable: false

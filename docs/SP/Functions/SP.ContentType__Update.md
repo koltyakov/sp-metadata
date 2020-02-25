@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: Update
 
-## Function Import: Update
+> Namespace: SP
 
 - Entity type: SP.ContentType
 - Is composable: false

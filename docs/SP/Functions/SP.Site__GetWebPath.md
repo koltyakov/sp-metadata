@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetWebPath
 
-## Function Import: GetWebPath
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

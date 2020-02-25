@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_TeamChannelManager_DemoteTeamChannelByPath
 
-## Function Import: SP_TeamChannelManager_DemoteTeamChannelByPath
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

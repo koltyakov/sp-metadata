@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetCatalog
 
-## Function Import: GetCatalog
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

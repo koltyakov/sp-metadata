@@ -1,6 +1,6 @@
-# Namespace: SP.Utilities
+# Function Import: SP_Utilities_Utility_SearchPrincipalsUsingContextWeb
 
-## Function Import: SP_Utilities_Utility_SearchPrincipalsUsingContextWeb
+> Namespace: SP.Utilities
 
 - Is composable: false
 - Is bindable: false

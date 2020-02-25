@@ -1,6 +1,6 @@
-# Namespace: SP.Utilities
+# Function Import: SP_Utilities_Utility_LogCustomRemoteAppError
 
-## Function Import: SP_Utilities_Utility_LogCustomRemoteAppError
+> Namespace: SP.Utilities
 
 - Is composable: false
 - Is bindable: false

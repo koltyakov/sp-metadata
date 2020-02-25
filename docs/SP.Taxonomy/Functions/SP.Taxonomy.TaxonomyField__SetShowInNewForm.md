@@ -1,6 +1,6 @@
-# Namespace: SP.Taxonomy
+# Function Import: SetShowInNewForm
 
-## Function Import: SetShowInNewForm
+> Namespace: SP.Taxonomy
 
 - Entity type: SP.Taxonomy.TaxonomyField
 - Is composable: false

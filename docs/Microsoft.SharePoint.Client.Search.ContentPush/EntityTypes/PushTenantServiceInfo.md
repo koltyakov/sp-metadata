@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Client.Search.ContentPush
+# Entity Type: PushTenantServiceInfo
 
-## Entity Type: PushTenantServiceInfo
+> Namespace: Microsoft.SharePoint.Client.Search.ContentPush
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

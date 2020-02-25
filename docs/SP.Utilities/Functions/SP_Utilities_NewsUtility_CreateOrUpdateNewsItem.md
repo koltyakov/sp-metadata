@@ -1,6 +1,6 @@
-# Namespace: SP.Utilities
+# Function Import: SP_Utilities_NewsUtility_CreateOrUpdateNewsItem
 
-## Function Import: SP_Utilities_NewsUtility_CreateOrUpdateNewsItem
+> Namespace: SP.Utilities
 
 - Is composable: false
 - Is bindable: false

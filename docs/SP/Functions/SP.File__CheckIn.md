@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: CheckIn
 
-## Function Import: CheckIn
+> Namespace: SP
 
 - Entity type: SP.File
 - Is composable: false

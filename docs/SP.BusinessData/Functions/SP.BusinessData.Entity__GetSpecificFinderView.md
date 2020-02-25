@@ -1,6 +1,6 @@
-# Namespace: SP.BusinessData
+# Function Import: GetSpecificFinderView
 
-## Function Import: GetSpecificFinderView
+> Namespace: SP.BusinessData
 
 - Entity type: SP.BusinessData.Entity
 - Is composable: false

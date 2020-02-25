@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: WriteCache2
 
-## Function Import: WriteCache2
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.PersonalCache
 - Is composable: false

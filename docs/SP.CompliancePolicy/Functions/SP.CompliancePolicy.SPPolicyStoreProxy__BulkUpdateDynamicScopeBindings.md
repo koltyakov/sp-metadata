@@ -1,6 +1,6 @@
-# Namespace: SP.CompliancePolicy
+# Function Import: BulkUpdateDynamicScopeBindings
 
-## Function Import: BulkUpdateDynamicScopeBindings
+> Namespace: SP.CompliancePolicy
 
 - Entity type: SP.CompliancePolicy.SPPolicyStoreProxy
 - Is composable: false

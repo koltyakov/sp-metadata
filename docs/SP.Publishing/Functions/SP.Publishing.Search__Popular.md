@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: Popular
 
-## Function Import: Popular
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.Search
 - Is composable: false

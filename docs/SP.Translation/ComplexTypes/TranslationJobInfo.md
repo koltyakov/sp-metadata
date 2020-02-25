@@ -1,10 +1,8 @@
-# Namespace: SP.Translation
+# Complex Type: TranslationJobInfo
 
-## Complex Type: TranslationJobInfo
+> Namespace: SP.Translation
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

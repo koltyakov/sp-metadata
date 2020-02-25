@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Activities
+# Complex Type: MentionFacet
 
-## Complex Type: MentionFacet
+> Namespace: Microsoft.SharePoint.Activities
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

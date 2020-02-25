@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: SP_UserProfiles_FollowedItemData
 
-## Function Import: SP_UserProfiles_FollowedItemData
+> Namespace: SP.UserProfiles
 
 - Is composable: false
 - Is bindable: false

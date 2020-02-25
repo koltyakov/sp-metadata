@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: UpdateDateTimeProperty
 
-## Function Import: UpdateDateTimeProperty
+> Namespace: PS
 
 - Entity type: PS.WorkflowActivities
 - Is composable: false

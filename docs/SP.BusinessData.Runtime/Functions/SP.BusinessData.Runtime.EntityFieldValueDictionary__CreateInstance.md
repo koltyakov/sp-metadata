@@ -1,6 +1,6 @@
-# Namespace: SP.BusinessData.Runtime
+# Function Import: CreateInstance
 
-## Function Import: CreateInstance
+> Namespace: SP.BusinessData.Runtime
 
 - Entity type: SP.BusinessData.Runtime.EntityFieldValueDictionary
 - Is composable: false

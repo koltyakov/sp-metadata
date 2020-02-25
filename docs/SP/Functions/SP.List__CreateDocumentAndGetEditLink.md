@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: CreateDocumentAndGetEditLink
 
-## Function Import: CreateDocumentAndGetEditLink
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

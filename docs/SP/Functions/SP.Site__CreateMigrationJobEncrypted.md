@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: CreateMigrationJobEncrypted
 
-## Function Import: CreateMigrationJobEncrypted
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

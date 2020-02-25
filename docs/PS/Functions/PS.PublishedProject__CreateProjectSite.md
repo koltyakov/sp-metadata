@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: CreateProjectSite
 
-## Function Import: CreateProjectSite
+> Namespace: PS
 
 - Entity type: PS.PublishedProject
 - Is composable: false

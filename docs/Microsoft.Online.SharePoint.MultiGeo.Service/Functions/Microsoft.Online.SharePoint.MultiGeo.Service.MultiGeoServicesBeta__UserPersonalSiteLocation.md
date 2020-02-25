@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Online.SharePoint.MultiGeo.Service
+# Function Import: UserPersonalSiteLocation
 
-## Function Import: UserPersonalSiteLocation
+> Namespace: Microsoft.Online.SharePoint.MultiGeo.Service
 
 - Entity type: Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta
 - Is composable: false

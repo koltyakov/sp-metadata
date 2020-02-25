@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_AppContextSite
 
-## Function Import: SP_AppContextSite
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

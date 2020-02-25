@@ -1,10 +1,8 @@
-# Namespace: SPO.Identity
+# Entity Type: SPOIdentityHelper
 
-## Entity Type: SPOIdentityHelper
+> Namespace: SPO.Identity
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

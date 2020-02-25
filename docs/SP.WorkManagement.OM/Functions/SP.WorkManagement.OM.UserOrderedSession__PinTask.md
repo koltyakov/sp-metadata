@@ -1,6 +1,6 @@
-# Namespace: SP.WorkManagement.OM
+# Function Import: PinTask
 
-## Function Import: PinTask
+> Namespace: SP.WorkManagement.OM
 
 - Entity type: SP.WorkManagement.OM.UserOrderedSession
 - Is composable: false

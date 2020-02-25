@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Yammer
+# Complex Type: WacToken
 
-## Complex Type: WacToken
+> Namespace: Microsoft.SharePoint.Yammer
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,10 +1,8 @@
-# Namespace: SP.UserProfiles
+# Entity Type: PersonProperties
 
-## Entity Type: PersonProperties
+> Namespace: SP.UserProfiles
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: PostReply
 
-## Function Import: PostReply
+> Namespace: SP.Microfeed
 
 - Entity type: SP.Microfeed.MicrofeedManager
 - Is composable: false

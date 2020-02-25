@@ -1,6 +1,6 @@
-# Namespace: SP.Translation
+# Function Import: SP_Translation_SyncTranslator
 
-## Function Import: SP_Translation_SyncTranslator
+> Namespace: SP.Translation
 
 - Is composable: false
 - Is bindable: false

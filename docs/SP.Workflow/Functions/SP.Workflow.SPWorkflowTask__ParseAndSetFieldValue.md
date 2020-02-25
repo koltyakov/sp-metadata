@@ -1,6 +1,6 @@
-# Namespace: SP.Workflow
+# Function Import: ParseAndSetFieldValue
 
-## Function Import: ParseAndSetFieldValue
+> Namespace: SP.Workflow
 
 - Entity type: SP.Workflow.SPWorkflowTask
 - Is composable: false

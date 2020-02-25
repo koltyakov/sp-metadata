@@ -1,10 +1,8 @@
-# Namespace: SP.PageInstrumentation
+# Complex Type: PageImpressionClient
 
-## Complex Type: PageImpressionClient
+> Namespace: SP.PageInstrumentation
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

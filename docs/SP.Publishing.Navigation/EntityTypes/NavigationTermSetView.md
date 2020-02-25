@@ -1,10 +1,8 @@
-# Namespace: SP.Publishing.Navigation
+# Entity Type: NavigationTermSetView
 
-## Entity Type: NavigationTermSetView
+> Namespace: SP.Publishing.Navigation
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

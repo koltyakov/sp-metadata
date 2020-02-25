@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery
+# Entity Type: SPCorporateCuratedGallerySettingsFactory
 
-## Entity Type: SPCorporateCuratedGallerySettingsFactory
+> Namespace: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

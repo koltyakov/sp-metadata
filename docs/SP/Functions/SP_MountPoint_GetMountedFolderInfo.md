@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_MountPoint_GetMountedFolderInfo
 
-## Function Import: SP_MountPoint_GetMountedFolderInfo
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

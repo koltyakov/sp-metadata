@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Client.Search.Administration
+# Function Import: Microsoft_SharePoint_Client_Search_Administration_SearchObjectOwner
 
-## Function Import: Microsoft_SharePoint_Client_Search_Administration_SearchObjectOwner
+> Namespace: Microsoft.SharePoint.Client.Search.Administration
 
 - Is composable: false
 - Is bindable: false

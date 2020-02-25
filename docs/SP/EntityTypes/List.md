@@ -1,10 +1,8 @@
-# Namespace: SP
+# Entity Type: List
 
-## Entity Type: List
+> Namespace: SP
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -87,8 +85,6 @@ ValidationMessage (Edm.String) | ✅ | ✅ | ✅ | ✅
 WriteSecurity (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

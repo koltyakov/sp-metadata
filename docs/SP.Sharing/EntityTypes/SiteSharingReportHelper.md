@@ -1,10 +1,8 @@
-# Namespace: SP.Sharing
+# Entity Type: SiteSharingReportHelper
 
-## Entity Type: SiteSharingReportHelper
+> Namespace: SP.Sharing
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

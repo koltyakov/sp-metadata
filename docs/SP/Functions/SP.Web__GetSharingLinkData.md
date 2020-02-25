@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetSharingLinkData
 
-## Function Import: GetSharingLinkData
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

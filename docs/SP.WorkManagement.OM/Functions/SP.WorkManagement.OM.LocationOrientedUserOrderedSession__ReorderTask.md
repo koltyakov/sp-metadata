@@ -1,6 +1,6 @@
-# Namespace: SP.WorkManagement.OM
+# Function Import: ReorderTask
 
-## Function Import: ReorderTask
+> Namespace: SP.WorkManagement.OM
 
 - Entity type: SP.WorkManagement.OM.LocationOrientedUserOrderedSession
 - Is composable: false

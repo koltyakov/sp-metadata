@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: GetResourcePlanByUrl
 
-## Function Import: GetResourcePlanByUrl
+> Namespace: PS
 
 - Entity type: PS.PublishedProject
 - Is composable: false

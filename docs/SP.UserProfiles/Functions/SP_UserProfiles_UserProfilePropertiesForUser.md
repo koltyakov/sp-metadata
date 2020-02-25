@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: SP_UserProfiles_UserProfilePropertiesForUser
 
-## Function Import: SP_UserProfiles_UserProfilePropertiesForUser
+> Namespace: SP.UserProfiles
 
 - Is composable: false
 - Is bindable: false

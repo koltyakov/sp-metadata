@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_Site_Exists
 
-## Function Import: SP_Site_Exists
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

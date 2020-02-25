@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Online.SharePoint.TenantAdministration
+# Function Import: Microsoft_Online_SharePoint_TenantAdministration_SiteProperties
 
-## Function Import: Microsoft_Online_SharePoint_TenantAdministration_SiteProperties
+> Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
 - Is composable: false
 - Is bindable: false

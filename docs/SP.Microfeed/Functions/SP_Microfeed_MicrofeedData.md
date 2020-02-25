@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: SP_Microfeed_MicrofeedData
 
-## Function Import: SP_Microfeed_MicrofeedData
+> Namespace: SP.Microfeed
 
 - Is composable: false
 - Is bindable: false

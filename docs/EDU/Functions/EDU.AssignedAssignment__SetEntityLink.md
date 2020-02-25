@@ -1,6 +1,6 @@
-# Namespace: EDU
+# Function Import: SetEntityLink
 
-## Function Import: SetEntityLink
+> Namespace: EDU
 
 - Entity type: EDU.AssignedAssignment
 - Is composable: false

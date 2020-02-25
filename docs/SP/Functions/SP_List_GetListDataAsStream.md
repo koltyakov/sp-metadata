@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_List_GetListDataAsStream
 
-## Function Import: SP_List_GetListDataAsStream
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

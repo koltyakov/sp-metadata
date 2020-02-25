@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: GetVersion
 
-## Function Import: GetVersion
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.RepostPage
 - Is composable: false

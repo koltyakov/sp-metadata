@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Utilities.WebTemplateExtensions
+# Function Import: Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_UpdateSiteScriptPackage
 
-## Function Import: Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_UpdateSiteScriptPackage
+> Namespace: Microsoft.SharePoint.Utilities.WebTemplateExtensions
 
 - Is composable: false
 - Is bindable: false

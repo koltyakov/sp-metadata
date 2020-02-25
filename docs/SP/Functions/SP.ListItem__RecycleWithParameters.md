@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: RecycleWithParameters
 
-## Function Import: RecycleWithParameters
+> Namespace: SP
 
 - Entity type: SP.ListItem
 - Is composable: false

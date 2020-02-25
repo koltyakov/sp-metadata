@@ -1,6 +1,6 @@
-# Namespace: SP.Workflow
+# Function Import: RecycleWithParameters
 
-## Function Import: RecycleWithParameters
+> Namespace: SP.Workflow
 
 - Entity type: SP.Workflow.SPWorkflowTask
 - Is composable: false

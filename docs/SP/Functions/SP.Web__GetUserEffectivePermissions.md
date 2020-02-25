@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetUserEffectivePermissions
 
-## Function Import: GetUserEffectivePermissions
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

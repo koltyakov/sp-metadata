@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Packaging
+# Entity Type: AppIconInfo
 
-## Entity Type: AppIconInfo
+> Namespace: Microsoft.SharePoint.Packaging
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

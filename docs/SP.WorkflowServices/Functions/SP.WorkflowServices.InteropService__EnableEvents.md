@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: EnableEvents
 
-## Function Import: EnableEvents
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.InteropService
 - Is composable: false

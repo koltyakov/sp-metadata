@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: SubmitStatusUpdates
 
-## Function Import: SubmitStatusUpdates
+> Namespace: PS
 
 - Entity type: PS.StatusAssignment
 - Is composable: false

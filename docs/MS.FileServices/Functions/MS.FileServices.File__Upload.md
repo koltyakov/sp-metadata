@@ -1,6 +1,6 @@
-# Namespace: MS.FileServices
+# Function Import: Upload
 
-## Function Import: Upload
+> Namespace: MS.FileServices
 
 - Entity type: MS.FileServices.File
 - Is composable: false

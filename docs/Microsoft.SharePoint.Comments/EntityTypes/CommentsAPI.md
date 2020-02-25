@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Comments
+# Entity Type: CommentsAPI
 
-## Entity Type: CommentsAPI
+> Namespace: Microsoft.SharePoint.Comments
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: ReadProjectProperty
 
-## Function Import: ReadProjectProperty
+> Namespace: PS
 
 - Entity type: PS.WorkflowActivities
 - Is composable: false

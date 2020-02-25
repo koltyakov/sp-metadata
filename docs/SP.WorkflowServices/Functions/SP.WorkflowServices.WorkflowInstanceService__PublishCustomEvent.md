@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: PublishCustomEvent
 
-## Function Import: PublishCustomEvent
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowInstanceService
 - Is composable: false

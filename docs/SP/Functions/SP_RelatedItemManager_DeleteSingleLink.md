@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_RelatedItemManager_DeleteSingleLink
 
-## Function Import: SP_RelatedItemManager_DeleteSingleLink
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

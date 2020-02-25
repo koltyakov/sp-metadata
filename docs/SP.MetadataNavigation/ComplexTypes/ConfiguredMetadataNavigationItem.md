@@ -1,10 +1,8 @@
-# Namespace: SP.MetadataNavigation
+# Complex Type: ConfiguredMetadataNavigationItem
 
-## Complex Type: ConfiguredMetadataNavigationItem
+> Namespace: SP.MetadataNavigation
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

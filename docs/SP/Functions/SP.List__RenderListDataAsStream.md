@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: RenderListDataAsStream
 
-## Function Import: RenderListDataAsStream
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

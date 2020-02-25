@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SetShowInEditForm
 
-## Function Import: SetShowInEditForm
+> Namespace: SP
 
 - Entity type: SP.FieldLookup
 - Is composable: false

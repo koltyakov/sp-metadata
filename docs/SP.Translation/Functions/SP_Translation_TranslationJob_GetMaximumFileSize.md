@@ -1,6 +1,6 @@
-# Namespace: SP.Translation
+# Function Import: SP_Translation_TranslationJob_GetMaximumFileSize
 
-## Function Import: SP_Translation_TranslationJob_GetMaximumFileSize
+> Namespace: SP.Translation
 
 - Is composable: false
 - Is bindable: false

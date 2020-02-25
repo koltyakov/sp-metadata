@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetFileByGuestUrlExtended
 
-## Function Import: GetFileByGuestUrlExtended
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

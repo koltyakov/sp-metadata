@@ -1,10 +1,8 @@
-# Namespace: SP
+# Entity Type: ChangeField
 
-## Entity Type: ChangeField
+> Namespace: SP
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

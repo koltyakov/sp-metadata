@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: ReadGuidProperty
 
-## Function Import: ReadGuidProperty
+> Namespace: PS
 
 - Entity type: PS.WorkflowActivities
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.Social
+# Function Import: Actor
 
-## Function Import: Actor
+> Namespace: SP.Social
 
 - Entity type: SP.Social.SocialRestFeedManager
 - Is composable: false

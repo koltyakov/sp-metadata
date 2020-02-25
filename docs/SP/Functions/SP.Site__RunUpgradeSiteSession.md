@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: RunUpgradeSiteSession
 
-## Function Import: RunUpgradeSiteSession
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

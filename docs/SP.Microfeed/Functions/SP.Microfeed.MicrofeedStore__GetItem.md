@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: GetItem
 
-## Function Import: GetItem
+> Namespace: SP.Microfeed
 
 - Entity type: SP.Microfeed.MicrofeedStore
 - Is composable: false

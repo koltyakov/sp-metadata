@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: GetVideoEmbedCode
 
-## Function Import: GetVideoEmbedCode
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.VideoItem
 - Is composable: false

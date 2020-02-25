@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: ValidateHubSiteJoinApprovalToken
 
-## Function Import: ValidateHubSiteJoinApprovalToken
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

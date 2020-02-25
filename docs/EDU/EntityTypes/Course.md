@@ -1,10 +1,8 @@
-# Namespace: EDU
+# Entity Type: Course
 
-## Entity Type: Course
+> Namespace: EDU
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -14,8 +12,6 @@ CustomData (Edm.String) | ❌ | ❌ | ❌ | ✅
 Department (Edm.String) | ❌ | ❌ | ❌ | ✅
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,10 +1,8 @@
-# Namespace: SP.Publishing
+# Entity Type: PointPublishingPost
 
-## Entity Type: PointPublishingPost
+> Namespace: SP.Publishing
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -20,8 +18,6 @@ UserIsAuthor (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Version (Edm.String) | ✅ | ❌ | ❌ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

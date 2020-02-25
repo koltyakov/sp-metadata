@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetResponseData
 
-## Function Import: GetResponseData
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

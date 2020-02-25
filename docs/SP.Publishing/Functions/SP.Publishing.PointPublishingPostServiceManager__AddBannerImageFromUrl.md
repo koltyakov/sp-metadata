@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: AddBannerImageFromUrl
 
-## Function Import: AddBannerImageFromUrl
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.PointPublishingPostServiceManager
 - Is composable: false

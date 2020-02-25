@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: GetItem
 
-## Function Import: GetItem
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.FollowedContent
 - Is composable: false

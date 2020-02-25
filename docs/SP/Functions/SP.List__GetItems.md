@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetItems
 
-## Function Import: GetItems
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

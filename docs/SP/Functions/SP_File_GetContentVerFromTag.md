@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_File_GetContentVerFromTag
 
-## Function Import: SP_File_GetContentVerFromTag
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

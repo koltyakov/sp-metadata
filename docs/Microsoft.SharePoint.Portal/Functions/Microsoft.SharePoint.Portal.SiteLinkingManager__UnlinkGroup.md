@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Portal
+# Function Import: UnlinkGroup
 
-## Function Import: UnlinkGroup
+> Namespace: Microsoft.SharePoint.Portal
 
 - Entity type: Microsoft.SharePoint.Portal.SiteLinkingManager
 - Is composable: false

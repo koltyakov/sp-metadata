@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: SP_WorkflowServices_WorkflowServicesManager
 
-## Function Import: SP_WorkflowServices_WorkflowServicesManager
+> Namespace: SP.WorkflowServices
 
 - Is composable: false
 - Is bindable: false

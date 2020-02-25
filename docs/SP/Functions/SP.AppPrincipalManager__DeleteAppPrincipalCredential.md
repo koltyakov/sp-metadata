@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: DeleteAppPrincipalCredential
 
-## Function Import: DeleteAppPrincipalCredential
+> Namespace: SP
 
 - Entity type: SP.AppPrincipalManager
 - Is composable: false

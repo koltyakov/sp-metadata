@@ -1,10 +1,8 @@
-# Namespace: SP.Publishing
+# Entity Type: PageDiagnosticsController
 
-## Entity Type: PageDiagnosticsController
+> Namespace: SP.Publishing
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

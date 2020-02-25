@@ -1,10 +1,8 @@
-# Namespace: PS
+# Entity Type: CustomField
 
-## Entity Type: CustomField
+> Namespace: PS
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -34,8 +32,6 @@ ShowToolTip (Edm.Boolean) | ✅ | ❌ | ✅ | ❌
 UseFieldForMatching (Edm.Boolean) | ✅ | ❌ | ✅ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

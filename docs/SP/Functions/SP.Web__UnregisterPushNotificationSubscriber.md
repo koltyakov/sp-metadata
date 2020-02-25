@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: UnregisterPushNotificationSubscriber
 
-## Function Import: UnregisterPushNotificationSubscriber
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

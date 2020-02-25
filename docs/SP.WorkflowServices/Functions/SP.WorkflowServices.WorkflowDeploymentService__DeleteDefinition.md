@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: DeleteDefinition
 
-## Function Import: DeleteDefinition
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowDeploymentService
 - Is composable: false

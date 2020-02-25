@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Utilities.WebTemplateExtensions
+# Entity Type: SiteDesignRun
 
-## Entity Type: SiteDesignRun
+> Namespace: Microsoft.SharePoint.Utilities.WebTemplateExtensions
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

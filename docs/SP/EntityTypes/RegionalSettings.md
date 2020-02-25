@@ -1,10 +1,8 @@
-# Namespace: SP
+# Entity Type: RegionalSettings
 
-## Entity Type: RegionalSettings
+> Namespace: SP
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -39,8 +37,6 @@ WorkDayStartHour (Edm.Int16) | ✅ | ✅ | ✅ | ✅
 WorkDays (Edm.Int16) | ✅ | ✅ | ✅ | ✅
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

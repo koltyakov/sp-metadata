@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: GetSubscription
 
-## Function Import: GetSubscription
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowSubscriptionService
 - Is composable: false

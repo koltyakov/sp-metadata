@@ -1,6 +1,6 @@
-# Namespace: SP.Directory
+# Function Import: SP_Directory_SPHelper_GetMembersInBatch
 
-## Function Import: SP_Directory_SPHelper_GetMembersInBatch
+> Namespace: SP.Directory
 
 - Is composable: false
 - Is bindable: false

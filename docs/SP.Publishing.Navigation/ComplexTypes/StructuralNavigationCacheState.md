@@ -1,10 +1,8 @@
-# Namespace: SP.Publishing.Navigation
+# Complex Type: StructuralNavigationCacheState
 
-## Complex Type: StructuralNavigationCacheState
+> Namespace: SP.Publishing.Navigation
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.AppManagement
+# Function Import: Microsoft_SharePoint_AppManagement_SPAppPrincipalInfo_GetClientIdFromAppPrincipalEncodedClaim
 
-## Function Import: Microsoft_SharePoint_AppManagement_SPAppPrincipalInfo_GetClientIdFromAppPrincipalEncodedClaim
+> Namespace: Microsoft.SharePoint.AppManagement
 
 - Is composable: false
 - Is bindable: false

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetById
 
-## Function Import: GetById
+> Namespace: SP
 
 - Entity type: SP.LanguageCollection
 - Is composable: false

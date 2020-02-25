@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: RecoverTenantForBringYourOwnKey
 
-## Function Import: RecoverTenantForBringYourOwnKey
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: UpdateVirusInfo
 
-## Function Import: UpdateVirusInfo
+> Namespace: SP
 
 - Entity type: SP.File
 - Is composable: false

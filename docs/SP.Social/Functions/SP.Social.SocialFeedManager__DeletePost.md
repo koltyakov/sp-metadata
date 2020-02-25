@@ -1,6 +1,6 @@
-# Namespace: SP.Social
+# Function Import: DeletePost
 
-## Function Import: DeletePost
+> Namespace: SP.Social
 
 - Entity type: SP.Social.SocialFeedManager
 - Is composable: false

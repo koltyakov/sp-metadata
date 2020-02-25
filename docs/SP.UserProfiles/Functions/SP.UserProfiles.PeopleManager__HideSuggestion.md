@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: HideSuggestion
 
-## Function Import: HideSuggestion
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.PeopleManager
 - Is composable: false

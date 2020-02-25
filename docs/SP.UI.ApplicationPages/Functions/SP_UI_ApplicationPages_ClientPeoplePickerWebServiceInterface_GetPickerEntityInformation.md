@@ -1,6 +1,6 @@
-# Namespace: SP.UI.ApplicationPages
+# Function Import: SP_UI_ApplicationPages_ClientPeoplePickerWebServiceInterface_GetPickerEntityInformation
 
-## Function Import: SP_UI_ApplicationPages_ClientPeoplePickerWebServiceInterface_GetPickerEntityInformation
+> Namespace: SP.UI.ApplicationPages
 
 - Is composable: false
 - Is bindable: false

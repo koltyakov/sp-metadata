@@ -1,6 +1,6 @@
-# Namespace: SP.BusinessData
+# Function Import: SetLobSystemInstanceProperty
 
-## Function Import: SetLobSystemInstanceProperty
+> Namespace: SP.BusinessData
 
 - Entity type: SP.BusinessData.AppBdcCatalog
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: FindAndUpdateFollowedItem
 
-## Function Import: FindAndUpdateFollowedItem
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.FollowedContent
 - Is composable: false

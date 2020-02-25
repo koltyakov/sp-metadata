@@ -1,10 +1,8 @@
-# Namespace: SP.WebParts
+# Entity Type: WebPart
 
-## Entity Type: WebPart
+> Namespace: SP.WebParts
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -17,8 +15,6 @@ TitleUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
 ZoneIndex (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

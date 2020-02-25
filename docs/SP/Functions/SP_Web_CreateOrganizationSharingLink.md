@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_Web_CreateOrganizationSharingLink
 
-## Function Import: SP_Web_CreateOrganizationSharingLink
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

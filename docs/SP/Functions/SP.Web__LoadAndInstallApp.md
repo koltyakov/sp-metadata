@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: LoadAndInstallApp
 
-## Function Import: LoadAndInstallApp
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

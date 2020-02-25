@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: CountInstancesWithStatus
 
-## Function Import: CountInstancesWithStatus
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowInstanceService
 - Is composable: false

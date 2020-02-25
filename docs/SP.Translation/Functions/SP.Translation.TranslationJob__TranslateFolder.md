@@ -1,6 +1,6 @@
-# Namespace: SP.Translation
+# Function Import: TranslateFolder
 
-## Function Import: TranslateFolder
+> Namespace: SP.Translation
 
 - Entity type: SP.Translation.TranslationJob
 - Is composable: false

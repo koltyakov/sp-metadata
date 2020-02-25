@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Office.Education.QuizOM
+# Function Import: GetGradingKey
 
-## Function Import: GetGradingKey
+> Namespace: Microsoft.Office.Education.QuizOM
 
 - Entity type: Microsoft.Office.Education.QuizOM.Quiz
 - Is composable: false

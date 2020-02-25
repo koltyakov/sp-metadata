@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: AddDepartment
 
-## Function Import: AddDepartment
+> Namespace: PS
 
 - Entity type: PS.EnterpriseProjectType
 - Is composable: false

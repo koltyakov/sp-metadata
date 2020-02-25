@@ -1,6 +1,6 @@
-# Namespace: SP.WebParts
+# Function Import: MoveWebPartTo
 
-## Function Import: MoveWebPartTo
+> Namespace: SP.WebParts
 
 - Entity type: SP.WebParts.WebPartDefinition
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.Utilities
+# Function Import: SP_Utilities_Utility_LocalizeWebPartGallery
 
-## Function Import: SP_Utilities_Utility_LocalizeWebPartGallery
+> Namespace: SP.Utilities
 
 - Is composable: false
 - Is bindable: false

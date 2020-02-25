@@ -1,6 +1,6 @@
-# Namespace: SP.Directory
+# Function Import: SP_Directory_SPHelper_GetMembership
 
-## Function Import: SP_Directory_SPHelper_GetMembership
+> Namespace: SP.Directory
 
 - Is composable: false
 - Is bindable: false

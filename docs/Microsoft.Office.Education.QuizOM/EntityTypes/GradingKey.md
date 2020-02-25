@@ -1,10 +1,8 @@
-# Namespace: Microsoft.Office.Education.QuizOM
+# Entity Type: GradingKey
 
-## Entity Type: GradingKey
+> Namespace: Microsoft.Office.Education.QuizOM
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

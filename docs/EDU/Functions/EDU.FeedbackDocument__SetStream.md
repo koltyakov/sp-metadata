@@ -1,6 +1,6 @@
-# Namespace: EDU
+# Function Import: SetStream
 
-## Function Import: SetStream
+> Namespace: EDU
 
 - Entity type: EDU.FeedbackDocument
 - Is composable: false

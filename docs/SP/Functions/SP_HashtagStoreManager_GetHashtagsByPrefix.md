@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_HashtagStoreManager_GetHashtagsByPrefix
 
-## Function Import: SP_HashtagStoreManager_GetHashtagsByPrefix
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

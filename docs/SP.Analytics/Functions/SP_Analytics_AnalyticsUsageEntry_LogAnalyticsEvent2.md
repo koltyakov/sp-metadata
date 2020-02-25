@@ -1,6 +1,6 @@
-# Namespace: SP.Analytics
+# Function Import: SP_Analytics_AnalyticsUsageEntry_LogAnalyticsEvent2
 
-## Function Import: SP_Analytics_AnalyticsUsageEntry_LogAnalyticsEvent2
+> Namespace: SP.Analytics
 
 - Is composable: false
 - Is bindable: false

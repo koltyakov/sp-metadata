@@ -1,6 +1,6 @@
-# Namespace: SP.Workflow
+# Function Import: BreakRoleInheritance
 
-## Function Import: BreakRoleInheritance
+> Namespace: SP.Workflow
 
 - Entity type: SP.Workflow.SPWorkflowTask
 - Is composable: false

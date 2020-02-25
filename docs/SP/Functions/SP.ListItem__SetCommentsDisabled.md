@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SetCommentsDisabled
 
-## Function Import: SetCommentsDisabled
+> Namespace: SP
 
 - Entity type: SP.ListItem
 - Is composable: false

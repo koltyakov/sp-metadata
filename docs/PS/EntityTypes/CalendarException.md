@@ -1,10 +1,8 @@
-# Namespace: PS
+# Entity Type: CalendarException
 
-## Entity Type: CalendarException
+> Namespace: PS
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -30,8 +28,6 @@ Shift5Start (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 Start (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

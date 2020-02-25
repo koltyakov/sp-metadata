@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: ReadBooleanProperty
 
-## Function Import: ReadBooleanProperty
+> Namespace: PS
 
 - Entity type: PS.WorkflowActivities
 - Is composable: false

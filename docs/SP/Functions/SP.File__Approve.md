@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: Approve
 
-## Function Import: Approve
+> Namespace: SP
 
 - Entity type: SP.File
 - Is composable: false

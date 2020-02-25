@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: GetActivitySignatures
 
-## Function Import: GetActivitySignatures
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowDeploymentService
 - Is composable: false

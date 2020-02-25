@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: RemoveFromSpotlight
 
-## Function Import: RemoveFromSpotlight
+> Namespace: SP
 
 - Entity type: SP.View
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: OBA.Server.ServerWrapper
+# Function Import: PublishReport
 
-## Function Import: PublishReport
+> Namespace: OBA.Server.ServerWrapper
 
 - Entity type: OBA.Server.ServerWrapper.Reporting
 - Is composable: false

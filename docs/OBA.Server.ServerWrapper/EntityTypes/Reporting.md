@@ -1,10 +1,8 @@
-# Namespace: OBA.Server.ServerWrapper
+# Entity Type: Reporting
 
-## Entity Type: Reporting
+> Namespace: OBA.Server.ServerWrapper
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

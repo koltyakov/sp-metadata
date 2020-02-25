@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery
+# Function Import: Deploy
 
-## Function Import: Deploy
+> Namespace: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery
 
 - Entity type: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetAvailableWebTemplates
 
-## Function Import: GetAvailableWebTemplates
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

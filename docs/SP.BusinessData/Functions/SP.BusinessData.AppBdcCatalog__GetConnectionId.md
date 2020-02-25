@@ -1,6 +1,6 @@
-# Namespace: SP.BusinessData
+# Function Import: GetConnectionId
 
-## Function Import: GetConnectionId
+> Namespace: SP.BusinessData
 
 - Entity type: SP.BusinessData.AppBdcCatalog
 - Is composable: false

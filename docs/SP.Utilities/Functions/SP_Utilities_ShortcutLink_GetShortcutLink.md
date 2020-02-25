@@ -1,6 +1,6 @@
-# Namespace: SP.Utilities
+# Function Import: SP_Utilities_ShortcutLink_GetShortcutLink
 
-## Function Import: SP_Utilities_ShortcutLink_GetShortcutLink
+> Namespace: SP.Utilities
 
 - Is composable: false
 - Is bindable: false

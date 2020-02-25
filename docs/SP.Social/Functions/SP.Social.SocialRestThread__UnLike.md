@@ -1,6 +1,6 @@
-# Namespace: SP.Social
+# Function Import: UnLike
 
-## Function Import: UnLike
+> Namespace: SP.Social
 
 - Entity type: SP.Social.SocialRestThread
 - Is composable: false

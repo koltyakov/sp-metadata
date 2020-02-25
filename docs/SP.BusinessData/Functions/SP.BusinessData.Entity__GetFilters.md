@@ -1,6 +1,6 @@
-# Namespace: SP.BusinessData
+# Function Import: GetFilters
 
-## Function Import: GetFilters
+> Namespace: SP.BusinessData
 
 - Entity type: SP.BusinessData.Entity
 - Is composable: false

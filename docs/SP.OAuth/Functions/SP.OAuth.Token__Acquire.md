@@ -1,6 +1,6 @@
-# Namespace: SP.OAuth
+# Function Import: Acquire
 
-## Function Import: Acquire
+> Namespace: SP.OAuth
 
 - Entity type: SP.OAuth.Token
 - Is composable: false

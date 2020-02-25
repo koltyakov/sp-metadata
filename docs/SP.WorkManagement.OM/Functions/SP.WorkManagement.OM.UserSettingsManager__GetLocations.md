@@ -1,6 +1,6 @@
-# Namespace: SP.WorkManagement.OM
+# Function Import: GetLocations
 
-## Function Import: GetLocations
+> Namespace: SP.WorkManagement.OM
 
 - Entity type: SP.WorkManagement.OM.UserSettingsManager
 - Is composable: false

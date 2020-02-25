@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: Thumbnails
 
-## Function Import: Thumbnails
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.VideoItem
 - Is composable: false

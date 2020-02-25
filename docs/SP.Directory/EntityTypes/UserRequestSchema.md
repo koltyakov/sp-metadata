@@ -1,10 +1,8 @@
-# Namespace: SP.Directory
+# Entity Type: UserRequestSchema
 
-## Entity Type: UserRequestSchema
+> Namespace: SP.Directory
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

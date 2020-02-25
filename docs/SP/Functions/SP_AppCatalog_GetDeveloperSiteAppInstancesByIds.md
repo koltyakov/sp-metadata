@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_AppCatalog_GetDeveloperSiteAppInstancesByIds
 
-## Function Import: SP_AppCatalog_GetDeveloperSiteAppInstancesByIds
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

@@ -1,10 +1,8 @@
-# Namespace: SP.Directory
+# Complex Type: GroupNameValidationResult
 
-## Complex Type: GroupNameValidationResult
+> Namespace: SP.Directory
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

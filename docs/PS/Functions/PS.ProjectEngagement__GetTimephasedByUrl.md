@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: GetTimephasedByUrl
 
-## Function Import: GetTimephasedByUrl
+> Namespace: PS
 
 - Entity type: PS.ProjectEngagement
 - Is composable: false

@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.ClientSideComponent
+# Entity Type: HostedApp
 
-## Entity Type: HostedApp
+> Namespace: Microsoft.SharePoint.ClientSideComponent
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

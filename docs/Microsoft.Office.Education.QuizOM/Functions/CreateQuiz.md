@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Office.Education.QuizOM
+# Function Import: CreateQuiz
 
-## Function Import: CreateQuiz
+> Namespace: Microsoft.Office.Education.QuizOM
 
 - Is composable: false
 - Is bindable: false

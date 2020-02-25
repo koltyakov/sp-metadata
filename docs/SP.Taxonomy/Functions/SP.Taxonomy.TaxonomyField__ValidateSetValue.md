@@ -1,6 +1,6 @@
-# Namespace: SP.Taxonomy
+# Function Import: ValidateSetValue
 
-## Function Import: ValidateSetValue
+> Namespace: SP.Taxonomy
 
 - Entity type: SP.Taxonomy.TaxonomyField
 - Is composable: false

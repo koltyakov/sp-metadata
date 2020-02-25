@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: GetChannels
 
-## Function Import: GetChannels
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.VideoServiceManager
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.TenantCdn
+# Function Import: IsFolderUrlsInTenantCdn
 
-## Function Import: IsFolderUrlsInTenantCdn
+> Namespace: Microsoft.SharePoint.TenantCdn
 
 - Entity type: Microsoft.SharePoint.TenantCdn.TenantCdnApi
 - Is composable: false

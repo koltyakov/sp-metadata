@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Portal
+# Complex Type: GroupCreationContext
 
-## Complex Type: GroupCreationContext
+> Namespace: Microsoft.SharePoint.Portal
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

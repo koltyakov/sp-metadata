@@ -1,6 +1,6 @@
-# Namespace: SP.PageInstrumentation
+# Function Import: SP_PageInstrumentation_ClickManager_RecordClick
 
-## Function Import: SP_PageInstrumentation_ClickManager_RecordClick
+> Namespace: SP.PageInstrumentation
 
 - Is composable: false
 - Is bindable: false

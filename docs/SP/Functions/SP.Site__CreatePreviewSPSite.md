@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: CreatePreviewSPSite
 
-## Function Import: CreatePreviewSPSite
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

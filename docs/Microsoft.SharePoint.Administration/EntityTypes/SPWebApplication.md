@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Administration
+# Entity Type: SPWebApplication
 
-## Entity Type: SPWebApplication
+> Namespace: Microsoft.SharePoint.Administration
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -15,8 +13,6 @@ OutboundMailReplyToAddress (Edm.String) | ✅ | ❌ | ❌ | ❌
 OutboundMailSenderAddress (Edm.String) | ✅ | ❌ | ❌ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

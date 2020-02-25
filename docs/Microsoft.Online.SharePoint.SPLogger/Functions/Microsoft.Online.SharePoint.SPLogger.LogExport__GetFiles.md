@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Online.SharePoint.SPLogger
+# Function Import: GetFiles
 
-## Function Import: GetFiles
+> Namespace: Microsoft.Online.SharePoint.SPLogger
 
 - Entity type: Microsoft.Online.SharePoint.SPLogger.LogExport
 - Is composable: false

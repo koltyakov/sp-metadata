@@ -1,6 +1,6 @@
-# Namespace: SP.BusinessData
+# Function Import: Create
 
-## Function Import: Create
+> Namespace: SP.BusinessData
 
 - Entity type: SP.BusinessData.Entity
 - Is composable: false

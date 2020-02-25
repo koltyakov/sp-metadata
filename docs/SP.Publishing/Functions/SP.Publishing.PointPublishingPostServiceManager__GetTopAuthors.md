@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: GetTopAuthors
 
-## Function Import: GetTopAuthors
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.PointPublishingPostServiceManager
 - Is composable: false

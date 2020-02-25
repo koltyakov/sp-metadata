@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Office.Education.QuizOM
+# Function Import: Microsoft_Office_Education_QuizOM_QuizUtilities_GetSafeHtmlText
 
-## Function Import: Microsoft_Office_Education_QuizOM_QuizUtilities_GetSafeHtmlText
+> Namespace: Microsoft.Office.Education.QuizOM
 
 - Is composable: false
 - Is bindable: false

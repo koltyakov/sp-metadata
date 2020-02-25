@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Portal
+# Function Import: AreSegmentsCompatible
 
-## Function Import: AreSegmentsCompatible
+> Namespace: Microsoft.SharePoint.Portal
 
 - Entity type: Microsoft.SharePoint.Portal.SPSiteManager
 - Is composable: false

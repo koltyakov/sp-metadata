@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: UpdateIdeaListItemStatus
 
-## Function Import: UpdateIdeaListItemStatus
+> Namespace: PS
 
 - Entity type: PS.DraftProject
 - Is composable: false

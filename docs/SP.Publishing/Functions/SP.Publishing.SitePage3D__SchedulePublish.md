@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: SchedulePublish
 
-## Function Import: SchedulePublish
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.SitePage3D
 - Is composable: false

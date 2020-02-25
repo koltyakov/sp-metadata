@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: StartUpload
 
-## Function Import: StartUpload
+> Namespace: SP
 
 - Entity type: SP.File
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Portal
+# Function Import: Microsoft_SharePoint_Portal_CommunityModeration_ReportAbuse
 
-## Function Import: Microsoft_SharePoint_Portal_CommunityModeration_ReportAbuse
+> Namespace: Microsoft.SharePoint.Portal
 
 - Is composable: false
 - Is bindable: false

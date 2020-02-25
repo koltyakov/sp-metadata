@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Internal
+# Function Import: Microsoft_SharePoint_Internal_TrackedItemService_GetTrackedItemUpdatesForUser
 
-## Function Import: Microsoft_SharePoint_Internal_TrackedItemService_GetTrackedItemUpdatesForUser
+> Namespace: Microsoft.SharePoint.Internal
 
 - Is composable: false
 - Is bindable: false

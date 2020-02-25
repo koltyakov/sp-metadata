@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Flighting.Runtime
+# Entity Type: SPFlight
 
-## Entity Type: SPFlight
+> Namespace: Microsoft.SharePoint.Flighting.Runtime
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

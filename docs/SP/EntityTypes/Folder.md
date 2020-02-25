@@ -1,10 +1,8 @@
-# Namespace: SP
+# Entity Type: Folder
 
-## Entity Type: Folder
+> Namespace: SP
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -23,8 +21,6 @@ UniqueId (Edm.Guid) | ✅ | ✅ | ✅ | ❌
 WelcomePage (Edm.String) | ✅ | ✅ | ✅ | ✅
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

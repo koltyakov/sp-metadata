@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: AddUserToPostPeopleList
 
-## Function Import: AddUserToPostPeopleList
+> Namespace: SP.Microfeed
 
 - Entity type: SP.Microfeed.MicrofeedManager
 - Is composable: false

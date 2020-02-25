@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SetAccessRequestSiteDescriptionAndUpdate
 
-## Function Import: SetAccessRequestSiteDescriptionAndUpdate
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

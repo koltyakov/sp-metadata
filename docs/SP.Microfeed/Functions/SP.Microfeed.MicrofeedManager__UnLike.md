@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: UnLike
 
-## Function Import: UnLike
+> Namespace: SP.Microfeed
 
 - Entity type: SP.Microfeed.MicrofeedManager
 - Is composable: false

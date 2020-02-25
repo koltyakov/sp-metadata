@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Utilities.WebTemplateExtensions
+# Complex Type: FormulaCreationInfo
 
-## Complex Type: FormulaCreationInfo
+> Namespace: Microsoft.SharePoint.Utilities.WebTemplateExtensions
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

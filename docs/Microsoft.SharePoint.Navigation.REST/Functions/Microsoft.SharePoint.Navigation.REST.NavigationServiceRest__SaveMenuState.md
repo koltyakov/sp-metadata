@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Navigation.REST
+# Function Import: SaveMenuState
 
-## Function Import: SaveMenuState
+> Namespace: Microsoft.SharePoint.Navigation.REST
 
 - Entity type: Microsoft.SharePoint.Navigation.REST.NavigationServiceRest
 - Is composable: false

@@ -1,10 +1,8 @@
-# Namespace: SP
+# Complex Type: TranslationNotificationRecipient
 
-## Complex Type: TranslationNotificationRecipient
+> Namespace: SP
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

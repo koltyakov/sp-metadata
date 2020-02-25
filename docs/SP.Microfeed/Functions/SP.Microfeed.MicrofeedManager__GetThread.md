@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: GetThread
 
-## Function Import: GetThread
+> Namespace: SP.Microfeed
 
 - Entity type: SP.Microfeed.MicrofeedManager
 - Is composable: false

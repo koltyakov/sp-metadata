@@ -1,6 +1,6 @@
-# Namespace: SP.Utilities
+# Function Import: AddTenantTheme
 
-## Function Import: AddTenantTheme
+> Namespace: SP.Utilities
 
 - Entity type: SP.Utilities.ThemeManager
 - Is composable: false

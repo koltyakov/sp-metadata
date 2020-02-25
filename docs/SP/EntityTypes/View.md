@@ -1,10 +1,8 @@
-# Namespace: SP
+# Entity Type: View
 
-## Entity Type: View
+> Namespace: SP
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -54,8 +52,6 @@ ViewType (Edm.String) | ✅ | ✅ | ✅ | ✅
 VisualizationInfo (SP.Visualization) | ✅ | ✅ | ❌ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

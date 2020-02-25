@@ -1,10 +1,8 @@
-# Namespace: Microsoft.Online.SharePoint.MultiGeo.Service
+# Complex Type: GeoAdministratorEntityData
 
-## Complex Type: GeoAdministratorEntityData
+> Namespace: Microsoft.Online.SharePoint.MultiGeo.Service
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

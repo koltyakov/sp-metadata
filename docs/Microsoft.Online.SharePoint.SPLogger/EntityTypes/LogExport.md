@@ -1,10 +1,8 @@
-# Namespace: Microsoft.Online.SharePoint.SPLogger
+# Entity Type: LogExport
 
-## Entity Type: LogExport
+> Namespace: Microsoft.Online.SharePoint.SPLogger
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: UpdateData
 
-## Function Import: UpdateData
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.FollowedContent
 - Is composable: false

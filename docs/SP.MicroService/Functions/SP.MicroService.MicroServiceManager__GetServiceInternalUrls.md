@@ -1,6 +1,6 @@
-# Namespace: SP.MicroService
+# Function Import: GetServiceInternalUrls
 
-## Function Import: GetServiceInternalUrls
+> Namespace: SP.MicroService
 
 - Entity type: SP.MicroService.MicroServiceManager
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.Utilities
+# Function Import: SP_Utilities_WopiHostUtility_GetWopiTargetPropertiesByUrl
 
-## Function Import: SP_Utilities_WopiHostUtility_GetWopiTargetPropertiesByUrl
+> Namespace: SP.Utilities
 
 - Is composable: false
 - Is bindable: false

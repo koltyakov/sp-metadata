@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: MoveViewFieldTo
 
-## Function Import: MoveViewFieldTo
+> Namespace: SP
 
 - Entity type: SP.ViewFieldCollection
 - Is composable: false

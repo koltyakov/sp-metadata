@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: ValidateSetValue
 
-## Function Import: ValidateSetValue
+> Namespace: SP
 
 - Entity type: SP.FieldGuid
 - Is composable: false

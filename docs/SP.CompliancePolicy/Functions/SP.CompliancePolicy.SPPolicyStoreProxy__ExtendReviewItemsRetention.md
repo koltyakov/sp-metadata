@@ -1,6 +1,6 @@
-# Namespace: SP.CompliancePolicy
+# Function Import: ExtendReviewItemsRetention
 
-## Function Import: ExtendReviewItemsRetention
+> Namespace: SP.CompliancePolicy
 
 - Entity type: SP.CompliancePolicy.SPPolicyStoreProxy
 - Is composable: false

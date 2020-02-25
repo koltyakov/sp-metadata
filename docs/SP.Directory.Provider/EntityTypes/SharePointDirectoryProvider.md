@@ -1,10 +1,8 @@
-# Namespace: SP.Directory.Provider
+# Entity Type: SharePointDirectoryProvider
 
-## Entity Type: SharePointDirectoryProvider
+> Namespace: SP.Directory.Provider
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

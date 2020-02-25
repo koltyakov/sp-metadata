@@ -1,10 +1,8 @@
-# Namespace: SP.WorkflowServices
+# Entity Type: WorkflowDeploymentService
 
-## Entity Type: WorkflowDeploymentService
+> Namespace: SP.WorkflowServices
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

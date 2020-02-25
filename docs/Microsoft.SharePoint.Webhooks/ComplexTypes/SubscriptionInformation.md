@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Webhooks
+# Complex Type: SubscriptionInformation
 
-## Complex Type: SubscriptionInformation
+> Namespace: Microsoft.SharePoint.Webhooks
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

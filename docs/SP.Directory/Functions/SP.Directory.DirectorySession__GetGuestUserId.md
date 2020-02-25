@@ -1,6 +1,6 @@
-# Namespace: SP.Directory
+# Function Import: GetGuestUserId
 
-## Function Import: GetGuestUserId
+> Namespace: SP.Directory
 
 - Entity type: SP.Directory.DirectorySession
 - Is composable: false

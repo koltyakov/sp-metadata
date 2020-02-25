@@ -1,10 +1,8 @@
-# Namespace: SP.Workflow
+# Entity Type: WorkflowAssociation
 
-## Entity Type: WorkflowAssociation
+> Namespace: SP.Workflow
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,6 +1,6 @@
-# Namespace: SP.MicroService
+# Function Import: DeleteMicroserviceWorkItem
 
-## Function Import: DeleteMicroserviceWorkItem
+> Namespace: SP.MicroService
 
 - Entity type: SP.MicroService.MicroServiceManager
 - Is composable: false

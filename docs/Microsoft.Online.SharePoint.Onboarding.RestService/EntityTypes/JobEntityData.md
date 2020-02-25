@@ -1,10 +1,8 @@
-# Namespace: Microsoft.Online.SharePoint.Onboarding.RestService
+# Entity Type: JobEntityData
 
-## Entity Type: JobEntityData
+> Namespace: Microsoft.Online.SharePoint.Onboarding.RestService
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

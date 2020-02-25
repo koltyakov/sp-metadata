@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: CreateSPAsyncReadJobWithMultiUrl
 
-## Function Import: CreateSPAsyncReadJobWithMultiUrl
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

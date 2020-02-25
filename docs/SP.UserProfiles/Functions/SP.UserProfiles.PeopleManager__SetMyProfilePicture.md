@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: SetMyProfilePicture
 
-## Function Import: SetMyProfilePicture
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.PeopleManager
 - Is composable: false

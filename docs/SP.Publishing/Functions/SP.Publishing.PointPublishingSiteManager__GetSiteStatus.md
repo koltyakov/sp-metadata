@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: GetSiteStatus
 
-## Function Import: GetSiteStatus
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.PointPublishingSiteManager
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_RecentListCollection_UpdateRecentLists
 
-## Function Import: SP_RecentListCollection_UpdateRecentLists
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

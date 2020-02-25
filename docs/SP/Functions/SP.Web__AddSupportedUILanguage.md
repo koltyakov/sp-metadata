@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: AddSupportedUILanguage
 
-## Function Import: AddSupportedUILanguage
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

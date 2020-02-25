@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetAppInstancesByProductId
 
-## Function Import: GetAppInstancesByProductId
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

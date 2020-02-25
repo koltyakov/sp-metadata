@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: SetVideoOwner
 
-## Function Import: SetVideoOwner
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.VideoItem
 - Is composable: false

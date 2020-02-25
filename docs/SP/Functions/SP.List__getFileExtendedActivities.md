@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: getFileExtendedActivities
 
-## Function Import: getFileExtendedActivities
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetFileUserValue
 
-## Function Import: GetFileUserValue
+> Namespace: SP
 
 - Entity type: SP.File
 - Is composable: false

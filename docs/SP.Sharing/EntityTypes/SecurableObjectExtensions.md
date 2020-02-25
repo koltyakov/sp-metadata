@@ -1,10 +1,8 @@
-# Namespace: SP.Sharing
+# Entity Type: SecurableObjectExtensions
 
-## Entity Type: SecurableObjectExtensions
+> Namespace: SP.Sharing
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: LeaveProjectStage
 
-## Function Import: LeaveProjectStage
+> Namespace: PS
 
 - Entity type: PS.WorkflowActivities
 - Is composable: false

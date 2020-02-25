@@ -1,6 +1,6 @@
-# Namespace: SP.UI.ApplicationPages
+# Function Import: SP_UI_ApplicationPages_PeoplePickerWebServiceInterface_GetSearchResultsByHierarchy
 
-## Function Import: SP_UI_ApplicationPages_PeoplePickerWebServiceInterface_GetSearchResultsByHierarchy
+> Namespace: SP.UI.ApplicationPages
 
 - Is composable: false
 - Is bindable: false

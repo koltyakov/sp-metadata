@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Online.SharePoint.MultiGeo.Service
+# Function Import: Microsoft_Online_SharePoint_MultiGeo_Service_UserPersonalSiteId
 
-## Function Import: Microsoft_Online_SharePoint_MultiGeo_Service_UserPersonalSiteId
+> Namespace: Microsoft.Online.SharePoint.MultiGeo.Service
 
 - Is composable: false
 - Is bindable: false

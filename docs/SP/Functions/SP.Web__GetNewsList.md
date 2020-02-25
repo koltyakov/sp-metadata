@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetNewsList
 
-## Function Import: GetNewsList
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

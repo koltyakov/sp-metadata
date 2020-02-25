@@ -1,10 +1,8 @@
-# Namespace: SP.BusinessData.Runtime
+# Entity Type: EntityFieldValueDictionary
 
-## Entity Type: EntityFieldValueDictionary
+> Namespace: SP.BusinessData.Runtime
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

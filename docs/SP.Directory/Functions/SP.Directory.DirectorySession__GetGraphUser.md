@@ -1,6 +1,6 @@
-# Namespace: SP.Directory
+# Function Import: GetGraphUser
 
-## Function Import: GetGraphUser
+> Namespace: SP.Directory
 
 - Entity type: SP.Directory.DirectorySession
 - Is composable: false

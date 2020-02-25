@@ -1,6 +1,6 @@
-# Namespace: SP.Social
+# Function Import: SP_Social_SocialAnnouncementManager_GetCurrentAnnouncements
 
-## Function Import: SP_Social_SocialAnnouncementManager_GetCurrentAnnouncements
+> Namespace: SP.Social
 
 - Is composable: false
 - Is bindable: false

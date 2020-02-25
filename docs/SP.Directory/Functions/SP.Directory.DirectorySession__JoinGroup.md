@@ -1,6 +1,6 @@
-# Namespace: SP.Directory
+# Function Import: JoinGroup
 
-## Function Import: JoinGroup
+> Namespace: SP.Directory
 
 - Entity type: SP.Directory.DirectorySession
 - Is composable: false

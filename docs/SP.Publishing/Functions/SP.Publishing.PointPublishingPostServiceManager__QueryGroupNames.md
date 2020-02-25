@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: QueryGroupNames
 
-## Function Import: QueryGroupNames
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.PointPublishingPostServiceManager
 - Is composable: false

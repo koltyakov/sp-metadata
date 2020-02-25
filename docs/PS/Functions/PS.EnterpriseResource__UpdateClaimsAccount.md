@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: UpdateClaimsAccount
 
-## Function Import: UpdateClaimsAccount
+> Namespace: PS
 
 - Entity type: PS.EnterpriseResource
 - Is composable: false

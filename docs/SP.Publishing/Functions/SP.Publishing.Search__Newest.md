@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: Newest
 
-## Function Import: Newest
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.Search
 - Is composable: false

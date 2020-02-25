@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: CopyTo
 
-## Function Import: CopyTo
+> Namespace: PS
 
 - Entity type: PS.Calendar
 - Is composable: false

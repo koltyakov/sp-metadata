@@ -1,6 +1,6 @@
-# Namespace: SP.Workflow
+# Function Import: UpdateHashtags
 
-## Function Import: UpdateHashtags
+> Namespace: SP.Workflow
 
 - Entity type: SP.Workflow.SPWorkflowTask
 - Is composable: false

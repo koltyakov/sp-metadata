@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SyncFlowTemplates
 
-## Function Import: SyncFlowTemplates
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

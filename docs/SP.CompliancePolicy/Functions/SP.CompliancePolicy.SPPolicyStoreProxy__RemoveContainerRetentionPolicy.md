@@ -1,6 +1,6 @@
-# Namespace: SP.CompliancePolicy
+# Function Import: RemoveContainerRetentionPolicy
 
-## Function Import: RemoveContainerRetentionPolicy
+> Namespace: SP.CompliancePolicy
 
 - Entity type: SP.CompliancePolicy.SPPolicyStoreProxy
 - Is composable: false

@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Administration
+# Entity Type: SPAppStateQueryJobDefinition
 
-## Entity Type: SPAppStateQueryJobDefinition
+> Namespace: Microsoft.SharePoint.Administration
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

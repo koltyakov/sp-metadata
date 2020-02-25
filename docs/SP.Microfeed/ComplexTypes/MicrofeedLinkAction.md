@@ -1,10 +1,8 @@
-# Namespace: SP.Microfeed
+# Complex Type: MicrofeedLinkAction
 
-## Complex Type: MicrofeedLinkAction
+> Namespace: SP.Microfeed
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

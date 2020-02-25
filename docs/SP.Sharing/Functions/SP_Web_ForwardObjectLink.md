@@ -1,6 +1,6 @@
-# Namespace: SP.Sharing
+# Function Import: SP_Web_ForwardObjectLink
 
-## Function Import: SP_Web_ForwardObjectLink
+> Namespace: SP.Sharing
 
 - Is composable: false
 - Is bindable: false

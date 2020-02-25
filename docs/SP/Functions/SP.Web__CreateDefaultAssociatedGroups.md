@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: CreateDefaultAssociatedGroups
 
-## Function Import: CreateDefaultAssociatedGroups
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

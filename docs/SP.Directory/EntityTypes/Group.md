@@ -1,10 +1,8 @@
-# Namespace: SP.Directory
+# Entity Type: Group
 
-## Entity Type: Group
+> Namespace: SP.Directory
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -46,8 +44,6 @@ teamsResources (Collection(SP.KeyValue)) | ✅ | ✅ | ❌ | ❌
 yammerResources (Collection(SP.KeyValue)) | ✅ | ✅ | ❌ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,6 +1,6 @@
-# Namespace: SP.Utilities
+# Function Import: SP_Utilities_Utility_MarkDiscussionAsFeatured
 
-## Function Import: SP_Utilities_Utility_MarkDiscussionAsFeatured
+> Namespace: SP.Utilities
 
 - Is composable: false
 - Is bindable: false

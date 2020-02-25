@@ -1,10 +1,8 @@
-# Namespace: SP
+# Complex Type: HubSiteCreationInformation
 
-## Complex Type: HubSiteCreationInformation
+> Namespace: SP
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

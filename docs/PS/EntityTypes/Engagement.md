@@ -1,10 +1,8 @@
-# Namespace: PS
+# Entity Type: Engagement
 
-## Entity Type: Engagement
+> Namespace: PS
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -18,8 +16,6 @@ SubmittedDate (Edm.DateTime) | ✅ | ✅ | ❌ | ❌
 TimephasedEditsOnly (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

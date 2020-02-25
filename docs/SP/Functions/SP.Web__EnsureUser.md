@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: EnsureUser
 
-## Function Import: EnsureUser
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

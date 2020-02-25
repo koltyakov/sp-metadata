@@ -1,10 +1,8 @@
-# Namespace: SP.PageInstrumentation
+# Entity Type: ClickManager
 
-## Entity Type: ClickManager
+> Namespace: SP.PageInstrumentation
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

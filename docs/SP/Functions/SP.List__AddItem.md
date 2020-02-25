@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: AddItem
 
-## Function Import: AddItem
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

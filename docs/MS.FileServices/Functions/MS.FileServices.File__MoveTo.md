@@ -1,6 +1,6 @@
-# Namespace: MS.FileServices
+# Function Import: MoveTo
 
-## Function Import: MoveTo
+> Namespace: MS.FileServices
 
 - Entity type: MS.FileServices.File
 - Is composable: false

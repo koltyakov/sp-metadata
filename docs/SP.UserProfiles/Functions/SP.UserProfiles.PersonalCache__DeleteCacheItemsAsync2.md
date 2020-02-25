@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: DeleteCacheItemsAsync2
 
-## Function Import: DeleteCacheItemsAsync2
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.PersonalCache
 - Is composable: false

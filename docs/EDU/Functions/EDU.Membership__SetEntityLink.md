@@ -1,6 +1,6 @@
-# Namespace: EDU
+# Function Import: SetEntityLink
 
-## Function Import: SetEntityLink
+> Namespace: EDU
 
 - Entity type: EDU.Membership
 - Is composable: false

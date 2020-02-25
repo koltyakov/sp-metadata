@@ -1,6 +1,6 @@
-# Namespace: SP.Utilities
+# Function Import: SP_Utilities_Utility_CreateEmailBodyForInvitation
 
-## Function Import: SP_Utilities_Utility_CreateEmailBodyForInvitation
+> Namespace: SP.Utilities
 
 - Is composable: false
 - Is bindable: false

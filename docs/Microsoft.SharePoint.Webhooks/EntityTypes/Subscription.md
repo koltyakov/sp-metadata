@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Webhooks
+# Entity Type: Subscription
 
-## Entity Type: Subscription
+> Namespace: Microsoft.SharePoint.Webhooks
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

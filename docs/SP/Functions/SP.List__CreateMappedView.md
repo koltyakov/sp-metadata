@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: CreateMappedView
 
-## Function Import: CreateMappedView
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.Social
+# Function Import: TimelineFeed
 
-## Function Import: TimelineFeed
+> Namespace: SP.Social
 
 - Entity type: SP.Social.SocialRestActor
 - Is composable: false

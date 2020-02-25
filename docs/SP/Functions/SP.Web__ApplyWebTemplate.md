@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: ApplyWebTemplate
 
-## Function Import: ApplyWebTemplate
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

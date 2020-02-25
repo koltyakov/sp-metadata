@@ -1,6 +1,6 @@
-# Namespace: SP.Sharing
+# Function Import: SP_SharingUtility_GetUserDirectoryInfoByEmail
 
-## Function Import: SP_SharingUtility_GetUserDirectoryInfoByEmail
+> Namespace: SP.Sharing
 
 - Is composable: false
 - Is bindable: false

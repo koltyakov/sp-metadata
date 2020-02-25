@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: RemoveDepartment
 
-## Function Import: RemoveDepartment
+> Namespace: PS
 
 - Entity type: PS.EnterpriseProjectType
 - Is composable: false

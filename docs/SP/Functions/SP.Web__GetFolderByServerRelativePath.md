@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetFolderByServerRelativePath
 
-## Function Import: GetFolderByServerRelativePath
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

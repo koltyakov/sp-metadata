@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: PageContextInfo
 
-## Function Import: PageContextInfo
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

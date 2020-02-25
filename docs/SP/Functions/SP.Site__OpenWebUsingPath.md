@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: OpenWebUsingPath
 
-## Function Import: OpenWebUsingPath
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

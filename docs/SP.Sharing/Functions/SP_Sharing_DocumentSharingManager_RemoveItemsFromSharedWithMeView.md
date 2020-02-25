@@ -1,6 +1,6 @@
-# Namespace: SP.Sharing
+# Function Import: SP_Sharing_DocumentSharingManager_RemoveItemsFromSharedWithMeView
 
-## Function Import: SP_Sharing_DocumentSharingManager_RemoveItemsFromSharedWithMeView
+> Namespace: SP.Sharing
 
 - Is composable: false
 - Is bindable: false

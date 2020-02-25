@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: UpdateProjectStageStatus
 
-## Function Import: UpdateProjectStageStatus
+> Namespace: PS
 
 - Entity type: PS.WorkflowActivities
 - Is composable: false

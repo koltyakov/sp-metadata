@@ -1,6 +1,6 @@
-# Namespace: SP.DocumentManagement
+# Function Import: ResetDocIdByServerRelativePath
 
-## Function Import: ResetDocIdByServerRelativePath
+> Namespace: SP.DocumentManagement
 
 - Entity type: SP.DocumentManagement.DocumentId
 - Is composable: false

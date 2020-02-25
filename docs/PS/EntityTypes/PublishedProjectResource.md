@@ -1,10 +1,8 @@
-# Namespace: PS
+# Entity Type: PublishedProjectResource
 
-## Entity Type: PublishedProjectResource
+> Namespace: PS
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -27,8 +25,6 @@ StandardRate (Edm.Double) | ✅ | ✅ | ✅ | ❌
 StandardRateUnits (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

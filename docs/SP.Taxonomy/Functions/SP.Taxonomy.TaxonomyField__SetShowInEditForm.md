@@ -1,6 +1,6 @@
-# Namespace: SP.Taxonomy
+# Function Import: SetShowInEditForm
 
-## Function Import: SetShowInEditForm
+> Namespace: SP.Taxonomy
 
 - Entity type: SP.Taxonomy.TaxonomyField
 - Is composable: false

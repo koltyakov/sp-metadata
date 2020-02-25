@@ -1,6 +1,6 @@
-# Namespace: SP.Social
+# Function Import: LikePost
 
-## Function Import: LikePost
+> Namespace: SP.Social
 
 - Entity type: SP.Social.SocialFeedManager
 - Is composable: false

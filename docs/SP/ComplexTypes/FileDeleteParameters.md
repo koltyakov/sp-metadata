@@ -1,10 +1,8 @@
-# Namespace: SP
+# Complex Type: FileDeleteParameters
 
-## Complex Type: FileDeleteParameters
+> Namespace: SP
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: Query
 
-## Function Import: Query
+> Namespace: SP.Microfeed
 
 - Entity type: SP.Microfeed.MicrofeedStore
 - Is composable: false

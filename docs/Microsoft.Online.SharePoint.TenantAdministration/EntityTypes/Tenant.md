@@ -1,10 +1,8 @@
-# Namespace: Microsoft.Online.SharePoint.TenantAdministration
+# Entity Type: Tenant
 
-## Entity Type: Tenant
+> Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -125,8 +123,6 @@ WhoCanShareAllowListInTenant (Edm.String) | ✅ | ❌ | ❌ | ❌
 WhoCanShareAllowListInTenantByPrincipalIdentity (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

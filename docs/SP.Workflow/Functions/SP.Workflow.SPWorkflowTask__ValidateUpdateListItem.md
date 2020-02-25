@@ -1,6 +1,6 @@
-# Namespace: SP.Workflow
+# Function Import: ValidateUpdateListItem
 
-## Function Import: ValidateUpdateListItem
+> Namespace: SP.Workflow
 
 - Entity type: SP.Workflow.SPWorkflowTask
 - Is composable: false

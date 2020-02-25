@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: ReadNumberProperty
 
-## Function Import: ReadNumberProperty
+> Namespace: PS
 
 - Entity type: PS.WorkflowActivities
 - Is composable: false

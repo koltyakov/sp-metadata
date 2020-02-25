@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: RepopulateLMT
 
-## Function Import: RepopulateLMT
+> Namespace: SP.Microfeed
 
 - Entity type: SP.Microfeed.MicrofeedManager
 - Is composable: false

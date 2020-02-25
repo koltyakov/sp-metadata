@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: PublishEvent
 
-## Function Import: PublishEvent
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowMessagingService
 - Is composable: false

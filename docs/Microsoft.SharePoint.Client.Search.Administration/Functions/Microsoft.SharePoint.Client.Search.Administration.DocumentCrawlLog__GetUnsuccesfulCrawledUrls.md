@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Client.Search.Administration
+# Function Import: GetUnsuccesfulCrawledUrls
 
-## Function Import: GetUnsuccesfulCrawledUrls
+> Namespace: Microsoft.SharePoint.Client.Search.Administration
 
 - Entity type: Microsoft.SharePoint.Client.Search.Administration.DocumentCrawlLog
 - Is composable: false

@@ -1,10 +1,8 @@
-# Namespace: SP.DocumentManagement
+# Entity Type: DocumentId
 
-## Entity Type: DocumentId
+> Namespace: SP.DocumentManagement
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: Microsoft_SharePoint_Yammer_WacApi_AddUserToSiteCollection
 
-## Function Import: Microsoft_SharePoint_Yammer_WacApi_AddUserToSiteCollection
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

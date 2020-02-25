@@ -1,6 +1,6 @@
-# Namespace: SP.CompliancePolicy
+# Function Import: SP_CompliancePolicy_SPPolicyStoreProxy_IsSiteDeletable
 
-## Function Import: SP_CompliancePolicy_SPPolicyStoreProxy_IsSiteDeletable
+> Namespace: SP.CompliancePolicy
 
 - Is composable: false
 - Is bindable: false

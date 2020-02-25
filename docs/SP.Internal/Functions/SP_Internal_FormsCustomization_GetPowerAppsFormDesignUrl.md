@@ -1,6 +1,6 @@
-# Namespace: SP.Internal
+# Function Import: SP_Internal_FormsCustomization_GetPowerAppsFormDesignUrl
 
-## Function Import: SP_Internal_FormsCustomization_GetPowerAppsFormDesignUrl
+> Namespace: SP.Internal
 
 - Is composable: false
 - Is bindable: false

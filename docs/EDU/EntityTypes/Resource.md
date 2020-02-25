@@ -1,10 +1,8 @@
-# Namespace: EDU
+# Entity Type: Resource
 
-## Entity Type: Resource
+> Namespace: EDU
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -15,8 +13,6 @@ ResourceCategory (Edm.String) | ❌ | ❌ | ❌ | ✅
 ResourceType (Edm.String) | ❌ | ❌ | ❌ | ✅
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Office.SecureStoreService.Server
+# Function Import: Microsoft_Office_SecureStoreService_Server_TargetApplicationField
 
-## Function Import: Microsoft_Office_SecureStoreService_Server_TargetApplicationField
+> Namespace: Microsoft.Office.SecureStoreService.Server
 
 - Is composable: false
 - Is bindable: false

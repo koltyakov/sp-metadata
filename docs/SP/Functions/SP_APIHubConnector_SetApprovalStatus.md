@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_APIHubConnector_SetApprovalStatus
 
-## Function Import: SP_APIHubConnector_SetApprovalStatus
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

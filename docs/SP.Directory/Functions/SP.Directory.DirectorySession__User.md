@@ -1,6 +1,6 @@
-# Namespace: SP.Directory
+# Function Import: User
 
-## Function Import: User
+> Namespace: SP.Directory
 
 - Entity type: SP.Directory.DirectorySession
 - Is composable: false

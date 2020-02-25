@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetRecycleBinItems
 
-## Function Import: GetRecycleBinItems
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

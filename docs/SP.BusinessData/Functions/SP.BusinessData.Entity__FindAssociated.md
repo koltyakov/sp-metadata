@@ -1,6 +1,6 @@
-# Namespace: SP.BusinessData
+# Function Import: FindAssociated
 
-## Function Import: FindAssociated
+> Namespace: SP.BusinessData
 
 - Entity type: SP.BusinessData.Entity
 - Is composable: false

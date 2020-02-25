@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Utilities.WebTemplateExtensions
+# Complex Type: SiteDesignCreationInfo
 
-## Complex Type: SiteDesignCreationInfo
+> Namespace: Microsoft.SharePoint.Utilities.WebTemplateExtensions
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

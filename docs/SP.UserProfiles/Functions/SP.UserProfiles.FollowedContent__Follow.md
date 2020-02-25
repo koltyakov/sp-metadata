@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: Follow
 
-## Function Import: Follow
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.FollowedContent
 - Is composable: false

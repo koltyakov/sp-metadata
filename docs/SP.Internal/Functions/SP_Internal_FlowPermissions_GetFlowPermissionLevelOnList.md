@@ -1,6 +1,6 @@
-# Namespace: SP.Internal
+# Function Import: SP_Internal_FlowPermissions_GetFlowPermissionLevelOnList
 
-## Function Import: SP_Internal_FlowPermissions_GetFlowPermissionLevelOnList
+> Namespace: SP.Internal
 
 - Is composable: false
 - Is bindable: false

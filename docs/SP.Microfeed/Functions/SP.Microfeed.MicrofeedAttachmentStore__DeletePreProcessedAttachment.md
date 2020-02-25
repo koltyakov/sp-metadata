@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: DeletePreProcessedAttachment
 
-## Function Import: DeletePreProcessedAttachment
+> Namespace: SP.Microfeed
 
 - Entity type: SP.Microfeed.MicrofeedAttachmentStore
 - Is composable: false

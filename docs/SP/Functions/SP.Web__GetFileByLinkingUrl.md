@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetFileByLinkingUrl
 
-## Function Import: GetFileByLinkingUrl
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Office.Server.Search.REST
+# Function Import: postquery
 
-## Function Import: postquery
+> Namespace: Microsoft.Office.Server.Search.REST
 
 - Entity type: Microsoft.Office.Server.Search.REST.SearchService
 - Is composable: false

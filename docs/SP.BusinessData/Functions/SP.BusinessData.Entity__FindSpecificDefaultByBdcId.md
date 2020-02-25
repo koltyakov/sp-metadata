@@ -1,6 +1,6 @@
-# Namespace: SP.BusinessData
+# Function Import: FindSpecificDefaultByBdcId
 
-## Function Import: FindSpecificDefaultByBdcId
+> Namespace: SP.BusinessData
 
 - Entity type: SP.BusinessData.Entity
 - Is composable: false

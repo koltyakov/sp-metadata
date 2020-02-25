@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: CheckIn
 
-## Function Import: CheckIn
+> Namespace: PS
 
 - Entity type: PS.DraftProject
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: IncrementVideoViewProgressCount
 
-## Function Import: IncrementVideoViewProgressCount
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.VideoItem
 - Is composable: false

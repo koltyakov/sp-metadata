@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: GetDocProps
 
-## Function Import: GetDocProps
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.PointPublishingPostServiceManager
 - Is composable: false

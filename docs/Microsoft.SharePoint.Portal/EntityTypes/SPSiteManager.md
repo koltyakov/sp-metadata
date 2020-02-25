@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Portal
+# Entity Type: SPSiteManager
 
-## Entity Type: SPSiteManager
+> Namespace: Microsoft.SharePoint.Portal
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

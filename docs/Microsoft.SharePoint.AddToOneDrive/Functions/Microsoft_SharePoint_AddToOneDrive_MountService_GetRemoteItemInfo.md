@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.AddToOneDrive
+# Function Import: Microsoft_SharePoint_AddToOneDrive_MountService_GetRemoteItemInfo
 
-## Function Import: Microsoft_SharePoint_AddToOneDrive_MountService_GetRemoteItemInfo
+> Namespace: Microsoft.SharePoint.AddToOneDrive
 
 - Is composable: false
 - Is bindable: false

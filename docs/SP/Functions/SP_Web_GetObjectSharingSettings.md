@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_Web_GetObjectSharingSettings
 
-## Function Import: SP_Web_GetObjectSharingSettings
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

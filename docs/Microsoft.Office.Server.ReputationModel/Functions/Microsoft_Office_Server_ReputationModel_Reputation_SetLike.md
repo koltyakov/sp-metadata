@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Office.Server.ReputationModel
+# Function Import: Microsoft_Office_Server_ReputationModel_Reputation_SetLike
 
-## Function Import: Microsoft_Office_Server_ReputationModel_Reputation_SetLike
+> Namespace: Microsoft.Office.Server.ReputationModel
 
 - Is composable: false
 - Is bindable: false

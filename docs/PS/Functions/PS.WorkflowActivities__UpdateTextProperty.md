@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: UpdateTextProperty
 
-## Function Import: UpdateTextProperty
+> Namespace: PS
 
 - Entity type: PS.WorkflowActivities
 - Is composable: false

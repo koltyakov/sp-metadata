@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: AddMask
 
-## Function Import: AddMask
+> Namespace: PS
 
 - Entity type: PS.LookupTable
 - Is composable: false

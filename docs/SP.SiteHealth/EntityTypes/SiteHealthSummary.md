@@ -1,10 +1,8 @@
-# Namespace: SP.SiteHealth
+# Entity Type: SiteHealthSummary
 
-## Entity Type: SiteHealthSummary
+> Namespace: SP.SiteHealth
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

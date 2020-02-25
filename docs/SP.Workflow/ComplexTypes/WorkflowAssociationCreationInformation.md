@@ -1,10 +1,8 @@
-# Namespace: SP.Workflow
+# Complex Type: WorkflowAssociationCreationInformation
 
-## Complex Type: WorkflowAssociationCreationInformation
+> Namespace: SP.Workflow
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

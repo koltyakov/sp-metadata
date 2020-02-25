@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetMappedApps
 
-## Function Import: GetMappedApps
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

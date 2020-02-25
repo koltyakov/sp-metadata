@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: Enumerate
 
-## Function Import: Enumerate
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowInstanceService
 - Is composable: false

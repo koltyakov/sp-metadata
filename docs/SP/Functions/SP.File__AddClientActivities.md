@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: AddClientActivities
 
-## Function Import: AddClientActivities
+> Namespace: SP
 
 - Entity type: SP.File
 - Is composable: false

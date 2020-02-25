@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SyncFlowInstances
 
-## Function Import: SyncFlowInstances
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

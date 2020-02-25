@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_SPHSite_AddOrgNewsSite
 
-## Function Import: SP_SPHSite_AddOrgNewsSite
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

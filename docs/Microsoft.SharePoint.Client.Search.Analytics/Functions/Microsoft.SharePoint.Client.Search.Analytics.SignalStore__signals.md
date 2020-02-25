@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Client.Search.Analytics
+# Function Import: signals
 
-## Function Import: signals
+> Namespace: Microsoft.SharePoint.Client.Search.Analytics
 
 - Entity type: Microsoft.SharePoint.Client.Search.Analytics.SignalStore
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: NeedsUpgradeByType
 
-## Function Import: NeedsUpgradeByType
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

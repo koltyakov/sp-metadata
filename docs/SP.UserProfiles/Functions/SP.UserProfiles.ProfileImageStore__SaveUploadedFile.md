@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: SaveUploadedFile
 
-## Function Import: SaveUploadedFile
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.ProfileImageStore
 - Is composable: false

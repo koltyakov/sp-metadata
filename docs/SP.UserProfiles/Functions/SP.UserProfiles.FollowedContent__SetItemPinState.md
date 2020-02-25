@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: SetItemPinState
 
-## Function Import: SetItemPinState
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.FollowedContent
 - Is composable: false

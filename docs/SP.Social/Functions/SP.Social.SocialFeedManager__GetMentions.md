@@ -1,6 +1,6 @@
-# Namespace: SP.Social
+# Function Import: GetMentions
 
-## Function Import: GetMentions
+> Namespace: SP.Social
 
 - Entity type: SP.Social.SocialFeedManager
 - Is composable: false

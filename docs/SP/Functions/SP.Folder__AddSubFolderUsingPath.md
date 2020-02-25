@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: AddSubFolderUsingPath
 
-## Function Import: AddSubFolderUsingPath
+> Namespace: SP
 
 - Entity type: SP.Folder
 - Is composable: false

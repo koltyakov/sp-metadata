@@ -1,6 +1,6 @@
-# Namespace: SP.Sharing
+# Function Import: SP_Sharing_DocumentSharingManager_UpdateDocumentSharingInfo
 
-## Function Import: SP_Sharing_DocumentSharingManager_UpdateDocumentSharingInfo
+> Namespace: SP.Sharing
 
 - Is composable: false
 - Is bindable: false

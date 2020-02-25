@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Utilities.WebTemplateExtensions
+# Entity Type: DesignPackageMenuContents
 
-## Entity Type: DesignPackageMenuContents
+> Namespace: Microsoft.SharePoint.Utilities.WebTemplateExtensions
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

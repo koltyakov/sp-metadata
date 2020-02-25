@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: GetPlaybackUrl
 
-## Function Import: GetPlaybackUrl
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.VideoItem
 - Is composable: false

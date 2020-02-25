@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Office.Education.QuizOM
+# Function Import: GetCurrentUsersLatestResponse
 
-## Function Import: GetCurrentUsersLatestResponse
+> Namespace: Microsoft.Office.Education.QuizOM
 
 - Entity type: Microsoft.Office.Education.QuizOM.Quiz
 - Is composable: false

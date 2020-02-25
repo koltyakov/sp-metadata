@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetFileByServerRelativePath
 
-## Function Import: GetFileByServerRelativePath
+> Namespace: SP
 
 - Entity type: SP.RemoteWeb
 - Is composable: false

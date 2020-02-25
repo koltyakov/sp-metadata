@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: HubSiteDataAsStream
 
-## Function Import: HubSiteDataAsStream
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

@@ -1,10 +1,8 @@
-# Namespace: SP.UI
+# Entity Type: MySiteLinks
 
-## Entity Type: MySiteLinks
+> Namespace: SP.UI
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,6 +1,6 @@
-# Namespace: SP.Sharing
+# Function Import: SP_Sharing_SiteSharingReportHelper_CreateSharingReportJob
 
-## Function Import: SP_Sharing_SiteSharingReportHelper_CreateSharingReportJob
+> Namespace: SP.Sharing
 
 - Is composable: false
 - Is bindable: false

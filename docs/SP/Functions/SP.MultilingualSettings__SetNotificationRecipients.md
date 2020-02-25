@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SetNotificationRecipients
 
-## Function Import: SetNotificationRecipients
+> Namespace: SP
 
 - Entity type: SP.MultilingualSettings
 - Is composable: false

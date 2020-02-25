@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: UnpublishMappedView
 
-## Function Import: UnpublishMappedView
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

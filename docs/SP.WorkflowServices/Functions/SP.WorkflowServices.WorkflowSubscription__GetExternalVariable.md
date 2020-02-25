@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: GetExternalVariable
 
-## Function Import: GetExternalVariable
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowSubscription
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.Translation
+# Function Import: Create
 
-## Function Import: Create
+> Namespace: SP.Translation
 
 - Entity type: SP.TranslationStatusCollection
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_RecentListCollection_GetRecentListsWithPageContextInfo
 
-## Function Import: SP_RecentListCollection_GetRecentListsWithPageContextInfo
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.Utilities
+# Function Import: DeleteTenantTheme
 
-## Function Import: DeleteTenantTheme
+> Namespace: SP.Utilities
 
 - Entity type: SP.Utilities.ThemeManager
 - Is composable: false

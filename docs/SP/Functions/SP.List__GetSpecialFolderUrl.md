@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetSpecialFolderUrl
 
-## Function Import: GetSpecialFolderUrl
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

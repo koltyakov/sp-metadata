@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: CheckLicense
 
-## Function Import: CheckLicense
+> Namespace: SP
 
 - Entity type: SP.SPAppLicenseManager
 - Is composable: false

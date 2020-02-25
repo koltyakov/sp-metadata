@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetWebDavUrl
 
-## Function Import: GetWebDavUrl
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

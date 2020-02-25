@@ -1,6 +1,6 @@
-# Namespace: SP.WorkManagement.OM
+# Function Import: SetPersistedProperties
 
-## Function Import: SetPersistedProperties
+> Namespace: SP.WorkManagement.OM
 
 - Entity type: SP.WorkManagement.OM.UserSettingsManager
 - Is composable: false

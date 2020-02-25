@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: RemoveSPUserInformation
 
-## Function Import: RemoveSPUserInformation
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.PeopleManager
 - Is composable: false

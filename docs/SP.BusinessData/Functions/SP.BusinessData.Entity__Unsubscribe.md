@@ -1,6 +1,6 @@
-# Namespace: SP.BusinessData
+# Function Import: Unsubscribe
 
-## Function Import: Unsubscribe
+> Namespace: SP.BusinessData
 
 - Entity type: SP.BusinessData.Entity
 - Is composable: false

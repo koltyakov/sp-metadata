@@ -1,10 +1,8 @@
-# Namespace: SP.Publishing.Navigation
+# Entity Type: StructuralNavigationCacheWrapper
 
-## Entity Type: StructuralNavigationCacheWrapper
+> Namespace: SP.Publishing.Navigation
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

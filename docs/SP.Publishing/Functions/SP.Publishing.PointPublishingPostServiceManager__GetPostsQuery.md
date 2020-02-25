@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: GetPostsQuery
 
-## Function Import: GetPostsQuery
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.PointPublishingPostServiceManager
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SetCorporateCatalog
 
-## Function Import: SetCorporateCatalog
+> Namespace: SP
 
 - Entity type: SP.TenantSettings
 - Is composable: false

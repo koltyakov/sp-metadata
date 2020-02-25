@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: AddViewField
 
-## Function Import: AddViewField
+> Namespace: SP
 
 - Entity type: SP.ViewFieldCollection
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.Utilities
+# Function Import: SP_Utilities_Utility_CreateWikiPageInContextWeb
 
-## Function Import: SP_Utilities_Utility_CreateWikiPageInContextWeb
+> Namespace: SP.Utilities
 
 - Is composable: false
 - Is bindable: false

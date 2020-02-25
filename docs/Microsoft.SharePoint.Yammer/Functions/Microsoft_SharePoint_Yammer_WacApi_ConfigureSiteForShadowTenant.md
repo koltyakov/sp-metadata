@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Yammer
+# Function Import: Microsoft_SharePoint_Yammer_WacApi_ConfigureSiteForShadowTenant
 
-## Function Import: Microsoft_SharePoint_Yammer_WacApi_ConfigureSiteForShadowTenant
+> Namespace: Microsoft.SharePoint.Yammer
 
 - Is composable: false
 - Is bindable: false

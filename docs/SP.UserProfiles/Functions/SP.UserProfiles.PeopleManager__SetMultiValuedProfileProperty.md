@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: SetMultiValuedProfileProperty
 
-## Function Import: SetMultiValuedProfileProperty
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.PeopleManager
 - Is composable: false

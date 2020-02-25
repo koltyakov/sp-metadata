@@ -1,6 +1,6 @@
-# Namespace: SP.BusinessData.Runtime
+# Function Import: SP_BusinessData_Runtime_NotificationCallback
 
-## Function Import: SP_BusinessData_Runtime_NotificationCallback
+> Namespace: SP.BusinessData.Runtime
 
 - Is composable: false
 - Is bindable: false

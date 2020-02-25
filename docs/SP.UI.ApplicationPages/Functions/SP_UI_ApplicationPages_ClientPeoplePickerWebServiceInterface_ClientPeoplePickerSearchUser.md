@@ -1,6 +1,6 @@
-# Namespace: SP.UI.ApplicationPages
+# Function Import: SP_UI_ApplicationPages_ClientPeoplePickerWebServiceInterface_ClientPeoplePickerSearchUser
 
-## Function Import: SP_UI_ApplicationPages_ClientPeoplePickerWebServiceInterface_ClientPeoplePickerSearchUser
+> Namespace: SP.UI.ApplicationPages
 
 - Is composable: false
 - Is bindable: false

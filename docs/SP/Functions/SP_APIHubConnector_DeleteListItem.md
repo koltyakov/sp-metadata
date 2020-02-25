@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_APIHubConnector_DeleteListItem
 
-## Function Import: SP_APIHubConnector_DeleteListItem
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

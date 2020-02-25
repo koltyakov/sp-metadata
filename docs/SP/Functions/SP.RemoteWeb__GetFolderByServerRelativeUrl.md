@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetFolderByServerRelativeUrl
 
-## Function Import: GetFolderByServerRelativeUrl
+> Namespace: SP
 
 - Entity type: SP.RemoteWeb
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.BusinessData.Runtime
+# Function Import: GetCollectionSize
 
-## Function Import: GetCollectionSize
+> Namespace: SP.BusinessData.Runtime
 
 - Entity type: SP.BusinessData.Runtime.EntityFieldValueDictionary
 - Is composable: false

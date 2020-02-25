@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: DetachAssignmentFromQuiz
 
-## Function Import: DetachAssignmentFromQuiz
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

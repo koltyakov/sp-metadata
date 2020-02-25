@@ -1,6 +1,6 @@
-# Namespace: SP.Social
+# Function Import: FollowedCount
 
-## Function Import: FollowedCount
+> Namespace: SP.Social
 
 - Entity type: SP.Social.SocialRestFollowingManager
 - Is composable: false

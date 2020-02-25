@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Internal
+# Function Import: LogActivity
 
-## Function Import: LogActivity
+> Namespace: Microsoft.SharePoint.Internal
 
 - Entity type: Microsoft.SharePoint.Internal.ActivityLogger
 - Is composable: false

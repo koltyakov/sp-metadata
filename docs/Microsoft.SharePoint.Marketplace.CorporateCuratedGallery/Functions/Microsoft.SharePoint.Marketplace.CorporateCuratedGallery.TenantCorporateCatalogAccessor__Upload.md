@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery
+# Function Import: Upload
 
-## Function Import: Upload
+> Namespace: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery
 
 - Entity type: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor
 - Is composable: false

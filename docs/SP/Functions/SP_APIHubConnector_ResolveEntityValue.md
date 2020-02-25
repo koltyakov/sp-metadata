@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_APIHubConnector_ResolveEntityValue
 
-## Function Import: SP_APIHubConnector_ResolveEntityValue
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

@@ -1,10 +1,8 @@
-# Namespace: SP.Sharing
+# Entity Type: SharingInformation
 
-## Entity Type: SharingInformation
+> Namespace: SP.Sharing
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -44,8 +42,6 @@ webTemplateId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 webUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

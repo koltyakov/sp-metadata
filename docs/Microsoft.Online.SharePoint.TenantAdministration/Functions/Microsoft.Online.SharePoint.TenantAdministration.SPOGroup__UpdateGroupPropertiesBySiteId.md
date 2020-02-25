@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Online.SharePoint.TenantAdministration
+# Function Import: UpdateGroupPropertiesBySiteId
 
-## Function Import: UpdateGroupPropertiesBySiteId
+> Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
 - Entity type: Microsoft.Online.SharePoint.TenantAdministration.SPOGroup
 - Is composable: false

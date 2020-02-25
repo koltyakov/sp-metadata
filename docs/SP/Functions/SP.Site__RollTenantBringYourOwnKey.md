@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: RollTenantBringYourOwnKey
 
-## Function Import: RollTenantBringYourOwnKey
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

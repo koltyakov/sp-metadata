@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: EmbedData
 
-## Function Import: EmbedData
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.EmbedService
 - Is composable: false

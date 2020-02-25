@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: ValidateActivity
 
-## Function Import: ValidateActivity
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowDeploymentService
 - Is composable: false

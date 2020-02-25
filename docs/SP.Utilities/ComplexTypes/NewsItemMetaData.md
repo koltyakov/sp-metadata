@@ -1,10 +1,8 @@
-# Namespace: SP.Utilities
+# Complex Type: NewsItemMetaData
 
-## Complex Type: NewsItemMetaData
+> Namespace: SP.Utilities
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

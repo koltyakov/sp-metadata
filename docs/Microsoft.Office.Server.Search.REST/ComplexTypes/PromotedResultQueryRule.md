@@ -1,10 +1,8 @@
-# Namespace: Microsoft.Office.Server.Search.REST
+# Complex Type: PromotedResultQueryRule
 
-## Complex Type: PromotedResultQueryRule
+> Namespace: Microsoft.Office.Server.Search.REST
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

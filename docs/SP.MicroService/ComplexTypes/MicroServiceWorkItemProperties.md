@@ -1,10 +1,8 @@
-# Namespace: SP.MicroService
+# Complex Type: MicroServiceWorkItemProperties
 
-## Complex Type: MicroServiceWorkItemProperties
+> Namespace: SP.MicroService
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

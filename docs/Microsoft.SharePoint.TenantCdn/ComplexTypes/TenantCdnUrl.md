@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.TenantCdn
+# Complex Type: TenantCdnUrl
 
-## Complex Type: TenantCdnUrl
+> Namespace: Microsoft.SharePoint.TenantCdn
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetGroupById
 
-## Function Import: GetGroupById
+> Namespace: SP
 
 - Entity type: SP.RemoteWeb
 - Is composable: false

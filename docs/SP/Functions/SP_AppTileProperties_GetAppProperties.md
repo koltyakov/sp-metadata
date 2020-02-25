@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_AppTileProperties_GetAppProperties
 
-## Function Import: SP_AppTileProperties_GetAppProperties
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

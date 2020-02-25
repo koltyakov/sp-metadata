@@ -1,6 +1,6 @@
-# Namespace: SP.Social
+# Function Import: Post
 
-## Function Import: Post
+> Namespace: SP.Social
 
 - Entity type: SP.Social.SocialRestFeed
 - Is composable: false

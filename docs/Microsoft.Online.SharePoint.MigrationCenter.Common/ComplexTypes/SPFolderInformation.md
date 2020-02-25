@@ -1,10 +1,8 @@
-# Namespace: Microsoft.Online.SharePoint.MigrationCenter.Common
+# Complex Type: SPFolderInformation
 
-## Complex Type: SPFolderInformation
+> Namespace: Microsoft.Online.SharePoint.MigrationCenter.Common
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

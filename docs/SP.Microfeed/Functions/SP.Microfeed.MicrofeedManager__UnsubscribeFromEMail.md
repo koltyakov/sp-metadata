@@ -1,6 +1,6 @@
-# Namespace: SP.Microfeed
+# Function Import: UnsubscribeFromEMail
 
-## Function Import: UnsubscribeFromEMail
+> Namespace: SP.Microfeed
 
 - Entity type: SP.Microfeed.MicrofeedManager
 - Is composable: false

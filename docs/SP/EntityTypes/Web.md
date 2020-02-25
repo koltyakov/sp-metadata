@@ -1,10 +1,8 @@
-# Namespace: SP
+# Entity Type: Web
 
-## Entity Type: Web
+> Namespace: SP
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
@@ -96,8 +94,6 @@ WebTemplate (Edm.String) | ✅ | ✅ | ✅ | ✅
 WelcomePage (Edm.String) | ✅ | ✅ | ❌ | ❌
 
 ### Navigation Properties
-
-**Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

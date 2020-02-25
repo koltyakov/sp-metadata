@@ -1,10 +1,8 @@
-# Namespace: SP.Publishing
+# Complex Type: ProfileCoreProperties
 
-## Complex Type: ProfileCoreProperties
+> Namespace: SP.Publishing
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

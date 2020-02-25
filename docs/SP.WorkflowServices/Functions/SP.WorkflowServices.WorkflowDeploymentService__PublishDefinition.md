@@ -1,6 +1,6 @@
-# Namespace: SP.WorkflowServices
+# Function Import: PublishDefinition
 
-## Function Import: PublishDefinition
+> Namespace: SP.WorkflowServices
 
 - Entity type: SP.WorkflowServices.WorkflowDeploymentService
 - Is composable: false

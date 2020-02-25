@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_RelatedItemManager_GetRelatedItems
 
-## Function Import: SP_RelatedItemManager_GetRelatedItems
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

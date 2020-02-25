@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetClientSideWebParts
 
-## Function Import: GetClientSideWebParts
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

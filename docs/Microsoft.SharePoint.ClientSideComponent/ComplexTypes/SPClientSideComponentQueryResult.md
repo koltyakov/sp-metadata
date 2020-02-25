@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.ClientSideComponent
+# Complex Type: SPClientSideComponentQueryResult
 
-## Complex Type: SPClientSideComponentQueryResult
+> Namespace: Microsoft.SharePoint.ClientSideComponent
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

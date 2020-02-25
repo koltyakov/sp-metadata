@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.ClientSideComponent
+# Function Import: GetById
 
-## Function Import: GetById
+> Namespace: Microsoft.SharePoint.ClientSideComponent
 
 - Entity type: Microsoft.SharePoint.ClientSideComponent.HostedAppsManager
 - Is composable: false

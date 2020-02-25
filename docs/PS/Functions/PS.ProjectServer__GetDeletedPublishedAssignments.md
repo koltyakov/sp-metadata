@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: GetDeletedPublishedAssignments
 
-## Function Import: GetDeletedPublishedAssignments
+> Namespace: PS
 
 - Entity type: PS.ProjectServer
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetWebTemplates
 
-## Function Import: GetWebTemplates
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: RenderListContextMenuData
 
-## Function Import: RenderListContextMenuData
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

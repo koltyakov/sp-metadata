@@ -1,6 +1,6 @@
-# Namespace: SP.CompliancePolicy
+# Function Import: RetagReviewItems
 
-## Function Import: RetagReviewItems
+> Namespace: SP.CompliancePolicy
 
 - Entity type: SP.CompliancePolicy.SPPolicyStoreProxy
 - Is composable: false

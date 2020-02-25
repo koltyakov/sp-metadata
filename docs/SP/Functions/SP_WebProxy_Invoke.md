@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_WebProxy_Invoke
 
-## Function Import: SP_WebProxy_Invoke
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

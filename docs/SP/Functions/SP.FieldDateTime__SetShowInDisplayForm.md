@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SetShowInDisplayForm
 
-## Function Import: SetShowInDisplayForm
+> Namespace: SP
 
 - Entity type: SP.FieldDateTime
 - Is composable: false

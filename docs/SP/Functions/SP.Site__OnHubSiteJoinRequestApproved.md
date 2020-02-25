@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: OnHubSiteJoinRequestApproved
 
-## Function Import: OnHubSiteJoinRequestApproved
+> Namespace: SP
 
 - Entity type: SP.Site
 - Is composable: false

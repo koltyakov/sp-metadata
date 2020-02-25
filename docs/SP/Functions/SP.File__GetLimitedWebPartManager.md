@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetLimitedWebPartManager
 
-## Function Import: GetLimitedWebPartManager
+> Namespace: SP
 
 - Entity type: SP.File
 - Is composable: false

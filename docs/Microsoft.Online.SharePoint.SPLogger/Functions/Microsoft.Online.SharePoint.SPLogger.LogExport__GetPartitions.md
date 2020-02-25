@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Online.SharePoint.SPLogger
+# Function Import: GetPartitions
 
-## Function Import: GetPartitions
+> Namespace: Microsoft.Online.SharePoint.SPLogger
 
 - Entity type: Microsoft.Online.SharePoint.SPLogger.LogExport
 - Is composable: false

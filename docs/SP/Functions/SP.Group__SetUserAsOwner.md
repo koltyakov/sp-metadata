@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SetUserAsOwner
 
-## Function Import: SetUserAsOwner
+> Namespace: SP
 
 - Entity type: SP.Group
 - Is composable: false

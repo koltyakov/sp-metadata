@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: AddImage
 
-## Function Import: AddImage
+> Namespace: SP.Publishing
 
 - Entity type: SP.Publishing.SitePageService
 - Is composable: false

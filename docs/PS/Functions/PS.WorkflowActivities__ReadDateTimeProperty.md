@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: ReadDateTimeProperty
 
-## Function Import: ReadDateTimeProperty
+> Namespace: PS
 
 - Entity type: PS.WorkflowActivities
 - Is composable: false

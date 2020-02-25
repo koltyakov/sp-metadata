@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SetShowInNewForm
 
-## Function Import: SetShowInNewForm
+> Namespace: SP
 
 - Entity type: SP.FieldUrl
 - Is composable: false

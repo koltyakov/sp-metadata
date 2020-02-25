@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: AddTaskPlanLink
 
-## Function Import: AddTaskPlanLink
+> Namespace: PS
 
 - Entity type: PS.PublishedTask
 - Is composable: false

@@ -1,6 +1,6 @@
-# Namespace: SP.Directory
+# Function Import: ValidateGroupName
 
-## Function Import: ValidateGroupName
+> Namespace: SP.Directory
 
 - Entity type: SP.Directory.DirectorySession
 - Is composable: false

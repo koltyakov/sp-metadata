@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_ObjectSharingInformation_CanCurrentUserShareRemote
 
-## Function Import: SP_ObjectSharingInformation_CanCurrentUserShareRemote
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

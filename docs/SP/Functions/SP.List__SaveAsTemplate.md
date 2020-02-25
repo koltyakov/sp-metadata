@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SaveAsTemplate
 
-## Function Import: SaveAsTemplate
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

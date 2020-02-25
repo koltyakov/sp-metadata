@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_SPHSite_IsModernSiteWithHorizontalNav
 
-## Function Import: SP_SPHSite_IsModernSiteWithHorizontalNav
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

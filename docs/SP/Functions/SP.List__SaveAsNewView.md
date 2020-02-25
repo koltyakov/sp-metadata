@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SaveAsNewView
 
-## Function Import: SaveAsNewView
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

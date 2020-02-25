@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.Internal
+# Entity Type: TrackedItemService
 
-## Entity Type: TrackedItemService
+> Namespace: Microsoft.SharePoint.Internal
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

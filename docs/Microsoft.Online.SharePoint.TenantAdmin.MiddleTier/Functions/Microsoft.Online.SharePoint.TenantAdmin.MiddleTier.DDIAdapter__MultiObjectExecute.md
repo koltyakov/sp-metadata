@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Online.SharePoint.TenantAdmin.MiddleTier
+# Function Import: MultiObjectExecute
 
-## Function Import: MultiObjectExecute
+> Namespace: Microsoft.Online.SharePoint.TenantAdmin.MiddleTier
 
 - Entity type: Microsoft.Online.SharePoint.TenantAdmin.MiddleTier.DDIAdapter
 - Is composable: false

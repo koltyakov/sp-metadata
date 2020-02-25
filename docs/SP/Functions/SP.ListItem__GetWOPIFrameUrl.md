@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: GetWOPIFrameUrl
 
-## Function Import: GetWOPIFrameUrl
+> Namespace: SP
 
 - Entity type: SP.ListItem
 - Is composable: false

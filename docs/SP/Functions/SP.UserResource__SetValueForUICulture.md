@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SetValueForUICulture
 
-## Function Import: SetValueForUICulture
+> Namespace: SP
 
 - Entity type: SP.UserResource
 - Is composable: false

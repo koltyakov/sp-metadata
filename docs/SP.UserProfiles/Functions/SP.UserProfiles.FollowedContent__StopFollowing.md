@@ -1,6 +1,6 @@
-# Namespace: SP.UserProfiles
+# Function Import: StopFollowing
 
-## Function Import: StopFollowing
+> Namespace: SP.UserProfiles
 
 - Entity type: SP.UserProfiles.FollowedContent
 - Is composable: false

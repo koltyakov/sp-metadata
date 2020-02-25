@@ -1,6 +1,6 @@
-# Namespace: SP.Publishing
+# Function Import: SP_Publishing_AddinSettings
 
-## Function Import: SP_Publishing_AddinSettings
+> Namespace: SP.Publishing
 
 - Is composable: false
 - Is bindable: false

@@ -1,10 +1,8 @@
-# Namespace: Microsoft.SharePoint.AddToOneDrive
+# Complex Type: UpdateMountPointsRequest
 
-## Complex Type: UpdateMountPointsRequest
+> Namespace: Microsoft.SharePoint.AddToOneDrive
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

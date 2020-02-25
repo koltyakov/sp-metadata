@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Internal.ClientSideComponent
+# Function Import: Microsoft_SharePoint_Internal_ClientSideComponent_Token_AcquireOBOToken
 
-## Function Import: Microsoft_SharePoint_Internal_ClientSideComponent_Token_AcquireOBOToken
+> Namespace: Microsoft.SharePoint.Internal.ClientSideComponent
 
 - Is composable: false
 - Is bindable: false

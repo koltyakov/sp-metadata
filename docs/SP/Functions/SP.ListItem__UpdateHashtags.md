@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: UpdateHashtags
 
-## Function Import: UpdateHashtags
+> Namespace: SP
 
 - Entity type: SP.ListItem
 - Is composable: false

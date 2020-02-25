@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_Web_CreateAnonymousLink
 
-## Function Import: SP_Web_CreateAnonymousLink
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

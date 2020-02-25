@@ -1,6 +1,6 @@
-# Namespace: SP.BusinessData
+# Function Import: FindFiltered
 
-## Function Import: FindFiltered
+> Namespace: SP.BusinessData
 
 - Entity type: SP.BusinessData.Entity
 - Is composable: false

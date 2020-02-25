@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_FavoriteLists_RemoveFavoriteList
 
-## Function Import: SP_FavoriteLists_RemoveFavoriteList
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

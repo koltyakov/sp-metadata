@@ -1,6 +1,6 @@
-# Namespace: Microsoft.SharePoint.Client.Search.Query
+# Function Import: SetQueryPropertyValue
 
-## Function Import: SetQueryPropertyValue
+> Namespace: Microsoft.SharePoint.Client.Search.Query
 
 - Entity type: Microsoft.SharePoint.Client.Search.Query.KeywordQueryProperties
 - Is composable: false

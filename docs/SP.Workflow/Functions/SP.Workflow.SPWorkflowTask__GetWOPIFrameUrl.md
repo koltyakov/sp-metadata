@@ -1,6 +1,6 @@
-# Namespace: SP.Workflow
+# Function Import: GetWOPIFrameUrl
 
-## Function Import: GetWOPIFrameUrl
+> Namespace: SP.Workflow
 
 - Entity type: SP.Workflow.SPWorkflowTask
 - Is composable: false

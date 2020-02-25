@@ -1,6 +1,6 @@
-# Namespace: SP.BusinessData.Runtime
+# Function Import: CreateCollectionInstance
 
-## Function Import: CreateCollectionInstance
+> Namespace: SP.BusinessData.Runtime
 
 - Entity type: SP.BusinessData.Runtime.EntityInstance
 - Is composable: false

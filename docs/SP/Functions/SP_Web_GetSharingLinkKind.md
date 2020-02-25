@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_Web_GetSharingLinkKind
 
-## Function Import: SP_Web_GetSharingLinkKind
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

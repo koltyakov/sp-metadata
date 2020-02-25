@@ -1,6 +1,6 @@
-# Namespace: Microsoft.Online.SharePoint.TenantAdministration
+# Function Import: MessageCenterMessages
 
-## Function Import: MessageCenterMessages
+> Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
 - Entity type: Microsoft.Online.SharePoint.TenantAdministration.Office365CommsMessagesServiceProxy
 - Is composable: false

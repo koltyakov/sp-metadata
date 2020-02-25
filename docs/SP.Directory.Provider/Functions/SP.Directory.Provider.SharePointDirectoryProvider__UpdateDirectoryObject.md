@@ -1,6 +1,6 @@
-# Namespace: SP.Directory.Provider
+# Function Import: UpdateDirectoryObject
 
-## Function Import: UpdateDirectoryObject
+> Namespace: SP.Directory.Provider
 
 - Entity type: SP.Directory.Provider.SharePointDirectoryProvider
 - Is composable: false

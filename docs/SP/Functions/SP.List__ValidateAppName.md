@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: ValidateAppName
 
-## Function Import: ValidateAppName
+> Namespace: SP
 
 - Entity type: SP.List
 - Is composable: false

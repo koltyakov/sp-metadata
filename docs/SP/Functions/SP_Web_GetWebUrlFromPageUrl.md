@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SP_Web_GetWebUrlFromPageUrl
 
-## Function Import: SP_Web_GetWebUrlFromPageUrl
+> Namespace: SP
 
 - Is composable: false
 - Is bindable: false

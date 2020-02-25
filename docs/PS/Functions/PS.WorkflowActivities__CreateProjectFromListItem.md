@@ -1,6 +1,6 @@
-# Namespace: PS
+# Function Import: CreateProjectFromListItem
 
-## Function Import: CreateProjectFromListItem
+> Namespace: PS
 
 - Entity type: PS.WorkflowActivities
 - Is composable: false

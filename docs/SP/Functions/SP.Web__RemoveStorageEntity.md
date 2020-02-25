@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: RemoveStorageEntity
 
-## Function Import: RemoveStorageEntity
+> Namespace: SP
 
 - Entity type: SP.Web
 - Is composable: false

@@ -1,10 +1,8 @@
-# Namespace: SP.OAuth
+# Entity Type: TokenResponse
 
-## Entity Type: TokenResponse
+> Namespace: SP.OAuth
 
 ### Properties
-
-**Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:

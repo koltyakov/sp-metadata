@@ -1,6 +1,6 @@
-# Namespace: SP
+# Function Import: SaveBinaryStream
 
-## Function Import: SaveBinaryStream
+> Namespace: SP
 
 - Entity type: SP.File
 - Is composable: false
