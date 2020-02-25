@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"strings"
 	"text/template"
 )
 
@@ -25,7 +26,7 @@ func genDoc(templatePath string, filePath string, data interface{}) error {
 		return err
 	}
 
-	res, err := ioutil.ReadAll(&b)
+	bytes, err := ioutil.ReadAll(&b)
 	if err != nil {
 		return err
 	}
@@ -36,7 +37,11 @@ func genDoc(templatePath string, filePath string, data interface{}) error {
 	file, _ := os.OpenFile(filePath, os.O_RDONLY|os.O_CREATE, 0644)
 	_ = file.Close()
 
-	if err := ioutil.WriteFile(filePath, res, 0644); err != nil {
+	trimmed := fmt.Sprintf("%s", bytes)
+	trimmed = strings.TrimSpace(trimmed)
+	trimmed = strings.Replace(trimmed, "\n\n\n", "\n\n", -1)
+
+	if err := ioutil.WriteFile(filePath, []byte(trimmed), 0644); err != nil {
 		return err
 	}
 
