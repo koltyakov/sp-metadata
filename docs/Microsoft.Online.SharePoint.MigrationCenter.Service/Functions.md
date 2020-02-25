@@ -20,7 +20,7 @@ GetCredentials (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.M
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterStorage">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service MigrationCenterStorage) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCredential">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service MigrationCredential) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationTask">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service MigrationTask) | ✅ | ❌ | ❌ | ❌
-ParseUrl (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage) | ✅ | ❌ | ❌ | ❌
+ParseUrl (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage) | ✅ (❌) | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.MigrationCenter.Service.Device) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential) | ✅ | ❌ | ❌ | ❌

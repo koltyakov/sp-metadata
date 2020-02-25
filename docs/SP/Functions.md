@@ -497,9 +497,9 @@ SP_HubSites | ✅ | ✅ | ❌ | ❌
 SP_HubSites_CanCreate | ❌ | ✅ | ❌ | ❌
 SP_HubSites_Load | ✅ | ✅ | ❌ | ❌
 SP_KnowledgeHub | ✅ | ❌ | ❌ | ❌
-[SP_ListHomeItemCollection_GetListHomeItems](./Functions/SP_ListHomeItemCollection_GetListHomeItems.md) | ✅ | ❌ | ❌ | ❌
-[<span title="SP_ListHomeItemCollection_GetListHomeItemsWithPageContextInfo">SP_ListHomeItemCollection_GetListHomeItemsWithPage...</span> (SP ListHomeItemCollection GetListHomeItemsWithPageContextInfo)](./Functions/SP_ListHomeItemCollection_GetListHomeItemsWithPageContextInfo.md) | ✅ | ❌ | ❌ | ❌
-[SP_ListHomeItemCollection_GetListHomePersonalLists](./Functions/SP_ListHomeItemCollection_GetListHomePersonalLists.md) | ✅ | ❌ | ❌ | ❌
+[SP_ListHomeItemCollection_GetListHomeItems](./Functions/SP_ListHomeItemCollection_GetListHomeItems.md) | ✅ (❌) | ❌ | ❌ | ❌
+[<span title="SP_ListHomeItemCollection_GetListHomeItemsWithPageContextInfo">SP_ListHomeItemCollection_GetListHomeItemsWithPage...</span> (SP ListHomeItemCollection GetListHomeItemsWithPageContextInfo)](./Functions/SP_ListHomeItemCollection_GetListHomeItemsWithPageContextInfo.md) | ✅ (❌) | ❌ | ❌ | ❌
+[SP_ListHomeItemCollection_GetListHomePersonalLists](./Functions/SP_ListHomeItemCollection_GetListHomePersonalLists.md) | ✅ (❌) | ❌ | ❌ | ❌
 [SP_List_GetListDataAsStream](./Functions/SP_List_GetListDataAsStream.md) | ✅ | ✅ | ❌ | ❌
 [SP_MountPoint_GetMountedFolderInfo](./Functions/SP_MountPoint_GetMountedFolderInfo.md) | ✅ | ✅ | ✅ | ❌
 [SP_MoveCopyUtil_CopyFile](./Functions/SP_MoveCopyUtil_CopyFile.md) | ✅ | ✅ | ✅ | ❌

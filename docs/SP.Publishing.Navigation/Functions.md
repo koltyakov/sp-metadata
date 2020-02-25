@@ -12,10 +12,10 @@ PortalNavigationCache | ✅ | ❌ | ❌ | ❌
 Refresh (SP.Publishing.Navigation.PortalNavigationCacheWrapper) | ✅ | ❌ | ❌ | ❌
 [SP_Publishing_Navigation_NavigationTermSetView](./Functions/SP_Publishing_Navigation_NavigationTermSetView.md) | ❌ | ❌ | ❌ | ✅
 <span title="SP_Publishing_Navigation_PortalNavigationCacheWrapper">SP_Publishing_Navigation_PortalNavigationCacheWrap...</span> (SP Publishing Navigation PortalNavigationCacheWrapper) | ✅ | ❌ | ❌ | ❌
-<span title="SP_Publishing_Navigation_StructuralNavigationCacheWrapper">SP_Publishing_Navigation_StructuralNavigationCache...</span> (SP Publishing Navigation StructuralNavigationCacheWrapper) | ✅ | ❌ | ❌ | ❌
+<span title="SP_Publishing_Navigation_StructuralNavigationCacheWrapper">SP_Publishing_Navigation_StructuralNavigationCache...</span> (SP Publishing Navigation StructuralNavigationCacheWrapper) | ✅ (❌) | ❌ | ❌ | ❌
 [SP_Publishing_Navigation_WebNavigationSettings](./Functions/SP_Publishing_Navigation_WebNavigationSettings.md) | ❌ | ❌ | ❌ | ✅
-SetSiteState (SP.Publishing.Navigation.StructuralNavigationCacheWrapper) | ✅ | ❌ | ❌ | ❌
-SetWebState (SP.Publishing.Navigation.StructuralNavigationCacheWrapper) | ✅ | ❌ | ❌ | ❌
-SiteState (SP.Publishing.Navigation.StructuralNavigationCacheWrapper) | ✅ | ❌ | ❌ | ❌
-StructuralNavigationCache | ✅ | ❌ | ❌ | ❌
-WebState (SP.Publishing.Navigation.StructuralNavigationCacheWrapper) | ✅ | ❌ | ❌ | ❌
+SetSiteState (SP.Publishing.Navigation.StructuralNavigationCacheWrapper) | ✅ (❌) | ❌ | ❌ | ❌
+SetWebState (SP.Publishing.Navigation.StructuralNavigationCacheWrapper) | ✅ (❌) | ❌ | ❌ | ❌
+SiteState (SP.Publishing.Navigation.StructuralNavigationCacheWrapper) | ✅ (❌) | ❌ | ❌ | ❌
+StructuralNavigationCache | ✅ (❌) | ❌ | ❌ | ❌
+WebState (SP.Publishing.Navigation.StructuralNavigationCacheWrapper) | ✅ (❌) | ❌ | ❌ | ❌
