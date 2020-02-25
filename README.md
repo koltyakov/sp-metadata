@@ -12,9 +12,9 @@ One of the main goals of the project is providing an easily accessible entry poi
 
 The project should not be treated as documentation as EDMX doesn't provide the corresponding level of details, e.g you can't know GET or POST should be used for a method. And I also do not map everything from EDMX models to `.md`s, it's mostly flat entities and presence comparison within the versions.
 
-## APIs drill-down entry point
+## Where to start
 
-Check out [REST APIs Namespaces](./docs/Namespaces.md) availability then drill-down to a specific API.
+Check out 👉 [REST APIs Namespaces](./docs/Namespaces.md) 👈 availability then drill-down to a specific API.
 
 ## Similar projects
 
