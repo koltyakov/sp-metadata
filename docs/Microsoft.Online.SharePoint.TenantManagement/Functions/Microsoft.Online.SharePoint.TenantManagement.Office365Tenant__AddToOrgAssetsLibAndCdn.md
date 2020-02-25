@@ -9,7 +9,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 cdnType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 libUrl (SP.ResourcePath) | ✅ | ❌ | ❌ | ❌
 orgAssetType (Edm.Int32) | ✅ | ❌ | ❌ | ❌

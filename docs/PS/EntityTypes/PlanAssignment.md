@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 BookingType (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 CanLevel (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 Code (Edm.String) | ✅ | ✅ | ✅ | ❌
@@ -27,7 +27,7 @@ TerminationDate (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 CustomFields | ✅ | ✅ | ✅ | ❌
 Intervals | ✅ | ✅ | ✅ | ❌
 Resource | ✅ | ✅ | ✅ | ❌

@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Contact (Edm.String) | ✅ | ✅ | ❌ | ❌
 ContextConditions (Collection(Microsoft.Office.Server.Search.REST.ContextCondition)) | ✅ | ✅ | ❌ | ❌
 CreationDate (Edm.DateTime) | ✅ | ✅ | ❌ | ❌

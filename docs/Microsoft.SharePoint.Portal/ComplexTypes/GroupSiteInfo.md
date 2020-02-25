@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 DocumentsUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 ErrorMessage (Edm.String) | ✅ | ✅ | ✅ | ❌
 GroupId (Edm.Guid) | ✅ | ✅ | ❌ | ❌

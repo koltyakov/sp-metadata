@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 AadObjectId (SP.UserIdInfo) | ✅ | ❌ | ❌ | ❌
 Email (Edm.String) | ✅ | ✅ | ✅ | ✅
 Expiration (Edm.String) | ✅ | ❌ | ❌ | ❌
@@ -22,6 +22,6 @@ UserPrincipalName (Edm.String) | ✅ | ❌ | ❌ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Alerts | ✅ | ✅ | ❌ | ❌
 Groups | ✅ | ✅ | ✅ | ✅

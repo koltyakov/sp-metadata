@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 AnchorId (Edm.Guid) | ✅ | ✅ | ❌ | ✅
 CreateValuesInEditForm (Edm.Boolean) | ✅ | ✅ | ❌ | ✅
 IsAnchorValid (Edm.Boolean) | ✅ | ✅ | ❌ | ✅

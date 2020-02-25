@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 AttemptNumber (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 Id (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 IsComplete (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
@@ -19,5 +19,5 @@ Responses (Collection(SP.KeyValue)) | ❌ | ❌ | ❌ | ✅
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 User | ❌ | ❌ | ❌ | ✅

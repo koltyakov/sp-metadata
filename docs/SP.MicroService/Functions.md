@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 AddMicroserviceWorkItem (SP.MicroService.MicroServiceManager) | ✅ | ✅ | ❌ | ❌
 DeleteMicroserviceWorkItem (SP.MicroService.MicroServiceManager) | ✅ | ✅ | ❌ | ❌
 DeleteMicroserviceWorkItemByContentDbId (SP.MicroService.MicroServiceManager) | ✅ | ❌ | ❌ | ❌

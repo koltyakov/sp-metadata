@@ -9,7 +9,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 blockType (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 clickType (Edm.String) | ✅ | ✅ | ✅ | ❌
 clickedResultId (Edm.String) | ✅ | ✅ | ✅ | ❌

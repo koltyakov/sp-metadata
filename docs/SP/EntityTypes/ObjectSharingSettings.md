@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 AccessRequestMode (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 BlockPeoplePickerAndSharing (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 CanCurrentUserManageOrganizationReadWriteLink (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
@@ -53,7 +53,7 @@ WebUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 ObjectSharingInformation | ✅ | ✅ | ✅ | ❌
 SharePointSettings | ✅ | ✅ | ✅ | ❌
 SharingPermissions | ✅ | ✅ | ✅ | ❌

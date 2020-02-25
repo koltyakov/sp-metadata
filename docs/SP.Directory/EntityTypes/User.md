@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 AboutMe (Edm.String) | ❌ | ❌ | ✅ | ❌
 Alias (Edm.String) | ❌ | ❌ | ✅ | ❌
 Birthday (Edm.DateTime) | ❌ | ❌ | ✅ | ❌
@@ -76,7 +76,7 @@ userType (Edm.String) | ✅ | ✅ | ❌ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Membership | ❌ | ❌ | ✅ | ❌
 Properties | ❌ | ❌ | ✅ | ❌
 RankedMembership | ❌ | ❌ | ✅ | ❌

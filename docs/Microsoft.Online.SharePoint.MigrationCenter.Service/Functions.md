@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Create (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage) | ✅ | ❌ | ❌ | ❌
 DeleteObject (Microsoft.Online.SharePoint.MigrationCenter.Service.Device) | ✅ | ❌ | ❌ | ❌
 DeleteObject (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage) | ✅ | ❌ | ❌ | ❌

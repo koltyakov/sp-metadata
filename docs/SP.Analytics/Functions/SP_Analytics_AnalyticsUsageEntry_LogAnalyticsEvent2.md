@@ -8,7 +8,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 eventTypeId (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 itemId (Edm.String) | ✅ | ✅ | ✅ | ✅
 rollupScopeId (Edm.Guid) | ✅ | ✅ | ✅ | ✅

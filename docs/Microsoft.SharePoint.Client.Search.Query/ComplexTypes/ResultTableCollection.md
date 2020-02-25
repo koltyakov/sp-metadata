@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 ElapsedTime (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 Properties (Collection(SP.KeyValue)) | ❌ | ❌ | ❌ | ✅
 QueryId (Edm.String) | ❌ | ❌ | ❌ | ✅

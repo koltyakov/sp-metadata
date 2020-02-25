@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Behavior (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 CheckInRequired (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 CustomFields (Collection(PS.StageCustomFieldCreationInformation)) | ✅ | ✅ | ✅ | ❌

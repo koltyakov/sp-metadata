@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 AllowMultipleBlanks (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
 AllowMultipleSelection (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
 Choices (Collection(Microsoft.Office.Education.QuizOM.QuizChoice)) | ❌ | ❌ | ❌ | ✅

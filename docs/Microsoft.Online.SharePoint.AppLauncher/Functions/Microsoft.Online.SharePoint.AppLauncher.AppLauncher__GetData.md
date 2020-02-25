@@ -9,7 +9,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 isMobileRequest (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 locale (Edm.String) | ✅ | ❌ | ❌ | ❌
 onPremVer (Edm.String) | ✅ | ❌ | ❌ | ❌

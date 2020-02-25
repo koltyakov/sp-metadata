@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 BatchDelete (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)) | ✅ | ❌ | ❌ | ❌
 Delete (Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication) | ✅ | ❌ | ❌ | ❌
 GetByModelId (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningSample)) | ✅ | ❌ | ❌ | ❌

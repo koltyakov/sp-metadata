@@ -9,6 +9,6 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 expirationHours (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 expirationMinuites (Edm.Int32) | ✅ | ❌ | ❌ | ❌

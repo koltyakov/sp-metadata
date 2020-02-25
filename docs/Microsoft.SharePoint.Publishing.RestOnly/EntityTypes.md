@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 [BaseCustomProperty](./EntityTypes/BaseCustomProperty.md) | ✅ | ❌ | ❌ | ❌
 [BigIntCustomProperty](./EntityTypes/BigIntCustomProperty.md) | ✅ | ❌ | ❌ | ❌
 [BooleanCustomProperty](./EntityTypes/BooleanCustomProperty.md) | ✅ | ❌ | ❌ | ❌

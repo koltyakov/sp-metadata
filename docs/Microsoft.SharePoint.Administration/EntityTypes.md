@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 [FeatureDefinition](./EntityTypes/FeatureDefinition.md) | ✅ | ❌ | ❌ | ❌
 [SPAnalyticsUsageService](./EntityTypes/SPAnalyticsUsageService.md) | ✅ | ✅ | ✅ | ✅
 [SPAppStateQueryJobDefinition](./EntityTypes/SPAppStateQueryJobDefinition.md) | ✅ | ❌ | ❌ | ❌

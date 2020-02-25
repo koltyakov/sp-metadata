@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 ActualCost (Edm.Double) | ✅ | ✅ | ✅ | ❌
 ActualCostWorkPerformed (Edm.String) | ✅ | ✅ | ✅ | ❌
 ActualCostWorkPerformedMilliseconds (Edm.Int32) | ✅ | ✅ | ✅ | ❌
@@ -76,6 +76,6 @@ WorkVarianceTimeSpan (Edm.Time) | ✅ | ✅ | ✅ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 CustomFields | ✅ | ✅ | ✅ | ❌
 EnterpriseResource | ✅ | ✅ | ✅ | ❌

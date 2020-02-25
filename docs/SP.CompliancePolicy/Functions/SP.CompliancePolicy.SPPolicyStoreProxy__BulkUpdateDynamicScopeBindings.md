@@ -9,7 +9,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 scopesToAdd (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 scopesToRemove (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 siteId (Edm.String) | ✅ | ❌ | ❌ | ❌

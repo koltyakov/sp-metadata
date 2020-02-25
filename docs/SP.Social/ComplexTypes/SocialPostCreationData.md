@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Attachment (SP.Social.SocialAttachment) | ✅ | ✅ | ✅ | ✅
 ContentItems (Collection(SP.Social.SocialDataItem)) | ✅ | ✅ | ✅ | ✅
 ContentText (Edm.String) | ✅ | ✅ | ✅ | ✅

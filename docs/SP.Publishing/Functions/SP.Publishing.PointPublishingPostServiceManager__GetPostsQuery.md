@@ -9,7 +9,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 directionAscending (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 draftsOnly (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 itemIdBoundary (Edm.Int32) | ✅ | ❌ | ❌ | ❌

@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 AllowCreateDeclarativeWorkflow (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 AllowDesigner (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 AllowExternalEmbeddingWrapper (Edm.Int32) | ✅ | ✅ | ❌ | ❌
@@ -73,7 +73,7 @@ Usage (SP.UsageInfo) | ✅ | ✅ | ✅ | ✅
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Audit | ✅ | ✅ | ✅ | ✅
 CustomScriptSafeDomains | ✅ | ✅ | ❌ | ❌
 EventReceivers | ✅ | ✅ | ✅ | ✅

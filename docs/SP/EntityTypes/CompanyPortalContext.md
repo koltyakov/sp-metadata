@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 FooterEmphasis (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 FooterLayout (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 FooterNavigation (Edm.String) | ✅ | ❌ | ❌ | ❌

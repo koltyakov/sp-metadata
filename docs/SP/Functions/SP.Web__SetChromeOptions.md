@@ -9,7 +9,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 footerEmphasis (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 footerEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 footerLayout (Edm.Int32) | ✅ | ❌ | ❌ | ❌

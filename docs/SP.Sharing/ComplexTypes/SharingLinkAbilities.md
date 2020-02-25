@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 canAddNewExternalPrincipals (SP.Sharing.SharingAbilityStatus) | ✅ | ❌ | ❌ | ❌
 canGetEditLink (SP.Sharing.SharingAbilityStatus) | ✅ | ✅ | ❌ | ❌
 canGetReadLink (SP.Sharing.SharingAbilityStatus) | ✅ | ✅ | ❌ | ❌

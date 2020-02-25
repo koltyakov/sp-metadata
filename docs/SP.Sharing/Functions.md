@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 [SP_SharingUtility_GetUserDirectoryInfoByEmail](./Functions/SP_SharingUtility_GetUserDirectoryInfoByEmail.md) | ✅ | ✅ | ❌ | ❌
 [SP_SharingUtility_ValidateSameUserEmails](./Functions/SP_SharingUtility_ValidateSameUserEmails.md) | ✅ | ✅ | ❌ | ❌
 [<span title="SP_Sharing_DocumentSharingManager_GetRoleDefinition">SP_Sharing_DocumentSharingManager_GetRoleDefinitio...</span> (SP Sharing DocumentSharingManager GetRoleDefinition)](./Functions/SP_Sharing_DocumentSharingManager_GetRoleDefinition.md) | ✅ | ✅ | ✅ | ✅

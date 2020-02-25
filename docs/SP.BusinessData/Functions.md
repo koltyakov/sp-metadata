@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 ContainsLocalizedDisplayName (SP.BusinessData.EntityIdentifier) | ✅ | ✅ | ✅ | ✅
 ContainsLocalizedDisplayName (SP.BusinessData.TypeDescriptor) | ✅ | ✅ | ✅ | ✅
 Create (SP.BusinessData.Entity) | ❌ | ❌ | ❌ | ✅

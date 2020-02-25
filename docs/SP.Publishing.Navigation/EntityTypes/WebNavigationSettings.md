@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 AddNewPagesToNavigation (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
 CreateFriendlyUrlsForNewPages (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
 
@@ -16,6 +16,6 @@ CreateFriendlyUrlsForNewPages (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 CurrentNavigation | ❌ | ❌ | ❌ | ✅
 GlobalNavigation | ❌ | ❌ | ❌ | ✅

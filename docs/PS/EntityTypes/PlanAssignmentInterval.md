@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Duration (Edm.String) | ✅ | ✅ | ✅ | ❌
 DurationMilliseconds (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 DurationTimeSpan (Edm.Time) | ✅ | ✅ | ✅ | ❌

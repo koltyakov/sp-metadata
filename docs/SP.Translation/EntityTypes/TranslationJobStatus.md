@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Canceled (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 Count (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 Failed (Edm.Int32) | ✅ | ✅ | ✅ | ✅

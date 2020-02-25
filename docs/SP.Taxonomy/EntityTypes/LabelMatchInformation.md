@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 DefaultLabelOnly (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
 ExcludeKeyword (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
 Lcid (Edm.Int32) | ❌ | ❌ | ❌ | ✅

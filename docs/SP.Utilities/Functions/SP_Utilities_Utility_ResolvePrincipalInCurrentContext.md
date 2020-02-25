@@ -8,7 +8,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 addToUserInfoList (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 input (Edm.String) | ✅ | ✅ | ✅ | ✅
 inputIsEmailOnly (Edm.Boolean) | ✅ | ✅ | ✅ | ✅

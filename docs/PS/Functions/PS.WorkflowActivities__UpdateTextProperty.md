@@ -9,7 +9,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 projectId (Edm.Guid) | ✅ | ✅ | ✅ | ❌
 propertyId (Edm.String) | ✅ | ✅ | ✅ | ❌
 value (Edm.String) | ✅ | ✅ | ✅ | ❌

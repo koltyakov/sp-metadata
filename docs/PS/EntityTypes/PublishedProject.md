@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 CurrencyCode (Edm.String) | ✅ | ✅ | ✅ | ❌
 CurrencyDigits (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 CurrencyPosition (Edm.Int32) | ✅ | ✅ | ✅ | ❌
@@ -49,7 +49,7 @@ WinprojVersion (Edm.Decimal) | ✅ | ✅ | ✅ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Assignments | ✅ | ✅ | ✅ | ❌
 Calendar | ✅ | ✅ | ✅ | ❌
 Draft | ✅ | ✅ | ✅ | ❌

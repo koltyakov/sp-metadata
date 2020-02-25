@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 ChannelID (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 CreatedDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 DefaultEmbedCode (Edm.String) | ✅ | ❌ | ❌ | ❌
@@ -33,7 +33,7 @@ YammerObjectUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Author | ✅ | ❌ | ❌ | ❌
 Owner | ✅ | ❌ | ❌ | ❌
 PeopleInMedia | ✅ | ❌ | ❌ | ❌

@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 AddressbarLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 AllowCommentsTextOnEmailEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowDownloadingNonWebViewableFiles (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

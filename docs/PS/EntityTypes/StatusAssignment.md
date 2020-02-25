@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 ActualFinish (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 ActualOvertime (Edm.String) | ✅ | ✅ | ✅ | ❌
 ActualOvertimeMilliseconds (Edm.Int32) | ✅ | ✅ | ✅ | ❌
@@ -46,7 +46,7 @@ WorkTimeSpan (Edm.Time) | ✅ | ✅ | ✅ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 CustomFields | ✅ | ✅ | ✅ | ❌
 History | ✅ | ✅ | ✅ | ❌
 Project | ✅ | ✅ | ✅ | ❌

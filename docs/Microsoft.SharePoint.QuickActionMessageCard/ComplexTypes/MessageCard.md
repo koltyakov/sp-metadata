@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 autoInvokeAction (Microsoft.SharePoint.QuickActionMessageCard.AutoInvokeAction) | ✅ | ❌ | ❌ | ❌
 autoInvokeOptions (Microsoft.SharePoint.QuickActionMessageCard.AutoInvokeOptions) | ✅ | ❌ | ❌ | ❌
 context (Edm.String) | ✅ | ✅ | ❌ | ❌

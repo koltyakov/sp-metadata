@@ -9,7 +9,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 end (Edm.String) | ✅ | ✅ | ✅ | ❌
 scale (Edm.String) | ✅ | ✅ | ✅ | ❌
 start (Edm.String) | ✅ | ✅ | ✅ | ❌

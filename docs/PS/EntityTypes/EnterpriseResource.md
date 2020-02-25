@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 CanLevel (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 Code (Edm.String) | ✅ | ✅ | ✅ | ❌
 CostAccrual (Edm.Int32) | ✅ | ✅ | ✅ | ❌
@@ -41,7 +41,7 @@ TerminationDate (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Assignments | ✅ | ✅ | ✅ | ❌
 BaseCalendar | ✅ | ✅ | ✅ | ❌
 CostRateTables | ✅ | ✅ | ✅ | ❌

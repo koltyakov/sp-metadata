@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Actor (SP.Social.SocialRestFeedManager) | ✅ | ✅ | ✅ | ✅
 ClearUnReadMentionCount (SP.Social.SocialRestFeed) | ✅ | ✅ | ✅ | ✅
 CreateFileAttachment (SP.Social.SocialFeedManager) | ✅ | ✅ | ✅ | ❌

@@ -9,7 +9,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 boost (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 matchType (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 matchValue (Edm.String) | ✅ | ✅ | ✅ | ✅

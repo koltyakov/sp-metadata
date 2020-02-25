@@ -9,7 +9,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 documentTemplateType (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 fileName (Edm.String) | ✅ | ✅ | ✅ | ❌
 folderPath (Edm.String) | ✅ | ✅ | ✅ | ❌

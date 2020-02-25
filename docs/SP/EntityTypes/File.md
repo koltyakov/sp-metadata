@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 ActivityCapabilities (Microsoft.SharePoint.Activities.ActivityCapabilities) | ✅ | ✅ | ❌ | ❌
 CheckInComment (Edm.String) | ✅ | ✅ | ✅ | ✅
 CheckOutType (Edm.Int32) | ✅ | ✅ | ✅ | ✅
@@ -41,7 +41,7 @@ WebId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Author | ✅ | ✅ | ✅ | ✅
 CheckedOutByUser | ✅ | ✅ | ✅ | ✅
 EffectiveInformationRightsManagementSettings | ✅ | ✅ | ✅ | ❌

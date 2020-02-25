@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 [ExternalUser](./EntityTypes/ExternalUser.md) | ✅ | ❌ | ❌ | ❌
 [GetExternalUsersResults](./EntityTypes/GetExternalUsersResults.md) | ✅ | ❌ | ❌ | ❌
 [GroupCreationParams](./EntityTypes/GroupCreationParams.md) | ✅ | ❌ | ❌ | ❌

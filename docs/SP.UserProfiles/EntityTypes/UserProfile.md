@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 AccountName (Edm.String) | ✅ | ✅ | ✅ | ❌
 DisplayName (Edm.String) | ✅ | ✅ | ✅ | ❌
 FollowPersonalSiteUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
@@ -36,6 +36,6 @@ UrlToCreatePersonalSite (Edm.String) | ✅ | ✅ | ✅ | ✅
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 FollowedContent | ✅ | ✅ | ✅ | ✅
 PersonalSite | ✅ | ✅ | ✅ | ✅

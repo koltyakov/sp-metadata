@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 AddAttributeToTask (SP.WorkManagement.OM.BaseSession) | ✅ | ✅ | ✅ | ✅
 AddAttributeToTask (SP.WorkManagement.OM.LocationOrientedSortableSession) | ✅ | ✅ | ✅ | ✅
 AddAttributeToTask (SP.WorkManagement.OM.LocationOrientedUserOrderedSession) | ✅ | ✅ | ✅ | ✅

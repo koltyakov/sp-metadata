@@ -9,7 +9,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 associationName (Edm.String) | ❌ | ❌ | ❌ | ✅
 entityInstance (SP.BusinessData.Runtime.EntityInstance) | ❌ | ❌ | ❌ | ✅
 filterList (Collection(SP.BusinessData.Filter)) | ❌ | ❌ | ❌ | ✅

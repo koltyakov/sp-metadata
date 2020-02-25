@@ -9,7 +9,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 newName (Edm.String) | ✅ | ✅ | ✅ | ✅
 oldName (Edm.String) | ✅ | ✅ | ✅ | ✅
 privateView (Edm.Boolean) | ✅ | ✅ | ✅ | ✅

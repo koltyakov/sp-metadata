@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 EngagementsTimephasedPageSize (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 EnterpriseResourcesPageSize (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 IsDelegate (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
@@ -19,7 +19,7 @@ ProjectsPageSize (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Calendars | ✅ | ✅ | ✅ | ❌
 CustomFields | ✅ | ✅ | ✅ | ❌
 EnterpriseProjectTypes | ✅ | ✅ | ✅ | ❌

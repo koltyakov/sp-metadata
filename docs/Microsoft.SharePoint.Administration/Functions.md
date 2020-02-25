@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 GetFeatureDefinition (Collection(Microsoft.SharePoint.Administration.FeatureDefinition)) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_SharePoint_Administration_SPAnalyticsUsageService">Microsoft_SharePoint_Administration_SPAnalyticsUsa...</span> (Microsoft SharePoint Administration SPAnalyticsUsageService) | ✅ | ✅ | ✅ | ✅
 Microsoft_SharePoint_Administration_SPFarm_Local | ✅ | ❌ | ❌ | ❌

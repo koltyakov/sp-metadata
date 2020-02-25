@@ -31,9 +31,9 @@ func genMDTable(parameter string, envCodes []string, compareMatrix []*Comparison
 			continue
 		}
 		if i == 0 {
-			table += "-|:" + strings.Repeat("-", utf8.RuneCountInString(eMap[envCode].Name))
+			table += "-|:" + strings.Repeat("-", utf8.RuneCountInString(eMap[envCode].Name)) + ":"
 		} else {
-			table += ":|:" + strings.Repeat("-", utf8.RuneCountInString(eMap[envCode].Name))
+			table += "|:" + strings.Repeat("-", utf8.RuneCountInString(eMap[envCode].Name)) + ":"
 		}
 	}
 	table += "\n"

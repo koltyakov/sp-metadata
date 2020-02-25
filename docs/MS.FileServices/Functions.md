@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Add (Collection(MS.FileServices.FileSystemItem)) | ✅ | ✅ | ✅ | ❌
 CopyTo (MS.FileServices.File) | ✅ | ✅ | ✅ | ❌
 DeleteObject (MS.FileServices.File) | ✅ | ✅ | ✅ | ❌

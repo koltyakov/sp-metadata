@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 CustomResults (Collection(Microsoft.Office.Server.Search.REST.CustomResult)) | ✅ | ✅ | ✅ | ✅
 QueryId (Edm.String) | ✅ | ✅ | ✅ | ✅
 QueryRuleId (Edm.Guid) | ✅ | ✅ | ✅ | ✅

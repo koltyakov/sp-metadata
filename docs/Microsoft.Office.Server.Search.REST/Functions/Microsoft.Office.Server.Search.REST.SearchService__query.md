@@ -9,7 +9,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 OLSQuerySession (Edm.String) | ✅ | ✅ | ❌ | ❌
 blockDedupeMode (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 bypassResultTypes (Edm.Boolean) | ✅ | ✅ | ✅ | ✅

@@ -9,7 +9,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 eventType (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 lobSystemInstance (SP.BusinessData.LobSystemInstance) | ❌ | ❌ | ❌ | ✅
 notificationCallback (SP.BusinessData.Runtime.NotificationCallback) | ❌ | ❌ | ❌ | ✅

@@ -9,7 +9,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 minutes (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 payLoad (Edm.Binary) | ✅ | ✅ | ❌ | ❌
 properties (SP.MicroService.MicroServiceWorkItemProperties) | ✅ | ✅ | ❌ | ❌

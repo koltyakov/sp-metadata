@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 AddAttachment (SP.Microfeed.MicrofeedData) | ✅ | ✅ | ✅ | ✅
 AddData (SP.Microfeed.MicrofeedStore) | ✅ | ✅ | ✅ | ✅
 AddDataAsStream (SP.Microfeed.MicrofeedStore) | ✅ | ✅ | ✅ | ❌

@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 DsGuid (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 IsMultivalue (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Privacy (Edm.Int32) | ✅ | ❌ | ❌ | ❌

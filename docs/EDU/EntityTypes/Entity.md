@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 CreatedBy (Edm.String) | ❌ | ❌ | ❌ | ✅
 CreatedDate (Edm.DateTime) | ❌ | ❌ | ❌ | ✅
 Description (Edm.String) | ❌ | ❌ | ❌ | ✅

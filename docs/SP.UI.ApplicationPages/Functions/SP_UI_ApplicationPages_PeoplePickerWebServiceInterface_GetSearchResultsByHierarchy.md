@@ -8,7 +8,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 contextUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
 entityTypes (Edm.String) | ✅ | ✅ | ✅ | ✅
 hierarchyNodeID (Edm.String) | ✅ | ✅ | ✅ | ✅

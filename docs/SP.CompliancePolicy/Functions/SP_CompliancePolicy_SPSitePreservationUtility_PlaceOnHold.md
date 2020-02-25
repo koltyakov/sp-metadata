@@ -8,7 +8,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 durationInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 holdId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 holdPeriodSource (Edm.String) | ✅ | ❌ | ❌ | ❌

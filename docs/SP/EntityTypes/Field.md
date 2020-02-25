@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 AutoIndexed (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 CanBeDeleted (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 ClientSideComponentId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
@@ -54,6 +54,6 @@ ValidationMessage (Edm.String) | ✅ | ✅ | ✅ | ✅
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 DescriptionResource | ✅ | ✅ | ✅ | ❌
 TitleResource | ✅ | ✅ | ✅ | ❌

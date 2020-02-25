@@ -8,7 +8,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 assignmentId (Edm.Guid) | ❌ | ❌ | ❌ | ✅
 quizId (Edm.Guid) | ❌ | ❌ | ❌ | ✅
 web (SP.Web) | ❌ | ❌ | ❌ | ✅

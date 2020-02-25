@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 [<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetListDataScript">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> (Microsoft SharePoint Portal UserProfiles DocumentsSharedWithGroup GetListDataScript)](./Functions/Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetListDataScript.md) | ✅ | ✅ | ✅ | ❌
 [<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetListHighlightsData">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> (Microsoft SharePoint Portal UserProfiles DocumentsSharedWithGroup GetListHighlightsData)](./Functions/Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetListHighlightsData.md) | ✅ | ✅ | ✅ | ❌
 [<span title="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetListHighlightsDataScript">Microsoft_SharePoint_Portal_UserProfiles_Documents...</span> (Microsoft SharePoint Portal UserProfiles DocumentsSharedWithGroup GetListHighlightsDataScript)](./Functions/Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetListHighlightsDataScript.md) | ✅ | ✅ | ✅ | ❌

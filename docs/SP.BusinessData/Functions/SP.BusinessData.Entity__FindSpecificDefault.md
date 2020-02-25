@@ -9,6 +9,6 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 identity (SP.BusinessData.Runtime.EntityIdentity) | ❌ | ❌ | ❌ | ✅
 lobSystemInstance (SP.BusinessData.LobSystemInstance) | ❌ | ❌ | ❌ | ✅

@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Cancel (Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJob) | ✅ | ❌ | ❌ | ❌
 Cancel (Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob) | ✅ | ❌ | ❌ | ❌
 Cancel (Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob) | ✅ | ❌ | ❌ | ❌

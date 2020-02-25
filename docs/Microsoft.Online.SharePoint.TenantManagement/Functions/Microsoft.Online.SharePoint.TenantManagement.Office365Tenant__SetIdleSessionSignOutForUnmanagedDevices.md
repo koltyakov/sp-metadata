@@ -9,7 +9,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 enabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 signOutAfter (Edm.Time) | ✅ | ❌ | ❌ | ❌
 warnAfter (Edm.Time) | ✅ | ❌ | ❌ | ❌

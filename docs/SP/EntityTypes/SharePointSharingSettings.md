@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 AddToGroupModeName (Edm.String) | ✅ | ✅ | ✅ | ❌
 GroupNameLines (Collection(Edm.String)) | ✅ | ✅ | ✅ | ❌
 GroupRoleDefinitionNamesLines (Collection(Edm.String)) | ✅ | ✅ | ✅ | ❌
@@ -30,5 +30,5 @@ txtEmailSubjectText (Edm.String) | ✅ | ✅ | ✅ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 PickerProperties | ✅ | ✅ | ✅ | ❌

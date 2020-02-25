@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 AddTenantTheme (SP.Utilities.ThemeManager) | ✅ | ✅ | ❌ | ❌
 ApplyTheme (SP.Utilities.ThemeManager) | ✅ | ✅ | ❌ | ❌
 DeleteTenantTheme (SP.Utilities.ThemeManager) | ✅ | ✅ | ❌ | ❌

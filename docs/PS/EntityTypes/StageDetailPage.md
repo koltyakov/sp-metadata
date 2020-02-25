@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Description (Edm.String) | ✅ | ✅ | ✅ | ❌
 Id (Edm.Guid) | ✅ | ✅ | ✅ | ❌
 Position (Edm.Int32) | ✅ | ✅ | ✅ | ❌
@@ -18,6 +18,6 @@ RequiresAttention (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Page | ✅ | ✅ | ✅ | ❌
 Stage | ✅ | ✅ | ✅ | ❌

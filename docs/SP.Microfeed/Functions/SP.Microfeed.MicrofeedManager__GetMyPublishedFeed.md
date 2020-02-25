@@ -9,7 +9,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 ShowPublicView (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 feedOptions (SP.Microfeed.MicrofeedRetrievalOptions) | ✅ | ✅ | ✅ | ✅
 typeOfPubFeed (Edm.Int32) | ✅ | ✅ | ✅ | ✅

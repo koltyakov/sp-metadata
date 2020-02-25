@@ -9,7 +9,7 @@
 ### Parameters
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 complianceFlags (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 complianceTag (Edm.String) | ✅ | ❌ | ❌ | ❌
 complianceTagWrittenTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌

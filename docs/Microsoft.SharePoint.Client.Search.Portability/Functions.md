@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 DeleteSearchConfiguration (Microsoft.SharePoint.Client.Search.Portability.SearchConfigurationPortability) | ❌ | ❌ | ❌ | ✅
 ExportSearchConfiguration (Microsoft.SharePoint.Client.Search.Portability.SearchConfigurationPortability) | ❌ | ❌ | ❌ | ✅
 ImportSearchConfiguration (Microsoft.SharePoint.Client.Search.Portability.SearchConfigurationPortability) | ❌ | ❌ | ❌ | ✅

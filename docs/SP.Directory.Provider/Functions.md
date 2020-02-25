@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 CreateDirectoryObject (SP.Directory.Provider.SharePointDirectoryProvider) | ✅ | ✅ | ✅ | ❌
 DeleteDirectoryObject (SP.Directory.Provider.SharePointDirectoryProvider) | ✅ | ✅ | ✅ | ❌
 GetOrCreateUnifiedGroupTenantInstanceId (SP.Directory.Provider.SharePointDirectoryProvider) | ✅ | ✅ | ❌ | ❌

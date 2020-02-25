@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 CreatedDate (Edm.DateTime) | ✅ | ✅ | ❌ | ❌
 Description (Edm.String) | ✅ | ✅ | ❌ | ❌
 Id (Edm.Guid) | ✅ | ✅ | ❌ | ❌
@@ -22,7 +22,7 @@ TimephasedEditsOnly (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Comments | ✅ | ✅ | ❌ | ❌
 ModifiedBy | ✅ | ✅ | ❌ | ❌
 Project | ✅ | ✅ | ❌ | ❌

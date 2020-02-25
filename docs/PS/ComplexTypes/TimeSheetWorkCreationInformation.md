@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 ActualWork (Edm.String) | ✅ | ✅ | ✅ | ❌
 Comment (Edm.String) | ✅ | ✅ | ✅ | ❌
 End (Edm.DateTime) | ✅ | ✅ | ✅ | ❌

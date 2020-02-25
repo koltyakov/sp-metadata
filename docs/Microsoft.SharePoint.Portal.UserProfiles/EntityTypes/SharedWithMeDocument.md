@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Authors (Collection(Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocumentUser)) | ✅ | ✅ | ✅ | ❌
 CallerStack (Edm.String) | ✅ | ❌ | ❌ | ❌
 ChildCount (Edm.Int32) | ✅ | ✅ | ❌ | ❌

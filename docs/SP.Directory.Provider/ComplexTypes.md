@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 [AlternateIdData](./ComplexTypes/AlternateIdData.md) | ✅ | ✅ | ❌ | ❌
 [DirectoryObjectChanges](./ComplexTypes/DirectoryObjectChanges.md) | ✅ | ✅ | ❌ | ❌
 [DirectoryObjectData](./ComplexTypes/DirectoryObjectData.md) | ✅ | ✅ | ✅ | ❌

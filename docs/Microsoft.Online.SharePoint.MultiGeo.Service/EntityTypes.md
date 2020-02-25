@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 [AllowedDataLocation](./EntityTypes/AllowedDataLocation.md) | ✅ | ❌ | ❌ | ❌
 [AllowedDataLocationEntityData](./EntityTypes/AllowedDataLocationEntityData.md) | ✅ | ❌ | ❌ | ❌
 [ContentDbSchemaVersion](./EntityTypes/ContentDbSchemaVersion.md) | ✅ | ❌ | ❌ | ❌

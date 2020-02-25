@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Departments (Collection(Edm.Guid)) | ✅ | ❌ | ✅ | ❌
 Description (Edm.String) | ✅ | ✅ | ✅ | ❌
 Id (Edm.Guid) | ✅ | ✅ | ✅ | ❌
@@ -31,5 +31,5 @@ WorkspaceTemplateName (Edm.String) | ✅ | ✅ | ✅ | ❌
 **Availability matrix**
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 ProjectDetailPages | ✅ | ✅ | ✅ | ❌

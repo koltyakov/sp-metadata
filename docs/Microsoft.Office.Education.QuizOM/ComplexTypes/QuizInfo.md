@@ -7,7 +7,7 @@
 **Availability matrix**
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 CountQuestions (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 ExternalLink (Edm.Guid) | ❌ | ❌ | ❌ | ✅
 LastModified (Edm.DateTime) | ❌ | ❌ | ❌ | ✅

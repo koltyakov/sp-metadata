@@ -5,7 +5,7 @@
 **Availability matrix**
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
-----------|:---:|:-------:|:-------:|:-------
+----------|:---:|:-------:|:-------:|:-------:
 Add (Collection(SP.Directory.Group)) | ✅ | ✅ | ✅ | ❌
 Add (Collection(SP.Directory.User)) | ✅ | ✅ | ✅ | ❌
 Commit (SP.Directory.User) | ❌ | ❌ | ✅ | ❌
