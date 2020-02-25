@@ -9,6 +9,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
+infos (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 itemUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 policyScenario (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-infos (Edm.Int32) | ✅ | ❌ | ❌ | ❌

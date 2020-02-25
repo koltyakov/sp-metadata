@@ -10,5 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-upgrade (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 sendemail (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+upgrade (Edm.Boolean) | ✅ | ✅ | ✅ | ✅

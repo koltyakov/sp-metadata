@@ -10,5 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-comment (Edm.String) | ✅ | ✅ | ✅ | ✅
 checkInType (Edm.Int32) | ✅ | ✅ | ✅ | ✅
+comment (Edm.String) | ✅ | ✅ | ✅ | ✅

@@ -9,11 +9,11 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-webPartQualifier (Edm.String) | ✅ | ✅ | ✅ | ✅
-sortFieldName (Edm.String) | ✅ | ✅ | ✅ | ✅
+includeCacheData (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
+includeRSIData (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 isAscendingSort (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 offset (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 rowLimit (Edm.Int32) | ✅ | ✅ | ✅ | ✅
-includeCacheData (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
-includeRSIData (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 searchOffset (Edm.Int32) | ✅ | ✅ | ✅ | ❌
+sortFieldName (Edm.String) | ✅ | ✅ | ✅ | ✅
+webPartQualifier (Edm.String) | ✅ | ✅ | ✅ | ✅

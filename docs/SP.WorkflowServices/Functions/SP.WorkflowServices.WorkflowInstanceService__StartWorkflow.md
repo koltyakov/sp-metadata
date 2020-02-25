@@ -10,5 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-subscription (SP.WorkflowServices.WorkflowSubscription) | ❌ | ❌ | ❌ | ✅
 payload (Collection(SP.KeyValue)) | ❌ | ❌ | ❌ | ✅
+subscription (SP.WorkflowServices.WorkflowSubscription) | ❌ | ❌ | ❌ | ✅

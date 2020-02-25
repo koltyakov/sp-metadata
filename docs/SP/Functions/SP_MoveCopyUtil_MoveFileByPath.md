@@ -9,7 +9,7 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-srcPath (SP.ResourcePath) | ✅ | ✅ | ❌ | ❌
 destPath (SP.ResourcePath) | ✅ | ✅ | ❌ | ❌
-overwrite (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 options (SP.MoveCopyOptions) | ✅ | ✅ | ❌ | ❌
+overwrite (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
+srcPath (SP.ResourcePath) | ✅ | ✅ | ❌ | ❌

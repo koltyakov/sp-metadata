@@ -10,6 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-value (Edm.String) | ✅ | ✅ | ❌ | ❌
-displayFormat (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 calendarType (Edm.Int32) | ✅ | ✅ | ❌ | ❌
+displayFormat (Edm.Int32) | ✅ | ✅ | ❌ | ❌
+value (Edm.String) | ✅ | ✅ | ❌ | ❌

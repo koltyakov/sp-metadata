@@ -9,10 +9,10 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-sortFieldName (Edm.String) | ✅ | ✅ | ✅ | ❌
+documentLibrary (Edm.String) | ✅ | ✅ | ✅ | ❌
 isAscendingSort (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 offset (Edm.Int32) | ✅ | ✅ | ✅ | ❌
-rowLimit (Edm.Int32) | ✅ | ✅ | ✅ | ❌
-person (Edm.String) | ✅ | ✅ | ✅ | ❌
-documentLibrary (Edm.String) | ✅ | ✅ | ✅ | ❌
 onlyDocuments (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
+person (Edm.String) | ✅ | ✅ | ✅ | ❌
+rowLimit (Edm.Int32) | ✅ | ✅ | ✅ | ❌
+sortFieldName (Edm.String) | ✅ | ✅ | ✅ | ❌

@@ -9,5 +9,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-store (SP.Microfeed.MicrofeedStore) | ❌ | ❌ | ❌ | ✅
 props (Collection(SP.KeyValue)) | ❌ | ❌ | ❌ | ✅
+store (SP.Microfeed.MicrofeedStore) | ❌ | ❌ | ❌ | ✅

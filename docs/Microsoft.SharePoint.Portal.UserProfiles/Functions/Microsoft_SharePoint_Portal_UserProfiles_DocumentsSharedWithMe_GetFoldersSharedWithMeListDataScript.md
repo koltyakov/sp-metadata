@@ -9,9 +9,9 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-webPartQualifier (Edm.String) | ✅ | ✅ | ✅ | ❌
-sortFieldName (Edm.String) | ✅ | ✅ | ✅ | ❌
 isAscendingSort (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 offset (Edm.Int32) | ✅ | ✅ | ✅ | ❌
-rowLimit (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 renderEmptyList (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
+rowLimit (Edm.Int32) | ✅ | ✅ | ✅ | ❌
+sortFieldName (Edm.String) | ✅ | ✅ | ✅ | ❌
+webPartQualifier (Edm.String) | ✅ | ✅ | ✅ | ❌

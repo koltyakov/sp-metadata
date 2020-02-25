@@ -10,7 +10,7 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-siteId (Edm.String) | ✅ | ❌ | ❌ | ❌
 externalId (Edm.String) | ✅ | ❌ | ❌ | ❌
-settingType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 setting (Edm.String) | ✅ | ❌ | ❌ | ❌
+settingType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+siteId (Edm.String) | ✅ | ❌ | ❌ | ❌

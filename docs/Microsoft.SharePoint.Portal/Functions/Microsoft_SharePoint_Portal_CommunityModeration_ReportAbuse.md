@@ -9,6 +9,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-listID (Edm.String) | ✅ | ✅ | ✅ | ✅
-itemID (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 comment (Edm.String) | ✅ | ✅ | ✅ | ✅
+itemID (Edm.Int32) | ✅ | ✅ | ✅ | ✅
+listID (Edm.String) | ✅ | ✅ | ✅ | ✅

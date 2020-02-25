@@ -9,6 +9,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-primaryEmail (Edm.String) | ✅ | ✅ | ❌ | ❌
 otherEmail (Edm.String) | ✅ | ✅ | ❌ | ❌
+primaryEmail (Edm.String) | ✅ | ✅ | ❌ | ❌
 principalName (Edm.String) | ✅ | ✅ | ❌ | ❌

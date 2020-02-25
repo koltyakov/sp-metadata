@@ -10,9 +10,9 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-profileType (Edm.Int32) | ✅ | ✅ | ✅ | ✅
-fileNamePrefix (Edm.String) | ✅ | ✅ | ✅ | ✅
-isFeedAttachment (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 clientFilePath (Edm.String) | ✅ | ✅ | ✅ | ✅
+fileNamePrefix (Edm.String) | ✅ | ✅ | ✅ | ✅
 fileSize (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 fileStream (Edm.Stream) | ✅ | ✅ | ✅ | ✅
+isFeedAttachment (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+profileType (Edm.Int32) | ✅ | ✅ | ✅ | ✅

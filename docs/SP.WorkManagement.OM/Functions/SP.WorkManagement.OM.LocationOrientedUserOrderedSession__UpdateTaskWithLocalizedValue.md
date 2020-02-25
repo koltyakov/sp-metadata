@@ -10,6 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-taskKey (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 field (Edm.Int32) | ✅ | ✅ | ✅ | ✅
+taskKey (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 value (Edm.String) | ✅ | ✅ | ✅ | ✅

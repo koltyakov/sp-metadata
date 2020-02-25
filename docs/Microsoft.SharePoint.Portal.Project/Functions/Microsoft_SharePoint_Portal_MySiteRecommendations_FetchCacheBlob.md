@@ -10,5 +10,5 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
 category (Edm.Int32) | ✅ | ✅ | ✅ | ✅
-personalSiteUri (Edm.String) | ✅ | ✅ | ✅ | ✅
 forceRefresh (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+personalSiteUri (Edm.String) | ✅ | ✅ | ✅ | ✅

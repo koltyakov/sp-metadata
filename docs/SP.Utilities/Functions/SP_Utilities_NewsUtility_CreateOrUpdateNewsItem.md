@@ -9,5 +9,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-itemData (SP.Utilities.NewsItem) | ✅ | ✅ | ❌ | ❌
 afterItemId (Edm.Int32) | ✅ | ✅ | ❌ | ❌
+itemData (SP.Utilities.NewsItem) | ✅ | ✅ | ❌ | ❌

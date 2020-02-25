@@ -10,9 +10,9 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
+fCapitalizeFirstLetters (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
+fHitHighlighting (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
+fPreQuerySuggestions (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
+fPrefixMatchAllTerms (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
 iNumberOfQuerySuggestions (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 iNumberOfResultSuggestions (Edm.Int32) | ❌ | ❌ | ❌ | ✅
-fPreQuerySuggestions (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
-fHitHighlighting (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
-fCapitalizeFirstLetters (Edm.Boolean) | ❌ | ❌ | ❌ | ✅
-fPrefixMatchAllTerms (Edm.Boolean) | ❌ | ❌ | ❌ | ✅

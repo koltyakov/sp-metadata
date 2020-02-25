@@ -10,5 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-userId (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 options (Edm.Int32) | ❌ | ❌ | ❌ | ✅
+userId (Edm.Int32) | ❌ | ❌ | ❌ | ✅

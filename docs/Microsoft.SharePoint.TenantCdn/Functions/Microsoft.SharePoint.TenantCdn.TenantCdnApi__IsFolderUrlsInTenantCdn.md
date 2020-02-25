@@ -10,5 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-urls (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 cdnType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+urls (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌

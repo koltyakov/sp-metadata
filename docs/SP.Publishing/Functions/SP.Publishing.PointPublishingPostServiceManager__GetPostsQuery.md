@@ -10,8 +10,8 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-top (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-itemIdBoundary (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 directionAscending (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-publishedOnly (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 draftsOnly (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+itemIdBoundary (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+publishedOnly (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+top (Edm.Int32) | ✅ | ❌ | ❌ | ❌

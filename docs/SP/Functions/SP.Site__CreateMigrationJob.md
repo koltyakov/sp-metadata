@@ -10,7 +10,7 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-gWebId (Edm.Guid) | ✅ | ✅ | ✅ | ❌
-azureContainerSourceUri (Edm.String) | ✅ | ✅ | ✅ | ❌
 azureContainerManifestUri (Edm.String) | ✅ | ✅ | ✅ | ❌
+azureContainerSourceUri (Edm.String) | ✅ | ✅ | ✅ | ❌
 azureQueueReportUri (Edm.String) | ✅ | ✅ | ✅ | ❌
+gWebId (Edm.Guid) | ✅ | ✅ | ✅ | ❌

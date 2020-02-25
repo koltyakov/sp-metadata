@@ -10,6 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-siteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 logonName (Edm.String) | ✅ | ❌ | ❌ | ❌
 secondaryLogonName (Edm.String) | ✅ | ❌ | ❌ | ❌
+siteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

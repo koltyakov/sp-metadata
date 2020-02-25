@@ -10,7 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-parameters (SP.RenderListDataParameters) | ✅ | ✅ | ✅ | ❌
 CascDelWarnMessage (Edm.String) | ✅ | ✅ | ✅ | ❌
 CustomAction (Edm.String) | ✅ | ✅ | ✅ | ❌
 DrillDown (Edm.String) | ✅ | ✅ | ✅ | ❌
@@ -132,10 +131,11 @@ SortField6 (Edm.String) | ✅ | ✅ | ✅ | ❌
 SortField7 (Edm.String) | ✅ | ✅ | ✅ | ❌
 SortField8 (Edm.String) | ✅ | ✅ | ✅ | ❌
 SortField9 (Edm.String) | ✅ | ✅ | ✅ | ❌
-SortFields (Edm.String) | ✅ | ✅ | ✅ | ❌
 SortFieldValues (Edm.String) | ✅ | ✅ | ✅ | ❌
+SortFields (Edm.String) | ✅ | ✅ | ✅ | ❌
 View (Edm.String) | ✅ | ✅ | ✅ | ❌
 ViewCount (Edm.String) | ✅ | ✅ | ✅ | ❌
 ViewId (Edm.String) | ✅ | ✅ | ✅ | ❌
 ViewPath (Edm.String) | ✅ | ✅ | ❌ | ❌
 WebPartId (Edm.String) | ✅ | ✅ | ✅ | ❌
+parameters (SP.RenderListDataParameters) | ✅ | ✅ | ✅ | ❌

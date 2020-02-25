@@ -10,7 +10,7 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
+culture (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+itemLimit (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 queryText (Edm.String) | ✅ | ❌ | ❌ | ❌
 startItemIndex (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-itemLimit (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-culture (Edm.Int32) | ✅ | ❌ | ❌ | ❌

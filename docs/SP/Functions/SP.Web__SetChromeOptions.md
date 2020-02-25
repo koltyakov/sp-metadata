@@ -10,9 +10,9 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-headerLayout (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-headerEmphasis (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-megaMenuEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+footerEmphasis (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 footerEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 footerLayout (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-footerEmphasis (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+headerEmphasis (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+headerLayout (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+megaMenuEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

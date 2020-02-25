@@ -10,5 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-startIndex (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 limit (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+startIndex (Edm.Int32) | ✅ | ❌ | ❌ | ❌

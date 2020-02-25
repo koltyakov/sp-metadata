@@ -9,6 +9,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-webUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
-stageId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 outcome (Edm.Int64) | ✅ | ❌ | ❌ | ❌
+stageId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+webUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

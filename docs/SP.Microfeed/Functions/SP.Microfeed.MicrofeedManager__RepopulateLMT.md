@@ -10,5 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-timeStamp (Edm.DateTime) | ✅ | ✅ | ✅ | ✅
 secureHash (Edm.String) | ✅ | ✅ | ✅ | ✅
+timeStamp (Edm.DateTime) | ✅ | ✅ | ✅ | ✅

@@ -9,5 +9,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-webUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 runId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+webUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

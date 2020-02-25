@@ -9,5 +9,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-itemUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 actionsPayload (Edm.String) | ✅ | ❌ | ❌ | ❌
+itemUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

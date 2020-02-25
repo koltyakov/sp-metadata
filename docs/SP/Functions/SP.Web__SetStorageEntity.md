@@ -10,7 +10,7 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
+comments (Edm.String) | ✅ | ✅ | ❌ | ❌
+description (Edm.String) | ✅ | ✅ | ❌ | ❌
 key (Edm.String) | ✅ | ✅ | ❌ | ❌
 value (Edm.String) | ✅ | ✅ | ❌ | ❌
-description (Edm.String) | ✅ | ✅ | ❌ | ❌
-comments (Edm.String) | ✅ | ✅ | ❌ | ❌

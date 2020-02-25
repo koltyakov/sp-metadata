@@ -9,7 +9,7 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-url (Edm.String) | ✅ | ✅ | ✅ | ✅
-title (Edm.String) | ✅ | ✅ | ✅ | ✅
 description (Edm.String) | ✅ | ✅ | ✅ | ✅
 imageUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
+title (Edm.String) | ✅ | ✅ | ✅ | ✅
+url (Edm.String) | ✅ | ✅ | ✅ | ✅

@@ -10,7 +10,7 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-folderPath (SP.ResourcePath) | ✅ | ❌ | ❌ | ❌
-requiredCacheKeys (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 createIfMissing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+folderPath (SP.ResourcePath) | ✅ | ❌ | ❌ | ❌
 mySiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+requiredCacheKeys (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌

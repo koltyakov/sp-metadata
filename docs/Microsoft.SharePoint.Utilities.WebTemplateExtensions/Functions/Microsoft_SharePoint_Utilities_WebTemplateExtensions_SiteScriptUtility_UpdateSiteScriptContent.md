@@ -11,6 +11,6 @@ Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
 Content (Edm.String) | ✅ | ✅ | ❌ | ❌
 Description (Edm.String) | ✅ | ✅ | ❌ | ❌
-Title (Edm.String) | ✅ | ✅ | ❌ | ❌
 Id (Edm.Guid) | ✅ | ✅ | ❌ | ❌
+Title (Edm.String) | ✅ | ✅ | ❌ | ❌
 Version (Edm.Int32) | ✅ | ✅ | ❌ | ❌

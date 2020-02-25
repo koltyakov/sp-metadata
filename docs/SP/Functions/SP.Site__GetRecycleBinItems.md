@@ -10,8 +10,8 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
+isAscending (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
+itemState (Edm.Int32) | ✅ | ✅ | ✅ | ❌
+orderBy (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 pagingInfo (Edm.String) | ✅ | ✅ | ✅ | ❌
 rowLimit (Edm.Int32) | ✅ | ✅ | ✅ | ❌
-isAscending (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
-orderBy (Edm.Int32) | ✅ | ✅ | ✅ | ❌
-itemState (Edm.Int32) | ✅ | ✅ | ✅ | ❌

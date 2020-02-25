@@ -10,6 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-projId (Edm.Guid) | ✅ | ✅ | ✅ | ❌
-jobId (Edm.Guid) | ✅ | ✅ | ✅ | ❌
 force (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
+jobId (Edm.Guid) | ✅ | ✅ | ✅ | ❌
+projId (Edm.Guid) | ✅ | ✅ | ✅ | ❌

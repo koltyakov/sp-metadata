@@ -9,5 +9,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-requestIds (Collection(Edm.Int32)) | ✅ | ✅ | ✅ | ✅
 newStatus (Edm.Int32) | ✅ | ✅ | ✅ | ✅
+requestIds (Collection(Edm.Int32)) | ✅ | ✅ | ✅ | ✅

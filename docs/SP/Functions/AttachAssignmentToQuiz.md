@@ -9,6 +9,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-web (SP.Web) | ❌ | ❌ | ❌ | ✅
-quizId (Edm.Guid) | ❌ | ❌ | ❌ | ✅
 assignmentId (Edm.Guid) | ❌ | ❌ | ❌ | ✅
+quizId (Edm.Guid) | ❌ | ❌ | ❌ | ✅
+web (SP.Web) | ❌ | ❌ | ❌ | ✅

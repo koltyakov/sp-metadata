@@ -10,8 +10,8 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
 groupId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
-sortFieldName (Edm.String) | ✅ | ✅ | ❌ | ❌
+isAppOnlyRequest (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 isAscendingSort (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 offset (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 rowLimit (Edm.Int32) | ✅ | ✅ | ❌ | ❌
-isAppOnlyRequest (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+sortFieldName (Edm.String) | ✅ | ✅ | ❌ | ❌

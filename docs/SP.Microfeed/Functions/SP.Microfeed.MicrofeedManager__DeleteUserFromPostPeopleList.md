@@ -10,5 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-postIdentifier (Edm.String) | ✅ | ✅ | ✅ | ✅
 UserLoginName (Edm.String) | ✅ | ✅ | ✅ | ✅
+postIdentifier (Edm.String) | ✅ | ✅ | ✅ | ✅

@@ -10,6 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-hubSiteId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
-approvalToken (Edm.String) | ✅ | ❌ | ❌ | ❌
 approvalCorrelationId (Edm.String) | ✅ | ❌ | ❌ | ❌
+approvalToken (Edm.String) | ✅ | ❌ | ❌ | ❌
+hubSiteId (Edm.Guid) | ✅ | ✅ | ❌ | ❌

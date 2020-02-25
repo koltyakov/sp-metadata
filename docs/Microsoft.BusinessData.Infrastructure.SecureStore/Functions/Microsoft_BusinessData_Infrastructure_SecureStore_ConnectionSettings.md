@@ -9,14 +9,14 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-name (Edm.String) | ✅ | ❌ | ❌ | ❌
-descr (Edm.String) | ✅ | ❌ | ❌ | ❌
-connectionSettingsType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-target (Edm.String) | ✅ | ❌ | ❌ | ❌
 authenticationMode (Edm.String) | ✅ | ❌ | ❌ | ❌
+connectionSettingsType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+customSettings (Collection(SP.KeyValue)) | ✅ | ❌ | ❌ | ❌
+descr (Edm.String) | ✅ | ❌ | ❌ | ❌
+name (Edm.String) | ✅ | ❌ | ❌ | ❌
+parentName (Edm.String) | ✅ | ❌ | ❌ | ❌
+proxySSOApplicationId (Edm.String) | ✅ | ❌ | ❌ | ❌
+proxyTarget (Edm.String) | ✅ | ❌ | ❌ | ❌
 ssoApplicationId (Edm.String) | ✅ | ❌ | ❌ | ❌
 ssoProviderImplId (Edm.String) | ✅ | ❌ | ❌ | ❌
-proxyTarget (Edm.String) | ✅ | ❌ | ❌ | ❌
-proxySSOApplicationId (Edm.String) | ✅ | ❌ | ❌ | ❌
-parentName (Edm.String) | ✅ | ❌ | ❌ | ❌
-customSettings (Collection(SP.KeyValue)) | ✅ | ❌ | ❌ | ❌
+target (Edm.String) | ✅ | ❌ | ❌ | ❌

@@ -9,6 +9,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-name (Edm.String) | ✅ | ❌ | ❌ | ❌
-masked (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 credentialType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+masked (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+name (Edm.String) | ✅ | ❌ | ❌ | ❌

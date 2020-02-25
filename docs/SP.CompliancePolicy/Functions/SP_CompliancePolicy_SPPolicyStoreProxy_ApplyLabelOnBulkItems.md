@@ -9,8 +9,8 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-itemIds (Collection(Edm.Int32)) | ✅ | ❌ | ❌ | ❌
-listUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
-complianceTagValue (Edm.String) | ✅ | ❌ | ❌ | ❌
 blockDelete (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 blockEdit (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+complianceTagValue (Edm.String) | ✅ | ❌ | ❌ | ❌
+itemIds (Collection(Edm.Int32)) | ✅ | ❌ | ❌ | ❌
+listUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

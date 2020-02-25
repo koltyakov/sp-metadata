@@ -10,5 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-newUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
 flags (Edm.Int32) | ✅ | ✅ | ✅ | ✅
+newUrl (Edm.String) | ✅ | ✅ | ✅ | ✅

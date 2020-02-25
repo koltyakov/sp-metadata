@@ -10,6 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
+archiveUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 sourceUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 targetUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
-archiveUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

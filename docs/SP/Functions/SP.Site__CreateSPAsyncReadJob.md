@@ -10,8 +10,8 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-url (Edm.String) | ✅ | ❌ | ❌ | ❌
-readOptions (SP.AsyncReadOptions) | ✅ | ❌ | ❌ | ❌
-encryptionOption (SP.EncryptionOption) | ✅ | ❌ | ❌ | ❌
 azureContainerManifestUri (Edm.String) | ✅ | ❌ | ❌ | ❌
 azureQueueReportUri (Edm.String) | ✅ | ❌ | ❌ | ❌
+encryptionOption (SP.EncryptionOption) | ✅ | ❌ | ❌ | ❌
+readOptions (SP.AsyncReadOptions) | ✅ | ❌ | ❌ | ❌
+url (Edm.String) | ✅ | ❌ | ❌ | ❌

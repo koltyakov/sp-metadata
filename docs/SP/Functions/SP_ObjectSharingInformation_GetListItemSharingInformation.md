@@ -9,11 +9,11 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-listID (Edm.Guid) | ✅ | ✅ | ✅ | ✅
-itemID (Edm.Int32) | ✅ | ✅ | ✅ | ✅
+checkForAccessRequests (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 excludeCurrentUser (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
-excludeSiteAdmin (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 excludeSecurityGroups (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+excludeSiteAdmin (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+itemID (Edm.Int32) | ✅ | ✅ | ✅ | ✅
+listID (Edm.Guid) | ✅ | ✅ | ✅ | ✅
 retrieveAnonymousLinks (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 retrieveUserInfoDetails (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
-checkForAccessRequests (Edm.Boolean) | ✅ | ✅ | ✅ | ✅

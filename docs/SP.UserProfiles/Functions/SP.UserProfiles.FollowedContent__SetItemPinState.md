@@ -10,6 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-uri (Edm.String) | ✅ | ✅ | ✅ | ❌
 groupId (Edm.Guid) | ✅ | ✅ | ✅ | ❌
 pinState (Edm.Int32) | ✅ | ✅ | ✅ | ❌
+uri (Edm.String) | ✅ | ✅ | ✅ | ❌

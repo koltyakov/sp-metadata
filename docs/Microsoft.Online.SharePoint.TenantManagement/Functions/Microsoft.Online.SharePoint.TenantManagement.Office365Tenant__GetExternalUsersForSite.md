@@ -10,8 +10,8 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-siteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
-position (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-pageSize (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 filter (Edm.String) | ✅ | ❌ | ❌ | ❌
+pageSize (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+position (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+siteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 sortOrder (Edm.Int32) | ✅ | ❌ | ❌ | ❌

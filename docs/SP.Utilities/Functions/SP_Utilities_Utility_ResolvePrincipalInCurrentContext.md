@@ -9,9 +9,9 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
+addToUserInfoList (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 input (Edm.String) | ✅ | ✅ | ✅ | ✅
+inputIsEmailOnly (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+matchUserInfoList (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 scopes (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 sources (Edm.Int32) | ✅ | ✅ | ✅ | ✅
-inputIsEmailOnly (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
-addToUserInfoList (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
-matchUserInfoList (Edm.Boolean) | ✅ | ✅ | ✅ | ❌

@@ -10,8 +10,8 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
 applicationId (Edm.String) | ✅ | ❌ | ❌ | ❌
-friendlyName (Edm.String) | ✅ | ❌ | ❌ | ❌
 contactEmail (Edm.String) | ✅ | ❌ | ❌ | ❌
+credentialManagementUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+friendlyName (Edm.String) | ✅ | ❌ | ❌ | ❌
 ticketTimeoutInMinutes (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 type (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-credentialManagementUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

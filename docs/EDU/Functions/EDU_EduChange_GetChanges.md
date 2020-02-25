@@ -9,8 +9,8 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
+endChangeId (Edm.String) | ❌ | ❌ | ❌ | ✅
+maxNumChanges (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 siteUri (Edm.String) | ❌ | ❌ | ❌ | ✅
 startChangeId (Edm.String) | ❌ | ❌ | ❌ | ✅
-endChangeId (Edm.String) | ❌ | ❌ | ❌ | ✅
 timeout (Edm.Int32) | ❌ | ❌ | ❌ | ✅
-maxNumChanges (Edm.Int32) | ❌ | ❌ | ❌ | ✅

@@ -9,6 +9,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-objectUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
 groupId (Edm.Int32) | ✅ | ✅ | ✅ | ❌
+objectUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
 useSimplifiedRoles (Edm.Boolean) | ✅ | ✅ | ✅ | ❌

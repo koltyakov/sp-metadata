@@ -9,7 +9,7 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-listName (Edm.String) | ✅ | ✅ | ❌ | ❌
-folderPath (SP.ResourcePath) | ✅ | ✅ | ❌ | ❌
-referrer (Edm.String) | ✅ | ✅ | ❌ | ❌
 callback (Edm.String) | ✅ | ✅ | ❌ | ❌
+folderPath (SP.ResourcePath) | ✅ | ✅ | ❌ | ❌
+listName (Edm.String) | ✅ | ✅ | ❌ | ❌
+referrer (Edm.String) | ✅ | ✅ | ❌ | ❌

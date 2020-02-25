@@ -10,9 +10,9 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-displayName (Edm.String) | ✅ | ✅ | ❌ | ❌
 alias (Edm.String) | ✅ | ✅ | ❌ | ❌
+creationOptions (Collection(Edm.String)) | ✅ | ✅ | ❌ | ❌
+description (Edm.String) | ✅ | ✅ | ❌ | ❌
+displayName (Edm.String) | ✅ | ✅ | ❌ | ❌
 isPublic (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 ownerPrincipalNames (Collection(Edm.String)) | ✅ | ✅ | ❌ | ❌
-description (Edm.String) | ✅ | ✅ | ❌ | ❌
-creationOptions (Collection(Edm.String)) | ✅ | ✅ | ❌ | ❌

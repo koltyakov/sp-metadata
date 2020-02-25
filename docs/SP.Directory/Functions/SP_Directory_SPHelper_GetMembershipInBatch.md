@@ -9,6 +9,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-userId (Edm.Guid) | ✅ | ✅ | ✅ | ❌
-batchStart (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 batchSize (Edm.Int32) | ✅ | ✅ | ✅ | ❌
+batchStart (Edm.Int32) | ✅ | ✅ | ✅ | ❌
+userId (Edm.Guid) | ✅ | ✅ | ✅ | ❌

@@ -9,7 +9,7 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-providerID (Edm.String) | ✅ | ✅ | ✅ | ✅
-hierarchyNodeID (Edm.String) | ✅ | ✅ | ✅ | ✅
-entityTypes (Edm.String) | ✅ | ✅ | ✅ | ✅
 contextUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
+entityTypes (Edm.String) | ✅ | ✅ | ✅ | ✅
+hierarchyNodeID (Edm.String) | ✅ | ✅ | ✅ | ✅
+providerID (Edm.String) | ✅ | ✅ | ✅ | ✅

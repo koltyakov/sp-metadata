@@ -11,6 +11,6 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
 destinationUrl (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
+forceMySiteDefaultList (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
 retrieveAllLists (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
 retrieveFoldersForAllLists (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
-forceMySiteDefaultList (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌

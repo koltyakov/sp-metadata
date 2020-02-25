@@ -9,5 +9,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-spsiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 isPublic (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+spsiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

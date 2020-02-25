@@ -10,7 +10,7 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-menuNodeKey (Edm.String) | ✅ | ✅ | ✅ | ✅
-mapProviderName (Edm.String) | ✅ | ✅ | ✅ | ✅
-depth (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 customProperties (Edm.String) | ✅ | ✅ | ✅ | ✅
+depth (Edm.Int32) | ✅ | ✅ | ✅ | ✅
+mapProviderName (Edm.String) | ✅ | ✅ | ✅ | ✅
+menuNodeKey (Edm.String) | ✅ | ✅ | ✅ | ✅

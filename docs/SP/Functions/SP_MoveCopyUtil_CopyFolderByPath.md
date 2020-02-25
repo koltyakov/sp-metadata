@@ -9,6 +9,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-srcPath (SP.ResourcePath) | ✅ | ✅ | ❌ | ❌
 destPath (SP.ResourcePath) | ✅ | ✅ | ❌ | ❌
 options (SP.MoveCopyOptions) | ✅ | ✅ | ❌ | ❌
+srcPath (SP.ResourcePath) | ✅ | ✅ | ❌ | ❌

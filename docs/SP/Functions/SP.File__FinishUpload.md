@@ -10,6 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-uploadId (Edm.Guid) | ✅ | ✅ | ✅ | ❌
 fileOffset (Edm.Int64) | ✅ | ✅ | ✅ | ❌
 stream (Edm.Stream) | ✅ | ✅ | ✅ | ❌
+uploadId (Edm.Guid) | ✅ | ✅ | ✅ | ❌

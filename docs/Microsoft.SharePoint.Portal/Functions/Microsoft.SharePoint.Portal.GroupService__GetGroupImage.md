@@ -10,6 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-id (Edm.String) | ✅ | ✅ | ❌ | ❌
-hash (Edm.String) | ✅ | ✅ | ❌ | ❌
 color (Edm.String) | ✅ | ✅ | ❌ | ❌
+hash (Edm.String) | ✅ | ✅ | ❌ | ❌
+id (Edm.String) | ✅ | ✅ | ❌ | ❌

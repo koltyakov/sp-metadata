@@ -10,6 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-feedOwner (Edm.String) | ✅ | ✅ | ✅ | ✅
 feedOptions (SP.Microfeed.MicrofeedRetrievalOptions) | ✅ | ✅ | ✅ | ✅
+feedOwner (Edm.String) | ✅ | ✅ | ✅ | ✅
 typeOfPubFeed (Edm.Int32) | ✅ | ✅ | ✅ | ✅

@@ -10,7 +10,7 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-subscription (SP.BusinessData.Runtime.Subscription) | ❌ | ❌ | ❌ | ✅
-onBehalfOfUser (Edm.String) | ❌ | ❌ | ❌ | ✅
-unsubscriberName (Edm.String) | ❌ | ❌ | ❌ | ✅
 lobSystemInstance (SP.BusinessData.LobSystemInstance) | ❌ | ❌ | ❌ | ✅
+onBehalfOfUser (Edm.String) | ❌ | ❌ | ❌ | ✅
+subscription (SP.BusinessData.Runtime.Subscription) | ❌ | ❌ | ❌ | ✅
+unsubscriberName (Edm.String) | ❌ | ❌ | ❌ | ✅

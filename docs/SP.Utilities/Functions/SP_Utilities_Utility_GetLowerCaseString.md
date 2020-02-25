@@ -9,5 +9,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-sourceValue (Edm.String) | ✅ | ✅ | ✅ | ✅
 lcid (Edm.Int32) | ✅ | ✅ | ✅ | ✅
+sourceValue (Edm.String) | ✅ | ✅ | ✅ | ✅

@@ -10,5 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-fileExtension (Edm.String) | ✅ | ❌ | ❌ | ❌
 customVideoThumbnail (Edm.Stream) | ✅ | ❌ | ❌ | ❌
+fileExtension (Edm.String) | ✅ | ❌ | ❌ | ❌

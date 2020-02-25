@@ -10,6 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-width (Edm.Int32) | ✅ | ✅ | ❌ | ❌
-height (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 clientType (Edm.String) | ✅ | ✅ | ❌ | ❌
+height (Edm.Int32) | ✅ | ✅ | ❌ | ❌
+width (Edm.Int32) | ✅ | ✅ | ❌ | ❌

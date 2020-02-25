@@ -9,6 +9,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-web (SP.Web) | ❌ | ❌ | ❌ | ✅
-title (Edm.String) | ❌ | ❌ | ❌ | ✅
 description (Edm.String) | ❌ | ❌ | ❌ | ✅
+title (Edm.String) | ❌ | ❌ | ❌ | ✅
+web (SP.Web) | ❌ | ❌ | ❌ | ✅

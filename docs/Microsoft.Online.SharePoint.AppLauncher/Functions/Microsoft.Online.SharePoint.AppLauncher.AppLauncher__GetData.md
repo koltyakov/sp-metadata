@@ -10,7 +10,7 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-suiteVersion (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 isMobileRequest (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 locale (Edm.String) | ✅ | ❌ | ❌ | ❌
 onPremVer (Edm.String) | ✅ | ❌ | ❌ | ❌
+suiteVersion (Edm.Int32) | ✅ | ❌ | ❌ | ❌

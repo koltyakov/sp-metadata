@@ -10,6 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-url (Edm.String) | ✅ | ✅ | ✅ | ✅
-key (Edm.String) | ✅ | ✅ | ✅ | ✅
 iv (Edm.String) | ✅ | ✅ | ✅ | ✅
+key (Edm.String) | ✅ | ✅ | ✅ | ✅
+url (Edm.String) | ✅ | ✅ | ✅ | ✅

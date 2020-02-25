@@ -10,6 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-itemId (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 formId (Edm.String) | ✅ | ✅ | ✅ | ✅
+itemId (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 mode (Edm.Int32) | ✅ | ✅ | ✅ | ✅

@@ -9,5 +9,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-possibleFollowerAccountName (Edm.String) | ✅ | ✅ | ✅ | ✅
 possibleFolloweeAccountName (Edm.String) | ✅ | ✅ | ✅ | ✅
+possibleFollowerAccountName (Edm.String) | ✅ | ✅ | ✅ | ✅

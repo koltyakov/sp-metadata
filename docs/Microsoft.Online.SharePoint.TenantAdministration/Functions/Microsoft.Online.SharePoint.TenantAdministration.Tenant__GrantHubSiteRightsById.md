@@ -10,6 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
+grantedRights (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 hubSiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 principals (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
-grantedRights (Edm.Int64) | ✅ | ❌ | ❌ | ❌

@@ -10,6 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-eventSourceId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 eventName (Edm.String) | ✅ | ❌ | ❌ | ❌
+eventSourceId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 payload (Collection(SP.KeyValue)) | ✅ | ❌ | ❌ | ❌

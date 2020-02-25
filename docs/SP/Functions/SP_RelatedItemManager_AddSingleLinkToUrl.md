@@ -9,7 +9,7 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-SourceListName (Edm.String) | ✅ | ✅ | ✅ | ✅
 SourceItemID (Edm.Int32) | ✅ | ✅ | ✅ | ✅
+SourceListName (Edm.String) | ✅ | ✅ | ✅ | ✅
 TargetItemUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
 TryAddReverseLink (Edm.Boolean) | ✅ | ✅ | ✅ | ✅

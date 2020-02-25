@@ -10,5 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-nWebTemplateFilter (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 nConfigurationFilter (Edm.Int16) | ✅ | ✅ | ✅ | ✅
+nWebTemplateFilter (Edm.Int32) | ✅ | ✅ | ✅ | ✅

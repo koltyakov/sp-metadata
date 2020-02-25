@@ -9,7 +9,7 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-srcUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
 destUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
-overwrite (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 options (SP.MoveCopyOptions) | ✅ | ✅ | ❌ | ❌
+overwrite (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
+srcUrl (Edm.String) | ✅ | ✅ | ✅ | ❌

@@ -10,5 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-mask (PS.LookupMask) | ✅ | ✅ | ✅ | ❌
 level (Edm.Int32) | ✅ | ✅ | ✅ | ❌
+mask (PS.LookupMask) | ✅ | ✅ | ✅ | ❌

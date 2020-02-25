@@ -10,8 +10,8 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-width (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-height (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 autoplay (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-showInfo (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+height (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 makeResponsive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+showInfo (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+width (Edm.Int32) | ✅ | ❌ | ❌ | ❌

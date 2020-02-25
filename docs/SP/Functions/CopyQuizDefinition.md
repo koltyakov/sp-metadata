@@ -9,8 +9,8 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-sourceWeb (SP.Web) | ❌ | ❌ | ❌ | ✅
-quizId (Edm.Guid) | ❌ | ❌ | ❌ | ✅
 destinationWebUrl (Edm.String) | ❌ | ❌ | ❌ | ✅
-options (Edm.Int32) | ❌ | ❌ | ❌ | ✅
 newQuizTitle (Edm.String) | ❌ | ❌ | ❌ | ✅
+options (Edm.Int32) | ❌ | ❌ | ❌ | ✅
+quizId (Edm.Guid) | ❌ | ❌ | ❌ | ✅
+sourceWeb (SP.Web) | ❌ | ❌ | ❌ | ✅

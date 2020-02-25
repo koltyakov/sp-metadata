@@ -9,8 +9,8 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-itemID (Edm.Int32) | ✅ | ✅ | ✅ | ✅
-url (Edm.String) | ✅ | ✅ | ✅ | ✅
-title (Edm.String) | ✅ | ✅ | ✅ | ✅
 description (Edm.String) | ✅ | ✅ | ✅ | ✅
 imageUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
+itemID (Edm.Int32) | ✅ | ✅ | ✅ | ✅
+title (Edm.String) | ✅ | ✅ | ✅ | ✅
+url (Edm.String) | ✅ | ✅ | ✅ | ✅

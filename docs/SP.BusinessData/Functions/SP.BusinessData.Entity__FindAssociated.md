@@ -10,7 +10,7 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-entityInstance (SP.BusinessData.Runtime.EntityInstance) | ❌ | ❌ | ❌ | ✅
 associationName (Edm.String) | ❌ | ❌ | ❌ | ✅
+entityInstance (SP.BusinessData.Runtime.EntityInstance) | ❌ | ❌ | ❌ | ✅
 filterList (Collection(SP.BusinessData.Filter)) | ❌ | ❌ | ❌ | ✅
 lobSystemInstance (SP.BusinessData.LobSystemInstance) | ❌ | ❌ | ❌ | ✅

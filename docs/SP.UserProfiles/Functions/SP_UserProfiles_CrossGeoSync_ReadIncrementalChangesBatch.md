@@ -9,6 +9,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-targetInstanceId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-lastEventId (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 batchSize (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+lastEventId (Edm.Int64) | ✅ | ❌ | ❌ | ❌
+targetInstanceId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

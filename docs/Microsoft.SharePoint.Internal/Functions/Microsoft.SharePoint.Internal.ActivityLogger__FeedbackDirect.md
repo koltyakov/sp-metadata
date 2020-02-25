@@ -10,9 +10,9 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-Operation (Edm.String) | ✅ | ❌ | ❌ | ❌
-ListId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-ListItemUniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 AffectedResourceUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 ItemType (Edm.String) | ✅ | ❌ | ❌ | ❌
+ListId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+ListItemUniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+Operation (Edm.String) | ✅ | ❌ | ❌ | ❌
 json (Edm.String) | ✅ | ❌ | ❌ | ❌

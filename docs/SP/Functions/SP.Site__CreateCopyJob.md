@@ -10,6 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-exportObjectUris (Collection(Edm.String)) | ✅ | ✅ | ❌ | ❌
 destinationUri (Edm.String) | ✅ | ✅ | ❌ | ❌
+exportObjectUris (Collection(Edm.String)) | ✅ | ✅ | ❌ | ❌
 options (SP.CopyMigrationOptions) | ✅ | ✅ | ❌ | ❌

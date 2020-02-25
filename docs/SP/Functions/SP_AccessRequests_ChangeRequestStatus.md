@@ -9,8 +9,8 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
+convStr (Edm.String) | ✅ | ✅ | ✅ | ✅
 itemId (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 newStatus (Edm.Int32) | ✅ | ✅ | ✅ | ✅
-convStr (Edm.String) | ✅ | ✅ | ✅ | ✅
 permType (Edm.String) | ✅ | ✅ | ✅ | ✅
 permissionLevel (Edm.Int32) | ✅ | ✅ | ✅ | ✅

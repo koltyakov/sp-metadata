@@ -11,5 +11,5 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
 accountName (Edm.String) | ✅ | ✅ | ✅ | ✅
-postId (Edm.String) | ✅ | ✅ | ✅ | ✅
 like (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+postId (Edm.String) | ✅ | ✅ | ✅ | ✅

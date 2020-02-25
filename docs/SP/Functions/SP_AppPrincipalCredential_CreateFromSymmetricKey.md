@@ -9,6 +9,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-symmetricKey (Edm.String) | ✅ | ✅ | ✅ | ✅
-notBefore (Edm.DateTime) | ✅ | ✅ | ✅ | ✅
 notAfter (Edm.DateTime) | ✅ | ✅ | ✅ | ✅
+notBefore (Edm.DateTime) | ✅ | ✅ | ✅ | ✅
+symmetricKey (Edm.String) | ✅ | ✅ | ✅ | ✅

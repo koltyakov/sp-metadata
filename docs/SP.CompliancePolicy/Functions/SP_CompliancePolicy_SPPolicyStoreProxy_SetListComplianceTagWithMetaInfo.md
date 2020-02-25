@@ -9,10 +9,10 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-listUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
-complianceTagValue (Edm.String) | ✅ | ❌ | ❌ | ❌
 blockDelete (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 blockEdit (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+complianceTagValue (Edm.String) | ✅ | ❌ | ❌ | ❌
 complianceTagWrittenTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
-userEmailAddress (Edm.String) | ✅ | ❌ | ❌ | ❌
+listUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 syncToItems (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+userEmailAddress (Edm.String) | ✅ | ❌ | ❌ | ❌

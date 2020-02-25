@@ -10,6 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
-questionId (Edm.Guid) | ❌ | ❌ | ❌ | ✅
 newQuestion (Microsoft.Office.Education.QuizOM.Question) | ❌ | ❌ | ❌ | ✅
 newQuestionKey (Microsoft.Office.Education.QuizOM.QuestionKey) | ❌ | ❌ | ❌ | ✅
+questionId (Edm.Guid) | ❌ | ❌ | ❌ | ✅

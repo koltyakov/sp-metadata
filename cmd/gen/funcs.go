@@ -174,7 +174,6 @@ func functionParamsTable(envFnMap map[string][]edmx.FunctionImport, key string) 
 	}
 
 	keyPresenceMap := map[string]map[string]bool{}
-	var keys []string
 	for envCode, fnArr := range envFnMap {
 		for _, functionImp := range fnArr {
 			if functionImp.Name == fnName {
@@ -188,15 +187,6 @@ func functionParamsTable(envFnMap map[string][]edmx.FunctionImport, key string) 
 							}
 							n[envCode] = true
 							keyPresenceMap[key] = n
-							newKey := true
-							for _, k := range keys {
-								if k == key {
-									newKey = false
-								}
-							}
-							if newKey {
-								keys = append(keys, key)
-							}
 						}
 					}
 				}
@@ -207,6 +197,12 @@ func functionParamsTable(envFnMap map[string][]edmx.FunctionImport, key string) 
 	if len(keyPresenceMap) == 0 {
 		return ""
 	}
+
+	var keys []string
+	for key := range keyPresenceMap {
+		keys = append(keys, key)
+	}
+	sort.Strings(keys)
 
 	// Map to comparison matrix
 	for _, key := range keys {

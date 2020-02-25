@@ -9,6 +9,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
+len (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 logOnName (Edm.String) | ✅ | ✅ | ✅ | ❌
 offset (Edm.Int32) | ✅ | ✅ | ✅ | ❌
-len (Edm.Int32) | ✅ | ✅ | ✅ | ❌

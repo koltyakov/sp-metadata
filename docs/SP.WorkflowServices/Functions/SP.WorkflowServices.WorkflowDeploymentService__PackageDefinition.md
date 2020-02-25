@@ -12,5 +12,5 @@ Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------
 definitionId (Edm.Guid) | ✅ | ✅ | ✅ | ✅
 packageDefaultFilename (Edm.String) | ✅ | ✅ | ✅ | ✅
-packageTitle (Edm.String) | ✅ | ✅ | ✅ | ✅
 packageDescription (Edm.String) | ✅ | ✅ | ✅ | ✅
+packageTitle (Edm.String) | ✅ | ✅ | ✅ | ✅
