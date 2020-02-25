@@ -1,6 +1,6 @@
-# Namespace: {{.Namespace}}
+# Function Import: {{.Function}}
 
-## Function Import: {{.Function}}
+> Namespace: {{.Namespace}}
 
 {{ if (ne .EntityType "") }}- Entity type: {{.EntityType}}
 {{ end }}{{ if (ne .ReturnType "") }}- Return type: {{.ReturnType}}

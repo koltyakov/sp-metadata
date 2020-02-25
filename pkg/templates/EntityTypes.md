@@ -2,6 +2,4 @@
 
 ## Entity Types
 
-**Availability matrix**
-
 {{.Table}}

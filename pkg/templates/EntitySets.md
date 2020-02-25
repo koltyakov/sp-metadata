@@ -2,6 +2,4 @@
 
 ## Entity Sets
 
-**Availability matrix**
-
 {{.Table}}

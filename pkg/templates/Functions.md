@@ -2,6 +2,4 @@
 
 ## Functions Imports
 
-**Availability matrix**
-
 {{.Table}}

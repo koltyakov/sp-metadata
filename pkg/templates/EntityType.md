@@ -1,14 +1,10 @@
-# Namespace: {{.Namespace}}
+# Entity Type: {{.EntityType}}
 
-## Entity Type: {{.EntityType}}
+> Namespace: {{.Namespace}}
 
 {{ if (ne .PropsTable "") }}### Properties
 
-**Availability matrix**
-
 {{.PropsTable}}{{ end }}
 {{ if (ne .NavPropsTable "") }}### Navigation Properties
-
-**Availability matrix**
 
 {{.NavPropsTable}}{{ end }}

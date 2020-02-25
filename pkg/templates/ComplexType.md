@@ -1,9 +1,7 @@
-# Namespace: {{.Namespace}}
+# Complex Type: {{.ComplexType}}
 
-## Complex Type: {{.ComplexType}}
+> Namespace: {{.Namespace}}
 
-### Properties
-
-**Availability matrix**
+## Properties
 
 {{.Table}}
