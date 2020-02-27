@@ -23,8 +23,7 @@ CanSendLink (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 CanShareFolder (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 DefaultShareLinkPermission (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 DefaultShareLinkType (Edm.Int32) | ✅ | ✅ | ❌ | ❌
-DoesUserHaveIBSegment (Edm.Boolean) | ❌ (✅) | ❌ | ❌ | ❌
-EnforceIBSegmentFiltering (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
+EnforceIBSegmentFiltering (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 GroupsList (Collection(SP.KeyValue)) | ✅ | ✅ | ✅ | ❌
 HasEditRole (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 HasReadRole (Edm.Boolean) | ✅ | ✅ | ✅ | ❌

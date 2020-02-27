@@ -10,4 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-state (SP.Publishing.Navigation.StructuralNavigationCacheState) | ✅ (❌) | ❌ | ❌ | ❌
+state (SP.Publishing.Navigation.StructuralNavigationCacheState) | ✅ | ❌ | ❌ | ❌

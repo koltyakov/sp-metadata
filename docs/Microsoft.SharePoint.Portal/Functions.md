@@ -5,7 +5,7 @@
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 ArchiveTeamChannelSite (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
-AreSegmentsCompatible (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ (❌) | ❌ | ❌ | ❌
+AreSegmentsCompatible (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
 CanCreateHubJoinedSite (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
 CanUserCreateGroup (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ❌ | ❌
 Context (Microsoft.SharePoint.Portal.SharePointHomeServiceContextBuilder) | ✅ | ✅ | ❌ | ❌
