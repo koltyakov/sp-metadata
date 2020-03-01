@@ -8,6 +8,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CommunicationSiteCreationRequest](./ComplexTypes/CommunicationSiteCreationRequest.md) | ✅ | ✅ | ❌ | ❌
 [CommunicationSiteCreationResponse](./ComplexTypes/CommunicationSiteCreationResponse.md) | ✅ | ✅ | ❌ | ❌
 [DateTimeCustomProperty](./ComplexTypes/DateTimeCustomProperty.md) | ✅ | ❌ | ❌ | ❌
+[Error](./ComplexTypes/Error.md) | ✅ | ❌ | ❌ | ❌
 [FilePickerOptions](./ComplexTypes/FilePickerOptions.md) | ✅ | ❌ | ❌ | ❌
 [ItemViewsAnalyticsData](./ComplexTypes/ItemViewsAnalyticsData.md) | ✅ | ❌ | ❌ | ❌
 [PersonCore](./ComplexTypes/PersonCore.md) | ✅ | ❌ | ❌ | ❌
@@ -27,6 +28,8 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [PropertyValue](./ComplexTypes/PropertyValue.md) | ✅ | ❌ | ❌ | ❌
 [PublishSiteInformation](./ComplexTypes/PublishSiteInformation.md) | ✅ | ❌ | ❌ | ❌
 [RepostPageFieldsData](./ComplexTypes/RepostPageFieldsData.md) | ✅ | ❌ | ❌ | ❌
+[RuleErrorDetails](./ComplexTypes/RuleErrorDetails.md) | ✅ | ❌ | ❌ | ❌
+[RuleResult](./ComplexTypes/RuleResult.md) | ✅ | ❌ | ❌ | ❌
 [SharePagePreviewByEmailFieldsData](./ComplexTypes/SharePagePreviewByEmailFieldsData.md) | ✅ | ✅ | ❌ | ❌
 [SitePage3DFieldsData](./ComplexTypes/SitePage3DFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [SitePageFieldsData](./ComplexTypes/SitePageFieldsData.md) | ✅ | ✅ | ❌ | ❌

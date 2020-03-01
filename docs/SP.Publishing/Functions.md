@@ -10,6 +10,7 @@ AddImage (SP.Publishing.SitePageService) | ✅ | ✅ | ❌ | ❌
 AddImageFromExternalUrl (SP.Publishing.SitePageService) | ✅ | ✅ | ❌ | ❌
 AddImageFromUrl (SP.Publishing.PointPublishingPost) | ✅ | ❌ | ❌ | ❌
 AddOrUpdateUser (Collection(SP.Publishing.PointPublishingUser)) | ✅ | ❌ | ❌ | ❌
+ByPage (SP.Publishing.PageDiagnosticsController) | ✅ | ❌ | ❌ | ❌
 CanCreatePromotedPage (SP.Publishing.SitePageService) | ✅ | ✅ | ❌ | ❌
 CheckOut (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 CheckOut (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌

@@ -53,6 +53,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.SharePoint.Portal.Project](./Microsoft.SharePoint.Portal.Project) | ✅ | ✅ | ✅ | ✅
 [Microsoft.SharePoint.Portal.UserProfiles](./Microsoft.SharePoint.Portal.UserProfiles) | ✅ | ✅ | ✅ | ✅
 [Microsoft.SharePoint.Portal.WebControls](./Microsoft.SharePoint.Portal.WebControls) | ✅ | ✅ | ✅ | ❌
+[Microsoft.SharePoint.Publishing.Diagnostics](./Microsoft.SharePoint.Publishing.Diagnostics) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Publishing.RestOnly](./Microsoft.SharePoint.Publishing.RestOnly) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.QuickActionMessageCard](./Microsoft.SharePoint.QuickActionMessageCard) | ✅ | ✅ | ❌ | ❌
 [Microsoft.SharePoint.TenantCdn](./Microsoft.SharePoint.TenantCdn) | ✅ | ❌ | ❌ | ❌

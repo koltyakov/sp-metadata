@@ -19,6 +19,7 @@ ID (Edm.String) | ✅ | ✅ | ❌ | ❌
 InstalledVersion (Edm.String) | ✅ | ✅ | ❌ | ❌
 IsClientSideSolution (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 IsEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+IsPackageDefaultSkipFeatureDeployment (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsValidAppPackage (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ProductId (Edm.String) | ✅ | ❌ | ❌ | ❌
 ShortDescription (Edm.String) | ✅ | ❌ | ❌ | ❌
