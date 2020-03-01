@@ -7058,6 +7058,10 @@
           <Parameter Name="version" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_Publishing_PageDiagnosticsController" ReturnType="SP.Publishing.PageDiagnosticsController" IsComposable="true" EntitySet="PageDiagnostics" />
+        <FunctionImport Name="ByPage" ReturnType="Microsoft.SharePoint.Publishing.Diagnostics.PageDiagnostics" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.PageDiagnosticsController" />
+          <Parameter Name="pageRelativeFilePath" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="Save" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.PageDiagnosticsController" />
           <Parameter Name="pageDiagnosticsResult" Type="Edm.String" />
@@ -8592,9 +8596,6 @@
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplyImplicitSiteDesign" ReturnType="Edm.Boolean" />
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplySiteDesign" ReturnType="Collection(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptActionResult)">
           <Parameter Name="webUrl" Type="Edm.String" />
-          <Parameter Name="siteDesignId" Type="Edm.Guid" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplySiteDesignGetRunId" ReturnType="Edm.Guid">
           <Parameter Name="siteDesignId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteDesign" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignMetadata">
@@ -16249,6 +16250,9 @@
       <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata/IsEnabled">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata/IsPackageDefaultSkipFeatureDeployment">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata/IsValidAppPackage">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17957,9 +17961,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplySiteDesign(Edm.String, Edm.Guid)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplySiteDesignGetRunId(Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteDesign(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignCreationInfo)">
@@ -22493,6 +22494,9 @@
       <ComplexType Name="DateTimeCustomProperty" BaseType="SP.Publishing.ProfileDateTime">
         <Property Name="CustomPropertyName" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="Error">
+        <Property Name="Details" Type="Collection(Edm.String)" />
+      </ComplexType>
       <ComplexType Name="ViewData">
         <Property Name="TotalHits" Type="Edm.Int32" Nullable="false" />
         <Property Name="TotalUsers" Type="Edm.Int32" Nullable="false" />
@@ -22662,6 +22666,17 @@
         <Property Name="TopicHeader" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="RepostPageFieldsData" BaseType="SP.Publishing.SitePageFieldsData" />
+      <ComplexType Name="RuleErrorDetails">
+        <Property Name="errorHeaders" Type="Collection(Edm.String)" />
+        <Property Name="errors" Type="Collection(SP.Publishing.Error)" />
+      </ComplexType>
+      <ComplexType Name="RuleResult">
+        <Property Name="Details" Type="SP.Publishing.RuleErrorDetails" />
+        <Property Name="learnMore" Type="Edm.String" />
+        <Property Name="ResultCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Title" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="SharePagePreviewByEmailFieldsData">
         <Property Name="message" Type="Edm.String" />
         <Property Name="recipientEmails" Type="Collection(Edm.String)" />
@@ -23228,6 +23243,39 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
+    </Schema>
+    <Schema Namespace="Microsoft.SharePoint.Publishing.Diagnostics" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="PageDetails">
+        <Property Name="CorrelationId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="IsPublished" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ListId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ListItemId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ListItemUniqueId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="PageLayoutName" Type="Edm.String" />
+        <Property Name="PageLoadTimeInMS" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PageType" Type="Edm.String" />
+        <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="SpIISLatencyInMS" Type="Edm.Int32" Nullable="false" />
+        <Property Name="SpRequestDurationInMS" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Url" Type="Edm.String" />
+        <Property Name="Version" Type="Edm.String" />
+        <Property Name="WebId" Type="Edm.Guid" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="PageDiagnosticsResult">
+        <Property Name="CreatedDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="PageDetails" Type="Microsoft.SharePoint.Publishing.Diagnostics.PageDetails" />
+        <Property Name="suggestions" Type="Collection(SP.Publishing.RuleResult)" />
+        <Property Name="ToolDetails" Type="Microsoft.SharePoint.Publishing.Diagnostics.ToolDetails" />
+      </ComplexType>
+      <ComplexType Name="ToolDetails">
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Version" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="PageDiagnostics">
+        <Property Name="LatestDraftVersion" Type="Edm.String" />
+        <Property Name="LatestPublishedVersion" Type="Edm.String" />
+        <Property Name="Results" Type="Collection(Microsoft.SharePoint.Publishing.Diagnostics.PageDiagnosticsResult)" />
+      </ComplexType>
     </Schema>
     <Schema Namespace="Microsoft.Office.Server.Search.REST" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="ContextCondition">
@@ -26792,6 +26840,7 @@
         <Property Name="InstalledVersion" Type="Edm.String" />
         <Property Name="IsClientSideSolution" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsPackageDefaultSkipFeatureDeployment" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsValidAppPackage" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ProductId" Type="Edm.String" />
         <Property Name="ShortDescription" Type="Edm.String" />
