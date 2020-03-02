@@ -2,6 +2,8 @@ github.com/Azure/go-autorest/autorest v0.9.0/go.mod h1:xyHB1BMZT0cuDHU7I0+g046+B
 github.com/Azure/go-autorest/autorest v0.9.3/go.mod h1:GsRuLYvwzLjjjRoWEIyMUaYq8GNUx2nRB378IPt/1p0=
 github.com/Azure/go-autorest/autorest v0.9.6 h1:5YWtOnckcudzIw8lPPBcWOnmIFWMtHci1ZWAZulMSx0=
 github.com/Azure/go-autorest/autorest v0.9.6/go.mod h1:/FALq9T/kS7b5J5qsQ+RSTUdAmGFqi0vUdVNNx8q630=
+github.com/Azure/go-autorest/autorest v0.10.0 h1:mvdtztBqcL8se7MdrUweNieTNi4kfNG6GOJuurQJpuY=
+github.com/Azure/go-autorest/autorest v0.10.0/go.mod h1:/FALq9T/kS7b5J5qsQ+RSTUdAmGFqi0vUdVNNx8q630=
 github.com/Azure/go-autorest/autorest/adal v0.5.0/go.mod h1:8Z9fGy2MpX0PvDjB1pEgQTmVqjGhiHBW7RJJEciWzS0=
 github.com/Azure/go-autorest/autorest/adal v0.8.0/go.mod h1:Z6vX6WXXuyieHAXwMj0S6HY6e6wcHn37qQMBQlvY3lc=
 github.com/Azure/go-autorest/autorest/adal v0.8.1/go.mod h1:ZjhuQClTqx435SRJ2iMlOxPYt3d2C/T/7TiQCVZSn3Q=
@@ -41,8 +43,12 @@ github.com/koltyakov/gosip v0.0.0-20200221093442-940109f1fceb h1:6op4C3TPN/aJ9bT
 github.com/koltyakov/gosip v0.0.0-20200221093442-940109f1fceb/go.mod h1:DpSM0LqsY8Yp2S9XipKnpkESyLTkfgexQt9g0gvlpyI=
 github.com/koltyakov/gosip v0.0.0-20200222104728-443e170617bc h1:VgtLMf9VHPA8ci4QcS6RYF/b4UGJyj/5scMJrnCN3e0=
 github.com/koltyakov/gosip v0.0.0-20200222104728-443e170617bc/go.mod h1:FPE5IEzpMTrkTRwRwkzBtllAyxi1BbN2Ld3rnUyKuzU=
+github.com/koltyakov/gosip v0.0.0-20200225132234-b35776755523 h1:pzur8z8o/Kb/3QLRNdmV4wezkHQpNGoVoco1dN4kSAY=
+github.com/koltyakov/gosip v0.0.0-20200225132234-b35776755523/go.mod h1:5SMFh3WAbcXGGeqAEyUnMdSOfBj6FES3q5jdePef3Ls=
 github.com/koltyakov/gosip-sandbox v0.0.0-20200221120152-0945f1932fe7 h1:RL7Ym4crbfMAA9rwu8q1LVLD3EIBUjd+3YRHQwfXLKU=
 github.com/koltyakov/gosip-sandbox v0.0.0-20200221120152-0945f1932fe7/go.mod h1:DQA9x0mR8wHMocid5l4yHHWj4JGd5u1J7yXZc4NPm74=
+github.com/koltyakov/gosip-sandbox v0.0.0-20200226102059-e4632279c0a2 h1:5yjiNvitf5fyEeRrjHmz6oERIhHVVPlPWEVPyttbnVw=
+github.com/koltyakov/gosip-sandbox v0.0.0-20200226102059-e4632279c0a2/go.mod h1:G0X/900Rxwpdvre7RYPFAhYUd1L0rI6jnIcW+HjlRo8=
 github.com/koltyakov/lorca v0.1.9-0.20200112132759-701f901adf53 h1:My2OUesQydAzsvEVM9rApLwD/8/+eq/iX2k4dSRgtGI=
 github.com/koltyakov/lorca v0.1.9-0.20200112132759-701f901adf53/go.mod h1:+IUvlBJz7t189cEBL5r+17vOHhtTxVGBeeUcUq7uVZo=
 github.com/mitchellh/go-homedir v1.1.0 h1:lukF9ziXFxDFPkA1vsr5zpc1XuPDn/wFntq5mG+4E0Y=
@@ -64,8 +70,14 @@ golang.org/x/net v0.0.0-20200219183655-46282727080f h1:dB42wwhNuwPvh8f+5zZWNcU+F
 golang.org/x/net v0.0.0-20200219183655-46282727080f/go.mod h1:z5CRVTTTmAJ677TzLLGU+0bjPO0LkuOLi4/5GtJWs/s=
 golang.org/x/net v0.0.0-20200222125558-5a598a2470a0 h1:MsuvTghUPjX762sGLnGsxC3HM0B5r83wEtYcYR8/vRs=
 golang.org/x/net v0.0.0-20200222125558-5a598a2470a0/go.mod h1:z5CRVTTTmAJ677TzLLGU+0bjPO0LkuOLi4/5GtJWs/s=
+golang.org/x/net v0.0.0-20200226051749-491c5fce7268/go.mod h1:z5CRVTTTmAJ677TzLLGU+0bjPO0LkuOLi4/5GtJWs/s=
+golang.org/x/net v0.0.0-20200301022130-244492dfa37a h1:GuSPYbZzB5/dcLNCwLQLsg3obCJtX9IJhpXkvY7kzk0=
+golang.org/x/net v0.0.0-20200301022130-244492dfa37a/go.mod h1:z5CRVTTTmAJ677TzLLGU+0bjPO0LkuOLi4/5GtJWs/s=
 golang.org/x/sys v0.0.0-20190215142949-d0b11bdaac8a/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
 golang.org/x/sys v0.0.0-20190412213103-97732733099d/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200219091948-cb0a6d8edb6c h1:jceGD5YNJGgGMkJz79agzOln1K9TaZUjv5ird16qniQ=
 golang.org/x/sys v0.0.0-20200219091948-cb0a6d8edb6c/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20200223170610-d5e6a3e2c0ae/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20200301204400-5d559ad92b82 h1:lMQVwSjnOFtj3Ssuec21gK8stJac9xnIo2CjVk2cczw=
+golang.org/x/sys v0.0.0-20200301204400-5d559ad92b82/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
