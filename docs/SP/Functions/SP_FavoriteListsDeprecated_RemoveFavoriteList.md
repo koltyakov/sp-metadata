@@ -1,4 +1,4 @@
-# Function Import: SP_FavoriteLists_RemoveFavoriteList
+# Function Import: SP_FavoriteListsDeprecated_RemoveFavoriteList
 
 > Namespace: SP
 

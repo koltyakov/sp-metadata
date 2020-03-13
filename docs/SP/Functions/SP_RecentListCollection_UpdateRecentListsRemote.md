@@ -1,4 +1,4 @@
-# Function Import: SP_FavoriteLists_GetIsListFavorite
+# Function Import: SP_RecentListCollection_UpdateRecentListsRemote
 
 > Namespace: SP
 
@@ -9,4 +9,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-listId (Edm.String) | ✅ | ❌ | ❌ | ❌
+recentListsJson (Edm.String) | ✅ | ❌ | ❌ | ❌

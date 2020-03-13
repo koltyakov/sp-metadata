@@ -46,6 +46,7 @@ SearchBoxInNavBar (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SearchBoxPlaceholderText (Edm.String) | ✅ | ❌ | ❌ | ❌
 SensitivityLabel (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 SensitivityLabelId (Edm.String) | ✅ | ❌ | ❌ | ❌
+SensitivityLabelInfo (SP.SensitivityLabelInfo) | ✅ | ❌ | ❌ | ❌
 ServerRelativePath (SP.ResourcePath) | ✅ | ✅ | ❌ | ❌
 ServerRelativeUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
 ShareByEmailEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ❌

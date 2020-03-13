@@ -1,4 +1,4 @@
-# Function Import: SP_FavoriteLists_AddFavoriteList
+# Function Import: SP_FavoriteListsDeprecated_AddFavoriteList
 
 > Namespace: SP
 

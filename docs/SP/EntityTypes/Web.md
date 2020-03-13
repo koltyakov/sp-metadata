@@ -57,6 +57,7 @@ MasterUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
 MegaMenuEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MembersCanShare (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 NavAudienceTargetingEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+NextStepsFirstRunEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 NoCrawl (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 NotificationsInOneDriveForBusinessEnabled (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 NotificationsInSharePointEnabled (Edm.Boolean) | ✅ | ✅ | ❌ | ❌

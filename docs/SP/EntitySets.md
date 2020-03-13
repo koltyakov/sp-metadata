@@ -131,6 +131,7 @@ ExchangeUserSyncStates | ✅ | ✅ | ✅ | ✅
 Exports | ❌ | ❌ | ❌ | ✅
 ExternalSubscriptionStores | ✅ | ✅ | ✅ | ✅
 ExternalUsers | ✅ | ❌ | ❌ | ❌
+FavoriteListsDeprecateds | ✅ | ❌ | ❌ | ❌
 FavoriteListss | ✅ | ❌ | ❌ | ❌
 FeatureDefinitions | ✅ | ❌ | ❌ | ❌
 Features | ✅ | ✅ | ✅ | ✅
@@ -269,6 +270,8 @@ OpenWebParameterss | ✅ | ❌ | ❌ | ❌
 OrderInfos | ✅ | ✅ | ✅ | ✅
 OrgNews | ✅ | ❌ | ❌ | ❌
 OrgNewsSites | ✅ | ❌ | ❌ | ❌
+OrgRelationNotifications | ✅ | ❌ | ❌ | ❌
+OrgRelationVerifications | ✅ | ❌ | ❌ | ❌
 PageDiagnostics | ✅ | ❌ | ❌ | ❌
 PageSizess | ✅ | ✅ | ❌ | ❌
 PeopleManagers | ✅ | ✅ | ✅ | ✅
@@ -280,6 +283,7 @@ PersonalWebs | ✅ | ✅ | ❌ | ❌
 Phases | ✅ | ✅ | ✅ | ❌
 PickerEntityInformations | ✅ | ✅ | ❌ | ❌
 PickerSettingss | ✅ | ✅ | ✅ | ❌
+PlacesEntitys | ✅ | ❌ | ❌ | ❌
 PlanAssignmentIntervals | ✅ | ✅ | ✅ | ❌
 PlanAssignments | ✅ | ✅ | ✅ | ❌
 PointPublishingAdmins | ✅ | ❌ | ❌ | ❌
@@ -583,4 +587,5 @@ WorkflowSubscriptions | ✅ | ✅ | ✅ | ✅
 WorkflowTemplates | ✅ | ✅ | ✅ | ✅
 comments | ✅ | ✅ | ❌ | ❌
 likedByInformations | ✅ | ✅ | ❌ | ❌
+placesInformations | ✅ | ❌ | ❌ | ❌
 userEntitys | ✅ | ✅ | ❌ | ❌

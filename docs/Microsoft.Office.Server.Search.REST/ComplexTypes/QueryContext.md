@@ -11,3 +11,4 @@ PortalUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 RoleIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 SpSiteId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 SpWebId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
+TenantInstanceId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

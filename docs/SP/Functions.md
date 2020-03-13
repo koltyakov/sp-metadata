@@ -75,6 +75,7 @@ CreateMigrationIngestionJob (SP.Site) | ✅ | ✅ | ✅ | ❌
 CreateMigrationJob (SP.Site) | ✅ | ✅ | ✅ | ❌
 CreateMigrationJobEncrypted (SP.Site) | ✅ | ✅ | ❌ | ❌
 CreatePreviewSPSite (SP.Site) | ✅ | ✅ | ✅ | ✅
+CreateRule (SP.List) | ✅ | ❌ | ❌ | ❌
 CreateSPAsyncReadJob (SP.Site) | ✅ | ❌ | ❌ | ❌
 CreateSPAsyncReadJobWithMultiUrl (SP.Site) | ✅ | ❌ | ❌ | ❌
 DefaultDocumentLibrary (SP.Web) | ✅ | ✅ | ✅ | ❌
@@ -127,6 +128,7 @@ DeleteObject (SP.UserCustomAction) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.View) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.Web) | ✅ | ✅ | ✅ | ✅
 [DeleteQuiz](./Functions/DeleteQuiz.md) | ❌ | ❌ | ❌ | ✅
+DeleteRule (SP.List) | ✅ | ❌ | ❌ | ❌
 DeleteWithParameters (SP.File) | ✅ | ❌ | ❌ | ❌
 DeleteWithParameters (SP.Folder) | ✅ | ❌ | ❌ | ❌
 DeleteWithParameters (SP.ListItem) | ✅ | ❌ | ❌ | ❌
@@ -184,6 +186,7 @@ ExtendUpgradeReminderDate (SP.Site) | ✅ | ✅ | ✅ | ✅
 FinishUpload (SP.File) | ✅ | ✅ | ✅ | ❌
 FinishUploadWithChecksum (SP.File) | ✅ | ❌ | ❌ | ❌
 GetAllClientSideComponents (SP.Web) | ✅ | ❌ | ❌ | ❌
+GetAllRules (SP.List) | ✅ | ❌ | ❌ | ❌
 GetAppBdcCatalog (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetAppBdcCatalogForAppInstance (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetAppDatabaseConnectionString (SP.AppInstance) | ✅ | ✅ | ✅ | ❌
@@ -482,10 +485,14 @@ SP_AppPrincipalIdentityProvider_External | ✅ | ✅ | ✅ | ✅
 <span title="SP_AppSiteContextUtility_GetAppSiteContextCollection">SP_AppSiteContextUtility_GetAppSiteContextCollecti...</span> (SP AppSiteContextUtility GetAppSiteContextCollection) | ✅ | ✅ | ❌ | ❌
 [SP_AppTileProperties_GetAppProperties](./Functions/SP_AppTileProperties_GetAppProperties.md) | ✅ | ✅ | ❌ | ❌
 SP_CurrencyList_GetList | ✅ | ✅ | ❌ | ❌
-[SP_FavoriteLists_AddFavoriteList](./Functions/SP_FavoriteLists_AddFavoriteList.md) | ✅ | ❌ | ❌ | ❌
-SP_FavoriteLists_GetFavoriteLists | ✅ | ❌ | ❌ | ❌
-[SP_FavoriteLists_GetIsListFavorite](./Functions/SP_FavoriteLists_GetIsListFavorite.md) | ✅ | ❌ | ❌ | ❌
-[SP_FavoriteLists_RemoveFavoriteList](./Functions/SP_FavoriteLists_RemoveFavoriteList.md) | ✅ | ❌ | ❌ | ❌
+[SP_FavoriteListsDeprecated_AddFavoriteList](./Functions/SP_FavoriteListsDeprecated_AddFavoriteList.md) | ✅ | ❌ | ❌ | ❌
+SP_FavoriteListsDeprecated_GetFavoriteLists | ✅ | ❌ | ❌ | ❌
+[SP_FavoriteListsDeprecated_GetIsListFavorite](./Functions/SP_FavoriteListsDeprecated_GetIsListFavorite.md) | ✅ | ❌ | ❌ | ❌
+[SP_FavoriteListsDeprecated_RemoveFavoriteList](./Functions/SP_FavoriteListsDeprecated_RemoveFavoriteList.md) | ✅ | ❌ | ❌ | ❌
+[SP_FavoriteLists_AddList](./Functions/SP_FavoriteLists_AddList.md) | ✅ | ❌ | ❌ | ❌
+[SP_FavoriteLists_GetListsBy](./Functions/SP_FavoriteLists_GetListsBy.md) | ✅ | ❌ | ❌ | ❌
+[SP_FavoriteLists_RemoveList](./Functions/SP_FavoriteLists_RemoveList.md) | ✅ | ❌ | ❌ | ❌
+[SP_FavoriteLists_UpdateList](./Functions/SP_FavoriteLists_UpdateList.md) | ✅ | ❌ | ❌ | ❌
 [SP_File_GetContentVerFromTag](./Functions/SP_File_GetContentVerFromTag.md) | ✅ | ✅ | ✅ | ✅
 [SP_HashtagStoreManager_CallOLS](./Functions/SP_HashtagStoreManager_CallOLS.md) | ✅ | ✅ | ❌ | ❌
 [SP_HashtagStoreManager_GetBlockedHashtags](./Functions/SP_HashtagStoreManager_GetBlockedHashtags.md) | ✅ | ✅ | ❌ | ❌
@@ -520,6 +527,7 @@ SP_OrganizationNews | ✅ | ❌ | ❌ | ❌
 [SP_RecentListCollection_GetRecentLists](./Functions/SP_RecentListCollection_GetRecentLists.md) | ✅ | ❌ | ❌ | ❌
 [<span title="SP_RecentListCollection_GetRecentListsWithPageContextInfo">SP_RecentListCollection_GetRecentListsWithPageCont...</span> (SP RecentListCollection GetRecentListsWithPageContextInfo)](./Functions/SP_RecentListCollection_GetRecentListsWithPageContextInfo.md) | ✅ | ❌ | ❌ | ❌
 [SP_RecentListCollection_UpdateRecentLists](./Functions/SP_RecentListCollection_UpdateRecentLists.md) | ✅ | ❌ | ❌ | ❌
+[SP_RecentListCollection_UpdateRecentListsRemote](./Functions/SP_RecentListCollection_UpdateRecentListsRemote.md) | ✅ | ❌ | ❌ | ❌
 [SP_RelatedItemManager_AddSingleLink](./Functions/SP_RelatedItemManager_AddSingleLink.md) | ✅ | ✅ | ✅ | ✅
 [SP_RelatedItemManager_AddSingleLinkFromUrl](./Functions/SP_RelatedItemManager_AddSingleLinkFromUrl.md) | ✅ | ✅ | ✅ | ✅
 [SP_RelatedItemManager_AddSingleLinkToUrl](./Functions/SP_RelatedItemManager_AddSingleLinkToUrl.md) | ✅ | ✅ | ✅ | ✅
@@ -705,6 +713,7 @@ UpdateAlert (SP.Alert) | ✅ | ✅ | ❌ | ❌
 UpdateEx (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 UpdateHashtags (SP.ListItem) | ✅ | ✅ | ❌ | ❌
 UpdateOverwriteVersion (SP.ListItem) | ✅ | ✅ | ❌ | ❌
+UpdateRule (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateVirusInfo (SP.File) | ✅ | ✅ | ❌ | ❌
 Upgrade (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
 UploadImage (SP.Web) | ✅ | ❌ | ❌ | ❌

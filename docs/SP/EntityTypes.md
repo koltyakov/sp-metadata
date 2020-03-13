@@ -49,6 +49,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [EffectiveInformationRightsManagementSettings](./EntityTypes/EffectiveInformationRightsManagementSettings.md) | ✅ | ✅ | ✅ | ❌
 [EventReceiverDefinition](./EntityTypes/EventReceiverDefinition.md) | ✅ | ✅ | ✅ | ✅
 [FavoriteLists](./EntityTypes/FavoriteLists.md) | ✅ | ❌ | ❌ | ❌
+[FavoriteListsDeprecated](./EntityTypes/FavoriteListsDeprecated.md) | ✅ | ❌ | ❌ | ❌
 [Feature](./EntityTypes/Feature.md) | ✅ | ✅ | ✅ | ✅
 [Field](./EntityTypes/Field.md) | ✅ | ✅ | ✅ | ✅
 [FieldCalculated](./EntityTypes/FieldCalculated.md) | ✅ | ✅ | ✅ | ✅

@@ -96,8 +96,10 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPHSiteReference](./ComplexTypes/SPHSiteReference.md) | ✅ | ❌ | ❌ | ❌
 [SPImageItem](./ComplexTypes/SPImageItem.md) | ✅ | ❌ | ❌ | ❌
 [SPInvitationCreationResult](./ComplexTypes/SPInvitationCreationResult.md) | ✅ | ✅ | ✅ | ❌
+[SPListRule](./ComplexTypes/SPListRule.md) | ✅ | ❌ | ❌ | ❌
 [SPMoveAndShareFileInfo](./ComplexTypes/SPMoveAndShareFileInfo.md) | ✅ | ❌ | ❌ | ❌
 [ScriptSafeDomainEntityData](./ComplexTypes/ScriptSafeDomainEntityData.md) | ✅ | ✅ | ❌ | ❌
+[SensitivityLabelInfo](./ComplexTypes/SensitivityLabelInfo.md) | ✅ | ❌ | ❌ | ❌
 [SharedWithUser](./ComplexTypes/SharedWithUser.md) | ✅ | ✅ | ❌ | ❌
 [SharedWithUserCollection](./ComplexTypes/SharedWithUserCollection.md) | ✅ | ✅ | ❌ | ❌
 [SharingLinkData](./ComplexTypes/SharingLinkData.md) | ✅ | ✅ | ❌ | ❌

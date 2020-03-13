@@ -11,6 +11,7 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 cdnType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+defaultOriginAdded (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 libUrl (SP.ResourcePath) | ✅ | ❌ | ❌ | ❌
 orgAssetType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 thumbnailUrl (SP.ResourcePath) | ✅ | ❌ | ❌ | ❌

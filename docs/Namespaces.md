@@ -43,6 +43,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.SharePoint.Internal](./Microsoft.SharePoint.Internal) | ✅ | ✅ | ❌ | ❌
 [Microsoft.SharePoint.Internal.ClientSideComponent](./Microsoft.SharePoint.Internal.ClientSideComponent) | ✅ | ✅ | ❌ | ❌
 [Microsoft.SharePoint.Likes](./Microsoft.SharePoint.Likes) | ✅ | ✅ | ❌ | ❌
+[Microsoft.SharePoint.ListHome](./Microsoft.SharePoint.ListHome) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Marketplace](./Microsoft.SharePoint.Marketplace) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Marketplace.CorporateCuratedGallery](./Microsoft.SharePoint.Marketplace.CorporateCuratedGallery) | ✅ | ✅ | ❌ | ❌
 [Microsoft.SharePoint.Navigation.REST](./Microsoft.SharePoint.Navigation.REST) | ✅ | ✅ | ✅ | ✅
