@@ -518,6 +518,12 @@
         <Property Name="BypassQuotaCheck" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BypassSharedLock" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="SPListRule">
+        <Property Name="Condition" Type="Edm.String" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Outcome" Type="Edm.String" />
+        <Property Name="Title" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="MachineLearningSampleMeta">
         <Property Name="ExtractedText" Type="Edm.String" />
       </ComplexType>
@@ -745,6 +751,10 @@
         <Property Name="Name" Type="Edm.String" />
         <Property Name="Order" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="SensitivityLabelInfo">
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="UpgradeInfo">
         <Property Name="ErrorFile" Type="Edm.String" />
         <Property Name="Errors" Type="Edm.Int32" Nullable="false" />
@@ -971,6 +981,7 @@
         <Property Name="SandboxedCodeActivationCapability" Type="Edm.Int32" Nullable="false" />
         <Property Name="SearchBoxInNavBar" Type="Edm.Int32" Nullable="false" />
         <Property Name="SearchBoxPlaceholderText" Type="Edm.String" />
+        <Property Name="SensitivityLabelInfo" Type="SP.SensitivityLabelInfo" />
         <Property Name="ServerRelativePath" Type="SP.ResourcePath" />
         <Property Name="ServerRelativeUrl" Type="Edm.String" />
         <Property Name="ShareByEmailEnabled" Type="Edm.Boolean" Nullable="false" />
@@ -1666,6 +1677,7 @@
         <Property Name="MegaMenuEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MembersCanShare" Type="Edm.Boolean" Nullable="false" />
         <Property Name="NavAudienceTargetingEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="NextStepsFirstRunEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="NoCrawl" Type="Edm.Boolean" Nullable="false" />
         <Property Name="NotificationsInOneDriveForBusinessEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="NotificationsInSharePointEnabled" Type="Edm.Boolean" Nullable="false" />
@@ -2025,6 +2037,12 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
+      <EntityType Name="FavoriteLists" Abstract="true">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="KnowledgeHub">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
@@ -2084,7 +2102,7 @@
         <Property Name="Uri" Type="Edm.String" Nullable="false" />
         <Property Name="UrlZone" Type="Edm.Int32" Nullable="false" />
       </EntityType>
-      <EntityType Name="FavoriteLists" Abstract="true">
+      <EntityType Name="FavoriteListsDeprecated" Abstract="true">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
@@ -3579,6 +3597,8 @@
         <EntitySet Name="MoveJobEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.MoveJobEntityData" />
         <EntitySet Name="MultiGeoApiVersionss" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoApiVersions" />
         <EntitySet Name="MultiGeoServicesBetas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
+        <EntitySet Name="OrgRelationNotifications" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationNotification" />
+        <EntitySet Name="OrgRelationVerifications" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationVerification" />
         <EntitySet Name="StorageQuotas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota" />
         <EntitySet Name="StorageQuotaEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuotaEntityData" />
         <EntitySet Name="TaxonomyReplicationParameterss" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.TaxonomyReplicationParameters" />
@@ -3621,6 +3641,8 @@
         <EntitySet Name="ActivityExtensionss" EntityType="Microsoft.SharePoint.Activities.ActivityExtensions" />
         <EntitySet Name="SPActivityEntitys" EntityType="Microsoft.SharePoint.Activities.SPActivityEntity" />
         <EntitySet Name="MountServices" EntityType="Microsoft.SharePoint.AddToOneDrive.MountService" />
+        <EntitySet Name="PlacesEntitys" EntityType="Microsoft.SharePoint.AddToOneDrive.PlacesEntity" />
+        <EntitySet Name="placesInformations" EntityType="Microsoft.SharePoint.AddToOneDrive.placesInformation" />
         <EntitySet Name="FeatureDefinitions" EntityType="Microsoft.SharePoint.Administration.FeatureDefinition" />
         <EntitySet Name="SPAnalyticsUsageServices" EntityType="Microsoft.SharePoint.Administration.SPAnalyticsUsageService" />
         <EntitySet Name="SPAppStateQueryJobDefinitions" EntityType="Microsoft.SharePoint.Administration.SPAppStateQueryJobDefinition" />
@@ -3821,6 +3843,7 @@
         <EntitySet Name="EffectiveInformationRightsManagementSettingss" EntityType="SP.EffectiveInformationRightsManagementSettings" />
         <EntitySet Name="EventReceiverDefinitions" EntityType="SP.EventReceiverDefinition" />
         <EntitySet Name="FavoriteListss" EntityType="SP.FavoriteLists" />
+        <EntitySet Name="FavoriteListsDeprecateds" EntityType="SP.FavoriteListsDeprecated" />
         <EntitySet Name="Features" EntityType="SP.Feature" />
         <EntitySet Name="Fields" EntityType="SP.Field" />
         <EntitySet Name="FieldLinks" EntityType="SP.FieldLink" />
@@ -5073,6 +5096,14 @@
         <FunctionImport Name="GeoMoveCompatibilityChecks" ReturnType="Collection(Microsoft.Online.SharePoint.MultiGeo.Service.GeoMoveTenantCompatibilityCheck)" IsComposable="true" IsBindable="true" EntitySet="GeoMoveTenantCompatibilityChecks">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
         </FunctionImport>
+        <FunctionImport Name="OrgRelationNotification" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationNotification" IsComposable="true" IsBindable="true" EntitySet="OrgRelationNotifications">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
+          <Parameter Name="encodedNotificationQuery" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="OrgRelationVerification" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationVerification" IsComposable="true" IsBindable="true" EntitySet="OrgRelationVerifications">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
+          <Parameter Name="encodedVerificationQuery" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="UserPersonalSiteId" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.UserPersonalSiteId" IsComposable="true" IsBindable="true" EntitySet="UserPersonalSiteIds">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
           <Parameter Name="userPrincipalName" Type="Edm.String" />
@@ -5080,6 +5111,12 @@
         <FunctionImport Name="UserPersonalSiteLocation" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.UserPersonalSiteLocation" IsComposable="true" IsBindable="true" EntitySet="UserPersonalSiteLocations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
           <Parameter Name="userPrincipalName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_OrgRelationNotification" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationNotification" IsComposable="true" EntitySet="OrgRelationNotifications">
+          <Parameter Name="encodedNotificationQuery" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_OrgRelationVerification" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationVerification" IsComposable="true" EntitySet="OrgRelationVerifications">
+          <Parameter Name="encodedVerificationQuery" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="GetByUrl" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob" IsComposable="true" IsBindable="true" EntitySet="SiteMoveJobEntityDatas">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob)" />
@@ -8866,6 +8903,21 @@
           <Parameter Name="Overwrite" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="Url" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="SP_FavoriteLists_AddList">
+          <Parameter Name="favoriteList" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
+        </FunctionImport>
+        <FunctionImport Name="SP_FavoriteLists_GetListsBy" ReturnType="Collection(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
+          <Parameter Name="siteId" Type="Edm.String" />
+          <Parameter Name="listId" Type="Edm.String" />
+          <Parameter Name="page" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_FavoriteLists_RemoveList">
+          <Parameter Name="siteId" Type="Edm.String" />
+          <Parameter Name="listId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_FavoriteLists_UpdateList">
+          <Parameter Name="favoriteList" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
+        </FunctionImport>
         <FunctionImport Name="SP_KnowledgeHub" ReturnType="SP.KnowledgeHub" IsComposable="true" EntitySet="KnowledgeHubs" />
         <FunctionImport Name="SiteReference" ReturnType="SP.KnowledgeHubSiteReference" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.KnowledgeHub" />
@@ -9124,10 +9176,23 @@
           <Parameter Name="appViewCreationInfo" Type="SP.AppViewCreationInfo" />
           <Parameter Name="visualizationTarget" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="CreateRule" ReturnType="Edm.Guid" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="condition" Type="Edm.String" />
+          <Parameter Name="outcome" Type="Edm.String" />
+          <Parameter Name="title" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="DeleteObject" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
         </FunctionImport>
+        <FunctionImport Name="DeleteRule" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="ruleId" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="EnsureSignoffStatusField" ReturnType="SP.Field" IsBindable="true" EntitySet="Fields">
+          <Parameter Name="this" Type="SP.List" />
+        </FunctionImport>
+        <FunctionImport Name="GetAllRules" ReturnType="Collection(SP.SPListRule)" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
         </FunctionImport>
         <FunctionImport Name="GetBloomFilter" ReturnType="SP.ListBloomFilter" IsBindable="true" EntitySet="ListBloomFilters">
@@ -9555,6 +9620,13 @@
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
         </FunctionImport>
+        <FunctionImport Name="UpdateRule" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="ruleId" Type="Edm.String" />
+          <Parameter Name="condition" Type="Edm.String" />
+          <Parameter Name="outcome" Type="Edm.String" />
+          <Parameter Name="title" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="ValidateAppName" ReturnType="SP.VisualizationAppSynchronizationResult" IsBindable="true" EntitySet="VisualizationAppSynchronizationResults">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="appDisplayName" Type="Edm.String" />
@@ -9707,16 +9779,16 @@
           <Parameter Name="bNewDocumentUpdate" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="checkInComment" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="SP_FavoriteLists_AddFavoriteList">
+        <FunctionImport Name="SP_FavoriteListsDeprecated_AddFavoriteList">
           <Parameter Name="listId" Type="Edm.String" />
           <Parameter Name="listTitle" Type="Edm.String" />
           <Parameter Name="listUrl" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="SP_FavoriteLists_GetFavoriteLists" ReturnType="Edm.String" />
-        <FunctionImport Name="SP_FavoriteLists_GetIsListFavorite" ReturnType="Edm.Boolean">
+        <FunctionImport Name="SP_FavoriteListsDeprecated_GetFavoriteLists" ReturnType="Edm.String" />
+        <FunctionImport Name="SP_FavoriteListsDeprecated_GetIsListFavorite" ReturnType="Edm.Boolean">
           <Parameter Name="listId" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="SP_FavoriteLists_RemoveFavoriteList" ReturnType="Edm.Boolean">
+        <FunctionImport Name="SP_FavoriteListsDeprecated_RemoveFavoriteList" ReturnType="Edm.Boolean">
           <Parameter Name="listId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_ListHomeItemCollection_GetListHomeItems" ReturnType="Edm.Stream" IsSideEffecting="false">
@@ -9740,6 +9812,9 @@
           <Parameter Name="sortBy" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_RecentListCollection_UpdateRecentLists">
+          <Parameter Name="recentListsJson" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_RecentListCollection_UpdateRecentListsRemote">
           <Parameter Name="recentListsJson" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_RelatedItemManager_AddSingleLink">
@@ -12290,6 +12365,7 @@
           <Parameter Name="libUrl" Type="SP.ResourcePath" />
           <Parameter Name="thumbnailUrl" Type="SP.ResourcePath" />
           <Parameter Name="orgAssetType" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="defaultOriginAdded" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="CreateTenantCdnDefaultOrigins" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantManagement.Office365Tenant" />
@@ -13320,6 +13396,10 @@
         <AssociationSet Name="Microsoft_Online_SharePoint_TenantManagement_GetExternalUsersResults_ExternalUserCollection_Microsoft_Online_SharePoint_TenantManagement_ExternalUser_ExternalUserCollectionPartnerSet" Association="Microsoft.Online.SharePoint.TenantManagement.Microsoft_Online_SharePoint_TenantManagement_GetExternalUsersResults_ExternalUserCollection_Microsoft_Online_SharePoint_TenantManagement_ExternalUser_ExternalUserCollectionPartner">
           <End Role="ExternalUserCollectionPartner" EntitySet="GetExternalUsersResultss" />
           <End Role="ExternalUserCollection" EntitySet="ExternalUsers" />
+        </AssociationSet>
+        <AssociationSet Name="Microsoft_SharePoint_AddToOneDrive_placesInformation_places_Microsoft_SharePoint_AddToOneDrive_PlacesEntity_placesPartnerSet" Association="Microsoft.SharePoint.AddToOneDrive.Microsoft_SharePoint_AddToOneDrive_placesInformation_places_Microsoft_SharePoint_AddToOneDrive_PlacesEntity_placesPartner">
+          <End Role="placesPartner" EntitySet="placesInformations" />
+          <End Role="places" EntitySet="PlacesEntitys" />
         </AssociationSet>
         <AssociationSet Name="Microsoft_SharePoint_Administration_SPFarm_Local_Microsoft_SharePoint_Administration_SPFarm_LocalPartnerSet" Association="Microsoft.SharePoint.Administration.Microsoft_SharePoint_Administration_SPFarm_Local_Microsoft_SharePoint_Administration_SPFarm_LocalPartner">
           <End Role="LocalPartner" EntitySet="SPFarms" />
@@ -15047,6 +15127,12 @@
       <Annotations Target="Microsoft.SharePoint.QuickActionMessageCard.SPAccessRequestRefreshStatus">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.ListHome.ListHomeItem">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.ListHome.FavoriteListHomeItem">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Internal.AppRenderInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -15072,6 +15158,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Administration.OrgAssets">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.AddToOneDrive.PlacesUserEntity">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.CountByDate">
@@ -15342,6 +15431,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.RenderListDataParameters/ReplaceGroup">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.SensitivityLabelInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.VisualizationAppInfo">
@@ -16136,6 +16228,9 @@
       <Annotations Target="SP.Web/MultilingualSettings">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Web/NextStepsFirstRunEnabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Sharing.SharedDocumentInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16338,6 +16433,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Site/SearchBoxPlaceholderText">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Site/SensitivityLabelInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Site/ServerRelativePath">
@@ -16812,6 +16910,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.AddToOneDrive.MountService">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.AddToOneDrive.PlacesEntity">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.AddToOneDrive.placesInformation">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ListHomeItem">
@@ -18221,6 +18325,18 @@
       <Annotations Target="SP.ApiData/Upload(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_FavoriteLists_AddList(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_FavoriteLists_GetListsBy(Edm.String, Edm.String, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_FavoriteLists_RemoveList(Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_FavoriteLists_UpdateList(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_Internal_FlowPermissions_GetFlowPermissionLevelOnList(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18293,6 +18409,15 @@
       <Annotations Target="SP.ApiData/CreateMappedView(SP.List, SP.AppViewCreationInfo, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/CreateRule(SP.List, Edm.String, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/DeleteRule(SP.List, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetAllRules(SP.List)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetBloomFilter(SP.List, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18333,6 +18458,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/UnpublishMappedView(SP.List, Edm.Guid, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/UpdateRule(SP.List, Edm.String, Edm.String, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/ValidateAppName(SP.List, Edm.String)">
@@ -18377,16 +18505,16 @@
       <Annotations Target="SP.ApiData/UpdateHashtags(SP.ListItem, Collection(SP.Hashtag), Collection(SP.Hashtag))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_FavoriteLists_AddFavoriteList(Edm.String, Edm.String, Edm.String)">
+      <Annotations Target="SP.ApiData/SP_FavoriteListsDeprecated_AddFavoriteList(Edm.String, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_FavoriteLists_GetFavoriteLists()">
+      <Annotations Target="SP.ApiData/SP_FavoriteListsDeprecated_GetFavoriteLists()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_FavoriteLists_GetIsListFavorite(Edm.String)">
+      <Annotations Target="SP.ApiData/SP_FavoriteListsDeprecated_GetIsListFavorite(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_FavoriteLists_RemoveFavoriteList(Edm.String)">
+      <Annotations Target="SP.ApiData/SP_FavoriteListsDeprecated_RemoveFavoriteList(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_ListHomeItemCollection_GetListHomeItems(Edm.Int32)">
@@ -18411,6 +18539,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_RecentListCollection_UpdateRecentLists(Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_RecentListCollection_UpdateRecentListsRemote(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_AppTileProperties_GetAppProperties(Edm.Guid, Edm.Int32, Edm.Guid, Edm.Int32, Edm.String, Edm.String, Edm.Boolean)">
@@ -19503,6 +19634,19 @@
         <Property Name="LastModified" Type="Edm.DateTime" Nullable="false" />
         <Property Name="StartedDateInUtc" Type="Edm.DateTime" Nullable="false" />
         <Property Name="StateName" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="OrgRelationNotification">
+        <Key>
+          <PropertyRef Name="NotificationSucceeded" />
+        </Key>
+        <Property Name="NotificationSucceeded" Type="Edm.Boolean" Nullable="false" />
+      </EntityType>
+      <EntityType Name="OrgRelationVerification">
+        <Key>
+          <PropertyRef Name="PartnerSiteSubscriptionId" />
+        </Key>
+        <Property Name="PartnerSiteSubscriptionId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Result" Type="Edm.String" />
       </EntityType>
       <EntityType Name="StorageQuotaEntityData">
         <Key>
@@ -23342,6 +23486,7 @@
         <Property Name="RoleIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="SpSiteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="SpWebId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="TenantInstanceId" Type="Edm.Guid" Nullable="false" />
       </ComplexType>
       <ComplexType Name="QueryRoutingInfo">
         <Property Name="QueryState" Type="Edm.Int32" Nullable="false" />
@@ -24266,6 +24411,17 @@
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
     </Schema>
+    <Schema Namespace="Microsoft.SharePoint.ListHome" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="ListHomeItem">
+        <Property Name="listId" Type="Edm.String" />
+        <Property Name="listUrl" Type="Edm.String" />
+        <Property Name="siteId" Type="Edm.String" />
+        <Property Name="title" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="FavoriteListHomeItem" BaseType="Microsoft.SharePoint.ListHome.ListHomeItem">
+        <Property Name="favoritesOrder" Type="Edm.Single" />
+      </ComplexType>
+    </Schema>
     <Schema Namespace="SP.Internal" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="AppRenderInfo">
         <Property Name="BackgroundColor" Type="Edm.String" />
@@ -24504,13 +24660,19 @@
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.AddToOneDrive" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="GetRemoteItemInfoRequest">
-        <Property Name="EnforceRemoteItemRestrictions" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsCreateMountPointFlow" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RemoteItemListId" Type="Edm.Guid" Nullable="false" />
         <Property Name="RemoteItemSiteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="RemoteItemSiteUrl" Type="Edm.String" />
         <Property Name="RemoteItemUniqueIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="RemoteItemWebId" Type="Edm.Guid" Nullable="false" />
         <Property Name="UserEmail" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="PlacesUserEntity">
+        <Property Name="email" Type="Edm.String" />
+        <Property Name="id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="loginName" Type="Edm.String" />
+        <Property Name="name" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="UpdateMountPointsRequest">
         <Property Name="MountPointUniqueIds" Type="Collection(Edm.Guid)" Nullable="false" />
@@ -24521,6 +24683,26 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
+      <EntityType Name="PlacesEntity">
+        <Key>
+          <PropertyRef Name="actionDate" />
+        </Key>
+        <Property Name="actionDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="userEntity" Type="Microsoft.SharePoint.AddToOneDrive.PlacesUserEntity" />
+      </EntityType>
+      <EntityType Name="placesInformation">
+        <Key>
+          <PropertyRef Name="inCallersDrive" />
+        </Key>
+        <Property Name="inCallersDrive" Type="Edm.String" Nullable="false" />
+        <Property Name="placesCount" Type="Edm.String" />
+        <Property Name="itemSourcePath" Type="Edm.String" />
+        <NavigationProperty Name="places" Relationship="Microsoft.SharePoint.AddToOneDrive.Microsoft_SharePoint_AddToOneDrive_placesInformation_places_Microsoft_SharePoint_AddToOneDrive_PlacesEntity_placesPartner" ToRole="places" FromRole="placesPartner" />
+      </EntityType>
+      <Association Name="Microsoft_SharePoint_AddToOneDrive_placesInformation_places_Microsoft_SharePoint_AddToOneDrive_PlacesEntity_placesPartner">
+        <End Type="Microsoft.SharePoint.AddToOneDrive.PlacesEntity" Role="places" Multiplicity="*" />
+        <End Type="Microsoft.SharePoint.AddToOneDrive.placesInformation" Role="placesPartner" Multiplicity="0..1" />
+      </Association>
     </Schema>
     <Schema Namespace="SP.Sharing" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="Principal">
