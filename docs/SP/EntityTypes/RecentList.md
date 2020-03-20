@@ -13,6 +13,7 @@ createdDate (Edm.String) | ✅ | ❌ | ❌ | ❌
 icon (Edm.String) | ✅ | ❌ | ❌ | ❌
 lastModifiedDate (Edm.String) | ✅ | ❌ | ❌ | ❌
 lastViewDate (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+lastviewDateTime (Edm.String) | ✅ | ❌ | ❌ | ❌
 listId (Edm.String) | ✅ | ❌ | ❌ | ❌
 listTitle (Edm.String) | ✅ | ❌ | ❌ | ❌
 listUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

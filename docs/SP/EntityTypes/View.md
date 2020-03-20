@@ -49,6 +49,7 @@ ViewJoins (Edm.String) | ✅ | ✅ | ✅ | ✅
 ViewProjectedFields (Edm.String) | ✅ | ✅ | ✅ | ✅
 ViewQuery (Edm.String) | ✅ | ✅ | ✅ | ✅
 ViewType (Edm.String) | ✅ | ✅ | ✅ | ✅
+ViewType2 (Edm.String) | ✅ | ❌ | ❌ | ❌
 VisualizationInfo (SP.Visualization) | ✅ | ✅ | ❌ | ❌
 
 ### Navigation Properties

@@ -68,6 +68,7 @@ IsUnmanagedSyncClientForTenantRestricted (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsUnmanagedSyncClientRestrictionFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LegacyAuthProtocolsEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LimitedAccessFileType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+MachineLearningCaptureEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ManagedPathsForSiteCreation (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 MarkNewFilesSensitiveByDefault (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MobileFriendlyUrlEnabledInTenant (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

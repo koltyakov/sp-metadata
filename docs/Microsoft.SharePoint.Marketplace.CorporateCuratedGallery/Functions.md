@@ -12,6 +12,7 @@ GetAppById (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorpo
 GetByAbsoluteUrl (Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem)) | ❌ | ✅ | ❌ | ❌
 GetById (Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata)) | ✅ | ✅ | ❌ | ❌
 Install (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata) | ✅ | ✅ | ❌ | ❌
+IsAppUpgradeAvailable (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ❌ | ❌ | ❌
 Remove (Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem)) | ✅ | ✅ | ❌ | ❌
 Remove (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata) | ✅ | ✅ | ❌ | ❌
 RemoveById (Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem)) | ✅ | ✅ | ❌ | ❌

@@ -13,3 +13,4 @@ RemoteItemSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 RemoteItemUniqueIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 RemoteItemWebId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 UserEmail (Edm.String) | ✅ | ❌ | ❌ | ❌
+UserLoginName (Edm.String) | ✅ | ❌ | ❌ | ❌

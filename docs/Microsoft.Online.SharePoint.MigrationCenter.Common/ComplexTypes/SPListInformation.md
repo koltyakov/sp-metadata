@@ -13,6 +13,7 @@ FolderInfoList (Collection(Microsoft.Online.SharePoint.MigrationCenter.Common.SP
 ID (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 IsListPathUsedAsTitle (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMySiteDocumentLibrary (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+IsQueryFoldersThrottled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsSpecifiedOrDefault (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 ShowWarning (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

@@ -16,9 +16,9 @@ Message (Edm.String) | ✅ | ❌ | ❌ | ❌
 OriginalUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 ProcessingMilliseconds (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SPListInfoList (Collection(Microsoft.Online.SharePoint.MigrationCenter.Common.SPListInformation)) | ✅ | ❌ | ❌ | ❌
+ServerUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 SiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 SiteServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
-SiteServerUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 SiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 Success (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 WebId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

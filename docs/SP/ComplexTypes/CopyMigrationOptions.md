@@ -9,6 +9,7 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 AllowSchemaMismatch (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 AllowSmallerVersionLimitOnDestination (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 BypassSharedLock (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ClientEtags (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 IgnoreVersionHistory (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 IncludeItemPermissions (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMoveMode (Edm.Boolean) | ✅ | ✅ | ❌ | ❌

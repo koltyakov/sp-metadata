@@ -14,3 +14,5 @@ TargetCompanyId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 TargetInstanceId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 TargetSiteSubscriptionId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 TargetSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+TenantMergeSourceMySiteHostUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+TenantMergeTargetMySiteHostUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
