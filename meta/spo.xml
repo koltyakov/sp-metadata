@@ -318,6 +318,7 @@
         <Property Name="AllowSchemaMismatch" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowSmallerVersionLimitOnDestination" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BypassSharedLock" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ClientEtags" Type="Collection(Edm.String)" />
         <Property Name="IgnoreVersionHistory" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IncludeItemPermissions" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsMoveMode" Type="Edm.Boolean" Nullable="false" />
@@ -1587,6 +1588,7 @@
         <Property Name="ToolbarTemplateName" Type="Edm.String" />
         <Property Name="ViewType" Type="Edm.String" />
         <Property Name="ViewData" Type="Edm.String" />
+        <Property Name="ViewType2" Type="Edm.String" />
         <Property Name="VisualizationInfo" Type="SP.Visualization" />
         <NavigationProperty Name="ViewFields" Relationship="SP.SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartner" ToRole="ViewFields" FromRole="ViewFieldsPartner" />
       </EntityType>
@@ -2284,6 +2286,7 @@
         <Property Name="icon" Type="Edm.String" />
         <Property Name="lastModifiedDate" Type="Edm.String" />
         <Property Name="lastViewDate" Type="Edm.Int32" Nullable="false" />
+        <Property Name="lastviewDateTime" Type="Edm.String" />
         <Property Name="listId" Type="Edm.String" />
         <Property Name="listTitle" Type="Edm.String" />
         <Property Name="listUrl" Type="Edm.String" />
@@ -8893,6 +8896,10 @@
           <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
           <Parameter Name="itemUniqueId" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="IsAppUpgradeAvailable" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.AppUpgradeAvailability" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
+          <Parameter Name="id" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="SyncSolutionToTeams" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
           <Parameter Name="id" Type="Edm.Int32" Nullable="false" />
@@ -12871,6 +12878,16 @@
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MigrationCenter.Service.Device" />
         </FunctionImport>
+        <FunctionImport Name="BatchCreate" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Common.BatchCreationResult" IsBindable="true">
+          <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask)" />
+          <Parameter Name="taskDefinitions" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskDefinition)" />
+          <Parameter Name="taskSettings" Type="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskSettings" />
+        </FunctionImport>
+        <FunctionImport Name="BatchDelete" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Common.BatchDeletionResult" IsBindable="true">
+          <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask)" />
+          <Parameter Name="taskIdList" Type="Collection(Edm.Guid)" Nullable="false" />
+          <Parameter Name="deleteInProgressTask" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="GetById" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask" IsComposable="true" IsBindable="true" EntitySet="MigrationTaskEntityDatas">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask)" />
           <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
@@ -15127,6 +15144,15 @@
       <Annotations Target="Microsoft.SharePoint.QuickActionMessageCard.SPAccessRequestRefreshStatus">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.AppUpgradeAvailability">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.AppUpgradeAvailability/AssetId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.AppUpgradeAvailability/IsUpgradeAvailable">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.ListHome.ListHomeItem">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -15314,6 +15340,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.CopyMigrationOptions/BypassSharedLock">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.CopyMigrationOptions/ClientEtags">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.CopyMigrationOptions/IncludeItemPermissions">
@@ -15941,6 +15970,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobEntityData/TargetSiteSubscriptionId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobEntityData/TenantMergeSourceMySiteHostUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobEntityData/TenantMergeTargetMySiteHostUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.UserProfiles.PersonalCache">
@@ -18319,6 +18354,9 @@
       <Annotations Target="SP.ApiData/GetAppById(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/IsAppUpgradeAvailable(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SyncSolutionToTeams(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19063,6 +19101,12 @@
       <Annotations Target="SP.ApiData/Update(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/BatchCreate(Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask), Collection(Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskDefinition), Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskSettings)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/BatchDelete(Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask), Collection(Edm.Guid), Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.GenerateEntitySetProperties" Bool="false" />
       </Annotations>
@@ -19422,6 +19466,8 @@
         <Property Name="TargetInstanceId" Type="Edm.Guid" Nullable="false" />
         <Property Name="TargetSiteSubscriptionId" Type="Edm.Guid" Nullable="false" />
         <Property Name="TargetSiteUrl" Type="Edm.String" />
+        <Property Name="TenantMergeSourceMySiteHostUrl" Type="Edm.String" />
+        <Property Name="TenantMergeTargetMySiteHostUrl" Type="Edm.String" />
       </EntityType>
       <EntityType Name="CrossFarmSiteMoveJobEntityData" BaseType="Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobEntityData">
         <Property Name="TextPayload" Type="Edm.String" />
@@ -24411,6 +24457,91 @@
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
     </Schema>
+    <Schema Namespace="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="AppUpgradeAvailability">
+        <Property Name="AssetId" Type="Edm.String" />
+        <Property Name="IsUpgradeAvailable" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
+      <EntityType Name="SiteCollectionCorporateCatalogAccessor">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+        <NavigationProperty Name="AvailableApps" Relationship="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_SiteCollectionCorporateCatalogAccessor_AvailableApps_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_AvailableAppsPartner" ToRole="AvailableApps" FromRole="AvailableAppsPartner" />
+      </EntityType>
+      <EntityType Name="CorporateCatalogAppMetadata">
+        <Key>
+          <PropertyRef Name="AadAppId" />
+        </Key>
+        <Property Name="AadAppId" Type="Edm.String" Nullable="false" />
+        <Property Name="AadPermissions" Type="Edm.String" />
+        <Property Name="AppCatalogVersion" Type="Edm.String" />
+        <Property Name="CanUpgrade" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="CDNLocation" Type="Edm.String" />
+        <Property Name="ContainsTenantWideExtension" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="CurrentVersionDeployed" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Deployed" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ErrorMessage" Type="Edm.String" />
+        <Property Name="ID" Type="Edm.String" />
+        <Property Name="InstalledVersion" Type="Edm.String" />
+        <Property Name="IsClientSideSolution" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsPackageDefaultSkipFeatureDeployment" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsValidAppPackage" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ProductId" Type="Edm.String" />
+        <Property Name="ShortDescription" Type="Edm.String" />
+        <Property Name="SkipDeploymentFeature" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ThumbnailUrl" Type="Edm.String" />
+        <Property Name="Title" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="TenantCorporateCatalogAccessor">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+        <NavigationProperty Name="AvailableApps" Relationship="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_AvailableApps_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_AvailableAppsPartner" ToRole="AvailableApps" FromRole="AvailableAppsPartner" />
+        <NavigationProperty Name="SiteCollectionAppCatalogsSites" Relationship="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_SiteCollectionAppCatalogsSites_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_SiteCollectionAppCatalogAllowedItem_SiteCollectionAppCatalogsSitesPartner" ToRole="SiteCollectionAppCatalogsSites" FromRole="SiteCollectionAppCatalogsSitesPartner" />
+      </EntityType>
+      <EntityType Name="SiteCollectionAppCatalogAllowedItem">
+        <Key>
+          <PropertyRef Name="AbsoluteUrl" />
+        </Key>
+        <Property Name="AbsoluteUrl" Type="Edm.String" Nullable="false" />
+        <Property Name="SiteID" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+      <EntityType Name="SPCorporateCuratedGallerySettingsBase" Abstract="true">
+        <Key>
+          <PropertyRef Name="HostSiteFullUrl" />
+        </Key>
+        <Property Name="HostSiteFullUrl" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="SPCorporateCuratedGallerySettingsFactory">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <Association Name="SP_Web_SiteCollectionAppCatalog_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_SiteCollectionCorporateCatalogAccessor_SiteCollectionAppCatalogPartner">
+        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor" Role="SiteCollectionAppCatalog" Multiplicity="0..1" />
+        <End Type="SP.Web" Role="SiteCollectionAppCatalogPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="SP_Web_TenantAppCatalog_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_TenantAppCatalogPartner">
+        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" Role="TenantAppCatalog" Multiplicity="0..1" />
+        <End Type="SP.Web" Role="TenantAppCatalogPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_SiteCollectionCorporateCatalogAccessor_AvailableApps_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_AvailableAppsPartner">
+        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata" Role="AvailableApps" Multiplicity="*" />
+        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor" Role="AvailableAppsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_AvailableApps_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_AvailableAppsPartner">
+        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata" Role="AvailableApps" Multiplicity="*" />
+        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" Role="AvailableAppsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_SiteCollectionAppCatalogsSites_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_SiteCollectionAppCatalogAllowedItem_SiteCollectionAppCatalogsSitesPartner">
+        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem" Role="SiteCollectionAppCatalogsSites" Multiplicity="*" />
+        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" Role="SiteCollectionAppCatalogsSitesPartner" Multiplicity="0..1" />
+      </Association>
+    </Schema>
     <Schema Namespace="Microsoft.SharePoint.ListHome" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="ListHomeItem">
         <Property Name="listId" Type="Edm.String" />
@@ -24667,6 +24798,7 @@
         <Property Name="RemoteItemUniqueIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="RemoteItemWebId" Type="Edm.Guid" Nullable="false" />
         <Property Name="UserEmail" Type="Edm.String" />
+        <Property Name="UserLoginName" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="PlacesUserEntity">
         <Property Name="email" Type="Edm.String" />
@@ -25945,6 +26077,7 @@
         <Property Name="IsUnmanagedSyncClientRestrictionFlightEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LegacyAuthProtocolsEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LimitedAccessFileType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ManagedPathsForSiteCreation" Type="Collection(Edm.String)" />
         <Property Name="MarkNewFilesSensitiveByDefault" Type="Edm.Int32" Nullable="false" />
         <Property Name="MobileFriendlyUrlEnabledInTenant" Type="Edm.Boolean" Nullable="false" />
@@ -26014,9 +26147,39 @@
       </Association>
     </Schema>
     <Schema Namespace="Microsoft.Online.SharePoint.MigrationCenter.Common" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="BatchCreationResult">
+        <Property Name="CreatedCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CreatedTaskIdList" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="ErrorCode" Type="Edm.String" />
+        <Property Name="ErrorMessage" Type="Edm.String" />
+        <Property Name="FieldError" Type="Edm.String" />
+        <Property Name="ProcessingMilliseconds" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TotalCount" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="BatchDeletionResult">
+        <Property Name="DeletedCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DeletedTaskIdList" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="ErrorCode" Type="Edm.String" />
+        <Property Name="ErrorMessage" Type="Edm.String" />
+        <Property Name="NotDeletedCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="NotDeletedTaskIdList" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="ProcessingMilliseconds" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="MigrationStorageSettings">
         <Property Name="EncryptedCertificate" Type="Edm.String" />
         <Property Name="EncryptionKey" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="MigrationTaskDefinition">
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="SourceListName" Type="Edm.String" />
+        <Property Name="SourceListRelativePath" Type="Edm.String" />
+        <Property Name="SourceUri" Type="Edm.String" />
+        <Property Name="SourceUserName" Type="Edm.String" />
+        <Property Name="TargetListName" Type="Edm.String" />
+        <Property Name="TargetListRelativePath" Type="Edm.String" />
+        <Property Name="TargetSiteUrl" Type="Edm.String" />
+        <Property Name="TargetUserName" Type="Edm.String" />
+        <Property Name="Type" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="MigrationTaskSettings">
         <Property Name="AzureActiveDirectoryLkp" Type="Edm.Boolean" Nullable="false" />
@@ -26061,6 +26224,7 @@
         <Property Name="ID" Type="Edm.Guid" Nullable="false" />
         <Property Name="IsListPathUsedAsTitle" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsMySiteDocumentLibrary" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsQueryFoldersThrottled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsSpecifiedOrDefault" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ServerRelativeUrl" Type="Edm.String" />
         <Property Name="ShowWarning" Type="Edm.Boolean" Nullable="false" />
@@ -26153,9 +26317,9 @@
         <Property Name="Message" Type="Edm.String" />
         <Property Name="OriginalUrl" Type="Edm.String" />
         <Property Name="ProcessingMilliseconds" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ServerUrl" Type="Edm.String" />
         <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="SiteServerRelativeUrl" Type="Edm.String" />
-        <Property Name="SiteServerUrl" Type="Edm.String" />
         <Property Name="SiteUrl" Type="Edm.String" />
         <Property Name="SPListInfoList" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Common.SPListInformation)" />
         <Property Name="Success" Type="Edm.Boolean" Nullable="false" />
@@ -26997,87 +27161,6 @@
         <End Type="Microsoft.SharePoint.Comments.comment" Role="likedByPartner" Multiplicity="0..1" />
       </Association>
     </Schema>
-    <Schema Namespace="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-      <EntityType Name="SiteCollectionCorporateCatalogAccessor">
-        <Key>
-          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
-        </Key>
-        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
-        <NavigationProperty Name="AvailableApps" Relationship="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_SiteCollectionCorporateCatalogAccessor_AvailableApps_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_AvailableAppsPartner" ToRole="AvailableApps" FromRole="AvailableAppsPartner" />
-      </EntityType>
-      <EntityType Name="CorporateCatalogAppMetadata">
-        <Key>
-          <PropertyRef Name="AadAppId" />
-        </Key>
-        <Property Name="AadAppId" Type="Edm.String" Nullable="false" />
-        <Property Name="AadPermissions" Type="Edm.String" />
-        <Property Name="AppCatalogVersion" Type="Edm.String" />
-        <Property Name="CanUpgrade" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="CDNLocation" Type="Edm.String" />
-        <Property Name="ContainsTenantWideExtension" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="CurrentVersionDeployed" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="Deployed" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="ErrorMessage" Type="Edm.String" />
-        <Property Name="ID" Type="Edm.String" />
-        <Property Name="InstalledVersion" Type="Edm.String" />
-        <Property Name="IsClientSideSolution" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsEnabled" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsPackageDefaultSkipFeatureDeployment" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsValidAppPackage" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="ProductId" Type="Edm.String" />
-        <Property Name="ShortDescription" Type="Edm.String" />
-        <Property Name="SkipDeploymentFeature" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="ThumbnailUrl" Type="Edm.String" />
-        <Property Name="Title" Type="Edm.String" />
-      </EntityType>
-      <EntityType Name="TenantCorporateCatalogAccessor">
-        <Key>
-          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
-        </Key>
-        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
-        <NavigationProperty Name="AvailableApps" Relationship="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_AvailableApps_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_AvailableAppsPartner" ToRole="AvailableApps" FromRole="AvailableAppsPartner" />
-        <NavigationProperty Name="SiteCollectionAppCatalogsSites" Relationship="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_SiteCollectionAppCatalogsSites_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_SiteCollectionAppCatalogAllowedItem_SiteCollectionAppCatalogsSitesPartner" ToRole="SiteCollectionAppCatalogsSites" FromRole="SiteCollectionAppCatalogsSitesPartner" />
-      </EntityType>
-      <EntityType Name="SiteCollectionAppCatalogAllowedItem">
-        <Key>
-          <PropertyRef Name="AbsoluteUrl" />
-        </Key>
-        <Property Name="AbsoluteUrl" Type="Edm.String" Nullable="false" />
-        <Property Name="SiteID" Type="Edm.Guid" Nullable="false" />
-      </EntityType>
-      <EntityType Name="SPCorporateCuratedGallerySettingsBase" Abstract="true">
-        <Key>
-          <PropertyRef Name="HostSiteFullUrl" />
-        </Key>
-        <Property Name="HostSiteFullUrl" Type="Edm.String" Nullable="false" />
-      </EntityType>
-      <EntityType Name="SPCorporateCuratedGallerySettingsFactory">
-        <Key>
-          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
-        </Key>
-        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
-      </EntityType>
-      <Association Name="SP_Web_SiteCollectionAppCatalog_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_SiteCollectionCorporateCatalogAccessor_SiteCollectionAppCatalogPartner">
-        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor" Role="SiteCollectionAppCatalog" Multiplicity="0..1" />
-        <End Type="SP.Web" Role="SiteCollectionAppCatalogPartner" Multiplicity="0..1" />
-      </Association>
-      <Association Name="SP_Web_TenantAppCatalog_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_TenantAppCatalogPartner">
-        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" Role="TenantAppCatalog" Multiplicity="0..1" />
-        <End Type="SP.Web" Role="TenantAppCatalogPartner" Multiplicity="0..1" />
-      </Association>
-      <Association Name="Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_SiteCollectionCorporateCatalogAccessor_AvailableApps_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_AvailableAppsPartner">
-        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata" Role="AvailableApps" Multiplicity="*" />
-        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor" Role="AvailableAppsPartner" Multiplicity="0..1" />
-      </Association>
-      <Association Name="Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_AvailableApps_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_AvailableAppsPartner">
-        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata" Role="AvailableApps" Multiplicity="*" />
-        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" Role="AvailableAppsPartner" Multiplicity="0..1" />
-      </Association>
-      <Association Name="Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_SiteCollectionAppCatalogsSites_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_SiteCollectionAppCatalogAllowedItem_SiteCollectionAppCatalogsSitesPartner">
-        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem" Role="SiteCollectionAppCatalogsSites" Multiplicity="*" />
-        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" Role="SiteCollectionAppCatalogsSitesPartner" Multiplicity="0..1" />
-      </Association>
-    </Schema>
     <Schema Namespace="Microsoft.Office.Server.ReputationModel" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="Reputation" Abstract="true">
         <Key>
@@ -27530,6 +27613,7 @@
         <Property Name="IsUnmanagedSyncClientRestrictionFlightEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LegacyAuthProtocolsEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LimitedAccessFileType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MobileFriendlyUrlEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MySitesPublicEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="NotificationsInOneDriveForBusinessEnabled" Type="Edm.Boolean" Nullable="false" />
