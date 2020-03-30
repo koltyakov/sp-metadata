@@ -18,7 +18,6 @@ pingadminendpoint (Microsoft.Office.Server.Search.REST.SearchSetting) | ✅ | �
 postquery (Microsoft.Office.Server.Search.REST.SearchService) | ✅ | ✅ | ✅ | ✅
 query (Microsoft.Office.Server.Search.REST.SearchService) | ✅ | ✅ | ✅ | ✅
 resultspageaddress (Microsoft.Office.Server.Search.REST.SearchService) | ✅ | ✅ | ✅ | ❌
-scsendpointinfo (Microsoft.Office.Server.Search.REST.SearchSetting) | ✅ | ❌ | ❌ | ❌
 scspartialupdateendpointinfo (Microsoft.Office.Server.Search.REST.SearchSetting) | ✅ | ❌ | ❌ | ❌
 searchcenterurl (Microsoft.Office.Server.Search.REST.SearchService) | ✅ | ✅ | ✅ | ❌
 setxssearchpolicy (Microsoft.Office.Server.Search.REST.SearchSetting) | ✅ | ❌ | ❌ | ❌

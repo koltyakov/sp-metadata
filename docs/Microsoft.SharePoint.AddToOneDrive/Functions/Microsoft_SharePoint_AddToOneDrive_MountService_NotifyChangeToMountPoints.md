@@ -1,4 +1,4 @@
-# Function Import: Microsoft_SharePoint_AddToOneDrive_MountService_UpdateMountPoints
+# Function Import: Microsoft_SharePoint_AddToOneDrive_MountService_NotifyChangeToMountPoints
 
 > Namespace: Microsoft.SharePoint.AddToOneDrive
 
@@ -9,4 +9,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-request (Microsoft.SharePoint.AddToOneDrive.UpdateMountPointsRequest) | ✅ | ❌ | ❌ | ❌
+request (Microsoft.SharePoint.AddToOneDrive.NotifyChangeToMountPointsRequest) | ✅ | ❌ | ❌ | ❌

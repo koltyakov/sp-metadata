@@ -555,8 +555,10 @@ SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌
 [SP_TeamChannelManager_AddTeamChannel](./Functions/SP_TeamChannelManager_AddTeamChannel.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_DemoteTeamChannelById](./Functions/SP_TeamChannelManager_DemoteTeamChannelById.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_DemoteTeamChannelByPath](./Functions/SP_TeamChannelManager_DemoteTeamChannelByPath.md) | ✅ | ✅ | ❌ | ❌
+[SP_TeamChannelManager_GetConversations](./Functions/SP_TeamChannelManager_GetConversations.md) | ✅ | ❌ | ❌ | ❌
 [SP_TeamChannelManager_PromoteToTeamChannelById](./Functions/SP_TeamChannelManager_PromoteToTeamChannelById.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_PromoteToTeamChannelByPath](./Functions/SP_TeamChannelManager_PromoteToTeamChannelByPath.md) | ✅ | ✅ | ❌ | ❌
+[SP_TeamChannelManager_SaveConversations](./Functions/SP_TeamChannelManager_SaveConversations.md) | ✅ | ❌ | ❌ | ❌
 SP_TenantSettings_Current | ✅ | ✅ | ✅ | ✅
 [SP_WebProxy_Invoke](./Functions/SP_WebProxy_Invoke.md) | ✅ | ✅ | ✅ | ✅
 [SP_Web_CreateAnonymousLink](./Functions/SP_Web_CreateAnonymousLink.md) | ✅ | ✅ | ✅ | ❌

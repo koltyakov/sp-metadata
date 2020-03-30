@@ -14,4 +14,5 @@ IgnoreVersionHistory (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 IncludeItemPermissions (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMoveMode (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 MoveAndShareFileInfo (SP.SPMoveAndShareFileInfo) | ✅ | ❌ | ❌ | ❌
+MoveButKeepSource (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 NameConflictBehavior (Edm.Int32) | ✅ | ✅ | ❌ | ❌

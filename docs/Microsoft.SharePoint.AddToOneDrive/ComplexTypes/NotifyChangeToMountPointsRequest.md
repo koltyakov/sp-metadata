@@ -1,4 +1,4 @@
-# Complex Type: UpdateMountPointsRequest
+# Complex Type: NotifyChangeToMountPointsRequest
 
 > Namespace: Microsoft.SharePoint.AddToOneDrive
 
