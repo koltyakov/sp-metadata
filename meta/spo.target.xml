@@ -323,6 +323,7 @@
         <Property Name="IncludeItemPermissions" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsMoveMode" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MoveAndShareFileInfo" Type="SP.SPMoveAndShareFileInfo" />
+        <Property Name="MoveButKeepSource" Type="Edm.Boolean" Nullable="false" />
         <Property Name="NameConflictBehavior" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="SPMoveAndShareFileInfo">
@@ -4845,6 +4846,11 @@
           <Parameter Name="policyScenario" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="infos" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_GetSiteCompliancePolicyProperty" ReturnType="Edm.String" IsSideEffecting="false">
+          <Parameter Name="siteUrl" Type="Edm.String" />
+          <Parameter Name="siteId" Type="Edm.String" />
+          <Parameter Name="propertyName" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_IsSiteDeletable" ReturnType="Edm.Boolean" IsSideEffecting="false">
           <Parameter Name="siteUrl" Type="Edm.String" />
         </FunctionImport>
@@ -4917,6 +4923,12 @@
           <Parameter Name="complianceTagWrittenTime" Type="Edm.DateTime" Nullable="false" />
           <Parameter Name="userEmailAddress" Type="Edm.String" />
           <Parameter Name="syncToItems" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_SetSiteCompliancePolicyProperty">
+          <Parameter Name="siteUrl" Type="Edm.String" />
+          <Parameter Name="siteId" Type="Edm.String" />
+          <Parameter Name="propertyName" Type="Edm.String" />
+          <Parameter Name="propertyValue" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_UnlockRecordItem" ReturnType="Edm.Int32">
           <Parameter Name="listUrl" Type="Edm.String" />
@@ -7903,9 +7915,6 @@
         <FunctionImport Name="pingadminendpoint" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.Search.REST.SearchSetting" />
         </FunctionImport>
-        <FunctionImport Name="scsendpointinfo" ReturnType="Microsoft.Office.Server.Search.REST.ScsEndpoint" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.Office.Server.Search.REST.SearchSetting" />
-        </FunctionImport>
         <FunctionImport Name="scspartialupdateendpointinfo" ReturnType="Microsoft.Office.Server.Search.REST.ScsEndpoint" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.Search.REST.SearchSetting" />
         </FunctionImport>
@@ -9125,8 +9134,8 @@
         <FunctionImport Name="Microsoft_SharePoint_AddToOneDrive_MountService_GetRemoteItemInfo" ReturnType="Edm.String">
           <Parameter Name="request" Type="Microsoft.SharePoint.AddToOneDrive.GetRemoteItemInfoRequest" />
         </FunctionImport>
-        <FunctionImport Name="Microsoft_SharePoint_AddToOneDrive_MountService_UpdateMountPoints">
-          <Parameter Name="request" Type="Microsoft.SharePoint.AddToOneDrive.UpdateMountPointsRequest" />
+        <FunctionImport Name="Microsoft_SharePoint_AddToOneDrive_MountService_NotifyChangeToMountPoints">
+          <Parameter Name="request" Type="Microsoft.SharePoint.AddToOneDrive.NotifyChangeToMountPointsRequest" />
         </FunctionImport>
         <FunctionImport Name="BreakRoleInheritance" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -11428,6 +11437,10 @@
         <FunctionImport Name="SP_TeamChannelManager_DemoteTeamChannelByPath" ReturnType="Edm.Boolean">
           <Parameter Name="DecodedUrl" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="SP_TeamChannelManager_GetConversations" ReturnType="Edm.String">
+          <Parameter Name="listUrl" Type="Edm.String" />
+          <Parameter Name="listItemId" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="SP_TeamChannelManager_PromoteToTeamChannelById" ReturnType="Edm.Boolean">
           <Parameter Name="folderId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="teamChannelUrl" Type="Edm.String" />
@@ -11437,6 +11450,11 @@
           <Parameter Name="DecodedUrl" Type="Edm.String" />
           <Parameter Name="teamChannelUrl" Type="Edm.String" />
           <Parameter Name="channelName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_TeamChannelManager_SaveConversations">
+          <Parameter Name="listUrl" Type="Edm.String" />
+          <Parameter Name="listItemId" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="updatedConversationsObject" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="GetThemeFontByName" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.ThemeInfo" />
@@ -15354,6 +15372,9 @@
       <Annotations Target="SP.CopyMigrationOptions/MoveAndShareFileInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.CopyMigrationOptions/MoveButKeepSource">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.CustomActionElement/ClientSideComponentId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18426,7 +18447,7 @@
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_AddToOneDrive_MountService_GetRemoteItemInfo(Microsoft.SharePoint.AddToOneDrive.GetRemoteItemInfoRequest)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Microsoft_SharePoint_AddToOneDrive_MountService_UpdateMountPoints(Microsoft.SharePoint.AddToOneDrive.UpdateMountPointsRequest)">
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_AddToOneDrive_MountService_NotifyChangeToMountPoints(Microsoft.SharePoint.AddToOneDrive.NotifyChangeToMountPointsRequest)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/AddItemUsingPath(SP.List, SP.ListItemCreationInformationUsingPath)">
@@ -18795,10 +18816,16 @@
       <Annotations Target="SP.ApiData/SP_TeamChannelManager_DemoteTeamChannelByPath(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_TeamChannelManager_GetConversations(Edm.String, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_TeamChannelManager_PromoteToTeamChannelById(Edm.Guid, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_TeamChannelManager_PromoteToTeamChannelByPath(Edm.String, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_TeamChannelManager_SaveConversations(Edm.String, Edm.Int32, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/AddToSpotlight(SP.View, Edm.Int32, Edm.String, Edm.Int32)">
@@ -24800,14 +24827,14 @@
         <Property Name="UserEmail" Type="Edm.String" />
         <Property Name="UserLoginName" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="NotifyChangeToMountPointsRequest">
+        <Property Name="MountPointUniqueIds" Type="Collection(Edm.Guid)" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="PlacesUserEntity">
         <Property Name="email" Type="Edm.String" />
         <Property Name="id" Type="Edm.Int32" Nullable="false" />
         <Property Name="loginName" Type="Edm.String" />
         <Property Name="name" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="UpdateMountPointsRequest">
-        <Property Name="MountPointUniqueIds" Type="Collection(Edm.Guid)" Nullable="false" />
       </ComplexType>
       <EntityType Name="MountService" Abstract="true">
         <Key>
