@@ -192,8 +192,8 @@ LikesAPIs | ✅ | ✅ | ❌ | ❌
 LimitedWebPartManagers | ✅ | ✅ | ✅ | ✅
 Links | ✅ | ✅ | ❌ | ✅
 ListBloomFilters | ✅ | ✅ | ❌ | ❌
+ListHomeItem2s | ✅ | ❌ | ❌ | ❌
 ListHomeItemCollections | ✅ | ❌ | ❌ | ❌
-ListHomeItems | ✅ | ❌ | ❌ | ❌
 ListItemVersions | ✅ | ✅ | ❌ | ❌
 ListItems | ✅ | ✅ | ✅ | ✅
 ListTemplates | ✅ | ✅ | ✅ | ✅

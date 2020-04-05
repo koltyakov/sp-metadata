@@ -33,6 +33,8 @@ HasHolds (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HubSiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 IBSegmentDisplayNames (Edm.String) | ✅ | ❌ | ❌ | ❌
 IBSegments (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+IBSegmentsToAdd (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+IBSegmentsToRemove (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 IsGroupOwnerSiteAdmin (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsHubSite (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LastContentModifiedDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌

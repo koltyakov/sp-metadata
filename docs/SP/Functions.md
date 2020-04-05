@@ -490,9 +490,13 @@ SP_FavoriteListsDeprecated_GetFavoriteLists | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteListsDeprecated_GetIsListFavorite](./Functions/SP_FavoriteListsDeprecated_GetIsListFavorite.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteListsDeprecated_RemoveFavoriteList](./Functions/SP_FavoriteListsDeprecated_RemoveFavoriteList.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_AddList](./Functions/SP_FavoriteLists_AddList.md) | ✅ | ❌ | ❌ | ❌
+[SP_FavoriteLists_AddListXgeo](./Functions/SP_FavoriteLists_AddListXgeo.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_GetListsBy](./Functions/SP_FavoriteLists_GetListsBy.md) | ✅ | ❌ | ❌ | ❌
+[SP_FavoriteLists_GetListsByXgeo](./Functions/SP_FavoriteLists_GetListsByXgeo.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_RemoveList](./Functions/SP_FavoriteLists_RemoveList.md) | ✅ | ❌ | ❌ | ❌
+[SP_FavoriteLists_RemoveListXgeo](./Functions/SP_FavoriteLists_RemoveListXgeo.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_UpdateList](./Functions/SP_FavoriteLists_UpdateList.md) | ✅ | ❌ | ❌ | ❌
+[SP_FavoriteLists_UpdateListXgeo](./Functions/SP_FavoriteLists_UpdateListXgeo.md) | ✅ | ❌ | ❌ | ❌
 [SP_File_GetContentVerFromTag](./Functions/SP_File_GetContentVerFromTag.md) | ✅ | ✅ | ✅ | ✅
 [SP_HashtagStoreManager_CallOLS](./Functions/SP_HashtagStoreManager_CallOLS.md) | ✅ | ✅ | ❌ | ❌
 [SP_HashtagStoreManager_GetBlockedHashtags](./Functions/SP_HashtagStoreManager_GetBlockedHashtags.md) | ✅ | ✅ | ❌ | ❌
