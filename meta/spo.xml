@@ -449,6 +449,7 @@
       <ComplexType Name="HubSiteCreationInformation">
         <Property Name="Description" Type="Edm.String" />
         <Property Name="EnablePermissionsSync" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="EnforcedECTs" Type="Edm.String" />
         <Property Name="HideNameInNavigation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LogoUrl" Type="Edm.String" />
         <Property Name="ParentHubSiteId" Type="Edm.Guid" Nullable="false" />
@@ -2111,13 +2112,7 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
-      <EntityType Name="ListHomeItemCollection" Abstract="true">
-        <Key>
-          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
-        </Key>
-        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
-      </EntityType>
-      <EntityType Name="ListHomeItem">
+      <EntityType Name="ListHomeItem2">
         <Key>
           <PropertyRef Name="color" />
         </Key>
@@ -2135,6 +2130,12 @@
         <Property Name="siteId" Type="Edm.String" />
         <Property Name="siteTitle" Type="Edm.String" />
         <Property Name="siteUrl" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="ListHomeItemCollection" Abstract="true">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
       <EntityType Name="ObjectSharingSettings">
         <Key>
@@ -3866,7 +3867,7 @@
         <EntitySet Name="FormsCustomizations" EntityType="SP.Internal.FormsCustomization" />
         <EntitySet Name="LanguageCollections" EntityType="SP.LanguageCollection" />
         <EntitySet Name="ListBloomFilters" EntityType="SP.ListBloomFilter" />
-        <EntitySet Name="ListHomeItems" EntityType="SP.ListHomeItem" />
+        <EntitySet Name="ListHomeItem2s" EntityType="SP.ListHomeItem2" />
         <EntitySet Name="ListHomeItemCollections" EntityType="SP.ListHomeItemCollection" />
         <EntitySet Name="ListItems" EntityType="SP.ListItem" />
         <EntitySet Name="ListItemVersions" EntityType="SP.ListItemVersion" />
@@ -8922,7 +8923,15 @@
         <FunctionImport Name="SP_FavoriteLists_AddList">
           <Parameter Name="favoriteList" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
         </FunctionImport>
+        <FunctionImport Name="SP_FavoriteLists_AddListXgeo">
+          <Parameter Name="favoriteList" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
+        </FunctionImport>
         <FunctionImport Name="SP_FavoriteLists_GetListsBy" ReturnType="Collection(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
+          <Parameter Name="siteId" Type="Edm.String" />
+          <Parameter Name="listId" Type="Edm.String" />
+          <Parameter Name="page" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_FavoriteLists_GetListsByXgeo" ReturnType="Collection(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
           <Parameter Name="siteId" Type="Edm.String" />
           <Parameter Name="listId" Type="Edm.String" />
           <Parameter Name="page" Type="Edm.Int32" Nullable="false" />
@@ -8931,7 +8940,14 @@
           <Parameter Name="siteId" Type="Edm.String" />
           <Parameter Name="listId" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="SP_FavoriteLists_RemoveListXgeo">
+          <Parameter Name="siteId" Type="Edm.String" />
+          <Parameter Name="listId" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="SP_FavoriteLists_UpdateList">
+          <Parameter Name="favoriteList" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
+        </FunctionImport>
+        <FunctionImport Name="SP_FavoriteLists_UpdateListXgeo">
           <Parameter Name="favoriteList" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
         </FunctionImport>
         <FunctionImport Name="SP_KnowledgeHub" ReturnType="SP.KnowledgeHub" IsComposable="true" EntitySet="KnowledgeHubs" />
@@ -9813,7 +9829,7 @@
         <FunctionImport Name="SP_ListHomeItemCollection_GetListHomeItemsWithPageContextInfo" ReturnType="Edm.Stream" IsSideEffecting="false">
           <Parameter Name="sortBy" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="SP_ListHomeItemCollection_GetListHomePersonalLists" ReturnType="Collection(SP.ListHomeItem)" IsComposable="true" EntitySet="ListHomeItems">
+        <FunctionImport Name="SP_ListHomeItemCollection_GetListHomePersonalLists" ReturnType="Collection(SP.ListHomeItem2)" IsComposable="true" EntitySet="ListHomeItem2s">
           <Parameter Name="sortBy" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_MultilingualSettings" ReturnType="SP.MultilingualSettings" IsComposable="true" EntitySet="MultilingualSettingss" />
@@ -15411,6 +15427,9 @@
       <Annotations Target="SP.HubSiteCreationInformation/EnablePermissionsSync">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.HubSiteCreationInformation/EnforcedECTs">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.HubSiteCreationInformation/HideNameInNavigation">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16974,7 +16993,7 @@
       <Annotations Target="Microsoft.SharePoint.AddToOneDrive.placesInformation">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ListHomeItem">
+      <Annotations Target="SP.ListHomeItem2">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ObjectSharingSettings">
@@ -18387,13 +18406,25 @@
       <Annotations Target="SP.ApiData/SP_FavoriteLists_AddList(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_FavoriteLists_AddListXgeo(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_FavoriteLists_GetListsBy(Edm.String, Edm.String, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_FavoriteLists_GetListsByXgeo(Edm.String, Edm.String, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_FavoriteLists_RemoveList(Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_FavoriteLists_RemoveListXgeo(Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_FavoriteLists_UpdateList(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_FavoriteLists_UpdateListXgeo(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Internal_FlowPermissions_GetFlowPermissionLevelOnList(Edm.String)">
@@ -25941,6 +25972,8 @@
         <Property Name="HubSiteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="IBSegmentDisplayNames" Type="Edm.String" />
         <Property Name="IBSegments" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="IBSegmentsToAdd" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="IBSegmentsToRemove" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="IsGroupOwnerSiteAdmin" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsHubSite" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LastContentModifiedDate" Type="Edm.DateTime" Nullable="false" />
