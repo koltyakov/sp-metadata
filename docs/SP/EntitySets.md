@@ -38,6 +38,7 @@ AssignmentGrades | ❌ | ❌ | ❌ | ✅
 Assignments | ✅ | ✅ | ✅ | ❌
 Attachments | ✅ | ✅ | ✅ | ✅
 Audits | ✅ | ✅ | ✅ | ✅
+Authentications | ✅ | ❌ | ❌ | ❌
 BaseCalendarExceptions | ✅ | ✅ | ✅ | ❌
 BaseCustomPropertys | ✅ | ❌ | ❌ | ❌
 BaseSessions | ✅ | ✅ | ✅ | ✅

@@ -15,3 +15,4 @@ ModelVersion (Edm.String) | ✅ | ❌ | ❌ | ❌
 ObjectId (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetLibraryUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 UniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+ViewOption (Edm.String) | ✅ | ❌ | ❌ | ❌

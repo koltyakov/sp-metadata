@@ -10,3 +10,4 @@ ModelUniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 TargetLibraryServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetWebServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+ViewOption (Edm.String) | ✅ | ❌ | ❌ | ❌
