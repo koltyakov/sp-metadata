@@ -3571,6 +3571,7 @@
         <EntitySet Name="TargetApplicationFields" EntityType="Microsoft.Office.SecureStoreService.Server.TargetApplicationField" />
         <EntitySet Name="SPMachineLearningModelEntityDatas" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData" />
         <EntitySet Name="SPMachineLearningPublicationsEntityDatas" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData" />
+        <EntitySet Name="SPMachineLearningPublicationsResults" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult" />
         <EntitySet Name="SPMachineLearningSamples" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample" />
         <EntitySet Name="SPMachineLearningSampleEntityDatas" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningSampleEntityData" />
         <EntitySet Name="Reputations" EntityType="Microsoft.Office.Server.ReputationModel.Reputation" />
@@ -3887,6 +3888,7 @@
         <EntitySet Name="MultilingualSettingss" EntityType="SP.MultilingualSettings" />
         <EntitySet Name="Navigations" EntityType="SP.Navigation" />
         <EntitySet Name="NavigationNodes" EntityType="SP.NavigationNode" />
+        <EntitySet Name="Authentications" EntityType="SP.OAuth.Authentication" />
         <EntitySet Name="NativeClients" EntityType="SP.OAuth.NativeClient" />
         <EntitySet Name="Tokens1" EntityType="SP.OAuth.Token" />
         <EntitySet Name="TokenResponses" EntityType="SP.OAuth.TokenResponse" />
@@ -4745,6 +4747,9 @@
         </FunctionImport>
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" IsComposable="true" EntitySet="Machinelearnings" />
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningModelEntityData" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData" IsComposable="true" EntitySet="SPMachineLearningModelEntityDatas" />
+        <FunctionImport Name="Delete" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
+        </FunctionImport>
         <FunctionImport Name="ImportMeta" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsBindable="true" EntitySet="Models">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
         </FunctionImport>
@@ -4766,7 +4771,6 @@
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication" />
         </FunctionImport>
-        <EntitySet Name="SPMachineLearningPublicationsResults" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult" />
         <FunctionImport Name="BatchDelete" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult" IsBindable="true" EntitySet="SPMachineLearningPublicationsResults">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)" />
           <Parameter Name="publications" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData)" />
@@ -12280,6 +12284,11 @@
           <Parameter Name="resource" Type="Edm.String" />
           <Parameter Name="tokenType" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="SP_OAuth_Authentication" ReturnType="SP.OAuth.Authentication" IsComposable="true" EntitySet="Authentications" />
+        <FunctionImport Name="GetRenewalUrl" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="SP.OAuth.Authentication" />
+          <Parameter Name="redirectUrl" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="GetById" ReturnType="SP.NavigationNode" IsComposable="true" IsBindable="true" EntitySet="NavigationNodes">
           <Parameter Name="this" Type="Collection(SP.NavigationNode)" />
           <Parameter Name="id" Type="Edm.Int32" Nullable="false" />
@@ -15877,6 +15886,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/UniqueId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/ViewOption">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub/Publications">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -15958,7 +15970,31 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData/TargetWebServerRelativeUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData/ViewOption">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData/Publications">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationResult">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationResult/Publication">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationResult/StatusCode">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult/Details">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult/TotalFailures">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult/TotalSuccesses">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSampleEntityData">
@@ -17182,6 +17218,9 @@
       <Annotations Target="SP.OAuth.Token">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.OAuth.Authentication">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Sharing.PersonalWeb">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17476,6 +17515,9 @@
       <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningModelEntityData()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/Delete(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/ImportMeta(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17495,27 +17537,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Update(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationResult">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationResult/Publication">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationResult/StatusCode">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult/Details">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult/TotalFailures">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult/TotalSuccesses">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/BatchDelete(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication), Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData))">
@@ -19031,6 +19052,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Acquire(SP.OAuth.Token, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_OAuth_Authentication()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetRenewalUrl(SP.OAuth.Authentication, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_UI_ApplicationPages_ClientPeoplePickerWebServiceInterface_GetPickerEntityInformation(SP.UI.ApplicationPages.PickerEntityInformationRequest)">
@@ -24886,7 +24913,10 @@
         </Key>
         <Property Name="inCallersDrive" Type="Edm.String" Nullable="false" />
         <Property Name="placesCount" Type="Edm.String" />
+        <Property Name="itemSourceListTitle" Type="Edm.String" />
         <Property Name="itemSourcePath" Type="Edm.String" />
+        <Property Name="itemSourceSiteTemplateId" Type="Edm.String" />
+        <Property Name="itemSourceSiteTitle" Type="Edm.String" />
         <NavigationProperty Name="places" Relationship="Microsoft.SharePoint.AddToOneDrive.Microsoft_SharePoint_AddToOneDrive_placesInformation_places_Microsoft_SharePoint_AddToOneDrive_PlacesEntity_placesPartner" ToRole="places" FromRole="placesPartner" />
       </EntityType>
       <Association Name="Microsoft_SharePoint_AddToOneDrive_placesInformation_places_Microsoft_SharePoint_AddToOneDrive_PlacesEntity_placesPartner">
@@ -26449,6 +26479,7 @@
         <Property Name="TargetLibraryServerRelativeUrl" Type="Edm.String" />
         <Property Name="TargetSiteUrl" Type="Edm.String" />
         <Property Name="TargetWebServerRelativeUrl" Type="Edm.String" />
+        <Property Name="ViewOption" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPMachineLearningPublicationResult">
         <Property Name="Publication" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData" />
@@ -26493,6 +26524,7 @@
         <Property Name="ObjectId" Type="Edm.String" />
         <Property Name="TargetLibraryUrl" Type="Edm.String" />
         <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ViewOption" Type="Edm.String" />
       </EntityType>
       <EntityType Name="SPMachineLearningSample">
         <Key>
@@ -26527,13 +26559,6 @@
         <Property Name="Comment" Type="Edm.String" Nullable="false" />
         <Property Name="Publications" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData)" />
       </EntityType>
-      <EntityType Name="SPMachineLearningSampleEntityData">
-        <Key>
-          <PropertyRef Name="ExtractedText" />
-        </Key>
-        <Property Name="ExtractedText" Type="Edm.String" Nullable="false" />
-        <Property Name="Markups" Type="Edm.String" />
-      </EntityType>
       <EntityType Name="SPMachineLearningPublicationsResult">
         <Key>
           <PropertyRef Name="TotalFailures" />
@@ -26541,6 +26566,13 @@
         <Property Name="Details" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationResult)" />
         <Property Name="TotalFailures" Type="Edm.Int32" Nullable="false" />
         <Property Name="TotalSuccesses" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="SPMachineLearningSampleEntityData">
+        <Key>
+          <PropertyRef Name="ExtractedText" />
+        </Key>
+        <Property Name="ExtractedText" Type="Edm.String" Nullable="false" />
+        <Property Name="Markups" Type="Edm.String" />
       </EntityType>
       <Association Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Models_Microsoft_Office_Server_ContentCenter_SPMachineLearningModel_ModelsPartner">
         <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" Role="Models" Multiplicity="*" />
@@ -27349,6 +27381,12 @@
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
       <EntityType Name="Token">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="Authentication">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
