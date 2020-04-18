@@ -296,6 +296,12 @@
         <Property Name="Id" Type="Edm.String" />
         <Property Name="Name" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="ContentTypeEntityData">
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Group" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="ParentContentTypeId" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="ContextWebInformation">
         <Property Name="FormDigestTimeoutSeconds" Type="Edm.Int32" Nullable="false" />
         <Property Name="FormDigestValue" Type="Edm.String" />
@@ -524,8 +530,11 @@
       <ComplexType Name="SPListRule">
         <Property Name="Condition" Type="Edm.String" />
         <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="IsActive" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="LastModifiedDate" Type="Edm.DateTime" Nullable="false" />
         <Property Name="Outcome" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
+        <Property Name="TriggerType" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="MachineLearningSampleMeta">
         <Property Name="ExtractedText" Type="Edm.String" />
@@ -725,6 +734,7 @@
         <Property Name="WebPartId" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="RenderListDataParameters">
+        <Property Name="AddAllFields" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AddRequiredFields" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowMultipleValueFilterForTaxonomyFields" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AudienceTarget" Type="Edm.Boolean" Nullable="false" />
@@ -738,6 +748,7 @@
         <Property Name="OverrideViewXml" Type="Edm.String" />
         <Property Name="Paging" Type="Edm.String" />
         <Property Name="RenderOptions" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RenderURLFieldInJSON" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ReplaceGroup" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ViewXml" Type="Edm.String" />
       </ComplexType>
@@ -1557,6 +1568,7 @@
         <Property Name="DefaultViewForContentType" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EditorModified" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Formats" Type="Edm.String" />
+        <Property Name="GridLayout" Type="Edm.String" />
         <Property Name="Hidden" Type="Edm.Boolean" Nullable="false" />
         <Property Name="HtmlSchemaXml" Type="Edm.String" />
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
@@ -1728,6 +1740,7 @@
         <NavigationProperty Name="Author" Relationship="SP.SP_Web_Author_SP_User_AuthorPartner" ToRole="Author" FromRole="AuthorPartner" />
         <NavigationProperty Name="AvailableContentTypes" Relationship="SP.SP_Web_AvailableContentTypes_SP_ContentType_AvailableContentTypesPartner" ToRole="AvailableContentTypes" FromRole="AvailableContentTypesPartner" />
         <NavigationProperty Name="AvailableFields" Relationship="SP.SP_Web_AvailableFields_SP_Field_AvailableFieldsPartner" ToRole="AvailableFields" FromRole="AvailableFieldsPartner" />
+        <NavigationProperty Name="CanModernizeHomepage" Relationship="SP.SP_Web_CanModernizeHomepage_SP_ModernizeHomepageResult_CanModernizeHomepagePartner" ToRole="CanModernizeHomepage" FromRole="CanModernizeHomepagePartner" />
         <NavigationProperty Name="ClientWebParts" Relationship="SP.SP_Web_ClientWebParts_SP_ClientWebPart_ClientWebPartsPartner" ToRole="ClientWebParts" FromRole="ClientWebPartsPartner" />
         <NavigationProperty Name="ContentTypes" Relationship="SP.SP_Web_ContentTypes_SP_ContentType_ContentTypesPartner" ToRole="ContentTypes" FromRole="ContentTypesPartner" />
         <NavigationProperty Name="CurrentUser" Relationship="SP.SP_Web_CurrentUser_SP_User_CurrentUserPartner" ToRole="CurrentUser" FromRole="CurrentUserPartner" />
@@ -1785,6 +1798,13 @@
         <Property Name="Thumbnail" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
         <Property Name="Version" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="ModernizeHomepageResult">
+        <Key>
+          <PropertyRef Name="CanModernizeHomepage" />
+        </Key>
+        <Property Name="CanModernizeHomepage" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Reason" Type="Edm.String" />
       </EntityType>
       <EntityType Name="ClientWebPart">
         <Key>
@@ -2123,9 +2143,12 @@
         <Property Name="icon" Type="Edm.String" />
         <Property Name="lastModifiedDate" Type="Edm.String" />
         <Property Name="lastViewDate" Type="Edm.String" />
+        <Property Name="lastviewDateTime" Type="Edm.String" />
         <Property Name="listId" Type="Edm.String" />
         <Property Name="listTitle" Type="Edm.String" />
         <Property Name="listUrl" Type="Edm.String" />
+        <Property Name="listViewCounts" Type="Collection(SP.CountByDate)" />
+        <Property Name="shouldRemove" Type="Edm.Boolean" Nullable="false" />
         <Property Name="siteColor" Type="Edm.String" />
         <Property Name="siteId" Type="Edm.String" />
         <Property Name="siteTitle" Type="Edm.String" />
@@ -2293,6 +2316,7 @@
         <Property Name="listTitle" Type="Edm.String" />
         <Property Name="listUrl" Type="Edm.String" />
         <Property Name="listViewCounts" Type="Collection(SP.CountByDate)" />
+        <Property Name="shouldRemove" Type="Edm.Boolean" Nullable="false" />
         <Property Name="siteColor" Type="Edm.String" />
         <Property Name="siteId" Type="Edm.String" />
         <Property Name="siteTitle" Type="Edm.String" />
@@ -3134,6 +3158,10 @@
         <End Type="SP.Field" Role="AvailableFields" Multiplicity="*" />
         <End Type="SP.Web" Role="AvailableFieldsPartner" Multiplicity="0..1" />
       </Association>
+      <Association Name="SP_Web_CanModernizeHomepage_SP_ModernizeHomepageResult_CanModernizeHomepagePartner">
+        <End Type="SP.ModernizeHomepageResult" Role="CanModernizeHomepage" Multiplicity="0..1" />
+        <End Type="SP.Web" Role="CanModernizeHomepagePartner" Multiplicity="0..1" />
+      </Association>
       <Association Name="SP_Web_ClientWebParts_SP_ClientWebPart_ClientWebPartsPartner">
         <End Type="SP.ClientWebPart" Role="ClientWebParts" Multiplicity="*" />
         <End Type="SP.Web" Role="ClientWebPartsPartner" Multiplicity="0..1" />
@@ -3566,6 +3594,7 @@
         <EntitySet Name="StructuralNavigationCaches" EntityType="SP.Publishing.Navigation.StructuralNavigationCacheWrapper" />
         <EntitySet Name="Thememanagers" EntityType="SP.Utilities.ThemeManager" />
         <EntitySet Name="Webs" EntityType="SP.Web" />
+        <EntitySet Name="Workitems" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem" />
         <EntitySet Name="ConnectionSettingss" EntityType="Microsoft.BusinessData.Infrastructure.SecureStore.ConnectionSettings" />
         <EntitySet Name="TargetApplications" EntityType="Microsoft.Office.SecureStoreService.Server.TargetApplication" />
         <EntitySet Name="TargetApplicationFields" EntityType="Microsoft.Office.SecureStoreService.Server.TargetApplicationField" />
@@ -3574,6 +3603,7 @@
         <EntitySet Name="SPMachineLearningPublicationsResults" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult" />
         <EntitySet Name="SPMachineLearningSamples" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample" />
         <EntitySet Name="SPMachineLearningSampleEntityDatas" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningSampleEntityData" />
+        <EntitySet Name="SPMachineLearningWorkItemEntityDatas" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData" />
         <EntitySet Name="Reputations" EntityType="Microsoft.Office.Server.ReputationModel.Reputation" />
         <EntitySet Name="SearchServices" EntityType="Microsoft.Office.Server.Search.REST.SearchService" />
         <EntitySet Name="SearchSettings" EntityType="Microsoft.Office.Server.Search.REST.SearchSetting" />
@@ -3881,6 +3911,7 @@
         <EntitySet Name="MicrofeedPostOptionCollections" EntityType="SP.Microfeed.MicrofeedPostOptionCollection" />
         <EntitySet Name="MicrofeedStores" EntityType="SP.Microfeed.MicrofeedStore" />
         <EntitySet Name="MicroServiceUtilitiess" EntityType="SP.MicroService.MicroServiceUtilities" />
+        <EntitySet Name="ModernizeHomepageResults" EntityType="SP.ModernizeHomepageResult" />
         <EntitySet Name="MountedFolderInfos" EntityType="SP.MountedFolderInfo" />
         <EntitySet Name="MountPoints" EntityType="SP.MountPoint" />
         <EntitySet Name="MountPointInfos" EntityType="SP.MountPointInfo" />
@@ -4096,6 +4127,7 @@
         <FunctionImport Name="StructuralNavigationCache" ReturnType="SP.Publishing.Navigation.StructuralNavigationCacheWrapper" IsComposable="true" EntitySet="StructuralNavigationCaches" />
         <FunctionImport Name="thememanager" ReturnType="SP.Utilities.ThemeManager" IsComposable="true" EntitySet="Thememanagers" />
         <FunctionImport Name="web" ReturnType="SP.Web" IsComposable="true" EntitySet="Webs" />
+        <FunctionImport Name="workitems" ReturnType="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem)" IsComposable="true" EntitySet="Workitems" />
         <FunctionImport Name="SP_ApiMetadata_Current" ReturnType="SP.ApiMetadata" IsComposable="true" EntitySet="ApiMetadatas" />
         <FunctionImport Name="AddAttributeToTask" ReturnType="SP.WorkManagement.OM.TaskWriteResult" IsBindable="true" EntitySet="TaskWriteResults">
           <Parameter Name="this" Type="SP.WorkManagement.OM.BaseSession" />
@@ -4799,6 +4831,11 @@
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningSample)" />
           <Parameter Name="uniqueId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItemEntityData" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData" IsComposable="true" EntitySet="SPMachineLearningWorkItemEntityDatas" />
+        <FunctionImport Name="GetByIdentifier" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem" IsComposable="true" IsBindable="true" EntitySet="Workitems">
+          <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem)" />
+          <Parameter Name="identifier" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="AddDynamicScopeBinding" IsBindable="true">
           <Parameter Name="this" Type="SP.CompliancePolicy.SPPolicyStoreProxy" />
           <Parameter Name="identity" Type="Edm.String" />
@@ -4878,6 +4915,10 @@
           <Parameter Name="rules" Type="Collection(Edm.String)" />
           <Parameter Name="classificationResults" Type="Collection(SP.CompliancePolicy.DlpClassificationResult)" />
         </FunctionImport>
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_RegisterSiteHoldEventReceiver">
+          <Parameter Name="siteUrl" Type="Edm.String" />
+          <Parameter Name="siteId" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="RemoveContainerRetentionPolicy" IsBindable="true">
           <Parameter Name="this" Type="SP.CompliancePolicy.SPPolicyStoreProxy" />
           <Parameter Name="siteId" Type="Edm.String" />
@@ -4938,6 +4979,10 @@
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_UnlockRecordItem" ReturnType="Edm.Int32">
           <Parameter Name="listUrl" Type="Edm.String" />
           <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_UnRegisterHoldEventReceiver">
+          <Parameter Name="siteUrl" Type="Edm.String" />
+          <Parameter Name="siteId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="UpdateContainerSetting" IsBindable="true">
           <Parameter Name="this" Type="SP.CompliancePolicy.SPPolicyStoreProxy" />
@@ -8927,15 +8972,7 @@
         <FunctionImport Name="SP_FavoriteLists_AddList">
           <Parameter Name="favoriteList" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
         </FunctionImport>
-        <FunctionImport Name="SP_FavoriteLists_AddListXgeo">
-          <Parameter Name="favoriteList" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
-        </FunctionImport>
-        <FunctionImport Name="SP_FavoriteLists_GetListsBy" ReturnType="Collection(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
-          <Parameter Name="siteId" Type="Edm.String" />
-          <Parameter Name="listId" Type="Edm.String" />
-          <Parameter Name="page" Type="Edm.Int32" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="SP_FavoriteLists_GetListsByXgeo" ReturnType="Collection(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
+        <FunctionImport Name="SP_FavoriteLists_GetListsBy" ReturnType="Collection(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)" IsSideEffecting="false">
           <Parameter Name="siteId" Type="Edm.String" />
           <Parameter Name="listId" Type="Edm.String" />
           <Parameter Name="page" Type="Edm.Int32" Nullable="false" />
@@ -8944,14 +8981,7 @@
           <Parameter Name="siteId" Type="Edm.String" />
           <Parameter Name="listId" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="SP_FavoriteLists_RemoveListXgeo">
-          <Parameter Name="siteId" Type="Edm.String" />
-          <Parameter Name="listId" Type="Edm.String" />
-        </FunctionImport>
         <FunctionImport Name="SP_FavoriteLists_UpdateList">
-          <Parameter Name="favoriteList" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
-        </FunctionImport>
-        <FunctionImport Name="SP_FavoriteLists_UpdateListXgeo">
           <Parameter Name="favoriteList" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
         </FunctionImport>
         <FunctionImport Name="SP_KnowledgeHub" ReturnType="SP.KnowledgeHub" IsComposable="true" EntitySet="KnowledgeHubs" />
@@ -9217,6 +9247,7 @@
           <Parameter Name="condition" Type="Edm.String" />
           <Parameter Name="outcome" Type="Edm.String" />
           <Parameter Name="title" Type="Edm.String" />
+          <Parameter Name="triggerType" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="DeleteObject" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -9662,6 +9693,7 @@
           <Parameter Name="condition" Type="Edm.String" />
           <Parameter Name="outcome" Type="Edm.String" />
           <Parameter Name="title" Type="Edm.String" />
+          <Parameter Name="status" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="ValidateAppName" ReturnType="SP.VisualizationAppSynchronizationResult" IsBindable="true" EntitySet="VisualizationAppSynchronizationResults">
           <Parameter Name="this" Type="SP.List" />
@@ -10072,6 +10104,10 @@
         <FunctionImport Name="AddAvailableContentType" ReturnType="SP.ContentType" IsBindable="true" EntitySet="ContentTypes">
           <Parameter Name="this" Type="Collection(SP.ContentType)" />
           <Parameter Name="contentTypeId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="Create" ReturnType="SP.ContentType" IsBindable="true" EntitySet="ContentTypes">
+          <Parameter Name="this" Type="Collection(SP.ContentType)" />
+          <Parameter Name="parameters" Type="SP.ContentTypeEntityData" />
         </FunctionImport>
         <FunctionImport Name="GetById" ReturnType="SP.ContentType" IsComposable="true" IsBindable="true" EntitySet="ContentTypes">
           <Parameter Name="this" Type="Collection(SP.ContentType)" />
@@ -12894,6 +12930,7 @@
           <Parameter Name="retrieveAllLists" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="retrieveFoldersForAllLists" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="forceMySiteDefaultList" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="migrationType" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage" />
@@ -13113,6 +13150,10 @@
           <End Role="SamplesPartner" EntitySet="Machinelearnings" />
           <End Role="Samples" EntitySet="SPMachineLearningSamples" />
         </AssociationSet>
+        <AssociationSet Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_WorkItems_Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItem_WorkItemsPartnerSet" Association="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_WorkItems_Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItem_WorkItemsPartner">
+          <End Role="WorkItemsPartner" EntitySet="Machinelearnings" />
+          <End Role="WorkItems" EntitySet="Workitems" />
+        </AssociationSet>
         <AssociationSet Name="SP_RequestUserContext_Current_SP_RequestUserContext_CurrentPartnerSet" Association="SP.SP_RequestUserContext_Current_SP_RequestUserContext_CurrentPartner">
           <End Role="CurrentPartner" EntitySet="Mes" />
           <End Role="Current" EntitySet="Mes" />
@@ -13208,6 +13249,10 @@
         <AssociationSet Name="SP_Web_AvailableFields_SP_Field_AvailableFieldsPartnerSet" Association="SP.SP_Web_AvailableFields_SP_Field_AvailableFieldsPartner">
           <End Role="AvailableFieldsPartner" EntitySet="Webs" />
           <End Role="AvailableFields" EntitySet="Fields" />
+        </AssociationSet>
+        <AssociationSet Name="SP_Web_CanModernizeHomepage_SP_ModernizeHomepageResult_CanModernizeHomepagePartnerSet" Association="SP.SP_Web_CanModernizeHomepage_SP_ModernizeHomepageResult_CanModernizeHomepagePartner">
+          <End Role="CanModernizeHomepagePartner" EntitySet="Webs" />
+          <End Role="CanModernizeHomepage" EntitySet="ModernizeHomepageResults" />
         </AssociationSet>
         <AssociationSet Name="SP_Web_ClientWebParts_SP_ClientWebPart_ClientWebPartsPartnerSet" Association="SP.SP_Web_ClientWebParts_SP_ClientWebPart_ClientWebPartsPartner">
           <End Role="ClientWebPartsPartner" EntitySet="Webs" />
@@ -15493,6 +15538,9 @@
       <Annotations Target="SP.CamlQuery/FolderServerRelativePath">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.RenderListDataParameters/AddAllFields">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.RenderListDataParameters/AddRequiredFields">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -15506,6 +15554,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.RenderListDataParameters/MergeDefaultView">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.RenderListDataParameters/RenderURLFieldInJSON">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.RenderListDataParameters/ReplaceGroup">
@@ -15919,6 +15970,36 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub/Samples">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem/Created">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem/DeliverDate">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem/ID">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem/Status">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem/TargetServerRelativeUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem/TargetSiteUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem/TargetWebServerRelativeUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem/Type">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub/WorkItems">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16004,6 +16085,21 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSampleEntityData/Markups">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData/TargetServerRelativeUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData/TargetSiteUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData/TargetWebServerRelativeUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData/Type">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.DocumentManagement.DocumentId">
@@ -16295,6 +16391,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.AppTile/LastModifiedDate">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ModernizeHomepageResult">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Web/CanModernizeHomepage">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Web/CommentsOnSitePagesDisabled">
@@ -17323,6 +17425,9 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService/AvailableManagedPathsForSiteCreation">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService/CommentsOnSitePagesDisabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService/CustomFormUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17369,6 +17474,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService/SiteCreationNewUX">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService/SitePagesEnabled">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService/SmtpServer">
@@ -17561,6 +17669,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetByUniqueId(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningSample), Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItemEntityData()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetByIdentifier(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem), Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_DocumentManagement_DocumentId()">
@@ -18427,25 +18541,13 @@
       <Annotations Target="SP.ApiData/SP_FavoriteLists_AddList(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_FavoriteLists_AddListXgeo(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.ApiData/SP_FavoriteLists_GetListsBy(Edm.String, Edm.String, Edm.Int32)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SP_FavoriteLists_GetListsByXgeo(Edm.String, Edm.String, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_FavoriteLists_RemoveList(Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_FavoriteLists_RemoveListXgeo(Edm.String, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.ApiData/SP_FavoriteLists_UpdateList(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SP_FavoriteLists_UpdateListXgeo(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Internal_FlowPermissions_GetFlowPermissionLevelOnList(Edm.String)">
@@ -18520,7 +18622,7 @@
       <Annotations Target="SP.ApiData/CreateMappedView(SP.List, SP.AppViewCreationInfo, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/CreateRule(SP.List, Edm.String, Edm.String, Edm.String)">
+      <Annotations Target="SP.ApiData/CreateRule(SP.List, Edm.String, Edm.String, Edm.String, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/DeleteRule(SP.List, Edm.String)">
@@ -18571,7 +18673,7 @@
       <Annotations Target="SP.ApiData/UnpublishMappedView(SP.List, Edm.Guid, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/UpdateRule(SP.List, Edm.String, Edm.String, Edm.String, Edm.String)">
+      <Annotations Target="SP.ApiData/UpdateRule(SP.List, Edm.String, Edm.String, Edm.String, Edm.String, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/ValidateAppName(SP.List, Edm.String)">
@@ -22946,8 +23048,10 @@
         <Property Name="errors" Type="Collection(SP.Publishing.Error)" />
       </ComplexType>
       <ComplexType Name="RuleResult">
+        <Property Name="ActionToTake" Type="Edm.String" />
         <Property Name="Details" Type="SP.Publishing.RuleErrorDetails" />
-        <Property Name="learnMore" Type="Edm.String" />
+        <Property Name="description" Type="Edm.String" />
+        <Property Name="LearnMoreLink" Type="Edm.String" />
         <Property Name="ResultCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
@@ -25782,6 +25886,10 @@
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="CommentsOnSitePagesDisabled">
+        <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Value" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="CustomFormUrl">
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.String" />
@@ -25884,6 +25992,10 @@
         <Property Name="Url" Type="Edm.String" />
         <Property Name="UserCodeMaximumLevel" Type="Edm.Double" Nullable="false" />
         <Property Name="UserCodeWarningLevel" Type="Edm.Double" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="SitePagesEnabled">
+        <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Value" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
       <ComplexType Name="SPOSitePropertiesEnumerableFilter">
         <Property Name="Filter" Type="Edm.String" />
@@ -26081,6 +26193,7 @@
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
         <Property Name="AutoQuotaEnabled" Type="Microsoft.Online.SharePoint.TenantAdministration.AutoQuotaEnabled" />
         <Property Name="AvailableManagedPathsForSiteCreation" Type="Collection(Edm.String)" />
+        <Property Name="CommentsOnSitePagesDisabled" Type="Microsoft.Online.SharePoint.TenantAdministration.CommentsOnSitePagesDisabled" />
         <Property Name="CustomFormUrl" Type="Microsoft.Online.SharePoint.TenantAdministration.CustomFormUrl" />
         <Property Name="DisableGroupify" Type="Microsoft.Online.SharePoint.TenantAdministration.DisableGroupify" />
         <Property Name="MailFromAddress" Type="Microsoft.Online.SharePoint.TenantAdministration.MailFromAddress" />
@@ -26097,6 +26210,7 @@
         <Property Name="ShowSelfServiceSiteCreation" Type="Microsoft.Online.SharePoint.TenantAdministration.ShowSelfServiceSiteCreation" />
         <Property Name="SiteCreationDefaultStorageQuota" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCreationDefaultStorageQuota" />
         <Property Name="SiteCreationNewUX" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCreationNewUX" />
+        <Property Name="SitePagesEnabled" Type="Microsoft.Online.SharePoint.TenantAdministration.SitePagesEnabled" />
         <Property Name="SmtpServer" Type="Microsoft.Online.SharePoint.TenantAdministration.SmtpServer" />
         <Property Name="SPListModernUXOff" Type="Microsoft.Online.SharePoint.TenantAdministration.SPListModernUXOff" />
         <Property Name="TenantDefaultTimeZoneId" Type="Microsoft.Online.SharePoint.TenantAdministration.TenantDefaultTimeZoneId" />
@@ -26493,6 +26607,7 @@
         <NavigationProperty Name="Models" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Models_Microsoft_Office_Server_ContentCenter_SPMachineLearningModel_ModelsPartner" ToRole="Models" FromRole="ModelsPartner" />
         <NavigationProperty Name="Publications" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Publications_Microsoft_Office_Server_ContentCenter_SPMachineLearningPublication_PublicationsPartner" ToRole="Publications" FromRole="PublicationsPartner" />
         <NavigationProperty Name="Samples" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Samples_Microsoft_Office_Server_ContentCenter_SPMachineLearningSample_SamplesPartner" ToRole="Samples" FromRole="SamplesPartner" />
+        <NavigationProperty Name="WorkItems" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_WorkItems_Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItem_WorkItemsPartner" ToRole="WorkItems" FromRole="WorkItemsPartner" />
       </EntityType>
       <EntityType Name="SPMachineLearningModel">
         <Key>
@@ -26538,6 +26653,19 @@
         <Property Name="ObjectId" Type="Edm.String" />
         <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
       </EntityType>
+      <EntityType Name="SPMachineLearningWorkItem">
+        <Key>
+          <PropertyRef Name="Created" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DeliverDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Status" Type="Edm.String" />
+        <Property Name="TargetServerRelativeUrl" Type="Edm.String" />
+        <Property Name="TargetSiteUrl" Type="Edm.String" />
+        <Property Name="TargetWebServerRelativeUrl" Type="Edm.String" />
+        <Property Name="Type" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
       <EntityType Name="SPMachineLearningModelEntityData">
         <Key>
           <PropertyRef Name="Accuracy" />
@@ -26574,6 +26702,15 @@
         <Property Name="ExtractedText" Type="Edm.String" Nullable="false" />
         <Property Name="Markups" Type="Edm.String" />
       </EntityType>
+      <EntityType Name="SPMachineLearningWorkItemEntityData">
+        <Key>
+          <PropertyRef Name="TargetServerRelativeUrl" />
+        </Key>
+        <Property Name="TargetServerRelativeUrl" Type="Edm.String" Nullable="false" />
+        <Property Name="TargetSiteUrl" Type="Edm.String" />
+        <Property Name="TargetWebServerRelativeUrl" Type="Edm.String" />
+        <Property Name="Type" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
       <Association Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Models_Microsoft_Office_Server_ContentCenter_SPMachineLearningModel_ModelsPartner">
         <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" Role="Models" Multiplicity="*" />
         <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" Role="ModelsPartner" Multiplicity="0..1" />
@@ -26585,6 +26722,10 @@
       <Association Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Samples_Microsoft_Office_Server_ContentCenter_SPMachineLearningSample_SamplesPartner">
         <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample" Role="Samples" Multiplicity="*" />
         <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" Role="SamplesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_WorkItems_Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItem_WorkItemsPartner">
+        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem" Role="WorkItems" Multiplicity="*" />
+        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" Role="WorkItemsPartner" Multiplicity="0..1" />
       </Association>
     </Schema>
     <Schema Namespace="SP.WorkManagement.OM" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
