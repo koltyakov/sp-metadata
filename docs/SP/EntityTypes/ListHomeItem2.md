@@ -13,9 +13,12 @@ createdDate (Edm.String) | ✅ | ❌ | ❌ | ❌
 icon (Edm.String) | ✅ | ❌ | ❌ | ❌
 lastModifiedDate (Edm.String) | ✅ | ❌ | ❌ | ❌
 lastViewDate (Edm.String) | ✅ | ❌ | ❌ | ❌
+lastviewDateTime (Edm.String) | ✅ | ❌ | ❌ | ❌
 listId (Edm.String) | ✅ | ❌ | ❌ | ❌
 listTitle (Edm.String) | ✅ | ❌ | ❌ | ❌
 listUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+listViewCounts (Collection(SP.CountByDate)) | ✅ | ❌ | ❌ | ❌
+shouldRemove (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 siteColor (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteId (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteTitle (Edm.String) | ✅ | ❌ | ❌ | ❌

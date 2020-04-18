@@ -18,6 +18,7 @@ listId (Edm.String) | ✅ | ❌ | ❌ | ❌
 listTitle (Edm.String) | ✅ | ❌ | ❌ | ❌
 listUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 listViewCounts (Collection(SP.CountByDate)) | ✅ | ❌ | ❌ | ❌
+shouldRemove (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 siteColor (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteId (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteTitle (Edm.String) | ✅ | ❌ | ❌ | ❌

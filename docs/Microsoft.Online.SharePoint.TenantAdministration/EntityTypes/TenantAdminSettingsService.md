@@ -8,6 +8,7 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 AutoQuotaEnabled (Microsoft.Online.SharePoint.TenantAdministration.AutoQuotaEnabled) | ✅ | ❌ | ❌ | ❌
 AvailableManagedPathsForSiteCreation (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+CommentsOnSitePagesDisabled (Microsoft.Online.SharePoint.TenantAdministration.CommentsOnSitePagesDisabled) | ✅ | ❌ | ❌ | ❌
 CustomFormUrl (Microsoft.Online.SharePoint.TenantAdministration.CustomFormUrl) | ✅ | ❌ | ❌ | ❌
 DisableGroupify (Microsoft.Online.SharePoint.TenantAdministration.DisableGroupify) | ✅ | ❌ | ❌ | ❌
 Id4a81de82eeb94d6080ea5bf63e27023a (Edm.String) | ✅ | ❌ | ❌ | ❌
@@ -26,5 +27,6 @@ ShowNextGenerationSyncClientOnTeamSite (Microsoft.Online.SharePoint.TenantAdmini
 ShowSelfServiceSiteCreation (Microsoft.Online.SharePoint.TenantAdministration.ShowSelfServiceSiteCreation) | ✅ | ❌ | ❌ | ❌
 SiteCreationDefaultStorageQuota (Microsoft.Online.SharePoint.TenantAdministration.SiteCreationDefaultStorageQuota) | ✅ | ❌ | ❌ | ❌
 SiteCreationNewUX (Microsoft.Online.SharePoint.TenantAdministration.SiteCreationNewUX) | ✅ | ❌ | ❌ | ❌
+SitePagesEnabled (Microsoft.Online.SharePoint.TenantAdministration.SitePagesEnabled) | ✅ | ❌ | ❌ | ❌
 SmtpServer (Microsoft.Online.SharePoint.TenantAdministration.SmtpServer) | ✅ | ❌ | ❌ | ❌
 TenantDefaultTimeZoneId (Microsoft.Online.SharePoint.TenantAdministration.TenantDefaultTimeZoneId) | ✅ | ❌ | ❌ | ❌

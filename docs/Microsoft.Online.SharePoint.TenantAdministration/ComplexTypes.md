@@ -5,6 +5,7 @@
 Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [AutoQuotaEnabled](./ComplexTypes/AutoQuotaEnabled.md) | ✅ | ❌ | ❌ | ❌
+[CommentsOnSitePagesDisabled](./ComplexTypes/CommentsOnSitePagesDisabled.md) | ✅ | ❌ | ❌ | ❌
 [CustomFormUrl](./ComplexTypes/CustomFormUrl.md) | ✅ | ❌ | ❌ | ❌
 [DisableGroupify](./ComplexTypes/DisableGroupify.md) | ✅ | ❌ | ❌ | ❌
 [GroupInfo](./ComplexTypes/GroupInfo.md) | ✅ | ❌ | ❌ | ❌
@@ -30,6 +31,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SiteCreationDefaultStorageQuota](./ComplexTypes/SiteCreationDefaultStorageQuota.md) | ✅ | ❌ | ❌ | ❌
 [SiteCreationNewUX](./ComplexTypes/SiteCreationNewUX.md) | ✅ | ❌ | ❌ | ❌
 [SiteCreationProperties](./ComplexTypes/SiteCreationProperties.md) | ✅ | ❌ | ❌ | ❌
+[SitePagesEnabled](./ComplexTypes/SitePagesEnabled.md) | ✅ | ❌ | ❌ | ❌
 [SiteUserGroupInfo](./ComplexTypes/SiteUserGroupInfo.md) | ✅ | ❌ | ❌ | ❌
 [SmtpServer](./ComplexTypes/SmtpServer.md) | ✅ | ❌ | ❌ | ❌
 [TenantDefaultTimeZoneId](./ComplexTypes/TenantDefaultTimeZoneId.md) | ✅ | ❌ | ❌ | ❌

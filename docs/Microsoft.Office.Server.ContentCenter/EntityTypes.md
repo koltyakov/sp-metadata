@@ -12,3 +12,5 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPMachineLearningPublicationsResult](./EntityTypes/SPMachineLearningPublicationsResult.md) | ✅ | ❌ | ❌ | ❌
 [SPMachineLearningSample](./EntityTypes/SPMachineLearningSample.md) | ✅ | ❌ | ❌ | ❌
 [SPMachineLearningSampleEntityData](./EntityTypes/SPMachineLearningSampleEntityData.md) | ✅ | ❌ | ❌ | ❌
+[SPMachineLearningWorkItem](./EntityTypes/SPMachineLearningWorkItem.md) | ✅ | ❌ | ❌ | ❌
+[SPMachineLearningWorkItemEntityData](./EntityTypes/SPMachineLearningWorkItemEntityData.md) | ✅ | ❌ | ❌ | ❌

@@ -236,6 +236,7 @@ MigrationCenterStorages | ✅ | ❌ | ❌ | ❌
 MigrationCredentialEntityDatas | ✅ | ❌ | ❌ | ❌
 MigrationTaskEntityDatas | ✅ | ❌ | ❌ | ❌
 Models | ✅ | ❌ | ❌ | ❌
+ModernizeHomepageResults | ✅ | ❌ | ❌ | ❌
 ModuleLinks | ✅ | ✅ | ✅ | ❌
 MountPointInfos | ✅ | ✅ | ✅ | ❌
 MountPoints | ✅ | ✅ | ✅ | ❌
@@ -384,6 +385,7 @@ SPMachineLearningPublicationsEntityDatas | ✅ | ❌ | ❌ | ❌
 SPMachineLearningPublicationsResults | ✅ | ❌ | ❌ | ❌
 SPMachineLearningSampleEntityDatas | ✅ | ❌ | ❌ | ❌
 SPMachineLearningSamples | ✅ | ❌ | ❌ | ❌
+SPMachineLearningWorkItemEntityDatas | ✅ | ❌ | ❌ | ❌
 SPMarketplaceSettingss | ✅ | ❌ | ❌ | ❌
 SPMigrationJobStatuss | ✅ | ✅ | ✅ | ❌
 SPO3rdPartyAADPermissionGrants | ✅ | ❌ | ❌ | ❌
@@ -586,6 +588,7 @@ WorkflowServicesManagers | ✅ | ✅ | ✅ | ✅
 WorkflowSubscriptionServices | ✅ | ✅ | ✅ | ✅
 WorkflowSubscriptions | ✅ | ✅ | ✅ | ✅
 WorkflowTemplates | ✅ | ✅ | ✅ | ✅
+Workitems | ✅ | ❌ | ❌ | ❌
 comments | ✅ | ✅ | ❌ | ❌
 likedByInformations | ✅ | ✅ | ❌ | ❌
 placesInformations | ✅ | ❌ | ❌ | ❌

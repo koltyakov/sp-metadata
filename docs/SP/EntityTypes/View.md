@@ -16,6 +16,7 @@ DefaultView (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 DefaultViewForContentType (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 EditorModified (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 Formats (Edm.String) | ✅ | ✅ | ✅ | ✅
+GridLayout (Edm.String) | ✅ | ❌ | ❌ | ❌
 Hidden (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 HtmlSchemaXml (Edm.String) | ✅ | ✅ | ✅ | ✅
 Id (Edm.Guid) | ✅ | ✅ | ✅ | ✅

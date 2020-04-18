@@ -91,6 +91,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ListItem](./EntityTypes/ListItem.md) | ✅ | ✅ | ✅ | ✅
 [ListItemVersion](./EntityTypes/ListItemVersion.md) | ✅ | ✅ | ❌ | ❌
 [ListTemplate](./EntityTypes/ListTemplate.md) | ✅ | ✅ | ✅ | ✅
+[ModernizeHomepageResult](./EntityTypes/ModernizeHomepageResult.md) | ✅ | ❌ | ❌ | ❌
 [MountPoint](./EntityTypes/MountPoint.md) | ✅ | ✅ | ✅ | ❌
 [MountPointInfo](./EntityTypes/MountPointInfo.md) | ✅ | ✅ | ✅ | ❌
 [MountedFolderInfo](./EntityTypes/MountedFolderInfo.md) | ✅ | ✅ | ✅ | ❌

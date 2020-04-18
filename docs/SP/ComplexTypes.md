@@ -22,6 +22,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ChangeToken](./ComplexTypes/ChangeToken.md) | ✅ | ✅ | ✅ | ✅
 [ClassificationResult](./ComplexTypes/ClassificationResult.md) | ✅ | ❌ | ❌ | ❌
 [ContentTypeCreationInformation](./ComplexTypes/ContentTypeCreationInformation.md) | ✅ | ✅ | ✅ | ✅
+[ContentTypeEntityData](./ComplexTypes/ContentTypeEntityData.md) | ✅ | ❌ | ❌ | ❌
 [ContentTypeId](./ComplexTypes/ContentTypeId.md) | ✅ | ✅ | ✅ | ✅
 [ContextWebInformation](./ComplexTypes/ContextWebInformation.md) | ✅ | ✅ | ✅ | ✅
 [CopyJobProgress](./ComplexTypes/CopyJobProgress.md) | ✅ | ✅ | ❌ | ❌

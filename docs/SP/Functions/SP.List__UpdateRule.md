@@ -13,4 +13,5 @@ Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 condition (Edm.String) | ✅ | ❌ | ❌ | ❌
 outcome (Edm.String) | ✅ | ❌ | ❌ | ❌
 ruleId (Edm.String) | ✅ | ❌ | ❌ | ❌
+status (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 title (Edm.String) | ✅ | ❌ | ❌ | ❌

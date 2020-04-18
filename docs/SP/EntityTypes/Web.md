@@ -110,6 +110,7 @@ Author | ✅ | ✅ | ❌ | ❌
 AvailableContentTypes | ✅ | ✅ | ✅ | ✅
 AvailableFields | ✅ | ✅ | ✅ | ✅
 BingMapsInformation | ❌ | ✅ | ❌ | ❌
+CanModernizeHomepage | ✅ | ❌ | ❌ | ❌
 ClientWebParts | ✅ | ✅ | ❌ | ❌
 ContentTypes | ✅ | ✅ | ✅ | ✅
 CurrentUser | ✅ | ✅ | ✅ | ✅
