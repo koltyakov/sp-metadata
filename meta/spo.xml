@@ -3637,6 +3637,7 @@
         <EntitySet Name="OrgRelationVerifications" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationVerification" />
         <EntitySet Name="StorageQuotas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota" />
         <EntitySet Name="StorageQuotaEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuotaEntityData" />
+        <EntitySet Name="SupportedGeoLocationsForTenants" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.SupportedGeoLocationsForTenant" />
         <EntitySet Name="TaxonomyReplicationParameterss" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.TaxonomyReplicationParameters" />
         <EntitySet Name="TenantInformations" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.TenantInformation" />
         <EntitySet Name="UnifiedGroups" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.UnifiedGroup" />
@@ -9248,6 +9249,7 @@
           <Parameter Name="outcome" Type="Edm.String" />
           <Parameter Name="title" Type="Edm.String" />
           <Parameter Name="triggerType" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="emailField" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="DeleteObject" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -9693,6 +9695,7 @@
           <Parameter Name="condition" Type="Edm.String" />
           <Parameter Name="outcome" Type="Edm.String" />
           <Parameter Name="title" Type="Edm.String" />
+          <Parameter Name="emailField" Type="Edm.String" />
           <Parameter Name="status" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="ValidateAppName" ReturnType="SP.VisualizationAppSynchronizationResult" IsBindable="true" EntitySet="VisualizationAppSynchronizationResults">
@@ -12394,9 +12397,17 @@
           <Parameter Name="propagateAcl" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_Sharing_SiteSharingReportHelper_CancelSharingReportJob" ReturnType="SP.Sharing.SiteSharingReportStatus" />
+        <FunctionImport Name="SP_Sharing_SiteSharingReportHelper_CancelSharingReportJobForTenantAdmin" ReturnType="SP.Sharing.SiteSharingReportStatus">
+          <Parameter Name="siteUrl" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="SP_Sharing_SiteSharingReportHelper_CreateSharingReportJob" ReturnType="SP.Sharing.SiteSharingReportStatus">
           <Parameter Name="webUrl" Type="Edm.String" />
           <Parameter Name="folderUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Sharing_SiteSharingReportHelper_CreateSharingReportJobForTenantAdmin" ReturnType="SP.Sharing.SiteSharingReportStatus">
+          <Parameter Name="siteUrl" Type="Edm.String" />
+          <Parameter Name="reportWebUrl" Type="Edm.String" />
+          <Parameter Name="reportFolderUrl" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_Sharing_SiteSharingReportHelper_GetSiteSharingReportCapabilities" ReturnType="SP.Sharing.SiteSharingReportCapabilities" IsSideEffecting="false" />
         <FunctionImport Name="DeleteObject" IsBindable="true">
@@ -13457,6 +13468,10 @@
         <AssociationSet Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_StorageQuotas_Microsoft_Online_SharePoint_MultiGeo_Service_StorageQuota_StorageQuotasPartnerSet" Association="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_StorageQuotas_Microsoft_Online_SharePoint_MultiGeo_Service_StorageQuota_StorageQuotasPartner">
           <End Role="StorageQuotasPartner" EntitySet="MultiGeoServicesBetas" />
           <End Role="StorageQuotas" EntitySet="StorageQuotas" />
+        </AssociationSet>
+        <AssociationSet Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_SupportedGeoLocationsForTenant_Microsoft_Online_SharePoint_MultiGeo_Service_SupportedGeoLocationsForTenant_SupportedGeoLocationsForTenantPartnerSet" Association="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_SupportedGeoLocationsForTenant_Microsoft_Online_SharePoint_MultiGeo_Service_SupportedGeoLocationsForTenant_SupportedGeoLocationsForTenantPartner">
+          <End Role="SupportedGeoLocationsForTenantPartner" EntitySet="MultiGeoServicesBetas" />
+          <End Role="SupportedGeoLocationsForTenant" EntitySet="SupportedGeoLocationsForTenants" />
         </AssociationSet>
         <AssociationSet Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_TaxonomyReplicationParameters_Microsoft_Online_SharePoint_MultiGeo_Service_TaxonomyReplicationParameters_TaxonomyReplicationParametersPartnerSet" Association="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_TaxonomyReplicationParameters_Microsoft_Online_SharePoint_MultiGeo_Service_TaxonomyReplicationParameters_TaxonomyReplicationParametersPartner">
           <End Role="TaxonomyReplicationParametersPartner" EntitySet="MultiGeoServicesBetas" />
@@ -18622,7 +18637,7 @@
       <Annotations Target="SP.ApiData/CreateMappedView(SP.List, SP.AppViewCreationInfo, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/CreateRule(SP.List, Edm.String, Edm.String, Edm.String, Edm.Int32)">
+      <Annotations Target="SP.ApiData/CreateRule(SP.List, Edm.String, Edm.String, Edm.String, Edm.Int32, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/DeleteRule(SP.List, Edm.String)">
@@ -18673,7 +18688,7 @@
       <Annotations Target="SP.ApiData/UnpublishMappedView(SP.List, Edm.Guid, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/UpdateRule(SP.List, Edm.String, Edm.String, Edm.String, Edm.String, Edm.Int32)">
+      <Annotations Target="SP.ApiData/UpdateRule(SP.List, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/ValidateAppName(SP.List, Edm.String)">
@@ -19177,7 +19192,13 @@
       <Annotations Target="SP.ApiData/SP_Sharing_SiteSharingReportHelper_CancelSharingReportJob()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_Sharing_SiteSharingReportHelper_CancelSharingReportJobForTenantAdmin(Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_Sharing_SiteSharingReportHelper_CreateSharingReportJob(Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_Sharing_SiteSharingReportHelper_CreateSharingReportJobForTenantAdmin(Edm.String, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Sharing_SiteSharingReportHelper_GetSiteSharingReportCapabilities()">
@@ -19809,6 +19830,7 @@
         <NavigationProperty Name="GroupMoveJobs" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_GroupMoveJobs_Microsoft_Online_SharePoint_MultiGeo_Service_GroupMoveJob_GroupMoveJobsPartner" ToRole="GroupMoveJobs" FromRole="GroupMoveJobsPartner" />
         <NavigationProperty Name="SiteMoveJobs" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_SiteMoveJobs_Microsoft_Online_SharePoint_MultiGeo_Service_SiteMoveJob_SiteMoveJobsPartner" ToRole="SiteMoveJobs" FromRole="SiteMoveJobsPartner" />
         <NavigationProperty Name="StorageQuotas" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_StorageQuotas_Microsoft_Online_SharePoint_MultiGeo_Service_StorageQuota_StorageQuotasPartner" ToRole="StorageQuotas" FromRole="StorageQuotasPartner" />
+        <NavigationProperty Name="SupportedGeoLocationsForTenant" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_SupportedGeoLocationsForTenant_Microsoft_Online_SharePoint_MultiGeo_Service_SupportedGeoLocationsForTenant_SupportedGeoLocationsForTenantPartner" ToRole="SupportedGeoLocationsForTenant" FromRole="SupportedGeoLocationsForTenantPartner" />
         <NavigationProperty Name="TaxonomyReplicationParameters" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_TaxonomyReplicationParameters_Microsoft_Online_SharePoint_MultiGeo_Service_TaxonomyReplicationParameters_TaxonomyReplicationParametersPartner" ToRole="TaxonomyReplicationParameters" FromRole="TaxonomyReplicationParametersPartner" />
         <NavigationProperty Name="TenantInformationCollection" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_TenantInformationCollection_Microsoft_Online_SharePoint_MultiGeo_Service_TenantInformation_TenantInformationCollectionPartner" ToRole="TenantInformationCollection" FromRole="TenantInformationCollectionPartner" />
         <NavigationProperty Name="UnifiedGroups" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_UnifiedGroups_Microsoft_Online_SharePoint_MultiGeo_Service_UnifiedGroup_UnifiedGroupsPartner" ToRole="UnifiedGroups" FromRole="UnifiedGroupsPartner" />
@@ -19830,6 +19852,13 @@
         <Property Name="GeoUsedStorageMB" Type="Edm.Int64" Nullable="false" />
         <Property Name="QuotaType" Type="Edm.Int32" Nullable="false" />
         <Property Name="TenantStorageMB" Type="Edm.Int64" Nullable="false" />
+      </EntityType>
+      <EntityType Name="SupportedGeoLocationsForTenant">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+        <Property Name="Items" Type="Collection(Edm.String)" />
       </EntityType>
       <EntityType Name="TaxonomyReplicationParameters">
         <Key>
@@ -19968,6 +19997,10 @@
       <Association Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_StorageQuotas_Microsoft_Online_SharePoint_MultiGeo_Service_StorageQuota_StorageQuotasPartner">
         <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota" Role="StorageQuotas" Multiplicity="*" />
         <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" Role="StorageQuotasPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_SupportedGeoLocationsForTenant_Microsoft_Online_SharePoint_MultiGeo_Service_SupportedGeoLocationsForTenant_SupportedGeoLocationsForTenantPartner">
+        <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.SupportedGeoLocationsForTenant" Role="SupportedGeoLocationsForTenant" Multiplicity="0..1" />
+        <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" Role="SupportedGeoLocationsForTenantPartner" Multiplicity="0..1" />
       </Association>
       <Association Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_TaxonomyReplicationParameters_Microsoft_Online_SharePoint_MultiGeo_Service_TaxonomyReplicationParameters_TaxonomyReplicationParametersPartner">
         <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.TaxonomyReplicationParameters" Role="TaxonomyReplicationParameters" Multiplicity="0..1" />
@@ -24047,8 +24080,10 @@
         <Property Name="DataClassificationOptionsNew" Type="Collection(SP.KeyValue)" />
         <Property Name="DefaultClassification" Type="Edm.String" />
         <Property Name="ExternalInvitationEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="MachineLearningCapturedEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PreferredLanguage" Type="Edm.Int32" />
         <Property Name="RequireSecondaryContact" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SiteLabelDisplayName" Type="Edm.String" />
         <Property Name="SitePath" Type="Edm.String" />
         <Property Name="UsageGuidelineUrl" Type="Edm.String" />
       </ComplexType>
@@ -24733,13 +24768,17 @@
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.ListHome" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="ListHomeItem">
+        <Property Name="color" Type="Edm.String" />
+        <Property Name="icon" Type="Edm.String" />
         <Property Name="listId" Type="Edm.String" />
         <Property Name="listUrl" Type="Edm.String" />
         <Property Name="siteId" Type="Edm.String" />
+        <Property Name="siteUrl" Type="Edm.String" />
         <Property Name="title" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="FavoriteListHomeItem" BaseType="Microsoft.SharePoint.ListHome.ListHomeItem">
         <Property Name="favoritesOrder" Type="Edm.Single" />
+        <Property Name="lastPolled" Type="Edm.Single" />
       </ComplexType>
     </Schema>
     <Schema Namespace="SP.Internal" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
