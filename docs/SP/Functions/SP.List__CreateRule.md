@@ -11,6 +11,7 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 condition (Edm.String) | ✅ | ❌ | ❌ | ❌
+emailField (Edm.String) | ✅ | ❌ | ❌ | ❌
 outcome (Edm.String) | ✅ | ❌ | ❌ | ❌
 title (Edm.String) | ✅ | ❌ | ❌ | ❌
 triggerType (Edm.Int32) | ✅ | ❌ | ❌ | ❌

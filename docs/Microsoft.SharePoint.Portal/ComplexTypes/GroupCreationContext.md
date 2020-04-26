@@ -15,7 +15,9 @@ DataClassificationOptions (Collection(Edm.String)) | ✅ | ✅ | ❌ | ❌
 DataClassificationOptionsNew (Collection(SP.KeyValue)) | ✅ | ❌ | ❌ | ❌
 DefaultClassification (Edm.String) | ✅ | ✅ | ❌ | ❌
 ExternalInvitationEnabled (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
+MachineLearningCapturedEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PreferredLanguage (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 RequireSecondaryContact (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
+SiteLabelDisplayName (Edm.String) | ✅ | ❌ | ❌ | ❌
 SitePath (Edm.String) | ✅ | ✅ | ❌ | ❌
 UsageGuidelineUrl (Edm.String) | ✅ | ✅ | ❌ | ❌

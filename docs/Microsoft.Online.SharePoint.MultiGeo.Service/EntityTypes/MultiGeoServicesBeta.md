@@ -27,6 +27,7 @@ GlobalAdminCheck | ✅ | ❌ | ❌ | ❌
 GroupMoveJobs | ✅ | ❌ | ❌ | ❌
 SiteMoveJobs | ✅ | ❌ | ❌ | ❌
 StorageQuotas | ✅ | ❌ | ❌ | ❌
+SupportedGeoLocationsForTenant | ✅ | ❌ | ❌ | ❌
 TaxonomyReplicationParameters | ✅ | ❌ | ❌ | ❌
 TenantInformationCollection | ✅ | ❌ | ❌ | ❌
 UnifiedGroups | ✅ | ❌ | ❌ | ❌

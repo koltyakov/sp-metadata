@@ -15,7 +15,9 @@ SP_Sharing_PersonalWeb_FixPermissionInheritance | ✅ | ✅ | ❌ | ❌
 SP_Sharing_PersonalWeb_GetOversharedWebInfo | ✅ | ✅ | ❌ | ❌
 [SP_Sharing_PersonalWeb_RemovePermissionForUsers](./Functions/SP_Sharing_PersonalWeb_RemovePermissionForUsers.md) | ✅ | ✅ | ❌ | ❌
 <span title="SP_Sharing_SiteSharingReportHelper_CancelSharingReportJob">SP_Sharing_SiteSharingReportHelper_CancelSharingRe...</span> (SP Sharing SiteSharingReportHelper CancelSharingReportJob) | ✅ | ❌ | ❌ | ❌
+[<span title="SP_Sharing_SiteSharingReportHelper_CancelSharingReportJobForTenantAdmin">SP_Sharing_SiteSharingReportHelper_CancelSharingRe...</span> (SP Sharing SiteSharingReportHelper CancelSharingReportJobForTenantAdmin)](./Functions/SP_Sharing_SiteSharingReportHelper_CancelSharingReportJobForTenantAdmin.md) | ✅ | ❌ | ❌ | ❌
 [<span title="SP_Sharing_SiteSharingReportHelper_CreateSharingReportJob">SP_Sharing_SiteSharingReportHelper_CreateSharingRe...</span> (SP Sharing SiteSharingReportHelper CreateSharingReportJob)](./Functions/SP_Sharing_SiteSharingReportHelper_CreateSharingReportJob.md) | ✅ | ❌ | ❌ | ❌
+[<span title="SP_Sharing_SiteSharingReportHelper_CreateSharingReportJobForTenantAdmin">SP_Sharing_SiteSharingReportHelper_CreateSharingRe...</span> (SP Sharing SiteSharingReportHelper CreateSharingReportJobForTenantAdmin)](./Functions/SP_Sharing_SiteSharingReportHelper_CreateSharingReportJobForTenantAdmin.md) | ✅ | ❌ | ❌ | ❌
 <span title="SP_Sharing_SiteSharingReportHelper_GetSiteSharingReportCapabilities">SP_Sharing_SiteSharingReportHelper_GetSiteSharingR...</span> (SP Sharing SiteSharingReportHelper GetSiteSharingReportCapabilities) | ✅ | ❌ | ❌ | ❌
 [SP_Web_ForwardObjectLink](./Functions/SP_Web_ForwardObjectLink.md) | ✅ | ✅ | ✅ | ❌
 [SP_Web_ShareObject](./Functions/SP_Web_ShareObject.md) | ✅ | ✅ | ✅ | ❌

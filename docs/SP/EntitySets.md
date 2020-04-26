@@ -482,6 +482,7 @@ Subscriptions | ✅ | ✅ | ✅ | ✅
 Subscriptions1 | ✅ | ✅ | ❌ | ❌
 SubtitleFiles | ✅ | ❌ | ❌ | ❌
 SuiteNavDatas | ✅ | ✅ | ✅ | ✅
+SupportedGeoLocationsForTenants | ✅ | ❌ | ❌ | ❌
 SyncTranslators | ✅ | ✅ | ✅ | ✅
 TargetApplicationFields | ✅ | ❌ | ❌ | ❌
 TargetApplications | ✅ | ❌ | ❌ | ❌

@@ -36,6 +36,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SiteMoveJobEntityData](./EntityTypes/SiteMoveJobEntityData.md) | ✅ | ❌ | ❌ | ❌
 [StorageQuota](./EntityTypes/StorageQuota.md) | ✅ | ❌ | ❌ | ❌
 [StorageQuotaEntityData](./EntityTypes/StorageQuotaEntityData.md) | ✅ | ❌ | ❌ | ❌
+[SupportedGeoLocationsForTenant](./EntityTypes/SupportedGeoLocationsForTenant.md) | ✅ | ❌ | ❌ | ❌
 [TaxonomyReplicationParameters](./EntityTypes/TaxonomyReplicationParameters.md) | ✅ | ❌ | ❌ | ❌
 [TenantInformation](./EntityTypes/TenantInformation.md) | ✅ | ❌ | ❌ | ❌
 [UnifiedGroup](./EntityTypes/UnifiedGroup.md) | ✅ | ❌ | ❌ | ❌
