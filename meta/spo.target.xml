@@ -325,6 +325,7 @@
         <Property Name="AllowSmallerVersionLimitOnDestination" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BypassSharedLock" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ClientEtags" Type="Collection(Edm.String)" />
+        <Property Name="ExcludeChildren" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IgnoreVersionHistory" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IncludeItemPermissions" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsMoveMode" Type="Edm.Boolean" Nullable="false" />
@@ -828,6 +829,7 @@
         <Property Name="ViewData" Type="Edm.String" />
         <Property Name="ViewFields" Type="Collection(Edm.String)" />
         <Property Name="ViewTypeKind" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ViewType2" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="VisualizationAppInfo">
         <Property Name="DesignUri" Type="Edm.String" />
@@ -7627,6 +7629,7 @@
         <FunctionImport Name="SP_Publishing_SitePageService_FilePickerTabOptions" ReturnType="SP.Publishing.FilePickerOptions" IsSideEffecting="false" />
         <FunctionImport Name="SP_Publishing_SitePageService_GetAvailableFullPageApplications" ReturnType="Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult)" IsSideEffecting="false">
           <Parameter Name="includeErrors" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="project" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_Publishing_SitePageService_GetCurrentUserMemberships" ReturnType="Collection(Edm.Guid)" IsSideEffecting="false" />
         <FunctionImport Name="SP_Publishing_SitePageService_GetTimeZone" ReturnType="SP.Publishing.PrimaryCityTime" IsComposable="true" EntitySet="PrimaryCityTimes">
@@ -8358,6 +8361,10 @@
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.SPSiteManager" />
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="GetCompatibleSegments" ReturnType="Collection(Microsoft.SharePoint.Portal.IBSegmentInfo)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Portal.SPSiteManager" />
+          <Parameter Name="segments" Type="Collection(Edm.Guid)" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="GetIBSegmentLabels" ReturnType="Collection(Microsoft.SharePoint.Portal.IBSegmentInfo)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.SPSiteManager" />
           <Parameter Name="IBSegments" Type="Collection(Edm.Guid)" Nullable="false" />
@@ -8370,6 +8377,10 @@
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.SPSiteManager" />
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="relatedGroupId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SetIBSegments" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Portal.SPSiteManager" />
+          <Parameter Name="IBSegments" Type="Collection(Edm.Guid)" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SetTeamChannelSiteOwner" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.SPSiteManager" />
@@ -8978,6 +8989,11 @@
           <Parameter Name="listId" Type="Edm.String" />
           <Parameter Name="page" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="SP_FavoriteLists_GetListsBySubstrate" ReturnType="Edm.String">
+          <Parameter Name="siteId" Type="Edm.String" />
+          <Parameter Name="listId" Type="Edm.String" />
+          <Parameter Name="page" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="SP_FavoriteLists_RemoveList">
           <Parameter Name="siteId" Type="Edm.String" />
           <Parameter Name="listId" Type="Edm.String" />
@@ -8986,6 +9002,10 @@
           <Parameter Name="favoriteList" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
         </FunctionImport>
         <FunctionImport Name="SP_KnowledgeHub" ReturnType="SP.KnowledgeHub" IsComposable="true" EntitySet="KnowledgeHubs" />
+        <FunctionImport Name="AddOrUpdateSiteReference" IsBindable="true">
+          <Parameter Name="this" Type="SP.KnowledgeHub" />
+          <Parameter Name="knowledgeHubSiteUrl" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="SiteReference" ReturnType="SP.KnowledgeHubSiteReference" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.KnowledgeHub" />
         </FunctionImport>
@@ -11775,14 +11795,17 @@
         <FunctionImport Name="GetClientSideComponents" ReturnType="Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult)" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="components" Type="Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentIdentifier)" />
+          <Parameter Name="project" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetClientSideComponentsById" ReturnType="Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="componentIds" Type="Collection(Edm.Guid)" Nullable="false" />
+          <Parameter Name="project" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetClientSideWebParts" ReturnType="Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="includeErrors" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="project" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_Web_GetContextWebInformation" ReturnType="SP.ContextWebInformation" />
         <FunctionImport Name="SP_Web_GetContextWebThemeData" ReturnType="Edm.String" IsSideEffecting="false" />
@@ -12034,6 +12057,7 @@
           <Parameter Name="footerEnabled" Type="Edm.Boolean" />
           <Parameter Name="footerLayout" Type="Edm.Int32" />
           <Parameter Name="footerEmphasis" Type="Edm.Int32" />
+          <Parameter Name="hideTitleInHeader" Type="Edm.Boolean" />
         </FunctionImport>
         <FunctionImport Name="SetDefaultNewPageTemplateId" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
@@ -12630,6 +12654,7 @@
         <FunctionImport Name="Microsoft_Online_SharePoint_TenantAdministration_SiteCollectionManagementService" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" IsComposable="true" EntitySet="SiteCollectionManagementServices" />
         <FunctionImport Name="ExportCSVFile" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
+          <Parameter Name="viewXml" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="GetSiteDescription" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
@@ -15448,6 +15473,9 @@
       <Annotations Target="SP.CopyMigrationOptions/ClientEtags">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.CopyMigrationOptions/ExcludeChildren">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.CopyMigrationOptions/IncludeItemPermissions">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -15878,6 +15906,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub/MachineLearningCaptureEnabled">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel">
@@ -18025,7 +18056,7 @@
       <Annotations Target="SP.ApiData/SP_Publishing_SitePageService_FilePickerTabOptions()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_Publishing_SitePageService_GetAvailableFullPageApplications(Edm.Boolean)">
+      <Annotations Target="SP.ApiData/SP_Publishing_SitePageService_GetAvailableFullPageApplications(Edm.Boolean, Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Publishing_SitePageService_GetCurrentUserMemberships()">
@@ -18244,6 +18275,9 @@
       <Annotations Target="Microsoft.SharePoint.Portal.IBSegmentInfo/ObjectId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetCompatibleSegments(Microsoft.SharePoint.Portal.SPSiteManager, Collection(Edm.Guid))">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetIBSegmentLabels(Microsoft.SharePoint.Portal.SPSiteManager, Collection(Edm.Guid))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18260,6 +18294,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/RestoreTeamsChannelSite(Microsoft.SharePoint.Portal.SPSiteManager, Edm.Guid, Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetIBSegments(Microsoft.SharePoint.Portal.SPSiteManager, Collection(Edm.Guid))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetTeamChannelSiteOwner(Microsoft.SharePoint.Portal.SPSiteManager, Edm.Guid, Edm.String, Edm.String)">
@@ -18557,6 +18594,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_FavoriteLists_GetListsBy(Edm.String, Edm.String, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_FavoriteLists_GetListsBySubstrate(Edm.String, Edm.String, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_FavoriteLists_RemoveList(Edm.String, Edm.String)">
@@ -19009,13 +19049,13 @@
       <Annotations Target="SP.ApiData/GetAllClientSideComponents(SP.Web)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/GetClientSideComponents(SP.Web, Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentIdentifier))">
+      <Annotations Target="SP.ApiData/GetClientSideComponents(SP.Web, Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentIdentifier), Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/GetClientSideComponentsById(SP.Web, Collection(Edm.Guid))">
+      <Annotations Target="SP.ApiData/GetClientSideComponentsById(SP.Web, Collection(Edm.Guid), Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/GetClientSideWebParts(SP.Web, Edm.Boolean)">
+      <Annotations Target="SP.ApiData/GetClientSideWebParts(SP.Web, Edm.Boolean, Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetFileByGuestUrlEnsureAccess(SP.Web, Edm.String, Edm.Boolean)">
@@ -19084,7 +19124,7 @@
       <Annotations Target="SP.ApiData/SetAccessRequestSiteDescriptionAndUpdate(SP.Web, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SetChromeOptions(SP.Web, Edm.Int32, Edm.Int32, Edm.Boolean, Edm.Boolean, Edm.Int32, Edm.Int32)">
+      <Annotations Target="SP.ApiData/SetChromeOptions(SP.Web, Edm.Int32, Edm.Int32, Edm.Boolean, Edm.Boolean, Edm.Int32, Edm.Int32, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetDefaultNewPageTemplateId(SP.Web, Edm.Guid)">
@@ -19222,7 +19262,7 @@
       <Annotations Target="SP.ApiData/Microsoft_Online_SharePoint_TenantAdministration_SiteCollectionManagementService()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/ExportCSVFile(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService)">
+      <Annotations Target="SP.ApiData/ExportCSVFile(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetSiteDescription(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService, Edm.Guid)">
@@ -26640,9 +26680,9 @@
       </ComplexType>
       <EntityType Name="SPMachineLearningHub">
         <Key>
-          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+          <PropertyRef Name="MachineLearningCaptureEnabled" />
         </Key>
-        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+        <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
         <NavigationProperty Name="Models" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Models_Microsoft_Office_Server_ContentCenter_SPMachineLearningModel_ModelsPartner" ToRole="Models" FromRole="ModelsPartner" />
         <NavigationProperty Name="Publications" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Publications_Microsoft_Office_Server_ContentCenter_SPMachineLearningPublication_PublicationsPartner" ToRole="Publications" FromRole="PublicationsPartner" />
         <NavigationProperty Name="Samples" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Samples_Microsoft_Office_Server_ContentCenter_SPMachineLearningSample_SamplesPartner" ToRole="Samples" FromRole="SamplesPartner" />
