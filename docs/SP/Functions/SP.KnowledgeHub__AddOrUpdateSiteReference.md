@@ -1,8 +1,8 @@
-# Function Import: GetClientSideComponentsById
+# Function Import: AddOrUpdateSiteReference
 
 > Namespace: SP
 
-- Entity type: SP.Web
+- Entity type: SP.KnowledgeHub
 - Is composable: false
 - Is bindable: false
 
@@ -10,5 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-componentIds (Collection(Edm.Guid)) | ✅ | ✅ | ❌ | ❌
-project (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+knowledgeHubSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

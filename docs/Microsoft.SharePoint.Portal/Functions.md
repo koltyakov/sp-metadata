@@ -18,6 +18,7 @@ Delete (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 Delete (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ✅ | ❌ | ❌
 EnsureTeamForGroup (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 EnsureTeamForGroupEx (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
+GetCompatibleSegments (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
 GetGroupCreationContext (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ❌ | ❌
 GetGroupImage (Microsoft.SharePoint.Portal.GroupService) | ✅ | ✅ | ❌ | ❌
 GetGroupSiteConversionData (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ❌ | ❌
@@ -51,6 +52,7 @@ Notebook (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ✅ | ❌
 PinToTeam (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 RestoreTeamsChannelSite (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
 SetGroupImage (Microsoft.SharePoint.Portal.GroupService) | ✅ | ✅ | ❌ | ❌
+SetIBSegments (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
 SetRectSiteLogo (Microsoft.SharePoint.Portal.SiteIconManager) | ✅ | ❌ | ❌ | ❌
 SetTeamChannelSiteOwner (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
 SiteIconManager | ✅ | ❌ | ❌ | ❌

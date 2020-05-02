@@ -11,3 +11,4 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 components (Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentIdentifier)) | ✅ | ✅ | ❌ | ❌
+project (Edm.Guid) | ✅ | ❌ | ❌ | ❌

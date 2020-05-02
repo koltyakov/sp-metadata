@@ -10,6 +10,7 @@ AllowSchemaMismatch (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 AllowSmallerVersionLimitOnDestination (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 BypassSharedLock (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ClientEtags (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+ExcludeChildren (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IgnoreVersionHistory (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 IncludeItemPermissions (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMoveMode (Edm.Boolean) | ✅ | ✅ | ❌ | ❌

@@ -24,6 +24,7 @@ AddDependentLookupField (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
 AddField (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
 AddItem (SP.List) | ✅ | ✅ | ✅ | ✅
 AddItemUsingPath (SP.List) | ✅ | ✅ | ❌ | ❌
+AddOrUpdateSiteReference (SP.KnowledgeHub) | ✅ | ❌ | ❌ | ❌
 AddRoleAssignment (Collection(SP.RoleAssignment)) | ✅ | ✅ | ✅ | ✅
 AddStub (Collection(SP.File)) | ✅ | ✅ | ✅ | ❌
 AddStubUsingPath (Collection(SP.File)) | ✅ | ✅ | ❌ | ❌
@@ -492,6 +493,7 @@ SP_FavoriteListsDeprecated_GetFavoriteLists | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteListsDeprecated_RemoveFavoriteList](./Functions/SP_FavoriteListsDeprecated_RemoveFavoriteList.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_AddList](./Functions/SP_FavoriteLists_AddList.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_GetListsBy](./Functions/SP_FavoriteLists_GetListsBy.md) | ✅ | ❌ | ❌ | ❌
+[SP_FavoriteLists_GetListsBySubstrate](./Functions/SP_FavoriteLists_GetListsBySubstrate.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_RemoveList](./Functions/SP_FavoriteLists_RemoveList.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_UpdateList](./Functions/SP_FavoriteLists_UpdateList.md) | ✅ | ❌ | ❌ | ❌
 [SP_File_GetContentVerFromTag](./Functions/SP_File_GetContentVerFromTag.md) | ✅ | ✅ | ✅ | ✅
