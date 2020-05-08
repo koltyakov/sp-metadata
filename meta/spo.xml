@@ -3585,6 +3585,7 @@
         <EntitySet Name="OrgNews" EntityType="SP.OrganizationNews" />
         <EntitySet Name="OrgNewsSites" EntityType="Microsoft.SharePoint.OrgNewsSite.OrgNewsSiteApi" />
         <EntitySet Name="PageDiagnostics" EntityType="SP.Publishing.PageDiagnosticsController" />
+        <EntitySet Name="PortalLaunchWaves" EntityType="SP.Publishing.PortalLaunch.PortalLaunchWavesManager" />
         <EntitySet Name="PortalNavigationCaches" EntityType="SP.Publishing.Navigation.PortalNavigationCacheWrapper" />
         <EntitySet Name="Publications" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication" />
         <EntitySet Name="Sites" EntityType="SP.Site" />
@@ -4119,6 +4120,7 @@
         <FunctionImport Name="OrgNews" ReturnType="SP.OrganizationNews" IsComposable="true" EntitySet="OrgNews" />
         <FunctionImport Name="OrgNewsSite" ReturnType="Microsoft.SharePoint.OrgNewsSite.OrgNewsSiteApi" IsComposable="true" EntitySet="OrgNewsSites" />
         <FunctionImport Name="PageDiagnostics" ReturnType="SP.Publishing.PageDiagnosticsController" IsComposable="true" EntitySet="PageDiagnostics" />
+        <FunctionImport Name="PortalLaunchWaves" ReturnType="SP.Publishing.PortalLaunch.PortalLaunchWavesManager" IsComposable="true" EntitySet="PortalLaunchWaves" />
         <FunctionImport Name="PortalNavigationCache" ReturnType="SP.Publishing.Navigation.PortalNavigationCacheWrapper" IsComposable="true" EntitySet="PortalNavigationCaches" />
         <FunctionImport Name="publications" ReturnType="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)" IsComposable="true" EntitySet="Publications" />
         <FunctionImport Name="site" ReturnType="SP.Site" IsComposable="true" EntitySet="Sites" />
@@ -4896,6 +4898,10 @@
           <Parameter Name="siteId" Type="Edm.String" />
           <Parameter Name="propertyName" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_GetSiteSubscriptionProperty" ReturnType="Edm.String" IsSideEffecting="false">
+          <Parameter Name="tenantId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="propertyName" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_IsSiteDeletable" ReturnType="Edm.Boolean" IsSideEffecting="false">
           <Parameter Name="siteUrl" Type="Edm.String" />
         </FunctionImport>
@@ -4921,6 +4927,9 @@
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_RegisterSiteHoldEventReceiver">
           <Parameter Name="siteUrl" Type="Edm.String" />
           <Parameter Name="siteId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_RegisterSiteSubscriptionEventReceiver">
+          <Parameter Name="tenantId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="RemoveContainerRetentionPolicy" IsBindable="true">
           <Parameter Name="this" Type="SP.CompliancePolicy.SPPolicyStoreProxy" />
@@ -4976,6 +4985,11 @@
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_SetSiteCompliancePolicyProperty">
           <Parameter Name="siteUrl" Type="Edm.String" />
           <Parameter Name="siteId" Type="Edm.String" />
+          <Parameter Name="propertyName" Type="Edm.String" />
+          <Parameter Name="propertyValue" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_SetSiteSubscriptionProperty">
+          <Parameter Name="tenantId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="propertyName" Type="Edm.String" />
           <Parameter Name="propertyValue" Type="Edm.String" />
         </FunctionImport>
@@ -7813,6 +7827,25 @@
           <Parameter Name="this" Type="Collection(SP.Publishing.VideoThumbnail)" />
           <Parameter Name="choice" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="SP_Publishing_PortalLaunch_PortalLaunchWavesManager" ReturnType="SP.Publishing.PortalLaunch.PortalLaunchWavesManager" IsComposable="true" EntitySet="PortalLaunchWaves">
+          <Parameter Name="siteSubscriptionId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="useTenantStoreCache" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetAllWaveSetups" ReturnType="SP.Publishing.PortalLaunch.PortalLaunchSetupWrapper" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.PortalLaunch.PortalLaunchWavesManager" />
+        </FunctionImport>
+        <FunctionImport Name="GetWaveSetup" ReturnType="SP.Publishing.PortalLaunch.PortalLaunchWaveSetup" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.PortalLaunch.PortalLaunchWavesManager" />
+          <Parameter Name="siteUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="RemoveWaveSetup" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.PortalLaunch.PortalLaunchWavesManager" />
+          <Parameter Name="siteUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SaveWaveSetup" ReturnType="SP.Publishing.PortalLaunch.PortalLaunchWaveSetup" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.PortalLaunch.PortalLaunchWavesManager" />
+          <Parameter Name="portalLaunchSetup" Type="SP.Publishing.PortalLaunch.PortalLaunchWaveSetup" />
+        </FunctionImport>
         <FunctionImport Name="SP_Publishing_Navigation_PortalNavigationCacheWrapper" ReturnType="SP.Publishing.Navigation.PortalNavigationCacheWrapper" IsComposable="true" EntitySet="PortalNavigationCaches" />
         <FunctionImport Name="Disable" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.Navigation.PortalNavigationCacheWrapper" />
@@ -8989,7 +9022,7 @@
           <Parameter Name="listId" Type="Edm.String" />
           <Parameter Name="page" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="SP_FavoriteLists_GetListsBySubstrate" ReturnType="Edm.String">
+        <FunctionImport Name="SP_FavoriteLists_GetListsBySubstrate" ReturnType="Edm.String" IsSideEffecting="false">
           <Parameter Name="siteId" Type="Edm.String" />
           <Parameter Name="listId" Type="Edm.String" />
           <Parameter Name="page" Type="Edm.Int32" Nullable="false" />
@@ -12755,6 +12788,9 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="cultureName" Type="Edm.String" />
           <Parameter Name="compatibilityLevel" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetSPOSiteCreationSources" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.SPOSiteCreationSource)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
         <FunctionImport Name="GetSPOTenantAllWebTemplates" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection" IsComposable="true" IsBindable="true" EntitySet="SPOTenantWebTemplateCollections">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -18128,6 +18164,18 @@
       <Annotations Target="SP.ApiData/Update(SP.Publishing.TopicSitePage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetAllWaveSetups(SP.Publishing.PortalLaunch.PortalLaunchWavesManager)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetWaveSetup(SP.Publishing.PortalLaunch.PortalLaunchWavesManager, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/RemoveWaveSetup(SP.Publishing.PortalLaunch.PortalLaunchWavesManager, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SaveWaveSetup(SP.Publishing.PortalLaunch.PortalLaunchWavesManager, SP.Publishing.PortalLaunch.PortalLaunchWaveSetup)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Disable(SP.Publishing.Navigation.PortalNavigationCacheWrapper)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -23126,6 +23174,7 @@
         <Property Name="description" Type="Edm.String" />
         <Property Name="LearnMoreLink" Type="Edm.String" />
         <Property Name="ResultCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RuleType" Type="Edm.String" />
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
       </ComplexType>
@@ -23678,6 +23727,42 @@
         <End Type="SP.Publishing.SpotlightVideo" Role="SpotlightVideos" Multiplicity="*" />
         <End Type="SP.Publishing.VideoServiceManager" Role="SpotlightVideosPartner" Multiplicity="0..1" />
       </Association>
+    </Schema>
+    <Schema Namespace="SP.Publishing.PortalLaunch" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="PortalLaunchSetupWrapper" />
+      <ComplexType Name="PortalLaunchWaveGroup">
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="SiteUrl" Type="Edm.String" />
+        <Property Name="UserGroupName" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="PortalLaunchWaveSetup">
+        <Property Name="AlternativeUrlsOfNewSite" Type="Edm.String" />
+        <Property Name="AlternativeUrlsOfOldSite" Type="Edm.String" />
+        <Property Name="CreatedOn" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ExpectedUsersSize" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IsPaused" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ModifiedOn" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="NewSiteUrl" Type="Edm.String" />
+        <Property Name="PauseAtWave" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RedirectionType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RedirectUrl" Type="Edm.String" />
+        <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TriggerUrls" Type="Collection(SP.KeyValue)" />
+        <Property Name="Waves" Type="Collection(SP.Publishing.PortalLaunch.PortalLaunchWave)" />
+      </ComplexType>
+      <ComplexType Name="PortalLaunchWave">
+        <Property Name="Groups" Type="Collection(SP.Publishing.PortalLaunch.PortalLaunchWaveGroup)" />
+        <Property Name="LaunchDateUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Order" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <EntityType Name="PortalLaunchWavesManager">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
     </Schema>
     <Schema Namespace="SP.Publishing.Navigation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="StructuralNavigationCacheState">
@@ -24813,6 +24898,7 @@
         <Property Name="listId" Type="Edm.String" />
         <Property Name="listUrl" Type="Edm.String" />
         <Property Name="siteId" Type="Edm.String" />
+        <Property Name="siteTitle" Type="Edm.String" />
         <Property Name="siteUrl" Type="Edm.String" />
         <Property Name="title" Type="Edm.String" />
       </ComplexType>
@@ -26102,6 +26188,10 @@
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="SPOSiteCreationSource">
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="TenantDefaultTimeZoneId">
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.Int32" Nullable="false" />
@@ -26414,6 +26504,7 @@
         <Property Name="UserVoiceForFeedbackEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="WhoCanShareAllowListInTenant" Type="Edm.String" />
         <Property Name="WhoCanShareAllowListInTenantByPrincipalIdentity" Type="Collection(Edm.String)" />
+        <Property Name="Workflows2013State" Type="Edm.Int32" Nullable="false" />
         <NavigationProperty Name="Sites" Relationship="Microsoft.Online.SharePoint.TenantAdministration.Microsoft_Online_SharePoint_TenantAdministration_Tenant_Sites_Microsoft_Online_SharePoint_TenantAdministration_SiteProperties_SitesPartner" ToRole="Sites" FromRole="SitesPartner" />
       </EntityType>
       <EntityType Name="SpoOperation">
@@ -27382,6 +27473,7 @@
         </Key>
         <Property Name="AppId" Type="Edm.String" Nullable="false" />
         <Property Name="IsConnected" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsRegistered" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ScopePath" Type="Edm.String" />
         <Property Name="ServiceHealthStatus" Type="Edm.Int32" Nullable="false" />
         <NavigationProperty Name="Current" Relationship="SP.WorkflowServices.SP_WorkflowServices_WorkflowServicesManager_Current_SP_WorkflowServices_WorkflowServicesManager_CurrentPartner" ToRole="Current" FromRole="CurrentPartner" />
@@ -27970,6 +28062,7 @@
         <Property Name="UsePersistentCookiesForExplorerView" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UserVoiceForFeedbackEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="WhoCanShareAllowList" Type="Edm.String" />
+        <Property Name="Workflows2013State" Type="Edm.Int32" Nullable="false" />
       </EntityType>
       <EntityType Name="RemoveExternalUsersResults">
         <Key>
