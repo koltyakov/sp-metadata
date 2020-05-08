@@ -83,6 +83,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [SP.PageInstrumentation](./SP.PageInstrumentation) | ✅ | ❌ | ❌ | ❌
 [SP.Publishing](./SP.Publishing) | ✅ | ✅ | ❌ | ✅
 [SP.Publishing.Navigation](./SP.Publishing.Navigation) | ✅ | ❌ | ❌ | ✅
+[SP.Publishing.PortalLaunch](./SP.Publishing.PortalLaunch) | ✅ | ❌ | ❌ | ❌
 [SP.Sharing](./SP.Sharing) | ✅ | ✅ | ✅ | ✅
 [SP.SiteHealth](./SP.SiteHealth) | ✅ | ✅ | ✅ | ✅
 [SP.Social](./SP.Social) | ✅ | ✅ | ✅ | ✅

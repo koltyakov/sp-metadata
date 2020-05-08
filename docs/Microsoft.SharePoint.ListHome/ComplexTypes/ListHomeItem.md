@@ -11,5 +11,6 @@ icon (Edm.String) | ✅ | ❌ | ❌ | ❌
 listId (Edm.String) | ✅ | ❌ | ❌ | ❌
 listUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteId (Edm.String) | ✅ | ❌ | ❌ | ❌
+siteTitle (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 title (Edm.String) | ✅ | ❌ | ❌ | ❌

@@ -122,6 +122,7 @@ UsePersistentCookiesForExplorerView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UserVoiceForFeedbackEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 WhoCanShareAllowListInTenant (Edm.String) | ✅ | ❌ | ❌ | ❌
 WhoCanShareAllowListInTenantByPrincipalIdentity (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+Workflows2013State (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 
 ### Navigation Properties
 

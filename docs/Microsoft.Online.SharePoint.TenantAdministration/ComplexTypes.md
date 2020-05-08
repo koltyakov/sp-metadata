@@ -22,6 +22,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [PolicyOption](./ComplexTypes/PolicyOption.md) | ✅ | ❌ | ❌ | ❌
 [RequireSecondaryContact](./ComplexTypes/RequireSecondaryContact.md) | ✅ | ❌ | ❌ | ❌
 [SPListModernUXOff](./ComplexTypes/SPListModernUXOff.md) | ✅ | ❌ | ❌ | ❌
+[SPOSiteCreationSource](./ComplexTypes/SPOSiteCreationSource.md) | ✅ | ❌ | ❌ | ❌
 [SPOSitePropertiesEnumerableFilter](./ComplexTypes/SPOSitePropertiesEnumerableFilter.md) | ✅ | ❌ | ❌ | ❌
 [SPOTenantWebTemplate](./ComplexTypes/SPOTenantWebTemplate.md) | ✅ | ❌ | ❌ | ❌
 [SecondaryAdministratorsFieldsData](./ComplexTypes/SecondaryAdministratorsFieldsData.md) | ✅ | ❌ | ❌ | ❌

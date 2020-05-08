@@ -298,6 +298,7 @@ PointPublishingSiteStatuss | ✅ | ❌ | ❌ | ❌
 PointPublishingTenantManagers | ✅ | ❌ | ❌ | ❌
 PointPublishingUsers | ✅ | ❌ | ❌ | ❌
 PolicyEvaluationInfos | ✅ | ❌ | ❌ | ❌
+PortalLaunchWaves | ✅ | ❌ | ❌ | ❌
 PortalNavigationCaches | ✅ | ❌ | ❌ | ❌
 PrimaryCityTimes | ✅ | ✅ | ❌ | ❌
 Principals | ✅ | ✅ | ✅ | ✅
