@@ -17,12 +17,6 @@ var Environments = []*Environment{
 		IgnoreInGen: false,
 	},
 	{
-		Name:        "SPO (Tenant)",
-		Code:        "spo-tenant",
-		Config:      "./config/private.spo.tenant.json",
-		IgnoreInGen: true,
-	},
-	{
 		Name:        "SPO (Target)",
 		Code:        "spo.target",
 		Config:      "./config/private.spo.target.json",
