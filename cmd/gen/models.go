@@ -21,6 +21,10 @@ func getModels() ([]*ModelMeta, error) {
 	var models []*ModelMeta
 
 	for _, e := range config.Environments {
+		if e.IgnoreInGen {
+			continue
+		}
+
 		edmxFilePath := fmt.Sprintf("./meta/%s.xml", e.Code)
 
 		reader, err := os.Open(edmxFilePath)
