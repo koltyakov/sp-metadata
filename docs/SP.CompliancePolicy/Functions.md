@@ -15,6 +15,7 @@ RemoveContainerRetentionPolicy (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | 
 RemoveContainerSettings (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
 RetagReviewItems (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
 RetagReviewItemsWithMetas (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
+[<span title="SP_CompliancePolicy_SPPolicyStoreProxy_ActivateHoldFeatureOnSite">SP_CompliancePolicy_SPPolicyStoreProxy_ActivateHol...</span> (SP CompliancePolicy SPPolicyStoreProxy ActivateHoldFeatureOnSite)](./Functions/SP_CompliancePolicy_SPPolicyStoreProxy_ActivateHoldFeatureOnSite.md) | ✅ | ❌ | ❌ | ❌
 [<span title="SP_CompliancePolicy_SPPolicyStoreProxy_ApplyDlpActions">SP_CompliancePolicy_SPPolicyStoreProxy_ApplyDlpAct...</span> (SP CompliancePolicy SPPolicyStoreProxy ApplyDlpActions)](./Functions/SP_CompliancePolicy_SPPolicyStoreProxy_ApplyDlpActions.md) | ✅ | ❌ | ❌ | ❌
 [<span title="SP_CompliancePolicy_SPPolicyStoreProxy_ApplyLabelOnBulkItems">SP_CompliancePolicy_SPPolicyStoreProxy_ApplyLabelO...</span> (SP CompliancePolicy SPPolicyStoreProxy ApplyLabelOnBulkItems)](./Functions/SP_CompliancePolicy_SPPolicyStoreProxy_ApplyLabelOnBulkItems.md) | ✅ | ❌ | ❌ | ❌
 [<span title="SP_CompliancePolicy_SPPolicyStoreProxy_CheckSiteIsDeletableById">SP_CompliancePolicy_SPPolicyStoreProxy_CheckSiteIs...</span> (SP CompliancePolicy SPPolicyStoreProxy CheckSiteIsDeletableById)](./Functions/SP_CompliancePolicy_SPPolicyStoreProxy_CheckSiteIsDeletableById.md) | ✅ | ❌ | ❌ | ❌

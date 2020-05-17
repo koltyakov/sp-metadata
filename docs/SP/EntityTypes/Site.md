@@ -18,6 +18,7 @@ AllowSelfServiceUpgradeEvaluation (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 AuditLogTrimmingRetention (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 CanSyncHubSitePermissions (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CanUpgrade (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+ChannelGroupId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 Classification (Edm.String) | ✅ | ✅ | ❌ | ❌
 CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 CompatibilityLevel (Edm.Int32) | ✅ | ✅ | ✅ | ✅
