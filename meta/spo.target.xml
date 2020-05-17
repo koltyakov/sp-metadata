@@ -820,6 +820,7 @@
       </ComplexType>
       <ComplexType Name="ViewCreationInformation">
         <Property Name="baseViewId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CalendarViewStyles" Type="Edm.String" />
         <Property Name="Paged" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PersonalView" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Query" Type="Edm.String" />
@@ -969,6 +970,7 @@
         <Property Name="AuditLogTrimmingRetention" Type="Edm.Int32" Nullable="false" />
         <Property Name="CanSyncHubSitePermissions" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CanUpgrade" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ChannelGroupId" Type="Edm.Guid" Nullable="false" />
         <Property Name="Classification" Type="Edm.String" />
         <Property Name="CommentsOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CompatibilityLevel" Type="Edm.Int32" Nullable="false" />
@@ -1563,6 +1565,7 @@
         <Property Name="Aggregations" Type="Edm.String" />
         <Property Name="AggregationsStatus" Type="Edm.String" />
         <Property Name="BaseViewId" Type="Edm.String" />
+        <Property Name="CalendarViewStyles" Type="Edm.String" />
         <Property Name="ColumnWidth" Type="Edm.String" />
         <Property Name="ContentTypeId" Type="SP.ContentTypeId" />
         <Property Name="CustomFormatter" Type="Edm.String" />
@@ -4783,6 +4786,9 @@
           <Parameter Name="groupId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" IsComposable="true" EntitySet="Machinelearnings" />
+        <FunctionImport Name="GetRetentionLabels" ReturnType="Collection(SP.CompliancePolicy.ComplianceTag)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningModelEntityData" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData" IsComposable="true" EntitySet="SPMachineLearningModelEntityDatas" />
         <FunctionImport Name="Delete" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
@@ -4840,6 +4846,10 @@
         <FunctionImport Name="GetByIdentifier" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem" IsComposable="true" IsBindable="true" EntitySet="Workitems">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem)" />
           <Parameter Name="identifier" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_ActivateHoldFeatureOnSite">
+          <Parameter Name="siteUrl" Type="Edm.String" />
+          <Parameter Name="siteId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="AddDynamicScopeBinding" IsBindable="true">
           <Parameter Name="this" Type="SP.CompliancePolicy.SPPolicyStoreProxy" />
@@ -16145,6 +16155,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationResult">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationResult/ErrorMessage">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationResult/Publication">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16239,6 +16252,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Site/CanSyncHubSitePermissions">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Site/ChannelGroupId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Site/Classification">
@@ -17702,6 +17718,9 @@
       <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningHub()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetRetentionLabels(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningModelEntityData()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18291,6 +18310,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/CanCreateHubJoinedSite(Microsoft.SharePoint.Portal.SPSiteManager, Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Portal.SPSiteCreationRequest/ChannelGroupId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Portal.SPSiteCreationRequest/HubSiteId">
@@ -24265,6 +24287,7 @@
         <Property Name="SiteUrl" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPSiteCreationRequest">
+        <Property Name="ChannelGroupId" Type="Edm.Guid" Nullable="false" />
         <Property Name="Classification" Type="Edm.String" />
         <Property Name="Description" Type="Edm.String" />
         <Property Name="HubSiteId" Type="Edm.Guid" Nullable="false" />
@@ -26189,7 +26212,7 @@
         <Property Name="Value" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
       <ComplexType Name="SPOSiteCreationSource">
-        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Id" Type="Edm.String" />
         <Property Name="Name" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="TenantDefaultTimeZoneId">
@@ -26389,6 +26412,7 @@
           <PropertyRef Name="AddressbarLinkPermission" />
         </Key>
         <Property Name="AddressbarLinkPermission" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AIBuilderEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowCommentsTextOnEmailEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowDownloadingNonWebViewableFiles" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowedDomainListForSyncClient" Type="Collection(Edm.Guid)" Nullable="false" />
@@ -26766,6 +26790,7 @@
         <Property Name="ViewOption" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPMachineLearningPublicationResult">
+        <Property Name="ErrorMessage" Type="Edm.String" />
         <Property Name="Publication" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData" />
         <Property Name="StatusCode" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
@@ -27974,6 +27999,7 @@
           <PropertyRef Name="AddressbarLinkPermission" />
         </Key>
         <Property Name="AddressbarLinkPermission" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AIBuilderEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowCommentsTextOnEmailEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowDownloadingNonWebViewableFiles" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowedDomainListForSyncClient" Type="Collection(Edm.Guid)" Nullable="false" />
