@@ -11,5 +11,6 @@ ID (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 IsActive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LastModifiedDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 Outcome (Edm.String) | ✅ | ❌ | ❌ | ❌
+Owner (Edm.String) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ❌ | ❌ | ❌
 TriggerType (Edm.Int32) | ✅ | ❌ | ❌ | ❌

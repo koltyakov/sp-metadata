@@ -63,6 +63,7 @@ HideSyncButtonOnODB (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IPAddressAllowList (Edm.String) | ✅ | ❌ | ❌ | ❌
 IPAddressEnforcement (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IPAddressWACTokenLifetime (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+IsFluidEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsHubSitesMultiGeoFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMultiGeo (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsUnmanagedSyncClientForTenantRestricted (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

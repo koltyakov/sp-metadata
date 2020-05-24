@@ -8,6 +8,7 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 Aggregations (Edm.String) | ✅ | ✅ | ✅ | ✅
 AggregationsStatus (Edm.String) | ✅ | ✅ | ✅ | ✅
+AssosciatedContentTypeId (Edm.String) | ✅ | ❌ | ❌ | ❌
 BaseViewId (Edm.String) | ✅ | ✅ | ✅ | ✅
 CalendarViewStyles (Edm.String) | ✅ | ❌ | ❌ | ❌
 ColumnWidth (Edm.String) | ✅ | ✅ | ❌ | ❌

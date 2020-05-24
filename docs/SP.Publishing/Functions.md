@@ -4,6 +4,7 @@
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+Activate (Collection(SP.Publishing.SitePage3D)) | ✅ | ❌ | ❌ | ❌
 Add (Collection(SP.Publishing.SubtitleFile)) | ✅ | ❌ | ❌ | ❌
 AddBannerImageFromUrl (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | ❌ | ❌
 AddImage (SP.Publishing.SitePageService) | ✅ | ✅ | ❌ | ❌
