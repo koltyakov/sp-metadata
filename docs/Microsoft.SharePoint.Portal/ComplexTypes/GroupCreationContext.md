@@ -18,6 +18,6 @@ ExternalInvitationEnabled (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 MachineLearningCapturedEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PreferredLanguage (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 RequireSecondaryContact (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
-SiteLabelDisplayName (Edm.String) | ✅ | ❌ | ❌ | ❌
 SitePath (Edm.String) | ✅ | ✅ | ❌ | ❌
+SiteSensitivityLabelId (Edm.String) | ✅ | ❌ | ❌ | ❌
 UsageGuidelineUrl (Edm.String) | ✅ | ✅ | ❌ | ❌

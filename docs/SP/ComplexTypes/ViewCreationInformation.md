@@ -6,7 +6,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-AssosciatedContentTypeId (Edm.String) | ✅ | ❌ | ❌ | ❌
+AssociatedContentTypeId (Edm.String) | ✅ | ❌ | ❌ | ❌
 CalendarViewStyles (Edm.String) | ✅ | ❌ | ❌ | ❌
 Paged (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 PersonalView (Edm.Boolean) | ✅ | ✅ | ✅ | ✅

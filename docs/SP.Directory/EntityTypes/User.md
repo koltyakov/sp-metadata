@@ -54,6 +54,8 @@ sharePointHomeMobileUpsell (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 sharePointHomeRefreshFirstRun (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 sharePointLibrariesFirstRun (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 sharePointListsFirstRun (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
+sharePointListsGoMobileFirstRun (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+sharePointListsHomeFirstRun (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 sharePointModernDocSetsFirstRun (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 sharePointModernHomepageFirstRun (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 sharePointNewsDigestTeachingBubble (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
