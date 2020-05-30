@@ -820,7 +820,7 @@
         <Property Name="Title" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="ViewCreationInformation">
-        <Property Name="AssosciatedContentTypeId" Type="Edm.String" />
+        <Property Name="AssociatedContentTypeId" Type="Edm.String" />
         <Property Name="baseViewId" Type="Edm.Int32" Nullable="false" />
         <Property Name="CalendarViewStyles" Type="Edm.String" />
         <Property Name="Paged" Type="Edm.Boolean" Nullable="false" />
@@ -1566,7 +1566,7 @@
         </Key>
         <Property Name="Aggregations" Type="Edm.String" />
         <Property Name="AggregationsStatus" Type="Edm.String" />
-        <Property Name="AssosciatedContentTypeId" Type="Edm.String" />
+        <Property Name="AssociatedContentTypeId" Type="Edm.String" />
         <Property Name="BaseViewId" Type="Edm.String" />
         <Property Name="CalendarViewStyles" Type="Edm.String" />
         <Property Name="ColumnWidth" Type="Edm.String" />
@@ -1736,6 +1736,7 @@
         <Property Name="Url" Type="Edm.String" />
         <Property Name="UseAccessRequestDefault" Type="Edm.Boolean" Nullable="false" />
         <Property Name="WebTemplate" Type="Edm.String" />
+        <Property Name="WebTemplatesGalleryFirstRunEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="WelcomePage" Type="Edm.String" />
         <NavigationProperty Name="Activities" Relationship="Microsoft.SharePoint.Activities.SP_Web_Activities_Microsoft_SharePoint_Activities_SPActivityEntity_ActivitiesPartner" ToRole="Activities" FromRole="ActivitiesPartner" />
         <NavigationProperty Name="ActivityLogger" Relationship="Microsoft.SharePoint.Internal.SP_Web_ActivityLogger_Microsoft_SharePoint_Internal_ActivityLogger_ActivityLoggerPartner" ToRole="ActivityLogger" FromRole="ActivityLoggerPartner" />
@@ -4789,6 +4790,10 @@
           <Parameter Name="groupId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" IsComposable="true" EntitySet="Machinelearnings" />
+        <FunctionImport Name="GetRetentionLabel" ReturnType="SP.CompliancePolicy.ComplianceTag" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
+          <Parameter Name="retentionLabelId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="GetRetentionLabels" ReturnType="Collection(SP.CompliancePolicy.ComplianceTag)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
         </FunctionImport>
@@ -16743,6 +16748,9 @@
       <Annotations Target="SP.UserCustomAction/HostProperties">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Web/WebTemplatesGalleryFirstRunEnabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Webhooks.Subscription">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17740,6 +17748,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningHub()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetRetentionLabel(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetRetentionLabels(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub)">
@@ -19546,6 +19557,8 @@
         <Property Name="sharePointHomeRefreshFirstRun" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointLibrariesFirstRun" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointListsFirstRun" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="sharePointListsGoMobileFirstRun" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="sharePointListsHomeFirstRun" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointModernDocSetsFirstRun" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointModernHomepageFirstRun" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointNewsDigestTeachingBubble" Type="Edm.Boolean" Nullable="false" />
@@ -24270,8 +24283,8 @@
         <Property Name="MachineLearningCapturedEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PreferredLanguage" Type="Edm.Int32" />
         <Property Name="RequireSecondaryContact" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="SiteLabelDisplayName" Type="Edm.String" />
         <Property Name="SitePath" Type="Edm.String" />
+        <Property Name="SiteSensitivityLabelId" Type="Edm.String" />
         <Property Name="UsageGuidelineUrl" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="GroupCreationParams">
