@@ -287,6 +287,8 @@
         <Property Name="Metas" Type="Collection(SP.KeyValue)" />
         <Property Name="ModelId" Type="Edm.String" />
         <Property Name="ModelVersion" Type="Edm.String" />
+        <Property Name="RetentionLabelFlags" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RetentionLabelName" Type="Edm.String" />
         <Property Name="RetryCount" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="ListItemComplianceInfo">
@@ -2604,6 +2606,7 @@
         </Key>
         <Property Name="Description" Type="Edm.String" Nullable="false" />
         <Property Name="EnablePermissionsSync" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="EnforcedECTs" Type="Edm.String" />
         <Property Name="HideNameInNavigation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ID" Type="Edm.Guid" Nullable="false" />
         <Property Name="LogoUrl" Type="Edm.String" />
@@ -15533,6 +15536,12 @@
       <Annotations Target="SP.ClassificationResult/ModelVersion">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ClassificationResult/RetentionLabelFlags">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ClassificationResult/RetentionLabelName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ClassificationResult/RetryCount">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17376,6 +17385,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.HubSite/EnablePermissionsSync">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.HubSite/EnforcedECTs">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.HubSite/HideNameInNavigation">
@@ -19555,6 +19567,8 @@
         <Property Name="sharePointHomeFirstRun" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointHomeMobileUpsell" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointHomeRefreshFirstRun" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="sharePointKnowledgeCenterFirstRun" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="sharePointKnowledgeManagementTopicPageFirstRun" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointLibrariesFirstRun" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointListsFirstRun" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointListsGoMobileFirstRun" Type="Edm.Boolean" Nullable="false" />

@@ -287,6 +287,8 @@
         <Property Name="Metas" Type="Collection(SP.KeyValue)" />
         <Property Name="ModelId" Type="Edm.String" />
         <Property Name="ModelVersion" Type="Edm.String" />
+        <Property Name="RetentionLabelFlags" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RetentionLabelName" Type="Edm.String" />
         <Property Name="RetryCount" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="ListItemComplianceInfo">
@@ -2604,6 +2606,7 @@
         </Key>
         <Property Name="Description" Type="Edm.String" Nullable="false" />
         <Property Name="EnablePermissionsSync" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="EnforcedECTs" Type="Edm.String" />
         <Property Name="HideNameInNavigation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ID" Type="Edm.Guid" Nullable="false" />
         <Property Name="LogoUrl" Type="Edm.String" />
@@ -4053,15 +4056,15 @@
         <EntitySet Name="Utilitys" EntityType="SP.Utilities.Utility" />
         <EntitySet Name="WopiHostUtilitys" EntityType="SP.Utilities.WopiHostUtility" />
         <EntitySet Name="WopiPropertiess" EntityType="SP.Utilities.WopiProperties" />
-        <EntitySet Name="Views" EntityType="SP.View" />
-        <EntitySet Name="ViewFieldCollections" EntityType="SP.ViewFieldCollection" />
-        <EntitySet Name="VisualizationAppSynchronizationResults" EntityType="SP.VisualizationAppSynchronizationResult" />
         <EntitySet Name="WebInformations" EntityType="SP.WebInformation" />
         <EntitySet Name="LimitedWebPartManagers" EntityType="SP.WebParts.LimitedWebPartManager" />
         <EntitySet Name="WebParts" EntityType="SP.WebParts.WebPart" />
         <EntitySet Name="WebPartDefinitions" EntityType="SP.WebParts.WebPartDefinition" />
         <EntitySet Name="WebProxys" EntityType="SP.WebProxy" />
         <EntitySet Name="WebTemplates" EntityType="SP.WebTemplate" />
+        <EntitySet Name="Views" EntityType="SP.View" />
+        <EntitySet Name="ViewFieldCollections" EntityType="SP.ViewFieldCollection" />
+        <EntitySet Name="VisualizationAppSynchronizationResults" EntityType="SP.VisualizationAppSynchronizationResult" />
         <EntitySet Name="SPWorkflows" EntityType="SP.Workflow.SPWorkflow" />
         <EntitySet Name="SPWorkflowManagers" EntityType="SP.Workflow.SPWorkflowManager" />
         <EntitySet Name="WorkflowAssociations" EntityType="SP.Workflow.WorkflowAssociation" />
@@ -14738,14 +14741,6 @@
           <End Role="PersonalSitePartner" EntitySet="UserProfiles" />
           <End Role="PersonalSite" EntitySet="Sites" />
         </AssociationSet>
-        <AssociationSet Name="SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartnerSet" Association="SP.SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartner">
-          <End Role="ViewFieldsPartner" EntitySet="Views" />
-          <End Role="ViewFields" EntitySet="ViewFieldCollections" />
-        </AssociationSet>
-        <AssociationSet Name="SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartnerSet" Association="SP.SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartner">
-          <End Role="AppMappedViewsPartner" EntitySet="VisualizationAppSynchronizationResults" />
-          <End Role="AppMappedViews" EntitySet="Views" />
-        </AssociationSet>
         <AssociationSet Name="SP_WebParts_LimitedWebPartManager_WebParts_SP_WebParts_WebPartDefinition_WebPartsPartnerSet" Association="SP.WebParts.SP_WebParts_LimitedWebPartManager_WebParts_SP_WebParts_WebPartDefinition_WebPartsPartner">
           <End Role="WebPartsPartner" EntitySet="LimitedWebPartManagers" />
           <End Role="WebParts" EntitySet="WebPartDefinitions" />
@@ -14757,6 +14752,14 @@
         <AssociationSet Name="SP_WebParts_WebPartDefinition_WebPart_SP_WebParts_WebPart_WebPartPartnerSet" Association="SP.WebParts.SP_WebParts_WebPartDefinition_WebPart_SP_WebParts_WebPart_WebPartPartner">
           <End Role="WebPartPartner" EntitySet="WebPartDefinitions" />
           <End Role="WebPart" EntitySet="WebParts" />
+        </AssociationSet>
+        <AssociationSet Name="SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartnerSet" Association="SP.SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartner">
+          <End Role="ViewFieldsPartner" EntitySet="Views" />
+          <End Role="ViewFields" EntitySet="ViewFieldCollections" />
+        </AssociationSet>
+        <AssociationSet Name="SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartnerSet" Association="SP.SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartner">
+          <End Role="AppMappedViewsPartner" EntitySet="VisualizationAppSynchronizationResults" />
+          <End Role="AppMappedViews" EntitySet="Views" />
         </AssociationSet>
         <AssociationSet Name="SP_WorkflowServices_InteropService_Current_SP_WorkflowServices_InteropService_CurrentPartnerSet" Association="SP.WorkflowServices.SP_WorkflowServices_InteropService_Current_SP_WorkflowServices_InteropService_CurrentPartner">
           <End Role="CurrentPartner" EntitySet="InteropServices" />
@@ -15531,6 +15534,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ClassificationResult/ModelVersion">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ClassificationResult/RetentionLabelFlags">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ClassificationResult/RetentionLabelName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ClassificationResult/RetryCount">
@@ -17376,6 +17385,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.HubSite/EnablePermissionsSync">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.HubSite/EnforcedECTs">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.HubSite/HideNameInNavigation">
@@ -19555,6 +19567,8 @@
         <Property Name="sharePointHomeFirstRun" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointHomeMobileUpsell" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointHomeRefreshFirstRun" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="sharePointKnowledgeCenterFirstRun" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="sharePointKnowledgeManagementTopicPageFirstRun" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointLibrariesFirstRun" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointListsFirstRun" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointListsGoMobileFirstRun" Type="Edm.Boolean" Nullable="false" />
