@@ -52,6 +52,8 @@ sharePointHomeCreateNewsTeachingBubble (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 sharePointHomeFirstRun (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 sharePointHomeMobileUpsell (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 sharePointHomeRefreshFirstRun (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+sharePointKnowledgeCenterFirstRun (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+sharePointKnowledgeManagementTopicPageFirstRun (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 sharePointLibrariesFirstRun (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 sharePointListsFirstRun (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 sharePointListsGoMobileFirstRun (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
