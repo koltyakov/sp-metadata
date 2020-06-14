@@ -1738,6 +1738,7 @@
         <Property Name="Url" Type="Edm.String" />
         <Property Name="UseAccessRequestDefault" Type="Edm.Boolean" Nullable="false" />
         <Property Name="WebTemplate" Type="Edm.String" />
+        <Property Name="WebTemplateConfiguration" Type="Edm.String" />
         <Property Name="WebTemplatesGalleryFirstRunEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="WelcomePage" Type="Edm.String" />
         <NavigationProperty Name="Activities" Relationship="Microsoft.SharePoint.Activities.SP_Web_Activities_Microsoft_SharePoint_Activities_SPActivityEntity_ActivitiesPartner" ToRole="Activities" FromRole="ActivitiesPartner" />
@@ -2164,6 +2165,7 @@
         <Property Name="siteId" Type="Edm.String" />
         <Property Name="siteTitle" Type="Edm.String" />
         <Property Name="siteUrl" Type="Edm.String" />
+        <Property Name="webTemplateConfiguration" Type="Edm.String" />
       </EntityType>
       <EntityType Name="ListHomeItemCollection" Abstract="true">
         <Key>
@@ -2332,6 +2334,7 @@
         <Property Name="siteId" Type="Edm.String" />
         <Property Name="siteTitle" Type="Edm.String" />
         <Property Name="siteUrl" Type="Edm.String" />
+        <Property Name="webTemplateConfiguration" Type="Edm.String" />
       </EntityType>
       <EntityType Name="RelatedItemManager">
         <Key>
@@ -8905,6 +8908,9 @@
           <Parameter Name="this" Type="SP.SPHSite" />
         </FunctionImport>
         <FunctionImport Name="SP_SPHSite_GetSPHSiteXGeo" ReturnType="SP.SPHSiteReference" />
+        <FunctionImport Name="SP_SPHSite_IsCommSite" ReturnType="Edm.Boolean">
+          <Parameter Name="siteUrl" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="SP_SPHSite_IsModernSiteWithHorizontalNav" ReturnType="Edm.Boolean">
           <Parameter Name="siteUrl" Type="Edm.String" />
         </FunctionImport>
@@ -11615,6 +11621,10 @@
         <FunctionImport Name="LocalTimeToUTC" ReturnType="Edm.DateTime" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.TimeZone" />
           <Parameter Name="date" Type="Edm.DateTime" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SetId" IsBindable="true">
+          <Parameter Name="this" Type="SP.TimeZone" />
+          <Parameter Name="id" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="UTCToLocalTime" ReturnType="Edm.DateTime" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.TimeZone" />
@@ -16757,6 +16767,9 @@
       <Annotations Target="SP.UserCustomAction/HostProperties">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Web/WebTemplateConfiguration">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Web/WebTemplatesGalleryFirstRunEnabled">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18647,6 +18660,9 @@
       <Annotations Target="SP.ApiData/SP_SPHSite_GetSPHSiteXGeo()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_SPHSite_IsCommSite(Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_SPHSite_IsModernSiteWithHorizontalNav(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19158,6 +19174,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_TeamChannelManager_SaveConversations(Edm.String, Edm.Int32, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetId(SP.TimeZone, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/AddToSpotlight(SP.View, Edm.Int32, Edm.String, Edm.Int32)">
@@ -22011,7 +22030,9 @@
         <Property Name="LinkLag" Type="Edm.Int32" Nullable="false" />
         <Property Name="LinkLagDuration" Type="Edm.String" />
         <Property Name="LinkLagFmt" Type="Edm.Int16" Nullable="false" />
+        <Property Name="PredecessorTaskId" Type="Edm.Guid" Nullable="false" />
         <Property Name="ProjUid" Type="Edm.Guid" Nullable="false" />
+        <Property Name="SuccessorTaskId" Type="Edm.Guid" Nullable="false" />
         <NavigationProperty Name="End" Relationship="PS.PS_PublishedTaskLink_End_PS_PublishedTask_EndPartner" ToRole="End" FromRole="EndPartner" />
         <NavigationProperty Name="Start" Relationship="PS.PS_PublishedTaskLink_Start_PS_PublishedTask_StartPartner" ToRole="Start" FromRole="StartPartner" />
       </EntityType>
@@ -22093,7 +22114,9 @@
         <Property Name="DependencyType" Type="Edm.Int32" Nullable="false" />
         <Property Name="EndId" Type="Edm.Guid" Nullable="false" />
         <Property Name="LinkLagDuration" Type="Edm.String" />
+        <Property Name="PredecessorTaskId" Type="Edm.Guid" Nullable="false" />
         <Property Name="StartId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="SuccessorTaskId" Type="Edm.Guid" Nullable="false" />
         <NavigationProperty Name="End" Relationship="PS.PS_DraftTaskLink_End_PS_DraftTask_EndPartner" ToRole="End" FromRole="EndPartner" />
         <NavigationProperty Name="Start" Relationship="PS.PS_DraftTaskLink_Start_PS_DraftTask_StartPartner" ToRole="Start" FromRole="StartPartner" />
       </EntityType>
@@ -26287,6 +26310,7 @@
         <Property Name="Value" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
       <ComplexType Name="SPOSiteCreationSource">
+        <Property Name="DisplayName" Type="Edm.String" />
         <Property Name="Id" Type="Edm.String" />
         <Property Name="Name" Type="Edm.String" />
       </ComplexType>
@@ -26488,6 +26512,7 @@
         </Key>
         <Property Name="AddressbarLinkPermission" Type="Edm.Int32" Nullable="false" />
         <Property Name="AIBuilderEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AIBuilderSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="AllowCommentsTextOnEmailEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowDownloadingNonWebViewableFiles" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowedDomainListForSyncClient" Type="Collection(Edm.Guid)" Nullable="false" />
@@ -28076,6 +28101,7 @@
         </Key>
         <Property Name="AddressbarLinkPermission" Type="Edm.Int32" Nullable="false" />
         <Property Name="AIBuilderEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AIBuilderSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="AllowCommentsTextOnEmailEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowDownloadingNonWebViewableFiles" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowedDomainListForSyncClient" Type="Collection(Edm.Guid)" Nullable="false" />
