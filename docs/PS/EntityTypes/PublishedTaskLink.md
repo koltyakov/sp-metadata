@@ -10,7 +10,9 @@ DependencyType (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 LinkLag (Edm.Int32) | ✅ | ❌ | ✅ | ❌
 LinkLagDuration (Edm.String) | ✅ | ❌ | ❌ | ❌
 LinkLagFmt (Edm.Int16) | ✅ | ❌ | ✅ | ❌
+PredecessorTaskId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 ProjUid (Edm.Guid) | ✅ | ❌ | ✅ | ❌
+SuccessorTaskId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 
 ### Navigation Properties
 

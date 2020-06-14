@@ -23,3 +23,4 @@ siteColor (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteId (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteTitle (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+webTemplateConfiguration (Edm.String) | ✅ | ❌ | ❌ | ❌

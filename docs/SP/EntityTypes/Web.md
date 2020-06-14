@@ -92,6 +92,7 @@ UIVersionConfigurationEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 Url (Edm.String) | ✅ | ✅ | ✅ | ✅
 UseAccessRequestDefault (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 WebTemplate (Edm.String) | ✅ | ✅ | ✅ | ✅
+WebTemplateConfiguration (Edm.String) | ✅ | ❌ | ❌ | ❌
 WebTemplatesGalleryFirstRunEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 WelcomePage (Edm.String) | ✅ | ✅ | ❌ | ❌
 
