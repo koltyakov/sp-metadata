@@ -12,7 +12,6 @@ DebugCommand (Edm.String) | ✅ | ❌ | ❌ | ❌
 DeviceAddedTimeUTC (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 Disconnected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 FromClient (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-Id (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 LastActivityTimeUtc (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 LastHeartbeatTimeUtc (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 LastModifiedTimeUtc (Edm.DateTime) | ✅ | ❌ | ❌ | ❌

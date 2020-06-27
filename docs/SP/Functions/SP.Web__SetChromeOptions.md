@@ -16,4 +16,5 @@ footerLayout (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 headerEmphasis (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 headerLayout (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 hideTitleInHeader (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+logoAlignment (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 megaMenuEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

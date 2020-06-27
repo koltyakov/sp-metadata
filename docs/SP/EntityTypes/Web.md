@@ -53,6 +53,7 @@ IsRevertHomepageLinkHidden (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Language (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 LastItemModifiedDate (Edm.DateTime) | ✅ | ✅ | ✅ | ✅
 LastItemUserModifiedDate (Edm.DateTime) | ✅ | ✅ | ❌ | ❌
+LogoAlignment (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MasterUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
 MegaMenuEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MembersCanShare (Edm.Boolean) | ✅ | ✅ | ✅ | ❌

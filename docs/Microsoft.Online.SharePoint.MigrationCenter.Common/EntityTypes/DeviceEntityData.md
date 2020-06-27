@@ -10,6 +10,7 @@ ClientUserName (Edm.String) | ✅ | ❌ | ❌ | ❌
 DeviceName (Edm.String) | ✅ | ❌ | ❌ | ❌
 DiskSpace (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 FriendlyName (Edm.String) | ✅ | ❌ | ❌ | ❌
+Id (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 TargetUserName (Edm.String) | ✅ | ❌ | ❌ | ❌
 TaskQueueExpiresOnTimeUtc (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 TaskQueueUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

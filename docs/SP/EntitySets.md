@@ -59,6 +59,7 @@ CommunicationSites | ✅ | ✅ | ❌ | ❌
 CommunityModerations | ✅ | ✅ | ✅ | ✅
 CompanyPortalContexts | ✅ | ❌ | ❌ | ❌
 CompatibilityRanges | ✅ | ✅ | ✅ | ✅
+ComplianceRetentionWorkItems | ✅ | ❌ | ❌ | ❌
 ComponentContextInfos | ✅ | ✅ | ❌ | ❌
 ConnectionSettingss | ✅ | ❌ | ❌ | ❌
 ConnectorResults | ✅ | ✅ | ❌ | ❌

@@ -35,6 +35,7 @@ ContentTypeSyncSiteTemplatesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | �
 CustomizedExternalSharingServiceUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 DefaultLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DefaultSharingLinkType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+DisableAddToOneDrive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableReportProblemDialog (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisabledWebPartIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 DisallowInfectedFileDownload (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -64,6 +65,8 @@ HideSyncButtonOnODB (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IPAddressAllowList (Edm.String) | ✅ | ❌ | ❌ | ❌
 IPAddressEnforcement (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IPAddressWACTokenLifetime (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+ImageTaggingOption (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+IncludeAtAGlanceInShareEmails (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsFluidEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsHubSitesMultiGeoFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMultiGeo (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

@@ -10,6 +10,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [DisableGroupify](./ComplexTypes/DisableGroupify.md) | ✅ | ❌ | ❌ | ❌
 [GroupInfo](./ComplexTypes/GroupInfo.md) | ✅ | ❌ | ❌ | ❌
 [HubSitePermission](./ComplexTypes/HubSitePermission.md) | ✅ | ❌ | ❌ | ❌
+[IncludeAtAGlanceInShareEmails](./ComplexTypes/IncludeAtAGlanceInShareEmails.md) | ✅ | ❌ | ❌ | ❌
 [MailFromAddress](./ComplexTypes/MailFromAddress.md) | ✅ | ❌ | ❌ | ❌
 [MessagesFieldsData](./ComplexTypes/MessagesFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [MobileNotificationIsEnabledForSharepoint](./ComplexTypes/MobileNotificationIsEnabledForSharepoint.md) | ✅ | ❌ | ❌ | ❌

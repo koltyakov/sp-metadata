@@ -54,6 +54,7 @@ RestoreTeamsChannelSite (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ 
 SetGroupImage (Microsoft.SharePoint.Portal.GroupService) | ✅ | ✅ | ❌ | ❌
 SetIBSegments (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
 SetRectSiteLogo (Microsoft.SharePoint.Portal.SiteIconManager) | ✅ | ❌ | ❌ | ❌
+SetSiteLogo (Microsoft.SharePoint.Portal.SiteIconManager) | ✅ | ❌ | ❌ | ❌
 SetTeamChannelSiteOwner (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
 SiteIconManager | ✅ | ❌ | ❌ | ❌
 SiteUrl (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌

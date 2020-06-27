@@ -18,6 +18,8 @@ ExternalInvitationEnabled (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 MachineLearningCapturedEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PreferredLanguage (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 RequireSecondaryContact (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
+ShowSelfServiceSiteCreation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+SiteCreationNewUX (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SitePath (Edm.String) | ✅ | ✅ | ❌ | ❌
 SiteSensitivityLabelId (Edm.String) | ✅ | ❌ | ❌ | ❌
 UsageGuidelineUrl (Edm.String) | ✅ | ✅ | ❌ | ❌

@@ -12,6 +12,7 @@ CommentsOnSitePagesDisabled (Microsoft.Online.SharePoint.TenantAdministration.Co
 CustomFormUrl (Microsoft.Online.SharePoint.TenantAdministration.CustomFormUrl) | ✅ | ❌ | ❌ | ❌
 DisableGroupify (Microsoft.Online.SharePoint.TenantAdministration.DisableGroupify) | ✅ | ❌ | ❌ | ❌
 Id4a81de82eeb94d6080ea5bf63e27023a (Edm.String) | ✅ | ❌ | ❌ | ❌
+IncludeAtAGlanceInShareEmails (Microsoft.Online.SharePoint.TenantAdministration.IncludeAtAGlanceInShareEmails) | ✅ | ❌ | ❌ | ❌
 MailFromAddress (Microsoft.Online.SharePoint.TenantAdministration.MailFromAddress) | ✅ | ❌ | ❌ | ❌
 MobileNotificationIsEnabledForSharepoint (Microsoft.Online.SharePoint.TenantAdministration.MobileNotificationIsEnabledForSharepoint) | ✅ | ❌ | ❌ | ❌
 NewPortalAsDefault (Microsoft.Online.SharePoint.TenantAdministration.NewPortalAsDefault) | ✅ | ❌ | ❌ | ❌

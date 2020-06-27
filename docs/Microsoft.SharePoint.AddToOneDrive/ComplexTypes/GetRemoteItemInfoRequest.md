@@ -7,6 +7,7 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 IsCreateMountPointFlow (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+MountedRemoteItemUniqueIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 RemoteItemListId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 RemoteItemSiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 RemoteItemSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
