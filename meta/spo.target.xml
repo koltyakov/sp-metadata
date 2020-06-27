@@ -1699,6 +1699,7 @@
         <Property Name="Language" Type="Edm.Int32" Nullable="false" />
         <Property Name="LastItemModifiedDate" Type="Edm.DateTime" Nullable="false" />
         <Property Name="LastItemUserModifiedDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="LogoAlignment" Type="Edm.Int32" Nullable="false" />
         <Property Name="MasterUrl" Type="Edm.String" />
         <Property Name="MegaMenuEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MembersCanShare" Type="Edm.Boolean" Nullable="false" />
@@ -3612,6 +3613,7 @@
         <EntitySet Name="Webs" EntityType="SP.Web" />
         <EntitySet Name="Workitems" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem" />
         <EntitySet Name="ConnectionSettingss" EntityType="Microsoft.BusinessData.Infrastructure.SecureStore.ConnectionSettings" />
+        <EntitySet Name="ComplianceRetentionWorkItems" EntityType="Microsoft.Office.CompliancePolicy.SharePoint.ComplianceFoundation.ComplianceRetentionWorkItem" />
         <EntitySet Name="TargetApplications" EntityType="Microsoft.Office.SecureStoreService.Server.TargetApplication" />
         <EntitySet Name="TargetApplicationFields" EntityType="Microsoft.Office.SecureStoreService.Server.TargetApplicationField" />
         <EntitySet Name="SPMachineLearningModelEntityDatas" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData" />
@@ -8237,6 +8239,7 @@
           <Parameter Name="formValues" Type="Collection(SP.ListItemFormUpdateValue)" />
           <Parameter Name="bNewDocumentUpdate" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="checkInComment" Type="Edm.String" />
+          <Parameter Name="datesInUTC" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_AppManagement_SPAppPrincipalInfo_GetClientIdFromAppPrincipalEncodedClaim" ReturnType="Edm.String">
           <Parameter Name="encodedAppPrincipalClaim" Type="Edm.String" />
@@ -8472,6 +8475,12 @@
         <FunctionImport Name="SetRectSiteLogo" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.SiteIconManager" />
           <Parameter Name="absoluteLogoUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SetSiteLogo" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Portal.SiteIconManager" />
+          <Parameter Name="relativeLogoUrl" Type="Edm.String" />
+          <Parameter Name="type" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="aspect" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Portal_SiteLinkingManager" ReturnType="Microsoft.SharePoint.Portal.SiteLinkingManager" IsComposable="true" EntitySet="Sitelinkingmanagers" />
         <FunctionImport Name="GetSiteLinks" ReturnType="Microsoft.SharePoint.Portal.LinkedSitesListContract" IsSideEffecting="false" IsBindable="true">
@@ -9939,6 +9948,7 @@
           <Parameter Name="formValues" Type="Collection(SP.ListItemFormUpdateValue)" />
           <Parameter Name="bNewDocumentUpdate" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="checkInComment" Type="Edm.String" />
+          <Parameter Name="datesInUTC" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_FavoriteListsDeprecated_AddFavoriteList">
           <Parameter Name="listId" Type="Edm.String" />
@@ -12132,6 +12142,7 @@
           <Parameter Name="footerLayout" Type="Edm.Int32" />
           <Parameter Name="footerEmphasis" Type="Edm.Int32" />
           <Parameter Name="hideTitleInHeader" Type="Edm.Boolean" />
+          <Parameter Name="logoAlignment" Type="Edm.Int32" />
         </FunctionImport>
         <FunctionImport Name="SetDefaultNewPageTemplateId" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
@@ -14934,6 +14945,9 @@
       <Annotations Target="SP.CompliancePolicy.ComplianceTag">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.CompliancePolicy.SharePoint.ComplianceFoundation.Models.ComplianceRetentionWorkItemResponse">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.MetadataNavigation.ConfiguredMetadataNavigationItemCollection">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16242,6 +16256,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData/Type">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.CompliancePolicy.SharePoint.ComplianceFoundation.ComplianceRetentionWorkItem">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.DocumentManagement.DocumentId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16573,6 +16590,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Web/HostedApps">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Web/LogoAlignment">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.MultilingualSettings">
@@ -17589,6 +17609,9 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService/DisableGroupify">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService/IncludeAtAGlanceInShareEmails">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService/MailFromAddress">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18447,6 +18470,9 @@
       <Annotations Target="SP.ApiData/SetRectSiteLogo(Microsoft.SharePoint.Portal.SiteIconManager, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SetSiteLogo(Microsoft.SharePoint.Portal.SiteIconManager, Edm.String, Edm.Int32, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetSharedWithGroupDocs(Edm.Guid, Edm.String, Edm.Boolean, Edm.Int32, Edm.Int32, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19266,7 +19292,7 @@
       <Annotations Target="SP.ApiData/SetAccessRequestSiteDescriptionAndUpdate(SP.Web, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SetChromeOptions(SP.Web, Edm.Int32, Edm.Int32, Edm.Boolean, Edm.Boolean, Edm.Int32, Edm.Int32, Edm.Boolean)">
+      <Annotations Target="SP.ApiData/SetChromeOptions(SP.Web, Edm.Int32, Edm.Int32, Edm.Boolean, Edm.Boolean, Edm.Int32, Edm.Int32, Edm.Boolean, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetDefaultNewPageTemplateId(SP.Web, Edm.Guid)">
@@ -19727,6 +19753,14 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
+    </Schema>
+    <Schema Namespace="Microsoft.Office.CompliancePolicy.SharePoint.ComplianceFoundation.Models" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="ComplianceRetentionWorkItemResponse">
+        <Property Name="SiteId" Type="Edm.String" />
+        <Property Name="TenantId" Type="Edm.String" />
+        <Property Name="WorkItemId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="WorkItemJobStatus" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
     </Schema>
     <Schema Namespace="SP.MetadataNavigation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="ConfiguredMetadataNavigationItemCollection">
@@ -24320,6 +24354,8 @@
         <Property Name="MachineLearningCapturedEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PreferredLanguage" Type="Edm.Int32" />
         <Property Name="RequireSecondaryContact" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ShowSelfServiceSiteCreation" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SiteCreationNewUX" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SitePath" Type="Edm.String" />
         <Property Name="SiteSensitivityLabelId" Type="Edm.String" />
         <Property Name="UsageGuidelineUrl" Type="Edm.String" />
@@ -25022,6 +25058,8 @@
         <Property Name="siteTitle" Type="Edm.String" />
         <Property Name="siteUrl" Type="Edm.String" />
         <Property Name="title" Type="Edm.String" />
+        <Property Name="webId" Type="Edm.String" />
+        <Property Name="webTemplateConfiguration" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="FavoriteListHomeItem" BaseType="Microsoft.SharePoint.ListHome.ListHomeItem">
         <Property Name="favoritesOrder" Type="Edm.Single" />
@@ -25267,6 +25305,7 @@
     <Schema Namespace="Microsoft.SharePoint.AddToOneDrive" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="GetRemoteItemInfoRequest">
         <Property Name="IsCreateMountPointFlow" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="MountedRemoteItemUniqueIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="RemoteItemListId" Type="Edm.Guid" Nullable="false" />
         <Property Name="RemoteItemSiteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="RemoteItemSiteUrl" Type="Edm.String" />
@@ -26193,6 +26232,10 @@
         <Property Name="PrincipalName" Type="Edm.String" />
         <Property Name="Rights" Type="Edm.Int64" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="IncludeAtAGlanceInShareEmails">
+        <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Value" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="MailFromAddress">
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.String" />
@@ -26487,6 +26530,7 @@
         <Property Name="CommentsOnSitePagesDisabled" Type="Microsoft.Online.SharePoint.TenantAdministration.CommentsOnSitePagesDisabled" />
         <Property Name="CustomFormUrl" Type="Microsoft.Online.SharePoint.TenantAdministration.CustomFormUrl" />
         <Property Name="DisableGroupify" Type="Microsoft.Online.SharePoint.TenantAdministration.DisableGroupify" />
+        <Property Name="IncludeAtAGlanceInShareEmails" Type="Microsoft.Online.SharePoint.TenantAdministration.IncludeAtAGlanceInShareEmails" />
         <Property Name="MailFromAddress" Type="Microsoft.Online.SharePoint.TenantAdministration.MailFromAddress" />
         <Property Name="MobileNotificationIsEnabledForSharepoint" Type="Microsoft.Online.SharePoint.TenantAdministration.MobileNotificationIsEnabledForSharepoint" />
         <Property Name="NewPortalAsDefault" Type="Microsoft.Online.SharePoint.TenantAdministration.NewPortalAsDefault" />
@@ -26539,6 +26583,7 @@
         <Property Name="CustomizedExternalSharingServiceUrl" Type="Edm.String" />
         <Property Name="DefaultLinkPermission" Type="Edm.Int32" Nullable="false" />
         <Property Name="DefaultSharingLinkType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DisableAddToOneDrive" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisabledWebPartIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="DisableReportProblemDialog" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisallowInfectedFileDownload" Type="Edm.Boolean" Nullable="false" />
@@ -26565,6 +26610,8 @@
         <Property Name="GuestSharingGroupAllowListInTenantByPrincipalIdentity" Type="Collection(Edm.String)" />
         <Property Name="HideDefaultThemes" Type="Edm.Boolean" Nullable="false" />
         <Property Name="HideSyncButtonOnODB" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ImageTaggingOption" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IncludeAtAGlanceInShareEmails" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IPAddressAllowList" Type="Edm.String" />
         <Property Name="IPAddressEnforcement" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IPAddressWACTokenLifetime" Type="Edm.Int32" Nullable="false" />
@@ -26741,12 +26788,13 @@
       </ComplexType>
       <EntityType Name="DeviceEntityData">
         <Key>
-          <PropertyRef Name="ClientUserName" />
+          <PropertyRef Name="Id" />
         </Key>
-        <Property Name="ClientUserName" Type="Edm.String" Nullable="false" />
+        <Property Name="ClientUserName" Type="Edm.String" />
         <Property Name="DeviceName" Type="Edm.String" />
         <Property Name="DiskSpace" Type="Edm.Int64" Nullable="false" />
         <Property Name="FriendlyName" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
         <Property Name="TargetUserName" Type="Edm.String" />
         <Property Name="TaskQueueExpiresOnTimeUtc" Type="Edm.DateTime" Nullable="false" />
         <Property Name="TaskQueueUrl" Type="Edm.String" />
@@ -27431,6 +27479,14 @@
     </Schema>
     <Schema Namespace="Microsoft.AppServices" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="AppCollection">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Microsoft.Office.CompliancePolicy.SharePoint.ComplianceFoundation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="ComplianceRetentionWorkItem">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
@@ -28127,6 +28183,7 @@
         <Property Name="CustomizedExternalSharingServiceUrl" Type="Edm.String" />
         <Property Name="DefaultLinkPermission" Type="Edm.Int32" Nullable="false" />
         <Property Name="DefaultSharingLinkType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DisableAddToOneDrive" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisplayStartASiteOption" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EmailAttestationEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EmailAttestationReAuthDays" Type="Edm.Int32" Nullable="false" />
@@ -28144,6 +28201,8 @@
         <Property Name="GetOrgAssets" Type="Microsoft.SharePoint.Administration.OrgAssets" />
         <Property Name="GuestSharingGroupAllowList" Type="Edm.String" />
         <Property Name="HideSyncButtonOnODB" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ImageTaggingOption" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IncludeAtAGlanceInShareEmails" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IPAddressAllowList" Type="Edm.String" />
         <Property Name="IPAddressEnforcement" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IPAddressWACTokenLifetime" Type="Edm.Int32" Nullable="false" />
@@ -28328,7 +28387,6 @@
         <Property Name="DeviceAddedTimeUTC" Type="Edm.DateTime" Nullable="false" />
         <Property Name="Disconnected" Type="Edm.Boolean" Nullable="false" />
         <Property Name="FromClient" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
         <Property Name="LastActivityTimeUtc" Type="Edm.DateTime" Nullable="false" />
         <Property Name="LastHeartbeatTimeUtc" Type="Edm.DateTime" Nullable="false" />
         <Property Name="LastModifiedTimeUtc" Type="Edm.DateTime" Nullable="false" />
