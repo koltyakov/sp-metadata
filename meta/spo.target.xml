@@ -2139,12 +2139,6 @@
         <Property Name="Uri" Type="Edm.String" Nullable="false" />
         <Property Name="UrlZone" Type="Edm.Int32" Nullable="false" />
       </EntityType>
-      <EntityType Name="FavoriteListsDeprecated" Abstract="true">
-        <Key>
-          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
-        </Key>
-        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
-      </EntityType>
       <EntityType Name="ListHomeItem2">
         <Key>
           <PropertyRef Name="color" />
@@ -2295,6 +2289,7 @@
         <Property Name="PrincipalAccountType" Type="Edm.String" />
         <Property Name="PrincipalSource" Type="Edm.Int32" Nullable="false" />
         <Property Name="QuerySettings" Type="SP.UI.ApplicationPages.PeoplePickerQuerySettings" />
+        <Property Name="UseSubstrateSearch" Type="Edm.Boolean" Nullable="false" />
         <Property Name="VisibleSuggestions" Type="Edm.Int32" Nullable="false" />
       </EntityType>
       <EntityType Name="SharingPermissionInformation">
@@ -3898,7 +3893,6 @@
         <EntitySet Name="EffectiveInformationRightsManagementSettingss" EntityType="SP.EffectiveInformationRightsManagementSettings" />
         <EntitySet Name="EventReceiverDefinitions" EntityType="SP.EventReceiverDefinition" />
         <EntitySet Name="FavoriteListss" EntityType="SP.FavoriteLists" />
-        <EntitySet Name="FavoriteListsDeprecateds" EntityType="SP.FavoriteListsDeprecated" />
         <EntitySet Name="Features" EntityType="SP.Feature" />
         <EntitySet Name="Fields" EntityType="SP.Field" />
         <EntitySet Name="FieldLinks" EntityType="SP.FieldLink" />
@@ -9309,6 +9303,7 @@
           <Parameter Name="formValues" Type="Collection(SP.ListItemFormUpdateValue)" />
           <Parameter Name="bNewDocumentUpdate" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="checkInComment" Type="Edm.String" />
+          <Parameter Name="datesInUTC" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="AddValidateUpdateItemUsingPath" ReturnType="Collection(SP.ListItemFormUpdateValue)" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -9316,6 +9311,7 @@
           <Parameter Name="formValues" Type="Collection(SP.ListItemFormUpdateValue)" />
           <Parameter Name="bNewDocumentUpdate" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="checkInComment" Type="Edm.String" />
+          <Parameter Name="datesInUTC" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="BulkValidateUpdateListItems" ReturnType="Collection(SP.ListItemFormUpdateValue)" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -9949,18 +9945,6 @@
           <Parameter Name="bNewDocumentUpdate" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="checkInComment" Type="Edm.String" />
           <Parameter Name="datesInUTC" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="SP_FavoriteListsDeprecated_AddFavoriteList">
-          <Parameter Name="listId" Type="Edm.String" />
-          <Parameter Name="listTitle" Type="Edm.String" />
-          <Parameter Name="listUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="SP_FavoriteListsDeprecated_GetFavoriteLists" ReturnType="Edm.String" />
-        <FunctionImport Name="SP_FavoriteListsDeprecated_GetIsListFavorite" ReturnType="Edm.Boolean">
-          <Parameter Name="listId" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="SP_FavoriteListsDeprecated_RemoveFavoriteList" ReturnType="Edm.Boolean">
-          <Parameter Name="listId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_ListHomeItemCollection_GetListHomeItems" ReturnType="Edm.Stream" IsSideEffecting="false">
           <Parameter Name="sortBy" Type="Edm.Int32" Nullable="false" />
@@ -16046,6 +16030,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/ListID">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/ModelSettings">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/ObjectId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16082,7 +16069,16 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/ObjectId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/TargetLibraryServerRelativeUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/TargetLibraryUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/TargetSiteUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/TargetWebServerRelativeUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/UniqueId">
@@ -16176,6 +16172,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/LastTrained">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/ModelSettings">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/Schemas">
@@ -17669,6 +17668,9 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/AddressbarLinkPermission">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/AnyoneLinkTrackUsers">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/GuestSharingGroupAllowListInTenantByPrincipalIdentity">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18413,6 +18415,9 @@
       <Annotations Target="Microsoft.SharePoint.Portal.SPSiteCreationRequest/SensitivityLabel2">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Portal.SPSiteCreationRequest/TeamsChannelType">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Portal.SPSiteCreationRequest/WebTemplateExtensionId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18827,10 +18832,10 @@
       <Annotations Target="SP.ApiData/AddItemUsingPath(SP.List, SP.ListItemCreationInformationUsingPath)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/AddValidateUpdateItem(SP.List, SP.ListItemCreationInformation, Collection(SP.ListItemFormUpdateValue), Edm.Boolean, Edm.String)">
+      <Annotations Target="SP.ApiData/AddValidateUpdateItem(SP.List, SP.ListItemCreationInformation, Collection(SP.ListItemFormUpdateValue), Edm.Boolean, Edm.String, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/AddValidateUpdateItemUsingPath(SP.List, SP.ListItemCreationInformationUsingPath, Collection(SP.ListItemFormUpdateValue), Edm.Boolean, Edm.String)">
+      <Annotations Target="SP.ApiData/AddValidateUpdateItemUsingPath(SP.List, SP.ListItemCreationInformationUsingPath, Collection(SP.ListItemFormUpdateValue), Edm.Boolean, Edm.String, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/BulkValidateUpdateListItems(SP.List, Collection(Edm.Int32), Collection(SP.ListItemFormUpdateValue), Edm.Boolean, Edm.String, Edm.String)">
@@ -18936,18 +18941,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/UpdateHashtags(SP.ListItem, Collection(SP.Hashtag), Collection(SP.Hashtag))">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SP_FavoriteListsDeprecated_AddFavoriteList(Edm.String, Edm.String, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SP_FavoriteListsDeprecated_GetFavoriteLists()">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SP_FavoriteListsDeprecated_GetIsListFavorite(Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SP_FavoriteListsDeprecated_RemoveFavoriteList(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_ListHomeItemCollection_GetListHomeItems(Edm.Int32)">
@@ -24424,6 +24417,7 @@
         <Property Name="SensitivityLabel2" Type="Edm.String" />
         <Property Name="ShareByEmailEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SiteDesignId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="TeamsChannelType" Type="Edm.Int32" Nullable="false" />
         <Property Name="TimeZoneId" Type="Edm.Int32" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
         <Property Name="Url" Type="Edm.String" />
@@ -25979,6 +25973,7 @@
         <Property Name="SharePointGroupID" Type="Edm.Int32" Nullable="false" />
         <Property Name="UrlZone" Type="Edm.Int32" Nullable="false" />
         <Property Name="UrlZoneSpecified" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="UseSubstrateSearch" Type="Edm.Boolean" Nullable="false" />
         <Property Name="WebApplicationID" Type="Edm.Guid" Nullable="false" />
       </ComplexType>
       <ComplexType Name="PeoplePickerQuerySettings">
@@ -26322,6 +26317,11 @@
         <Property Name="UserCodeMaximumLevel" Type="Edm.Double" Nullable="false" />
         <Property Name="UserCodeWarningLevel" Type="Edm.Double" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="SiteInfoForSitePicker">
+        <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="SiteName" Type="Edm.String" />
+        <Property Name="Url" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="SitePagesEnabled">
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.Boolean" Nullable="false" />
@@ -26556,6 +26556,7 @@
         </Key>
         <Property Name="AddressbarLinkPermission" Type="Edm.Int32" Nullable="false" />
         <Property Name="AIBuilderEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AIBuilderSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
         <Property Name="AIBuilderSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="AllowCommentsTextOnEmailEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowDownloadingNonWebViewableFiles" Type="Edm.Boolean" Nullable="false" />
@@ -26564,6 +26565,7 @@
         <Property Name="AllowGuestUserShareToUsersNotInSiteCollection" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowLimitedAccessOnUnmanagedDevices" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowSelectSGsInODBListInTenant" Type="Collection(Edm.String)" />
+        <Property Name="AnyoneLinkTrackUsers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ApplyAppEnforcedRestrictionsToAdHocRecipients" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BccExternalSharingInvitations" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BccExternalSharingInvitationsList" Type="Edm.String" />
@@ -26580,7 +26582,9 @@
         <Property Name="ConditionalAccessPolicy" Type="Edm.Int32" Nullable="false" />
         <Property Name="ConditionalAccessPolicyErrorHelpLink" Type="Edm.String" />
         <Property Name="ContentTypeSyncSiteTemplatesList" Type="Collection(Edm.String)" />
+        <Property Name="CortexLicenseEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CustomizedExternalSharingServiceUrl" Type="Edm.String" />
+        <Property Name="DefaultContentCenterSite" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker" />
         <Property Name="DefaultLinkPermission" Type="Edm.Int32" Nullable="false" />
         <Property Name="DefaultSharingLinkType" Type="Edm.Int32" Nullable="false" />
         <Property Name="DisableAddToOneDrive" Type="Edm.Boolean" Nullable="false" />
@@ -26608,6 +26612,7 @@
         <Property Name="FolderAnonymousLinkType" Type="Edm.Int32" Nullable="false" />
         <Property Name="GuestSharingGroupAllowListInTenant" Type="Edm.String" />
         <Property Name="GuestSharingGroupAllowListInTenantByPrincipalIdentity" Type="Collection(Edm.String)" />
+        <Property Name="HasAdminCompletedCUConfiguration" Type="Edm.Boolean" Nullable="false" />
         <Property Name="HideDefaultThemes" Type="Edm.Boolean" Nullable="false" />
         <Property Name="HideSyncButtonOnODB" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ImageTaggingOption" Type="Edm.Int32" Nullable="false" />
@@ -26966,6 +26971,7 @@
         <Property Name="ID" Type="Edm.Int32" Nullable="false" />
         <Property Name="LastTrained" Type="Edm.DateTime" />
         <Property Name="ListID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ModelSettings" Type="Edm.String" />
         <Property Name="ObjectId" Type="Edm.String" />
         <Property Name="Schemas" Type="Edm.String" />
         <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
@@ -26981,7 +26987,10 @@
         <Property Name="ModelUniqueId" Type="Edm.Guid" Nullable="false" />
         <Property Name="ModelVersion" Type="Edm.String" />
         <Property Name="ObjectId" Type="Edm.String" />
+        <Property Name="TargetLibraryServerRelativeUrl" Type="Edm.String" />
         <Property Name="TargetLibraryUrl" Type="Edm.String" />
+        <Property Name="TargetSiteUrl" Type="Edm.String" />
+        <Property Name="TargetWebServerRelativeUrl" Type="Edm.String" />
         <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
         <Property Name="ViewOption" Type="Edm.String" />
       </EntityType>
@@ -27022,6 +27031,7 @@
         <Property Name="ContentTypeName" Type="Edm.String" />
         <Property Name="Explanations" Type="Edm.String" />
         <Property Name="LastTrained" Type="Edm.DateTime" />
+        <Property Name="ModelSettings" Type="Edm.String" />
         <Property Name="Schemas" Type="Edm.String" />
       </EntityType>
       <EntityType Name="SPMachineLearningPublicationsEntityData">
@@ -28157,6 +28167,7 @@
         </Key>
         <Property Name="AddressbarLinkPermission" Type="Edm.Int32" Nullable="false" />
         <Property Name="AIBuilderEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AIBuilderSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
         <Property Name="AIBuilderSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="AllowCommentsTextOnEmailEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowDownloadingNonWebViewableFiles" Type="Edm.Boolean" Nullable="false" />
@@ -28165,6 +28176,7 @@
         <Property Name="AllowGuestUserShareToUsersNotInSiteCollection" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowLimitedAccessOnUnmanagedDevices" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowSelectSGsInODBList" Type="Collection(Edm.String)" />
+        <Property Name="AnyoneLinkTrackUsers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ApplyAppEnforcedRestrictionsToAdHocRecipients" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BccExternalSharingInvitations" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BccExternalSharingInvitationsList" Type="Edm.String" />
@@ -28181,6 +28193,7 @@
         <Property Name="ConditionalAccessPolicyErrorHelpLink" Type="Edm.String" />
         <Property Name="ContentTypeSyncSiteTemplatesList" Type="Collection(Edm.String)" />
         <Property Name="CustomizedExternalSharingServiceUrl" Type="Edm.String" />
+        <Property Name="DefaultContentCenterSite" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker" />
         <Property Name="DefaultLinkPermission" Type="Edm.Int32" Nullable="false" />
         <Property Name="DefaultSharingLinkType" Type="Edm.Int32" Nullable="false" />
         <Property Name="DisableAddToOneDrive" Type="Edm.Boolean" Nullable="false" />
@@ -28200,6 +28213,7 @@
         <Property Name="FolderAnonymousLinkType" Type="Edm.Int32" Nullable="false" />
         <Property Name="GetOrgAssets" Type="Microsoft.SharePoint.Administration.OrgAssets" />
         <Property Name="GuestSharingGroupAllowList" Type="Edm.String" />
+        <Property Name="HasAdminCompletedCUConfiguration" Type="Edm.Boolean" Nullable="false" />
         <Property Name="HideSyncButtonOnODB" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ImageTaggingOption" Type="Edm.Int32" Nullable="false" />
         <Property Name="IncludeAtAGlanceInShareEmails" Type="Edm.Boolean" Nullable="false" />
