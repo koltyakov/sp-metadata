@@ -14,4 +14,5 @@ ContentTypeId (Edm.String) | ✅ | ❌ | ❌ | ❌
 ContentTypeName (Edm.String) | ✅ | ❌ | ❌ | ❌
 Explanations (Edm.String) | ✅ | ❌ | ❌ | ❌
 LastTrained (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
+ModelSettings (Edm.String) | ✅ | ❌ | ❌ | ❌
 Schemas (Edm.String) | ✅ | ❌ | ❌ | ❌

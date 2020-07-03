@@ -33,6 +33,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SiteCreationDefaultStorageQuota](./ComplexTypes/SiteCreationDefaultStorageQuota.md) | ✅ | ❌ | ❌ | ❌
 [SiteCreationNewUX](./ComplexTypes/SiteCreationNewUX.md) | ✅ | ❌ | ❌ | ❌
 [SiteCreationProperties](./ComplexTypes/SiteCreationProperties.md) | ✅ | ❌ | ❌ | ❌
+[SiteInfoForSitePicker](./ComplexTypes/SiteInfoForSitePicker.md) | ✅ | ❌ | ❌ | ❌
 [SitePagesEnabled](./ComplexTypes/SitePagesEnabled.md) | ✅ | ❌ | ❌ | ❌
 [SiteUserGroupInfo](./ComplexTypes/SiteUserGroupInfo.md) | ✅ | ❌ | ❌ | ❌
 [SmtpServer](./ComplexTypes/SmtpServer.md) | ✅ | ❌ | ❌ | ❌

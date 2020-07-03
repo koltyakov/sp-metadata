@@ -15,6 +15,7 @@ Explanations (Edm.String) | ✅ | ❌ | ❌ | ❌
 ID (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 LastTrained (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 ListID (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+ModelSettings (Edm.String) | ✅ | ❌ | ❌ | ❌
 ObjectId (Edm.String) | ✅ | ❌ | ❌ | ❌
 Schemas (Edm.String) | ✅ | ❌ | ❌ | ❌
 UniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

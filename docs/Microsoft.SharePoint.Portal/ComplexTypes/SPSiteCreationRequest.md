@@ -17,6 +17,7 @@ SensitivityLabel (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 SensitivityLabel2 (Edm.String) | ✅ | ❌ | ❌ | ❌
 ShareByEmailEnabled (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 SiteDesignId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
+TeamsChannelType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 TimeZoneId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ✅ | ❌ | ❌
 Url (Edm.String) | ✅ | ✅ | ❌ | ❌

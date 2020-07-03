@@ -7,6 +7,7 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 AIBuilderEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+AIBuilderSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
 AIBuilderSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 AddressbarLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 AllowCommentsTextOnEmailEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -16,6 +17,7 @@ AllowGuestUserShareToUsersNotInSiteCollection (Edm.Boolean) | ✅ | ❌ | ❌ | 
 AllowLimitedAccessOnUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowSelectSGsInODBList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 AllowedDomainListForSyncClient (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+AnyoneLinkTrackUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ApplyAppEnforcedRestrictionsToAdHocRecipients (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BccExternalSharingInvitations (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BccExternalSharingInvitationsList (Edm.String) | ✅ | ❌ | ❌ | ❌
@@ -32,6 +34,7 @@ ConditionalAccessPolicy (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicyErrorHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌
 ContentTypeSyncSiteTemplatesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 CustomizedExternalSharingServiceUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+DefaultContentCenterSite (Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker) | ✅ | ❌ | ❌ | ❌
 DefaultLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DefaultSharingLinkType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DisableAddToOneDrive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -51,6 +54,7 @@ FilePickerExternalImageSearchEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 FolderAnonymousLinkType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 GetOrgAssets (Microsoft.SharePoint.Administration.OrgAssets) | ✅ | ❌ | ❌ | ❌
 GuestSharingGroupAllowList (Edm.String) | ✅ | ❌ | ❌ | ❌
+HasAdminCompletedCUConfiguration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HideSyncButtonOnODB (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IPAddressAllowList (Edm.String) | ✅ | ❌ | ❌ | ❌
 IPAddressEnforcement (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

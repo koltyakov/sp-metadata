@@ -13,6 +13,9 @@ ModelName (Edm.String) | ✅ | ❌ | ❌ | ❌
 ModelUniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 ModelVersion (Edm.String) | ✅ | ❌ | ❌ | ❌
 ObjectId (Edm.String) | ✅ | ❌ | ❌ | ❌
+TargetLibraryServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetLibraryUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+TargetSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+TargetWebServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 UniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 ViewOption (Edm.String) | ✅ | ❌ | ❌ | ❌

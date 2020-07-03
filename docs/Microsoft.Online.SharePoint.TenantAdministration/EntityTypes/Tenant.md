@@ -7,6 +7,7 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 AIBuilderEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+AIBuilderSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
 AIBuilderSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 AddressbarLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 AllowCommentsTextOnEmailEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -16,6 +17,7 @@ AllowGuestUserShareToUsersNotInSiteCollection (Edm.Boolean) | ✅ | ❌ | ❌ | 
 AllowLimitedAccessOnUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowSelectSGsInODBListInTenant (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 AllowedDomainListForSyncClient (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+AnyoneLinkTrackUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ApplyAppEnforcedRestrictionsToAdHocRecipients (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BccExternalSharingInvitations (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BccExternalSharingInvitationsList (Edm.String) | ✅ | ❌ | ❌ | ❌
@@ -32,7 +34,9 @@ CompatibilityRange (Edm.String) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicy (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicyErrorHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌
 ContentTypeSyncSiteTemplatesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+CortexLicenseEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CustomizedExternalSharingServiceUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+DefaultContentCenterSite (Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker) | ✅ | ❌ | ❌ | ❌
 DefaultLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DefaultSharingLinkType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DisableAddToOneDrive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -60,6 +64,7 @@ FilePickerExternalImageSearchEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 FolderAnonymousLinkType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 GuestSharingGroupAllowListInTenant (Edm.String) | ✅ | ❌ | ❌ | ❌
 GuestSharingGroupAllowListInTenantByPrincipalIdentity (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+HasAdminCompletedCUConfiguration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HideDefaultThemes (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HideSyncButtonOnODB (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IPAddressAllowList (Edm.String) | ✅ | ❌ | ❌ | ❌

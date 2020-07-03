@@ -11,4 +11,5 @@ AllowOnlyEmailAddresses (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 PrincipalAccountType (Edm.String) | ✅ | ✅ | ✅ | ❌
 PrincipalSource (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 QuerySettings (SP.UI.ApplicationPages.PeoplePickerQuerySettings) | ✅ | ✅ | ❌ | ❌
+UseSubstrateSearch (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 VisibleSuggestions (Edm.Int32) | ✅ | ✅ | ✅ | ❌

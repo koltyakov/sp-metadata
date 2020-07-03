@@ -21,4 +21,5 @@ Required (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 SharePointGroupID (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 UrlZone (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 UrlZoneSpecified (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+UseSubstrateSearch (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 WebApplicationID (Edm.Guid) | ✅ | ✅ | ✅ | ✅

@@ -487,10 +487,6 @@ SP_AppPrincipalIdentityProvider_External | ✅ | ✅ | ✅ | ✅
 <span title="SP_AppSiteContextUtility_GetAppSiteContextCollection">SP_AppSiteContextUtility_GetAppSiteContextCollecti...</span> (SP AppSiteContextUtility GetAppSiteContextCollection) | ✅ | ✅ | ❌ | ❌
 [SP_AppTileProperties_GetAppProperties](./Functions/SP_AppTileProperties_GetAppProperties.md) | ✅ | ✅ | ❌ | ❌
 SP_CurrencyList_GetList | ✅ | ✅ | ❌ | ❌
-[SP_FavoriteListsDeprecated_AddFavoriteList](./Functions/SP_FavoriteListsDeprecated_AddFavoriteList.md) | ✅ | ❌ | ❌ | ❌
-SP_FavoriteListsDeprecated_GetFavoriteLists | ✅ | ❌ | ❌ | ❌
-[SP_FavoriteListsDeprecated_GetIsListFavorite](./Functions/SP_FavoriteListsDeprecated_GetIsListFavorite.md) | ✅ | ❌ | ❌ | ❌
-[SP_FavoriteListsDeprecated_RemoveFavoriteList](./Functions/SP_FavoriteListsDeprecated_RemoveFavoriteList.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_AddList](./Functions/SP_FavoriteLists_AddList.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_GetListsBy](./Functions/SP_FavoriteLists_GetListsBy.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_GetListsBySubstrate](./Functions/SP_FavoriteLists_GetListsBySubstrate.md) | ✅ | ❌ | ❌ | ❌
