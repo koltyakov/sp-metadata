@@ -42,6 +42,7 @@ DisplayStartASiteOption (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EmailAttestationEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EmailAttestationReAuthDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 EmailAttestationRequired (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+EnableAutoNewsDigest (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableAzureADB2BIntegration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableGuestSignInAcceleration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnablePromotedFileHandlers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -104,4 +105,5 @@ UseFindPeopleInPeoplePicker (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UsePersistentCookiesForExplorerView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UserVoiceForFeedbackEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 WhoCanShareAllowList (Edm.String) | ✅ | ❌ | ❌ | ❌
+Workflow2010Disabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Workflows2013State (Edm.Int32) | ✅ | ❌ | ❌ | ❌

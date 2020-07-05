@@ -487,9 +487,12 @@ SP_AppPrincipalIdentityProvider_External | ✅ | ✅ | ✅ | ✅
 <span title="SP_AppSiteContextUtility_GetAppSiteContextCollection">SP_AppSiteContextUtility_GetAppSiteContextCollecti...</span> (SP AppSiteContextUtility GetAppSiteContextCollection) | ✅ | ✅ | ❌ | ❌
 [SP_AppTileProperties_GetAppProperties](./Functions/SP_AppTileProperties_GetAppProperties.md) | ✅ | ✅ | ❌ | ❌
 SP_CurrencyList_GetList | ✅ | ✅ | ❌ | ❌
+[SP_FavoriteListsSubstrate_AddList](./Functions/SP_FavoriteListsSubstrate_AddList.md) | ✅ | ❌ | ❌ | ❌
+[SP_FavoriteListsSubstrate_GetListsBy](./Functions/SP_FavoriteListsSubstrate_GetListsBy.md) | ✅ | ❌ | ❌ | ❌
+[SP_FavoriteListsSubstrate_RemoveList](./Functions/SP_FavoriteListsSubstrate_RemoveList.md) | ✅ | ❌ | ❌ | ❌
+[SP_FavoriteListsSubstrate_UpdateList](./Functions/SP_FavoriteListsSubstrate_UpdateList.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_AddList](./Functions/SP_FavoriteLists_AddList.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_GetListsBy](./Functions/SP_FavoriteLists_GetListsBy.md) | ✅ | ❌ | ❌ | ❌
-[SP_FavoriteLists_GetListsBySubstrate](./Functions/SP_FavoriteLists_GetListsBySubstrate.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_RemoveList](./Functions/SP_FavoriteLists_RemoveList.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_UpdateList](./Functions/SP_FavoriteLists_UpdateList.md) | ✅ | ❌ | ❌ | ❌
 [SP_File_GetContentVerFromTag](./Functions/SP_File_GetContentVerFromTag.md) | ✅ | ✅ | ✅ | ✅
@@ -504,6 +507,7 @@ SP_KnowledgeHub | ✅ | ❌ | ❌ | ❌
 [SP_ListHomeItemCollection_GetListHomeItems](./Functions/SP_ListHomeItemCollection_GetListHomeItems.md) | ✅ | ❌ | ❌ | ❌
 [<span title="SP_ListHomeItemCollection_GetListHomeItemsWithPageContextInfo">SP_ListHomeItemCollection_GetListHomeItemsWithPage...</span> (SP ListHomeItemCollection GetListHomeItemsWithPageContextInfo)](./Functions/SP_ListHomeItemCollection_GetListHomeItemsWithPageContextInfo.md) | ✅ | ❌ | ❌ | ❌
 [SP_ListHomeItemCollection_GetListHomePersonalLists](./Functions/SP_ListHomeItemCollection_GetListHomePersonalLists.md) | ✅ | ❌ | ❌ | ❌
+[SP_ListHomeItemCollection_RemoveRecentLists](./Functions/SP_ListHomeItemCollection_RemoveRecentLists.md) | ✅ | ❌ | ❌ | ❌
 [SP_List_GetListDataAsStream](./Functions/SP_List_GetListDataAsStream.md) | ✅ | ✅ | ❌ | ❌
 [SP_MountPoint_GetMountedFolderInfo](./Functions/SP_MountPoint_GetMountedFolderInfo.md) | ✅ | ✅ | ✅ | ❌
 [SP_MoveCopyUtil_CopyFile](./Functions/SP_MoveCopyUtil_CopyFile.md) | ✅ | ✅ | ✅ | ❌

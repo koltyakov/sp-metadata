@@ -50,6 +50,7 @@ EmailAttestationEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EmailAttestationReAuthDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 EmailAttestationRequired (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableAIPIntegration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+EnableAutoNewsDigest (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableAzureADB2BIntegration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableGuestSignInAcceleration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableMinimumVersionRequirement (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -133,6 +134,7 @@ UsePersistentCookiesForExplorerView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UserVoiceForFeedbackEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 WhoCanShareAllowListInTenant (Edm.String) | ✅ | ❌ | ❌ | ❌
 WhoCanShareAllowListInTenantByPrincipalIdentity (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+Workflow2010Disabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Workflows2013State (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 
 ### Navigation Properties

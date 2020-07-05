@@ -1,4 +1,4 @@
-# Function Import: SP_FavoriteLists_GetListsBySubstrate
+# Function Import: SP_FavoriteListsSubstrate_RemoveList
 
 > Namespace: SP
 
@@ -10,5 +10,5 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 listId (Edm.String) | ✅ | ❌ | ❌ | ❌
-page (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 siteId (Edm.String) | ✅ | ❌ | ❌ | ❌
+webId (Edm.String) | ✅ | ❌ | ❌ | ❌
