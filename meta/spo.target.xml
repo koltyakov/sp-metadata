@@ -739,6 +739,7 @@
       </ComplexType>
       <ComplexType Name="RenderListDataParameters">
         <Property Name="AddAllFields" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AddRegionalSettings" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AddRequiredFields" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowMultipleValueFilterForTaxonomyFields" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AudienceTarget" Type="Edm.Boolean" Nullable="false" />
@@ -2080,6 +2081,12 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
+      <EntityType Name="FavoriteListsSubstrate" Abstract="true">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="KnowledgeHub">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
@@ -2160,6 +2167,7 @@
         <Property Name="siteId" Type="Edm.String" />
         <Property Name="siteTitle" Type="Edm.String" />
         <Property Name="siteUrl" Type="Edm.String" />
+        <Property Name="webId" Type="Edm.String" />
         <Property Name="webTemplateConfiguration" Type="Edm.String" />
       </EntityType>
       <EntityType Name="ListHomeItemCollection" Abstract="true">
@@ -2330,6 +2338,7 @@
         <Property Name="siteId" Type="Edm.String" />
         <Property Name="siteTitle" Type="Edm.String" />
         <Property Name="siteUrl" Type="Edm.String" />
+        <Property Name="webId" Type="Edm.String" />
         <Property Name="webTemplateConfiguration" Type="Edm.String" />
       </EntityType>
       <EntityType Name="RelatedItemManager">
@@ -2527,6 +2536,7 @@
         <Property Name="EnableLookup" Type="Edm.Boolean" Nullable="false" />
       </EntityType>
       <EntityType Name="FieldNumber" BaseType="SP.Field">
+        <Property Name="CommaSeparator" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisplayFormat" Type="Edm.Int32" Nullable="false" />
         <Property Name="MaximumValue" Type="Edm.Double" Nullable="false" />
         <Property Name="MinimumValue" Type="Edm.Double" Nullable="false" />
@@ -3893,6 +3903,7 @@
         <EntitySet Name="EffectiveInformationRightsManagementSettingss" EntityType="SP.EffectiveInformationRightsManagementSettings" />
         <EntitySet Name="EventReceiverDefinitions" EntityType="SP.EventReceiverDefinition" />
         <EntitySet Name="FavoriteListss" EntityType="SP.FavoriteLists" />
+        <EntitySet Name="FavoriteListsSubstrates" EntityType="SP.FavoriteListsSubstrate" />
         <EntitySet Name="Features" EntityType="SP.Feature" />
         <EntitySet Name="Fields" EntityType="SP.Field" />
         <EntitySet Name="FieldLinks" EntityType="SP.FieldLink" />
@@ -9062,17 +9073,28 @@
           <Parameter Name="listId" Type="Edm.String" />
           <Parameter Name="page" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="SP_FavoriteLists_GetListsBySubstrate" ReturnType="Edm.String" IsSideEffecting="false">
-          <Parameter Name="siteId" Type="Edm.String" />
-          <Parameter Name="listId" Type="Edm.String" />
-          <Parameter Name="page" Type="Edm.Int32" Nullable="false" />
-        </FunctionImport>
         <FunctionImport Name="SP_FavoriteLists_RemoveList">
           <Parameter Name="siteId" Type="Edm.String" />
           <Parameter Name="listId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_FavoriteLists_UpdateList">
           <Parameter Name="favoriteList" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
+        </FunctionImport>
+        <FunctionImport Name="SP_FavoriteListsSubstrate_AddList">
+          <Parameter Name="list" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
+        </FunctionImport>
+        <FunctionImport Name="SP_FavoriteListsSubstrate_GetListsBy" ReturnType="Edm.String" IsSideEffecting="false">
+          <Parameter Name="siteId" Type="Edm.String" />
+          <Parameter Name="listId" Type="Edm.String" />
+          <Parameter Name="page" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_FavoriteListsSubstrate_RemoveList">
+          <Parameter Name="siteId" Type="Edm.String" />
+          <Parameter Name="listId" Type="Edm.String" />
+          <Parameter Name="webId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_FavoriteListsSubstrate_UpdateList">
+          <Parameter Name="list" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
         </FunctionImport>
         <FunctionImport Name="SP_KnowledgeHub" ReturnType="SP.KnowledgeHub" IsComposable="true" EntitySet="KnowledgeHubs" />
         <FunctionImport Name="AddOrUpdateSiteReference" IsBindable="true">
@@ -9954,6 +9976,9 @@
         </FunctionImport>
         <FunctionImport Name="SP_ListHomeItemCollection_GetListHomePersonalLists" ReturnType="Collection(SP.ListHomeItem2)" IsComposable="true" EntitySet="ListHomeItem2s">
           <Parameter Name="sortBy" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_ListHomeItemCollection_RemoveRecentLists">
+          <Parameter Name="recentListsJson" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_MultilingualSettings" ReturnType="SP.MultilingualSettings" IsComposable="true" EntitySet="MultilingualSettingss" />
         <FunctionImport Name="SetNotificationRecipients" IsBindable="true">
@@ -15673,6 +15698,9 @@
       <Annotations Target="SP.RenderListDataParameters/AddAllFields">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.RenderListDataParameters/AddRegionalSettings">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.RenderListDataParameters/AddRequiredFields">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17608,6 +17636,9 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService/DisableGroupify">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService/EnableAutoNewsDigest">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService/IncludeAtAGlanceInShareEmails">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18766,13 +18797,22 @@
       <Annotations Target="SP.ApiData/SP_FavoriteLists_GetListsBy(Edm.String, Edm.String, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_FavoriteLists_GetListsBySubstrate(Edm.String, Edm.String, Edm.Int32)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.ApiData/SP_FavoriteLists_RemoveList(Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_FavoriteLists_UpdateList(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_FavoriteListsSubstrate_AddList(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_FavoriteListsSubstrate_GetListsBy(Edm.String, Edm.String, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_FavoriteListsSubstrate_RemoveList(Edm.String, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_FavoriteListsSubstrate_UpdateList(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Internal_FlowPermissions_GetFlowPermissionLevelOnList(Edm.String)">
@@ -18950,6 +18990,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_ListHomeItemCollection_GetListHomePersonalLists(Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_ListHomeItemCollection_RemoveRecentLists(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_MultilingualSettings()">
@@ -26218,6 +26261,10 @@
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="EnableAutoNewsDigest">
+        <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Value" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="GroupInfo">
         <Property Name="GroupStatusInAAD" Type="Edm.Int32" Nullable="false" />
         <Property Name="SiteUrl" Type="Edm.String" />
@@ -26530,6 +26577,7 @@
         <Property Name="CommentsOnSitePagesDisabled" Type="Microsoft.Online.SharePoint.TenantAdministration.CommentsOnSitePagesDisabled" />
         <Property Name="CustomFormUrl" Type="Microsoft.Online.SharePoint.TenantAdministration.CustomFormUrl" />
         <Property Name="DisableGroupify" Type="Microsoft.Online.SharePoint.TenantAdministration.DisableGroupify" />
+        <Property Name="EnableAutoNewsDigest" Type="Microsoft.Online.SharePoint.TenantAdministration.EnableAutoNewsDigest" />
         <Property Name="IncludeAtAGlanceInShareEmails" Type="Microsoft.Online.SharePoint.TenantAdministration.IncludeAtAGlanceInShareEmails" />
         <Property Name="MailFromAddress" Type="Microsoft.Online.SharePoint.TenantAdministration.MailFromAddress" />
         <Property Name="MobileNotificationIsEnabledForSharepoint" Type="Microsoft.Online.SharePoint.TenantAdministration.MobileNotificationIsEnabledForSharepoint" />
@@ -26598,6 +26646,7 @@
         <Property Name="EmailAttestationReAuthDays" Type="Edm.Int32" Nullable="false" />
         <Property Name="EmailAttestationRequired" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnableAIPIntegration" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="EnableAutoNewsDigest" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnableAzureADB2BIntegration" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnableGuestSignInAcceleration" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnableMinimumVersionRequirement" Type="Edm.Boolean" Nullable="false" />
@@ -26681,6 +26730,7 @@
         <Property Name="UserVoiceForFeedbackEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="WhoCanShareAllowListInTenant" Type="Edm.String" />
         <Property Name="WhoCanShareAllowListInTenantByPrincipalIdentity" Type="Collection(Edm.String)" />
+        <Property Name="Workflow2010Disabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Workflows2013State" Type="Edm.Int32" Nullable="false" />
         <NavigationProperty Name="Sites" Relationship="Microsoft.Online.SharePoint.TenantAdministration.Microsoft_Online_SharePoint_TenantAdministration_Tenant_Sites_Microsoft_Online_SharePoint_TenantAdministration_SiteProperties_SitesPartner" ToRole="Sites" FromRole="SitesPartner" />
       </EntityType>
@@ -28201,6 +28251,7 @@
         <Property Name="EmailAttestationEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EmailAttestationReAuthDays" Type="Edm.Int32" Nullable="false" />
         <Property Name="EmailAttestationRequired" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="EnableAutoNewsDigest" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnableAzureADB2BIntegration" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnableGuestSignInAcceleration" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnablePromotedFileHandlers" Type="Edm.Boolean" Nullable="false" />
@@ -28263,6 +28314,7 @@
         <Property Name="UsePersistentCookiesForExplorerView" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UserVoiceForFeedbackEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="WhoCanShareAllowList" Type="Edm.String" />
+        <Property Name="Workflow2010Disabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Workflows2013State" Type="Edm.Int32" Nullable="false" />
       </EntityType>
       <EntityType Name="RemoveExternalUsersResults">
