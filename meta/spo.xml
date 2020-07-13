@@ -739,6 +739,7 @@
       </ComplexType>
       <ComplexType Name="RenderListDataParameters">
         <Property Name="AddAllFields" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AddAllViewFields" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AddRegionalSettings" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AddRequiredFields" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowMultipleValueFilterForTaxonomyFields" Type="Edm.Boolean" Nullable="false" />
@@ -2547,8 +2548,10 @@
       </EntityType>
       <EntityType Name="FieldDateTime" BaseType="SP.Field">
         <Property Name="DateTimeCalendarType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DateFormat" Type="Edm.String" />
         <Property Name="DisplayFormat" Type="Edm.Int32" Nullable="false" />
         <Property Name="FriendlyDisplayFormat" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TimeFormat" Type="Edm.String" />
       </EntityType>
       <EntityType Name="FieldGeolocation" BaseType="SP.Field" />
       <EntityType Name="FieldGuid" BaseType="SP.Field" />
@@ -4803,6 +4806,10 @@
           <Parameter Name="groupId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" IsComposable="true" EntitySet="Machinelearnings" />
+        <FunctionImport Name="GetModelIdForContentType" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
+          <Parameter Name="contentTypeName" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="GetRetentionLabel" ReturnType="SP.CompliancePolicy.ComplianceTag" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
           <Parameter Name="retentionLabelId" Type="Edm.Guid" Nullable="false" />
@@ -7574,6 +7581,10 @@
         <FunctionImport Name="GetPageColumnState" ReturnType="Edm.Int32" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Collection(SP.Publishing.SitePage)" />
           <Parameter Name="url" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetTranslations" ReturnType="SP.TranslationStatusCollection" IsComposable="true" IsBindable="true" EntitySet="TranslationStatusCollections">
+          <Parameter Name="this" Type="Collection(SP.Publishing.SitePage)" />
+          <Parameter Name="sourceItemId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="IsSitePage" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Collection(SP.Publishing.SitePage)" />
@@ -15698,6 +15709,9 @@
       <Annotations Target="SP.RenderListDataParameters/AddAllFields">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.RenderListDataParameters/AddAllViewFields">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.RenderListDataParameters/AddRegionalSettings">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17831,6 +17845,9 @@
       <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningHub()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetModelIdForContentType(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetRetentionLabel(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18144,6 +18161,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetPageColumnState(Collection(SP.Publishing.SitePage), Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetTranslations(Collection(SP.Publishing.SitePage), Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/IsSitePage(Collection(SP.Publishing.SitePage), Edm.String)">
@@ -26365,6 +26385,7 @@
         <Property Name="UserCodeWarningLevel" Type="Edm.Double" Nullable="false" />
       </ComplexType>
       <ComplexType Name="SiteInfoForSitePicker">
+        <Property Name="Error" Type="Edm.String" />
         <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="SiteName" Type="Edm.String" />
         <Property Name="Url" Type="Edm.String" />
@@ -26624,6 +26645,7 @@
         <Property Name="BlockDownloadOfViewableFilesForGuests" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BlockDownloadOfViewableFilesOnUnmanagedDevices" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BlockMacSync" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="BlockSendLabelMismatchEmail" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CommentsOnFilesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CommentsOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CompatibilityRange" Type="Edm.String" />
@@ -26674,6 +26696,7 @@
         <Property Name="IsMultiGeo" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsUnmanagedSyncClientForTenantRestricted" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsUnmanagedSyncClientRestrictionFlightEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="LabelMismatchEmailHelpLink" Type="Edm.String" />
         <Property Name="LegacyAuthProtocolsEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LimitedAccessFileType" Type="Edm.Int32" Nullable="false" />
         <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
@@ -28474,10 +28497,12 @@
         </Key>
         <Property Name="ActionId" Type="Edm.Int32" Nullable="false" />
         <Property Name="DebugCommand" Type="Edm.String" />
+        <Property Name="DeviceCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="GlobalTaskSettings" Type="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskSettings" />
         <Property Name="IsServiceInitialized" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SchedulerInformation" Type="Microsoft.Online.SharePoint.MigrationCenter.Common.TaskSchedulerInformation" />
         <Property Name="SchemaVersion" Type="Edm.String" />
+        <Property Name="TaskCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="TotalDevicesAdded" Type="Edm.Int32" Nullable="false" />
         <Property Name="TotalTasksAdded" Type="Edm.Int32" Nullable="false" />
       </EntityType>
