@@ -7,6 +7,7 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 AddAllFields (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+AddAllViewFields (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AddRegionalSettings (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AddRequiredFields (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 AllowMultipleValueFilterForTaxonomyFields (Edm.Boolean) | ✅ | ✅ | ❌ | ❌

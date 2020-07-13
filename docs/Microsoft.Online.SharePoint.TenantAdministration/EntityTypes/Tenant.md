@@ -28,6 +28,7 @@ BlockDownloadOfAllFilesOnUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockDownloadOfViewableFilesForGuests (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockDownloadOfViewableFilesOnUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockMacSync (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+BlockSendLabelMismatchEmail (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CommentsOnFilesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CompatibilityRange (Edm.String) | ✅ | ❌ | ❌ | ❌
@@ -78,6 +79,7 @@ IsHubSitesMultiGeoFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMultiGeo (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsUnmanagedSyncClientForTenantRestricted (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsUnmanagedSyncClientRestrictionFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+LabelMismatchEmailHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌
 LegacyAuthProtocolsEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LimitedAccessFileType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MachineLearningCaptureEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

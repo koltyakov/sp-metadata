@@ -81,6 +81,7 @@ GetSiteStatus (SP.Publishing.PointPublishingSiteManager) | ✅ | ❌ | ❌ | ❌
 GetStreamingKeyAccessToken (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 GetSubtitleFile (Collection(SP.Publishing.SubtitleFile)) | ✅ | ❌ | ❌ | ❌
 GetTopAuthors (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | ❌ | ❌
+GetTranslations (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
 GetVersion (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 GetVersion (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
 GetVersion (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
