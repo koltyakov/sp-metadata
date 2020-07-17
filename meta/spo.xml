@@ -162,8 +162,10 @@
         <Property Name="PasswordLastModifiedBy" Type="SP.Sharing.Principal" />
         <Property Name="RequiresPassword" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RestrictedShareMembership" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Scope" Type="Edm.Int32" Nullable="false" />
         <Property Name="ShareId" Type="Edm.Guid" Nullable="false" />
         <Property Name="ShareTokenString" Type="Edm.String" />
+        <Property Name="TrackLinkUsers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Url" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="UserIdInfo">
@@ -746,6 +748,7 @@
         <Property Name="AudienceTarget" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DatesInUtc" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ExpandGroups" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ExpandUserField" Type="Edm.Boolean" Nullable="false" />
         <Property Name="FirstGroupOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="FolderServerRelativeUrl" Type="Edm.String" />
         <Property Name="ImageFieldsToTryRewriteToCdnUrls" Type="Edm.String" />
@@ -3688,6 +3691,7 @@
         <EntitySet Name="SiteCollectionManagementServices" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
         <EntitySet Name="SitePropertiess" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SiteProperties" />
         <EntitySet Name="SPOGroups" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SPOGroup" />
+        <EntitySet Name="SPOPortalLaunchValidators" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SPOPortalLaunchValidator" />
         <EntitySet Name="SPOTenantCdnPolicys" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SPOTenantCdnPolicy" />
         <EntitySet Name="SPOTenantWebTemplateCollections" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection" />
         <EntitySet Name="Tenants" EntityType="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -7341,6 +7345,10 @@
         <FunctionImport Name="IsContentTypeAvailable" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Collection(SP.Publishing.RepostPage)" />
         </FunctionImport>
+        <FunctionImport Name="BoostNews" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.RepostPage" />
+          <Parameter Name="SitePageBoost" Type="SP.Publishing.BoostFieldsData" />
+        </FunctionImport>
         <FunctionImport Name="CheckOut" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
         </FunctionImport>
@@ -7489,6 +7497,10 @@
         <FunctionImport Name="Activate" IsBindable="true">
           <Parameter Name="this" Type="Collection(SP.Publishing.SitePage3D)" />
         </FunctionImport>
+        <FunctionImport Name="BoostNews" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
+          <Parameter Name="SitePageBoost" Type="SP.Publishing.BoostFieldsData" />
+        </FunctionImport>
         <FunctionImport Name="CheckOut" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
         </FunctionImport>
@@ -7609,6 +7621,10 @@
         <FunctionImport Name="GetById" ReturnType="SP.Publishing.SitePageMetadata" IsComposable="true" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="Collection(SP.Publishing.SitePageMetadata)" />
           <Parameter Name="id" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="BoostNews" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.SitePage" />
+          <Parameter Name="SitePageBoost" Type="SP.Publishing.BoostFieldsData" />
         </FunctionImport>
         <FunctionImport Name="CheckOut" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
@@ -7736,6 +7752,10 @@
         <FunctionImport Name="SP_Publishing_TopicPageCollection" ReturnType="Collection(SP.Publishing.TopicSitePage)" IsComposable="true" EntitySet="SitePageMetadatas" />
         <FunctionImport Name="IsContentTypeAvailable" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Collection(SP.Publishing.TopicSitePage)" />
+        </FunctionImport>
+        <FunctionImport Name="BoostNews" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
+          <Parameter Name="SitePageBoost" Type="SP.Publishing.BoostFieldsData" />
         </FunctionImport>
         <FunctionImport Name="CheckOut" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
@@ -14980,6 +15000,15 @@
       <Annotations Target="SP.Publishing.AcronymInformation">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.BoostFieldsData/BoostUntilSeen">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.BoostFieldsData/Expiry">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.BoostFieldsData/Impressions">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.ProfileDateTime">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -15544,10 +15573,16 @@
       <Annotations Target="SP.SharingLinkInfo/RestrictedShareMembership">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.SharingLinkInfo/Scope">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.SharingLinkInfo/ShareId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.SharingLinkInfo/ShareTokenString">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.SharingLinkInfo/TrackLinkUsers">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.AppProperties">
@@ -15724,6 +15759,9 @@
       <Annotations Target="SP.RenderListDataParameters/ExpandGroups">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.RenderListDataParameters/ExpandUserField">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.RenderListDataParameters/ImageFieldsToTryRewriteToCdnUrls">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -15853,6 +15891,12 @@
       <Annotations Target="SP.Sharing.ShareLinkSettings/embeddable">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Sharing.ShareLinkSettings/scope">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Sharing.ShareLinkSettings/trackLinkUsers">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Sharing.ShareLinkResponse">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -15866,6 +15910,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Sharing.SharingLinkPasswordAbilityStatus">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Sharing.SharingAbilities/anyoneLinkAbilities">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Sharing.SharingInformationRequest">
@@ -17614,6 +17661,9 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SPOGroup">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SPOPortalLaunchValidator">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminEndpoints">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18019,6 +18069,9 @@
       <Annotations Target="SP.ApiData/IsContentTypeAvailable(Collection(SP.Publishing.RepostPage))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/BoostNews(SP.Publishing.RepostPage, SP.Publishing.BoostFieldsData)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/CheckOut(SP.Publishing.RepostPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18086,6 +18139,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Activate(Collection(SP.Publishing.SitePage3D))">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/BoostNews(SP.Publishing.SitePage3D, SP.Publishing.BoostFieldsData)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/CheckOut(SP.Publishing.SitePage3D)">
@@ -18184,6 +18240,9 @@
       <Annotations Target="SP.ApiData/GetById(Collection(SP.Publishing.SitePageMetadata), Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/BoostNews(SP.Publishing.SitePage, SP.Publishing.BoostFieldsData)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/CheckOut(SP.Publishing.SitePage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18272,6 +18331,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/IsContentTypeAvailable(Collection(SP.Publishing.TopicSitePage))">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/BoostNews(SP.Publishing.TopicSitePage, SP.Publishing.BoostFieldsData)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/CheckOut(SP.Publishing.TopicSitePage)">
@@ -23177,6 +23239,11 @@
         <Property Name="Lcid" Type="Edm.Int32" Nullable="false" />
         <Property Name="Text" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="BoostFieldsData">
+        <Property Name="BoostUntilSeen" Type="Edm.Boolean" />
+        <Property Name="Expiry" Type="Edm.DateTime" />
+        <Property Name="Impressions" Type="Edm.Int64" />
+      </ComplexType>
       <ComplexType Name="ProfileDateTime">
         <Property Name="DateTimeType" Type="Edm.Int32" Nullable="false" />
         <Property Name="DateTimeValue" Type="Edm.DateTime" Nullable="false" />
@@ -23950,7 +24017,6 @@
         <Property Name="RedirectUrl" Type="Edm.String" />
         <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
-        <Property Name="TriggerUrls" Type="Collection(SP.KeyValue)" />
         <Property Name="Waves" Type="Collection(SP.Publishing.PortalLaunch.PortalLaunchWave)" />
       </ComplexType>
       <ComplexType Name="PortalLaunchWave">
@@ -24775,9 +24841,17 @@
         <Property Name="Description" Type="Edm.String" />
         <Property Name="DesignPackageId" Type="Edm.Guid" />
         <Property Name="IsDefault" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsOutOfBoxTemplate" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsTenantAdminOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PreviewImageAltText" Type="Edm.String" />
         <Property Name="PreviewImageUrl" Type="Edm.String" />
+        <Property Name="RequiresGroupConnected" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="RequiresTeamsConnected" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="RequiresYammerConnected" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SiteScriptIds" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="SupportedWebTemplates" Type="Collection(Edm.String)" />
+        <Property Name="TemplateFeatures" Type="Collection(Edm.String)" />
+        <Property Name="ThmubnailUrl" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
         <Property Name="WebTemplate" Type="Edm.String" />
       </ComplexType>
@@ -25519,7 +25593,9 @@
         <Property Name="passwordProtected" Type="Edm.Boolean" Nullable="false" />
         <Property Name="restrictShareMembership" Type="Edm.Boolean" Nullable="false" />
         <Property Name="role" Type="Edm.Int32" Nullable="false" />
+        <Property Name="scope" Type="Edm.Int32" Nullable="false" />
         <Property Name="shareId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="trackLinkUsers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="updatePassword" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
       <ComplexType Name="ShareLinkResponse">
@@ -25527,6 +25603,7 @@
       </ComplexType>
       <ComplexType Name="SharingAbilities">
         <Property Name="anonymousLinkAbilities" Type="SP.Sharing.SharingLinkAbilities" />
+        <Property Name="anyoneLinkAbilities" Type="SP.Sharing.SharingLinkAbilities" />
         <Property Name="directSharingAbilities" Type="SP.Sharing.DirectSharingAbilities" />
         <Property Name="organizationLinkAbilities" Type="SP.Sharing.SharingLinkAbilities" />
         <Property Name="peopleSharingLinkAbilities" Type="SP.Sharing.SharingLinkAbilities" />
@@ -25543,6 +25620,7 @@
         <Property Name="linkExpiration" Type="SP.Sharing.SharingLinkExpirationAbilityStatus" />
         <Property Name="passwordProtected" Type="SP.Sharing.SharingLinkPasswordAbilityStatus" />
         <Property Name="supportsRestrictedView" Type="SP.Sharing.SharingAbilityStatus" />
+        <Property Name="trackLinkUsers" Type="SP.Sharing.SharingAbilityStatus" />
       </ComplexType>
       <ComplexType Name="SharingLinkExpirationAbilityStatus" BaseType="SP.Sharing.SharingAbilityStatus">
         <Property Name="defaultExpirationInDays" Type="Edm.Int32" Nullable="false" />
@@ -25566,6 +25644,7 @@
         <Property Name="role" Type="Edm.Int32" Nullable="false" />
         <Property Name="scope" Type="Edm.Int32" Nullable="false" />
         <Property Name="shareKind" Type="Edm.Int32" Nullable="false" />
+        <Property Name="trackLinkUsers" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
       <ComplexType Name="SharingLinkTemplate">
         <Property Name="passwordProtected" Type="Edm.Boolean" Nullable="false" />
@@ -25661,6 +25740,7 @@
         <Property Name="accessRequestSettings" Type="SP.Sharing.AccessRequestSettings" />
         <Property Name="addressBarLinkSettings" Type="SP.Sharing.AddressBarLinkSettings" />
         <Property Name="anonymousLinkExpirationRestrictionDays" Type="Edm.Int32" Nullable="false" />
+        <Property Name="anyoneLinkTrackUsers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="blockPeoplePickerAndSharing" Type="Edm.Boolean" Nullable="false" />
         <Property Name="canAddExternalPrincipal" Type="Edm.Boolean" Nullable="false" />
         <Property Name="canAddInternalPrincipal" Type="Edm.Boolean" Nullable="false" />
@@ -26564,6 +26644,12 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
+      <EntityType Name="SPOPortalLaunchValidator">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="SPOTenantCdnPolicy">
         <Key>
           <PropertyRef Name="PolicyType" />
@@ -26646,6 +26732,7 @@
         <Property Name="BlockDownloadOfViewableFilesOnUnmanagedDevices" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BlockMacSync" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BlockSendLabelMismatchEmail" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="BlockUserInfoVisibility" Type="Edm.String" />
         <Property Name="CommentsOnFilesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CommentsOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CompatibilityRange" Type="Edm.String" />
@@ -28260,6 +28347,7 @@
         <Property Name="BlockDownloadOfViewableFilesForGuests" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BlockDownloadOfViewableFilesOnUnmanagedDevices" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BlockMacSync" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="BlockUserInfoVisibility" Type="Edm.String" />
         <Property Name="CommentsOnFilesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CommentsOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ConditionalAccessPolicy" Type="Edm.Int32" Nullable="false" />
