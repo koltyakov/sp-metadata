@@ -19,5 +19,7 @@ password (Edm.String) | ✅ | ✅ | ❌ | ❌
 passwordProtected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 restrictShareMembership (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 role (Edm.Int32) | ✅ | ✅ | ❌ | ❌
+scope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 shareId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
+trackLinkUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 updatePassword (Edm.Boolean) | ✅ | ✅ | ❌ | ❌

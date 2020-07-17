@@ -18,5 +18,4 @@ RedirectUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 RedirectionType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 Status (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-TriggerUrls (Collection(SP.KeyValue)) | ✅ | ❌ | ❌ | ❌
 Waves (Collection(SP.Publishing.PortalLaunch.PortalLaunchWave)) | ✅ | ❌ | ❌ | ❌

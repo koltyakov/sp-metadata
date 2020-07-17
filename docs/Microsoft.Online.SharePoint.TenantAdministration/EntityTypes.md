@@ -9,6 +9,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ResponseMessageCenter](./EntityTypes/ResponseMessageCenter.md) | ✅ | ❌ | ❌ | ❌
 [ResponseServiceHealth](./EntityTypes/ResponseServiceHealth.md) | ✅ | ❌ | ❌ | ❌
 [SPOGroup](./EntityTypes/SPOGroup.md) | ✅ | ❌ | ❌ | ❌
+[SPOPortalLaunchValidator](./EntityTypes/SPOPortalLaunchValidator.md) | ✅ | ❌ | ❌ | ❌
 [SPOTenantCdnPolicy](./EntityTypes/SPOTenantCdnPolicy.md) | ✅ | ❌ | ❌ | ❌
 [SPOTenantWebTemplateCollection](./EntityTypes/SPOTenantWebTemplateCollection.md) | ✅ | ❌ | ❌ | ❌
 [SiteCollectionManagementService](./EntityTypes/SiteCollectionManagementService.md) | ✅ | ❌ | ❌ | ❌

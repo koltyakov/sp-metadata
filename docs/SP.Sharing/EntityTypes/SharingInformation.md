@@ -9,6 +9,7 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 accessRequestSettings (SP.Sharing.AccessRequestSettings) | ✅ | ✅ | ❌ | ❌
 addressBarLinkSettings (SP.Sharing.AddressBarLinkSettings) | ✅ | ❌ | ❌ | ❌
 anonymousLinkExpirationRestrictionDays (Edm.Int32) | ✅ | ✅ | ❌ | ❌
+anyoneLinkTrackUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 blockPeoplePickerAndSharing (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 canAddExternalPrincipal (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 canAddInternalPrincipal (Edm.Boolean) | ✅ | ✅ | ❌ | ❌

@@ -17,3 +17,4 @@ canManageReviewLink (SP.Sharing.SharingAbilityStatus) | ✅ | ❌ | ❌ | ❌
 linkExpiration (SP.Sharing.SharingLinkExpirationAbilityStatus) | ✅ | ✅ | ❌ | ❌
 passwordProtected (SP.Sharing.SharingLinkPasswordAbilityStatus) | ✅ | ✅ | ❌ | ❌
 supportsRestrictedView (SP.Sharing.SharingAbilityStatus) | ✅ | ❌ | ❌ | ❌
+trackLinkUsers (SP.Sharing.SharingAbilityStatus) | ✅ | ❌ | ❌ | ❌

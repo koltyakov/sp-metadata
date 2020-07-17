@@ -393,6 +393,7 @@ SPMigrationJobStatuss | ✅ | ✅ | ✅ | ❌
 SPO3rdPartyAADPermissionGrants | ✅ | ❌ | ❌ | ❌
 SPOGroups | ✅ | ❌ | ❌ | ❌
 SPOIdentityHelpers | ✅ | ❌ | ❌ | ❌
+SPOPortalLaunchValidators | ✅ | ❌ | ❌ | ❌
 SPOTenantCdnPolicys | ✅ | ❌ | ❌ | ❌
 SPOTenantWebTemplateCollections | ✅ | ❌ | ❌ | ❌
 SPOUserSessionRevocationResults | ✅ | ❌ | ❌ | ❌

@@ -11,3 +11,4 @@ passwordProtected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 role (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 scope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 shareKind (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+trackLinkUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

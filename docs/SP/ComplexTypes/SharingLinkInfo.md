@@ -32,6 +32,8 @@ PasswordLastModified (Edm.String) | ✅ | ❌ | ❌ | ❌
 PasswordLastModifiedBy (SP.Sharing.Principal) | ✅ | ❌ | ❌ | ❌
 RequiresPassword (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 RestrictedShareMembership (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
+Scope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ShareId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 ShareTokenString (Edm.String) | ✅ | ❌ | ❌ | ❌
+TrackLinkUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Url (Edm.String) | ✅ | ✅ | ✅ | ❌

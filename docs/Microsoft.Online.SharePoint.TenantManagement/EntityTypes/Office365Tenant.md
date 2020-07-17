@@ -28,6 +28,7 @@ BlockDownloadOfAllFilesOnUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockDownloadOfViewableFilesForGuests (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockDownloadOfViewableFilesOnUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockMacSync (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+BlockUserInfoVisibility (Edm.String) | ✅ | ❌ | ❌ | ❌
 CommentsOnFilesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicy (Edm.Int32) | ✅ | ❌ | ❌ | ❌

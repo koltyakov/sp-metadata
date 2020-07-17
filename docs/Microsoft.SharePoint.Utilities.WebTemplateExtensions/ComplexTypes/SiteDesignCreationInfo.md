@@ -9,8 +9,16 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 Description (Edm.String) | ✅ | ✅ | ❌ | ❌
 DesignPackageId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 IsDefault (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
+IsOutOfBoxTemplate (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+IsTenantAdminOnly (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PreviewImageAltText (Edm.String) | ✅ | ✅ | ❌ | ❌
 PreviewImageUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
+RequiresGroupConnected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+RequiresTeamsConnected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+RequiresYammerConnected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SiteScriptIds (Collection(Edm.Guid)) | ✅ | ✅ | ❌ | ❌
+SupportedWebTemplates (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+TemplateFeatures (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+ThmubnailUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ✅ | ❌ | ❌
 WebTemplate (Edm.String) | ✅ | ✅ | ❌ | ❌

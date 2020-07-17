@@ -11,6 +11,10 @@ AddImage (SP.Publishing.SitePageService) | ✅ | ✅ | ❌ | ❌
 AddImageFromExternalUrl (SP.Publishing.SitePageService) | ✅ | ✅ | ❌ | ❌
 AddImageFromUrl (SP.Publishing.PointPublishingPost) | ✅ | ❌ | ❌ | ❌
 AddOrUpdateUser (Collection(SP.Publishing.PointPublishingUser)) | ✅ | ❌ | ❌ | ❌
+BoostNews (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
+BoostNews (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
+BoostNews (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
+BoostNews (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 ByPage (SP.Publishing.PageDiagnosticsController) | ✅ | ❌ | ❌ | ❌
 CanCreatePromotedPage (SP.Publishing.SitePageService) | ✅ | ✅ | ❌ | ❌
 CheckOut (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
