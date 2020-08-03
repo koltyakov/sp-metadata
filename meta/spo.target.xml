@@ -1747,6 +1747,7 @@
         <Property Name="WebTemplateConfiguration" Type="Edm.String" />
         <Property Name="WebTemplatesGalleryFirstRunEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="WelcomePage" Type="Edm.String" />
+        <NavigationProperty Name="AccessRequestsList" Relationship="SP.SP_Web_AccessRequestsList_SP_List_AccessRequestsListPartner" ToRole="AccessRequestsList" FromRole="AccessRequestsListPartner" />
         <NavigationProperty Name="Activities" Relationship="Microsoft.SharePoint.Activities.SP_Web_Activities_Microsoft_SharePoint_Activities_SPActivityEntity_ActivitiesPartner" ToRole="Activities" FromRole="ActivitiesPartner" />
         <NavigationProperty Name="ActivityLogger" Relationship="Microsoft.SharePoint.Internal.SP_Web_ActivityLogger_Microsoft_SharePoint_Internal_ActivityLogger_ActivityLoggerPartner" ToRole="ActivityLogger" FromRole="ActivityLoggerPartner" />
         <NavigationProperty Name="Alerts" Relationship="SP.SP_Web_Alerts_SP_Alert_AlertsPartner" ToRole="Alerts" FromRole="AlertsPartner" />
@@ -3148,6 +3149,10 @@
       <Association Name="SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartner">
         <End Type="SP.ViewFieldCollection" Role="ViewFields" Multiplicity="0..1" />
         <End Type="SP.View" Role="ViewFieldsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="SP_Web_AccessRequestsList_SP_List_AccessRequestsListPartner">
+        <End Type="SP.List" Role="AccessRequestsList" Multiplicity="0..1" />
+        <End Type="SP.Web" Role="AccessRequestsListPartner" Multiplicity="0..1" />
       </Association>
       <Association Name="SP_Web_Alerts_SP_Alert_AlertsPartner">
         <End Type="SP.Alert" Role="Alerts" Multiplicity="*" />
@@ -8508,15 +8513,14 @@
           <Parameter Name="type" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="hash" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="SetRectSiteLogo" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.SharePoint.Portal.SiteIconManager" />
-          <Parameter Name="absoluteLogoUrl" Type="Edm.String" />
-        </FunctionImport>
         <FunctionImport Name="SetSiteLogo" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.SiteIconManager" />
           <Parameter Name="relativeLogoUrl" Type="Edm.String" />
           <Parameter Name="type" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="aspect" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="focalx" Type="Edm.Double" Nullable="false" />
+          <Parameter Name="focaly" Type="Edm.Double" Nullable="false" />
+          <Parameter Name="isFocalPatch" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Portal_SiteLinkingManager" ReturnType="Microsoft.SharePoint.Portal.SiteLinkingManager" IsComposable="true" EntitySet="Sitelinkingmanagers" />
         <FunctionImport Name="GetSiteLinks" ReturnType="Microsoft.SharePoint.Portal.LinkedSitesListContract" IsSideEffecting="false" IsBindable="true">
@@ -12781,6 +12785,9 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
           <Parameter Name="viewXml" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="GetSiteCreationSource" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SiteCreationSource" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
+        </FunctionImport>
         <FunctionImport Name="GetSiteDescription" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
@@ -13373,6 +13380,10 @@
         <AssociationSet Name="SP_Utilities_ThemeManager_ContextThemeManager_SP_Utilities_ThemeManager_ContextThemeManagerPartnerSet" Association="SP.Utilities.SP_Utilities_ThemeManager_ContextThemeManager_SP_Utilities_ThemeManager_ContextThemeManagerPartner">
           <End Role="ContextThemeManagerPartner" EntitySet="Thememanagers" />
           <End Role="ContextThemeManager" EntitySet="Thememanagers" />
+        </AssociationSet>
+        <AssociationSet Name="SP_Web_AccessRequestsList_SP_List_AccessRequestsListPartnerSet" Association="SP.SP_Web_AccessRequestsList_SP_List_AccessRequestsListPartner">
+          <End Role="AccessRequestsListPartner" EntitySet="Webs" />
+          <End Role="AccessRequestsList" EntitySet="Lists" />
         </AssociationSet>
         <AssociationSet Name="SP_Web_Activities_Microsoft_SharePoint_Activities_SPActivityEntity_ActivitiesPartnerSet" Association="Microsoft.SharePoint.Activities.SP_Web_Activities_Microsoft_SharePoint_Activities_SPActivityEntity_ActivitiesPartner">
           <End Role="ActivitiesPartner" EntitySet="Webs" />
@@ -16149,6 +16160,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/ModelName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/ModelType">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/ModelUniqueId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16156,6 +16170,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/ObjectId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/TargetLibraryRemoved">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/TargetLibraryServerRelativeUrl">
@@ -17595,9 +17612,6 @@
       <Annotations Target="SP.Sharing.SharingInformation/addressBarLinkSettings">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.Sharing.SharingInformation/effectiveLimitedAccessFileType">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.Sharing.SharingInformation/enforceIBSegmentFiltering">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18585,10 +18599,7 @@
       <Annotations Target="SP.ApiData/GetSiteLogo(Microsoft.SharePoint.Portal.SiteIconManager, Edm.String, Edm.Int32, Edm.Int32, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SetRectSiteLogo(Microsoft.SharePoint.Portal.SiteIconManager, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SetSiteLogo(Microsoft.SharePoint.Portal.SiteIconManager, Edm.String, Edm.Int32, Edm.Int32)">
+      <Annotations Target="SP.ApiData/SetSiteLogo(Microsoft.SharePoint.Portal.SiteIconManager, Edm.String, Edm.Int32, Edm.Int32, Edm.Double, Edm.Double, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetSharedWithGroupDocs(Edm.Guid, Edm.String, Edm.Boolean, Edm.Int32, Edm.Int32, Edm.Boolean)">
@@ -19549,6 +19560,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/ExportCSVFile(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetSiteCreationSource(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetSiteDescription(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService, Edm.Guid)">
@@ -24079,6 +24093,7 @@
       <ComplexType Name="PageDiagnostics">
         <Property Name="LatestDraftVersion" Type="Edm.String" />
         <Property Name="LatestPublishedVersion" Type="Edm.String" />
+        <Property Name="PageFileName" Type="Edm.String" />
         <Property Name="Results" Type="Collection(Microsoft.SharePoint.Publishing.Diagnostics.PageDiagnosticsResult)" />
       </ComplexType>
     </Schema>
@@ -25755,7 +25770,6 @@
         <Property Name="defaultShareLinkToExistingAccess" Type="Edm.Boolean" Nullable="false" />
         <Property Name="directUrl" Type="Edm.String" />
         <Property Name="domainRestrictionSettings" Type="SP.Sharing.DomainRestrictionSettings" />
-        <Property Name="effectiveLimitedAccessFileType" Type="Edm.Int32" Nullable="false" />
         <Property Name="enforceIBSegmentFiltering" Type="Edm.Boolean" Nullable="false" />
         <Property Name="fileExtension" Type="Edm.String" />
         <Property Name="hasUniquePermissions" Type="Edm.Boolean" Nullable="false" />
@@ -26443,6 +26457,10 @@
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="SiteCreationData">
+        <Property Name="Count" Type="Edm.Int32" Nullable="false" />
+        <Property Name="SiteCreationSourceGuid" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="SiteCreationDefaultStorageQuota">
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.Int32" Nullable="false" />
@@ -26463,6 +26481,13 @@
         <Property Name="Url" Type="Edm.String" />
         <Property Name="UserCodeMaximumLevel" Type="Edm.Double" Nullable="false" />
         <Property Name="UserCodeWarningLevel" Type="Edm.Double" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="SiteCreationSource">
+        <Property Name="IsSyncThresholdLimitReached" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="LastRefreshTimeStamp" Type="Edm.DateTime" />
+        <Property Name="SiteCreationData" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteCreationData)" />
+        <Property Name="SyncThresholdLimit" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TotalSitesCount" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="SiteInfoForSitePicker">
         <Property Name="Error" Type="Edm.String" />
@@ -27144,9 +27169,11 @@
         <Property Name="ID" Type="Edm.Int32" Nullable="false" />
         <Property Name="ModelId" Type="Edm.Int32" Nullable="false" />
         <Property Name="ModelName" Type="Edm.String" />
+        <Property Name="ModelType" Type="Edm.Int32" Nullable="false" />
         <Property Name="ModelUniqueId" Type="Edm.Guid" Nullable="false" />
         <Property Name="ModelVersion" Type="Edm.String" />
         <Property Name="ObjectId" Type="Edm.String" />
+        <Property Name="TargetLibraryRemoved" Type="Edm.Boolean" Nullable="false" />
         <Property Name="TargetLibraryServerRelativeUrl" Type="Edm.String" />
         <Property Name="TargetLibraryUrl" Type="Edm.String" />
         <Property Name="TargetSiteUrl" Type="Edm.String" />
