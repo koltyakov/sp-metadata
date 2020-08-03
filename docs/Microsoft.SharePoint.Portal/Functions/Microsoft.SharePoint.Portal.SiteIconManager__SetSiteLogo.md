@@ -11,5 +11,8 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 aspect (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+focalx (Edm.Double) | ✅ | ❌ | ❌ | ❌
+focaly (Edm.Double) | ✅ | ❌ | ❌ | ❌
+isFocalPatch (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 relativeLogoUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 type (Edm.Int32) | ✅ | ❌ | ❌ | ❌

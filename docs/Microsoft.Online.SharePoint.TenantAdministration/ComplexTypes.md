@@ -31,9 +31,11 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SecondaryAdministratorsInfo](./ComplexTypes/SecondaryAdministratorsInfo.md) | ✅ | ❌ | ❌ | ❌
 [ShowNextGenerationSyncClientOnTeamSite](./ComplexTypes/ShowNextGenerationSyncClientOnTeamSite.md) | ✅ | ❌ | ❌ | ❌
 [ShowSelfServiceSiteCreation](./ComplexTypes/ShowSelfServiceSiteCreation.md) | ✅ | ❌ | ❌ | ❌
+[SiteCreationData](./ComplexTypes/SiteCreationData.md) | ✅ | ❌ | ❌ | ❌
 [SiteCreationDefaultStorageQuota](./ComplexTypes/SiteCreationDefaultStorageQuota.md) | ✅ | ❌ | ❌ | ❌
 [SiteCreationNewUX](./ComplexTypes/SiteCreationNewUX.md) | ✅ | ❌ | ❌ | ❌
 [SiteCreationProperties](./ComplexTypes/SiteCreationProperties.md) | ✅ | ❌ | ❌ | ❌
+[SiteCreationSource](./ComplexTypes/SiteCreationSource.md) | ✅ | ❌ | ❌ | ❌
 [SiteInfoForSitePicker](./ComplexTypes/SiteInfoForSitePicker.md) | ✅ | ❌ | ❌ | ❌
 [SitePagesEnabled](./ComplexTypes/SitePagesEnabled.md) | ✅ | ❌ | ❌ | ❌
 [SiteUserGroupInfo](./ComplexTypes/SiteUserGroupInfo.md) | ✅ | ❌ | ❌ | ❌

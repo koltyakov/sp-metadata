@@ -10,9 +10,11 @@ DriveId (Edm.String) | ✅ | ❌ | ❌ | ❌
 ID (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ModelId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ModelName (Edm.String) | ✅ | ❌ | ❌ | ❌
+ModelType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ModelUniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 ModelVersion (Edm.String) | ✅ | ❌ | ❌ | ❌
 ObjectId (Edm.String) | ✅ | ❌ | ❌ | ❌
+TargetLibraryRemoved (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 TargetLibraryServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetLibraryUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

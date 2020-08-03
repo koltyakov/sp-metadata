@@ -101,6 +101,7 @@ WelcomePage (Edm.String) | ✅ | ✅ | ❌ | ❌
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+AccessRequestsList | ✅ | ❌ | ❌ | ❌
 Activities | ✅ | ✅ | ❌ | ❌
 ActivityLogger | ✅ | ✅ | ❌ | ❌
 Alerts | ✅ | ✅ | ❌ | ❌
