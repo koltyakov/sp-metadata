@@ -382,6 +382,7 @@
       <ComplexType Name="DocumentLibraryInformation">
         <Property Name="AbsoluteUrl" Type="Edm.String" />
         <Property Name="FromCrossFarm" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
         <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
         <Property Name="ModifiedFriendlyDisplay" Type="Edm.String" />
         <Property Name="ServerRelativeUrl" Type="Edm.String" />
@@ -918,6 +919,7 @@
       </ComplexType>
       <ComplexType Name="MenuNode">
         <Property Name="AudienceIds" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="CurrentLCID" Type="Edm.Int32" Nullable="false" />
         <Property Name="CustomProperties" Type="Collection(SP.KeyValue)" />
         <Property Name="FriendlyUrlSegment" Type="Edm.String" />
         <Property Name="IsDeleted" Type="Edm.Boolean" Nullable="false" />
@@ -1885,6 +1887,7 @@
           <PropertyRef Name="Id" />
         </Key>
         <Property Name="AudienceIds" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="CurrentLCID" Type="Edm.Int32" Nullable="false" />
         <Property Name="Id" Type="Edm.Int32" Nullable="false" />
         <Property Name="IsDocLib" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsExternal" Type="Edm.Boolean" Nullable="false" />
@@ -2448,6 +2451,8 @@
         <Property Name="ListId" Type="Edm.Guid" Nullable="false" />
         <Property Name="ListTemplate" Type="Edm.Int32" Nullable="false" />
         <Property Name="ListTitle" Type="Edm.String" />
+        <Property Name="MoveWasForRecycle" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="MoveWasForRestore" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ServerRelativeUrl" Type="Edm.String" />
         <Property Name="SharedByUser" Type="SP.SharedWithUser" />
         <Property Name="SharedWithUsers" Type="SP.SharedWithUserCollection" />
@@ -2609,12 +2614,6 @@
         </Key>
         <Property Name="SynchronizationData" Type="Edm.String" Nullable="false" />
         <Property Name="SynchronizationStatus" Type="Edm.Int32" Nullable="false" />
-      </EntityType>
-      <EntityType Name="HashtagStoreManager">
-        <Key>
-          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
-        </Key>
-        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
       <EntityType Name="HubSite">
         <Key>
@@ -3927,7 +3926,6 @@
         <EntitySet Name="Folders1" EntityType="SP.Folder" />
         <EntitySet Name="Forms" EntityType="SP.Form" />
         <EntitySet Name="Groups1" EntityType="SP.Group" />
-        <EntitySet Name="HashtagStoreManagers" EntityType="SP.HashtagStoreManager" />
         <EntitySet Name="InformationRightsManagementFileSettingss" EntityType="SP.InformationRightsManagementFileSettings" />
         <EntitySet Name="InformationRightsManagementSettingss" EntityType="SP.InformationRightsManagementSettings" />
         <EntitySet Name="FlowPermissionss" EntityType="SP.Internal.FlowPermissions" />
@@ -4843,6 +4841,10 @@
         <FunctionImport Name="GetByUniqueId" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsComposable="true" IsBindable="true" EntitySet="Models">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
           <Parameter Name="uniqueId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="Import" IsBindable="true">
+          <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
+          <Parameter Name="relativeUrl" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningPublicationsEntityData" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData" IsComposable="true" EntitySet="SPMachineLearningPublicationsEntityDatas" />
         <FunctionImport Name="Delete" IsBindable="true">
@@ -8180,9 +8182,6 @@
           <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
           <Parameter Name="query" Type="SP.ChangeQuery" />
         </FunctionImport>
-        <FunctionImport Name="GetHashtags" ReturnType="Collection(SP.Hashtag)" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
-        </FunctionImport>
         <FunctionImport Name="GetUserEffectivePermissions" ReturnType="SP.BasePermissions" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
           <Parameter Name="userName" Type="Edm.String" />
@@ -8266,11 +8265,6 @@
         <FunctionImport Name="UpdateEx" IsBindable="true">
           <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
           <Parameter Name="parameters" Type="SP.ListItemUpdateParameters" />
-        </FunctionImport>
-        <FunctionImport Name="UpdateHashtags" ReturnType="Collection(SP.Hashtag)" IsBindable="true">
-          <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
-          <Parameter Name="hashtagsToAdd" Type="Collection(SP.Hashtag)" />
-          <Parameter Name="hashtagsToRemove" Type="Collection(SP.Hashtag)" />
         </FunctionImport>
         <FunctionImport Name="UpdateOverwriteVersion" IsBindable="true">
           <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
@@ -9111,6 +9105,7 @@
         <FunctionImport Name="SP_FavoriteLists_RemoveList">
           <Parameter Name="siteId" Type="Edm.String" />
           <Parameter Name="listId" Type="Edm.String" />
+          <Parameter Name="webId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_FavoriteLists_UpdateList">
           <Parameter Name="favoriteList" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
@@ -9584,6 +9579,11 @@
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="query" Type="SP.ChangeLogItemQuery" />
         </FunctionImport>
+        <FunctionImport Name="GetLookupFieldChoices" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="targetFieldName" Type="Edm.String" />
+          <Parameter Name="pagingInfo" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="GetMappedApp" ReturnType="SP.VisualizationAppSynchronizationResult" IsBindable="true" EntitySet="VisualizationAppSynchronizationResults">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="appId" Type="Edm.Guid" Nullable="false" />
@@ -9814,6 +9814,12 @@
           <Parameter Name="strDescription" Type="Edm.String" />
           <Parameter Name="bSaveData" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="SearchLookupFieldChoices" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="targetFieldName" Type="Edm.String" />
+          <Parameter Name="beginsWithSearchString" Type="Edm.String" />
+          <Parameter Name="pagingInfo" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="SetExemptFromBlockDownloadOfNonViewableFiles" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="value" Type="Edm.Boolean" Nullable="false" />
@@ -9901,9 +9907,6 @@
           <Parameter Name="this" Type="SP.ListItem" />
           <Parameter Name="query" Type="SP.ChangeQuery" />
         </FunctionImport>
-        <FunctionImport Name="GetHashtags" ReturnType="Collection(SP.Hashtag)" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="SP.ListItem" />
-        </FunctionImport>
         <FunctionImport Name="GetUserEffectivePermissions" ReturnType="SP.BasePermissions" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.ListItem" />
           <Parameter Name="userName" Type="Edm.String" />
@@ -9987,11 +9990,6 @@
         <FunctionImport Name="UpdateEx" IsBindable="true">
           <Parameter Name="this" Type="SP.ListItem" />
           <Parameter Name="parameters" Type="SP.ListItemUpdateParameters" />
-        </FunctionImport>
-        <FunctionImport Name="UpdateHashtags" ReturnType="Collection(SP.Hashtag)" IsBindable="true">
-          <Parameter Name="this" Type="SP.ListItem" />
-          <Parameter Name="hashtagsToAdd" Type="Collection(SP.Hashtag)" />
-          <Parameter Name="hashtagsToRemove" Type="Collection(SP.Hashtag)" />
         </FunctionImport>
         <FunctionImport Name="UpdateOverwriteVersion" IsBindable="true">
           <Parameter Name="this" Type="SP.ListItem" />
@@ -11110,18 +11108,6 @@
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.Group" />
         </FunctionImport>
-        <FunctionImport Name="SP_HashtagStoreManager_CallOLS" ReturnType="Edm.String" IsSideEffecting="false">
-          <Parameter Name="url" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="SP_HashtagStoreManager_GetBlockedHashtags" ReturnType="Collection(Edm.String)" IsSideEffecting="false">
-          <Parameter Name="hashtagsToCheck" Type="Collection(Edm.String)" />
-        </FunctionImport>
-        <FunctionImport Name="SP_HashtagStoreManager_GetHashtagsByPrefix" ReturnType="Collection(Edm.String)" IsSideEffecting="false">
-          <Parameter Name="prefix" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="SP_HashtagStoreManager_SetBlockedHashtags" ReturnType="Edm.Int32">
-          <Parameter Name="hashtagsToSet" Type="Collection(Edm.String)" />
-        </FunctionImport>
         <FunctionImport Name="SP_HubSites" ReturnType="Collection(SP.HubSite)" IsComposable="true" EntitySet="Hubsites" />
         <FunctionImport Name="GetById" ReturnType="SP.HubSite" IsComposable="true" IsBindable="true" EntitySet="Hubsites">
           <Parameter Name="this" Type="Collection(SP.HubSite)" />
@@ -11294,6 +11280,7 @@
         <FunctionImport Name="RestoreByIds" IsBindable="true">
           <Parameter Name="this" Type="Collection(SP.RecycleBinItem)" />
           <Parameter Name="ids" Type="Collection(Edm.String)" />
+          <Parameter Name="bRenameExistingItems" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="DeleteObject" IsBindable="true">
           <Parameter Name="this" Type="SP.RecycleBinItem" />
@@ -15011,6 +14998,9 @@
       <Annotations Target="SP.Publishing.AcronymInformation">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.BoostFieldsData/BoostOrderType">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.BoostFieldsData/BoostUntilSeen">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -15018,6 +15008,18 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.BoostFieldsData/Impressions">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.BoostFieldsData/NextItemId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.BoostFieldsData/NextItemVersion">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.BoostFieldsData/PreviousItemId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.BoostFieldsData/PreviousItemVersion">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.ProfileDateTime">
@@ -17462,6 +17464,12 @@
       <Annotations Target="SP.ChangeItem/ListTitle">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ChangeItem/MoveWasForRecycle">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ChangeItem/MoveWasForRestore">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ChangeItem/Title">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17511,9 +17519,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.FlowSynchronizationResult">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.HashtagStoreManager">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.HubSite">
@@ -17774,6 +17779,9 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService/TenantDefaultTimeZoneId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService/UserVoiceForFeedbackEnabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/AddressbarLinkPermission">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17934,6 +17942,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetByUniqueId(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Import(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningPublicationsEntityData()">
@@ -18434,9 +18445,6 @@
       <Annotations Target="SP.ApiData/DeleteWithParameters(SP.Workflow.SPWorkflowTask, SP.ListItemDeleteParameters)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/GetHashtags(SP.Workflow.SPWorkflowTask)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.ApiData/RecycleWithParameters(SP.Workflow.SPWorkflowTask, SP.ListItemDeleteParameters)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18459,9 +18467,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetComplianceTagWithRecord(SP.Workflow.SPWorkflowTask, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/UpdateHashtags(SP.Workflow.SPWorkflowTask, Collection(SP.Hashtag), Collection(SP.Hashtag))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetGroupImage(Microsoft.SharePoint.Portal.GroupService, Edm.String, Edm.String, Edm.String)">
@@ -18890,7 +18895,7 @@
       <Annotations Target="SP.ApiData/SP_FavoriteLists_GetListsBy(Edm.String, Edm.String, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_FavoriteLists_RemoveList(Edm.String, Edm.String)">
+      <Annotations Target="SP.ApiData/SP_FavoriteLists_RemoveList(Edm.String, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_FavoriteLists_UpdateList(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
@@ -19046,9 +19051,6 @@
       <Annotations Target="SP.ApiData/DeleteWithParameters(SP.ListItem, SP.ListItemDeleteParameters)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/GetHashtags(SP.ListItem)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.ApiData/RecycleWithParameters(SP.ListItem, SP.ListItemDeleteParameters)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19071,9 +19073,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetComplianceTagWithRecord(SP.ListItem, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/UpdateHashtags(SP.ListItem, Collection(SP.Hashtag), Collection(SP.Hashtag))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_ListHomeItemCollection_GetListHomeItems(Edm.Int32)">
@@ -19221,18 +19220,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetUserAsOwner(SP.Group, Edm.Int32)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SP_HashtagStoreManager_CallOLS(Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SP_HashtagStoreManager_GetBlockedHashtags(Collection(Edm.String))">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SP_HashtagStoreManager_GetHashtagsByPrefix(Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SP_HashtagStoreManager_SetBlockedHashtags(Collection(Edm.String))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_HubSites()">
@@ -23254,9 +23241,14 @@
         <Property Name="Text" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="BoostFieldsData">
+        <Property Name="BoostOrderType" Type="Edm.Int32" Nullable="false" />
         <Property Name="BoostUntilSeen" Type="Edm.Boolean" />
         <Property Name="Expiry" Type="Edm.DateTime" />
         <Property Name="Impressions" Type="Edm.Int64" />
+        <Property Name="NextItemId" Type="Edm.Int32" />
+        <Property Name="NextItemVersion" Type="Edm.Int32" />
+        <Property Name="PreviousItemId" Type="Edm.Int32" />
+        <Property Name="PreviousItemVersion" Type="Edm.Int32" />
       </ComplexType>
       <ComplexType Name="ProfileDateTime">
         <Property Name="DateTimeType" Type="Edm.Int32" Nullable="false" />
@@ -24488,7 +24480,7 @@
         <Property Name="DataClassificationOptionsNew" Type="Collection(SP.KeyValue)" />
         <Property Name="DefaultClassification" Type="Edm.String" />
         <Property Name="ExternalInvitationEnabled" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="MachineLearningCapturedEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PreferredLanguage" Type="Edm.Int32" />
         <Property Name="RequireSecondaryContact" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ShowSelfServiceSiteCreation" Type="Edm.Boolean" Nullable="false" />
@@ -24878,6 +24870,7 @@
         <Property Name="Outcome" Type="Edm.Int64" Nullable="false" />
         <Property Name="OutcomeText" Type="Edm.String" />
         <Property Name="Target" Type="Edm.String" />
+        <Property Name="TargetId" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SiteScriptCreationInfo">
@@ -26534,6 +26527,10 @@
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="UserVoiceForFeedbackEnabled">
+        <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Value" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="SPOTenantWebTemplate">
         <Property Name="CompatibilityLevel" Type="Edm.Int32" Nullable="false" />
         <Property Name="Description" Type="Edm.String" />
@@ -26729,6 +26726,7 @@
         <Property Name="SmtpServer" Type="Microsoft.Online.SharePoint.TenantAdministration.SmtpServer" />
         <Property Name="SPListModernUXOff" Type="Microsoft.Online.SharePoint.TenantAdministration.SPListModernUXOff" />
         <Property Name="TenantDefaultTimeZoneId" Type="Microsoft.Online.SharePoint.TenantAdministration.TenantDefaultTimeZoneId" />
+        <Property Name="UserVoiceForFeedbackEnabled" Type="Microsoft.Online.SharePoint.TenantAdministration.UserVoiceForFeedbackEnabled" />
       </EntityType>
       <EntityType Name="Tenant">
         <Key>
