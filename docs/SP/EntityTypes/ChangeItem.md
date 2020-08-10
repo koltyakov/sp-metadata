@@ -19,6 +19,8 @@ ItemId (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 ListId (Edm.Guid) | ✅ | ✅ | ✅ | ✅
 ListTemplate (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 ListTitle (Edm.String) | ✅ | ✅ | ❌ | ❌
+MoveWasForRecycle (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+MoveWasForRestore (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ServerRelativeUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
 SharedByUser (SP.SharedWithUser) | ✅ | ✅ | ❌ | ❌
 SharedWithUsers (SP.SharedWithUserCollection) | ✅ | ✅ | ❌ | ❌

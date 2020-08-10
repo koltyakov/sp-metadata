@@ -78,7 +78,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [Folder](./EntityTypes/Folder.md) | ✅ | ✅ | ✅ | ✅
 [Form](./EntityTypes/Form.md) | ✅ | ✅ | ✅ | ✅
 [Group](./EntityTypes/Group.md) | ✅ | ✅ | ✅ | ✅
-[HashtagStoreManager](./EntityTypes/HashtagStoreManager.md) | ✅ | ✅ | ❌ | ❌
+[HashtagStoreManager](./EntityTypes/HashtagStoreManager.md) | ❌ | ✅ | ❌ | ❌
 [HubSite](./EntityTypes/HubSite.md) | ✅ | ✅ | ❌ | ❌
 [InformationRightsManagementFileSettings](./EntityTypes/InformationRightsManagementFileSettings.md) | ✅ | ✅ | ✅ | ❌
 [InformationRightsManagementSettings](./EntityTypes/InformationRightsManagementSettings.md) | ✅ | ✅ | ✅ | ✅

@@ -18,6 +18,7 @@ GetByUniqueId (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearnin
 GetModelIdForContentType (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
 GetRetentionLabel (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
 GetRetentionLabels (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
+Import (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)) | ✅ | ❌ | ❌ | ❌
 ImportMeta (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub">Microsoft_Office_Server_ContentCenter_SPMachineLea...</span> (Microsoft Office Server ContentCenter SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningModelEntityData">Microsoft_Office_Server_ContentCenter_SPMachineLea...</span> (Microsoft Office Server ContentCenter SPMachineLearningModelEntityData) | ✅ | ❌ | ❌ | ❌

@@ -172,7 +172,7 @@ Groups | ✅ | ✅ | ✅ | ✅
 Groups1 | ✅ | ✅ | ✅ | ❌
 Groupsitemanagers | ✅ | ✅ | ✅ | ❌
 HashTagCollections | ✅ | ✅ | ✅ | ✅
-HashtagStoreManagers | ✅ | ✅ | ❌ | ❌
+HashtagStoreManagers | ❌ | ✅ | ❌ | ❌
 HostedApps | ✅ | ❌ | ❌ | ❌
 HostedAppsManagers | ✅ | ❌ | ❌ | ❌
 HubSitePropertiess | ✅ | ❌ | ❌ | ❌

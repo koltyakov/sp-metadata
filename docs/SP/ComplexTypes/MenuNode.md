@@ -7,6 +7,7 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 AudienceIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+CurrentLCID (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CustomProperties (Collection(SP.KeyValue)) | ✅ | ✅ | ✅ | ✅
 FriendlyUrlSegment (Edm.String) | ✅ | ✅ | ✅ | ✅
 IsDeleted (Edm.Boolean) | ✅ | ✅ | ❌ | ❌

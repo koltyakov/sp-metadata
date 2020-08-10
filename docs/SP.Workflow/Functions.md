@@ -14,7 +14,6 @@ GetById (Collection(SP.Workflow.WorkflowTemplate)) | ✅ | ✅ | ✅ | ✅
 GetByName (Collection(SP.Workflow.WorkflowAssociation)) | ✅ | ✅ | ✅ | ✅
 GetByName (Collection(SP.Workflow.WorkflowTemplate)) | ✅ | ✅ | ✅ | ✅
 GetChanges (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
-GetHashtags (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 GetUserEffectivePermissions (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 GetWOPIFrameUrl (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 MediaServiceUpdate (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
@@ -35,6 +34,5 @@ SystemUpdate (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 Update (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 Update (SP.Workflow.WorkflowAssociation) | ✅ | ✅ | ✅ | ✅
 UpdateEx (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
-UpdateHashtags (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 UpdateOverwriteVersion (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 ValidateUpdateListItem (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌

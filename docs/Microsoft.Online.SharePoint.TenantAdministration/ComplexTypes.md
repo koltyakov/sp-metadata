@@ -42,3 +42,4 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SmtpServer](./ComplexTypes/SmtpServer.md) | ✅ | ❌ | ❌ | ❌
 [TenantDefaultTimeZoneId](./ComplexTypes/TenantDefaultTimeZoneId.md) | ✅ | ❌ | ❌ | ❌
 [UserInfo](./ComplexTypes/UserInfo.md) | ✅ | ❌ | ❌ | ❌
+[UserVoiceForFeedbackEnabled](./ComplexTypes/UserVoiceForFeedbackEnabled.md) | ✅ | ❌ | ❌ | ❌

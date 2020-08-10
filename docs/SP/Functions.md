@@ -288,7 +288,7 @@ GetFolderByServerRelativeUrl (SP.RemoteWeb) | ✅ | ✅ | ✅ | ❌
 GetFolderByServerRelativeUrl (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetGlobalSchemaXml (SP.ListTemplate) | ✅ | ✅ | ✅ | ❌
 GetGroupById (SP.RemoteWeb) | ✅ | ✅ | ✅ | ❌
-GetHashtags (SP.ListItem) | ✅ | ✅ | ❌ | ❌
+GetHashtags (SP.ListItem) | ❌ | ✅ | ❌ | ❌
 GetHubSiteJoinApprovalCorrelationId (SP.Site) | ✅ | ❌ | ❌ | ❌
 GetImagePreviewUri (SP.File) | ✅ | ✅ | ❌ | ❌
 GetImagePreviewUrl (SP.File) | ✅ | ✅ | ✅ | ❌
@@ -306,6 +306,7 @@ GetListItemChanges (SP.Folder) | ✅ | ✅ | ✅ | ❌
 GetListItemChangesSinceToken (SP.List) | ✅ | ✅ | ✅ | ✅
 GetListItemUsingPath (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetListUsingPath (SP.Web) | ✅ | ✅ | ❌ | ❌
+GetLookupFieldChoices (SP.List) | ✅ | ❌ | ❌ | ❌
 GetMappedApp (SP.List) | ✅ | ✅ | ❌ | ❌
 GetMappedApps (SP.List) | ✅ | ✅ | ❌ | ❌
 GetMigrationJobStatus (SP.Site) | ✅ | ✅ | ✅ | ❌
@@ -496,10 +497,10 @@ SP_CurrencyList_GetList | ✅ | ✅ | ❌ | ❌
 [SP_FavoriteLists_RemoveList](./Functions/SP_FavoriteLists_RemoveList.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_UpdateList](./Functions/SP_FavoriteLists_UpdateList.md) | ✅ | ❌ | ❌ | ❌
 [SP_File_GetContentVerFromTag](./Functions/SP_File_GetContentVerFromTag.md) | ✅ | ✅ | ✅ | ✅
-[SP_HashtagStoreManager_CallOLS](./Functions/SP_HashtagStoreManager_CallOLS.md) | ✅ | ✅ | ❌ | ❌
-[SP_HashtagStoreManager_GetBlockedHashtags](./Functions/SP_HashtagStoreManager_GetBlockedHashtags.md) | ✅ | ✅ | ❌ | ❌
-[SP_HashtagStoreManager_GetHashtagsByPrefix](./Functions/SP_HashtagStoreManager_GetHashtagsByPrefix.md) | ✅ | ✅ | ❌ | ❌
-[SP_HashtagStoreManager_SetBlockedHashtags](./Functions/SP_HashtagStoreManager_SetBlockedHashtags.md) | ✅ | ✅ | ❌ | ❌
+[SP_HashtagStoreManager_CallOLS](./Functions/SP_HashtagStoreManager_CallOLS.md) | ❌ | ✅ | ❌ | ❌
+[SP_HashtagStoreManager_GetBlockedHashtags](./Functions/SP_HashtagStoreManager_GetBlockedHashtags.md) | ❌ | ✅ | ❌ | ❌
+[SP_HashtagStoreManager_GetHashtagsByPrefix](./Functions/SP_HashtagStoreManager_GetHashtagsByPrefix.md) | ❌ | ✅ | ❌ | ❌
+[SP_HashtagStoreManager_SetBlockedHashtags](./Functions/SP_HashtagStoreManager_SetBlockedHashtags.md) | ❌ | ✅ | ❌ | ❌
 SP_HubSites | ✅ | ✅ | ❌ | ❌
 SP_HubSites_CanCreate | ❌ | ✅ | ❌ | ❌
 SP_HubSites_Load | ✅ | ✅ | ❌ | ❌
@@ -582,6 +583,7 @@ SP_Web_GetContextWebThemeData | ✅ | ✅ | ✅ | ❌
 SaveAsNewView (SP.List) | ✅ | ✅ | ✅ | ✅
 SaveAsTemplate (SP.List) | ✅ | ✅ | ❌ | ❌
 SaveBinaryStream (SP.File) | ✅ | ✅ | ✅ | ✅
+SearchLookupFieldChoices (SP.List) | ✅ | ❌ | ❌ | ❌
 Set (SP.RequestVariable) | ❌ | ❌ | ❌ | ✅
 SetAccessRequestSiteDescriptionAndUpdate (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetAppPrincipalConfiguration (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
@@ -718,7 +720,7 @@ Update (SP.Web) | ✅ | ✅ | ✅ | ✅
 UpdateAlert (SP.Alert) | ✅ | ✅ | ❌ | ❌
 <span title="UpdateClientObjectModelUseRemoteAPIsPermissionSetting (SP.Site)">UpdateClientObjectModelUseRemoteAPIsPermissionSett...</span> | ✅ | ✅ | ✅ | ✅
 UpdateEx (SP.ListItem) | ✅ | ❌ | ❌ | ❌
-UpdateHashtags (SP.ListItem) | ✅ | ✅ | ❌ | ❌
+UpdateHashtags (SP.ListItem) | ❌ | ✅ | ❌ | ❌
 UpdateOverwriteVersion (SP.ListItem) | ✅ | ✅ | ❌ | ❌
 UpdateRule (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateVirusInfo (SP.File) | ✅ | ✅ | ❌ | ❌

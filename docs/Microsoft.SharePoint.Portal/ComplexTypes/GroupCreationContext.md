@@ -15,7 +15,7 @@ DataClassificationOptions (Collection(Edm.String)) | ✅ | ✅ | ❌ | ❌
 DataClassificationOptionsNew (Collection(SP.KeyValue)) | ✅ | ❌ | ❌ | ❌
 DefaultClassification (Edm.String) | ✅ | ✅ | ❌ | ❌
 ExternalInvitationEnabled (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
-MachineLearningCapturedEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+MachineLearningCaptureEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PreferredLanguage (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 RequireSecondaryContact (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 ShowSelfServiceSiteCreation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

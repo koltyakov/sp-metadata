@@ -1,7 +1,8 @@
-# Function Import: SP_HashtagStoreManager_GetBlockedHashtags
+# Function Import: GetLookupFieldChoices
 
 > Namespace: SP
 
+- Entity type: SP.List
 - Is composable: false
 - Is bindable: false
 
@@ -9,4 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-hashtagsToCheck (Collection(Edm.String)) | ❌ | ✅ | ❌ | ❌
+pagingInfo (Edm.String) | ✅ | ❌ | ❌ | ❌
+targetFieldName (Edm.String) | ✅ | ❌ | ❌ | ❌
