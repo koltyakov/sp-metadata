@@ -535,6 +535,7 @@
       </ComplexType>
       <ComplexType Name="SPListRule">
         <Property Name="Condition" Type="Edm.String" />
+        <Property Name="CreateDate" Type="Edm.DateTime" Nullable="false" />
         <Property Name="ID" Type="Edm.Guid" Nullable="false" />
         <Property Name="IsActive" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LastModifiedDate" Type="Edm.DateTime" Nullable="false" />
@@ -1352,6 +1353,7 @@
         <Property Name="UIVersion" Type="Edm.Int32" Nullable="false" />
         <Property Name="UIVersionLabel" Type="Edm.String" />
         <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="VroomItemID" Type="Edm.String" />
         <Property Name="WebId" Type="Edm.Guid" Nullable="false" />
         <NavigationProperty Name="Author" Relationship="SP.SP_File_Author_SP_User_AuthorPartner" ToRole="Author" FromRole="AuthorPartner" />
         <NavigationProperty Name="CheckedOutByUser" Relationship="SP.SP_File_CheckedOutByUser_SP_User_CheckedOutByUserPartner" ToRole="CheckedOutByUser" FromRole="CheckedOutByUserPartner" />
@@ -2547,10 +2549,13 @@
       </EntityType>
       <EntityType Name="FieldNumber" BaseType="SP.Field">
         <Property Name="CommaSeparator" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="CustomUnitName" Type="Edm.String" />
+        <Property Name="CustomUnitOnRight" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisplayFormat" Type="Edm.Int32" Nullable="false" />
         <Property Name="MaximumValue" Type="Edm.Double" Nullable="false" />
         <Property Name="MinimumValue" Type="Edm.Double" Nullable="false" />
         <Property Name="ShowAsPercentage" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Unit" Type="Edm.String" />
       </EntityType>
       <EntityType Name="FieldCurrency" BaseType="SP.FieldNumber">
         <Property Name="CurrencyLocaleId" Type="Edm.Int32" Nullable="false" />
@@ -3647,6 +3652,8 @@
         <EntitySet Name="UrlParseResults" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.UrlParseResult" />
         <EntitySet Name="MigrationCenterServicess" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterServices" />
         <EntitySet Name="MigrationCenterStorages" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage" />
+        <EntitySet Name="MigrationPropertiess" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationProperties" />
+        <EntitySet Name="MigrationSPFlights" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationSPFlight" />
         <EntitySet Name="AllowedDataLocationEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocationEntityData" />
         <EntitySet Name="ContentDbSchemaVersions" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.ContentDbSchemaVersion" />
         <EntitySet Name="GroupMoveJobEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJobEntityData" />
@@ -4842,9 +4849,9 @@
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
           <Parameter Name="uniqueId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="Import" IsBindable="true">
+        <FunctionImport Name="Import" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsBindable="true" EntitySet="Models">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
-          <Parameter Name="relativeUrl" Type="Edm.String" />
+          <Parameter Name="packageName" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningPublicationsEntityData" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData" IsComposable="true" EntitySet="SPMachineLearningPublicationsEntityDatas" />
         <FunctionImport Name="Delete" IsBindable="true">
@@ -4974,6 +4981,10 @@
           <Parameter Name="classificationResults" Type="Collection(SP.CompliancePolicy.DlpClassificationResult)" />
         </FunctionImport>
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_RegisterSiteHoldEventReceiver">
+          <Parameter Name="siteUrl" Type="Edm.String" />
+          <Parameter Name="siteId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_RegisterSiteItemDeleteEventReceiver">
           <Parameter Name="siteUrl" Type="Edm.String" />
           <Parameter Name="siteId" Type="Edm.String" />
         </FunctionImport>
@@ -8980,6 +8991,9 @@
           <Parameter Name="this" Type="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" />
           <Parameter Name="mapProviderName" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="GlobalNav" ReturnType="SP.MenuState" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" />
+        </FunctionImport>
         <FunctionImport Name="MenuNodeKey" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" />
           <Parameter Name="currentUrl" Type="Edm.String" />
@@ -10010,8 +10024,12 @@
         <FunctionImport Name="SP_ListHomeItemCollection_GetListHomePersonalLists" ReturnType="Collection(SP.ListHomeItem2)" IsComposable="true" EntitySet="ListHomeItem2s">
           <Parameter Name="sortBy" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="SP_ListHomeItemCollection_GetRecommendLists" ReturnType="Edm.String" IsSideEffecting="false" />
         <FunctionImport Name="SP_ListHomeItemCollection_RemoveRecentLists">
           <Parameter Name="recentListsJson" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_ListHomeItemCollection_RemoveRecommendLists">
+          <Parameter Name="recommendListsJson" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_MultilingualSettings" ReturnType="SP.MultilingualSettings" IsComposable="true" EntitySet="MultilingualSettingss" />
         <FunctionImport Name="SetNotificationRecipients" IsBindable="true">
@@ -12179,6 +12197,11 @@
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="defaultNewPageTemplateId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="SetGlobalNavSettings" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="title" Type="Edm.String" />
+          <Parameter Name="source" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="SetStorageEntity" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="key" Type="Edm.String" />
@@ -12899,6 +12922,18 @@
         <FunctionImport Name="HasValidEducationLicense" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
+        <FunctionImport Name="PftTestGetDrives" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+        </FunctionImport>
+        <FunctionImport Name="PftTestGetUrl" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="url" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="PftTestGetUrlEx" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="url" Type="Edm.String" />
+          <Parameter Name="realm" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="RegisterHubSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties" IsBindable="true" EntitySet="HubSitePropertiess">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteUrl" Type="Edm.String" />
@@ -13119,6 +13154,26 @@
         </FunctionImport>
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MigrationCenter.Service.Device" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationProperties" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationProperties" IsComposable="true" EntitySet="MigrationPropertiess" />
+        <FunctionImport Name="Delete" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationProperties" />
+          <Parameter Name="key" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetProperty" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationProperty" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationProperties" />
+          <Parameter Name="key" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SetProperty" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationProperty" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationProperties" />
+          <Parameter Name="key" Type="Edm.String" />
+          <Parameter Name="value" Type="Edm.String" />
+          <Parameter Name="throwIfExists" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationSPFlight" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationSPFlight" IsComposable="true" EntitySet="MigrationSPFlights" />
+        <FunctionImport Name="IsFlightEnabled" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationSPFlight" />
+          <Parameter Name="flightName" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="BatchCreate" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Common.BatchCreationResult" IsBindable="true">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask)" />
@@ -13555,6 +13610,14 @@
         <AssociationSet Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Devices_Microsoft_Online_SharePoint_MigrationCenter_Service_Device_DevicesPartnerSet" Association="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Devices_Microsoft_Online_SharePoint_MigrationCenter_Service_Device_DevicesPartner">
           <End Role="DevicesPartner" EntitySet="MigrationCenterServicess" />
           <End Role="Devices" EntitySet="DeviceEntityDatas" />
+        </AssociationSet>
+        <AssociationSet Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Properties_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationProperties_PropertiesPartnerSet" Association="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Properties_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationProperties_PropertiesPartner">
+          <End Role="PropertiesPartner" EntitySet="MigrationCenterServicess" />
+          <End Role="Properties" EntitySet="MigrationPropertiess" />
+        </AssociationSet>
+        <AssociationSet Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_SPFlight_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationSPFlight_SPFlightPartnerSet" Association="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_SPFlight_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationSPFlight_SPFlightPartner">
+          <End Role="SPFlightPartner" EntitySet="MigrationCenterServicess" />
+          <End Role="SPFlight" EntitySet="MigrationSPFlights" />
         </AssociationSet>
         <AssociationSet Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Storage_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterStorage_StoragePartnerSet" Association="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Storage_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterStorage_StoragePartner">
           <End Role="StoragePartner" EntitySet="MigrationCenterServicess" />
@@ -16591,6 +16654,9 @@
       <Annotations Target="SP.File/ServerRelativePath">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.File/VroomItemID">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Folder/ServerRelativePath">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19084,7 +19150,13 @@
       <Annotations Target="SP.ApiData/SP_ListHomeItemCollection_GetListHomePersonalLists(Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_ListHomeItemCollection_GetRecommendLists()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_ListHomeItemCollection_RemoveRecentLists(Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_ListHomeItemCollection_RemoveRecommendLists(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_MultilingualSettings()">
@@ -19414,6 +19486,9 @@
       <Annotations Target="SP.ApiData/SetDefaultNewPageTemplateId(SP.Web, Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SetGlobalNavSettings(SP.Web, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SetStorageEntity(SP.Web, Edm.String, Edm.String, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19592,6 +19667,15 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetSiteSecondaryAdministrators(Microsoft.Online.SharePoint.TenantAdministration.Tenant, Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/PftTestGetDrives(Microsoft.Online.SharePoint.TenantAdministration.Tenant)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/PftTestGetUrl(Microsoft.Online.SharePoint.TenantAdministration.Tenant, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/PftTestGetUrlEx(Microsoft.Online.SharePoint.TenantAdministration.Tenant, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetSiteSecondaryAdministrators(Microsoft.Online.SharePoint.TenantAdministration.Tenant, Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData)">
@@ -24483,6 +24567,7 @@
         <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PreferredLanguage" Type="Edm.Int32" />
         <Property Name="RequireSecondaryContact" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SensitivityLabelPolicyMandatory" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ShowSelfServiceSiteCreation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SiteCreationNewUX" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SitePath" Type="Edm.String" />
@@ -25918,6 +26003,7 @@
           <PropertyRef Name="HasPersonalizedParts" />
         </Key>
         <Property Name="HasPersonalizedParts" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="HasWebPartConnections" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Scope" Type="Edm.Int32" Nullable="false" />
         <NavigationProperty Name="WebParts" Relationship="SP.WebParts.SP_WebParts_LimitedWebPartManager_WebParts_SP_WebParts_WebPartDefinition_WebPartsPartner" ToRole="WebParts" FromRole="WebPartsPartner" />
       </EntityType>
@@ -26736,6 +26822,7 @@
         <Property Name="AIBuilderEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AIBuilderSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
         <Property Name="AIBuilderSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="AIBuilderSiteListFileName" Type="Edm.String" />
         <Property Name="AllowCommentsTextOnEmailEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowDownloadingNonWebViewableFiles" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowedDomainListForSyncClient" Type="Collection(Edm.Guid)" Nullable="false" />
@@ -26768,6 +26855,7 @@
         <Property Name="DefaultLinkPermission" Type="Edm.Int32" Nullable="false" />
         <Property Name="DefaultSharingLinkType" Type="Edm.Int32" Nullable="false" />
         <Property Name="DisableAddToOneDrive" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisableCustomAppAuthentication" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisabledWebPartIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="DisableReportProblemDialog" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisallowInfectedFileDownload" Type="Edm.Boolean" Nullable="false" />
@@ -26878,6 +26966,120 @@
       <Association Name="Microsoft_Online_SharePoint_TenantAdministration_Tenant_Sites_Microsoft_Online_SharePoint_TenantAdministration_SiteProperties_SitesPartner">
         <End Type="Microsoft.Online.SharePoint.TenantAdministration.SiteProperties" Role="Sites" Multiplicity="*" />
         <End Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" Role="SitesPartner" Multiplicity="0..1" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Microsoft.Online.SharePoint.MigrationCenter.Service" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="MigrationProperty">
+        <Property Name="key" Type="Edm.String" />
+        <Property Name="updatedTimeUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="value" Type="Edm.String" />
+      </ComplexType>
+      <EntityType Name="Device" BaseType="Microsoft.Online.SharePoint.MigrationCenter.Common.DeviceEntityData">
+        <Property Name="ActionId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AssignedTimeUTC" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DebugCommand" Type="Edm.String" />
+        <Property Name="DeviceAddedTimeUTC" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Disconnected" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="FromClient" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="LastActivityTimeUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="LastHeartbeatTimeUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="LastModifiedTimeUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="LinkedTaskId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="MigrationCenterServices">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+        <NavigationProperty Name="Devices" Relationship="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Devices_Microsoft_Online_SharePoint_MigrationCenter_Service_Device_DevicesPartner" ToRole="Devices" FromRole="DevicesPartner" />
+        <NavigationProperty Name="Properties" Relationship="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Properties_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationProperties_PropertiesPartner" ToRole="Properties" FromRole="PropertiesPartner" />
+        <NavigationProperty Name="SPFlight" Relationship="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_SPFlight_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationSPFlight_SPFlightPartner" ToRole="SPFlight" FromRole="SPFlightPartner" />
+        <NavigationProperty Name="Storage" Relationship="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Storage_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterStorage_StoragePartner" ToRole="Storage" FromRole="StoragePartner" />
+        <NavigationProperty Name="Tasks" Relationship="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Tasks_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationTask_TasksPartner" ToRole="Tasks" FromRole="TasksPartner" />
+      </EntityType>
+      <EntityType Name="MigrationProperties">
+        <Key>
+          <PropertyRef Name="Count" />
+        </Key>
+        <Property Name="Count" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="MigrationSPFlight">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="MigrationCenterStorage">
+        <Key>
+          <PropertyRef Name="ActionId" />
+        </Key>
+        <Property Name="ActionId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DebugCommand" Type="Edm.String" />
+        <Property Name="DeviceCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="GlobalTaskSettings" Type="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskSettings" />
+        <Property Name="IsServiceInitialized" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SchedulerInformation" Type="Microsoft.Online.SharePoint.MigrationCenter.Common.TaskSchedulerInformation" />
+        <Property Name="SchemaVersion" Type="Edm.String" />
+        <Property Name="TaskCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TotalDevicesAdded" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TotalTasksAdded" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="MigrationTask" BaseType="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskEntityData">
+        <Property Name="ActionId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ClientName" Type="Edm.String" />
+        <Property Name="DebugCommand" Type="Edm.String" />
+        <Property Name="Duration" Type="Edm.Time" Nullable="false" />
+        <Property Name="ErrorCode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ErrorMessage" Type="Edm.String" />
+        <Property Name="FailedTimes" Type="Edm.Int32" Nullable="false" />
+        <Property Name="FailedTimeUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="FailureId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="FilesScanned" Type="Edm.Int64" Nullable="false" />
+        <Property Name="FilesScannedWithIssues" Type="Edm.Int64" Nullable="false" />
+        <Property Name="FriendlyClientName" Type="Edm.String" />
+        <Property Name="IsRetryableFailure" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsScanDone" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="LinkedDeviceId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="LogFilePath" Type="Edm.String" />
+        <Property Name="ManagementStatus" Type="Edm.Int32" Nullable="false" />
+        <Property Name="MigratedFilesCount" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ReportFileUrl" Type="Edm.String" />
+        <Property Name="ScanDoneTimeUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="StartTimeUTC" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="false" />
+        <Property Name="StatusUpdatedTimeUTC" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="TaskId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ToBeMigratedFilesCount" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TotalBytes" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TotalBytesMigrated" Type="Edm.Int64" Nullable="false" />
+        <Property Name="UpdateStatusOnly" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="WorkflowId" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+      <EntityType Name="MigrationCredential" BaseType="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationCredentialEntityData">
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="LastModifiedBy" Type="Edm.String" />
+        <Property Name="LastModifiedDateTimeUtc" Type="Edm.DateTime" Nullable="false" />
+      </EntityType>
+      <Association Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Devices_Microsoft_Online_SharePoint_MigrationCenter_Service_Device_DevicesPartner">
+        <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.Device" Role="Devices" Multiplicity="*" />
+        <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterServices" Role="DevicesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Properties_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationProperties_PropertiesPartner">
+        <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationProperties" Role="Properties" Multiplicity="0..1" />
+        <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterServices" Role="PropertiesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_SPFlight_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationSPFlight_SPFlightPartner">
+        <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationSPFlight" Role="SPFlight" Multiplicity="0..1" />
+        <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterServices" Role="SPFlightPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Storage_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterStorage_StoragePartner">
+        <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage" Role="Storage" Multiplicity="0..1" />
+        <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterServices" Role="StoragePartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Tasks_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationTask_TasksPartner">
+        <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask" Role="Tasks" Multiplicity="*" />
+        <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterServices" Role="TasksPartner" Multiplicity="0..1" />
       </Association>
     </Schema>
     <Schema Namespace="Microsoft.Online.SharePoint.MigrationCenter.Common" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -28354,6 +28556,7 @@
         <Property Name="AIBuilderEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AIBuilderSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
         <Property Name="AIBuilderSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="AIBuilderSiteListFileName" Type="Edm.String" />
         <Property Name="AllowCommentsTextOnEmailEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowDownloadingNonWebViewableFiles" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowedDomainListForSyncClient" Type="Collection(Edm.Guid)" Nullable="false" />
@@ -28383,6 +28586,7 @@
         <Property Name="DefaultLinkPermission" Type="Edm.Int32" Nullable="false" />
         <Property Name="DefaultSharingLinkType" Type="Edm.Int32" Nullable="false" />
         <Property Name="DisableAddToOneDrive" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisableCustomAppAuthentication" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisplayStartASiteOption" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EmailAttestationEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EmailAttestationReAuthDays" Type="Edm.Int32" Nullable="false" />
@@ -28580,93 +28784,6 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
-    </Schema>
-    <Schema Namespace="Microsoft.Online.SharePoint.MigrationCenter.Service" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-      <EntityType Name="Device" BaseType="Microsoft.Online.SharePoint.MigrationCenter.Common.DeviceEntityData">
-        <Property Name="ActionId" Type="Edm.Int32" Nullable="false" />
-        <Property Name="AssignedTimeUTC" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="DebugCommand" Type="Edm.String" />
-        <Property Name="DeviceAddedTimeUTC" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="Disconnected" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="FromClient" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="LastActivityTimeUtc" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="LastHeartbeatTimeUtc" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="LastModifiedTimeUtc" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="LinkedTaskId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="Status" Type="Edm.Int32" Nullable="false" />
-      </EntityType>
-      <EntityType Name="MigrationCenterServices">
-        <Key>
-          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
-        </Key>
-        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
-        <NavigationProperty Name="Devices" Relationship="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Devices_Microsoft_Online_SharePoint_MigrationCenter_Service_Device_DevicesPartner" ToRole="Devices" FromRole="DevicesPartner" />
-        <NavigationProperty Name="Storage" Relationship="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Storage_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterStorage_StoragePartner" ToRole="Storage" FromRole="StoragePartner" />
-        <NavigationProperty Name="Tasks" Relationship="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Tasks_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationTask_TasksPartner" ToRole="Tasks" FromRole="TasksPartner" />
-      </EntityType>
-      <EntityType Name="MigrationCenterStorage">
-        <Key>
-          <PropertyRef Name="ActionId" />
-        </Key>
-        <Property Name="ActionId" Type="Edm.Int32" Nullable="false" />
-        <Property Name="DebugCommand" Type="Edm.String" />
-        <Property Name="DeviceCount" Type="Edm.Int32" Nullable="false" />
-        <Property Name="GlobalTaskSettings" Type="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskSettings" />
-        <Property Name="IsServiceInitialized" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="SchedulerInformation" Type="Microsoft.Online.SharePoint.MigrationCenter.Common.TaskSchedulerInformation" />
-        <Property Name="SchemaVersion" Type="Edm.String" />
-        <Property Name="TaskCount" Type="Edm.Int32" Nullable="false" />
-        <Property Name="TotalDevicesAdded" Type="Edm.Int32" Nullable="false" />
-        <Property Name="TotalTasksAdded" Type="Edm.Int32" Nullable="false" />
-      </EntityType>
-      <EntityType Name="MigrationTask" BaseType="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskEntityData">
-        <Property Name="ActionId" Type="Edm.Int32" Nullable="false" />
-        <Property Name="ClientName" Type="Edm.String" />
-        <Property Name="DebugCommand" Type="Edm.String" />
-        <Property Name="Duration" Type="Edm.Time" Nullable="false" />
-        <Property Name="ErrorCode" Type="Edm.Int32" Nullable="false" />
-        <Property Name="ErrorMessage" Type="Edm.String" />
-        <Property Name="FailedTimes" Type="Edm.Int32" Nullable="false" />
-        <Property Name="FailedTimeUtc" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="FailureId" Type="Edm.Int32" Nullable="false" />
-        <Property Name="FilesScanned" Type="Edm.Int64" Nullable="false" />
-        <Property Name="FilesScannedWithIssues" Type="Edm.Int64" Nullable="false" />
-        <Property Name="FriendlyClientName" Type="Edm.String" />
-        <Property Name="IsRetryableFailure" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsScanDone" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="LinkedDeviceId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="LogFilePath" Type="Edm.String" />
-        <Property Name="ManagementStatus" Type="Edm.Int32" Nullable="false" />
-        <Property Name="MigratedFilesCount" Type="Edm.Int64" Nullable="false" />
-        <Property Name="ReportFileUrl" Type="Edm.String" />
-        <Property Name="ScanDoneTimeUtc" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="StartTimeUTC" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="Status" Type="Edm.Int32" Nullable="false" />
-        <Property Name="StatusUpdatedTimeUTC" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="TaskId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="ToBeMigratedFilesCount" Type="Edm.Int64" Nullable="false" />
-        <Property Name="TotalBytes" Type="Edm.Int64" Nullable="false" />
-        <Property Name="TotalBytesMigrated" Type="Edm.Int64" Nullable="false" />
-        <Property Name="UpdateStatusOnly" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="WorkflowId" Type="Edm.Guid" Nullable="false" />
-      </EntityType>
-      <EntityType Name="MigrationCredential" BaseType="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationCredentialEntityData">
-        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
-        <Property Name="LastModifiedBy" Type="Edm.String" />
-        <Property Name="LastModifiedDateTimeUtc" Type="Edm.DateTime" Nullable="false" />
-      </EntityType>
-      <Association Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Devices_Microsoft_Online_SharePoint_MigrationCenter_Service_Device_DevicesPartner">
-        <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.Device" Role="Devices" Multiplicity="*" />
-        <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterServices" Role="DevicesPartner" Multiplicity="0..1" />
-      </Association>
-      <Association Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Storage_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterStorage_StoragePartner">
-        <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage" Role="Storage" Multiplicity="0..1" />
-        <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterServices" Role="StoragePartner" Multiplicity="0..1" />
-      </Association>
-      <Association Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Tasks_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationTask_TasksPartner">
-        <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask" Role="Tasks" Multiplicity="*" />
-        <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterServices" Role="TasksPartner" Multiplicity="0..1" />
-      </Association>
     </Schema>
     <Schema Namespace="Microsoft.Online.SharePoint.AppLauncher" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="AppLauncher">
