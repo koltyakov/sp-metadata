@@ -32,6 +32,7 @@ Title (Edm.String) | ✅ | ✅ | ✅ | ✅
 UIVersion (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 UIVersionLabel (Edm.String) | ✅ | ✅ | ✅ | ✅
 UniqueId (Edm.Guid) | ✅ | ✅ | ✅ | ❌
+VroomItemID (Edm.String) | ✅ | ❌ | ❌ | ❌
 WebId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 
 ### Navigation Properties

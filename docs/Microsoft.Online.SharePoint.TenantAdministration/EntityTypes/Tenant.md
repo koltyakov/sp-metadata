@@ -9,6 +9,7 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 AIBuilderEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AIBuilderSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
 AIBuilderSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+AIBuilderSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 AddressbarLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 AllowCommentsTextOnEmailEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowDownloadingNonWebViewableFiles (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -42,6 +43,7 @@ DefaultContentCenterSite (Microsoft.Online.SharePoint.TenantAdministration.SiteI
 DefaultLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DefaultSharingLinkType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DisableAddToOneDrive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+DisableCustomAppAuthentication (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableReportProblemDialog (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisabledWebPartIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 DisallowInfectedFileDownload (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

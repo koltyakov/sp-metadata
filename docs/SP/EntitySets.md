@@ -235,6 +235,8 @@ Microservicemanagers | ✅ | ✅ | ❌ | ❌
 MigrationCenterServicess | ✅ | ❌ | ❌ | ❌
 MigrationCenterStorages | ✅ | ❌ | ❌ | ❌
 MigrationCredentialEntityDatas | ✅ | ❌ | ❌ | ❌
+MigrationPropertiess | ✅ | ❌ | ❌ | ❌
+MigrationSPFlights | ✅ | ❌ | ❌ | ❌
 MigrationTaskEntityDatas | ✅ | ❌ | ❌ | ❌
 Models | ✅ | ❌ | ❌ | ❌
 ModernizeHomepageResults | ✅ | ❌ | ❌ | ❌
