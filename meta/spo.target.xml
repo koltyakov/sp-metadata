@@ -165,6 +165,7 @@
         <Property Name="Scope" Type="Edm.Int32" Nullable="false" />
         <Property Name="ShareId" Type="Edm.Guid" Nullable="false" />
         <Property Name="ShareTokenString" Type="Edm.String" />
+        <Property Name="SharingLinkStatus" Type="Edm.Int32" Nullable="false" />
         <Property Name="TrackLinkUsers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Url" Type="Edm.String" />
       </ComplexType>
@@ -1353,6 +1354,7 @@
         <Property Name="UIVersion" Type="Edm.Int32" Nullable="false" />
         <Property Name="UIVersionLabel" Type="Edm.String" />
         <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="VroomDriveID" Type="Edm.String" />
         <Property Name="VroomItemID" Type="Edm.String" />
         <Property Name="WebId" Type="Edm.Guid" Nullable="false" />
         <NavigationProperty Name="Author" Relationship="SP.SP_File_Author_SP_User_AuthorPartner" ToRole="Author" FromRole="AuthorPartner" />
@@ -1483,6 +1485,7 @@
         <Property Name="DefaultContentApprovalWorkflowId" Type="Edm.Guid" Nullable="false" />
         <Property Name="DefaultDisplayFormUrl" Type="Edm.String" />
         <Property Name="DefaultEditFormUrl" Type="Edm.String" />
+        <Property Name="DefaultItemOpenInBrowser" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DefaultItemOpenUseListSetting" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DefaultNewFormUrl" Type="Edm.String" />
         <Property Name="DefaultViewPath" Type="SP.ResourcePath" />
@@ -3649,9 +3652,11 @@
         <EntitySet Name="DeviceEntityDatas" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.DeviceEntityData" />
         <EntitySet Name="MigrationCredentialEntityDatas" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationCredentialEntityData" />
         <EntitySet Name="MigrationTaskEntityDatas" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskEntityData" />
+        <EntitySet Name="TeamResources" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.Teams.TeamResource" />
         <EntitySet Name="UrlParseResults" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.UrlParseResult" />
         <EntitySet Name="MigrationCenterServicess" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterServices" />
         <EntitySet Name="MigrationCenterStorages" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage" />
+        <EntitySet Name="MigrationCenterTeamss" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterTeams" />
         <EntitySet Name="MigrationPropertiess" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationProperties" />
         <EntitySet Name="MigrationSPFlights" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationSPFlight" />
         <EntitySet Name="AllowedDataLocationEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocationEntityData" />
@@ -4989,6 +4994,9 @@
           <Parameter Name="siteId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_RegisterSiteSubscriptionEventReceiver">
+          <Parameter Name="tenantId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_RegisterSiteSubscriptionItemDeleteEventReceiver">
           <Parameter Name="tenantId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="RemoveContainerRetentionPolicy" IsBindable="true">
@@ -13132,6 +13140,12 @@
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterTeams" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterTeams" IsComposable="true" EntitySet="MigrationCenterTeamss" />
+        <FunctionImport Name="Teams" ReturnType="Collection(Microsoft.Online.SharePoint.MigrationCenter.Common.Teams.TeamResource)" IsComposable="true" IsBindable="true" EntitySet="TeamResources">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterTeams" />
+          <Parameter Name="startsWith" Type="Edm.String" />
+          <Parameter Name="limit" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="GetById" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential" IsComposable="true" IsBindable="true" EntitySet="MigrationCredentialEntityDatas">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential)" />
           <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
@@ -13626,6 +13640,10 @@
         <AssociationSet Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Tasks_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationTask_TasksPartnerSet" Association="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Tasks_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationTask_TasksPartner">
           <End Role="TasksPartner" EntitySet="MigrationCenterServicess" />
           <End Role="Tasks" EntitySet="MigrationTaskEntityDatas" />
+        </AssociationSet>
+        <AssociationSet Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Teams_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterTeams_TeamsPartnerSet" Association="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Teams_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterTeams_TeamsPartner">
+          <End Role="TeamsPartner" EntitySet="MigrationCenterServicess" />
+          <End Role="Teams" EntitySet="MigrationCenterTeamss" />
         </AssociationSet>
         <AssociationSet Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_AllowedDataLocations_Microsoft_Online_SharePoint_MultiGeo_Service_AllowedDataLocation_AllowedDataLocationsPartnerSet" Association="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_AllowedDataLocations_Microsoft_Online_SharePoint_MultiGeo_Service_AllowedDataLocation_AllowedDataLocationsPartner">
           <End Role="AllowedDataLocationsPartner" EntitySet="MultiGeoServicesBetas" />
@@ -15658,6 +15676,9 @@
       <Annotations Target="SP.SharingLinkInfo/ShareTokenString">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.SharingLinkInfo/SharingLinkStatus">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.SharingLinkInfo/TrackLinkUsers">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16654,6 +16675,9 @@
       <Annotations Target="SP.File/ServerRelativePath">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.File/VroomDriveID">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.File/VroomItemID">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16676,6 +16700,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.List/Color">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.List/DefaultItemOpenInBrowser">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.List/DefaultItemOpenUseListSetting">
@@ -24557,7 +24584,7 @@
       <ComplexType Name="GroupCreationContext">
         <Property Name="ClassificationDescriptions" Type="Collection(SP.KeyValue)" />
         <Property Name="ClassificationDescriptionsNew" Type="Collection(SP.KeyValue)" />
-        <Property Name="ClassificationPrivacy" Type="Collection(SP.KeyValue)" />
+        <Property Name="ClassificationExtSharingValue" Type="Collection(SP.KeyValue)" />
         <Property Name="ClassificationPrivacyValue" Type="Collection(SP.KeyValue)" />
         <Property Name="CustomFormUrl" Type="Edm.String" />
         <Property Name="DataClassificationOptions" Type="Collection(Edm.String)" />
@@ -26857,6 +26884,7 @@
         <Property Name="DisableAddToOneDrive" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableCustomAppAuthentication" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisabledWebPartIds" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="DisablePersonalListCreation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableReportProblemDialog" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisallowInfectedFileDownload" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisplayNamesOfFileViewers" Type="Edm.Boolean" Nullable="false" />
@@ -26882,6 +26910,8 @@
         <Property Name="GuestSharingGroupAllowListInTenant" Type="Edm.String" />
         <Property Name="GuestSharingGroupAllowListInTenantByPrincipalIdentity" Type="Collection(Edm.String)" />
         <Property Name="HasAdminCompletedCUConfiguration" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="HasIntelligentContentServicesCapability" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="HasTopicExperiencesCapability" Type="Edm.Boolean" Nullable="false" />
         <Property Name="HideDefaultThemes" Type="Edm.Boolean" Nullable="false" />
         <Property Name="HideSyncButtonOnODB" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ImageTaggingOption" Type="Edm.Int32" Nullable="false" />
@@ -26997,6 +27027,7 @@
         <NavigationProperty Name="SPFlight" Relationship="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_SPFlight_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationSPFlight_SPFlightPartner" ToRole="SPFlight" FromRole="SPFlightPartner" />
         <NavigationProperty Name="Storage" Relationship="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Storage_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterStorage_StoragePartner" ToRole="Storage" FromRole="StoragePartner" />
         <NavigationProperty Name="Tasks" Relationship="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Tasks_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationTask_TasksPartner" ToRole="Tasks" FromRole="TasksPartner" />
+        <NavigationProperty Name="Teams" Relationship="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Teams_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterTeams_TeamsPartner" ToRole="Teams" FromRole="TeamsPartner" />
       </EntityType>
       <EntityType Name="MigrationProperties">
         <Key>
@@ -27056,6 +27087,12 @@
         <Property Name="UpdateStatusOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="WorkflowId" Type="Edm.Guid" Nullable="false" />
       </EntityType>
+      <EntityType Name="MigrationCenterTeams">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="MigrationCredential" BaseType="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationCredentialEntityData">
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
         <Property Name="LastModifiedBy" Type="Edm.String" />
@@ -27080,6 +27117,10 @@
       <Association Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Tasks_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationTask_TasksPartner">
         <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask" Role="Tasks" Multiplicity="*" />
         <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterServices" Role="TasksPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Teams_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterTeams_TeamsPartner">
+        <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterTeams" Role="Teams" Multiplicity="0..1" />
+        <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterServices" Role="TeamsPartner" Multiplicity="0..1" />
       </Association>
     </Schema>
     <Schema Namespace="Microsoft.Online.SharePoint.MigrationCenter.Common" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -28587,6 +28628,7 @@
         <Property Name="DefaultSharingLinkType" Type="Edm.Int32" Nullable="false" />
         <Property Name="DisableAddToOneDrive" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableCustomAppAuthentication" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisablePersonalListCreation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisplayStartASiteOption" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EmailAttestationEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EmailAttestationReAuthDays" Type="Edm.Int32" Nullable="false" />
@@ -28783,6 +28825,20 @@
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Microsoft.Online.SharePoint.MigrationCenter.Common.Teams" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="TeamResource">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="GroupDefaultLibraryName" Type="Edm.String" />
+        <Property Name="GroupDefaultLibraryWebUrl" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="SiteLogoUrl" Type="Edm.String" />
+        <Property Name="Visibility" Type="Edm.String" />
+        <Property Name="WebUrl" Type="Edm.String" />
       </EntityType>
     </Schema>
     <Schema Namespace="Microsoft.Online.SharePoint.AppLauncher" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
