@@ -17,6 +17,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.Office.Server.Search.REST](./Microsoft.Office.Server.Search.REST) | ✅ | ✅ | ✅ | ✅
 [Microsoft.Online.SharePoint.AppLauncher](./Microsoft.Online.SharePoint.AppLauncher) | ✅ | ❌ | ❌ | ❌
 [Microsoft.Online.SharePoint.MigrationCenter.Common](./Microsoft.Online.SharePoint.MigrationCenter.Common) | ✅ | ❌ | ❌ | ❌
+[Microsoft.Online.SharePoint.MigrationCenter.Common.Teams](./Microsoft.Online.SharePoint.MigrationCenter.Common.Teams) | ✅ | ❌ | ❌ | ❌
 [Microsoft.Online.SharePoint.MigrationCenter.Service](./Microsoft.Online.SharePoint.MigrationCenter.Service) | ✅ | ❌ | ❌ | ❌
 [Microsoft.Online.SharePoint.MultiGeo.Service](./Microsoft.Online.SharePoint.MultiGeo.Service) | ✅ | ❌ | ❌ | ❌
 [Microsoft.Online.SharePoint.Onboarding.RestService](./Microsoft.Online.SharePoint.Onboarding.RestService) | ✅ | ❌ | ❌ | ❌

@@ -22,6 +22,7 @@ DataSource (SP.ListDataSource) | ✅ | ✅ | ✅ | ✅
 DefaultContentApprovalWorkflowId (Edm.Guid) | ✅ | ✅ | ✅ | ✅
 DefaultDisplayFormUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
 DefaultEditFormUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
+DefaultItemOpenInBrowser (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DefaultItemOpenUseListSetting (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 DefaultNewFormUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
 DefaultViewPath (SP.ResourcePath) | ✅ | ✅ | ❌ | ❌

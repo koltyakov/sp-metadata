@@ -17,3 +17,4 @@ Properties | ✅ | ❌ | ❌ | ❌
 SPFlight | ✅ | ❌ | ❌ | ❌
 Storage | ✅ | ❌ | ❌ | ❌
 Tasks | ✅ | ❌ | ❌ | ❌
+Teams | ✅ | ❌ | ❌ | ❌

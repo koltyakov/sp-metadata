@@ -35,5 +35,6 @@ RestrictedShareMembership (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 Scope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ShareId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 ShareTokenString (Edm.String) | ✅ | ❌ | ❌ | ❌
+SharingLinkStatus (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 TrackLinkUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Url (Edm.String) | ✅ | ✅ | ✅ | ❌

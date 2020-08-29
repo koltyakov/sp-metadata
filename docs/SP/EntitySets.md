@@ -234,6 +234,7 @@ MicrofeedStores | ✅ | ✅ | ✅ | ✅
 Microservicemanagers | ✅ | ✅ | ❌ | ❌
 MigrationCenterServicess | ✅ | ❌ | ❌ | ❌
 MigrationCenterStorages | ✅ | ❌ | ❌ | ❌
+MigrationCenterTeamss | ✅ | ❌ | ❌ | ❌
 MigrationCredentialEntityDatas | ✅ | ❌ | ❌ | ❌
 MigrationPropertiess | ✅ | ❌ | ❌ | ❌
 MigrationSPFlights | ✅ | ❌ | ❌ | ❌
@@ -506,6 +507,7 @@ TaxonomyFieldValueCollections | ❌ | ❌ | ❌ | ✅
 TaxonomyReplicationParameterss | ✅ | ❌ | ❌ | ❌
 TeamChannelManagers | ✅ | ✅ | ❌ | ❌
 TeamChannels | ✅ | ❌ | ❌ | ❌
+TeamResources | ✅ | ❌ | ❌ | ❌
 TenantAdminEndpointss | ✅ | ❌ | ❌ | ❌
 TenantAdminSettingsServices | ✅ | ❌ | ❌ | ❌
 TenantAppInstances | ✅ | ✅ | ✅ | ❌

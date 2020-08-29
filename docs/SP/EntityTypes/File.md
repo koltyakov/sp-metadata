@@ -32,6 +32,7 @@ Title (Edm.String) | ✅ | ✅ | ✅ | ✅
 UIVersion (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 UIVersionLabel (Edm.String) | ✅ | ✅ | ✅ | ✅
 UniqueId (Edm.Guid) | ✅ | ✅ | ✅ | ❌
+VroomDriveID (Edm.String) | ✅ | ❌ | ❌ | ❌
 VroomItemID (Edm.String) | ✅ | ❌ | ❌ | ❌
 WebId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 

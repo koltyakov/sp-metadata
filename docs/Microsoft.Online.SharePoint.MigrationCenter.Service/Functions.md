@@ -21,12 +21,14 @@ IsFlightEnabled (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationSP
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_Device">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service Device) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service MigrationCenterServices) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterStorage">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service MigrationCenterStorage) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterTeams">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service MigrationCenterTeams) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCredential">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service MigrationCredential) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationProperties">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service MigrationProperties) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationSPFlight">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service MigrationSPFlight) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationTask">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service MigrationTask) | ✅ | ❌ | ❌ | ❌
 ParseUrl (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage) | ✅ | ❌ | ❌ | ❌
 SetProperty (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationProperties) | ✅ | ❌ | ❌ | ❌
+Teams (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterTeams) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.MigrationCenter.Service.Device) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential) | ✅ | ❌ | ❌ | ❌
