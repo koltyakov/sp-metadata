@@ -160,6 +160,7 @@
         <Property Name="LinkKind" Type="Edm.Int32" Nullable="false" />
         <Property Name="PasswordLastModified" Type="Edm.String" />
         <Property Name="PasswordLastModifiedBy" Type="SP.Sharing.Principal" />
+        <Property Name="RedeemedUsers" Type="Collection(SP.Sharing.LinkInvitation)" />
         <Property Name="RequiresPassword" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RestrictedShareMembership" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Scope" Type="Edm.Int32" Nullable="false" />
@@ -935,6 +936,7 @@
       <ComplexType Name="MenuState">
         <Property Name="AudienceIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="FriendlyUrlPrefix" Type="Edm.String" />
+        <Property Name="IsAudienceTargetEnabledForGlobalNav" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Nodes" Type="Collection(SP.MenuNode)" />
         <Property Name="SimpleUrl" Type="Edm.String" />
         <Property Name="SPSitePrefix" Type="Edm.String" />
@@ -3652,6 +3654,7 @@
         <EntitySet Name="DeviceEntityDatas" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.DeviceEntityData" />
         <EntitySet Name="MigrationCredentialEntityDatas" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationCredentialEntityData" />
         <EntitySet Name="MigrationTaskEntityDatas" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskEntityData" />
+        <EntitySet Name="ChannelResources" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.Teams.ChannelResource" />
         <EntitySet Name="TeamResources" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.Teams.TeamResource" />
         <EntitySet Name="UrlParseResults" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.UrlParseResult" />
         <EntitySet Name="MigrationCenterServicess" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterServices" />
@@ -7732,7 +7735,9 @@
           <Parameter Name="includeErrors" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="project" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="SP_Publishing_SitePageService_GetCurrentUserMemberships" ReturnType="Collection(Edm.Guid)" IsSideEffecting="false" />
+        <FunctionImport Name="SP_Publishing_SitePageService_GetCurrentUserMemberships" ReturnType="Collection(Edm.Guid)" IsSideEffecting="false">
+          <Parameter Name="scenario" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="SP_Publishing_SitePageService_GetTimeZone" ReturnType="SP.Publishing.PrimaryCityTime" IsComposable="true" EntitySet="PrimaryCityTimes">
           <Parameter Name="cityName" Type="Edm.String" />
         </FunctionImport>
@@ -9106,9 +9111,17 @@
           <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
           <Parameter Name="id" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="SolutionContainsTeamsComponent" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
+          <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="SyncSolutionToTeams" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
           <Parameter Name="id" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SyncSolutionToTeamsByUniqueId" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
+          <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Upload" ReturnType="Edm.Guid" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
@@ -12259,6 +12272,8 @@
           <Parameter Name="listTitle" Type="Edm.String" />
           <Parameter Name="imageName" Type="Edm.String" />
           <Parameter Name="contentStream" Type="Edm.Stream" />
+          <Parameter Name="listId" Type="Edm.String" />
+          <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetByName" ReturnType="SP.WebTemplate" IsComposable="true" IsBindable="true" EntitySet="WebTemplates">
           <Parameter Name="this" Type="Collection(SP.WebTemplate)" />
@@ -13141,6 +13156,11 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterTeams" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterTeams" IsComposable="true" EntitySet="MigrationCenterTeamss" />
+        <FunctionImport Name="TeamChannels" ReturnType="Collection(Microsoft.Online.SharePoint.MigrationCenter.Common.Teams.ChannelResource)" IsComposable="true" IsBindable="true" EntitySet="ChannelResources">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterTeams" />
+          <Parameter Name="teamId" Type="Edm.String" />
+          <Parameter Name="membershipType" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="Teams" ReturnType="Collection(Microsoft.Online.SharePoint.MigrationCenter.Common.Teams.TeamResource)" IsComposable="true" IsBindable="true" EntitySet="TeamResources">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterTeams" />
           <Parameter Name="startsWith" Type="Edm.String" />
@@ -15661,6 +15681,9 @@
       <Annotations Target="SP.SharingLinkInfo/PasswordLastModifiedBy">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.SharingLinkInfo/RedeemedUsers">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.SharingLinkInfo/RequiresPassword">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16201,6 +16224,12 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/ContentTypeName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/Created">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/CreatedBy">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/DriveId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16219,6 +16248,12 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/ModelSettings">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/Modified">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/ModifiedBy">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/ObjectId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16232,6 +16267,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/Created">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/CreatedBy">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/DriveId">
@@ -16253,6 +16294,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/ModelVersion">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/Modified">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/ModifiedBy">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/ObjectId">
@@ -18430,7 +18477,7 @@
       <Annotations Target="SP.ApiData/SP_Publishing_SitePageService_GetAvailableFullPageApplications(Edm.Boolean, Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_Publishing_SitePageService_GetCurrentUserMemberships()">
+      <Annotations Target="SP.ApiData/SP_Publishing_SitePageService_GetCurrentUserMemberships(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Publishing_SitePageService_GetTimeZone(Edm.String)">
@@ -18976,7 +19023,13 @@
       <Annotations Target="SP.ApiData/IsAppUpgradeAvailable(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SolutionContainsTeamsComponent(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SyncSolutionToTeams(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SyncSolutionToTeamsByUniqueId(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Upload(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String)">
@@ -19531,7 +19584,7 @@
       <Annotations Target="SP.ApiData/SyncHubSiteTheme(SP.Web)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/UploadImage(SP.Web, Edm.String, Edm.String, Edm.Stream)">
+      <Annotations Target="SP.ApiData/UploadImage(SP.Web, Edm.String, Edm.String, Edm.Stream, Edm.String, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_TranslationStatusCollection()">
@@ -20324,6 +20377,7 @@
           <PropertyRef Name="GeoLocation" />
         </Key>
         <Property Name="GeoLocation" Type="Edm.String" Nullable="false" />
+        <Property Name="IsIBEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MySiteHostDomain" Type="Edm.String" />
         <Property Name="PortalDomain" Type="Edm.String" />
         <Property Name="RootSiteDomain" Type="Edm.String" />
@@ -27392,27 +27446,35 @@
         <Property Name="ContentTypeGroup" Type="Edm.String" />
         <Property Name="ContentTypeId" Type="Edm.String" />
         <Property Name="ContentTypeName" Type="Edm.String" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="CreatedBy" Type="Edm.String" />
         <Property Name="DriveId" Type="Edm.String" />
         <Property Name="Explanations" Type="Edm.String" />
         <Property Name="ID" Type="Edm.Int32" Nullable="false" />
         <Property Name="LastTrained" Type="Edm.DateTime" />
         <Property Name="ListID" Type="Edm.Guid" Nullable="false" />
         <Property Name="ModelSettings" Type="Edm.String" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedBy" Type="Edm.String" />
         <Property Name="ObjectId" Type="Edm.String" />
         <Property Name="Schemas" Type="Edm.String" />
         <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
       </EntityType>
       <EntityType Name="SPMachineLearningPublication">
         <Key>
-          <PropertyRef Name="DriveId" />
+          <PropertyRef Name="Created" />
         </Key>
-        <Property Name="DriveId" Type="Edm.String" Nullable="false" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="CreatedBy" Type="Edm.String" />
+        <Property Name="DriveId" Type="Edm.String" />
         <Property Name="ID" Type="Edm.Int32" Nullable="false" />
         <Property Name="ModelId" Type="Edm.Int32" Nullable="false" />
         <Property Name="ModelName" Type="Edm.String" />
         <Property Name="ModelType" Type="Edm.Int32" Nullable="false" />
         <Property Name="ModelUniqueId" Type="Edm.Guid" Nullable="false" />
         <Property Name="ModelVersion" Type="Edm.String" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedBy" Type="Edm.String" />
         <Property Name="ObjectId" Type="Edm.String" />
         <Property Name="TargetLibraryRemoved" Type="Edm.Boolean" Nullable="false" />
         <Property Name="TargetLibraryServerRelativeUrl" Type="Edm.String" />
@@ -28828,13 +28890,23 @@
       </EntityType>
     </Schema>
     <Schema Namespace="Microsoft.Online.SharePoint.MigrationCenter.Common.Teams" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="ChannelResource">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="AbsoluteUrl" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+        <Property Name="MembershipType" Type="Edm.String" />
+        <Property Name="ServerRelativeUrl" Type="Edm.String" />
+        <Property Name="SubFolders" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Common.SPFolderInformation)" />
+      </EntityType>
       <EntityType Name="TeamResource">
         <Key>
           <PropertyRef Name="Id" />
         </Key>
         <Property Name="DisplayName" Type="Edm.String" />
-        <Property Name="GroupDefaultLibraryName" Type="Edm.String" />
-        <Property Name="GroupDefaultLibraryWebUrl" Type="Edm.String" />
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
         <Property Name="SiteLogoUrl" Type="Edm.String" />
         <Property Name="Visibility" Type="Edm.String" />
