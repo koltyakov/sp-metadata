@@ -147,7 +147,7 @@ SP_Publishing_SitePageService | ✅ | ✅ | ❌ | ❌
 [SP_Publishing_SitePageService_ComputeFileName](./Functions/SP_Publishing_SitePageService_ComputeFileName.md) | ✅ | ❌ | ❌ | ❌
 SP_Publishing_SitePageService_FilePickerTabOptions | ✅ | ❌ | ❌ | ❌
 [<span title="SP_Publishing_SitePageService_GetAvailableFullPageApplications">SP_Publishing_SitePageService_GetAvailableFullPage...</span> (SP Publishing SitePageService GetAvailableFullPageApplications)](./Functions/SP_Publishing_SitePageService_GetAvailableFullPageApplications.md) | ✅ | ❌ | ❌ | ❌
-<span title="SP_Publishing_SitePageService_GetCurrentUserMemberships">SP_Publishing_SitePageService_GetCurrentUserMember...</span> (SP Publishing SitePageService GetCurrentUserMemberships) | ✅ | ❌ | ❌ | ❌
+[<span title="SP_Publishing_SitePageService_GetCurrentUserMemberships">SP_Publishing_SitePageService_GetCurrentUserMember...</span> (SP Publishing SitePageService GetCurrentUserMemberships)](./Functions/SP_Publishing_SitePageService_GetCurrentUserMemberships.md) | ✅ | ❌ | ❌ | ❌
 [SP_Publishing_SitePageService_GetTimeZone](./Functions/SP_Publishing_SitePageService_GetTimeZone.md) | ✅ | ✅ | ❌ | ❌
 <span title="SP_Publishing_SitePageService_IsFilePickerExternalImageSearchEnabled">SP_Publishing_SitePageService_IsFilePickerExternal...</span> (SP Publishing SitePageService IsFilePickerExternalImageSearchEnabled) | ✅ | ✅ | ❌ | ❌
 SP_Publishing_SitePageService_OrgAssets | ✅ | ❌ | ❌ | ❌

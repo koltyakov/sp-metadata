@@ -18,7 +18,9 @@ Remove (Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Site
 Remove (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata) | ✅ | ✅ | ❌ | ❌
 RemoveById (Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem)) | ✅ | ✅ | ❌ | ❌
 Retract (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata) | ✅ | ✅ | ❌ | ❌
+SolutionContainsTeamsComponent (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ❌ | ❌ | ❌
 SyncSolutionToTeams (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ❌ | ❌ | ❌
+SyncSolutionToTeamsByUniqueId (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ❌ | ❌ | ❌
 Uninstall (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata) | ✅ | ✅ | ❌ | ❌
 Upgrade (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata) | ✅ | ✅ | ❌ | ❌
 Upload (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ❌ | ❌ | ❌

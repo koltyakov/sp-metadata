@@ -49,6 +49,7 @@ CalloutInfos | ✅ | ✅ | ✅ | ✅
 Cases | ❌ | ❌ | ❌ | ✅
 ChangeInformations | ❌ | ❌ | ❌ | ✅
 Changes | ✅ | ✅ | ✅ | ✅
+ChannelResources | ✅ | ❌ | ❌ | ❌
 CheckedOutFiles | ✅ | ✅ | ❌ | ❌
 ClickManagers | ✅ | ❌ | ❌ | ❌
 ClientPeoplePickerWebServiceInterfaces | ✅ | ✅ | ✅ | ✅

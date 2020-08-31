@@ -28,6 +28,7 @@ IsFlightEnabled (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationSP
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationTask">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service MigrationTask) | ✅ | ❌ | ❌ | ❌
 ParseUrl (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage) | ✅ | ❌ | ❌ | ❌
 SetProperty (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationProperties) | ✅ | ❌ | ❌ | ❌
+TeamChannels (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterTeams) | ✅ | ❌ | ❌ | ❌
 Teams (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterTeams) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.MigrationCenter.Service.Device) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage) | ✅ | ❌ | ❌ | ❌

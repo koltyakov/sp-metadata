@@ -30,6 +30,7 @@ LimitUseToApplication (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LinkKind (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 PasswordLastModified (Edm.String) | ✅ | ❌ | ❌ | ❌
 PasswordLastModifiedBy (SP.Sharing.Principal) | ✅ | ❌ | ❌ | ❌
+RedeemedUsers (Collection(SP.Sharing.LinkInvitation)) | ✅ | ❌ | ❌ | ❌
 RequiresPassword (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 RestrictedShareMembership (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 Scope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
