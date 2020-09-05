@@ -343,6 +343,7 @@
         <Property Name="MoveAndShareFileInfo" Type="SP.SPMoveAndShareFileInfo" />
         <Property Name="MoveButKeepSource" Type="Edm.Boolean" Nullable="false" />
         <Property Name="NameConflictBehavior" Type="Edm.Int32" Nullable="false" />
+        <Property Name="SameWebCopyMoveOptimization" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
       <ComplexType Name="SPMoveAndShareFileInfo">
         <Property Name="ItemPermissionableUserIds" Type="Collection(Edm.Int32)" Nullable="false" />
@@ -1531,6 +1532,7 @@
         <Property Name="LastItemModifiedDate" Type="Edm.DateTime" Nullable="false" />
         <Property Name="LastItemUserModifiedDate" Type="Edm.DateTime" Nullable="false" />
         <Property Name="ListExperienceOptions" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ListFormCustomized" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ListItemEntityTypeFullName" Type="Edm.String" />
         <Property Name="MajorVersionLimit" Type="Edm.Int32" Nullable="false" />
         <Property Name="MajorWithMinorVersionsLimit" Type="Edm.Int32" Nullable="false" />
@@ -11905,6 +11907,11 @@
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="logonName" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="EnsureUserByObjectId" ReturnType="SP.User" IsBindable="true" EntitySet="Users1">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="objectId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="tenantId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="ExecuteRemoteLOB" ReturnType="Edm.Stream" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="inputStream" Type="Edm.Stream" />
@@ -12817,6 +12824,10 @@
         <FunctionImport Name="ExportCSVFile" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
           <Parameter Name="viewXml" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetSiteCohortsSummary" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SiteCohortsSummary" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
+          <Parameter Name="view" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="GetSiteCreationSource" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SiteCreationSource" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
@@ -15552,6 +15563,9 @@
       <Annotations Target="SP.Internal.AppRenderInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Deployment.ShortcutInformation">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Comments.CommentInformation">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -15766,6 +15780,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.CopyMigrationOptions/MoveButKeepSource">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.CopyMigrationOptions/SameWebCopyMoveOptimization">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.CustomActionElement/ClientSideComponentId">
@@ -16780,6 +16797,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.List/IsSystemList">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.List/ListFormCustomized">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.List/PageRenderType">
@@ -19702,6 +19722,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/ExportCSVFile(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetSiteCohortsSummary(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetSiteCreationSource(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService)">
@@ -25414,6 +25437,15 @@
         <End Type="SP.Web" Role="ActivityLoggerPartner" Multiplicity="0..1" />
       </Association>
     </Schema>
+    <Schema Namespace="Microsoft.SharePoint.Deployment" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="ShortcutInformation">
+        <Property Name="AddedById" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="TimeCreated" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="TimeLastModified" Type="Edm.DateTime" Nullable="false" />
+      </ComplexType>
+    </Schema>
     <Schema Namespace="Microsoft.SharePoint.Comments" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="CommentInformation">
         <Property Name="mentions" Type="Collection(Microsoft.SharePoint.Comments.Client.Identity)" />
@@ -26001,6 +26033,7 @@
         <Property Name="ListId" Type="Edm.Guid" Nullable="false" />
         <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
         <Property Name="Name" Type="Edm.String" />
+        <Property Name="RunningInstances" Type="Edm.Int32" Nullable="false" />
         <Property Name="TaskListTitle" Type="Edm.String" />
         <Property Name="WebId" Type="Edm.Guid" Nullable="false" />
       </EntityType>
@@ -26616,6 +26649,12 @@
       <ComplexType Name="ShowSelfServiceSiteCreation">
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="SiteCohortsSummary">
+        <Property Name="ActiveSitesCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="InactiveSitesCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="NeverUsedSitesCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TotalSitesCount" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="SiteCreationData">
         <Property Name="Count" Type="Edm.Int32" Nullable="false" />
