@@ -42,6 +42,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.SharePoint.ClientSideComponent](./Microsoft.SharePoint.ClientSideComponent) | ✅ | ✅ | ✅ | ❌
 [Microsoft.SharePoint.Comments](./Microsoft.SharePoint.Comments) | ✅ | ✅ | ❌ | ❌
 [Microsoft.SharePoint.Comments.Client](./Microsoft.SharePoint.Comments.Client) | ✅ | ✅ | ❌ | ❌
+[Microsoft.SharePoint.Deployment](./Microsoft.SharePoint.Deployment) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Flighting.Runtime](./Microsoft.SharePoint.Flighting.Runtime) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Internal](./Microsoft.SharePoint.Internal) | ✅ | ✅ | ❌ | ❌
 [Microsoft.SharePoint.Internal.ClientSideComponent](./Microsoft.SharePoint.Internal.ClientSideComponent) | ✅ | ✅ | ❌ | ❌

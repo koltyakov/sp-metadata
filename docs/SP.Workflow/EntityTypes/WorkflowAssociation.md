@@ -22,5 +22,6 @@ IsDeclarative (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 ListId (Edm.Guid) | ✅ | ✅ | ✅ | ✅
 Modified (Edm.DateTime) | ✅ | ✅ | ✅ | ✅
 Name (Edm.String) | ✅ | ✅ | ✅ | ✅
+RunningInstances (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 TaskListTitle (Edm.String) | ✅ | ✅ | ✅ | ✅
 WebId (Edm.Guid) | ✅ | ✅ | ✅ | ✅

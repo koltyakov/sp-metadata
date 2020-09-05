@@ -181,6 +181,7 @@ EnsureSignoffStatusField (SP.List) | ✅ | ❌ | ❌ | ❌
 EnsureSiteAssetsLibrary (Collection(SP.List)) | ✅ | ✅ | ✅ | ✅
 EnsureSitePagesLibrary (Collection(SP.List)) | ✅ | ✅ | ✅ | ✅
 EnsureUser (SP.Web) | ✅ | ✅ | ✅ | ✅
+EnsureUserByObjectId (SP.Web) | ✅ | ❌ | ❌ | ❌
 ExecuteCobaltRequest (SP.File) | ✅ | ✅ | ✅ | ❌
 ExecuteRemoteLOB (SP.Web) | ✅ | ✅ | ✅ | ✅
 Expire (SP.User) | ✅ | ❌ | ❌ | ❌

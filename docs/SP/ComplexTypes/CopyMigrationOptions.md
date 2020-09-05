@@ -17,3 +17,4 @@ IsMoveMode (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 MoveAndShareFileInfo (SP.SPMoveAndShareFileInfo) | ✅ | ❌ | ❌ | ❌
 MoveButKeepSource (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 NameConflictBehavior (Edm.Int32) | ✅ | ✅ | ❌ | ❌
+SameWebCopyMoveOptimization (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

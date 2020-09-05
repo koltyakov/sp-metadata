@@ -66,6 +66,7 @@ LastItemDeletedDate (Edm.DateTime) | ✅ | ✅ | ✅ | ✅
 LastItemModifiedDate (Edm.DateTime) | ✅ | ✅ | ✅ | ✅
 LastItemUserModifiedDate (Edm.DateTime) | ✅ | ✅ | ❌ | ❌
 ListExperienceOptions (Edm.Int32) | ✅ | ✅ | ❌ | ❌
+ListFormCustomized (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ListItemEntityTypeFullName (Edm.String) | ✅ | ✅ | ✅ | ✅
 MajorVersionLimit (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 MajorWithMinorVersionsLimit (Edm.Int32) | ✅ | ✅ | ✅ | ✅
