@@ -33,6 +33,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.SharePoint.AddToOneDrive](./Microsoft.SharePoint.AddToOneDrive) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Administration](./Microsoft.SharePoint.Administration) | ✅ | ✅ | ✅ | ✅
 [Microsoft.SharePoint.AppManagement](./Microsoft.SharePoint.AppManagement) | ✅ | ❌ | ❌ | ❌
+[Microsoft.SharePoint.AuthPolicy](./Microsoft.SharePoint.AuthPolicy) | ✅ (❌) | ❌ | ❌ | ❌
 [Microsoft.SharePoint.AuthPolicy.Events](./Microsoft.SharePoint.AuthPolicy.Events) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Client.Search.Administration](./Microsoft.SharePoint.Client.Search.Administration) | ✅ | ✅ | ✅ | ✅
 [Microsoft.SharePoint.Client.Search.Analytics](./Microsoft.SharePoint.Client.Search.Analytics) | ✅ | ✅ | ✅ | ✅

@@ -24,6 +24,7 @@ SP_Translation_TranslationJob_IsServiceEnabled | ✅ | ✅ | ✅ | ✅
 [<span title="SP_Translation_VariationsTranslationTimerJob_ImportTranslationPackage">SP_Translation_VariationsTranslationTimerJob_Impor...</span> (SP Translation VariationsTranslationTimerJob ImportTranslationPackage)](./Functions/SP_Translation_VariationsTranslationTimerJob_ImportTranslationPackage.md) | ✅ | ✅ | ✅ | ✅
 [<span title="SP_Translation_VariationsTranslationTimerJob_MachineTranslateItems">SP_Translation_VariationsTranslationTimerJob_Machi...</span> (SP Translation VariationsTranslationTimerJob MachineTranslateItems)](./Functions/SP_Translation_VariationsTranslationTimerJob_MachineTranslateItems.md) | ✅ | ✅ | ✅ | ✅
 [<span title="SP_Translation_VariationsTranslationTimerJob_MachineTranslateItemsRequiringTranslation">SP_Translation_VariationsTranslationTimerJob_Machi...</span> (SP Translation VariationsTranslationTimerJob MachineTranslateItemsRequiringTranslation)](./Functions/SP_Translation_VariationsTranslationTimerJob_MachineTranslateItemsRequiringTranslation.md) | ✅ | ✅ | ✅ | ✅
+Set (SP.TranslationStatusCollection) | ✅ (❌) | ❌ | ❌ | ❌
 Translate (SP.Translation.SyncTranslator) | ✅ | ✅ | ✅ | ✅
 TranslateFile (SP.Translation.TranslationJob) | ✅ | ✅ | ✅ | ✅
 TranslateFolder (SP.Translation.TranslationJob) | ✅ | ✅ | ✅ | ✅

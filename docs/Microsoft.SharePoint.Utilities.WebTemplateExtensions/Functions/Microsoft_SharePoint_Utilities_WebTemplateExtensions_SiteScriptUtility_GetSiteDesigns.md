@@ -1,4 +1,4 @@
-# Function Import: Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignMetadata
+# Function Import: Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesigns
 
 > Namespace: Microsoft.SharePoint.Utilities.WebTemplateExtensions
 
@@ -9,5 +9,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-id (Edm.Guid) | ✅ | ✅ | ❌ | ❌
+includeUntargeted (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
 store (Edm.Int32) | ✅ (❌) | ❌ | ❌ | ❌

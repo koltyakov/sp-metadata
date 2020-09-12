@@ -92,6 +92,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [RenderListDataOverrideParameters](./ComplexTypes/RenderListDataOverrideParameters.md) | ✅ | ✅ | ✅ | ❌
 [RenderListDataParameters](./ComplexTypes/RenderListDataParameters.md) | ✅ | ✅ | ✅ | ❌
 [RenderListFilterDataParameters](./ComplexTypes/RenderListFilterDataParameters.md) | ✅ | ✅ | ✅ | ❌
+[RequestedTranslation](./ComplexTypes/RequestedTranslation.md) | ✅ (❌) | ❌ | ❌ | ❌
 [ResourcePath](./ComplexTypes/ResourcePath.md) | ✅ | ✅ | ❌ | ❌
 [RoleDefinitionCreationInformation](./ComplexTypes/RoleDefinitionCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [SPHSiteReference](./ComplexTypes/SPHSiteReference.md) | ✅ | ❌ | ❌ | ❌
@@ -115,6 +116,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [TranslationNotificationRecipientSetRequest](./ComplexTypes/TranslationNotificationRecipientSetRequest.md) | ✅ | ❌ | ❌ | ❌
 [TranslationStatus](./ComplexTypes/TranslationStatus.md) | ✅ | ❌ | ❌ | ❌
 [TranslationStatusCreationRequest](./ComplexTypes/TranslationStatusCreationRequest.md) | ✅ | ❌ | ❌ | ❌
+[TranslationStatusSetRequest](./ComplexTypes/TranslationStatusSetRequest.md) | ✅ (❌) | ❌ | ❌ | ❌
 [UpgradeInfo](./ComplexTypes/UpgradeInfo.md) | ✅ | ✅ | ✅ | ✅
 [UsageInfo](./ComplexTypes/UsageInfo.md) | ✅ | ✅ | ✅ | ✅
 [UserCreationInformation](./ComplexTypes/UserCreationInformation.md) | ✅ | ✅ | ✅ | ✅

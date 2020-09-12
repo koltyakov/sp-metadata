@@ -140,6 +140,7 @@ FeatureDefinitions | ✅ | ❌ | ❌ | ❌
 Features | ✅ | ✅ | ✅ | ✅
 FieldLinks | ✅ | ✅ | ✅ | ✅
 FieldStringValuess | ✅ | ✅ | ✅ | ✅
+FieldThumbnails | ✅ (❌) | ❌ | ❌ | ❌
 Fields | ✅ | ✅ | ✅ | ✅
 FileHandlerWopiPropertiess | ✅ | ✅ | ❌ | ❌
 FileServices | ✅ | ✅ | ✅ | ❌
@@ -408,6 +409,7 @@ SPPolicyStoreProxys | ✅ | ❌ | ❌ | ❌
 SPSitePreservationUtilitys | ✅ | ❌ | ❌ | ❌
 SPSocialSwitchs | ✅ | ✅ | ❌ | ❌
 SPTenantAppInstanceDatas | ✅ | ❌ | ❌ | ❌
+SPTenantIBPolicyComplianceReportEntityDatas | ✅ (❌) | ❌ | ❌ | ❌
 SPWebApplications | ✅ | ❌ | ❌ | ❌
 SPWebServices | ✅ | ❌ | ❌ | ❌
 SPWorkflowManagers | ✅ | ❌ | ❌ | ❌

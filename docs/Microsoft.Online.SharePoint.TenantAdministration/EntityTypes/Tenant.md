@@ -37,7 +37,7 @@ CompatibilityRange (Edm.String) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicy (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicyErrorHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌
 ContentTypeSyncSiteTemplatesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
-CortexLicenseEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+CortexLicenseEnabled (Edm.Boolean) | ❌ (✅) | ❌ | ❌ | ❌
 CustomizedExternalSharingServiceUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 DefaultContentCenterSite (Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker) | ✅ | ❌ | ❌ | ❌
 DefaultLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
@@ -46,6 +46,7 @@ DisableAddToOneDrive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableCustomAppAuthentication (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisablePersonalListCreation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableReportProblemDialog (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+DisabledModernListTemplateIds (Collection(Edm.Guid)) | ✅ (❌) | ❌ | ❌ | ❌
 DisabledWebPartIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 DisallowInfectedFileDownload (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisplayNamesOfFileViewers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

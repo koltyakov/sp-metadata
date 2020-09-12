@@ -4,6 +4,7 @@
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+ExportSearchReports (Microsoft.Office.Server.Search.REST.SearchSetting) | ✅ (❌) | ❌ | ❌ | ❌
 Microsoft_Office_Server_Search_REST_SearchService | ✅ | ✅ | ✅ | ✅
 Microsoft_Office_Server_Search_REST_SearchSetting | ✅ | ✅ | ❌ | ❌
 RecordPageClick (Microsoft.Office.Server.Search.REST.SearchService) | ✅ | ✅ | ✅ | ❌

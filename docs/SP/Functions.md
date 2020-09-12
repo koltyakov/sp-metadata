@@ -112,7 +112,7 @@ DeleteObject (SP.FieldMultiLineText) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.FieldNumber) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.FieldRatingScale) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.FieldText) | ✅ | ✅ | ✅ | ✅
-DeleteObject (SP.FieldThumbnail) | ✅ | ❌ | ❌ | ❌
+DeleteObject (SP.FieldThumbnail) | ❌ (✅) | ❌ | ❌ | ❌
 DeleteObject (SP.FieldUrl) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.FieldUser) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.File) | ✅ | ✅ | ✅ | ✅
@@ -152,7 +152,7 @@ DisableIndex (SP.FieldMultiLineText) | ✅ | ❌ | ❌ | ❌
 DisableIndex (SP.FieldNumber) | ✅ | ❌ | ❌ | ❌
 DisableIndex (SP.FieldRatingScale) | ✅ | ❌ | ❌ | ❌
 DisableIndex (SP.FieldText) | ✅ | ❌ | ❌ | ❌
-DisableIndex (SP.FieldThumbnail) | ✅ | ❌ | ❌ | ❌
+DisableIndex (SP.FieldThumbnail) | ❌ (✅) | ❌ | ❌ | ❌
 DisableIndex (SP.FieldUrl) | ✅ | ❌ | ❌ | ❌
 DisableIndex (SP.FieldUser) | ✅ | ❌ | ❌ | ❌
 DoesPushNotificationSubscriberExist (SP.Web) | ✅ | ✅ | ✅ | ✅
@@ -172,7 +172,7 @@ EnableIndex (SP.FieldMultiLineText) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldNumber) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldRatingScale) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldText) | ✅ | ❌ | ❌ | ❌
-EnableIndex (SP.FieldThumbnail) | ✅ | ❌ | ❌ | ❌
+EnableIndex (SP.FieldThumbnail) | ❌ (✅) | ❌ | ❌ | ❌
 EnableIndex (SP.FieldUrl) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldUser) | ✅ | ❌ | ❌ | ❌
 EnsureClientRenderedSitePagesLibrary (Collection(SP.List)) | ✅ | ✅ | ❌ | ❌
@@ -560,6 +560,7 @@ SP_ServerSettings_GetBlockedFileExtensions | ✅ | ✅ | ✅ | ✅
 SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌
 [SP_Site_Exists](./Functions/SP_Site_Exists.md) | ✅ | ✅ | ❌ | ❌
 [SP_Site_GetUrlById](./Functions/SP_Site_GetUrlById.md) | ✅ | ❌ | ❌ | ❌
+[SP_Site_GetUrlByIdForWeb](./Functions/SP_Site_GetUrlByIdForWeb.md) | ✅ (❌) | ❌ | ❌ | ❌
 [SP_TeamChannelManager_AddTeamChannel](./Functions/SP_TeamChannelManager_AddTeamChannel.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_DemoteTeamChannelById](./Functions/SP_TeamChannelManager_DemoteTeamChannelById.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_DemoteTeamChannelByPath](./Functions/SP_TeamChannelManager_DemoteTeamChannelByPath.md) | ✅ | ✅ | ❌ | ❌
@@ -621,7 +622,7 @@ SetShowInDisplayForm (SP.FieldMultiLineText) | ✅ | ✅ | ✅ | ✅
 SetShowInDisplayForm (SP.FieldNumber) | ✅ | ✅ | ✅ | ✅
 SetShowInDisplayForm (SP.FieldRatingScale) | ✅ | ✅ | ✅ | ✅
 SetShowInDisplayForm (SP.FieldText) | ✅ | ✅ | ✅ | ✅
-SetShowInDisplayForm (SP.FieldThumbnail) | ✅ | ❌ | ❌ | ❌
+SetShowInDisplayForm (SP.FieldThumbnail) | ❌ (✅) | ❌ | ❌ | ❌
 SetShowInDisplayForm (SP.FieldUrl) | ✅ | ✅ | ✅ | ✅
 SetShowInDisplayForm (SP.FieldUser) | ✅ | ✅ | ✅ | ✅
 SetShowInEditForm (SP.Field) | ✅ | ✅ | ✅ | ✅
@@ -639,7 +640,7 @@ SetShowInEditForm (SP.FieldMultiLineText) | ✅ | ✅ | ✅ | ✅
 SetShowInEditForm (SP.FieldNumber) | ✅ | ✅ | ✅ | ✅
 SetShowInEditForm (SP.FieldRatingScale) | ✅ | ✅ | ✅ | ✅
 SetShowInEditForm (SP.FieldText) | ✅ | ✅ | ✅ | ✅
-SetShowInEditForm (SP.FieldThumbnail) | ✅ | ❌ | ❌ | ❌
+SetShowInEditForm (SP.FieldThumbnail) | ❌ (✅) | ❌ | ❌ | ❌
 SetShowInEditForm (SP.FieldUrl) | ✅ | ✅ | ✅ | ✅
 SetShowInEditForm (SP.FieldUser) | ✅ | ✅ | ✅ | ✅
 SetShowInNewForm (SP.Field) | ✅ | ✅ | ✅ | ✅
@@ -657,7 +658,7 @@ SetShowInNewForm (SP.FieldMultiLineText) | ✅ | ✅ | ✅ | ✅
 SetShowInNewForm (SP.FieldNumber) | ✅ | ✅ | ✅ | ✅
 SetShowInNewForm (SP.FieldRatingScale) | ✅ | ✅ | ✅ | ✅
 SetShowInNewForm (SP.FieldText) | ✅ | ✅ | ✅ | ✅
-SetShowInNewForm (SP.FieldThumbnail) | ✅ | ❌ | ❌ | ❌
+SetShowInNewForm (SP.FieldThumbnail) | ❌ (✅) | ❌ | ❌ | ❌
 SetShowInNewForm (SP.FieldUrl) | ✅ | ✅ | ✅ | ✅
 SetShowInNewForm (SP.FieldUser) | ✅ | ✅ | ✅ | ✅
 SetStorageEntity (SP.Web) | ✅ | ✅ | ❌ | ❌
@@ -702,7 +703,7 @@ Update (SP.FieldMultiLineText) | ✅ | ✅ | ✅ | ✅
 Update (SP.FieldNumber) | ✅ | ✅ | ✅ | ✅
 Update (SP.FieldRatingScale) | ✅ | ✅ | ✅ | ✅
 Update (SP.FieldText) | ✅ | ✅ | ✅ | ✅
-Update (SP.FieldThumbnail) | ✅ | ❌ | ❌ | ❌
+Update (SP.FieldThumbnail) | ❌ (✅) | ❌ | ❌ | ❌
 Update (SP.FieldUrl) | ✅ | ✅ | ✅ | ✅
 Update (SP.FieldUser) | ✅ | ✅ | ✅ | ✅
 Update (SP.File) | ✅ | ✅ | ✅ | ❌

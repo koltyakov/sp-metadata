@@ -29,6 +29,7 @@ IsFlightEnabled (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationSP
 ParseUrl (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage) | ✅ | ❌ | ❌ | ❌
 SetProperty (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationProperties) | ✅ | ❌ | ❌ | ❌
 TeamChannels (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterTeams) | ✅ | ❌ | ❌ | ❌
+TeamChannelsExperiment (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterTeams) | ✅ (❌) | ❌ | ❌ | ❌
 Teams (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterTeams) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.MigrationCenter.Service.Device) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage) | ✅ | ❌ | ❌ | ❌
