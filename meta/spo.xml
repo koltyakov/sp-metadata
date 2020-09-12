@@ -105,6 +105,10 @@
         <Property Name="Url" Type="Edm.String" />
         <Property Name="WebId" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="RequestedTranslation">
+        <Property Name="LanguageCode" Type="Edm.String" />
+        <Property Name="WebRelativePath" Type="SP.ResourcePath" />
+      </ComplexType>
       <ComplexType Name="ScriptSafeDomainEntityData">
         <Property Name="DomainName" Type="Edm.String" />
       </ComplexType>
@@ -912,6 +916,9 @@
       </ComplexType>
       <ComplexType Name="TranslationStatusCreationRequest">
         <Property Name="LanguageCodes" Type="Collection(Edm.String)" />
+      </ComplexType>
+      <ComplexType Name="TranslationStatusSetRequest">
+        <Property Name="RequestedTranslations" Type="Collection(SP.RequestedTranslation)" />
       </ComplexType>
       <ComplexType Name="TranslationStatus">
         <Property Name="Culture" Type="Edm.String" />
@@ -2610,7 +2617,12 @@
       <EntityType Name="FieldText" BaseType="SP.Field">
         <Property Name="MaxLength" Type="Edm.Int32" Nullable="false" />
       </EntityType>
-      <EntityType Name="FieldThumbnail" BaseType="SP.FieldMultiLineText" />
+      <EntityType Name="FieldThumbnail">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="FieldUrl" BaseType="SP.Field">
         <Property Name="DisplayFormat" Type="Edm.Int32" Nullable="false" />
       </EntityType>
@@ -3740,6 +3752,7 @@
         <EntitySet Name="SPWebServices" EntityType="Microsoft.SharePoint.Administration.SPWebService" />
         <EntitySet Name="SPAppPrincipalInfos" EntityType="Microsoft.SharePoint.AppManagement.SPAppPrincipalInfo" />
         <EntitySet Name="SPAuthEvents" EntityType="Microsoft.SharePoint.AuthPolicy.Events.SPAuthEvent" />
+        <EntitySet Name="SPTenantIBPolicyComplianceReportEntityDatas" EntityType="Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReportEntityData" />
         <EntitySet Name="DocumentCrawlLogs" EntityType="Microsoft.SharePoint.Client.Search.Administration.DocumentCrawlLog" />
         <EntitySet Name="SignalStores" EntityType="Microsoft.SharePoint.Client.Search.Analytics.SignalStore" />
         <EntitySet Name="QueryPersonalizationDatas" EntityType="Microsoft.SharePoint.Client.Search.Query.QueryPersonalizationData" />
@@ -3936,6 +3949,7 @@
         <EntitySet Name="Fields" EntityType="SP.Field" />
         <EntitySet Name="FieldLinks" EntityType="SP.FieldLink" />
         <EntitySet Name="FieldStringValuess" EntityType="SP.FieldStringValues" />
+        <EntitySet Name="FieldThumbnails" EntityType="SP.FieldThumbnail" />
         <EntitySet Name="Files12" EntityType="SP.File" />
         <EntitySet Name="FileVersions" EntityType="SP.FileVersion" />
         <EntitySet Name="FileVersionEvents" EntityType="SP.FileVersionEvent" />
@@ -8083,6 +8097,15 @@
           <Parameter Name="zeroTermSuggestions" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Office_Server_Search_REST_SearchSetting" ReturnType="Microsoft.Office.Server.Search.REST.SearchSetting" IsComposable="true" EntitySet="SearchSettings" />
+        <FunctionImport Name="ExportSearchReports" ReturnType="Microsoft.Office.Server.Search.REST.ReportBase" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Office.Server.Search.REST.SearchSetting" />
+          <Parameter Name="TenantId" Type="Edm.String" />
+          <Parameter Name="ReportType" Type="Edm.String" />
+          <Parameter Name="Interval" Type="Edm.String" />
+          <Parameter Name="StartDate" Type="Edm.String" />
+          <Parameter Name="EndDate" Type="Edm.String" />
+          <Parameter Name="SiteCollectionId" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="getpromotedresultqueryrules" ReturnType="Microsoft.Office.Server.Search.REST.PromotedResultsOperationsResult" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.Search.REST.SearchSetting" />
           <Parameter Name="siteCollectionLevel" Type="Edm.Boolean" Nullable="false" />
@@ -8837,6 +8860,7 @@
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplySiteDesign" ReturnType="Collection(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptActionResult)">
           <Parameter Name="webUrl" Type="Edm.String" />
           <Parameter Name="siteDesignId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="store" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteDesign" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignMetadata">
           <Parameter Name="info" Type="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignCreationInfo" />
@@ -8870,6 +8894,7 @@
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetHiddenBuiltInDesignPackages" ReturnType="Edm.Int64" />
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignMetadata" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignMetadata">
           <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="store" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignRights" ReturnType="Collection(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignPrincipal)" EntitySet="SiteDesignPrincipals">
           <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
@@ -8885,7 +8910,10 @@
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignRunStatusAndSchema" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SPSiteScriptStatusAndSchema">
           <Parameter Name="runId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesigns" ReturnType="Collection(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignMetadata)" />
+        <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesigns" ReturnType="Collection(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignMetadata)">
+          <Parameter Name="includeUntargeted" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="store" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignStages" ReturnType="Edm.String">
           <Parameter Name="siteDesignId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
@@ -8904,8 +8932,11 @@
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteScriptMetadata" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptMetadata">
           <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="store" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteScripts" ReturnType="Collection(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptMetadata)" />
+        <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteScripts" ReturnType="Collection(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptMetadata)">
+          <Parameter Name="store" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GrantSiteDesignRights">
           <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="principalNames" Type="Collection(Edm.String)" />
@@ -9259,6 +9290,20 @@
         <FunctionImport Name="IndexStore" IsBindable="true">
           <Parameter Name="this" Type="SP.BusinessData.Infrastructure.ExternalSubscriptionStore" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_AuthPolicy_SPTenantIBPolicyComplianceReportCollection" ReturnType="Collection(Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReport)" IsComposable="true" EntitySet="SPTenantIBPolicyComplianceReportEntityDatas" />
+        <FunctionImport Name="GetAllReportStates" ReturnType="Collection(Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReport)" IsComposable="true" IsBindable="true" EntitySet="SPTenantIBPolicyComplianceReportEntityDatas">
+          <Parameter Name="this" Type="Collection(Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReport)" />
+        </FunctionImport>
+        <FunctionImport Name="GetReportById" ReturnType="Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReport" IsComposable="true" IsBindable="true" EntitySet="SPTenantIBPolicyComplianceReportEntityDatas">
+          <Parameter Name="this" Type="Collection(Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReport)" />
+          <Parameter Name="ReportId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="RemoveFinalizedReport" IsBindable="true">
+          <Parameter Name="this" Type="Collection(Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReport)" />
+          <Parameter Name="ReportId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_AuthPolicy_SPTenantIBPolicyComplianceReportEntityData" ReturnType="Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReportEntityData" IsComposable="true" EntitySet="SPTenantIBPolicyComplianceReportEntityDatas" />
+        <FunctionImport Name="Microsoft_SharePoint_AuthPolicy_SPTenantIBPolicyComplianceReport" ReturnType="Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReport" IsComposable="true" EntitySet="SPTenantIBPolicyComplianceReportEntityDatas" />
         <FunctionImport Name="Microsoft_SharePoint_AuthPolicy_Events_SPAuthEvents" ReturnType="Collection(Microsoft.SharePoint.AuthPolicy.Events.SPAuthEvent)" IsComposable="true" EntitySet="SPAuthEvents" />
         <FunctionImport Name="Microsoft_SharePoint_AuthPolicy_Events_SPAuthEvent" ReturnType="Microsoft.SharePoint.AuthPolicy.Events.SPAuthEvent" IsComposable="true" EntitySet="SPAuthEvents" />
         <FunctionImport Name="SP_Analytics_AnalyticsUsageEntry_LogAnalyticsAppEvent">
@@ -10742,30 +10787,6 @@
           <Parameter Name="this" Type="SP.FieldText" />
         </FunctionImport>
         <FunctionImport Name="DeleteObject" IsBindable="true">
-          <Parameter Name="this" Type="SP.FieldThumbnail" />
-        </FunctionImport>
-        <FunctionImport Name="DisableIndex" ReturnType="Edm.Int32" IsBindable="true">
-          <Parameter Name="this" Type="SP.FieldThumbnail" />
-        </FunctionImport>
-        <FunctionImport Name="EnableIndex" ReturnType="Edm.Int32" IsBindable="true">
-          <Parameter Name="this" Type="SP.FieldThumbnail" />
-        </FunctionImport>
-        <FunctionImport Name="SetShowInDisplayForm" IsBindable="true">
-          <Parameter Name="this" Type="SP.FieldThumbnail" />
-          <Parameter Name="value" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="SetShowInEditForm" IsBindable="true">
-          <Parameter Name="this" Type="SP.FieldThumbnail" />
-          <Parameter Name="value" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="SetShowInNewForm" IsBindable="true">
-          <Parameter Name="this" Type="SP.FieldThumbnail" />
-          <Parameter Name="value" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="Update" IsBindable="true">
-          <Parameter Name="this" Type="SP.FieldThumbnail" />
-        </FunctionImport>
-        <FunctionImport Name="DeleteObject" IsBindable="true">
           <Parameter Name="this" Type="SP.FieldUrl" />
         </FunctionImport>
         <FunctionImport Name="DisableIndex" ReturnType="Edm.Int32" IsBindable="true">
@@ -11554,6 +11575,11 @@
           <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="stopRedirect" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="SP_Site_GetUrlByIdForWeb" ReturnType="Edm.String" IsSideEffecting="false">
+          <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="stopRedirect" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="webId" Type="Edm.Guid" />
+        </FunctionImport>
         <FunctionImport Name="GetWebPath" ReturnType="SP.ResourcePath" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Site" />
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
@@ -12298,6 +12324,10 @@
         <FunctionImport Name="Create" ReturnType="SP.TranslationStatusCollection" IsBindable="true" EntitySet="TranslationStatusCollections">
           <Parameter Name="this" Type="SP.TranslationStatusCollection" />
           <Parameter Name="request" Type="SP.TranslationStatusCreationRequest" />
+        </FunctionImport>
+        <FunctionImport Name="Set" ReturnType="SP.TranslationStatusCollection" IsBindable="true" EntitySet="TranslationStatusCollections">
+          <Parameter Name="this" Type="SP.TranslationStatusCollection" />
+          <Parameter Name="request" Type="SP.TranslationStatusSetRequest" />
         </FunctionImport>
         <FunctionImport Name="UpdateTranslationLanguages" IsBindable="true">
           <Parameter Name="this" Type="SP.TranslationStatusCollection" />
@@ -13172,10 +13202,16 @@
           <Parameter Name="teamId" Type="Edm.String" />
           <Parameter Name="membershipType" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="TeamChannelsExperiment" ReturnType="Collection(Microsoft.Online.SharePoint.MigrationCenter.Common.Teams.ChannelResource)" IsComposable="true" IsBindable="true" EntitySet="ChannelResources">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterTeams" />
+          <Parameter Name="teamId" Type="Edm.String" />
+          <Parameter Name="membershipType" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="Teams" ReturnType="Collection(Microsoft.Online.SharePoint.MigrationCenter.Common.Teams.TeamResource)" IsComposable="true" IsBindable="true" EntitySet="TeamResources">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterTeams" />
           <Parameter Name="startsWith" Type="Edm.String" />
           <Parameter Name="limit" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="withLogo" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetById" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential" IsComposable="true" IsBindable="true" EntitySet="MigrationCredentialEntityDatas">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential)" />
@@ -15602,6 +15638,9 @@
       <Annotations Target="SP.CurrencyInformation">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.RequestedTranslation">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ScriptSafeDomainEntityData">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -15936,6 +15975,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.TranslationStatusCreationRequest">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.TranslationStatusSetRequest">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.TranslationStatus">
@@ -18779,7 +18821,7 @@
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplyImplicitSiteDesign()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplySiteDesign(Edm.String, Edm.Guid)">
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplySiteDesign(Edm.String, Edm.Guid, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteDesign(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignCreationInfo)">
@@ -18812,7 +18854,7 @@
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetHiddenBuiltInDesignPackages()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignMetadata(Edm.Guid)">
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignMetadata(Edm.Guid, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignRights(Edm.Guid)">
@@ -18827,7 +18869,7 @@
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignRunStatusAndSchema(Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesigns()">
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesigns(Edm.Boolean, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignStages(Edm.Guid)">
@@ -18845,10 +18887,10 @@
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteScriptFromWeb(Edm.String, Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptSerializationInfo)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteScriptMetadata(Edm.Guid)">
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteScriptMetadata(Edm.Guid, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteScripts()">
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteScripts(Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GrantSiteDesignRights(Edm.Guid, Collection(Edm.String), Edm.Int64)">
@@ -19611,6 +19653,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Create(SP.TranslationStatusCollection, SP.TranslationStatusCreationRequest)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Set(SP.TranslationStatusCollection, SP.TranslationStatusSetRequest)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/UpdateTranslationLanguages(SP.TranslationStatusCollection)">
@@ -24412,6 +24457,75 @@
         <Property Name="Title" Type="Edm.String" />
         <Property Name="Url" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="ReportAbandonedQueriesData">
+        <Property Name="AbandonedPercentage" Type="Edm.Double" Nullable="false" />
+        <Property Name="QueryText" Type="Edm.String" />
+        <Property Name="ResultSource" Type="Edm.String" />
+        <Property Name="Total" Type="Edm.Int64" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="ReportAbandonedQueriesItem">
+        <Property Name="Date" Type="Edm.String" />
+        <Property Name="Report" Type="Collection(Microsoft.Office.Server.Search.REST.ReportAbandonedQueriesData)" />
+      </ComplexType>
+      <ComplexType Name="ReportBase" />
+      <ComplexType Name="ReportAbandonedQueries" BaseType="Microsoft.Office.Server.Search.REST.ReportBase">
+        <Property Name="Reports" Type="Collection(Microsoft.Office.Server.Search.REST.ReportAbandonedQueriesItem)" />
+      </ComplexType>
+      <ComplexType Name="ReportNoResultData">
+        <Property Name="NoResultPercentage" Type="Edm.Double" Nullable="false" />
+        <Property Name="QueryText" Type="Edm.String" />
+        <Property Name="ResultSource" Type="Edm.String" />
+        <Property Name="Total" Type="Edm.Int64" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="ReportNoResultItem">
+        <Property Name="Date" Type="Edm.String" />
+        <Property Name="Report" Type="Collection(Microsoft.Office.Server.Search.REST.ReportNoResultData)" />
+      </ComplexType>
+      <ComplexType Name="ReportNoResultQueries" BaseType="Microsoft.Office.Server.Search.REST.ReportBase">
+        <Property Name="Reports" Type="Collection(Microsoft.Office.Server.Search.REST.ReportNoResultItem)" />
+      </ComplexType>
+      <ComplexType Name="ReportNumberOfQueriesData">
+        <Property Name="Hits" Type="Edm.String" />
+        <Property Name="ResultSource" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ReportNumberOfQueriesItem">
+        <Property Name="Date" Type="Edm.String" />
+        <Property Name="Report" Type="Collection(Microsoft.Office.Server.Search.REST.ReportNumberOfQueriesData)" />
+      </ComplexType>
+      <ComplexType Name="ReportNumberOfQueries" BaseType="Microsoft.Office.Server.Search.REST.ReportBase">
+        <Property Name="Reports" Type="Collection(Microsoft.Office.Server.Search.REST.ReportNumberOfQueriesItem)" />
+      </ComplexType>
+      <ComplexType Name="ReportQueryRulesData">
+        <Property Name="DictionaryTerms" Type="Edm.Int64" Nullable="false" />
+        <Property Name="Owner" Type="Edm.String" />
+        <Property Name="OwnerType" Type="Edm.String" />
+        <Property Name="PercentagePromotedResult" Type="Edm.Double" Nullable="false" />
+        <Property Name="PromotedResultClicks" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PromotedResultURL" Type="Edm.String" />
+        <Property Name="QueryRule" Type="Edm.String" />
+        <Property Name="ResultSource" Type="Edm.String" />
+        <Property Name="TimesFired" Type="Edm.Int64" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="ReportQueryRulesItem">
+        <Property Name="Date" Type="Edm.String" />
+        <Property Name="Report" Type="Collection(Microsoft.Office.Server.Search.REST.ReportQueryRulesData)" />
+      </ComplexType>
+      <ComplexType Name="ReportQueryRules" BaseType="Microsoft.Office.Server.Search.REST.ReportBase">
+        <Property Name="Reports" Type="Collection(Microsoft.Office.Server.Search.REST.ReportQueryRulesItem)" />
+      </ComplexType>
+      <ComplexType Name="ReportTopQueriesData">
+        <Property Name="QueryPercentage" Type="Edm.Double" Nullable="false" />
+        <Property Name="QueryText" Type="Edm.String" />
+        <Property Name="ResultSource" Type="Edm.String" />
+        <Property Name="Total" Type="Edm.Int64" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="ReportTopQueriesItem">
+        <Property Name="Date" Type="Edm.String" />
+        <Property Name="Report" Type="Collection(Microsoft.Office.Server.Search.REST.ReportTopQueriesData)" />
+      </ComplexType>
+      <ComplexType Name="ReportTopQueries" BaseType="Microsoft.Office.Server.Search.REST.ReportBase">
+        <Property Name="Reports" Type="Collection(Microsoft.Office.Server.Search.REST.ReportTopQueriesItem)" />
+      </ComplexType>
       <ComplexType Name="ScsEndpoint">
         <Property Name="FarmLabel" Type="Edm.String" />
         <Property Name="PushServiceLocation" Type="Edm.String" />
@@ -24715,6 +24829,7 @@
       <ComplexType Name="M365TabItem">
         <Property Name="displayName" Type="Edm.String" />
         <Property Name="isDefault" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="itemType" Type="Edm.Int32" Nullable="false" />
         <Property Name="url" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="PinToTeamParams">
@@ -26969,13 +27084,13 @@
         <Property Name="ConditionalAccessPolicy" Type="Edm.Int32" Nullable="false" />
         <Property Name="ConditionalAccessPolicyErrorHelpLink" Type="Edm.String" />
         <Property Name="ContentTypeSyncSiteTemplatesList" Type="Collection(Edm.String)" />
-        <Property Name="CortexLicenseEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CustomizedExternalSharingServiceUrl" Type="Edm.String" />
         <Property Name="DefaultContentCenterSite" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker" />
         <Property Name="DefaultLinkPermission" Type="Edm.Int32" Nullable="false" />
         <Property Name="DefaultSharingLinkType" Type="Edm.Int32" Nullable="false" />
         <Property Name="DisableAddToOneDrive" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableCustomAppAuthentication" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisabledModernListTemplateIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="DisabledWebPartIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="DisablePersonalListCreation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableReportProblemDialog" Type="Edm.Boolean" Nullable="false" />
@@ -28631,6 +28746,22 @@
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
     </Schema>
+    <Schema Namespace="Microsoft.SharePoint.AuthPolicy" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="SPTenantIBPolicyComplianceReportEntityData">
+        <Key>
+          <PropertyRef Name="AutoHeal" />
+        </Key>
+        <Property Name="AutoHeal" Type="Edm.Boolean" Nullable="false" />
+      </EntityType>
+      <EntityType Name="SPTenantIBPolicyComplianceReport" BaseType="Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReportEntityData">
+        <Property Name="CompleteTimeInUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Content" Type="Collection(Edm.String)" />
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="QueuedTimeInUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="StartTimeInUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="State" Type="Edm.String" />
+      </EntityType>
+    </Schema>
     <Schema Namespace="Microsoft.SharePoint.AuthPolicy.Events" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="SPAuthEvent">
         <Key>
@@ -28729,6 +28860,7 @@
         <Property Name="DefaultSharingLinkType" Type="Edm.Int32" Nullable="false" />
         <Property Name="DisableAddToOneDrive" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableCustomAppAuthentication" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisabledModernListTemplateIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="DisablePersonalListCreation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisplayStartASiteOption" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EmailAttestationEnabled" Type="Edm.Boolean" Nullable="false" />
