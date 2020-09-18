@@ -530,6 +530,7 @@
         <Property Name="BypassSharedLock" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
       <ComplexType Name="ListItemFormUpdateValue">
+        <Property Name="ErrorCode" Type="Edm.Int32" Nullable="false" />
         <Property Name="ErrorMessage" Type="Edm.String" />
         <Property Name="FieldName" Type="Edm.String" />
         <Property Name="FieldValue" Type="Edm.String" />
@@ -1541,6 +1542,7 @@
         <Property Name="ListExperienceOptions" Type="Edm.Int32" Nullable="false" />
         <Property Name="ListFormCustomized" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ListItemEntityTypeFullName" Type="Edm.String" />
+        <Property Name="ListSchemaVersion" Type="Edm.Int32" Nullable="false" />
         <Property Name="MajorVersionLimit" Type="Edm.Int32" Nullable="false" />
         <Property Name="MajorWithMinorVersionsLimit" Type="Edm.Int32" Nullable="false" />
         <Property Name="MultipleDataList" Type="Edm.Boolean" Nullable="false" />
@@ -1554,6 +1556,7 @@
         <Property Name="SchemaXml" Type="Edm.String" />
         <Property Name="ServerTemplateCanCreateFolders" Type="Edm.Boolean" Nullable="false" />
         <Property Name="TemplateFeatureId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="TemplateTypeId" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
         <Property Name="ValidationFormula" Type="Edm.String" />
         <Property Name="ValidationMessage" Type="Edm.String" />
@@ -5387,16 +5390,7 @@
           <Parameter Name="requestBodyStream" Type="Edm.Stream" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_Onboarding_RestService_OnboardingServicesBeta" ReturnType="Microsoft.Online.SharePoint.Onboarding.RestService.OnboardingServicesBeta" IsComposable="true" EntitySet="OnboardingServicesBetas" />
-        <FunctionImport Name="GetJobById" ReturnType="Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob" IsComposable="true" IsBindable="true" EntitySet="TenantRenameJobEntityDatas">
-          <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob)" />
-          <Parameter Name="jobId" Type="Edm.Guid" Nullable="false" />
-          <Parameter Name="loadProgressState" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="GetJobsByState" ReturnType="Collection(Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob)" IsComposable="true" IsBindable="true" EntitySet="TenantRenameJobEntityDatas">
-          <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob)" />
-          <Parameter Name="state" Type="Edm.Int32" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="GetState" ReturnType="Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob" IsComposable="true" IsBindable="true" EntitySet="TenantRenameJobEntityDatas">
+        <FunctionImport Name="Get" ReturnType="Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob" IsComposable="true" IsBindable="true" EntitySet="TenantRenameJobEntityDatas">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob)" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_Onboarding_RestService_TenantRename_TenantRenameJob" ReturnType="Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob" IsComposable="true" EntitySet="TenantRenameJobEntityDatas" />
@@ -6412,10 +6406,6 @@
           <Parameter Name="postId" Type="Edm.String" />
           <Parameter Name="like" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="PS_LookupTables_InvalidNameCharacters" ReturnType="Collection(Edm.String)" IsSideEffecting="false" />
-        <FunctionImport Name="DeleteObject" IsBindable="true">
-          <Parameter Name="this" Type="PS.CalendarException" />
-        </FunctionImport>
         <FunctionImport Name="DeleteObject" IsBindable="true">
           <Parameter Name="this" Type="PS.BaseCalendarException" />
         </FunctionImport>
@@ -6441,6 +6431,9 @@
         <FunctionImport Name="GetById" ReturnType="PS.CalendarException" IsComposable="true" IsBindable="true" EntitySet="CalendarExceptions">
           <Parameter Name="this" Type="Collection(PS.CalendarException)" />
           <Parameter Name="id" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="DeleteObject" IsBindable="true">
+          <Parameter Name="this" Type="PS.CalendarException" />
         </FunctionImport>
         <FunctionImport Name="CopyTo" ReturnType="PS.Calendar" IsBindable="true" EntitySet="Calendars">
           <Parameter Name="this" Type="PS.Calendar" />
@@ -6498,22 +6491,6 @@
         <FunctionImport Name="GetById" ReturnType="PS.DraftProjectResource" IsComposable="true" IsBindable="true" EntitySet="DraftProjectResources">
           <Parameter Name="this" Type="Collection(PS.DraftProjectResource)" />
           <Parameter Name="objectId" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetResourcePlanByUrl" ReturnType="PS.ResourcePlan" IsComposable="true" IsBindable="true" EntitySet="ResourcePlans">
-          <Parameter Name="this" Type="PS.Project" />
-          <Parameter Name="start" Type="Edm.String" />
-          <Parameter Name="end" Type="Edm.String" />
-          <Parameter Name="scale" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="LeaveProjectStage" IsBindable="true">
-          <Parameter Name="this" Type="PS.Project" />
-        </FunctionImport>
-        <FunctionImport Name="ReadyToLeaveProjectStage" ReturnType="Edm.Int32" IsBindable="true">
-          <Parameter Name="this" Type="PS.Project" />
-        </FunctionImport>
-        <FunctionImport Name="UpdateIdeaListItemStatus" IsBindable="true">
-          <Parameter Name="this" Type="PS.Project" />
-          <Parameter Name="status" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Add" ReturnType="PS.DraftTask" IsBindable="true" EntitySet="DraftTasks">
           <Parameter Name="this" Type="Collection(PS.DraftTask)" />
@@ -6654,9 +6631,6 @@
           <Parameter Name="this" Type="PS.EventHandler" />
         </FunctionImport>
         <FunctionImport Name="DeleteObject" IsBindable="true">
-          <Parameter Name="this" Type="PS.LookupEntry" />
-        </FunctionImport>
-        <FunctionImport Name="DeleteObject" IsBindable="true">
           <Parameter Name="this" Type="PS.LookupCost" />
         </FunctionImport>
         <FunctionImport Name="DeleteObject" IsBindable="true">
@@ -6680,6 +6654,9 @@
         <FunctionImport Name="GetById" ReturnType="PS.LookupEntry" IsComposable="true" IsBindable="true" EntitySet="LookupEntrys">
           <Parameter Name="this" Type="Collection(PS.LookupEntry)" />
           <Parameter Name="objectId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="DeleteObject" IsBindable="true">
+          <Parameter Name="this" Type="PS.LookupEntry" />
         </FunctionImport>
         <FunctionImport Name="DeleteObject" IsBindable="true">
           <Parameter Name="this" Type="PS.LookupNumber" />
@@ -6815,6 +6792,22 @@
           <Parameter Name="start" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="PS_ProjectServerData" ReturnType="PS.ProjectServerData" IsComposable="true" EntitySet="ProjectServerDatas" />
+        <FunctionImport Name="GetResourcePlanByUrl" ReturnType="PS.ResourcePlan" IsComposable="true" IsBindable="true" EntitySet="ResourcePlans">
+          <Parameter Name="this" Type="PS.Project" />
+          <Parameter Name="start" Type="Edm.String" />
+          <Parameter Name="end" Type="Edm.String" />
+          <Parameter Name="scale" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="LeaveProjectStage" IsBindable="true">
+          <Parameter Name="this" Type="PS.Project" />
+        </FunctionImport>
+        <FunctionImport Name="ReadyToLeaveProjectStage" ReturnType="Edm.Int32" IsBindable="true">
+          <Parameter Name="this" Type="PS.Project" />
+        </FunctionImport>
+        <FunctionImport Name="UpdateIdeaListItemStatus" IsBindable="true">
+          <Parameter Name="this" Type="PS.Project" />
+          <Parameter Name="status" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="GetById" ReturnType="PS.ProjectWorkflowInstance" IsComposable="true" IsBindable="true" EntitySet="ProjectWorkflowInstances">
           <Parameter Name="this" Type="Collection(PS.ProjectWorkflowInstance)" />
           <Parameter Name="objectId" Type="Edm.String" />
@@ -7244,6 +7237,7 @@
           <Parameter Name="this" Type="Collection(PS.WorkflowDesignerField)" />
           <Parameter Name="objectId" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="PS_LookupTables_InvalidNameCharacters" ReturnType="Collection(Edm.String)" IsSideEffecting="false" />
         <FunctionImport Name="SP_Publishing_CommunicationSite" ReturnType="SP.Publishing.CommunicationSite" IsComposable="true" EntitySet="CommunicationSites" />
         <FunctionImport Name="Create" ReturnType="SP.Publishing.CommunicationSiteCreationResponse" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CommunicationSite" />
@@ -8231,6 +8225,9 @@
           <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
           <Parameter Name="query" Type="SP.ChangeQuery" />
         </FunctionImport>
+        <FunctionImport Name="GetComments" ReturnType="Collection(Microsoft.SharePoint.Comments.comment)" IsComposable="true" IsBindable="true" EntitySet="comments">
+          <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
+        </FunctionImport>
         <FunctionImport Name="GetUserEffectivePermissions" ReturnType="SP.BasePermissions" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
           <Parameter Name="userName" Type="Edm.String" />
@@ -8886,6 +8883,10 @@
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ExecuteTemplateScript" ReturnType="Collection(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptActionResult)">
           <Parameter Name="script" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ExecuteTemplateScriptWithParameters" ReturnType="Collection(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptActionResult)">
+          <Parameter Name="script" Type="Edm.String" />
+          <Parameter Name="parameters" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetDefaultSiteDesignForWebTemplate" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignMetadata">
           <Parameter Name="webTemplate" Type="Edm.String" />
@@ -9988,6 +9989,9 @@
         <FunctionImport Name="GetChanges" ReturnType="Collection(SP.Change)" IsBindable="true" EntitySet="Changes">
           <Parameter Name="this" Type="SP.ListItem" />
           <Parameter Name="query" Type="SP.ChangeQuery" />
+        </FunctionImport>
+        <FunctionImport Name="GetComments" ReturnType="Collection(Microsoft.SharePoint.Comments.comment)" IsComposable="true" IsBindable="true" EntitySet="comments">
+          <Parameter Name="this" Type="SP.ListItem" />
         </FunctionImport>
         <FunctionImport Name="GetUserEffectivePermissions" ReturnType="SP.BasePermissions" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.ListItem" />
@@ -16844,6 +16848,9 @@
       <Annotations Target="SP.List/ListFormCustomized">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.List/ListSchemaVersion">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.List/PageRenderType">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17103,6 +17110,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Webhooks.Subscription">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.List/TemplateTypeId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Site/HubSiteSynchronizableVisitorGroup">
@@ -18647,6 +18657,9 @@
       <Annotations Target="SP.ApiData/DeleteWithParameters(SP.Workflow.SPWorkflowTask, SP.ListItemDeleteParameters)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetComments(SP.Workflow.SPWorkflowTask)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/RecycleWithParameters(SP.Workflow.SPWorkflowTask, SP.ListItemDeleteParameters)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18843,6 +18856,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ExecuteTemplateScript(Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ExecuteTemplateScriptWithParameters(Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetDefaultSiteDesignForWebTemplate(Edm.String)">
@@ -19257,6 +19273,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/DeleteWithParameters(SP.ListItem, SP.ListItemDeleteParameters)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetComments(SP.ListItem)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/RecycleWithParameters(SP.ListItem, SP.ListItemDeleteParameters)">
@@ -21289,7 +21308,6 @@
       </EntityType>
     </Schema>
     <Schema Namespace="PS" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-      <ComplexType Name="EngagementSaveConflictException" />
       <ComplexType Name="AssignmentCreationInformation">
         <Property Name="Finish" Type="Edm.DateTime" Nullable="false" />
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
@@ -21556,19 +21574,7 @@
         <Property Name="PlannedWork" Type="Edm.String" />
         <Property Name="Start" Type="Edm.DateTime" Nullable="false" />
       </ComplexType>
-      <EntityType Name="EntityType">
-        <Key>
-          <PropertyRef Name="Name" />
-        </Key>
-        <Property Name="Name" Type="Edm.String" Nullable="false" />
-        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
-      </EntityType>
-      <EntityType Name="LookupTables">
-        <Key>
-          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
-        </Key>
-        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
-      </EntityType>
+      <ComplexType Name="EngagementSaveConflictException" />
       <EntityType Name="Assignment" Abstract="true">
         <Key>
           <PropertyRef Name="Id" />
@@ -21650,6 +21656,13 @@
         <NavigationProperty Name="EntityType" Relationship="PS.PS_CustomField_EntityType_PS_EntityType_EntityTypePartner" ToRole="EntityType" FromRole="EntityTypePartner" />
         <NavigationProperty Name="LookupEntries" Relationship="PS.PS_CustomField_LookupEntries_PS_LookupEntry_LookupEntriesPartner" ToRole="LookupEntries" FromRole="LookupEntriesPartner" />
         <NavigationProperty Name="LookupTable" Relationship="PS.PS_CustomField_LookupTable_PS_LookupTable_LookupTablePartner" ToRole="LookupTable" FromRole="LookupTablePartner" />
+      </EntityType>
+      <EntityType Name="EntityType">
+        <Key>
+          <PropertyRef Name="Name" />
+        </Key>
+        <Property Name="Name" Type="Edm.String" Nullable="false" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
       </EntityType>
       <EntityType Name="LookupEntry" Abstract="true">
         <Key>
@@ -22968,6 +22981,12 @@
         <Property Name="End" Type="Edm.DateTime" Nullable="false" />
         <Property Name="Start" Type="Edm.DateTime" Nullable="false" />
         <NavigationProperty Name="Assignments" Relationship="PS.PS_TimePhase_Assignments_PS_StatusAssignment_AssignmentsPartner" ToRole="Assignments" FromRole="AssignmentsPartner" />
+      </EntityType>
+      <EntityType Name="LookupTables">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
       <Association Name="PS_Assignment_CustomFields_PS_CustomField_CustomFieldsPartner">
         <End Type="PS.CustomField" Role="CustomFields" Multiplicity="*" />
@@ -27180,6 +27199,7 @@
         <Property Name="SocialBarOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SpecialCharactersStateInFileFolderNames" Type="Edm.Int32" Nullable="false" />
         <Property Name="StartASiteFormUrl" Type="Edm.String" />
+        <Property Name="StopNew2010Workflows" Type="Edm.Boolean" Nullable="false" />
         <Property Name="StorageQuota" Type="Edm.Int64" Nullable="false" />
         <Property Name="StorageQuotaAllocated" Type="Edm.Int64" Nullable="false" />
         <Property Name="SyncAadB2BManagementPolicy" Type="Edm.Boolean" Nullable="false" />
@@ -28226,6 +28246,7 @@
       <EntityType Name="TenantRenameJobEntityData" BaseType="Microsoft.Online.SharePoint.Onboarding.RestService.JobEntityData">
         <Property Name="IncludeGestures" Type="Edm.String" />
         <Property Name="JobId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ScheduledDateTimeInUtc" Type="Edm.DateTime" Nullable="false" />
         <Property Name="SkipDomainCheck" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SourceAdminSiteUrl" Type="Edm.String" />
         <Property Name="SourceMySiteHostUrl" Type="Edm.String" />
@@ -28923,6 +28944,7 @@
         <Property Name="SignInAccelerationDomain" Type="Edm.String" />
         <Property Name="SocialBarOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="StartASiteFormUrl" Type="Edm.String" />
+        <Property Name="StopNew2010Workflows" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyncAadB2BManagementPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyncPrivacyProfileProperties" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UseFindPeopleInPeoplePicker" Type="Edm.Boolean" Nullable="false" />
