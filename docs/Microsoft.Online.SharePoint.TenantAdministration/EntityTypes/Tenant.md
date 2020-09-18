@@ -134,6 +134,7 @@ SignInAccelerationDomain (Edm.String) | ✅ | ❌ | ❌ | ❌
 SocialBarOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SpecialCharactersStateInFileFolderNames (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 StartASiteFormUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+StopNew2010Workflows (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
 StorageQuota (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 StorageQuotaAllocated (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 SyncAadB2BManagementPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

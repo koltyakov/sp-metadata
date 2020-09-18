@@ -263,6 +263,7 @@ GetClientPersistedCacheKey (SP.Site) | ✅ | ❌ | ❌ | ❌
 GetClientSideComponents (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetClientSideComponentsById (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetClientSideWebParts (SP.Web) | ✅ | ✅ | ✅ | ❌
+GetComments (SP.ListItem) | ✅ (❌) | ❌ | ❌ | ❌
 GetConnectedHubs (Collection(SP.HubSite)) | ✅ | ❌ | ❌ | ❌
 GetCopyJobProgress (SP.Site) | ✅ | ✅ | ❌ | ❌
 GetCustomListTemplates (SP.Web) | ✅ | ✅ | ✅ | ✅

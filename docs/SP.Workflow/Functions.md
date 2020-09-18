@@ -14,6 +14,7 @@ GetById (Collection(SP.Workflow.WorkflowTemplate)) | ✅ | ✅ | ✅ | ✅
 GetByName (Collection(SP.Workflow.WorkflowAssociation)) | ✅ | ✅ | ✅ | ✅
 GetByName (Collection(SP.Workflow.WorkflowTemplate)) | ✅ | ✅ | ✅ | ✅
 GetChanges (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
+GetComments (SP.Workflow.SPWorkflowTask) | ✅ (❌) | ❌ | ❌ | ❌
 GetUserEffectivePermissions (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 GetWOPIFrameUrl (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 MediaServiceUpdate (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
