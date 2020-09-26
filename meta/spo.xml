@@ -7937,14 +7937,14 @@
           <Parameter Name="siteSubscriptionId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="useTenantStoreCache" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="GetAllWaveSetups" ReturnType="SP.Publishing.PortalLaunch.PortalLaunchSetupWrapper" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.PortalLaunch.PortalLaunchWavesManager" />
-        </FunctionImport>
-        <FunctionImport Name="GetWaveSetup" ReturnType="SP.Publishing.PortalLaunch.PortalLaunchWaveSetup" IsBindable="true">
+        <FunctionImport Name="Get" ReturnType="SP.Publishing.PortalLaunch.PortalLaunchWaveSetup" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.PortalLaunch.PortalLaunchWavesManager" />
           <Parameter Name="siteUrl" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="RemoveWaveSetup" ReturnType="Edm.Boolean" IsBindable="true">
+        <FunctionImport Name="GetAll" ReturnType="Collection(SP.Publishing.PortalLaunch.PortalLaunchWaveSetup)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.PortalLaunch.PortalLaunchWavesManager" />
+        </FunctionImport>
+        <FunctionImport Name="Remove" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.PortalLaunch.PortalLaunchWavesManager" />
           <Parameter Name="siteUrl" Type="Edm.String" />
         </FunctionImport>
@@ -9175,6 +9175,11 @@
           <Parameter Name="siteId" Type="Edm.String" />
           <Parameter Name="listId" Type="Edm.String" />
           <Parameter Name="webId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_FavoriteLists_ReorderList">
+          <Parameter Name="listToReorder" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
+          <Parameter Name="listBefore" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
+          <Parameter Name="listAfter" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
         </FunctionImport>
         <FunctionImport Name="SP_FavoriteLists_UpdateList">
           <Parameter Name="favoriteList" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
@@ -12981,6 +12986,10 @@
           <Parameter Name="localeId" Type="Edm.Int64" Nullable="false" />
           <Parameter Name="compatibilityLevel" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="GetTenantAllOrCompatibleIBSegments" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.IBSegmentInfo)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="segments" Type="Collection(Edm.Guid)" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="GrantHubSiteRightsById" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties" IsBindable="true" EntitySet="HubSitePropertiess">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="hubSiteId" Type="Edm.Guid" Nullable="false" />
@@ -13871,6 +13880,10 @@
         <AssociationSet Name="Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_StoreApps_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_StoreAppsPartnerSet" Association="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_StoreApps_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_StoreAppsPartner">
           <End Role="StoreAppsPartner" EntitySet="TenantCorporateCatalogAccessors" />
           <End Role="StoreApps" EntitySet="CorporateCatalogAppMetadatas" />
+        </AssociationSet>
+        <AssociationSet Name="Microsoft_SharePoint_Portal_SharePointHomeServiceContext_DWEngineToken_SP_OAuth_TokenResponse_DWEngineTokenPartnerSet" Association="SP.OAuth.Microsoft_SharePoint_Portal_SharePointHomeServiceContext_DWEngineToken_SP_OAuth_TokenResponse_DWEngineTokenPartner">
+          <End Role="DWEngineTokenPartner" EntitySet="SharePointHomeServiceContexts" />
+          <End Role="DWEngineToken" EntitySet="TokenResponses" />
         </AssociationSet>
         <AssociationSet Name="Microsoft_SharePoint_Portal_SharePointHomeServiceContext_Token_SP_OAuth_TokenResponse_TokenPartnerSet" Association="SP.OAuth.Microsoft_SharePoint_Portal_SharePointHomeServiceContext_Token_SP_OAuth_TokenResponse_TokenPartner">
           <End Role="TokenPartner" EntitySet="SharePointHomeServiceContexts" />
@@ -16185,19 +16198,16 @@
       <Annotations Target="Microsoft.SharePoint.Activities.SharingFacet">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Activities.TaskFacet">
+      <Annotations Target="Microsoft.SharePoint.Activities.TaskCompletedFacet">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Activities.TaskCompleteFacet">
+      <Annotations Target="Microsoft.SharePoint.Activities.TaskCreatedFacet">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Activities.TaskCreateFacet">
+      <Annotations Target="Microsoft.SharePoint.Activities.TaskReassignedFacet">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Activities.TaskReassignFacet">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Activities.TaskReopenFacet">
+      <Annotations Target="Microsoft.SharePoint.Activities.TaskReopenedFacet">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Activities.VersionFacet">
@@ -16240,6 +16250,15 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.GroupInfo">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.IBSegmentInfo">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.IBSegmentInfo/DisplayName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.IBSegmentInfo/ObjectId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.MessagesFieldsData">
@@ -18621,18 +18640,6 @@
       <Annotations Target="SP.ApiData/Update(SP.Publishing.TopicSitePage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/GetAllWaveSetups(SP.Publishing.PortalLaunch.PortalLaunchWavesManager)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetWaveSetup(SP.Publishing.PortalLaunch.PortalLaunchWavesManager, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/RemoveWaveSetup(SP.Publishing.PortalLaunch.PortalLaunchWavesManager, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SaveWaveSetup(SP.Publishing.PortalLaunch.PortalLaunchWavesManager, SP.Publishing.PortalLaunch.PortalLaunchWaveSetup)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.ApiData/Disable(SP.Publishing.Navigation.PortalNavigationCacheWrapper)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19120,6 +19127,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_FavoriteLists_RemoveList(Edm.String, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_FavoriteLists_ReorderList(Microsoft.SharePoint.ListHome.FavoriteListHomeItem, Microsoft.SharePoint.ListHome.FavoriteListHomeItem, Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_FavoriteLists_UpdateList(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
@@ -24270,11 +24280,13 @@
         <Property Name="IsPaused" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ModifiedOn" Type="Edm.DateTime" Nullable="false" />
         <Property Name="NewSiteUrl" Type="Edm.String" />
+        <Property Name="OwnersAndEditors" Type="Collection(SP.KeyValue)" />
         <Property Name="PauseAtWave" Type="Edm.Int32" Nullable="false" />
         <Property Name="RedirectionType" Type="Edm.Int32" Nullable="false" />
         <Property Name="RedirectUrl" Type="Edm.String" />
         <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
+        <Property Name="WaveOverrideUsers" Type="Edm.String" />
         <Property Name="Waves" Type="Collection(SP.Publishing.PortalLaunch.PortalLaunchWave)" />
       </ComplexType>
       <ComplexType Name="PortalLaunchWave">
@@ -24936,6 +24948,7 @@
         <Property Name="HomePageContext" Type="Microsoft.SharePoint.Portal.Home.SharePointHomePageContext" />
         <Property Name="Payload" Type="Edm.String" />
         <Property Name="Urls" Type="Collection(Edm.String)" />
+        <NavigationProperty Name="DWEngineToken" Relationship="SP.OAuth.Microsoft_SharePoint_Portal_SharePointHomeServiceContext_DWEngineToken_SP_OAuth_TokenResponse_DWEngineTokenPartner" ToRole="DWEngineToken" FromRole="DWEngineTokenPartner" />
         <NavigationProperty Name="Token" Relationship="SP.OAuth.Microsoft_SharePoint_Portal_SharePointHomeServiceContext_Token_SP_OAuth_TokenResponse_TokenPartner" ToRole="Token" FromRole="TokenPartner" />
       </EntityType>
       <EntityType Name="SPHubSitesUtility">
@@ -25526,6 +25539,7 @@
       <ComplexType Name="FavoriteListHomeItem" BaseType="Microsoft.SharePoint.ListHome.ListHomeItem">
         <Property Name="favoritesOrder" Type="Edm.Single" />
         <Property Name="lastPolled" Type="Edm.Single" />
+        <Property Name="order" Type="Edm.Int64" />
       </ComplexType>
     </Schema>
     <Schema Namespace="SP.Internal" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -26501,7 +26515,10 @@
         <Property Name="restore" Type="Microsoft.SharePoint.Activities.RestoreFacet" />
         <Property Name="restoreVersion" Type="Microsoft.SharePoint.Activities.RestoreVersionFacet" />
         <Property Name="share" Type="Microsoft.SharePoint.Activities.SharingFacet" />
-        <Property Name="task" Type="Microsoft.SharePoint.Activities.TaskFacet" />
+        <Property Name="taskCompleted" Type="Microsoft.SharePoint.Activities.TaskCompletedFacet" />
+        <Property Name="taskCreated" Type="Microsoft.SharePoint.Activities.TaskCreatedFacet" />
+        <Property Name="taskReassigned" Type="Microsoft.SharePoint.Activities.TaskReassignedFacet" />
+        <Property Name="taskReopened" Type="Microsoft.SharePoint.Activities.TaskReopenedFacet" />
         <Property Name="version" Type="Microsoft.SharePoint.Activities.VersionFacet" />
       </ComplexType>
       <ComplexType Name="AddToOneDriveFacet">
@@ -26557,20 +26574,22 @@
         <Property Name="recipients" Type="Collection(Microsoft.SharePoint.Activities.ActivityIdentity)" />
         <Property Name="sharingType" Type="Edm.String" />
       </ComplexType>
-      <ComplexType Name="TaskFacet">
-        <Property Name="assignee" Type="Microsoft.SharePoint.Activities.ActivityIdentity" />
-        <Property Name="complete" Type="Microsoft.SharePoint.Activities.TaskCompleteFacet" />
-        <Property Name="create" Type="Microsoft.SharePoint.Activities.TaskCreateFacet" />
-        <Property Name="reassign" Type="Microsoft.SharePoint.Activities.TaskReassignFacet" />
-        <Property Name="reopen" Type="Microsoft.SharePoint.Activities.TaskReopenFacet" />
+      <ComplexType Name="TaskCompletedFacet">
+        <Property Name="assignees" Type="Collection(Microsoft.SharePoint.Activities.ActivityIdentity)" />
         <Property Name="taskCreator" Type="Microsoft.SharePoint.Activities.ActivityIdentity" />
       </ComplexType>
-      <ComplexType Name="TaskCompleteFacet" />
-      <ComplexType Name="TaskCreateFacet" />
-      <ComplexType Name="TaskReassignFacet">
-        <Property Name="lastAssignee" Type="Microsoft.SharePoint.Activities.ActivityIdentity" />
+      <ComplexType Name="TaskCreatedFacet">
+        <Property Name="assignees" Type="Collection(Microsoft.SharePoint.Activities.ActivityIdentity)" />
+        <Property Name="taskCreator" Type="Microsoft.SharePoint.Activities.ActivityIdentity" />
       </ComplexType>
-      <ComplexType Name="TaskReopenFacet" />
+      <ComplexType Name="TaskReassignedFacet">
+        <Property Name="assignees" Type="Collection(Microsoft.SharePoint.Activities.ActivityIdentity)" />
+        <Property Name="taskCreator" Type="Microsoft.SharePoint.Activities.ActivityIdentity" />
+      </ComplexType>
+      <ComplexType Name="TaskReopenedFacet">
+        <Property Name="assignees" Type="Collection(Microsoft.SharePoint.Activities.ActivityIdentity)" />
+        <Property Name="taskCreator" Type="Microsoft.SharePoint.Activities.ActivityIdentity" />
+      </ComplexType>
       <ComplexType Name="VersionFacet">
         <Property Name="newVersion" Type="Edm.String" />
       </ComplexType>
@@ -26714,6 +26733,10 @@
         <Property Name="DisplayName" Type="Edm.String" />
         <Property Name="PrincipalName" Type="Edm.String" />
         <Property Name="Rights" Type="Edm.Int64" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="IBSegmentInfo">
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="ObjectId" Type="Edm.Guid" Nullable="false" />
       </ComplexType>
       <ComplexType Name="IncludeAtAGlanceInShareEmails">
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
@@ -26956,7 +26979,6 @@
         <Property Name="GroupOwnerLoginName" Type="Edm.String" />
         <Property Name="HasHolds" Type="Edm.Boolean" Nullable="false" />
         <Property Name="HubSiteId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="IBSegmentDisplayNames" Type="Edm.String" />
         <Property Name="IBSegments" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="IBSegmentsToAdd" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="IBSegmentsToRemove" Type="Collection(Edm.Guid)" Nullable="false" />
@@ -27098,6 +27120,7 @@
         <Property Name="BlockSendLabelMismatchEmail" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BlockUserInfoVisibility" Type="Edm.String" />
         <Property Name="CommentsOnFilesDisabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="CommentsOnListItemsDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CommentsOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CompatibilityRange" Type="Edm.String" />
         <Property Name="ConditionalAccessPolicy" Type="Edm.Int32" Nullable="false" />
@@ -28561,6 +28584,10 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
+      <Association Name="Microsoft_SharePoint_Portal_SharePointHomeServiceContext_DWEngineToken_SP_OAuth_TokenResponse_DWEngineTokenPartner">
+        <End Type="SP.OAuth.TokenResponse" Role="DWEngineToken" Multiplicity="0..1" />
+        <End Type="Microsoft.SharePoint.Portal.SharePointHomeServiceContext" Role="DWEngineTokenPartner" Multiplicity="0..1" />
+      </Association>
       <Association Name="Microsoft_SharePoint_Portal_SharePointHomeServiceContext_Token_SP_OAuth_TokenResponse_TokenPartner">
         <End Type="SP.OAuth.TokenResponse" Role="Token" Multiplicity="0..1" />
         <End Type="Microsoft.SharePoint.Portal.SharePointHomeServiceContext" Role="TokenPartner" Multiplicity="0..1" />
@@ -28871,6 +28898,7 @@
         <Property Name="BlockMacSync" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BlockUserInfoVisibility" Type="Edm.String" />
         <Property Name="CommentsOnFilesDisabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="CommentsOnListItemsDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CommentsOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ConditionalAccessPolicy" Type="Edm.Int32" Nullable="false" />
         <Property Name="ConditionalAccessPolicyErrorHelpLink" Type="Edm.String" />
