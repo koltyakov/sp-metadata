@@ -31,6 +31,7 @@ BlockDownloadOfViewableFilesOnUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ |
 BlockMacSync (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockUserInfoVisibility (Edm.String) | ✅ | ❌ | ❌ | ❌
 CommentsOnFilesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+CommentsOnListItemsDisabled (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
 CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicy (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicyErrorHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌

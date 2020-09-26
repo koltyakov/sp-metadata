@@ -497,6 +497,7 @@ SP_CurrencyList_GetList | ✅ | ✅ | ❌ | ❌
 [SP_FavoriteLists_AddList](./Functions/SP_FavoriteLists_AddList.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_GetListsBy](./Functions/SP_FavoriteLists_GetListsBy.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_RemoveList](./Functions/SP_FavoriteLists_RemoveList.md) | ✅ | ❌ | ❌ | ❌
+[SP_FavoriteLists_ReorderList](./Functions/SP_FavoriteLists_ReorderList.md) | ✅ (❌) | ❌ | ❌ | ❌
 [SP_FavoriteLists_UpdateList](./Functions/SP_FavoriteLists_UpdateList.md) | ✅ | ❌ | ❌ | ❌
 [SP_File_GetContentVerFromTag](./Functions/SP_File_GetContentVerFromTag.md) | ✅ | ✅ | ✅ | ✅
 [SP_HashtagStoreManager_CallOLS](./Functions/SP_HashtagStoreManager_CallOLS.md) | ❌ | ✅ | ❌ | ❌

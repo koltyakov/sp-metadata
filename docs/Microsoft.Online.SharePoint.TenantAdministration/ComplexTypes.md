@@ -11,6 +11,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [EnableAutoNewsDigest](./ComplexTypes/EnableAutoNewsDigest.md) | ✅ | ❌ | ❌ | ❌
 [GroupInfo](./ComplexTypes/GroupInfo.md) | ✅ | ❌ | ❌ | ❌
 [HubSitePermission](./ComplexTypes/HubSitePermission.md) | ✅ | ❌ | ❌ | ❌
+[IBSegmentInfo](./ComplexTypes/IBSegmentInfo.md) | ✅ (❌) | ❌ | ❌ | ❌
 [IncludeAtAGlanceInShareEmails](./ComplexTypes/IncludeAtAGlanceInShareEmails.md) | ✅ | ❌ | ❌ | ❌
 [MailFromAddress](./ComplexTypes/MailFromAddress.md) | ✅ | ❌ | ❌ | ❌
 [MessagesFieldsData](./ComplexTypes/MessagesFieldsData.md) | ✅ | ❌ | ❌ | ❌

@@ -26,6 +26,7 @@ GetSitePropertiesByUrl (Microsoft.Online.SharePoint.TenantAdministration.Tenant)
 GetSitePropertiesFromSharePointByFilters (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSiteSecondaryAdministrators (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSiteUserGroups (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
+GetTenantAllOrCompatibleIBSegments (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ (❌) | ❌ | ❌ | ❌
 GetTenantSharingStatus (Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService) | ✅ | ❌ | ❌ | ❌
 GrantHubSiteRightsById (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 HasValidEducationLicense (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌

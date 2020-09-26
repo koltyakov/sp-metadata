@@ -13,9 +13,11 @@ ExpectedUsersSize (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 IsPaused (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ModifiedOn (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 NewSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+OwnersAndEditors (Collection(SP.KeyValue)) | ✅ (❌) | ❌ | ❌ | ❌
 PauseAtWave (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 RedirectUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 RedirectionType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 Status (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+WaveOverrideUsers (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
 Waves (Collection(SP.Publishing.PortalLaunch.PortalLaunchWave)) | ✅ | ❌ | ❌ | ❌

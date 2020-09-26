@@ -32,6 +32,7 @@ BlockMacSync (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockSendLabelMismatchEmail (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockUserInfoVisibility (Edm.String) | ✅ | ❌ | ❌ | ❌
 CommentsOnFilesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+CommentsOnListItemsDisabled (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
 CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CompatibilityRange (Edm.String) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicy (Edm.Int32) | ✅ | ❌ | ❌ | ❌
