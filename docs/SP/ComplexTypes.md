@@ -15,6 +15,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [AsyncReadJobInfo](./ComplexTypes/AsyncReadJobInfo.md) | ✅ | ❌ | ❌ | ❌
 [AsyncReadOptions](./ComplexTypes/AsyncReadOptions.md) | ✅ | ❌ | ❌ | ❌
 [AttachmentCreationInformation](./ComplexTypes/AttachmentCreationInformation.md) | ✅ | ✅ | ✅ | ✅
+[AutoLabellingWorkInformation](./ComplexTypes/AutoLabellingWorkInformation.md) | ✅ (❌) | ❌ | ❌ | ❌
 [BasePermissions](./ComplexTypes/BasePermissions.md) | ✅ | ✅ | ✅ | ✅
 [CamlQuery](./ComplexTypes/CamlQuery.md) | ✅ | ✅ | ✅ | ✅
 [ChangeLogItemQuery](./ComplexTypes/ChangeLogItemQuery.md) | ✅ | ✅ | ✅ | ✅
@@ -40,6 +41,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CustomerKeyVaultInfo](./ComplexTypes/CustomerKeyVaultInfo.md) | ✅ | ✅ | ❌ | ❌
 [DocumentLibraryInformation](./ComplexTypes/DocumentLibraryInformation.md) | ✅ | ✅ | ✅ | ❌
 [EncryptionOption](./ComplexTypes/EncryptionOption.md) | ✅ | ✅ | ❌ | ❌
+[EnqueueJobInformation](./ComplexTypes/EnqueueJobInformation.md) | ✅ (❌) | ❌ | ❌ | ❌
 [EventReceiverDefinitionCreationInformation](./ComplexTypes/EventReceiverDefinitionCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [ExternalAppPrincipalCreationParameters](./ComplexTypes/ExternalAppPrincipalCreationParameters.md) | ❌ | ❌ | ❌ | ✅
 [FieldCalculatedErrorValue](./ComplexTypes/FieldCalculatedErrorValue.md) | ✅ | ✅ | ✅ | ✅

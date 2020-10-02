@@ -33,6 +33,7 @@ AddSubFolderUsingPath (SP.Folder) | ✅ | ✅ | ❌ | ❌
 AddSupportedUILanguage (SP.Web) | ✅ | ✅ | ✅ | ✅
 AddTemplateFile (Collection(SP.File)) | ✅ | ✅ | ✅ | ✅
 AddToSpotlight (SP.View) | ✅ | ✅ | ❌ | ❌
+AddUserById (Collection(SP.User)) | ✅ (❌) | ❌ | ❌ | ❌
 AddUsingPath (Collection(SP.Attachment)) | ✅ | ✅ | ❌ | ❌
 AddUsingPath (Collection(SP.File)) | ✅ | ✅ | ❌ | ❌
 AddUsingPath (Collection(SP.Folder)) | ✅ | ✅ | ❌ | ❌
@@ -175,6 +176,7 @@ EnableIndex (SP.FieldText) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldThumbnail) | ❌ (✅) | ❌ | ❌ | ❌
 EnableIndex (SP.FieldUrl) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldUser) | ✅ | ❌ | ❌ | ❌
+EnqueueApplySensitivityLabelWork (SP.Site) | ✅ (❌) | ❌ | ❌ | ❌
 EnsureClientRenderedSitePagesLibrary (Collection(SP.List)) | ✅ | ✅ | ❌ | ❌
 EnsureEventsList (Collection(SP.List)) | ✅ | ✅ | ❌ | ❌
 EnsureSignoffStatusField (SP.List) | ✅ | ❌ | ❌ | ❌
@@ -388,6 +390,7 @@ OnboardTenantForBringYourOwnKey (SP.Site) | ✅ | ✅ | ❌ | ❌
 OpenBinaryStream (SP.File) | ✅ | ✅ | ✅ | ✅
 OpenBinaryStream (SP.FileVersion) | ✅ | ✅ | ✅ | ❌
 OpenBinaryStreamWithOptions (SP.File) | ✅ | ✅ | ❌ | ❌
+OpenBinaryStreamWithOptions (SP.FileVersion) | ✅ (❌) | ❌ | ❌ | ❌
 OpenWeb (SP.Site) | ✅ | ✅ | ✅ | ✅
 OpenWebById (SP.Site) | ✅ | ✅ | ✅ | ✅
 OpenWebUsingPath (SP.Site) | ✅ | ✅ | ❌ | ❌

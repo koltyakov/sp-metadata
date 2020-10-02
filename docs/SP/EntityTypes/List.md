@@ -57,6 +57,7 @@ IrmExpire (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 IrmReject (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 IsApplicationList (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 IsCatalog (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+IsDefaultDocumentLibrary (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
 IsEnterpriseGalleryLibrary (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 IsPrivate (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 IsSiteAssetsLibrary (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
