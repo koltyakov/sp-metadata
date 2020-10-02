@@ -236,6 +236,9 @@
       <ComplexType Name="AttachmentCreationInformation">
         <Property Name="FileName" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="AutoLabellingWorkInformation">
+        <Property Name="WorkItemType" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="BasePermissions">
         <Property Name="High" Type="Edm.Int64" Nullable="false" />
         <Property Name="Low" Type="Edm.Int64" Nullable="false" />
@@ -394,6 +397,9 @@
         <Property Name="ModifiedFriendlyDisplay" Type="Edm.String" />
         <Property Name="ServerRelativeUrl" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="EnqueueJobInformation">
+        <Property Name="EnqueueJobStatus" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="EventReceiverDefinitionCreationInformation">
         <Property Name="ReceiverAssembly" Type="Edm.String" />
@@ -1531,6 +1537,7 @@
         <Property Name="IrmReject" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsApplicationList" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsCatalog" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsDefaultDocumentLibrary" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsEnterpriseGalleryLibrary" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsPrivate" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsSiteAssetsLibrary" Type="Edm.Boolean" Nullable="false" />
@@ -3655,7 +3662,6 @@
         <EntitySet Name="Webs" EntityType="SP.Web" />
         <EntitySet Name="Workitems" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem" />
         <EntitySet Name="ConnectionSettingss" EntityType="Microsoft.BusinessData.Infrastructure.SecureStore.ConnectionSettings" />
-        <EntitySet Name="ComplianceRetentionWorkItems" EntityType="Microsoft.Office.CompliancePolicy.SharePoint.ComplianceFoundation.ComplianceRetentionWorkItem" />
         <EntitySet Name="TargetApplications" EntityType="Microsoft.Office.SecureStoreService.Server.TargetApplication" />
         <EntitySet Name="TargetApplicationFields" EntityType="Microsoft.Office.SecureStoreService.Server.TargetApplicationField" />
         <EntitySet Name="SPMachineLearningModelEntityDatas" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData" />
@@ -3929,6 +3935,7 @@
         <EntitySet Name="CheckedOutFiles" EntityType="SP.CheckedOutFile" />
         <EntitySet Name="ClientWebParts" EntityType="SP.ClientWebPart" />
         <EntitySet Name="CompatibilityRanges" EntityType="SP.CompatibilityRange" />
+        <EntitySet Name="ComplianceRetentionWorkItemSubmitters" EntityType="SP.ComplianceFoundation.ComplianceRetentionWorkItemSubmitter" />
         <EntitySet Name="PolicyEvaluationInfos" EntityType="SP.CompliancePolicy.PolicyEvaluationInfo" />
         <EntitySet Name="SPPolicyStoreProxys" EntityType="SP.CompliancePolicy.SPPolicyStoreProxy" />
         <EntitySet Name="SPSitePreservationUtilitys" EntityType="SP.CompliancePolicy.SPSitePreservationUtility" />
@@ -5103,6 +5110,9 @@
           <Parameter Name="holdId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="durationInDays" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="holdPeriodSource" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddComplianceRetentionWorkItem2" ReturnType="Edm.Boolean">
+          <Parameter Name="workItemInput" Type="SP.ComplianceFoundation.Models.RetentionWorkItemInput" />
         </FunctionImport>
         <FunctionImport Name="SP_DocumentManagement_DocumentId" ReturnType="SP.DocumentManagement.DocumentId" IsComposable="true" EntitySet="DocumentIds" />
         <FunctionImport Name="ResetDocIdByServerRelativePath" IsBindable="true">
@@ -11084,6 +11094,10 @@
         <FunctionImport Name="OpenBinaryStream" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.FileVersion" />
         </FunctionImport>
+        <FunctionImport Name="OpenBinaryStreamWithOptions" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.FileVersion" />
+          <Parameter Name="openOptions" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="Add" ReturnType="SP.Folder" IsBindable="true" EntitySet="Folders1">
           <Parameter Name="this" Type="Collection(SP.Folder)" />
           <Parameter Name="url" Type="Edm.String" />
@@ -11534,6 +11548,10 @@
           <Parameter Name="this" Type="SP.Site" />
           <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="EnqueueApplySensitivityLabelWork" ReturnType="SP.EnqueueJobInformation" IsBindable="true">
+          <Parameter Name="this" Type="SP.Site" />
+          <Parameter Name="workItemInformation" Type="SP.AutoLabellingWorkInformation" />
+        </FunctionImport>
         <FunctionImport Name="SP_Site_Exists" ReturnType="Edm.Boolean" IsSideEffecting="false">
           <Parameter Name="url" Type="Edm.String" />
         </FunctionImport>
@@ -11746,6 +11764,10 @@
         <FunctionImport Name="UTCToLocalTime" ReturnType="Edm.DateTime" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.TimeZone" />
           <Parameter Name="date" Type="Edm.DateTime" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="AddUserById" ReturnType="SP.User" IsBindable="true" EntitySet="Users1">
+          <Parameter Name="this" Type="Collection(SP.User)" />
+          <Parameter Name="id" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetByEmail" ReturnType="SP.User" IsComposable="true" IsBindable="true" EntitySet="Users1">
           <Parameter Name="this" Type="Collection(SP.User)" />
@@ -12316,6 +12338,7 @@
           <Parameter Name="contentStream" Type="Edm.Stream" />
           <Parameter Name="listId" Type="Edm.String" />
           <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="overwrite" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetByName" ReturnType="SP.WebTemplate" IsComposable="true" IsBindable="true" EntitySet="WebTemplates">
           <Parameter Name="this" Type="Collection(SP.WebTemplate)" />
@@ -15148,7 +15171,10 @@
       <Annotations Target="SP.CompliancePolicy.ComplianceTag">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.Office.CompliancePolicy.SharePoint.ComplianceFoundation.Models.ComplianceRetentionWorkItemResponse">
+      <Annotations Target="SP.ComplianceFoundation.Models.ComplianceRetentionWorkItemResponse">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ComplianceFoundation.Models.RetentionWorkItemInput">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.MetadataNavigation.ConfiguredMetadataNavigationItemCollection">
@@ -16576,7 +16602,7 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData/Type">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.Office.CompliancePolicy.SharePoint.ComplianceFoundation.ComplianceRetentionWorkItem">
+      <Annotations Target="SP.ComplianceFoundation.ComplianceRetentionWorkItemSubmitter">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.DocumentManagement.DocumentId">
@@ -16856,6 +16882,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.InformationRightsManagementSettings/TemplateId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.List/IsDefaultDocumentLibrary">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.List/IsEnterpriseGalleryLibrary">
@@ -18215,6 +18244,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetByIdentifier(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem), Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddComplianceRetentionWorkItem2(SP.ComplianceFoundation.Models.RetentionWorkItemInput)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_DocumentManagement_DocumentId()">
@@ -19675,7 +19707,7 @@
       <Annotations Target="SP.ApiData/SyncHubSiteTheme(SP.Web)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/UploadImage(SP.Web, Edm.String, Edm.String, Edm.Stream, Edm.String, Edm.Int32)">
+      <Annotations Target="SP.ApiData/UploadImage(SP.Web, Edm.String, Edm.String, Edm.Stream, Edm.String, Edm.Int32, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_TranslationStatusCollection()">
@@ -20134,12 +20166,17 @@
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
     </Schema>
-    <Schema Namespace="Microsoft.Office.CompliancePolicy.SharePoint.ComplianceFoundation.Models" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+    <Schema Namespace="SP.ComplianceFoundation.Models" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="ComplianceRetentionWorkItemResponse">
         <Property Name="SiteId" Type="Edm.String" />
         <Property Name="TenantId" Type="Edm.String" />
         <Property Name="WorkItemId" Type="Edm.Guid" Nullable="false" />
         <Property Name="WorkItemJobStatus" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="RetentionWorkItemInput">
+        <Property Name="SignalsEndTimeStamp" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="SignalsStartTimeStamp" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="SignalsStorageName" Type="Edm.String" />
       </ComplexType>
     </Schema>
     <Schema Namespace="SP.MetadataNavigation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -25203,6 +25240,7 @@
         <Property Name="Version" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="SiteScriptActionResult">
+        <Property Name="ErrorCode" Type="Edm.Int32" Nullable="false" />
         <Property Name="Outcome" Type="Edm.Int64" Nullable="false" />
         <Property Name="OutcomeText" Type="Edm.String" />
         <Property Name="Target" Type="Edm.String" />
@@ -27258,15 +27296,22 @@
       <EntityType Name="Device" BaseType="Microsoft.Online.SharePoint.MigrationCenter.Common.DeviceEntityData">
         <Property Name="ActionId" Type="Edm.Int32" Nullable="false" />
         <Property Name="AssignedTimeUTC" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="AssignmentId" Type="Edm.String" />
         <Property Name="DebugCommand" Type="Edm.String" />
         <Property Name="DeviceAddedTimeUTC" Type="Edm.DateTime" Nullable="false" />
         <Property Name="Disconnected" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ErrorCode" Type="Edm.String" />
         <Property Name="FromClient" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LastActivityTimeUtc" Type="Edm.DateTime" Nullable="false" />
         <Property Name="LastHeartbeatTimeUtc" Type="Edm.DateTime" Nullable="false" />
         <Property Name="LastModifiedTimeUtc" Type="Edm.DateTime" Nullable="false" />
         <Property Name="LinkedTaskId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Message" Type="Edm.String" />
+        <Property Name="RunningTaskCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
+        <Property Name="UpdateTimestamp" Type="Edm.String" />
+        <Property Name="WaitingTaskCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="WorkflowJsonData" Type="Edm.String" />
       </EntityType>
       <EntityType Name="MigrationCenterServices">
         <Key>
@@ -27336,6 +27381,7 @@
         <Property Name="TotalBytes" Type="Edm.Int64" Nullable="false" />
         <Property Name="TotalBytesMigrated" Type="Edm.Int64" Nullable="false" />
         <Property Name="UpdateStatusOnly" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="UpdateTimestamp" Type="Edm.String" />
         <Property Name="WorkflowId" Type="Edm.Guid" Nullable="false" />
       </EntityType>
       <EntityType Name="MigrationCenterTeams">
@@ -27475,8 +27521,11 @@
         <Property Name="ClientUserName" Type="Edm.String" />
         <Property Name="DeviceName" Type="Edm.String" />
         <Property Name="DiskSpace" Type="Edm.Int64" Nullable="false" />
+        <Property Name="FreeQuota" Type="Edm.Int32" Nullable="false" />
         <Property Name="FriendlyName" Type="Edm.String" />
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="StatusQueueExpiresOnTimeUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="StatusQueueUrl" Type="Edm.String" />
         <Property Name="TargetUserName" Type="Edm.String" />
         <Property Name="TaskQueueExpiresOnTimeUtc" Type="Edm.DateTime" Nullable="false" />
         <Property Name="TaskQueueUrl" Type="Edm.String" />
@@ -28182,8 +28231,8 @@
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
     </Schema>
-    <Schema Namespace="Microsoft.Office.CompliancePolicy.SharePoint.ComplianceFoundation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-      <EntityType Name="ComplianceRetentionWorkItem">
+    <Schema Namespace="SP.ComplianceFoundation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="ComplianceRetentionWorkItemSubmitter">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
