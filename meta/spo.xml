@@ -1922,6 +1922,7 @@
         <Property Name="Title" Type="Edm.String" />
         <Property Name="Url" Type="Edm.String" />
         <NavigationProperty Name="Children" Relationship="SP.SP_NavigationNode_Children_SP_NavigationNode_ChildrenPartner" ToRole="Children" FromRole="ChildrenPartner" />
+        <NavigationProperty Name="TitleResource" Relationship="SP.SP_NavigationNode_TitleResource_SP_UserResource_TitleResourcePartner" ToRole="TitleResource" FromRole="TitleResourcePartner" />
       </EntityType>
       <EntityType Name="WebInformation">
         <Key>
@@ -2745,6 +2746,13 @@
         <NavigationProperty Name="Current" Relationship="SP.SP_RequestUserContext_Current_SP_RequestUserContext_CurrentPartner" ToRole="Current" FromRole="CurrentPartner" />
         <NavigationProperty Name="User" Relationship="SP.SP_RequestUserContext_User_SP_User_UserPartner" ToRole="User" FromRole="UserPartner" />
       </EntityType>
+      <EntityType Name="SPResourceEntry">
+        <Key>
+          <PropertyRef Name="LCID" />
+        </Key>
+        <Property Name="LCID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Value" Type="Edm.String" />
+      </EntityType>
       <EntityType Name="SharingUtility" Abstract="true">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
@@ -3355,6 +3363,10 @@
         <End Type="SP.NavigationNode" Role="Children" Multiplicity="*" />
         <End Type="SP.NavigationNode" Role="ChildrenPartner" Multiplicity="0..1" />
       </Association>
+      <Association Name="SP_NavigationNode_TitleResource_SP_UserResource_TitleResourcePartner">
+        <End Type="SP.UserResource" Role="TitleResource" Multiplicity="0..1" />
+        <End Type="SP.NavigationNode" Role="TitleResourcePartner" Multiplicity="0..1" />
+      </Association>
       <Association Name="SP_PushNotificationSubscriber_User_SP_User_UserPartner">
         <End Type="SP.User" Role="User" Multiplicity="0..1" />
         <End Type="SP.PushNotificationSubscriber" Role="UserPartner" Multiplicity="0..1" />
@@ -3704,6 +3716,7 @@
         <EntitySet Name="MoveJobEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.MoveJobEntityData" />
         <EntitySet Name="MultiGeoApiVersionss" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoApiVersions" />
         <EntitySet Name="MultiGeoServicesBetas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
+        <EntitySet Name="OrgRelationGroupManagedPaths" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationGroupManagedPath" />
         <EntitySet Name="OrgRelationNotifications" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationNotification" />
         <EntitySet Name="OrgRelationVerifications" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationVerification" />
         <EntitySet Name="StorageQuotas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota" />
@@ -4074,6 +4087,7 @@
         <EntitySet Name="SPAppLicenseManagers" EntityType="SP.SPAppLicenseManager" />
         <EntitySet Name="SPDataLeakagePreventionStatusInfos" EntityType="SP.SPDataLeakagePreventionStatusInfo" />
         <EntitySet Name="SPMigrationJobStatuss" EntityType="SP.SPMigrationJobStatus" />
+        <EntitySet Name="SPResourceEntrys" EntityType="SP.SPResourceEntry" />
         <EntitySet Name="StorageMetricss" EntityType="SP.StorageMetrics" />
         <EntitySet Name="TeamChannels" EntityType="SP.TeamChannel" />
         <EntitySet Name="TeamChannelManagers" EntityType="SP.TeamChannelManager" />
@@ -5278,6 +5292,10 @@
         <FunctionImport Name="GeoMoveCompatibilityChecks" ReturnType="Collection(Microsoft.Online.SharePoint.MultiGeo.Service.GeoMoveTenantCompatibilityCheck)" IsComposable="true" IsBindable="true" EntitySet="GeoMoveTenantCompatibilityChecks">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
         </FunctionImport>
+        <FunctionImport Name="OrgRelationGroupManagedPath" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationGroupManagedPath" IsComposable="true" IsBindable="true" EntitySet="OrgRelationGroupManagedPaths">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
+          <Parameter Name="encodedNotificationQuery" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="OrgRelationNotification" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationNotification" IsComposable="true" IsBindable="true" EntitySet="OrgRelationNotifications">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
           <Parameter Name="encodedNotificationQuery" Type="Edm.String" />
@@ -5293,6 +5311,9 @@
         <FunctionImport Name="UserPersonalSiteLocation" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.UserPersonalSiteLocation" IsComposable="true" IsBindable="true" EntitySet="UserPersonalSiteLocations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
           <Parameter Name="userPrincipalName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_OrgRelationGroupManagedPath" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationGroupManagedPath" IsComposable="true" EntitySet="OrgRelationGroupManagedPaths">
+          <Parameter Name="encodedNotificationQuery" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_OrgRelationNotification" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationNotification" IsComposable="true" EntitySet="OrgRelationNotifications">
           <Parameter Name="encodedNotificationQuery" Type="Edm.String" />
@@ -10102,6 +10123,462 @@
           <Parameter Name="checkInComment" Type="Edm.String" />
           <Parameter Name="datesInUTC" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="BreakRoleInheritance" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="copyRoleAssignments" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="clearSubscopes" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="ResetRoleInheritance" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+        </FunctionImport>
+        <FunctionImport Name="AddCrossFarmMessage" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="messagePayloadBase64" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="AddSupportedUILanguage" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="lcid" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="ApplyTheme" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="colorPaletteUrl" Type="Edm.String" />
+          <Parameter Name="fontSchemeUrl" Type="Edm.String" />
+          <Parameter Name="backgroundImageUrl" Type="Edm.String" />
+          <Parameter Name="shareGenerated" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="ApplyWebTemplate" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="webTemplate" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Web_CreateAnonymousLink" ReturnType="Edm.String">
+          <Parameter Name="url" Type="Edm.String" />
+          <Parameter Name="isEditLink" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Web_CreateAnonymousLinkWithExpiration" ReturnType="Edm.String">
+          <Parameter Name="url" Type="Edm.String" />
+          <Parameter Name="isEditLink" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="expirationString" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="CreateDefaultAssociatedGroups" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="userLogin" Type="Edm.String" />
+          <Parameter Name="userLogin2" Type="Edm.String" />
+          <Parameter Name="groupNameSeed" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Web_CreateOrganizationSharingLink" ReturnType="Edm.String">
+          <Parameter Name="url" Type="Edm.String" />
+          <Parameter Name="isEditLink" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="DefaultDocumentLibrary" ReturnType="SP.List" IsComposable="true" IsBindable="true" EntitySet="Lists">
+          <Parameter Name="this" Type="SP.Web" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Web_DefaultDocumentLibraryUrl" ReturnType="SP.DocumentLibraryInformation" IsSideEffecting="false">
+          <Parameter Name="webUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Web_DeleteAllAnonymousLinksForObject">
+          <Parameter Name="url" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Web_DeleteAnonymousLinkForObject">
+          <Parameter Name="url" Type="Edm.String" />
+          <Parameter Name="isEditLink" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="removeAssociatedSharingLinkGroup" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="DeleteObject" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Web_DestroyOrganizationSharingLink">
+          <Parameter Name="url" Type="Edm.String" />
+          <Parameter Name="isEditLink" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="removeAssociatedSharingLinkGroup" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="DoesPushNotificationSubscriberExist" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="deviceAppInstanceId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="DoesUserHavePermissions" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="permissionMask" Type="SP.BasePermissions" />
+        </FunctionImport>
+        <FunctionImport Name="EnsureUser" ReturnType="SP.User" IsBindable="true" EntitySet="Users1">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="logonName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="EnsureUserByObjectId" ReturnType="SP.User" IsBindable="true" EntitySet="Users1">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="objectId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="tenantId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="ExecuteRemoteLOB" ReturnType="Edm.Stream" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="inputStream" Type="Edm.Stream" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Web_ForwardObjectLink" ReturnType="SP.SharingResult" EntitySet="SharingResults">
+          <Parameter Name="url" Type="Edm.String" />
+          <Parameter Name="peoplePickerInput" Type="Edm.String" />
+          <Parameter Name="emailSubject" Type="Edm.String" />
+          <Parameter Name="emailBody" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetAllClientSideComponents" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+        </FunctionImport>
+        <FunctionImport Name="GetAppBdcCatalog" ReturnType="SP.BusinessData.AppBdcCatalog" IsBindable="true" EntitySet="AppBdcCatalogs">
+          <Parameter Name="this" Type="SP.Web" />
+        </FunctionImport>
+        <FunctionImport Name="GetAppBdcCatalogForAppInstance" ReturnType="SP.BusinessData.AppBdcCatalog" IsBindable="true" EntitySet="AppBdcCatalogs">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="appInstanceId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetAppInstanceById" ReturnType="SP.AppInstance" IsComposable="true" IsBindable="true" EntitySet="AppInstances">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="appInstanceId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetAppInstancesByProductId" ReturnType="Collection(SP.AppInstance)" IsComposable="true" IsBindable="true" EntitySet="AppInstances">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="productId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetAvailableWebTemplates" ReturnType="Collection(SP.WebTemplate)" IsComposable="true" IsBindable="true" EntitySet="WebTemplates">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="lcid" Type="Edm.Int64" Nullable="false" />
+          <Parameter Name="doIncludeCrossLanguage" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetCatalog" ReturnType="SP.List" IsComposable="true" IsBindable="true" EntitySet="Lists">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="typeCatalog" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetChanges" ReturnType="Collection(SP.Change)" IsBindable="true" EntitySet="Changes">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="query" Type="SP.ChangeQuery" />
+        </FunctionImport>
+        <FunctionImport Name="GetClientSideComponents" ReturnType="Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult)" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="components" Type="Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentIdentifier)" />
+          <Parameter Name="project" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetClientSideComponentsById" ReturnType="Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="componentIds" Type="Collection(Edm.Guid)" Nullable="false" />
+          <Parameter Name="project" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetClientSideWebParts" ReturnType="Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="includeErrors" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="project" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Web_GetContextWebInformation" ReturnType="SP.ContextWebInformation" />
+        <FunctionImport Name="SP_Web_GetContextWebThemeData" ReturnType="Edm.String" IsSideEffecting="false" />
+        <FunctionImport Name="GetCustomListTemplates" ReturnType="Collection(SP.ListTemplate)" IsComposable="true" IsBindable="true" EntitySet="ListTemplates">
+          <Parameter Name="this" Type="SP.Web" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Web_GetDocumentAndMediaLibraries" ReturnType="Collection(SP.DocumentLibraryInformation)" IsSideEffecting="false">
+          <Parameter Name="webFullUrl" Type="Edm.String" />
+          <Parameter Name="includePageLibraries" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Web_GetDocumentLibraries" ReturnType="Collection(SP.DocumentLibraryInformation)" IsSideEffecting="false">
+          <Parameter Name="webFullUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetEntity" ReturnType="SP.BusinessData.Entity" IsBindable="true" EntitySet="Entitys">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="namespace" Type="Edm.String" />
+          <Parameter Name="name" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetFileByGuestUrl" ReturnType="SP.File" IsComposable="true" IsBindable="true" EntitySet="Files12">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="guestUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetFileByGuestUrlEnsureAccess" ReturnType="SP.File" IsComposable="true" IsBindable="true" EntitySet="Files12">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="guestUrl" Type="Edm.String" />
+          <Parameter Name="ensureAccess" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetFileByGuestUrlExtended" ReturnType="SP.File" IsComposable="true" IsBindable="true" EntitySet="Files12">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="guestUrl" Type="Edm.String" />
+          <Parameter Name="requestSettings" Type="SP.Sharing.SharingLinkAccessRequest" />
+        </FunctionImport>
+        <FunctionImport Name="GetFileById" ReturnType="SP.File" IsComposable="true" IsBindable="true" EntitySet="Files12">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="uniqueId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetFileByLinkingUrl" ReturnType="SP.File" IsComposable="true" IsBindable="true" EntitySet="Files12">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="linkingUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetFileByServerRelativePath" ReturnType="SP.File" IsComposable="true" IsBindable="true" EntitySet="Files12">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="DecodedUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetFileByServerRelativeUrl" ReturnType="SP.File" IsComposable="true" IsBindable="true" EntitySet="Files12">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="serverRelativeUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetFileByUrl" ReturnType="SP.File" IsComposable="true" IsBindable="true" EntitySet="Files12">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="fileUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetFileByWOPIFrameUrl" ReturnType="SP.File" IsComposable="true" IsBindable="true" EntitySet="Files12">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="wopiFrameUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetFolderByGuestUrl" ReturnType="SP.Folder" IsComposable="true" IsBindable="true" EntitySet="Folders1">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="guestUrl" Type="Edm.String" />
+          <Parameter Name="ensureAccess" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetFolderByGuestUrlExtended" ReturnType="SP.Folder" IsComposable="true" IsBindable="true" EntitySet="Folders1">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="guestUrl" Type="Edm.String" />
+          <Parameter Name="requestSettings" Type="SP.Sharing.SharingLinkAccessRequest" />
+        </FunctionImport>
+        <FunctionImport Name="GetFolderById" ReturnType="SP.Folder" IsComposable="true" IsBindable="true" EntitySet="Folders1">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="uniqueId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetFolderByServerRelativePath" ReturnType="SP.Folder" IsComposable="true" IsBindable="true" EntitySet="Folders1">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="DecodedUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetFolderByServerRelativeUrl" ReturnType="SP.Folder" IsComposable="true" IsBindable="true" EntitySet="Folders1">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="serverRelativeUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetList" ReturnType="SP.List" IsComposable="true" IsBindable="true" EntitySet="Lists">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="strUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetListItem" ReturnType="SP.ListItem" IsComposable="true" IsBindable="true" EntitySet="ListItems">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="strUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetListItemByResourceId" ReturnType="SP.ListItem" IsComposable="true" IsBindable="true" EntitySet="ListItems">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="resourceId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetListItemUsingPath" ReturnType="SP.ListItem" IsComposable="true" IsBindable="true" EntitySet="ListItems">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="DecodedUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetListUsingPath" ReturnType="SP.List" IsComposable="true" IsBindable="true" EntitySet="Lists">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="DecodedUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetNewsList" ReturnType="SP.List" IsBindable="true" EntitySet="Lists">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="allowCreate" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Web_GetObjectSharingSettings" ReturnType="SP.ObjectSharingSettings" EntitySet="ObjectSharingSettingss">
+          <Parameter Name="objectUrl" Type="Edm.String" />
+          <Parameter Name="groupId" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="useSimplifiedRoles" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetPushNotificationSubscriber" ReturnType="SP.PushNotificationSubscriber" IsComposable="true" IsBindable="true" EntitySet="PushNotificationSubscribers">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="deviceAppInstanceId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetPushNotificationSubscribersByArgs" ReturnType="Collection(SP.PushNotificationSubscriber)" IsComposable="true" IsBindable="true" EntitySet="PushNotificationSubscribers">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="customArgs" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetPushNotificationSubscribersByUser" ReturnType="Collection(SP.PushNotificationSubscriber)" IsComposable="true" IsBindable="true" EntitySet="PushNotificationSubscribers">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="userName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetRecycleBinItems" ReturnType="Collection(SP.RecycleBinItem)" IsComposable="true" IsBindable="true" EntitySet="RecycleBinItems">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="pagingInfo" Type="Edm.String" />
+          <Parameter Name="rowLimit" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="isAscending" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="orderBy" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="itemState" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetRecycleBinItemsByQueryInfo" ReturnType="Collection(SP.RecycleBinItem)" IsComposable="true" IsBindable="true" EntitySet="RecycleBinItems">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="IsAscending" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="ItemState" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="OrderBy" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="PagingInfo" Type="Edm.String" />
+          <Parameter Name="RowLimit" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="ShowOnlyMyItems" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetRegionalDateTimeSchema" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+        </FunctionImport>
+        <FunctionImport Name="GetSharingLinkData" ReturnType="SP.SharingLinkData" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="linkUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Web_GetSharingLinkKind" ReturnType="Edm.Int32" IsSideEffecting="false">
+          <Parameter Name="fileUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetSPAppContextAsStream" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+        </FunctionImport>
+        <FunctionImport Name="GetStorageEntity" ReturnType="Microsoft.SharePoint.ClientSideComponent.StorageEntity" IsComposable="true" IsBindable="true" EntitySet="StorageEntitys">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="key" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetSubwebsFilteredForCurrentUser" ReturnType="Collection(SP.WebInformation)" IsComposable="true" IsBindable="true" EntitySet="WebInformations">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="nWebTemplateFilter" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="nConfigurationFilter" Type="Edm.Int16" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetUserById" ReturnType="SP.User" IsComposable="true" IsBindable="true" EntitySet="Users1">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="userId" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetUserEffectivePermissions" ReturnType="SP.BasePermissions" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="userName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetViewFromPath" ReturnType="SP.View" IsComposable="true" IsBindable="true" EntitySet="Views">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="DecodedUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetViewFromUrl" ReturnType="SP.View" IsComposable="true" IsBindable="true" EntitySet="Views">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="listUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Web_GetWebUrlFromPageUrl" ReturnType="Edm.String" IsSideEffecting="false">
+          <Parameter Name="pageFullUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="HubSiteData" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="forceRefresh" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="HubSiteDataAsStream" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="forceRefresh" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="IncrementSiteClientTag" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+        </FunctionImport>
+        <FunctionImport Name="LoadAndInstallApp" ReturnType="SP.AppInstance" IsBindable="true" EntitySet="AppInstances">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="appPackageStream" Type="Edm.Stream" />
+        </FunctionImport>
+        <FunctionImport Name="LoadAndInstallAppInSpecifiedLocale" ReturnType="SP.AppInstance" IsBindable="true" EntitySet="AppInstances">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="appPackageStream" Type="Edm.Stream" />
+          <Parameter Name="installationLocaleLCID" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="LoadApp" ReturnType="SP.AppInstance" IsBindable="true" EntitySet="AppInstances">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="appPackageStream" Type="Edm.Stream" />
+          <Parameter Name="installationLocaleLCID" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="MapToIcon" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="fileName" Type="Edm.String" />
+          <Parameter Name="progId" Type="Edm.String" />
+          <Parameter Name="size" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="PageContextCore" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+        </FunctionImport>
+        <FunctionImport Name="PageContextInfo" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="includeODBSettings" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="emitNavigationInfo" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="ParseDateTime" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="value" Type="Edm.String" />
+          <Parameter Name="displayFormat" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="calendarType" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="ProcessExternalNotification" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="stream" Type="Edm.Stream" />
+        </FunctionImport>
+        <FunctionImport Name="RegisterPushNotificationSubscriber" ReturnType="SP.PushNotificationSubscriber" IsBindable="true" EntitySet="PushNotificationSubscribers">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="deviceAppInstanceId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="serviceToken" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="RemoveStorageEntity" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="key" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="RemoveSupportedUILanguage" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="lcid" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SetAccessRequestSiteDescriptionAndUpdate" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="description" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SetChromeOptions" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="headerLayout" Type="Edm.Int32" />
+          <Parameter Name="headerEmphasis" Type="Edm.Int32" />
+          <Parameter Name="megaMenuEnabled" Type="Edm.Boolean" />
+          <Parameter Name="footerEnabled" Type="Edm.Boolean" />
+          <Parameter Name="footerLayout" Type="Edm.Int32" />
+          <Parameter Name="footerEmphasis" Type="Edm.Int32" />
+          <Parameter Name="hideTitleInHeader" Type="Edm.Boolean" />
+          <Parameter Name="logoAlignment" Type="Edm.Int32" />
+        </FunctionImport>
+        <FunctionImport Name="SetDefaultNewPageTemplateId" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="defaultNewPageTemplateId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SetGlobalNavSettings" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="title" Type="Edm.String" />
+          <Parameter Name="source" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SetStorageEntity" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="key" Type="Edm.String" />
+          <Parameter Name="value" Type="Edm.String" />
+          <Parameter Name="description" Type="Edm.String" />
+          <Parameter Name="comments" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SetUseAccessRequestDefaultAndUpdate" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="useAccessRequestDefault" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Web_ShareObject" ReturnType="SP.SharingResult" EntitySet="SharingResults">
+          <Parameter Name="url" Type="Edm.String" />
+          <Parameter Name="peoplePickerInput" Type="Edm.String" />
+          <Parameter Name="roleValue" Type="Edm.String" />
+          <Parameter Name="groupId" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="propagateAcl" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="sendEmail" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="includeAnonymousLinkInEmail" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="emailSubject" Type="Edm.String" />
+          <Parameter Name="emailBody" Type="Edm.String" />
+          <Parameter Name="useSimplifiedRoles" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SyncFlowInstances" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="targetWebUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SyncFlowTemplates" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="category" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SyncHubSiteTheme" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+        </FunctionImport>
+        <FunctionImport Name="UnregisterPushNotificationSubscriber" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="deviceAppInstanceId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Web_UnshareObject" ReturnType="SP.SharingResult" EntitySet="SharingResults">
+          <Parameter Name="url" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="Update" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+        </FunctionImport>
+        <FunctionImport Name="UploadImage" ReturnType="SP.SPImageItem" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="listTitle" Type="Edm.String" />
+          <Parameter Name="imageName" Type="Edm.String" />
+          <Parameter Name="contentStream" Type="Edm.Stream" />
+          <Parameter Name="listId" Type="Edm.String" />
+          <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="overwrite" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="SP_ListHomeItemCollection_GetListHomeItems" ReturnType="Edm.Stream" IsSideEffecting="false">
           <Parameter Name="sortBy" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
@@ -11415,6 +11892,10 @@
           <Parameter Name="serverRelativeUrl" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_RequestUserContext_Current" ReturnType="SP.RequestUserContext" IsComposable="true" EntitySet="Mes" />
+        <FunctionImport Name="SP_SPResourceEntry" ReturnType="SP.SPResourceEntry" IsComposable="true" EntitySet="SPResourceEntrys">
+          <Parameter Name="LCID" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="value" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="AddRoleAssignment" IsBindable="true">
           <Parameter Name="this" Type="Collection(SP.RoleAssignment)" />
           <Parameter Name="principalId" Type="Edm.Int32" Nullable="false" />
@@ -11802,6 +12283,9 @@
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.UserCustomAction" />
         </FunctionImport>
+        <FunctionImport Name="GetResourceEntries" ReturnType="Collection(SP.SPResourceEntry)" IsComposable="true" IsBindable="true" EntitySet="SPResourceEntrys">
+          <Parameter Name="this" Type="SP.UserResource" />
+        </FunctionImport>
         <FunctionImport Name="GetValueForUICulture" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.UserResource" />
           <Parameter Name="cultureName" Type="Edm.String" />
@@ -11883,462 +12367,6 @@
         </FunctionImport>
         <FunctionImport Name="SP_WebProxy_Invoke" ReturnType="SP.WebResponseInfo">
           <Parameter Name="requestInfo" Type="SP.WebRequestInfo" />
-        </FunctionImport>
-        <FunctionImport Name="BreakRoleInheritance" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="copyRoleAssignments" Type="Edm.Boolean" Nullable="false" />
-          <Parameter Name="clearSubscopes" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="ResetRoleInheritance" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-        </FunctionImport>
-        <FunctionImport Name="AddCrossFarmMessage" ReturnType="Edm.Boolean" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="messagePayloadBase64" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="AddSupportedUILanguage" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="lcid" Type="Edm.Int32" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="ApplyTheme" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="colorPaletteUrl" Type="Edm.String" />
-          <Parameter Name="fontSchemeUrl" Type="Edm.String" />
-          <Parameter Name="backgroundImageUrl" Type="Edm.String" />
-          <Parameter Name="shareGenerated" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="ApplyWebTemplate" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="webTemplate" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="SP_Web_CreateAnonymousLink" ReturnType="Edm.String">
-          <Parameter Name="url" Type="Edm.String" />
-          <Parameter Name="isEditLink" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="SP_Web_CreateAnonymousLinkWithExpiration" ReturnType="Edm.String">
-          <Parameter Name="url" Type="Edm.String" />
-          <Parameter Name="isEditLink" Type="Edm.Boolean" Nullable="false" />
-          <Parameter Name="expirationString" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="CreateDefaultAssociatedGroups" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="userLogin" Type="Edm.String" />
-          <Parameter Name="userLogin2" Type="Edm.String" />
-          <Parameter Name="groupNameSeed" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="SP_Web_CreateOrganizationSharingLink" ReturnType="Edm.String">
-          <Parameter Name="url" Type="Edm.String" />
-          <Parameter Name="isEditLink" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="DefaultDocumentLibrary" ReturnType="SP.List" IsComposable="true" IsBindable="true" EntitySet="Lists">
-          <Parameter Name="this" Type="SP.Web" />
-        </FunctionImport>
-        <FunctionImport Name="SP_Web_DefaultDocumentLibraryUrl" ReturnType="SP.DocumentLibraryInformation" IsSideEffecting="false">
-          <Parameter Name="webUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="SP_Web_DeleteAllAnonymousLinksForObject">
-          <Parameter Name="url" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="SP_Web_DeleteAnonymousLinkForObject">
-          <Parameter Name="url" Type="Edm.String" />
-          <Parameter Name="isEditLink" Type="Edm.Boolean" Nullable="false" />
-          <Parameter Name="removeAssociatedSharingLinkGroup" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="DeleteObject" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-        </FunctionImport>
-        <FunctionImport Name="SP_Web_DestroyOrganizationSharingLink">
-          <Parameter Name="url" Type="Edm.String" />
-          <Parameter Name="isEditLink" Type="Edm.Boolean" Nullable="false" />
-          <Parameter Name="removeAssociatedSharingLinkGroup" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="DoesPushNotificationSubscriberExist" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="deviceAppInstanceId" Type="Edm.Guid" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="DoesUserHavePermissions" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="permissionMask" Type="SP.BasePermissions" />
-        </FunctionImport>
-        <FunctionImport Name="EnsureUser" ReturnType="SP.User" IsBindable="true" EntitySet="Users1">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="logonName" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="EnsureUserByObjectId" ReturnType="SP.User" IsBindable="true" EntitySet="Users1">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="objectId" Type="Edm.Guid" Nullable="false" />
-          <Parameter Name="tenantId" Type="Edm.Guid" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="ExecuteRemoteLOB" ReturnType="Edm.Stream" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="inputStream" Type="Edm.Stream" />
-        </FunctionImport>
-        <FunctionImport Name="SP_Web_ForwardObjectLink" ReturnType="SP.SharingResult" EntitySet="SharingResults">
-          <Parameter Name="url" Type="Edm.String" />
-          <Parameter Name="peoplePickerInput" Type="Edm.String" />
-          <Parameter Name="emailSubject" Type="Edm.String" />
-          <Parameter Name="emailBody" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetAllClientSideComponents" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-        </FunctionImport>
-        <FunctionImport Name="GetAppBdcCatalog" ReturnType="SP.BusinessData.AppBdcCatalog" IsBindable="true" EntitySet="AppBdcCatalogs">
-          <Parameter Name="this" Type="SP.Web" />
-        </FunctionImport>
-        <FunctionImport Name="GetAppBdcCatalogForAppInstance" ReturnType="SP.BusinessData.AppBdcCatalog" IsBindable="true" EntitySet="AppBdcCatalogs">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="appInstanceId" Type="Edm.Guid" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="GetAppInstanceById" ReturnType="SP.AppInstance" IsComposable="true" IsBindable="true" EntitySet="AppInstances">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="appInstanceId" Type="Edm.Guid" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="GetAppInstancesByProductId" ReturnType="Collection(SP.AppInstance)" IsComposable="true" IsBindable="true" EntitySet="AppInstances">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="productId" Type="Edm.Guid" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="GetAvailableWebTemplates" ReturnType="Collection(SP.WebTemplate)" IsComposable="true" IsBindable="true" EntitySet="WebTemplates">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="lcid" Type="Edm.Int64" Nullable="false" />
-          <Parameter Name="doIncludeCrossLanguage" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="GetCatalog" ReturnType="SP.List" IsComposable="true" IsBindable="true" EntitySet="Lists">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="typeCatalog" Type="Edm.Int32" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="GetChanges" ReturnType="Collection(SP.Change)" IsBindable="true" EntitySet="Changes">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="query" Type="SP.ChangeQuery" />
-        </FunctionImport>
-        <FunctionImport Name="GetClientSideComponents" ReturnType="Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult)" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="components" Type="Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentIdentifier)" />
-          <Parameter Name="project" Type="Edm.Guid" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="GetClientSideComponentsById" ReturnType="Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult)" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="componentIds" Type="Collection(Edm.Guid)" Nullable="false" />
-          <Parameter Name="project" Type="Edm.Guid" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="GetClientSideWebParts" ReturnType="Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult)" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="includeErrors" Type="Edm.Boolean" Nullable="false" />
-          <Parameter Name="project" Type="Edm.Guid" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="SP_Web_GetContextWebInformation" ReturnType="SP.ContextWebInformation" />
-        <FunctionImport Name="SP_Web_GetContextWebThemeData" ReturnType="Edm.String" IsSideEffecting="false" />
-        <FunctionImport Name="GetCustomListTemplates" ReturnType="Collection(SP.ListTemplate)" IsComposable="true" IsBindable="true" EntitySet="ListTemplates">
-          <Parameter Name="this" Type="SP.Web" />
-        </FunctionImport>
-        <FunctionImport Name="SP_Web_GetDocumentAndMediaLibraries" ReturnType="Collection(SP.DocumentLibraryInformation)" IsSideEffecting="false">
-          <Parameter Name="webFullUrl" Type="Edm.String" />
-          <Parameter Name="includePageLibraries" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="SP_Web_GetDocumentLibraries" ReturnType="Collection(SP.DocumentLibraryInformation)" IsSideEffecting="false">
-          <Parameter Name="webFullUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetEntity" ReturnType="SP.BusinessData.Entity" IsBindable="true" EntitySet="Entitys">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="namespace" Type="Edm.String" />
-          <Parameter Name="name" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetFileByGuestUrl" ReturnType="SP.File" IsComposable="true" IsBindable="true" EntitySet="Files12">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="guestUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetFileByGuestUrlEnsureAccess" ReturnType="SP.File" IsComposable="true" IsBindable="true" EntitySet="Files12">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="guestUrl" Type="Edm.String" />
-          <Parameter Name="ensureAccess" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="GetFileByGuestUrlExtended" ReturnType="SP.File" IsComposable="true" IsBindable="true" EntitySet="Files12">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="guestUrl" Type="Edm.String" />
-          <Parameter Name="requestSettings" Type="SP.Sharing.SharingLinkAccessRequest" />
-        </FunctionImport>
-        <FunctionImport Name="GetFileById" ReturnType="SP.File" IsComposable="true" IsBindable="true" EntitySet="Files12">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="uniqueId" Type="Edm.Guid" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="GetFileByLinkingUrl" ReturnType="SP.File" IsComposable="true" IsBindable="true" EntitySet="Files12">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="linkingUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetFileByServerRelativePath" ReturnType="SP.File" IsComposable="true" IsBindable="true" EntitySet="Files12">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="DecodedUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetFileByServerRelativeUrl" ReturnType="SP.File" IsComposable="true" IsBindable="true" EntitySet="Files12">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="serverRelativeUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetFileByUrl" ReturnType="SP.File" IsComposable="true" IsBindable="true" EntitySet="Files12">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="fileUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetFileByWOPIFrameUrl" ReturnType="SP.File" IsComposable="true" IsBindable="true" EntitySet="Files12">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="wopiFrameUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetFolderByGuestUrl" ReturnType="SP.Folder" IsComposable="true" IsBindable="true" EntitySet="Folders1">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="guestUrl" Type="Edm.String" />
-          <Parameter Name="ensureAccess" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="GetFolderByGuestUrlExtended" ReturnType="SP.Folder" IsComposable="true" IsBindable="true" EntitySet="Folders1">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="guestUrl" Type="Edm.String" />
-          <Parameter Name="requestSettings" Type="SP.Sharing.SharingLinkAccessRequest" />
-        </FunctionImport>
-        <FunctionImport Name="GetFolderById" ReturnType="SP.Folder" IsComposable="true" IsBindable="true" EntitySet="Folders1">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="uniqueId" Type="Edm.Guid" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="GetFolderByServerRelativePath" ReturnType="SP.Folder" IsComposable="true" IsBindable="true" EntitySet="Folders1">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="DecodedUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetFolderByServerRelativeUrl" ReturnType="SP.Folder" IsComposable="true" IsBindable="true" EntitySet="Folders1">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="serverRelativeUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetList" ReturnType="SP.List" IsComposable="true" IsBindable="true" EntitySet="Lists">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="strUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetListItem" ReturnType="SP.ListItem" IsComposable="true" IsBindable="true" EntitySet="ListItems">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="strUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetListItemByResourceId" ReturnType="SP.ListItem" IsComposable="true" IsBindable="true" EntitySet="ListItems">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="resourceId" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetListItemUsingPath" ReturnType="SP.ListItem" IsComposable="true" IsBindable="true" EntitySet="ListItems">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="DecodedUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetListUsingPath" ReturnType="SP.List" IsComposable="true" IsBindable="true" EntitySet="Lists">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="DecodedUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetNewsList" ReturnType="SP.List" IsBindable="true" EntitySet="Lists">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="allowCreate" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="SP_Web_GetObjectSharingSettings" ReturnType="SP.ObjectSharingSettings" EntitySet="ObjectSharingSettingss">
-          <Parameter Name="objectUrl" Type="Edm.String" />
-          <Parameter Name="groupId" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="useSimplifiedRoles" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="GetPushNotificationSubscriber" ReturnType="SP.PushNotificationSubscriber" IsComposable="true" IsBindable="true" EntitySet="PushNotificationSubscribers">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="deviceAppInstanceId" Type="Edm.Guid" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="GetPushNotificationSubscribersByArgs" ReturnType="Collection(SP.PushNotificationSubscriber)" IsComposable="true" IsBindable="true" EntitySet="PushNotificationSubscribers">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="customArgs" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetPushNotificationSubscribersByUser" ReturnType="Collection(SP.PushNotificationSubscriber)" IsComposable="true" IsBindable="true" EntitySet="PushNotificationSubscribers">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="userName" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetRecycleBinItems" ReturnType="Collection(SP.RecycleBinItem)" IsComposable="true" IsBindable="true" EntitySet="RecycleBinItems">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="pagingInfo" Type="Edm.String" />
-          <Parameter Name="rowLimit" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="isAscending" Type="Edm.Boolean" Nullable="false" />
-          <Parameter Name="orderBy" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="itemState" Type="Edm.Int32" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="GetRecycleBinItemsByQueryInfo" ReturnType="Collection(SP.RecycleBinItem)" IsComposable="true" IsBindable="true" EntitySet="RecycleBinItems">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="IsAscending" Type="Edm.Boolean" Nullable="false" />
-          <Parameter Name="ItemState" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="OrderBy" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="PagingInfo" Type="Edm.String" />
-          <Parameter Name="RowLimit" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="ShowOnlyMyItems" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="GetRegionalDateTimeSchema" ReturnType="Edm.String" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-        </FunctionImport>
-        <FunctionImport Name="GetSharingLinkData" ReturnType="SP.SharingLinkData" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="linkUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="SP_Web_GetSharingLinkKind" ReturnType="Edm.Int32" IsSideEffecting="false">
-          <Parameter Name="fileUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetSPAppContextAsStream" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-        </FunctionImport>
-        <FunctionImport Name="GetStorageEntity" ReturnType="Microsoft.SharePoint.ClientSideComponent.StorageEntity" IsComposable="true" IsBindable="true" EntitySet="StorageEntitys">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="key" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetSubwebsFilteredForCurrentUser" ReturnType="Collection(SP.WebInformation)" IsComposable="true" IsBindable="true" EntitySet="WebInformations">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="nWebTemplateFilter" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="nConfigurationFilter" Type="Edm.Int16" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="GetUserById" ReturnType="SP.User" IsComposable="true" IsBindable="true" EntitySet="Users1">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="userId" Type="Edm.Int32" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="GetUserEffectivePermissions" ReturnType="SP.BasePermissions" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="userName" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetViewFromPath" ReturnType="SP.View" IsComposable="true" IsBindable="true" EntitySet="Views">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="DecodedUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetViewFromUrl" ReturnType="SP.View" IsComposable="true" IsBindable="true" EntitySet="Views">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="listUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="SP_Web_GetWebUrlFromPageUrl" ReturnType="Edm.String" IsSideEffecting="false">
-          <Parameter Name="pageFullUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="HubSiteData" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="forceRefresh" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="HubSiteDataAsStream" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="forceRefresh" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="IncrementSiteClientTag" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-        </FunctionImport>
-        <FunctionImport Name="LoadAndInstallApp" ReturnType="SP.AppInstance" IsBindable="true" EntitySet="AppInstances">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="appPackageStream" Type="Edm.Stream" />
-        </FunctionImport>
-        <FunctionImport Name="LoadAndInstallAppInSpecifiedLocale" ReturnType="SP.AppInstance" IsBindable="true" EntitySet="AppInstances">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="appPackageStream" Type="Edm.Stream" />
-          <Parameter Name="installationLocaleLCID" Type="Edm.Int32" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="LoadApp" ReturnType="SP.AppInstance" IsBindable="true" EntitySet="AppInstances">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="appPackageStream" Type="Edm.Stream" />
-          <Parameter Name="installationLocaleLCID" Type="Edm.Int32" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="MapToIcon" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="fileName" Type="Edm.String" />
-          <Parameter Name="progId" Type="Edm.String" />
-          <Parameter Name="size" Type="Edm.Int32" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="PageContextCore" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-        </FunctionImport>
-        <FunctionImport Name="PageContextInfo" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="includeODBSettings" Type="Edm.Boolean" Nullable="false" />
-          <Parameter Name="emitNavigationInfo" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="ParseDateTime" ReturnType="Edm.String" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="value" Type="Edm.String" />
-          <Parameter Name="displayFormat" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="calendarType" Type="Edm.Int32" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="ProcessExternalNotification" ReturnType="Edm.String" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="stream" Type="Edm.Stream" />
-        </FunctionImport>
-        <FunctionImport Name="RegisterPushNotificationSubscriber" ReturnType="SP.PushNotificationSubscriber" IsBindable="true" EntitySet="PushNotificationSubscribers">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="deviceAppInstanceId" Type="Edm.Guid" Nullable="false" />
-          <Parameter Name="serviceToken" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="RemoveStorageEntity" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="key" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="RemoveSupportedUILanguage" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="lcid" Type="Edm.Int32" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="SetAccessRequestSiteDescriptionAndUpdate" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="description" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="SetChromeOptions" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="headerLayout" Type="Edm.Int32" />
-          <Parameter Name="headerEmphasis" Type="Edm.Int32" />
-          <Parameter Name="megaMenuEnabled" Type="Edm.Boolean" />
-          <Parameter Name="footerEnabled" Type="Edm.Boolean" />
-          <Parameter Name="footerLayout" Type="Edm.Int32" />
-          <Parameter Name="footerEmphasis" Type="Edm.Int32" />
-          <Parameter Name="hideTitleInHeader" Type="Edm.Boolean" />
-          <Parameter Name="logoAlignment" Type="Edm.Int32" />
-        </FunctionImport>
-        <FunctionImport Name="SetDefaultNewPageTemplateId" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="defaultNewPageTemplateId" Type="Edm.Guid" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="SetGlobalNavSettings" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="title" Type="Edm.String" />
-          <Parameter Name="source" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="SetStorageEntity" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="key" Type="Edm.String" />
-          <Parameter Name="value" Type="Edm.String" />
-          <Parameter Name="description" Type="Edm.String" />
-          <Parameter Name="comments" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="SetUseAccessRequestDefaultAndUpdate" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="useAccessRequestDefault" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="SP_Web_ShareObject" ReturnType="SP.SharingResult" EntitySet="SharingResults">
-          <Parameter Name="url" Type="Edm.String" />
-          <Parameter Name="peoplePickerInput" Type="Edm.String" />
-          <Parameter Name="roleValue" Type="Edm.String" />
-          <Parameter Name="groupId" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="propagateAcl" Type="Edm.Boolean" Nullable="false" />
-          <Parameter Name="sendEmail" Type="Edm.Boolean" Nullable="false" />
-          <Parameter Name="includeAnonymousLinkInEmail" Type="Edm.Boolean" Nullable="false" />
-          <Parameter Name="emailSubject" Type="Edm.String" />
-          <Parameter Name="emailBody" Type="Edm.String" />
-          <Parameter Name="useSimplifiedRoles" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="SyncFlowInstances" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="targetWebUrl" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="SyncFlowTemplates" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="category" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="SyncHubSiteTheme" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-        </FunctionImport>
-        <FunctionImport Name="UnregisterPushNotificationSubscriber" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="deviceAppInstanceId" Type="Edm.Guid" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="SP_Web_UnshareObject" ReturnType="SP.SharingResult" EntitySet="SharingResults">
-          <Parameter Name="url" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="Update" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-        </FunctionImport>
-        <FunctionImport Name="UploadImage" ReturnType="SP.SPImageItem" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="listTitle" Type="Edm.String" />
-          <Parameter Name="imageName" Type="Edm.String" />
-          <Parameter Name="contentStream" Type="Edm.Stream" />
-          <Parameter Name="listId" Type="Edm.String" />
-          <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="overwrite" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetByName" ReturnType="SP.WebTemplate" IsComposable="true" IsBindable="true" EntitySet="WebTemplates">
           <Parameter Name="this" Type="Collection(SP.WebTemplate)" />
@@ -14755,6 +14783,10 @@
         <AssociationSet Name="SP_NavigationNode_Children_SP_NavigationNode_ChildrenPartnerSet" Association="SP.SP_NavigationNode_Children_SP_NavigationNode_ChildrenPartner">
           <End Role="ChildrenPartner" EntitySet="NavigationNodes" />
           <End Role="Children" EntitySet="NavigationNodes" />
+        </AssociationSet>
+        <AssociationSet Name="SP_NavigationNode_TitleResource_SP_UserResource_TitleResourcePartnerSet" Association="SP.SP_NavigationNode_TitleResource_SP_UserResource_TitleResourcePartner">
+          <End Role="TitleResourcePartner" EntitySet="NavigationNodes" />
+          <End Role="TitleResource" EntitySet="UserResources" />
         </AssociationSet>
         <AssociationSet Name="SP_ObjectSharingInformation_SharedWithUsersCollection_SP_ObjectSharingInformationUser_SharedWithUsersCollectionPartnerSet" Association="SP.SP_ObjectSharingInformation_SharedWithUsersCollection_SP_ObjectSharingInformationUser_SharedWithUsersCollectionPartner">
           <End Role="SharedWithUsersCollectionPartner" EntitySet="ObjectSharingInformations" />
@@ -19344,6 +19376,114 @@
       <Annotations Target="SP.ApiData/SetComplianceTagWithRecord(SP.ListItem, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_Web_DefaultDocumentLibraryUrl(Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetAllClientSideComponents(SP.Web)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetClientSideComponents(SP.Web, Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentIdentifier), Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetClientSideComponentsById(SP.Web, Collection(Edm.Guid), Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetClientSideWebParts(SP.Web, Edm.Boolean, Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetFileByGuestUrlEnsureAccess(SP.Web, Edm.String, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetFileByGuestUrlExtended(SP.Web, Edm.String, SP.Sharing.SharingLinkAccessRequest)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetFileByServerRelativePath(SP.Web, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetFolderByGuestUrl(SP.Web, Edm.String, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetFolderByGuestUrlExtended(SP.Web, Edm.String, SP.Sharing.SharingLinkAccessRequest)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetFolderByServerRelativePath(SP.Web, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetListItemUsingPath(SP.Web, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetListUsingPath(SP.Web, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetNewsList(SP.Web, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetRegionalDateTimeSchema(SP.Web)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetSharingLinkData(SP.Web, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_Web_GetSharingLinkKind(Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetSPAppContextAsStream(SP.Web)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetStorageEntity(SP.Web, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetViewFromPath(SP.Web, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/HubSiteData(SP.Web, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/HubSiteDataAsStream(SP.Web, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/PageContextCore(SP.Web)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/PageContextInfo(SP.Web, Edm.Boolean, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/ParseDateTime(SP.Web, Edm.String, Edm.Int32, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/RemoveStorageEntity(SP.Web, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetAccessRequestSiteDescriptionAndUpdate(SP.Web, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetChromeOptions(SP.Web, Edm.Int32, Edm.Int32, Edm.Boolean, Edm.Boolean, Edm.Int32, Edm.Int32, Edm.Boolean, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetDefaultNewPageTemplateId(SP.Web, Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetGlobalNavSettings(SP.Web, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetStorageEntity(SP.Web, Edm.String, Edm.String, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetUseAccessRequestDefaultAndUpdate(SP.Web, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SyncFlowInstances(SP.Web, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SyncFlowTemplates(SP.Web, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SyncHubSiteTheme(SP.Web)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/UploadImage(SP.Web, Edm.String, Edm.String, Edm.Stream, Edm.String, Edm.Int32, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_ListHomeItemCollection_GetListHomeItems(Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19596,118 +19736,13 @@
       <Annotations Target="SP.ApiData/SetId(SP.TimeZone, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetResourceEntries(SP.UserResource)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/AddToSpotlight(SP.View, Edm.Int32, Edm.String, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/RemoveFromSpotlight(SP.View, Edm.Int32, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SP_Web_DefaultDocumentLibraryUrl(Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetAllClientSideComponents(SP.Web)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetClientSideComponents(SP.Web, Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentIdentifier), Edm.Guid)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetClientSideComponentsById(SP.Web, Collection(Edm.Guid), Edm.Guid)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetClientSideWebParts(SP.Web, Edm.Boolean, Edm.Guid)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetFileByGuestUrlEnsureAccess(SP.Web, Edm.String, Edm.Boolean)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetFileByGuestUrlExtended(SP.Web, Edm.String, SP.Sharing.SharingLinkAccessRequest)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetFileByServerRelativePath(SP.Web, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetFolderByGuestUrl(SP.Web, Edm.String, Edm.Boolean)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetFolderByGuestUrlExtended(SP.Web, Edm.String, SP.Sharing.SharingLinkAccessRequest)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetFolderByServerRelativePath(SP.Web, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetListItemUsingPath(SP.Web, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetListUsingPath(SP.Web, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetNewsList(SP.Web, Edm.Boolean)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetRegionalDateTimeSchema(SP.Web)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetSharingLinkData(SP.Web, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SP_Web_GetSharingLinkKind(Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetSPAppContextAsStream(SP.Web)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetStorageEntity(SP.Web, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetViewFromPath(SP.Web, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/HubSiteData(SP.Web, Edm.Boolean)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/HubSiteDataAsStream(SP.Web, Edm.Boolean)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/PageContextCore(SP.Web)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/PageContextInfo(SP.Web, Edm.Boolean, Edm.Boolean)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/ParseDateTime(SP.Web, Edm.String, Edm.Int32, Edm.Int32)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/RemoveStorageEntity(SP.Web, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SetAccessRequestSiteDescriptionAndUpdate(SP.Web, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SetChromeOptions(SP.Web, Edm.Int32, Edm.Int32, Edm.Boolean, Edm.Boolean, Edm.Int32, Edm.Int32, Edm.Boolean, Edm.Int32)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SetDefaultNewPageTemplateId(SP.Web, Edm.Guid)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SetGlobalNavSettings(SP.Web, Edm.String, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SetStorageEntity(SP.Web, Edm.String, Edm.String, Edm.String, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SetUseAccessRequestDefaultAndUpdate(SP.Web, Edm.Boolean)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SyncFlowInstances(SP.Web, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SyncFlowTemplates(SP.Web, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SyncHubSiteTheme(SP.Web)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/UploadImage(SP.Web, Edm.String, Edm.String, Edm.Stream, Edm.String, Edm.Int32, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_TranslationStatusCollection()">
@@ -20534,6 +20569,12 @@
         <Property Name="LastModified" Type="Edm.DateTime" Nullable="false" />
         <Property Name="StartedDateInUtc" Type="Edm.DateTime" Nullable="false" />
         <Property Name="StateName" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="OrgRelationGroupManagedPath">
+        <Key>
+          <PropertyRef Name="GroupManagedPath" />
+        </Key>
+        <Property Name="GroupManagedPath" Type="Edm.String" Nullable="false" />
       </EntityType>
       <EntityType Name="OrgRelationNotification">
         <Key>
@@ -28846,16 +28887,16 @@
     <Schema Namespace="Microsoft.SharePoint.AuthPolicy" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="SPTenantIBPolicyComplianceReportEntityData">
         <Key>
-          <PropertyRef Name="AutoHeal" />
+          <PropertyRef Name="UpdateOneDriveSegments" />
         </Key>
-        <Property Name="AutoHeal" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="UpdateOneDriveSegments" Type="Edm.Boolean" Nullable="false" />
       </EntityType>
       <EntityType Name="SPTenantIBPolicyComplianceReport" BaseType="Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReportEntityData">
-        <Property Name="CompleteTimeInUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="CompleteTimeInUtc" Type="Edm.DateTime" />
         <Property Name="Content" Type="Collection(Edm.String)" />
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
-        <Property Name="QueuedTimeInUtc" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="StartTimeInUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="QueuedTimeInUtc" Type="Edm.DateTime" />
+        <Property Name="StartTimeInUtc" Type="Edm.DateTime" />
         <Property Name="State" Type="Edm.String" />
       </EntityType>
     </Schema>
