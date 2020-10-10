@@ -279,6 +279,7 @@ OpenWebParameterss | ✅ | ❌ | ❌ | ❌
 OrderInfos | ✅ | ✅ | ✅ | ✅
 OrgNews | ✅ | ❌ | ❌ | ❌
 OrgNewsSites | ✅ | ❌ | ❌ | ❌
+OrgRelationGroupManagedPaths | ✅ (❌) | ❌ | ❌ | ❌
 OrgRelationNotifications | ✅ | ❌ | ❌ | ❌
 OrgRelationVerifications | ✅ | ❌ | ❌ | ❌
 PageDiagnostics | ✅ | ❌ | ❌ | ❌
@@ -407,6 +408,7 @@ SPOWebAppServicePrincipalPermissionGrants | ✅ | ❌ | ❌ | ❌
 SPOWebAppServicePrincipalPermissionRequests | ✅ | ❌ | ❌ | ❌
 SPOWebAppServicePrincipals | ✅ | ❌ | ❌ | ❌
 SPPolicyStoreProxys | ✅ | ❌ | ❌ | ❌
+SPResourceEntrys | ✅ (❌) | ❌ | ❌ | ❌
 SPSitePreservationUtilitys | ✅ | ❌ | ❌ | ❌
 SPSocialSwitchs | ✅ | ✅ | ❌ | ❌
 SPTenantAppInstanceDatas | ✅ | ❌ | ❌ | ❌

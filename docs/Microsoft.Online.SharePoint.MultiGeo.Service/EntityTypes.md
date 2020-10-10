@@ -30,6 +30,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [MoveJobEntityData](./EntityTypes/MoveJobEntityData.md) | ✅ | ❌ | ❌ | ❌
 [MultiGeoApiVersions](./EntityTypes/MultiGeoApiVersions.md) | ✅ | ❌ | ❌ | ❌
 [MultiGeoServicesBeta](./EntityTypes/MultiGeoServicesBeta.md) | ✅ | ❌ | ❌ | ❌
+[OrgRelationGroupManagedPath](./EntityTypes/OrgRelationGroupManagedPath.md) | ✅ (❌) | ❌ | ❌ | ❌
 [OrgRelationNotification](./EntityTypes/OrgRelationNotification.md) | ✅ | ❌ | ❌ | ❌
 [OrgRelationVerification](./EntityTypes/OrgRelationVerification.md) | ✅ | ❌ | ❌ | ❌
 [SiteMoveJob](./EntityTypes/SiteMoveJob.md) | ✅ | ❌ | ❌ | ❌

@@ -331,6 +331,7 @@ GetRecycleBinItemsByQueryInfo (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetRegionalDateTimeSchema (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetRelatedFields (SP.List) | ✅ | ✅ | ✅ | ✅
 GetRemoteContext (SP.RequestContext) | ✅ | ✅ | ✅ | ❌
+GetResourceEntries (SP.UserResource) | ✅ (❌) | ❌ | ❌ | ❌
 [GetResponseData](./Functions/GetResponseData.md) | ❌ | ❌ | ❌ | ✅
 GetSPAppContextAsStream (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetSharedWithUsers (SP.ObjectSharingInformation) | ✅ | ✅ | ✅ | ✅
@@ -560,6 +561,7 @@ SP_SPHSite_GetSPHSiteXGeo | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsModernSiteWithHorizontalNav](./Functions/SP_SPHSite_IsModernSiteWithHorizontalNav.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsValidHomeSite](./Functions/SP_SPHSite_IsValidHomeSite.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_SetSPHSite](./Functions/SP_SPHSite_SetSPHSite.md) | ✅ | ❌ | ❌ | ❌
+[SP_SPResourceEntry](./Functions/SP_SPResourceEntry.md) | ✅ (❌) | ❌ | ❌ | ❌
 SP_ServerSettings_GetBlockedFileExtensions | ✅ | ✅ | ✅ | ✅
 [SP_ServerSettings_GetGlobalInstalledLanguages](./Functions/SP_ServerSettings_GetGlobalInstalledLanguages.md) | ✅ | ✅ | ✅ | ✅
 SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌
