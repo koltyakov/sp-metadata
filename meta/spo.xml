@@ -547,6 +547,10 @@
         <Property Name="BypassQuotaCheck" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BypassSharedLock" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="ListItemUpdateResults">
+        <Property Name="UpdatedData" Type="Edm.String" />
+        <Property Name="UpdateResults" Type="Collection(SP.ListItemFormUpdateValue)" />
+      </ComplexType>
       <ComplexType Name="SPListRule">
         <Property Name="Condition" Type="Edm.String" />
         <Property Name="CreateDate" Type="Edm.DateTime" Nullable="false" />
@@ -765,6 +769,7 @@
         <Property Name="DatesInUtc" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ExpandGroups" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ExpandUserField" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="FilterOutChannelFoldersInDefaultDocLib" Type="Edm.Boolean" Nullable="false" />
         <Property Name="FirstGroupOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="FolderServerRelativeUrl" Type="Edm.String" />
         <Property Name="ImageFieldsToTryRewriteToCdnUrls" Type="Edm.String" />
@@ -783,6 +788,10 @@
         <Property Name="OverrideScope" Type="Edm.String" />
         <Property Name="ProcessQStringToCAML" Type="Edm.String" />
         <Property Name="ViewId" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SPResourceEntry">
+        <Property Name="LCID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Value" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="RoleDefinitionCreationInformation">
         <Property Name="BasePermissions" Type="SP.BasePermissions" />
@@ -947,6 +956,7 @@
         <Property Name="NodeType" Type="Edm.Int32" Nullable="false" />
         <Property Name="SimpleUrl" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
+        <Property Name="Translations" Type="Collection(SP.SPResourceEntry)" />
       </ComplexType>
       <ComplexType Name="MenuState">
         <Property Name="AudienceIds" Type="Collection(Edm.Guid)" Nullable="false" />
@@ -2110,6 +2120,12 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
+      <EntityType Name="PinnedItems" Abstract="true">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="FavoriteLists" Abstract="true">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
@@ -2642,6 +2658,7 @@
         <Property Name="Presence" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SelectionGroup" Type="Edm.Int32" Nullable="false" />
         <Property Name="SelectionMode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="UserDisplayOptions" Type="Edm.String" />
       </EntityType>
       <EntityType Name="FlowSynchronizationResult">
         <Key>
@@ -2745,13 +2762,6 @@
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
         <NavigationProperty Name="Current" Relationship="SP.SP_RequestUserContext_Current_SP_RequestUserContext_CurrentPartner" ToRole="Current" FromRole="CurrentPartner" />
         <NavigationProperty Name="User" Relationship="SP.SP_RequestUserContext_User_SP_User_UserPartner" ToRole="User" FromRole="UserPartner" />
-      </EntityType>
-      <EntityType Name="SPResourceEntry">
-        <Key>
-          <PropertyRef Name="LCID" />
-        </Key>
-        <Property Name="LCID" Type="Edm.Int32" Nullable="false" />
-        <Property Name="Value" Type="Edm.String" />
       </EntityType>
       <EntityType Name="SharingUtility" Abstract="true">
         <Key>
@@ -4017,6 +4027,7 @@
         <EntitySet Name="OpenWebParameterss" EntityType="SP.OpenWebParameters" />
         <EntitySet Name="ClickManagers" EntityType="SP.PageInstrumentation.ClickManager" />
         <EntitySet Name="PickerSettingss" EntityType="SP.PickerSettings" />
+        <EntitySet Name="PinnedItemss" EntityType="SP.PinnedItems" />
         <EntitySet Name="Principals" EntityType="SP.Principal" />
         <EntitySet Name="PropertyValuess" EntityType="SP.PropertyValues" />
         <EntitySet Name="CommunicationSites" EntityType="SP.Publishing.CommunicationSite" />
@@ -4087,7 +4098,6 @@
         <EntitySet Name="SPAppLicenseManagers" EntityType="SP.SPAppLicenseManager" />
         <EntitySet Name="SPDataLeakagePreventionStatusInfos" EntityType="SP.SPDataLeakagePreventionStatusInfo" />
         <EntitySet Name="SPMigrationJobStatuss" EntityType="SP.SPMigrationJobStatus" />
-        <EntitySet Name="SPResourceEntrys" EntityType="SP.SPResourceEntry" />
         <EntitySet Name="StorageMetricss" EntityType="SP.StorageMetrics" />
         <EntitySet Name="TeamChannels" EntityType="SP.TeamChannel" />
         <EntitySet Name="TeamChannelManagers" EntityType="SP.TeamChannelManager" />
@@ -4889,6 +4899,10 @@
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
         </FunctionImport>
+        <FunctionImport Name="UpdateModelSettings" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
+          <Parameter Name="ModelSettings" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="GetByTitle" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsComposable="true" IsBindable="true" EntitySet="Models">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
           <Parameter Name="title" Type="Edm.String" />
@@ -4979,6 +4993,14 @@
           <Parameter Name="this" Type="SP.CompliancePolicy.SPPolicyStoreProxy" />
           <Parameter Name="itemIds" Type="Collection(Edm.Int32)" Nullable="false" />
           <Parameter Name="extensionDate" Type="Edm.DateTime" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_FindAlternativeScope" ReturnType="Edm.String" IsSideEffecting="false">
+          <Parameter Name="tenantId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="scope" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_FindPolicyScopeById" ReturnType="Edm.String" IsSideEffecting="false">
+          <Parameter Name="tenantId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="scopeId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_GetAvailableTagsForSite" ReturnType="Collection(SP.CompliancePolicy.ComplianceTag)" IsSideEffecting="false">
           <Parameter Name="siteUrl" Type="Edm.String" />
@@ -8346,6 +8368,13 @@
         <FunctionImport Name="UpdateOverwriteVersion" IsBindable="true">
           <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
         </FunctionImport>
+        <FunctionImport Name="ValidateUpdateFetchListItem" ReturnType="SP.ListItemUpdateResults" IsBindable="true">
+          <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
+          <Parameter Name="formValues" Type="Collection(SP.ListItemFormUpdateValue)" />
+          <Parameter Name="bNewDocumentUpdate" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="checkInComment" Type="Edm.String" />
+          <Parameter Name="datesInUTC" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="ValidateUpdateListItem" ReturnType="Collection(SP.ListItemFormUpdateValue)" IsBindable="true">
           <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
           <Parameter Name="formValues" Type="Collection(SP.ListItemFormUpdateValue)" />
@@ -9059,6 +9088,21 @@
         </FunctionImport>
         <FunctionImport Name="SitesReference" ReturnType="Collection(SP.OrganizationNewsSiteReference)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.OrganizationNews" />
+        </FunctionImport>
+        <FunctionImport Name="SP_PinnedItems_AddItem">
+          <Parameter Name="pinnedItem" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
+        </FunctionImport>
+        <FunctionImport Name="SP_PinnedItems_GetItemsBy" ReturnType="Collection(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)" IsSideEffecting="false">
+          <Parameter Name="siteId" Type="Edm.String" />
+          <Parameter Name="listId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_PinnedItems_RemoveItem">
+          <Parameter Name="siteId" Type="Edm.String" />
+          <Parameter Name="listId" Type="Edm.String" />
+          <Parameter Name="webId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_PinnedItems_UpdateItem">
+          <Parameter Name="pinnedItem" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_OrgNewsSite_OrgNewsSiteApi" ReturnType="Microsoft.SharePoint.OrgNewsSite.OrgNewsSiteApi" IsComposable="true" EntitySet="OrgNewsSites" />
         <FunctionImport Name="Details" ReturnType="Microsoft.SharePoint.OrgNewsSite.OrgNewsSiteInfo" IsSideEffecting="false" IsBindable="true">
@@ -10115,6 +10159,13 @@
         </FunctionImport>
         <FunctionImport Name="UpdateOverwriteVersion" IsBindable="true">
           <Parameter Name="this" Type="SP.ListItem" />
+        </FunctionImport>
+        <FunctionImport Name="ValidateUpdateFetchListItem" ReturnType="SP.ListItemUpdateResults" IsBindable="true">
+          <Parameter Name="this" Type="SP.ListItem" />
+          <Parameter Name="formValues" Type="Collection(SP.ListItemFormUpdateValue)" />
+          <Parameter Name="bNewDocumentUpdate" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="checkInComment" Type="Edm.String" />
+          <Parameter Name="datesInUTC" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="ValidateUpdateListItem" ReturnType="Collection(SP.ListItemFormUpdateValue)" IsBindable="true">
           <Parameter Name="this" Type="SP.ListItem" />
@@ -11892,10 +11943,6 @@
           <Parameter Name="serverRelativeUrl" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_RequestUserContext_Current" ReturnType="SP.RequestUserContext" IsComposable="true" EntitySet="Mes" />
-        <FunctionImport Name="SP_SPResourceEntry" ReturnType="SP.SPResourceEntry" IsComposable="true" EntitySet="SPResourceEntrys">
-          <Parameter Name="LCID" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="value" Type="Edm.String" />
-        </FunctionImport>
         <FunctionImport Name="AddRoleAssignment" IsBindable="true">
           <Parameter Name="this" Type="Collection(SP.RoleAssignment)" />
           <Parameter Name="principalId" Type="Edm.Int32" Nullable="false" />
@@ -12283,7 +12330,7 @@
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.UserCustomAction" />
         </FunctionImport>
-        <FunctionImport Name="GetResourceEntries" ReturnType="Collection(SP.SPResourceEntry)" IsComposable="true" IsBindable="true" EntitySet="SPResourceEntrys">
+        <FunctionImport Name="GetResourceEntries" ReturnType="Collection(SP.SPResourceEntry)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.UserResource" />
         </FunctionImport>
         <FunctionImport Name="GetValueForUICulture" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
@@ -16013,6 +16060,9 @@
       <Annotations Target="SP.RenderListDataParameters/ExpandUserField">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.RenderListDataParameters/FilterOutChannelFoldersInDefaultDocLib">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.RenderListDataParameters/ImageFieldsToTryRewriteToCdnUrls">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16536,6 +16586,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/ColumnName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/ColumnType">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/ContentTypeGroup">
@@ -18230,6 +18283,9 @@
       <Annotations Target="SP.ApiData/Update(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/UpdateModelSettings(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetByTitle(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19119,6 +19175,18 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_SPHSite_SetSPHSite(Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_PinnedItems_AddItem(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_PinnedItems_GetItemsBy(Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_PinnedItems_RemoveItem(Edm.String, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_PinnedItems_UpdateItem(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetPublishingNavigationProviderType(Microsoft.SharePoint.Navigation.REST.NavigationServiceRest, Edm.String)">
@@ -25272,7 +25340,7 @@
         <Property Name="SiteScriptIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="SupportedWebTemplates" Type="Collection(Edm.String)" />
         <Property Name="TemplateFeatures" Type="Collection(Edm.String)" />
-        <Property Name="ThmubnailUrl" Type="Edm.String" />
+        <Property Name="ThumbnailUrl" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
         <Property Name="WebTemplate" Type="Edm.String" />
       </ComplexType>
@@ -25526,11 +25594,11 @@
       </EntityType>
       <EntityType Name="CorporateCatalogAppMetadata">
         <Key>
-          <PropertyRef Name="AadAppId" />
+          <PropertyRef Name="AppCatalogVersion" />
         </Key>
-        <Property Name="AadAppId" Type="Edm.String" Nullable="false" />
+        <Property Name="AadAppId" Type="Edm.String" />
         <Property Name="AadPermissions" Type="Edm.String" />
-        <Property Name="AppCatalogVersion" Type="Edm.String" />
+        <Property Name="AppCatalogVersion" Type="Edm.String" Nullable="false" />
         <Property Name="CanUpgrade" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CDNLocation" Type="Edm.String" />
         <Property Name="ContainsTenantWideExtension" Type="Edm.Boolean" Nullable="false" />
@@ -25606,8 +25674,10 @@
       <ComplexType Name="ListHomeItem">
         <Property Name="color" Type="Edm.String" />
         <Property Name="icon" Type="Edm.String" />
+        <Property Name="isDocLib" Type="Edm.Boolean" />
         <Property Name="listId" Type="Edm.String" />
         <Property Name="listUrl" Type="Edm.String" />
+        <Property Name="siteIconUrl" Type="Edm.String" />
         <Property Name="siteId" Type="Edm.String" />
         <Property Name="siteTitle" Type="Edm.String" />
         <Property Name="siteUrl" Type="Edm.String" />
@@ -27803,6 +27873,7 @@
         <Property Name="Accuracy" Type="Edm.Single" Nullable="false" />
         <Property Name="ColumnId" Type="Edm.String" />
         <Property Name="ColumnName" Type="Edm.String" />
+        <Property Name="ColumnType" Type="Edm.String" />
         <Property Name="ContentTypeGroup" Type="Edm.String" />
         <Property Name="ContentTypeId" Type="Edm.String" />
         <Property Name="ContentTypeName" Type="Edm.String" />
