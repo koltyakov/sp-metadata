@@ -537,6 +537,10 @@ SP_MultilingualSettings | ✅ | ❌ | ❌ | ❌
 [<span title="SP_ObjectSharingInformation_GetWebSharingInformation">SP_ObjectSharingInformation_GetWebSharingInformati...</span> (SP ObjectSharingInformation GetWebSharingInformation)](./Functions/SP_ObjectSharingInformation_GetWebSharingInformation.md) | ✅ | ✅ | ✅ | ✅
 SP_OrganizationNews | ✅ | ❌ | ❌ | ❌
 [SP_OrganizationNews_GetSiteReference](./Functions/SP_OrganizationNews_GetSiteReference.md) | ✅ | ❌ | ❌ | ❌
+[SP_PinnedItems_AddItem](./Functions/SP_PinnedItems_AddItem.md) | ✅ (❌) | ❌ | ❌ | ❌
+[SP_PinnedItems_GetItemsBy](./Functions/SP_PinnedItems_GetItemsBy.md) | ✅ (❌) | ❌ | ❌ | ❌
+[SP_PinnedItems_RemoveItem](./Functions/SP_PinnedItems_RemoveItem.md) | ✅ (❌) | ❌ | ❌ | ❌
+[SP_PinnedItems_UpdateItem](./Functions/SP_PinnedItems_UpdateItem.md) | ✅ (❌) | ❌ | ❌ | ❌
 [SP_RecentListCollection_GetRecentLists](./Functions/SP_RecentListCollection_GetRecentLists.md) | ✅ | ❌ | ❌ | ❌
 [<span title="SP_RecentListCollection_GetRecentListsWithPageContextInfo">SP_RecentListCollection_GetRecentListsWithPageCont...</span> (SP RecentListCollection GetRecentListsWithPageContextInfo)](./Functions/SP_RecentListCollection_GetRecentListsWithPageContextInfo.md) | ✅ | ❌ | ❌ | ❌
 [SP_RecentListCollection_UpdateRecentLists](./Functions/SP_RecentListCollection_UpdateRecentLists.md) | ✅ | ❌ | ❌ | ❌
@@ -561,7 +565,6 @@ SP_SPHSite_GetSPHSiteXGeo | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsModernSiteWithHorizontalNav](./Functions/SP_SPHSite_IsModernSiteWithHorizontalNav.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsValidHomeSite](./Functions/SP_SPHSite_IsValidHomeSite.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_SetSPHSite](./Functions/SP_SPHSite_SetSPHSite.md) | ✅ | ❌ | ❌ | ❌
-[SP_SPResourceEntry](./Functions/SP_SPResourceEntry.md) | ✅ (❌) | ❌ | ❌ | ❌
 SP_ServerSettings_GetBlockedFileExtensions | ✅ | ✅ | ✅ | ✅
 [SP_ServerSettings_GetGlobalInstalledLanguages](./Functions/SP_ServerSettings_GetGlobalInstalledLanguages.md) | ✅ | ✅ | ✅ | ✅
 SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌
@@ -756,6 +759,7 @@ ValidateSetValue (SP.FieldRatingScale) | ❌ | ❌ | ❌ | ✅
 ValidateSetValue (SP.FieldText) | ❌ | ❌ | ❌ | ✅
 ValidateSetValue (SP.FieldUrl) | ❌ | ❌ | ❌ | ✅
 ValidateSetValue (SP.FieldUser) | ❌ | ❌ | ❌ | ✅
+ValidateUpdateFetchListItem (SP.ListItem) | ✅ (❌) | ❌ | ❌ | ❌
 ValidateUpdateListItem (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 contextinfo | ✅ | ✅ | ✅ | ✅
 files | ✅ | ✅ | ✅ | ❌

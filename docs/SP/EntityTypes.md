@@ -105,6 +105,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [OpenWebParameters](./EntityTypes/OpenWebParameters.md) | ✅ | ❌ | ❌ | ❌
 [OrganizationNews](./EntityTypes/OrganizationNews.md) | ✅ | ❌ | ❌ | ❌
 [PickerSettings](./EntityTypes/PickerSettings.md) | ✅ | ✅ | ✅ | ❌
+[PinnedItems](./EntityTypes/PinnedItems.md) | ✅ (❌) | ❌ | ❌ | ❌
 [Principal](./EntityTypes/Principal.md) | ✅ | ✅ | ✅ | ✅
 [PropertyValues](./EntityTypes/PropertyValues.md) | ✅ | ✅ | ✅ | ✅
 [PushNotificationSubscriber](./EntityTypes/PushNotificationSubscriber.md) | ✅ | ✅ | ✅ | ✅
@@ -125,7 +126,6 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPDataLeakagePreventionStatusInfo](./EntityTypes/SPDataLeakagePreventionStatusInfo.md) | ✅ | ✅ | ✅ | ❌
 [SPHSite](./EntityTypes/SPHSite.md) | ✅ | ❌ | ❌ | ❌
 [SPMigrationJobStatus](./EntityTypes/SPMigrationJobStatus.md) | ✅ | ✅ | ✅ | ❌
-[SPResourceEntry](./EntityTypes/SPResourceEntry.md) | ✅ (❌) | ❌ | ❌ | ❌
 [ScriptSafeDomain](./EntityTypes/ScriptSafeDomain.md) | ✅ | ✅ | ❌ | ❌
 [SecurableObject](./EntityTypes/SecurableObject.md) | ✅ | ✅ | ✅ | ✅
 [ServerSettings](./EntityTypes/ServerSettings.md) | ✅ | ✅ | ✅ | ✅

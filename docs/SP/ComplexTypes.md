@@ -74,6 +74,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ListItemDeleteParameters](./ComplexTypes/ListItemDeleteParameters.md) | ✅ | ❌ | ❌ | ❌
 [ListItemFormUpdateValue](./ComplexTypes/ListItemFormUpdateValue.md) | ✅ | ✅ | ✅ | ✅
 [ListItemUpdateParameters](./ComplexTypes/ListItemUpdateParameters.md) | ✅ | ❌ | ❌ | ❌
+[ListItemUpdateResults](./ComplexTypes/ListItemUpdateResults.md) | ✅ (❌) | ❌ | ❌ | ❌
 [MachineLearningSampleMeta](./ComplexTypes/MachineLearningSampleMeta.md) | ✅ | ❌ | ❌ | ❌
 [MediaServiceUpdateParameters](./ComplexTypes/MediaServiceUpdateParameters.md) | ✅ | ❌ | ❌ | ❌
 [MenuNode](./ComplexTypes/MenuNode.md) | ✅ | ✅ | ✅ | ✅
@@ -102,6 +103,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPInvitationCreationResult](./ComplexTypes/SPInvitationCreationResult.md) | ✅ | ✅ | ✅ | ❌
 [SPListRule](./ComplexTypes/SPListRule.md) | ✅ | ❌ | ❌ | ❌
 [SPMoveAndShareFileInfo](./ComplexTypes/SPMoveAndShareFileInfo.md) | ✅ | ❌ | ❌ | ❌
+[SPResourceEntry](./ComplexTypes/SPResourceEntry.md) | ✅ (❌) | ❌ | ❌ | ❌
 [ScriptSafeDomainEntityData](./ComplexTypes/ScriptSafeDomainEntityData.md) | ✅ | ✅ | ❌ | ❌
 [SensitivityLabelInfo](./ComplexTypes/SensitivityLabelInfo.md) | ✅ | ❌ | ❌ | ❌
 [SharedWithUser](./ComplexTypes/SharedWithUser.md) | ✅ | ✅ | ❌ | ❌

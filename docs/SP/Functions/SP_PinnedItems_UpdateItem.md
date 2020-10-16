@@ -1,4 +1,4 @@
-# Function Import: SP_SPResourceEntry
+# Function Import: SP_PinnedItems_UpdateItem
 
 > Namespace: SP
 
@@ -9,5 +9,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-LCID (Edm.Int32) | ✅ (❌) | ❌ | ❌ | ❌
-value (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
+pinnedItem (Microsoft.SharePoint.ListHome.FavoriteListHomeItem) | ✅ (❌) | ❌ | ❌ | ❌

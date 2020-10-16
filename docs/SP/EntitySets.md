@@ -293,6 +293,7 @@ PersonalWebs | ✅ | ✅ | ❌ | ❌
 Phases | ✅ | ✅ | ✅ | ❌
 PickerEntityInformations | ✅ | ✅ | ❌ | ❌
 PickerSettingss | ✅ | ✅ | ✅ | ❌
+PinnedItemss | ✅ (❌) | ❌ | ❌ | ❌
 PlacesEntitys | ✅ | ❌ | ❌ | ❌
 PlanAssignmentIntervals | ✅ | ✅ | ✅ | ❌
 PlanAssignments | ✅ | ✅ | ✅ | ❌
@@ -408,7 +409,6 @@ SPOWebAppServicePrincipalPermissionGrants | ✅ | ❌ | ❌ | ❌
 SPOWebAppServicePrincipalPermissionRequests | ✅ | ❌ | ❌ | ❌
 SPOWebAppServicePrincipals | ✅ | ❌ | ❌ | ❌
 SPPolicyStoreProxys | ✅ | ❌ | ❌ | ❌
-SPResourceEntrys | ✅ (❌) | ❌ | ❌ | ❌
 SPSitePreservationUtilitys | ✅ | ❌ | ❌ | ❌
 SPSocialSwitchs | ✅ | ✅ | ❌ | ❌
 SPTenantAppInstanceDatas | ✅ | ❌ | ❌ | ❌

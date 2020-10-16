@@ -36,4 +36,5 @@ Update (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 Update (SP.Workflow.WorkflowAssociation) | ✅ | ✅ | ✅ | ✅
 UpdateEx (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 UpdateOverwriteVersion (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
+ValidateUpdateFetchListItem (SP.Workflow.SPWorkflowTask) | ✅ (❌) | ❌ | ❌ | ❌
 ValidateUpdateListItem (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
