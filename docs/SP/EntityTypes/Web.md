@@ -29,6 +29,7 @@ CustomSiteActionsDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DefaultNewPageTemplateId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 DepartmentData (Edm.String) | ❌ | ✅ | ❌ | ❌
 Description (Edm.String) | ✅ | ✅ | ✅ | ✅
+DescriptionTranslations (Collection(SP.SPResourceEntry)) | ✅ (❌) | ❌ | ❌ | ❌
 DesignPackageId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 DesignerDownloadUrlForCurrentUser (Edm.String) | ✅ | ✅ | ✅ | ✅
 DisableAppViews (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
@@ -87,6 +88,7 @@ ThemeData (Edm.String) | ✅ | ✅ | ✅ | ❌
 ThemedCssFolderUrl (Edm.String) | ✅ | ✅ | ❌ | ✅
 ThirdPartyMdmEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 Title (Edm.String) | ✅ | ✅ | ✅ | ✅
+TitleTranslations (Collection(SP.SPResourceEntry)) | ✅ (❌) | ❌ | ❌ | ❌
 TreeViewEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 UIVersion (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 UIVersionConfigurationEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ✅

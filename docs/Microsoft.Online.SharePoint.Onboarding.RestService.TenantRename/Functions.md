@@ -8,4 +8,5 @@ Get (Collection(Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.
 GetJobById (Collection(Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob)) | ❌ (✅) | ❌ | ❌ | ❌
 GetJobsByState (Collection(Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob)) | ❌ (✅) | ❌ | ❌ | ❌
 GetState (Collection(Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob)) | ❌ (✅) | ❌ | ❌ | ❌
+GetWarningMessages (Collection(Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob)) | ✅ (❌) | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_Onboarding_RestService_TenantRename_TenantRenameJob">Microsoft_Online_SharePoint_Onboarding_RestService...</span> (Microsoft Online SharePoint Onboarding RestService TenantRename TenantRenameJob) | ✅ | ❌ | ❌ | ❌
