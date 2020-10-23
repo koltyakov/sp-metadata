@@ -1718,6 +1718,7 @@
         <Property Name="CustomSiteActionsDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DefaultNewPageTemplateId" Type="Edm.Guid" Nullable="false" />
         <Property Name="Description" Type="Edm.String" />
+        <Property Name="DescriptionTranslations" Type="Collection(SP.SPResourceEntry)" />
         <Property Name="DesignerDownloadUrlForCurrentUser" Type="Edm.String" />
         <Property Name="DesignPackageId" Type="Edm.Guid" Nullable="false" />
         <Property Name="DisableAppViews" Type="Edm.Boolean" Nullable="false" />
@@ -1776,6 +1777,7 @@
         <Property Name="ThemedCssFolderUrl" Type="Edm.String" />
         <Property Name="ThirdPartyMdmEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
+        <Property Name="TitleTranslations" Type="Collection(SP.SPResourceEntry)" />
         <Property Name="TreeViewEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UIVersion" Type="Edm.Int32" Nullable="false" />
         <Property Name="UIVersionConfigurationEnabled" Type="Edm.Boolean" Nullable="false" />
@@ -5446,6 +5448,9 @@
         <FunctionImport Name="Get" ReturnType="Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob" IsComposable="true" IsBindable="true" EntitySet="TenantRenameJobEntityDatas">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob)" />
         </FunctionImport>
+        <FunctionImport Name="GetWarningMessages" ReturnType="Collection(Edm.String)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob)" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_Onboarding_RestService_TenantRename_TenantRenameJob" ReturnType="Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob" IsComposable="true" EntitySet="TenantRenameJobEntityDatas" />
         <FunctionImport Name="GetBySiteUrl" ReturnType="Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJob" IsComposable="true" IsBindable="true" EntitySet="SiteRenameJobEntityDatas">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJob)" />
@@ -8163,6 +8168,7 @@
           <Parameter Name="this" Type="Microsoft.Office.Server.Search.REST.SearchSetting" />
           <Parameter Name="callLocalSearchFarmsOnly" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="skipGroupObjectIdLookup" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="throwOnRemoteApiCheck" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="getxssearchpolicy" ReturnType="Microsoft.Office.Server.Search.REST.XSSearchPolicy" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.Search.REST.SearchSetting" />
@@ -9116,6 +9122,9 @@
         <FunctionImport Name="GlobalNav" ReturnType="SP.MenuState" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" />
         </FunctionImport>
+        <FunctionImport Name="GlobalNavEnabled" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" />
+        </FunctionImport>
         <FunctionImport Name="MenuNodeKey" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" />
           <Parameter Name="currentUrl" Type="Edm.String" />
@@ -9132,6 +9141,10 @@
           <Parameter Name="this" Type="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" />
           <Parameter Name="menuState" Type="SP.MenuState" />
           <Parameter Name="mapProviderName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SetGlobalNavEnabled" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" />
+          <Parameter Name="isEnabled" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_MicroService_MicroServiceManager" ReturnType="SP.MicroService.MicroServiceManager" IsComposable="true" EntitySet="Microservicemanagers" />
         <FunctionImport Name="AddMicroserviceWorkItem" ReturnType="Edm.Guid" IsBindable="true">
@@ -12624,6 +12637,7 @@
           <Parameter Name="listID" Type="Edm.String" />
           <Parameter Name="topicIDs" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="SP_Utilities_WopiHostUtility_GenerateFileBundle" ReturnType="Edm.String" IsSideEffecting="false" />
         <FunctionImport Name="SP_Utilities_WopiHostUtility_GetFileHandlerWopiTargetPropertiesByUrl" ReturnType="SP.Utilities.FileHandlerWopiProperties" IsComposable="true" EntitySet="FileHandlerWopiPropertiess">
           <Parameter Name="fileUrl" Type="Edm.String" />
           <Parameter Name="appId" Type="Edm.String" />
@@ -19862,6 +19876,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/UpdateTenantTheme(SP.Utilities.ThemeManager, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_Utilities_WopiHostUtility_GenerateFileBundle()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Utilities_WopiHostUtility_GetFileHandlerWopiTargetPropertiesByUrl(Edm.String, Edm.String)">
@@ -28442,10 +28459,13 @@
         <Property Name="UseV2TenantRename" Type="Edm.Boolean" Nullable="false" />
       </EntityType>
       <EntityType Name="TenantRenameJob" BaseType="Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJobEntityData">
+        <Property Name="DateTimeFormat" Type="Edm.String" />
         <Property Name="FailedSitesCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="InprogressSitesCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="JobState" Type="Edm.String" />
         <Property Name="QueuedSitesCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RequestedAt" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ResponseMessages" Type="Collection(Edm.String)" />
         <Property Name="SuccessSitesCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="SuspendedSitesCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="TriggeredBy" Type="Edm.String" />
