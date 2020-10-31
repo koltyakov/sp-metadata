@@ -24,6 +24,8 @@ MigrateSchema (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Name (Edm.String) | ✅ | ❌ | ❌ | ❌
 PreservePermissionForFileShare (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PreserveUserPermissionForOnPrem (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ReplaceInvalidCharacters (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
+ReplacementOfInvalidCharacters (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
 ScanOnly (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ScheduledStartTimeUTC (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 SkipListWithAudienceEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

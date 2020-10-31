@@ -23,6 +23,8 @@ MigrateOneNoteNotebook (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MigrateSchema (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PreservePermissionForFileShare (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PreserveUserPermissionForOnPrem (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ReplaceInvalidCharacters (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
+ReplacementOfInvalidCharacters (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
 ScanOnly (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SkipListWithAudienceEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 StartMigrationAutomaticallyWhenNoScanIssue (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
