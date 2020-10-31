@@ -16536,10 +16536,28 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/Created">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/CreatedBy">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/CreatedByName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/DriveId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/Etag">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/ExtractedText">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/FileLeafRef">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/FileType">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/ID">
@@ -16551,7 +16569,22 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/Markups">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/ModelIds">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/Modified">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/ModifiedBy">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/ModifiedByName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/ObjectId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/Title">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/UniqueId">
@@ -16692,7 +16725,16 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData/TargetServerRelativeUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData/TargetSiteId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData/TargetSiteUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData/TargetUniqueId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData/TargetWebId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData/TargetWebServerRelativeUrl">
@@ -27601,6 +27643,8 @@
         <Property Name="MigrateSchema" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PreservePermissionForFileShare" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PreserveUserPermissionForOnPrem" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ReplaceInvalidCharacters" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ReplacementOfInvalidCharacters" Type="Edm.String" />
         <Property Name="ScanOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SkipListWithAudienceEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="StartMigrationAutomaticallyWhenNoScanIssue" Type="Edm.Boolean" Nullable="false" />
@@ -27681,6 +27725,8 @@
         <Property Name="Name" Type="Edm.String" Nullable="false" />
         <Property Name="PreservePermissionForFileShare" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PreserveUserPermissionForOnPrem" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ReplaceInvalidCharacters" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ReplacementOfInvalidCharacters" Type="Edm.String" />
         <Property Name="ScanOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ScheduledStartTimeUTC" Type="Edm.DateTime" Nullable="false" />
         <Property Name="SkipListWithAudienceEnabled" Type="Edm.Boolean" Nullable="false" />
@@ -27860,14 +27906,25 @@
       </EntityType>
       <EntityType Name="SPMachineLearningSample">
         <Key>
-          <PropertyRef Name="DriveId" />
+          <PropertyRef Name="Created" />
         </Key>
-        <Property Name="DriveId" Type="Edm.String" Nullable="false" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="CreatedBy" Type="Edm.String" />
+        <Property Name="CreatedByName" Type="Edm.String" />
+        <Property Name="DriveId" Type="Edm.String" />
+        <Property Name="Etag" Type="Edm.String" />
         <Property Name="ExtractedText" Type="Edm.String" />
+        <Property Name="FileLeafRef" Type="Edm.String" />
+        <Property Name="FileType" Type="Edm.String" />
         <Property Name="ID" Type="Edm.Int32" Nullable="false" />
         <Property Name="ListID" Type="Edm.Guid" Nullable="false" />
         <Property Name="Markups" Type="Edm.String" />
+        <Property Name="ModelIds" Type="Collection(Edm.Int32)" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedBy" Type="Edm.String" />
+        <Property Name="ModifiedByName" Type="Edm.String" />
         <Property Name="ObjectId" Type="Edm.String" />
+        <Property Name="Title" Type="Edm.String" />
         <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
       </EntityType>
       <EntityType Name="SPMachineLearningWorkItem">
@@ -27926,7 +27983,10 @@
           <PropertyRef Name="TargetServerRelativeUrl" />
         </Key>
         <Property Name="TargetServerRelativeUrl" Type="Edm.String" Nullable="false" />
+        <Property Name="TargetSiteId" Type="Edm.Guid" />
         <Property Name="TargetSiteUrl" Type="Edm.String" />
+        <Property Name="TargetUniqueId" Type="Edm.Guid" />
+        <Property Name="TargetWebId" Type="Edm.Guid" />
         <Property Name="TargetWebServerRelativeUrl" Type="Edm.String" />
         <Property Name="Type" Type="Edm.Guid" Nullable="false" />
       </EntityType>
