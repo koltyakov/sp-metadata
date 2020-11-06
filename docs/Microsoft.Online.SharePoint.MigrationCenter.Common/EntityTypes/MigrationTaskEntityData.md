@@ -18,14 +18,14 @@ Encrypted (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 FilterOutHiddenFiles (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 FilterOutPathSpecialCharacters (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IgnoredFileExtensions (Edm.String) | ✅ | ❌ | ❌ | ❌
+InvalidCharsReplacement (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
 MigrateAllWebStructures (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MigrateOneNoteNotebook (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MigrateSchema (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Name (Edm.String) | ✅ | ❌ | ❌ | ❌
 PreservePermissionForFileShare (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PreserveUserPermissionForOnPrem (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-ReplaceInvalidCharacters (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
-ReplacementOfInvalidCharacters (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
+ReplaceInvalidChars (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
 ScanOnly (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ScheduledStartTimeUTC (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 SkipListWithAudienceEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

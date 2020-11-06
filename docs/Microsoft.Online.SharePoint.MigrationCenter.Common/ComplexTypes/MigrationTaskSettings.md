@@ -18,13 +18,13 @@ Encrypted (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 FilterOutHiddenFiles (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 FilterOutPathSpecialCharacters (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IgnoredFileExtensions (Edm.String) | ✅ | ❌ | ❌ | ❌
+InvalidCharsReplacement (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
 MigrateAllWebStructures (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MigrateOneNoteNotebook (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MigrateSchema (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PreservePermissionForFileShare (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PreserveUserPermissionForOnPrem (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-ReplaceInvalidCharacters (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
-ReplacementOfInvalidCharacters (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
+ReplaceInvalidChars (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
 ScanOnly (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SkipListWithAudienceEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 StartMigrationAutomaticallyWhenNoScanIssue (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

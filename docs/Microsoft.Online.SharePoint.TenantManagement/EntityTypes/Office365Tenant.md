@@ -43,6 +43,7 @@ DefaultSharingLinkType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DisableAddToOneDrive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableCustomAppAuthentication (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisablePersonalListCreation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+DisableSpacesActivation (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
 DisabledModernListTemplateIds (Collection(Edm.Guid)) | ✅ (❌) | ❌ | ❌ | ❌
 DisplayStartASiteOption (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EmailAttestationEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

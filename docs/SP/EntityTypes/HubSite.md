@@ -13,6 +13,7 @@ HideNameInNavigation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ID (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 LogoUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 ParentHubSiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+PermissionsSyncTag (Edm.Int32) | ✅ (❌) | ❌ | ❌ | ❌
 RequiresJoinApproval (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SiteDesignId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 SiteId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
