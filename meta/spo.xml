@@ -156,6 +156,7 @@
         <Property Name="IsDefault" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsEditLink" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsFormsLink" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsManageListLink" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsReviewLink" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsUnhealthy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LastModified" Type="Edm.String" />
@@ -400,6 +401,7 @@
       </ComplexType>
       <ComplexType Name="EnqueueJobInformation">
         <Property Name="EnqueueJobStatus" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Message" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="EventReceiverDefinitionCreationInformation">
         <Property Name="ReceiverAssembly" Type="Edm.String" />
@@ -446,6 +448,7 @@
       </ComplexType>
       <ComplexType Name="FileCollectionAddParameters">
         <Property Name="AutoCheckoutOnInvalidData" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="EnsureUniqueFileName" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Overwrite" Type="Edm.Boolean" Nullable="false" />
         <Property Name="XorHash" Type="Edm.String" />
       </ComplexType>
@@ -478,6 +481,7 @@
         <Property Name="HideNameInNavigation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LogoUrl" Type="Edm.String" />
         <Property Name="ParentHubSiteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="PermissionsSyncTag" Type="Edm.Int32" Nullable="false" />
         <Property Name="RequiresJoinApproval" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SiteDesignId" Type="Edm.Guid" Nullable="false" />
         <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
@@ -1311,6 +1315,7 @@
         <Property Name="Indexed" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IndexStatus" Type="Edm.Int32" Nullable="false" />
         <Property Name="InternalName" Type="Edm.String" />
+        <Property Name="IsModern" Type="Edm.Boolean" Nullable="false" />
         <Property Name="JSLink" Type="Edm.String" />
         <Property Name="NoCrawl" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PinnedToFiltersPane" Type="Edm.Boolean" Nullable="false" />
@@ -2680,6 +2685,7 @@
         <Property Name="ID" Type="Edm.Guid" Nullable="false" />
         <Property Name="LogoUrl" Type="Edm.String" />
         <Property Name="ParentHubSiteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="PermissionsSyncTag" Type="Edm.Int32" Nullable="false" />
         <Property Name="RequiresJoinApproval" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SiteDesignId" Type="Edm.Guid" Nullable="false" />
         <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
@@ -9223,6 +9229,8 @@
           <Parameter Name="Content" Type="Edm.Binary" />
           <Parameter Name="Overwrite" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="Url" Type="Edm.String" />
+          <Parameter Name="IconUrl" Type="Edm.String" />
+          <Parameter Name="ShortDescription" Type="Edm.String" />
           <Parameter Name="StoreAssetId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="GetAppById" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata" IsComposable="true" IsBindable="true" EntitySet="CorporateCatalogAppMetadatas">
@@ -11407,6 +11415,7 @@
         <FunctionImport Name="AddStubUsingPath" ReturnType="SP.File" IsBindable="true" EntitySet="Files12">
           <Parameter Name="this" Type="Collection(SP.File)" />
           <Parameter Name="DecodedUrl" Type="Edm.String" />
+          <Parameter Name="parameters" Type="SP.FileCollectionAddParameters" />
         </FunctionImport>
         <FunctionImport Name="AddTemplateFile" ReturnType="SP.File" IsBindable="true" EntitySet="Files12">
           <Parameter Name="this" Type="Collection(SP.File)" />
@@ -11417,6 +11426,7 @@
           <Parameter Name="this" Type="Collection(SP.File)" />
           <Parameter Name="DecodedUrl" Type="Edm.String" />
           <Parameter Name="AutoCheckoutOnInvalidData" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="EnsureUniqueFileName" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="Overwrite" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="XorHash" Type="Edm.String" />
           <Parameter Name="contentStream" Type="Edm.Stream" />
@@ -15849,6 +15859,9 @@
       <Annotations Target="SP.SharingLinkInfo/IsFormsLink">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.SharingLinkInfo/IsManageListLink">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.SharingLinkInfo/IsReviewLink">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16006,6 +16019,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.HubSiteCreationInformation/ParentHubSiteId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.HubSiteCreationInformation/PermissionsSyncTag">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.HubSiteCreationInformation/RequiresJoinApproval">
@@ -17946,6 +17962,9 @@
       <Annotations Target="SP.HubSite/ParentHubSiteId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.HubSite/PermissionsSyncTag">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.HubSite/RequiresJoinApproval">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19287,7 +19306,7 @@
       <Annotations Target="SP.ApiData/Add(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/AddStoreApp(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String, Edm.String)">
+      <Annotations Target="SP.ApiData/AddStoreApp(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String, Edm.String, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetAppById(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.String)">
@@ -19710,7 +19729,7 @@
       <Annotations Target="SP.ApiData/SP_CurrencyList_GetList()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/AddUsingPath(Collection(SP.File), Edm.String, Edm.Boolean, Edm.Boolean, Edm.String, Edm.Stream)">
+      <Annotations Target="SP.ApiData/AddUsingPath(Collection(SP.File), Edm.String, Edm.Boolean, Edm.Boolean, Edm.Boolean, Edm.String, Edm.Stream)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/AddClientActivities(SP.File, Edm.Stream)">
@@ -25642,6 +25661,8 @@
         <Property Name="IsUpgradeAvailable" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
       <ComplexType Name="StoreAppCreationInformation" BaseType="SP.FileCreationInformation">
+        <Property Name="IconUrl" Type="Edm.String" />
+        <Property Name="ShortDescription" Type="Edm.String" />
         <Property Name="StoreAssetId" Type="Edm.String" />
       </ComplexType>
       <EntityType Name="SiteCollectionCorporateCatalogAccessor">
@@ -25653,11 +25674,11 @@
       </EntityType>
       <EntityType Name="CorporateCatalogAppMetadata">
         <Key>
-          <PropertyRef Name="AppCatalogVersion" />
+          <PropertyRef Name="AadAppId" />
         </Key>
-        <Property Name="AadAppId" Type="Edm.String" />
+        <Property Name="AadAppId" Type="Edm.String" Nullable="false" />
         <Property Name="AadPermissions" Type="Edm.String" />
-        <Property Name="AppCatalogVersion" Type="Edm.String" Nullable="false" />
+        <Property Name="AppCatalogVersion" Type="Edm.String" />
         <Property Name="CanUpgrade" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CDNLocation" Type="Edm.String" />
         <Property Name="ContainsTenantWideExtension" Type="Edm.Boolean" Nullable="false" />
@@ -26173,10 +26194,12 @@
       <ComplexType Name="SharingLinkAbilities">
         <Property Name="canAddNewExternalPrincipals" Type="SP.Sharing.SharingAbilityStatus" />
         <Property Name="canGetEditLink" Type="SP.Sharing.SharingAbilityStatus" />
+        <Property Name="canGetManageListLink" Type="SP.Sharing.SharingAbilityStatus" />
         <Property Name="canGetReadLink" Type="SP.Sharing.SharingAbilityStatus" />
         <Property Name="canGetReviewLink" Type="SP.Sharing.SharingAbilityStatus" />
         <Property Name="canHaveExternalUsers" Type="SP.Sharing.SharingAbilityStatus" />
         <Property Name="canManageEditLink" Type="SP.Sharing.SharingAbilityStatus" />
+        <Property Name="canManageManageListLink" Type="SP.Sharing.SharingAbilityStatus" />
         <Property Name="canManageReadLink" Type="SP.Sharing.SharingAbilityStatus" />
         <Property Name="canManageReviewLink" Type="SP.Sharing.SharingAbilityStatus" />
         <Property Name="linkExpiration" Type="SP.Sharing.SharingLinkExpirationAbilityStatus" />
@@ -27344,6 +27367,7 @@
         <Property Name="DisabledWebPartIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="DisablePersonalListCreation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableReportProblemDialog" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisableSpacesActivation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisallowInfectedFileDownload" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisplayNamesOfFileViewers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisplayNamesOfFileViewersInSpo" Type="Edm.Boolean" Nullable="false" />
@@ -27638,13 +27662,13 @@
         <Property Name="FilterOutHiddenFiles" Type="Edm.Boolean" Nullable="false" />
         <Property Name="FilterOutPathSpecialCharacters" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IgnoredFileExtensions" Type="Edm.String" />
+        <Property Name="InvalidCharsReplacement" Type="Edm.String" />
         <Property Name="MigrateAllWebStructures" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MigrateOneNoteNotebook" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MigrateSchema" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PreservePermissionForFileShare" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PreserveUserPermissionForOnPrem" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="ReplaceInvalidCharacters" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="ReplacementOfInvalidCharacters" Type="Edm.String" />
+        <Property Name="ReplaceInvalidChars" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ScanOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SkipListWithAudienceEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="StartMigrationAutomaticallyWhenNoScanIssue" Type="Edm.Boolean" Nullable="false" />
@@ -27719,14 +27743,14 @@
         <Property Name="FilterOutHiddenFiles" Type="Edm.Boolean" Nullable="false" />
         <Property Name="FilterOutPathSpecialCharacters" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IgnoredFileExtensions" Type="Edm.String" />
+        <Property Name="InvalidCharsReplacement" Type="Edm.String" />
         <Property Name="MigrateAllWebStructures" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MigrateOneNoteNotebook" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MigrateSchema" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Name" Type="Edm.String" Nullable="false" />
         <Property Name="PreservePermissionForFileShare" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PreserveUserPermissionForOnPrem" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="ReplaceInvalidCharacters" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="ReplacementOfInvalidCharacters" Type="Edm.String" />
+        <Property Name="ReplaceInvalidChars" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ScanOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ScheduledStartTimeUTC" Type="Edm.DateTime" Nullable="false" />
         <Property Name="SkipListWithAudienceEnabled" Type="Edm.Boolean" Nullable="false" />
@@ -29152,6 +29176,7 @@
         <Property Name="DisableCustomAppAuthentication" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisabledModernListTemplateIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="DisablePersonalListCreation" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisableSpacesActivation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisplayStartASiteOption" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EmailAttestationEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EmailAttestationReAuthDays" Type="Edm.Int32" Nullable="false" />
