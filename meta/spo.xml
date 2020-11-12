@@ -3723,6 +3723,7 @@
         <EntitySet Name="CrossGeoTenantBYOKs" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantBYOK" />
         <EntitySet Name="CrossGeoTenantCompatibilitys" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantCompatibility" />
         <EntitySet Name="CrossGeoTenantPropertyEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantPropertyEntityData" />
+        <EntitySet Name="CrossGeoUserPlacementJobEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoUserPlacementJobEntityData" />
         <EntitySet Name="DBSchemaCompatibilityChecks" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.DBSchemaCompatibilityCheck" />
         <EntitySet Name="GeoAdministrators" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator" />
         <EntitySet Name="GeoExperiences" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.GeoExperience" />
@@ -5255,6 +5256,8 @@
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoUserPlacementJobEntityData" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoUserPlacementJobEntityData" IsComposable="true" EntitySet="CrossGeoUserPlacementJobEntityDatas" />
+        <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoUserPlacementJob" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoUserPlacementJob" IsComposable="true" EntitySet="CrossGeoUserPlacementJobEntityDatas" />
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_DBSchemaCompatibilityCheck" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.DBSchemaCompatibilityCheck" IsComposable="true" EntitySet="DBSchemaCompatibilityChecks" />
         <FunctionImport Name="Create" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator" IsBindable="true" EntitySet="GeoAdministrators">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator)" />
@@ -13879,6 +13882,10 @@
           <End Role="CrossGeoTenantPropertiesPartner" EntitySet="MultiGeoServicesBetas" />
           <End Role="CrossGeoTenantProperties" EntitySet="CrossGeoTenantPropertyEntityDatas" />
         </AssociationSet>
+        <AssociationSet Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_CrossGeoUserPlacementJobs_Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoUserPlacementJob_CrossGeoUserPlacementJobsPartnerSet" Association="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_CrossGeoUserPlacementJobs_Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoUserPlacementJob_CrossGeoUserPlacementJobsPartner">
+          <End Role="CrossGeoUserPlacementJobsPartner" EntitySet="MultiGeoServicesBetas" />
+          <End Role="CrossGeoUserPlacementJobs" EntitySet="CrossGeoUserPlacementJobEntityDatas" />
+        </AssociationSet>
         <AssociationSet Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_GeoAdministrators_Microsoft_Online_SharePoint_MultiGeo_Service_GeoAdministrator_GeoAdministratorsPartnerSet" Association="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_GeoAdministrators_Microsoft_Online_SharePoint_MultiGeo_Service_GeoAdministrator_GeoAdministratorsPartner">
           <End Role="GeoAdministratorsPartner" EntitySet="MultiGeoServicesBetas" />
           <End Role="GeoAdministrators" EntitySet="GeoAdministrators" />
@@ -20547,6 +20554,16 @@
       <EntityType Name="CrossGeoTenantProperty" BaseType="Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantPropertyEntityData">
         <Property Name="LastModifiedTimeInUtc" Type="Edm.DateTime" Nullable="false" />
       </EntityType>
+      <EntityType Name="CrossGeoUserPlacementJobEntityData">
+        <Key>
+          <PropertyRef Name="TenantMySiteUrl" />
+        </Key>
+        <Property Name="TenantMySiteUrl" Type="Edm.String" Nullable="false" />
+        <Property Name="UserObjectId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="UserPrincipalName" Type="Edm.String" />
+        <Property Name="WorkitemId" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+      <EntityType Name="CrossGeoUserPlacementJob" BaseType="Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoUserPlacementJobEntityData" />
       <EntityType Name="DBSchemaCompatibilityCheck">
         <Key>
           <PropertyRef Name="CompatibilityResult" />
@@ -20641,6 +20658,7 @@
         <NavigationProperty Name="CrossGeoTenantBYOK" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_CrossGeoTenantBYOK_Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoTenantBYOK_CrossGeoTenantBYOKPartner" ToRole="CrossGeoTenantBYOK" FromRole="CrossGeoTenantBYOKPartner" />
         <NavigationProperty Name="CrossGeoTenantCompatibility" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_CrossGeoTenantCompatibility_Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoTenantCompatibility_CrossGeoTenantCompatibilityPartner" ToRole="CrossGeoTenantCompatibility" FromRole="CrossGeoTenantCompatibilityPartner" />
         <NavigationProperty Name="CrossGeoTenantProperties" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_CrossGeoTenantProperties_Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoTenantProperty_CrossGeoTenantPropertiesPartner" ToRole="CrossGeoTenantProperties" FromRole="CrossGeoTenantPropertiesPartner" />
+        <NavigationProperty Name="CrossGeoUserPlacementJobs" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_CrossGeoUserPlacementJobs_Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoUserPlacementJob_CrossGeoUserPlacementJobsPartner" ToRole="CrossGeoUserPlacementJobs" FromRole="CrossGeoUserPlacementJobsPartner" />
         <NavigationProperty Name="GeoAdministrators" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_GeoAdministrators_Microsoft_Online_SharePoint_MultiGeo_Service_GeoAdministrator_GeoAdministratorsPartner" ToRole="GeoAdministrators" FromRole="GeoAdministratorsPartner" />
         <NavigationProperty Name="GeoExperience" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_GeoExperience_Microsoft_Online_SharePoint_MultiGeo_Service_GeoExperience_GeoExperiencePartner" ToRole="GeoExperience" FromRole="GeoExperiencePartner" />
         <NavigationProperty Name="GeoTenantInstanceInformationCollection" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_GeoTenantInstanceInformationCollection_Microsoft_Online_SharePoint_MultiGeo_Service_GeoTenantInstanceInformation_GeoTenantInstanceInformationCollectionPartner" ToRole="GeoTenantInstanceInformationCollection" FromRole="GeoTenantInstanceInformationCollectionPartner" />
@@ -20794,6 +20812,10 @@
       <Association Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_CrossGeoTenantProperties_Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoTenantProperty_CrossGeoTenantPropertiesPartner">
         <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty" Role="CrossGeoTenantProperties" Multiplicity="*" />
         <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" Role="CrossGeoTenantPropertiesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_CrossGeoUserPlacementJobs_Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoUserPlacementJob_CrossGeoUserPlacementJobsPartner">
+        <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoUserPlacementJob" Role="CrossGeoUserPlacementJobs" Multiplicity="*" />
+        <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" Role="CrossGeoUserPlacementJobsPartner" Multiplicity="0..1" />
       </Association>
       <Association Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_GeoAdministrators_Microsoft_Online_SharePoint_MultiGeo_Service_GeoAdministrator_GeoAdministratorsPartner">
         <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator" Role="GeoAdministrators" Multiplicity="*" />
