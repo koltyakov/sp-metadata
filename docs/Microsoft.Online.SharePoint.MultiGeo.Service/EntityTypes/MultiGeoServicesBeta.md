@@ -20,6 +20,7 @@ CrossFarmUserMoveJobs | ✅ | ❌ | ❌ | ❌
 CrossGeoTenantBYOK | ✅ | ❌ | ❌ | ❌
 CrossGeoTenantCompatibility | ✅ | ❌ | ❌ | ❌
 CrossGeoTenantProperties | ✅ | ❌ | ❌ | ❌
+CrossGeoUserPlacementJobs | ✅ (❌) | ❌ | ❌ | ❌
 GeoAdministrators | ✅ | ❌ | ❌ | ❌
 GeoExperience | ✅ | ❌ | ❌ | ❌
 GeoTenantInstanceInformationCollection | ✅ | ❌ | ❌ | ❌

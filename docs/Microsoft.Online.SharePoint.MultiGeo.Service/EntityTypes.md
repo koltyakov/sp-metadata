@@ -16,6 +16,8 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CrossGeoTenantCompatibility](./EntityTypes/CrossGeoTenantCompatibility.md) | ✅ | ❌ | ❌ | ❌
 [CrossGeoTenantProperty](./EntityTypes/CrossGeoTenantProperty.md) | ✅ | ❌ | ❌ | ❌
 [CrossGeoTenantPropertyEntityData](./EntityTypes/CrossGeoTenantPropertyEntityData.md) | ✅ | ❌ | ❌ | ❌
+[CrossGeoUserPlacementJob](./EntityTypes/CrossGeoUserPlacementJob.md) | ✅ (❌) | ❌ | ❌ | ❌
+[CrossGeoUserPlacementJobEntityData](./EntityTypes/CrossGeoUserPlacementJobEntityData.md) | ✅ (❌) | ❌ | ❌ | ❌
 [DBSchemaCompatibilityCheck](./EntityTypes/DBSchemaCompatibilityCheck.md) | ✅ | ❌ | ❌ | ❌
 [GeoAdministrator](./EntityTypes/GeoAdministrator.md) | ✅ | ❌ | ❌ | ❌
 [GeoExperience](./EntityTypes/GeoExperience.md) | ✅ | ❌ | ❌ | ❌

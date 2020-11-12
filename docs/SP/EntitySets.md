@@ -76,6 +76,7 @@ CrossGeoSyncs | ✅ | ❌ | ❌ | ❌
 CrossGeoTenantBYOKs | ✅ | ❌ | ❌ | ❌
 CrossGeoTenantCompatibilitys | ✅ | ❌ | ❌ | ❌
 CrossGeoTenantPropertyEntityDatas | ✅ | ❌ | ❌ | ❌
+CrossGeoUserPlacementJobEntityDatas | ✅ (❌) | ❌ | ❌ | ❌
 CurrencyLists | ✅ | ✅ | ❌ | ❌
 CustomAttributeFilters | ✅ | ✅ | ✅ | ✅
 CustomFields | ✅ | ✅ | ✅ | ❌
