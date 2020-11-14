@@ -8,6 +8,7 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 Description (Edm.String) | ✅ | ✅ | ❌ | ❌
 DesignPackageId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+DesignType (Edm.Int64) | ✅ (❌) | ❌ | ❌ | ❌
 IsDefault (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 IsOutOfBoxTemplate (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsTenantAdminOnly (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
