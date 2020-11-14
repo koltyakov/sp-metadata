@@ -238,6 +238,8 @@
         <Property Name="FileName" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="AutoLabellingWorkInformation">
+        <Property Name="RoutingHint" Type="Edm.String" />
+        <Property Name="ScaleUnitId" Type="Edm.Guid" Nullable="false" />
         <Property Name="WorkItemType" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="BasePermissions">
@@ -457,6 +459,7 @@
         <Property Name="ETagMatch" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="FolderCollectionAddParameters">
+        <Property Name="EnsureUniqueFileName" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Overwrite" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
       <ComplexType Name="FolderDeleteParameters">
@@ -5092,6 +5095,13 @@
         <FunctionImport Name="RetagReviewItemsWithMetas" ReturnType="Collection(Edm.Int32)" IsBindable="true">
           <Parameter Name="this" Type="SP.CompliancePolicy.SPPolicyStoreProxy" />
           <Parameter Name="itemIds" Type="Collection(Edm.Int32)" Nullable="false" />
+          <Parameter Name="newTagName" Type="Edm.String" />
+          <Parameter Name="newTagMetas" Type="Collection(Edm.String)" />
+        </FunctionImport>
+        <FunctionImport Name="RetagUnifiedReviewItemsWithMetas" ReturnType="Collection(Edm.String)" IsBindable="true">
+          <Parameter Name="this" Type="SP.CompliancePolicy.SPPolicyStoreProxy" />
+          <Parameter Name="itemIds" Type="Collection(Edm.String)" />
+          <Parameter Name="originalTagName" Type="Edm.String" />
           <Parameter Name="newTagName" Type="Edm.String" />
           <Parameter Name="newTagMetas" Type="Collection(Edm.String)" />
         </FunctionImport>
@@ -11659,6 +11669,7 @@
         <FunctionImport Name="AddUsingPath" ReturnType="SP.Folder" IsBindable="true" EntitySet="Folders1">
           <Parameter Name="this" Type="Collection(SP.Folder)" />
           <Parameter Name="DecodedUrl" Type="Edm.String" />
+          <Parameter Name="EnsureUniqueFileName" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="Overwrite" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="AddWithOverwrite" ReturnType="SP.Folder" IsBindable="true" EntitySet="Folders1">
@@ -13171,6 +13182,11 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="hubSiteId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="principals" Type="Collection(Edm.String)" />
+        </FunctionImport>
+        <FunctionImport Name="SetIBSegmentsOnSite" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="segments" Type="Collection(Edm.Guid)" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SetIdleSessionSignOutForUnmanagedDevices" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -15977,9 +15993,6 @@
       <Annotations Target="SP.CopyMigrationOptions/MoveButKeepSource">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.CopyMigrationOptions/SameWebCopyMoveOptimization">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.CustomActionElement/ClientSideComponentId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16580,7 +16593,13 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/FileLeafRef">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/FileRef">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/FileType">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/FSObjType">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/ID">
@@ -16605,6 +16624,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/ObjectId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/ServerRedirectedEmbedUri">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/Title">
@@ -24586,6 +24608,7 @@
         <Property Name="CreatedDate" Type="Edm.DateTime" Nullable="false" />
         <Property Name="PageDetails" Type="Microsoft.SharePoint.Publishing.Diagnostics.PageDetails" />
         <Property Name="suggestions" Type="Collection(SP.Publishing.RuleResult)" />
+        <Property Name="Score" Type="Edm.Int32" Nullable="false" />
         <Property Name="ToolDetails" Type="Microsoft.SharePoint.Publishing.Diagnostics.ToolDetails" />
       </ComplexType>
       <ComplexType Name="ToolDetails">
@@ -25429,6 +25452,7 @@
       <ComplexType Name="SiteDesignCreationInfo">
         <Property Name="Description" Type="Edm.String" />
         <Property Name="DesignPackageId" Type="Edm.Guid" />
+        <Property Name="DesignType" Type="Edm.Int64" Nullable="false" />
         <Property Name="IsDefault" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsOutOfBoxTemplate" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsTenantAdminOnly" Type="Edm.Boolean" Nullable="false" />
@@ -27961,7 +27985,9 @@
         <Property Name="Etag" Type="Edm.String" />
         <Property Name="ExtractedText" Type="Edm.String" />
         <Property Name="FileLeafRef" Type="Edm.String" />
+        <Property Name="FileRef" Type="Edm.String" />
         <Property Name="FileType" Type="Edm.String" />
+        <Property Name="FSObjType" Type="Edm.Int32" Nullable="false" />
         <Property Name="ID" Type="Edm.Int32" Nullable="false" />
         <Property Name="ListID" Type="Edm.Guid" Nullable="false" />
         <Property Name="Markups" Type="Edm.String" />
@@ -27970,6 +27996,7 @@
         <Property Name="ModifiedBy" Type="Edm.String" />
         <Property Name="ModifiedByName" Type="Edm.String" />
         <Property Name="ObjectId" Type="Edm.String" />
+        <Property Name="ServerRedirectedEmbedUri" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
         <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
       </EntityType>
