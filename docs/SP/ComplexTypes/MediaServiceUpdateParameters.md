@@ -22,3 +22,4 @@ MediaServiceOCR (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceTranscript (Edm.String) | ✅ | ❌ | ❌ | ❌
 SensitivityLabel (Edm.String) | ✅ | ❌ | ❌ | ❌
 SensitivityLabelAssignmentMethod (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+XTenantLabelInfo (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌

@@ -21,6 +21,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [DBSchemaCompatibilityCheck](./EntityTypes/DBSchemaCompatibilityCheck.md) | ✅ | ❌ | ❌ | ❌
 [GeoAdministrator](./EntityTypes/GeoAdministrator.md) | ✅ | ❌ | ❌ | ❌
 [GeoExperience](./EntityTypes/GeoExperience.md) | ✅ | ❌ | ❌ | ❌
+[GeoLocationData](./EntityTypes/GeoLocationData.md) | ✅ (❌) | ❌ | ❌ | ❌
 [GeoMoveTenantCompatibilityCheck](./EntityTypes/GeoMoveTenantCompatibilityCheck.md) | ✅ | ❌ | ❌ | ❌
 [GeoTenantInstanceInformation](./EntityTypes/GeoTenantInstanceInformation.md) | ✅ | ❌ | ❌ | ❌
 [GeoTenantInstanceInformationEntityData](./EntityTypes/GeoTenantInstanceInformationEntityData.md) | ✅ | ❌ | ❌ | ❌

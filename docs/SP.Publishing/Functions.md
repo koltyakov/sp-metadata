@@ -53,6 +53,7 @@ DiscardPage (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 DiscardPage (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 EmbedData (SP.Publishing.EmbedService) | ✅ | ✅ | ❌ | ❌
 Enable (SP.Publishing.CommunicationSite) | ✅ | ❌ | ❌ | ❌
+EnableCategories (SP.Publishing.SitePageService) | ✅ (❌) | ❌ | ❌ | ❌
 EnsureTitleResource (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
 Feed (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
 FeedTargeted (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌

@@ -162,6 +162,7 @@ Forms | ✅ | ✅ | ✅ | ✅
 FormsCustomizations | ✅ | ✅ | ❌ | ❌
 GeoAdministrators | ✅ | ❌ | ❌ | ❌
 GeoExperiences | ✅ | ❌ | ❌ | ❌
+GeoLocationDatas | ✅ (❌) | ❌ | ❌ | ❌
 GeoMoveTenantCompatibilityChecks | ✅ | ❌ | ❌ | ❌
 GeoTenantInstanceInformationEntityDatas | ✅ | ❌ | ❌ | ❌
 GetExternalUsersResultss | ✅ | ❌ | ❌ | ❌

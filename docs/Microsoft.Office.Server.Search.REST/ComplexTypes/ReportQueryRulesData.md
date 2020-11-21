@@ -6,12 +6,12 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-DictionaryTerms (Edm.Int64) | ✅ (❌) | ❌ | ❌ | ❌
-Owner (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
+DictionaryTerms (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
 OwnerType (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
-PercentagePromotedResult (Edm.Double) | ✅ (❌) | ❌ | ❌ | ❌
-PromotedResultClicks (Edm.Int64) | ✅ (❌) | ❌ | ❌ | ❌
+PercentagePromotedResult (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
+PromotedResultClicks (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
 PromotedResultURL (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
+PromotedResultURLName (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
 QueryRule (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
 ResultSource (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
-TimesFired (Edm.Int64) | ✅ (❌) | ❌ | ❌ | ❌
+TimesFired (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌

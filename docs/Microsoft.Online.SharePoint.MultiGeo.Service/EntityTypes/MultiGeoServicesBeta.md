@@ -33,3 +33,4 @@ TaxonomyReplicationParameters | ✅ | ❌ | ❌ | ❌
 TenantInformationCollection | ✅ | ❌ | ❌ | ❌
 UnifiedGroups | ✅ | ❌ | ❌ | ❌
 UserMoveJobs | ✅ | ❌ | ❌ | ❌
+supportedgeolocationsmapdata | ✅ (❌) | ❌ | ❌ | ❌
