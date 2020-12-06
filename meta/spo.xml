@@ -482,6 +482,7 @@
         <Property Name="Description" Type="Edm.String" />
         <Property Name="EnablePermissionsSync" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnforcedECTs" Type="Edm.String" />
+        <Property Name="EnforcedECTsVersion" Type="Edm.Int32" Nullable="false" />
         <Property Name="HideNameInNavigation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LogoUrl" Type="Edm.String" />
         <Property Name="ParentHubSiteId" Type="Edm.Guid" Nullable="false" />
@@ -1382,6 +1383,7 @@
         <Property Name="MinorVersion" Type="Edm.Int32" Nullable="false" />
         <Property Name="Name" Type="Edm.String" Nullable="false" />
         <Property Name="PageRenderType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ServerRedirectedUrl" Type="Edm.String" />
         <Property Name="ServerRelativePath" Type="SP.ResourcePath" />
         <Property Name="ServerRelativeUrl" Type="Edm.String" />
         <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
@@ -1741,6 +1743,7 @@
         <Property Name="FooterEmphasis" Type="Edm.Int32" Nullable="false" />
         <Property Name="FooterEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="FooterLayout" Type="Edm.Int32" Nullable="false" />
+        <Property Name="HasWebTemplateExtension" Type="Edm.Boolean" Nullable="false" />
         <Property Name="HeaderEmphasis" Type="Edm.Int32" Nullable="false" />
         <Property Name="HeaderLayout" Type="Edm.Int32" Nullable="false" />
         <Property Name="HideTitleInHeader" Type="Edm.Boolean" Nullable="false" />
@@ -2625,6 +2628,7 @@
       <EntityType Name="FieldMultiLineText" BaseType="SP.Field">
         <Property Name="AllowHyperlink" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AppendOnly" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsLongHyperlink" Type="Edm.Boolean" Nullable="false" />
         <Property Name="NumberOfLines" Type="Edm.Int32" Nullable="false" />
         <Property Name="RestrictedMode" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RichText" Type="Edm.Boolean" Nullable="false" />
@@ -2686,6 +2690,7 @@
         <Property Name="Description" Type="Edm.String" Nullable="false" />
         <Property Name="EnablePermissionsSync" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnforcedECTs" Type="Edm.String" />
+        <Property Name="EnforcedECTsVersion" Type="Edm.Int32" Nullable="false" />
         <Property Name="HideNameInNavigation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ID" Type="Edm.Guid" Nullable="false" />
         <Property Name="LogoUrl" Type="Edm.String" />
@@ -8534,6 +8539,15 @@
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
           <Parameter Name="groupId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="GetTeamChannelFilesUrl" ReturnType="Edm.Stream" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
+          <Parameter Name="teamId" Type="Edm.String" />
+          <Parameter Name="channelId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetTeamChannels" ReturnType="Edm.Stream" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
+          <Parameter Name="teamId" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="GetValidSiteUrlFromAlias" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
           <Parameter Name="alias" Type="Edm.String" />
@@ -9147,6 +9161,7 @@
         </FunctionImport>
         <FunctionImport Name="GlobalNav" ReturnType="SP.MenuState" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" />
+          <Parameter Name="source" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="GlobalNavEnabled" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" />
@@ -10028,6 +10043,12 @@
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="value" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="SetItemsOrder" ReturnType="Collection(Edm.Int32)" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="itemIds" Type="Collection(Edm.Int32)" Nullable="false" />
+          <Parameter Name="lowerOrderItemId" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="higherOrderItemId" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="SyncFlowCallbackUrl" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="flowId" Type="Edm.String" />
@@ -10050,6 +10071,10 @@
         </FunctionImport>
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
+        </FunctionImport>
+        <FunctionImport Name="UpdateFormProcessingModelRetentionLabel" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="retentionLabel" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="UpdateRule" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -13018,10 +13043,16 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="GetTrackViewFeatureAlwaysVisible" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
+        </FunctionImport>
         <FunctionImport Name="Office365ProvidedSharepointSiteActivityDataReady" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
         </FunctionImport>
         <FunctionImport Name="ResetTimestampUpdateOffice365ProvidedSharepointSiteActivityData" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
+        </FunctionImport>
+        <FunctionImport Name="SetTrackViewFeatureAlwaysVisible" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
         </FunctionImport>
         <FunctionImport Name="UpdateOffice365ProvidedSharepointSiteActivityData" ReturnType="Edm.Boolean" IsBindable="true">
@@ -13094,6 +13125,9 @@
           <Parameter Name="siteCreationProperties" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCreationProperties" />
         </FunctionImport>
         <FunctionImport Name="GetIdleSessionSignOutForUnmanagedDevices" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+        </FunctionImport>
+        <FunctionImport Name="GetPowerAppsEnvironments" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.PowerAppsEnvironment)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
         <FunctionImport Name="GetSiteHealthStatus" ReturnType="SP.Publishing.PortalHealthStatus" IsSideEffecting="false" IsBindable="true">
@@ -16043,6 +16077,9 @@
       <Annotations Target="SP.HubSiteCreationInformation/EnforcedECTs">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.HubSiteCreationInformation/EnforcedECTsVersion">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.HubSiteCreationInformation/HideNameInNavigation">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17027,6 +17064,9 @@
       <Annotations Target="SP.File/PageRenderType">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.File/ServerRedirectedUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.File/ServerRelativePath">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17142,6 +17182,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Web/FooterLayout">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Web/HasWebTemplateExtension">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Web/HeaderEmphasis">
@@ -17975,6 +18018,9 @@
       <Annotations Target="SP.FieldNumber/DisplayFormat">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.FieldMultiLineText/IsLongHyperlink">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.FieldLookup/DependentLookupInternalNames">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17991,6 +18037,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.HubSite/EnforcedECTs">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.HubSite/EnforcedECTsVersion">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.HubSite/HideNameInNavigation">
@@ -18968,6 +19017,12 @@
       <Annotations Target="SP.ApiData/GetGroupSiteConversionData(Microsoft.SharePoint.Portal.GroupSiteManager)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetTeamChannelFilesUrl(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetTeamChannels(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetValidSiteUrlFromAlias(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.String, Edm.String, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19508,6 +19563,9 @@
       <Annotations Target="SP.ApiData/SetExemptFromBlockDownloadOfNonViewableFiles(SP.List, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SetItemsOrder(SP.List, Collection(Edm.Int32), Edm.Int32, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SyncFlowCallbackUrl(SP.List, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19521,6 +19579,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/UnpublishMappedView(SP.List, Edm.Guid, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/UpdateFormProcessingModelRetentionLabel(SP.List, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/UpdateRule(SP.List, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.Int32)">
@@ -20066,10 +20127,16 @@
       <Annotations Target="SP.ApiData/GetSiteDescription(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService, Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetTrackViewFeatureAlwaysVisible(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Office365ProvidedSharepointSiteActivityDataReady(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/ResetTimestampUpdateOffice365ProvidedSharepointSiteActivityData(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetTrackViewFeatureAlwaysVisible(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/UpdateOffice365ProvidedSharepointSiteActivityData(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService, Edm.String)">
@@ -24836,6 +24903,7 @@
         <Property Name="PromotedResultURL" Type="Edm.String" />
         <Property Name="PromotedResultURLName" Type="Edm.String" />
         <Property Name="QueryRule" Type="Edm.String" />
+        <Property Name="QueryRuleId" Type="Edm.String" />
         <Property Name="ResultSource" Type="Edm.String" />
         <Property Name="TimesFired" Type="Edm.String" />
       </ComplexType>
@@ -27092,6 +27160,11 @@
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="PowerAppsEnvironment">
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="IsDefault" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="RequireSecondaryContact">
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.Boolean" Nullable="false" />
@@ -27405,6 +27478,7 @@
           <PropertyRef Name="AddressbarLinkPermission" />
         </Key>
         <Property Name="AddressbarLinkPermission" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AIBuilderDefaultPowerAppsEnvironment" Type="Edm.String" />
         <Property Name="AIBuilderEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AIBuilderSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
         <Property Name="AIBuilderSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
@@ -29224,6 +29298,7 @@
           <PropertyRef Name="AddressbarLinkPermission" />
         </Key>
         <Property Name="AddressbarLinkPermission" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AIBuilderDefaultPowerAppsEnvironment" Type="Edm.String" />
         <Property Name="AIBuilderEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AIBuilderSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
         <Property Name="AIBuilderSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
