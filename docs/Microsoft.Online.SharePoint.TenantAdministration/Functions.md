@@ -14,6 +14,7 @@ GetGroupInfo (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ✅ |
 GetGroupSiteRelationship (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
 GetIdleSessionSignOutForUnmanagedDevices (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetLockStateById (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
+GetPowerAppsEnvironments (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ (❌) | ❌ | ❌ | ❌
 GetSPOAllWebTemplates (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPOSiteCreationSources (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPOTenantAllWebTemplates (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -28,6 +29,7 @@ GetSiteSecondaryAdministrators (Microsoft.Online.SharePoint.TenantAdministration
 GetSiteUserGroups (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
 GetTenantAllOrCompatibleIBSegments (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ (❌) | ❌ | ❌ | ❌
 GetTenantSharingStatus (Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService) | ✅ | ❌ | ❌ | ❌
+GetTrackViewFeatureAlwaysVisible (Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService) | ✅ (❌) | ❌ | ❌ | ❌
 GrantHubSiteRightsById (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 HasValidEducationLicense (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 MessageCenterMessages (Microsoft.Online.SharePoint.TenantAdministration.Office365CommsMessagesServiceProxy) | ✅ | ❌ | ❌ | ❌
@@ -57,6 +59,7 @@ ServiceHealthMessages (Microsoft.Online.SharePoint.TenantAdministration.Office36
 SetIBSegmentsOnSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ (❌) | ❌ | ❌ | ❌
 SetIdleSessionSignOutForUnmanagedDevices (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetSiteSecondaryAdministrators (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+SetTrackViewFeatureAlwaysVisible (Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService) | ✅ (❌) | ❌ | ❌ | ❌
 SwapSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SwapSiteWithSmartGestureOption (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SwapSiteWithSmartGestureOptionForce (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌

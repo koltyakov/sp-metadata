@@ -23,6 +23,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [NewTeamSiteManagedPath](./ComplexTypes/NewTeamSiteManagedPath.md) | ✅ | ❌ | ❌ | ❌
 [ParentSiteUrl](./ComplexTypes/ParentSiteUrl.md) | ✅ | ❌ | ❌ | ❌
 [PolicyOption](./ComplexTypes/PolicyOption.md) | ✅ | ❌ | ❌ | ❌
+[PowerAppsEnvironment](./ComplexTypes/PowerAppsEnvironment.md) | ✅ (❌) | ❌ | ❌ | ❌
 [RequireSecondaryContact](./ComplexTypes/RequireSecondaryContact.md) | ✅ | ❌ | ❌ | ❌
 [SPListModernUXOff](./ComplexTypes/SPListModernUXOff.md) | ✅ | ❌ | ❌ | ❌
 [SPOSiteCreationSource](./ComplexTypes/SPOSiteCreationSource.md) | ✅ | ❌ | ❌ | ❌

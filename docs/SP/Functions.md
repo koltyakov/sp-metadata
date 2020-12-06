@@ -615,6 +615,7 @@ SetExemptFromBlockDownloadOfNonViewableFiles (SP.List) | ✅ | ✅ | ❌ | ❌
 SetFileUserValue (SP.File) | ✅ | ❌ | ❌ | ❌
 SetGlobalNavSettings (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetId (SP.TimeZone) | ✅ | ❌ | ❌ | ❌
+SetItemsOrder (SP.List) | ✅ (❌) | ❌ | ❌ | ❌
 SetNotificationRecipients (SP.MultilingualSettings) | ✅ | ❌ | ❌ | ❌
 [SetQuizState](./Functions/SetQuizState.md) | ❌ | ❌ | ❌ | ✅
 SetShowInDisplayForm (SP.Field) | ✅ | ✅ | ✅ | ✅
@@ -735,6 +736,7 @@ Update (SP.Web) | ✅ | ✅ | ✅ | ✅
 UpdateAlert (SP.Alert) | ✅ | ✅ | ❌ | ❌
 <span title="UpdateClientObjectModelUseRemoteAPIsPermissionSetting (SP.Site)">UpdateClientObjectModelUseRemoteAPIsPermissionSett...</span> | ✅ | ✅ | ✅ | ✅
 UpdateEx (SP.ListItem) | ✅ | ❌ | ❌ | ❌
+UpdateFormProcessingModelRetentionLabel (SP.List) | ✅ (❌) | ❌ | ❌ | ❌
 UpdateHashtags (SP.ListItem) | ❌ | ✅ | ❌ | ❌
 UpdateOverwriteVersion (SP.ListItem) | ✅ | ✅ | ❌ | ❌
 UpdateRule (SP.List) | ✅ | ❌ | ❌ | ❌

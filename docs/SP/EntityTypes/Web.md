@@ -42,6 +42,7 @@ ExcludeFromOfflineClient (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 FooterEmphasis (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 FooterEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 FooterLayout (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+HasWebTemplateExtension (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
 HeaderEmphasis (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 HeaderLayout (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 HideTitleInHeader (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

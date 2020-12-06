@@ -13,5 +13,6 @@ PromotedResultClicks (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
 PromotedResultURL (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
 PromotedResultURLName (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
 QueryRule (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
+QueryRuleId (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
 ResultSource (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
 TimesFired (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
