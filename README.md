@@ -1,5 +1,7 @@
 # SharePoint Metadata Tracker
 
+![banner](./assets/banner.png)
+
 The Metadata Tracker collects SharePoint API entity definitions (`/_api/$metadata`).
 
 [Entity definitions](./meta/README.md) (`edmx` models) are stored in `./meta` folder.
