@@ -1,6 +1,6 @@
-# SharePoint Metadata Tracker
-
 ![banner](./assets/banner.png)
+
+# SharePoint Metadata Tracker
 
 The Metadata Tracker collects SharePoint API entity definitions (`/_api/$metadata`).
 
