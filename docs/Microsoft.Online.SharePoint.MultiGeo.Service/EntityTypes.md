@@ -16,12 +16,12 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CrossGeoTenantCompatibility](./EntityTypes/CrossGeoTenantCompatibility.md) | ✅ | ❌ | ❌ | ❌
 [CrossGeoTenantProperty](./EntityTypes/CrossGeoTenantProperty.md) | ✅ | ❌ | ❌ | ❌
 [CrossGeoTenantPropertyEntityData](./EntityTypes/CrossGeoTenantPropertyEntityData.md) | ✅ | ❌ | ❌ | ❌
-[CrossGeoUserPlacementJob](./EntityTypes/CrossGeoUserPlacementJob.md) | ✅ (❌) | ❌ | ❌ | ❌
-[CrossGeoUserPlacementJobEntityData](./EntityTypes/CrossGeoUserPlacementJobEntityData.md) | ✅ (❌) | ❌ | ❌ | ❌
+[CrossGeoUserPlacementJob](./EntityTypes/CrossGeoUserPlacementJob.md) | ✅ | ❌ | ❌ | ❌
+[CrossGeoUserPlacementJobEntityData](./EntityTypes/CrossGeoUserPlacementJobEntityData.md) | ✅ | ❌ | ❌ | ❌
 [DBSchemaCompatibilityCheck](./EntityTypes/DBSchemaCompatibilityCheck.md) | ✅ | ❌ | ❌ | ❌
 [GeoAdministrator](./EntityTypes/GeoAdministrator.md) | ✅ | ❌ | ❌ | ❌
 [GeoExperience](./EntityTypes/GeoExperience.md) | ✅ | ❌ | ❌ | ❌
-[GeoLocationData](./EntityTypes/GeoLocationData.md) | ✅ (❌) | ❌ | ❌ | ❌
+[GeoLocationData](./EntityTypes/GeoLocationData.md) | ✅ | ❌ | ❌ | ❌
 [GeoMoveTenantCompatibilityCheck](./EntityTypes/GeoMoveTenantCompatibilityCheck.md) | ✅ | ❌ | ❌ | ❌
 [GeoTenantInstanceInformation](./EntityTypes/GeoTenantInstanceInformation.md) | ✅ | ❌ | ❌ | ❌
 [GeoTenantInstanceInformationEntityData](./EntityTypes/GeoTenantInstanceInformationEntityData.md) | ✅ | ❌ | ❌ | ❌
@@ -33,7 +33,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [MoveJobEntityData](./EntityTypes/MoveJobEntityData.md) | ✅ | ❌ | ❌ | ❌
 [MultiGeoApiVersions](./EntityTypes/MultiGeoApiVersions.md) | ✅ | ❌ | ❌ | ❌
 [MultiGeoServicesBeta](./EntityTypes/MultiGeoServicesBeta.md) | ✅ | ❌ | ❌ | ❌
-[OrgRelationGroupManagedPath](./EntityTypes/OrgRelationGroupManagedPath.md) | ✅ (❌) | ❌ | ❌ | ❌
+[OrgRelationGroupManagedPath](./EntityTypes/OrgRelationGroupManagedPath.md) | ✅ | ❌ | ❌ | ❌
 [OrgRelationNotification](./EntityTypes/OrgRelationNotification.md) | ✅ | ❌ | ❌ | ❌
 [OrgRelationVerification](./EntityTypes/OrgRelationVerification.md) | ✅ | ❌ | ❌ | ❌
 [SiteMoveJob](./EntityTypes/SiteMoveJob.md) | ✅ | ❌ | ❌ | ❌

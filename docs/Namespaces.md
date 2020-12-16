@@ -8,8 +8,6 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [MS.FileServices](./MS.FileServices) | ✅ | ✅ | ✅ | ❌
 [Microsoft.AppServices](./Microsoft.AppServices) | ✅ | ❌ | ❌ | ❌
 [Microsoft.BusinessData.Infrastructure.SecureStore](./Microsoft.BusinessData.Infrastructure.SecureStore) | ✅ | ❌ | ❌ | ❌
-[Microsoft.Office.CompliancePolicy.SharePoint.ComplianceFoundation](./Microsoft.Office.CompliancePolicy.SharePoint.ComplianceFoundation) | ❌ (✅) | ❌ | ❌ | ❌
-[Microsoft.Office.CompliancePolicy.SharePoint.ComplianceFoundation.Models](./Microsoft.Office.CompliancePolicy.SharePoint.ComplianceFoundation.Models) | ❌ (✅) | ❌ | ❌ | ❌
 [Microsoft.Office.Education.QuizOM](./Microsoft.Office.Education.QuizOM) | ❌ | ❌ | ❌ | ✅
 [Microsoft.Office.SecureStoreService.Server](./Microsoft.Office.SecureStoreService.Server) | ✅ | ❌ | ❌ | ❌
 [Microsoft.Office.Server.ContentCenter](./Microsoft.Office.Server.ContentCenter) | ✅ | ❌ | ❌ | ❌
@@ -33,7 +31,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.SharePoint.AddToOneDrive](./Microsoft.SharePoint.AddToOneDrive) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Administration](./Microsoft.SharePoint.Administration) | ✅ | ✅ | ✅ | ✅
 [Microsoft.SharePoint.AppManagement](./Microsoft.SharePoint.AppManagement) | ✅ | ❌ | ❌ | ❌
-[Microsoft.SharePoint.AuthPolicy](./Microsoft.SharePoint.AuthPolicy) | ✅ (❌) | ❌ | ❌ | ❌
+[Microsoft.SharePoint.AuthPolicy](./Microsoft.SharePoint.AuthPolicy) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.AuthPolicy.Events](./Microsoft.SharePoint.AuthPolicy.Events) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Client.Search.Administration](./Microsoft.SharePoint.Client.Search.Administration) | ✅ | ✅ | ✅ | ✅
 [Microsoft.SharePoint.Client.Search.Analytics](./Microsoft.SharePoint.Client.Search.Analytics) | ✅ | ✅ | ✅ | ✅
@@ -75,8 +73,8 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [SP.BusinessData](./SP.BusinessData) | ✅ | ✅ | ✅ | ✅
 [SP.BusinessData.Infrastructure](./SP.BusinessData.Infrastructure) | ✅ | ✅ | ✅ | ✅
 [SP.BusinessData.Runtime](./SP.BusinessData.Runtime) | ✅ | ✅ | ✅ | ✅
-[SP.ComplianceFoundation](./SP.ComplianceFoundation) | ✅ (❌) | ❌ | ❌ | ❌
-[SP.ComplianceFoundation.Models](./SP.ComplianceFoundation.Models) | ✅ (❌) | ❌ | ❌ | ❌
+[SP.ComplianceFoundation](./SP.ComplianceFoundation) | ✅ | ❌ | ❌ | ❌
+[SP.ComplianceFoundation.Models](./SP.ComplianceFoundation.Models) | ✅ | ❌ | ❌ | ❌
 [SP.CompliancePolicy](./SP.CompliancePolicy) | ✅ | ❌ | ❌ | ❌
 [SP.Directory](./SP.Directory) | ✅ | ✅ | ✅ | ❌
 [SP.Directory.Provider](./SP.Directory.Provider) | ✅ | ✅ | ✅ | ❌

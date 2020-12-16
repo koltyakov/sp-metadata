@@ -20,7 +20,7 @@ CrossFarmUserMoveJobs | ✅ | ❌ | ❌ | ❌
 CrossGeoTenantBYOK | ✅ | ❌ | ❌ | ❌
 CrossGeoTenantCompatibility | ✅ | ❌ | ❌ | ❌
 CrossGeoTenantProperties | ✅ | ❌ | ❌ | ❌
-CrossGeoUserPlacementJobs | ✅ (❌) | ❌ | ❌ | ❌
+CrossGeoUserPlacementJobs | ✅ | ❌ | ❌ | ❌
 GeoAdministrators | ✅ | ❌ | ❌ | ❌
 GeoExperience | ✅ | ❌ | ❌ | ❌
 GeoTenantInstanceInformationCollection | ✅ | ❌ | ❌ | ❌
@@ -33,4 +33,4 @@ TaxonomyReplicationParameters | ✅ | ❌ | ❌ | ❌
 TenantInformationCollection | ✅ | ❌ | ❌ | ❌
 UnifiedGroups | ✅ | ❌ | ❌ | ❌
 UserMoveJobs | ✅ | ❌ | ❌ | ❌
-supportedgeolocationsmapdata | ✅ (❌) | ❌ | ❌ | ❌
+supportedgeolocationsmapdata | ✅ | ❌ | ❌ | ❌

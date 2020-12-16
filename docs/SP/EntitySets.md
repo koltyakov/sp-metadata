@@ -60,8 +60,7 @@ CommunicationSites | ✅ | ✅ | ❌ | ❌
 CommunityModerations | ✅ | ✅ | ✅ | ✅
 CompanyPortalContexts | ✅ | ❌ | ❌ | ❌
 CompatibilityRanges | ✅ | ✅ | ✅ | ✅
-ComplianceRetentionWorkItemSubmitters | ✅ (❌) | ❌ | ❌ | ❌
-ComplianceRetentionWorkItems | ❌ (✅) | ❌ | ❌ | ❌
+ComplianceRetentionWorkItemSubmitters | ✅ | ❌ | ❌ | ❌
 ComponentContextInfos | ✅ | ✅ | ❌ | ❌
 ConnectionSettingss | ✅ | ❌ | ❌ | ❌
 ConnectorResults | ✅ | ✅ | ❌ | ❌
@@ -76,7 +75,7 @@ CrossGeoSyncs | ✅ | ❌ | ❌ | ❌
 CrossGeoTenantBYOKs | ✅ | ❌ | ❌ | ❌
 CrossGeoTenantCompatibilitys | ✅ | ❌ | ❌ | ❌
 CrossGeoTenantPropertyEntityDatas | ✅ | ❌ | ❌ | ❌
-CrossGeoUserPlacementJobEntityDatas | ✅ (❌) | ❌ | ❌ | ❌
+CrossGeoUserPlacementJobEntityDatas | ✅ | ❌ | ❌ | ❌
 CurrencyLists | ✅ | ✅ | ❌ | ❌
 CustomAttributeFilters | ✅ | ✅ | ✅ | ✅
 CustomFields | ✅ | ✅ | ✅ | ❌
@@ -142,7 +141,7 @@ FeatureDefinitions | ✅ | ❌ | ❌ | ❌
 Features | ✅ | ✅ | ✅ | ✅
 FieldLinks | ✅ | ✅ | ✅ | ✅
 FieldStringValuess | ✅ | ✅ | ✅ | ✅
-FieldThumbnails | ✅ (❌) | ❌ | ❌ | ❌
+FieldThumbnails | ✅ | ❌ | ❌ | ❌
 Fields | ✅ | ✅ | ✅ | ✅
 FileHandlerWopiPropertiess | ✅ | ✅ | ❌ | ❌
 FileServices | ✅ | ✅ | ✅ | ❌
@@ -162,7 +161,7 @@ Forms | ✅ | ✅ | ✅ | ✅
 FormsCustomizations | ✅ | ✅ | ❌ | ❌
 GeoAdministrators | ✅ | ❌ | ❌ | ❌
 GeoExperiences | ✅ | ❌ | ❌ | ❌
-GeoLocationDatas | ✅ (❌) | ❌ | ❌ | ❌
+GeoLocationDatas | ✅ | ❌ | ❌ | ❌
 GeoMoveTenantCompatibilityChecks | ✅ | ❌ | ❌ | ❌
 GeoTenantInstanceInformationEntityDatas | ✅ | ❌ | ❌ | ❌
 GetExternalUsersResultss | ✅ | ❌ | ❌ | ❌
@@ -281,7 +280,7 @@ OpenWebParameterss | ✅ | ❌ | ❌ | ❌
 OrderInfos | ✅ | ✅ | ✅ | ✅
 OrgNews | ✅ | ❌ | ❌ | ❌
 OrgNewsSites | ✅ | ❌ | ❌ | ❌
-OrgRelationGroupManagedPaths | ✅ (❌) | ❌ | ❌ | ❌
+OrgRelationGroupManagedPaths | ✅ | ❌ | ❌ | ❌
 OrgRelationNotifications | ✅ | ❌ | ❌ | ❌
 OrgRelationVerifications | ✅ | ❌ | ❌ | ❌
 PageDiagnostics | ✅ | ❌ | ❌ | ❌
@@ -295,7 +294,7 @@ PersonalWebs | ✅ | ✅ | ❌ | ❌
 Phases | ✅ | ✅ | ✅ | ❌
 PickerEntityInformations | ✅ | ✅ | ❌ | ❌
 PickerSettingss | ✅ | ✅ | ✅ | ❌
-PinnedItemss | ✅ (❌) | ❌ | ❌ | ❌
+PinnedItemss | ✅ | ❌ | ❌ | ❌
 PlacesEntitys | ✅ | ❌ | ❌ | ❌
 PlanAssignmentIntervals | ✅ | ✅ | ✅ | ❌
 PlanAssignments | ✅ | ✅ | ✅ | ❌
@@ -414,7 +413,7 @@ SPPolicyStoreProxys | ✅ | ❌ | ❌ | ❌
 SPSitePreservationUtilitys | ✅ | ❌ | ❌ | ❌
 SPSocialSwitchs | ✅ | ✅ | ❌ | ❌
 SPTenantAppInstanceDatas | ✅ | ❌ | ❌ | ❌
-SPTenantIBPolicyComplianceReportEntityDatas | ✅ (❌) | ❌ | ❌ | ❌
+SPTenantIBPolicyComplianceReportEntityDatas | ✅ | ❌ | ❌ | ❌
 SPWebApplications | ✅ | ❌ | ❌ | ❌
 SPWebServices | ✅ | ❌ | ❌ | ❌
 SPWorkflowManagers | ✅ | ❌ | ❌ | ❌

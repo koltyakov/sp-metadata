@@ -12,4 +12,4 @@ Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 limit (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 startsWith (Edm.String) | ✅ | ❌ | ❌ | ❌
-withLogo (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
+withLogo (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

@@ -33,7 +33,7 @@ AddSubFolderUsingPath (SP.Folder) | ✅ | ✅ | ❌ | ❌
 AddSupportedUILanguage (SP.Web) | ✅ | ✅ | ✅ | ✅
 AddTemplateFile (Collection(SP.File)) | ✅ | ✅ | ✅ | ✅
 AddToSpotlight (SP.View) | ✅ | ✅ | ❌ | ❌
-AddUserById (Collection(SP.User)) | ✅ (❌) | ❌ | ❌ | ❌
+AddUserById (Collection(SP.User)) | ✅ | ❌ | ❌ | ❌
 AddUsingPath (Collection(SP.Attachment)) | ✅ | ✅ | ❌ | ❌
 AddUsingPath (Collection(SP.File)) | ✅ | ✅ | ❌ | ❌
 AddUsingPath (Collection(SP.Folder)) | ✅ | ✅ | ❌ | ❌
@@ -113,7 +113,6 @@ DeleteObject (SP.FieldMultiLineText) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.FieldNumber) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.FieldRatingScale) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.FieldText) | ✅ | ✅ | ✅ | ✅
-DeleteObject (SP.FieldThumbnail) | ❌ (✅) | ❌ | ❌ | ❌
 DeleteObject (SP.FieldUrl) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.FieldUser) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.File) | ✅ | ✅ | ✅ | ✅
@@ -153,7 +152,6 @@ DisableIndex (SP.FieldMultiLineText) | ✅ | ❌ | ❌ | ❌
 DisableIndex (SP.FieldNumber) | ✅ | ❌ | ❌ | ❌
 DisableIndex (SP.FieldRatingScale) | ✅ | ❌ | ❌ | ❌
 DisableIndex (SP.FieldText) | ✅ | ❌ | ❌ | ❌
-DisableIndex (SP.FieldThumbnail) | ❌ (✅) | ❌ | ❌ | ❌
 DisableIndex (SP.FieldUrl) | ✅ | ❌ | ❌ | ❌
 DisableIndex (SP.FieldUser) | ✅ | ❌ | ❌ | ❌
 DoesPushNotificationSubscriberExist (SP.Web) | ✅ | ✅ | ✅ | ✅
@@ -173,10 +171,9 @@ EnableIndex (SP.FieldMultiLineText) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldNumber) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldRatingScale) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldText) | ✅ | ❌ | ❌ | ❌
-EnableIndex (SP.FieldThumbnail) | ❌ (✅) | ❌ | ❌ | ❌
 EnableIndex (SP.FieldUrl) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldUser) | ✅ | ❌ | ❌ | ❌
-EnqueueApplySensitivityLabelWork (SP.Site) | ✅ (❌) | ❌ | ❌ | ❌
+EnqueueApplySensitivityLabelWork (SP.Site) | ✅ | ❌ | ❌ | ❌
 EnsureClientRenderedSitePagesLibrary (Collection(SP.List)) | ✅ | ✅ | ❌ | ❌
 EnsureEventsList (Collection(SP.List)) | ✅ | ✅ | ❌ | ❌
 EnsureSignoffStatusField (SP.List) | ✅ | ❌ | ❌ | ❌
@@ -265,7 +262,7 @@ GetClientPersistedCacheKey (SP.Site) | ✅ | ❌ | ❌ | ❌
 GetClientSideComponents (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetClientSideComponentsById (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetClientSideWebParts (SP.Web) | ✅ | ✅ | ✅ | ❌
-GetComments (SP.ListItem) | ✅ (❌) | ❌ | ❌ | ❌
+GetComments (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 GetConnectedHubs (Collection(SP.HubSite)) | ✅ | ❌ | ❌ | ❌
 GetCopyJobProgress (SP.Site) | ✅ | ✅ | ❌ | ❌
 GetCustomListTemplates (SP.Web) | ✅ | ✅ | ✅ | ✅
@@ -331,7 +328,7 @@ GetRecycleBinItemsByQueryInfo (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetRegionalDateTimeSchema (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetRelatedFields (SP.List) | ✅ | ✅ | ✅ | ✅
 GetRemoteContext (SP.RequestContext) | ✅ | ✅ | ✅ | ❌
-GetResourceEntries (SP.UserResource) | ✅ (❌) | ❌ | ❌ | ❌
+GetResourceEntries (SP.UserResource) | ✅ | ❌ | ❌ | ❌
 [GetResponseData](./Functions/GetResponseData.md) | ❌ | ❌ | ❌ | ✅
 GetSPAppContextAsStream (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetSharedWithUsers (SP.ObjectSharingInformation) | ✅ | ✅ | ✅ | ✅
@@ -391,7 +388,7 @@ OnboardTenantForBringYourOwnKey (SP.Site) | ✅ | ✅ | ❌ | ❌
 OpenBinaryStream (SP.File) | ✅ | ✅ | ✅ | ✅
 OpenBinaryStream (SP.FileVersion) | ✅ | ✅ | ✅ | ❌
 OpenBinaryStreamWithOptions (SP.File) | ✅ | ✅ | ❌ | ❌
-OpenBinaryStreamWithOptions (SP.FileVersion) | ✅ (❌) | ❌ | ❌ | ❌
+OpenBinaryStreamWithOptions (SP.FileVersion) | ✅ | ❌ | ❌ | ❌
 OpenWeb (SP.Site) | ✅ | ✅ | ✅ | ✅
 OpenWebById (SP.Site) | ✅ | ✅ | ✅ | ✅
 OpenWebUsingPath (SP.Site) | ✅ | ✅ | ❌ | ❌
@@ -501,7 +498,7 @@ SP_CurrencyList_GetList | ✅ | ✅ | ❌ | ❌
 [SP_FavoriteLists_AddList](./Functions/SP_FavoriteLists_AddList.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_GetListsBy](./Functions/SP_FavoriteLists_GetListsBy.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_RemoveList](./Functions/SP_FavoriteLists_RemoveList.md) | ✅ | ❌ | ❌ | ❌
-[SP_FavoriteLists_ReorderList](./Functions/SP_FavoriteLists_ReorderList.md) | ✅ (❌) | ❌ | ❌ | ❌
+[SP_FavoriteLists_ReorderList](./Functions/SP_FavoriteLists_ReorderList.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_UpdateList](./Functions/SP_FavoriteLists_UpdateList.md) | ✅ | ❌ | ❌ | ❌
 [SP_File_GetContentVerFromTag](./Functions/SP_File_GetContentVerFromTag.md) | ✅ | ✅ | ✅ | ✅
 [SP_HashtagStoreManager_CallOLS](./Functions/SP_HashtagStoreManager_CallOLS.md) | ❌ | ✅ | ❌ | ❌
@@ -537,10 +534,10 @@ SP_MultilingualSettings | ✅ | ❌ | ❌ | ❌
 [<span title="SP_ObjectSharingInformation_GetWebSharingInformation">SP_ObjectSharingInformation_GetWebSharingInformati...</span> (SP ObjectSharingInformation GetWebSharingInformation)](./Functions/SP_ObjectSharingInformation_GetWebSharingInformation.md) | ✅ | ✅ | ✅ | ✅
 SP_OrganizationNews | ✅ | ❌ | ❌ | ❌
 [SP_OrganizationNews_GetSiteReference](./Functions/SP_OrganizationNews_GetSiteReference.md) | ✅ | ❌ | ❌ | ❌
-[SP_PinnedItems_AddItem](./Functions/SP_PinnedItems_AddItem.md) | ✅ (❌) | ❌ | ❌ | ❌
-[SP_PinnedItems_GetItemsBy](./Functions/SP_PinnedItems_GetItemsBy.md) | ✅ (❌) | ❌ | ❌ | ❌
-[SP_PinnedItems_RemoveItem](./Functions/SP_PinnedItems_RemoveItem.md) | ✅ (❌) | ❌ | ❌ | ❌
-[SP_PinnedItems_UpdateItem](./Functions/SP_PinnedItems_UpdateItem.md) | ✅ (❌) | ❌ | ❌ | ❌
+[SP_PinnedItems_AddItem](./Functions/SP_PinnedItems_AddItem.md) | ✅ | ❌ | ❌ | ❌
+[SP_PinnedItems_GetItemsBy](./Functions/SP_PinnedItems_GetItemsBy.md) | ✅ | ❌ | ❌ | ❌
+[SP_PinnedItems_RemoveItem](./Functions/SP_PinnedItems_RemoveItem.md) | ✅ | ❌ | ❌ | ❌
+[SP_PinnedItems_UpdateItem](./Functions/SP_PinnedItems_UpdateItem.md) | ✅ | ❌ | ❌ | ❌
 [SP_RecentListCollection_GetRecentLists](./Functions/SP_RecentListCollection_GetRecentLists.md) | ✅ | ❌ | ❌ | ❌
 [<span title="SP_RecentListCollection_GetRecentListsWithPageContextInfo">SP_RecentListCollection_GetRecentListsWithPageCont...</span> (SP RecentListCollection GetRecentListsWithPageContextInfo)](./Functions/SP_RecentListCollection_GetRecentListsWithPageContextInfo.md) | ✅ | ❌ | ❌ | ❌
 [SP_RecentListCollection_UpdateRecentLists](./Functions/SP_RecentListCollection_UpdateRecentLists.md) | ✅ | ❌ | ❌ | ❌
@@ -570,7 +567,7 @@ SP_ServerSettings_GetBlockedFileExtensions | ✅ | ✅ | ✅ | ✅
 SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌
 [SP_Site_Exists](./Functions/SP_Site_Exists.md) | ✅ | ✅ | ❌ | ❌
 [SP_Site_GetUrlById](./Functions/SP_Site_GetUrlById.md) | ✅ | ❌ | ❌ | ❌
-[SP_Site_GetUrlByIdForWeb](./Functions/SP_Site_GetUrlByIdForWeb.md) | ✅ (❌) | ❌ | ❌ | ❌
+[SP_Site_GetUrlByIdForWeb](./Functions/SP_Site_GetUrlByIdForWeb.md) | ✅ | ❌ | ❌ | ❌
 [SP_TeamChannelManager_AddTeamChannel](./Functions/SP_TeamChannelManager_AddTeamChannel.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_DemoteTeamChannelById](./Functions/SP_TeamChannelManager_DemoteTeamChannelById.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_DemoteTeamChannelByPath](./Functions/SP_TeamChannelManager_DemoteTeamChannelByPath.md) | ✅ | ✅ | ❌ | ❌
@@ -615,7 +612,7 @@ SetExemptFromBlockDownloadOfNonViewableFiles (SP.List) | ✅ | ✅ | ❌ | ❌
 SetFileUserValue (SP.File) | ✅ | ❌ | ❌ | ❌
 SetGlobalNavSettings (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetId (SP.TimeZone) | ✅ | ❌ | ❌ | ❌
-SetItemsOrder (SP.List) | ✅ (❌) | ❌ | ❌ | ❌
+SetItemsOrder (SP.List) | ✅ | ❌ | ❌ | ❌
 SetNotificationRecipients (SP.MultilingualSettings) | ✅ | ❌ | ❌ | ❌
 [SetQuizState](./Functions/SetQuizState.md) | ❌ | ❌ | ❌ | ✅
 SetShowInDisplayForm (SP.Field) | ✅ | ✅ | ✅ | ✅
@@ -633,7 +630,6 @@ SetShowInDisplayForm (SP.FieldMultiLineText) | ✅ | ✅ | ✅ | ✅
 SetShowInDisplayForm (SP.FieldNumber) | ✅ | ✅ | ✅ | ✅
 SetShowInDisplayForm (SP.FieldRatingScale) | ✅ | ✅ | ✅ | ✅
 SetShowInDisplayForm (SP.FieldText) | ✅ | ✅ | ✅ | ✅
-SetShowInDisplayForm (SP.FieldThumbnail) | ❌ (✅) | ❌ | ❌ | ❌
 SetShowInDisplayForm (SP.FieldUrl) | ✅ | ✅ | ✅ | ✅
 SetShowInDisplayForm (SP.FieldUser) | ✅ | ✅ | ✅ | ✅
 SetShowInEditForm (SP.Field) | ✅ | ✅ | ✅ | ✅
@@ -651,7 +647,6 @@ SetShowInEditForm (SP.FieldMultiLineText) | ✅ | ✅ | ✅ | ✅
 SetShowInEditForm (SP.FieldNumber) | ✅ | ✅ | ✅ | ✅
 SetShowInEditForm (SP.FieldRatingScale) | ✅ | ✅ | ✅ | ✅
 SetShowInEditForm (SP.FieldText) | ✅ | ✅ | ✅ | ✅
-SetShowInEditForm (SP.FieldThumbnail) | ❌ (✅) | ❌ | ❌ | ❌
 SetShowInEditForm (SP.FieldUrl) | ✅ | ✅ | ✅ | ✅
 SetShowInEditForm (SP.FieldUser) | ✅ | ✅ | ✅ | ✅
 SetShowInNewForm (SP.Field) | ✅ | ✅ | ✅ | ✅
@@ -669,7 +664,6 @@ SetShowInNewForm (SP.FieldMultiLineText) | ✅ | ✅ | ✅ | ✅
 SetShowInNewForm (SP.FieldNumber) | ✅ | ✅ | ✅ | ✅
 SetShowInNewForm (SP.FieldRatingScale) | ✅ | ✅ | ✅ | ✅
 SetShowInNewForm (SP.FieldText) | ✅ | ✅ | ✅ | ✅
-SetShowInNewForm (SP.FieldThumbnail) | ❌ (✅) | ❌ | ❌ | ❌
 SetShowInNewForm (SP.FieldUrl) | ✅ | ✅ | ✅ | ✅
 SetShowInNewForm (SP.FieldUser) | ✅ | ✅ | ✅ | ✅
 SetStorageEntity (SP.Web) | ✅ | ✅ | ❌ | ❌
@@ -714,7 +708,6 @@ Update (SP.FieldMultiLineText) | ✅ | ✅ | ✅ | ✅
 Update (SP.FieldNumber) | ✅ | ✅ | ✅ | ✅
 Update (SP.FieldRatingScale) | ✅ | ✅ | ✅ | ✅
 Update (SP.FieldText) | ✅ | ✅ | ✅ | ✅
-Update (SP.FieldThumbnail) | ❌ (✅) | ❌ | ❌ | ❌
 Update (SP.FieldUrl) | ✅ | ✅ | ✅ | ✅
 Update (SP.FieldUser) | ✅ | ✅ | ✅ | ✅
 Update (SP.File) | ✅ | ✅ | ✅ | ❌
@@ -736,7 +729,7 @@ Update (SP.Web) | ✅ | ✅ | ✅ | ✅
 UpdateAlert (SP.Alert) | ✅ | ✅ | ❌ | ❌
 <span title="UpdateClientObjectModelUseRemoteAPIsPermissionSetting (SP.Site)">UpdateClientObjectModelUseRemoteAPIsPermissionSett...</span> | ✅ | ✅ | ✅ | ✅
 UpdateEx (SP.ListItem) | ✅ | ❌ | ❌ | ❌
-UpdateFormProcessingModelRetentionLabel (SP.List) | ✅ (❌) | ❌ | ❌ | ❌
+UpdateFormProcessingModelRetentionLabel (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateHashtags (SP.ListItem) | ❌ | ✅ | ❌ | ❌
 UpdateOverwriteVersion (SP.ListItem) | ✅ | ✅ | ❌ | ❌
 UpdateRule (SP.List) | ✅ | ❌ | ❌ | ❌
@@ -761,7 +754,7 @@ ValidateSetValue (SP.FieldRatingScale) | ❌ | ❌ | ❌ | ✅
 ValidateSetValue (SP.FieldText) | ❌ | ❌ | ❌ | ✅
 ValidateSetValue (SP.FieldUrl) | ❌ | ❌ | ❌ | ✅
 ValidateSetValue (SP.FieldUser) | ❌ | ❌ | ❌ | ✅
-ValidateUpdateFetchListItem (SP.ListItem) | ✅ (❌) | ❌ | ❌ | ❌
+ValidateUpdateFetchListItem (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 ValidateUpdateListItem (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 contextinfo | ✅ | ✅ | ✅ | ✅
 files | ✅ | ✅ | ✅ | ❌

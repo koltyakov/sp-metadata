@@ -9,4 +9,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-pinnedItem (Microsoft.SharePoint.ListHome.FavoriteListHomeItem) | ✅ (❌) | ❌ | ❌ | ❌
+pinnedItem (Microsoft.SharePoint.ListHome.FavoriteListHomeItem) | ✅ | ❌ | ❌ | ❌

@@ -15,7 +15,7 @@ AudienceTarget (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DatesInUtc (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 ExpandGroups (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 ExpandUserField (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-FilterOutChannelFoldersInDefaultDocLib (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
+FilterOutChannelFoldersInDefaultDocLib (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 FirstGroupOnly (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 FolderServerRelativeUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
 ImageFieldsToTryRewriteToCdnUrls (Edm.String) | ✅ | ✅ | ❌ | ❌

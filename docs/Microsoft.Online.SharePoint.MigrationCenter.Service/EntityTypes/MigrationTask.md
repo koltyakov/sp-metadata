@@ -34,5 +34,5 @@ ToBeMigratedFilesCount (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 TotalBytes (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 TotalBytesMigrated (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 UpdateStatusOnly (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-UpdateTimestamp (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
+UpdateTimestamp (Edm.String) | ✅ | ❌ | ❌ | ❌
 WorkflowId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

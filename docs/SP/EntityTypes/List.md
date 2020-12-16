@@ -57,7 +57,7 @@ IrmExpire (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 IrmReject (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 IsApplicationList (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 IsCatalog (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
-IsDefaultDocumentLibrary (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
+IsDefaultDocumentLibrary (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsEnterpriseGalleryLibrary (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 IsPrivate (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 IsSiteAssetsLibrary (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
@@ -69,7 +69,7 @@ LastItemUserModifiedDate (Edm.DateTime) | ✅ | ✅ | ❌ | ❌
 ListExperienceOptions (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 ListFormCustomized (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ListItemEntityTypeFullName (Edm.String) | ✅ | ✅ | ✅ | ✅
-ListSchemaVersion (Edm.Int32) | ✅ (❌) | ❌ | ❌ | ❌
+ListSchemaVersion (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MajorVersionLimit (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 MajorWithMinorVersionsLimit (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 MultipleDataList (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
@@ -83,7 +83,7 @@ ReadSecurity (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 SchemaXml (Edm.String) | ✅ | ✅ | ✅ | ✅
 ServerTemplateCanCreateFolders (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 TemplateFeatureId (Edm.Guid) | ✅ | ✅ | ✅ | ✅
-TemplateTypeId (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
+TemplateTypeId (Edm.String) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ✅ | ✅ | ✅
 ValidationFormula (Edm.String) | ✅ | ✅ | ✅ | ✅
 ValidationMessage (Edm.String) | ✅ | ✅ | ✅ | ✅

@@ -17,4 +17,4 @@ NodeType (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 Nodes (Collection(SP.MenuNode)) | ✅ | ✅ | ✅ | ✅
 SimpleUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
 Title (Edm.String) | ✅ | ✅ | ✅ | ✅
-Translations (Collection(SP.SPResourceEntry)) | ✅ (❌) | ❌ | ❌ | ❌
+Translations (Collection(SP.SPResourceEntry)) | ✅ | ❌ | ❌ | ❌

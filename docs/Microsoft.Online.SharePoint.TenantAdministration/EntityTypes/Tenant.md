@@ -6,7 +6,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-AIBuilderDefaultPowerAppsEnvironment (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
+AIBuilderDefaultPowerAppsEnvironment (Edm.String) | ✅ | ❌ | ❌ | ❌
 AIBuilderEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AIBuilderSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
 AIBuilderSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
@@ -33,13 +33,12 @@ BlockMacSync (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockSendLabelMismatchEmail (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockUserInfoVisibility (Edm.String) | ✅ | ❌ | ❌ | ❌
 CommentsOnFilesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-CommentsOnListItemsDisabled (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
+CommentsOnListItemsDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CompatibilityRange (Edm.String) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicy (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicyErrorHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌
 ContentTypeSyncSiteTemplatesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
-CortexLicenseEnabled (Edm.Boolean) | ❌ (✅) | ❌ | ❌ | ❌
 CustomizedExternalSharingServiceUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 DefaultContentCenterSite (Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker) | ✅ | ❌ | ❌ | ❌
 DefaultLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
@@ -48,8 +47,8 @@ DisableAddToOneDrive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableCustomAppAuthentication (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisablePersonalListCreation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableReportProblemDialog (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-DisableSpacesActivation (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
-DisabledModernListTemplateIds (Collection(Edm.Guid)) | ✅ (❌) | ❌ | ❌ | ❌
+DisableSpacesActivation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+DisabledModernListTemplateIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 DisabledWebPartIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 DisallowInfectedFileDownload (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisplayNamesOfFileViewers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -137,7 +136,7 @@ SignInAccelerationDomain (Edm.String) | ✅ | ❌ | ❌ | ❌
 SocialBarOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SpecialCharactersStateInFileFolderNames (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 StartASiteFormUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
-StopNew2010Workflows (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
+StopNew2010Workflows (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 StorageQuota (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 StorageQuotaAllocated (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 SyncAadB2BManagementPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

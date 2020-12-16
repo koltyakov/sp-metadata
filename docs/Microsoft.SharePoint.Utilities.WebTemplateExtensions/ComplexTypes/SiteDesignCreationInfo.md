@@ -8,7 +8,7 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 Description (Edm.String) | ✅ | ✅ | ❌ | ❌
 DesignPackageId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-DesignType (Edm.Int64) | ✅ (❌) | ❌ | ❌ | ❌
+DesignType (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 IsDefault (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 IsOutOfBoxTemplate (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsTenantAdminOnly (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -20,7 +20,6 @@ RequiresYammerConnected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SiteScriptIds (Collection(Edm.Guid)) | ✅ | ✅ | ❌ | ❌
 SupportedWebTemplates (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 TemplateFeatures (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
-ThmubnailUrl (Edm.String) | ❌ (✅) | ❌ | ❌ | ❌
-ThumbnailUrl (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
+ThumbnailUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ✅ | ❌ | ❌
 WebTemplate (Edm.String) | ✅ | ✅ | ❌ | ❌

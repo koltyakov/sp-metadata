@@ -21,9 +21,8 @@ rename (Microsoft.SharePoint.Activities.RenameFacet) | ✅ | ✅ | ❌ | ❌
 restore (Microsoft.SharePoint.Activities.RestoreFacet) | ✅ | ✅ | ❌ | ❌
 restoreVersion (Microsoft.SharePoint.Activities.RestoreVersionFacet) | ✅ | ❌ | ❌ | ❌
 share (Microsoft.SharePoint.Activities.SharingFacet) | ✅ | ✅ | ❌ | ❌
-task (Microsoft.SharePoint.Activities.TaskFacet) | ❌ (✅) | ❌ | ❌ | ❌
-taskCompleted (Microsoft.SharePoint.Activities.TaskCompletedFacet) | ✅ (❌) | ❌ | ❌ | ❌
-taskCreated (Microsoft.SharePoint.Activities.TaskCreatedFacet) | ✅ (❌) | ❌ | ❌ | ❌
-taskReassigned (Microsoft.SharePoint.Activities.TaskReassignedFacet) | ✅ (❌) | ❌ | ❌ | ❌
-taskReopened (Microsoft.SharePoint.Activities.TaskReopenedFacet) | ✅ (❌) | ❌ | ❌ | ❌
+taskCompleted (Microsoft.SharePoint.Activities.TaskCompletedFacet) | ✅ | ❌ | ❌ | ❌
+taskCreated (Microsoft.SharePoint.Activities.TaskCreatedFacet) | ✅ | ❌ | ❌ | ❌
+taskReassigned (Microsoft.SharePoint.Activities.TaskReassignedFacet) | ✅ | ❌ | ❌ | ❌
+taskReopened (Microsoft.SharePoint.Activities.TaskReopenedFacet) | ✅ | ❌ | ❌ | ❌
 version (Microsoft.SharePoint.Activities.VersionFacet) | ✅ | ✅ | ❌ | ❌

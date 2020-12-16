@@ -15,7 +15,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [AsyncReadJobInfo](./ComplexTypes/AsyncReadJobInfo.md) | ✅ | ❌ | ❌ | ❌
 [AsyncReadOptions](./ComplexTypes/AsyncReadOptions.md) | ✅ | ❌ | ❌ | ❌
 [AttachmentCreationInformation](./ComplexTypes/AttachmentCreationInformation.md) | ✅ | ✅ | ✅ | ✅
-[AutoLabellingWorkInformation](./ComplexTypes/AutoLabellingWorkInformation.md) | ✅ (❌) | ❌ | ❌ | ❌
+[AutoLabellingWorkInformation](./ComplexTypes/AutoLabellingWorkInformation.md) | ✅ | ❌ | ❌ | ❌
 [BasePermissions](./ComplexTypes/BasePermissions.md) | ✅ | ✅ | ✅ | ✅
 [CamlQuery](./ComplexTypes/CamlQuery.md) | ✅ | ✅ | ✅ | ✅
 [ChangeLogItemQuery](./ComplexTypes/ChangeLogItemQuery.md) | ✅ | ✅ | ✅ | ✅
@@ -41,7 +41,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CustomerKeyVaultInfo](./ComplexTypes/CustomerKeyVaultInfo.md) | ✅ | ✅ | ❌ | ❌
 [DocumentLibraryInformation](./ComplexTypes/DocumentLibraryInformation.md) | ✅ | ✅ | ✅ | ❌
 [EncryptionOption](./ComplexTypes/EncryptionOption.md) | ✅ | ✅ | ❌ | ❌
-[EnqueueJobInformation](./ComplexTypes/EnqueueJobInformation.md) | ✅ (❌) | ❌ | ❌ | ❌
+[EnqueueJobInformation](./ComplexTypes/EnqueueJobInformation.md) | ✅ | ❌ | ❌ | ❌
 [EventReceiverDefinitionCreationInformation](./ComplexTypes/EventReceiverDefinitionCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [ExternalAppPrincipalCreationParameters](./ComplexTypes/ExternalAppPrincipalCreationParameters.md) | ❌ | ❌ | ❌ | ✅
 [FieldCalculatedErrorValue](./ComplexTypes/FieldCalculatedErrorValue.md) | ✅ | ✅ | ✅ | ✅
@@ -74,7 +74,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ListItemDeleteParameters](./ComplexTypes/ListItemDeleteParameters.md) | ✅ | ❌ | ❌ | ❌
 [ListItemFormUpdateValue](./ComplexTypes/ListItemFormUpdateValue.md) | ✅ | ✅ | ✅ | ✅
 [ListItemUpdateParameters](./ComplexTypes/ListItemUpdateParameters.md) | ✅ | ❌ | ❌ | ❌
-[ListItemUpdateResults](./ComplexTypes/ListItemUpdateResults.md) | ✅ (❌) | ❌ | ❌ | ❌
+[ListItemUpdateResults](./ComplexTypes/ListItemUpdateResults.md) | ✅ | ❌ | ❌ | ❌
 [MachineLearningSampleMeta](./ComplexTypes/MachineLearningSampleMeta.md) | ✅ | ❌ | ❌ | ❌
 [MediaServiceUpdateParameters](./ComplexTypes/MediaServiceUpdateParameters.md) | ✅ | ❌ | ❌ | ❌
 [MenuNode](./ComplexTypes/MenuNode.md) | ✅ | ✅ | ✅ | ✅
@@ -95,7 +95,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [RenderListDataOverrideParameters](./ComplexTypes/RenderListDataOverrideParameters.md) | ✅ | ✅ | ✅ | ❌
 [RenderListDataParameters](./ComplexTypes/RenderListDataParameters.md) | ✅ | ✅ | ✅ | ❌
 [RenderListFilterDataParameters](./ComplexTypes/RenderListFilterDataParameters.md) | ✅ | ✅ | ✅ | ❌
-[RequestedTranslation](./ComplexTypes/RequestedTranslation.md) | ✅ (❌) | ❌ | ❌ | ❌
+[RequestedTranslation](./ComplexTypes/RequestedTranslation.md) | ✅ | ❌ | ❌ | ❌
 [ResourcePath](./ComplexTypes/ResourcePath.md) | ✅ | ✅ | ❌ | ❌
 [RoleDefinitionCreationInformation](./ComplexTypes/RoleDefinitionCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [SPHSiteReference](./ComplexTypes/SPHSiteReference.md) | ✅ | ❌ | ❌ | ❌
@@ -103,7 +103,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPInvitationCreationResult](./ComplexTypes/SPInvitationCreationResult.md) | ✅ | ✅ | ✅ | ❌
 [SPListRule](./ComplexTypes/SPListRule.md) | ✅ | ❌ | ❌ | ❌
 [SPMoveAndShareFileInfo](./ComplexTypes/SPMoveAndShareFileInfo.md) | ✅ | ❌ | ❌ | ❌
-[SPResourceEntry](./ComplexTypes/SPResourceEntry.md) | ✅ (❌) | ❌ | ❌ | ❌
+[SPResourceEntry](./ComplexTypes/SPResourceEntry.md) | ✅ | ❌ | ❌ | ❌
 [ScriptSafeDomainEntityData](./ComplexTypes/ScriptSafeDomainEntityData.md) | ✅ | ✅ | ❌ | ❌
 [SensitivityLabelInfo](./ComplexTypes/SensitivityLabelInfo.md) | ✅ | ❌ | ❌ | ❌
 [SharedWithUser](./ComplexTypes/SharedWithUser.md) | ✅ | ✅ | ❌ | ❌
@@ -120,7 +120,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [TranslationNotificationRecipientSetRequest](./ComplexTypes/TranslationNotificationRecipientSetRequest.md) | ✅ | ❌ | ❌ | ❌
 [TranslationStatus](./ComplexTypes/TranslationStatus.md) | ✅ | ❌ | ❌ | ❌
 [TranslationStatusCreationRequest](./ComplexTypes/TranslationStatusCreationRequest.md) | ✅ | ❌ | ❌ | ❌
-[TranslationStatusSetRequest](./ComplexTypes/TranslationStatusSetRequest.md) | ✅ (❌) | ❌ | ❌ | ❌
+[TranslationStatusSetRequest](./ComplexTypes/TranslationStatusSetRequest.md) | ✅ | ❌ | ❌ | ❌
 [UpgradeInfo](./ComplexTypes/UpgradeInfo.md) | ✅ | ✅ | ✅ | ✅
 [UsageInfo](./ComplexTypes/UsageInfo.md) | ✅ | ✅ | ✅ | ✅
 [UserCreationInformation](./ComplexTypes/UserCreationInformation.md) | ✅ | ✅ | ✅ | ✅

@@ -34,13 +34,8 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [RevisionInfo](./ComplexTypes/RevisionInfo.md) | ✅ | ✅ | ❌ | ❌
 [RevisionSetFacet](./ComplexTypes/RevisionSetFacet.md) | ✅ | ✅ | ❌ | ❌
 [SharingFacet](./ComplexTypes/SharingFacet.md) | ✅ | ✅ | ❌ | ❌
-[TaskCompleteFacet](./ComplexTypes/TaskCompleteFacet.md) | ❌ (✅) | ❌ | ❌ | ❌
-[TaskCompletedFacet](./ComplexTypes/TaskCompletedFacet.md) | ✅ (❌) | ❌ | ❌ | ❌
-[TaskCreateFacet](./ComplexTypes/TaskCreateFacet.md) | ❌ (✅) | ❌ | ❌ | ❌
-[TaskCreatedFacet](./ComplexTypes/TaskCreatedFacet.md) | ✅ (❌) | ❌ | ❌ | ❌
-[TaskFacet](./ComplexTypes/TaskFacet.md) | ❌ (✅) | ❌ | ❌ | ❌
-[TaskReassignFacet](./ComplexTypes/TaskReassignFacet.md) | ❌ (✅) | ❌ | ❌ | ❌
-[TaskReassignedFacet](./ComplexTypes/TaskReassignedFacet.md) | ✅ (❌) | ❌ | ❌ | ❌
-[TaskReopenFacet](./ComplexTypes/TaskReopenFacet.md) | ❌ (✅) | ❌ | ❌ | ❌
-[TaskReopenedFacet](./ComplexTypes/TaskReopenedFacet.md) | ✅ (❌) | ❌ | ❌ | ❌
+[TaskCompletedFacet](./ComplexTypes/TaskCompletedFacet.md) | ✅ | ❌ | ❌ | ❌
+[TaskCreatedFacet](./ComplexTypes/TaskCreatedFacet.md) | ✅ | ❌ | ❌ | ❌
+[TaskReassignedFacet](./ComplexTypes/TaskReassignedFacet.md) | ✅ | ❌ | ❌ | ❌
+[TaskReopenedFacet](./ComplexTypes/TaskReopenedFacet.md) | ✅ | ❌ | ❌ | ❌
 [VersionFacet](./ComplexTypes/VersionFacet.md) | ✅ | ✅ | ❌ | ❌

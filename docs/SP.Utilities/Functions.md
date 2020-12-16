@@ -37,7 +37,7 @@ SP_Utilities_Utility_GetUserPermissionLevels | ✅ | ✅ | ✅ | ❌
 [<span title="SP_Utilities_Utility_SearchPrincipalsUsingContextWeb">SP_Utilities_Utility_SearchPrincipalsUsingContextW...</span> (SP Utilities Utility SearchPrincipalsUsingContextWeb)](./Functions/SP_Utilities_Utility_SearchPrincipalsUsingContextWeb.md) | ✅ | ✅ | ✅ | ✅
 [SP_Utilities_Utility_SendEmail](./Functions/SP_Utilities_Utility_SendEmail.md) | ✅ | ✅ | ✅ | ✅
 [SP_Utilities_Utility_UnmarkDiscussionAsFeatured](./Functions/SP_Utilities_Utility_UnmarkDiscussionAsFeatured.md) | ✅ | ✅ | ✅ | ✅
-SP_Utilities_WopiHostUtility_GenerateFileBundle | ✅ (❌) | ❌ | ❌ | ❌
+SP_Utilities_WopiHostUtility_GenerateFileBundle | ✅ | ❌ | ❌ | ❌
 [<span title="SP_Utilities_WopiHostUtility_GetFileHandlerWopiTargetPropertiesByUrl">SP_Utilities_WopiHostUtility_GetFileHandlerWopiTar...</span> (SP Utilities WopiHostUtility GetFileHandlerWopiTargetPropertiesByUrl)](./Functions/SP_Utilities_WopiHostUtility_GetFileHandlerWopiTargetPropertiesByUrl.md) | ✅ | ✅ | ❌ | ❌
 [SP_Utilities_WopiHostUtility_GetWebApplicationUrls](./Functions/SP_Utilities_WopiHostUtility_GetWebApplicationUrls.md) | ✅ | ✅ | ❌ | ❌
 SP_Utilities_WopiHostUtility_GetWopiOrigins | ✅ | ❌ | ❌ | ❌

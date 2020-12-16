@@ -27,9 +27,9 @@ GetIBSegmentLabels (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌
 GetSiteLinks (Microsoft.SharePoint.Portal.SiteLinkingManager) | ✅ | ✅ | ❌ | ❌
 GetSiteLogo (Microsoft.SharePoint.Portal.SiteIconManager) | ✅ | ❌ | ❌ | ❌
 GetSiteStatus (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ✅ | ❌
-GetTeamChannelFilesUrl (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ (❌) | ❌ | ❌ | ❌
+GetTeamChannelFilesUrl (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetTeamChannelSiteOwner (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
-GetTeamChannels (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ (❌) | ❌ | ❌ | ❌
+GetTeamChannels (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetValidSiteUrlFromAlias (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ❌ | ❌
 GroupService | ✅ | ✅ | ❌ | ❌
 HideTeamifyPrompt (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌

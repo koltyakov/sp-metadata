@@ -10,9 +10,9 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-EndDate (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
-Interval (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
-ReportType (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
-SiteCollectionId (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
-StartDate (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
-TenantId (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
+EndDate (Edm.String) | ✅ | ❌ | ❌ | ❌
+Interval (Edm.String) | ✅ | ❌ | ❌ | ❌
+ReportType (Edm.String) | ✅ | ❌ | ❌ | ❌
+SiteCollectionId (Edm.String) | ✅ | ❌ | ❌ | ❌
+StartDate (Edm.String) | ✅ | ❌ | ❌ | ❌
+TenantId (Edm.String) | ✅ | ❌ | ❌ | ❌

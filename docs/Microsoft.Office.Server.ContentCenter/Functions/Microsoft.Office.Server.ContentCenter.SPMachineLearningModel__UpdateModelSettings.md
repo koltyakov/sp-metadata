@@ -10,4 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-ModelSettings (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
+ModelSettings (Edm.String) | ✅ | ❌ | ❌ | ❌

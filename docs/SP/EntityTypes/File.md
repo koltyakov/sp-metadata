@@ -23,7 +23,7 @@ MajorVersion (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 MinorVersion (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 Name (Edm.String) | ✅ | ✅ | ✅ | ✅
 PageRenderType (Edm.Int32) | ✅ | ✅ | ❌ | ❌
-ServerRedirectedUrl (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
+ServerRedirectedUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 ServerRelativePath (SP.ResourcePath) | ✅ | ✅ | ❌ | ❌
 ServerRelativeUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
 SiteId (Edm.Guid) | ✅ | ✅ | ❌ | ❌

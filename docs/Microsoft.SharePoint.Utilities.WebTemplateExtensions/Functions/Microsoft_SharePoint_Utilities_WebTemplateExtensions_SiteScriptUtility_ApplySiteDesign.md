@@ -10,5 +10,5 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 siteDesignId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
-store (Edm.Int32) | ✅ (❌) | ❌ | ❌ | ❌
+store (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 webUrl (Edm.String) | ✅ | ✅ | ❌ | ❌

@@ -8,7 +8,7 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 IncludeGestures (Edm.String) | ✅ | ❌ | ❌ | ❌
 JobId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-ScheduledDateTimeInUtc (Edm.DateTime) | ✅ (❌) | ❌ | ❌ | ❌
+ScheduledDateTimeInUtc (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 SkipDomainCheck (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SourceAdminSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 SourceMySiteHostUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

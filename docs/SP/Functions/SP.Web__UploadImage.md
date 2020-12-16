@@ -15,4 +15,4 @@ imageName (Edm.String) | ✅ | ❌ | ❌ | ❌
 itemId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 listId (Edm.String) | ✅ | ❌ | ❌ | ❌
 listTitle (Edm.String) | ✅ | ❌ | ❌ | ❌
-overwrite (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
+overwrite (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

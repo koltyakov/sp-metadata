@@ -9,5 +9,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-scope (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
-tenantId (Edm.Guid) | ✅ (❌) | ❌ | ❌ | ❌
+scope (Edm.String) | ✅ | ❌ | ❌ | ❌
+tenantId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

@@ -22,7 +22,7 @@ IsCreateOnlyLink (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsDefault (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsEditLink (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 IsFormsLink (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
-IsManageListLink (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
+IsManageListLink (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsReviewLink (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 IsUnhealthy (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 LastModified (Edm.String) | ✅ | ✅ | ❌ | ❌

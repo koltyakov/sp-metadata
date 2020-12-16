@@ -29,7 +29,7 @@ CustomSiteActionsDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DefaultNewPageTemplateId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 DepartmentData (Edm.String) | ❌ | ✅ | ❌ | ❌
 Description (Edm.String) | ✅ | ✅ | ✅ | ✅
-DescriptionTranslations (Collection(SP.SPResourceEntry)) | ✅ (❌) | ❌ | ❌ | ❌
+DescriptionTranslations (Collection(SP.SPResourceEntry)) | ✅ | ❌ | ❌ | ❌
 DesignPackageId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 DesignerDownloadUrlForCurrentUser (Edm.String) | ✅ | ✅ | ✅ | ✅
 DisableAppViews (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
@@ -42,7 +42,7 @@ ExcludeFromOfflineClient (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 FooterEmphasis (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 FooterEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 FooterLayout (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-HasWebTemplateExtension (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
+HasWebTemplateExtension (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HeaderEmphasis (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 HeaderLayout (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 HideTitleInHeader (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -89,7 +89,7 @@ ThemeData (Edm.String) | ✅ | ✅ | ✅ | ❌
 ThemedCssFolderUrl (Edm.String) | ✅ | ✅ | ❌ | ✅
 ThirdPartyMdmEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 Title (Edm.String) | ✅ | ✅ | ✅ | ✅
-TitleTranslations (Collection(SP.SPResourceEntry)) | ✅ (❌) | ❌ | ❌ | ❌
+TitleTranslations (Collection(SP.SPResourceEntry)) | ✅ | ❌ | ❌ | ❌
 TreeViewEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 UIVersion (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 UIVersionConfigurationEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ✅

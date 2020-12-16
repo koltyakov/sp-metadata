@@ -6,7 +6,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-AIBuilderDefaultPowerAppsEnvironment (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
+AIBuilderDefaultPowerAppsEnvironment (Edm.String) | ✅ | ❌ | ❌ | ❌
 AIBuilderEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AIBuilderSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
 AIBuilderSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
@@ -32,7 +32,7 @@ BlockDownloadOfViewableFilesOnUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ |
 BlockMacSync (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockUserInfoVisibility (Edm.String) | ✅ | ❌ | ❌ | ❌
 CommentsOnFilesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-CommentsOnListItemsDisabled (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
+CommentsOnListItemsDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicy (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicyErrorHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌
@@ -44,8 +44,8 @@ DefaultSharingLinkType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DisableAddToOneDrive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableCustomAppAuthentication (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisablePersonalListCreation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-DisableSpacesActivation (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
-DisabledModernListTemplateIds (Collection(Edm.Guid)) | ✅ (❌) | ❌ | ❌ | ❌
+DisableSpacesActivation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+DisabledModernListTemplateIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 DisplayStartASiteOption (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EmailAttestationEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EmailAttestationReAuthDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
@@ -107,7 +107,7 @@ ShowPeoplePickerSuggestionsForGuestUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SignInAccelerationDomain (Edm.String) | ✅ | ❌ | ❌ | ❌
 SocialBarOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 StartASiteFormUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
-StopNew2010Workflows (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
+StopNew2010Workflows (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyncAadB2BManagementPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyncPrivacyProfileProperties (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UseFindPeopleInPeoplePicker (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

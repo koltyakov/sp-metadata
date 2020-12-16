@@ -28,7 +28,7 @@ Id (Edm.Guid) | ✅ | ✅ | ✅ | ✅
 IndexStatus (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Indexed (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 InternalName (Edm.String) | ✅ | ✅ | ✅ | ✅
-IsModern (Edm.Boolean) | ✅ (❌) | ❌ | ❌ | ❌
+IsModern (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 JSLink (Edm.String) | ✅ | ✅ | ✅ | ✅
 NoCrawl (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 PinnedToFiltersPane (Edm.Boolean) | ✅ | ✅ | ❌ | ❌

@@ -20,22 +20,22 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [Refiner](./ComplexTypes/Refiner.md) | ✅ | ✅ | ✅ | ✅
 [RefinerEntry](./ComplexTypes/RefinerEntry.md) | ✅ | ✅ | ✅ | ✅
 [RelevantResults](./ComplexTypes/RelevantResults.md) | ✅ | ✅ | ✅ | ✅
-[ReportAbandonedQueries](./ComplexTypes/ReportAbandonedQueries.md) | ✅ (❌) | ❌ | ❌ | ❌
-[ReportAbandonedQueriesData](./ComplexTypes/ReportAbandonedQueriesData.md) | ✅ (❌) | ❌ | ❌ | ❌
-[ReportAbandonedQueriesItem](./ComplexTypes/ReportAbandonedQueriesItem.md) | ✅ (❌) | ❌ | ❌ | ❌
-[ReportBase](./ComplexTypes/ReportBase.md) | ✅ (❌) | ❌ | ❌ | ❌
-[ReportNoResultData](./ComplexTypes/ReportNoResultData.md) | ✅ (❌) | ❌ | ❌ | ❌
-[ReportNoResultItem](./ComplexTypes/ReportNoResultItem.md) | ✅ (❌) | ❌ | ❌ | ❌
-[ReportNoResultQueries](./ComplexTypes/ReportNoResultQueries.md) | ✅ (❌) | ❌ | ❌ | ❌
-[ReportNumberOfQueries](./ComplexTypes/ReportNumberOfQueries.md) | ✅ (❌) | ❌ | ❌ | ❌
-[ReportNumberOfQueriesData](./ComplexTypes/ReportNumberOfQueriesData.md) | ✅ (❌) | ❌ | ❌ | ❌
-[ReportNumberOfQueriesItem](./ComplexTypes/ReportNumberOfQueriesItem.md) | ✅ (❌) | ❌ | ❌ | ❌
-[ReportQueryRules](./ComplexTypes/ReportQueryRules.md) | ✅ (❌) | ❌ | ❌ | ❌
-[ReportQueryRulesData](./ComplexTypes/ReportQueryRulesData.md) | ✅ (❌) | ❌ | ❌ | ❌
-[ReportQueryRulesItem](./ComplexTypes/ReportQueryRulesItem.md) | ✅ (❌) | ❌ | ❌ | ❌
-[ReportTopQueries](./ComplexTypes/ReportTopQueries.md) | ✅ (❌) | ❌ | ❌ | ❌
-[ReportTopQueriesData](./ComplexTypes/ReportTopQueriesData.md) | ✅ (❌) | ❌ | ❌ | ❌
-[ReportTopQueriesItem](./ComplexTypes/ReportTopQueriesItem.md) | ✅ (❌) | ❌ | ❌ | ❌
+[ReportAbandonedQueries](./ComplexTypes/ReportAbandonedQueries.md) | ✅ | ❌ | ❌ | ❌
+[ReportAbandonedQueriesData](./ComplexTypes/ReportAbandonedQueriesData.md) | ✅ | ❌ | ❌ | ❌
+[ReportAbandonedQueriesItem](./ComplexTypes/ReportAbandonedQueriesItem.md) | ✅ | ❌ | ❌ | ❌
+[ReportBase](./ComplexTypes/ReportBase.md) | ✅ | ❌ | ❌ | ❌
+[ReportNoResultData](./ComplexTypes/ReportNoResultData.md) | ✅ | ❌ | ❌ | ❌
+[ReportNoResultItem](./ComplexTypes/ReportNoResultItem.md) | ✅ | ❌ | ❌ | ❌
+[ReportNoResultQueries](./ComplexTypes/ReportNoResultQueries.md) | ✅ | ❌ | ❌ | ❌
+[ReportNumberOfQueries](./ComplexTypes/ReportNumberOfQueries.md) | ✅ | ❌ | ❌ | ❌
+[ReportNumberOfQueriesData](./ComplexTypes/ReportNumberOfQueriesData.md) | ✅ | ❌ | ❌ | ❌
+[ReportNumberOfQueriesItem](./ComplexTypes/ReportNumberOfQueriesItem.md) | ✅ | ❌ | ❌ | ❌
+[ReportQueryRules](./ComplexTypes/ReportQueryRules.md) | ✅ | ❌ | ❌ | ❌
+[ReportQueryRulesData](./ComplexTypes/ReportQueryRulesData.md) | ✅ | ❌ | ❌ | ❌
+[ReportQueryRulesItem](./ComplexTypes/ReportQueryRulesItem.md) | ✅ | ❌ | ❌ | ❌
+[ReportTopQueries](./ComplexTypes/ReportTopQueries.md) | ✅ | ❌ | ❌ | ❌
+[ReportTopQueriesData](./ComplexTypes/ReportTopQueriesData.md) | ✅ | ❌ | ❌ | ❌
+[ReportTopQueriesItem](./ComplexTypes/ReportTopQueriesItem.md) | ✅ | ❌ | ❌ | ❌
 [ScsEndpoint](./ComplexTypes/ScsEndpoint.md) | ✅ | ❌ | ❌ | ❌
 [SearchEndpoints](./ComplexTypes/SearchEndpoints.md) | ✅ | ✅ | ❌ | ❌
 [SearchObjectOwnerResult](./ComplexTypes/SearchObjectOwnerResult.md) | ✅ | ✅ | ❌ | ❌

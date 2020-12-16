@@ -105,7 +105,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [OpenWebParameters](./EntityTypes/OpenWebParameters.md) | ✅ | ❌ | ❌ | ❌
 [OrganizationNews](./EntityTypes/OrganizationNews.md) | ✅ | ❌ | ❌ | ❌
 [PickerSettings](./EntityTypes/PickerSettings.md) | ✅ | ✅ | ✅ | ❌
-[PinnedItems](./EntityTypes/PinnedItems.md) | ✅ (❌) | ❌ | ❌ | ❌
+[PinnedItems](./EntityTypes/PinnedItems.md) | ✅ | ❌ | ❌ | ❌
 [Principal](./EntityTypes/Principal.md) | ✅ | ✅ | ✅ | ✅
 [PropertyValues](./EntityTypes/PropertyValues.md) | ✅ | ✅ | ✅ | ✅
 [PushNotificationSubscriber](./EntityTypes/PushNotificationSubscriber.md) | ✅ | ✅ | ✅ | ✅
