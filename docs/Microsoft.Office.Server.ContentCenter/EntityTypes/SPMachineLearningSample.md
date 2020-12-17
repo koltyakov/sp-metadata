@@ -26,4 +26,6 @@ ModifiedByName (Edm.String) | ✅ | ❌ | ❌ | ❌
 ObjectId (Edm.String) | ✅ | ❌ | ❌ | ❌
 ServerRedirectedEmbedUri (Edm.String) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ❌ | ❌ | ❌
+TokenEndPosition (Collection(Edm.Int32)) | ✅ | ❌ | ❌ | ❌
+TokenStartPosition (Collection(Edm.Int32)) | ✅ | ❌ | ❌ | ❌
 UniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

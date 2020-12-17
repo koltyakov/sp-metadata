@@ -17,6 +17,7 @@ AllowDownloadingNonWebViewableFiles (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowEditing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowGuestUserShareToUsersNotInSiteCollection (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowLimitedAccessOnUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+AllowOverrideForBlockUserInfoVisibility (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowSelectSGsInODBList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 AllowedDomainListForSyncClient (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 AnyoneLinkTrackUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -31,6 +32,8 @@ BlockDownloadOfViewableFilesForGuests (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockDownloadOfViewableFilesOnUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockMacSync (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockUserInfoVisibility (Edm.String) | ✅ | ❌ | ❌ | ❌
+BlockUserInfoVisibilityInOneDrive (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+BlockUserInfoVisibilityInSharePoint (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CommentsOnFilesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CommentsOnListItemsDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
