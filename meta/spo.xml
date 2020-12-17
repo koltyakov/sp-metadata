@@ -4970,6 +4970,10 @@
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningSample)" />
           <Parameter Name="uniqueId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="GetByUniqueIdWithTokenization" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample" IsComposable="true" IsBindable="true" EntitySet="SPMachineLearningSamples">
+          <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningSample)" />
+          <Parameter Name="uniqueId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItemEntityData" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData" IsComposable="true" EntitySet="SPMachineLearningWorkItemEntityDatas" />
         <FunctionImport Name="GetByIdentifier" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem" IsComposable="true" IsBindable="true" EntitySet="Workitems">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem)" />
@@ -16683,6 +16687,12 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/Title">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/TokenEndPosition">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/TokenStartPosition">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample/UniqueId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18493,6 +18503,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetByUniqueId(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningSample), Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetByUniqueIdWithTokenization(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningSample), Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItemEntityData()">
@@ -27372,6 +27385,7 @@
         <Property Name="LimitedAccessFileType" Type="Edm.Int32" Nullable="false" />
         <Property Name="LockIssue" Type="Edm.String" />
         <Property Name="LockState" Type="Edm.String" />
+        <Property Name="OverrideBlockUserInfoVisibility" Type="Edm.Int32" Nullable="false" />
         <Property Name="OverrideTenantAnonymousLinkExpirationPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="OverrideTenantExternalUserExpirationPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Owner" Type="Edm.String" />
@@ -27489,6 +27503,7 @@
         <Property Name="AllowEditing" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowGuestUserShareToUsersNotInSiteCollection" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowLimitedAccessOnUnmanagedDevices" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AllowOverrideForBlockUserInfoVisibility" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowSelectSGsInODBListInTenant" Type="Collection(Edm.String)" />
         <Property Name="AnyoneLinkTrackUsers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ApplyAppEnforcedRestrictionsToAdHocRecipients" Type="Edm.Boolean" Nullable="false" />
@@ -27503,6 +27518,8 @@
         <Property Name="BlockMacSync" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BlockSendLabelMismatchEmail" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BlockUserInfoVisibility" Type="Edm.String" />
+        <Property Name="BlockUserInfoVisibilityInOneDrive" Type="Edm.Int32" Nullable="false" />
+        <Property Name="BlockUserInfoVisibilityInSharePoint" Type="Edm.Int32" Nullable="false" />
         <Property Name="CommentsOnFilesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CommentsOnListItemsDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CommentsOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
@@ -28105,6 +28122,8 @@
         <Property Name="ObjectId" Type="Edm.String" />
         <Property Name="ServerRedirectedEmbedUri" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
+        <Property Name="TokenEndPosition" Type="Collection(Edm.Int32)" Nullable="false" />
+        <Property Name="TokenStartPosition" Type="Collection(Edm.Int32)" Nullable="false" />
         <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
       </EntityType>
       <EntityType Name="SPMachineLearningWorkItem">
@@ -29309,6 +29328,7 @@
         <Property Name="AllowEditing" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowGuestUserShareToUsersNotInSiteCollection" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowLimitedAccessOnUnmanagedDevices" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AllowOverrideForBlockUserInfoVisibility" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowSelectSGsInODBList" Type="Collection(Edm.String)" />
         <Property Name="AnyoneLinkTrackUsers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ApplyAppEnforcedRestrictionsToAdHocRecipients" Type="Edm.Boolean" Nullable="false" />
@@ -29322,6 +29342,8 @@
         <Property Name="BlockDownloadOfViewableFilesOnUnmanagedDevices" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BlockMacSync" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BlockUserInfoVisibility" Type="Edm.String" />
+        <Property Name="BlockUserInfoVisibilityInOneDrive" Type="Edm.Int32" Nullable="false" />
+        <Property Name="BlockUserInfoVisibilityInSharePoint" Type="Edm.Int32" Nullable="false" />
         <Property Name="CommentsOnFilesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CommentsOnListItemsDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CommentsOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
