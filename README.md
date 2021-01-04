@@ -1,4 +1,4 @@
-![banner](./assets/banner.png)
+![banner](./assets/banner.jpg)
 
 # SharePoint Metadata Tracker
 
