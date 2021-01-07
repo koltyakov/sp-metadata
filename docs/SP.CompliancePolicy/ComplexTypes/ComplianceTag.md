@@ -17,6 +17,7 @@ DisplayName (Edm.String) | ✅ | ❌ | ❌ | ❌
 EncryptionRMSTemplateId (Edm.String) | ✅ | ❌ | ❌ | ❌
 HasRetentionAction (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsEventTag (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+MultiStageReviewerEmail (Edm.String) | ✅ | ❌ | ❌ | ❌
 Notes (Edm.String) | ✅ | ❌ | ❌ | ❌
 RequireSenderAuthenticationEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ReviewerEmail (Edm.String) | ✅ | ❌ | ❌ | ❌

@@ -12,6 +12,9 @@ DesignType (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 IsDefault (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 IsOutOfBoxTemplate (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsTenantAdminOnly (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ListColor (Edm.Int64) | ✅ | ❌ | ❌ | ❌
+ListIcon (Edm.Int64) | ✅ | ❌ | ❌ | ❌
+LogoUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 PreviewImageAltText (Edm.String) | ✅ | ✅ | ❌ | ❌
 PreviewImageUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 RequiresGroupConnected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

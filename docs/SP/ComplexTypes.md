@@ -39,6 +39,11 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CustomerKeyInfo](./ComplexTypes/CustomerKeyInfo.md) | ✅ | ✅ | ❌ | ❌
 [CustomerKeyStatusInfo](./ComplexTypes/CustomerKeyStatusInfo.md) | ✅ | ✅ | ❌ | ❌
 [CustomerKeyVaultInfo](./ComplexTypes/CustomerKeyVaultInfo.md) | ✅ | ✅ | ❌ | ❌
+[CustomizedFormsPage](./ComplexTypes/CustomizedFormsPage.md) | ✅ | ❌ | ❌ | ❌
+[CustomizedFormsPageCollection](./ComplexTypes/CustomizedFormsPageCollection.md) | ✅ | ❌ | ❌ | ❌
+[DashboardConfiguration](./ComplexTypes/DashboardConfiguration.md) | ✅ | ❌ | ❌ | ❌
+[DashboardConfigurationInformation](./ComplexTypes/DashboardConfigurationInformation.md) | ✅ | ❌ | ❌ | ❌
+[DashboardConfigurationItem](./ComplexTypes/DashboardConfigurationItem.md) | ✅ | ❌ | ❌ | ❌
 [DocumentLibraryInformation](./ComplexTypes/DocumentLibraryInformation.md) | ✅ | ✅ | ✅ | ❌
 [EncryptionOption](./ComplexTypes/EncryptionOption.md) | ✅ | ✅ | ❌ | ❌
 [EnqueueJobInformation](./ComplexTypes/EnqueueJobInformation.md) | ✅ | ❌ | ❌ | ❌

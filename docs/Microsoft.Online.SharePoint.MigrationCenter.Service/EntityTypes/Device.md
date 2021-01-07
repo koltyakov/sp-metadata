@@ -13,6 +13,7 @@ DebugCommand (Edm.String) | ✅ | ❌ | ❌ | ❌
 DeviceAddedTimeUTC (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 Disconnected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ErrorCode (Edm.String) | ✅ | ❌ | ❌ | ❌
+ErrorMessage (Edm.String) | ✅ | ❌ | ❌ | ❌
 FromClient (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LastActivityTimeUtc (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 LastHeartbeatTimeUtc (Edm.DateTime) | ✅ | ❌ | ❌ | ❌

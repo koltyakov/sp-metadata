@@ -15,6 +15,8 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [LinkedSiteContract](./ComplexTypes/LinkedSiteContract.md) | ✅ | ✅ | ❌ | ❌
 [LinkedSitesListContract](./ComplexTypes/LinkedSitesListContract.md) | ✅ | ✅ | ❌ | ❌
 [M365TabItem](./ComplexTypes/M365TabItem.md) | ✅ | ❌ | ❌ | ❌
+[OrgLabelsContext](./ComplexTypes/OrgLabelsContext.md) | ✅ | ❌ | ❌ | ❌
+[OrgLabelsContextList](./ComplexTypes/OrgLabelsContextList.md) | ✅ | ❌ | ❌ | ❌
 [PinToTeamParams](./ComplexTypes/PinToTeamParams.md) | ✅ | ❌ | ❌ | ❌
 [PinToTeamResponse](./ComplexTypes/PinToTeamResponse.md) | ✅ | ❌ | ❌ | ❌
 [SPSiteCreationRequest](./ComplexTypes/SPSiteCreationRequest.md) | ✅ | ✅ | ❌ | ❌

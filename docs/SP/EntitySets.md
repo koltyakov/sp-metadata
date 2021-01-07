@@ -105,10 +105,12 @@ DraftProjectResources1 | ✅ | ✅ | ✅ | ❌
 DraftProjects | ✅ | ✅ | ✅ | ❌
 DraftTaskLinks | ✅ | ✅ | ✅ | ❌
 DraftTasks | ✅ | ✅ | ✅ | ❌
+EEs | ✅ | ❌ | ❌ | ❌
 EduChanges | ❌ | ❌ | ❌ | ✅
 EffectiveInformationRightsManagementSettingss | ✅ | ✅ | ✅ | ❌
 EmbedDataV1s | ✅ | ✅ | ❌ | ❌
 EmbedServices | ✅ | ✅ | ❌ | ❌
+EmployeeEngagementConfigurations | ✅ | ❌ | ❌ | ❌
 EngagementComments | ✅ | ✅ | ❌ | ❌
 EngagementTimephasedPeriods | ✅ | ✅ | ❌ | ❌
 Engagements | ✅ | ✅ | ❌ | ❌

@@ -24,6 +24,7 @@ CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 CompatibilityLevel (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 ComplianceAttribute (Edm.String) | ✅ | ❌ | ❌ | ❌
 CurrentChangeToken (SP.ChangeToken) | ✅ | ✅ | ✅ | ❌
+CustomizedFormsPages (SP.CustomizedFormsPageCollection) | ✅ | ❌ | ❌ | ❌
 DisableAppViews (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 DisableCompanyWideSharingLinks (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 DisableFlows (Edm.Boolean) | ✅ | ✅ | ❌ | ❌

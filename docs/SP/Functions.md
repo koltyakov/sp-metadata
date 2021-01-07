@@ -156,6 +156,7 @@ DisableIndex (SP.FieldUrl) | ✅ | ❌ | ❌ | ❌
 DisableIndex (SP.FieldUser) | ✅ | ❌ | ❌ | ❌
 DoesPushNotificationSubscriberExist (SP.Web) | ✅ | ✅ | ✅ | ✅
 DoesUserHavePermissions (SP.Web) | ✅ | ✅ | ✅ | ✅
+EE | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.Field) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldCalculated) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldChoice) | ✅ | ❌ | ❌ | ❌
@@ -265,6 +266,7 @@ GetClientSideWebParts (SP.Web) | ✅ | ✅ | ✅ | ❌
 GetComments (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 GetConnectedHubs (Collection(SP.HubSite)) | ✅ | ❌ | ❌ | ❌
 GetCopyJobProgress (SP.Site) | ✅ | ✅ | ❌ | ❌
+GetCurrent (SP.EmployeeEngagementConfiguration) | ✅ | ❌ | ❌ | ❌
 GetCustomListTemplates (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetEntity (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetErrorDetails (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
@@ -426,6 +428,7 @@ RemoveById (Collection(SP.Group)) | ✅ | ✅ | ✅ | ✅
 RemoveById (Collection(SP.User)) | ✅ | ✅ | ✅ | ✅
 RemoveByLoginName (Collection(SP.Group)) | ✅ | ✅ | ✅ | ✅
 RemoveByLoginName (Collection(SP.User)) | ✅ | ✅ | ✅ | ✅
+RemoveCurrent (SP.EmployeeEngagementConfiguration) | ✅ | ❌ | ❌ | ❌
 RemoveFromSpotlight (SP.View) | ✅ | ✅ | ❌ | ❌
 RemoveHubSite (SP.Site) | ❌ | ✅ | ❌ | ❌
 RemoveRoleAssignment (Collection(SP.RoleAssignment)) | ✅ | ✅ | ✅ | ✅
@@ -491,6 +494,8 @@ SP_AppPrincipalIdentityProvider_External | ✅ | ✅ | ✅ | ✅
 <span title="SP_AppSiteContextUtility_GetAppSiteContextCollection">SP_AppSiteContextUtility_GetAppSiteContextCollecti...</span> (SP AppSiteContextUtility GetAppSiteContextCollection) | ✅ | ✅ | ❌ | ❌
 [SP_AppTileProperties_GetAppProperties](./Functions/SP_AppTileProperties_GetAppProperties.md) | ✅ | ✅ | ❌ | ❌
 SP_CurrencyList_GetList | ✅ | ✅ | ❌ | ❌
+SP_EE | ✅ | ❌ | ❌ | ❌
+SP_EmployeeEngagementConfiguration | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteListsSubstrate_AddList](./Functions/SP_FavoriteListsSubstrate_AddList.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteListsSubstrate_GetListsBy](./Functions/SP_FavoriteListsSubstrate_GetListsBy.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteListsSubstrate_RemoveList](./Functions/SP_FavoriteListsSubstrate_RemoveList.md) | ✅ | ❌ | ❌ | ❌
@@ -607,6 +612,7 @@ SetComplianceTagWithMetaInfo (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 SetComplianceTagWithNoHold (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 SetComplianceTagWithRecord (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 SetCorporateCatalog (SP.TenantSettings) | ✅ | ❌ | ❌ | ❌
+SetCurrent (SP.EmployeeEngagementConfiguration) | ✅ | ❌ | ❌ | ❌
 SetDefaultNewPageTemplateId (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetExemptFromBlockDownloadOfNonViewableFiles (SP.List) | ✅ | ✅ | ❌ | ❌
 SetFileUserValue (SP.File) | ✅ | ❌ | ❌ | ❌

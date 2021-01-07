@@ -46,7 +46,9 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CreatablesInfo](./EntityTypes/CreatablesInfo.md) | ✅ | ✅ | ✅ | ❌
 [CurrencyList](./EntityTypes/CurrencyList.md) | ✅ | ✅ | ❌ | ❌
 [DlpPolicyTip](./EntityTypes/DlpPolicyTip.md) | ✅ | ✅ | ✅ | ❌
+[EE](./EntityTypes/EE.md) | ✅ | ❌ | ❌ | ❌
 [EffectiveInformationRightsManagementSettings](./EntityTypes/EffectiveInformationRightsManagementSettings.md) | ✅ | ✅ | ✅ | ❌
+[EmployeeEngagementConfiguration](./EntityTypes/EmployeeEngagementConfiguration.md) | ✅ | ❌ | ❌ | ❌
 [EventReceiverDefinition](./EntityTypes/EventReceiverDefinition.md) | ✅ | ✅ | ✅ | ✅
 [FavoriteLists](./EntityTypes/FavoriteLists.md) | ✅ | ❌ | ❌ | ❌
 [FavoriteListsSubstrate](./EntityTypes/FavoriteListsSubstrate.md) | ✅ | ❌ | ❌ | ❌

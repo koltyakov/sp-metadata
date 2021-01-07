@@ -18,3 +18,4 @@ TargetUserName (Edm.String) | ✅ | ❌ | ❌ | ❌
 TaskQueueExpiresOnTimeUtc (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 TaskQueueUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 Version (Edm.String) | ✅ | ❌ | ❌ | ❌
+WorkingFolder (Edm.String) | ✅ | ❌ | ❌ | ❌
