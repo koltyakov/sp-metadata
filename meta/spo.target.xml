@@ -50,8 +50,17 @@
         <Property Name="Url" Type="Edm.String" />
         <Property Name="WebId" Type="Edm.Guid" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="DashboardConfigurationInformation">
+        <Property Name="WebAbsolutePath" Type="SP.ResourcePath" />
+      </ComplexType>
       <ComplexType Name="ResourcePath">
         <Property Name="DecodedUrl" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="DashboardConfigurationItem">
+        <Property Name="WebAbsolutePath" Type="SP.ResourcePath" />
+      </ComplexType>
+      <ComplexType Name="DashboardConfiguration">
+        <Property Name="DashboardConfigurationItems" Type="Collection(SP.DashboardConfigurationItem)" />
       </ComplexType>
       <ComplexType Name="ContentTypeId">
         <Property Name="StringValue" Type="Edm.String" />
@@ -81,6 +90,15 @@
       <ComplexType Name="CurrencyInformation">
         <Property Name="DisplayString" Type="Edm.String" />
         <Property Name="LCID" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="CustomizedFormsPageCollection">
+        <Property Name="Items" Type="Collection(SP.CustomizedFormsPage)" />
+      </ComplexType>
+      <ComplexType Name="CustomizedFormsPage">
+        <Property Name="formType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="pageId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Url" Type="Edm.String" />
+        <Property Name="webpartId" Type="Edm.Guid" Nullable="false" />
       </ComplexType>
       <ComplexType Name="EncryptionOption">
         <Property Name="AES256CBCKey" Type="Edm.Binary" />
@@ -1026,6 +1044,7 @@
         <Property Name="CompatibilityLevel" Type="Edm.Int32" Nullable="false" />
         <Property Name="ComplianceAttribute" Type="Edm.String" />
         <Property Name="CurrentChangeToken" Type="SP.ChangeToken" />
+        <Property Name="CustomizedFormsPages" Type="SP.CustomizedFormsPageCollection" />
         <Property Name="DisableAppViews" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableCompanyWideSharingLinks" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableFlows" Type="Edm.Boolean" Nullable="false" />
@@ -2158,6 +2177,19 @@
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="EmployeeEngagementConfiguration">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="EE">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+        <NavigationProperty Name="Dashboards" Relationship="SP.SP_EE_Dashboards_SP_EmployeeEngagementConfiguration_DashboardsPartner" ToRole="Dashboards" FromRole="DashboardsPartner" />
       </EntityType>
       <EntityType Name="AppCatalog" Abstract="true">
         <Key>
@@ -3567,6 +3599,10 @@
         <End Type="SP.PropertyValues" Role="Properties" Multiplicity="0..1" />
         <End Type="SP.WebParts.WebPart" Role="PropertiesPartner" Multiplicity="0..1" />
       </Association>
+      <Association Name="SP_EE_Dashboards_SP_EmployeeEngagementConfiguration_DashboardsPartner">
+        <End Type="SP.EmployeeEngagementConfiguration" Role="Dashboards" Multiplicity="0..1" />
+        <End Type="SP.EE" Role="DashboardsPartner" Multiplicity="0..1" />
+      </Association>
       <Association Name="SP_ObjectSharingSettings_ObjectSharingInformation_SP_ObjectSharingInformation_ObjectSharingInformationPartner">
         <End Type="SP.ObjectSharingInformation" Role="ObjectSharingInformation" Multiplicity="0..1" />
         <End Type="SP.ObjectSharingSettings" Role="ObjectSharingInformationPartner" Multiplicity="0..1" />
@@ -3674,6 +3710,7 @@
       <EntityContainer Name="ApiData">
         <EntitySet Name="Apps" EntityType="Microsoft.AppServices.AppCollection" />
         <EntitySet Name="ComponentContextInfos" EntityType="Microsoft.SharePoint.Internal.ClientSideComponent.ComponentContextInfo" />
+        <EntitySet Name="EEs" EntityType="SP.EE" />
         <EntitySet Name="Files" EntityType="MS.FileServices.FileSystemItem" />
         <EntitySet Name="GroupServices" EntityType="Microsoft.SharePoint.Portal.GroupService" />
         <EntitySet Name="Groupsitemanagers" EntityType="Microsoft.SharePoint.Portal.GroupSiteManager" />
@@ -3995,6 +4032,7 @@
         <EntitySet Name="DlpPolicyTips" EntityType="SP.DlpPolicyTip" />
         <EntitySet Name="DocumentIds" EntityType="SP.DocumentManagement.DocumentId" />
         <EntitySet Name="EffectiveInformationRightsManagementSettingss" EntityType="SP.EffectiveInformationRightsManagementSettings" />
+        <EntitySet Name="EmployeeEngagementConfigurations" EntityType="SP.EmployeeEngagementConfiguration" />
         <EntitySet Name="EventReceiverDefinitions" EntityType="SP.EventReceiverDefinition" />
         <EntitySet Name="FavoriteListss" EntityType="SP.FavoriteLists" />
         <EntitySet Name="FavoriteListsSubstrates" EntityType="SP.FavoriteListsSubstrate" />
@@ -4221,6 +4259,7 @@
         <FunctionImport Name="Apps" ReturnType="Microsoft.AppServices.AppCollection" IsComposable="true" EntitySet="Apps" />
         <FunctionImport Name="ComponentContextInfo" ReturnType="Microsoft.SharePoint.Internal.ClientSideComponent.ComponentContextInfo" IsComposable="true" EntitySet="ComponentContextInfos" />
         <FunctionImport Name="contextinfo" ReturnType="SP.ContextWebInformation" IsComposable="true" />
+        <FunctionImport Name="EE" ReturnType="SP.EE" IsComposable="true" EntitySet="EEs" />
         <FunctionImport Name="files" ReturnType="Collection(MS.FileServices.FileSystemItem)" IsComposable="true" EntitySet="Files" />
         <FunctionImport Name="GroupService" ReturnType="Microsoft.SharePoint.Portal.GroupService" IsComposable="true" EntitySet="GroupServices" />
         <FunctionImport Name="groupsitemanager" ReturnType="Microsoft.SharePoint.Portal.GroupSiteManager" IsComposable="true" EntitySet="Groupsitemanagers" />
@@ -8533,6 +8572,10 @@
         <FunctionImport Name="EnsureTeamForGroupEx" ReturnType="Microsoft.SharePoint.Portal.EnsureTeamForGroupExResponse" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
         </FunctionImport>
+        <FunctionImport Name="GetAllOrgLabels" ReturnType="Microsoft.SharePoint.Portal.OrgLabelsContextList" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
+          <Parameter Name="pageNumber" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="GetGroupCreationContext" ReturnType="Microsoft.SharePoint.Portal.GroupCreationContext" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
         </FunctionImport>
@@ -8969,6 +9012,9 @@
           <Parameter Name="siteDesignId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="store" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateListDesign" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignMetadata">
+          <Parameter Name="info" Type="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignCreationInfo" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteDesign" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignMetadata">
           <Parameter Name="info" Type="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignCreationInfo" />
         </FunctionImport>
@@ -9003,6 +9049,13 @@
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetDesignPackageMenuContents" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.DesignPackageMenuContents" EntitySet="DesignPackageMenuContentss" />
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetHiddenBuiltInDesignPackages" ReturnType="Edm.Int64" />
+        <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetListDesign" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignMetadata">
+          <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="store" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetListDesigns" ReturnType="Collection(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignMetadata)">
+          <Parameter Name="store" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignMetadata" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignMetadata">
           <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="store" Type="Edm.Int32" Nullable="false" />
@@ -9055,6 +9108,9 @@
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoteCreateSiteScript" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptMetadata">
           <Parameter Name="info" Type="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptCreationInfo" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoveListDesign">
+          <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoveSiteDesignTask">
           <Parameter Name="taskId" Type="Edm.Guid" Nullable="false" />
@@ -9403,6 +9459,18 @@
           <Parameter Name="clientId" Type="Edm.String" />
           <Parameter Name="resource" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="SP_EmployeeEngagementConfiguration" ReturnType="SP.EmployeeEngagementConfiguration" IsComposable="true" EntitySet="EmployeeEngagementConfigurations" />
+        <FunctionImport Name="GetCurrent" ReturnType="SP.DashboardConfiguration" IsBindable="true">
+          <Parameter Name="this" Type="SP.EmployeeEngagementConfiguration" />
+        </FunctionImport>
+        <FunctionImport Name="RemoveCurrent" IsBindable="true">
+          <Parameter Name="this" Type="SP.EmployeeEngagementConfiguration" />
+        </FunctionImport>
+        <FunctionImport Name="SetCurrent" IsBindable="true">
+          <Parameter Name="this" Type="SP.EmployeeEngagementConfiguration" />
+          <Parameter Name="input" Type="SP.DashboardConfigurationInformation" />
+        </FunctionImport>
+        <FunctionImport Name="SP_EE" ReturnType="SP.EE" IsComposable="true" EntitySet="EEs" />
         <FunctionImport Name="Like" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Comments.comment" />
         </FunctionImport>
@@ -13567,6 +13635,10 @@
         </FunctionImport>
         <EntitySet Name="DraftProjectResources1" EntityType="PS.DraftProjectResource" />
         <EntitySet Name="PublishedProjects1" EntityType="PS.PublishedProject" />
+        <AssociationSet Name="SP_EE_Dashboards_SP_EmployeeEngagementConfiguration_DashboardsPartnerSet" Association="SP.SP_EE_Dashboards_SP_EmployeeEngagementConfiguration_DashboardsPartner">
+          <End Role="DashboardsPartner" EntitySet="EEs" />
+          <End Role="Dashboards" EntitySet="EmployeeEngagementConfigurations" />
+        </AssociationSet>
         <AssociationSet Name="SP_List_Author_SP_User_AuthorPartnerSet" Association="SP.SP_List_Author_SP_User_AuthorPartner">
           <End Role="AuthorPartner" EntitySet="Lists" />
           <End Role="Author" EntitySet="Users1" />
@@ -15523,6 +15595,27 @@
       <Annotations Target="Microsoft.SharePoint.Portal.M365TabItem">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Portal.OrgLabelsContext">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Portal.OrgLabelsContext/DisplayName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Portal.OrgLabelsContext/LabelApplicableTo">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Portal.OrgLabelsContext/ObjectId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Portal.OrgLabelsContextList">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Portal.OrgLabelsContextList/IsLastPage">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Portal.OrgLabelsContextList/Labels">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Portal.PinToTeamParams">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -15817,6 +15910,21 @@
       <Annotations Target="SP.Internal.AppRenderInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.DashboardConfigurationInformation">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ResourcePath">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ResourcePath/DecodedUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.DashboardConfigurationItem">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.DashboardConfiguration">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Deployment.ShortcutInformation">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -15833,12 +15941,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Administration.OrgAssetsLibrary">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ResourcePath">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ResourcePath/DecodedUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Administration.OrgAssets">
@@ -16921,6 +17023,9 @@
       <Annotations Target="SP.Site/ComplianceAttribute">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Site/CustomizedFormsPages">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ScriptSafeDomain">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17888,6 +17993,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Internal.ClientSideComponent.Token">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.EmployeeEngagementConfiguration">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.EE/Dashboards">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Comments.comment">
@@ -19024,6 +19135,9 @@
       <Annotations Target="SP.ApiData/EnsureTeamForGroupEx(Microsoft.SharePoint.Portal.GroupSiteManager)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetAllOrgLabels(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetGroupCreationContext(Microsoft.SharePoint.Portal.GroupSiteManager)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19153,6 +19267,9 @@
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplySiteDesign(Edm.String, Edm.Guid, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateListDesign(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignCreationInfo)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteDesign(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignCreationInfo)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19184,6 +19301,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetHiddenBuiltInDesignPackages()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetListDesign(Edm.Guid, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetListDesigns(Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignMetadata(Edm.Guid, Edm.Int32)">
@@ -19229,6 +19352,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoteCreateSiteScript(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptCreationInfo)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoveListDesign(Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoveSiteDesignTask(Edm.Guid)">
@@ -19493,6 +19619,18 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Internal_ClientSideComponent_Token_AcquireOBOToken(Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_EmployeeEngagementConfiguration()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetCurrent(SP.EmployeeEngagementConfiguration)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/RemoveCurrent(SP.EmployeeEngagementConfiguration)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetCurrent(SP.EmployeeEngagementConfiguration, SP.DashboardConfigurationInformation)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Like(Microsoft.SharePoint.Comments.comment)">
@@ -20434,6 +20572,7 @@
         <Property Name="EncryptionRMSTemplateId" Type="Edm.String" />
         <Property Name="HasRetentionAction" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsEventTag" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="MultiStageReviewerEmail" Type="Edm.String" />
         <Property Name="Notes" Type="Edm.String" />
         <Property Name="RequireSenderAuthenticationEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ReviewerEmail" Type="Edm.String" />
@@ -21179,9 +21318,9 @@
       </EntityType>
       <EntityType Name="PersonalCache">
         <Key>
-          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+          <PropertyRef Name="MySiteUrl" />
         </Key>
-        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+        <Property Name="MySiteUrl" Type="Edm.String" Nullable="false" />
       </EntityType>
       <EntityType Name="PersonProperties">
         <Key>
@@ -25246,6 +25385,15 @@
         <Property Name="itemType" Type="Edm.Int32" Nullable="false" />
         <Property Name="url" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="OrgLabelsContext">
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="LabelApplicableTo" Type="Edm.String" />
+        <Property Name="ObjectId" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="OrgLabelsContextList">
+        <Property Name="IsLastPage" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Labels" Type="Collection(Microsoft.SharePoint.Portal.OrgLabelsContext)" />
+      </ComplexType>
       <ComplexType Name="PinToTeamParams">
         <Property Name="tabs" Type="Collection(Microsoft.SharePoint.Portal.M365TabItem)" />
         <Property Name="teamsId" Type="Edm.String" />
@@ -25570,6 +25718,9 @@
         <Property Name="IsDefault" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsOutOfBoxTemplate" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsTenantAdminOnly" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ListColor" Type="Edm.Int64" Nullable="false" />
+        <Property Name="ListIcon" Type="Edm.Int64" Nullable="false" />
+        <Property Name="LogoUrl" Type="Edm.String" />
         <Property Name="PreviewImageAltText" Type="Edm.String" />
         <Property Name="PreviewImageUrl" Type="Edm.String" />
         <Property Name="RequiresGroupConnected" Type="Edm.Boolean" Nullable="false" />
@@ -27665,6 +27816,7 @@
         <Property Name="DeviceAddedTimeUTC" Type="Edm.DateTime" Nullable="false" />
         <Property Name="Disconnected" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ErrorCode" Type="Edm.String" />
+        <Property Name="ErrorMessage" Type="Edm.String" />
         <Property Name="FromClient" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LastActivityTimeUtc" Type="Edm.DateTime" Nullable="false" />
         <Property Name="LastHeartbeatTimeUtc" Type="Edm.DateTime" Nullable="false" />
@@ -27896,6 +28048,7 @@
         <Property Name="TaskQueueExpiresOnTimeUtc" Type="Edm.DateTime" Nullable="false" />
         <Property Name="TaskQueueUrl" Type="Edm.String" />
         <Property Name="Version" Type="Edm.String" />
+        <Property Name="WorkingFolder" Type="Edm.String" />
       </EntityType>
       <EntityType Name="MigrationTaskEntityData">
         <Key>
