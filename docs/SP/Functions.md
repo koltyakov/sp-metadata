@@ -59,6 +59,7 @@ CheckLicense (SP.SPAppLicenseManager) | ✅ | ❌ | ❌ | ❌
 CheckOut (SP.File) | ✅ | ✅ | ✅ | ✅
 Clear (Collection(SP.UserCustomAction)) | ✅ | ✅ | ✅ | ✅
 ClearCorporateCatalog (SP.TenantSettings) | ✅ | ❌ | ❌ | ❌
+Configuration (SP.EE) | ✅ | ❌ | ❌ | ❌
 Contains (Collection(SP.Alert)) | ✅ | ✅ | ❌ | ❌
 ContinueUpload (SP.File) | ✅ | ✅ | ✅ | ❌
 [CopyQuizDefinition](./Functions/CopyQuizDefinition.md) | ❌ | ❌ | ❌ | ✅
@@ -175,6 +176,7 @@ EnableIndex (SP.FieldText) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldUrl) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldUser) | ✅ | ❌ | ❌ | ❌
 EnqueueApplySensitivityLabelWork (SP.Site) | ✅ | ❌ | ❌ | ❌
+EnqueueAsyncActionTaskById (SP.List) | ✅ | ❌ | ❌ | ❌
 EnsureClientRenderedSitePagesLibrary (Collection(SP.List)) | ✅ | ✅ | ❌ | ❌
 EnsureEventsList (Collection(SP.List)) | ✅ | ✅ | ❌ | ❌
 EnsureSignoffStatusField (SP.List) | ✅ | ❌ | ❌ | ❌
@@ -197,6 +199,8 @@ GetAppInstanceById (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetAppInstancesByProductId (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetAppPrincipalConfiguration (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
 GetAppPrincipalCredentials (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
+GetAsyncActionConfig (SP.List) | ✅ | ❌ | ❌ | ❌
+GetAsyncActionTaskIds (SP.List) | ✅ | ❌ | ❌ | ❌
 GetAvailableWebTemplates (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetBloomFilter (SP.List) | ✅ | ✅ | ❌ | ❌
 GetBloomFilterWithCustomFields (SP.List) | ✅ | ✅ | ❌ | ❌
@@ -259,7 +263,6 @@ GetChanges (SP.ListItem) | ✅ | ✅ | ✅ | ❌
 GetChanges (SP.Site) | ✅ | ✅ | ✅ | ✅
 GetChanges (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetCheckedOutFiles (SP.List) | ✅ | ✅ | ❌ | ❌
-GetClientPersistedCacheKey (SP.Site) | ✅ | ❌ | ❌ | ❌
 GetClientSideComponents (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetClientSideComponentsById (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetClientSideWebParts (SP.Web) | ✅ | ✅ | ✅ | ❌
@@ -543,6 +546,7 @@ SP_OrganizationNews | ✅ | ❌ | ❌ | ❌
 [SP_PinnedItems_GetItemsBy](./Functions/SP_PinnedItems_GetItemsBy.md) | ✅ | ❌ | ❌ | ❌
 [SP_PinnedItems_RemoveItem](./Functions/SP_PinnedItems_RemoveItem.md) | ✅ | ❌ | ❌ | ❌
 [SP_PinnedItems_UpdateItem](./Functions/SP_PinnedItems_UpdateItem.md) | ✅ | ❌ | ❌ | ❌
+SP_QuickAccessItemCollection_GetQuickAccessItems | ✅ | ❌ | ❌ | ❌
 [SP_RecentListCollection_GetRecentLists](./Functions/SP_RecentListCollection_GetRecentLists.md) | ✅ | ❌ | ❌ | ❌
 [<span title="SP_RecentListCollection_GetRecentListsWithPageContextInfo">SP_RecentListCollection_GetRecentListsWithPageCont...</span> (SP RecentListCollection GetRecentListsWithPageContextInfo)](./Functions/SP_RecentListCollection_GetRecentListsWithPageContextInfo.md) | ✅ | ❌ | ❌ | ❌
 [SP_RecentListCollection_UpdateRecentLists](./Functions/SP_RecentListCollection_UpdateRecentLists.md) | ✅ | ❌ | ❌ | ❌

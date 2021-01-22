@@ -238,6 +238,7 @@ MicrofeedPostDefinitionManagers | ✅ | ✅ | ✅ | ✅
 MicrofeedPostOptionCollections | ✅ | ✅ | ✅ | ✅
 MicrofeedStores | ✅ | ✅ | ✅ | ✅
 Microservicemanagers | ✅ | ✅ | ❌ | ❌
+MigrationCenterDeployStatuss | ✅ | ❌ | ❌ | ❌
 MigrationCenterServicess | ✅ | ❌ | ❌ | ❌
 MigrationCenterStorages | ✅ | ❌ | ❌ | ❌
 MigrationCenterTeamss | ✅ | ❌ | ❌ | ❌
@@ -312,6 +313,7 @@ PointPublishingUsers | ✅ | ❌ | ❌ | ❌
 PolicyEvaluationInfos | ✅ | ❌ | ❌ | ❌
 PortalLaunchWaves | ✅ | ❌ | ❌ | ❌
 PortalNavigationCaches | ✅ | ❌ | ❌ | ❌
+PreserveDocumentSubmitters | ✅ | ❌ | ❌ | ❌
 PrimaryCityTimes | ✅ | ✅ | ❌ | ❌
 Principals | ✅ | ✅ | ✅ | ✅
 ProfileImageStores | ✅ | ✅ | ✅ | ✅
@@ -345,6 +347,7 @@ PushTenantServiceInfos | ❌ | ❌ | ❌ | ✅
 QueryPersonalizationDatas | ✅ | ✅ | ✅ | ✅
 Querys | ❌ | ❌ | ❌ | ✅
 QueueJobs | ✅ | ✅ | ✅ | ❌
+QuickAccessItemCollections | ✅ | ❌ | ❌ | ❌
 QuizUtilitiess | ❌ | ❌ | ❌ | ✅
 Quizs | ❌ | ❌ | ❌ | ✅
 RankingLabelings | ✅ | ✅ | ✅ | ✅
@@ -517,6 +520,7 @@ TaxonomyReplicationParameterss | ✅ | ❌ | ❌ | ❌
 TeamChannelManagers | ✅ | ✅ | ❌ | ❌
 TeamChannels | ✅ | ❌ | ❌ | ❌
 TeamResources | ✅ | ❌ | ❌ | ❌
+TeamsPackageDownloads | ✅ | ❌ | ❌ | ❌
 TenantAdminEndpointss | ✅ | ❌ | ❌ | ❌
 TenantAdminSettingsServices | ✅ | ❌ | ❌ | ❌
 TenantAppInstances | ✅ | ✅ | ✅ | ❌

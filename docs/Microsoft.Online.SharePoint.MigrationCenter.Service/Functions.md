@@ -17,8 +17,10 @@ GetById (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.Migratio
 GetById (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask)) | ✅ | ❌ | ❌ | ❌
 GetCredentials (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential)) | ✅ | ❌ | ❌ | ❌
 GetProperty (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationProperties) | ✅ | ❌ | ❌ | ❌
+IsChangeDeployed (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterDeployStatus) | ✅ | ❌ | ❌ | ❌
 IsFlightEnabled (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationSPFlight) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_Device">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service Device) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterDeployStatus">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service MigrationCenterDeployStatus) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service MigrationCenterServices) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterStorage">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service MigrationCenterStorage) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterTeams">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service MigrationCenterTeams) | ✅ | ❌ | ❌ | ❌

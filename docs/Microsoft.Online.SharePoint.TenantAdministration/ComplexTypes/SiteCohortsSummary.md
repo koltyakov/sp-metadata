@@ -6,7 +6,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-ActiveSitesCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+ExternallySharedSitesCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+GroupConnectedSitesCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 InactiveSitesCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-NeverUsedSitesCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 TotalSitesCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌

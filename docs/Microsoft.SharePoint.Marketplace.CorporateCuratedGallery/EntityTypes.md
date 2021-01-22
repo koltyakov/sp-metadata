@@ -9,4 +9,5 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPCorporateCuratedGallerySettingsFactory](./EntityTypes/SPCorporateCuratedGallerySettingsFactory.md) | ✅ | ❌ | ❌ | ❌
 [SiteCollectionAppCatalogAllowedItem](./EntityTypes/SiteCollectionAppCatalogAllowedItem.md) | ✅ | ✅ | ❌ | ❌
 [SiteCollectionCorporateCatalogAccessor](./EntityTypes/SiteCollectionCorporateCatalogAccessor.md) | ✅ | ✅ | ❌ | ❌
+[TeamsPackageDownload](./EntityTypes/TeamsPackageDownload.md) | ✅ | ❌ | ❌ | ❌
 [TenantCorporateCatalogAccessor](./EntityTypes/TenantCorporateCatalogAccessor.md) | ✅ | ✅ | ❌ | ❌

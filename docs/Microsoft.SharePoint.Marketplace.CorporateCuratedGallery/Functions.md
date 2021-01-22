@@ -9,6 +9,9 @@ Add (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorp
 Add (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ✅ | ❌ | ❌
 AddStoreApp (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ❌ | ❌ | ❌
 Deploy (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata) | ✅ | ✅ | ❌ | ❌
+DownloadTeams (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TeamsPackageDownload) | ✅ | ❌ | ❌ | ❌
+DownloadTeamsSolution (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ❌ | ❌ | ❌
+DownloadTeamsSolutionByUniqueId (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ❌ | ❌ | ❌
 GetAppById (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ❌ | ❌ | ❌
 GetByAbsoluteUrl (Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem)) | ❌ | ✅ | ❌ | ❌
 GetById (Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata)) | ✅ | ✅ | ❌ | ❌

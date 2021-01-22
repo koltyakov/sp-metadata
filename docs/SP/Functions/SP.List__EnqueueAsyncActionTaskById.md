@@ -1,8 +1,8 @@
-# Function Import: GetClientPersistedCacheKey
+# Function Import: EnqueueAsyncActionTaskById
 
 > Namespace: SP
 
-- Entity type: SP.Site
+- Entity type: SP.List
 - Is composable: false
 - Is bindable: false
 
@@ -10,4 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-isSiteScope (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+id (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+parameters (Collection(SP.KeyValue)) | ✅ | ❌ | ❌ | ❌

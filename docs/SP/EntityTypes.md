@@ -111,6 +111,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [Principal](./EntityTypes/Principal.md) | ✅ | ✅ | ✅ | ✅
 [PropertyValues](./EntityTypes/PropertyValues.md) | ✅ | ✅ | ✅ | ✅
 [PushNotificationSubscriber](./EntityTypes/PushNotificationSubscriber.md) | ✅ | ✅ | ✅ | ✅
+[QuickAccessItemCollection](./EntityTypes/QuickAccessItemCollection.md) | ✅ | ❌ | ❌ | ❌
 [RecentList](./EntityTypes/RecentList.md) | ✅ | ❌ | ❌ | ❌
 [RecentListCollection](./EntityTypes/RecentListCollection.md) | ✅ | ❌ | ❌ | ❌
 [RecycleBinItem](./EntityTypes/RecycleBinItem.md) | ✅ | ✅ | ✅ | ✅
