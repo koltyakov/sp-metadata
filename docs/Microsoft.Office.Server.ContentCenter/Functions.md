@@ -26,6 +26,7 @@ ImportMeta (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ 
 <span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningPublicationsEntityData">Microsoft_Office_Server_ContentCenter_SPMachineLea...</span> (Microsoft Office Server ContentCenter SPMachineLearningPublicationsEntityData) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningSampleEntityData">Microsoft_Office_Server_ContentCenter_SPMachineLea...</span> (Microsoft Office Server ContentCenter SPMachineLearningSampleEntityData) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItemEntityData">Microsoft_Office_Server_ContentCenter_SPMachineLea...</span> (Microsoft Office Server ContentCenter SPMachineLearningWorkItemEntityData) | ✅ | ❌ | ❌ | ❌
+RenameExtractor (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Office.Server.ContentCenter.SPMachineLearningSample) | ✅ | ❌ | ❌ | ❌

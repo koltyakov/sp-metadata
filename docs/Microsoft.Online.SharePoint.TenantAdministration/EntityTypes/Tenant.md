@@ -80,6 +80,7 @@ HasAdminCompletedCUConfiguration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HasIntelligentContentServicesCapability (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HasTopicExperiencesCapability (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HideDefaultThemes (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+HideSyncButtonOnDocLib (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HideSyncButtonOnODB (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IPAddressAllowList (Edm.String) | ✅ | ❌ | ❌ | ❌
 IPAddressEnforcement (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

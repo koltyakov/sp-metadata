@@ -67,6 +67,7 @@ FolderAnonymousLinkType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 GetOrgAssets (Microsoft.SharePoint.Administration.OrgAssets) | ✅ | ❌ | ❌ | ❌
 GuestSharingGroupAllowList (Edm.String) | ✅ | ❌ | ❌ | ❌
 HasAdminCompletedCUConfiguration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+HideSyncButtonOnDocLib (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HideSyncButtonOnODB (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IPAddressAllowList (Edm.String) | ✅ | ❌ | ❌ | ❌
 IPAddressEnforcement (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
