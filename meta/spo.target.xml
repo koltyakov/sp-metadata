@@ -4968,6 +4968,11 @@
         <FunctionImport Name="ImportMeta" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsBindable="true" EntitySet="Models">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
         </FunctionImport>
+        <FunctionImport Name="RenameExtractor" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsBindable="true" EntitySet="Models">
+          <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
+          <Parameter Name="fromExtractorName" Type="Edm.String" />
+          <Parameter Name="toExtractorName" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
         </FunctionImport>
@@ -16663,6 +16668,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub/IsDefaultContentCenter">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub/MachineLearningCaptureEnabled">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16870,10 +16878,16 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem/DeliverDate">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem/ErrorMessage">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem/ID">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem/Status">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem/StatusCode">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem/TargetServerRelativeUrl">
@@ -18635,6 +18649,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/ImportMeta(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/RenameExtractor(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Update(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)">
@@ -27833,6 +27850,7 @@
         <Property Name="HasIntelligentContentServicesCapability" Type="Edm.Boolean" Nullable="false" />
         <Property Name="HasTopicExperiencesCapability" Type="Edm.Boolean" Nullable="false" />
         <Property Name="HideDefaultThemes" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="HideSyncButtonOnDocLib" Type="Edm.Boolean" Nullable="false" />
         <Property Name="HideSyncButtonOnODB" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ImageTaggingOption" Type="Edm.Int32" Nullable="false" />
         <Property Name="IncludeAtAGlanceInShareEmails" Type="Edm.Boolean" Nullable="false" />
@@ -28328,8 +28346,9 @@
       </ComplexType>
       <EntityType Name="SPMachineLearningHub">
         <Key>
-          <PropertyRef Name="MachineLearningCaptureEnabled" />
+          <PropertyRef Name="IsDefaultContentCenter" />
         </Key>
+        <Property Name="IsDefaultContentCenter" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
         <NavigationProperty Name="Models" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Models_Microsoft_Office_Server_ContentCenter_SPMachineLearningModel_ModelsPartner" ToRole="Models" FromRole="ModelsPartner" />
         <NavigationProperty Name="Publications" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Publications_Microsoft_Office_Server_ContentCenter_SPMachineLearningPublication_PublicationsPartner" ToRole="Publications" FromRole="PublicationsPartner" />
@@ -28416,8 +28435,10 @@
         </Key>
         <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
         <Property Name="DeliverDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ErrorMessage" Type="Edm.String" />
         <Property Name="ID" Type="Edm.Guid" Nullable="false" />
         <Property Name="Status" Type="Edm.String" />
+        <Property Name="StatusCode" Type="Edm.Int32" Nullable="false" />
         <Property Name="TargetServerRelativeUrl" Type="Edm.String" />
         <Property Name="TargetSiteUrl" Type="Edm.String" />
         <Property Name="TargetWebServerRelativeUrl" Type="Edm.String" />
@@ -29667,6 +29688,7 @@
         <Property Name="GetOrgAssets" Type="Microsoft.SharePoint.Administration.OrgAssets" />
         <Property Name="GuestSharingGroupAllowList" Type="Edm.String" />
         <Property Name="HasAdminCompletedCUConfiguration" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="HideSyncButtonOnDocLib" Type="Edm.Boolean" Nullable="false" />
         <Property Name="HideSyncButtonOnODB" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ImageTaggingOption" Type="Edm.Int32" Nullable="false" />
         <Property Name="IncludeAtAGlanceInShareEmails" Type="Edm.Boolean" Nullable="false" />
