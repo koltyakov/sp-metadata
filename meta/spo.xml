@@ -56,14 +56,12 @@
       <ComplexType Name="ResourcePath">
         <Property Name="DecodedUrl" Type="Edm.String" />
       </ComplexType>
-      <ComplexType Name="DashboardConfigurationInformation">
+      <ComplexType Name="DashboardItem">
         <Property Name="WebAbsolutePath" Type="SP.ResourcePath" />
       </ComplexType>
-      <ComplexType Name="DashboardConfigurationItem">
-        <Property Name="WebAbsolutePath" Type="SP.ResourcePath" />
-      </ComplexType>
-      <ComplexType Name="DashboardConfiguration">
-        <Property Name="DashboardConfigurationItems" Type="Collection(SP.DashboardConfigurationItem)" />
+      <ComplexType Name="PivotItem">
+        <Property Name="Audiences" Type="Collection(Edm.String)" />
+        <Property Name="Name" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="ContentTypeId">
         <Property Name="StringValue" Type="Edm.String" />
@@ -149,6 +147,7 @@
         <Property Name="IsAnonymous" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsCreateOnlyLink" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsFormsLink" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsManageListLink" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsOriginatedFromSharingFlow" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsReviewLink" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsSharingLink" Type="Edm.Boolean" Nullable="false" />
@@ -1775,6 +1774,7 @@
         <Property Name="IsMultilingual" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsProvisioningComplete" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsRevertHomepageLinkHidden" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="KeepFieldUserResources" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Language" Type="Edm.Int32" Nullable="false" />
         <Property Name="LastItemModifiedDate" Type="Edm.DateTime" Nullable="false" />
         <Property Name="LastItemUserModifiedDate" Type="Edm.DateTime" Nullable="false" />
@@ -2181,18 +2181,20 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
-      <EntityType Name="EmployeeEngagementConfiguration">
+      <EntityType Name="AppConfiguration">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+        <Property Name="DashboardItems" Type="Collection(SP.DashboardItem)" />
+        <Property Name="PivotItems" Type="Collection(SP.PivotItem)" />
       </EntityType>
-      <EntityType Name="EE">
+      <EntityType Name="EmployeeEngagement">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
-        <NavigationProperty Name="Dashboards" Relationship="SP.SP_EE_Dashboards_SP_EmployeeEngagementConfiguration_DashboardsPartner" ToRole="Dashboards" FromRole="DashboardsPartner" />
+        <NavigationProperty Name="AppConfiguration" Relationship="SP.SP_EmployeeEngagement_AppConfiguration_SP_AppConfiguration_AppConfigurationPartner" ToRole="AppConfiguration" FromRole="AppConfigurationPartner" />
       </EntityType>
       <EntityType Name="AppCatalog" Abstract="true">
         <Key>
@@ -3608,9 +3610,9 @@
         <End Type="SP.PropertyValues" Role="Properties" Multiplicity="0..1" />
         <End Type="SP.WebParts.WebPart" Role="PropertiesPartner" Multiplicity="0..1" />
       </Association>
-      <Association Name="SP_EE_Dashboards_SP_EmployeeEngagementConfiguration_DashboardsPartner">
-        <End Type="SP.EmployeeEngagementConfiguration" Role="Dashboards" Multiplicity="0..1" />
-        <End Type="SP.EE" Role="DashboardsPartner" Multiplicity="0..1" />
+      <Association Name="SP_EmployeeEngagement_AppConfiguration_SP_AppConfiguration_AppConfigurationPartner">
+        <End Type="SP.AppConfiguration" Role="AppConfiguration" Multiplicity="0..1" />
+        <End Type="SP.EmployeeEngagement" Role="AppConfigurationPartner" Multiplicity="0..1" />
       </Association>
       <Association Name="SP_ObjectSharingSettings_ObjectSharingInformation_SP_ObjectSharingInformation_ObjectSharingInformationPartner">
         <End Type="SP.ObjectSharingInformation" Role="ObjectSharingInformation" Multiplicity="0..1" />
@@ -3719,7 +3721,7 @@
       <EntityContainer Name="ApiData">
         <EntitySet Name="Apps" EntityType="Microsoft.AppServices.AppCollection" />
         <EntitySet Name="ComponentContextInfos" EntityType="Microsoft.SharePoint.Internal.ClientSideComponent.ComponentContextInfo" />
-        <EntitySet Name="EEs" EntityType="SP.EE" />
+        <EntitySet Name="EEs" EntityType="SP.EmployeeEngagement" />
         <EntitySet Name="Files" EntityType="MS.FileServices.FileSystemItem" />
         <EntitySet Name="GroupServices" EntityType="Microsoft.SharePoint.Portal.GroupService" />
         <EntitySet Name="Groupsitemanagers" EntityType="Microsoft.SharePoint.Portal.GroupSiteManager" />
@@ -3998,6 +4000,7 @@
         <EntitySet Name="ApiMetadatas" EntityType="SP.ApiMetadata" />
         <EntitySet Name="Apps1" EntityType="SP.App" />
         <EntitySet Name="AppCatalogs" EntityType="SP.AppCatalog" />
+        <EntitySet Name="AppConfigurations" EntityType="SP.AppConfiguration" />
         <EntitySet Name="AppContextSites" EntityType="SP.AppContextSite" />
         <EntitySet Name="AppInstances" EntityType="SP.AppInstance" />
         <EntitySet Name="AppInstanceErrorDetailss" EntityType="SP.AppInstanceErrorDetails" />
@@ -4044,7 +4047,6 @@
         <EntitySet Name="DlpPolicyTips" EntityType="SP.DlpPolicyTip" />
         <EntitySet Name="DocumentIds" EntityType="SP.DocumentManagement.DocumentId" />
         <EntitySet Name="EffectiveInformationRightsManagementSettingss" EntityType="SP.EffectiveInformationRightsManagementSettings" />
-        <EntitySet Name="EmployeeEngagementConfigurations" EntityType="SP.EmployeeEngagementConfiguration" />
         <EntitySet Name="EventReceiverDefinitions" EntityType="SP.EventReceiverDefinition" />
         <EntitySet Name="FavoriteListss" EntityType="SP.FavoriteLists" />
         <EntitySet Name="FavoriteListsSubstrates" EntityType="SP.FavoriteListsSubstrate" />
@@ -4272,7 +4274,7 @@
         <FunctionImport Name="Apps" ReturnType="Microsoft.AppServices.AppCollection" IsComposable="true" EntitySet="Apps" />
         <FunctionImport Name="ComponentContextInfo" ReturnType="Microsoft.SharePoint.Internal.ClientSideComponent.ComponentContextInfo" IsComposable="true" EntitySet="ComponentContextInfos" />
         <FunctionImport Name="contextinfo" ReturnType="SP.ContextWebInformation" IsComposable="true" />
-        <FunctionImport Name="EE" ReturnType="SP.EE" IsComposable="true" EntitySet="EEs" />
+        <FunctionImport Name="EE" ReturnType="SP.EmployeeEngagement" IsComposable="true" EntitySet="EEs" />
         <FunctionImport Name="files" ReturnType="Collection(MS.FileServices.FileSystemItem)" IsComposable="true" EntitySet="Files" />
         <FunctionImport Name="GroupService" ReturnType="Microsoft.SharePoint.Portal.GroupService" IsComposable="true" EntitySet="GroupServices" />
         <FunctionImport Name="groupsitemanager" ReturnType="Microsoft.SharePoint.Portal.GroupSiteManager" IsComposable="true" EntitySet="Groupsitemanagers" />
@@ -5240,6 +5242,7 @@
         </FunctionImport>
         <FunctionImport Name="SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddComplianceRetentionWorkItem3" ReturnType="Edm.Boolean" />
         <FunctionImport Name="SP_ComplianceFoundation_PreserveDocumentSubmitter_PreserveCloudAttachmentIntoPHL" ReturnType="SP.ComplianceFoundation.Models.PreservedCloudAttachment">
+          <Parameter Name="webId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="documentUniqueId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="versionLabel" Type="Edm.String" />
           <Parameter Name="tagInfo" Type="SP.ComplianceFoundation.Models.ComplianceTagInfo" />
@@ -9494,20 +9497,13 @@
           <Parameter Name="clientId" Type="Edm.String" />
           <Parameter Name="resource" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="SP_EmployeeEngagementConfiguration" ReturnType="SP.EmployeeEngagementConfiguration" IsComposable="true" EntitySet="EmployeeEngagementConfigurations" />
-        <FunctionImport Name="GetCurrent" ReturnType="SP.DashboardConfiguration" IsBindable="true">
-          <Parameter Name="this" Type="SP.EmployeeEngagementConfiguration" />
+        <FunctionImport Name="SP_AppConfiguration" ReturnType="SP.AppConfiguration" IsComposable="true" EntitySet="AppConfigurations" />
+        <FunctionImport Name="Update" IsBindable="true">
+          <Parameter Name="this" Type="SP.AppConfiguration" />
         </FunctionImport>
-        <FunctionImport Name="RemoveCurrent" IsBindable="true">
-          <Parameter Name="this" Type="SP.EmployeeEngagementConfiguration" />
-        </FunctionImport>
-        <FunctionImport Name="SetCurrent" IsBindable="true">
-          <Parameter Name="this" Type="SP.EmployeeEngagementConfiguration" />
-          <Parameter Name="input" Type="SP.DashboardConfigurationInformation" />
-        </FunctionImport>
-        <FunctionImport Name="SP_EE" ReturnType="SP.EE" IsComposable="true" EntitySet="EEs" />
+        <FunctionImport Name="SP_EmployeeEngagement" ReturnType="SP.EmployeeEngagement" IsComposable="true" EntitySet="EEs" />
         <FunctionImport Name="Configuration" ReturnType="SP.ConfigurationData" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="SP.EE" />
+          <Parameter Name="this" Type="SP.EmployeeEngagement" />
         </FunctionImport>
         <FunctionImport Name="Like" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Comments.comment" />
@@ -10181,6 +10177,7 @@
         </FunctionImport>
         <FunctionImport Name="SyncFlowInstances" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
           <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="retrieveGroupFlows" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SyncFlowTemplates" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
           <Parameter Name="this" Type="SP.List" />
@@ -13358,6 +13355,10 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="secondaryAdministratorsFieldsData" Type="Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData" />
         </FunctionImport>
+        <FunctionImport Name="SetSiteUserGroups" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="siteUserGroupsData" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteUserGroupsData" />
+        </FunctionImport>
         <FunctionImport Name="SwapSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="sourceUrl" Type="Edm.String" />
@@ -13579,6 +13580,7 @@
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask)" />
           <Parameter Name="taskDefinitions" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskDefinition)" />
           <Parameter Name="taskSettings" Type="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskSettings" />
+          <Parameter Name="mmTaskSettings" Type="Microsoft.Online.SharePoint.MigrationCenter.Common.MMTaskSettings" />
         </FunctionImport>
         <FunctionImport Name="BatchDelete" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Common.BatchDeletionResult" IsBindable="true">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask)" />
@@ -13687,9 +13689,9 @@
         </FunctionImport>
         <EntitySet Name="DraftProjectResources1" EntityType="PS.DraftProjectResource" />
         <EntitySet Name="PublishedProjects1" EntityType="PS.PublishedProject" />
-        <AssociationSet Name="SP_EE_Dashboards_SP_EmployeeEngagementConfiguration_DashboardsPartnerSet" Association="SP.SP_EE_Dashboards_SP_EmployeeEngagementConfiguration_DashboardsPartner">
-          <End Role="DashboardsPartner" EntitySet="EEs" />
-          <End Role="Dashboards" EntitySet="EmployeeEngagementConfigurations" />
+        <AssociationSet Name="SP_EmployeeEngagement_AppConfiguration_SP_AppConfiguration_AppConfigurationPartnerSet" Association="SP.SP_EmployeeEngagement_AppConfiguration_SP_AppConfiguration_AppConfigurationPartner">
+          <End Role="AppConfigurationPartner" EntitySet="EEs" />
+          <End Role="AppConfiguration" EntitySet="AppConfigurations" />
         </AssociationSet>
         <AssociationSet Name="SP_List_Author_SP_User_AuthorPartnerSet" Association="SP.SP_List_Author_SP_User_AuthorPartner">
           <End Role="AuthorPartner" EntitySet="Lists" />
@@ -15981,13 +15983,10 @@
       <Annotations Target="SP.ResourcePath/DecodedUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.DashboardConfigurationInformation">
+      <Annotations Target="SP.DashboardItem">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.DashboardConfigurationItem">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.DashboardConfiguration">
+      <Annotations Target="SP.PivotItem">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Deployment.ShortcutInformation">
@@ -16036,6 +16035,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.SharingLinkData/HasExternalGuestInvitees">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.SharingLinkData/IsManageListLink">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.SharingLinkData/IsOriginatedFromSharingFlow">
@@ -16533,13 +16535,13 @@
       <Annotations Target="Microsoft.SharePoint.Activities.GetCommentFacet">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Activities.GetCommentFacet/commentId">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Activities.ActivityIdentity">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Activities.ActivityIdentityItem">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Activities.GetCommentFacet/commentId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Activities.GetCommentFacet/parentCommentId">
@@ -16654,6 +16656,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.UserInfo">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SiteUserGroupsData">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.AppServices.AppCollection">
@@ -17391,6 +17396,9 @@
       <Annotations Target="SP.Web/HostedApps">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Web/KeepFieldUserResources">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Web/LogoAlignment">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18075,13 +18083,10 @@
       <Annotations Target="Microsoft.SharePoint.Internal.ClientSideComponent.Token">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.EmployeeEngagementConfiguration">
+      <Annotations Target="SP.AppConfiguration">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.EE">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.EE/Dashboards">
+      <Annotations Target="SP.EmployeeEngagement">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Comments.comment">
@@ -18717,7 +18722,7 @@
       <Annotations Target="SP.ApiData/SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddComplianceRetentionWorkItem3()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_ComplianceFoundation_PreserveDocumentSubmitter_PreserveCloudAttachmentIntoPHL(Edm.Guid, Edm.String, SP.ComplianceFoundation.Models.ComplianceTagInfo)">
+      <Annotations Target="SP.ApiData/SP_ComplianceFoundation_PreserveDocumentSubmitter_PreserveCloudAttachmentIntoPHL(Edm.Guid, Edm.Guid, Edm.String, SP.ComplianceFoundation.Models.ComplianceTagInfo)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_DocumentManagement_DocumentId()">
@@ -19722,19 +19727,7 @@
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Internal_ClientSideComponent_Token_AcquireOBOToken(Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_EmployeeEngagementConfiguration()">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetCurrent(SP.EmployeeEngagementConfiguration)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/RemoveCurrent(SP.EmployeeEngagementConfiguration)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SetCurrent(SP.EmployeeEngagementConfiguration, SP.DashboardConfigurationInformation)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/Configuration(SP.EE)">
+      <Annotations Target="SP.ApiData/Configuration(SP.EmployeeEngagement)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Like(Microsoft.SharePoint.Comments.comment)">
@@ -19836,7 +19829,7 @@
       <Annotations Target="SP.ApiData/SyncFlowInstance(SP.List, Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SyncFlowInstances(SP.List)">
+      <Annotations Target="SP.ApiData/SyncFlowInstances(SP.List, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SyncFlowTemplates(SP.List, Edm.String)">
@@ -20448,6 +20441,9 @@
       <Annotations Target="SP.ApiData/SetSiteSecondaryAdministrators(Microsoft.Online.SharePoint.TenantAdministration.Tenant, Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SetSiteUserGroups(Microsoft.Online.SharePoint.TenantAdministration.Tenant, Microsoft.Online.SharePoint.TenantAdministration.SiteUserGroupsData)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Add(Collection(Microsoft.Online.SharePoint.TenantAdministration.Internal.SPO3rdPartyAADPermissionGrant), Edm.String, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20487,7 +20483,7 @@
       <Annotations Target="SP.ApiData/Update(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/BatchCreate(Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask), Collection(Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskDefinition), Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskSettings)">
+      <Annotations Target="SP.ApiData/BatchCreate(Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask), Collection(Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskDefinition), Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskSettings, Microsoft.Online.SharePoint.MigrationCenter.Common.MMTaskSettings)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/BatchDelete(Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask), Collection(Edm.Guid), Edm.Boolean)">
@@ -27203,6 +27199,7 @@
       <ComplexType Name="CheckinFacet" />
       <ComplexType Name="CheckoutFacet" />
       <ComplexType Name="GetCommentFacet">
+        <Property Name="assignees" Type="Collection(Microsoft.SharePoint.Activities.ActivityIdentity)" />
         <Property Name="commentId" Type="Edm.String" />
         <Property Name="isReply" Type="Edm.Boolean" Nullable="false" />
         <Property Name="parentAuthor" Type="Microsoft.SharePoint.Activities.ActivityIdentity" />
@@ -27210,6 +27207,8 @@
         <Property Name="participants" Type="Collection(Microsoft.SharePoint.Activities.ActivityIdentity)" />
       </ComplexType>
       <ComplexType Name="ActivityIdentity">
+        <Property Name="clientId" Type="Edm.String" />
+        <Property Name="clientIdProvider" Type="Edm.String" />
         <Property Name="email" Type="Edm.String" />
         <Property Name="group" Type="Microsoft.SharePoint.Activities.ActivityIdentityItem" />
         <Property Name="name" Type="Edm.String" />
@@ -27217,6 +27216,8 @@
         <Property Name="userPrincipalName" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="ActivityIdentityItem">
+        <Property Name="clientId" Type="Edm.String" />
+        <Property Name="clientIdProvider" Type="Edm.String" />
         <Property Name="displayName" Type="Edm.String" />
         <Property Name="email" Type="Edm.String" />
         <Property Name="userPrincipalName" Type="Edm.String" />
@@ -27258,6 +27259,7 @@
       </ComplexType>
       <ComplexType Name="TaskReassignedFacet">
         <Property Name="assignees" Type="Collection(Microsoft.SharePoint.Activities.ActivityIdentity)" />
+        <Property Name="previousAssignees" Type="Collection(Microsoft.SharePoint.Activities.ActivityIdentity)" />
         <Property Name="taskCreator" Type="Microsoft.SharePoint.Activities.ActivityIdentity" />
       </ComplexType>
       <ComplexType Name="TaskReopenedFacet">
@@ -27377,6 +27379,13 @@
         <Property Name="TextField" Type="Edm.Guid" Nullable="false" />
         <Property Name="UserCreated" Type="Edm.Boolean" Nullable="false" />
       </EntityType>
+    </Schema>
+    <Schema Namespace="Microsoft.SharePoint.Taxonomy.ContentTypeSync.Internal" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="ContentTypeSyndicationResult">
+        <Property Name="FailedContentTypeIDs" Type="Collection(Edm.String)" />
+        <Property Name="FailedReason" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IsPassed" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
     </Schema>
     <Schema Namespace="Microsoft.Online.SharePoint.TenantAdministration" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="AutoQuotaEnabled">
@@ -27543,15 +27552,19 @@
         <Property Name="Template" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SiteUserGroupInfo">
-        <Property Name="groupId" Type="Edm.Int32" Nullable="false" />
         <Property Name="userGroup" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.UserInfo)" />
       </ComplexType>
       <ComplexType Name="UserInfo">
         <Property Name="email" Type="Edm.String" />
-        <Property Name="id" Type="Edm.Int32" Nullable="false" />
         <Property Name="loginName" Type="Edm.String" />
         <Property Name="name" Type="Edm.String" />
         <Property Name="userPrincipalName" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SiteUserGroupsData">
+        <Property Name="members" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.UserInfo)" />
+        <Property Name="owners" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.UserInfo)" />
+        <Property Name="siteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="visitors" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.UserInfo)" />
       </ComplexType>
       <ComplexType Name="SmtpServer">
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
@@ -28121,6 +28134,7 @@
         <Property Name="Type" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="MigrationTaskSettings">
+        <Property Name="AgentGroupName" Type="Edm.String" />
         <Property Name="AzureActiveDirectoryLkp" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CustomAzureAccessKey" Type="Edm.String" />
         <Property Name="CustomAzureDeletionAfterMig" Type="Edm.Boolean" Nullable="false" />
@@ -28149,6 +28163,9 @@
         <Property Name="UseCustomAzureStorage" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UserMappingCSVFile" Type="Edm.String" />
         <Property Name="VersionNumsPreserved" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="MMTaskSettings">
+        <Property Name="agentGroupName" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPFolderInformation">
         <Property Name="Depth" Type="Edm.Int32" Nullable="false" />
@@ -28190,6 +28207,7 @@
         <Property Name="DiskSpace" Type="Edm.Int64" Nullable="false" />
         <Property Name="FreeQuota" Type="Edm.Int32" Nullable="false" />
         <Property Name="FriendlyName" Type="Edm.String" />
+        <Property Name="GroupName" Type="Edm.String" />
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
         <Property Name="StatusQueueExpiresOnTimeUtc" Type="Edm.DateTime" Nullable="false" />
         <Property Name="StatusQueueUrl" Type="Edm.String" />
@@ -28203,6 +28221,7 @@
         <Key>
           <PropertyRef Name="Name" />
         </Key>
+        <Property Name="AgentGroupName" Type="Edm.String" />
         <Property Name="AzureActiveDirectoryLkp" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CustomAzureAccessKey" Type="Edm.String" />
         <Property Name="CustomAzureDeletionAfterMig" Type="Edm.Boolean" Nullable="false" />
