@@ -17,6 +17,7 @@ AnalyticsUsageEntrys | ✅ | ✅ | ✅ | ✅
 ApiMetadatas | ✅ | ✅ | ✅ | ✅
 AppBdcCatalogs | ✅ | ✅ | ✅ | ✅
 AppCatalogs | ✅ | ✅ | ✅ | ✅
+AppConfigurations | ✅ | ❌ | ❌ | ❌
 AppContextSites | ✅ | ✅ | ✅ | ✅
 AppDetailss | ✅ | ✅ | ✅ | ❌
 AppIconInfos | ✅ | ✅ | ✅ | ❌
@@ -110,7 +111,6 @@ EduChanges | ❌ | ❌ | ❌ | ✅
 EffectiveInformationRightsManagementSettingss | ✅ | ✅ | ✅ | ❌
 EmbedDataV1s | ✅ | ✅ | ❌ | ❌
 EmbedServices | ✅ | ✅ | ❌ | ❌
-EmployeeEngagementConfigurations | ✅ | ❌ | ❌ | ❌
 EngagementComments | ✅ | ✅ | ❌ | ❌
 EngagementTimephasedPeriods | ✅ | ✅ | ❌ | ❌
 Engagements | ✅ | ✅ | ❌ | ❌

@@ -6,6 +6,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [BatchCreationResult](./ComplexTypes/BatchCreationResult.md) | ✅ | ❌ | ❌ | ❌
 [BatchDeletionResult](./ComplexTypes/BatchDeletionResult.md) | ✅ | ❌ | ❌ | ❌
+[MMTaskSettings](./ComplexTypes/MMTaskSettings.md) | ✅ | ❌ | ❌ | ❌
 [MigrationStorageSettings](./ComplexTypes/MigrationStorageSettings.md) | ✅ | ❌ | ❌ | ❌
 [MigrationTaskDefinition](./ComplexTypes/MigrationTaskDefinition.md) | ✅ | ❌ | ❌ | ❌
 [MigrationTaskSettings](./ComplexTypes/MigrationTaskSettings.md) | ✅ | ❌ | ❌ | ❌

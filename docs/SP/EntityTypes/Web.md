@@ -52,6 +52,7 @@ IsHomepageModernized (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMultilingual (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 IsProvisioningComplete (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsRevertHomepageLinkHidden (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+KeepFieldUserResources (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Language (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 LastItemModifiedDate (Edm.DateTime) | ✅ | ✅ | ✅ | ✅
 LastItemUserModifiedDate (Edm.DateTime) | ✅ | ✅ | ❌ | ❌

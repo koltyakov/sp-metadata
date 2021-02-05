@@ -11,6 +11,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ApiMetadata](./EntityTypes/ApiMetadata.md) | ✅ | ✅ | ✅ | ✅
 [App](./EntityTypes/App.md) | ✅ | ✅ | ✅ | ✅
 [AppCatalog](./EntityTypes/AppCatalog.md) | ✅ | ✅ | ✅ | ✅
+[AppConfiguration](./EntityTypes/AppConfiguration.md) | ✅ | ❌ | ❌ | ❌
 [AppContextSite](./EntityTypes/AppContextSite.md) | ✅ | ✅ | ✅ | ✅
 [AppInstance](./EntityTypes/AppInstance.md) | ✅ | ✅ | ✅ | ✅
 [AppInstanceErrorDetails](./EntityTypes/AppInstanceErrorDetails.md) | ✅ | ✅ | ✅ | ✅
@@ -46,9 +47,8 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CreatablesInfo](./EntityTypes/CreatablesInfo.md) | ✅ | ✅ | ✅ | ❌
 [CurrencyList](./EntityTypes/CurrencyList.md) | ✅ | ✅ | ❌ | ❌
 [DlpPolicyTip](./EntityTypes/DlpPolicyTip.md) | ✅ | ✅ | ✅ | ❌
-[EE](./EntityTypes/EE.md) | ✅ | ❌ | ❌ | ❌
 [EffectiveInformationRightsManagementSettings](./EntityTypes/EffectiveInformationRightsManagementSettings.md) | ✅ | ✅ | ✅ | ❌
-[EmployeeEngagementConfiguration](./EntityTypes/EmployeeEngagementConfiguration.md) | ✅ | ❌ | ❌ | ❌
+[EmployeeEngagement](./EntityTypes/EmployeeEngagement.md) | ✅ | ❌ | ❌ | ❌
 [EventReceiverDefinition](./EntityTypes/EventReceiverDefinition.md) | ✅ | ✅ | ✅ | ✅
 [FavoriteLists](./EntityTypes/FavoriteLists.md) | ✅ | ❌ | ❌ | ❌
 [FavoriteListsSubstrate](./EntityTypes/FavoriteListsSubstrate.md) | ✅ | ❌ | ❌ | ❌

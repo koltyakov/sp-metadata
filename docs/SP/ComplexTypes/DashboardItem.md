@@ -1,4 +1,4 @@
-# Complex Type: DashboardConfigurationItem
+# Complex Type: DashboardItem
 
 > Namespace: SP
 

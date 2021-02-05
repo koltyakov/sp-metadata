@@ -6,6 +6,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+assignees (Collection(Microsoft.SharePoint.Activities.ActivityIdentity)) | ✅ | ❌ | ❌ | ❌
 commentId (Edm.String) | ✅ | ❌ | ❌ | ❌
 isReply (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 parentAuthor (Microsoft.SharePoint.Activities.ActivityIdentity) | ✅ | ❌ | ❌ | ❌

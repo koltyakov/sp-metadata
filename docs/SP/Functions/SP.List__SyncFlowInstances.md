@@ -1,8 +1,8 @@
-# Function Import: SetCurrent
+# Function Import: SyncFlowInstances
 
 > Namespace: SP
 
-- Entity type: SP.EmployeeEngagementConfiguration
+- Entity type: SP.List
 - Is composable: false
 - Is bindable: false
 
@@ -10,4 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-input (SP.DashboardConfigurationInformation) | ✅ | ❌ | ❌ | ❌
+retrieveGroupFlows (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

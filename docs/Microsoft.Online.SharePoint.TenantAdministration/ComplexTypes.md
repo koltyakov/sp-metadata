@@ -42,6 +42,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SiteInfoForSitePicker](./ComplexTypes/SiteInfoForSitePicker.md) | ✅ | ❌ | ❌ | ❌
 [SitePagesEnabled](./ComplexTypes/SitePagesEnabled.md) | ✅ | ❌ | ❌ | ❌
 [SiteUserGroupInfo](./ComplexTypes/SiteUserGroupInfo.md) | ✅ | ❌ | ❌ | ❌
+[SiteUserGroupsData](./ComplexTypes/SiteUserGroupsData.md) | ✅ | ❌ | ❌ | ❌
 [SmtpServer](./ComplexTypes/SmtpServer.md) | ✅ | ❌ | ❌ | ❌
 [TenantDefaultTimeZoneId](./ComplexTypes/TenantDefaultTimeZoneId.md) | ✅ | ❌ | ❌ | ❌
 [UserInfo](./ComplexTypes/UserInfo.md) | ✅ | ❌ | ❌ | ❌

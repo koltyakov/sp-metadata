@@ -14,6 +14,7 @@ HasExternalGuestInvitees (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 IsAnonymous (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 IsCreateOnlyLink (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsFormsLink (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
+IsManageListLink (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsOriginatedFromSharingFlow (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 IsReviewLink (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 IsSharingLink (Edm.Boolean) | ✅ | ✅ | ❌ | ❌

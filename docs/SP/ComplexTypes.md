@@ -42,9 +42,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CustomerKeyVaultInfo](./ComplexTypes/CustomerKeyVaultInfo.md) | ✅ | ✅ | ❌ | ❌
 [CustomizedFormsPage](./ComplexTypes/CustomizedFormsPage.md) | ✅ | ❌ | ❌ | ❌
 [CustomizedFormsPageCollection](./ComplexTypes/CustomizedFormsPageCollection.md) | ✅ | ❌ | ❌ | ❌
-[DashboardConfiguration](./ComplexTypes/DashboardConfiguration.md) | ✅ | ❌ | ❌ | ❌
-[DashboardConfigurationInformation](./ComplexTypes/DashboardConfigurationInformation.md) | ✅ | ❌ | ❌ | ❌
-[DashboardConfigurationItem](./ComplexTypes/DashboardConfigurationItem.md) | ✅ | ❌ | ❌ | ❌
+[DashboardItem](./ComplexTypes/DashboardItem.md) | ✅ | ❌ | ❌ | ❌
 [DocumentLibraryInformation](./ComplexTypes/DocumentLibraryInformation.md) | ✅ | ✅ | ✅ | ❌
 [EncryptionOption](./ComplexTypes/EncryptionOption.md) | ✅ | ✅ | ❌ | ❌
 [EnqueueJobInformation](./ComplexTypes/EnqueueJobInformation.md) | ✅ | ❌ | ❌ | ❌
@@ -91,6 +89,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [NavigationNodeCreationInformation](./ComplexTypes/NavigationNodeCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [OrganizationNewsSiteReference](./ComplexTypes/OrganizationNewsSiteReference.md) | ✅ | ❌ | ❌ | ❌
 [ParameterInformation](./ComplexTypes/ParameterInformation.md) | ✅ | ✅ | ✅ | ✅
+[PivotItem](./ComplexTypes/PivotItem.md) | ✅ | ❌ | ❌ | ❌
 [PortalAndOrgNewsSiteReference](./ComplexTypes/PortalAndOrgNewsSiteReference.md) | ✅ | ❌ | ❌ | ❌
 [PropertyInformation](./ComplexTypes/PropertyInformation.md) | ✅ | ✅ | ✅ | ✅
 [ProvisionedMigrationContainersInfo](./ComplexTypes/ProvisionedMigrationContainersInfo.md) | ✅ | ✅ | ❌ | ❌
