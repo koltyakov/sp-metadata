@@ -74,6 +74,7 @@ CreateDefaultAssociatedGroups (SP.Web) | ✅ | ✅ | ❌ | ❌
 CreateDocumentAndGetEditLink (SP.List) | ✅ | ✅ | ✅ | ❌
 CreateDocumentWithDefaultName (SP.List) | ✅ | ✅ | ❌ | ❌
 CreateFieldAsXml (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
+CreateGroupBasedEnvironment (SP.Web) | ✅ | ❌ | ❌ | ❌
 CreateMappedView (SP.List) | ✅ | ✅ | ❌ | ❌
 CreateMigrationIngestionJob (SP.Site) | ✅ | ✅ | ✅ | ❌
 CreateMigrationJob (SP.Site) | ✅ | ✅ | ✅ | ❌
@@ -206,6 +207,7 @@ GetBloomFilter (SP.List) | ✅ | ✅ | ❌ | ❌
 GetBloomFilterWithCustomFields (SP.List) | ✅ | ✅ | ❌ | ❌
 GetBringYourOwnKeySiteStatus (SP.Site) | ✅ | ✅ | ❌ | ❌
 GetBringYourOwnKeyTenantStatus (SP.Site) | ✅ | ✅ | ❌ | ❌
+GetBusinessAppOperationStatus (SP.List) | ✅ | ❌ | ❌ | ❌
 GetByDomainName (Collection(SP.ScriptSafeDomain)) | ✅ | ✅ | ❌ | ❌
 GetByEmail (Collection(SP.User)) | ✅ | ✅ | ✅ | ✅
 GetByFieldId (Collection(SP.RelatedField)) | ✅ | ✅ | ✅ | ✅
@@ -292,6 +294,7 @@ GetFolderByServerRelativePath (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetFolderByServerRelativeUrl (SP.RemoteWeb) | ✅ | ✅ | ✅ | ❌
 GetFolderByServerRelativeUrl (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetGlobalSchemaXml (SP.ListTemplate) | ✅ | ✅ | ✅ | ❌
+GetGroupBasedEnvironment (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetGroupById (SP.RemoteWeb) | ✅ | ✅ | ✅ | ❌
 GetHashtags (SP.ListItem) | ❌ | ✅ | ❌ | ❌
 GetHubSiteJoinApprovalCorrelationId (SP.Site) | ✅ | ❌ | ❌ | ❌
