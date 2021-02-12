@@ -598,6 +598,7 @@
         <Property Name="ClassificationResult" Type="SP.ClassificationResult" />
         <Property Name="ContentVersion" Type="Edm.Int32" Nullable="false" />
         <Property Name="MachineLearningSampleMeta" Type="SP.MachineLearningSampleMeta" />
+        <Property Name="MediaLengthInSeconds" Type="Edm.Int32" Nullable="false" />
         <Property Name="MediaServiceAutoKeyPoints" Type="Edm.String" />
         <Property Name="MediaServiceAutoTags" Type="Edm.String" />
         <Property Name="MediaServiceDateTaken" Type="Edm.String" />
@@ -4956,6 +4957,11 @@
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
           <Parameter Name="contentTypeName" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="GetModels" ReturnType="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" IsComposable="true" IsBindable="true" EntitySet="Models">
+          <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
+          <Parameter Name="listId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="type" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="GetRetentionLabel" ReturnType="SP.CompliancePolicy.ComplianceTag" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
           <Parameter Name="retentionLabelId" Type="Edm.Guid" Nullable="false" />
@@ -4964,11 +4970,19 @@
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningModelEntityData" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData" IsComposable="true" EntitySet="SPMachineLearningModelEntityDatas" />
+        <FunctionImport Name="Copy" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
+          <Parameter Name="copyTo" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="Delete" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
         </FunctionImport>
         <FunctionImport Name="ImportMeta" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsBindable="true" EntitySet="Models">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
+        </FunctionImport>
+        <FunctionImport Name="Rename" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
+          <Parameter Name="renameTo" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="RenameExtractor" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsBindable="true" EntitySet="Models">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
@@ -9349,6 +9363,13 @@
           <Parameter Name="Overwrite" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="Url" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="AddAndDeployStoreAppById" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
+          <Parameter Name="CMU" Type="Edm.String" />
+          <Parameter Name="Overwrite" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="SkipFeatureDeployment" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="StoreAssetId" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="AddStoreApp" ReturnType="SP.File" IsBindable="true" EntitySet="Files12">
           <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
           <Parameter Name="Content" Type="Edm.Binary" />
@@ -9756,6 +9777,9 @@
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="listItemStartingID" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="internalFieldNames" Type="Collection(Edm.String)" />
+        </FunctionImport>
+        <FunctionImport Name="GetBusinessAppOperationStatus" ReturnType="SP.FlowSynchronizationResult" IsComposable="true" IsBindable="true" EntitySet="FlowSynchronizationResults">
+          <Parameter Name="this" Type="SP.List" />
         </FunctionImport>
         <FunctionImport Name="GetChanges" ReturnType="Collection(SP.Change)" IsBindable="true" EntitySet="Changes">
           <Parameter Name="this" Type="SP.List" />
@@ -10401,6 +10425,9 @@
           <Parameter Name="userLogin2" Type="Edm.String" />
           <Parameter Name="groupNameSeed" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="CreateGroupBasedEnvironment" ReturnType="SP.FlowSynchronizationResult" IsComposable="true" IsBindable="true" EntitySet="FlowSynchronizationResults">
+          <Parameter Name="this" Type="SP.Web" />
+        </FunctionImport>
         <FunctionImport Name="SP_Web_CreateOrganizationSharingLink" ReturnType="Edm.String">
           <Parameter Name="url" Type="Edm.String" />
           <Parameter Name="isEditLink" Type="Edm.Boolean" Nullable="false" />
@@ -10576,6 +10603,9 @@
         <FunctionImport Name="GetFolderByServerRelativeUrl" ReturnType="SP.Folder" IsComposable="true" IsBindable="true" EntitySet="Folders1">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="serverRelativeUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetGroupBasedEnvironment" ReturnType="SP.FlowSynchronizationResult" IsComposable="true" IsBindable="true" EntitySet="FlowSynchronizationResults">
+          <Parameter Name="this" Type="SP.Web" />
         </FunctionImport>
         <FunctionImport Name="GetList" ReturnType="SP.List" IsComposable="true" IsBindable="true" EntitySet="Lists">
           <Parameter Name="this" Type="SP.Web" />
@@ -13325,6 +13355,12 @@
         <FunctionImport Name="RemoveSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="RenderIBSegmentListDataAsStream" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="parameters" Type="SP.RenderListDataParameters" />
+          <Parameter Name="segments" Type="Collection(Edm.Guid)" Nullable="false" />
+          <Parameter Name="overrideParameters" Type="SP.RenderListDataOverrideParameters" />
         </FunctionImport>
         <FunctionImport Name="RestoreDeletedSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -18641,6 +18677,9 @@
       <Annotations Target="SP.ApiData/GetModelIdForContentType(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetModels(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Edm.Guid, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetRetentionLabel(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18650,10 +18689,16 @@
       <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningModelEntityData()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/Copy(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Delete(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/ImportMeta(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Rename(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/RenameExtractor(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel, Edm.String, Edm.String)">
@@ -19646,6 +19691,9 @@
       <Annotations Target="SP.ApiData/Add(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/AddAndDeployStoreAppById(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.String, Edm.Boolean, Edm.Boolean, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/AddStoreApp(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String, Edm.String, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19799,6 +19847,9 @@
       <Annotations Target="SP.ApiData/GetBloomFilterWithCustomFields(SP.List, Edm.Int32, Collection(Edm.String))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetBusinessAppOperationStatus(SP.List)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetCheckedOutFiles(SP.List)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19883,6 +19934,9 @@
       <Annotations Target="SP.ApiData/SetComplianceTagWithRecord(SP.ListItem, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/CreateGroupBasedEnvironment(SP.Web)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_Web_DefaultDocumentLibraryUrl(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19914,6 +19968,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetFolderByServerRelativePath(SP.Web, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetGroupBasedEnvironment(SP.Web)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetListItemUsingPath(SP.Web, Edm.String)">
@@ -26093,6 +26150,12 @@
         <Property Name="AssetId" Type="Edm.String" />
         <Property Name="IsUpgradeAvailable" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="SPStoreAppCreateByIdInformation">
+        <Property Name="CMU" Type="Edm.String" />
+        <Property Name="Overwrite" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SkipFeatureDeployment" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="StoreAssetId" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="StoreAppCreationInformation" BaseType="SP.FileCreationInformation">
         <Property Name="IconUrl" Type="Edm.String" />
         <Property Name="ShortDescription" Type="Edm.String" />
@@ -27466,9 +27529,11 @@
         <Property Name="Value" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="PowerAppsEnvironment">
+        <Property Name="AllocatedAICredits" Type="Edm.Double" Nullable="false" />
         <Property Name="DisplayName" Type="Edm.String" />
         <Property Name="IsDefault" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Name" Type="Edm.String" />
+        <Property Name="PurchasedAICredits" Type="Edm.Int64" Nullable="false" />
       </ComplexType>
       <ComplexType Name="RequireSecondaryContact">
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
