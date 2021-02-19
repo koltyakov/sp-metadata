@@ -44,6 +44,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CompatibilityRange](./EntityTypes/CompatibilityRange.md) | ✅ | ✅ | ✅ | ✅
 [ConnectorResult](./EntityTypes/ConnectorResult.md) | ✅ | ✅ | ❌ | ❌
 [ContentType](./EntityTypes/ContentType.md) | ✅ | ✅ | ✅ | ✅
+[CopySourceInfo](./EntityTypes/CopySourceInfo.md) | ✅ | ❌ | ❌ | ❌
 [CreatablesInfo](./EntityTypes/CreatablesInfo.md) | ✅ | ✅ | ✅ | ❌
 [CurrencyList](./EntityTypes/CurrencyList.md) | ✅ | ✅ | ❌ | ❌
 [DlpPolicyTip](./EntityTypes/DlpPolicyTip.md) | ✅ | ✅ | ✅ | ❌

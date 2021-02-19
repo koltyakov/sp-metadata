@@ -8,6 +8,7 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 AssociatedContentTypeId (Edm.String) | ✅ | ❌ | ❌ | ❌
 CalendarViewStyles (Edm.String) | ✅ | ❌ | ❌ | ❌
+ColumnWidth (Edm.String) | ✅ | ❌ | ❌ | ❌
 Paged (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 PersonalView (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 Query (Edm.String) | ✅ | ✅ | ✅ | ✅

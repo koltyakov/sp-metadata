@@ -29,6 +29,7 @@ DefaultViewPath (SP.ResourcePath) | ✅ | ✅ | ❌ | ❌
 DefaultViewUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
 Description (Edm.String) | ✅ | ✅ | ✅ | ✅
 Direction (Edm.String) | ✅ | ✅ | ✅ | ✅
+DisableCommenting (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableGridEditing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DocumentTemplateUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
 DraftVersionVisibility (Edm.Int32) | ✅ | ✅ | ✅ | ✅

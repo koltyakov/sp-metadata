@@ -7,7 +7,11 @@ Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 BatchCreate (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask)) | ✅ | ❌ | ❌ | ❌
 BatchDelete (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask)) | ✅ | ❌ | ❌ | ❌
 Create (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage) | ✅ | ❌ | ❌ | ❌
+CreateByName (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroup)) | ✅ | ❌ | ❌ | ❌
+CreateDuplicateTasks (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask)) | ✅ | ❌ | ❌ | ❌
 Delete (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationProperties) | ✅ | ❌ | ❌ | ❌
+DeleteByName (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroup)) | ✅ | ❌ | ❌ | ❌
+DeleteObject (Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroup) | ✅ | ❌ | ❌ | ❌
 DeleteObject (Microsoft.Online.SharePoint.MigrationCenter.Service.Device) | ✅ | ❌ | ❌ | ❌
 DeleteObject (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage) | ✅ | ❌ | ❌ | ❌
 DeleteObject (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential) | ✅ | ❌ | ❌ | ❌
@@ -15,10 +19,13 @@ DeleteObject (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask)
 GetById (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.Device)) | ✅ | ❌ | ❌ | ❌
 GetById (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential)) | ✅ | ❌ | ❌ | ❌
 GetById (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask)) | ✅ | ❌ | ❌ | ❌
+GetByName (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroup)) | ✅ | ❌ | ❌ | ❌
 GetCredentials (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential)) | ✅ | ❌ | ❌ | ❌
+GetGroupList (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroup)) | ✅ | ❌ | ❌ | ❌
 GetProperty (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationProperties) | ✅ | ❌ | ❌ | ❌
 IsChangeDeployed (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterDeployStatus) | ✅ | ❌ | ❌ | ❌
 IsFlightEnabled (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationSPFlight) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Online_SharePoint_MigrationCenter_Service_AgentGroup">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service AgentGroup) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_Device">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service Device) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterDeployStatus">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service MigrationCenterDeployStatus) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service MigrationCenterServices) | ✅ | ❌ | ❌ | ❌

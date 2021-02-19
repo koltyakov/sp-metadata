@@ -20,6 +20,7 @@ Folder (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 Group (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 GroupMembershipAdd (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 GroupMembershipDelete (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+IgnoreStartTokenNotFoundError (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Item (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 LatestFirst (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 List (Edm.Boolean) | ✅ | ✅ | ✅ | ✅

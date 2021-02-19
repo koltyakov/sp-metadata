@@ -183,6 +183,7 @@ EnsureEventsList (Collection(SP.List)) | ✅ | ✅ | ❌ | ❌
 EnsureSignoffStatusField (SP.List) | ✅ | ❌ | ❌ | ❌
 EnsureSiteAssetsLibrary (Collection(SP.List)) | ✅ | ✅ | ✅ | ✅
 EnsureSitePagesLibrary (Collection(SP.List)) | ✅ | ✅ | ✅ | ✅
+EnsureTenantAppCatalog (SP.Web) | ✅ | ❌ | ❌ | ❌
 EnsureUser (SP.Web) | ✅ | ✅ | ✅ | ✅
 EnsureUserByObjectId (SP.Web) | ✅ | ❌ | ❌ | ❌
 ExecuteCobaltRequest (SP.File) | ✅ | ✅ | ✅ | ❌
@@ -191,6 +192,7 @@ Expire (SP.User) | ✅ | ❌ | ❌ | ❌
 ExtendUpgradeReminderDate (SP.Site) | ✅ | ✅ | ✅ | ✅
 FinishUpload (SP.File) | ✅ | ✅ | ✅ | ❌
 FinishUploadWithChecksum (SP.File) | ✅ | ❌ | ❌ | ❌
+GetAdaptiveCardExtensions (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetAllClientSideComponents (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetAllRules (SP.List) | ✅ | ❌ | ❌ | ❌
 GetAppBdcCatalog (SP.Web) | ✅ | ✅ | ✅ | ✅

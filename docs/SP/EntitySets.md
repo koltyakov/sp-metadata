@@ -10,6 +10,7 @@ ActivityExtensionss | ✅ | ✅ | ❌ | ❌
 ActivityLoggers | ✅ | ✅ | ❌ | ❌
 AddinPlugins | ❌ | ❌ | ❌ | ✅
 AddinSettingss | ❌ | ❌ | ❌ | ✅
+AgentGroupEntitys | ✅ | ❌ | ❌ | ❌
 Alerts | ✅ | ✅ | ❌ | ❌
 AllowedDataLocationEntityDatas | ✅ | ❌ | ❌ | ❌
 AlternateUrls | ✅ | ✅ | ✅ | ✅
@@ -68,6 +69,7 @@ ConnectorResults | ✅ | ✅ | ❌ | ❌
 ContentDbSchemaVersions | ✅ | ❌ | ❌ | ❌
 ContentTypes | ✅ | ✅ | ✅ | ✅
 Conversations | ❌ | ❌ | ✅ | ❌
+CopySourceInfos | ✅ | ❌ | ❌ | ❌
 CorporateCatalogAppMetadatas | ✅ | ✅ | ❌ | ❌
 CourseGrades | ❌ | ❌ | ❌ | ✅
 CreatablesInfos | ✅ | ✅ | ✅ | ❌

@@ -1,9 +1,10 @@
-# Complex Type: MMTaskSettings
+# Entity Type: AgentGroupEntity
 
 > Namespace: Microsoft.Online.SharePoint.MigrationCenter.Common
 
-## Properties
+### Properties
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-AgentGroupName (Edm.String) | ✅ | ❌ | ❌ | ❌
+Id (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+Name (Edm.String) | ✅ | ❌ | ❌ | ❌
