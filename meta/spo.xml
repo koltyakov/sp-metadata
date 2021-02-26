@@ -1398,6 +1398,7 @@
         <Property Name="ListId" Type="Edm.Guid" Nullable="false" />
         <Property Name="ETag" Type="Edm.String" />
         <Property Name="Exists" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="HasAlternateContentStreams" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IrmEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Length" Type="Edm.Int64" Nullable="false" />
         <Property Name="Level" Type="Edm.Byte" Nullable="false" />
@@ -4971,7 +4972,8 @@
         <FunctionImport Name="GetModels" ReturnType="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" IsComposable="true" IsBindable="true" EntitySet="Models">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
           <Parameter Name="listId" Type="Edm.Guid" Nullable="false" />
-          <Parameter Name="type" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="modelTypes" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="publicationTypes" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetRetentionLabel" ReturnType="SP.CompliancePolicy.ComplianceTag" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
@@ -8635,6 +8637,11 @@
         <FunctionImport Name="GetGroupSiteConversionData" ReturnType="Microsoft.SharePoint.Portal.GroupSiteConversionInfo" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
         </FunctionImport>
+        <FunctionImport Name="GetSharedChannelSharePointUrl" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
+          <Parameter Name="tenantId" Type="Edm.String" />
+          <Parameter Name="groupId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="GetSiteStatus" ReturnType="Microsoft.SharePoint.Portal.GroupSiteInfo" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
           <Parameter Name="groupId" Type="Edm.Guid" Nullable="false" />
@@ -8647,6 +8654,10 @@
         <FunctionImport Name="GetTeamChannels" ReturnType="Edm.Stream" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
           <Parameter Name="teamId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetUserSharedChannelMemberGroups" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
+          <Parameter Name="userName" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="GetValidSiteUrlFromAlias" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
@@ -9411,7 +9422,7 @@
           <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
           <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="SyncSolutionToTeams" IsBindable="true">
+        <FunctionImport Name="SyncSolutionToTeams" ReturnType="Edm.Int32" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
           <Parameter Name="id" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
@@ -9755,6 +9766,7 @@
           <Parameter Name="title" Type="Edm.String" />
           <Parameter Name="triggerType" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="emailField" Type="Edm.String" />
+          <Parameter Name="actionType" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="DeleteObject" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -10239,6 +10251,7 @@
           <Parameter Name="title" Type="Edm.String" />
           <Parameter Name="emailField" Type="Edm.String" />
           <Parameter Name="status" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="actionType" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="ValidateAppName" ReturnType="SP.VisualizationAppSynchronizationResult" IsBindable="true" EntitySet="VisualizationAppSynchronizationResults">
           <Parameter Name="this" Type="SP.List" />
@@ -11631,7 +11644,10 @@
         <FunctionImport Name="AddStubUsingPath" ReturnType="SP.File" IsBindable="true" EntitySet="Files12">
           <Parameter Name="this" Type="Collection(SP.File)" />
           <Parameter Name="DecodedUrl" Type="Edm.String" />
-          <Parameter Name="parameters" Type="SP.FileCollectionAddParameters" />
+          <Parameter Name="AutoCheckoutOnInvalidData" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="EnsureUniqueFileName" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="Overwrite" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="XorHash" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="AddTemplateFile" ReturnType="SP.File" IsBindable="true" EntitySet="Files12">
           <Parameter Name="this" Type="Collection(SP.File)" />
@@ -17295,6 +17311,9 @@
       <Annotations Target="SP.File/EffectiveInformationRightsManagementSettings">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.File/HasAlternateContentStreams">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.InformationRightsManagementFileSettings">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18735,7 +18754,7 @@
       <Annotations Target="SP.ApiData/GetModelIdForContentType(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/GetModels(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Edm.Guid, Edm.Int32)">
+      <Annotations Target="SP.ApiData/GetModels(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Edm.Guid, Edm.Int32, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetRetentionLabel(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Edm.Guid)">
@@ -19344,10 +19363,16 @@
       <Annotations Target="SP.ApiData/GetGroupSiteConversionData(Microsoft.SharePoint.Portal.GroupSiteManager)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetSharedChannelSharePointUrl(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.String, Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetTeamChannelFilesUrl(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetTeamChannels(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetUserSharedChannelMemberGroups(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetValidSiteUrlFromAlias(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.String, Edm.String, Edm.Boolean)">
@@ -19881,7 +19906,7 @@
       <Annotations Target="SP.ApiData/CreateMappedView(SP.List, SP.AppViewCreationInfo, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/CreateRule(SP.List, Edm.String, Edm.String, Edm.String, Edm.Int32, Edm.String)">
+      <Annotations Target="SP.ApiData/CreateRule(SP.List, Edm.String, Edm.String, Edm.String, Edm.Int32, Edm.String, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/DeleteRule(SP.List, Edm.String)">
@@ -19950,7 +19975,7 @@
       <Annotations Target="SP.ApiData/UpdateFormProcessingModelRetentionLabel(SP.List, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/UpdateRule(SP.List, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.Int32)">
+      <Annotations Target="SP.ApiData/UpdateRule(SP.List, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.Int32, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/ValidateAppName(SP.List, Edm.String)">
