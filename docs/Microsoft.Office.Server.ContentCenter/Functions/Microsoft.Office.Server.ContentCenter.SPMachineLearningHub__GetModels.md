@@ -11,4 +11,5 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 listId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-type (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+modelTypes (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+publicationTypes (Edm.Int32) | ✅ | ❌ | ❌ | ❌

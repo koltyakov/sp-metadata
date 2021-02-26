@@ -13,6 +13,7 @@ ContentTag (Edm.String) | ✅ | ✅ | ✅ | ✅
 CustomizedPageStatus (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 ETag (Edm.String) | ✅ | ✅ | ✅ | ✅
 Exists (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+HasAlternateContentStreams (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IrmEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 Length (Edm.Int64) | ✅ | ✅ | ✅ | ✅
 Level (Edm.Byte) | ✅ | ✅ | ✅ | ✅

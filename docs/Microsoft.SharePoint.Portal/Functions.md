@@ -25,12 +25,14 @@ GetGroupImage (Microsoft.SharePoint.Portal.GroupService) | ✅ | ✅ | ❌ | ❌
 GetGroupSiteConversionData (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ❌ | ❌
 GetHubSites (Microsoft.SharePoint.Portal.SPHubSitesUtility) | ✅ | ✅ | ❌ | ❌
 GetIBSegmentLabels (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
+GetSharedChannelSharePointUrl (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetSiteLinks (Microsoft.SharePoint.Portal.SiteLinkingManager) | ✅ | ✅ | ❌ | ❌
 GetSiteLogo (Microsoft.SharePoint.Portal.SiteIconManager) | ✅ | ❌ | ❌ | ❌
 GetSiteStatus (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ✅ | ❌
 GetTeamChannelFilesUrl (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetTeamChannelSiteOwner (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
 GetTeamChannels (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
+GetUserSharedChannelMemberGroups (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetValidSiteUrlFromAlias (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ❌ | ❌
 GroupService | ✅ | ✅ | ❌ | ❌
 HideTeamifyPrompt (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
