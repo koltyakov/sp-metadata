@@ -582,6 +582,7 @@
         <Property Name="UpdateResults" Type="Collection(SP.ListItemFormUpdateValue)" />
       </ComplexType>
       <ComplexType Name="SPListRule">
+        <Property Name="ActionType" Type="Edm.Int32" Nullable="false" />
         <Property Name="Condition" Type="Edm.String" />
         <Property Name="CreateDate" Type="Edm.DateTime" Nullable="false" />
         <Property Name="ID" Type="Edm.Guid" Nullable="false" />
@@ -2306,6 +2307,7 @@
         <Property Name="DefaultShareLinkPermission" Type="Edm.Int32" Nullable="false" />
         <Property Name="DefaultShareLinkType" Type="Edm.Int32" Nullable="false" />
         <Property Name="EnforceIBSegmentFiltering" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="EnforceSPOSearch" Type="Edm.Boolean" Nullable="false" />
         <Property Name="GroupsList" Type="Collection(SP.KeyValue)" />
         <Property Name="HasEditRole" Type="Edm.Boolean" Nullable="false" />
         <Property Name="HasReadRole" Type="Edm.Boolean" Nullable="false" />
@@ -3763,6 +3765,8 @@
         <EntitySet Name="ConnectionSettingss" EntityType="Microsoft.BusinessData.Infrastructure.SecureStore.ConnectionSettings" />
         <EntitySet Name="TargetApplications" EntityType="Microsoft.Office.SecureStoreService.Server.TargetApplication" />
         <EntitySet Name="TargetApplicationFields" EntityType="Microsoft.Office.SecureStoreService.Server.TargetApplicationField" />
+        <EntitySet Name="SPMachineLearningAzureCognitiveEntityDatas" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningAzureCognitiveEntityData" />
+        <EntitySet Name="SPMachineLearningEnableds" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled" />
         <EntitySet Name="SPMachineLearningModelEntityDatas" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData" />
         <EntitySet Name="SPMachineLearningPublicationsEntityDatas" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData" />
         <EntitySet Name="SPMachineLearningPublicationsResults" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult" />
@@ -3796,6 +3800,7 @@
         <EntitySet Name="CrossGeoTenantPropertyEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantPropertyEntityData" />
         <EntitySet Name="CrossGeoUserPlacementJobEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoUserPlacementJobEntityData" />
         <EntitySet Name="DBSchemaCompatibilityChecks" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.DBSchemaCompatibilityCheck" />
+        <EntitySet Name="DfDeprecationSiteEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationSiteEntityData" />
         <EntitySet Name="GeoAdministrators" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator" />
         <EntitySet Name="GeoExperiences" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.GeoExperience" />
         <EntitySet Name="GeoLocationDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.GeoLocationData" />
@@ -4964,6 +4969,7 @@
         <FunctionImport Name="SP_Directory_SPHelper_SyncGroup">
           <Parameter Name="groupId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningAzureCognitiveEntityData" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningAzureCognitiveEntityData" IsComposable="true" EntitySet="SPMachineLearningAzureCognitiveEntityDatas" />
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" IsComposable="true" EntitySet="Machinelearnings" />
         <FunctionImport Name="GetModelIdForContentType" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
@@ -5268,7 +5274,7 @@
         <FunctionImport Name="SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddComplianceRetentionWorkItem2" ReturnType="Edm.Boolean">
           <Parameter Name="workItemInput" Type="SP.ComplianceFoundation.Models.RetentionWorkItemInput" />
         </FunctionImport>
-        <FunctionImport Name="SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddComplianceRetentionWorkItem3" ReturnType="Edm.Boolean" />
+        <FunctionImport Name="SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddUnifiedRetentionWorkItem" ReturnType="Edm.Boolean" />
         <FunctionImport Name="SP_ComplianceFoundation_PreserveDocumentSubmitter_PreserveCloudAttachmentIntoPHL" ReturnType="SP.ComplianceFoundation.Models.PreservedCloudAttachment">
           <Parameter Name="webId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="documentUniqueId" Type="Edm.Guid" Nullable="false" />
@@ -5375,6 +5381,16 @@
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoUserPlacementJobEntityData" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoUserPlacementJobEntityData" IsComposable="true" EntitySet="CrossGeoUserPlacementJobEntityDatas" />
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoUserPlacementJob" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoUserPlacementJob" IsComposable="true" EntitySet="CrossGeoUserPlacementJobEntityDatas" />
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_DBSchemaCompatibilityCheck" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.DBSchemaCompatibilityCheck" IsComposable="true" EntitySet="DBSchemaCompatibilityChecks" />
+        <FunctionImport Name="GetBySiteUrl" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJob" IsComposable="true" IsBindable="true" EntitySet="DfDeprecationSiteEntityDatas">
+          <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJob)" />
+          <Parameter Name="sourceSiteUrl" Type="Edm.String" />
+          <Parameter Name="targetSiteUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_DfDeprecationJob" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJob" IsComposable="true" EntitySet="DfDeprecationSiteEntityDatas" />
+        <FunctionImport Name="Delete" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJob" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_DfDeprecationSiteEntityData" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationSiteEntityData" IsComposable="true" EntitySet="DfDeprecationSiteEntityDatas" />
         <FunctionImport Name="Create" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator" IsBindable="true" EntitySet="GeoAdministrators">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator)" />
           <Parameter Name="parameters" Type="Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministratorEntityData" />
@@ -11828,6 +11844,11 @@
           <Parameter Name="uploadId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="stream" Type="Edm.Stream" />
         </FunctionImport>
+        <FunctionImport Name="StartUploadFile" ReturnType="SP.File" IsBindable="true" EntitySet="Files12">
+          <Parameter Name="this" Type="SP.File" />
+          <Parameter Name="uploadId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="stream" Type="Edm.Stream" />
+        </FunctionImport>
         <FunctionImport Name="UndoCheckOut" IsBindable="true">
           <Parameter Name="this" Type="SP.File" />
         </FunctionImport>
@@ -11843,6 +11864,17 @@
           <Parameter Name="virusStatus" Type="Edm.Byte" Nullable="false" />
           <Parameter Name="virusMessage" Type="Edm.String" />
           <Parameter Name="etagToCheck" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="Upload" ReturnType="SP.File" IsBindable="true" EntitySet="Files12">
+          <Parameter Name="this" Type="SP.File" />
+          <Parameter Name="uploadId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="stream" Type="Edm.Stream" />
+        </FunctionImport>
+        <FunctionImport Name="UploadWithChecksum" ReturnType="SP.File" IsBindable="true" EntitySet="Files12">
+          <Parameter Name="this" Type="SP.File" />
+          <Parameter Name="uploadId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="checksum" Type="Edm.Binary" />
+          <Parameter Name="stream" Type="Edm.Stream" />
         </FunctionImport>
         <FunctionImport Name="DeleteAll" IsBindable="true">
           <Parameter Name="this" Type="Collection(SP.FileVersion)" />
@@ -13861,6 +13893,10 @@
           <End Role="WorkflowAssociationsPartner" EntitySet="Lists" />
           <End Role="WorkflowAssociations" EntitySet="WorkflowAssociations" />
         </AssociationSet>
+        <AssociationSet Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_MachineLearningEnabled_Microsoft_Office_Server_ContentCenter_SPMachineLearningEnabled_MachineLearningEnabledPartnerSet" Association="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_MachineLearningEnabled_Microsoft_Office_Server_ContentCenter_SPMachineLearningEnabled_MachineLearningEnabledPartner">
+          <End Role="MachineLearningEnabledPartner" EntitySet="Machinelearnings" />
+          <End Role="MachineLearningEnabled" EntitySet="SPMachineLearningEnableds" />
+        </AssociationSet>
         <AssociationSet Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Models_Microsoft_Office_Server_ContentCenter_SPMachineLearningModel_ModelsPartnerSet" Association="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Models_Microsoft_Office_Server_ContentCenter_SPMachineLearningModel_ModelsPartner">
           <End Role="ModelsPartner" EntitySet="Machinelearnings" />
           <End Role="Models" EntitySet="Models" />
@@ -14180,6 +14216,10 @@
         <AssociationSet Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_CrossGeoUserPlacementJobs_Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoUserPlacementJob_CrossGeoUserPlacementJobsPartnerSet" Association="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_CrossGeoUserPlacementJobs_Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoUserPlacementJob_CrossGeoUserPlacementJobsPartner">
           <End Role="CrossGeoUserPlacementJobsPartner" EntitySet="MultiGeoServicesBetas" />
           <End Role="CrossGeoUserPlacementJobs" EntitySet="CrossGeoUserPlacementJobEntityDatas" />
+        </AssociationSet>
+        <AssociationSet Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_DfDeprecationJobs_Microsoft_Online_SharePoint_MultiGeo_Service_DfDeprecationJob_DfDeprecationJobsPartnerSet" Association="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_DfDeprecationJobs_Microsoft_Online_SharePoint_MultiGeo_Service_DfDeprecationJob_DfDeprecationJobsPartner">
+          <End Role="DfDeprecationJobsPartner" EntitySet="MultiGeoServicesBetas" />
+          <End Role="DfDeprecationJobs" EntitySet="DfDeprecationSiteEntityDatas" />
         </AssociationSet>
         <AssociationSet Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_GeoAdministrators_Microsoft_Online_SharePoint_MultiGeo_Service_GeoAdministrator_GeoAdministratorsPartnerSet" Association="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_GeoAdministrators_Microsoft_Online_SharePoint_MultiGeo_Service_GeoAdministrator_GeoAdministratorsPartner">
           <End Role="GeoAdministratorsPartner" EntitySet="MultiGeoServicesBetas" />
@@ -15688,6 +15728,9 @@
       <Annotations Target="SP.Publishing.SitePageFieldsData/CanvasJson1">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.SitePageFieldsData/Categories">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.SitePageFieldsData/Description">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16777,6 +16820,27 @@
       <Annotations Target="SP.Directory.User/sharePointFiltersPaneFirstRun">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningAzureCognitiveEntityData">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningAzureCognitiveEntityData/Columns">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningAzureCognitiveEntityData/ContentTypeGroup">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningAzureCognitiveEntityData/ContentTypeName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/MachineLearningCaptureEnabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/MachineLearningExperienceEnabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16784,6 +16848,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub/MachineLearningCaptureEnabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub/MachineLearningEnabled">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel">
@@ -17005,7 +17072,16 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem/TargetServerRelativeUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem/TargetSiteId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem/TargetSiteUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem/TargetUniqueId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem/TargetWebId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem/TargetWebServerRelativeUrl">
@@ -17114,6 +17190,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData/IsFolder">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData/TargetServerRelativeUrl">
@@ -17821,6 +17900,9 @@
       <Annotations Target="SP.Publishing.SitePageMetadata/BannerThumbnailUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.SitePageMetadata/Categories">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.SitePageMetadata/CommentCount">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18454,6 +18536,9 @@
       <Annotations Target="SP.Sharing.SharingInformation/enforceIBSegmentFiltering">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Sharing.SharingInformation/enforceSPOSearch">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Sharing.SharingInformation/fileExtension">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18748,6 +18833,9 @@
       <Annotations Target="SP.ApiData/ValidateGroupName(SP.Directory.DirectorySession, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningAzureCognitiveEntityData()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningHub()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18841,7 +18929,7 @@
       <Annotations Target="SP.ApiData/SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddComplianceRetentionWorkItem2(SP.ComplianceFoundation.Models.RetentionWorkItemInput)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddComplianceRetentionWorkItem3()">
+      <Annotations Target="SP.ApiData/SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddUnifiedRetentionWorkItem()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_ComplianceFoundation_PreserveDocumentSubmitter_PreserveCloudAttachmentIntoPHL(Edm.Guid, Edm.Guid, Edm.String, SP.ComplianceFoundation.Models.ComplianceTagInfo)">
@@ -20254,9 +20342,6 @@
       <Annotations Target="SP.ApiData/DeleteWithParameters(SP.File, SP.FileDeleteParameters)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/FinishUploadWithChecksum(SP.File, Edm.Guid, Edm.Int64, Edm.String, Edm.Stream)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.ApiData/GetFileUserValue(SP.File, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20270,6 +20355,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetFileUserValue(SP.File, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Upload(SP.File, Edm.Guid, Edm.Stream)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/UploadWithChecksum(SP.File, Edm.Guid, Edm.Binary, Edm.Stream)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/RecycleByID(Collection(SP.FileVersion), Edm.Int32)">
@@ -21101,6 +21192,15 @@
         </Key>
         <Property Name="CompatibilityResult" Type="Edm.String" Nullable="false" />
       </EntityType>
+      <EntityType Name="DfDeprecationSiteEntityData">
+        <Key>
+          <PropertyRef Name="sourceSiteUrl" />
+        </Key>
+        <Property Name="sourceSiteUrl" Type="Edm.String" Nullable="false" />
+        <Property Name="targetSiteUrl" Type="Edm.String" />
+        <Property Name="validationResult" Type="Edm.Boolean" Nullable="false" />
+      </EntityType>
+      <EntityType Name="DfDeprecationJob" BaseType="Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationSiteEntityData" />
       <EntityType Name="GeoAdministrator">
         <Key>
           <PropertyRef Name="DisplayName" />
@@ -21199,6 +21299,7 @@
         <NavigationProperty Name="CrossGeoTenantCompatibility" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_CrossGeoTenantCompatibility_Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoTenantCompatibility_CrossGeoTenantCompatibilityPartner" ToRole="CrossGeoTenantCompatibility" FromRole="CrossGeoTenantCompatibilityPartner" />
         <NavigationProperty Name="CrossGeoTenantProperties" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_CrossGeoTenantProperties_Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoTenantProperty_CrossGeoTenantPropertiesPartner" ToRole="CrossGeoTenantProperties" FromRole="CrossGeoTenantPropertiesPartner" />
         <NavigationProperty Name="CrossGeoUserPlacementJobs" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_CrossGeoUserPlacementJobs_Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoUserPlacementJob_CrossGeoUserPlacementJobsPartner" ToRole="CrossGeoUserPlacementJobs" FromRole="CrossGeoUserPlacementJobsPartner" />
+        <NavigationProperty Name="DfDeprecationJobs" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_DfDeprecationJobs_Microsoft_Online_SharePoint_MultiGeo_Service_DfDeprecationJob_DfDeprecationJobsPartner" ToRole="DfDeprecationJobs" FromRole="DfDeprecationJobsPartner" />
         <NavigationProperty Name="GeoAdministrators" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_GeoAdministrators_Microsoft_Online_SharePoint_MultiGeo_Service_GeoAdministrator_GeoAdministratorsPartner" ToRole="GeoAdministrators" FromRole="GeoAdministratorsPartner" />
         <NavigationProperty Name="GeoExperience" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_GeoExperience_Microsoft_Online_SharePoint_MultiGeo_Service_GeoExperience_GeoExperiencePartner" ToRole="GeoExperience" FromRole="GeoExperiencePartner" />
         <NavigationProperty Name="GeoTenantInstanceInformationCollection" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_GeoTenantInstanceInformationCollection_Microsoft_Online_SharePoint_MultiGeo_Service_GeoTenantInstanceInformation_GeoTenantInstanceInformationCollectionPartner" ToRole="GeoTenantInstanceInformationCollection" FromRole="GeoTenantInstanceInformationCollectionPartner" />
@@ -21357,6 +21458,10 @@
       <Association Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_CrossGeoUserPlacementJobs_Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoUserPlacementJob_CrossGeoUserPlacementJobsPartner">
         <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoUserPlacementJob" Role="CrossGeoUserPlacementJobs" Multiplicity="*" />
         <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" Role="CrossGeoUserPlacementJobsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_DfDeprecationJobs_Microsoft_Online_SharePoint_MultiGeo_Service_DfDeprecationJob_DfDeprecationJobsPartner">
+        <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJob" Role="DfDeprecationJobs" Multiplicity="*" />
+        <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" Role="DfDeprecationJobsPartner" Multiplicity="0..1" />
       </Association>
       <Association Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_GeoAdministrators_Microsoft_Online_SharePoint_MultiGeo_Service_GeoAdministrator_GeoAdministratorsPartner">
         <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator" Role="GeoAdministrators" Multiplicity="*" />
@@ -24484,6 +24589,7 @@
         <Property Name="BannerImageUrl" Type="Edm.String" />
         <Property Name="CanvasContent1" Type="Edm.String" />
         <Property Name="CanvasJson1" Type="Edm.String" />
+        <Property Name="Categories" Type="Edm.String" />
         <Property Name="Description" Type="Edm.String" />
         <Property Name="LayoutWebpartsContent" Type="Edm.String" />
         <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
@@ -24770,6 +24876,7 @@
         <Property Name="AuthorByline" Type="Collection(Edm.String)" />
         <Property Name="BannerImageUrl" Type="Edm.String" />
         <Property Name="BannerThumbnailUrl" Type="Edm.String" />
+        <Property Name="Categories" Type="Edm.String" />
         <Property Name="CommentCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="CommentsDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ContentTypeId" Type="Edm.String" />
@@ -25610,6 +25717,7 @@
         <Property Name="DefaultClassification" Type="Edm.String" />
         <Property Name="ExternalInvitationEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="MachineLearningExperienceEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PreferredLanguage" Type="Edm.Int32" />
         <Property Name="RequireSecondaryContact" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SensitivityLabelPolicyMandatory" Type="Edm.Boolean" Nullable="false" />
@@ -26938,6 +27046,7 @@
         <Property Name="directUrl" Type="Edm.String" />
         <Property Name="domainRestrictionSettings" Type="SP.Sharing.DomainRestrictionSettings" />
         <Property Name="enforceIBSegmentFiltering" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="enforceSPOSearch" Type="Edm.Boolean" Nullable="false" />
         <Property Name="fileExtension" Type="Edm.String" />
         <Property Name="hasUniquePermissions" Type="Edm.Boolean" Nullable="false" />
         <Property Name="itemUniqueId" Type="Edm.Guid" Nullable="false" />
@@ -28027,6 +28136,7 @@
         <Property Name="HideSyncButtonOnODB" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ImageTaggingOption" Type="Edm.Int32" Nullable="false" />
         <Property Name="IncludeAtAGlanceInShareEmails" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="InformationBarriersSuspension" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IPAddressAllowList" Type="Edm.String" />
         <Property Name="IPAddressEnforcement" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IPAddressWACTokenLifetime" Type="Edm.Int32" Nullable="false" />
@@ -28037,6 +28147,7 @@
         <Property Name="IsMultiGeo" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsUnmanagedSyncClientForTenantRestricted" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsUnmanagedSyncClientRestrictionFlightEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsWBFluidEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LabelMismatchEmailHelpLink" Type="Edm.String" />
         <Property Name="LegacyAuthProtocolsEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LimitedAccessFileType" Type="Edm.Int32" Nullable="false" />
@@ -28542,12 +28653,28 @@
         <Property Name="Publication" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData" />
         <Property Name="StatusCode" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
+      <EntityType Name="SPMachineLearningAzureCognitiveEntityData">
+        <Key>
+          <PropertyRef Name="ContentTypeGroup" />
+        </Key>
+        <Property Name="Columns" Type="Collection(SP.KeyValue)" />
+        <Property Name="ContentTypeGroup" Type="Edm.String" Nullable="false" />
+        <Property Name="ContentTypeName" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="SPMachineLearningEnabled">
+        <Key>
+          <PropertyRef Name="MachineLearningCaptureEnabled" />
+        </Key>
+        <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="MachineLearningExperienceEnabled" Type="Edm.Boolean" Nullable="false" />
+      </EntityType>
       <EntityType Name="SPMachineLearningHub">
         <Key>
           <PropertyRef Name="IsDefaultContentCenter" />
         </Key>
         <Property Name="IsDefaultContentCenter" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
+        <NavigationProperty Name="MachineLearningEnabled" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_MachineLearningEnabled_Microsoft_Office_Server_ContentCenter_SPMachineLearningEnabled_MachineLearningEnabledPartner" ToRole="MachineLearningEnabled" FromRole="MachineLearningEnabledPartner" />
         <NavigationProperty Name="Models" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Models_Microsoft_Office_Server_ContentCenter_SPMachineLearningModel_ModelsPartner" ToRole="Models" FromRole="ModelsPartner" />
         <NavigationProperty Name="Publications" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Publications_Microsoft_Office_Server_ContentCenter_SPMachineLearningPublication_PublicationsPartner" ToRole="Publications" FromRole="PublicationsPartner" />
         <NavigationProperty Name="Samples" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Samples_Microsoft_Office_Server_ContentCenter_SPMachineLearningSample_SamplesPartner" ToRole="Samples" FromRole="SamplesPartner" />
@@ -28638,7 +28765,10 @@
         <Property Name="Status" Type="Edm.String" />
         <Property Name="StatusCode" Type="Edm.Int32" Nullable="false" />
         <Property Name="TargetServerRelativeUrl" Type="Edm.String" />
+        <Property Name="TargetSiteId" Type="Edm.Guid" />
         <Property Name="TargetSiteUrl" Type="Edm.String" />
+        <Property Name="TargetUniqueId" Type="Edm.Guid" />
+        <Property Name="TargetWebId" Type="Edm.Guid" />
         <Property Name="TargetWebServerRelativeUrl" Type="Edm.String" />
         <Property Name="Type" Type="Edm.Guid" Nullable="false" />
       </EntityType>
@@ -28682,9 +28812,10 @@
       </EntityType>
       <EntityType Name="SPMachineLearningWorkItemEntityData">
         <Key>
-          <PropertyRef Name="TargetServerRelativeUrl" />
+          <PropertyRef Name="IsFolder" />
         </Key>
-        <Property Name="TargetServerRelativeUrl" Type="Edm.String" Nullable="false" />
+        <Property Name="IsFolder" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="TargetServerRelativeUrl" Type="Edm.String" />
         <Property Name="TargetSiteId" Type="Edm.Guid" />
         <Property Name="TargetSiteUrl" Type="Edm.String" />
         <Property Name="TargetUniqueId" Type="Edm.Guid" />
@@ -28692,6 +28823,10 @@
         <Property Name="TargetWebServerRelativeUrl" Type="Edm.String" />
         <Property Name="Type" Type="Edm.Guid" Nullable="false" />
       </EntityType>
+      <Association Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_MachineLearningEnabled_Microsoft_Office_Server_ContentCenter_SPMachineLearningEnabled_MachineLearningEnabledPartner">
+        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled" Role="MachineLearningEnabled" Multiplicity="0..1" />
+        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" Role="MachineLearningEnabledPartner" Multiplicity="0..1" />
+      </Association>
       <Association Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Models_Microsoft_Office_Server_ContentCenter_SPMachineLearningModel_ModelsPartner">
         <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" Role="Models" Multiplicity="*" />
         <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" Role="ModelsPartner" Multiplicity="0..1" />
@@ -29890,6 +30025,7 @@
         <Property Name="HideSyncButtonOnODB" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ImageTaggingOption" Type="Edm.Int32" Nullable="false" />
         <Property Name="IncludeAtAGlanceInShareEmails" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="InformationBarriersSuspension" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IPAddressAllowList" Type="Edm.String" />
         <Property Name="IPAddressEnforcement" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IPAddressWACTokenLifetime" Type="Edm.Int32" Nullable="false" />
