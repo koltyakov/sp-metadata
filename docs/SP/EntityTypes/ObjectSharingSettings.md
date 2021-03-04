@@ -24,6 +24,7 @@ CanShareFolder (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 DefaultShareLinkPermission (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 DefaultShareLinkType (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 EnforceIBSegmentFiltering (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+EnforceSPOSearch (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 GroupsList (Collection(SP.KeyValue)) | ✅ | ✅ | ✅ | ❌
 HasEditRole (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 HasReadRole (Edm.Boolean) | ✅ | ✅ | ✅ | ❌

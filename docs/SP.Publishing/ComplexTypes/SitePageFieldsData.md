@@ -10,6 +10,7 @@ AuthorByline (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 BannerImageUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 CanvasContent1 (Edm.String) | ✅ | ✅ | ❌ | ❌
 CanvasJson1 (Edm.String) | ✅ | ✅ | ❌ | ❌
+Categories (Edm.String) | ✅ | ❌ | ❌ | ❌
 Description (Edm.String) | ✅ | ❌ | ❌ | ❌
 LayoutWebpartsContent (Edm.String) | ✅ | ✅ | ❌ | ❌
 Modified (Edm.DateTime) | ✅ | ✅ | ❌ | ❌

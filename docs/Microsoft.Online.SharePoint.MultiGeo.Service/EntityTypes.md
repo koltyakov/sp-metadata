@@ -19,6 +19,8 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CrossGeoUserPlacementJob](./EntityTypes/CrossGeoUserPlacementJob.md) | ✅ | ❌ | ❌ | ❌
 [CrossGeoUserPlacementJobEntityData](./EntityTypes/CrossGeoUserPlacementJobEntityData.md) | ✅ | ❌ | ❌ | ❌
 [DBSchemaCompatibilityCheck](./EntityTypes/DBSchemaCompatibilityCheck.md) | ✅ | ❌ | ❌ | ❌
+[DfDeprecationJob](./EntityTypes/DfDeprecationJob.md) | ✅ | ❌ | ❌ | ❌
+[DfDeprecationSiteEntityData](./EntityTypes/DfDeprecationSiteEntityData.md) | ✅ | ❌ | ❌ | ❌
 [GeoAdministrator](./EntityTypes/GeoAdministrator.md) | ✅ | ❌ | ❌ | ❌
 [GeoExperience](./EntityTypes/GeoExperience.md) | ✅ | ❌ | ❌ | ❌
 [GeoLocationData](./EntityTypes/GeoLocationData.md) | ✅ | ❌ | ❌ | ❌

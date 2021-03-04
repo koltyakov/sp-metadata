@@ -21,6 +21,7 @@ CrossGeoTenantBYOK | ✅ | ❌ | ❌ | ❌
 CrossGeoTenantCompatibility | ✅ | ❌ | ❌ | ❌
 CrossGeoTenantProperties | ✅ | ❌ | ❌ | ❌
 CrossGeoUserPlacementJobs | ✅ | ❌ | ❌ | ❌
+DfDeprecationJobs | ✅ | ❌ | ❌ | ❌
 GeoAdministrators | ✅ | ❌ | ❌ | ❌
 GeoExperience | ✅ | ❌ | ❌ | ❌
 GeoTenantInstanceInformationCollection | ✅ | ❌ | ❌ | ❌

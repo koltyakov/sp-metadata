@@ -686,6 +686,7 @@ SetViewXml (SP.View) | ✅ | ✅ | ❌ | ❌
 SiteReference (SP.KnowledgeHub) | ✅ | ❌ | ❌ | ❌
 SitesReference (SP.OrganizationNews) | ✅ | ❌ | ❌ | ❌
 StartUpload (SP.File) | ✅ | ✅ | ✅ | ❌
+StartUploadFile (SP.File) | ✅ | ❌ | ❌ | ❌
 SyncFlowCallbackUrl (SP.List) | ✅ | ✅ | ❌ | ❌
 SyncFlowInstance (SP.List) | ✅ | ✅ | ❌ | ❌
 SyncFlowInstances (SP.List) | ✅ | ✅ | ❌ | ❌
@@ -748,7 +749,9 @@ UpdateOverwriteVersion (SP.ListItem) | ✅ | ✅ | ❌ | ❌
 UpdateRule (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateVirusInfo (SP.File) | ✅ | ✅ | ❌ | ❌
 Upgrade (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
+Upload (SP.File) | ✅ | ❌ | ❌ | ❌
 UploadImage (SP.Web) | ✅ | ❌ | ❌ | ❌
+UploadWithChecksum (SP.File) | ✅ | ❌ | ❌ | ❌
 ValidateAppName (SP.List) | ✅ | ✅ | ❌ | ❌
 ValidateHubSiteJoinApprovalToken (SP.Site) | ✅ | ❌ | ❌ | ❌
 ValidateSetValue (SP.Field) | ❌ | ❌ | ❌ | ✅

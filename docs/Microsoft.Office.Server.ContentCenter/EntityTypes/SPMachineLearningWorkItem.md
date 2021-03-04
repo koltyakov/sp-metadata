@@ -13,6 +13,9 @@ ID (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 Status (Edm.String) | ✅ | ❌ | ❌ | ❌
 StatusCode (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 TargetServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+TargetSiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 TargetSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+TargetUniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+TargetWebId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 TargetWebServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 Type (Edm.Guid) | ✅ | ❌ | ❌ | ❌

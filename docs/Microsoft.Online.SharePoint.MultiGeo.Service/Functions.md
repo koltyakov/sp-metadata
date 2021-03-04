@@ -9,6 +9,7 @@ Cancel (Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob) | ✅ | ❌ | 
 Cancel (Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob) | ✅ | ❌ | ❌ | ❌
 Create (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator)) | ✅ | ❌ | ❌ | ❌
 DBSchemaCompatibilityCheck (Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta) | ✅ | ❌ | ❌ | ❌
+Delete (Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJob) | ✅ | ❌ | ❌ | ❌
 DeleteObject (Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocation) | ✅ | ❌ | ❌ | ❌
 DeleteObject (Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty) | ✅ | ❌ | ❌ | ❌
 DeleteObject (Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator) | ✅ | ❌ | ❌ | ❌
@@ -30,6 +31,7 @@ GetByMoveId (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUs
 GetByMoveId (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob)) | ✅ | ❌ | ❌ | ❌
 GetByObjectId (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator)) | ✅ | ❌ | ❌ | ❌
 GetByPropertyNameAndGeoLocation (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty)) | ✅ | ❌ | ❌ | ❌
+GetBySiteUrl (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJob)) | ✅ | ❌ | ❌ | ❌
 GetByUpn (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob)) | ✅ | ❌ | ❌ | ❌
 GetByUrl (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob)) | ✅ | ❌ | ❌ | ❌
 GetByValidPdl (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob)) | ✅ | ❌ | ❌ | ❌
@@ -50,6 +52,8 @@ GetMoveReport (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJ
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoUserPlacementJob">Microsoft_Online_SharePoint_MultiGeo_Service_Cross...</span> (Microsoft Online SharePoint MultiGeo Service CrossGeoUserPlacementJob) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoUserPlacementJobEntityData">Microsoft_Online_SharePoint_MultiGeo_Service_Cross...</span> (Microsoft Online SharePoint MultiGeo Service CrossGeoUserPlacementJobEntityData) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_DBSchemaCompatibilityCheck">Microsoft_Online_SharePoint_MultiGeo_Service_DBSch...</span> (Microsoft Online SharePoint MultiGeo Service DBSchemaCompatibilityCheck) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_DfDeprecationJob">Microsoft_Online_SharePoint_MultiGeo_Service_DfDep...</span> (Microsoft Online SharePoint MultiGeo Service DfDeprecationJob) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_DfDeprecationSiteEntityData">Microsoft_Online_SharePoint_MultiGeo_Service_DfDep...</span> (Microsoft Online SharePoint MultiGeo Service DfDeprecationSiteEntityData) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_GeoAdministrator">Microsoft_Online_SharePoint_MultiGeo_Service_GeoAd...</span> (Microsoft Online SharePoint MultiGeo Service GeoAdministrator) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_GeoExperience">Microsoft_Online_SharePoint_MultiGeo_Service_GeoEx...</span> (Microsoft Online SharePoint MultiGeo Service GeoExperience) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_GeoLocationData">Microsoft_Online_SharePoint_MultiGeo_Service_GeoLo...</span> (Microsoft Online SharePoint MultiGeo Service GeoLocationData) | ✅ | ❌ | ❌ | ❌

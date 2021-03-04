@@ -25,6 +25,7 @@ defaultShareLinkToExistingAccess (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 directUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 domainRestrictionSettings (SP.Sharing.DomainRestrictionSettings) | ✅ | ✅ | ❌ | ❌
 enforceIBSegmentFiltering (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+enforceSPOSearch (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 fileExtension (Edm.String) | ✅ | ❌ | ❌ | ❌
 hasUniquePermissions (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 itemUniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

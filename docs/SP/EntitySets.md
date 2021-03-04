@@ -91,6 +91,7 @@ DateRangeCriterions | ✅ | ✅ | ✅ | ✅
 DeletedPublishedAssignments | ✅ | ✅ | ✅ | ❌
 DesignPackageMenuContentss | ✅ | ❌ | ❌ | ❌
 DeviceEntityDatas | ✅ | ❌ | ❌ | ❌
+DfDeprecationSiteEntityDatas | ✅ | ❌ | ❌ | ❌
 Diagnosticss | ✅ | ❌ | ❌ | ❌
 DirectoryNotifications | ✅ | ✅ | ❌ | ❌
 DirectorySessions | ✅ | ✅ | ✅ | ❌
@@ -398,6 +399,8 @@ SPFarms | ✅ | ❌ | ❌ | ❌
 SPFlights | ✅ | ❌ | ❌ | ❌
 SPHSites | ✅ | ❌ | ❌ | ❌
 SPHelpers | ❌ | ❌ | ✅ | ❌
+SPMachineLearningAzureCognitiveEntityDatas | ✅ | ❌ | ❌ | ❌
+SPMachineLearningEnableds | ✅ | ❌ | ❌ | ❌
 SPMachineLearningModelEntityDatas | ✅ | ❌ | ❌ | ❌
 SPMachineLearningPublicationsEntityDatas | ✅ | ❌ | ❌ | ❌
 SPMachineLearningPublicationsResults | ✅ | ❌ | ❌ | ❌

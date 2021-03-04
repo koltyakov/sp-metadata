@@ -10,6 +10,7 @@ AbsoluteUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 AuthorByline (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 BannerImageUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 BannerThumbnailUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+Categories (Edm.String) | ✅ | ❌ | ❌ | ❌
 CommentCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CommentsDisabled (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 ContentTypeId (Edm.String) | ✅ | ✅ | ❌ | ❌

@@ -6,6 +6,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+IsFolder (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 TargetServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetSiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 TargetSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
