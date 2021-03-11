@@ -4,7 +4,6 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-[SPMachineLearningAzureCognitiveEntityData](./EntityTypes/SPMachineLearningAzureCognitiveEntityData.md) | ✅ | ❌ | ❌ | ❌
 [SPMachineLearningEnabled](./EntityTypes/SPMachineLearningEnabled.md) | ✅ | ❌ | ❌ | ❌
 [SPMachineLearningHub](./EntityTypes/SPMachineLearningHub.md) | ✅ | ❌ | ❌ | ❌
 [SPMachineLearningModel](./EntityTypes/SPMachineLearningModel.md) | ✅ | ❌ | ❌ | ❌

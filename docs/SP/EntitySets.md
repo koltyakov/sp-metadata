@@ -399,7 +399,6 @@ SPFarms | ✅ | ❌ | ❌ | ❌
 SPFlights | ✅ | ❌ | ❌ | ❌
 SPHSites | ✅ | ❌ | ❌ | ❌
 SPHelpers | ❌ | ❌ | ✅ | ❌
-SPMachineLearningAzureCognitiveEntityDatas | ✅ | ❌ | ❌ | ❌
 SPMachineLearningEnableds | ✅ | ❌ | ❌ | ❌
 SPMachineLearningModelEntityDatas | ✅ | ❌ | ❌ | ❌
 SPMachineLearningPublicationsEntityDatas | ✅ | ❌ | ❌ | ❌

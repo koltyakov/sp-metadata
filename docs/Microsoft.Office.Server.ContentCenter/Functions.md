@@ -8,6 +8,7 @@ BatchDelete (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningP
 Copy (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
 Delete (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
 Delete (Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication) | ✅ | ❌ | ❌ | ❌
+EnsureAzureCognitive (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)) | ✅ | ❌ | ❌ | ❌
 GetByIdentifier (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem)) | ✅ | ❌ | ❌ | ❌
 GetByModelId (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningSample)) | ✅ | ❌ | ❌ | ❌
 GetByModelUniqueId (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)) | ✅ | ❌ | ❌ | ❌
@@ -23,7 +24,6 @@ GetRetentionLabel (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) |
 GetRetentionLabels (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
 Import (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)) | ✅ | ❌ | ❌ | ❌
 ImportMeta (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
-<span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningAzureCognitiveEntityData">Microsoft_Office_Server_ContentCenter_SPMachineLea...</span> (Microsoft Office Server ContentCenter SPMachineLearningAzureCognitiveEntityData) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub">Microsoft_Office_Server_ContentCenter_SPMachineLea...</span> (Microsoft Office Server ContentCenter SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningModelEntityData">Microsoft_Office_Server_ContentCenter_SPMachineLea...</span> (Microsoft Office Server ContentCenter SPMachineLearningModelEntityData) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningPublicationsEntityData">Microsoft_Office_Server_ContentCenter_SPMachineLea...</span> (Microsoft Office Server ContentCenter SPMachineLearningPublicationsEntityData) | ✅ | ❌ | ❌ | ❌

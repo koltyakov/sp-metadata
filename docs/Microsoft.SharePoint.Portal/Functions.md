@@ -20,6 +20,7 @@ EnsureTeamForGroup (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | 
 EnsureTeamForGroupEx (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetAllOrgLabels (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetCompatibleSegments (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
+GetCurrentUserSharedChannelMemberGroups (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetGroupCreationContext (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ❌ | ❌
 GetGroupImage (Microsoft.SharePoint.Portal.GroupService) | ✅ | ✅ | ❌ | ❌
 GetGroupSiteConversionData (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ❌ | ❌
