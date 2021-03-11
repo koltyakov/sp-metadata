@@ -3765,7 +3765,6 @@
         <EntitySet Name="ConnectionSettingss" EntityType="Microsoft.BusinessData.Infrastructure.SecureStore.ConnectionSettings" />
         <EntitySet Name="TargetApplications" EntityType="Microsoft.Office.SecureStoreService.Server.TargetApplication" />
         <EntitySet Name="TargetApplicationFields" EntityType="Microsoft.Office.SecureStoreService.Server.TargetApplicationField" />
-        <EntitySet Name="SPMachineLearningAzureCognitiveEntityDatas" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningAzureCognitiveEntityData" />
         <EntitySet Name="SPMachineLearningEnableds" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled" />
         <EntitySet Name="SPMachineLearningModelEntityDatas" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData" />
         <EntitySet Name="SPMachineLearningPublicationsEntityDatas" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData" />
@@ -4969,7 +4968,6 @@
         <FunctionImport Name="SP_Directory_SPHelper_SyncGroup">
           <Parameter Name="groupId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningAzureCognitiveEntityData" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningAzureCognitiveEntityData" IsComposable="true" EntitySet="SPMachineLearningAzureCognitiveEntityDatas" />
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" IsComposable="true" EntitySet="Machinelearnings" />
         <FunctionImport Name="GetModelIdForContentType" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
@@ -5015,6 +5013,10 @@
         <FunctionImport Name="UpdateModelSettings" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
           <Parameter Name="ModelSettings" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="EnsureAzureCognitive" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsBindable="true" EntitySet="Models">
+          <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
+          <Parameter Name="parameters" Type="Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData" />
         </FunctionImport>
         <FunctionImport Name="GetByTitle" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsComposable="true" IsBindable="true" EntitySet="Models">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
@@ -8646,6 +8648,9 @@
         <FunctionImport Name="GetAllOrgLabels" ReturnType="Microsoft.SharePoint.Portal.OrgLabelsContextList" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
           <Parameter Name="pageNumber" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetCurrentUserSharedChannelMemberGroups" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
         </FunctionImport>
         <FunctionImport Name="GetGroupCreationContext" ReturnType="Microsoft.SharePoint.Portal.GroupCreationContext" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
@@ -15617,6 +15622,27 @@
       <Annotations Target="SP.Directory.GroupNameValidationResult/IsValidName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.ColumnDef">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.ColumnDef/Name">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.ColumnDef/Type">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData/Columns">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData/ContentTypeGroup">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData/ContentTypeName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.CompliancePolicy.ComplianceTag">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16818,18 +16844,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Directory.User/sharePointFiltersPaneFirstRun">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningAzureCognitiveEntityData">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningAzureCognitiveEntityData/Columns">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningAzureCognitiveEntityData/ContentTypeGroup">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningAzureCognitiveEntityData/ContentTypeName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled">
@@ -18833,9 +18847,6 @@
       <Annotations Target="SP.ApiData/ValidateGroupName(SP.Directory.DirectorySession, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningAzureCognitiveEntityData()">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningHub()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18873,6 +18884,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/UpdateModelSettings(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/EnsureAzureCognitive(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetByTitle(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String)">
@@ -19443,6 +19457,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetAllOrgLabels(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetCurrentUserSharedChannelMemberGroups(Microsoft.SharePoint.Portal.GroupSiteManager)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetGroupCreationContext(Microsoft.SharePoint.Portal.GroupSiteManager)">
@@ -20904,6 +20921,211 @@
       <Association Name="SP_Directory_GroupAndUserStatus_Group_SP_Directory_Group_GroupPartner">
         <End Type="SP.Directory.Group" Role="Group" Multiplicity="0..1" />
         <End Type="SP.Directory.GroupAndUserStatus" Role="GroupPartner" Multiplicity="0..1" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Microsoft.Office.Server.ContentCenter" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="ColumnDef">
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Type" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SPAzureCognitiveModelEntityData">
+        <Property Name="Columns" Type="Collection(Microsoft.Office.Server.ContentCenter.ColumnDef)" />
+        <Property Name="ContentTypeGroup" Type="Edm.String" />
+        <Property Name="ContentTypeName" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SPMachineLearningPublicationEntityData">
+        <Property Name="ModelUniqueId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="TargetLibraryServerRelativeUrl" Type="Edm.String" />
+        <Property Name="TargetSiteUrl" Type="Edm.String" />
+        <Property Name="TargetWebServerRelativeUrl" Type="Edm.String" />
+        <Property Name="ViewOption" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SPMachineLearningPublicationResult">
+        <Property Name="ErrorMessage" Type="Edm.String" />
+        <Property Name="Publication" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData" />
+        <Property Name="StatusCode" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <EntityType Name="SPMachineLearningEnabled">
+        <Key>
+          <PropertyRef Name="MachineLearningCaptureEnabled" />
+        </Key>
+        <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="MachineLearningExperienceEnabled" Type="Edm.Boolean" Nullable="false" />
+      </EntityType>
+      <EntityType Name="SPMachineLearningHub">
+        <Key>
+          <PropertyRef Name="IsDefaultContentCenter" />
+        </Key>
+        <Property Name="IsDefaultContentCenter" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
+        <NavigationProperty Name="MachineLearningEnabled" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_MachineLearningEnabled_Microsoft_Office_Server_ContentCenter_SPMachineLearningEnabled_MachineLearningEnabledPartner" ToRole="MachineLearningEnabled" FromRole="MachineLearningEnabledPartner" />
+        <NavigationProperty Name="Models" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Models_Microsoft_Office_Server_ContentCenter_SPMachineLearningModel_ModelsPartner" ToRole="Models" FromRole="ModelsPartner" />
+        <NavigationProperty Name="Publications" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Publications_Microsoft_Office_Server_ContentCenter_SPMachineLearningPublication_PublicationsPartner" ToRole="Publications" FromRole="PublicationsPartner" />
+        <NavigationProperty Name="Samples" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Samples_Microsoft_Office_Server_ContentCenter_SPMachineLearningSample_SamplesPartner" ToRole="Samples" FromRole="SamplesPartner" />
+        <NavigationProperty Name="WorkItems" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_WorkItems_Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItem_WorkItemsPartner" ToRole="WorkItems" FromRole="WorkItemsPartner" />
+      </EntityType>
+      <EntityType Name="SPMachineLearningModel">
+        <Key>
+          <PropertyRef Name="ConfidenceScore" />
+        </Key>
+        <Property Name="ConfidenceScore" Type="Edm.String" Nullable="false" />
+        <Property Name="ContentTypeGroup" Type="Edm.String" />
+        <Property Name="ContentTypeId" Type="Edm.String" />
+        <Property Name="ContentTypeName" Type="Edm.String" />
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="CreatedBy" Type="Edm.String" />
+        <Property Name="DriveId" Type="Edm.String" />
+        <Property Name="Explanations" Type="Edm.String" />
+        <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="LastTrained" Type="Edm.DateTime" />
+        <Property Name="ListID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ModelSettings" Type="Edm.String" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedBy" Type="Edm.String" />
+        <Property Name="ObjectId" Type="Edm.String" />
+        <Property Name="Schemas" Type="Edm.String" />
+        <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+      <EntityType Name="SPMachineLearningPublication">
+        <Key>
+          <PropertyRef Name="Created" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="CreatedBy" Type="Edm.String" />
+        <Property Name="DriveId" Type="Edm.String" />
+        <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ModelId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ModelName" Type="Edm.String" />
+        <Property Name="ModelType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ModelUniqueId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ModelVersion" Type="Edm.String" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedBy" Type="Edm.String" />
+        <Property Name="ObjectId" Type="Edm.String" />
+        <Property Name="TargetLibraryRemoved" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="TargetLibraryServerRelativeUrl" Type="Edm.String" />
+        <Property Name="TargetLibraryUrl" Type="Edm.String" />
+        <Property Name="TargetSiteUrl" Type="Edm.String" />
+        <Property Name="TargetWebServerRelativeUrl" Type="Edm.String" />
+        <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ViewOption" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="SPMachineLearningSample">
+        <Key>
+          <PropertyRef Name="Created" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="CreatedBy" Type="Edm.String" />
+        <Property Name="CreatedByName" Type="Edm.String" />
+        <Property Name="DriveId" Type="Edm.String" />
+        <Property Name="Etag" Type="Edm.String" />
+        <Property Name="ExtractedText" Type="Edm.String" />
+        <Property Name="FileLeafRef" Type="Edm.String" />
+        <Property Name="FileRef" Type="Edm.String" />
+        <Property Name="FileType" Type="Edm.String" />
+        <Property Name="FSObjType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ListID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Markups" Type="Edm.String" />
+        <Property Name="ModelIds" Type="Collection(Edm.Int32)" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedBy" Type="Edm.String" />
+        <Property Name="ModifiedByName" Type="Edm.String" />
+        <Property Name="ObjectId" Type="Edm.String" />
+        <Property Name="ServerRedirectedEmbedUri" Type="Edm.String" />
+        <Property Name="Title" Type="Edm.String" />
+        <Property Name="TokenEndPosition" Type="Collection(Edm.Int32)" Nullable="false" />
+        <Property Name="TokenStartPosition" Type="Collection(Edm.Int32)" Nullable="false" />
+        <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+      <EntityType Name="SPMachineLearningWorkItem">
+        <Key>
+          <PropertyRef Name="Created" />
+        </Key>
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DeliverDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ErrorMessage" Type="Edm.String" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Status" Type="Edm.String" />
+        <Property Name="StatusCode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TargetServerRelativeUrl" Type="Edm.String" />
+        <Property Name="TargetSiteId" Type="Edm.Guid" />
+        <Property Name="TargetSiteUrl" Type="Edm.String" />
+        <Property Name="TargetUniqueId" Type="Edm.Guid" />
+        <Property Name="TargetWebId" Type="Edm.Guid" />
+        <Property Name="TargetWebServerRelativeUrl" Type="Edm.String" />
+        <Property Name="Type" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+      <EntityType Name="SPMachineLearningModelEntityData">
+        <Key>
+          <PropertyRef Name="Accuracy" />
+        </Key>
+        <Property Name="Accuracy" Type="Edm.Single" Nullable="false" />
+        <Property Name="ColumnId" Type="Edm.String" />
+        <Property Name="ColumnName" Type="Edm.String" />
+        <Property Name="ColumnType" Type="Edm.String" />
+        <Property Name="ContentTypeGroup" Type="Edm.String" />
+        <Property Name="ContentTypeId" Type="Edm.String" />
+        <Property Name="ContentTypeName" Type="Edm.String" />
+        <Property Name="Explanations" Type="Edm.String" />
+        <Property Name="LastTrained" Type="Edm.DateTime" />
+        <Property Name="ModelSettings" Type="Edm.String" />
+        <Property Name="Schemas" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="SPMachineLearningPublicationsEntityData">
+        <Key>
+          <PropertyRef Name="Comment" />
+        </Key>
+        <Property Name="Comment" Type="Edm.String" Nullable="false" />
+        <Property Name="Publications" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData)" />
+      </EntityType>
+      <EntityType Name="SPMachineLearningPublicationsResult">
+        <Key>
+          <PropertyRef Name="TotalFailures" />
+        </Key>
+        <Property Name="Details" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationResult)" />
+        <Property Name="TotalFailures" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TotalSuccesses" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="SPMachineLearningSampleEntityData">
+        <Key>
+          <PropertyRef Name="ExtractedText" />
+        </Key>
+        <Property Name="ExtractedText" Type="Edm.String" Nullable="false" />
+        <Property Name="Markups" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="SPMachineLearningWorkItemEntityData">
+        <Key>
+          <PropertyRef Name="IsFolder" />
+        </Key>
+        <Property Name="IsFolder" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="TargetServerRelativeUrl" Type="Edm.String" />
+        <Property Name="TargetSiteId" Type="Edm.Guid" />
+        <Property Name="TargetSiteUrl" Type="Edm.String" />
+        <Property Name="TargetUniqueId" Type="Edm.Guid" />
+        <Property Name="TargetWebId" Type="Edm.Guid" />
+        <Property Name="TargetWebServerRelativeUrl" Type="Edm.String" />
+        <Property Name="Type" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+      <Association Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_MachineLearningEnabled_Microsoft_Office_Server_ContentCenter_SPMachineLearningEnabled_MachineLearningEnabledPartner">
+        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled" Role="MachineLearningEnabled" Multiplicity="0..1" />
+        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" Role="MachineLearningEnabledPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Models_Microsoft_Office_Server_ContentCenter_SPMachineLearningModel_ModelsPartner">
+        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" Role="Models" Multiplicity="*" />
+        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" Role="ModelsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Publications_Microsoft_Office_Server_ContentCenter_SPMachineLearningPublication_PublicationsPartner">
+        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication" Role="Publications" Multiplicity="*" />
+        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" Role="PublicationsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Samples_Microsoft_Office_Server_ContentCenter_SPMachineLearningSample_SamplesPartner">
+        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample" Role="Samples" Multiplicity="*" />
+        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" Role="SamplesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_WorkItems_Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItem_WorkItemsPartner">
+        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem" Role="WorkItems" Multiplicity="*" />
+        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" Role="WorkItemsPartner" Multiplicity="0..1" />
       </Association>
     </Schema>
     <Schema Namespace="SP.CompliancePolicy" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -28639,210 +28861,6 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
-    </Schema>
-    <Schema Namespace="Microsoft.Office.Server.ContentCenter" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-      <ComplexType Name="SPMachineLearningPublicationEntityData">
-        <Property Name="ModelUniqueId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="TargetLibraryServerRelativeUrl" Type="Edm.String" />
-        <Property Name="TargetSiteUrl" Type="Edm.String" />
-        <Property Name="TargetWebServerRelativeUrl" Type="Edm.String" />
-        <Property Name="ViewOption" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="SPMachineLearningPublicationResult">
-        <Property Name="ErrorMessage" Type="Edm.String" />
-        <Property Name="Publication" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData" />
-        <Property Name="StatusCode" Type="Edm.Int32" Nullable="false" />
-      </ComplexType>
-      <EntityType Name="SPMachineLearningAzureCognitiveEntityData">
-        <Key>
-          <PropertyRef Name="ContentTypeGroup" />
-        </Key>
-        <Property Name="Columns" Type="Collection(SP.KeyValue)" />
-        <Property Name="ContentTypeGroup" Type="Edm.String" Nullable="false" />
-        <Property Name="ContentTypeName" Type="Edm.String" />
-      </EntityType>
-      <EntityType Name="SPMachineLearningEnabled">
-        <Key>
-          <PropertyRef Name="MachineLearningCaptureEnabled" />
-        </Key>
-        <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="MachineLearningExperienceEnabled" Type="Edm.Boolean" Nullable="false" />
-      </EntityType>
-      <EntityType Name="SPMachineLearningHub">
-        <Key>
-          <PropertyRef Name="IsDefaultContentCenter" />
-        </Key>
-        <Property Name="IsDefaultContentCenter" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
-        <NavigationProperty Name="MachineLearningEnabled" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_MachineLearningEnabled_Microsoft_Office_Server_ContentCenter_SPMachineLearningEnabled_MachineLearningEnabledPartner" ToRole="MachineLearningEnabled" FromRole="MachineLearningEnabledPartner" />
-        <NavigationProperty Name="Models" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Models_Microsoft_Office_Server_ContentCenter_SPMachineLearningModel_ModelsPartner" ToRole="Models" FromRole="ModelsPartner" />
-        <NavigationProperty Name="Publications" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Publications_Microsoft_Office_Server_ContentCenter_SPMachineLearningPublication_PublicationsPartner" ToRole="Publications" FromRole="PublicationsPartner" />
-        <NavigationProperty Name="Samples" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Samples_Microsoft_Office_Server_ContentCenter_SPMachineLearningSample_SamplesPartner" ToRole="Samples" FromRole="SamplesPartner" />
-        <NavigationProperty Name="WorkItems" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_WorkItems_Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItem_WorkItemsPartner" ToRole="WorkItems" FromRole="WorkItemsPartner" />
-      </EntityType>
-      <EntityType Name="SPMachineLearningModel">
-        <Key>
-          <PropertyRef Name="ConfidenceScore" />
-        </Key>
-        <Property Name="ConfidenceScore" Type="Edm.String" Nullable="false" />
-        <Property Name="ContentTypeGroup" Type="Edm.String" />
-        <Property Name="ContentTypeId" Type="Edm.String" />
-        <Property Name="ContentTypeName" Type="Edm.String" />
-        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="CreatedBy" Type="Edm.String" />
-        <Property Name="DriveId" Type="Edm.String" />
-        <Property Name="Explanations" Type="Edm.String" />
-        <Property Name="ID" Type="Edm.Int32" Nullable="false" />
-        <Property Name="LastTrained" Type="Edm.DateTime" />
-        <Property Name="ListID" Type="Edm.Guid" Nullable="false" />
-        <Property Name="ModelSettings" Type="Edm.String" />
-        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="ModifiedBy" Type="Edm.String" />
-        <Property Name="ObjectId" Type="Edm.String" />
-        <Property Name="Schemas" Type="Edm.String" />
-        <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
-      </EntityType>
-      <EntityType Name="SPMachineLearningPublication">
-        <Key>
-          <PropertyRef Name="Created" />
-        </Key>
-        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="CreatedBy" Type="Edm.String" />
-        <Property Name="DriveId" Type="Edm.String" />
-        <Property Name="ID" Type="Edm.Int32" Nullable="false" />
-        <Property Name="ModelId" Type="Edm.Int32" Nullable="false" />
-        <Property Name="ModelName" Type="Edm.String" />
-        <Property Name="ModelType" Type="Edm.Int32" Nullable="false" />
-        <Property Name="ModelUniqueId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="ModelVersion" Type="Edm.String" />
-        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="ModifiedBy" Type="Edm.String" />
-        <Property Name="ObjectId" Type="Edm.String" />
-        <Property Name="TargetLibraryRemoved" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="TargetLibraryServerRelativeUrl" Type="Edm.String" />
-        <Property Name="TargetLibraryUrl" Type="Edm.String" />
-        <Property Name="TargetSiteUrl" Type="Edm.String" />
-        <Property Name="TargetWebServerRelativeUrl" Type="Edm.String" />
-        <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="ViewOption" Type="Edm.String" />
-      </EntityType>
-      <EntityType Name="SPMachineLearningSample">
-        <Key>
-          <PropertyRef Name="Created" />
-        </Key>
-        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="CreatedBy" Type="Edm.String" />
-        <Property Name="CreatedByName" Type="Edm.String" />
-        <Property Name="DriveId" Type="Edm.String" />
-        <Property Name="Etag" Type="Edm.String" />
-        <Property Name="ExtractedText" Type="Edm.String" />
-        <Property Name="FileLeafRef" Type="Edm.String" />
-        <Property Name="FileRef" Type="Edm.String" />
-        <Property Name="FileType" Type="Edm.String" />
-        <Property Name="FSObjType" Type="Edm.Int32" Nullable="false" />
-        <Property Name="ID" Type="Edm.Int32" Nullable="false" />
-        <Property Name="ListID" Type="Edm.Guid" Nullable="false" />
-        <Property Name="Markups" Type="Edm.String" />
-        <Property Name="ModelIds" Type="Collection(Edm.Int32)" Nullable="false" />
-        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="ModifiedBy" Type="Edm.String" />
-        <Property Name="ModifiedByName" Type="Edm.String" />
-        <Property Name="ObjectId" Type="Edm.String" />
-        <Property Name="ServerRedirectedEmbedUri" Type="Edm.String" />
-        <Property Name="Title" Type="Edm.String" />
-        <Property Name="TokenEndPosition" Type="Collection(Edm.Int32)" Nullable="false" />
-        <Property Name="TokenStartPosition" Type="Collection(Edm.Int32)" Nullable="false" />
-        <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
-      </EntityType>
-      <EntityType Name="SPMachineLearningWorkItem">
-        <Key>
-          <PropertyRef Name="Created" />
-        </Key>
-        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="DeliverDate" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="ErrorMessage" Type="Edm.String" />
-        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
-        <Property Name="Status" Type="Edm.String" />
-        <Property Name="StatusCode" Type="Edm.Int32" Nullable="false" />
-        <Property Name="TargetServerRelativeUrl" Type="Edm.String" />
-        <Property Name="TargetSiteId" Type="Edm.Guid" />
-        <Property Name="TargetSiteUrl" Type="Edm.String" />
-        <Property Name="TargetUniqueId" Type="Edm.Guid" />
-        <Property Name="TargetWebId" Type="Edm.Guid" />
-        <Property Name="TargetWebServerRelativeUrl" Type="Edm.String" />
-        <Property Name="Type" Type="Edm.Guid" Nullable="false" />
-      </EntityType>
-      <EntityType Name="SPMachineLearningModelEntityData">
-        <Key>
-          <PropertyRef Name="Accuracy" />
-        </Key>
-        <Property Name="Accuracy" Type="Edm.Single" Nullable="false" />
-        <Property Name="ColumnId" Type="Edm.String" />
-        <Property Name="ColumnName" Type="Edm.String" />
-        <Property Name="ColumnType" Type="Edm.String" />
-        <Property Name="ContentTypeGroup" Type="Edm.String" />
-        <Property Name="ContentTypeId" Type="Edm.String" />
-        <Property Name="ContentTypeName" Type="Edm.String" />
-        <Property Name="Explanations" Type="Edm.String" />
-        <Property Name="LastTrained" Type="Edm.DateTime" />
-        <Property Name="ModelSettings" Type="Edm.String" />
-        <Property Name="Schemas" Type="Edm.String" />
-      </EntityType>
-      <EntityType Name="SPMachineLearningPublicationsEntityData">
-        <Key>
-          <PropertyRef Name="Comment" />
-        </Key>
-        <Property Name="Comment" Type="Edm.String" Nullable="false" />
-        <Property Name="Publications" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData)" />
-      </EntityType>
-      <EntityType Name="SPMachineLearningPublicationsResult">
-        <Key>
-          <PropertyRef Name="TotalFailures" />
-        </Key>
-        <Property Name="Details" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationResult)" />
-        <Property Name="TotalFailures" Type="Edm.Int32" Nullable="false" />
-        <Property Name="TotalSuccesses" Type="Edm.Int32" Nullable="false" />
-      </EntityType>
-      <EntityType Name="SPMachineLearningSampleEntityData">
-        <Key>
-          <PropertyRef Name="ExtractedText" />
-        </Key>
-        <Property Name="ExtractedText" Type="Edm.String" Nullable="false" />
-        <Property Name="Markups" Type="Edm.String" />
-      </EntityType>
-      <EntityType Name="SPMachineLearningWorkItemEntityData">
-        <Key>
-          <PropertyRef Name="IsFolder" />
-        </Key>
-        <Property Name="IsFolder" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="TargetServerRelativeUrl" Type="Edm.String" />
-        <Property Name="TargetSiteId" Type="Edm.Guid" />
-        <Property Name="TargetSiteUrl" Type="Edm.String" />
-        <Property Name="TargetUniqueId" Type="Edm.Guid" />
-        <Property Name="TargetWebId" Type="Edm.Guid" />
-        <Property Name="TargetWebServerRelativeUrl" Type="Edm.String" />
-        <Property Name="Type" Type="Edm.Guid" Nullable="false" />
-      </EntityType>
-      <Association Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_MachineLearningEnabled_Microsoft_Office_Server_ContentCenter_SPMachineLearningEnabled_MachineLearningEnabledPartner">
-        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled" Role="MachineLearningEnabled" Multiplicity="0..1" />
-        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" Role="MachineLearningEnabledPartner" Multiplicity="0..1" />
-      </Association>
-      <Association Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Models_Microsoft_Office_Server_ContentCenter_SPMachineLearningModel_ModelsPartner">
-        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" Role="Models" Multiplicity="*" />
-        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" Role="ModelsPartner" Multiplicity="0..1" />
-      </Association>
-      <Association Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Publications_Microsoft_Office_Server_ContentCenter_SPMachineLearningPublication_PublicationsPartner">
-        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication" Role="Publications" Multiplicity="*" />
-        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" Role="PublicationsPartner" Multiplicity="0..1" />
-      </Association>
-      <Association Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Samples_Microsoft_Office_Server_ContentCenter_SPMachineLearningSample_SamplesPartner">
-        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample" Role="Samples" Multiplicity="*" />
-        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" Role="SamplesPartner" Multiplicity="0..1" />
-      </Association>
-      <Association Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_WorkItems_Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItem_WorkItemsPartner">
-        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem" Role="WorkItems" Multiplicity="*" />
-        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" Role="WorkItemsPartner" Multiplicity="0..1" />
-      </Association>
     </Schema>
     <Schema Namespace="SP.WorkManagement.OM" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="BaseSession">
