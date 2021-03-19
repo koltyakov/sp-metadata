@@ -90,6 +90,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [OrganizationNewsSiteReference](./ComplexTypes/OrganizationNewsSiteReference.md) | ✅ | ❌ | ❌ | ❌
 [ParameterInformation](./ComplexTypes/ParameterInformation.md) | ✅ | ✅ | ✅ | ✅
 [PivotItem](./ComplexTypes/PivotItem.md) | ✅ | ❌ | ❌ | ❌
+[Placeholder](./ComplexTypes/Placeholder.md) | ✅ | ❌ | ❌ | ❌
 [PortalAndOrgNewsSiteReference](./ComplexTypes/PortalAndOrgNewsSiteReference.md) | ✅ | ❌ | ❌ | ❌
 [PropertyInformation](./ComplexTypes/PropertyInformation.md) | ✅ | ✅ | ✅ | ✅
 [ProvisionedMigrationContainersInfo](./ComplexTypes/ProvisionedMigrationContainersInfo.md) | ✅ | ✅ | ❌ | ❌

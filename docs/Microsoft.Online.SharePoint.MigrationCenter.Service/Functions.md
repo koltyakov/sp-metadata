@@ -6,6 +6,7 @@ Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 BatchCreate (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask)) | ✅ | ❌ | ❌ | ❌
 BatchDelete (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask)) | ✅ | ❌ | ❌ | ❌
+BatchRandomCreate (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData)) | ✅ | ❌ | ❌ | ❌
 Create (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage) | ✅ | ❌ | ❌ | ❌
 CreateByName (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroup)) | ✅ | ❌ | ❌ | ❌
 CreateDuplicateTasks (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask)) | ✅ | ❌ | ❌ | ❌
@@ -16,11 +17,14 @@ DeleteObject (Microsoft.Online.SharePoint.MigrationCenter.Service.Device) | ✅ 
 DeleteObject (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage) | ✅ | ❌ | ❌ | ❌
 DeleteObject (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential) | ✅ | ❌ | ❌ | ❌
 DeleteObject (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask) | ✅ | ❌ | ❌ | ❌
+DeleteObject (Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData) | ✅ | ❌ | ❌ | ❌
 GetById (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.Device)) | ✅ | ❌ | ❌ | ❌
 GetById (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential)) | ✅ | ❌ | ❌ | ❌
 GetById (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask)) | ✅ | ❌ | ❌ | ❌
+GetById (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData)) | ✅ | ❌ | ❌ | ❌
 GetByName (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroup)) | ✅ | ❌ | ❌ | ❌
 GetCredentials (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential)) | ✅ | ❌ | ❌ | ❌
+GetData (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData)) | ✅ | ❌ | ❌ | ❌
 GetGroupList (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroup)) | ✅ | ❌ | ❌ | ❌
 GetProperty (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationProperties) | ✅ | ❌ | ❌ | ❌
 IsChangeDeployed (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterDeployStatus) | ✅ | ❌ | ❌ | ❌
@@ -35,6 +39,7 @@ IsFlightEnabled (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationSP
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationProperties">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service MigrationProperties) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationSPFlight">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service MigrationSPFlight) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationTask">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service MigrationTask) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Online_SharePoint_MigrationCenter_Service_PerformanceData">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service PerformanceData) | ✅ | ❌ | ❌ | ❌
 ParseUrl (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage) | ✅ | ❌ | ❌ | ❌
 SetProperty (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationProperties) | ✅ | ❌ | ❌ | ❌
 TeamChannels (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterTeams) | ✅ | ❌ | ❌ | ❌

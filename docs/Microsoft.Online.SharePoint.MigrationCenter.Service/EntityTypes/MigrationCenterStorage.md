@@ -11,8 +11,10 @@ DebugCommand (Edm.String) | ✅ | ❌ | ❌ | ❌
 DeviceCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 GlobalTaskSettings (Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskSettings) | ✅ | ❌ | ❌ | ❌
 IsServiceInitialized (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+PerformanceDataCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SchedulerInformation (Microsoft.Online.SharePoint.MigrationCenter.Common.TaskSchedulerInformation) | ✅ | ❌ | ❌ | ❌
 SchemaVersion (Edm.String) | ✅ | ❌ | ❌ | ❌
 TaskCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 TotalDevicesAdded (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+TotalPerformanceDataAdded (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 TotalTasksAdded (Edm.Int32) | ✅ | ❌ | ❌ | ❌

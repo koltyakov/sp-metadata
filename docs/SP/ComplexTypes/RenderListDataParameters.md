@@ -26,4 +26,5 @@ Paging (Edm.String) | ✅ | ✅ | ✅ | ❌
 RenderOptions (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 RenderURLFieldInJSON (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ReplaceGroup (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
+ShowStubFile (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ViewXml (Edm.String) | ✅ | ✅ | ✅ | ❌

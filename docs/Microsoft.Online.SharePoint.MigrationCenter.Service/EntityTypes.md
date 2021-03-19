@@ -14,3 +14,4 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [MigrationProperties](./EntityTypes/MigrationProperties.md) | ✅ | ❌ | ❌ | ❌
 [MigrationSPFlight](./EntityTypes/MigrationSPFlight.md) | ✅ | ❌ | ❌ | ❌
 [MigrationTask](./EntityTypes/MigrationTask.md) | ✅ | ❌ | ❌ | ❌
+[PerformanceData](./EntityTypes/PerformanceData.md) | ✅ | ❌ | ❌ | ❌

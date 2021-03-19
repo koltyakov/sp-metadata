@@ -268,6 +268,7 @@ GetChanges (SP.Site) | ✅ | ✅ | ✅ | ✅
 GetChanges (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetCheckedOutFiles (SP.List) | ✅ | ✅ | ❌ | ❌
 GetClientSideComponents (SP.Web) | ✅ | ✅ | ❌ | ❌
+GetClientSideComponentsByComponentType (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetClientSideComponentsById (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetClientSideWebParts (SP.Web) | ✅ | ✅ | ✅ | ❌
 GetComments (SP.ListItem) | ✅ | ❌ | ❌ | ❌
@@ -319,11 +320,13 @@ GetListUsingPath (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetLookupFieldChoices (SP.List) | ✅ | ❌ | ❌ | ❌
 GetMappedApp (SP.List) | ✅ | ✅ | ❌ | ❌
 GetMappedApps (SP.List) | ✅ | ✅ | ❌ | ❌
+GetMediaServiceMetadata (SP.File) | ✅ | ❌ | ❌ | ❌
 GetMigrationJobStatus (SP.Site) | ✅ | ✅ | ✅ | ❌
 GetMigrationStatus (SP.Site) | ✅ | ✅ | ✅ | ❌
 GetNewsList (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetNodeById (SP.Navigation) | ✅ | ✅ | ✅ | ✅
 GetOnePageContextAsStream (SP.Web) | ❌ | ✅ | ❌ | ❌
+GetPlaceholdersMetadata (SP.List) | ✅ | ❌ | ❌ | ❌
 GetPreAuthorizedAccessUrl (SP.File) | ✅ | ✅ | ✅ | ❌
 GetPreAuthorizedAccessUrl2 (SP.File) | ✅ | ❌ | ❌ | ❌
 GetPreviousAppVersion (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
@@ -580,6 +583,7 @@ SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌
 [SP_Site_Exists](./Functions/SP_Site_Exists.md) | ✅ | ✅ | ❌ | ❌
 [SP_Site_GetUrlById](./Functions/SP_Site_GetUrlById.md) | ✅ | ❌ | ❌ | ❌
 [SP_Site_GetUrlByIdForWeb](./Functions/SP_Site_GetUrlByIdForWeb.md) | ✅ | ❌ | ❌ | ❌
+[SP_SmartCache_Update](./Functions/SP_SmartCache_Update.md) | ✅ | ❌ | ❌ | ❌
 [SP_TeamChannelManager_AddTeamChannel](./Functions/SP_TeamChannelManager_AddTeamChannel.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_DemoteTeamChannelById](./Functions/SP_TeamChannelManager_DemoteTeamChannelById.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_DemoteTeamChannelByPath](./Functions/SP_TeamChannelManager_DemoteTeamChannelByPath.md) | ✅ | ✅ | ❌ | ❌
@@ -625,6 +629,7 @@ SetFileUserValue (SP.File) | ✅ | ❌ | ❌ | ❌
 SetGlobalNavSettings (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetId (SP.TimeZone) | ✅ | ❌ | ❌ | ❌
 SetItemsOrder (SP.List) | ✅ | ❌ | ❌ | ❌
+SetMediaServiceMetadata (SP.File) | ✅ | ❌ | ❌ | ❌
 SetNotificationRecipients (SP.MultilingualSettings) | ✅ | ❌ | ❌ | ❌
 [SetQuizState](./Functions/SetQuizState.md) | ❌ | ❌ | ❌ | ✅
 SetShowInDisplayForm (SP.Field) | ✅ | ✅ | ✅ | ✅
@@ -746,6 +751,7 @@ UpdateEx (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 UpdateFormProcessingModelRetentionLabel (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateHashtags (SP.ListItem) | ❌ | ✅ | ❌ | ❌
 UpdateOverwriteVersion (SP.ListItem) | ✅ | ✅ | ❌ | ❌
+UpdatePlaceholdersMetadata (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateRule (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateVirusInfo (SP.File) | ✅ | ✅ | ❌ | ❌
 Upgrade (SP.AppInstance) | ✅ | ✅ | ✅ | ✅

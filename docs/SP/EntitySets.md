@@ -246,6 +246,7 @@ MigrationCenterServicess | ✅ | ❌ | ❌ | ❌
 MigrationCenterStorages | ✅ | ❌ | ❌ | ❌
 MigrationCenterTeamss | ✅ | ❌ | ❌ | ❌
 MigrationCredentialEntityDatas | ✅ | ❌ | ❌ | ❌
+MigrationPerformanceEntityDatas | ✅ | ❌ | ❌ | ❌
 MigrationPropertiess | ✅ | ❌ | ❌ | ❌
 MigrationSPFlights | ✅ | ❌ | ❌ | ❌
 MigrationTaskEntityDatas | ✅ | ❌ | ❌ | ❌
@@ -469,6 +470,8 @@ SiteSharingReportHelpers | ✅ | ❌ | ❌ | ❌
 SiteUrls | ✅ | ✅ | ✅ | ✅
 Sitelinkingmanagers | ✅ | ✅ | ❌ | ❌
 Sites | ✅ | ✅ | ✅ | ✅
+SmartCacheItems | ✅ | ❌ | ❌ | ❌
+SmartCaches | ✅ | ❌ | ❌ | ❌
 SocialAnnouncementManagers | ✅ | ✅ | ✅ | ❌
 SocialFeedManagers | ✅ | ✅ | ✅ | ✅
 SocialFollowingManagers | ✅ | ✅ | ✅ | ✅
