@@ -116,6 +116,15 @@
         <Property Name="jobId" Type="Edm.Guid" Nullable="false" />
         <Property Name="userId" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="Placeholder">
+        <Property Name="DataType" Type="Edm.String" />
+        <Property Name="EndPosition" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Id" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="QuestionTitle" Type="Edm.String" />
+        <Property Name="Source" Type="Edm.String" />
+        <Property Name="StartPosition" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="RelatedItem">
         <Property Name="IconUrl" Type="Edm.String" />
         <Property Name="ItemId" Type="Edm.Int32" Nullable="false" />
@@ -813,6 +822,7 @@
         <Property Name="RenderOptions" Type="Edm.Int32" Nullable="false" />
         <Property Name="RenderURLFieldInJSON" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ReplaceGroup" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ShowStubFile" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ViewXml" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="RenderListFilterDataParameters">
@@ -1656,6 +1666,7 @@
         <Property Name="ColumnWidth" Type="Edm.String" />
         <Property Name="ContentTypeId" Type="SP.ContentTypeId" />
         <Property Name="CustomFormatter" Type="Edm.String" />
+        <Property Name="CustomOrder" Type="Edm.String" />
         <Property Name="DefaultView" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DefaultViewForContentType" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EditorModified" Type="Edm.Boolean" Nullable="false" />
@@ -2485,6 +2496,12 @@
         <NavigationProperty Name="GroupsSharedWith" Relationship="SP.SP_SharingResult_GroupsSharedWith_SP_Group_GroupsSharedWithPartner" ToRole="GroupsSharedWith" FromRole="GroupsSharedWithPartner" />
         <NavigationProperty Name="GroupUsersAddedTo" Relationship="SP.SP_SharingResult_GroupUsersAddedTo_SP_Group_GroupUsersAddedToPartner" ToRole="GroupUsersAddedTo" FromRole="GroupUsersAddedToPartner" />
         <NavigationProperty Name="UsersWithAccessRequests" Relationship="SP.SP_SharingResult_UsersWithAccessRequests_SP_User_UsersWithAccessRequestsPartner" ToRole="UsersWithAccessRequests" FromRole="UsersWithAccessRequestsPartner" />
+      </EntityType>
+      <EntityType Name="SmartCache" Abstract="true">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
       <EntityType Name="AccessRequests" Abstract="true">
         <Key>
@@ -3779,6 +3796,7 @@
         <EntitySet Name="AgentGroupEntitys" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.AgentGroupEntity" />
         <EntitySet Name="DeviceEntityDatas" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.DeviceEntityData" />
         <EntitySet Name="MigrationCredentialEntityDatas" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationCredentialEntityData" />
+        <EntitySet Name="MigrationPerformanceEntityDatas" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationPerformanceEntityData" />
         <EntitySet Name="MigrationTaskEntityDatas" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskEntityData" />
         <EntitySet Name="ChannelResources" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.Teams.ChannelResource" />
         <EntitySet Name="TeamResources" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.Teams.TeamResource" />
@@ -3915,6 +3933,7 @@
         <EntitySet Name="SharedWithMeDocuments" EntityType="Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocument" />
         <EntitySet Name="RecentDocuments" EntityType="Microsoft.SharePoint.Portal.WebControls.RecentDocument" />
         <EntitySet Name="BaseCustomPropertys" EntityType="Microsoft.SharePoint.Publishing.RestOnly.BaseCustomProperty" />
+        <EntitySet Name="SmartCacheItems" EntityType="Microsoft.SharePoint.SmartCache.SmartCacheItem" />
         <EntitySet Name="TenantCdnApis" EntityType="Microsoft.SharePoint.TenantCdn.TenantCdnApi" />
         <EntitySet Name="UserActionAPIs" EntityType="Microsoft.SharePoint.UserActions.UserActionAPI" />
         <EntitySet Name="DesignPackageMenuContentss" EntityType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.DesignPackageMenuContents" />
@@ -4176,6 +4195,7 @@
         <EntitySet Name="SharingUtilitys" EntityType="SP.SharingUtility" />
         <EntitySet Name="SiteHealthSummarys" EntityType="SP.SiteHealth.SiteHealthSummary" />
         <EntitySet Name="SiteUrls" EntityType="SP.SiteUrl" />
+        <EntitySet Name="SmartCaches" EntityType="SP.SmartCache" />
         <EntitySet Name="SocialAnnouncementManagers" EntityType="SP.Social.SocialAnnouncementManager" />
         <EntitySet Name="SocialFeedManagers" EntityType="SP.Social.SocialFeedManager" />
         <EntitySet Name="SocialFollowingManagers" EntityType="SP.Social.SocialFollowingManager" />
@@ -4969,6 +4989,10 @@
           <Parameter Name="groupId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" IsComposable="true" EntitySet="Machinelearnings" />
+        <FunctionImport Name="CreateSite" ReturnType="Edm.Guid" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
+          <Parameter Name="siteCreationProperties" Type="Microsoft.Office.Server.ContentCenter.SiteCreationProperties" />
+        </FunctionImport>
         <FunctionImport Name="GetModelIdForContentType" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
           <Parameter Name="contentTypeName" Type="Edm.String" />
@@ -5121,6 +5145,7 @@
           <Parameter Name="tenantId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="scopeId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_GetAdvancedRecordVersioningDisabled" ReturnType="Edm.Boolean" IsSideEffecting="false" />
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_GetAvailableTagsForSite" ReturnType="Collection(SP.CompliancePolicy.ComplianceTag)" IsSideEffecting="false">
           <Parameter Name="siteUrl" Type="Edm.String" />
         </FunctionImport>
@@ -5211,6 +5236,9 @@
           <Parameter Name="originalTagName" Type="Edm.String" />
           <Parameter Name="newTagName" Type="Edm.String" />
           <Parameter Name="newTagMetas" Type="Collection(Edm.String)" />
+        </FunctionImport>
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_SetAdvancedRecordVersioningDisabled">
+          <Parameter Name="disabled" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_SetComplianceTagOnBulkItems" ReturnType="Collection(Edm.Int32)">
           <Parameter Name="itemIds" Type="Collection(Edm.Int32)" Nullable="false" />
@@ -9999,6 +10027,10 @@
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="visualizationAppTarget" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="GetPlaceholdersMetadata" ReturnType="Collection(SP.Placeholder)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="Name" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="GetRelatedFields" ReturnType="Collection(SP.RelatedField)" IsComposable="true" IsBindable="true" EntitySet="RelatedFields">
           <Parameter Name="this" Type="SP.List" />
         </FunctionImport>
@@ -10263,6 +10295,11 @@
         <FunctionImport Name="UpdateFormProcessingModelRetentionLabel" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="retentionLabel" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="UpdatePlaceholdersMetadata" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="Name" Type="Edm.String" />
+          <Parameter Name="placeholders" Type="Collection(SP.Placeholder)" />
         </FunctionImport>
         <FunctionImport Name="UpdateRule" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -10570,6 +10607,13 @@
         <FunctionImport Name="GetClientSideComponents" ReturnType="Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult)" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="components" Type="Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentIdentifier)" />
+          <Parameter Name="project" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetClientSideComponentsByComponentType" ReturnType="Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="componentTypesString" Type="Edm.String" />
+          <Parameter Name="supportedHostTypeValue" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="includeErrors" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="project" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetClientSideComponentsById" ReturnType="Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult)" IsSideEffecting="false" IsBindable="true">
@@ -10980,6 +11024,9 @@
           <Parameter Name="compatibilityLevel" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_ServerSettings_IsSharePointOnline" ReturnType="Edm.Boolean" />
+        <FunctionImport Name="SP_SmartCache_Update">
+          <Parameter Name="smartCacheJson" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="SP_AccessRequests_ChangeRequestStatus">
           <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="newStatus" Type="Edm.Int32" Nullable="false" />
@@ -11786,6 +11833,9 @@
           <Parameter Name="this" Type="SP.File" />
           <Parameter Name="scope" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="GetMediaServiceMetadata" ReturnType="SP.MediaServiceUpdateParameters" IsBindable="true">
+          <Parameter Name="this" Type="SP.File" />
+        </FunctionImport>
         <FunctionImport Name="GetPreAuthorizedAccessUrl" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.File" />
           <Parameter Name="expirationHours" Type="Edm.Int32" Nullable="false" />
@@ -11843,6 +11893,10 @@
           <Parameter Name="this" Type="SP.File" />
           <Parameter Name="key" Type="Edm.String" />
           <Parameter Name="value" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SetMediaServiceMetadata" IsBindable="true">
+          <Parameter Name="this" Type="SP.File" />
+          <Parameter Name="parameters" Type="SP.MediaServiceUpdateParameters" />
         </FunctionImport>
         <FunctionImport Name="StartUpload" ReturnType="Edm.Int64" IsBindable="true">
           <Parameter Name="this" Type="SP.File" />
@@ -13685,6 +13739,25 @@
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MigrationCenter.Service.Device" />
         </FunctionImport>
+        <FunctionImport Name="BatchRandomCreate" ReturnType="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData)" IsBindable="true" EntitySet="MigrationPerformanceEntityDatas">
+          <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData)" />
+          <Parameter Name="n" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetById" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData" IsComposable="true" IsBindable="true" EntitySet="MigrationPerformanceEntityDatas">
+          <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData)" />
+          <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetData" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceDashBoardData" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData)" />
+          <Parameter Name="StartTime" Type="Edm.DateTime" Nullable="false" />
+          <Parameter Name="EndTime" Type="Edm.DateTime" Nullable="false" />
+          <Parameter Name="AgentId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="ThroughputType" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_MigrationCenter_Service_PerformanceData" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData" IsComposable="true" EntitySet="MigrationPerformanceEntityDatas" />
+        <FunctionImport Name="DeleteObject" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationProperties" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationProperties" IsComposable="true" EntitySet="MigrationPropertiess" />
         <FunctionImport Name="Delete" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationProperties" />
@@ -13737,6 +13810,7 @@
         <FunctionImport Name="Microsoft_Online_SharePoint_MigrationCenter_Common_AgentGroupEntity" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Common.AgentGroupEntity" IsComposable="true" EntitySet="AgentGroupEntitys" />
         <FunctionImport Name="Microsoft_Online_SharePoint_MigrationCenter_Common_MigrationCredentialEntityData" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationCredentialEntityData" IsComposable="true" EntitySet="MigrationCredentialEntityDatas" />
         <FunctionImport Name="Microsoft_Online_SharePoint_MigrationCenter_Common_DeviceEntityData" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Common.DeviceEntityData" IsComposable="true" EntitySet="DeviceEntityDatas" />
+        <FunctionImport Name="Microsoft_Online_SharePoint_MigrationCenter_Common_MigrationPerformanceEntityData" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationPerformanceEntityData" IsComposable="true" EntitySet="MigrationPerformanceEntityDatas" />
         <FunctionImport Name="Microsoft_Online_SharePoint_MigrationCenter_Common_MigrationTaskEntityData" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskEntityData" IsComposable="true" EntitySet="MigrationTaskEntityDatas" />
         <FunctionImport Name="Microsoft_Online_SharePoint_AppLauncher_AppLauncher" ReturnType="Microsoft.Online.SharePoint.AppLauncher.AppLauncher" IsComposable="true" EntitySet="AppLaunchers" />
         <FunctionImport Name="GetData" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
@@ -14165,6 +14239,10 @@
         <AssociationSet Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Devices_Microsoft_Online_SharePoint_MigrationCenter_Service_Device_DevicesPartnerSet" Association="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Devices_Microsoft_Online_SharePoint_MigrationCenter_Service_Device_DevicesPartner">
           <End Role="DevicesPartner" EntitySet="MigrationCenterServicess" />
           <End Role="Devices" EntitySet="DeviceEntityDatas" />
+        </AssociationSet>
+        <AssociationSet Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_PerformanceData_Microsoft_Online_SharePoint_MigrationCenter_Service_PerformanceData_PerformanceDataPartnerSet" Association="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_PerformanceData_Microsoft_Online_SharePoint_MigrationCenter_Service_PerformanceData_PerformanceDataPartner">
+          <End Role="PerformanceDataPartner" EntitySet="MigrationCenterServicess" />
+          <End Role="PerformanceData" EntitySet="MigrationPerformanceEntityDatas" />
         </AssociationSet>
         <AssociationSet Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Properties_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationProperties_PropertiesPartnerSet" Association="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Properties_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationProperties_PropertiesPartner">
           <End Role="PropertiesPartner" EntitySet="MigrationCenterServicess" />
@@ -15631,6 +15709,27 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.ColumnDef/Type">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SiteCreationProperties">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SiteCreationProperties/CompatibilityLevel">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SiteCreationProperties/Lcid">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SiteCreationProperties/Owner">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SiteCreationProperties/TimeZoneId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SiteCreationProperties/Title">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SiteCreationProperties/Url">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16523,6 +16622,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.RenderListDataParameters/ReplaceGroup">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.RenderListDataParameters/ShowStubFile">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.SensitivityLabelInfo">
@@ -18263,6 +18365,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.TenantCdn.TenantCdnApi">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.SmartCache.SmartCacheItem">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.MicroService.MicroServiceManager">
@@ -20140,6 +20245,9 @@
       <Annotations Target="SP.ApiData/GetClientSideComponents(SP.Web, Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentIdentifier), Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetClientSideComponentsByComponentType(SP.Web, Edm.String, Edm.Int32, Edm.Boolean, Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetClientSideComponentsById(SP.Web, Collection(Edm.Guid), Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20279,6 +20387,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_RecentListCollection_UpdateRecentListsRemote(Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_SmartCache_Update(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_AppTileProperties_GetAppProperties(Edm.Guid, Edm.Int32, Edm.Guid, Edm.Int32, Edm.String, Edm.String, Edm.Boolean)">
@@ -20927,6 +21038,14 @@
       <ComplexType Name="ColumnDef">
         <Property Name="Name" Type="Edm.String" />
         <Property Name="Type" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SiteCreationProperties">
+        <Property Name="CompatibilityLevel" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Lcid" Type="Edm.String" />
+        <Property Name="Owner" Type="Edm.String" />
+        <Property Name="TimeZoneId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Title" Type="Edm.String" />
+        <Property Name="Url" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPAzureCognitiveModelEntityData">
         <Property Name="Columns" Type="Collection(Microsoft.Office.Server.ContentCenter.ColumnDef)" />
@@ -26847,6 +26966,7 @@
       </ComplexType>
       <ComplexType Name="OrgAssets">
         <Property Name="CentralAssetRepositoryLibraries" Type="Microsoft.SharePoint.Administration.OrgAssetsLibraryCollection" />
+        <Property Name="Domain" Type="SP.ResourcePath" />
         <Property Name="OrgAssetsLibraries" Type="Microsoft.SharePoint.Administration.OrgAssetsLibraryCollection" />
         <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="Url" Type="SP.ResourcePath" />
@@ -28446,6 +28566,15 @@
       </Association>
     </Schema>
     <Schema Namespace="Microsoft.Online.SharePoint.MigrationCenter.Service" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="PerformanceDashBoardData">
+        <Property Name="BottleneckList" Type="Collection(Edm.String)" />
+        <Property Name="RecommendationList" Type="Collection(Edm.String)" />
+        <Property Name="ThroughputTrend" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.Point)" />
+      </ComplexType>
+      <ComplexType Name="Point">
+        <Property Name="Throughput" Type="Edm.Int64" Nullable="false" />
+        <Property Name="Timestamp" Type="Edm.DateTime" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="MigrationProperty">
         <Property Name="key" Type="Edm.String" />
         <Property Name="updatedTimeUtc" Type="Edm.DateTime" Nullable="false" />
@@ -28493,12 +28622,14 @@
         <NavigationProperty Name="AgentGroups" Relationship="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_AgentGroups_Microsoft_Online_SharePoint_MigrationCenter_Service_AgentGroup_AgentGroupsPartner" ToRole="AgentGroups" FromRole="AgentGroupsPartner" />
         <NavigationProperty Name="DeployStatus" Relationship="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_DeployStatus_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterDeployStatus_DeployStatusPartner" ToRole="DeployStatus" FromRole="DeployStatusPartner" />
         <NavigationProperty Name="Devices" Relationship="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Devices_Microsoft_Online_SharePoint_MigrationCenter_Service_Device_DevicesPartner" ToRole="Devices" FromRole="DevicesPartner" />
+        <NavigationProperty Name="PerformanceData" Relationship="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_PerformanceData_Microsoft_Online_SharePoint_MigrationCenter_Service_PerformanceData_PerformanceDataPartner" ToRole="PerformanceData" FromRole="PerformanceDataPartner" />
         <NavigationProperty Name="Properties" Relationship="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Properties_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationProperties_PropertiesPartner" ToRole="Properties" FromRole="PropertiesPartner" />
         <NavigationProperty Name="SPFlight" Relationship="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_SPFlight_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationSPFlight_SPFlightPartner" ToRole="SPFlight" FromRole="SPFlightPartner" />
         <NavigationProperty Name="Storage" Relationship="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Storage_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterStorage_StoragePartner" ToRole="Storage" FromRole="StoragePartner" />
         <NavigationProperty Name="Tasks" Relationship="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Tasks_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationTask_TasksPartner" ToRole="Tasks" FromRole="TasksPartner" />
         <NavigationProperty Name="Teams" Relationship="Microsoft.Online.SharePoint.MigrationCenter.Service.Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Teams_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterTeams_TeamsPartner" ToRole="Teams" FromRole="TeamsPartner" />
       </EntityType>
+      <EntityType Name="PerformanceData" BaseType="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationPerformanceEntityData" />
       <EntityType Name="MigrationProperties">
         <Key>
           <PropertyRef Name="Count" />
@@ -28520,10 +28651,12 @@
         <Property Name="DeviceCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="GlobalTaskSettings" Type="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskSettings" />
         <Property Name="IsServiceInitialized" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="PerformanceDataCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="SchedulerInformation" Type="Microsoft.Online.SharePoint.MigrationCenter.Common.TaskSchedulerInformation" />
         <Property Name="SchemaVersion" Type="Edm.String" />
         <Property Name="TaskCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="TotalDevicesAdded" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TotalPerformanceDataAdded" Type="Edm.Int32" Nullable="false" />
         <Property Name="TotalTasksAdded" Type="Edm.Int32" Nullable="false" />
       </EntityType>
       <EntityType Name="MigrationTask" BaseType="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskEntityData">
@@ -28581,6 +28714,10 @@
       <Association Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Devices_Microsoft_Online_SharePoint_MigrationCenter_Service_Device_DevicesPartner">
         <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.Device" Role="Devices" Multiplicity="*" />
         <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterServices" Role="DevicesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_PerformanceData_Microsoft_Online_SharePoint_MigrationCenter_Service_PerformanceData_PerformanceDataPartner">
+        <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData" Role="PerformanceData" Multiplicity="*" />
+        <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterServices" Role="PerformanceDataPartner" Multiplicity="0..1" />
       </Association>
       <Association Name="Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationCenterServices_Properties_Microsoft_Online_SharePoint_MigrationCenter_Service_MigrationProperties_PropertiesPartner">
         <End Type="Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationProperties" Role="Properties" Multiplicity="0..1" />
@@ -28728,6 +28865,19 @@
         <Property Name="TaskQueueUrl" Type="Edm.String" />
         <Property Name="Version" Type="Edm.String" />
         <Property Name="WorkingFolder" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="MigrationPerformanceEntityData">
+        <Key>
+          <PropertyRef Name="AgentId" />
+        </Key>
+        <Property Name="AgentId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="AgentName" Type="Edm.String" />
+        <Property Name="Bottleneck" Type="Edm.String" />
+        <Property Name="MigratedBytes" Type="Edm.Int64" Nullable="false" />
+        <Property Name="MigratedFiles" Type="Edm.Int64" Nullable="false" />
+        <Property Name="Recommendation" Type="Edm.String" />
+        <Property Name="ResourceId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Timestamp" Type="Edm.DateTime" Nullable="false" />
       </EntityType>
       <EntityType Name="MigrationTaskEntityData">
         <Key>
@@ -29848,6 +29998,22 @@
         </Key>
         <Property Name="RequireJsScriptBlock" Type="Edm.String" Nullable="false" />
         <Property Name="ScenarioMapping" Type="Collection(SP.KeyValue)" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Microsoft.SharePoint.SmartCache" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="SmartCacheItem">
+        <Key>
+          <PropertyRef Name="contentClass" />
+        </Key>
+        <Property Name="contentClass" Type="Edm.String" Nullable="false" />
+        <Property Name="lastAccessDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="listId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="operation" Type="Edm.Int32" Nullable="false" />
+        <Property Name="properties" Type="Edm.String" />
+        <Property Name="siteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="spoId" Type="Edm.String" />
+        <Property Name="uniqueId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="webId" Type="Edm.Guid" Nullable="false" />
       </EntityType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.Packaging" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
