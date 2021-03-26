@@ -10,8 +10,8 @@ contentClass (Edm.String) | ✅ | ❌ | ❌ | ❌
 lastAccessDateTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 listId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 operation (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-properties (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 spoId (Edm.String) | ✅ | ❌ | ❌ | ❌
+spproperties (Edm.String) | ✅ | ❌ | ❌ | ❌
 uniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 webId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

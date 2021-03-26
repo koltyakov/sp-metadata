@@ -14,3 +14,4 @@ ModelVersion (Edm.String) | ✅ | ❌ | ❌ | ❌
 RetentionLabelFlags (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 RetentionLabelName (Edm.String) | ✅ | ❌ | ❌ | ❌
 RetryCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+SensitivityLabel (Edm.String) | ✅ | ❌ | ❌ | ❌

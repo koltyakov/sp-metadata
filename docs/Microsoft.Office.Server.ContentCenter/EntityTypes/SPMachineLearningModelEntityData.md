@@ -7,6 +7,7 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 Accuracy (Edm.Single) | ✅ | ❌ | ❌ | ❌
+BaseContentTypeName (Edm.String) | ✅ | ❌ | ❌ | ❌
 ColumnId (Edm.String) | ✅ | ❌ | ❌ | ❌
 ColumnName (Edm.String) | ✅ | ❌ | ❌ | ❌
 ColumnType (Edm.String) | ✅ | ❌ | ❌ | ❌

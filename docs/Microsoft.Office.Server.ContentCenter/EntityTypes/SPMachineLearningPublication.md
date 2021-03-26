@@ -18,6 +18,7 @@ ModelVersion (Edm.String) | ✅ | ❌ | ❌ | ❌
 Modified (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 ModifiedBy (Edm.String) | ✅ | ❌ | ❌ | ❌
 ObjectId (Edm.String) | ✅ | ❌ | ❌ | ❌
+PublicationType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 TargetLibraryRemoved (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 TargetLibraryServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetLibraryUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

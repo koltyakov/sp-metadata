@@ -10,6 +10,7 @@ DictionaryTerms (Edm.String) | ✅ | ❌ | ❌ | ❌
 OwnerType (Edm.String) | ✅ | ❌ | ❌ | ❌
 PercentagePromotedResult (Edm.String) | ✅ | ❌ | ❌ | ❌
 PromotedResultClicks (Edm.String) | ✅ | ❌ | ❌ | ❌
+PromotedResultId (Edm.String) | ✅ | ❌ | ❌ | ❌
 PromotedResultURL (Edm.String) | ✅ | ❌ | ❌ | ❌
 PromotedResultURLName (Edm.String) | ✅ | ❌ | ❌ | ❌
 QueryRule (Edm.String) | ✅ | ❌ | ❌ | ❌
