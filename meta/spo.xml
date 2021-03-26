@@ -335,6 +335,7 @@
         <Property Name="RetentionLabelFlags" Type="Edm.Int32" Nullable="false" />
         <Property Name="RetentionLabelName" Type="Edm.String" />
         <Property Name="RetryCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="SensitivityLabel" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="ListItemComplianceInfo">
         <Property Name="ComplianceTag" Type="Edm.String" />
@@ -5009,6 +5010,10 @@
         </FunctionImport>
         <FunctionImport Name="GetRetentionLabels" ReturnType="Collection(SP.CompliancePolicy.ComplianceTag)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
+        </FunctionImport>
+        <FunctionImport Name="VerifyModelUrls" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
+          <Parameter Name="urls" Type="Collection(Edm.String)" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningModelEntityData" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData" IsComposable="true" EntitySet="SPMachineLearningModelEntityDatas" />
         <FunctionImport Name="Copy" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsBindable="true" EntitySet="Models">
@@ -10557,6 +10562,7 @@
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="objectId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="tenantId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="principalType" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="ExecuteRemoteLOB" ReturnType="Edm.Stream" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
@@ -13421,6 +13427,9 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="secondaryAdministratorsFieldsData" Type="Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData" />
         </FunctionImport>
+        <FunctionImport Name="GetSiteSubscriptionId" ReturnType="Edm.Guid" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+        </FunctionImport>
         <FunctionImport Name="GetSPOAllWebTemplates" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection" IsComposable="true" IsBindable="true" EntitySet="SPOTenantWebTemplateCollections">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="cultureName" Type="Edm.String" />
@@ -15721,6 +15730,12 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SiteCreationProperties/Owner">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SiteCreationProperties/OwnerName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SiteCreationProperties/SiteUniName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SiteCreationProperties/TimeZoneId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -15731,6 +15746,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData/BaseContentTypeName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData/Columns">
@@ -16462,6 +16480,9 @@
       <Annotations Target="SP.ClassificationResult/RetryCount">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ClassificationResult/SensitivityLabel">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ListItemComplianceInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17065,6 +17086,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/ObjectId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/PublicationType">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/TargetLibraryRemoved">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17213,6 +17237,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/Accuracy">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/BaseContentTypeName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/ColumnId">
@@ -18965,6 +18992,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetRetentionLabels(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/VerifyModelUrls(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Collection(Edm.String))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningModelEntityData()">
@@ -21043,11 +21073,14 @@
         <Property Name="CompatibilityLevel" Type="Edm.Int32" Nullable="false" />
         <Property Name="Lcid" Type="Edm.String" />
         <Property Name="Owner" Type="Edm.String" />
+        <Property Name="OwnerName" Type="Edm.String" />
+        <Property Name="SiteUniName" Type="Edm.String" />
         <Property Name="TimeZoneId" Type="Edm.Int32" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
         <Property Name="Url" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPAzureCognitiveModelEntityData">
+        <Property Name="BaseContentTypeName" Type="Edm.String" />
         <Property Name="Columns" Type="Collection(Microsoft.Office.Server.ContentCenter.ColumnDef)" />
         <Property Name="ContentTypeGroup" Type="Edm.String" />
         <Property Name="ContentTypeName" Type="Edm.String" />
@@ -21121,6 +21154,7 @@
         <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
         <Property Name="ModifiedBy" Type="Edm.String" />
         <Property Name="ObjectId" Type="Edm.String" />
+        <Property Name="PublicationType" Type="Edm.Int32" Nullable="false" />
         <Property Name="TargetLibraryRemoved" Type="Edm.Boolean" Nullable="false" />
         <Property Name="TargetLibraryServerRelativeUrl" Type="Edm.String" />
         <Property Name="TargetLibraryUrl" Type="Edm.String" />
@@ -21180,6 +21214,7 @@
           <PropertyRef Name="Accuracy" />
         </Key>
         <Property Name="Accuracy" Type="Edm.Single" Nullable="false" />
+        <Property Name="BaseContentTypeName" Type="Edm.String" />
         <Property Name="ColumnId" Type="Edm.String" />
         <Property Name="ColumnName" Type="Edm.String" />
         <Property Name="ColumnType" Type="Edm.String" />
@@ -25774,6 +25809,7 @@
         <Property Name="OwnerType" Type="Edm.String" />
         <Property Name="PercentagePromotedResult" Type="Edm.String" />
         <Property Name="PromotedResultClicks" Type="Edm.String" />
+        <Property Name="PromotedResultId" Type="Edm.String" />
         <Property Name="PromotedResultURL" Type="Edm.String" />
         <Property Name="PromotedResultURLName" Type="Edm.String" />
         <Property Name="QueryRule" Type="Edm.String" />
@@ -30009,9 +30045,9 @@
         <Property Name="lastAccessDateTime" Type="Edm.DateTime" Nullable="false" />
         <Property Name="listId" Type="Edm.Guid" Nullable="false" />
         <Property Name="operation" Type="Edm.Int32" Nullable="false" />
-        <Property Name="properties" Type="Edm.String" />
         <Property Name="siteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="spoId" Type="Edm.String" />
+        <Property Name="spproperties" Type="Edm.String" />
         <Property Name="uniqueId" Type="Edm.Guid" Nullable="false" />
         <Property Name="webId" Type="Edm.Guid" Nullable="false" />
       </EntityType>
