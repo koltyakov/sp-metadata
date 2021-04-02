@@ -38,6 +38,8 @@ Likes (SP.Social.SocialRestActor) | ✅ | ✅ | ✅ | ✅
 Lock (SP.Social.SocialRestThread) | ✅ | ✅ | ✅ | ✅
 LockThread (SP.Social.SocialFeedManager) | ✅ | ✅ | ✅ | ✅
 MentionFeed (SP.Social.SocialRestActor) | ✅ | ✅ | ✅ | ✅
+MergeFollowedSites (SP.Social.SocialFollowingManager) | ✅ | ❌ | ❌ | ❌
+MergeFollowedSites (SP.Social.SocialRestFollowingManager) | ✅ | ❌ | ❌ | ❌
 My (SP.Social.SocialRestFeedManager) | ✅ | ✅ | ✅ | ✅
 My (SP.Social.SocialRestFollowingManager) | ✅ | ✅ | ✅ | ✅
 News (SP.Social.SocialRestActor) | ✅ | ✅ | ✅ | ✅

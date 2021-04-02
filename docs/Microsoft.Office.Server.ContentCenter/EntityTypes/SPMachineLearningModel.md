@@ -18,8 +18,10 @@ ID (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 LastTrained (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 ListID (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 ModelSettings (Edm.String) | ✅ | ❌ | ❌ | ❌
+ModelType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Modified (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 ModifiedBy (Edm.String) | ✅ | ❌ | ❌ | ❌
 ObjectId (Edm.String) | ✅ | ❌ | ❌ | ❌
+PublicationType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Schemas (Edm.String) | ✅ | ❌ | ❌ | ❌
 UniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
