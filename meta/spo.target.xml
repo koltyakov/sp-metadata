@@ -4252,15 +4252,15 @@
         <EntitySet Name="Utilitys" EntityType="SP.Utilities.Utility" />
         <EntitySet Name="WopiHostUtilitys" EntityType="SP.Utilities.WopiHostUtility" />
         <EntitySet Name="WopiPropertiess" EntityType="SP.Utilities.WopiProperties" />
-        <EntitySet Name="Views" EntityType="SP.View" />
-        <EntitySet Name="ViewFieldCollections" EntityType="SP.ViewFieldCollection" />
-        <EntitySet Name="VisualizationAppSynchronizationResults" EntityType="SP.VisualizationAppSynchronizationResult" />
         <EntitySet Name="WebInformations" EntityType="SP.WebInformation" />
         <EntitySet Name="LimitedWebPartManagers" EntityType="SP.WebParts.LimitedWebPartManager" />
         <EntitySet Name="WebParts" EntityType="SP.WebParts.WebPart" />
         <EntitySet Name="WebPartDefinitions" EntityType="SP.WebParts.WebPartDefinition" />
         <EntitySet Name="WebProxys" EntityType="SP.WebProxy" />
         <EntitySet Name="WebTemplates" EntityType="SP.WebTemplate" />
+        <EntitySet Name="Views" EntityType="SP.View" />
+        <EntitySet Name="ViewFieldCollections" EntityType="SP.ViewFieldCollection" />
+        <EntitySet Name="VisualizationAppSynchronizationResults" EntityType="SP.VisualizationAppSynchronizationResult" />
         <EntitySet Name="SPWorkflows" EntityType="SP.Workflow.SPWorkflow" />
         <EntitySet Name="SPWorkflowManagers" EntityType="SP.Workflow.SPWorkflowManager" />
         <EntitySet Name="WorkflowAssociations" EntityType="SP.Workflow.WorkflowAssociation" />
@@ -5097,6 +5097,10 @@
         <FunctionImport Name="GetByUniqueIdWithTokenization" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample" IsComposable="true" IsBindable="true" EntitySet="SPMachineLearningSamples">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningSample)" />
           <Parameter Name="uniqueId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetTemplateByModelId" ReturnType="Collection(Edm.String)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningSample)" />
+          <Parameter Name="modelID" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItemEntityData" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData" IsComposable="true" EntitySet="SPMachineLearningWorkItemEntityDatas" />
         <FunctionImport Name="GetByIdentifier" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem" IsComposable="true" IsBindable="true" EntitySet="Workitems">
@@ -6307,6 +6311,10 @@
           <Parameter Name="this" Type="SP.Social.SocialFollowingManager" />
           <Parameter Name="actor" Type="SP.Social.SocialActorInfo" />
         </FunctionImport>
+        <FunctionImport Name="MergeFollowedSites" ReturnType="Edm.Int32" IsBindable="true">
+          <Parameter Name="this" Type="SP.Social.SocialFollowingManager" />
+          <Parameter Name="followedSites" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="StopFollowing" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Social.SocialFollowingManager" />
           <Parameter Name="actor" Type="SP.Social.SocialActorInfo" />
@@ -6408,6 +6416,10 @@
           <Parameter Name="ContentUri" Type="Edm.String" />
           <Parameter Name="Id" Type="Edm.String" />
           <Parameter Name="TagGuid" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="MergeFollowedSites" ReturnType="Edm.Int32" IsBindable="true">
+          <Parameter Name="this" Type="SP.Social.SocialRestFollowingManager" />
+          <Parameter Name="followedSites" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="My" ReturnType="SP.Social.SocialRestFollowingManager" IsComposable="true" IsBindable="true" EntitySet="SocialRestFollowingManagers">
           <Parameter Name="this" Type="SP.Social.SocialRestFollowingManager" />
@@ -9455,6 +9467,10 @@
           <Parameter Name="IconUrl" Type="Edm.String" />
           <Parameter Name="ShortDescription" Type="Edm.String" />
           <Parameter Name="StoreAssetId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="AppRequests" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPStoreAppResponseInformation" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
+          <Parameter Name="AppRequestInfo" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPStoreAppRequestInformation" />
         </FunctionImport>
         <FunctionImport Name="DownloadTeamsSolution" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TeamsPackageDownload" IsComposable="true" IsBindable="true" EntitySet="TeamsPackageDownloads">
           <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
@@ -15529,14 +15545,6 @@
           <End Role="PersonalSitePartner" EntitySet="UserProfiles" />
           <End Role="PersonalSite" EntitySet="Sites" />
         </AssociationSet>
-        <AssociationSet Name="SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartnerSet" Association="SP.SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartner">
-          <End Role="ViewFieldsPartner" EntitySet="Views" />
-          <End Role="ViewFields" EntitySet="ViewFieldCollections" />
-        </AssociationSet>
-        <AssociationSet Name="SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartnerSet" Association="SP.SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartner">
-          <End Role="AppMappedViewsPartner" EntitySet="VisualizationAppSynchronizationResults" />
-          <End Role="AppMappedViews" EntitySet="Views" />
-        </AssociationSet>
         <AssociationSet Name="SP_WebParts_LimitedWebPartManager_WebParts_SP_WebParts_WebPartDefinition_WebPartsPartnerSet" Association="SP.WebParts.SP_WebParts_LimitedWebPartManager_WebParts_SP_WebParts_WebPartDefinition_WebPartsPartner">
           <End Role="WebPartsPartner" EntitySet="LimitedWebPartManagers" />
           <End Role="WebParts" EntitySet="WebPartDefinitions" />
@@ -15548,6 +15556,14 @@
         <AssociationSet Name="SP_WebParts_WebPartDefinition_WebPart_SP_WebParts_WebPart_WebPartPartnerSet" Association="SP.WebParts.SP_WebParts_WebPartDefinition_WebPart_SP_WebParts_WebPart_WebPartPartner">
           <End Role="WebPartPartner" EntitySet="WebPartDefinitions" />
           <End Role="WebPart" EntitySet="WebParts" />
+        </AssociationSet>
+        <AssociationSet Name="SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartnerSet" Association="SP.SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartner">
+          <End Role="ViewFieldsPartner" EntitySet="Views" />
+          <End Role="ViewFields" EntitySet="ViewFieldCollections" />
+        </AssociationSet>
+        <AssociationSet Name="SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartnerSet" Association="SP.SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartner">
+          <End Role="AppMappedViewsPartner" EntitySet="VisualizationAppSynchronizationResults" />
+          <End Role="AppMappedViews" EntitySet="Views" />
         </AssociationSet>
         <AssociationSet Name="SP_WorkflowServices_InteropService_Current_SP_WorkflowServices_InteropService_CurrentPartnerSet" Association="SP.WorkflowServices.SP_WorkflowServices_InteropService_Current_SP_WorkflowServices_InteropService_CurrentPartner">
           <End Role="CurrentPartner" EntitySet="InteropServices" />
@@ -17029,6 +17045,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/ModelSettings">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/ModelType">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/Modified">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17036,6 +17055,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/ObjectId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/PublicationType">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/Schemas">
@@ -19067,6 +19089,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetByUniqueIdWithTokenization(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningSample), Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetTemplateByModelId(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningSample), Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItemEntityData()">
@@ -21132,9 +21157,11 @@
         <Property Name="LastTrained" Type="Edm.DateTime" />
         <Property Name="ListID" Type="Edm.Guid" Nullable="false" />
         <Property Name="ModelSettings" Type="Edm.String" />
+        <Property Name="ModelType" Type="Edm.Int32" Nullable="false" />
         <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
         <Property Name="ModifiedBy" Type="Edm.String" />
         <Property Name="ObjectId" Type="Edm.String" />
+        <Property Name="PublicationType" Type="Edm.Int32" Nullable="false" />
         <Property Name="Schemas" Type="Edm.String" />
         <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
       </EntityType>
@@ -26740,6 +26767,19 @@
         <Property Name="IconUrl" Type="Edm.String" />
         <Property Name="ShortDescription" Type="Edm.String" />
         <Property Name="StoreAssetId" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SPStoreAppRequestInformation">
+        <Property Name="AssetId" Type="Edm.String" />
+        <Property Name="BillingMarket" Type="Edm.String" />
+        <Property Name="ContentMarket" Type="Edm.String" />
+        <Property Name="InstallationSiteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="InstallationWebId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Justification" Type="Edm.String" />
+        <Property Name="RequestType" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SPStoreAppResponseInformation">
+        <Property Name="ItemId" Type="Edm.String" />
+        <Property Name="ListId" Type="Edm.String" />
       </ComplexType>
       <EntityType Name="SiteCollectionCorporateCatalogAccessor">
         <Key>
