@@ -45,6 +45,7 @@ DefaultContentCenterSite (Microsoft.Online.SharePoint.TenantAdministration.SiteI
 DefaultLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DefaultSharingLinkType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DisableAddToOneDrive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+DisableBackToClassic (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableCustomAppAuthentication (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisablePersonalListCreation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableSpacesActivation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

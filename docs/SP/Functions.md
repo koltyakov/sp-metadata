@@ -207,6 +207,7 @@ GetAsyncActionTaskIds (SP.List) | ✅ | ❌ | ❌ | ❌
 GetAvailableWebTemplates (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetBloomFilter (SP.List) | ✅ | ✅ | ❌ | ❌
 GetBloomFilterWithCustomFields (SP.List) | ✅ | ✅ | ❌ | ❌
+GetBringYourOwnKeyRecoveryKeyMode (SP.Site) | ✅ | ❌ | ❌ | ❌
 GetBringYourOwnKeySiteStatus (SP.Site) | ✅ | ✅ | ❌ | ❌
 GetBringYourOwnKeyTenantStatus (SP.Site) | ✅ | ✅ | ❌ | ❌
 GetBusinessAppOperationStatus (SP.List) | ✅ | ❌ | ❌ | ❌

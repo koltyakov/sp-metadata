@@ -17,4 +17,5 @@ ContentTypeName (Edm.String) | ✅ | ❌ | ❌ | ❌
 Explanations (Edm.String) | ✅ | ❌ | ❌ | ❌
 LastTrained (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 ModelSettings (Edm.String) | ✅ | ❌ | ❌ | ❌
+SampleFileUniqueIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 Schemas (Edm.String) | ✅ | ❌ | ❌ | ❌

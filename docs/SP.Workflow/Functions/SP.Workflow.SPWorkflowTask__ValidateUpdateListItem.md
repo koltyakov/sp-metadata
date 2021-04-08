@@ -14,3 +14,4 @@ bNewDocumentUpdate (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 checkInComment (Edm.String) | ✅ | ❌ | ❌ | ❌
 datesInUTC (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 formValues (Collection(SP.ListItemFormUpdateValue)) | ✅ | ❌ | ❌ | ❌
+numberInInvariantCulture (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
