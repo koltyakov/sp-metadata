@@ -411,11 +411,14 @@
       </ComplexType>
       <ComplexType Name="CustomerKeyInfo">
         <Property Name="PrimaryKeyVault" Type="SP.CustomerKeyVaultInfo" />
+        <Property Name="RecoveryKeyVault" Type="SP.CustomerKeyVaultInfo" />
         <Property Name="SecondaryKeyVault" Type="SP.CustomerKeyVaultInfo" />
       </ComplexType>
       <ComplexType Name="CustomerKeyVaultInfo">
         <Property Name="KeyName" Type="Edm.String" />
         <Property Name="KeyVersion" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ResourceGroupName" Type="Edm.String" />
+        <Property Name="SubscriptionId" Type="Edm.Guid" Nullable="false" />
         <Property Name="VaultName" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="CustomerKeyStatusInfo">
@@ -607,6 +610,7 @@
         <Property Name="ExtractedText" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="MediaServiceUpdateParameters">
+        <Property Name="AIPLabelExtractionStatus" Type="Edm.Int32" Nullable="false" />
         <Property Name="ClassificationResult" Type="SP.ClassificationResult" />
         <Property Name="ContentVersion" Type="Edm.Int32" Nullable="false" />
         <Property Name="MachineLearningSampleMeta" Type="SP.MachineLearningSampleMeta" />
@@ -8572,6 +8576,7 @@
           <Parameter Name="bNewDocumentUpdate" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="checkInComment" Type="Edm.String" />
           <Parameter Name="datesInUTC" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="numberInInvariantCulture" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="ValidateUpdateListItem" ReturnType="Collection(SP.ListItemFormUpdateValue)" IsBindable="true">
           <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
@@ -8579,6 +8584,7 @@
           <Parameter Name="bNewDocumentUpdate" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="checkInComment" Type="Edm.String" />
           <Parameter Name="datesInUTC" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="numberInInvariantCulture" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_AppManagement_SPAppPrincipalInfo_GetClientIdFromAppPrincipalEncodedClaim" ReturnType="Edm.String">
           <Parameter Name="encodedAppPrincipalClaim" Type="Edm.String" />
@@ -9795,6 +9801,7 @@
           <Parameter Name="bNewDocumentUpdate" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="checkInComment" Type="Edm.String" />
           <Parameter Name="datesInUTC" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="numberInInvariantCulture" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="AddValidateUpdateItemUsingPath" ReturnType="Collection(SP.ListItemFormUpdateValue)" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -9803,6 +9810,7 @@
           <Parameter Name="bNewDocumentUpdate" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="checkInComment" Type="Edm.String" />
           <Parameter Name="datesInUTC" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="numberInInvarntCulture" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="BulkValidateUpdateListItems" ReturnType="Collection(SP.ListItemFormUpdateValue)" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -10479,6 +10487,7 @@
           <Parameter Name="bNewDocumentUpdate" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="checkInComment" Type="Edm.String" />
           <Parameter Name="datesInUTC" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="numberInInvariantCulture" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="ValidateUpdateListItem" ReturnType="Collection(SP.ListItemFormUpdateValue)" IsBindable="true">
           <Parameter Name="this" Type="SP.ListItem" />
@@ -10486,6 +10495,7 @@
           <Parameter Name="bNewDocumentUpdate" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="checkInComment" Type="Edm.String" />
           <Parameter Name="datesInUTC" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="numberInInvariantCulture" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="BreakRoleInheritance" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
@@ -12453,6 +12463,9 @@
           <Parameter Name="url" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="ExtendUpgradeReminderDate" IsBindable="true">
+          <Parameter Name="this" Type="SP.Site" />
+        </FunctionImport>
+        <FunctionImport Name="GetBringYourOwnKeyRecoveryKeyMode" ReturnType="Edm.Int32" IsBindable="true">
           <Parameter Name="this" Type="SP.Site" />
         </FunctionImport>
         <FunctionImport Name="GetBringYourOwnKeySiteStatus" ReturnType="SP.CustomerKeyStatusInfo" IsBindable="true">
@@ -16607,6 +16620,9 @@
       <Annotations Target="SP.MachineLearningSampleMeta/ExtractedText">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.MediaServiceUpdateParameters/AIPLabelExtractionStatus">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.MediaServiceUpdateParameters/ClassificationResult">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17289,6 +17305,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/ModelSettings">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/SampleFileUniqueIds">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/Schemas">
@@ -20156,10 +20175,10 @@
       <Annotations Target="SP.ApiData/AddItemUsingPath(SP.List, SP.ListItemCreationInformationUsingPath)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/AddValidateUpdateItem(SP.List, SP.ListItemCreationInformation, Collection(SP.ListItemFormUpdateValue), Edm.Boolean, Edm.String, Edm.Boolean)">
+      <Annotations Target="SP.ApiData/AddValidateUpdateItem(SP.List, SP.ListItemCreationInformation, Collection(SP.ListItemFormUpdateValue), Edm.Boolean, Edm.String, Edm.Boolean, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/AddValidateUpdateItemUsingPath(SP.List, SP.ListItemCreationInformationUsingPath, Collection(SP.ListItemFormUpdateValue), Edm.Boolean, Edm.String, Edm.Boolean)">
+      <Annotations Target="SP.ApiData/AddValidateUpdateItemUsingPath(SP.List, SP.ListItemCreationInformationUsingPath, Collection(SP.ListItemFormUpdateValue), Edm.Boolean, Edm.String, Edm.Boolean, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/BulkValidateUpdateListItems(SP.List, Collection(Edm.Int32), Collection(SP.ListItemFormUpdateValue), Edm.Boolean, Edm.String, Edm.String)">
@@ -20592,6 +20611,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_SharingUtility_ValidateSameUserEmails(Edm.String, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetBringYourOwnKeyRecoveryKeyMode(SP.Site)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetBringYourOwnKeySiteStatus(SP.Site)">
@@ -21251,6 +21273,7 @@
         <Property Name="Explanations" Type="Edm.String" />
         <Property Name="LastTrained" Type="Edm.DateTime" />
         <Property Name="ModelSettings" Type="Edm.String" />
+        <Property Name="SampleFileUniqueIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="Schemas" Type="Edm.String" />
       </EntityType>
       <EntityType Name="SPMachineLearningPublicationsEntityData">
@@ -28517,6 +28540,7 @@
         <Property Name="DefaultLinkPermission" Type="Edm.Int32" Nullable="false" />
         <Property Name="DefaultSharingLinkType" Type="Edm.Int32" Nullable="false" />
         <Property Name="DisableAddToOneDrive" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisableBackToClassic" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableCustomAppAuthentication" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisabledModernListTemplateIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="DisabledWebPartIds" Type="Collection(Edm.Guid)" Nullable="false" />
@@ -30259,6 +30283,7 @@
         <Property Name="DefaultLinkPermission" Type="Edm.Int32" Nullable="false" />
         <Property Name="DefaultSharingLinkType" Type="Edm.Int32" Nullable="false" />
         <Property Name="DisableAddToOneDrive" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisableBackToClassic" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableCustomAppAuthentication" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisabledModernListTemplateIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="DisablePersonalListCreation" Type="Edm.Boolean" Nullable="false" />
