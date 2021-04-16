@@ -429,8 +429,10 @@
       </ComplexType>
       <ComplexType Name="DocumentLibraryInformation">
         <Property Name="AbsoluteUrl" Type="Edm.String" />
+        <Property Name="DriveId" Type="Edm.String" />
         <Property Name="FromCrossFarm" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="IsDefaultDocumentLibrary" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
         <Property Name="ModifiedFriendlyDisplay" Type="Edm.String" />
         <Property Name="ServerRelativeUrl" Type="Edm.String" />
@@ -2301,6 +2303,12 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
+      <EntityType Name="NewsCollection" Abstract="true">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="ObjectSharingSettings">
         <Key>
           <PropertyRef Name="AccessRequestMode" />
@@ -3938,6 +3946,7 @@
         <EntitySet Name="SharedWithMeDocuments" EntityType="Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocument" />
         <EntitySet Name="RecentDocuments" EntityType="Microsoft.SharePoint.Portal.WebControls.RecentDocument" />
         <EntitySet Name="BaseCustomPropertys" EntityType="Microsoft.SharePoint.Publishing.RestOnly.BaseCustomProperty" />
+        <EntitySet Name="GetUpgradeOptionsApis" EntityType="Microsoft.SharePoint.QuotaManagement.GetUpgradeOptions.GetUpgradeOptionsApi" />
         <EntitySet Name="SmartCacheItems" EntityType="Microsoft.SharePoint.SmartCache.SmartCacheItem" />
         <EntitySet Name="TenantCdnApis" EntityType="Microsoft.SharePoint.TenantCdn.TenantCdnApi" />
         <EntitySet Name="UserActionAPIs" EntityType="Microsoft.SharePoint.UserActions.UserActionAPI" />
@@ -4130,6 +4139,7 @@
         <EntitySet Name="MultilingualSettingss" EntityType="SP.MultilingualSettings" />
         <EntitySet Name="Navigations" EntityType="SP.Navigation" />
         <EntitySet Name="NavigationNodes" EntityType="SP.NavigationNode" />
+        <EntitySet Name="NewsCollections" EntityType="SP.NewsCollection" />
         <EntitySet Name="Authentications" EntityType="SP.OAuth.Authentication" />
         <EntitySet Name="NativeClients" EntityType="SP.OAuth.NativeClient" />
         <EntitySet Name="Tokens1" EntityType="SP.OAuth.Token" />
@@ -8709,6 +8719,10 @@
         <FunctionImport Name="GetGroupSiteConversionData" ReturnType="Microsoft.SharePoint.Portal.GroupSiteConversionInfo" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
         </FunctionImport>
+        <FunctionImport Name="GetParentGroupForChannel" ReturnType="Collection(Microsoft.SharePoint.Portal.ParentGroup)" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
+          <Parameter Name="siteUrl" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="GetSharedChannelSharePointUrl" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
           <Parameter Name="tenantId" Type="Edm.String" />
@@ -9786,6 +9800,13 @@
         <FunctionImport Name="ResetRoleInheritance" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
         </FunctionImport>
+        <FunctionImport Name="AddCustomOrderToView" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="viewId" Type="Edm.String" />
+          <Parameter Name="itemIds" Type="Collection(Edm.Int32)" Nullable="false" />
+          <Parameter Name="relativeItemId" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="skipSaveView" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="AddItem" ReturnType="SP.ListItem" IsBindable="true" EntitySet="ListItems">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="parameters" Type="SP.ListItemCreationInformation" />
@@ -9810,7 +9831,7 @@
           <Parameter Name="bNewDocumentUpdate" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="checkInComment" Type="Edm.String" />
           <Parameter Name="datesInUTC" Type="Edm.Boolean" Nullable="false" />
-          <Parameter Name="numberInInvarntCulture" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="numberInInvariantCulture" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="BulkValidateUpdateListItems" ReturnType="Collection(SP.ListItemFormUpdateValue)" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -9879,6 +9900,9 @@
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="listItemStartingID" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="internalFieldNames" Type="Collection(Edm.String)" />
+        </FunctionImport>
+        <FunctionImport Name="GetBusinessAppMigrationInteractiveData" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
         </FunctionImport>
         <FunctionImport Name="GetBusinessAppOperationStatus" ReturnType="SP.FlowSynchronizationResult" IsComposable="true" IsBindable="true" EntitySet="FlowSynchronizationResults">
           <Parameter Name="this" Type="SP.List" />
@@ -10291,12 +10315,6 @@
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="value" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="SetItemsOrder" ReturnType="Collection(Edm.Int32)" IsBindable="true">
-          <Parameter Name="this" Type="SP.List" />
-          <Parameter Name="itemIds" Type="Collection(Edm.Int32)" Nullable="false" />
-          <Parameter Name="lowerOrderItemId" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="higherOrderItemId" Type="Edm.Int32" Nullable="false" />
-        </FunctionImport>
         <FunctionImport Name="SyncFlowCallbackUrl" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="flowId" Type="Edm.String" />
@@ -10523,6 +10541,9 @@
         <FunctionImport Name="ApplyWebTemplate" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="webTemplate" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="AuthenticateAndReturnPageContext" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
         </FunctionImport>
         <FunctionImport Name="SP_Web_CreateAnonymousLink" ReturnType="Edm.String">
           <Parameter Name="url" Type="Edm.String" />
@@ -10996,6 +11017,27 @@
         <FunctionImport Name="SetNotificationRecipients" IsBindable="true">
           <Parameter Name="this" Type="SP.MultilingualSettings" />
           <Parameter Name="request" Type="SP.TranslationNotificationRecipientSetRequest" />
+        </FunctionImport>
+        <FunctionImport Name="SP_NewsCollection_HubNews" ReturnType="Edm.String" IsSideEffecting="false">
+          <Parameter Name="departmentId" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="start" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="count" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="filterByAudience" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="languageOverride" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_NewsCollection_MultiHubNews" ReturnType="Edm.String">
+          <Parameter Name="multiHubJson" Type="Edm.String" />
+          <Parameter Name="start" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="count" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="filterByAudience" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="languageOverride" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_NewsCollection_MultiSiteNews" ReturnType="Edm.String">
+          <Parameter Name="multiSiteJson" Type="Edm.String" />
+          <Parameter Name="start" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="count" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="filterByAudience" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="languageOverride" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_QuickAccessItemCollection_GetQuickAccessItems" ReturnType="Edm.String" IsSideEffecting="false" />
         <FunctionImport Name="SP_RecentListCollection_GetRecentLists" ReturnType="Collection(SP.RecentList)" IsComposable="true" EntitySet="RecentLists">
@@ -15999,6 +16041,9 @@
       <Annotations Target="Microsoft.SharePoint.Portal.OrgLabelsContextList/Labels">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Portal.ParentGroup">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Portal.PinToTeamParams">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19647,6 +19692,9 @@
       <Annotations Target="SP.ApiData/GetGroupSiteConversionData(Microsoft.SharePoint.Portal.GroupSiteManager)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetParentGroupForChannel(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetSharedChannelSharePointUrl(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.String, Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20172,6 +20220,9 @@
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_AddToOneDrive_MountService_NotifyChangeToMountPoints(Microsoft.SharePoint.AddToOneDrive.NotifyChangeToMountPointsRequest)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/AddCustomOrderToView(SP.List, Edm.String, Collection(Edm.Int32), Edm.Int32, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/AddItemUsingPath(SP.List, SP.ListItemCreationInformationUsingPath)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20214,6 +20265,9 @@
       <Annotations Target="SP.ApiData/GetBloomFilterWithCustomFields(SP.List, Edm.Int32, Collection(Edm.String))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetBusinessAppMigrationInteractiveData(SP.List)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetBusinessAppOperationStatus(SP.List)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20236,9 +20290,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetExemptFromBlockDownloadOfNonViewableFiles(SP.List, Edm.Boolean)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SetItemsOrder(SP.List, Collection(Edm.Int32), Edm.Int32, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SyncFlowCallbackUrl(SP.List, Edm.String)">
@@ -20299,6 +20350,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetComplianceTagWithRecord(SP.ListItem, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/AuthenticateAndReturnPageContext(SP.Web)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/CreateGroupBasedEnvironment(SP.Web)">
@@ -20446,6 +20500,15 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetNotificationRecipients(SP.MultilingualSettings, SP.TranslationNotificationRecipientSetRequest)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_NewsCollection_HubNews(Edm.Int32, Edm.Int32, Edm.Int32, Edm.Boolean, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_NewsCollection_MultiHubNews(Edm.String, Edm.Int32, Edm.Int32, Edm.Boolean, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_NewsCollection_MultiSiteNews(Edm.String, Edm.Int32, Edm.Int32, Edm.Boolean, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_QuickAccessItemCollection_GetQuickAccessItems()">
@@ -26203,6 +26266,10 @@
         <Property Name="IsLastPage" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Labels" Type="Collection(Microsoft.SharePoint.Portal.OrgLabelsContext)" />
       </ComplexType>
+      <ComplexType Name="ParentGroup">
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="ID" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="PinToTeamParams">
         <Property Name="tabs" Type="Collection(Microsoft.SharePoint.Portal.M365TabItem)" />
         <Property Name="teamsId" Type="Edm.String" />
@@ -28383,6 +28450,7 @@
         <Property Name="GroupOwnerLoginName" Type="Edm.String" />
         <Property Name="HasHolds" Type="Edm.Boolean" Nullable="false" />
         <Property Name="HubSiteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="IBMode" Type="Edm.String" />
         <Property Name="IBSegments" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="IBSegmentsToAdd" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="IBSegmentsToRemove" Type="Collection(Edm.Guid)" Nullable="false" />
@@ -30114,6 +30182,14 @@
         <Property Name="spproperties" Type="Edm.String" />
         <Property Name="uniqueId" Type="Edm.Guid" Nullable="false" />
         <Property Name="webId" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Microsoft.SharePoint.QuotaManagement.GetUpgradeOptions" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="GetUpgradeOptionsApi">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.Packaging" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
