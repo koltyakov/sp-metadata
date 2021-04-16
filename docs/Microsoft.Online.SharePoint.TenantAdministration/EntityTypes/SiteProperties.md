@@ -31,6 +31,7 @@ GroupId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 GroupOwnerLoginName (Edm.String) | ✅ | ❌ | ❌ | ❌
 HasHolds (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HubSiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+IBMode (Edm.String) | ✅ | ❌ | ❌ | ❌
 IBSegments (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 IBSegmentsToAdd (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 IBSegmentsToRemove (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌

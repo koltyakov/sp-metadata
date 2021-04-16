@@ -102,6 +102,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [MultilingualSettings](./EntityTypes/MultilingualSettings.md) | ✅ | ❌ | ❌ | ❌
 [Navigation](./EntityTypes/Navigation.md) | ✅ | ✅ | ✅ | ✅
 [NavigationNode](./EntityTypes/NavigationNode.md) | ✅ | ✅ | ✅ | ✅
+[NewsCollection](./EntityTypes/NewsCollection.md) | ✅ | ❌ | ❌ | ❌
 [ObjectSharingInformation](./EntityTypes/ObjectSharingInformation.md) | ✅ | ✅ | ✅ | ✅
 [ObjectSharingInformationUser](./EntityTypes/ObjectSharingInformationUser.md) | ✅ | ✅ | ✅ | ✅
 [ObjectSharingSettings](./EntityTypes/ObjectSharingSettings.md) | ✅ | ✅ | ✅ | ❌

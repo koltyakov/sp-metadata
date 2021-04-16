@@ -15,4 +15,4 @@ checkInComment (Edm.String) | ✅ | ✅ | ❌ | ❌
 datesInUTC (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 formValues (Collection(SP.ListItemFormUpdateValue)) | ✅ | ✅ | ❌ | ❌
 listItemCreateInfo (SP.ListItemCreationInformationUsingPath) | ✅ | ✅ | ❌ | ❌
-numberInInvarntCulture (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+numberInInvariantCulture (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

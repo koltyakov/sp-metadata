@@ -20,6 +20,7 @@ AddAppPrincipalCredential (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
 AddAvailableContentType (Collection(SP.ContentType)) | ✅ | ✅ | ✅ | ✅
 AddClientActivities (SP.File) | ✅ | ✅ | ❌ | ❌
 AddCrossFarmMessage (SP.Web) | ✅ | ❌ | ❌ | ❌
+AddCustomOrderToView (SP.List) | ✅ | ❌ | ❌ | ❌
 AddDependentLookupField (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
 AddField (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
 AddItem (SP.List) | ✅ | ✅ | ✅ | ✅
@@ -46,6 +47,7 @@ ApplyTheme (SP.Web) | ✅ | ✅ | ✅ | ✅
 ApplyWebTemplate (SP.Web) | ✅ | ✅ | ✅ | ✅
 Approve (SP.File) | ✅ | ✅ | ✅ | ✅
 [AttachAssignmentToQuiz](./Functions/AttachAssignmentToQuiz.md) | ❌ | ❌ | ❌ | ✅
+AuthenticateAndReturnPageContext (SP.Web) | ✅ | ❌ | ❌ | ❌
 BreakRoleInheritance (SP.List) | ✅ | ✅ | ✅ | ✅
 BreakRoleInheritance (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 BreakRoleInheritance (SP.SecurableObject) | ✅ | ✅ | ✅ | ✅
@@ -210,6 +212,7 @@ GetBloomFilterWithCustomFields (SP.List) | ✅ | ✅ | ❌ | ❌
 GetBringYourOwnKeyRecoveryKeyMode (SP.Site) | ✅ | ❌ | ❌ | ❌
 GetBringYourOwnKeySiteStatus (SP.Site) | ✅ | ✅ | ❌ | ❌
 GetBringYourOwnKeyTenantStatus (SP.Site) | ✅ | ✅ | ❌ | ❌
+GetBusinessAppMigrationInteractiveData (SP.List) | ✅ | ❌ | ❌ | ❌
 GetBusinessAppOperationStatus (SP.List) | ✅ | ❌ | ❌ | ❌
 GetByDomainName (Collection(SP.ScriptSafeDomain)) | ✅ | ✅ | ❌ | ❌
 GetByEmail (Collection(SP.User)) | ✅ | ✅ | ✅ | ✅
@@ -541,6 +544,9 @@ SP_ListHomeItemCollection_GetRecommendLists | ✅ | ❌ | ❌ | ❌
 [SP_MoveCopyUtil_MoveFolder](./Functions/SP_MoveCopyUtil_MoveFolder.md) | ✅ | ✅ | ✅ | ❌
 [SP_MoveCopyUtil_MoveFolderByPath](./Functions/SP_MoveCopyUtil_MoveFolderByPath.md) | ✅ | ✅ | ❌ | ❌
 SP_MultilingualSettings | ✅ | ❌ | ❌ | ❌
+[SP_NewsCollection_HubNews](./Functions/SP_NewsCollection_HubNews.md) | ✅ | ❌ | ❌ | ❌
+[SP_NewsCollection_MultiHubNews](./Functions/SP_NewsCollection_MultiHubNews.md) | ✅ | ❌ | ❌ | ❌
+[SP_NewsCollection_MultiSiteNews](./Functions/SP_NewsCollection_MultiSiteNews.md) | ✅ | ❌ | ❌ | ❌
 [SP_ObjectSharingInformation_CanCurrentUserShare](./Functions/SP_ObjectSharingInformation_CanCurrentUserShare.md) | ✅ | ✅ | ✅ | ❌
 [<span title="SP_ObjectSharingInformation_CanCurrentUserShareRemote">SP_ObjectSharingInformation_CanCurrentUserShareRem...</span> (SP ObjectSharingInformation CanCurrentUserShareRemote)](./Functions/SP_ObjectSharingInformation_CanCurrentUserShareRemote.md) | ✅ | ✅ | ✅ | ❌
 [<span title="SP_ObjectSharingInformation_GetListItemSharingInformation">SP_ObjectSharingInformation_GetListItemSharingInfo...</span> (SP ObjectSharingInformation GetListItemSharingInformation)](./Functions/SP_ObjectSharingInformation_GetListItemSharingInformation.md) | ✅ | ✅ | ✅ | ✅
@@ -629,7 +635,6 @@ SetExemptFromBlockDownloadOfNonViewableFiles (SP.List) | ✅ | ✅ | ❌ | ❌
 SetFileUserValue (SP.File) | ✅ | ❌ | ❌ | ❌
 SetGlobalNavSettings (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetId (SP.TimeZone) | ✅ | ❌ | ❌ | ❌
-SetItemsOrder (SP.List) | ✅ | ❌ | ❌ | ❌
 SetMediaServiceMetadata (SP.File) | ✅ | ❌ | ❌ | ❌
 SetNotificationRecipients (SP.MultilingualSettings) | ✅ | ❌ | ❌ | ❌
 [SetQuizState](./Functions/SetQuizState.md) | ❌ | ❌ | ❌ | ✅

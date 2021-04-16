@@ -1,4 +1,4 @@
-# Function Import: SetItemsOrder
+# Function Import: AddCustomOrderToView
 
 > Namespace: SP
 
@@ -10,6 +10,7 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-higherOrderItemId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 itemIds (Collection(Edm.Int32)) | ✅ | ❌ | ❌ | ❌
-lowerOrderItemId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+relativeItemId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+skipSaveView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+viewId (Edm.String) | ✅ | ❌ | ❌ | ❌

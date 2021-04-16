@@ -170,6 +170,7 @@ GeoLocationDatas | ✅ | ❌ | ❌ | ❌
 GeoMoveTenantCompatibilityChecks | ✅ | ❌ | ❌ | ❌
 GeoTenantInstanceInformationEntityDatas | ✅ | ❌ | ❌ | ❌
 GetExternalUsersResultss | ✅ | ❌ | ❌ | ❌
+GetUpgradeOptionsApis | ✅ | ❌ | ❌ | ❌
 GlobalAdminChecks | ✅ | ❌ | ❌ | ❌
 GradedResponses | ❌ | ❌ | ❌ | ✅
 GradingKeys | ❌ | ❌ | ❌ | ✅
@@ -274,6 +275,7 @@ NavigationNodes | ✅ | ✅ | ✅ | ✅
 NavigationServiceRests | ✅ | ✅ | ✅ | ✅
 NavigationTermSetViews | ❌ | ❌ | ❌ | ✅
 Navigations | ✅ | ✅ | ✅ | ✅
+NewsCollections | ✅ | ❌ | ❌ | ❌
 NewsUtilitys | ✅ | ✅ | ❌ | ❌
 NonTaskDataReadResults | ✅ | ✅ | ✅ | ✅
 NotificationCallbacks | ✅ | ✅ | ✅ | ✅

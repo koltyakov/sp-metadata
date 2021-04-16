@@ -17,6 +17,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [M365TabItem](./ComplexTypes/M365TabItem.md) | ✅ | ❌ | ❌ | ❌
 [OrgLabelsContext](./ComplexTypes/OrgLabelsContext.md) | ✅ | ❌ | ❌ | ❌
 [OrgLabelsContextList](./ComplexTypes/OrgLabelsContextList.md) | ✅ | ❌ | ❌ | ❌
+[ParentGroup](./ComplexTypes/ParentGroup.md) | ✅ | ❌ | ❌ | ❌
 [PinToTeamParams](./ComplexTypes/PinToTeamParams.md) | ✅ | ❌ | ❌ | ❌
 [PinToTeamResponse](./ComplexTypes/PinToTeamResponse.md) | ✅ | ❌ | ❌ | ❌
 [SPSiteCreationRequest](./ComplexTypes/SPSiteCreationRequest.md) | ✅ | ✅ | ❌ | ❌

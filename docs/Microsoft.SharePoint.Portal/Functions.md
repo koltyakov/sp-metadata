@@ -26,6 +26,7 @@ GetGroupImage (Microsoft.SharePoint.Portal.GroupService) | ✅ | ✅ | ❌ | ❌
 GetGroupSiteConversionData (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ❌ | ❌
 GetHubSites (Microsoft.SharePoint.Portal.SPHubSitesUtility) | ✅ | ✅ | ❌ | ❌
 GetIBSegmentLabels (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
+GetParentGroupForChannel (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetSharedChannelSharePointUrl (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetSiteLinks (Microsoft.SharePoint.Portal.SiteLinkingManager) | ✅ | ✅ | ❌ | ❌
 GetSiteLogo (Microsoft.SharePoint.Portal.SiteIconManager) | ✅ | ❌ | ❌ | ❌
