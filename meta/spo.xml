@@ -771,6 +771,7 @@
         <Property Name="IsGroupRender" Type="Edm.String" />
         <Property Name="IsXslView" Type="Edm.String" />
         <Property Name="ListViewPageUrl" Type="Edm.String" />
+        <Property Name="OverrideRowLimit" Type="Edm.String" />
         <Property Name="OverrideScope" Type="Edm.String" />
         <Property Name="OverrideSelectCommand" Type="Edm.String" />
         <Property Name="PageFirstRow" Type="Edm.String" />
@@ -838,6 +839,7 @@
         <Property Name="OverrideScope" Type="Edm.String" />
         <Property Name="ProcessQStringToCAML" Type="Edm.String" />
         <Property Name="ViewId" Type="Edm.String" />
+        <Property Name="ViewXml" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPResourceEntry">
         <Property Name="LCID" Type="Edm.Int32" Nullable="false" />
@@ -3811,6 +3813,7 @@
         <EntitySet Name="MigrationCredentialEntityDatas" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationCredentialEntityData" />
         <EntitySet Name="MigrationPerformanceEntityDatas" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationPerformanceEntityData" />
         <EntitySet Name="MigrationTaskEntityDatas" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskEntityData" />
+        <EntitySet Name="PerfRecommendations" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.PerfRecommendation" />
         <EntitySet Name="ChannelResources" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.Teams.ChannelResource" />
         <EntitySet Name="TeamResources" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.Teams.TeamResource" />
         <EntitySet Name="UrlParseResults" EntityType="Microsoft.Online.SharePoint.MigrationCenter.Common.UrlParseResult" />
@@ -5324,9 +5327,6 @@
           <Parameter Name="durationInDays" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="holdPeriodSource" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddComplianceRetentionWorkItem2" ReturnType="Edm.Boolean">
-          <Parameter Name="workItemInput" Type="SP.ComplianceFoundation.Models.RetentionWorkItemInput" />
-        </FunctionImport>
         <FunctionImport Name="SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddUnifiedRetentionWorkItem" ReturnType="Edm.Boolean" />
         <FunctionImport Name="SP_ComplianceFoundation_PreserveDocumentSubmitter_PreserveCloudAttachmentIntoPHL" ReturnType="SP.ComplianceFoundation.Models.PreservedCloudAttachment">
           <Parameter Name="webId" Type="Edm.Guid" Nullable="false" />
@@ -6325,7 +6325,7 @@
           <Parameter Name="this" Type="SP.Social.SocialFollowingManager" />
           <Parameter Name="actor" Type="SP.Social.SocialActorInfo" />
         </FunctionImport>
-        <FunctionImport Name="MergeFollowedSites" ReturnType="Edm.Int32" IsBindable="true">
+        <FunctionImport Name="MergeFollowedSites" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.Social.SocialFollowingManager" />
           <Parameter Name="followedSites" Type="Edm.String" />
         </FunctionImport>
@@ -6431,7 +6431,7 @@
           <Parameter Name="Id" Type="Edm.String" />
           <Parameter Name="TagGuid" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="MergeFollowedSites" ReturnType="Edm.Int32" IsBindable="true">
+        <FunctionImport Name="MergeFollowedSites" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.Social.SocialRestFollowingManager" />
           <Parameter Name="followedSites" Type="Edm.String" />
         </FunctionImport>
@@ -10025,6 +10025,7 @@
           <Parameter Name="IsGroupRender" Type="Edm.String" />
           <Parameter Name="IsXslView" Type="Edm.String" />
           <Parameter Name="ListViewPageUrl" Type="Edm.String" />
+          <Parameter Name="OverrideRowLimit" Type="Edm.String" />
           <Parameter Name="OverrideScope" Type="Edm.String" />
           <Parameter Name="OverrideSelectCommand" Type="Edm.String" />
           <Parameter Name="PageFirstRow" Type="Edm.String" />
@@ -10237,6 +10238,7 @@
           <Parameter Name="IsGroupRender" Type="Edm.String" />
           <Parameter Name="IsXslView" Type="Edm.String" />
           <Parameter Name="ListViewPageUrl" Type="Edm.String" />
+          <Parameter Name="OverrideRowLimit" Type="Edm.String" />
           <Parameter Name="OverrideScope" Type="Edm.String" />
           <Parameter Name="OverrideSelectCommand" Type="Edm.String" />
           <Parameter Name="PageFirstRow" Type="Edm.String" />
@@ -10281,6 +10283,7 @@
           <Parameter Name="OverrideScope" Type="Edm.String" />
           <Parameter Name="ProcessQStringToCAML" Type="Edm.String" />
           <Parameter Name="ViewId" Type="Edm.String" />
+          <Parameter Name="ViewXml" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="RenderListFormData" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -13819,20 +13822,35 @@
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MigrationCenter.Service.Device" />
         </FunctionImport>
-        <FunctionImport Name="BatchRandomCreate" ReturnType="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData)" IsBindable="true" EntitySet="MigrationPerformanceEntityDatas">
+        <FunctionImport Name="AddPerfDataTest" ReturnType="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData)" IsBindable="true" EntitySet="MigrationPerformanceEntityDatas">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData)" />
-          <Parameter Name="n" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="Count" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="Bottleneck" Type="Edm.String" />
+          <Parameter Name="MaxDuration" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="MaxTaskFiles" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetById" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData" IsComposable="true" IsBindable="true" EntitySet="MigrationPerformanceEntityDatas">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData)" />
           <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="GetData" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceDashBoardData" IsSideEffecting="false" IsBindable="true">
+        <FunctionImport Name="GetData" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceDashboardData" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData)" />
           <Parameter Name="StartTime" Type="Edm.DateTime" Nullable="false" />
           <Parameter Name="EndTime" Type="Edm.DateTime" Nullable="false" />
           <Parameter Name="AgentId" Type="Edm.Guid" Nullable="false" />
-          <Parameter Name="ThroughputType" Type="Edm.String" />
+          <Parameter Name="TimeUnit" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetPerfDataTest" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData)" />
+          <Parameter Name="StartTime" Type="Edm.DateTime" Nullable="false" />
+          <Parameter Name="EndTime" Type="Edm.DateTime" Nullable="false" />
+          <Parameter Name="AgentId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetRawData" ReturnType="Collection(Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationPerformanceEntityData)" IsComposable="true" IsBindable="true" EntitySet="MigrationPerformanceEntityDatas">
+          <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData)" />
+          <Parameter Name="StartTime" Type="Edm.DateTime" Nullable="false" />
+          <Parameter Name="EndTime" Type="Edm.DateTime" Nullable="false" />
+          <Parameter Name="AgentId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_MigrationCenter_Service_PerformanceData" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData" IsComposable="true" EntitySet="MigrationPerformanceEntityDatas" />
         <FunctionImport Name="DeleteObject" IsBindable="true">
@@ -15834,16 +15852,10 @@
       <Annotations Target="SP.CompliancePolicy.ComplianceTag">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ComplianceFoundation.Models.ComplianceRetentionWorkItemResponse">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.ComplianceFoundation.Models.ComplianceTagInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ComplianceFoundation.Models.PreservedCloudAttachment">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ComplianceFoundation.Models.RetentionWorkItemInput">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.MetadataNavigation.ConfiguredMetadataNavigationItemCollection">
@@ -17124,6 +17136,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/Schemas">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/SourceUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/UniqueId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17364,6 +17379,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData/Comment">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData/Promote">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17383,6 +17401,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData/Publications">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData/PublicationType">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult">
@@ -19164,9 +19185,6 @@
       <Annotations Target="SP.ApiData/GetByIdentifier(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem), Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddComplianceRetentionWorkItem2(SP.ComplianceFoundation.Models.RetentionWorkItemInput)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.ApiData/SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddUnifiedRetentionWorkItem()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20277,7 +20295,7 @@
       <Annotations Target="SP.ApiData/GetItemByUniqueId(SP.List, Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_List_GetListDataAsStream(Edm.String, SP.RenderListDataParameters, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Collection(SP.KeyValue), Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String)">
+      <Annotations Target="SP.ApiData/SP_List_GetListDataAsStream(Edm.String, SP.RenderListDataParameters, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Collection(SP.KeyValue), Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetMappedApp(SP.List, Edm.Guid, Edm.Int32)">
@@ -21248,6 +21266,7 @@
         <Property Name="ObjectId" Type="Edm.String" />
         <Property Name="PublicationType" Type="Edm.Int32" Nullable="false" />
         <Property Name="Schemas" Type="Edm.String" />
+        <Property Name="SourceUrl" Type="Edm.String" />
         <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
       </EntityType>
       <EntityType Name="SPMachineLearningPublication">
@@ -21344,7 +21363,9 @@
           <PropertyRef Name="Comment" />
         </Key>
         <Property Name="Comment" Type="Edm.String" Nullable="false" />
+        <Property Name="Promote" Type="Edm.Boolean" />
         <Property Name="Publications" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData)" />
+        <Property Name="PublicationType" Type="Edm.Int32" />
       </EntityType>
       <EntityType Name="SPMachineLearningPublicationsResult">
         <Key>
@@ -21454,12 +21475,6 @@
       </EntityType>
     </Schema>
     <Schema Namespace="SP.ComplianceFoundation.Models" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-      <ComplexType Name="ComplianceRetentionWorkItemResponse">
-        <Property Name="SiteId" Type="Edm.String" />
-        <Property Name="TenantId" Type="Edm.String" />
-        <Property Name="WorkItemId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="WorkItemJobStatus" Type="Edm.Int32" Nullable="false" />
-      </ComplexType>
       <ComplexType Name="ComplianceTagInfo">
         <Property Name="IsRecord" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsRegulatory" Type="Edm.Boolean" Nullable="false" />
@@ -21471,11 +21486,6 @@
       <ComplexType Name="PreservedCloudAttachment">
         <Property Name="CompositeDocumentId" Type="Edm.String" />
         <Property Name="Url" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="RetentionWorkItemInput">
-        <Property Name="SignalsEndTimeStamp" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="SignalsStartTimeStamp" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="SignalsStorageName" Type="Edm.String" />
       </ComplexType>
     </Schema>
     <Schema Namespace="SP.MetadataNavigation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -26611,6 +26621,7 @@
       </ComplexType>
       <ComplexType Name="SiteDesignMetadata" BaseType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignCreationInfo">
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Order" Type="Edm.Int32" />
         <Property Name="Version" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="SiteScriptActionResult">
@@ -28734,19 +28745,21 @@
       </Association>
     </Schema>
     <Schema Namespace="Microsoft.Online.SharePoint.MigrationCenter.Service" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-      <ComplexType Name="PerformanceDashBoardData">
-        <Property Name="BottleneckList" Type="Collection(Edm.String)" />
-        <Property Name="RecommendationList" Type="Collection(Edm.String)" />
-        <Property Name="ThroughputTrend" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.Point)" />
-      </ComplexType>
-      <ComplexType Name="Point">
-        <Property Name="Throughput" Type="Edm.Int64" Nullable="false" />
-        <Property Name="Timestamp" Type="Edm.DateTime" Nullable="false" />
-      </ComplexType>
       <ComplexType Name="MigrationProperty">
         <Property Name="key" Type="Edm.String" />
         <Property Name="updatedTimeUtc" Type="Edm.DateTime" Nullable="false" />
         <Property Name="value" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="PerformanceDashboardData">
+        <Property Name="BottleneckList" Type="Collection(Edm.String)" />
+        <Property Name="RecommendationList" Type="Collection(Edm.String)" />
+        <Property Name="ThroughputTrend" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.ThroughputData)" />
+      </ComplexType>
+      <ComplexType Name="ThroughputData">
+        <Property Name="Bytes" Type="Edm.Int64" Nullable="false" />
+        <Property Name="EndTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Files" Type="Edm.Int64" Nullable="false" />
+        <Property Name="StartTime" Type="Edm.DateTime" Nullable="false" />
       </ComplexType>
       <EntityType Name="AgentGroup" BaseType="Microsoft.Online.SharePoint.MigrationCenter.Common.AgentGroupEntity">
         <Property Name="ActiveAgentCount" Type="Edm.Int32" Nullable="false" />
@@ -29041,11 +29054,17 @@
         <Property Name="AgentId" Type="Edm.Guid" Nullable="false" />
         <Property Name="AgentName" Type="Edm.String" />
         <Property Name="Bottleneck" Type="Edm.String" />
+        <Property Name="DiskWritingSpeed" Type="Edm.Int64" Nullable="false" />
+        <Property Name="Duration" Type="Edm.Int64" Nullable="false" />
         <Property Name="MigratedBytes" Type="Edm.Int64" Nullable="false" />
         <Property Name="MigratedFiles" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PackingSpeed" Type="Edm.Int64" Nullable="false" />
         <Property Name="Recommendation" Type="Edm.String" />
         <Property Name="ResourceId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="SourceReadingSpeed" Type="Edm.Int64" Nullable="false" />
+        <Property Name="SPOProcessingSpeed" Type="Edm.Int64" Nullable="false" />
         <Property Name="Timestamp" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="UploadingSpeed" Type="Edm.Int64" Nullable="false" />
       </EntityType>
       <EntityType Name="MigrationTaskEntityData">
         <Key>
@@ -29100,6 +29119,13 @@
         <Property Name="Description" Type="Edm.String" />
         <Property Name="Password" Type="Edm.String" />
         <Property Name="Type" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="PerfRecommendation">
+        <Key>
+          <PropertyRef Name="Guidance" />
+        </Key>
+        <Property Name="Guidance" Type="Edm.String" Nullable="false" />
+        <Property Name="Link" Type="Edm.String" />
       </EntityType>
       <EntityType Name="UrlParseResult">
         <Key>
