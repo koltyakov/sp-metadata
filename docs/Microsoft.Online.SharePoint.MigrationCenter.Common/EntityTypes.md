@@ -9,4 +9,5 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [MigrationCredentialEntityData](./EntityTypes/MigrationCredentialEntityData.md) | ✅ | ❌ | ❌ | ❌
 [MigrationPerformanceEntityData](./EntityTypes/MigrationPerformanceEntityData.md) | ✅ | ❌ | ❌ | ❌
 [MigrationTaskEntityData](./EntityTypes/MigrationTaskEntityData.md) | ✅ | ❌ | ❌ | ❌
+[PerfRecommendation](./EntityTypes/PerfRecommendation.md) | ✅ | ❌ | ❌ | ❌
 [UrlParseResult](./EntityTypes/UrlParseResult.md) | ✅ | ❌ | ❌ | ❌

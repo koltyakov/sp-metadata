@@ -4,9 +4,9 @@
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+AddPerfDataTest (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData)) | ✅ | ❌ | ❌ | ❌
 BatchCreate (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask)) | ✅ | ❌ | ❌ | ❌
 BatchDelete (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask)) | ✅ | ❌ | ❌ | ❌
-BatchRandomCreate (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData)) | ✅ | ❌ | ❌ | ❌
 Create (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage) | ✅ | ❌ | ❌ | ❌
 CreateByName (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroup)) | ✅ | ❌ | ❌ | ❌
 CreateDuplicateTasks (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask)) | ✅ | ❌ | ❌ | ❌
@@ -26,7 +26,9 @@ GetByName (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.AgentG
 GetCredentials (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential)) | ✅ | ❌ | ❌ | ❌
 GetData (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData)) | ✅ | ❌ | ❌ | ❌
 GetGroupList (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroup)) | ✅ | ❌ | ❌ | ❌
+GetPerfDataTest (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData)) | ✅ | ❌ | ❌ | ❌
 GetProperty (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationProperties) | ✅ | ❌ | ❌ | ❌
+GetRawData (Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData)) | ✅ | ❌ | ❌ | ❌
 IsChangeDeployed (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterDeployStatus) | ✅ | ❌ | ❌ | ❌
 IsFlightEnabled (Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationSPFlight) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MigrationCenter_Service_AgentGroup">Microsoft_Online_SharePoint_MigrationCenter_Servic...</span> (Microsoft Online SharePoint MigrationCenter Service AgentGroup) | ✅ | ❌ | ❌ | ❌

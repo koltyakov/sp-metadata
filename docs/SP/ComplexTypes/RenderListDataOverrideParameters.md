@@ -98,6 +98,7 @@ IsCSR (Edm.String) | ✅ | ✅ | ✅ | ❌
 IsGroupRender (Edm.String) | ✅ | ✅ | ✅ | ❌
 IsXslView (Edm.String) | ✅ | ✅ | ✅ | ❌
 ListViewPageUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
+OverrideRowLimit (Edm.String) | ✅ | ❌ | ❌ | ❌
 OverrideScope (Edm.String) | ✅ | ✅ | ✅ | ❌
 OverrideSelectCommand (Edm.String) | ✅ | ✅ | ✅ | ❌
 PageFirstRow (Edm.String) | ✅ | ✅ | ✅ | ❌

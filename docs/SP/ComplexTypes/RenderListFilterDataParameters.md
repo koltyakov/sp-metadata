@@ -11,3 +11,4 @@ FieldInternalName (Edm.String) | ✅ | ✅ | ✅ | ❌
 OverrideScope (Edm.String) | ✅ | ✅ | ✅ | ❌
 ProcessQStringToCAML (Edm.String) | ✅ | ✅ | ✅ | ❌
 ViewId (Edm.String) | ✅ | ✅ | ✅ | ❌
+ViewXml (Edm.String) | ✅ | ❌ | ❌ | ❌

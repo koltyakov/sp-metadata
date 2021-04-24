@@ -295,6 +295,7 @@ OrgRelationVerifications | ✅ | ❌ | ❌ | ❌
 PageDiagnostics | ✅ | ❌ | ❌ | ❌
 PageSizess | ✅ | ✅ | ❌ | ❌
 PeopleManagers | ✅ | ✅ | ✅ | ✅
+PerfRecommendations | ✅ | ❌ | ❌ | ❌
 PersistedPropertiess | ✅ | ✅ | ✅ | ✅
 PersonMagazines | ✅ | ❌ | ❌ | ❌
 PersonPropertiess | ✅ | ✅ | ✅ | ✅

@@ -24,4 +24,5 @@ ModifiedBy (Edm.String) | ✅ | ❌ | ❌ | ❌
 ObjectId (Edm.String) | ✅ | ❌ | ❌ | ❌
 PublicationType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Schemas (Edm.String) | ✅ | ❌ | ❌ | ❌
+SourceUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 UniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
