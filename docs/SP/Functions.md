@@ -47,7 +47,6 @@ ApplyTheme (SP.Web) | ✅ | ✅ | ✅ | ✅
 ApplyWebTemplate (SP.Web) | ✅ | ✅ | ✅ | ✅
 Approve (SP.File) | ✅ | ✅ | ✅ | ✅
 [AttachAssignmentToQuiz](./Functions/AttachAssignmentToQuiz.md) | ❌ | ❌ | ❌ | ✅
-AuthenticateAndReturnPageContext (SP.Web) | ✅ | ❌ | ❌ | ❌
 BreakRoleInheritance (SP.List) | ✅ | ✅ | ✅ | ✅
 BreakRoleInheritance (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 BreakRoleInheritance (SP.SecurableObject) | ✅ | ✅ | ✅ | ✅
@@ -60,6 +59,7 @@ CheckIn (SP.File) | ✅ | ✅ | ✅ | ✅
 CheckLicense (SP.SPAppLicenseManager) | ✅ | ❌ | ❌ | ❌
 CheckOut (SP.File) | ✅ | ✅ | ✅ | ✅
 Clear (Collection(SP.UserCustomAction)) | ✅ | ✅ | ✅ | ✅
+ClearBusinessAppMigrationInteractiveData (SP.List) | ✅ | ❌ | ❌ | ❌
 ClearCorporateCatalog (SP.TenantSettings) | ✅ | ❌ | ❌ | ❌
 Configuration (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 Contains (Collection(SP.Alert)) | ✅ | ✅ | ❌ | ❌
@@ -534,6 +534,7 @@ SP_ListHomeItemCollection_GetRecommendLists | ✅ | ❌ | ❌ | ❌
 [SP_ListHomeItemCollection_RemoveRecentLists](./Functions/SP_ListHomeItemCollection_RemoveRecentLists.md) | ✅ | ❌ | ❌ | ❌
 [SP_ListHomeItemCollection_RemoveRecommendLists](./Functions/SP_ListHomeItemCollection_RemoveRecommendLists.md) | ✅ | ❌ | ❌ | ❌
 [SP_List_GetListDataAsStream](./Functions/SP_List_GetListDataAsStream.md) | ✅ | ✅ | ❌ | ❌
+[SP_List_GetOneDriveListDataAsStream](./Functions/SP_List_GetOneDriveListDataAsStream.md) | ✅ | ❌ | ❌ | ❌
 [SP_MountPoint_GetMountedFolderInfo](./Functions/SP_MountPoint_GetMountedFolderInfo.md) | ✅ | ✅ | ✅ | ❌
 [SP_MoveCopyUtil_CopyFile](./Functions/SP_MoveCopyUtil_CopyFile.md) | ✅ | ✅ | ✅ | ❌
 [SP_MoveCopyUtil_CopyFileByPath](./Functions/SP_MoveCopyUtil_CopyFileByPath.md) | ✅ | ✅ | ❌ | ❌
@@ -784,6 +785,7 @@ ValidateSetValue (SP.FieldUrl) | ❌ | ❌ | ❌ | ✅
 ValidateSetValue (SP.FieldUser) | ❌ | ❌ | ❌ | ✅
 ValidateUpdateFetchListItem (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 ValidateUpdateListItem (SP.ListItem) | ✅ | ✅ | ✅ | ✅
+VivaConnections (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 contextinfo | ✅ | ✅ | ✅ | ✅
 files | ✅ | ✅ | ✅ | ❌
 getFileExtendedActivities (SP.List) | ❌ | ✅ | ❌ | ❌

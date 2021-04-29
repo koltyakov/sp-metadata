@@ -10,6 +10,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CommunicationSiteCreationResponse](./ComplexTypes/CommunicationSiteCreationResponse.md) | ✅ | ✅ | ❌ | ❌
 [DateTimeCustomProperty](./ComplexTypes/DateTimeCustomProperty.md) | ✅ | ❌ | ❌ | ❌
 [Error](./ComplexTypes/Error.md) | ✅ | ❌ | ❌ | ❌
+[FeedVideoPageFieldsData](./ComplexTypes/FeedVideoPageFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [FilePickerOptions](./ComplexTypes/FilePickerOptions.md) | ✅ | ❌ | ❌ | ❌
 [ItemViewsAnalyticsData](./ComplexTypes/ItemViewsAnalyticsData.md) | ✅ | ❌ | ❌ | ❌
 [PersonCore](./ComplexTypes/PersonCore.md) | ✅ | ❌ | ❌ | ❌
