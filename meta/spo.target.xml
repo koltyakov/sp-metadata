@@ -63,6 +63,13 @@
         <Property Name="Audiences" Type="Collection(Edm.String)" />
         <Property Name="Name" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="VivaConnectionsUrlConfiguration">
+        <Property Name="ContentUrl" Type="Edm.String" />
+        <Property Name="DashboardNotConfiguredWarning" Type="Edm.String" />
+        <Property Name="GlobalNavNotConfiguredWarning" Type="Edm.String" />
+        <Property Name="NotHomeSiteUrlWarning" Type="Edm.String" />
+        <Property Name="SearchUrl" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="ContentTypeId">
         <Property Name="StringValue" Type="Edm.String" />
       </ComplexType>
@@ -3631,6 +3638,10 @@
         <End Type="SP.User" Role="PeopleInMedia" Multiplicity="*" />
         <End Type="SP.Publishing.VideoItem" Role="PeopleInMediaPartner" Multiplicity="0..1" />
       </Association>
+      <Association Name="SP_Publishing_SitePage_Translations_SP_TranslationStatusCollection_TranslationsPartner">
+        <End Type="SP.TranslationStatusCollection" Role="Translations" Multiplicity="0..1" />
+        <End Type="SP.Publishing.SitePage" Role="TranslationsPartner" Multiplicity="0..1" />
+      </Association>
       <Association Name="SP_Publishing_PointPublishingPost_images_SP_File_imagesPartner">
         <End Type="SP.File" Role="images" Multiplicity="*" />
         <End Type="SP.Publishing.PointPublishingPost" Role="imagesPartner" Multiplicity="0..1" />
@@ -3638,10 +3649,6 @@
       <Association Name="SP_Publishing_PointPublishingPostServiceManager_bannerimages_SP_File_bannerimagesPartner">
         <End Type="SP.File" Role="bannerimages" Multiplicity="*" />
         <End Type="SP.Publishing.PointPublishingPostServiceManager" Role="bannerimagesPartner" Multiplicity="0..1" />
-      </Association>
-      <Association Name="SP_Publishing_SitePage_Translations_SP_TranslationStatusCollection_TranslationsPartner">
-        <End Type="SP.TranslationStatusCollection" Role="Translations" Multiplicity="0..1" />
-        <End Type="SP.Publishing.SitePage" Role="TranslationsPartner" Multiplicity="0..1" />
       </Association>
       <Association Name="SP_Publishing_VideoPermissionGroup_Users_SP_User_UsersPartner">
         <End Type="SP.User" Role="Users" Multiplicity="*" />
@@ -4159,6 +4166,7 @@
         <EntitySet Name="CommunicationSites" EntityType="SP.Publishing.CommunicationSite" />
         <EntitySet Name="EmbedDataV1s" EntityType="SP.Publishing.EmbedDataV1" />
         <EntitySet Name="EmbedServices" EntityType="SP.Publishing.EmbedService" />
+        <EntitySet Name="SitePageMetadatas" EntityType="SP.Publishing.SitePageMetadata" />
         <EntitySet Name="PersonMagazines" EntityType="SP.Publishing.PersonMagazine" />
         <EntitySet Name="PointPublishingDocPropss" EntityType="SP.Publishing.PointPublishingDocProps" />
         <EntitySet Name="PointPublishingMagazinePropss" EntityType="SP.Publishing.PointPublishingMagazineProps" />
@@ -4169,7 +4177,6 @@
         <EntitySet Name="PointPublishingTenantManagers" EntityType="SP.Publishing.PointPublishingTenantManager" />
         <EntitySet Name="PointPublishingUsers" EntityType="SP.Publishing.PointPublishingUser" />
         <EntitySet Name="PrimaryCityTimes" EntityType="SP.Publishing.PrimaryCityTime" />
-        <EntitySet Name="SitePageMetadatas" EntityType="SP.Publishing.SitePageMetadata" />
         <EntitySet Name="RichSharings" EntityType="SP.Publishing.RichSharing" />
         <EntitySet Name="Searchs" EntityType="SP.Publishing.Search" />
         <EntitySet Name="SharePointHomeServiceManagers" EntityType="SP.Publishing.SharePointHomeServiceManager" />
@@ -4269,15 +4276,15 @@
         <EntitySet Name="Utilitys" EntityType="SP.Utilities.Utility" />
         <EntitySet Name="WopiHostUtilitys" EntityType="SP.Utilities.WopiHostUtility" />
         <EntitySet Name="WopiPropertiess" EntityType="SP.Utilities.WopiProperties" />
+        <EntitySet Name="Views" EntityType="SP.View" />
+        <EntitySet Name="ViewFieldCollections" EntityType="SP.ViewFieldCollection" />
+        <EntitySet Name="VisualizationAppSynchronizationResults" EntityType="SP.VisualizationAppSynchronizationResult" />
         <EntitySet Name="WebInformations" EntityType="SP.WebInformation" />
         <EntitySet Name="LimitedWebPartManagers" EntityType="SP.WebParts.LimitedWebPartManager" />
         <EntitySet Name="WebParts" EntityType="SP.WebParts.WebPart" />
         <EntitySet Name="WebPartDefinitions" EntityType="SP.WebParts.WebPartDefinition" />
         <EntitySet Name="WebProxys" EntityType="SP.WebProxy" />
         <EntitySet Name="WebTemplates" EntityType="SP.WebTemplate" />
-        <EntitySet Name="Views" EntityType="SP.View" />
-        <EntitySet Name="ViewFieldCollections" EntityType="SP.ViewFieldCollection" />
-        <EntitySet Name="VisualizationAppSynchronizationResults" EntityType="SP.VisualizationAppSynchronizationResult" />
         <EntitySet Name="SPWorkflows" EntityType="SP.Workflow.SPWorkflow" />
         <EntitySet Name="SPWorkflowManagers" EntityType="SP.Workflow.SPWorkflowManager" />
         <EntitySet Name="WorkflowAssociations" EntityType="SP.Workflow.WorkflowAssociation" />
@@ -5328,6 +5335,7 @@
           <Parameter Name="holdPeriodSource" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddUnifiedRetentionWorkItem" ReturnType="Edm.Boolean" />
+        <FunctionImport Name="SP_ComplianceFoundation_PreserveDocumentSubmitter_AddPreserveCloudAttachmentWorkItem" ReturnType="Edm.Boolean" />
         <FunctionImport Name="SP_ComplianceFoundation_PreserveDocumentSubmitter_PreserveCloudAttachmentIntoPHL" ReturnType="SP.ComplianceFoundation.Models.PreservedCloudAttachment">
           <Parameter Name="webId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="documentUniqueId" Type="Edm.Guid" Nullable="false" />
@@ -7518,6 +7526,69 @@
           <Parameter Name="url" Type="Edm.String" />
           <Parameter Name="version" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="SP_Publishing_FeedVideoPageCollection" ReturnType="Collection(SP.Publishing.FeedVideoPage)" IsComposable="true" EntitySet="SitePageMetadatas" />
+        <FunctionImport Name="IsContentTypeAvailable" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Collection(SP.Publishing.FeedVideoPage)" />
+        </FunctionImport>
+        <FunctionImport Name="BoostNews" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+          <Parameter Name="SitePageBoost" Type="SP.Publishing.BoostFieldsData" />
+        </FunctionImport>
+        <FunctionImport Name="CheckOut" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+        </FunctionImport>
+        <FunctionImport Name="CheckoutPage" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+        </FunctionImport>
+        <FunctionImport Name="Copy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+        </FunctionImport>
+        <FunctionImport Name="CreateNewsCopy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+        </FunctionImport>
+        <FunctionImport Name="DemoteFromNews" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+        </FunctionImport>
+        <FunctionImport Name="DiscardPage" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+        </FunctionImport>
+        <FunctionImport Name="GetVersion" ReturnType="SP.Publishing.SitePage" IsComposable="true" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+          <Parameter Name="versionId" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="PromoteToNews" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+        </FunctionImport>
+        <FunctionImport Name="Publish" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+        </FunctionImport>
+        <FunctionImport Name="SaveDraft" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+          <Parameter Name="sitePage" Type="SP.Publishing.SitePageFieldsData" />
+        </FunctionImport>
+        <FunctionImport Name="SavePage" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+          <Parameter Name="pageStream" Type="Edm.Stream" />
+        </FunctionImport>
+        <FunctionImport Name="SavePageAsDraft" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+          <Parameter Name="pageStream" Type="Edm.Stream" />
+        </FunctionImport>
+        <FunctionImport Name="SavePageAsTemplate" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+        </FunctionImport>
+        <FunctionImport Name="SchedulePublish" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+          <Parameter Name="sitePage" Type="SP.Publishing.SitePageFieldsData" />
+        </FunctionImport>
+        <FunctionImport Name="SharePagePreviewByEmail" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+          <Parameter Name="message" Type="Edm.String" />
+          <Parameter Name="recipientEmails" Type="Collection(Edm.String)" />
+        </FunctionImport>
+        <FunctionImport Name="Update" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+        </FunctionImport>
         <FunctionImport Name="SP_Publishing_PageDiagnosticsController" ReturnType="SP.Publishing.PageDiagnosticsController" IsComposable="true" EntitySet="PageDiagnostics" />
         <FunctionImport Name="ByPage" ReturnType="Microsoft.SharePoint.Publishing.Diagnostics.PageDiagnostics" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.PageDiagnosticsController" />
@@ -9157,6 +9228,10 @@
           <Parameter Name="siteDesignId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplyImplicitSiteDesign" ReturnType="Edm.Boolean" />
+        <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplyListDesign" ReturnType="Collection(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptActionResult)">
+          <Parameter Name="listDesignId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="store" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplySiteDesign" ReturnType="Collection(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptActionResult)">
           <Parameter Name="webUrl" Type="Edm.String" />
           <Parameter Name="siteDesignId" Type="Edm.Guid" Nullable="false" />
@@ -9639,6 +9714,10 @@
         <FunctionImport Name="Configuration" ReturnType="SP.ConfigurationData" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.EmployeeEngagement" />
         </FunctionImport>
+        <FunctionImport Name="VivaConnections" ReturnType="SP.VivaConnectionsUrlConfiguration" IsBindable="true">
+          <Parameter Name="this" Type="SP.EmployeeEngagement" />
+          <Parameter Name="adminConfiguredUrl" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="Like" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Comments.comment" />
         </FunctionImport>
@@ -9805,6 +9884,7 @@
           <Parameter Name="viewId" Type="Edm.String" />
           <Parameter Name="itemIds" Type="Collection(Edm.Int32)" Nullable="false" />
           <Parameter Name="relativeItemId" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="insertAfter" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="skipSaveView" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="AddItem" ReturnType="SP.ListItem" IsBindable="true" EntitySet="ListItems">
@@ -9840,6 +9920,9 @@
           <Parameter Name="bNewDocumentUpdate" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="checkInComment" Type="Edm.String" />
           <Parameter Name="folderPath" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="ClearBusinessAppMigrationInteractiveData" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
         </FunctionImport>
         <FunctionImport Name="CreateDocumentAndGetEditLink" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -10080,6 +10163,138 @@
         <FunctionImport Name="GetMappedApps" ReturnType="SP.VisualizationAppSynchronizationResult" IsBindable="true" EntitySet="VisualizationAppSynchronizationResults">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="visualizationAppTarget" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_List_GetOneDriveListDataAsStream" ReturnType="Edm.Stream" IsSideEffecting="false">
+          <Parameter Name="parameters" Type="SP.RenderListDataParameters" />
+          <Parameter Name="CascDelWarnMessage" Type="Edm.String" />
+          <Parameter Name="CustomAction" Type="Edm.String" />
+          <Parameter Name="DrillDown" Type="Edm.String" />
+          <Parameter Name="Field" Type="Edm.String" />
+          <Parameter Name="FieldInternalName" Type="Edm.String" />
+          <Parameter Name="Filter" Type="Edm.String" />
+          <Parameter Name="FilterData" Type="Edm.String" />
+          <Parameter Name="FilterData1" Type="Edm.String" />
+          <Parameter Name="FilterData10" Type="Edm.String" />
+          <Parameter Name="FilterData2" Type="Edm.String" />
+          <Parameter Name="FilterData3" Type="Edm.String" />
+          <Parameter Name="FilterData4" Type="Edm.String" />
+          <Parameter Name="FilterData5" Type="Edm.String" />
+          <Parameter Name="FilterData6" Type="Edm.String" />
+          <Parameter Name="FilterData7" Type="Edm.String" />
+          <Parameter Name="FilterData8" Type="Edm.String" />
+          <Parameter Name="FilterData9" Type="Edm.String" />
+          <Parameter Name="FilterField" Type="Edm.String" />
+          <Parameter Name="FilterField1" Type="Edm.String" />
+          <Parameter Name="FilterField10" Type="Edm.String" />
+          <Parameter Name="FilterField2" Type="Edm.String" />
+          <Parameter Name="FilterField3" Type="Edm.String" />
+          <Parameter Name="FilterField4" Type="Edm.String" />
+          <Parameter Name="FilterField5" Type="Edm.String" />
+          <Parameter Name="FilterField6" Type="Edm.String" />
+          <Parameter Name="FilterField7" Type="Edm.String" />
+          <Parameter Name="FilterField8" Type="Edm.String" />
+          <Parameter Name="FilterField9" Type="Edm.String" />
+          <Parameter Name="FilterFields" Type="Edm.String" />
+          <Parameter Name="FilterFields1" Type="Edm.String" />
+          <Parameter Name="FilterFields10" Type="Edm.String" />
+          <Parameter Name="FilterFields2" Type="Edm.String" />
+          <Parameter Name="FilterFields3" Type="Edm.String" />
+          <Parameter Name="FilterFields4" Type="Edm.String" />
+          <Parameter Name="FilterFields5" Type="Edm.String" />
+          <Parameter Name="FilterFields6" Type="Edm.String" />
+          <Parameter Name="FilterFields7" Type="Edm.String" />
+          <Parameter Name="FilterFields8" Type="Edm.String" />
+          <Parameter Name="FilterFields9" Type="Edm.String" />
+          <Parameter Name="FilterLookupId" Type="Edm.String" />
+          <Parameter Name="FilterLookupId1" Type="Edm.String" />
+          <Parameter Name="FilterLookupId10" Type="Edm.String" />
+          <Parameter Name="FilterLookupId2" Type="Edm.String" />
+          <Parameter Name="FilterLookupId3" Type="Edm.String" />
+          <Parameter Name="FilterLookupId4" Type="Edm.String" />
+          <Parameter Name="FilterLookupId5" Type="Edm.String" />
+          <Parameter Name="FilterLookupId6" Type="Edm.String" />
+          <Parameter Name="FilterLookupId7" Type="Edm.String" />
+          <Parameter Name="FilterLookupId8" Type="Edm.String" />
+          <Parameter Name="FilterLookupId9" Type="Edm.String" />
+          <Parameter Name="FilterOp" Type="Edm.String" />
+          <Parameter Name="FilterOp1" Type="Edm.String" />
+          <Parameter Name="FilterOp10" Type="Edm.String" />
+          <Parameter Name="FilterOp2" Type="Edm.String" />
+          <Parameter Name="FilterOp3" Type="Edm.String" />
+          <Parameter Name="FilterOp4" Type="Edm.String" />
+          <Parameter Name="FilterOp5" Type="Edm.String" />
+          <Parameter Name="FilterOp6" Type="Edm.String" />
+          <Parameter Name="FilterOp7" Type="Edm.String" />
+          <Parameter Name="FilterOp8" Type="Edm.String" />
+          <Parameter Name="FilterOp9" Type="Edm.String" />
+          <Parameter Name="FilterValue" Type="Edm.String" />
+          <Parameter Name="FilterValue1" Type="Edm.String" />
+          <Parameter Name="FilterValue10" Type="Edm.String" />
+          <Parameter Name="FilterValue2" Type="Edm.String" />
+          <Parameter Name="FilterValue3" Type="Edm.String" />
+          <Parameter Name="FilterValue4" Type="Edm.String" />
+          <Parameter Name="FilterValue5" Type="Edm.String" />
+          <Parameter Name="FilterValue6" Type="Edm.String" />
+          <Parameter Name="FilterValue7" Type="Edm.String" />
+          <Parameter Name="FilterValue8" Type="Edm.String" />
+          <Parameter Name="FilterValue9" Type="Edm.String" />
+          <Parameter Name="FilterValues" Type="Edm.String" />
+          <Parameter Name="FilterValues1" Type="Edm.String" />
+          <Parameter Name="FilterValues10" Type="Edm.String" />
+          <Parameter Name="FilterValues2" Type="Edm.String" />
+          <Parameter Name="FilterValues3" Type="Edm.String" />
+          <Parameter Name="FilterValues4" Type="Edm.String" />
+          <Parameter Name="FilterValues5" Type="Edm.String" />
+          <Parameter Name="FilterValues6" Type="Edm.String" />
+          <Parameter Name="FilterValues7" Type="Edm.String" />
+          <Parameter Name="FilterValues8" Type="Edm.String" />
+          <Parameter Name="FilterValues9" Type="Edm.String" />
+          <Parameter Name="GroupString" Type="Edm.String" />
+          <Parameter Name="HasOverrideSelectCommand" Type="Edm.String" />
+          <Parameter Name="ID" Type="Edm.String" />
+          <Parameter Name="InplaceFullListSearch" Type="Edm.String" />
+          <Parameter Name="InplaceSearchQuery" Type="Edm.String" />
+          <Parameter Name="IsCSR" Type="Edm.String" />
+          <Parameter Name="IsGroupRender" Type="Edm.String" />
+          <Parameter Name="IsXslView" Type="Edm.String" />
+          <Parameter Name="ListViewPageUrl" Type="Edm.String" />
+          <Parameter Name="OverrideRowLimit" Type="Edm.String" />
+          <Parameter Name="OverrideScope" Type="Edm.String" />
+          <Parameter Name="OverrideSelectCommand" Type="Edm.String" />
+          <Parameter Name="PageFirstRow" Type="Edm.String" />
+          <Parameter Name="PageLastRow" Type="Edm.String" />
+          <Parameter Name="QueryParams" Type="Collection(SP.KeyValue)" />
+          <Parameter Name="RootFolder" Type="Edm.String" />
+          <Parameter Name="RootFolderUniqueId" Type="Edm.String" />
+          <Parameter Name="SortDir" Type="Edm.String" />
+          <Parameter Name="SortDir1" Type="Edm.String" />
+          <Parameter Name="SortDir10" Type="Edm.String" />
+          <Parameter Name="SortDir2" Type="Edm.String" />
+          <Parameter Name="SortDir3" Type="Edm.String" />
+          <Parameter Name="SortDir4" Type="Edm.String" />
+          <Parameter Name="SortDir5" Type="Edm.String" />
+          <Parameter Name="SortDir6" Type="Edm.String" />
+          <Parameter Name="SortDir7" Type="Edm.String" />
+          <Parameter Name="SortDir8" Type="Edm.String" />
+          <Parameter Name="SortDir9" Type="Edm.String" />
+          <Parameter Name="SortField" Type="Edm.String" />
+          <Parameter Name="SortField1" Type="Edm.String" />
+          <Parameter Name="SortField10" Type="Edm.String" />
+          <Parameter Name="SortField2" Type="Edm.String" />
+          <Parameter Name="SortField3" Type="Edm.String" />
+          <Parameter Name="SortField4" Type="Edm.String" />
+          <Parameter Name="SortField5" Type="Edm.String" />
+          <Parameter Name="SortField6" Type="Edm.String" />
+          <Parameter Name="SortField7" Type="Edm.String" />
+          <Parameter Name="SortField8" Type="Edm.String" />
+          <Parameter Name="SortField9" Type="Edm.String" />
+          <Parameter Name="SortFields" Type="Edm.String" />
+          <Parameter Name="SortFieldValues" Type="Edm.String" />
+          <Parameter Name="View" Type="Edm.String" />
+          <Parameter Name="ViewCount" Type="Edm.String" />
+          <Parameter Name="ViewId" Type="Edm.String" />
+          <Parameter Name="ViewPath" Type="Edm.String" />
+          <Parameter Name="WebPartId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="GetPlaceholdersMetadata" ReturnType="Collection(SP.Placeholder)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -10545,9 +10760,6 @@
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="webTemplate" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="AuthenticateAndReturnPageContext" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-        </FunctionImport>
         <FunctionImport Name="SP_Web_CreateAnonymousLink" ReturnType="Edm.String">
           <Parameter Name="url" Type="Edm.String" />
           <Parameter Name="isEditLink" Type="Edm.Boolean" Nullable="false" />
@@ -10563,7 +10775,7 @@
           <Parameter Name="userLogin2" Type="Edm.String" />
           <Parameter Name="groupNameSeed" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="CreateGroupBasedEnvironment" ReturnType="SP.FlowSynchronizationResult" IsComposable="true" IsBindable="true" EntitySet="FlowSynchronizationResults">
+        <FunctionImport Name="CreateGroupBasedEnvironment" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
           <Parameter Name="this" Type="SP.Web" />
         </FunctionImport>
         <FunctionImport Name="SP_Web_CreateOrganizationSharingLink" ReturnType="Edm.String">
@@ -15618,6 +15830,14 @@
           <End Role="PersonalSitePartner" EntitySet="UserProfiles" />
           <End Role="PersonalSite" EntitySet="Sites" />
         </AssociationSet>
+        <AssociationSet Name="SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartnerSet" Association="SP.SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartner">
+          <End Role="ViewFieldsPartner" EntitySet="Views" />
+          <End Role="ViewFields" EntitySet="ViewFieldCollections" />
+        </AssociationSet>
+        <AssociationSet Name="SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartnerSet" Association="SP.SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartner">
+          <End Role="AppMappedViewsPartner" EntitySet="VisualizationAppSynchronizationResults" />
+          <End Role="AppMappedViews" EntitySet="Views" />
+        </AssociationSet>
         <AssociationSet Name="SP_WebParts_LimitedWebPartManager_WebParts_SP_WebParts_WebPartDefinition_WebPartsPartnerSet" Association="SP.WebParts.SP_WebParts_LimitedWebPartManager_WebParts_SP_WebParts_WebPartDefinition_WebPartsPartner">
           <End Role="WebPartsPartner" EntitySet="LimitedWebPartManagers" />
           <End Role="WebParts" EntitySet="WebPartDefinitions" />
@@ -15629,14 +15849,6 @@
         <AssociationSet Name="SP_WebParts_WebPartDefinition_WebPart_SP_WebParts_WebPart_WebPartPartnerSet" Association="SP.WebParts.SP_WebParts_WebPartDefinition_WebPart_SP_WebParts_WebPart_WebPartPartner">
           <End Role="WebPartPartner" EntitySet="WebPartDefinitions" />
           <End Role="WebPart" EntitySet="WebParts" />
-        </AssociationSet>
-        <AssociationSet Name="SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartnerSet" Association="SP.SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartner">
-          <End Role="ViewFieldsPartner" EntitySet="Views" />
-          <End Role="ViewFields" EntitySet="ViewFieldCollections" />
-        </AssociationSet>
-        <AssociationSet Name="SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartnerSet" Association="SP.SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartner">
-          <End Role="AppMappedViewsPartner" EntitySet="VisualizationAppSynchronizationResults" />
-          <End Role="AppMappedViews" EntitySet="Views" />
         </AssociationSet>
         <AssociationSet Name="SP_WorkflowServices_InteropService_Current_SP_WorkflowServices_InteropService_CurrentPartnerSet" Association="SP.WorkflowServices.SP_WorkflowServices_InteropService_Current_SP_WorkflowServices_InteropService_CurrentPartner">
           <End Role="CurrentPartner" EntitySet="InteropServices" />
@@ -15900,6 +16112,39 @@
       <Annotations Target="SP.Publishing.DateTimeCustomProperty">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.SitePageFieldsData/AuthorByline">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.SitePageFieldsData/BannerImageUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.SitePageFieldsData/CanvasContent1">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.SitePageFieldsData/CanvasJson1">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.SitePageFieldsData/Categories">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.SitePageFieldsData/Description">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.SitePageFieldsData/LayoutWebpartsContent">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.SitePageFieldsData/Modified">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.SitePageFieldsData/PublishStartDate">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.SitePageFieldsData/Title">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.SitePageFieldsData/TopicHeader">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.PersonCore">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -15940,39 +16185,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.PropertyValue">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Publishing.SitePageFieldsData/AuthorByline">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Publishing.SitePageFieldsData/BannerImageUrl">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Publishing.SitePageFieldsData/CanvasContent1">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Publishing.SitePageFieldsData/CanvasJson1">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Publishing.SitePageFieldsData/Categories">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Publishing.SitePageFieldsData/Description">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Publishing.SitePageFieldsData/LayoutWebpartsContent">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Publishing.SitePageFieldsData/Modified">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Publishing.SitePageFieldsData/PublishStartDate">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Publishing.SitePageFieldsData/Title">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Publishing.SitePageFieldsData/TopicHeader">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.SharePagePreviewByEmailFieldsData">
@@ -16363,6 +16575,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.PivotItem">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.VivaConnectionsUrlConfiguration">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Deployment.ShortcutInformation">
@@ -18129,12 +18344,6 @@
       <Annotations Target="SP.Publishing.VideoItem">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.Publishing.PersonMagazine">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Publishing.PrimaryCityTime">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.Publishing.SitePageMetadata">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18307,6 +18516,18 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.RepostPage/ShouldSaveAsDraft">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.FeedVideoPage">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.FeedVideoPage/VideoDuration">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.PersonMagazine">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.PrimaryCityTime">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.RepostPageMetadata">
@@ -19188,6 +19409,9 @@
       <Annotations Target="SP.ApiData/SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddUnifiedRetentionWorkItem()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_ComplianceFoundation_PreserveDocumentSubmitter_AddPreserveCloudAttachmentWorkItem()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_ComplianceFoundation_PreserveDocumentSubmitter_PreserveCloudAttachmentIntoPHL(Edm.Guid, Edm.Guid, Edm.String, SP.ComplianceFoundation.Models.ComplianceTagInfo)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19255,6 +19479,63 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/EmbedData(SP.Publishing.EmbedService, Edm.String, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_Publishing_FeedVideoPageCollection()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/IsContentTypeAvailable(Collection(SP.Publishing.FeedVideoPage))">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/BoostNews(SP.Publishing.FeedVideoPage, SP.Publishing.BoostFieldsData)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/CheckOut(SP.Publishing.FeedVideoPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/CheckoutPage(SP.Publishing.FeedVideoPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Copy(SP.Publishing.FeedVideoPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/CreateNewsCopy(SP.Publishing.FeedVideoPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/DemoteFromNews(SP.Publishing.FeedVideoPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/DiscardPage(SP.Publishing.FeedVideoPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetVersion(SP.Publishing.FeedVideoPage, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/PromoteToNews(SP.Publishing.FeedVideoPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Publish(SP.Publishing.FeedVideoPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SaveDraft(SP.Publishing.FeedVideoPage, SP.Publishing.SitePageFieldsData)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SavePage(SP.Publishing.FeedVideoPage, Edm.Stream)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SavePageAsDraft(SP.Publishing.FeedVideoPage, Edm.Stream)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SavePageAsTemplate(SP.Publishing.FeedVideoPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SchedulePublish(SP.Publishing.FeedVideoPage, SP.Publishing.SitePageFieldsData)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SharePagePreviewByEmail(SP.Publishing.FeedVideoPage, Edm.String, Collection(Edm.String))">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Update(SP.Publishing.FeedVideoPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Publishing_PersonMagazine_GetDirects(Edm.String)">
@@ -19839,6 +20120,9 @@
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplyImplicitSiteDesign()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplyListDesign(Edm.Guid, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplySiteDesign(Edm.String, Edm.Guid, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20211,6 +20495,9 @@
       <Annotations Target="SP.ApiData/Configuration(SP.EmployeeEngagement)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/VivaConnections(SP.EmployeeEngagement, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Like(Microsoft.SharePoint.Comments.comment)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20238,7 +20525,7 @@
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_AddToOneDrive_MountService_NotifyChangeToMountPoints(Microsoft.SharePoint.AddToOneDrive.NotifyChangeToMountPointsRequest)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/AddCustomOrderToView(SP.List, Edm.String, Collection(Edm.Int32), Edm.Int32, Edm.Boolean)">
+      <Annotations Target="SP.ApiData/AddCustomOrderToView(SP.List, Edm.String, Collection(Edm.Int32), Edm.Int32, Edm.Boolean, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/AddItemUsingPath(SP.List, SP.ListItemCreationInformationUsingPath)">
@@ -20251,6 +20538,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/BulkValidateUpdateListItems(SP.List, Collection(Edm.Int32), Collection(SP.ListItemFormUpdateValue), Edm.Boolean, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/ClearBusinessAppMigrationInteractiveData(SP.List)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/CreateDocumentWithDefaultName(SP.List, Edm.String, Edm.String)">
@@ -20302,6 +20592,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetMappedApps(SP.List, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_List_GetOneDriveListDataAsStream(SP.RenderListDataParameters, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Collection(SP.KeyValue), Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/PublishMappedView(SP.List, Edm.Guid, Edm.Int32)">
@@ -20368,9 +20661,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetComplianceTagWithRecord(SP.ListItem, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/AuthenticateAndReturnPageContext(SP.Web)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/CreateGroupBasedEnvironment(SP.Web)">
@@ -24917,6 +25207,21 @@
       <ComplexType Name="Error">
         <Property Name="Details" Type="Collection(Edm.String)" />
       </ComplexType>
+      <ComplexType Name="SitePageFieldsData">
+        <Property Name="AuthorByline" Type="Collection(Edm.String)" />
+        <Property Name="BannerImageUrl" Type="Edm.String" />
+        <Property Name="CanvasContent1" Type="Edm.String" />
+        <Property Name="CanvasJson1" Type="Edm.String" />
+        <Property Name="Categories" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="LayoutWebpartsContent" Type="Edm.String" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="PublishStartDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Title" Type="Edm.String" />
+        <Property Name="TopicHeader" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="RepostPageFieldsData" BaseType="SP.Publishing.SitePageFieldsData" />
+      <ComplexType Name="FeedVideoPageFieldsData" BaseType="SP.Publishing.RepostPageFieldsData" />
       <ComplexType Name="ViewData">
         <Property Name="TotalHits" Type="Edm.Int32" Nullable="false" />
         <Property Name="TotalUsers" Type="Edm.Int32" Nullable="false" />
@@ -25083,20 +25388,6 @@
         <Property Name="TermId" Type="Edm.String" />
         <Property Name="Value" Type="Edm.String" />
       </ComplexType>
-      <ComplexType Name="SitePageFieldsData">
-        <Property Name="AuthorByline" Type="Collection(Edm.String)" />
-        <Property Name="BannerImageUrl" Type="Edm.String" />
-        <Property Name="CanvasContent1" Type="Edm.String" />
-        <Property Name="CanvasJson1" Type="Edm.String" />
-        <Property Name="Categories" Type="Edm.String" />
-        <Property Name="Description" Type="Edm.String" />
-        <Property Name="LayoutWebpartsContent" Type="Edm.String" />
-        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="PublishStartDate" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="Title" Type="Edm.String" />
-        <Property Name="TopicHeader" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="RepostPageFieldsData" BaseType="SP.Publishing.SitePageFieldsData" />
       <ComplexType Name="RuleErrorDetails">
         <Property Name="errorHeaders" Type="Collection(Edm.String)" />
         <Property Name="errors" Type="Collection(SP.Publishing.Error)" />
@@ -25250,6 +25541,76 @@
         <NavigationProperty Name="Owner" Relationship="SP.SP_Publishing_VideoItem_Owner_SP_User_OwnerPartner" ToRole="Owner" FromRole="OwnerPartner" />
         <NavigationProperty Name="PeopleInMedia" Relationship="SP.SP_Publishing_VideoItem_PeopleInMedia_SP_User_PeopleInMediaPartner" ToRole="PeopleInMedia" FromRole="PeopleInMediaPartner" />
       </EntityType>
+      <EntityType Name="SitePageMetadata">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="AbsoluteUrl" Type="Edm.String" />
+        <Property Name="AuthorByline" Type="Collection(Edm.String)" />
+        <Property Name="BannerImageUrl" Type="Edm.String" />
+        <Property Name="BannerThumbnailUrl" Type="Edm.String" />
+        <Property Name="Categories" Type="Edm.String" />
+        <Property Name="CommentCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CommentsDisabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ContentTypeId" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="DoesUserHaveEditPermission" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="FileName" Type="Edm.String" />
+        <Property Name="FirstPublished" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="FirstPublishedRelativeTime" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IsPageCheckedOutToCurrentUser" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsWebWelcomePage" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="LikeCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ListId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedRelativeTime" Type="Edm.String" />
+        <Property Name="PageLayoutType" Type="Edm.String" />
+        <Property Name="Path" Type="SP.ResourcePath" />
+        <Property Name="PromotedState" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PublishStartDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="SocialBarOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Title" Type="Edm.String" />
+        <Property Name="TopicHeader" Type="Edm.String" />
+        <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Url" Type="Edm.String" />
+        <Property Name="Version" Type="Edm.String" />
+        <Property Name="VersionInfo" Type="SP.Publishing.SitePageVersionInfo" />
+        <NavigationProperty Name="CreatedBy" Relationship="SP.Publishing.SP_Publishing_SitePageMetadata_CreatedBy_SP_Publishing_UserInfo_CreatedByPartner" ToRole="CreatedBy" FromRole="CreatedByPartner" />
+        <NavigationProperty Name="LastModifiedBy" Relationship="SP.Publishing.SP_Publishing_SitePageMetadata_LastModifiedBy_SP_Publishing_UserInfo_LastModifiedByPartner" ToRole="LastModifiedBy" FromRole="LastModifiedByPartner" />
+      </EntityType>
+      <EntityType Name="UserInfo">
+        <Key>
+          <PropertyRef Name="Name" />
+        </Key>
+        <Property Name="AccountName" Type="Edm.String" />
+        <Property Name="Acronym" Type="Edm.String" />
+        <Property Name="Color" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="SitePage" BaseType="SP.Publishing.SitePageMetadata">
+        <Property Name="AlternativeUrlMap" Type="Edm.String" />
+        <Property Name="CanvasContent1" Type="Edm.String" />
+        <Property Name="CanvasJson1" Type="Edm.String" />
+        <Property Name="IsLikedByCurrentUser" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsTemplate" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="LayoutWebpartsContent" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="SitePageFlags" Type="Edm.String" />
+        <NavigationProperty Name="Translations" Relationship="SP.SP_Publishing_SitePage_Translations_SP_TranslationStatusCollection_TranslationsPartner" ToRole="Translations" FromRole="TranslationsPartner" />
+      </EntityType>
+      <EntityType Name="RepostPage" BaseType="SP.Publishing.SitePage">
+        <Property Name="IsBannerImageUrlExternal" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="OriginalSourceItemId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="OriginalSourceListId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="OriginalSourceSiteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="OriginalSourceUrl" Type="Edm.String" />
+        <Property Name="OriginalSourceWebId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ShouldSaveAsDraft" Type="Edm.Boolean" Nullable="false" />
+      </EntityType>
+      <EntityType Name="FeedVideoPage" BaseType="SP.Publishing.RepostPage">
+        <Property Name="VideoDuration" Type="Edm.Int64" Nullable="false" />
+      </EntityType>
       <EntityType Name="PageDiagnosticsController">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
@@ -25366,73 +25727,6 @@
         <Property Name="Location" Type="Edm.String" Nullable="false" />
         <Property Name="Time" Type="Edm.String" />
         <Property Name="UtcOffset" Type="Edm.String" />
-      </EntityType>
-      <EntityType Name="SitePageMetadata">
-        <Key>
-          <PropertyRef Name="Id" />
-        </Key>
-        <Property Name="AbsoluteUrl" Type="Edm.String" />
-        <Property Name="AuthorByline" Type="Collection(Edm.String)" />
-        <Property Name="BannerImageUrl" Type="Edm.String" />
-        <Property Name="BannerThumbnailUrl" Type="Edm.String" />
-        <Property Name="Categories" Type="Edm.String" />
-        <Property Name="CommentCount" Type="Edm.Int32" Nullable="false" />
-        <Property Name="CommentsDisabled" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="ContentTypeId" Type="Edm.String" />
-        <Property Name="Description" Type="Edm.String" />
-        <Property Name="DoesUserHaveEditPermission" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="FileName" Type="Edm.String" />
-        <Property Name="FirstPublished" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="FirstPublishedRelativeTime" Type="Edm.String" />
-        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
-        <Property Name="IsPageCheckedOutToCurrentUser" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsWebWelcomePage" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="LikeCount" Type="Edm.Int32" Nullable="false" />
-        <Property Name="ListId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="ModifiedRelativeTime" Type="Edm.String" />
-        <Property Name="PageLayoutType" Type="Edm.String" />
-        <Property Name="Path" Type="SP.ResourcePath" />
-        <Property Name="PromotedState" Type="Edm.Int32" Nullable="false" />
-        <Property Name="PublishStartDate" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="SocialBarOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="Title" Type="Edm.String" />
-        <Property Name="TopicHeader" Type="Edm.String" />
-        <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="Url" Type="Edm.String" />
-        <Property Name="Version" Type="Edm.String" />
-        <Property Name="VersionInfo" Type="SP.Publishing.SitePageVersionInfo" />
-        <NavigationProperty Name="CreatedBy" Relationship="SP.Publishing.SP_Publishing_SitePageMetadata_CreatedBy_SP_Publishing_UserInfo_CreatedByPartner" ToRole="CreatedBy" FromRole="CreatedByPartner" />
-        <NavigationProperty Name="LastModifiedBy" Relationship="SP.Publishing.SP_Publishing_SitePageMetadata_LastModifiedBy_SP_Publishing_UserInfo_LastModifiedByPartner" ToRole="LastModifiedBy" FromRole="LastModifiedByPartner" />
-      </EntityType>
-      <EntityType Name="UserInfo">
-        <Key>
-          <PropertyRef Name="Name" />
-        </Key>
-        <Property Name="AccountName" Type="Edm.String" />
-        <Property Name="Acronym" Type="Edm.String" />
-        <Property Name="Color" Type="Edm.String" />
-        <Property Name="Name" Type="Edm.String" Nullable="false" />
-      </EntityType>
-      <EntityType Name="SitePage" BaseType="SP.Publishing.SitePageMetadata">
-        <Property Name="AlternativeUrlMap" Type="Edm.String" />
-        <Property Name="CanvasContent1" Type="Edm.String" />
-        <Property Name="CanvasJson1" Type="Edm.String" />
-        <Property Name="IsLikedByCurrentUser" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsTemplate" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="LayoutWebpartsContent" Type="Edm.String" />
-        <Property Name="Name" Type="Edm.String" />
-        <Property Name="SitePageFlags" Type="Edm.String" />
-        <NavigationProperty Name="Translations" Relationship="SP.SP_Publishing_SitePage_Translations_SP_TranslationStatusCollection_TranslationsPartner" ToRole="Translations" FromRole="TranslationsPartner" />
-      </EntityType>
-      <EntityType Name="RepostPage" BaseType="SP.Publishing.SitePage">
-        <Property Name="IsBannerImageUrlExternal" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="OriginalSourceItemId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="OriginalSourceListId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="OriginalSourceSiteId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="OriginalSourceUrl" Type="Edm.String" />
-        <Property Name="OriginalSourceWebId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="ShouldSaveAsDraft" Type="Edm.Boolean" Nullable="false" />
       </EntityType>
       <EntityType Name="RepostPageMetadata" BaseType="SP.Publishing.SitePageMetadata">
         <Property Name="OriginalSourceItemId" Type="Edm.Guid" Nullable="false" />
@@ -25585,6 +25879,14 @@
         <Property Name="IsSelected" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Url" Type="Edm.String" />
       </EntityType>
+      <Association Name="SP_Publishing_SitePageMetadata_CreatedBy_SP_Publishing_UserInfo_CreatedByPartner">
+        <End Type="SP.Publishing.UserInfo" Role="CreatedBy" Multiplicity="0..1" />
+        <End Type="SP.Publishing.SitePageMetadata" Role="CreatedByPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="SP_Publishing_SitePageMetadata_LastModifiedBy_SP_Publishing_UserInfo_LastModifiedByPartner">
+        <End Type="SP.Publishing.UserInfo" Role="LastModifiedBy" Multiplicity="0..1" />
+        <End Type="SP.Publishing.SitePageMetadata" Role="LastModifiedByPartner" Multiplicity="0..1" />
+      </Association>
       <Association Name="SP_Publishing_PointPublishingPostServiceManager_contributors_SP_Publishing_PointPublishingUser_contributorsPartner">
         <End Type="SP.Publishing.PointPublishingUser" Role="contributors" Multiplicity="*" />
         <End Type="SP.Publishing.PointPublishingPostServiceManager" Role="contributorsPartner" Multiplicity="0..1" />
@@ -25604,14 +25906,6 @@
       <Association Name="SP_Publishing_PointPublishingPostServiceManager_viewers_SP_Publishing_PointPublishingUser_viewersPartner">
         <End Type="SP.Publishing.PointPublishingUser" Role="viewers" Multiplicity="*" />
         <End Type="SP.Publishing.PointPublishingPostServiceManager" Role="viewersPartner" Multiplicity="0..1" />
-      </Association>
-      <Association Name="SP_Publishing_SitePageMetadata_CreatedBy_SP_Publishing_UserInfo_CreatedByPartner">
-        <End Type="SP.Publishing.UserInfo" Role="CreatedBy" Multiplicity="0..1" />
-        <End Type="SP.Publishing.SitePageMetadata" Role="CreatedByPartner" Multiplicity="0..1" />
-      </Association>
-      <Association Name="SP_Publishing_SitePageMetadata_LastModifiedBy_SP_Publishing_UserInfo_LastModifiedByPartner">
-        <End Type="SP.Publishing.UserInfo" Role="LastModifiedBy" Multiplicity="0..1" />
-        <End Type="SP.Publishing.SitePageMetadata" Role="LastModifiedByPartner" Multiplicity="0..1" />
       </Association>
       <Association Name="SP_Publishing_SitePageService_CommunicationSite_SP_Publishing_CommunicationSite_CommunicationSitePartner">
         <End Type="SP.Publishing.CommunicationSite" Role="CommunicationSite" Multiplicity="0..1" />
