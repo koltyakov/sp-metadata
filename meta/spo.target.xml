@@ -80,6 +80,17 @@
       <ComplexType Name="FieldUserValue" BaseType="SP.FieldLookupValue">
         <Property Name="Email" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="ContentAssemblyFormAnswer">
+        <Property Name="Answer" Type="Edm.String" />
+        <Property Name="ContentControlTagName" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ContentControlInfo">
+        <Property Name="ContentControlTagName" Type="Edm.String" />
+        <Property Name="EndIndex" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IsSingleParargaph" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ParagraphIds" Type="Collection(Edm.String)" />
+        <Property Name="StartIndex" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="CountByDate">
         <Property Name="count" Type="Edm.Int32" Nullable="false" />
         <Property Name="date" Type="Edm.Int32" Nullable="false" />
@@ -831,6 +842,7 @@
         <Property Name="FolderServerRelativeUrl" Type="Edm.String" />
         <Property Name="ImageFieldsToTryRewriteToCdnUrls" Type="Edm.String" />
         <Property Name="MergeDefaultView" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ModernListBoot" Type="Edm.Boolean" Nullable="false" />
         <Property Name="OriginalDate" Type="Edm.Boolean" Nullable="false" />
         <Property Name="OverrideViewXml" Type="Edm.String" />
         <Property Name="Paging" Type="Edm.String" />
@@ -1420,6 +1432,7 @@
         <Property Name="ActivityCapabilities" Type="Microsoft.SharePoint.Activities.ActivityCapabilities" />
         <Property Name="CheckInComment" Type="Edm.String" />
         <Property Name="CheckOutType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ComplianceInfo" Type="SP.ListItemComplianceInfo" />
         <Property Name="ContentTag" Type="Edm.String" />
         <Property Name="CustomizedPageStatus" Type="Edm.Int32" Nullable="false" />
         <Property Name="ListId" Type="Edm.Guid" Nullable="false" />
@@ -2358,6 +2371,7 @@
         <Property Name="ShareByEmailEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ShowExternalSharingWarning" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SimplifiedRoles" Type="Collection(SP.KeyValue)" />
+        <Property Name="SiteIBMode" Type="Edm.String" />
         <Property Name="SiteIBSegmentIDs" Type="Collection(Edm.String)" />
         <Property Name="SupportsAclPropagation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="WebUrl" Type="Edm.String" />
@@ -3958,6 +3972,7 @@
         <EntitySet Name="BaseCustomPropertys" EntityType="Microsoft.SharePoint.Publishing.RestOnly.BaseCustomProperty" />
         <EntitySet Name="GetUpgradeOptionsApis" EntityType="Microsoft.SharePoint.QuotaManagement.GetUpgradeOptions.GetUpgradeOptionsApi" />
         <EntitySet Name="SmartCacheItems" EntityType="Microsoft.SharePoint.SmartCache.SmartCacheItem" />
+        <EntitySet Name="SmartCacheJsonBlobItems" EntityType="Microsoft.SharePoint.SmartCache.SmartCacheJsonBlobItem" />
         <EntitySet Name="TenantCdnApis" EntityType="Microsoft.SharePoint.TenantCdn.TenantCdnApi" />
         <EntitySet Name="UserActionAPIs" EntityType="Microsoft.SharePoint.UserActions.UserActionAPI" />
         <EntitySet Name="DesignPackageMenuContentss" EntityType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.DesignPackageMenuContents" />
@@ -5334,8 +5349,8 @@
           <Parameter Name="durationInDays" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="holdPeriodSource" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddHighPriorityRetentionWorkItem" ReturnType="Edm.Boolean" />
         <FunctionImport Name="SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddUnifiedRetentionWorkItem" ReturnType="Edm.Boolean" />
-        <FunctionImport Name="SP_ComplianceFoundation_PreserveDocumentSubmitter_AddPreserveCloudAttachmentWorkItem" ReturnType="Edm.Boolean" />
         <FunctionImport Name="SP_ComplianceFoundation_PreserveDocumentSubmitter_PreserveCloudAttachmentIntoPHL" ReturnType="SP.ComplianceFoundation.Models.PreservedCloudAttachment">
           <Parameter Name="webId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="documentUniqueId" Type="Edm.Guid" Nullable="false" />
@@ -9761,6 +9776,14 @@
         <FunctionImport Name="Microsoft_SharePoint_AuthPolicy_SPTenantIBPolicyComplianceReportEntityData" ReturnType="Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReportEntityData" IsComposable="true" EntitySet="SPTenantIBPolicyComplianceReportEntityDatas" />
         <FunctionImport Name="Microsoft_SharePoint_AuthPolicy_SPTenantIBPolicyComplianceReport" ReturnType="Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReport" IsComposable="true" EntitySet="SPTenantIBPolicyComplianceReportEntityDatas" />
         <FunctionImport Name="Microsoft_SharePoint_AuthPolicy_Events_SPAuthEvents" ReturnType="Collection(Microsoft.SharePoint.AuthPolicy.Events.SPAuthEvent)" IsComposable="true" EntitySet="SPAuthEvents" />
+        <FunctionImport Name="RoleAssignmentMSGraphNotify" ReturnType="Microsoft.SharePoint.AuthPolicy.Events.SPAuthEvent" IsBindable="true" EntitySet="SPAuthEvents">
+          <Parameter Name="this" Type="Collection(Microsoft.SharePoint.AuthPolicy.Events.SPAuthEvent)" />
+          <Parameter Name="tenant" Type="Edm.String" />
+          <Parameter Name="action" Type="Edm.String" />
+          <Parameter Name="type" Type="Edm.String" />
+          <Parameter Name="resourcePayload" Type="Microsoft.SharePoint.AuthPolicy.Events.RoleAssignmentResourcePayload" />
+          <Parameter Name="id" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_AuthPolicy_Events_SPAuthEvent" ReturnType="Microsoft.SharePoint.AuthPolicy.Events.SPAuthEvent" IsComposable="true" EntitySet="SPAuthEvents" />
         <FunctionImport Name="SP_Analytics_AnalyticsUsageEntry_LogAnalyticsAppEvent">
           <Parameter Name="appEventTypeId" Type="Edm.Guid" Nullable="false" />
@@ -9930,6 +9953,12 @@
           <Parameter Name="folderPath" Type="Edm.String" />
           <Parameter Name="documentTemplateType" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="templateUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="CreateDocumentFromCAAETemplate" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="ContentTypName" Type="Edm.String" />
+          <Parameter Name="FileName" Type="Edm.String" />
+          <Parameter Name="contentAssemblyFormAnswers" Type="Collection(SP.ContentAssemblyFormAnswer)" />
         </FunctionImport>
         <FunctionImport Name="CreateDocumentWithDefaultName" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -10321,6 +10350,10 @@
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="sourceUrl" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="ParseDocumentTemplate" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="Name" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="PublishMappedView" ReturnType="SP.View" IsBindable="true" EntitySet="Views">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="appId" Type="Edm.Guid" Nullable="false" />
@@ -10548,6 +10581,11 @@
         <FunctionImport Name="SyncFlowTemplates" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="category" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="TemplatizeDocument" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="Name" Type="Edm.String" />
+          <Parameter Name="contentControlInfos" Type="Collection(SP.ContentControlInfo)" />
         </FunctionImport>
         <FunctionImport Name="UnpublishMappedView" ReturnType="SP.View" IsBindable="true" EntitySet="Views">
           <Parameter Name="this" Type="SP.List" />
@@ -11233,21 +11271,21 @@
           <Parameter Name="this" Type="SP.MultilingualSettings" />
           <Parameter Name="request" Type="SP.TranslationNotificationRecipientSetRequest" />
         </FunctionImport>
-        <FunctionImport Name="SP_NewsCollection_HubNews" ReturnType="Edm.String" IsSideEffecting="false">
+        <FunctionImport Name="SP_NewsCollection_HubNews" ReturnType="Microsoft.SharePoint.News.DataModel.ItemsList" IsSideEffecting="false">
           <Parameter Name="departmentId" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="start" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="count" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="filterByAudience" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="languageOverride" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="SP_NewsCollection_MultiHubNews" ReturnType="Edm.String">
+        <FunctionImport Name="SP_NewsCollection_MultiHubNews" ReturnType="Microsoft.SharePoint.News.DataModel.ItemsList">
           <Parameter Name="multiHubJson" Type="Edm.String" />
           <Parameter Name="start" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="count" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="filterByAudience" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="languageOverride" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="SP_NewsCollection_MultiSiteNews" ReturnType="Edm.String">
+        <FunctionImport Name="SP_NewsCollection_MultiSiteNews" ReturnType="Microsoft.SharePoint.News.DataModel.ItemsList">
           <Parameter Name="multiSiteJson" Type="Edm.String" />
           <Parameter Name="start" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="count" Type="Edm.Int32" Nullable="false" />
@@ -12858,6 +12896,10 @@
           <Parameter Name="versionUpgrade" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="queueOnly" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="sendEmail" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SetIsContributorOwnerEnabledPropertyForDefaultDocLib" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="SP.Site" />
+          <Parameter Name="propertyValue" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="UnregisterHubSite" IsBindable="true">
           <Parameter Name="this" Type="SP.Site" />
@@ -16544,6 +16586,48 @@
       <Annotations Target="Microsoft.SharePoint.QuickActionMessageCard.SPAccessRequestRefreshStatus">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.News.DataModel.SerializableType">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.News.DataModel.ItemReference">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.News.DataModel.DocumentReference">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.News.DataModel.Item">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.News.DataModel.NavigatableItem">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.News.DataModel.Document">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.News.DataModel.Folder">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.News.DataModel.Person">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.News.DataModel.PersonReference">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.News.DataModel.Library">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.News.DataModel.SPOSite">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.News.DataModel.SPOSiteReference">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.News.DataModel.ItemsList">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.News.DataModel.NewsArticle">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.AppUpgradeAvailability">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16941,6 +17025,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.RenderListDataParameters/MergeDefaultView">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.RenderListDataParameters/ModernListBoot">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.RenderListDataParameters/RenderURLFieldInJSON">
@@ -17798,6 +17885,9 @@
       <Annotations Target="SP.File/ActivityCapabilities">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.File/ComplianceInfo">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.EffectiveInformationRightsManagementSettings">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18521,6 +18611,9 @@
       <Annotations Target="SP.Publishing.FeedVideoPage">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.FeedVideoPage/ModernAudienceTargetUserField">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.FeedVideoPage/VideoDuration">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18723,6 +18816,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.SmartCache.SmartCacheItem">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.SmartCache.SmartCacheJsonBlobItem">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.MicroService.MicroServiceManager">
@@ -19017,6 +19113,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Sharing.SharingInformation/sharingAbilities">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Sharing.SharingInformation/siteIBMode">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Sharing.SharingInformation/siteIBSegmentIDs">
@@ -19406,10 +19505,10 @@
       <Annotations Target="SP.ApiData/GetByIdentifier(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem), Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddUnifiedRetentionWorkItem()">
+      <Annotations Target="SP.ApiData/SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddHighPriorityRetentionWorkItem()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_ComplianceFoundation_PreserveDocumentSubmitter_AddPreserveCloudAttachmentWorkItem()">
+      <Annotations Target="SP.ApiData/SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddUnifiedRetentionWorkItem()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_ComplianceFoundation_PreserveDocumentSubmitter_PreserveCloudAttachmentIntoPHL(Edm.Guid, Edm.Guid, Edm.String, SP.ComplianceFoundation.Models.ComplianceTagInfo)">
@@ -21393,6 +21492,7 @@
         <Property Name="sharePointFollowedDocumentsMigrated" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointFollowedSitesMigrated" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointFollowedSitesMigrated2" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="sharePointFollowedSitesMigratedToSPO" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointHomeCreateNewsTeachingBubble" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointHomeFirstRun" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointHomeMobileUpsell" Type="Edm.Boolean" Nullable="false" />
@@ -25609,6 +25709,7 @@
         <Property Name="ShouldSaveAsDraft" Type="Edm.Boolean" Nullable="false" />
       </EntityType>
       <EntityType Name="FeedVideoPage" BaseType="SP.Publishing.RepostPage">
+        <Property Name="ModernAudienceTargetUserField" Type="Edm.String" />
         <Property Name="VideoDuration" Type="Edm.Int64" Nullable="false" />
       </EntityType>
       <EntityType Name="PageDiagnosticsController">
@@ -27126,6 +27227,88 @@
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
     </Schema>
+    <Schema Namespace="Microsoft.SharePoint.News.DataModel" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="SerializableType">
+        <Property Name="type" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ItemReference" BaseType="Microsoft.SharePoint.News.DataModel.SerializableType">
+        <Property Name="exchangeId" Type="Edm.String" />
+        <Property Name="siteId" Type="Edm.Guid" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="DocumentReference" BaseType="Microsoft.SharePoint.News.DataModel.ItemReference">
+        <Property Name="uniqueId" Type="Edm.Guid" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="Item" BaseType="Microsoft.SharePoint.News.DataModel.SerializableType">
+        <Property Name="title" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="NavigatableItem" BaseType="Microsoft.SharePoint.News.DataModel.Item">
+        <Property Name="id" Type="Edm.String" />
+        <Property Name="originalUrl" Type="Edm.String" />
+        <Property Name="serverRedirectedUrl" Type="Edm.String" />
+        <Property Name="url" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="Document" BaseType="Microsoft.SharePoint.News.DataModel.NavigatableItem">
+        <Property Name="comments" Type="Edm.Int64" Nullable="false" />
+        <Property Name="contentClass" Type="Edm.String" />
+        <Property Name="contentTypeId" Type="Edm.String" />
+        <Property Name="fileExtension" Type="Edm.String" />
+        <Property Name="folder" Type="Microsoft.SharePoint.News.DataModel.Folder" />
+        <Property Name="itemReference" Type="Microsoft.SharePoint.News.DataModel.DocumentReference" />
+        <Property Name="lastModifiedBy" Type="Microsoft.SharePoint.News.DataModel.Person" />
+        <Property Name="lastModifiedTime" Type="Edm.String" />
+        <Property Name="library" Type="Microsoft.SharePoint.News.DataModel.Library" />
+        <Property Name="liked" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="likes" Type="Edm.Int64" Nullable="false" />
+        <Property Name="savedForLater" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="site" Type="Microsoft.SharePoint.News.DataModel.SPOSite" />
+        <Property Name="size" Type="Edm.Int64" Nullable="false" />
+        <Property Name="staticTeaser" Type="Edm.String" />
+        <Property Name="views" Type="Edm.Int64" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="Folder" BaseType="Microsoft.SharePoint.News.DataModel.NavigatableItem">
+        <Property Name="folderId" Type="Edm.Guid" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="Person" BaseType="Microsoft.SharePoint.News.DataModel.NavigatableItem">
+        <Property Name="accountName" Type="Edm.String" />
+        <Property Name="acronym" Type="Edm.String" />
+        <Property Name="bannerColor" Type="Edm.String" />
+        <Property Name="itemReference" Type="Microsoft.SharePoint.News.DataModel.PersonReference" />
+        <Property Name="workEmail" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="PersonReference" BaseType="Microsoft.SharePoint.News.DataModel.ItemReference" />
+      <ComplexType Name="Library" BaseType="Microsoft.SharePoint.News.DataModel.NavigatableItem">
+        <Property Name="listId" Type="Edm.Guid" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="SPOSite" BaseType="Microsoft.SharePoint.News.DataModel.NavigatableItem">
+        <Property Name="acronym" Type="Edm.String" />
+        <Property Name="bannerColor" Type="Edm.String" />
+        <Property Name="bannerImageUrl" Type="Edm.String" />
+        <Property Name="contentTypeId" Type="Edm.String" />
+        <Property Name="departmentId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="isExternalContent" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="itemReference" Type="Microsoft.SharePoint.News.DataModel.SPOSiteReference" />
+        <Property Name="language" Type="Edm.String" />
+        <Property Name="lastModifiedTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="webTemplate" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SPOSiteReference" BaseType="Microsoft.SharePoint.News.DataModel.ItemReference">
+        <Property Name="webId" Type="Edm.Guid" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="ItemsList" BaseType="Microsoft.SharePoint.News.DataModel.SerializableType">
+        <Property Name="items" Type="Collection(Microsoft.SharePoint.News.DataModel.Item)" />
+      </ComplexType>
+      <ComplexType Name="NewsArticle" BaseType="Microsoft.SharePoint.News.DataModel.Document">
+        <Property Name="author" Type="Microsoft.SharePoint.News.DataModel.Person" />
+        <Property Name="description" Type="Edm.String" />
+        <Property Name="firstPublishedDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="imageUrl" Type="Edm.String" />
+        <Property Name="isAuthoritativeNews" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="listItemId" Type="Edm.String" />
+        <Property Name="newsSourceType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="newsType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="relativeAuthorRank" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+    </Schema>
     <Schema Namespace="SP.MicroService" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="MicroServiceWorkItemProperties">
         <Property Name="ApiPath" Type="Edm.String" />
@@ -27421,6 +27604,21 @@
         <End Type="Microsoft.SharePoint.ClientSideComponent.HostedAppsManager" Role="HostedApps" Multiplicity="0..1" />
         <End Type="SP.Web" Role="HostedAppsPartner" Multiplicity="0..1" />
       </Association>
+    </Schema>
+    <Schema Namespace="Microsoft.SharePoint.AuthPolicy.Events" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="RoleAssignmentResourcePayload">
+        <Property Name="directoryScopeId" Type="Edm.String" />
+        <Property Name="principalId" Type="Edm.String" />
+        <Property Name="roleDefinitionId" Type="Edm.String" />
+      </ComplexType>
+      <EntityType Name="SPAuthEvent">
+        <Key>
+          <PropertyRef Name="EventData" />
+        </Key>
+        <Property Name="EventData" Type="Edm.String" Nullable="false" />
+        <Property Name="EventSource" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TenantId" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.Administration" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="OrgAssetsLibraryCollection">
@@ -27864,6 +28062,7 @@
         <Property Name="hasUniquePermissions" Type="Edm.Boolean" Nullable="false" />
         <Property Name="itemUniqueId" Type="Edm.Guid" Nullable="false" />
         <Property Name="microserviceShareUiUrl" Type="Edm.String" />
+        <Property Name="outlookEndpointHostUrl" Type="Edm.String" />
         <Property Name="permissionsInformation" Type="SP.Sharing.PermissionCollection" />
         <Property Name="sharedObjectType" Type="Edm.Int32" Nullable="false" />
         <Property Name="shareUiUrl" Type="Edm.String" />
@@ -27871,6 +28070,7 @@
         <Property Name="sharingLinkTemplates" Type="SP.Sharing.SharingLinkDefaultTemplatesCollection" />
         <Property Name="sharingStatus" Type="Edm.Int32" Nullable="false" />
         <Property Name="showExternalSharingWarning" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="siteIBMode" Type="Edm.String" />
         <Property Name="siteIBSegmentIDs" Type="Collection(Edm.String)" />
         <Property Name="webTemplateId" Type="Edm.Int32" Nullable="false" />
         <Property Name="webUrl" Type="Edm.String" />
@@ -30503,6 +30703,13 @@
         <Property Name="uniqueId" Type="Edm.Guid" Nullable="false" />
         <Property Name="webId" Type="Edm.Guid" Nullable="false" />
       </EntityType>
+      <EntityType Name="SmartCacheJsonBlobItem">
+        <Key>
+          <PropertyRef Name="spoId" />
+        </Key>
+        <Property Name="spoId" Type="Edm.String" Nullable="false" />
+        <Property Name="spproperties" Type="Edm.String" />
+      </EntityType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.QuotaManagement.GetUpgradeOptions" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="GetUpgradeOptionsApi">
@@ -30575,16 +30782,6 @@
         <Property Name="QueuedTimeInUtc" Type="Edm.DateTime" />
         <Property Name="StartTimeInUtc" Type="Edm.DateTime" />
         <Property Name="State" Type="Edm.String" />
-      </EntityType>
-    </Schema>
-    <Schema Namespace="Microsoft.SharePoint.AuthPolicy.Events" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-      <EntityType Name="SPAuthEvent">
-        <Key>
-          <PropertyRef Name="EventData" />
-        </Key>
-        <Property Name="EventData" Type="Edm.String" Nullable="false" />
-        <Property Name="EventSource" Type="Edm.Int32" Nullable="false" />
-        <Property Name="TenantId" Type="Edm.Guid" Nullable="false" />
       </EntityType>
     </Schema>
     <Schema Namespace="SP.Analytics" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
