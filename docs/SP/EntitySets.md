@@ -474,6 +474,7 @@ SiteUrls | ✅ | ✅ | ✅ | ✅
 Sitelinkingmanagers | ✅ | ✅ | ❌ | ❌
 Sites | ✅ | ✅ | ✅ | ✅
 SmartCacheItems | ✅ | ❌ | ❌ | ❌
+SmartCacheJsonBlobItems | ✅ | ❌ | ❌ | ❌
 SmartCaches | ✅ | ❌ | ❌ | ❌
 SocialAnnouncementManagers | ✅ | ✅ | ✅ | ❌
 SocialFeedManagers | ✅ | ✅ | ✅ | ✅

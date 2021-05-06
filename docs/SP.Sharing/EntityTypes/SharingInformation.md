@@ -30,6 +30,7 @@ fileExtension (Edm.String) | ✅ | ❌ | ❌ | ❌
 hasUniquePermissions (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 itemUniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 microserviceShareUiUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
+outlookEndpointHostUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 permissionsInformation (SP.Sharing.PermissionCollection) | ✅ | ✅ | ❌ | ❌
 shareUiUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 sharedObjectType (Edm.Int32) | ✅ | ✅ | ❌ | ❌
@@ -37,6 +38,7 @@ sharingAbilities (SP.Sharing.SharingAbilities) | ✅ | ✅ | ❌ | ❌
 sharingLinkTemplates (SP.Sharing.SharingLinkDefaultTemplatesCollection) | ✅ | ❌ | ❌ | ❌
 sharingStatus (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 showExternalSharingWarning (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
+siteIBMode (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteIBSegmentIDs (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 webTemplateId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 webUrl (Edm.String) | ✅ | ✅ | ❌ | ❌

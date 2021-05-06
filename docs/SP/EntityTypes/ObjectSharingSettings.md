@@ -42,6 +42,7 @@ Roles (Collection(SP.KeyValue)) | ✅ | ✅ | ✅ | ❌
 ShareByEmailEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 ShowExternalSharingWarning (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 SimplifiedRoles (Collection(SP.KeyValue)) | ✅ | ✅ | ✅ | ❌
+SiteIBMode (Edm.String) | ✅ | ❌ | ❌ | ❌
 SiteIBSegmentIDs (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 SupportsAclPropagation (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 WebUrl (Edm.String) | ✅ | ✅ | ✅ | ❌

@@ -9,6 +9,7 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 ActivityCapabilities (Microsoft.SharePoint.Activities.ActivityCapabilities) | ✅ | ✅ | ❌ | ❌
 CheckInComment (Edm.String) | ✅ | ✅ | ✅ | ✅
 CheckOutType (Edm.Int32) | ✅ | ✅ | ✅ | ✅
+ComplianceInfo (SP.ListItemComplianceInfo) | ✅ | ❌ | ❌ | ❌
 ContentTag (Edm.String) | ✅ | ✅ | ✅ | ✅
 CustomizedPageStatus (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 ETag (Edm.String) | ✅ | ✅ | ✅ | ✅

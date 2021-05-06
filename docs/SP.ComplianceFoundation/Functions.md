@@ -4,5 +4,5 @@
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+<span title="SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddHighPriorityRetentionWorkItem">SP_ComplianceFoundation_ComplianceRetentionWorkIte...</span> (SP ComplianceFoundation ComplianceRetentionWorkItemSubmitter AddHighPriorityRetentionWorkItem) | ✅ | ❌ | ❌ | ❌
 <span title="SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddUnifiedRetentionWorkItem">SP_ComplianceFoundation_ComplianceRetentionWorkIte...</span> (SP ComplianceFoundation ComplianceRetentionWorkItemSubmitter AddUnifiedRetentionWorkItem) | ✅ | ❌ | ❌ | ❌
-<span title="SP_ComplianceFoundation_PreserveDocumentSubmitter_AddPreserveCloudAttachmentWorkItem">SP_ComplianceFoundation_PreserveDocumentSubmitter...</span> (SP ComplianceFoundation PreserveDocumentSubmitter AddPreserveCloudAttachmentWorkItem) | ✅ | ❌ | ❌ | ❌

@@ -20,6 +20,7 @@ FirstGroupOnly (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 FolderServerRelativeUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
 ImageFieldsToTryRewriteToCdnUrls (Edm.String) | ✅ | ✅ | ❌ | ❌
 MergeDefaultView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ModernListBoot (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 OriginalDate (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 OverrideViewXml (Edm.String) | ✅ | ✅ | ❌ | ❌
 Paging (Edm.String) | ✅ | ✅ | ✅ | ❌

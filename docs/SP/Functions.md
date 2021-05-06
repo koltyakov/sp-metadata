@@ -74,6 +74,7 @@ CreateCopyJob (SP.Site) | ✅ | ✅ | ❌ | ❌
 CreateCopyJobs (SP.Site) | ✅ | ✅ | ❌ | ❌
 CreateDefaultAssociatedGroups (SP.Web) | ✅ | ✅ | ❌ | ❌
 CreateDocumentAndGetEditLink (SP.List) | ✅ | ✅ | ✅ | ❌
+CreateDocumentFromCAAETemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 CreateDocumentWithDefaultName (SP.List) | ✅ | ✅ | ❌ | ❌
 CreateFieldAsXml (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
 CreateGroupBasedEnvironment (SP.Web) | ✅ | ❌ | ❌ | ❌
@@ -414,6 +415,7 @@ PageContextCore (SP.Web) | ✅ | ❌ | ❌ | ❌
 PageContextInfo (SP.Web) | ✅ | ❌ | ❌ | ❌
 ParseAndSetFieldValue (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 ParseDateTime (SP.Web) | ✅ | ✅ | ❌ | ❌
+ParseDocumentTemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 ProcessExternalNotification (SP.Web) | ✅ | ✅ | ✅ | ✅
 ProvisionMigrationContainers (SP.Site) | ✅ | ✅ | ❌ | ❌
 ProvisionMigrationQueue (SP.Site) | ✅ | ✅ | ❌ | ❌
@@ -636,6 +638,7 @@ SetExemptFromBlockDownloadOfNonViewableFiles (SP.List) | ✅ | ✅ | ❌ | ❌
 SetFileUserValue (SP.File) | ✅ | ❌ | ❌ | ❌
 SetGlobalNavSettings (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetId (SP.TimeZone) | ✅ | ❌ | ❌ | ❌
+<span title="SetIsContributorOwnerEnabledPropertyForDefaultDocLib (SP.Site)">SetIsContributorOwnerEnabledPropertyForDefaultDocL...</span> | ✅ | ❌ | ❌ | ❌
 SetMediaServiceMetadata (SP.File) | ✅ | ❌ | ❌ | ❌
 SetNotificationRecipients (SP.MultilingualSettings) | ✅ | ❌ | ❌ | ❌
 [SetQuizState](./Functions/SetQuizState.md) | ❌ | ❌ | ❌ | ✅
@@ -708,6 +711,7 @@ SyncFlowTemplates (SP.Web) | ✅ | ❌ | ❌ | ❌
 SyncHubSiteTheme (SP.Web) | ✅ | ✅ | ❌ | ❌
 SystemUpdate (SP.ListItem) | ✅ | ✅ | ❌ | ❌
 TakeOverCheckOut (SP.CheckedOutFile) | ✅ | ✅ | ❌ | ❌
+TemplatizeDocument (SP.List) | ✅ | ❌ | ❌ | ❌
 UTCToLocalTime (SP.TimeZone) | ✅ | ✅ | ✅ | ✅
 UnPublish (SP.File) | ✅ | ✅ | ✅ | ✅
 UndoCheckOut (SP.File) | ✅ | ✅ | ✅ | ✅

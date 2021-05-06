@@ -48,6 +48,7 @@ sharePointFiltersPaneFirstRun (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 sharePointFollowedDocumentsMigrated (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 sharePointFollowedSitesMigrated (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 sharePointFollowedSitesMigrated2 (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+sharePointFollowedSitesMigratedToSPO (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 sharePointHomeCreateNewsTeachingBubble (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 sharePointHomeFirstRun (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 sharePointHomeMobileUpsell (Edm.Boolean) | ✅ | ✅ | ❌ | ❌

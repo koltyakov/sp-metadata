@@ -50,6 +50,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.SharePoint.Marketplace](./Microsoft.SharePoint.Marketplace) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Marketplace.CorporateCuratedGallery](./Microsoft.SharePoint.Marketplace.CorporateCuratedGallery) | ✅ | ✅ | ❌ | ❌
 [Microsoft.SharePoint.Navigation.REST](./Microsoft.SharePoint.Navigation.REST) | ✅ | ✅ | ✅ | ✅
+[Microsoft.SharePoint.News.DataModel](./Microsoft.SharePoint.News.DataModel) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.OrgNewsSite](./Microsoft.SharePoint.OrgNewsSite) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Packaging](./Microsoft.SharePoint.Packaging) | ✅ | ✅ | ✅ | ❌
 [Microsoft.SharePoint.Portal](./Microsoft.SharePoint.Portal) | ✅ | ✅ | ✅ | ✅
