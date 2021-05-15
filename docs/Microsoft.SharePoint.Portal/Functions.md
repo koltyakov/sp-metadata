@@ -20,7 +20,9 @@ EnsureTeamForGroup (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | 
 EnsureTeamForGroupEx (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetAllOrgLabels (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetCompatibleSegments (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
+GetCurrentUserJoinedTeams (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetCurrentUserSharedChannelMemberGroups (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
+GetCurrentUserTeamConnectedMemberGroups (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetGroupCreationContext (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ❌ | ❌
 GetGroupImage (Microsoft.SharePoint.Portal.GroupService) | ✅ | ✅ | ❌ | ❌
 GetGroupSiteConversionData (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ❌ | ❌
@@ -35,6 +37,7 @@ GetTeamChannelFilesUrl (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | �
 GetTeamChannelSiteOwner (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
 GetTeamChannels (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetUserSharedChannelMemberGroups (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
+GetUserTeamConnectedMemberGroups (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetValidSiteUrlFromAlias (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ❌ | ❌
 GroupService | ✅ | ✅ | ❌ | ❌
 HideTeamifyPrompt (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌

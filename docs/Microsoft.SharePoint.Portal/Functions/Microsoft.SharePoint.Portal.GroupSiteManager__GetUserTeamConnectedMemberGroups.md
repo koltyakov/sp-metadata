@@ -1,4 +1,4 @@
-# Function Import: GetTeamChannels
+# Function Import: GetUserTeamConnectedMemberGroups
 
 > Namespace: Microsoft.SharePoint.Portal
 
@@ -10,5 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-teamId (Edm.String) | ✅ | ❌ | ❌ | ❌
-useStagingEndpoint (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+userName (Edm.String) | ✅ | ❌ | ❌ | ❌

@@ -63,7 +63,6 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.SharePoint.QuickActionMessageCard](./Microsoft.SharePoint.QuickActionMessageCard) | ✅ | ✅ | ❌ | ❌
 [Microsoft.SharePoint.QuotaManagement.GetUpgradeOptions](./Microsoft.SharePoint.QuotaManagement.GetUpgradeOptions) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.SmartCache](./Microsoft.SharePoint.SmartCache) | ✅ | ❌ | ❌ | ❌
-[Microsoft.SharePoint.Taxonomy.ContentTypeSync.Internal](./Microsoft.SharePoint.Taxonomy.ContentTypeSync.Internal) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.TenantCdn](./Microsoft.SharePoint.TenantCdn) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.UserActions](./Microsoft.SharePoint.UserActions) | ✅ | ✅ | ❌ | ❌
 [Microsoft.SharePoint.Utilities.WebTemplateExtensions](./Microsoft.SharePoint.Utilities.WebTemplateExtensions) | ✅ | ✅ | ❌ | ❌
@@ -97,6 +96,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [SP.SiteHealth](./SP.SiteHealth) | ✅ | ✅ | ✅ | ✅
 [SP.Social](./SP.Social) | ✅ | ✅ | ✅ | ✅
 [SP.Taxonomy](./SP.Taxonomy) | ✅ | ✅ | ✅ | ✅
+[SP.Taxonomy.ContentTypeSync](./SP.Taxonomy.ContentTypeSync) | ✅ | ❌ | ❌ | ❌
 [SP.Translation](./SP.Translation) | ✅ | ✅ | ✅ | ✅
 [SP.UI](./SP.UI) | ❌ | ❌ | ❌ | ✅
 [SP.UI.ApplicationPages](./SP.UI.ApplicationPages) | ✅ | ✅ | ✅ | ✅

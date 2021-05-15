@@ -10,6 +10,7 @@ CreateSite (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | 
 Delete (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
 Delete (Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication) | ✅ | ❌ | ❌ | ❌
 EnsureAzureCognitive (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)) | ✅ | ❌ | ❌ | ❌
+GetAzureCognitiveExtractors (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)) | ✅ | ❌ | ❌ | ❌
 GetByIdentifier (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem)) | ✅ | ❌ | ❌ | ❌
 GetByModelId (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningSample)) | ✅ | ❌ | ❌ | ❌
 GetByModelUniqueId (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)) | ✅ | ❌ | ❌ | ❌

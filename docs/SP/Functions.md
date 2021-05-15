@@ -74,7 +74,6 @@ CreateCopyJob (SP.Site) | ✅ | ✅ | ❌ | ❌
 CreateCopyJobs (SP.Site) | ✅ | ✅ | ❌ | ❌
 CreateDefaultAssociatedGroups (SP.Web) | ✅ | ✅ | ❌ | ❌
 CreateDocumentAndGetEditLink (SP.List) | ✅ | ✅ | ✅ | ❌
-CreateDocumentFromCAAETemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 CreateDocumentWithDefaultName (SP.List) | ✅ | ✅ | ❌ | ❌
 CreateFieldAsXml (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
 CreateGroupBasedEnvironment (SP.Web) | ✅ | ❌ | ❌ | ❌
@@ -86,6 +85,7 @@ CreatePreviewSPSite (SP.Site) | ✅ | ✅ | ✅ | ✅
 CreateRule (SP.List) | ✅ | ❌ | ❌ | ❌
 CreateSPAsyncReadJob (SP.Site) | ✅ | ❌ | ❌ | ❌
 CreateSPAsyncReadJobWithMultiUrl (SP.Site) | ✅ | ❌ | ❌ | ❌
+DashboardContent (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 DefaultDocumentLibrary (SP.Web) | ✅ | ✅ | ✅ | ❌
 Delete (SP.HubSite) | ✅ | ✅ | ❌ | ❌
 DeleteAlert (Collection(SP.Alert)) | ✅ | ✅ | ❌ | ❌
@@ -415,7 +415,6 @@ PageContextCore (SP.Web) | ✅ | ❌ | ❌ | ❌
 PageContextInfo (SP.Web) | ✅ | ❌ | ❌ | ❌
 ParseAndSetFieldValue (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 ParseDateTime (SP.Web) | ✅ | ✅ | ❌ | ❌
-ParseDocumentTemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 ProcessExternalNotification (SP.Web) | ✅ | ✅ | ✅ | ✅
 ProvisionMigrationContainers (SP.Site) | ✅ | ✅ | ❌ | ❌
 ProvisionMigrationQueue (SP.Site) | ✅ | ✅ | ❌ | ❌
@@ -711,7 +710,6 @@ SyncFlowTemplates (SP.Web) | ✅ | ❌ | ❌ | ❌
 SyncHubSiteTheme (SP.Web) | ✅ | ✅ | ❌ | ❌
 SystemUpdate (SP.ListItem) | ✅ | ✅ | ❌ | ❌
 TakeOverCheckOut (SP.CheckedOutFile) | ✅ | ✅ | ❌ | ❌
-TemplatizeDocument (SP.List) | ✅ | ❌ | ❌ | ❌
 UTCToLocalTime (SP.TimeZone) | ✅ | ✅ | ✅ | ✅
 UnPublish (SP.File) | ✅ | ✅ | ✅ | ✅
 UndoCheckOut (SP.File) | ✅ | ✅ | ✅ | ✅

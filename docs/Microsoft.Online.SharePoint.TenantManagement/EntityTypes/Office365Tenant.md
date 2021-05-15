@@ -43,6 +43,7 @@ ContentTypeSyncSiteTemplatesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | �
 CustomizedExternalSharingServiceUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 DefaultContentCenterSite (Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker) | ✅ | ❌ | ❌ | ❌
 DefaultLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+DefaultODBMode (Edm.String) | ✅ | ❌ | ❌ | ❌
 DefaultSharingLinkType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DisableAddToOneDrive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableBackToClassic (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

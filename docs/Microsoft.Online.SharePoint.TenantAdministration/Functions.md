@@ -4,6 +4,7 @@
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+CheckSiteIsArchivedById (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
 CheckTenantIntuneLicense (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 CheckTenantLicenses (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 ConnectSiteToHubSiteById (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -15,6 +16,7 @@ GetGroupSiteRelationship (Collection(Microsoft.Online.SharePoint.TenantAdministr
 GetIdleSessionSignOutForUnmanagedDevices (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetLockStateById (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
 GetPowerAppsEnvironments (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+GetSPHSiteUrl (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPOAllWebTemplates (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPOSiteCreationSources (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPOTenantAllWebTemplates (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -53,6 +55,7 @@ RemoveDeletedSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | �
 RemoveDeletedSitePreferId (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RenderIBSegmentListDataAsStream (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+RenderIBSegmentListFilterData (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 <span title="ResetTimestampUpdateOffice365ProvidedSharepointSiteActivityData (Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService)">ResetTimestampUpdateOffice365ProvidedSharepointSit...</span> | ✅ | ❌ | ❌ | ❌
 RestoreDeletedSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RestoreDeletedSitePreferId (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
