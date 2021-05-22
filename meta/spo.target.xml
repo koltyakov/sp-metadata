@@ -1640,6 +1640,7 @@
         <Property Name="ReadSecurity" Type="Edm.Int32" Nullable="false" />
         <Property Name="SchemaXml" Type="Edm.String" />
         <Property Name="ServerTemplateCanCreateFolders" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ShowHiddenFieldsInModernForm" Type="Edm.Boolean" Nullable="false" />
         <Property Name="TemplateFeatureId" Type="Edm.Guid" Nullable="false" />
         <Property Name="TemplateTypeId" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
@@ -3815,6 +3816,7 @@
         <EntitySet Name="SPMachineLearningSamples" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample" />
         <EntitySet Name="SPMachineLearningSampleEntityDatas" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningSampleEntityData" />
         <EntitySet Name="SPMachineLearningWorkItemEntityDatas" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData" />
+        <EntitySet Name="SyntexModelsLandingInfos" EntityType="Microsoft.Office.Server.ContentCenter.SyntexModelsLandingInfo" />
         <EntitySet Name="Reputations" EntityType="Microsoft.Office.Server.ReputationModel.Reputation" />
         <EntitySet Name="SearchServices" EntityType="Microsoft.Office.Server.Search.REST.SearchService" />
         <EntitySet Name="SearchSettings" EntityType="Microsoft.Office.Server.Search.REST.SearchSetting" />
@@ -3962,7 +3964,6 @@
         <EntitySet Name="BaseCustomPropertys" EntityType="Microsoft.SharePoint.Publishing.RestOnly.BaseCustomProperty" />
         <EntitySet Name="GetUpgradeOptionsApis" EntityType="Microsoft.SharePoint.QuotaManagement.GetUpgradeOptions.GetUpgradeOptionsApi" />
         <EntitySet Name="SmartCacheItems" EntityType="Microsoft.SharePoint.SmartCache.SmartCacheItem" />
-        <EntitySet Name="SmartCacheJsonBlobItems" EntityType="Microsoft.SharePoint.SmartCache.SmartCacheJsonBlobItem" />
         <EntitySet Name="TenantCdnApis" EntityType="Microsoft.SharePoint.TenantCdn.TenantCdnApi" />
         <EntitySet Name="UserActionAPIs" EntityType="Microsoft.SharePoint.UserActions.UserActionAPI" />
         <EntitySet Name="DesignPackageMenuContentss" EntityType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.DesignPackageMenuContents" />
@@ -5023,6 +5024,10 @@
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
           <Parameter Name="siteCreationProperties" Type="Microsoft.Office.Server.ContentCenter.SiteCreationProperties" />
         </FunctionImport>
+        <FunctionImport Name="GetByContentTypeId" ReturnType="Microsoft.Office.Server.ContentCenter.SyntexModelsLandingInfo" IsComposable="true" IsBindable="true" EntitySet="SyntexModelsLandingInfos">
+          <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
+          <Parameter Name="contentTypeId" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="GetModelIdForContentType" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
           <Parameter Name="contentTypeName" Type="Edm.String" />
@@ -5106,6 +5111,11 @@
         <FunctionImport Name="GetByModelUniqueId" ReturnType="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)" IsComposable="true" IsBindable="true" EntitySet="Publications">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)" />
           <Parameter Name="modelUniqueId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetByModelUniqueIdAndPublicationType" ReturnType="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)" IsComposable="true" IsBindable="true" EntitySet="Publications">
+          <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)" />
+          <Parameter Name="modelUniqueId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="publicationType" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetByUniqueId" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication" IsComposable="true" IsBindable="true" EntitySet="Publications">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)" />
@@ -8790,7 +8800,7 @@
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
           <Parameter Name="pageNumber" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="GetCurrentUserJoinedTeams" ReturnType="Edm.Stream" IsBindable="true">
+        <FunctionImport Name="GetCurrentUserJoinedTeams" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
         </FunctionImport>
         <FunctionImport Name="GetCurrentUserSharedChannelMemberGroups" ReturnType="Edm.String" IsBindable="true">
@@ -17901,6 +17911,21 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData/Type">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SyntexModelsLandingInfo">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SyntexModelsLandingInfo/DocumentUnderstandingModelDisplayName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SyntexModelsLandingInfo/DocumentUnderstandingModelLandingUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SyntexModelsLandingInfo/FormProcessingModelDisplayName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SyntexModelsLandingInfo/FormProcessingModelLandingUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ComplianceFoundation.ComplianceRetentionWorkItemSubmitter">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18477,6 +18502,9 @@
       <Annotations Target="SP.Web/WebTemplatesGalleryFirstRunEnabled">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.List/ShowHiddenFieldsInModernForm">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Webhooks.Subscription">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18949,9 +18977,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.SmartCache.SmartCacheItem">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.SmartCache.SmartCacheJsonBlobItem">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.MicroService.MicroServiceManager">
@@ -19542,6 +19567,9 @@
       <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningHub()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetByContentTypeId(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetModelIdForContentType(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19609,6 +19637,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetByModelUniqueId(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication), Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetByModelUniqueIdAndPublicationType(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication), Edm.Guid, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetByUniqueId(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication), Edm.Guid)">
@@ -21930,6 +21961,15 @@
         <Property Name="TargetWebServerRelativeUrl" Type="Edm.String" />
         <Property Name="Type" Type="Edm.Guid" Nullable="false" />
       </EntityType>
+      <EntityType Name="SyntexModelsLandingInfo">
+        <Key>
+          <PropertyRef Name="DocumentUnderstandingModelDisplayName" />
+        </Key>
+        <Property Name="DocumentUnderstandingModelDisplayName" Type="Edm.String" Nullable="false" />
+        <Property Name="DocumentUnderstandingModelLandingUrl" Type="Edm.String" />
+        <Property Name="FormProcessingModelDisplayName" Type="Edm.String" />
+        <Property Name="FormProcessingModelLandingUrl" Type="Edm.String" />
+      </EntityType>
       <Association Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_MachineLearningEnabled_Microsoft_Office_Server_ContentCenter_SPMachineLearningEnabled_MachineLearningEnabledPartner">
         <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled" Role="MachineLearningEnabled" Multiplicity="0..1" />
         <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" Role="MachineLearningEnabledPartner" Multiplicity="0..1" />
@@ -21979,6 +22019,7 @@
         <Property Name="TagId" Type="Edm.Guid" Nullable="false" />
         <Property Name="TagName" Type="Edm.String" />
         <Property Name="TagRetentionBasedOn" Type="Edm.String" />
+        <Property Name="UnlockedAsDefault" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
       <ComplexType Name="DlpClassificationResult">
         <Property Name="ClassificationId" Type="Edm.String" />
@@ -27146,7 +27187,6 @@
         <Property Name="IsTenantAdminOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ListColor" Type="Edm.Int64" Nullable="false" />
         <Property Name="ListIcon" Type="Edm.Int64" Nullable="false" />
-        <Property Name="LogoUrl" Type="Edm.String" />
         <Property Name="PreviewImageAltText" Type="Edm.String" />
         <Property Name="PreviewImageUrl" Type="Edm.String" />
         <Property Name="RequiresGroupConnected" Type="Edm.Boolean" Nullable="false" />
@@ -29246,6 +29286,7 @@
         <Property Name="BlockUserInfoVisibility" Type="Edm.String" />
         <Property Name="BlockUserInfoVisibilityInOneDrive" Type="Edm.Int32" Nullable="false" />
         <Property Name="BlockUserInfoVisibilityInSharePoint" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ChannelMeetingRecordingPermission" Type="Edm.Int32" Nullable="false" />
         <Property Name="CommentsOnFilesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CommentsOnListItemsDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CommentsOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
@@ -29276,6 +29317,7 @@
         <Property Name="EnableAIPIntegration" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnableAutoNewsDigest" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnableAzureADB2BIntegration" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="EnabledFlightAllowAADB2BSkipCheckingOTP" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnableGuestSignInAcceleration" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnableMinimumVersionRequirement" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnableMipSiteLabel" Type="Edm.Boolean" Nullable="false" />
@@ -30837,24 +30879,21 @@
     <Schema Namespace="Microsoft.SharePoint.SmartCache" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="SmartCacheItem">
         <Key>
-          <PropertyRef Name="contentClass" />
+          <PropertyRef Name="accessUrl" />
         </Key>
-        <Property Name="contentClass" Type="Edm.String" Nullable="false" />
+        <Property Name="accessUrl" Type="Edm.String" Nullable="false" />
+        <Property Name="containerTitle" Type="Edm.String" />
+        <Property Name="isDefaultDocumentLibrary" Type="Edm.Boolean" />
         <Property Name="lastAccessDateTime" Type="Edm.DateTime" Nullable="false" />
         <Property Name="listId" Type="Edm.Guid" Nullable="false" />
         <Property Name="operation" Type="Edm.Int32" Nullable="false" />
+        <Property Name="pinOrder" Type="Edm.Int64" />
         <Property Name="siteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="spoId" Type="Edm.String" />
-        <Property Name="spproperties" Type="Edm.String" />
+        <Property Name="title" Type="Edm.String" />
         <Property Name="uniqueId" Type="Edm.Guid" Nullable="false" />
         <Property Name="webId" Type="Edm.Guid" Nullable="false" />
-      </EntityType>
-      <EntityType Name="SmartCacheJsonBlobItem">
-        <Key>
-          <PropertyRef Name="spoId" />
-        </Key>
-        <Property Name="spoId" Type="Edm.String" Nullable="false" />
-        <Property Name="spproperties" Type="Edm.String" />
+        <Property Name="webUrl" Type="Edm.String" />
       </EntityType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.QuotaManagement.GetUpgradeOptions" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -31011,6 +31050,7 @@
         <Property Name="BlockUserInfoVisibility" Type="Edm.String" />
         <Property Name="BlockUserInfoVisibilityInOneDrive" Type="Edm.Int32" Nullable="false" />
         <Property Name="BlockUserInfoVisibilityInSharePoint" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ChannelMeetingRecordingPermission" Type="Edm.Int32" Nullable="false" />
         <Property Name="CommentsOnFilesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CommentsOnListItemsDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CommentsOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
