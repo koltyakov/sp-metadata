@@ -83,6 +83,7 @@ ParserDisabled (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 ReadSecurity (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 SchemaXml (Edm.String) | ✅ | ✅ | ✅ | ✅
 ServerTemplateCanCreateFolders (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+ShowHiddenFieldsInModernForm (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 TemplateFeatureId (Edm.Guid) | ✅ | ✅ | ✅ | ✅
 TemplateTypeId (Edm.String) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ✅ | ✅ | ✅

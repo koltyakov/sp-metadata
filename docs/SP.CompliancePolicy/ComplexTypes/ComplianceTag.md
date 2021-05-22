@@ -27,3 +27,4 @@ TagDuration (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 TagId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 TagName (Edm.String) | ✅ | ❌ | ❌ | ❌
 TagRetentionBasedOn (Edm.String) | ✅ | ❌ | ❌ | ❌
+UnlockedAsDefault (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

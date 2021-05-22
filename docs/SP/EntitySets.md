@@ -474,7 +474,6 @@ SiteUrls | ✅ | ✅ | ✅ | ✅
 Sitelinkingmanagers | ✅ | ✅ | ❌ | ❌
 Sites | ✅ | ✅ | ✅ | ✅
 SmartCacheItems | ✅ | ❌ | ❌ | ❌
-SmartCacheJsonBlobItems | ✅ | ❌ | ❌ | ❌
 SmartCaches | ✅ | ❌ | ❌ | ❌
 SocialAnnouncementManagers | ✅ | ✅ | ✅ | ❌
 SocialFeedManagers | ✅ | ✅ | ✅ | ✅
@@ -513,6 +512,7 @@ SubtitleFiles | ✅ | ❌ | ❌ | ❌
 SuiteNavDatas | ✅ | ✅ | ✅ | ✅
 SupportedGeoLocationsForTenants | ✅ | ❌ | ❌ | ❌
 SyncTranslators | ✅ | ✅ | ✅ | ✅
+SyntexModelsLandingInfos | ✅ | ❌ | ❌ | ❌
 TargetApplicationFields | ✅ | ❌ | ❌ | ❌
 TargetApplications | ✅ | ❌ | ❌ | ❌
 TaskFilters | ✅ | ✅ | ✅ | ✅

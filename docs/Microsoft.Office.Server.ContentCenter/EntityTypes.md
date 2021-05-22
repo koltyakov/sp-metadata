@@ -15,3 +15,4 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPMachineLearningSampleEntityData](./EntityTypes/SPMachineLearningSampleEntityData.md) | ✅ | ❌ | ❌ | ❌
 [SPMachineLearningWorkItem](./EntityTypes/SPMachineLearningWorkItem.md) | ✅ | ❌ | ❌ | ❌
 [SPMachineLearningWorkItemEntityData](./EntityTypes/SPMachineLearningWorkItemEntityData.md) | ✅ | ❌ | ❌ | ❌
+[SyntexModelsLandingInfo](./EntityTypes/SyntexModelsLandingInfo.md) | ✅ | ❌ | ❌ | ❌
