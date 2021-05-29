@@ -1015,6 +1015,7 @@
         <Property Name="Key" Type="Edm.String" />
         <Property Name="Nodes" Type="Collection(SP.MenuNode)" />
         <Property Name="NodeType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="OpenInNewWindow" Type="Edm.Boolean" />
         <Property Name="SimpleUrl" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
         <Property Name="Translations" Type="Collection(SP.SPResourceEntry)" />
@@ -5108,6 +5109,10 @@
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)" />
           <Parameter Name="publications" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData)" />
         </FunctionImport>
+        <FunctionImport Name="BatchUnpromote" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult" IsBindable="true" EntitySet="SPMachineLearningPublicationsResults">
+          <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)" />
+          <Parameter Name="promotions" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData)" />
+        </FunctionImport>
         <FunctionImport Name="GetByModelUniqueId" ReturnType="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)" IsComposable="true" IsBindable="true" EntitySet="Publications">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)" />
           <Parameter Name="modelUniqueId" Type="Edm.Guid" Nullable="false" />
@@ -5206,6 +5211,7 @@
           <Parameter Name="this" Type="SP.CompliancePolicy.SPPolicyStoreProxy" />
           <Parameter Name="siteId" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_GetExpandFileVersionsInPHLEnabled" ReturnType="Edm.Boolean" IsSideEffecting="false" />
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_GetHoldGracePeriodInDays" ReturnType="Edm.Int32" IsSideEffecting="false" />
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_GetListComplianceTag" ReturnType="SP.CompliancePolicy.ComplianceTag" IsSideEffecting="false">
           <Parameter Name="listUrl" Type="Edm.String" />
@@ -5301,6 +5307,9 @@
           <Parameter Name="this" Type="SP.CompliancePolicy.SPPolicyStoreProxy" />
           <Parameter Name="siteId" Type="Edm.String" />
           <Parameter Name="defaultContainerLabel" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_SetExpandFileVersionsInPHLEnabled">
+          <Parameter Name="enabled" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_SetHoldGracePeriodInDays">
           <Parameter Name="gracePeriodInDays" Type="Edm.Int32" Nullable="false" />
@@ -8077,6 +8086,7 @@
           <Parameter Name="pageName" Type="Edm.String" />
           <Parameter Name="imageFileName" Type="Edm.String" />
           <Parameter Name="imageStream" Type="Edm.Stream" />
+          <Parameter Name="pageId" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="AddImageFromExternalUrl" ReturnType="SP.File" IsBindable="true" EntitySet="Files12">
           <Parameter Name="this" Type="SP.Publishing.SitePageService" />
@@ -8084,6 +8094,7 @@
           <Parameter Name="imageFileName" Type="Edm.String" />
           <Parameter Name="externalUrl" Type="Edm.String" />
           <Parameter Name="subFolderName" Type="Edm.String" />
+          <Parameter Name="pageId" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="CanCreatePromotedPage" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.SitePageService" />
@@ -10029,7 +10040,7 @@
         <FunctionImport Name="GetBusinessAppMigrationInteractiveData" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
         </FunctionImport>
-        <FunctionImport Name="GetBusinessAppOperationStatus" ReturnType="SP.FlowSynchronizationResult" IsComposable="true" IsBindable="true" EntitySet="FlowSynchronizationResults">
+        <FunctionImport Name="GetBusinessAppOperationStatus" ReturnType="Edm.Int32" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
         </FunctionImport>
         <FunctionImport Name="GetChanges" ReturnType="Collection(SP.Change)" IsBindable="true" EntitySet="Changes">
@@ -13687,6 +13698,10 @@
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)" />
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="GetSiteStateProperties" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SiteStateProperties" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)" />
+          <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="GetSiteUserGroups" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteUserGroupInfo)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)" />
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
@@ -13831,6 +13846,9 @@
         <FunctionImport Name="RemoveSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="RemoveSPHSite" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
         <FunctionImport Name="RenderIBSegmentListDataAsStream" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -14002,6 +14020,10 @@
         <FunctionImport Name="SetSiteUserGroups" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteUserGroupsData" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteUserGroupsData" />
+        </FunctionImport>
+        <FunctionImport Name="SetSPHSite" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="sphSiteUrl" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SwapSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -18601,6 +18623,9 @@
       <Annotations Target="SP.Publishing.SitePageMetadata/AbsoluteUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.SitePageMetadata/AssetFolderId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.SitePageMetadata/AuthorByline">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19636,6 +19661,9 @@
       <Annotations Target="SP.ApiData/BatchDelete(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication), Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/BatchUnpromote(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication), Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData))">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetByModelUniqueId(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication), Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20071,10 +20099,10 @@
       <Annotations Target="SP.ApiData/SP_Publishing_SitePageService()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/AddImage(SP.Publishing.SitePageService, Edm.String, Edm.String, Edm.Stream)">
+      <Annotations Target="SP.ApiData/AddImage(SP.Publishing.SitePageService, Edm.String, Edm.String, Edm.Stream, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/AddImageFromExternalUrl(SP.Publishing.SitePageService, Edm.String, Edm.String, Edm.String, Edm.String)">
+      <Annotations Target="SP.ApiData/AddImageFromExternalUrl(SP.Publishing.SitePageService, Edm.String, Edm.String, Edm.String, Edm.String, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/CanCreatePromotedPage(SP.Publishing.SitePageService)">
@@ -25832,6 +25860,7 @@
           <PropertyRef Name="Id" />
         </Key>
         <Property Name="AbsoluteUrl" Type="Edm.String" />
+        <Property Name="AssetFolderId" Type="Edm.Int32" Nullable="false" />
         <Property Name="AuthorByline" Type="Collection(Edm.String)" />
         <Property Name="BannerImageUrl" Type="Edm.String" />
         <Property Name="BannerThumbnailUrl" Type="Edm.String" />
@@ -29018,6 +29047,12 @@
         <Property Name="StartIndex" Type="Edm.String" />
         <Property Name="Template" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="SiteStateProperties">
+        <Property Name="GroupSiteRelationship" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IsArchived" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsSiteOnHold" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="LockState" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="SiteUserGroupInfo">
         <Property Name="userGroup" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.UserInfo)" />
       </ComplexType>
@@ -29344,6 +29379,7 @@
         <Property Name="IPAddressEnforcement" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IPAddressWACTokenLifetime" Type="Edm.Int32" Nullable="false" />
         <Property Name="IsAppBarTemporarilyDisabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsCollabMeetingNotesFluidEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsFluidEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsHubSitesMultiGeoFlightEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsMnAFlightEnabled" Type="Edm.Boolean" Nullable="false" />
@@ -29402,6 +29438,7 @@
         <Property Name="StopNew2010Workflows" Type="Edm.Boolean" Nullable="false" />
         <Property Name="StorageQuota" Type="Edm.Int64" Nullable="false" />
         <Property Name="StorageQuotaAllocated" Type="Edm.Int64" Nullable="false" />
+        <Property Name="StreamLaunchConfig" Type="Edm.Int32" Nullable="false" />
         <Property Name="SyncAadB2BManagementPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyncPrivacyProfileProperties" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UseFindPeopleInPeoplePicker" Type="Edm.Boolean" Nullable="false" />
@@ -31132,6 +31169,7 @@
         <Property Name="SocialBarOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="StartASiteFormUrl" Type="Edm.String" />
         <Property Name="StopNew2010Workflows" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="StreamLaunchConfig" Type="Edm.Int32" Nullable="false" />
         <Property Name="SyncAadB2BManagementPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyncPrivacyProfileProperties" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UseFindPeopleInPeoplePicker" Type="Edm.Boolean" Nullable="false" />
