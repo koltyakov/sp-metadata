@@ -116,6 +116,7 @@ SignInAccelerationDomain (Edm.String) | ✅ | ❌ | ❌ | ❌
 SocialBarOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 StartASiteFormUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 StopNew2010Workflows (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+StreamLaunchConfig (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SyncAadB2BManagementPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyncPrivacyProfileProperties (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UseFindPeopleInPeoplePicker (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

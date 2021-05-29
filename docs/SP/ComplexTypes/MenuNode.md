@@ -15,6 +15,7 @@ IsHidden (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 Key (Edm.String) | ✅ | ✅ | ✅ | ✅
 NodeType (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 Nodes (Collection(SP.MenuNode)) | ✅ | ✅ | ✅ | ✅
+OpenInNewWindow (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SimpleUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
 Title (Edm.String) | ✅ | ✅ | ✅ | ✅
 Translations (Collection(SP.SPResourceEntry)) | ✅ | ❌ | ❌ | ❌

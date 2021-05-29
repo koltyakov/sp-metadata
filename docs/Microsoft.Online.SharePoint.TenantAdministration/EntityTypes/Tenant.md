@@ -93,6 +93,7 @@ ImageTaggingOption (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 IncludeAtAGlanceInShareEmails (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 InformationBarriersSuspension (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsAppBarTemporarilyDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+IsCollabMeetingNotesFluidEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsFluidEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsHubSitesMultiGeoFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMnAFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -151,6 +152,7 @@ StartASiteFormUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 StopNew2010Workflows (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 StorageQuota (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 StorageQuotaAllocated (Edm.Int64) | ✅ | ❌ | ❌ | ❌
+StreamLaunchConfig (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SyncAadB2BManagementPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyncPrivacyProfileProperties (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UseFindPeopleInPeoplePicker (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

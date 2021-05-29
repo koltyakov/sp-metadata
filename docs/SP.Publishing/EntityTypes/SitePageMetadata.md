@@ -7,6 +7,7 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 AbsoluteUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
+AssetFolderId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 AuthorByline (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 BannerImageUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 BannerThumbnailUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

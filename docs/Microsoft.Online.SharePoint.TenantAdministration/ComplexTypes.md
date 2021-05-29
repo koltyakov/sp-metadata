@@ -41,6 +41,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SiteCreationSource](./ComplexTypes/SiteCreationSource.md) | ✅ | ❌ | ❌ | ❌
 [SiteInfoForSitePicker](./ComplexTypes/SiteInfoForSitePicker.md) | ✅ | ❌ | ❌ | ❌
 [SitePagesEnabled](./ComplexTypes/SitePagesEnabled.md) | ✅ | ❌ | ❌ | ❌
+[SiteStateProperties](./ComplexTypes/SiteStateProperties.md) | ✅ | ❌ | ❌ | ❌
 [SiteUserGroupInfo](./ComplexTypes/SiteUserGroupInfo.md) | ✅ | ❌ | ❌ | ❌
 [SiteUserGroupsData](./ComplexTypes/SiteUserGroupsData.md) | ✅ | ❌ | ❌ | ❌
 [SmtpServer](./ComplexTypes/SmtpServer.md) | ✅ | ❌ | ❌ | ❌
