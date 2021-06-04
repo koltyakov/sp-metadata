@@ -74,6 +74,7 @@ CreateCopyJob (SP.Site) | ✅ | ✅ | ❌ | ❌
 CreateCopyJobs (SP.Site) | ✅ | ✅ | ❌ | ❌
 CreateDefaultAssociatedGroups (SP.Web) | ✅ | ✅ | ❌ | ❌
 CreateDocumentAndGetEditLink (SP.List) | ✅ | ✅ | ✅ | ❌
+CreateDocumentFromCAAETemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 CreateDocumentWithDefaultName (SP.List) | ✅ | ✅ | ❌ | ❌
 CreateFieldAsXml (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
 CreateGroupBasedEnvironment (SP.Web) | ✅ | ❌ | ❌ | ❌
@@ -415,6 +416,7 @@ PageContextCore (SP.Web) | ✅ | ❌ | ❌ | ❌
 PageContextInfo (SP.Web) | ✅ | ❌ | ❌ | ❌
 ParseAndSetFieldValue (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 ParseDateTime (SP.Web) | ✅ | ✅ | ❌ | ❌
+ParseDocumentTemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 ProcessExternalNotification (SP.Web) | ✅ | ✅ | ✅ | ✅
 ProvisionMigrationContainers (SP.Site) | ✅ | ✅ | ❌ | ❌
 ProvisionMigrationQueue (SP.Site) | ✅ | ✅ | ❌ | ❌
@@ -597,9 +599,11 @@ SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌
 [SP_TeamChannelManager_DemoteTeamChannelById](./Functions/SP_TeamChannelManager_DemoteTeamChannelById.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_DemoteTeamChannelByPath](./Functions/SP_TeamChannelManager_DemoteTeamChannelByPath.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_GetConversations](./Functions/SP_TeamChannelManager_GetConversations.md) | ✅ | ❌ | ❌ | ❌
+SP_TeamChannelManager_GetTeamSiteData | ✅ | ❌ | ❌ | ❌
 [SP_TeamChannelManager_PromoteToTeamChannelById](./Functions/SP_TeamChannelManager_PromoteToTeamChannelById.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_PromoteToTeamChannelByPath](./Functions/SP_TeamChannelManager_PromoteToTeamChannelByPath.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_SaveConversations](./Functions/SP_TeamChannelManager_SaveConversations.md) | ✅ | ❌ | ❌ | ❌
+SP_TeamChannelManager_SyncTeamSiteSettings | ✅ | ❌ | ❌ | ❌
 SP_TenantSettings_Current | ✅ | ✅ | ✅ | ✅
 [SP_WebProxy_Invoke](./Functions/SP_WebProxy_Invoke.md) | ✅ | ✅ | ✅ | ✅
 [SP_Web_CreateAnonymousLink](./Functions/SP_Web_CreateAnonymousLink.md) | ✅ | ✅ | ✅ | ❌
@@ -710,6 +714,7 @@ SyncFlowTemplates (SP.Web) | ✅ | ❌ | ❌ | ❌
 SyncHubSiteTheme (SP.Web) | ✅ | ✅ | ❌ | ❌
 SystemUpdate (SP.ListItem) | ✅ | ✅ | ❌ | ❌
 TakeOverCheckOut (SP.CheckedOutFile) | ✅ | ✅ | ❌ | ❌
+TemplatizeDocument (SP.List) | ✅ | ❌ | ❌ | ❌
 UTCToLocalTime (SP.TimeZone) | ✅ | ✅ | ✅ | ✅
 UnPublish (SP.File) | ✅ | ✅ | ✅ | ✅
 UndoCheckOut (SP.File) | ✅ | ✅ | ✅ | ✅

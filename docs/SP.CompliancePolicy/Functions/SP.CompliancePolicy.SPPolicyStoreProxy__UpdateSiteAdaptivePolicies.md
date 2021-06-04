@@ -1,4 +1,4 @@
-# Function Import: DeleteDynamicScopeBinding
+# Function Import: UpdateSiteAdaptivePolicies
 
 > Namespace: SP.CompliancePolicy
 
@@ -10,5 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-identity (Edm.String) | ✅ | ❌ | ❌ | ❌
+policiesToAdd (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+policiesToRemove (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 siteId (Edm.String) | ✅ | ❌ | ❌ | ❌

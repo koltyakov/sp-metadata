@@ -4,11 +4,10 @@
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-AddDynamicScopeBinding (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
 BulkUpdateDynamicScopeBindings (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
-DeleteDynamicScopeBinding (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
 ExtendReviewItemsRetention (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
 GetDynamicScopeBindingBySiteId (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
+GetSiteAdaptivePolicies (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
 MarkReviewItemsForDeletion (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
 OpenBinaryStreamForOriginalItem (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
 RemoveContainerRetentionPolicy (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
@@ -51,3 +50,4 @@ RetagUnifiedReviewItemsWithMetas (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ 
 [<span title="SP_CompliancePolicy_SPSitePreservationUtility_PlaceOnHold">SP_CompliancePolicy_SPSitePreservationUtility_Plac...</span> (SP CompliancePolicy SPSitePreservationUtility PlaceOnHold)](./Functions/SP_CompliancePolicy_SPSitePreservationUtility_PlaceOnHold.md) | ✅ | ❌ | ❌ | ❌
 SetContainerRetentionPolicy (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
 UpdateContainerSetting (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
+UpdateSiteAdaptivePolicies (SP.CompliancePolicy.SPPolicyStoreProxy) | ✅ | ❌ | ❌ | ❌
