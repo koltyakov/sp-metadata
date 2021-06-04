@@ -80,6 +80,17 @@
       <ComplexType Name="FieldUserValue" BaseType="SP.FieldLookupValue">
         <Property Name="Email" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="ContentAssemblyFormAnswer">
+        <Property Name="Answer" Type="Edm.String" />
+        <Property Name="ContentControlTagName" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ContentControlInfo">
+        <Property Name="ContentControlTagName" Type="Edm.String" />
+        <Property Name="EndIndex" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IsSingleParargaph" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ParagraphIds" Type="Collection(Edm.String)" />
+        <Property Name="StartIndex" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="CountByDate">
         <Property Name="count" Type="Edm.Int32" Nullable="false" />
         <Property Name="date" Type="Edm.Int32" Nullable="false" />
@@ -5159,11 +5170,6 @@
           <Parameter Name="siteUrl" Type="Edm.String" />
           <Parameter Name="siteId" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="AddDynamicScopeBinding" IsBindable="true">
-          <Parameter Name="this" Type="SP.CompliancePolicy.SPPolicyStoreProxy" />
-          <Parameter Name="identity" Type="Edm.String" />
-          <Parameter Name="siteId" Type="Edm.String" />
-        </FunctionImport>
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_ApplyDlpActions">
           <Parameter Name="itemUrl" Type="Edm.String" />
           <Parameter Name="actionsPayload" Type="Edm.String" />
@@ -5183,11 +5189,6 @@
         </FunctionImport>
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_CheckSiteIsDeletableById" ReturnType="Edm.Boolean" IsSideEffecting="false">
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="DeleteDynamicScopeBinding" IsBindable="true">
-          <Parameter Name="this" Type="SP.CompliancePolicy.SPPolicyStoreProxy" />
-          <Parameter Name="identity" Type="Edm.String" />
-          <Parameter Name="siteId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="ExtendReviewItemsRetention" ReturnType="Collection(Edm.Int32)" IsBindable="true">
           <Parameter Name="this" Type="SP.CompliancePolicy.SPPolicyStoreProxy" />
@@ -5220,6 +5221,10 @@
           <Parameter Name="itemUrl" Type="Edm.String" />
           <Parameter Name="policyScenario" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="infos" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetSiteAdaptivePolicies" ReturnType="Collection(Edm.String)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.CompliancePolicy.SPPolicyStoreProxy" />
+          <Parameter Name="siteId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_GetSiteCompliancePolicyProperty" ReturnType="Edm.String" IsSideEffecting="false">
           <Parameter Name="siteUrl" Type="Edm.String" />
@@ -5355,6 +5360,12 @@
           <Parameter Name="externalId" Type="Edm.String" />
           <Parameter Name="settingType" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="setting" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="UpdateSiteAdaptivePolicies" IsBindable="true">
+          <Parameter Name="this" Type="SP.CompliancePolicy.SPPolicyStoreProxy" />
+          <Parameter Name="policiesToAdd" Type="Collection(Edm.String)" />
+          <Parameter Name="policiesToRemove" Type="Collection(Edm.String)" />
+          <Parameter Name="siteId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_CompliancePolicy_SPSitePreservationUtility_PlaceOnHold">
           <Parameter Name="siteId" Type="Edm.String" />
@@ -9984,6 +9995,12 @@
           <Parameter Name="documentTemplateType" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="templateUrl" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="CreateDocumentFromCAAETemplate" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="ContentTypName" Type="Edm.String" />
+          <Parameter Name="FileName" Type="Edm.String" />
+          <Parameter Name="contentAssemblyFormAnswers" Type="Collection(SP.ContentAssemblyFormAnswer)" />
+        </FunctionImport>
         <FunctionImport Name="CreateDocumentWithDefaultName" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="folderPath" Type="Edm.String" />
@@ -10374,6 +10391,10 @@
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="sourceUrl" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="ParseDocumentTemplate" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="Name" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="PublishMappedView" ReturnType="SP.View" IsBindable="true" EntitySet="Views">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="appId" Type="Edm.Guid" Nullable="false" />
@@ -10601,6 +10622,11 @@
         <FunctionImport Name="SyncFlowTemplates" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="category" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="TemplatizeDocument" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="Name" Type="Edm.String" />
+          <Parameter Name="contentControlInfos" Type="Collection(SP.ContentControlInfo)" />
         </FunctionImport>
         <FunctionImport Name="UnpublishMappedView" ReturnType="SP.View" IsBindable="true" EntitySet="Views">
           <Parameter Name="this" Type="SP.List" />
@@ -12915,6 +12941,7 @@
         <FunctionImport Name="SetIsContributorOwnerEnabledPropertyForDefaultDocLib" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Site" />
           <Parameter Name="propertyValue" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="forceDocLibActivation" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="UnregisterHubSite" IsBindable="true">
           <Parameter Name="this" Type="SP.Site" />
@@ -12945,6 +12972,7 @@
           <Parameter Name="listUrl" Type="Edm.String" />
           <Parameter Name="listItemId" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="SP_TeamChannelManager_GetTeamSiteData" ReturnType="Edm.String" IsSideEffecting="false" />
         <FunctionImport Name="SP_TeamChannelManager_PromoteToTeamChannelById" ReturnType="Edm.Boolean">
           <Parameter Name="folderId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="teamChannelUrl" Type="Edm.String" />
@@ -12960,6 +12988,7 @@
           <Parameter Name="listItemId" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="updatedConversationsObject" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="SP_TeamChannelManager_SyncTeamSiteSettings" ReturnType="Edm.DateTime" />
         <FunctionImport Name="GetThemeFontByName" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.ThemeInfo" />
           <Parameter Name="name" Type="Edm.String" />
@@ -17603,7 +17632,13 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/Schemas">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/SourceSiteUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/SourceUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/SourceWebServerRelativeUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/UniqueId">
@@ -17844,6 +17879,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData/Comment">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData/ModelSiteUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData/ModelWebServerRelativeUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData/Promote">
@@ -21347,6 +21388,9 @@
       <Annotations Target="SP.ApiData/SP_TeamChannelManager_GetConversations(Edm.String, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_TeamChannelManager_GetTeamSiteData()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_TeamChannelManager_PromoteToTeamChannelById(Edm.Guid, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21354,6 +21398,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_TeamChannelManager_SaveConversations(Edm.String, Edm.Int32, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_TeamChannelManager_SyncTeamSiteSettings()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetId(SP.TimeZone, Edm.Int32)">
@@ -21860,7 +21907,9 @@
         <Property Name="ObjectId" Type="Edm.String" />
         <Property Name="PublicationType" Type="Edm.Int32" Nullable="false" />
         <Property Name="Schemas" Type="Edm.String" />
+        <Property Name="SourceSiteUrl" Type="Edm.String" />
         <Property Name="SourceUrl" Type="Edm.String" />
+        <Property Name="SourceWebServerRelativeUrl" Type="Edm.String" />
         <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
       </EntityType>
       <EntityType Name="SPMachineLearningPublication">
@@ -21957,6 +22006,8 @@
           <PropertyRef Name="Comment" />
         </Key>
         <Property Name="Comment" Type="Edm.String" Nullable="false" />
+        <Property Name="ModelSiteUrl" Type="Edm.String" />
+        <Property Name="ModelWebServerRelativeUrl" Type="Edm.String" />
         <Property Name="Promote" Type="Edm.Boolean" />
         <Property Name="Publications" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData)" />
         <Property Name="PublicationType" Type="Edm.Int32" />
@@ -29339,6 +29390,7 @@
         <Property Name="DisableCustomAppAuthentication" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisabledModernListTemplateIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="DisabledWebPartIds" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="DisableOutlookPSTVersionTrimming" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisablePersonalListCreation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableReportProblemDialog" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableSpacesActivation" Type="Edm.Boolean" Nullable="false" />
@@ -29439,6 +29491,7 @@
         <Property Name="StorageQuota" Type="Edm.Int64" Nullable="false" />
         <Property Name="StorageQuotaAllocated" Type="Edm.Int64" Nullable="false" />
         <Property Name="StreamLaunchConfig" Type="Edm.Int32" Nullable="false" />
+        <Property Name="StreamLaunchConfigLastUpdated" Type="Edm.DateTime" Nullable="false" />
         <Property Name="SyncAadB2BManagementPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyncPrivacyProfileProperties" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UseFindPeopleInPeoplePicker" Type="Edm.Boolean" Nullable="false" />
@@ -31103,6 +31156,7 @@
         <Property Name="DisableBackToClassic" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableCustomAppAuthentication" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisabledModernListTemplateIds" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="DisableOutlookPSTVersionTrimming" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisablePersonalListCreation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableSpacesActivation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisplayStartASiteOption" Type="Edm.Boolean" Nullable="false" />
@@ -31170,6 +31224,7 @@
         <Property Name="StartASiteFormUrl" Type="Edm.String" />
         <Property Name="StopNew2010Workflows" Type="Edm.Boolean" Nullable="false" />
         <Property Name="StreamLaunchConfig" Type="Edm.Int32" Nullable="false" />
+        <Property Name="StreamLaunchConfigLastUpdated" Type="Edm.DateTime" Nullable="false" />
         <Property Name="SyncAadB2BManagementPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyncPrivacyProfileProperties" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UseFindPeopleInPeoplePicker" Type="Edm.Boolean" Nullable="false" />
