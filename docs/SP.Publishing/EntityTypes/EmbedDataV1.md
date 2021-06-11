@@ -9,7 +9,9 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 AllowHttpsEmbed (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 CreatorName (Edm.String) | ✅ | ✅ | ❌ | ❌
 DatePublishedAt (Edm.String) | ✅ | ✅ | ❌ | ❌
+DecodedUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 Description (Edm.String) | ✅ | ✅ | ❌ | ❌
+DurationInSeconds (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 EmbedServiceResponseCode (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 ErrorMessage (Edm.String) | ✅ | ✅ | ❌ | ❌
 Html (Edm.String) | ✅ | ✅ | ❌ | ❌

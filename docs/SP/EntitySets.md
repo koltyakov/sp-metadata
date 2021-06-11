@@ -183,6 +183,7 @@ Groups1 | ✅ | ✅ | ✅ | ❌
 Groupsitemanagers | ✅ | ✅ | ✅ | ❌
 HashTagCollections | ✅ | ✅ | ✅ | ✅
 HashtagStoreManagers | ❌ | ✅ | ❌ | ❌
+HostedAppAddResponses | ✅ | ❌ | ❌ | ❌
 HostedApps | ✅ | ❌ | ❌ | ❌
 HostedAppsManagers | ✅ | ❌ | ❌ | ❌
 HubSitePropertiess | ✅ | ❌ | ❌ | ❌

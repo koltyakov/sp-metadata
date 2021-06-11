@@ -30,6 +30,7 @@ ScanDoneTimeUtc (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 StartTimeUTC (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 Status (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 StatusUpdatedTimeUTC (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
+TaskCreatedTimeUtc (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 TaskId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 ToBeMigratedFilesCount (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 TotalBytes (Edm.Int64) | ✅ | ❌ | ❌ | ❌
