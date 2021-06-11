@@ -3937,6 +3937,7 @@
         <EntitySet Name="SortCollections" EntityType="Microsoft.SharePoint.Client.Search.Query.SortCollection" />
         <EntitySet Name="StringCollections" EntityType="Microsoft.SharePoint.Client.Search.Query.StringCollection" />
         <EntitySet Name="HostedApps" EntityType="Microsoft.SharePoint.ClientSideComponent.HostedApp" />
+        <EntitySet Name="HostedAppAddResponses" EntityType="Microsoft.SharePoint.ClientSideComponent.HostedAppAddResponse" />
         <EntitySet Name="HostedAppsManagers" EntityType="Microsoft.SharePoint.ClientSideComponent.HostedAppsManager" />
         <EntitySet Name="StorageEntitys" EntityType="Microsoft.SharePoint.ClientSideComponent.StorageEntity" />
         <EntitySet Name="comments" EntityType="Microsoft.SharePoint.Comments.comment" />
@@ -5118,6 +5119,12 @@
         </FunctionImport>
         <FunctionImport Name="BatchDelete" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult" IsBindable="true" EntitySet="SPMachineLearningPublicationsResults">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)" />
+          <Parameter Name="publications" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData)" />
+        </FunctionImport>
+        <FunctionImport Name="BatchRemove" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult" IsBindable="true" EntitySet="SPMachineLearningPublicationsResults">
+          <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)" />
+          <Parameter Name="modelSiteUrl" Type="Edm.String" />
+          <Parameter Name="modelWebServerRelativeUrl" Type="Edm.String" />
           <Parameter Name="publications" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData)" />
         </FunctionImport>
         <FunctionImport Name="BatchUnpromote" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult" IsBindable="true" EntitySet="SPMachineLearningPublicationsResults">
@@ -9613,6 +9620,7 @@
           <Parameter Name="Overwrite" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="Url" Type="Edm.String" />
           <Parameter Name="IconUrl" Type="Edm.String" />
+          <Parameter Name="Publisher" Type="Edm.String" />
           <Parameter Name="ShortDescription" Type="Edm.String" />
           <Parameter Name="StoreAssetId" Type="Edm.String" />
         </FunctionImport>
@@ -9791,6 +9799,11 @@
           <Parameter Name="webPartDataAsJson" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Add" ReturnType="Edm.Int32" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.ClientSideComponent.HostedAppsManager" />
+          <Parameter Name="webPartDataAsJson" Type="Edm.String" />
+          <Parameter Name="hostType" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="AddEx" ReturnType="Microsoft.SharePoint.ClientSideComponent.HostedAppAddResponse" IsBindable="true" EntitySet="HostedAppAddResponses">
           <Parameter Name="this" Type="Microsoft.SharePoint.ClientSideComponent.HostedAppsManager" />
           <Parameter Name="webPartDataAsJson" Type="Edm.String" />
           <Parameter Name="hostType" Type="Edm.String" />
@@ -19084,6 +19097,9 @@
       <Annotations Target="Microsoft.SharePoint.Comments.CommentsAPI">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.ClientSideComponent.HostedAppAddResponse">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.ClientSideComponent.HostedApp">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19700,6 +19716,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/BatchDelete(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication), Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData))">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/BatchRemove(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication), Edm.String, Edm.String, Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/BatchUnpromote(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication), Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData))">
@@ -20755,7 +20774,7 @@
       <Annotations Target="SP.ApiData/AddAndDeployStoreAppById(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.String, Edm.Boolean, Edm.Boolean, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/AddStoreApp(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String, Edm.String, Edm.String, Edm.String)">
+      <Annotations Target="SP.ApiData/AddStoreApp(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/DownloadTeamsSolution(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Int32)">
@@ -20858,6 +20877,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Add(Microsoft.SharePoint.ClientSideComponent.HostedAppsManager, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/AddEx(Microsoft.SharePoint.ClientSideComponent.HostedAppsManager, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetAppDatabaseConnectionString(SP.AppInstance)">
@@ -25857,7 +25879,9 @@
         <Property Name="AllowHttpsEmbed" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CreatorName" Type="Edm.String" />
         <Property Name="DatePublishedAt" Type="Edm.String" />
+        <Property Name="DecodedUrl" Type="Edm.String" />
         <Property Name="Description" Type="Edm.String" />
+        <Property Name="DurationInSeconds" Type="Edm.Int32" Nullable="false" />
         <Property Name="EmbedServiceResponseCode" Type="Edm.Int32" Nullable="false" />
         <Property Name="ErrorMessage" Type="Edm.String" />
         <Property Name="Html" Type="Edm.String" />
@@ -27608,6 +27632,7 @@
       </ComplexType>
       <ComplexType Name="StoreAppCreationInformation" BaseType="SP.FileCreationInformation">
         <Property Name="IconUrl" Type="Edm.String" />
+        <Property Name="Publisher" Type="Edm.String" />
         <Property Name="ShortDescription" Type="Edm.String" />
         <Property Name="StoreAssetId" Type="Edm.String" />
       </ComplexType>
@@ -27850,6 +27875,14 @@
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="HostedAppAddResponse">
+        <Key>
+          <PropertyRef Name="itemId" />
+        </Key>
+        <Property Name="itemId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="shareLinkUrl" Type="Edm.String" />
+        <Property Name="shareWebPath" Type="Edm.String" />
       </EntityType>
       <EntityType Name="HostedApp">
         <Key>
@@ -29637,6 +29670,7 @@
         <Property Name="StartTimeUTC" Type="Edm.DateTime" Nullable="false" />
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
         <Property Name="StatusUpdatedTimeUTC" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="TaskCreatedTimeUtc" Type="Edm.DateTime" Nullable="false" />
         <Property Name="TaskId" Type="Edm.Guid" Nullable="false" />
         <Property Name="ToBeMigratedFilesCount" Type="Edm.Int64" Nullable="false" />
         <Property Name="TotalBytes" Type="Edm.Int64" Nullable="false" />
