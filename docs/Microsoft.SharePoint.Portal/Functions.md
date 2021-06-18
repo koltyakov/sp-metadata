@@ -8,6 +8,7 @@ ArchiveTeamChannelSite (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ |
 AreSegmentsCompatible (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
 CanCreateHubJoinedSite (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
 CanUserCreateGroup (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ❌ | ❌
+ClearCurrentUserTeamsCache (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 Context (Microsoft.SharePoint.Portal.SharePointHomeServiceContextBuilder) | ✅ | ✅ | ❌ | ❌
 Create (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ✅ | ❌
 Create (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ✅ | ❌ | ❌
@@ -36,6 +37,7 @@ GetSiteStatus (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ✅ |
 GetTeamChannelFilesUrl (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetTeamChannelSiteOwner (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
 GetTeamChannels (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
+GetTeamChannelsEx (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetUserSharedChannelMemberGroups (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetUserTeamConnectedMemberGroups (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetValidSiteUrlFromAlias (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ❌ | ❌

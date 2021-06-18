@@ -12,6 +12,7 @@ AllowAccessFromUnmanagedDevice (Edm.String) | ✅ | ❌ | ❌ | ❌
 AutoDelete (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockDelete (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockEdit (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ComplianceFlags (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ContainsSiteLabel (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisplayName (Edm.String) | ✅ | ❌ | ❌ | ❌
 EncryptionRMSTemplateId (Edm.String) | ✅ | ❌ | ❌ | ❌

@@ -14,5 +14,6 @@ blockDelete (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 blockEdit (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 complianceTag (Edm.String) | ✅ | ❌ | ❌ | ❌
 complianceTagWrittenTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
+isRecordUnlockedAsDefault (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 isTagSuperLock (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 userEmailAddress (Edm.String) | ✅ | ❌ | ❌ | ❌

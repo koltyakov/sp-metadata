@@ -47,9 +47,6 @@ MessageCenterMessages (Microsoft.Online.SharePoint.TenantAdministration.Office36
 <span title="Microsoft_Online_SharePoint_TenantAdministration_TenantAdminEndpoints">Microsoft_Online_SharePoint_TenantAdministration_T...</span> (Microsoft Online SharePoint TenantAdministration TenantAdminEndpoints) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_TenantAdministration_TenantAdminSettingsService">Microsoft_Online_SharePoint_TenantAdministration_T...</span> (Microsoft Online SharePoint TenantAdministration TenantAdminSettingsService) | ✅ | ❌ | ❌ | ❌
 Office365ProvidedSharepointSiteActivityDataReady (Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService) | ✅ | ❌ | ❌ | ❌
-PftTestGetDrives (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
-PftTestGetUrl (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
-PftTestGetUrlEx (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RegisterHubSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RegisterHubSiteWithCreationInformation (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveDeletedSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌

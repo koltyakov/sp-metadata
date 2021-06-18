@@ -15,3 +15,4 @@ isEventBasedTag (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 isTagPolicyHold (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 isTagPolicyRecord (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 isTagSuperLock (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+isUnlockedAsDefault (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

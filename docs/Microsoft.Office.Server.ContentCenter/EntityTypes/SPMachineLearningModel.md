@@ -17,6 +17,7 @@ Explanations (Edm.String) | ✅ | ❌ | ❌ | ❌
 ID (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 LastTrained (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 ListID (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+ManagementAllowed (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ModelSettings (Edm.String) | ✅ | ❌ | ❌ | ❌
 ModelType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Modified (Edm.DateTime) | ✅ | ❌ | ❌ | ❌

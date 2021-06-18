@@ -37,6 +37,8 @@ IBSegmentsToAdd (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 IBSegmentsToRemove (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 IsGroupOwnerSiteAdmin (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsHubSite (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+IsTeamsChannelConnected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+IsTeamsConnected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LastContentModifiedDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 Lcid (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 LimitedAccessFileType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
@@ -68,6 +70,7 @@ StorageMaximumLevel (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 StorageQuotaType (Edm.String) | ✅ | ❌ | ❌ | ❌
 StorageUsage (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 StorageWarningLevel (Edm.Int64) | ✅ | ❌ | ❌ | ❌
+TeamsChannelType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Template (Edm.String) | ✅ | ❌ | ❌ | ❌
 TimeZoneId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ❌ | ❌ | ❌
