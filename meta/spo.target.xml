@@ -6016,7 +6016,6 @@
           <Parameter Name="this" Type="SP.UserProfiles.FollowedContent" />
           <Parameter Name="options" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="subtype" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="count" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="HasGroupMembershipChangedAndSyncChanges" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.UserProfiles.FollowedContent" />
