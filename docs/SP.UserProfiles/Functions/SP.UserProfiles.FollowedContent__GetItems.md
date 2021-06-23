@@ -10,6 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-count (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 options (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 subtype (Edm.Int32) | ✅ | ✅ | ✅ | ✅
