@@ -437,6 +437,7 @@
         <Property Name="KeyVersion" Type="Edm.Guid" Nullable="false" />
         <Property Name="ResourceGroupName" Type="Edm.String" />
         <Property Name="SubscriptionId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Uri" Type="Edm.String" />
         <Property Name="VaultName" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="CustomerKeyStatusInfo">
@@ -1441,6 +1442,7 @@
         <Property Name="ListId" Type="Edm.Guid" Nullable="false" />
         <Property Name="ETag" Type="Edm.String" />
         <Property Name="Exists" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ExpirationDate" Type="Edm.DateTime" />
         <Property Name="HasAlternateContentStreams" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IrmEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Length" Type="Edm.Int64" Nullable="false" />
@@ -2484,6 +2486,12 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
+      <EntityType Name="RecentListProxy" Abstract="true">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="RecentList">
         <Key>
           <PropertyRef Name="color" />
@@ -2961,6 +2969,17 @@
         </Key>
         <Property Name="folderId" Type="Edm.Guid" Nullable="false" />
         <Property Name="groupId" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="TeamSiteData">
+        <Key>
+          <PropertyRef Name="ErrorTag" />
+        </Key>
+        <Property Name="ErrorTag" Type="Edm.Int64" Nullable="false" />
+        <Property Name="HeaderEmphasis" Type="Edm.Int32" Nullable="false" />
+        <Property Name="HubSiteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="SiteUrl" Type="Edm.String" />
+        <Property Name="TenantInstanceId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ThemeToken" Type="Edm.String" />
       </EntityType>
       <EntityType Name="TenantAppUtility" Abstract="true">
         <Key>
@@ -3977,6 +3996,7 @@
         <EntitySet Name="SharedWithMeDocuments" EntityType="Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocument" />
         <EntitySet Name="RecentDocuments" EntityType="Microsoft.SharePoint.Portal.WebControls.RecentDocument" />
         <EntitySet Name="BaseCustomPropertys" EntityType="Microsoft.SharePoint.Publishing.RestOnly.BaseCustomProperty" />
+        <EntitySet Name="QuotaMigrationApis" EntityType="Microsoft.SharePoint.QuotaManagement.Consumer.QuotaMigrationApi" />
         <EntitySet Name="GetUpgradeOptionsApis" EntityType="Microsoft.SharePoint.QuotaManagement.GetUpgradeOptions.GetUpgradeOptionsApi" />
         <EntitySet Name="SmartCacheItems" EntityType="Microsoft.SharePoint.SmartCache.SmartCacheItem" />
         <EntitySet Name="TenantCdnApis" EntityType="Microsoft.SharePoint.TenantCdn.TenantCdnApi" />
@@ -4217,6 +4237,7 @@
         <EntitySet Name="QuickAccessItemCollections" EntityType="SP.QuickAccessItemCollection" />
         <EntitySet Name="RecentLists" EntityType="SP.RecentList" />
         <EntitySet Name="RecentListCollections" EntityType="SP.RecentListCollection" />
+        <EntitySet Name="RecentListProxys" EntityType="SP.RecentListProxy" />
         <EntitySet Name="RecycleBinItems" EntityType="SP.RecycleBinItem" />
         <EntitySet Name="RegionalSettingss" EntityType="SP.RegionalSettings" />
         <EntitySet Name="RelatedFields" EntityType="SP.RelatedField" />
@@ -4257,6 +4278,7 @@
         <EntitySet Name="StorageMetricss" EntityType="SP.StorageMetrics" />
         <EntitySet Name="TeamChannels" EntityType="SP.TeamChannel" />
         <EntitySet Name="TeamChannelManagers" EntityType="SP.TeamChannelManager" />
+        <EntitySet Name="TeamSiteDatas" EntityType="SP.TeamSiteData" />
         <EntitySet Name="TenantAppInstances" EntityType="SP.TenantAppInstance" />
         <EntitySet Name="TenantAppUtilitys" EntityType="SP.TenantAppUtility" />
         <EntitySet Name="TenantSettingss" EntityType="SP.TenantSettings" />
@@ -9460,6 +9482,11 @@
           <Parameter Name="urls" Type="Collection(Edm.String)" />
           <Parameter Name="cdnType" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_QuotaManagement_Consumer_QuotaMigrationApi" ReturnType="Microsoft.SharePoint.QuotaManagement.Consumer.QuotaMigrationApi" IsComposable="true" EntitySet="QuotaMigrationApis" />
+        <FunctionImport Name="MigrateQuota" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.QuotaManagement.Consumer.QuotaMigrationApi" />
+          <Parameter Name="IsMaxQuotaCall" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="SP_SPHSite" ReturnType="SP.SPHSite" IsComposable="true" EntitySet="SPHSites" />
         <FunctionImport Name="SP_SPHSite_AddOrgNewsSite" ReturnType="Edm.Guid">
           <Parameter Name="siteUrl" Type="Edm.String" />
@@ -10668,6 +10695,11 @@
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="retentionLabel" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="UpdateFormProcessingModelSettings" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="retentionLabel" Type="Edm.String" />
+          <Parameter Name="linkedList" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="UpdatePlaceholdersMetadata" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="Name" Type="Edm.String" />
@@ -11258,6 +11290,7 @@
           <Parameter Name="footerEmphasis" Type="Edm.Int32" />
           <Parameter Name="hideTitleInHeader" Type="Edm.Boolean" />
           <Parameter Name="logoAlignment" Type="Edm.Int32" />
+          <Parameter Name="horizontalQuickLaunch" Type="Edm.Boolean" />
         </FunctionImport>
         <FunctionImport Name="SetDefaultNewPageTemplateId" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
@@ -11375,6 +11408,9 @@
         </FunctionImport>
         <FunctionImport Name="SP_RecentListCollection_UpdateRecentListsRemote">
           <Parameter Name="recentListsJson" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_RecentListProxy_GetRecentListsProxy" ReturnType="Edm.Stream" IsSideEffecting="false">
+          <Parameter Name="sortBy" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_RelatedItemManager_AddSingleLink">
           <Parameter Name="SourceListName" Type="Edm.String" />
@@ -12287,6 +12323,10 @@
           <Parameter Name="this" Type="SP.File" />
           <Parameter Name="file" Type="Edm.Stream" />
         </FunctionImport>
+        <FunctionImport Name="SetExpirationDate" IsBindable="true">
+          <Parameter Name="this" Type="SP.File" />
+          <Parameter Name="expirationDate" Type="Edm.DateTime" />
+        </FunctionImport>
         <FunctionImport Name="SetFileUserValue" ReturnType="Microsoft.SharePoint.UserActions.officeFileUserValueResponse" IsBindable="true">
           <Parameter Name="this" Type="SP.File" />
           <Parameter Name="key" Type="Edm.String" />
@@ -13002,7 +13042,9 @@
           <Parameter Name="listUrl" Type="Edm.String" />
           <Parameter Name="listItemId" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="SP_TeamChannelManager_GetTeamSiteData" ReturnType="Edm.String" IsSideEffecting="false" />
+        <FunctionImport Name="SP_TeamChannelManager_GetTeamSiteData" ReturnType="SP.TeamSiteData" IsComposable="true" EntitySet="TeamSiteDatas">
+          <Parameter Name="ignoreValidation" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="SP_TeamChannelManager_PromoteToTeamChannelById" ReturnType="Edm.Boolean">
           <Parameter Name="folderId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="teamChannelUrl" Type="Edm.String" />
@@ -13018,7 +13060,7 @@
           <Parameter Name="listItemId" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="updatedConversationsObject" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="SP_TeamChannelManager_SyncTeamSiteSettings" ReturnType="Edm.DateTime" />
+        <FunctionImport Name="SP_TeamChannelManager_SyncTeamSiteSettings" ReturnType="SP.TeamSiteData" EntitySet="TeamSiteDatas" />
         <FunctionImport Name="GetThemeFontByName" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.ThemeInfo" />
           <Parameter Name="name" Type="Edm.String" />
@@ -14053,6 +14095,7 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="segments" Type="Collection(Edm.Guid)" Nullable="false" />
+          <Parameter Name="ibMode" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SetIdleSessionSignOutForUnmanagedDevices" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -18193,6 +18236,9 @@
       <Annotations Target="SP.File/EffectiveInformationRightsManagementSettings">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.File/ExpirationDate">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.File/HasAlternateContentStreams">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19321,6 +19367,27 @@
       <Annotations Target="SP.TeamChannel">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.TeamSiteData">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.TeamSiteData/ErrorTag">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.TeamSiteData/HeaderEmphasis">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.TeamSiteData/HubSiteId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.TeamSiteData/SiteUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.TeamSiteData/TenantInstanceId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.TeamSiteData/ThemeToken">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.TenantSettings">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19364,6 +19431,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Sharing.SharingInformation/fileExtension">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Sharing.SharingInformation/isStubFile">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Sharing.SharingInformation/sharingAbilities">
@@ -21007,6 +21077,9 @@
       <Annotations Target="SP.ApiData/UpdateFormProcessingModelRetentionLabel(SP.List, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/UpdateFormProcessingModelSettings(SP.List, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/UpdateRule(SP.List, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.Int32, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21145,7 +21218,7 @@
       <Annotations Target="SP.ApiData/SetAccessRequestSiteDescriptionAndUpdate(SP.Web, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SetChromeOptions(SP.Web, Edm.Int32, Edm.Int32, Edm.Boolean, Edm.Boolean, Edm.Int32, Edm.Int32, Edm.Boolean, Edm.Int32)">
+      <Annotations Target="SP.ApiData/SetChromeOptions(SP.Web, Edm.Int32, Edm.Int32, Edm.Boolean, Edm.Boolean, Edm.Int32, Edm.Int32, Edm.Boolean, Edm.Int32, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetDefaultNewPageTemplateId(SP.Web, Edm.Guid)">
@@ -21218,6 +21291,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_RecentListCollection_UpdateRecentListsRemote(Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_RecentListProxy_GetRecentListsProxy(Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_SmartCache_Update(Edm.String)">
@@ -21311,6 +21387,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/RecycleWithParameters(SP.File, SP.FileDeleteParameters)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetExpirationDate(SP.File, Edm.DateTime)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetFileUserValue(SP.File, Edm.String, Edm.String)">
@@ -21430,7 +21509,7 @@
       <Annotations Target="SP.ApiData/SP_TeamChannelManager_GetConversations(Edm.String, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_TeamChannelManager_GetTeamSiteData()">
+      <Annotations Target="SP.ApiData/SP_TeamChannelManager_GetTeamSiteData(Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_TeamChannelManager_PromoteToTeamChannelById(Edm.Guid, Edm.String, Edm.String)">
@@ -28383,6 +28462,7 @@
         <Property Name="enforceSPOSearch" Type="Edm.Boolean" Nullable="false" />
         <Property Name="fileExtension" Type="Edm.String" />
         <Property Name="hasUniquePermissions" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="isStubFile" Type="Edm.Boolean" Nullable="false" />
         <Property Name="itemUniqueId" Type="Edm.Guid" Nullable="false" />
         <Property Name="microserviceShareUiUrl" Type="Edm.String" />
         <Property Name="outlookEndpointHostUrl" Type="Edm.String" />
@@ -31057,6 +31137,14 @@
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.QuotaManagement.GetUpgradeOptions" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="GetUpgradeOptionsApi">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Microsoft.SharePoint.QuotaManagement.Consumer" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="QuotaMigrationApi">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
