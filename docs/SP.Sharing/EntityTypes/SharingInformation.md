@@ -28,6 +28,7 @@ enforceIBSegmentFiltering (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 enforceSPOSearch (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 fileExtension (Edm.String) | ✅ | ❌ | ❌ | ❌
 hasUniquePermissions (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
+isStubFile (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 itemUniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 microserviceShareUiUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 outlookEndpointHostUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

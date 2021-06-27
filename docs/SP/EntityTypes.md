@@ -116,6 +116,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [QuickAccessItemCollection](./EntityTypes/QuickAccessItemCollection.md) | ✅ | ❌ | ❌ | ❌
 [RecentList](./EntityTypes/RecentList.md) | ✅ | ❌ | ❌ | ❌
 [RecentListCollection](./EntityTypes/RecentListCollection.md) | ✅ | ❌ | ❌ | ❌
+[RecentListProxy](./EntityTypes/RecentListProxy.md) | ✅ | ❌ | ❌ | ❌
 [RecycleBinItem](./EntityTypes/RecycleBinItem.md) | ✅ | ✅ | ✅ | ✅
 [RegionalSettings](./EntityTypes/RegionalSettings.md) | ✅ | ✅ | ✅ | ✅
 [RelatedField](./EntityTypes/RelatedField.md) | ✅ | ✅ | ✅ | ✅
@@ -145,6 +146,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [StorageMetrics](./EntityTypes/StorageMetrics.md) | ✅ | ✅ | ✅ | ❌
 [TeamChannel](./EntityTypes/TeamChannel.md) | ✅ | ❌ | ❌ | ❌
 [TeamChannelManager](./EntityTypes/TeamChannelManager.md) | ✅ | ✅ | ❌ | ❌
+[TeamSiteData](./EntityTypes/TeamSiteData.md) | ✅ | ❌ | ❌ | ❌
 [TenantAppInstance](./EntityTypes/TenantAppInstance.md) | ✅ | ✅ | ✅ | ❌
 [TenantAppUtility](./EntityTypes/TenantAppUtility.md) | ✅ | ✅ | ✅ | ❌
 [TenantSettings](./EntityTypes/TenantSettings.md) | ✅ | ✅ | ✅ | ✅

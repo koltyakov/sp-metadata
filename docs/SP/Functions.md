@@ -568,6 +568,7 @@ SP_QuickAccessItemCollection_GetQuickAccessItems | ✅ | ❌ | ❌ | ❌
 [<span title="SP_RecentListCollection_GetRecentListsWithPageContextInfo">SP_RecentListCollection_GetRecentListsWithPageCont...</span> (SP RecentListCollection GetRecentListsWithPageContextInfo)](./Functions/SP_RecentListCollection_GetRecentListsWithPageContextInfo.md) | ✅ | ❌ | ❌ | ❌
 [SP_RecentListCollection_UpdateRecentLists](./Functions/SP_RecentListCollection_UpdateRecentLists.md) | ✅ | ❌ | ❌ | ❌
 [SP_RecentListCollection_UpdateRecentListsRemote](./Functions/SP_RecentListCollection_UpdateRecentListsRemote.md) | ✅ | ❌ | ❌ | ❌
+[SP_RecentListProxy_GetRecentListsProxy](./Functions/SP_RecentListProxy_GetRecentListsProxy.md) | ✅ | ❌ | ❌ | ❌
 [SP_RelatedItemManager_AddSingleLink](./Functions/SP_RelatedItemManager_AddSingleLink.md) | ✅ | ✅ | ✅ | ✅
 [SP_RelatedItemManager_AddSingleLinkFromUrl](./Functions/SP_RelatedItemManager_AddSingleLinkFromUrl.md) | ✅ | ✅ | ✅ | ✅
 [SP_RelatedItemManager_AddSingleLinkToUrl](./Functions/SP_RelatedItemManager_AddSingleLinkToUrl.md) | ✅ | ✅ | ✅ | ✅
@@ -599,7 +600,7 @@ SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌
 [SP_TeamChannelManager_DemoteTeamChannelById](./Functions/SP_TeamChannelManager_DemoteTeamChannelById.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_DemoteTeamChannelByPath](./Functions/SP_TeamChannelManager_DemoteTeamChannelByPath.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_GetConversations](./Functions/SP_TeamChannelManager_GetConversations.md) | ✅ | ❌ | ❌ | ❌
-SP_TeamChannelManager_GetTeamSiteData | ✅ | ❌ | ❌ | ❌
+[SP_TeamChannelManager_GetTeamSiteData](./Functions/SP_TeamChannelManager_GetTeamSiteData.md) | ✅ | ❌ | ❌ | ❌
 [SP_TeamChannelManager_PromoteToTeamChannelById](./Functions/SP_TeamChannelManager_PromoteToTeamChannelById.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_PromoteToTeamChannelByPath](./Functions/SP_TeamChannelManager_PromoteToTeamChannelByPath.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_SaveConversations](./Functions/SP_TeamChannelManager_SaveConversations.md) | ✅ | ❌ | ❌ | ❌
@@ -638,6 +639,7 @@ SetComplianceTagWithRecord (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 SetCorporateCatalog (SP.TenantSettings) | ✅ | ❌ | ❌ | ❌
 SetDefaultNewPageTemplateId (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetExemptFromBlockDownloadOfNonViewableFiles (SP.List) | ✅ | ✅ | ❌ | ❌
+SetExpirationDate (SP.File) | ✅ | ❌ | ❌ | ❌
 SetFileUserValue (SP.File) | ✅ | ❌ | ❌ | ❌
 SetGlobalNavSettings (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetId (SP.TimeZone) | ✅ | ❌ | ❌ | ❌
@@ -763,6 +765,7 @@ UpdateAlert (SP.Alert) | ✅ | ✅ | ❌ | ❌
 <span title="UpdateClientObjectModelUseRemoteAPIsPermissionSetting (SP.Site)">UpdateClientObjectModelUseRemoteAPIsPermissionSett...</span> | ✅ | ✅ | ✅ | ✅
 UpdateEx (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 UpdateFormProcessingModelRetentionLabel (SP.List) | ✅ | ❌ | ❌ | ❌
+UpdateFormProcessingModelSettings (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateHashtags (SP.ListItem) | ❌ | ✅ | ❌ | ❌
 UpdateOverwriteVersion (SP.ListItem) | ✅ | ✅ | ❌ | ❌
 UpdatePlaceholdersMetadata (SP.List) | ✅ | ❌ | ❌ | ❌

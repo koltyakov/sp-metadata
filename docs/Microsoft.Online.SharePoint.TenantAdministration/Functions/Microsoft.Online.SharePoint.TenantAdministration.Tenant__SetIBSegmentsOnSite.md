@@ -10,5 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+ibMode (Edm.String) | ✅ | ❌ | ❌ | ❌
 segments (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 siteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

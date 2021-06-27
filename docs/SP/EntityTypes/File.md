@@ -14,6 +14,7 @@ ContentTag (Edm.String) | ✅ | ✅ | ✅ | ✅
 CustomizedPageStatus (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 ETag (Edm.String) | ✅ | ✅ | ✅ | ✅
 Exists (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+ExpirationDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 HasAlternateContentStreams (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IrmEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 Length (Edm.Int64) | ✅ | ✅ | ✅ | ✅

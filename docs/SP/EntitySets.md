@@ -358,9 +358,11 @@ QueueJobs | ✅ | ✅ | ✅ | ❌
 QuickAccessItemCollections | ✅ | ❌ | ❌ | ❌
 QuizUtilitiess | ❌ | ❌ | ❌ | ✅
 Quizs | ❌ | ❌ | ❌ | ✅
+QuotaMigrationApis | ✅ | ❌ | ❌ | ❌
 RankingLabelings | ✅ | ✅ | ✅ | ✅
 RecentDocuments | ✅ | ✅ | ✅ | ❌
 RecentListCollections | ✅ | ❌ | ❌ | ❌
+RecentListProxys | ✅ | ❌ | ❌ | ❌
 RecentLists | ✅ | ❌ | ❌ | ❌
 RecipeUtilitys | ❌ | ✅ | ❌ | ❌
 RecycleBinItems | ✅ | ✅ | ✅ | ✅
@@ -533,6 +535,7 @@ TaxonomyReplicationParameterss | ✅ | ❌ | ❌ | ❌
 TeamChannelManagers | ✅ | ✅ | ❌ | ❌
 TeamChannels | ✅ | ❌ | ❌ | ❌
 TeamResources | ✅ | ❌ | ❌ | ❌
+TeamSiteDatas | ✅ | ❌ | ❌ | ❌
 TeamsPackageDownloads | ✅ | ❌ | ❌ | ❌
 TenantAdminEndpointss | ✅ | ❌ | ❌ | ❌
 TenantAdminSettingsServices | ✅ | ❌ | ❌ | ❌

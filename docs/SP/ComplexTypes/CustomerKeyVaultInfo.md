@@ -10,4 +10,5 @@ KeyName (Edm.String) | ✅ | ✅ | ❌ | ❌
 KeyVersion (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 ResourceGroupName (Edm.String) | ✅ | ❌ | ❌ | ❌
 SubscriptionId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+Uri (Edm.String) | ✅ | ❌ | ❌ | ❌
 VaultName (Edm.String) | ✅ | ✅ | ❌ | ❌

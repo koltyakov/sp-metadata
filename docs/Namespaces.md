@@ -61,6 +61,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.SharePoint.Publishing.Diagnostics](./Microsoft.SharePoint.Publishing.Diagnostics) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Publishing.RestOnly](./Microsoft.SharePoint.Publishing.RestOnly) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.QuickActionMessageCard](./Microsoft.SharePoint.QuickActionMessageCard) | ✅ | ✅ | ❌ | ❌
+[Microsoft.SharePoint.QuotaManagement.Consumer](./Microsoft.SharePoint.QuotaManagement.Consumer) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.QuotaManagement.GetUpgradeOptions](./Microsoft.SharePoint.QuotaManagement.GetUpgradeOptions) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.SmartCache](./Microsoft.SharePoint.SmartCache) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.TenantCdn](./Microsoft.SharePoint.TenantCdn) | ✅ | ❌ | ❌ | ❌
