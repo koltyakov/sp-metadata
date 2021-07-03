@@ -643,6 +643,7 @@
         <Property Name="MediaServiceEventHashCode" Type="Edm.String" />
         <Property Name="MediaServiceFastMetadata" Type="Edm.String" />
         <Property Name="MediaServiceGenerationTime" Type="Edm.String" />
+        <Property Name="MediaServiceImageTags" Type="Edm.String" />
         <Property Name="MediaServiceKeyPoints" Type="Edm.String" />
         <Property Name="MediaServiceLocation" Type="Edm.String" />
         <Property Name="MediaServiceMetadata" Type="Edm.String" />
@@ -8864,6 +8865,7 @@
         </FunctionImport>
         <FunctionImport Name="GetCurrentUserJoinedTeams" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
+          <Parameter Name="getLogoData" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetCurrentUserSharedChannelMemberGroups" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
@@ -17246,6 +17248,9 @@
       <Annotations Target="SP.MediaServiceUpdateParameters/MachineLearningSampleMeta">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.MediaServiceUpdateParameters/MediaServiceImageTags">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.MediaServiceUpdateParameters/SensitivityLabel">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20423,7 +20428,7 @@
       <Annotations Target="SP.ApiData/GetAllOrgLabels(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/GetCurrentUserJoinedTeams(Microsoft.SharePoint.Portal.GroupSiteManager)">
+      <Annotations Target="SP.ApiData/GetCurrentUserJoinedTeams(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetCurrentUserSharedChannelMemberGroups(Microsoft.SharePoint.Portal.GroupSiteManager)">
@@ -28475,6 +28480,7 @@
         <Property Name="showExternalSharingWarning" Type="Edm.Boolean" Nullable="false" />
         <Property Name="siteIBMode" Type="Edm.String" />
         <Property Name="siteIBSegmentIDs" Type="Collection(Edm.String)" />
+        <Property Name="userIsSharingViaMCS" Type="Edm.String" />
         <Property Name="webTemplateId" Type="Edm.Int32" Nullable="false" />
         <Property Name="webUrl" Type="Edm.String" />
         <NavigationProperty Name="pickerSettings" Relationship="SP.SP_Sharing_SharingInformation_pickerSettings_SP_PickerSettings_pickerSettingsPartner" ToRole="pickerSettings" FromRole="pickerSettingsPartner" />
@@ -29630,6 +29636,7 @@
         <Property Name="SpecialCharactersStateInFileFolderNames" Type="Edm.Int32" Nullable="false" />
         <Property Name="StartASiteFormUrl" Type="Edm.String" />
         <Property Name="StopNew2010Workflows" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="StopNew2013Workflows" Type="Edm.Boolean" Nullable="false" />
         <Property Name="StorageQuota" Type="Edm.Int64" Nullable="false" />
         <Property Name="StorageQuotaAllocated" Type="Edm.Int64" Nullable="false" />
         <Property Name="StreamLaunchConfig" Type="Edm.Int32" Nullable="false" />
@@ -31380,6 +31387,7 @@
         <Property Name="SocialBarOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="StartASiteFormUrl" Type="Edm.String" />
         <Property Name="StopNew2010Workflows" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="StopNew2013Workflows" Type="Edm.Boolean" Nullable="false" />
         <Property Name="StreamLaunchConfig" Type="Edm.Int32" Nullable="false" />
         <Property Name="StreamLaunchConfigLastUpdated" Type="Edm.DateTime" Nullable="false" />
         <Property Name="SyncAadB2BManagementPolicy" Type="Edm.Boolean" Nullable="false" />
