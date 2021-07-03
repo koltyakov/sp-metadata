@@ -17,6 +17,7 @@ MediaServiceDateTaken (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceEventHashCode (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceFastMetadata (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceGenerationTime (Edm.String) | ✅ | ❌ | ❌ | ❌
+MediaServiceImageTags (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceKeyPoints (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceLocation (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceMetadata (Edm.String) | ✅ | ❌ | ❌ | ❌

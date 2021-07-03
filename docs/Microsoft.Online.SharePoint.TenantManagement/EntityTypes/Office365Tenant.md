@@ -117,6 +117,7 @@ SignInAccelerationDomain (Edm.String) | ✅ | ❌ | ❌ | ❌
 SocialBarOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 StartASiteFormUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 StopNew2010Workflows (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+StopNew2013Workflows (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 StreamLaunchConfig (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 StreamLaunchConfigLastUpdated (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 SyncAadB2BManagementPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

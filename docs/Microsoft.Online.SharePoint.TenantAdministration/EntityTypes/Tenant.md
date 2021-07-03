@@ -152,6 +152,7 @@ SocialBarOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SpecialCharactersStateInFileFolderNames (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 StartASiteFormUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 StopNew2010Workflows (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+StopNew2013Workflows (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 StorageQuota (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 StorageQuotaAllocated (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 StreamLaunchConfig (Edm.Int32) | ✅ | ❌ | ❌ | ❌
