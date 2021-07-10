@@ -226,6 +226,11 @@
         <Property Name="NameId" Type="Edm.String" />
         <Property Name="NameIdIssuer" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="SmartTemplateContentType">
+        <Property Name="Id" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="PublishStatus" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="AlertCreationInformation">
         <Property Name="AlertFrequency" Type="Edm.Int32" Nullable="false" />
         <Property Name="AlertTemplateName" Type="Edm.String" />
@@ -4320,15 +4325,15 @@
         <EntitySet Name="Utilitys" EntityType="SP.Utilities.Utility" />
         <EntitySet Name="WopiHostUtilitys" EntityType="SP.Utilities.WopiHostUtility" />
         <EntitySet Name="WopiPropertiess" EntityType="SP.Utilities.WopiProperties" />
+        <EntitySet Name="Views" EntityType="SP.View" />
+        <EntitySet Name="ViewFieldCollections" EntityType="SP.ViewFieldCollection" />
+        <EntitySet Name="VisualizationAppSynchronizationResults" EntityType="SP.VisualizationAppSynchronizationResult" />
         <EntitySet Name="WebInformations" EntityType="SP.WebInformation" />
         <EntitySet Name="LimitedWebPartManagers" EntityType="SP.WebParts.LimitedWebPartManager" />
         <EntitySet Name="WebParts" EntityType="SP.WebParts.WebPart" />
         <EntitySet Name="WebPartDefinitions" EntityType="SP.WebParts.WebPartDefinition" />
         <EntitySet Name="WebProxys" EntityType="SP.WebProxy" />
         <EntitySet Name="WebTemplates" EntityType="SP.WebTemplate" />
-        <EntitySet Name="Views" EntityType="SP.View" />
-        <EntitySet Name="ViewFieldCollections" EntityType="SP.ViewFieldCollection" />
-        <EntitySet Name="VisualizationAppSynchronizationResults" EntityType="SP.VisualizationAppSynchronizationResult" />
         <EntitySet Name="SPWorkflows" EntityType="SP.Workflow.SPWorkflow" />
         <EntitySet Name="SPWorkflowManagers" EntityType="SP.Workflow.SPWorkflowManager" />
         <EntitySet Name="WorkflowAssociations" EntityType="SP.Workflow.WorkflowAssociation" />
@@ -5119,10 +5124,6 @@
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
           <Parameter Name="parameters" Type="Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData" />
         </FunctionImport>
-        <FunctionImport Name="GetAzureCognitiveExtractors" ReturnType="Collection(Edm.String)" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
-          <Parameter Name="modelName" Type="Edm.String" />
-        </FunctionImport>
         <FunctionImport Name="GetByTitle" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsComposable="true" IsBindable="true" EntitySet="Models">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
           <Parameter Name="title" Type="Edm.String" />
@@ -5130,6 +5131,9 @@
         <FunctionImport Name="GetByUniqueId" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsComposable="true" IsBindable="true" EntitySet="Models">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
           <Parameter Name="uniqueId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetSupportedPrebuiltModels" ReturnType="Collection(Microsoft.Office.Server.ContentCenter.PrebuiltModelInfo)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
         </FunctionImport>
         <FunctionImport Name="Import" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsBindable="true" EntitySet="Models">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
@@ -10077,6 +10081,11 @@
           <Parameter Name="emailField" Type="Edm.String" />
           <Parameter Name="actionType" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="CreateSmartTemplateContentTypeAndAddToList" ReturnType="SP.ContentType" IsBindable="true" EntitySet="ContentTypes">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="Name" Type="Edm.String" />
+          <Parameter Name="Description" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="DeleteObject" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
         </FunctionImport>
@@ -10115,6 +10124,9 @@
           <Parameter Name="this" Type="SP.List" />
         </FunctionImport>
         <FunctionImport Name="GetBusinessAppOperationStatus" ReturnType="Edm.Int32" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+        </FunctionImport>
+        <FunctionImport Name="GetCAAESmartTemplateContentTypes" ReturnType="Collection(SP.SmartTemplateContentType)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
         </FunctionImport>
         <FunctionImport Name="GetChanges" ReturnType="Collection(SP.Change)" IsBindable="true" EntitySet="Changes">
@@ -10706,6 +10718,7 @@
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="Name" Type="Edm.String" />
           <Parameter Name="placeholders" Type="Collection(SP.Placeholder)" />
+          <Parameter Name="IsPublishing" Type="Edm.Boolean" />
         </FunctionImport>
         <FunctionImport Name="UpdateRule" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -16129,6 +16142,14 @@
           <End Role="PersonalSitePartner" EntitySet="UserProfiles" />
           <End Role="PersonalSite" EntitySet="Sites" />
         </AssociationSet>
+        <AssociationSet Name="SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartnerSet" Association="SP.SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartner">
+          <End Role="ViewFieldsPartner" EntitySet="Views" />
+          <End Role="ViewFields" EntitySet="ViewFieldCollections" />
+        </AssociationSet>
+        <AssociationSet Name="SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartnerSet" Association="SP.SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartner">
+          <End Role="AppMappedViewsPartner" EntitySet="VisualizationAppSynchronizationResults" />
+          <End Role="AppMappedViews" EntitySet="Views" />
+        </AssociationSet>
         <AssociationSet Name="SP_WebParts_LimitedWebPartManager_WebParts_SP_WebParts_WebPartDefinition_WebPartsPartnerSet" Association="SP.WebParts.SP_WebParts_LimitedWebPartManager_WebParts_SP_WebParts_WebPartDefinition_WebPartsPartner">
           <End Role="WebPartsPartner" EntitySet="LimitedWebPartManagers" />
           <End Role="WebParts" EntitySet="WebPartDefinitions" />
@@ -16140,14 +16161,6 @@
         <AssociationSet Name="SP_WebParts_WebPartDefinition_WebPart_SP_WebParts_WebPart_WebPartPartnerSet" Association="SP.WebParts.SP_WebParts_WebPartDefinition_WebPart_SP_WebParts_WebPart_WebPartPartner">
           <End Role="WebPartPartner" EntitySet="WebPartDefinitions" />
           <End Role="WebPart" EntitySet="WebParts" />
-        </AssociationSet>
-        <AssociationSet Name="SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartnerSet" Association="SP.SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartner">
-          <End Role="ViewFieldsPartner" EntitySet="Views" />
-          <End Role="ViewFields" EntitySet="ViewFieldCollections" />
-        </AssociationSet>
-        <AssociationSet Name="SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartnerSet" Association="SP.SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartner">
-          <End Role="AppMappedViewsPartner" EntitySet="VisualizationAppSynchronizationResults" />
-          <End Role="AppMappedViews" EntitySet="Views" />
         </AssociationSet>
         <AssociationSet Name="SP_WorkflowServices_InteropService_Current_SP_WorkflowServices_InteropService_CurrentPartnerSet" Association="SP.WorkflowServices.SP_WorkflowServices_InteropService_Current_SP_WorkflowServices_InteropService_CurrentPartner">
           <End Role="CurrentPartner" EntitySet="InteropServices" />
@@ -16316,6 +16329,15 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.ColumnDef/Type">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.PrebuiltModelInfo">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.PrebuiltModelInfo/FormRecognizerApiVersion">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.PrebuiltModelInfo/FormRecognizerPrebuiltModelName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SiteCreationProperties">
@@ -17648,6 +17670,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/BaseContentTypeName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/ConfidenceScore">
@@ -19783,13 +19808,13 @@
       <Annotations Target="SP.ApiData/EnsureAzureCognitive(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/GetAzureCognitiveExtractors(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.ApiData/GetByTitle(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetByUniqueId(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetSupportedPrebuiltModels(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Import(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String)">
@@ -21955,6 +21980,10 @@
         <Property Name="Name" Type="Edm.String" />
         <Property Name="Type" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="PrebuiltModelInfo">
+        <Property Name="FormRecognizerApiVersion" Type="Edm.String" />
+        <Property Name="FormRecognizerPrebuiltModelName" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="SiteCreationProperties">
         <Property Name="CompatibilityLevel" Type="Edm.Int32" Nullable="false" />
         <Property Name="Lcid" Type="Edm.String" />
@@ -22004,9 +22033,10 @@
       </EntityType>
       <EntityType Name="SPMachineLearningModel">
         <Key>
-          <PropertyRef Name="ConfidenceScore" />
+          <PropertyRef Name="BaseContentTypeName" />
         </Key>
-        <Property Name="ConfidenceScore" Type="Edm.String" Nullable="false" />
+        <Property Name="BaseContentTypeName" Type="Edm.String" Nullable="false" />
+        <Property Name="ConfidenceScore" Type="Edm.String" />
         <Property Name="ContentTypeGroup" Type="Edm.String" />
         <Property Name="ContentTypeId" Type="Edm.String" />
         <Property Name="ContentTypeName" Type="Edm.String" />
@@ -29780,9 +29810,12 @@
         <Property Name="LogFilePath" Type="Edm.String" />
         <Property Name="ManagementStatus" Type="Edm.Int32" Nullable="false" />
         <Property Name="MigratedFilesCount" Type="Edm.Int64" Nullable="false" />
+        <Property Name="NextScheduleTimeUtc" Type="Edm.DateTime" Nullable="false" />
         <Property Name="OverallProgressPercentage" Type="Edm.Int32" Nullable="false" />
         <Property Name="ReportFileUrl" Type="Edm.String" />
+        <Property Name="RunTimes" Type="Edm.Int32" Nullable="false" />
         <Property Name="ScanDoneTimeUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ScheduledTimes" Type="Edm.Int32" Nullable="false" />
         <Property Name="StartTimeUTC" Type="Edm.DateTime" Nullable="false" />
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
         <Property Name="StatusUpdatedTimeUTC" Type="Edm.DateTime" Nullable="false" />
@@ -29911,6 +29944,8 @@
       </ComplexType>
       <ComplexType Name="MMTaskSettings">
         <Property Name="AgentGroupName" Type="Edm.String" />
+        <Property Name="ScheduledTimeUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ScheduledType" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="SPFolderInformation">
         <Property Name="Depth" Type="Edm.Int32" Nullable="false" />
@@ -30015,6 +30050,8 @@
         <Property Name="ReplaceInvalidChars" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ScanOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ScheduledStartTimeUTC" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ScheduledTimeUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ScheduledType" Type="Edm.Int32" Nullable="false" />
         <Property Name="SkipListWithAudienceEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SourceListName" Type="Edm.String" />
         <Property Name="SourceListRelativePath" Type="Edm.String" />
