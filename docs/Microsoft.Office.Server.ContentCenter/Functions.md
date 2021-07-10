@@ -12,7 +12,6 @@ CreateSite (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | 
 Delete (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
 Delete (Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication) | ✅ | ❌ | ❌ | ❌
 EnsureAzureCognitive (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)) | ✅ | ❌ | ❌ | ❌
-GetAzureCognitiveExtractors (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)) | ✅ | ❌ | ❌ | ❌
 GetByContentTypeId (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
 GetByIdentifier (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem)) | ✅ | ❌ | ❌ | ❌
 GetByModelId (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningSample)) | ✅ | ❌ | ❌ | ❌
@@ -28,6 +27,7 @@ GetModelIdForContentType (Microsoft.Office.Server.ContentCenter.SPMachineLearnin
 GetModels (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
 GetRetentionLabel (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
 GetRetentionLabels (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
+GetSupportedPrebuiltModels (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)) | ✅ | ❌ | ❌ | ❌
 GetTemplateByModelId (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningSample)) | ✅ | ❌ | ❌ | ❌
 Import (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)) | ✅ | ❌ | ❌ | ❌
 ImportMeta (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌

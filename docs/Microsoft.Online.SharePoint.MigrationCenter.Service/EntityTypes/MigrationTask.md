@@ -24,9 +24,12 @@ LinkedDeviceId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 LogFilePath (Edm.String) | ✅ | ❌ | ❌ | ❌
 ManagementStatus (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MigratedFilesCount (Edm.Int64) | ✅ | ❌ | ❌ | ❌
+NextScheduleTimeUtc (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 OverallProgressPercentage (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ReportFileUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+RunTimes (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ScanDoneTimeUtc (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
+ScheduledTimes (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 StartTimeUTC (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 Status (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 StatusUpdatedTimeUTC (Edm.DateTime) | ✅ | ❌ | ❌ | ❌

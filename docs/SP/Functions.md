@@ -86,6 +86,7 @@ CreatePreviewSPSite (SP.Site) | ✅ | ✅ | ✅ | ✅
 CreateRule (SP.List) | ✅ | ❌ | ❌ | ❌
 CreateSPAsyncReadJob (SP.Site) | ✅ | ❌ | ❌ | ❌
 CreateSPAsyncReadJobWithMultiUrl (SP.Site) | ✅ | ❌ | ❌ | ❌
+CreateSmartTemplateContentTypeAndAddToList (SP.List) | ✅ | ❌ | ❌ | ❌
 DashboardContent (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 DefaultDocumentLibrary (SP.Web) | ✅ | ✅ | ✅ | ❌
 Delete (SP.HubSite) | ✅ | ✅ | ❌ | ❌
@@ -265,6 +266,7 @@ GetByType (Collection(SP.RoleDefinition)) | ✅ | ✅ | ✅ | ✅
 GetByUrl (Collection(SP.File)) | ✅ | ✅ | ✅ | ✅
 GetByUrl (Collection(SP.Folder)) | ✅ | ✅ | ✅ | ✅
 GetByUrlOrAddStub (Collection(SP.File)) | ✅ | ✅ | ✅ | ❌
+GetCAAESmartTemplateContentTypes (SP.List) | ✅ | ❌ | ❌ | ❌
 GetCatalog (SP.Site) | ✅ | ✅ | ✅ | ✅
 GetCatalog (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetChanges (SP.Folder) | ✅ | ✅ | ❌ | ❌

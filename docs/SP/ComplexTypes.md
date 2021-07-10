@@ -120,6 +120,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SharingLinkInfo](./ComplexTypes/SharingLinkInfo.md) | ✅ | ✅ | ✅ | ❌
 [SimpleDataRow](./ComplexTypes/SimpleDataRow.md) | ✅ | ✅ | ✅ | ✅
 [SimpleDataTable](./ComplexTypes/SimpleDataTable.md) | ✅ | ✅ | ✅ | ✅
+[SmartTemplateContentType](./ComplexTypes/SmartTemplateContentType.md) | ✅ | ❌ | ❌ | ❌
 [SubwebQuery](./ComplexTypes/SubwebQuery.md) | ✅ | ✅ | ✅ | ✅
 [TenantAppInformation](./ComplexTypes/TenantAppInformation.md) | ✅ | ✅ | ✅ | ❌
 [TimeZoneInformation](./ComplexTypes/TimeZoneInformation.md) | ✅ | ✅ | ✅ | ✅
