@@ -139,6 +139,7 @@
         <Property Name="EndPosition" Type="Edm.Int32" Nullable="false" />
         <Property Name="Id" Type="Edm.String" />
         <Property Name="Name" Type="Edm.String" />
+        <Property Name="ParagraphId" Type="Edm.String" />
         <Property Name="QuestionTitle" Type="Edm.String" />
         <Property Name="Source" Type="Edm.String" />
         <Property Name="StartPosition" Type="Edm.Int32" Nullable="false" />
@@ -1023,6 +1024,11 @@
         <Property Name="LastModified" Type="Edm.DateTime" Nullable="false" />
         <Property Name="Path" Type="SP.ResourcePath" />
         <Property Name="Title" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="UpdateTemplateInfo">
+        <Property Name="NewName" Type="Edm.String" />
+        <Property Name="Operation" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Placeholders" Type="Collection(SP.Placeholder)" />
       </ComplexType>
       <ComplexType Name="MenuNode">
         <Property Name="AudienceIds" Type="Collection(Edm.Guid)" Nullable="false" />
@@ -5723,6 +5729,9 @@
           <Parameter Name="requestBodyStream" Type="Edm.Stream" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_Onboarding_RestService_OnboardingServicesBeta" ReturnType="Microsoft.Online.SharePoint.Onboarding.RestService.OnboardingServicesBeta" IsComposable="true" EntitySet="OnboardingServicesBetas" />
+        <FunctionImport Name="Cancel" IsBindable="true">
+          <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob)" />
+        </FunctionImport>
         <FunctionImport Name="Get" ReturnType="Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob" IsComposable="true" IsBindable="true" EntitySet="TenantRenameJobEntityDatas">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob)" />
         </FunctionImport>
@@ -10704,6 +10713,11 @@
         </FunctionImport>
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
+        </FunctionImport>
+        <FunctionImport Name="UpdateCAAETemplate" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="Name" Type="Edm.String" />
+          <Parameter Name="updateTemplateInfo" Type="SP.UpdateTemplateInfo" />
         </FunctionImport>
         <FunctionImport Name="UpdateFormProcessingModelRetentionLabel" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -16322,15 +16336,6 @@
       <Annotations Target="SP.Directory.GroupNameValidationResult/IsValidName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.Office.Server.ContentCenter.ColumnDef">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.Office.Server.ContentCenter.ColumnDef/Name">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.Office.Server.ContentCenter.ColumnDef/Type">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.PrebuiltModelInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16373,7 +16378,13 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData/BaseContentTypeName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData/Columns">
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData/ColumnId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData/ColumnName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData/ColumnType">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData/ContentTypeGroup">
@@ -17789,6 +17800,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/PublicationType">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/TargetLibraryId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/TargetLibraryRemoved">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17798,7 +17812,16 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/TargetLibraryUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/TargetSiteId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/TargetSiteUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/TargetWebId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/TargetWebName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/TargetWebServerRelativeUrl">
@@ -21976,10 +21999,6 @@
       </Association>
     </Schema>
     <Schema Namespace="Microsoft.Office.Server.ContentCenter" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-      <ComplexType Name="ColumnDef">
-        <Property Name="Name" Type="Edm.String" />
-        <Property Name="Type" Type="Edm.String" />
-      </ComplexType>
       <ComplexType Name="PrebuiltModelInfo">
         <Property Name="FormRecognizerApiVersion" Type="Edm.String" />
         <Property Name="FormRecognizerPrebuiltModelName" Type="Edm.String" />
@@ -21996,7 +22015,9 @@
       </ComplexType>
       <ComplexType Name="SPAzureCognitiveModelEntityData">
         <Property Name="BaseContentTypeName" Type="Edm.String" />
-        <Property Name="Columns" Type="Collection(Microsoft.Office.Server.ContentCenter.ColumnDef)" />
+        <Property Name="ColumnId" Type="Edm.String" />
+        <Property Name="ColumnName" Type="Edm.String" />
+        <Property Name="ColumnType" Type="Edm.String" />
         <Property Name="ContentTypeGroup" Type="Edm.String" />
         <Property Name="ContentTypeName" Type="Edm.String" />
       </ComplexType>
@@ -22077,10 +22098,14 @@
         <Property Name="ModifiedBy" Type="Edm.String" />
         <Property Name="ObjectId" Type="Edm.String" />
         <Property Name="PublicationType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TargetLibraryId" Type="Edm.Guid" Nullable="false" />
         <Property Name="TargetLibraryRemoved" Type="Edm.Boolean" Nullable="false" />
         <Property Name="TargetLibraryServerRelativeUrl" Type="Edm.String" />
         <Property Name="TargetLibraryUrl" Type="Edm.String" />
+        <Property Name="TargetSiteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="TargetSiteUrl" Type="Edm.String" />
+        <Property Name="TargetWebId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="TargetWebName" Type="Edm.String" />
         <Property Name="TargetWebServerRelativeUrl" Type="Edm.String" />
         <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
         <Property Name="ViewOption" Type="Edm.String" />
@@ -23090,6 +23115,7 @@
         <Property Name="ContentUri" Type="Edm.String" />
         <Property Name="EmailAddress" Type="Edm.String" />
         <Property Name="FollowedContentUri" Type="Edm.String" />
+        <Property Name="GroupId" Type="Edm.Guid" Nullable="false" />
         <Property Name="Id" Type="Edm.String" />
         <Property Name="ImageUri" Type="Edm.String" />
         <Property Name="IsFollowed" Type="Edm.Boolean" Nullable="false" />
@@ -29379,7 +29405,7 @@
         <Property Name="AllowEditing" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowSelfServiceUpgrade" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AnonymousLinkExpirationInDays" Type="Edm.Int32" Nullable="false" />
-        <Property Name="AuthContextStrength" Type="Edm.String" />
+        <Property Name="AuthenticationContextName" Type="Edm.String" />
         <Property Name="AverageResourceUsage" Type="Edm.Double" Nullable="false" />
         <Property Name="BlockDownloadLinksFileType" Type="Edm.Int32" Nullable="false" />
         <Property Name="CommentsOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
@@ -29622,6 +29648,7 @@
         <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ManagedPathsForSiteCreation" Type="Collection(Edm.String)" />
         <Property Name="MarkNewFilesSensitiveByDefault" Type="Edm.Int32" Nullable="false" />
+        <Property Name="MediaTranscription" Type="Edm.Int32" Nullable="false" />
         <Property Name="MobileFriendlyUrlEnabledInTenant" Type="Edm.Boolean" Nullable="false" />
         <Property Name="NoAccessRedirectUrl" Type="Edm.String" />
         <Property Name="NotificationsInOneDriveForBusinessEnabled" Type="Edm.Boolean" Nullable="false" />
@@ -31391,6 +31418,7 @@
         <Property Name="LegacyAuthProtocolsEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LimitedAccessFileType" Type="Edm.Int32" Nullable="false" />
         <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="MediaTranscription" Type="Edm.Int32" Nullable="false" />
         <Property Name="MobileFriendlyUrlEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MySitesPublicEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="NotificationsInOneDriveForBusinessEnabled" Type="Edm.Boolean" Nullable="false" />
