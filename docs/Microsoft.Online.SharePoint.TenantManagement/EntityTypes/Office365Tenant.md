@@ -84,6 +84,7 @@ IsUnmanagedSyncClientRestrictionFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | 
 LegacyAuthProtocolsEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LimitedAccessFileType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MachineLearningCaptureEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+MediaTranscription (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MobileFriendlyUrlEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MySitesPublicEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 NotificationsInOneDriveForBusinessEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

@@ -19,10 +19,14 @@ Modified (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 ModifiedBy (Edm.String) | ✅ | ❌ | ❌ | ❌
 ObjectId (Edm.String) | ✅ | ❌ | ❌ | ❌
 PublicationType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+TargetLibraryId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 TargetLibraryRemoved (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 TargetLibraryServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetLibraryUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+TargetSiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 TargetSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+TargetWebId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+TargetWebName (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetWebServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 UniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 ViewOption (Edm.String) | ✅ | ❌ | ❌ | ❌

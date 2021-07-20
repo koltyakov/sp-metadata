@@ -108,6 +108,7 @@ LimitedAccessFileType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MachineLearningCaptureEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ManagedPathsForSiteCreation (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 MarkNewFilesSensitiveByDefault (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+MediaTranscription (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MobileFriendlyUrlEnabledInTenant (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 NoAccessRedirectUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 NotificationsInOneDriveForBusinessEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

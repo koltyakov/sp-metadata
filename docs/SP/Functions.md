@@ -764,6 +764,7 @@ Update (SP.UserCustomAction) | ✅ | ✅ | ✅ | ✅
 Update (SP.View) | ✅ | ✅ | ✅ | ✅
 Update (SP.Web) | ✅ | ✅ | ✅ | ✅
 UpdateAlert (SP.Alert) | ✅ | ✅ | ❌ | ❌
+UpdateCAAETemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 <span title="UpdateClientObjectModelUseRemoteAPIsPermissionSetting (SP.Site)">UpdateClientObjectModelUseRemoteAPIsPermissionSett...</span> | ✅ | ✅ | ✅ | ✅
 UpdateEx (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 UpdateFormProcessingModelRetentionLabel (SP.List) | ✅ | ❌ | ❌ | ❌

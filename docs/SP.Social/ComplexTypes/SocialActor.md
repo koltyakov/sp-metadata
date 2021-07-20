@@ -12,6 +12,7 @@ CanFollow (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 ContentUri (Edm.String) | ✅ | ✅ | ✅ | ✅
 EmailAddress (Edm.String) | ✅ | ✅ | ✅ | ✅
 FollowedContentUri (Edm.String) | ✅ | ✅ | ✅ | ✅
+GroupId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 Id (Edm.String) | ✅ | ✅ | ✅ | ✅
 ImageUri (Edm.String) | ✅ | ✅ | ✅ | ✅
 IsFollowed (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
