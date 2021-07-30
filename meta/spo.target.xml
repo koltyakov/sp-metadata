@@ -1001,6 +1001,10 @@
         <Property Name="Options" Type="Edm.Int32" Nullable="false" />
         <Property Name="SchemaXml" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="TemplateMetaData">
+        <Property Name="Placeholders" Type="Collection(SP.Placeholder)" />
+        <Property Name="ServerRedirectedEmbedUrl" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="TranslationNotificationRecipientCollection">
         <Property Name="LanguageCode" Type="Edm.String" />
         <Property Name="Recipients" Type="Collection(SP.TranslationNotificationRecipient)" />
@@ -1118,6 +1122,7 @@
         <Property Name="IsHubSite" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LockIssue" Type="Edm.String" />
         <Property Name="MaxItemsPerThrottledOperation" Type="Edm.Int32" Nullable="false" />
+        <Property Name="MediaTranscriptionDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="NeedsB2BUpgrade" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ResourcePath" Type="SP.ResourcePath" />
         <Property Name="PrimaryUri" Type="Edm.String" />
@@ -3962,7 +3967,7 @@
         <EntitySet Name="SPAuthEvents" EntityType="Microsoft.SharePoint.AuthPolicy.Events.SPAuthEvent" />
         <EntitySet Name="SPTenantIBPolicyComplianceReportEntityDatas" EntityType="Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReportEntityData" />
         <EntitySet Name="DocumentCrawlLogs" EntityType="Microsoft.SharePoint.Client.Search.Administration.DocumentCrawlLog" />
-        <EntitySet Name="SiteCrawlVersionInfoProviders" EntityType="Microsoft.SharePoint.Client.Search.Administration.SiteCrawlVersionInfoProvider" />
+        <EntitySet Name="TenantCrawlVersionsInfoProviders" EntityType="Microsoft.SharePoint.Client.Search.Administration.TenantCrawlVersionsInfoProvider" />
         <EntitySet Name="SignalStores" EntityType="Microsoft.SharePoint.Client.Search.Analytics.SignalStore" />
         <EntitySet Name="QueryPersonalizationDatas" EntityType="Microsoft.SharePoint.Client.Search.Query.QueryPersonalizationData" />
         <EntitySet Name="RankingLabelings" EntityType="Microsoft.SharePoint.Client.Search.Query.RankingLabeling" />
@@ -5125,10 +5130,6 @@
         <FunctionImport Name="UpdateModelSettings" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
           <Parameter Name="ModelSettings" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="EnsureAzureCognitive" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsBindable="true" EntitySet="Models">
-          <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
-          <Parameter Name="parameters" Type="Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData" />
         </FunctionImport>
         <FunctionImport Name="GetByTitle" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsComposable="true" IsBindable="true" EntitySet="Models">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
@@ -8608,8 +8609,30 @@
           <Parameter Name="startDateTime" Type="Edm.DateTime" Nullable="false" />
           <Parameter Name="endDateTime" Type="Edm.DateTime" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="GetSiteCrawlVersionStatus" ReturnType="SP.SimpleDataTable" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.SiteCrawlVersionInfoProvider" />
+        <FunctionImport Name="DisableCrawlVersions" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.TenantCrawlVersionsInfoProvider" />
+          <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="DisableCrawlVersionsForTenant" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.TenantCrawlVersionsInfoProvider" />
+        </FunctionImport>
+        <FunctionImport Name="EnableCrawlVersions" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.TenantCrawlVersionsInfoProvider" />
+          <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="EnableCrawlVersionsForTenant" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.TenantCrawlVersionsInfoProvider" />
+        </FunctionImport>
+        <FunctionImport Name="GetSiteCrawlVersionStatus" ReturnType="Collection(SP.KeyValue)" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.TenantCrawlVersionsInfoProvider" />
+          <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="IsCrawlVersionsEnabled" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.TenantCrawlVersionsInfoProvider" />
+          <Parameter Name="SiteId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="IsCrawlVersionsEnabledForTenant" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.TenantCrawlVersionsInfoProvider" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Client_Search_Analytics_SignalStore" ReturnType="Microsoft.SharePoint.Client.Search.Analytics.SignalStore" IsComposable="true" EntitySet="SignalStores" />
         <FunctionImport Name="signals" IsBindable="true">
@@ -10137,6 +10160,11 @@
         </FunctionImport>
         <FunctionImport Name="GetCAAESmartTemplateContentTypes" ReturnType="Collection(SP.SmartTemplateContentType)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
+        </FunctionImport>
+        <FunctionImport Name="GetCAAETemplateMetadata" ReturnType="SP.TemplateMetaData" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="Name" Type="Edm.String" />
+          <Parameter Name="Published" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetChanges" ReturnType="Collection(SP.Change)" IsBindable="true" EntitySet="Changes">
           <Parameter Name="this" Type="SP.List" />
@@ -16375,7 +16403,7 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData/BaseContentTypeName">
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData/AzureCognitivePrebuiltModelName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData/ColumnId">
@@ -17683,6 +17711,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/AzureCognitivePrebuiltModelName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/BaseContentTypeName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17960,6 +17991,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/Accuracy">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/AzureCognitivePrebuiltModelName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/BaseContentTypeName">
@@ -19826,9 +19860,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/UpdateModelSettings(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/EnsureAzureCognitive(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetByTitle(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String)">
@@ -22014,7 +22045,7 @@
         <Property Name="Url" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPAzureCognitiveModelEntityData">
-        <Property Name="BaseContentTypeName" Type="Edm.String" />
+        <Property Name="AzureCognitivePrebuiltModelName" Type="Edm.String" />
         <Property Name="ColumnId" Type="Edm.String" />
         <Property Name="ColumnName" Type="Edm.String" />
         <Property Name="ColumnType" Type="Edm.String" />
@@ -22054,9 +22085,10 @@
       </EntityType>
       <EntityType Name="SPMachineLearningModel">
         <Key>
-          <PropertyRef Name="BaseContentTypeName" />
+          <PropertyRef Name="AzureCognitivePrebuiltModelName" />
         </Key>
-        <Property Name="BaseContentTypeName" Type="Edm.String" Nullable="false" />
+        <Property Name="AzureCognitivePrebuiltModelName" Type="Edm.String" Nullable="false" />
+        <Property Name="BaseContentTypeName" Type="Edm.String" />
         <Property Name="ConfidenceScore" Type="Edm.String" />
         <Property Name="ContentTypeGroup" Type="Edm.String" />
         <Property Name="ContentTypeId" Type="Edm.String" />
@@ -22161,6 +22193,7 @@
           <PropertyRef Name="Accuracy" />
         </Key>
         <Property Name="Accuracy" Type="Edm.Single" Nullable="false" />
+        <Property Name="AzureCognitivePrebuiltModelName" Type="Edm.String" />
         <Property Name="BaseContentTypeName" Type="Edm.String" />
         <Property Name="ColumnId" Type="Edm.String" />
         <Property Name="ColumnName" Type="Edm.String" />
@@ -29439,6 +29472,7 @@
         <Property Name="LimitedAccessFileType" Type="Edm.Int32" Nullable="false" />
         <Property Name="LockIssue" Type="Edm.String" />
         <Property Name="LockState" Type="Edm.String" />
+        <Property Name="MediaTranscription" Type="Edm.Int32" Nullable="false" />
         <Property Name="OverrideBlockUserInfoVisibility" Type="Edm.Int32" Nullable="false" />
         <Property Name="OverrideTenantAnonymousLinkExpirationPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="OverrideTenantExternalUserExpirationPolicy" Type="Edm.Boolean" Nullable="false" />
@@ -30926,7 +30960,7 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
-      <EntityType Name="SiteCrawlVersionInfoProvider">
+      <EntityType Name="TenantCrawlVersionsInfoProvider">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
