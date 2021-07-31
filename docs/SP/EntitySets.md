@@ -462,7 +462,6 @@ SignalStores | ✅ | ✅ | ✅ | ❌
 SiteCollectionAppCatalogAllowedItems | ✅ | ✅ | ❌ | ❌
 SiteCollectionCorporateCatalogAccessors | ✅ | ✅ | ❌ | ❌
 SiteCollectionManagementServices | ✅ | ❌ | ❌ | ❌
-SiteCrawlVersionInfoProviders | ✅ | ❌ | ❌ | ❌
 SiteDesignPrincipals | ✅ | ✅ | ❌ | ❌
 SiteDesignRuns | ✅ | ❌ | ❌ | ❌
 SiteHealthSummarys | ✅ | ✅ | ✅ | ✅
@@ -543,6 +542,7 @@ TenantAppInstances | ✅ | ✅ | ✅ | ❌
 TenantAppUtilitys | ✅ | ✅ | ✅ | ❌
 TenantCdnApis | ✅ | ❌ | ❌ | ❌
 TenantCorporateCatalogAccessors | ✅ | ✅ | ❌ | ❌
+TenantCrawlVersionsInfoProviders | ✅ | ❌ | ❌ | ❌
 TenantInformations | ✅ | ❌ | ❌ | ❌
 TenantRenameJobEntityDatas | ✅ | ❌ | ❌ | ❌
 TenantSettingss | ✅ | ✅ | ✅ | ✅

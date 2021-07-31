@@ -44,6 +44,7 @@ Lcid (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 LimitedAccessFileType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 LockIssue (Edm.String) | ✅ | ❌ | ❌ | ❌
 LockState (Edm.String) | ✅ | ❌ | ❌ | ❌
+MediaTranscription (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OverrideBlockUserInfoVisibility (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OverrideTenantAnonymousLinkExpirationPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 OverrideTenantExternalUserExpirationPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

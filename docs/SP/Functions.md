@@ -267,6 +267,7 @@ GetByUrl (Collection(SP.File)) | ✅ | ✅ | ✅ | ✅
 GetByUrl (Collection(SP.Folder)) | ✅ | ✅ | ✅ | ✅
 GetByUrlOrAddStub (Collection(SP.File)) | ✅ | ✅ | ✅ | ❌
 GetCAAESmartTemplateContentTypes (SP.List) | ✅ | ❌ | ❌ | ❌
+GetCAAETemplateMetadata (SP.List) | ✅ | ❌ | ❌ | ❌
 GetCatalog (SP.Site) | ✅ | ✅ | ✅ | ✅
 GetCatalog (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetChanges (SP.Folder) | ✅ | ✅ | ❌ | ❌

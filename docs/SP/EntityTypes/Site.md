@@ -37,6 +37,7 @@ Id (Edm.Guid) | ✅ | ✅ | ✅ | ✅
 IsHubSite (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 LockIssue (Edm.String) | ✅ | ✅ | ✅ | ✅
 MaxItemsPerThrottledOperation (Edm.Int32) | ✅ | ✅ | ✅ | ✅
+MediaTranscriptionDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 NeedsB2BUpgrade (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 PrimaryUri (Edm.String) | ✅ | ✅ | ✅ | ✅
 ReadOnly (Edm.Boolean) | ✅ | ✅ | ✅ | ✅

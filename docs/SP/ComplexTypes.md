@@ -122,6 +122,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SimpleDataTable](./ComplexTypes/SimpleDataTable.md) | ✅ | ✅ | ✅ | ✅
 [SmartTemplateContentType](./ComplexTypes/SmartTemplateContentType.md) | ✅ | ❌ | ❌ | ❌
 [SubwebQuery](./ComplexTypes/SubwebQuery.md) | ✅ | ✅ | ✅ | ✅
+[TemplateMetaData](./ComplexTypes/TemplateMetaData.md) | ✅ | ❌ | ❌ | ❌
 [TenantAppInformation](./ComplexTypes/TenantAppInformation.md) | ✅ | ✅ | ✅ | ❌
 [TimeZoneInformation](./ComplexTypes/TimeZoneInformation.md) | ✅ | ✅ | ✅ | ✅
 [TranslationNotificationRecipient](./ComplexTypes/TranslationNotificationRecipient.md) | ✅ | ❌ | ❌ | ❌

@@ -6,7 +6,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-BaseContentTypeName (Edm.String) | ✅ | ❌ | ❌ | ❌
+AzureCognitivePrebuiltModelName (Edm.String) | ✅ | ❌ | ❌ | ❌
 ColumnId (Edm.String) | ✅ | ❌ | ❌ | ❌
 ColumnName (Edm.String) | ✅ | ❌ | ❌ | ❌
 ColumnType (Edm.String) | ✅ | ❌ | ❌ | ❌

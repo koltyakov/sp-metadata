@@ -1,4 +1,4 @@
-# Entity Type: SiteCrawlVersionInfoProvider
+# Entity Type: TenantCrawlVersionsInfoProvider
 
 > Namespace: Microsoft.SharePoint.Client.Search.Administration
 
