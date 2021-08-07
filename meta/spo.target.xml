@@ -8154,6 +8154,9 @@
           <Parameter Name="subFolderName" Type="Edm.String" />
           <Parameter Name="pageId" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="CanCreatePage" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.SitePageService" />
+        </FunctionImport>
         <FunctionImport Name="CanCreatePromotedPage" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.SitePageService" />
         </FunctionImport>
@@ -8971,6 +8974,9 @@
         <FunctionImport Name="PinToTeam" ReturnType="Microsoft.SharePoint.Portal.PinToTeamResponse" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
           <Parameter Name="requestParams" Type="Microsoft.SharePoint.Portal.PinToTeamParams" />
+        </FunctionImport>
+        <FunctionImport Name="RecentAndJoinedTeams" ReturnType="Microsoft.SharePoint.Portal.RecentAndJoinedTeamsResponse" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Portal_CommunityModeration_ApproveReportedItems">
           <Parameter Name="listID" Type="Edm.String" />
@@ -13794,6 +13800,11 @@
           <Parameter Name="name" Type="Edm.String" />
           <Parameter Name="themeJson" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="UploadCustomFontsAndCatalogLib" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantManagement.Office365Tenant" />
+          <Parameter Name="customFontFiles" Type="Collection(Microsoft.SharePoint.Administration.CustomFontsResource)" />
+          <Parameter Name="libUrl" Type="SP.ResourcePath" />
+        </FunctionImport>
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties" />
         </FunctionImport>
@@ -16640,6 +16651,15 @@
       <Annotations Target="Microsoft.SharePoint.Portal.PinToTeamResponse">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Portal.RecentAndJoinedTeamsResponse">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.ListHome.ListHomeItem">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.ListHome.FavoriteListHomeItem">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Portal.Home.SharePointHomeDataCacheCollection">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16961,12 +16981,6 @@
       <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.AppUpgradeAvailability/IsUpgradeAvailable">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.SharePoint.ListHome.ListHomeItem">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.ListHome.FavoriteListHomeItem">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.Internal.AppRenderInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -16998,6 +17012,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Administration.CustomFontsResource">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Administration.OrgAssetsLibraryCollection">
@@ -20333,6 +20350,9 @@
       <Annotations Target="SP.ApiData/AddImageFromExternalUrl(SP.Publishing.SitePageService, Edm.String, Edm.String, Edm.String, Edm.String, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/CanCreatePage(SP.Publishing.SitePageService)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/CanCreatePromotedPage(SP.Publishing.SitePageService)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20553,6 +20573,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/PinToTeam(Microsoft.SharePoint.Portal.GroupSiteManager, Microsoft.SharePoint.Portal.PinToTeamParams)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/RecentAndJoinedTeams(Microsoft.SharePoint.Portal.GroupSiteManager)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Portal_SPHubSitesUtility()">
@@ -27171,6 +27194,17 @@
         <Property Name="FailedPinning" Type="Collection(Microsoft.SharePoint.Portal.M365TabItem)" />
         <Property Name="SuccessfulPinning" Type="Collection(Microsoft.SharePoint.Portal.M365TabItem)" />
       </ComplexType>
+      <ComplexType Name="RecentAndJoinedTeamsResponse">
+        <Property Name="joinedTeams" Type="Edm.String" />
+        <Property Name="joinedTeamsError" Type="Edm.String" />
+        <Property Name="joinedTeamsErrorCode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="pinnedItems" Type="Collection(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)" />
+        <Property Name="pinnedItemsError" Type="Edm.String" />
+        <Property Name="pinnedItemsErrorCode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="quickAccessItems" Type="Edm.String" />
+        <Property Name="quickAccessItemsError" Type="Edm.String" />
+        <Property Name="quickAccessItemsErrorCode" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="SPSiteCreationResponse">
         <Property Name="SiteId" Type="Edm.String" />
         <Property Name="SiteStatus" Type="Edm.Int32" Nullable="false" />
@@ -27281,6 +27315,27 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
+    </Schema>
+    <Schema Namespace="Microsoft.SharePoint.ListHome" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="ListHomeItem">
+        <Property Name="color" Type="Edm.String" />
+        <Property Name="icon" Type="Edm.String" />
+        <Property Name="isDocLib" Type="Edm.Boolean" />
+        <Property Name="listId" Type="Edm.String" />
+        <Property Name="listUrl" Type="Edm.String" />
+        <Property Name="siteIconUrl" Type="Edm.String" />
+        <Property Name="siteId" Type="Edm.String" />
+        <Property Name="siteTitle" Type="Edm.String" />
+        <Property Name="siteUrl" Type="Edm.String" />
+        <Property Name="title" Type="Edm.String" />
+        <Property Name="webId" Type="Edm.String" />
+        <Property Name="webTemplateConfiguration" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="FavoriteListHomeItem" BaseType="Microsoft.SharePoint.ListHome.ListHomeItem">
+        <Property Name="favoritesOrder" Type="Edm.Single" />
+        <Property Name="lastPolled" Type="Edm.Single" />
+        <Property Name="order" Type="Edm.Int64" />
+      </ComplexType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.Portal.Project" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="MyRecsCacheBlob">
@@ -27938,27 +27993,6 @@
         <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" Role="StoreAppsPartner" Multiplicity="0..1" />
       </Association>
     </Schema>
-    <Schema Namespace="Microsoft.SharePoint.ListHome" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-      <ComplexType Name="ListHomeItem">
-        <Property Name="color" Type="Edm.String" />
-        <Property Name="icon" Type="Edm.String" />
-        <Property Name="isDocLib" Type="Edm.Boolean" />
-        <Property Name="listId" Type="Edm.String" />
-        <Property Name="listUrl" Type="Edm.String" />
-        <Property Name="siteIconUrl" Type="Edm.String" />
-        <Property Name="siteId" Type="Edm.String" />
-        <Property Name="siteTitle" Type="Edm.String" />
-        <Property Name="siteUrl" Type="Edm.String" />
-        <Property Name="title" Type="Edm.String" />
-        <Property Name="webId" Type="Edm.String" />
-        <Property Name="webTemplateConfiguration" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="FavoriteListHomeItem" BaseType="Microsoft.SharePoint.ListHome.ListHomeItem">
-        <Property Name="favoritesOrder" Type="Edm.Single" />
-        <Property Name="lastPolled" Type="Edm.Single" />
-        <Property Name="order" Type="Edm.Int64" />
-      </ComplexType>
-    </Schema>
     <Schema Namespace="SP.Internal" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="AppRenderInfo">
         <Property Name="BackgroundColor" Type="Edm.String" />
@@ -28117,6 +28151,12 @@
       </EntityType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.Administration" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="CustomFontsResource">
+        <Property Name="byteArray" Type="Edm.Binary" />
+        <Property Name="fileName" Type="Edm.String" />
+        <Property Name="fullPath" Type="Edm.String" />
+        <Property Name="type" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="OrgAssetsLibraryCollection">
         <Property Name="Items" Type="Collection(Microsoft.SharePoint.Administration.OrgAssetsLibrary)" />
       </ComplexType>
@@ -29737,6 +29777,7 @@
         <Property Name="UseFindPeopleInPeoplePicker" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UsePersistentCookiesForExplorerView" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UserVoiceForFeedbackEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ViewersCanCommentOnMediaDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="WhoCanShareAllowListInTenant" Type="Edm.String" />
         <Property Name="WhoCanShareAllowListInTenantByPrincipalIdentity" Type="Collection(Edm.String)" />
         <Property Name="Workflow2010Disabled" Type="Edm.Boolean" Nullable="false" />
@@ -31494,6 +31535,7 @@
         <Property Name="UseFindPeopleInPeoplePicker" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UsePersistentCookiesForExplorerView" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UserVoiceForFeedbackEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ViewersCanCommentOnMediaDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="WhoCanShareAllowList" Type="Edm.String" />
         <Property Name="Workflow2010Disabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Workflows2013State" Type="Edm.Int32" Nullable="false" />
