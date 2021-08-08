@@ -17,6 +17,7 @@ BoostNews (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
 BoostNews (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 BoostNews (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 ByPage (SP.Publishing.PageDiagnosticsController) | ✅ | ❌ | ❌ | ❌
+CanCreatePage (SP.Publishing.SitePageService) | ✅ | ❌ | ❌ | ❌
 CanCreatePromotedPage (SP.Publishing.SitePageService) | ✅ | ✅ | ❌ | ❌
 CheckOut (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 CheckOut (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌

@@ -44,3 +44,4 @@ SetOrgAssetsLib (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) |
 SetTenantCdnEnabled (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 SetTenantCdnPolicy (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 UpdateTenantTheme (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
+UploadCustomFontsAndCatalogLib (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌

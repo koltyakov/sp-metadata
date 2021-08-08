@@ -62,6 +62,7 @@ Microsoft_SharePoint_Portal_SiteLinkingManager | ✅ | ✅ | ❌ | ❌
 <span title="Microsoft_SharePoint_Portal_SuiteNavData_GetSuiteNavData">Microsoft_SharePoint_Portal_SuiteNavData_GetSuiteN...</span> (Microsoft SharePoint Portal SuiteNavData GetSuiteNavData) | ✅ | ✅ | ✅ | ✅
 Notebook (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ✅ | ❌
 PinToTeam (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
+RecentAndJoinedTeams (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 RestoreTeamsChannelSite (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
 SetGroupImage (Microsoft.SharePoint.Portal.GroupService) | ✅ | ✅ | ❌ | ❌
 SetIBSegments (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌

@@ -22,5 +22,6 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ParentGroup](./ComplexTypes/ParentGroup.md) | ✅ | ❌ | ❌ | ❌
 [PinToTeamParams](./ComplexTypes/PinToTeamParams.md) | ✅ | ❌ | ❌ | ❌
 [PinToTeamResponse](./ComplexTypes/PinToTeamResponse.md) | ✅ | ❌ | ❌ | ❌
+[RecentAndJoinedTeamsResponse](./ComplexTypes/RecentAndJoinedTeamsResponse.md) | ✅ | ❌ | ❌ | ❌
 [SPSiteCreationRequest](./ComplexTypes/SPSiteCreationRequest.md) | ✅ | ✅ | ❌ | ❌
 [SPSiteCreationResponse](./ComplexTypes/SPSiteCreationResponse.md) | ✅ | ✅ | ❌ | ❌
