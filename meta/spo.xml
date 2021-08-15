@@ -80,6 +80,10 @@
       <ComplexType Name="FieldUserValue" BaseType="SP.FieldLookupValue">
         <Property Name="Email" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="ContentAssemblyFileInfo">
+        <Property Name="FileUrl" Type="Edm.String" />
+        <Property Name="ServerRedirectedEmbedUrl" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="ContentAssemblyFormAnswer">
         <Property Name="Answer" Type="Edm.String" />
         <Property Name="ContentControlTagName" Type="Edm.String" />
@@ -118,6 +122,12 @@
         <Property Name="pageId" Type="Edm.Guid" Nullable="false" />
         <Property Name="Url" Type="Edm.String" />
         <Property Name="webpartId" Type="Edm.Guid" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="DocumentGenerationInfo">
+        <Property Name="ContentAssemblyFormAnswers" Type="Collection(SP.ContentAssemblyFormAnswer)" />
+        <Property Name="FileName" Type="Edm.String" />
+        <Property Name="IsTempFile" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="TempFileUrl" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="EncryptionOption">
         <Property Name="AES256CBCKey" Type="Edm.Binary" />
@@ -450,6 +460,7 @@
         <Property Name="AvailabilityKeyVaultUri" Type="Edm.String" />
         <Property Name="PrimaryKeyVaultUri" Type="Edm.String" />
         <Property Name="RecoveryEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="RegistrationProgress" Type="Edm.Double" Nullable="false" />
         <Property Name="SecondaryKeyVaultUri" Type="Edm.String" />
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
@@ -1843,7 +1854,6 @@
         <Property Name="IsMultilingual" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsProvisioningComplete" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsRevertHomepageLinkHidden" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="KeepFieldUserResources" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Language" Type="Edm.Int32" Nullable="false" />
         <Property Name="LastItemModifiedDate" Type="Edm.DateTime" Nullable="false" />
         <Property Name="LastItemUserModifiedDate" Type="Edm.DateTime" Nullable="false" />
@@ -4011,6 +4021,7 @@
         <EntitySet Name="MySiteLinkss" EntityType="Microsoft.SharePoint.Portal.UserProfiles.MySiteLinks" />
         <EntitySet Name="PromotedSitess" EntityType="Microsoft.SharePoint.Portal.UserProfiles.PromotedSites" />
         <EntitySet Name="SharedWithMeDocuments" EntityType="Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocument" />
+        <EntitySet Name="SharedWithMeItemss" EntityType="Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeItems" />
         <EntitySet Name="RecentDocuments" EntityType="Microsoft.SharePoint.Portal.WebControls.RecentDocument" />
         <EntitySet Name="BaseCustomPropertys" EntityType="Microsoft.SharePoint.Publishing.RestOnly.BaseCustomProperty" />
         <EntitySet Name="QuotaMigrationApis" EntityType="Microsoft.SharePoint.QuotaManagement.Consumer.QuotaMigrationApi" />
@@ -8217,6 +8228,10 @@
           <Parameter Name="name" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_Publishing_TopicPageCollection" ReturnType="Collection(SP.Publishing.TopicSitePage)" IsComposable="true" EntitySet="SitePageMetadatas" />
+        <FunctionImport Name="GetByEntityId" ReturnType="SP.Publishing.TopicSitePage" IsComposable="true" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="Collection(SP.Publishing.TopicSitePage)" />
+          <Parameter Name="entityId" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="IsContentTypeAvailable" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Collection(SP.Publishing.TopicSitePage)" />
         </FunctionImport>
@@ -9139,6 +9154,7 @@
           <Parameter Name="includeRSIData" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="searchOffset" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Portal_UserProfiles_SharedWithMeItems_SharedWithMe" ReturnType="Edm.String" IsSideEffecting="false" />
         <FunctionImport Name="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetListDataScript" ReturnType="Edm.String">
           <Parameter Name="webPartQualifier" Type="Edm.String" />
           <Parameter Name="sortFieldName" Type="Edm.String" />
@@ -9371,6 +9387,7 @@
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplyListDesign" ReturnType="Collection(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptActionResult)">
           <Parameter Name="listDesignId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="store" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="runtimeParameters" Type="Collection(SP.KeyValue)" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplySiteDesign" ReturnType="Collection(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptActionResult)">
           <Parameter Name="webUrl" Type="Edm.String" />
@@ -10094,11 +10111,10 @@
           <Parameter Name="documentTemplateType" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="templateUrl" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="CreateDocumentFromCAAETemplate" IsBindable="true">
+        <FunctionImport Name="CreateDocumentFromCAAETemplate" ReturnType="SP.ContentAssemblyFileInfo" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
-          <Parameter Name="ContentTypName" Type="Edm.String" />
-          <Parameter Name="FileName" Type="Edm.String" />
-          <Parameter Name="contentAssemblyFormAnswers" Type="Collection(SP.ContentAssemblyFormAnswer)" />
+          <Parameter Name="ContentTypeName" Type="Edm.String" />
+          <Parameter Name="documentGenerationInfo" Type="SP.DocumentGenerationInfo" />
         </FunctionImport>
         <FunctionImport Name="CreateDocumentWithDefaultName" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -18538,9 +18554,6 @@
       <Annotations Target="SP.Web/HostedApps">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.Web/KeepFieldUserResources">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.Web/LogoAlignment">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20386,6 +20399,9 @@
       <Annotations Target="SP.ApiData/SP_Publishing_TopicPageCollection()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetByEntityId(Collection(SP.Publishing.TopicSitePage), Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/IsContentTypeAvailable(Collection(SP.Publishing.TopicSitePage))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20668,6 +20684,9 @@
       <Annotations Target="SP.ApiData/SetSiteLogo(Microsoft.SharePoint.Portal.SiteIconManager, Edm.String, Edm.Int32, Edm.Int32, Edm.Double, Edm.Double, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Portal_UserProfiles_SharedWithMeItems_SharedWithMe()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetSharedWithGroupDocs(Edm.Guid, Edm.String, Edm.Boolean, Edm.Int32, Edm.Int32, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20680,7 +20699,7 @@
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplyImplicitSiteDesign()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplyListDesign(Edm.Guid, Edm.Int32)">
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplyListDesign(Edm.Guid, Edm.Int32, Collection(SP.KeyValue))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplySiteDesign(Edm.String, Edm.Guid, Edm.Int32)">
@@ -27444,6 +27463,12 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
+      <EntityType Name="SharedWithMeItems" Abstract="true">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="DocumentsSharedWithGroup" Abstract="true">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
@@ -28445,6 +28470,10 @@
       </ComplexType>
       <ComplexType Name="SharingLinkAbilities">
         <Property Name="canAddNewExternalPrincipals" Type="SP.Sharing.SharingAbilityStatus" />
+        <Property Name="canDeleteEditLink" Type="SP.Sharing.SharingAbilityStatus" />
+        <Property Name="canDeleteManageListLink" Type="SP.Sharing.SharingAbilityStatus" />
+        <Property Name="canDeleteReadLink" Type="SP.Sharing.SharingAbilityStatus" />
+        <Property Name="canDeleteReviewLink" Type="SP.Sharing.SharingAbilityStatus" />
         <Property Name="canGetEditLink" Type="SP.Sharing.SharingAbilityStatus" />
         <Property Name="canGetManageListLink" Type="SP.Sharing.SharingAbilityStatus" />
         <Property Name="canGetReadLink" Type="SP.Sharing.SharingAbilityStatus" />
@@ -29478,6 +29507,7 @@
         <Property Name="AllowEditing" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowSelfServiceUpgrade" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AnonymousLinkExpirationInDays" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AuthContextStrength" Type="Edm.String" />
         <Property Name="AuthenticationContextName" Type="Edm.String" />
         <Property Name="AverageResourceUsage" Type="Edm.Double" Nullable="false" />
         <Property Name="BlockDownloadLinksFileType" Type="Edm.Int32" Nullable="false" />
@@ -29778,6 +29808,7 @@
         <Property Name="UsePersistentCookiesForExplorerView" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UserVoiceForFeedbackEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ViewersCanCommentOnMediaDisabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ViewInFileExplorerEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="WhoCanShareAllowListInTenant" Type="Edm.String" />
         <Property Name="WhoCanShareAllowListInTenantByPrincipalIdentity" Type="Collection(Edm.String)" />
         <Property Name="Workflow2010Disabled" Type="Edm.Boolean" Nullable="false" />
@@ -31536,6 +31567,7 @@
         <Property Name="UsePersistentCookiesForExplorerView" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UserVoiceForFeedbackEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ViewersCanCommentOnMediaDisabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ViewInFileExplorerEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="WhoCanShareAllowList" Type="Edm.String" />
         <Property Name="Workflow2010Disabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Workflows2013State" Type="Edm.Int32" Nullable="false" />
