@@ -126,6 +126,7 @@ SyncPrivacyProfileProperties (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UseFindPeopleInPeoplePicker (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UsePersistentCookiesForExplorerView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UserVoiceForFeedbackEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ViewInFileExplorerEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ViewersCanCommentOnMediaDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 WhoCanShareAllowList (Edm.String) | ✅ | ❌ | ❌ | ❌
 Workflow2010Disabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

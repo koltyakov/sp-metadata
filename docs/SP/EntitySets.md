@@ -452,6 +452,7 @@ SharePointHomeServiceManagers | ✅ | ✅ | ❌ | ❌
 SharePointSharingSettingss | ✅ | ✅ | ✅ | ❌
 SharedDocumentInfos | ✅ | ✅ | ❌ | ❌
 SharedWithMeDocuments | ✅ | ✅ | ✅ | ❌
+SharedWithMeItemss | ✅ | ❌ | ❌ | ❌
 SharingInformations | ✅ | ✅ | ❌ | ❌
 SharingPermissionInformations | ✅ | ✅ | ✅ | ❌
 SharingResults | ✅ | ✅ | ✅ | ❌

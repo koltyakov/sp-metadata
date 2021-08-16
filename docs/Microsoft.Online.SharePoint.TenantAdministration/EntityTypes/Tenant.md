@@ -163,6 +163,7 @@ SyncPrivacyProfileProperties (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UseFindPeopleInPeoplePicker (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UsePersistentCookiesForExplorerView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UserVoiceForFeedbackEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ViewInFileExplorerEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ViewersCanCommentOnMediaDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 WhoCanShareAllowListInTenant (Edm.String) | ✅ | ❌ | ❌ | ❌
 WhoCanShareAllowListInTenantByPrincipalIdentity (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌

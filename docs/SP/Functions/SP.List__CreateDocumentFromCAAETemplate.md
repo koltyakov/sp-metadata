@@ -10,6 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-ContentTypName (Edm.String) | ✅ | ❌ | ❌ | ❌
-FileName (Edm.String) | ✅ | ❌ | ❌ | ❌
-contentAssemblyFormAnswers (Collection(SP.ContentAssemblyFormAnswer)) | ✅ | ❌ | ❌ | ❌
+ContentTypeName (Edm.String) | ✅ | ❌ | ❌ | ❌
+documentGenerationInfo (SP.DocumentGenerationInfo) | ✅ | ❌ | ❌ | ❌

@@ -12,3 +12,4 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [MySiteLinks](./EntityTypes/MySiteLinks.md) | ✅ | ✅ | ✅ | ❌
 [PromotedSites](./EntityTypes/PromotedSites.md) | ✅ | ✅ | ✅ | ✅
 [SharedWithMeDocument](./EntityTypes/SharedWithMeDocument.md) | ✅ | ✅ | ✅ | ❌
+[SharedWithMeItems](./EntityTypes/SharedWithMeItems.md) | ✅ | ❌ | ❌ | ❌

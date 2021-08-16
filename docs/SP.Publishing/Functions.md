@@ -67,6 +67,7 @@ Feed (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
 FeedTargeted (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
 GetAcronymsAndColors (SP.Publishing.SharePointHomeServiceManager) | ✅ | ✅ | ❌ | ❌
 GetAllVideos (SP.Publishing.VideoChannel) | ✅ | ❌ | ❌ | ❌
+GetByEntityId (Collection(SP.Publishing.TopicSitePage)) | ✅ | ❌ | ❌ | ❌
 GetById (Collection(SP.Publishing.PointPublishingPost)) | ✅ | ❌ | ❌ | ❌
 GetById (Collection(SP.Publishing.PointPublishingUser)) | ✅ | ❌ | ❌ | ❌
 GetById (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
