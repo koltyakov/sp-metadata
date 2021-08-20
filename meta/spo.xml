@@ -1150,6 +1150,7 @@
         <Property Name="ShareByLinkEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ShowPeoplePickerSuggestionsForGuestUsers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ShowUrlStructure" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SitePolicyEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SocialBarOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="StatusBarLink" Type="Edm.String" />
         <Property Name="StatusBarText" Type="Edm.String" />
@@ -1653,6 +1654,7 @@
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
         <Property Name="ImagePath" Type="SP.ResourcePath" />
         <Property Name="ImageUrl" Type="Edm.String" />
+        <Property Name="DefaultSensitivityLabelForLibrary" Type="Edm.String" />
         <Property Name="IrmEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IrmExpire" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IrmReject" Type="Edm.Boolean" Nullable="false" />
@@ -8920,6 +8922,7 @@
         <FunctionImport Name="GetCurrentUserJoinedTeams" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
           <Parameter Name="getLogoData" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="forceCacheUpdate" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetCurrentUserSharedChannelMemberGroups" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
@@ -9438,6 +9441,7 @@
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetListDesigns" ReturnType="Collection(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignMetadata)">
           <Parameter Name="store" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetOutOfBoxSiteTemplateSettings" ReturnType="Collection(Microsoft.SharePoint.Utilities.WebTemplateExtensions.OutOfBoxSiteTemplateSettings)" />
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignMetadata" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignMetadata">
           <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="store" Type="Edm.Int32" Nullable="false" />
@@ -9505,6 +9509,9 @@
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_SetBuiltInDesignPackageVisibility">
           <Parameter Name="designPackageType" Type="Edm.Int64" Nullable="false" />
           <Parameter Name="isVisible" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_SetOutOfBoxSiteTemplateSettings" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.OutOfBoxSiteTemplateSettings">
+          <Parameter Name="updateInfo" Type="Microsoft.SharePoint.Utilities.WebTemplateExtensions.OutOfBoxSiteTemplateSettings" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_SetSiteScriptStageOutcome">
           <Parameter Name="webUrl" Type="Edm.String" />
@@ -16796,6 +16803,9 @@
       <Annotations Target="Microsoft.SharePoint.Webhooks.SubscriptionInformation">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Utilities.WebTemplateExtensions.OutOfBoxSiteTemplateSettings">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignCreationInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20543,7 +20553,7 @@
       <Annotations Target="SP.ApiData/GetAllOrgLabels(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/GetCurrentUserJoinedTeams(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.Boolean)">
+      <Annotations Target="SP.ApiData/GetCurrentUserJoinedTeams(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.Boolean, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetCurrentUserSharedChannelMemberGroups(Microsoft.SharePoint.Portal.GroupSiteManager)">
@@ -20747,6 +20757,9 @@
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetListDesigns(Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetOutOfBoxSiteTemplateSettings()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetSiteDesignMetadata(Edm.Guid, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20802,6 +20815,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_SetBuiltInDesignPackageVisibility(Edm.Int64, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_SetOutOfBoxSiteTemplateSettings(Microsoft.SharePoint.Utilities.WebTemplateExtensions.OutOfBoxSiteTemplateSettings)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_SetSiteScriptStageOutcome(Edm.String, Edm.Guid, Edm.Int64)">
@@ -27560,6 +27576,10 @@
       </Association>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.Utilities.WebTemplateExtensions" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="OutOfBoxSiteTemplateSettings">
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="IsHidden" Type="Edm.Boolean" />
+      </ComplexType>
       <ComplexType Name="SiteDesignCreationInfo">
         <Property Name="Description" Type="Edm.String" />
         <Property Name="DesignPackageId" Type="Edm.Guid" />
