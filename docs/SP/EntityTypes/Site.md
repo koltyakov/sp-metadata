@@ -56,6 +56,7 @@ ShareByEmailEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 ShareByLinkEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 ShowPeoplePickerSuggestionsForGuestUsers (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 ShowUrlStructure (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+SitePolicyEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SocialBarOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 StatusBarLink (Edm.String) | ✅ | ✅ | ❌ | ❌
 StatusBarText (Edm.String) | ✅ | ✅ | ❌ | ❌

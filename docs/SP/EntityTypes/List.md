@@ -25,6 +25,7 @@ DefaultEditFormUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
 DefaultItemOpenInBrowser (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DefaultItemOpenUseListSetting (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 DefaultNewFormUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
+DefaultSensitivityLabelForLibrary (Edm.String) | ✅ | ❌ | ❌ | ❌
 DefaultViewPath (SP.ResourcePath) | ✅ | ✅ | ❌ | ❌
 DefaultViewUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
 Description (Edm.String) | ✅ | ✅ | ✅ | ✅

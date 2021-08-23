@@ -6,6 +6,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [FormulaCreationInfo](./ComplexTypes/FormulaCreationInfo.md) | ❌ | ✅ | ❌ | ❌
 [FormulaMetadata](./ComplexTypes/FormulaMetadata.md) | ❌ | ✅ | ❌ | ❌
+[OutOfBoxSiteTemplateSettings](./ComplexTypes/OutOfBoxSiteTemplateSettings.md) | ✅ | ❌ | ❌ | ❌
 [RecipeCreationInfo](./ComplexTypes/RecipeCreationInfo.md) | ❌ | ✅ | ❌ | ❌
 [RecipeMetadata](./ComplexTypes/RecipeMetadata.md) | ❌ | ✅ | ❌ | ❌
 [SPSiteScriptStatusAndSchema](./ComplexTypes/SPSiteScriptStatusAndSchema.md) | ✅ | ❌ | ❌ | ❌
