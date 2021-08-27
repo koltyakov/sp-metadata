@@ -412,6 +412,7 @@
         <Property Name="AllowSmallerVersionLimitOnDestination" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BypassSharedLock" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ClientEtags" Type="Collection(Edm.String)" />
+        <Property Name="CustomizedItemName" Type="Collection(Edm.String)" />
         <Property Name="ExcludeChildren" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IgnoreVersionHistory" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IncludeItemPermissions" Type="Edm.Boolean" Nullable="false" />
@@ -683,6 +684,10 @@
       </ComplexType>
       <ComplexType Name="ProvisionedMigrationQueueInfo">
         <Property Name="JobQueueUri" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ProvisionedTemporaryAzureContainerInfo">
+        <Property Name="EncryptionKey" Type="Edm.Binary" />
+        <Property Name="Uri" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="CamlQuery">
         <Property Name="AllowIncrementalResults" Type="Edm.Boolean" Nullable="false" />
@@ -5260,6 +5265,8 @@
           <Parameter Name="scopeId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_GetAdvancedRecordVersioningDisabled" ReturnType="Edm.Boolean" IsSideEffecting="false" />
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_GetAllowFilesWithKeepLabelToBeDeletedODB" ReturnType="Edm.Boolean" IsSideEffecting="false" />
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_GetAllowFilesWithKeepLabelToBeDeletedSPO" ReturnType="Edm.Boolean" IsSideEffecting="false" />
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_GetAvailableTagsForSite" ReturnType="Collection(SP.CompliancePolicy.ComplianceTag)" IsSideEffecting="false">
           <Parameter Name="siteUrl" Type="Edm.String" />
         </FunctionImport>
@@ -5358,6 +5365,12 @@
         </FunctionImport>
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_SetAdvancedRecordVersioningDisabled">
           <Parameter Name="disabled" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_SetAllowFilesWithKeepLabelToBeDeletedODB">
+          <Parameter Name="allowDeletion" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_SetAllowFilesWithKeepLabelToBeDeletedSPO">
+          <Parameter Name="allowDeletion" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_SetComplianceTagOnBulkItems" ReturnType="Collection(Edm.Int32)">
           <Parameter Name="itemIds" Type="Collection(Edm.Int32)" Nullable="false" />
@@ -7642,6 +7655,11 @@
         <FunctionImport Name="Copy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
         </FunctionImport>
+        <FunctionImport Name="CopyWithConfiguration" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+          <Parameter Name="sitePageFlags" Type="Edm.String" />
+          <Parameter Name="isNews" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="CreateNewsCopy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
         </FunctionImport>
@@ -7828,6 +7846,11 @@
         <FunctionImport Name="Copy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
         </FunctionImport>
+        <FunctionImport Name="CopyWithConfiguration" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.RepostPage" />
+          <Parameter Name="sitePageFlags" Type="Edm.String" />
+          <Parameter Name="isNews" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="CreateNewsCopy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
         </FunctionImport>
@@ -7980,6 +8003,11 @@
         <FunctionImport Name="Copy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
         </FunctionImport>
+        <FunctionImport Name="CopyWithConfiguration" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
+          <Parameter Name="sitePageFlags" Type="Edm.String" />
+          <Parameter Name="isNews" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="CreateNewsCopy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
         </FunctionImport>
@@ -8104,6 +8132,11 @@
         </FunctionImport>
         <FunctionImport Name="Copy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
+        </FunctionImport>
+        <FunctionImport Name="CopyWithConfiguration" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.SitePage" />
+          <Parameter Name="sitePageFlags" Type="Edm.String" />
+          <Parameter Name="isNews" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="CreateNewsCopy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
@@ -8249,6 +8282,11 @@
         </FunctionImport>
         <FunctionImport Name="Copy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
+        </FunctionImport>
+        <FunctionImport Name="CopyWithConfiguration" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
+          <Parameter Name="sitePageFlags" Type="Edm.String" />
+          <Parameter Name="isNews" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="CreateNewsCopy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
@@ -8995,6 +9033,9 @@
         </FunctionImport>
         <FunctionImport Name="RecentAndJoinedTeams" ReturnType="Microsoft.SharePoint.Portal.RecentAndJoinedTeamsResponse" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
+          <Parameter Name="includeRecent" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="includeTeams" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="includePinned" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Portal_CommunityModeration_ApproveReportedItems">
           <Parameter Name="listID" Type="Edm.String" />
@@ -9157,7 +9198,7 @@
           <Parameter Name="includeRSIData" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="searchOffset" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="Microsoft_SharePoint_Portal_UserProfiles_SharedWithMeItems_SharedWithMe" ReturnType="Edm.String" IsSideEffecting="false" />
+        <FunctionImport Name="Microsoft_SharePoint_Portal_UserProfiles_SharedWithMeItems_SharedWithMe" ReturnType="Collection(Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocument)" IsComposable="true" EntitySet="SharedWithMeDocuments" />
         <FunctionImport Name="Microsoft_SharePoint_Portal_UserProfiles_DocumentsSharedWithGroup_GetListDataScript" ReturnType="Edm.String">
           <Parameter Name="webPartQualifier" Type="Edm.String" />
           <Parameter Name="sortFieldName" Type="Edm.String" />
@@ -9601,6 +9642,11 @@
           <Parameter Name="siteId" Type="Edm.String" />
           <Parameter Name="listId" Type="Edm.String" />
           <Parameter Name="webId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_PinnedItems_ReorderList">
+          <Parameter Name="itemToReorder" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
+          <Parameter Name="itemBefore" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
+          <Parameter Name="itemAfter" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
         </FunctionImport>
         <FunctionImport Name="SP_PinnedItems_UpdateItem">
           <Parameter Name="pinnedItem" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
@@ -10501,10 +10547,6 @@
           <Parameter Name="ViewPath" Type="Edm.String" />
           <Parameter Name="WebPartId" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="GetPlaceholdersMetadata" ReturnType="Collection(SP.Placeholder)" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="SP.List" />
-          <Parameter Name="Name" Type="Edm.String" />
-        </FunctionImport>
         <FunctionImport Name="GetRelatedFields" ReturnType="Collection(SP.RelatedField)" IsComposable="true" IsBindable="true" EntitySet="RelatedFields">
           <Parameter Name="this" Type="SP.List" />
         </FunctionImport>
@@ -10526,7 +10568,7 @@
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="sourceUrl" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="ParseDocumentTemplate" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
+        <FunctionImport Name="ParseDocumentTemplate" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="Name" Type="Edm.String" />
         </FunctionImport>
@@ -10758,11 +10800,6 @@
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="category" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="TemplatizeDocument" IsBindable="true">
-          <Parameter Name="this" Type="SP.List" />
-          <Parameter Name="Name" Type="Edm.String" />
-          <Parameter Name="contentControlInfos" Type="Collection(SP.ContentControlInfo)" />
-        </FunctionImport>
         <FunctionImport Name="UnpublishMappedView" ReturnType="SP.View" IsBindable="true" EntitySet="Views">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="appId" Type="Edm.Guid" Nullable="false" />
@@ -10784,12 +10821,6 @@
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="retentionLabel" Type="Edm.String" />
           <Parameter Name="linkedList" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="UpdatePlaceholdersMetadata" IsBindable="true">
-          <Parameter Name="this" Type="SP.List" />
-          <Parameter Name="Name" Type="Edm.String" />
-          <Parameter Name="placeholders" Type="Collection(SP.Placeholder)" />
-          <Parameter Name="IsPublishing" Type="Edm.Boolean" />
         </FunctionImport>
         <FunctionImport Name="UpdateRule" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -13067,6 +13098,9 @@
           <Parameter Name="this" Type="SP.Site" />
         </FunctionImport>
         <FunctionImport Name="ProvisionMigrationQueue" ReturnType="SP.ProvisionedMigrationQueueInfo" IsBindable="true">
+          <Parameter Name="this" Type="SP.Site" />
+        </FunctionImport>
+        <FunctionImport Name="ProvisionTemporaryAzureContainer" ReturnType="SP.ProvisionedTemporaryAzureContainerInfo" IsBindable="true">
           <Parameter Name="this" Type="SP.Site" />
         </FunctionImport>
         <FunctionImport Name="RecoverTenantForBringYourOwnKey" ReturnType="SP.CustomerKeyStatusInfo" IsBindable="true">
@@ -17241,12 +17275,6 @@
       <Annotations Target="SP.CopyMigrationOptions/BypassSharedLock">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.CopyMigrationOptions/ClientEtags">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CopyMigrationOptions/ExcludeChildren">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.CopyMigrationOptions/IncludeItemPermissions">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17254,9 +17282,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.CopyMigrationOptions/MoveAndShareFileInfo">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CopyMigrationOptions/MoveButKeepSource">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.CustomActionElement/ClientSideComponentId">
@@ -18079,6 +18104,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData/Comment">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData/isTileViewEnabled">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData/ModelSiteUrl">
@@ -20061,6 +20089,9 @@
       <Annotations Target="SP.ApiData/Copy(SP.Publishing.FeedVideoPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/CopyWithConfiguration(SP.Publishing.FeedVideoPage, Edm.String, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/CreateNewsCopy(SP.Publishing.FeedVideoPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20154,6 +20185,9 @@
       <Annotations Target="SP.ApiData/Copy(SP.Publishing.RepostPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/CopyWithConfiguration(SP.Publishing.RepostPage, Edm.String, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/CreateNewsCopy(SP.Publishing.RepostPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20224,6 +20258,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Copy(SP.Publishing.SitePage3D)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/CopyWithConfiguration(SP.Publishing.SitePage3D, Edm.String, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/CreateNewsCopy(SP.Publishing.SitePage3D)">
@@ -20323,6 +20360,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Copy(SP.Publishing.SitePage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/CopyWithConfiguration(SP.Publishing.SitePage, Edm.String, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/CreateNewsCopy(SP.Publishing.SitePage)">
@@ -20425,6 +20465,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Copy(SP.Publishing.TopicSitePage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/CopyWithConfiguration(SP.Publishing.TopicSitePage, Edm.String, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/CreateNewsCopy(SP.Publishing.TopicSitePage)">
@@ -20601,7 +20644,7 @@
       <Annotations Target="SP.ApiData/PinToTeam(Microsoft.SharePoint.Portal.GroupSiteManager, Microsoft.SharePoint.Portal.PinToTeamParams)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/RecentAndJoinedTeams(Microsoft.SharePoint.Portal.GroupSiteManager)">
+      <Annotations Target="SP.ApiData/RecentAndJoinedTeams(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.Boolean, Edm.Boolean, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Portal_SPHubSitesUtility()">
@@ -20953,6 +20996,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_PinnedItems_RemoveItem(Edm.String, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_PinnedItems_ReorderList(Microsoft.SharePoint.ListHome.FavoriteListHomeItem, Microsoft.SharePoint.ListHome.FavoriteListHomeItem, Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_PinnedItems_UpdateItem(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
@@ -22270,6 +22316,7 @@
           <PropertyRef Name="Comment" />
         </Key>
         <Property Name="Comment" Type="Edm.String" Nullable="false" />
+        <Property Name="isTileViewEnabled" Type="Edm.Boolean" />
         <Property Name="ModelSiteUrl" Type="Edm.String" />
         <Property Name="ModelWebServerRelativeUrl" Type="Edm.String" />
         <Property Name="Promote" Type="Edm.Boolean" />
@@ -27956,11 +28003,11 @@
       </EntityType>
       <EntityType Name="CorporateCatalogAppMetadata">
         <Key>
-          <PropertyRef Name="AadAppId" />
+          <PropertyRef Name="AppCatalogVersion" />
         </Key>
-        <Property Name="AadAppId" Type="Edm.String" Nullable="false" />
+        <Property Name="AadAppId" Type="Edm.String" />
         <Property Name="AadPermissions" Type="Edm.String" />
-        <Property Name="AppCatalogVersion" Type="Edm.String" />
+        <Property Name="AppCatalogVersion" Type="Edm.String" Nullable="false" />
         <Property Name="CanUpgrade" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CDNLocation" Type="Edm.String" />
         <Property Name="ContainsTenantWideExtension" Type="Edm.Boolean" Nullable="false" />
@@ -29959,6 +30006,7 @@
         <Property Name="FriendlyClientName" Type="Edm.String" />
         <Property Name="IsRetryableFailure" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsScanDone" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="LastFinishedTimeUtc" Type="Edm.DateTime" Nullable="false" />
         <Property Name="LinkedDeviceId" Type="Edm.Guid" Nullable="false" />
         <Property Name="LogFilePath" Type="Edm.String" />
         <Property Name="ManagementStatus" Type="Edm.Int32" Nullable="false" />
@@ -30202,7 +30250,6 @@
         <Property Name="PreserveUserPermissionForOnPrem" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ReplaceInvalidChars" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ScanOnly" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="ScheduledStartTimeUTC" Type="Edm.DateTime" Nullable="false" />
         <Property Name="ScheduledTimeUtc" Type="Edm.DateTime" Nullable="false" />
         <Property Name="ScheduledType" Type="Edm.Int32" Nullable="false" />
         <Property Name="SkipListWithAudienceEnabled" Type="Edm.Boolean" Nullable="false" />
