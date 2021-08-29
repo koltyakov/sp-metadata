@@ -34,6 +34,11 @@ Copy (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 Copy (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
 Copy (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 Copy (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+CopyWithConfiguration (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
+CopyWithConfiguration (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
+CopyWithConfiguration (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
+CopyWithConfiguration (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
+CopyWithConfiguration (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 Create (SP.Publishing.CommunicationSite) | ✅ | ✅ | ❌ | ❌
 Create (SP.Publishing.PointPublishingSiteManager) | ✅ | ❌ | ❌ | ❌
 CreateAppPage (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌

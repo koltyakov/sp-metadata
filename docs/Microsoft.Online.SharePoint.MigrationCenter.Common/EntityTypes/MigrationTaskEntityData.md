@@ -28,7 +28,6 @@ PreservePermissionForFileShare (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PreserveUserPermissionForOnPrem (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ReplaceInvalidChars (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ScanOnly (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-ScheduledStartTimeUTC (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 ScheduledTimeUtc (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 ScheduledType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SkipListWithAudienceEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

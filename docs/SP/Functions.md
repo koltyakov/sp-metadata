@@ -335,7 +335,6 @@ GetMigrationStatus (SP.Site) | ✅ | ✅ | ✅ | ❌
 GetNewsList (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetNodeById (SP.Navigation) | ✅ | ✅ | ✅ | ✅
 GetOnePageContextAsStream (SP.Web) | ❌ | ✅ | ❌ | ❌
-GetPlaceholdersMetadata (SP.List) | ✅ | ❌ | ❌ | ❌
 GetPreAuthorizedAccessUrl (SP.File) | ✅ | ✅ | ✅ | ❌
 GetPreAuthorizedAccessUrl2 (SP.File) | ✅ | ❌ | ❌ | ❌
 GetPreviousAppVersion (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
@@ -423,6 +422,7 @@ ParseDocumentTemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 ProcessExternalNotification (SP.Web) | ✅ | ✅ | ✅ | ✅
 ProvisionMigrationContainers (SP.Site) | ✅ | ✅ | ❌ | ❌
 ProvisionMigrationQueue (SP.Site) | ✅ | ✅ | ❌ | ❌
+ProvisionTemporaryAzureContainer (SP.Site) | ✅ | ❌ | ❌ | ❌
 Publish (SP.File) | ✅ | ✅ | ✅ | ✅
 PublishMappedView (SP.List) | ✅ | ✅ | ❌ | ❌
 RecoverTenantForBringYourOwnKey (SP.Site) | ✅ | ✅ | ❌ | ❌
@@ -565,6 +565,7 @@ SP_OrganizationNews | ✅ | ❌ | ❌ | ❌
 [SP_PinnedItems_AddItem](./Functions/SP_PinnedItems_AddItem.md) | ✅ | ❌ | ❌ | ❌
 [SP_PinnedItems_GetItemsBy](./Functions/SP_PinnedItems_GetItemsBy.md) | ✅ | ❌ | ❌ | ❌
 [SP_PinnedItems_RemoveItem](./Functions/SP_PinnedItems_RemoveItem.md) | ✅ | ❌ | ❌ | ❌
+[SP_PinnedItems_ReorderList](./Functions/SP_PinnedItems_ReorderList.md) | ✅ | ❌ | ❌ | ❌
 [SP_PinnedItems_UpdateItem](./Functions/SP_PinnedItems_UpdateItem.md) | ✅ | ❌ | ❌ | ❌
 SP_QuickAccessItemCollection_GetQuickAccessItems | ✅ | ❌ | ❌ | ❌
 [SP_RecentListCollection_GetRecentLists](./Functions/SP_RecentListCollection_GetRecentLists.md) | ✅ | ❌ | ❌ | ❌
@@ -719,7 +720,6 @@ SyncFlowTemplates (SP.Web) | ✅ | ❌ | ❌ | ❌
 SyncHubSiteTheme (SP.Web) | ✅ | ✅ | ❌ | ❌
 SystemUpdate (SP.ListItem) | ✅ | ✅ | ❌ | ❌
 TakeOverCheckOut (SP.CheckedOutFile) | ✅ | ✅ | ❌ | ❌
-TemplatizeDocument (SP.List) | ✅ | ❌ | ❌ | ❌
 UTCToLocalTime (SP.TimeZone) | ✅ | ✅ | ✅ | ✅
 UnPublish (SP.File) | ✅ | ✅ | ✅ | ✅
 UndoCheckOut (SP.File) | ✅ | ✅ | ✅ | ✅
@@ -772,7 +772,6 @@ UpdateFormProcessingModelRetentionLabel (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateFormProcessingModelSettings (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateHashtags (SP.ListItem) | ❌ | ✅ | ❌ | ❌
 UpdateOverwriteVersion (SP.ListItem) | ✅ | ✅ | ❌ | ❌
-UpdatePlaceholdersMetadata (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateRule (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateVirusInfo (SP.File) | ✅ | ✅ | ❌ | ❌
 Upgrade (SP.AppInstance) | ✅ | ✅ | ✅ | ✅

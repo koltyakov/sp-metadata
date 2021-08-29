@@ -20,6 +20,7 @@ FilesScannedWithIssues (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 FriendlyClientName (Edm.String) | ✅ | ❌ | ❌ | ❌
 IsRetryableFailure (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsScanDone (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+LastFinishedTimeUtc (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 LinkedDeviceId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 LogFilePath (Edm.String) | ✅ | ❌ | ❌ | ❌
 ManagementStatus (Edm.Int32) | ✅ | ❌ | ❌ | ❌

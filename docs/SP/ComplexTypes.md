@@ -99,6 +99,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [PropertyInformation](./ComplexTypes/PropertyInformation.md) | ✅ | ✅ | ✅ | ✅
 [ProvisionedMigrationContainersInfo](./ComplexTypes/ProvisionedMigrationContainersInfo.md) | ✅ | ✅ | ❌ | ❌
 [ProvisionedMigrationQueueInfo](./ComplexTypes/ProvisionedMigrationQueueInfo.md) | ✅ | ✅ | ❌ | ❌
+[ProvisionedTemporaryAzureContainerInfo](./ComplexTypes/ProvisionedTemporaryAzureContainerInfo.md) | ✅ | ❌ | ❌ | ❌
 [RecycleBinQueryInformation](./ComplexTypes/RecycleBinQueryInformation.md) | ✅ | ✅ | ❌ | ❌
 [RelatedItem](./ComplexTypes/RelatedItem.md) | ✅ | ✅ | ✅ | ✅
 [RenderListContextMenuDataParameters](./ComplexTypes/RenderListContextMenuDataParameters.md) | ✅ | ✅ | ✅ | ❌

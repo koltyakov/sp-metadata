@@ -12,3 +12,4 @@ ModelWebServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 Promote (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PublicationType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Publications (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData)) | ✅ | ❌ | ❌ | ❌
+isTileViewEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
