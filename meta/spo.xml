@@ -5185,6 +5185,9 @@
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)" />
           <Parameter Name="promotions" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData)" />
         </FunctionImport>
+        <FunctionImport Name="CheckTenantPublishPermissions" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)" />
+        </FunctionImport>
         <FunctionImport Name="GetByModelUniqueId" ReturnType="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)" IsComposable="true" IsBindable="true" EntitySet="Publications">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)" />
           <Parameter Name="modelUniqueId" Type="Edm.Guid" Nullable="false" />
@@ -8687,7 +8690,7 @@
         </FunctionImport>
         <FunctionImport Name="IsCrawlVersionsEnabled" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.TenantCrawlVersionsInfoProvider" />
-          <Parameter Name="SiteId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="IsCrawlVersionsEnabledForTenant" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.TenantCrawlVersionsInfoProvider" />
@@ -9993,6 +9996,7 @@
           <Parameter Name="type" Type="Edm.String" />
           <Parameter Name="resourcePayload" Type="Microsoft.SharePoint.AuthPolicy.Events.RoleAssignmentResourcePayload" />
           <Parameter Name="id" Type="Edm.String" />
+          <Parameter Name="containerId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_AuthPolicy_Events_SPAuthEvent" ReturnType="Microsoft.SharePoint.AuthPolicy.Events.SPAuthEvent" IsComposable="true" EntitySet="SPAuthEvents" />
         <FunctionImport Name="SP_Analytics_AnalyticsUsageEntry_LogAnalyticsAppEvent">
@@ -16432,6 +16436,18 @@
       <Annotations Target="SP.Directory.GroupNameValidationResult/IsValidName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.ColumnDef">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.ColumnDef/Id">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.ColumnDef/Name">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.ColumnDef/Type">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.PrebuiltModelInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17869,6 +17885,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/DriveId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/HasTargetSitePermission">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/ID">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18071,6 +18090,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/ColumnName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/Columns">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/ColumnType">
@@ -19958,6 +19980,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/BatchUnpromote(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication), Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData))">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/CheckTenantPublishPermissions(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetByModelUniqueId(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication), Edm.Guid)">
@@ -22134,6 +22159,11 @@
       </Association>
     </Schema>
     <Schema Namespace="Microsoft.Office.Server.ContentCenter" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="ColumnDef">
+        <Property Name="Id" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Type" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="PrebuiltModelInfo">
         <Property Name="FormRecognizerApiVersion" Type="Edm.String" />
         <Property Name="FormRecognizerPrebuiltModelName" Type="Edm.String" />
@@ -22224,6 +22254,7 @@
         <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
         <Property Name="CreatedBy" Type="Edm.String" />
         <Property Name="DriveId" Type="Edm.String" />
+        <Property Name="HasTargetSitePermission" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ID" Type="Edm.Int32" Nullable="false" />
         <Property Name="ModelId" Type="Edm.Int32" Nullable="false" />
         <Property Name="ModelName" Type="Edm.String" />
@@ -22301,6 +22332,7 @@
         <Property Name="BaseContentTypeName" Type="Edm.String" />
         <Property Name="ColumnId" Type="Edm.String" />
         <Property Name="ColumnName" Type="Edm.String" />
+        <Property Name="Columns" Type="Collection(Microsoft.Office.Server.ContentCenter.ColumnDef)" />
         <Property Name="ColumnType" Type="Edm.String" />
         <Property Name="ContentTypeGroup" Type="Edm.String" />
         <Property Name="ContentTypeId" Type="Edm.String" />
@@ -28003,11 +28035,11 @@
       </EntityType>
       <EntityType Name="CorporateCatalogAppMetadata">
         <Key>
-          <PropertyRef Name="AadAppId" />
+          <PropertyRef Name="AppCatalogVersion" />
         </Key>
-        <Property Name="AadAppId" Type="Edm.String" Nullable="false" />
+        <Property Name="AadAppId" Type="Edm.String" />
         <Property Name="AadPermissions" Type="Edm.String" />
-        <Property Name="AppCatalogVersion" Type="Edm.String" />
+        <Property Name="AppCatalogVersion" Type="Edm.String" Nullable="false" />
         <Property Name="CanUpgrade" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CDNLocation" Type="Edm.String" />
         <Property Name="ContainsTenantWideExtension" Type="Edm.Boolean" Nullable="false" />
@@ -29296,7 +29328,7 @@
     </Schema>
     <Schema Namespace="SP.Taxonomy.ContentTypeSync" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="ContentTypeSyndicationResult">
-        <Property Name="FailedContentTypeIDs" Type="Collection(Edm.String)" />
+        <Property Name="FailedContentTypeIDs" Type="Collection(SP.KeyValue)" />
         <Property Name="FailedReason" Type="Edm.Int32" Nullable="false" />
         <Property Name="IsPassed" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>

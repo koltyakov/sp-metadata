@@ -4354,15 +4354,15 @@
         <EntitySet Name="Utilitys" EntityType="SP.Utilities.Utility" />
         <EntitySet Name="WopiHostUtilitys" EntityType="SP.Utilities.WopiHostUtility" />
         <EntitySet Name="WopiPropertiess" EntityType="SP.Utilities.WopiProperties" />
-        <EntitySet Name="Views" EntityType="SP.View" />
-        <EntitySet Name="ViewFieldCollections" EntityType="SP.ViewFieldCollection" />
-        <EntitySet Name="VisualizationAppSynchronizationResults" EntityType="SP.VisualizationAppSynchronizationResult" />
         <EntitySet Name="WebInformations" EntityType="SP.WebInformation" />
         <EntitySet Name="LimitedWebPartManagers" EntityType="SP.WebParts.LimitedWebPartManager" />
         <EntitySet Name="WebParts" EntityType="SP.WebParts.WebPart" />
         <EntitySet Name="WebPartDefinitions" EntityType="SP.WebParts.WebPartDefinition" />
         <EntitySet Name="WebProxys" EntityType="SP.WebProxy" />
         <EntitySet Name="WebTemplates" EntityType="SP.WebTemplate" />
+        <EntitySet Name="Views" EntityType="SP.View" />
+        <EntitySet Name="ViewFieldCollections" EntityType="SP.ViewFieldCollection" />
+        <EntitySet Name="VisualizationAppSynchronizationResults" EntityType="SP.VisualizationAppSynchronizationResult" />
         <EntitySet Name="SPWorkflows" EntityType="SP.Workflow.SPWorkflow" />
         <EntitySet Name="SPWorkflowManagers" EntityType="SP.Workflow.SPWorkflowManager" />
         <EntitySet Name="WorkflowAssociations" EntityType="SP.Workflow.WorkflowAssociation" />
@@ -5184,6 +5184,9 @@
         <FunctionImport Name="BatchUnpromote" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult" IsBindable="true" EntitySet="SPMachineLearningPublicationsResults">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)" />
           <Parameter Name="promotions" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData)" />
+        </FunctionImport>
+        <FunctionImport Name="CheckTenantPublishPermissions" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)" />
         </FunctionImport>
         <FunctionImport Name="GetByModelUniqueId" ReturnType="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)" IsComposable="true" IsBindable="true" EntitySet="Publications">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)" />
@@ -8687,7 +8690,7 @@
         </FunctionImport>
         <FunctionImport Name="IsCrawlVersionsEnabled" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.TenantCrawlVersionsInfoProvider" />
-          <Parameter Name="SiteId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="IsCrawlVersionsEnabledForTenant" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.TenantCrawlVersionsInfoProvider" />
@@ -9993,6 +9996,7 @@
           <Parameter Name="type" Type="Edm.String" />
           <Parameter Name="resourcePayload" Type="Microsoft.SharePoint.AuthPolicy.Events.RoleAssignmentResourcePayload" />
           <Parameter Name="id" Type="Edm.String" />
+          <Parameter Name="containerId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_AuthPolicy_Events_SPAuthEvent" ReturnType="Microsoft.SharePoint.AuthPolicy.Events.SPAuthEvent" IsComposable="true" EntitySet="SPAuthEvents" />
         <FunctionImport Name="SP_Analytics_AnalyticsUsageEntry_LogAnalyticsAppEvent">
@@ -16252,14 +16256,6 @@
           <End Role="PersonalSitePartner" EntitySet="UserProfiles" />
           <End Role="PersonalSite" EntitySet="Sites" />
         </AssociationSet>
-        <AssociationSet Name="SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartnerSet" Association="SP.SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartner">
-          <End Role="ViewFieldsPartner" EntitySet="Views" />
-          <End Role="ViewFields" EntitySet="ViewFieldCollections" />
-        </AssociationSet>
-        <AssociationSet Name="SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartnerSet" Association="SP.SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartner">
-          <End Role="AppMappedViewsPartner" EntitySet="VisualizationAppSynchronizationResults" />
-          <End Role="AppMappedViews" EntitySet="Views" />
-        </AssociationSet>
         <AssociationSet Name="SP_WebParts_LimitedWebPartManager_WebParts_SP_WebParts_WebPartDefinition_WebPartsPartnerSet" Association="SP.WebParts.SP_WebParts_LimitedWebPartManager_WebParts_SP_WebParts_WebPartDefinition_WebPartsPartner">
           <End Role="WebPartsPartner" EntitySet="LimitedWebPartManagers" />
           <End Role="WebParts" EntitySet="WebPartDefinitions" />
@@ -16271,6 +16267,14 @@
         <AssociationSet Name="SP_WebParts_WebPartDefinition_WebPart_SP_WebParts_WebPart_WebPartPartnerSet" Association="SP.WebParts.SP_WebParts_WebPartDefinition_WebPart_SP_WebParts_WebPart_WebPartPartner">
           <End Role="WebPartPartner" EntitySet="WebPartDefinitions" />
           <End Role="WebPart" EntitySet="WebParts" />
+        </AssociationSet>
+        <AssociationSet Name="SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartnerSet" Association="SP.SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartner">
+          <End Role="ViewFieldsPartner" EntitySet="Views" />
+          <End Role="ViewFields" EntitySet="ViewFieldCollections" />
+        </AssociationSet>
+        <AssociationSet Name="SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartnerSet" Association="SP.SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartner">
+          <End Role="AppMappedViewsPartner" EntitySet="VisualizationAppSynchronizationResults" />
+          <End Role="AppMappedViews" EntitySet="Views" />
         </AssociationSet>
         <AssociationSet Name="SP_WorkflowServices_InteropService_Current_SP_WorkflowServices_InteropService_CurrentPartnerSet" Association="SP.WorkflowServices.SP_WorkflowServices_InteropService_Current_SP_WorkflowServices_InteropService_CurrentPartner">
           <End Role="CurrentPartner" EntitySet="InteropServices" />
@@ -16430,6 +16434,18 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Directory.GroupNameValidationResult/IsValidName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.ColumnDef">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.ColumnDef/Id">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.ColumnDef/Name">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.ColumnDef/Type">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.PrebuiltModelInfo">
@@ -17869,6 +17885,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/DriveId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/HasTargetSitePermission">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/ID">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18071,6 +18090,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/ColumnName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/Columns">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/ColumnType">
@@ -19958,6 +19980,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/BatchUnpromote(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication), Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData))">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/CheckTenantPublishPermissions(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetByModelUniqueId(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication), Edm.Guid)">
@@ -22134,6 +22159,11 @@
       </Association>
     </Schema>
     <Schema Namespace="Microsoft.Office.Server.ContentCenter" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="ColumnDef">
+        <Property Name="Id" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Type" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="PrebuiltModelInfo">
         <Property Name="FormRecognizerApiVersion" Type="Edm.String" />
         <Property Name="FormRecognizerPrebuiltModelName" Type="Edm.String" />
@@ -22224,6 +22254,7 @@
         <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
         <Property Name="CreatedBy" Type="Edm.String" />
         <Property Name="DriveId" Type="Edm.String" />
+        <Property Name="HasTargetSitePermission" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ID" Type="Edm.Int32" Nullable="false" />
         <Property Name="ModelId" Type="Edm.Int32" Nullable="false" />
         <Property Name="ModelName" Type="Edm.String" />
@@ -22301,6 +22332,7 @@
         <Property Name="BaseContentTypeName" Type="Edm.String" />
         <Property Name="ColumnId" Type="Edm.String" />
         <Property Name="ColumnName" Type="Edm.String" />
+        <Property Name="Columns" Type="Collection(Microsoft.Office.Server.ContentCenter.ColumnDef)" />
         <Property Name="ColumnType" Type="Edm.String" />
         <Property Name="ContentTypeGroup" Type="Edm.String" />
         <Property Name="ContentTypeId" Type="Edm.String" />
@@ -29296,7 +29328,7 @@
     </Schema>
     <Schema Namespace="SP.Taxonomy.ContentTypeSync" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="ContentTypeSyndicationResult">
-        <Property Name="FailedContentTypeIDs" Type="Collection(Edm.String)" />
+        <Property Name="FailedContentTypeIDs" Type="Collection(SP.KeyValue)" />
         <Property Name="FailedReason" Type="Edm.Int32" Nullable="false" />
         <Property Name="IsPassed" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
