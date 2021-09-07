@@ -7,6 +7,7 @@ Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 BatchDelete (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)) | ✅ | ❌ | ❌ | ❌
 BatchRemove (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)) | ✅ | ❌ | ❌ | ❌
 BatchUnpromote (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)) | ✅ | ❌ | ❌ | ❌
+CheckTenantPublishPermissions (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)) | ✅ | ❌ | ❌ | ❌
 Copy (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
 CreateSite (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
 Delete (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌

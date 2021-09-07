@@ -12,6 +12,7 @@ BaseContentTypeName (Edm.String) | ✅ | ❌ | ❌ | ❌
 ColumnId (Edm.String) | ✅ | ❌ | ❌ | ❌
 ColumnName (Edm.String) | ✅ | ❌ | ❌ | ❌
 ColumnType (Edm.String) | ✅ | ❌ | ❌ | ❌
+Columns (Collection(Microsoft.Office.Server.ContentCenter.ColumnDef)) | ✅ | ❌ | ❌ | ❌
 ContentTypeGroup (Edm.String) | ✅ | ❌ | ❌ | ❌
 ContentTypeId (Edm.String) | ✅ | ❌ | ❌ | ❌
 ContentTypeName (Edm.String) | ✅ | ❌ | ❌ | ❌
