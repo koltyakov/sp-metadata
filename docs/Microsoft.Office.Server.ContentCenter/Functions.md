@@ -38,6 +38,7 @@ ImportMeta (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ 
 <span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItemEntityData">Microsoft_Office_Server_ContentCenter_SPMachineLea...</span> (Microsoft Office Server ContentCenter SPMachineLearningWorkItemEntityData) | ✅ | ❌ | ❌ | ❌
 Rename (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
 RenameExtractor (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
+SetupContractsSolution (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Office.Server.ContentCenter.SPMachineLearningSample) | ✅ | ❌ | ❌ | ❌

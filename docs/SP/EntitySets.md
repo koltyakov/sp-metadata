@@ -627,6 +627,7 @@ WorkflowSubscriptionServices | ✅ | ✅ | ✅ | ✅
 WorkflowSubscriptions | ✅ | ✅ | ✅ | ✅
 WorkflowTemplates | ✅ | ✅ | ✅ | ✅
 Workitems | ✅ | ❌ | ❌ | ❌
+XTenantMoveCompatibilityChecks | ✅ | ❌ | ❌ | ❌
 comments | ✅ | ✅ | ❌ | ❌
 likedByInformations | ✅ | ✅ | ❌ | ❌
 placesInformations | ✅ | ❌ | ❌ | ❌

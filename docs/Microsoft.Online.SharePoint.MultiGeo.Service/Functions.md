@@ -76,6 +76,7 @@ GetMoveReport (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJ
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserMoveJobEntityData">Microsoft_Online_SharePoint_MultiGeo_Service_UserM...</span> (Microsoft Online SharePoint MultiGeo Service UserMoveJobEntityData) | ✅ | ❌ | ❌ | ❌
 [<span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserPersonalSiteId">Microsoft_Online_SharePoint_MultiGeo_Service_UserP...</span> (Microsoft Online SharePoint MultiGeo Service UserPersonalSiteId)](./Functions/Microsoft_Online_SharePoint_MultiGeo_Service_UserPersonalSiteId.md) | ✅ | ❌ | ❌ | ❌
 [<span title="Microsoft_Online_SharePoint_MultiGeo_Service_UserPersonalSiteLocation">Microsoft_Online_SharePoint_MultiGeo_Service_UserP...</span> (Microsoft Online SharePoint MultiGeo Service UserPersonalSiteLocation)](./Functions/Microsoft_Online_SharePoint_MultiGeo_Service_UserPersonalSiteLocation.md) | ✅ | ❌ | ❌ | ❌
+[<span title="Microsoft_Online_SharePoint_MultiGeo_Service_XTenantMoveCompatibilityCheck">Microsoft_Online_SharePoint_MultiGeo_Service_XTena...</span> (Microsoft Online SharePoint MultiGeo Service XTenantMoveCompatibilityCheck)](./Functions/Microsoft_Online_SharePoint_MultiGeo_Service_XTenantMoveCompatibilityCheck.md) | ✅ | ❌ | ❌ | ❌
 OrgRelationGroupManagedPath (Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta) | ✅ | ❌ | ❌ | ❌
 OrgRelationNotification (Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta) | ✅ | ❌ | ❌ | ❌
 OrgRelationVerification (Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta) | ✅ | ❌ | ❌ | ❌
@@ -91,3 +92,4 @@ UpgradeAllInstancesToSPOMode (Microsoft.Online.SharePoint.MultiGeo.Service.GeoEx
 UpgradeToSPOMode (Microsoft.Online.SharePoint.MultiGeo.Service.GeoExperience) | ✅ | ❌ | ❌ | ❌
 UserPersonalSiteId (Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta) | ✅ | ❌ | ❌ | ❌
 UserPersonalSiteLocation (Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta) | ✅ | ❌ | ❌ | ❌
+XTenantMoveCompatibilityCheck (Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta) | ✅ | ❌ | ❌ | ❌

@@ -46,6 +46,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CustomizedFormsPage](./ComplexTypes/CustomizedFormsPage.md) | ✅ | ❌ | ❌ | ❌
 [CustomizedFormsPageCollection](./ComplexTypes/CustomizedFormsPageCollection.md) | ✅ | ❌ | ❌ | ❌
 [DashboardItem](./ComplexTypes/DashboardItem.md) | ✅ | ❌ | ❌ | ❌
+[DashboardItemInfo](./ComplexTypes/DashboardItemInfo.md) | ✅ | ❌ | ❌ | ❌
 [DocumentGenerationInfo](./ComplexTypes/DocumentGenerationInfo.md) | ✅ | ❌ | ❌ | ❌
 [DocumentLibraryInformation](./ComplexTypes/DocumentLibraryInformation.md) | ✅ | ✅ | ✅ | ❌
 [EncryptionOption](./ComplexTypes/EncryptionOption.md) | ✅ | ✅ | ❌ | ❌

@@ -50,3 +50,4 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [UserMoveJobEntityData](./EntityTypes/UserMoveJobEntityData.md) | ✅ | ❌ | ❌ | ❌
 [UserPersonalSiteId](./EntityTypes/UserPersonalSiteId.md) | ✅ | ❌ | ❌ | ❌
 [UserPersonalSiteLocation](./EntityTypes/UserPersonalSiteLocation.md) | ✅ | ❌ | ❌ | ❌
+[XTenantMoveCompatibilityCheck](./EntityTypes/XTenantMoveCompatibilityCheck.md) | ✅ | ❌ | ❌ | ❌
