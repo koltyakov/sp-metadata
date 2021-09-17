@@ -56,6 +56,12 @@
       <ComplexType Name="ResourcePath">
         <Property Name="DecodedUrl" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="DashboardItemInfo">
+        <Property Name="ItemId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ListId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="WebId" Type="Edm.Guid" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="DashboardItem">
         <Property Name="WebAbsolutePath" Type="SP.ResourcePath" />
       </ComplexType>
@@ -3935,6 +3941,7 @@
         <EntitySet Name="UnifiedGroups" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.UnifiedGroup" />
         <EntitySet Name="UserPersonalSiteIds" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.UserPersonalSiteId" />
         <EntitySet Name="UserPersonalSiteLocations" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.UserPersonalSiteLocation" />
+        <EntitySet Name="XTenantMoveCompatibilityChecks" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.XTenantMoveCompatibilityCheck" />
         <EntitySet Name="JobEntityDatas1" EntityType="Microsoft.Online.SharePoint.Onboarding.RestService.JobEntityData" />
         <EntitySet Name="OnboardingServicesBetas" EntityType="Microsoft.Online.SharePoint.Onboarding.RestService.OnboardingServicesBeta" />
         <EntitySet Name="SiteRenameJobEntityDatas" EntityType="Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJobEntityData" />
@@ -5164,6 +5171,10 @@
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
           <Parameter Name="packageName" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="SetupContractsSolution" ReturnType="SP.List" IsBindable="true" EntitySet="Lists">
+          <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
+          <Parameter Name="contractLibraryName" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningPublicationsEntityData" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData" IsComposable="true" EntitySet="SPMachineLearningPublicationsEntityDatas" />
         <FunctionImport Name="Delete" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication" />
@@ -5650,6 +5661,10 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
           <Parameter Name="userPrincipalName" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="XTenantMoveCompatibilityCheck" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.XTenantMoveCompatibilityCheck" IsComposable="true" IsBindable="true" EntitySet="XTenantMoveCompatibilityChecks">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
+          <Parameter Name="targetTenantHostUrl" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_OrgRelationGroupManagedPath" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationGroupManagedPath" IsComposable="true" EntitySet="OrgRelationGroupManagedPaths">
           <Parameter Name="encodedNotificationQuery" Type="Edm.String" />
         </FunctionImport>
@@ -5743,6 +5758,9 @@
         </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_UserPersonalSiteLocation" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.UserPersonalSiteLocation" IsComposable="true" EntitySet="UserPersonalSiteLocations">
           <Parameter Name="userPrincipalName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_XTenantMoveCompatibilityCheck" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.XTenantMoveCompatibilityCheck" IsComposable="true" EntitySet="XTenantMoveCompatibilityChecks">
+          <Parameter Name="targetTenantHostUrl" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="OBA_Server_ServerWrapper_Diagnostics" ReturnType="OBA.Server.ServerWrapper.Diagnostics" IsComposable="true" EntitySet="Diagnosticss" />
         <FunctionImport Name="Status" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
@@ -17069,6 +17087,9 @@
       <Annotations Target="SP.ResourcePath/DecodedUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.DashboardItemInfo">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.DashboardItem">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19962,6 +19983,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Import(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetupContractsSolution(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningPublicationsEntityData()">
@@ -22920,6 +22944,14 @@
         <Property Name="MySiteUrl" Type="Edm.String" />
         <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="UserPrincipalName" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="XTenantMoveCompatibilityCheck">
+        <Key>
+          <PropertyRef Name="SourceTenantHostUrl" />
+        </Key>
+        <Property Name="SourceTenantHostUrl" Type="Edm.String" Nullable="false" />
+        <Property Name="TargetTenantHostUrl" Type="Edm.String" />
+        <Property Name="XTenantMoveCompatibilityResult" Type="Edm.Int32" Nullable="false" />
       </EntityType>
       <Association Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_AllowedDataLocations_Microsoft_Online_SharePoint_MultiGeo_Service_AllowedDataLocation_AllowedDataLocationsPartner">
         <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocation" Role="AllowedDataLocations" Multiplicity="*" />
