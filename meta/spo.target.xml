@@ -13987,6 +13987,15 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_TenantAdministration_Tenant" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.Tenant" IsComposable="true" EntitySet="Tenants" />
+        <FunctionImport Name="AddTenantAdminListItem" ReturnType="SP.ListItem" IsBindable="true" EntitySet="ListItems">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="columnValues" Type="Collection(Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminListItemColumnValue)" />
+          <Parameter Name="listName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="AddTenantAdminListView" ReturnType="SP.View" IsBindable="true" EntitySet="Views">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="parameters" Type="SP.ViewCreationInformation" />
+        </FunctionImport>
         <FunctionImport Name="CheckTenantIntuneLicense" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
@@ -14002,6 +14011,15 @@
         <FunctionImport Name="CreateSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteCreationProperties" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCreationProperties" />
+        </FunctionImport>
+        <FunctionImport Name="GetAdminListViews" ReturnType="Collection(SP.View)" IsComposable="true" IsBindable="true" EntitySet="Views">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+        </FunctionImport>
+        <FunctionImport Name="GetFilteredSPListItems" ReturnType="Collection(SP.ListItem)" IsBindable="true" EntitySet="ListItems">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="columnName" Type="Edm.String" />
+          <Parameter Name="columnValue" Type="Edm.String" />
+          <Parameter Name="listName" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="GetIdleSessionSignOutForUnmanagedDevices" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -14022,6 +14040,10 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="speFilter" Type="Microsoft.Online.SharePoint.TenantAdministration.SPOSitePropertiesEnumerableFilter" />
         </FunctionImport>
+        <FunctionImport Name="GetSitesByState" ReturnType="Collection(SP.ListItem)" IsBindable="true" EntitySet="ListItems">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="states" Type="Collection(Edm.Int32)" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="GetSiteSecondaryAdministrators" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsInfo)" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="secondaryAdministratorsFieldsData" Type="Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData" />
@@ -14031,6 +14053,14 @@
         </FunctionImport>
         <FunctionImport Name="GetSPHSiteUrl" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+        </FunctionImport>
+        <FunctionImport Name="GetSPListItemCount" ReturnType="Edm.Int32" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="listName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetSPListRootFolderProperties" ReturnType="SP.PropertyValues" IsBindable="true" EntitySet="PropertyValuess">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="listName" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="GetSPOAllWebTemplates" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection" IsComposable="true" IsBindable="true" EntitySet="SPOTenantWebTemplateCollections">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -14051,6 +14081,11 @@
         <FunctionImport Name="GetTenantAllOrCompatibleIBSegments" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.IBSegmentInfo)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="segments" Type="Collection(Edm.Guid)" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetViewByDisplayName" ReturnType="SP.View" IsBindable="true" EntitySet="Views">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="viewName" Type="Edm.String" />
+          <Parameter Name="listName" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="GrantHubSiteRightsById" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties" IsBindable="true" EntitySet="HubSitePropertiess">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -14085,6 +14120,26 @@
         </FunctionImport>
         <FunctionImport Name="RemoveSPHSite" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+        </FunctionImport>
+        <FunctionImport Name="RemoveSPListItem" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="listItemId" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="listName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="RemoveTenantAdminListView" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="viewId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="RenderAdminListData" ReturnType="Edm.Stream" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="parameters" Type="SP.RenderListDataParameters" />
+          <Parameter Name="overrideParameters" Type="SP.RenderListDataOverrideParameters" />
+          <Parameter Name="listName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="RenderFilteredAdminListData" ReturnType="Edm.Stream" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="parameters" Type="SP.RenderListFilterDataParameters" />
+          <Parameter Name="listName" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="RenderIBSegmentListDataAsStream" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -14238,6 +14293,11 @@
           <Parameter Name="hubSiteId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="principals" Type="Collection(Edm.String)" />
         </FunctionImport>
+        <FunctionImport Name="SetDefaultView" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="viewId" Type="Edm.String" />
+          <Parameter Name="listName" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="SetIBSegmentsOnSite" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
@@ -14289,6 +14349,17 @@
         </FunctionImport>
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+        </FunctionImport>
+        <FunctionImport Name="UpdateTenantAdminListItem" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="listItemId" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="columnValues" Type="Collection(Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminListItemColumnValue)" />
+          <Parameter Name="listName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="UpdateTenantAdminListView" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="viewId" Type="Edm.String" />
+          <Parameter Name="viewXml" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Add" IsBindable="true">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.Internal.SPO3rdPartyAADPermissionGrant)" />
@@ -28403,6 +28474,12 @@
         <End Type="Microsoft.SharePoint.Administration.SPWebApplication" Role="WebApplications" Multiplicity="*" />
         <End Type="Microsoft.SharePoint.Administration.SPWebService" Role="WebApplicationsPartner" Multiplicity="0..1" />
       </Association>
+    </Schema>
+    <Schema Namespace="Microsoft.SharePoint.Administration.TenantAdmin" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="TenantAdminListItemColumnValue">
+        <Property Name="columnName" Type="Edm.String" />
+        <Property Name="columnValue" Type="Edm.String" />
+      </ComplexType>
     </Schema>
     <Schema Namespace="SP.SiteHealth" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="SiteHealthResult">
