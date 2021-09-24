@@ -73,6 +73,7 @@ GuestSharingGroupAllowList (Edm.String) | ✅ | ❌ | ❌ | ❌
 HasAdminCompletedCUConfiguration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HideSyncButtonOnDocLib (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HideSyncButtonOnODB (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+IBImplicitGroupBased (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IPAddressAllowList (Edm.String) | ✅ | ❌ | ❌ | ❌
 IPAddressEnforcement (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IPAddressWACTokenLifetime (Edm.Int32) | ✅ | ❌ | ❌ | ❌

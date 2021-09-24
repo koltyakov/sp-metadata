@@ -87,6 +87,7 @@ HasTopicExperiencesCapability (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HideDefaultThemes (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HideSyncButtonOnDocLib (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HideSyncButtonOnODB (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+IBImplicitGroupBased (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IPAddressAllowList (Edm.String) | ✅ | ❌ | ❌ | ❌
 IPAddressEnforcement (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IPAddressWACTokenLifetime (Edm.Int32) | ✅ | ❌ | ❌ | ❌
