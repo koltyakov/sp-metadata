@@ -3946,7 +3946,6 @@
         <EntitySet Name="OnboardingServicesBetas" EntityType="Microsoft.Online.SharePoint.Onboarding.RestService.OnboardingServicesBeta" />
         <EntitySet Name="SiteRenameJobEntityDatas" EntityType="Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJobEntityData" />
         <EntitySet Name="TenantRenameJobEntityDatas" EntityType="Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJobEntityData" />
-        <EntitySet Name="PointPublishingAdmins" EntityType="Microsoft.Online.SharePoint.PointPublishing.PointPublishingAdmin" />
         <EntitySet Name="LogExports" EntityType="Microsoft.Online.SharePoint.SPLogger.LogExport" />
         <EntitySet Name="LogFileInfos" EntityType="Microsoft.Online.SharePoint.SPLogger.LogFileInfo" />
         <EntitySet Name="DDIAdapters" EntityType="Microsoft.Online.SharePoint.TenantAdmin.MiddleTier.DDIAdapter" />
@@ -14450,18 +14449,6 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.SPLogger.LogExport" />
           <Parameter Name="logType" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="Microsoft_Online_SharePoint_PointPublishing_PointPublishingAdmin" ReturnType="Microsoft.Online.SharePoint.PointPublishing.PointPublishingAdmin" IsComposable="true" EntitySet="PointPublishingAdmins" />
-        <FunctionImport Name="CreateTopicMagazine" ReturnType="Edm.Guid" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.Online.SharePoint.PointPublishing.PointPublishingAdmin" />
-          <Parameter Name="magazineName" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="DeleteTopicMagazine" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.Online.SharePoint.PointPublishing.PointPublishingAdmin" />
-          <Parameter Name="magazineId" Type="Edm.Guid" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="ProvisionPointPublishingAsync" ReturnType="Edm.Guid" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.Online.SharePoint.PointPublishing.PointPublishingAdmin" />
-        </FunctionImport>
         <FunctionImport Name="CreateByName" ReturnType="Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroup" IsBindable="true" EntitySet="AgentGroupEntitys">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroup)" />
           <Parameter Name="Name" Type="Edm.String" />
@@ -16650,6 +16637,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.SitePageFieldsData/BannerImageUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.SitePageFieldsData/CallToAction">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.SitePageFieldsData/CanvasContent1">
@@ -19019,6 +19009,9 @@
       <Annotations Target="SP.Publishing.SitePageMetadata/BannerThumbnailUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.SitePageMetadata/CallToAction">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.SitePageMetadata/Categories">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19989,9 +19982,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipal/ServicePrincipalObjectIds">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.Online.SharePoint.PointPublishing.PointPublishingAdmin">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/JoinGroup(SP.Directory.DirectorySession, Edm.Guid)">
@@ -26028,6 +26018,7 @@
       <ComplexType Name="SitePageFieldsData">
         <Property Name="AuthorByline" Type="Collection(Edm.String)" />
         <Property Name="BannerImageUrl" Type="Edm.String" />
+        <Property Name="CallToAction" Type="Edm.String" />
         <Property Name="CanvasContent1" Type="Edm.String" />
         <Property Name="CanvasJson1" Type="Edm.String" />
         <Property Name="Categories" Type="Edm.String" />
@@ -26370,6 +26361,7 @@
         <Property Name="AuthorByline" Type="Collection(Edm.String)" />
         <Property Name="BannerImageUrl" Type="Edm.String" />
         <Property Name="BannerThumbnailUrl" Type="Edm.String" />
+        <Property Name="CallToAction" Type="Edm.String" />
         <Property Name="Categories" Type="Edm.String" />
         <Property Name="CommentCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="CommentsDisabled" Type="Edm.Boolean" Nullable="false" />
@@ -27783,6 +27775,7 @@
         <Property Name="RequiresYammerConnected" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SiteScriptIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="SupportedWebTemplates" Type="Collection(Edm.String)" />
+        <Property Name="TargetPlatforms" Type="Collection(Edm.String)" />
         <Property Name="TemplateFeatures" Type="Collection(Edm.String)" />
         <Property Name="ThumbnailUrl" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
@@ -29880,6 +29873,7 @@
         <Property Name="AllowSelectSGsInODBListInTenant" Type="Collection(Edm.String)" />
         <Property Name="AnyoneLinkTrackUsers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ApplyAppEnforcedRestrictionsToAdHocRecipients" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AuthContextResilienceMode" Type="Edm.Int32" Nullable="false" />
         <Property Name="BccExternalSharingInvitations" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BccExternalSharingInvitationsList" Type="Edm.String" />
         <Property Name="BlockAccessOnUnmanagedDevices" Type="Edm.Boolean" Nullable="false" />
@@ -31519,7 +31513,10 @@
         <Property Name="listId" Type="Edm.Guid" Nullable="false" />
         <Property Name="operation" Type="Edm.Int32" Nullable="false" />
         <Property Name="pinOrder" Type="Edm.Int64" />
+        <Property Name="siteAcronym" Type="Edm.String" />
+        <Property Name="siteColor" Type="Edm.String" />
         <Property Name="siteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="siteLogoUrl" Type="Edm.String" />
         <Property Name="spoId" Type="Edm.String" />
         <Property Name="title" Type="Edm.String" />
         <Property Name="uniqueId" Type="Edm.Guid" Nullable="false" />
@@ -31679,6 +31676,7 @@
         <Property Name="AllowSelectSGsInODBList" Type="Collection(Edm.String)" />
         <Property Name="AnyoneLinkTrackUsers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ApplyAppEnforcedRestrictionsToAdHocRecipients" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AuthContextResilienceMode" Type="Edm.Int32" Nullable="false" />
         <Property Name="BccExternalSharingInvitations" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BccExternalSharingInvitationsList" Type="Edm.String" />
         <Property Name="BlockAccessOnUnmanagedDevices" Type="Edm.Boolean" Nullable="false" />
@@ -31908,14 +31906,6 @@
         <Property Name="Exception" Type="Edm.String" />
         <Property Name="FileName" Type="Edm.String" />
         <Property Name="Url" Type="Edm.String" />
-      </EntityType>
-    </Schema>
-    <Schema Namespace="Microsoft.Online.SharePoint.PointPublishing" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-      <EntityType Name="PointPublishingAdmin">
-        <Key>
-          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
-        </Key>
-        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
     </Schema>
     <Schema Namespace="Microsoft.Online.SharePoint.MigrationCenter.Common.Teams" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
