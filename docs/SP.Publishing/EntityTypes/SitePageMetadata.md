@@ -11,6 +11,7 @@ AssetFolderId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 AuthorByline (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 BannerImageUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 BannerThumbnailUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+CallToAction (Edm.String) | ✅ | ❌ | ❌ | ❌
 Categories (Edm.String) | ✅ | ❌ | ❌ | ❌
 CommentCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CommentsDisabled (Edm.Boolean) | ✅ | ✅ | ❌ | ❌

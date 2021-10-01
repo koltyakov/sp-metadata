@@ -22,6 +22,7 @@ AllowSelectSGsInODBList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 AllowedDomainListForSyncClient (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 AnyoneLinkTrackUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ApplyAppEnforcedRestrictionsToAdHocRecipients (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+AuthContextResilienceMode (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 BccExternalSharingInvitations (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BccExternalSharingInvitationsList (Edm.String) | ✅ | ❌ | ❌ | ❌
 BlockAccessOnUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

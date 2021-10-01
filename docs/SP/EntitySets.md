@@ -309,7 +309,6 @@ PinnedItemss | ✅ | ❌ | ❌ | ❌
 PlacesEntitys | ✅ | ❌ | ❌ | ❌
 PlanAssignmentIntervals | ✅ | ✅ | ✅ | ❌
 PlanAssignments | ✅ | ✅ | ✅ | ❌
-PointPublishingAdmins | ✅ | ❌ | ❌ | ❌
 PointPublishingDocPropss | ✅ | ❌ | ❌ | ❌
 PointPublishingMagazinePropss | ✅ | ❌ | ❌ | ❌
 PointPublishingPostServiceManagers | ✅ | ❌ | ❌ | ❌

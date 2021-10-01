@@ -13,7 +13,10 @@ lastAccessDateTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 listId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 operation (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 pinOrder (Edm.Int64) | ✅ | ❌ | ❌ | ❌
+siteAcronym (Edm.String) | ✅ | ❌ | ❌ | ❌
+siteColor (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+siteLogoUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 spoId (Edm.String) | ✅ | ❌ | ❌ | ❌
 title (Edm.String) | ✅ | ❌ | ❌ | ❌
 uniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

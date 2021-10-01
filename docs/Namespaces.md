@@ -21,7 +21,6 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.Online.SharePoint.Onboarding.RestService](./Microsoft.Online.SharePoint.Onboarding.RestService) | ✅ | ❌ | ❌ | ❌
 [Microsoft.Online.SharePoint.Onboarding.RestService.Service](./Microsoft.Online.SharePoint.Onboarding.RestService.Service) | ✅ | ❌ | ❌ | ❌
 [Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename](./Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename) | ✅ | ❌ | ❌ | ❌
-[Microsoft.Online.SharePoint.PointPublishing](./Microsoft.Online.SharePoint.PointPublishing) | ✅ | ❌ | ❌ | ❌
 [Microsoft.Online.SharePoint.SPLogger](./Microsoft.Online.SharePoint.SPLogger) | ✅ | ❌ | ❌ | ❌
 [Microsoft.Online.SharePoint.TenantAdmin.MiddleTier](./Microsoft.Online.SharePoint.TenantAdmin.MiddleTier) | ✅ | ❌ | ❌ | ❌
 [Microsoft.Online.SharePoint.TenantAdministration](./Microsoft.Online.SharePoint.TenantAdministration) | ✅ | ❌ | ❌ | ❌
