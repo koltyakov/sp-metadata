@@ -118,6 +118,7 @@
       </ComplexType>
       <ComplexType Name="CurrencyInformation">
         <Property Name="DisplayString" Type="Edm.String" />
+        <Property Name="LanguageCultureName" Type="Edm.String" />
         <Property Name="LCID" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="CustomizedFormsPageCollection">
@@ -667,7 +668,9 @@
         <Property Name="MediaServiceEventHashCode" Type="Edm.String" />
         <Property Name="MediaServiceFastMetadata" Type="Edm.String" />
         <Property Name="MediaServiceGenerationTime" Type="Edm.String" />
+        <Property Name="MediaServiceImageHeight" Type="Edm.Int32" />
         <Property Name="MediaServiceImageTags" Type="Edm.String" />
+        <Property Name="MediaServiceImageWidth" Type="Edm.Int32" />
         <Property Name="MediaServiceKeyPoints" Type="Edm.String" />
         <Property Name="MediaServiceLocation" Type="Edm.String" />
         <Property Name="MediaServiceMetadata" Type="Edm.String" />
@@ -5173,6 +5176,7 @@
         <FunctionImport Name="SetupContractsSolution" ReturnType="SP.List" IsBindable="true" EntitySet="Lists">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
           <Parameter Name="contractLibraryName" Type="Edm.String" />
+          <Parameter Name="packageName" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningPublicationsEntityData" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData" IsComposable="true" EntitySet="SPMachineLearningPublicationsEntityDatas" />
         <FunctionImport Name="Delete" IsBindable="true">
@@ -19708,6 +19712,9 @@
       <Annotations Target="SP.Sharing.SharingInformation/siteIBSegmentIDs">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Sharing.SharingInformation/userPhotoCdnBaseUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Sharing.SecurableObjectExtensions">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20047,7 +20054,7 @@
       <Annotations Target="SP.ApiData/Import(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SetupContractsSolution(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String)">
+      <Annotations Target="SP.ApiData/SetupContractsSolution(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningPublicationsEntityData()">
@@ -23292,9 +23299,10 @@
       </EntityType>
       <EntityType Name="PersonalCache">
         <Key>
-          <PropertyRef Name="MySiteUrl" />
+          <PropertyRef Name="CacheName" />
         </Key>
-        <Property Name="MySiteUrl" Type="Edm.String" Nullable="false" />
+        <Property Name="CacheName" Type="Edm.String" Nullable="false" />
+        <Property Name="MySiteUrl" Type="Edm.String" />
       </EntityType>
       <EntityType Name="PersonProperties">
         <Key>
@@ -28846,6 +28854,7 @@
         <Property Name="siteIBMode" Type="Edm.String" />
         <Property Name="siteIBSegmentIDs" Type="Collection(Edm.String)" />
         <Property Name="userIsSharingViaMCS" Type="Edm.String" />
+        <Property Name="userPhotoCdnBaseUrl" Type="Edm.String" />
         <Property Name="webTemplateId" Type="Edm.Int32" Nullable="false" />
         <Property Name="webUrl" Type="Edm.String" />
         <NavigationProperty Name="pickerSettings" Relationship="SP.SP_Sharing_SharingInformation_pickerSettings_SP_PickerSettings_pickerSettingsPartner" ToRole="pickerSettings" FromRole="pickerSettingsPartner" />
@@ -29436,7 +29445,8 @@
     </Schema>
     <Schema Namespace="SP.Taxonomy.ContentTypeSync" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="ContentTypeSyndicationResult">
-        <Property Name="FailedContentTypeIDs" Type="Collection(SP.KeyValue)" />
+        <Property Name="FailedContentTypeErrors" Type="Collection(Edm.String)" />
+        <Property Name="FailedContentTypeIDs" Type="Collection(Edm.String)" />
         <Property Name="FailedReason" Type="Edm.Int32" Nullable="false" />
         <Property Name="IsPassed" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
@@ -29905,6 +29915,7 @@
         <Property Name="DisableCustomAppAuthentication" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisabledModernListTemplateIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="DisabledWebPartIds" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="DisableListSync" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableOutlookPSTVersionTrimming" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisablePersonalListCreation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableReportProblemDialog" Type="Edm.Boolean" Nullable="false" />
@@ -30011,6 +30022,7 @@
         <Property Name="StorageQuotaAllocated" Type="Edm.Int64" Nullable="false" />
         <Property Name="StreamLaunchConfig" Type="Edm.Int32" Nullable="false" />
         <Property Name="StreamLaunchConfigLastUpdated" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="StreamLaunchConfigUpdateCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="SyncAadB2BManagementPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyncPrivacyProfileProperties" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UseFindPeopleInPeoplePicker" Type="Edm.Boolean" Nullable="false" />
@@ -31705,6 +31717,7 @@
         <Property Name="DisableBackToClassic" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableCustomAppAuthentication" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisabledModernListTemplateIds" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="DisableListSync" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableOutlookPSTVersionTrimming" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisablePersonalListCreation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableSpacesActivation" Type="Edm.Boolean" Nullable="false" />
@@ -31777,6 +31790,7 @@
         <Property Name="StopNew2013Workflows" Type="Edm.Boolean" Nullable="false" />
         <Property Name="StreamLaunchConfig" Type="Edm.Int32" Nullable="false" />
         <Property Name="StreamLaunchConfigLastUpdated" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="StreamLaunchConfigUpdateCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="SyncAadB2BManagementPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyncPrivacyProfileProperties" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UseFindPeopleInPeoplePicker" Type="Edm.Boolean" Nullable="false" />
