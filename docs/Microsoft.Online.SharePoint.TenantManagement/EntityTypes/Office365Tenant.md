@@ -50,6 +50,7 @@ DefaultSharingLinkType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DisableAddToOneDrive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableBackToClassic (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableCustomAppAuthentication (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+DisableListSync (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableOutlookPSTVersionTrimming (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisablePersonalListCreation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableSpacesActivation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -123,6 +124,7 @@ StopNew2010Workflows (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 StopNew2013Workflows (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 StreamLaunchConfig (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 StreamLaunchConfigLastUpdated (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
+StreamLaunchConfigUpdateCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SyncAadB2BManagementPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyncPrivacyProfileProperties (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UseFindPeopleInPeoplePicker (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

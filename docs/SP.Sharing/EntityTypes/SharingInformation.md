@@ -42,6 +42,7 @@ showExternalSharingWarning (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 siteIBMode (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteIBSegmentIDs (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 userIsSharingViaMCS (Edm.String) | ✅ | ❌ | ❌ | ❌
+userPhotoCdnBaseUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 webTemplateId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 webUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 

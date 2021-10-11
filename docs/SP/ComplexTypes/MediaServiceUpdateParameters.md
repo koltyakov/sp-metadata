@@ -17,7 +17,9 @@ MediaServiceDateTaken (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceEventHashCode (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceFastMetadata (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceGenerationTime (Edm.String) | ✅ | ❌ | ❌ | ❌
+MediaServiceImageHeight (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MediaServiceImageTags (Edm.String) | ✅ | ❌ | ❌ | ❌
+MediaServiceImageWidth (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MediaServiceKeyPoints (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceLocation (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceMetadata (Edm.String) | ✅ | ❌ | ❌ | ❌
