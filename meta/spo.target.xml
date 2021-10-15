@@ -2977,6 +2977,12 @@
         <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="WebId" Type="Edm.Guid" Nullable="false" />
       </EntityType>
+      <EntityType Name="UserExperienceState">
+        <Key>
+          <PropertyRef Name="Flags" />
+        </Key>
+        <Property Name="Flags" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
       <EntityType Name="VisualizationAppSynchronizationResult">
         <Key>
           <PropertyRef Name="SynchronizationData" />
@@ -4339,6 +4345,7 @@
         <EntitySet Name="PickerEntityInformations" EntityType="SP.UI.ApplicationPages.PickerEntityInformation" />
         <EntitySet Name="Users1" EntityType="SP.User" />
         <EntitySet Name="UserCustomActions" EntityType="SP.UserCustomAction" />
+        <EntitySet Name="UserExperienceStates" EntityType="SP.UserExperienceState" />
         <EntitySet Name="CrossGeoSyncs" EntityType="SP.UserProfiles.CrossGeoSync" />
         <EntitySet Name="FollowedContents" EntityType="SP.UserProfiles.FollowedContent" />
         <EntitySet Name="FollowedItemDatas" EntityType="SP.UserProfiles.FollowedItemData" />
@@ -9025,6 +9032,10 @@
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
           <Parameter Name="teamId" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="GetTeamChannelsWithSiteUrl" ReturnType="Microsoft.SharePoint.Portal.ChannelInfoCollection" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
+          <Parameter Name="siteUrl" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="GetUserSharedChannelMemberGroups" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
           <Parameter Name="userName" Type="Edm.String" />
@@ -9455,7 +9466,7 @@
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplyListDesign" ReturnType="Collection(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptActionResult)">
           <Parameter Name="listDesignId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="store" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="runtimeParameters" Type="Collection(SP.KeyValue)" />
+          <Parameter Name="runtimeParameters" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplySiteDesign" ReturnType="Collection(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptActionResult)">
           <Parameter Name="webUrl" Type="Edm.String" />
@@ -10256,9 +10267,6 @@
           <Parameter Name="this" Type="SP.List" />
         </FunctionImport>
         <FunctionImport Name="GetBusinessAppOperationStatus" ReturnType="Edm.Int32" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="SP.List" />
-        </FunctionImport>
-        <FunctionImport Name="GetCAAESmartTemplateContentTypes" ReturnType="Collection(SP.SmartTemplateContentType)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
         </FunctionImport>
         <FunctionImport Name="GetCAAETemplateMetadata" ReturnType="SP.TemplateMetaData" IsSideEffecting="false" IsBindable="true">
@@ -13158,6 +13166,7 @@
           <Parameter Name="this" Type="SP.Site" />
           <Parameter Name="propertyValue" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="forceDocLibActivation" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="deleteIfDocLibAlreadyExists" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="UnregisterHubSite" IsBindable="true">
           <Parameter Name="this" Type="SP.Site" />
@@ -13268,6 +13277,12 @@
         </FunctionImport>
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.UserCustomAction" />
+        </FunctionImport>
+        <FunctionImport Name="SP_UserExperienceState" ReturnType="SP.UserExperienceState" IsComposable="true" EntitySet="UserExperienceStates" />
+        <FunctionImport Name="SetFlag" IsBindable="true">
+          <Parameter Name="this" Type="SP.UserExperienceState" />
+          <Parameter Name="flag" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="reset" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetResourceEntries" ReturnType="Collection(SP.SPResourceEntry)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.UserResource" />
@@ -14353,6 +14368,13 @@
         </FunctionImport>
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+        </FunctionImport>
+        <FunctionImport Name="UpdateGroupSiteProperties" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="groupId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="updateType" Type="Edm.String" />
+          <Parameter Name="parameters" Type="Microsoft.Online.SharePoint.TenantAdministration.UpdateGroupSitePropertiesParameters" />
         </FunctionImport>
         <FunctionImport Name="UpdateTenantAdminListItem" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -19628,6 +19650,12 @@
       <Annotations Target="SP.SharingUtility">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.UserExperienceState">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.UserExperienceState/Flags">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.VisualizationAppSynchronizationResult">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20744,6 +20772,9 @@
       <Annotations Target="SP.ApiData/GetTeamChannelsEx(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetTeamChannelsWithSiteUrl(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetUserSharedChannelMemberGroups(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20870,7 +20901,7 @@
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplyImplicitSiteDesign()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplyListDesign(Edm.Guid, Edm.Int32, Collection(SP.KeyValue))">
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplyListDesign(Edm.Guid, Edm.Int32, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ApplySiteDesign(Edm.String, Edm.Guid, Edm.Int32)">
@@ -21834,6 +21865,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetId(SP.TimeZone, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_UserExperienceState()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetFlag(SP.UserExperienceState, Edm.Int32, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetResourceEntries(SP.UserResource)">
@@ -26852,6 +26889,7 @@
       <ComplexType Name="PageDiagnosticsResult">
         <Property Name="CreatedDate" Type="Edm.DateTime" Nullable="false" />
         <Property Name="PageDetails" Type="Microsoft.SharePoint.Publishing.Diagnostics.PageDetails" />
+        <Property Name="ResultStatus" Type="Edm.Int32" Nullable="false" />
         <Property Name="suggestions" Type="Collection(SP.Publishing.RuleResult)" />
         <Property Name="Score" Type="Edm.Int32" Nullable="false" />
         <Property Name="ToolDetails" Type="Microsoft.SharePoint.Publishing.Diagnostics.ToolDetails" />
@@ -29655,6 +29693,10 @@
       <ComplexType Name="TenantDefaultTimeZoneId">
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="UpdateGroupSitePropertiesParameters">
+        <Property Name="storageMaximumLevel" Type="Edm.Int64" Nullable="false" />
+        <Property Name="storageWarningLevel" Type="Edm.Int64" Nullable="false" />
       </ComplexType>
       <ComplexType Name="UserVoiceForFeedbackEnabled">
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
