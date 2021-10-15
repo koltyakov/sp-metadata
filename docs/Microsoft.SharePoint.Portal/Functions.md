@@ -38,6 +38,7 @@ GetTeamChannelFilesUrl (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | �
 GetTeamChannelSiteOwner (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
 GetTeamChannels (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetTeamChannelsEx (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
+GetTeamChannelsWithSiteUrl (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetUserSharedChannelMemberGroups (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetUserTeamConnectedMemberGroups (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetValidSiteUrlFromAlias (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ❌ | ❌

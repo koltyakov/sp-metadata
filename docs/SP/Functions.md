@@ -266,7 +266,6 @@ GetByType (Collection(SP.RoleDefinition)) | ✅ | ✅ | ✅ | ✅
 GetByUrl (Collection(SP.File)) | ✅ | ✅ | ✅ | ✅
 GetByUrl (Collection(SP.Folder)) | ✅ | ✅ | ✅ | ✅
 GetByUrlOrAddStub (Collection(SP.File)) | ✅ | ✅ | ✅ | ❌
-GetCAAESmartTemplateContentTypes (SP.List) | ✅ | ❌ | ❌ | ❌
 GetCAAETemplateMetadata (SP.List) | ✅ | ❌ | ❌ | ❌
 GetCatalog (SP.Site) | ✅ | ✅ | ✅ | ✅
 GetCatalog (SP.Web) | ✅ | ✅ | ✅ | ✅
@@ -611,6 +610,7 @@ SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌
 [SP_TeamChannelManager_SaveConversations](./Functions/SP_TeamChannelManager_SaveConversations.md) | ✅ | ❌ | ❌ | ❌
 SP_TeamChannelManager_SyncTeamSiteSettings | ✅ | ❌ | ❌ | ❌
 SP_TenantSettings_Current | ✅ | ✅ | ✅ | ✅
+SP_UserExperienceState | ✅ | ❌ | ❌ | ❌
 [SP_WebProxy_Invoke](./Functions/SP_WebProxy_Invoke.md) | ✅ | ✅ | ✅ | ✅
 [SP_Web_CreateAnonymousLink](./Functions/SP_Web_CreateAnonymousLink.md) | ✅ | ✅ | ✅ | ❌
 [SP_Web_CreateAnonymousLinkWithExpiration](./Functions/SP_Web_CreateAnonymousLinkWithExpiration.md) | ✅ | ✅ | ✅ | ❌
@@ -646,6 +646,7 @@ SetDefaultNewPageTemplateId (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetExemptFromBlockDownloadOfNonViewableFiles (SP.List) | ✅ | ✅ | ❌ | ❌
 SetExpirationDate (SP.File) | ✅ | ❌ | ❌ | ❌
 SetFileUserValue (SP.File) | ✅ | ❌ | ❌ | ❌
+SetFlag (SP.UserExperienceState) | ✅ | ❌ | ❌ | ❌
 SetGlobalNavSettings (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetId (SP.TimeZone) | ✅ | ❌ | ❌ | ❌
 <span title="SetIsContributorOwnerEnabledPropertyForDefaultDocLib (SP.Site)">SetIsContributorOwnerEnabledPropertyForDefaultDocL...</span> | ✅ | ❌ | ❌ | ❌

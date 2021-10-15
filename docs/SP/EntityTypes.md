@@ -157,6 +157,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [TypeInformation](./EntityTypes/TypeInformation.md) | ✅ | ✅ | ✅ | ✅
 [User](./EntityTypes/User.md) | ✅ | ✅ | ✅ | ✅
 [UserCustomAction](./EntityTypes/UserCustomAction.md) | ✅ | ✅ | ✅ | ✅
+[UserExperienceState](./EntityTypes/UserExperienceState.md) | ✅ | ❌ | ❌ | ❌
 [UserResource](./EntityTypes/UserResource.md) | ✅ | ✅ | ✅ | ❌
 [UserSolution](./EntityTypes/UserSolution.md) | ✅ | ❌ | ❌ | ❌
 [View](./EntityTypes/View.md) | ✅ | ✅ | ✅ | ✅

@@ -10,5 +10,5 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 listDesignId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-runtimeParameters (Collection(SP.KeyValue)) | ✅ | ❌ | ❌ | ❌
+runtimeParameters (Edm.String) | ✅ | ❌ | ❌ | ❌
 store (Edm.Int32) | ✅ | ❌ | ❌ | ❌

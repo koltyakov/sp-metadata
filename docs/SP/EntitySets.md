@@ -572,6 +572,7 @@ UrlParseResults | ✅ | ❌ | ❌ | ❌
 UsageAnalyticss | ❌ | ❌ | ❌ | ✅
 UserActionAPIs | ✅ | ✅ | ❌ | ❌
 UserCustomActions | ✅ | ✅ | ✅ | ✅
+UserExperienceStates | ✅ | ❌ | ❌ | ❌
 UserInfos | ✅ | ✅ | ❌ | ❌
 UserMoveJobEntityDatas | ✅ | ❌ | ❌ | ❌
 UserOrderedSessionManagers | ✅ | ✅ | ✅ | ✅

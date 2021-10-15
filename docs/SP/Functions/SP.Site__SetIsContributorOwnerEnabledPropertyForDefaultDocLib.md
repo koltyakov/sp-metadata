@@ -10,5 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+deleteIfDocLibAlreadyExists (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 forceDocLibActivation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 propertyValue (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
