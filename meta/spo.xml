@@ -3890,6 +3890,7 @@
         <EntitySet Name="ConnectionSettingss" EntityType="Microsoft.BusinessData.Infrastructure.SecureStore.ConnectionSettings" />
         <EntitySet Name="TargetApplications" EntityType="Microsoft.Office.SecureStoreService.Server.TargetApplication" />
         <EntitySet Name="TargetApplicationFields" EntityType="Microsoft.Office.SecureStoreService.Server.TargetApplicationField" />
+        <EntitySet Name="SyntexModelsLandingInfos" EntityType="Microsoft.Office.Server.ContentCenter.SyntexModelsLandingInfo" />
         <EntitySet Name="SPMachineLearningEnableds" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled" />
         <EntitySet Name="SPMachineLearningModelEntityDatas" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData" />
         <EntitySet Name="SPMachineLearningPublicationsEntityDatas" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData" />
@@ -3897,7 +3898,6 @@
         <EntitySet Name="SPMachineLearningSamples" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample" />
         <EntitySet Name="SPMachineLearningSampleEntityDatas" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningSampleEntityData" />
         <EntitySet Name="SPMachineLearningWorkItemEntityDatas" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData" />
-        <EntitySet Name="SyntexModelsLandingInfos" EntityType="Microsoft.Office.Server.ContentCenter.SyntexModelsLandingInfo" />
         <EntitySet Name="Reputations" EntityType="Microsoft.Office.Server.ReputationModel.Reputation" />
         <EntitySet Name="SearchServices" EntityType="Microsoft.Office.Server.Search.REST.SearchService" />
         <EntitySet Name="SearchSettings" EntityType="Microsoft.Office.Server.Search.REST.SearchSetting" />
@@ -4013,6 +4013,7 @@
         <EntitySet Name="comments" EntityType="Microsoft.SharePoint.Comments.comment" />
         <EntitySet Name="CommentsAPIs" EntityType="Microsoft.SharePoint.Comments.CommentsAPI" />
         <EntitySet Name="SPFlights" EntityType="Microsoft.SharePoint.Flighting.Runtime.SPFlight" />
+        <EntitySet Name="WacApis" EntityType="Microsoft.SharePoint.Yammer.WacApi" />
         <EntitySet Name="ActivityLoggers" EntityType="Microsoft.SharePoint.Internal.ActivityLogger" />
         <EntitySet Name="Tokens" EntityType="Microsoft.SharePoint.Internal.ClientSideComponent.Token" />
         <EntitySet Name="TrackedItemServices" EntityType="Microsoft.SharePoint.Internal.TrackedItemService" />
@@ -4058,7 +4059,6 @@
         <EntitySet Name="ModuleLinks" EntityType="Microsoft.SharePoint.WebControls.ModuleLink" />
         <EntitySet Name="ResourceManifestInformations" EntityType="Microsoft.SharePoint.WebControls.ResourceManifestInformation" />
         <EntitySet Name="Subscriptions" EntityType="Microsoft.SharePoint.Webhooks.Subscription" />
-        <EntitySet Name="WacApis" EntityType="Microsoft.SharePoint.Yammer.WacApi" />
         <EntitySet Name="Files1" EntityType="MS.FileServices.File" />
         <EntitySet Name="FileServices" EntityType="MS.FileServices.FileService" />
         <EntitySet Name="Folders" EntityType="MS.FileServices.Folder" />
@@ -4334,13 +4334,13 @@
         <EntitySet Name="TenantSettingss" EntityType="SP.TenantSettings" />
         <EntitySet Name="ThemeInfos" EntityType="SP.ThemeInfo" />
         <EntitySet Name="TimeZones" EntityType="SP.TimeZone" />
+        <EntitySet Name="TypeInformations" EntityType="SP.TypeInformation" />
         <EntitySet Name="SyncTranslators" EntityType="SP.Translation.SyncTranslator" />
         <EntitySet Name="TranslationJobs" EntityType="SP.Translation.TranslationJob" />
         <EntitySet Name="TranslationJobStatuss" EntityType="SP.Translation.TranslationJobStatus" />
         <EntitySet Name="VariationsTranslationTimerJobs" EntityType="SP.Translation.VariationsTranslationTimerJob" />
         <EntitySet Name="TranslationNotificationRecipientUserss" EntityType="SP.TranslationNotificationRecipientUsers" />
         <EntitySet Name="TranslationStatusCollections" EntityType="SP.TranslationStatusCollection" />
-        <EntitySet Name="TypeInformations" EntityType="SP.TypeInformation" />
         <EntitySet Name="ClientPeoplePickerWebServiceInterfaces" EntityType="SP.UI.ApplicationPages.ClientPeoplePickerWebServiceInterface" />
         <EntitySet Name="PickerEntityInformations" EntityType="SP.UI.ApplicationPages.PickerEntityInformation" />
         <EntitySet Name="Users1" EntityType="SP.User" />
@@ -28854,7 +28854,7 @@
       </EntityType>
       <EntityType Name="SharingInformation">
         <Key>
-          <PropertyRef Name="anonymousLinkExpirationRestrictionDays" />
+          <PropertyRef Name="anyoneLinkTrackUsers" />
         </Key>
         <Property Name="accessRequestSettings" Type="SP.Sharing.AccessRequestSettings" />
         <Property Name="addressBarLinkSettings" Type="SP.Sharing.AddressBarLinkSettings" />
