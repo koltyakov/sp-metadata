@@ -26,6 +26,7 @@ AddField (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
 AddItem (SP.List) | ✅ | ✅ | ✅ | ✅
 AddItemUsingPath (SP.List) | ✅ | ✅ | ❌ | ❌
 AddOrUpdateSiteReference (SP.KnowledgeHub) | ✅ | ❌ | ❌ | ❌
+AddPlaceholderUser (SP.Web) | ✅ | ❌ | ❌ | ❌
 AddRoleAssignment (Collection(SP.RoleAssignment)) | ✅ | ✅ | ✅ | ✅
 AddStub (Collection(SP.File)) | ✅ | ✅ | ✅ | ❌
 AddStubUsingPath (Collection(SP.File)) | ✅ | ✅ | ❌ | ❌

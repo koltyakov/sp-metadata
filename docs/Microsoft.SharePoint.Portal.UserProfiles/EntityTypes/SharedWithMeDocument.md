@@ -26,6 +26,7 @@ LinkingUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
 ListId (Edm.String) | ✅ | ✅ | ✅ | ❌
 ListItemId (Edm.String) | ✅ | ✅ | ✅ | ❌
 LocalItemUniqueId (Edm.String) | ✅ | ❌ | ❌ | ❌
+LocalItemUniqueIdCollection (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaBaseUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 Modified (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 ModifiedDateTimeUTC (Edm.DateTime) | ✅ | ✅ | ❌ | ❌

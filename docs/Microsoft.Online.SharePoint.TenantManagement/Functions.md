@@ -15,6 +15,7 @@ DeleteTenantTheme (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant)
 DisableSharingForNonOwnersOfSite (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 GetAllTenantThemes (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 GetById (Collection(Microsoft.Online.SharePoint.TenantManagement.ExternalUser)) | ✅ | ❌ | ❌ | ❌
+GetCustomFontsMinorVersion (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 GetExternalUsers (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 GetExternalUsersForSite (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 GetExternalUsersWithSortBy (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
