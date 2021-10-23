@@ -11036,6 +11036,13 @@
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="messagePayloadBase64" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="AddPlaceholderUser" ReturnType="Edm.Guid" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="listId" Type="Edm.String" />
+          <Parameter Name="listColumn" Type="Edm.String" />
+          <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="placeholderText" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="AddSupportedUILanguage" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="lcid" Type="Edm.Int32" Nullable="false" />
@@ -13768,6 +13775,10 @@
         <FunctionImport Name="GetAllTenantThemes" ReturnType="Collection(Microsoft.Online.SharePoint.TenantManagement.ThemeProperties)" IsBindable="true" EntitySet="ThemePropertiess">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantManagement.Office365Tenant" />
         </FunctionImport>
+        <FunctionImport Name="GetCustomFontsMinorVersion" ReturnType="Edm.Int32" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantManagement.Office365Tenant" />
+          <Parameter Name="libUrl" Type="SP.ResourcePath" />
+        </FunctionImport>
         <FunctionImport Name="GetExternalUsers" ReturnType="Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResults" IsBindable="true" EntitySet="GetExternalUsersResultss">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantManagement.Office365Tenant" />
           <Parameter Name="position" Type="Edm.Int32" Nullable="false" />
@@ -14006,6 +14017,10 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_TenantAdministration_Tenant" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.Tenant" IsComposable="true" EntitySet="Tenants" />
+        <FunctionImport Name="AddRecentAdminAction" ReturnType="SP.ListItem" IsBindable="true" EntitySet="ListItems">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="tenantAdminRecentAction" Type="Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminRecentAction" />
+        </FunctionImport>
         <FunctionImport Name="AddTenantAdminListItem" ReturnType="SP.ListItem" IsBindable="true" EntitySet="ListItems">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="columnValues" Type="Collection(Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminListItemColumnValue)" />
@@ -14039,6 +14054,9 @@
           <Parameter Name="columnName" Type="Edm.String" />
           <Parameter Name="columnValue" Type="Edm.String" />
           <Parameter Name="listName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetHomeSiteDetails" ReturnType="SP.SPHSiteReference" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
         <FunctionImport Name="GetIdleSessionSignOutForUnmanagedDevices" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -14298,6 +14316,11 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="parameters" Type="SP.RenderListFilterDataParameters" />
         </FunctionImport>
+        <FunctionImport Name="RenderRecentAdminActions" ReturnType="Edm.Stream" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="parameters" Type="SP.RenderListDataParameters" />
+          <Parameter Name="overrideParameters" Type="SP.RenderListDataOverrideParameters" />
+        </FunctionImport>
         <FunctionImport Name="RestoreDeletedSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteUrl" Type="Edm.String" />
@@ -14375,6 +14398,11 @@
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="updateType" Type="Edm.String" />
           <Parameter Name="parameters" Type="Microsoft.Online.SharePoint.TenantAdministration.UpdateGroupSitePropertiesParameters" />
+        </FunctionImport>
+        <FunctionImport Name="UpdateRecentAdminAction" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="listItemId" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="tenantAdminRecentAction" Type="Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminRecentAction" />
         </FunctionImport>
         <FunctionImport Name="UpdateTenantAdminListItem" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -21459,6 +21487,9 @@
       <Annotations Target="SP.ApiData/SetComplianceTagWithRecord(SP.ListItem, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/AddPlaceholderUser(SP.Web, Edm.String, Edm.String, Edm.Int32, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/CreateGroupBasedEnvironment(SP.Web)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -27444,6 +27475,7 @@
       </ComplexType>
       <ComplexType Name="ParentGroup">
         <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="GroupSiteUrl" Type="Edm.String" />
         <Property Name="ID" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="PinToTeamParams">
@@ -27669,6 +27701,7 @@
         <Property Name="ListId" Type="Edm.String" />
         <Property Name="ListItemId" Type="Edm.String" />
         <Property Name="LocalItemUniqueId" Type="Edm.String" />
+        <Property Name="LocalItemUniqueIdCollection" Type="Edm.String" />
         <Property Name="MediaBaseUrl" Type="Edm.String" />
         <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
         <Property Name="ModifiedDateTimeUTC" Type="Edm.DateTime" Nullable="false" />
@@ -28524,6 +28557,26 @@
       <ComplexType Name="TenantAdminListItemColumnValue">
         <Property Name="columnName" Type="Edm.String" />
         <Property Name="columnValue" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="TenantAdminRecentAction">
+        <Property Name="adminActionId" Type="Edm.String" />
+        <Property Name="adminActionSource" Type="Edm.Int32" Nullable="false" />
+        <Property Name="adminActionStatus" Type="Edm.Int32" Nullable="false" />
+        <Property Name="adminActionType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="clientOperationId" Type="Edm.String" />
+        <Property Name="correlationId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="errorCode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="errorMessage" Type="Edm.String" />
+        <Property Name="key" Type="Edm.String" />
+        <Property Name="lastUpdatedTime" Type="Edm.DateTime" />
+        <Property Name="metadata" Type="Edm.String" />
+        <Property Name="name" Type="Edm.String" />
+        <Property Name="requestedTime" Type="Edm.DateTime" />
+        <Property Name="startTime" Type="Edm.DateTime" />
+        <Property Name="url" Type="Edm.String" />
+        <Property Name="userEmail" Type="Edm.String" />
+        <Property Name="userId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="userName" Type="Edm.String" />
       </ComplexType>
     </Schema>
     <Schema Namespace="SP.SiteHealth" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
