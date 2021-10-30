@@ -5182,7 +5182,12 @@
         </FunctionImport>
         <FunctionImport Name="SetupContractsSolution" ReturnType="SP.List" IsBindable="true" EntitySet="Lists">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
-          <Parameter Name="contractLibraryName" Type="Edm.String" />
+          <Parameter Name="newLibraryName" Type="Edm.String" />
+          <Parameter Name="packageName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SetupPrimedLibrary" ReturnType="SP.List" IsBindable="true" EntitySet="Lists">
+          <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
+          <Parameter Name="primedLibraryName" Type="Edm.String" />
           <Parameter Name="packageName" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningPublicationsEntityData" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData" IsComposable="true" EntitySet="SPMachineLearningPublicationsEntityDatas" />
@@ -11141,6 +11146,7 @@
         </FunctionImport>
         <FunctionImport Name="GetAllClientSideComponents" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="languages" Type="Collection(Edm.String)" />
         </FunctionImport>
         <FunctionImport Name="GetAppBdcCatalog" ReturnType="SP.BusinessData.AppBdcCatalog" IsBindable="true" EntitySet="AppBdcCatalogs">
           <Parameter Name="this" Type="SP.Web" />
@@ -11509,6 +11515,7 @@
           <Parameter Name="contentStream" Type="Edm.Stream" />
           <Parameter Name="listId" Type="Edm.String" />
           <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="fieldId" Type="Edm.String" />
           <Parameter Name="overwrite" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_ListHomeItemCollection_GetListHomeItems" ReturnType="Edm.Stream" IsSideEffecting="false">
@@ -20113,6 +20120,9 @@
       <Annotations Target="SP.ApiData/SetupContractsSolution(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SetupPrimedLibrary(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningPublicationsEntityData()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21502,7 +21512,7 @@
       <Annotations Target="SP.ApiData/GetAdaptiveCardExtensions(SP.Web, Edm.Boolean, Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/GetAllClientSideComponents(SP.Web)">
+      <Annotations Target="SP.ApiData/GetAllClientSideComponents(SP.Web, Collection(Edm.String))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetClientSideComponents(SP.Web, Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentIdentifier), Edm.Guid)">
@@ -21610,7 +21620,7 @@
       <Annotations Target="SP.ApiData/SyncHubSiteTheme(SP.Web)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/UploadImage(SP.Web, Edm.String, Edm.String, Edm.Stream, Edm.String, Edm.Int32, Edm.Boolean)">
+      <Annotations Target="SP.ApiData/UploadImage(SP.Web, Edm.String, Edm.String, Edm.Stream, Edm.String, Edm.Int32, Edm.String, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_ListHomeItemCollection_GetListHomeItems(Edm.Int32)">
@@ -31615,11 +31625,14 @@
         </Key>
         <Property Name="accessUrl" Type="Edm.String" Nullable="false" />
         <Property Name="containerTitle" Type="Edm.String" />
+        <Property Name="contentClass" Type="Edm.String" />
         <Property Name="isDefaultDocumentLibrary" Type="Edm.Boolean" />
         <Property Name="lastAccessDateTime" Type="Edm.DateTime" Nullable="false" />
         <Property Name="listId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="listItemId" Type="Edm.Int32" Nullable="false" />
         <Property Name="operation" Type="Edm.Int32" Nullable="false" />
         <Property Name="pinOrder" Type="Edm.Int64" />
+        <Property Name="properties" Type="Edm.String" />
         <Property Name="siteAcronym" Type="Edm.String" />
         <Property Name="siteColor" Type="Edm.String" />
         <Property Name="siteId" Type="Edm.Guid" Nullable="false" />
