@@ -11,6 +11,7 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 contentStream (Edm.Stream) | ✅ | ❌ | ❌ | ❌
+fieldId (Edm.String) | ✅ | ❌ | ❌ | ❌
 imageName (Edm.String) | ✅ | ❌ | ❌ | ❌
 itemId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 listId (Edm.String) | ✅ | ❌ | ❌ | ❌
