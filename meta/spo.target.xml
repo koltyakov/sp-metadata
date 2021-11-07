@@ -5173,6 +5173,10 @@
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
           <Parameter Name="uniqueId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="GetExtractorNames" ReturnType="Collection(Edm.String)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
+          <Parameter Name="packageName" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="GetSupportedPrebuiltModels" ReturnType="Collection(Microsoft.Office.Server.ContentCenter.PrebuiltModelInfo)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
         </FunctionImport>
@@ -5309,6 +5313,7 @@
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_GetListComplianceTag" ReturnType="SP.CompliancePolicy.ComplianceTag" IsSideEffecting="false">
           <Parameter Name="listUrl" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_GetMetadataEditBlockingEnabled" ReturnType="Edm.Boolean" IsSideEffecting="false" />
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_GetPolicyEvaluationInfo" ReturnType="SP.CompliancePolicy.PolicyEvaluationInfo" IsComposable="true" EntitySet="PolicyEvaluationInfos">
           <Parameter Name="itemUrl" Type="Edm.String" />
           <Parameter Name="policyScenario" Type="Edm.Int32" Nullable="false" />
@@ -5432,6 +5437,9 @@
           <Parameter Name="complianceTagWrittenTime" Type="Edm.DateTime" Nullable="false" />
           <Parameter Name="userEmailAddress" Type="Edm.String" />
           <Parameter Name="syncToItems" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_SetMetadataEditBlockingEnabled">
+          <Parameter Name="enabled" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_SetSiteCompliancePolicyProperty">
           <Parameter Name="siteUrl" Type="Edm.String" />
@@ -20111,6 +20119,9 @@
       <Annotations Target="SP.ApiData/GetByUniqueId(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetExtractorNames(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetSupportedPrebuiltModels(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22236,6 +22247,7 @@
         <Property Name="principalName" Type="Edm.String" />
         <Property Name="responsibilities" Type="Collection(Edm.String)" />
         <Property Name="schools" Type="Collection(Edm.String)" />
+        <Property Name="sharePointAddTopicHighlightFirstRun" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointContentBarViewsTeachingBubble" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointConversationsLinkFirstRun" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointFiltersPaneFirstRun" Type="Edm.Boolean" Nullable="false" />
@@ -22263,6 +22275,11 @@
         <Property Name="sharePointProfileId" Type="Edm.Guid" Nullable="false" />
         <Property Name="sharePointSaveForLaterTeachingBubble" Type="Edm.Boolean" Nullable="false" />
         <Property Name="sharePointTeamsTeachingBubble" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="sharePointTopicAutoHighlightFirstRun" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="sharePointTopicManualHighlightFirstRun" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="sharePointTopicPageEditFirstRun" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="sharePointTopicPagePrivacyPermissionFirstRun" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="sharePointTopicPagePublishFirstRun" Type="Edm.Boolean" Nullable="false" />
         <Property Name="skills" Type="Collection(Edm.String)" />
         <Property Name="tags" Type="Collection(Edm.String)" />
         <Property Name="tenantInstanceId" Type="Edm.Guid" Nullable="false" />
@@ -29833,6 +29850,8 @@
         <Property Name="AuthenticationContextName" Type="Edm.String" />
         <Property Name="AverageResourceUsage" Type="Edm.Double" Nullable="false" />
         <Property Name="BlockDownloadLinksFileType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="BlockDownloadMicrosoft365GroupIds" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="BlockDownloadPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CommentsOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CompatibilityLevel" Type="Edm.Int32" Nullable="false" />
         <Property Name="ConditionalAccessPolicy" Type="Edm.Int32" Nullable="false" />
