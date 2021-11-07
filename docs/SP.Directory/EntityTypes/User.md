@@ -42,6 +42,7 @@ preferredName (Edm.String) | ✅ | ✅ | ❌ | ❌
 principalName (Edm.String) | ✅ | ✅ | ❌ | ❌
 responsibilities (Collection(Edm.String)) | ✅ | ✅ | ❌ | ❌
 schools (Collection(Edm.String)) | ✅ | ✅ | ❌ | ❌
+sharePointAddTopicHighlightFirstRun (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 sharePointContentBarViewsTeachingBubble (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 sharePointConversationsLinkFirstRun (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 sharePointFiltersPaneFirstRun (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
@@ -69,6 +70,11 @@ sharePointPictureUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 sharePointProfileId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 sharePointSaveForLaterTeachingBubble (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 sharePointTeamsTeachingBubble (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+sharePointTopicAutoHighlightFirstRun (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+sharePointTopicManualHighlightFirstRun (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+sharePointTopicPageEditFirstRun (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+sharePointTopicPagePrivacyPermissionFirstRun (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+sharePointTopicPagePublishFirstRun (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 skills (Collection(Edm.String)) | ✅ | ✅ | ❌ | ❌
 tags (Collection(Edm.String)) | ✅ | ✅ | ❌ | ❌
 tenantInstanceId (Edm.Guid) | ✅ | ✅ | ❌ | ❌

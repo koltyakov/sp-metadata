@@ -23,6 +23,7 @@ GetByUniqueId (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearnin
 GetByUniqueId (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)) | ✅ | ❌ | ❌ | ❌
 GetByUniqueId (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningSample)) | ✅ | ❌ | ❌ | ❌
 GetByUniqueIdWithTokenization (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningSample)) | ✅ | ❌ | ❌ | ❌
+GetExtractorNames (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)) | ✅ | ❌ | ❌ | ❌
 GetModelIdForContentType (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
 GetModels (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
 GetRetentionLabel (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌

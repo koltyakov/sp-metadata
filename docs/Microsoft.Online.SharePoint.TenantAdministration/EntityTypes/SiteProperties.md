@@ -14,6 +14,8 @@ AuthContextStrength (Edm.String) | ✅ | ❌ | ❌ | ❌
 AuthenticationContextName (Edm.String) | ✅ | ❌ | ❌ | ❌
 AverageResourceUsage (Edm.Double) | ✅ | ❌ | ❌ | ❌
 BlockDownloadLinksFileType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+BlockDownloadMicrosoft365GroupIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+BlockDownloadPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CompatibilityLevel (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicy (Edm.Int32) | ✅ | ❌ | ❌ | ❌
