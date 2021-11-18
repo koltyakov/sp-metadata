@@ -5338,6 +5338,7 @@
         <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_LockRecordItem" ReturnType="Edm.Int32">
           <Parameter Name="listUrl" Type="Edm.String" />
           <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="refreshLabeledTime" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="MarkReviewItemsForDeletion" ReturnType="Collection(Edm.Int32)" IsBindable="true">
           <Parameter Name="this" Type="SP.CompliancePolicy.SPPolicyStoreProxy" />
@@ -8016,6 +8017,7 @@
           <Parameter Name="url" Type="Edm.String" />
           <Parameter Name="message" Type="Edm.String" />
           <Parameter Name="recipientEmails" Type="Collection(Edm.String)" />
+          <Parameter Name="pageContent" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="ShareSiteByEmail" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.RichSharing" />
@@ -20425,7 +20427,7 @@
       <Annotations Target="SP.ApiData/SP_Publishing_RichSharing()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SharePageByEmail(SP.Publishing.RichSharing, Edm.String, Edm.String, Collection(Edm.String))">
+      <Annotations Target="SP.ApiData/SharePageByEmail(SP.Publishing.RichSharing, Edm.String, Edm.String, Collection(Edm.String), Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/ShareSiteByEmail(SP.Publishing.RichSharing, Edm.String, Edm.String, Edm.String, Edm.String, Collection(Edm.String))">
