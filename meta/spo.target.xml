@@ -11054,8 +11054,6 @@
         <FunctionImport Name="AddPlaceholderUser" ReturnType="Edm.Guid" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="listId" Type="Edm.String" />
-          <Parameter Name="listColumn" Type="Edm.String" />
-          <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="placeholderText" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="AddSupportedUILanguage" IsBindable="true">
@@ -14004,6 +14002,9 @@
         </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_TenantAdministration_SiteProperties" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SiteProperties" IsComposable="true" EntitySet="SitePropertiess">
           <Parameter Name="url" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_TenantAdministration_SiteProperties_ClearSharingLockDown">
+          <Parameter Name="siteUrl" Type="Edm.String" />
         </FunctionImport>
         <EntitySet Name="SpoOperations" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" />
         <FunctionImport Name="Update" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
@@ -17934,6 +17935,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/MachineLearningExperienceEnabled">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/UserSyntexEnabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21510,7 +21514,7 @@
       <Annotations Target="SP.ApiData/SetComplianceTagWithRecord(SP.ListItem, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/AddPlaceholderUser(SP.Web, Edm.String, Edm.String, Edm.Int32, Edm.String)">
+      <Annotations Target="SP.ApiData/AddPlaceholderUser(SP.Web, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/CreateGroupBasedEnvironment(SP.Web)">
@@ -22397,6 +22401,7 @@
         </Key>
         <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MachineLearningExperienceEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="UserSyntexEnabled" Type="Edm.Boolean" />
       </EntityType>
       <EntityType Name="SPMachineLearningHub">
         <Key>
@@ -29904,6 +29909,8 @@
         <Property Name="SharingBlockedDomainList" Type="Edm.String" />
         <Property Name="SharingCapability" Type="Edm.Int32" Nullable="false" />
         <Property Name="SharingDomainRestrictionMode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="SharingLockDownCanBeCleared" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SharingLockDownEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ShowPeoplePickerSuggestionsForGuestUsers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SiteDefinedSharingCapability" Type="Edm.Int32" Nullable="false" />
         <Property Name="SocialBarOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
