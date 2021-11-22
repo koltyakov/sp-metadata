@@ -66,6 +66,8 @@ SharingAllowedDomainList (Edm.String) | ✅ | ❌ | ❌ | ❌
 SharingBlockedDomainList (Edm.String) | ✅ | ❌ | ❌ | ❌
 SharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SharingDomainRestrictionMode (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+SharingLockDownCanBeCleared (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+SharingLockDownEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ShowPeoplePickerSuggestionsForGuestUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SiteDefinedSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SocialBarOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
