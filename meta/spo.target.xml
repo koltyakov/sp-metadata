@@ -151,6 +151,13 @@
         <Property Name="jobId" Type="Edm.Guid" Nullable="false" />
         <Property Name="userId" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="PlaceholderV2">
+        <Property Name="DataType" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="QuestionTitle" Type="Edm.String" />
+        <Property Name="Source" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="Placeholder">
         <Property Name="DataType" Type="Edm.String" />
         <Property Name="EndPosition" Type="Edm.Int32" Nullable="false" />
@@ -1029,6 +1036,10 @@
       <ComplexType Name="TemplateMetaData">
         <Property Name="Placeholders" Type="Collection(SP.Placeholder)" />
         <Property Name="ServerRedirectedEmbedUrl" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="TemplatizationMetaData">
+        <Property Name="FileInfo" Type="SP.ContentAssemblyFileInfo" />
+        <Property Name="Placeholders" Type="Collection(SP.PlaceholderV2)" />
       </ComplexType>
       <ComplexType Name="TranslationNotificationRecipientCollection">
         <Property Name="LanguageCode" Type="Edm.String" />
@@ -4047,7 +4058,6 @@
         <EntitySet Name="RecentDocuments" EntityType="Microsoft.SharePoint.Portal.WebControls.RecentDocument" />
         <EntitySet Name="BaseCustomPropertys" EntityType="Microsoft.SharePoint.Publishing.RestOnly.BaseCustomProperty" />
         <EntitySet Name="QuotaMigrationApis" EntityType="Microsoft.SharePoint.QuotaManagement.Consumer.QuotaMigrationApi" />
-        <EntitySet Name="GetUpgradeOptionsApis" EntityType="Microsoft.SharePoint.QuotaManagement.GetUpgradeOptions.GetUpgradeOptionsApi" />
         <EntitySet Name="SmartCacheItems" EntityType="Microsoft.SharePoint.SmartCache.SmartCacheItem" />
         <EntitySet Name="TenantCdnApis" EntityType="Microsoft.SharePoint.TenantCdn.TenantCdnApi" />
         <EntitySet Name="UserActionAPIs" EntityType="Microsoft.SharePoint.UserActions.UserActionAPI" />
@@ -9790,6 +9800,10 @@
           <Parameter Name="this" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem)" />
           <Parameter Name="absolutePath" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="GetById" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem" IsBindable="true" EntitySet="SiteCollectionAppCatalogAllowedItems">
+          <Parameter Name="this" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem)" />
+          <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="Remove" IsBindable="true">
           <Parameter Name="this" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem)" />
           <Parameter Name="absolutePath" Type="Edm.String" />
@@ -10207,6 +10221,10 @@
         </FunctionImport>
         <FunctionImport Name="ClearBusinessAppMigrationInteractiveData" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
+        </FunctionImport>
+        <FunctionImport Name="CopyTemplateAndGetMetadata" ReturnType="SP.TemplatizationMetaData" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="Name" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="CreateDocumentAndGetEditLink" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -11071,6 +11089,9 @@
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="webTemplate" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="ConsentToPowerPlatform" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
+          <Parameter Name="this" Type="SP.Web" />
+        </FunctionImport>
         <FunctionImport Name="SP_Web_CreateAnonymousLink" ReturnType="Edm.String">
           <Parameter Name="url" Type="Edm.String" />
           <Parameter Name="isEditLink" Type="Edm.Boolean" Nullable="false" />
@@ -11394,6 +11415,9 @@
           <Parameter Name="forceRefresh" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="IncrementSiteClientTag" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+        </FunctionImport>
+        <FunctionImport Name="ListPowerPlatformUserDetails" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
           <Parameter Name="this" Type="SP.Web" />
         </FunctionImport>
         <FunctionImport Name="LoadAndInstallApp" ReturnType="SP.AppInstance" IsBindable="true" EntitySet="AppInstances">
@@ -14063,6 +14087,10 @@
         <FunctionImport Name="CreateSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteCreationProperties" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCreationProperties" />
+        </FunctionImport>
+        <FunctionImport Name="ExportToCSV" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="viewXml" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="GetAdminListViews" ReturnType="Collection(SP.View)" IsComposable="true" IsBindable="true" EntitySet="Views">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -18943,6 +18971,9 @@
       <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem/AbsoluteUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem/ErrorMessage">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem/SiteID">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19424,6 +19455,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignRun/ID">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignRun/InvokedBy">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignRun/SiteDesignID">
@@ -19951,7 +19985,25 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/AnyoneLinkTrackUsers">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/CoreLoopDefaultSharingLinkRole">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/CoreLoopDefaultSharingLinkScope">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/CoreLoopSharingCapability">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/GuestSharingGroupAllowListInTenantByPrincipalIdentity">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/OneDriveLoopDefaultSharingLinkRole">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/OneDriveLoopDefaultSharingLinkScope">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/OneDriveLoopSharingCapability">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/Sites">
@@ -21517,6 +21569,9 @@
       <Annotations Target="SP.ApiData/AddPlaceholderUser(SP.Web, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/ConsentToPowerPlatform(SP.Web)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/CreateGroupBasedEnvironment(SP.Web)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21596,6 +21651,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/HubSiteDataAsStream(SP.Web, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/ListPowerPlatformUserDetails(SP.Web)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/PageContextCore(SP.Web)">
@@ -27979,6 +28037,7 @@
           <PropertyRef Name="ID" />
         </Key>
         <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="InvokedBy" Type="Edm.String" />
         <Property Name="SiteDesignID" Type="Edm.Guid" Nullable="false" />
         <Property Name="SiteDesignTitle" Type="Edm.String" />
         <Property Name="SiteDesignVersion" Type="Edm.Int32" Nullable="false" />
@@ -28286,6 +28345,7 @@
           <PropertyRef Name="AbsoluteUrl" />
         </Key>
         <Property Name="AbsoluteUrl" Type="Edm.String" Nullable="false" />
+        <Property Name="ErrorMessage" Type="Edm.String" />
         <Property Name="SiteID" Type="Edm.Guid" Nullable="false" />
       </EntityType>
       <EntityType Name="SPCorporateCuratedGallerySettingsBase" Abstract="true">
@@ -28978,6 +29038,7 @@
         <Property Name="showExternalSharingWarning" Type="Edm.Boolean" Nullable="false" />
         <Property Name="siteIBMode" Type="Edm.String" />
         <Property Name="siteIBSegmentIDs" Type="Collection(Edm.String)" />
+        <Property Name="standardRolesModified" Type="Edm.Boolean" Nullable="false" />
         <Property Name="userIsSharingViaMCS" Type="Edm.String" />
         <Property Name="userPhotoCdnBaseUrl" Type="Edm.String" />
         <Property Name="webTemplateId" Type="Edm.Int32" Nullable="false" />
@@ -29890,6 +29951,10 @@
         <Property Name="LimitedAccessFileType" Type="Edm.Int32" Nullable="false" />
         <Property Name="LockIssue" Type="Edm.String" />
         <Property Name="LockState" Type="Edm.String" />
+        <Property Name="LoopDefaultSharingLinkRole" Type="Edm.Int32" Nullable="false" />
+        <Property Name="LoopDefaultSharingLinkScope" Type="Edm.Int32" Nullable="false" />
+        <Property Name="LoopOverrideSharingCapability" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="LoopSharingCapability" Type="Edm.Int32" Nullable="false" />
         <Property Name="MediaTranscription" Type="Edm.Int32" Nullable="false" />
         <Property Name="OverrideBlockUserInfoVisibility" Type="Edm.Int32" Nullable="false" />
         <Property Name="OverrideTenantAnonymousLinkExpirationPolicy" Type="Edm.Boolean" Nullable="false" />
@@ -30038,6 +30103,9 @@
         <Property Name="ConditionalAccessPolicy" Type="Edm.Int32" Nullable="false" />
         <Property Name="ConditionalAccessPolicyErrorHelpLink" Type="Edm.String" />
         <Property Name="ContentTypeSyncSiteTemplatesList" Type="Collection(Edm.String)" />
+        <Property Name="CoreLoopDefaultSharingLinkRole" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CoreLoopDefaultSharingLinkScope" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CoreLoopSharingCapability" Type="Edm.Int32" Nullable="false" />
         <Property Name="CustomizedExternalSharingServiceUrl" Type="Edm.String" />
         <Property Name="DefaultContentCenterSite" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker" />
         <Property Name="DefaultLinkPermission" Type="Edm.Int32" Nullable="false" />
@@ -30117,6 +30185,9 @@
         <Property Name="ODBSharingCapability" Type="Edm.Int32" Nullable="false" />
         <Property Name="OfficeClientADALDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="OneDriveForGuestsEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="OneDriveLoopDefaultSharingLinkRole" Type="Edm.Int32" Nullable="false" />
+        <Property Name="OneDriveLoopDefaultSharingLinkScope" Type="Edm.Int32" Nullable="false" />
+        <Property Name="OneDriveLoopSharingCapability" Type="Edm.Int32" Nullable="false" />
         <Property Name="OneDriveStorageQuota" Type="Edm.Int64" Nullable="false" />
         <Property Name="OptOutOfGrooveBlock" Type="Edm.Boolean" Nullable="false" />
         <Property Name="OptOutOfGrooveSoftBlock" Type="Edm.Boolean" Nullable="false" />
@@ -31672,14 +31743,6 @@
         <Property Name="webUrl" Type="Edm.String" />
       </EntityType>
     </Schema>
-    <Schema Namespace="Microsoft.SharePoint.QuotaManagement.GetUpgradeOptions" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-      <EntityType Name="GetUpgradeOptionsApi">
-        <Key>
-          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
-        </Key>
-        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
-      </EntityType>
-    </Schema>
     <Schema Namespace="Microsoft.SharePoint.QuotaManagement.Consumer" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="QuotaMigrationApi">
         <Key>
@@ -31844,6 +31907,9 @@
         <Property Name="ConditionalAccessPolicy" Type="Edm.Int32" Nullable="false" />
         <Property Name="ConditionalAccessPolicyErrorHelpLink" Type="Edm.String" />
         <Property Name="ContentTypeSyncSiteTemplatesList" Type="Collection(Edm.String)" />
+        <Property Name="CoreLoopDefaultSharingLinkRole" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CoreLoopDefaultSharingLinkScope" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CoreLoopSharingCapability" Type="Edm.Int32" Nullable="false" />
         <Property Name="CustomizedExternalSharingServiceUrl" Type="Edm.String" />
         <Property Name="DefaultContentCenterSite" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker" />
         <Property Name="DefaultLinkPermission" Type="Edm.Int32" Nullable="false" />
@@ -31901,6 +31967,9 @@
         <Property Name="ODBSharingCapability" Type="Edm.Int32" Nullable="false" />
         <Property Name="OfficeClientADALDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="OneDriveForGuestsEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="OneDriveLoopDefaultSharingLinkRole" Type="Edm.Int32" Nullable="false" />
+        <Property Name="OneDriveLoopDefaultSharingLinkScope" Type="Edm.Int32" Nullable="false" />
+        <Property Name="OneDriveLoopSharingCapability" Type="Edm.Int32" Nullable="false" />
         <Property Name="OwnerAnonymousNotification" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PreventExternalUsersFromResharing" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ProvisionSharedWithEveryoneFolder" Type="Edm.Boolean" Nullable="false" />
