@@ -63,9 +63,11 @@ Clear (Collection(SP.UserCustomAction)) | ✅ | ✅ | ✅ | ✅
 ClearBusinessAppMigrationInteractiveData (SP.List) | ✅ | ❌ | ❌ | ❌
 ClearCorporateCatalog (SP.TenantSettings) | ✅ | ❌ | ❌ | ❌
 Configuration (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
+ConsentToPowerPlatform (SP.Web) | ✅ | ❌ | ❌ | ❌
 Contains (Collection(SP.Alert)) | ✅ | ✅ | ❌ | ❌
 ContinueUpload (SP.File) | ✅ | ✅ | ✅ | ❌
 [CopyQuizDefinition](./Functions/CopyQuizDefinition.md) | ❌ | ❌ | ❌ | ✅
+CopyTemplateAndGetMetadata (SP.List) | ✅ | ❌ | ❌ | ❌
 CopyTo (SP.File) | ✅ | ✅ | ✅ | ✅
 CopyToUsingPath (SP.File) | ✅ | ✅ | ❌ | ❌
 Create (Collection(SP.ContentType)) | ✅ | ❌ | ❌ | ❌
@@ -380,6 +382,7 @@ Install (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
 Invalidate (SP.Site) | ✅ | ✅ | ✅ | ✅
 JoinHubSite (SP.Site) | ✅ | ✅ | ❌ | ❌
 KnowledgeHub | ✅ | ❌ | ❌ | ❌
+ListPowerPlatformUserDetails (SP.Web) | ✅ | ❌ | ❌ | ❌
 LoadAndInstallApp (SP.Web) | ✅ | ✅ | ✅ | ✅
 LoadAndInstallAppInSpecifiedLocale (SP.Web) | ✅ | ✅ | ✅ | ✅
 LoadApp (SP.Web) | ✅ | ✅ | ✅ | ✅

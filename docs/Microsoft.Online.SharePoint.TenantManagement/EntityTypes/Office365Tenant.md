@@ -42,6 +42,9 @@ CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicy (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicyErrorHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌
 ContentTypeSyncSiteTemplatesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+CoreLoopDefaultSharingLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+CoreLoopDefaultSharingLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+CoreLoopSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CustomizedExternalSharingServiceUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 DefaultContentCenterSite (Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker) | ✅ | ❌ | ❌ | ❌
 DefaultLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
@@ -99,6 +102,9 @@ ODBMembersCanShare (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ODBSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OfficeClientADALDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 OneDriveForGuestsEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+OneDriveLoopDefaultSharingLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+OneDriveLoopDefaultSharingLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+OneDriveLoopSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OwnerAnonymousNotification (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PreventExternalUsersFromResharing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ProvisionSharedWithEveryoneFolder (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

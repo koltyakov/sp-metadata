@@ -7,4 +7,5 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 AbsoluteUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
+ErrorMessage (Edm.String) | ✅ | ❌ | ❌ | ❌
 SiteID (Edm.Guid) | ✅ | ✅ | ❌ | ❌

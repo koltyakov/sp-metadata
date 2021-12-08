@@ -47,6 +47,10 @@ Lcid (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 LimitedAccessFileType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 LockIssue (Edm.String) | ✅ | ❌ | ❌ | ❌
 LockState (Edm.String) | ✅ | ❌ | ❌ | ❌
+LoopDefaultSharingLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+LoopDefaultSharingLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+LoopOverrideSharingCapability (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+LoopSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MediaTranscription (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OverrideBlockUserInfoVisibility (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OverrideTenantAnonymousLinkExpirationPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

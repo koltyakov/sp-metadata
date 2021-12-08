@@ -96,6 +96,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ParameterInformation](./ComplexTypes/ParameterInformation.md) | ✅ | ✅ | ✅ | ✅
 [PivotItem](./ComplexTypes/PivotItem.md) | ✅ | ❌ | ❌ | ❌
 [Placeholder](./ComplexTypes/Placeholder.md) | ✅ | ❌ | ❌ | ❌
+[PlaceholderV2](./ComplexTypes/PlaceholderV2.md) | ✅ | ❌ | ❌ | ❌
 [PortalAndOrgNewsSiteReference](./ComplexTypes/PortalAndOrgNewsSiteReference.md) | ✅ | ❌ | ❌ | ❌
 [PropertyInformation](./ComplexTypes/PropertyInformation.md) | ✅ | ✅ | ✅ | ✅
 [ProvisionedMigrationContainersInfo](./ComplexTypes/ProvisionedMigrationContainersInfo.md) | ✅ | ✅ | ❌ | ❌
@@ -127,6 +128,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SmartTemplateContentType](./ComplexTypes/SmartTemplateContentType.md) | ✅ | ❌ | ❌ | ❌
 [SubwebQuery](./ComplexTypes/SubwebQuery.md) | ✅ | ✅ | ✅ | ✅
 [TemplateMetaData](./ComplexTypes/TemplateMetaData.md) | ✅ | ❌ | ❌ | ❌
+[TemplatizationMetaData](./ComplexTypes/TemplatizationMetaData.md) | ✅ | ❌ | ❌ | ❌
 [TenantAppInformation](./ComplexTypes/TenantAppInformation.md) | ✅ | ✅ | ✅ | ❌
 [TimeZoneInformation](./ComplexTypes/TimeZoneInformation.md) | ✅ | ✅ | ✅ | ✅
 [TranslationNotificationRecipient](./ComplexTypes/TranslationNotificationRecipient.md) | ✅ | ❌ | ❌ | ❌

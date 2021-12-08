@@ -170,7 +170,6 @@ GeoLocationDatas | ✅ | ❌ | ❌ | ❌
 GeoMoveTenantCompatibilityChecks | ✅ | ❌ | ❌ | ❌
 GeoTenantInstanceInformationEntityDatas | ✅ | ❌ | ❌ | ❌
 GetExternalUsersResultss | ✅ | ❌ | ❌ | ❌
-GetUpgradeOptionsApis | ✅ | ❌ | ❌ | ❌
 GlobalAdminChecks | ✅ | ❌ | ❌ | ❌
 GradedResponses | ❌ | ❌ | ❌ | ✅
 GradingKeys | ❌ | ❌ | ❌ | ✅

@@ -17,6 +17,7 @@ DownloadTeamsSolutionByUniqueId (Microsoft.SharePoint.Marketplace.CorporateCurat
 GetAppById (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ❌ | ❌ | ❌
 GetByAbsoluteUrl (Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem)) | ❌ | ✅ | ❌ | ❌
 GetById (Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata)) | ✅ | ✅ | ❌ | ❌
+GetById (Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem)) | ✅ | ❌ | ❌ | ❌
 Install (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata) | ✅ | ✅ | ❌ | ❌
 IsAppUpgradeAvailable (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ❌ | ❌ | ❌
 Remove (Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem)) | ✅ | ✅ | ❌ | ❌
