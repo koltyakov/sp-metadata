@@ -1,4 +1,4 @@
-# Function Import: CopyTemplateAndGetMetadata
+# Function Import: UpdateCAAETemplateV2
 
 > Namespace: SP
 
@@ -11,3 +11,4 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 Id (Edm.String) | ✅ | ❌ | ❌ | ❌
+updateTemplateInfo (SP.UpdateTemplateInfoV2) | ✅ | ❌ | ❌ | ❌

@@ -1,4 +1,4 @@
-# Function Import: CopyTemplateAndGetMetadata
+# Function Import: GetCAAETemplateMetadataV2
 
 > Namespace: SP
 

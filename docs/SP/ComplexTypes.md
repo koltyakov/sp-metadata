@@ -138,6 +138,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [TranslationStatusCreationRequest](./ComplexTypes/TranslationStatusCreationRequest.md) | ✅ | ❌ | ❌ | ❌
 [TranslationStatusSetRequest](./ComplexTypes/TranslationStatusSetRequest.md) | ✅ | ❌ | ❌ | ❌
 [UpdateTemplateInfo](./ComplexTypes/UpdateTemplateInfo.md) | ✅ | ❌ | ❌ | ❌
+[UpdateTemplateInfoV2](./ComplexTypes/UpdateTemplateInfoV2.md) | ✅ | ❌ | ❌ | ❌
 [UpgradeInfo](./ComplexTypes/UpgradeInfo.md) | ✅ | ✅ | ✅ | ✅
 [UsageInfo](./ComplexTypes/UsageInfo.md) | ✅ | ✅ | ✅ | ✅
 [UserCreationInformation](./ComplexTypes/UserCreationInformation.md) | ✅ | ✅ | ✅ | ✅

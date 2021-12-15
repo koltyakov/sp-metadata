@@ -270,6 +270,7 @@ GetByUrl (Collection(SP.File)) | ✅ | ✅ | ✅ | ✅
 GetByUrl (Collection(SP.Folder)) | ✅ | ✅ | ✅ | ✅
 GetByUrlOrAddStub (Collection(SP.File)) | ✅ | ✅ | ✅ | ❌
 GetCAAETemplateMetadata (SP.List) | ✅ | ❌ | ❌ | ❌
+GetCAAETemplateMetadataV2 (SP.List) | ✅ | ❌ | ❌ | ❌
 GetCatalog (SP.Site) | ✅ | ✅ | ✅ | ✅
 GetCatalog (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetChanges (SP.Folder) | ✅ | ✅ | ❌ | ❌
@@ -772,6 +773,7 @@ Update (SP.View) | ✅ | ✅ | ✅ | ✅
 Update (SP.Web) | ✅ | ✅ | ✅ | ✅
 UpdateAlert (SP.Alert) | ✅ | ✅ | ❌ | ❌
 UpdateCAAETemplate (SP.List) | ✅ | ❌ | ❌ | ❌
+UpdateCAAETemplateV2 (SP.List) | ✅ | ❌ | ❌ | ❌
 <span title="UpdateClientObjectModelUseRemoteAPIsPermissionSetting (SP.Site)">UpdateClientObjectModelUseRemoteAPIsPermissionSett...</span> | ✅ | ✅ | ✅ | ✅
 UpdateEx (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 UpdateFormProcessingModelRetentionLabel (SP.List) | ✅ | ❌ | ❌ | ❌
