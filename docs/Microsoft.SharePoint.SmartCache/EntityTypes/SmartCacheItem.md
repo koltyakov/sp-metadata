@@ -10,6 +10,8 @@ accessUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 containerTitle (Edm.String) | ✅ | ❌ | ❌ | ❌
 contentClass (Edm.String) | ✅ | ❌ | ❌ | ❌
 isDefaultDocumentLibrary (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+isTeamsChannelSite (Edm.Boolean) | ❌ (✅) | ❌ | ❌ | ❌
+isTeamsConnectedSite (Edm.Boolean) | ❌ (✅) | ❌ | ❌ | ❌
 lastAccessDateTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 listId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 listItemId (Edm.Int32) | ✅ | ❌ | ❌ | ❌

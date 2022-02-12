@@ -4,6 +4,9 @@
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+AddAsGroupOwnerAndMember (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ❌ (✅) | ❌ | ❌ | ❌
+AddGroupMember (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ❌ (✅) | ❌ | ❌ | ❌
+AddGroupOwner (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ❌ (✅) | ❌ | ❌ | ❌
 AddRecentAdminAction (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 AddTenantAdminListItem (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 AddTenantAdminListView (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -19,7 +22,8 @@ GetById (Collection(Microsoft.Online.SharePoint.TenantAdministration.SitePropert
 GetFilteredSPListItems (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetGroupInfo (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ✅ | ❌ | ❌ | ❌
 GetGroupSiteRelationship (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
-GetHomeSiteDetails (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+GetHomeSiteDetails (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ (❌) | ❌ | ❌ | ❌
+GetHomeSitesDetails (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ❌ (✅) | ❌ | ❌ | ❌
 GetIdleSessionSignOutForUnmanagedDevices (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetLockStateById (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
 GetPowerAppsEnvironments (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -39,6 +43,7 @@ GetSitePropertiesFromSharePointByFilters (Microsoft.Online.SharePoint.TenantAdmi
 GetSiteSecondaryAdministrators (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSiteStateProperties (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
 GetSiteSubscriptionId (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+GetSiteThumbnailLogo (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ❌ (✅) | ❌ | ❌ | ❌
 GetSiteUserGroups (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
 GetSitesByState (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetTenantAllOrCompatibleIBSegments (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -61,14 +66,18 @@ MessageCenterMessages (Microsoft.Online.SharePoint.TenantAdministration.Office36
 Office365ProvidedSharepointSiteActivityDataReady (Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService) | ✅ | ❌ | ❌ | ❌
 RegisterHubSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RegisterHubSiteWithCreationInformation (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+RemoveAsGroupOwnerAndMember (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ❌ (✅) | ❌ | ❌ | ❌
 RemoveDeletedSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveDeletedSitePreferId (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+RemoveGroupMember (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ❌ (✅) | ❌ | ❌ | ❌
+RemoveGroupOwner (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ❌ (✅) | ❌ | ❌ | ❌
 RemoveSPHSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveSPListItem (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveTenantAdminListView (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RenderAdminListData (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RenderFilteredAdminListData (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+RenderFilteredAdminListDataByGroupId (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ❌ (✅) | ❌ | ❌ | ❌
 RenderIBSegmentListDataAsStream (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RenderIBSegmentListFilterData (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RenderRecentAdminActions (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌

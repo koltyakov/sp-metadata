@@ -11,6 +11,7 @@ AvailableManagedPathsForSiteCreation (Collection(Edm.String)) | ✅ | ❌ | ❌ 
 CommentsOnSitePagesDisabled (Microsoft.Online.SharePoint.TenantAdministration.CommentsOnSitePagesDisabled) | ✅ | ❌ | ❌ | ❌
 CustomFormUrl (Microsoft.Online.SharePoint.TenantAdministration.CustomFormUrl) | ✅ | ❌ | ❌ | ❌
 DisableGroupify (Microsoft.Online.SharePoint.TenantAdministration.DisableGroupify) | ✅ | ❌ | ❌ | ❌
+DisableSelfServiceSiteCreation (Microsoft.Online.SharePoint.TenantAdministration.DisableSelfServiceSiteCreation) | ❌ (✅) | ❌ | ❌ | ❌
 EnableAutoNewsDigest (Microsoft.Online.SharePoint.TenantAdministration.EnableAutoNewsDigest) | ✅ | ❌ | ❌ | ❌
 Id4a81de82eeb94d6080ea5bf63e27023a (Edm.String) | ✅ | ❌ | ❌ | ❌
 IncludeAtAGlanceInShareEmails (Microsoft.Online.SharePoint.TenantAdministration.IncludeAtAGlanceInShareEmails) | ✅ | ❌ | ❌ | ❌

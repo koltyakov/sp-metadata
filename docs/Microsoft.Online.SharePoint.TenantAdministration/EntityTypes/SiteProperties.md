@@ -84,6 +84,7 @@ TeamsChannelType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Template (Edm.String) | ✅ | ❌ | ❌ | ❌
 TimeZoneId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ❌ | ❌ | ❌
+TitleTranslations (Collection(SP.SPResourceEntry)) | ❌ (✅) | ❌ | ❌ | ❌
 Url (Edm.String) | ✅ | ❌ | ❌ | ❌
 UserCodeMaximumLevel (Edm.Double) | ✅ | ❌ | ❌ | ❌
 UserCodeWarningLevel (Edm.Double) | ✅ | ❌ | ❌ | ❌

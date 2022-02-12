@@ -28,5 +28,6 @@ SolutionContainsTeamsComponent (Microsoft.SharePoint.Marketplace.CorporateCurate
 SyncSolutionToTeams (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ❌ | ❌ | ❌
 SyncSolutionToTeamsByUniqueId (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ❌ | ❌ | ❌
 Uninstall (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata) | ✅ | ✅ | ❌ | ❌
+UpdateMyRequestStatus (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ❌ (✅) | ❌ | ❌ | ❌
 Upgrade (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata) | ✅ | ✅ | ❌ | ❌
 Upload (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ❌ | ❌ | ❌

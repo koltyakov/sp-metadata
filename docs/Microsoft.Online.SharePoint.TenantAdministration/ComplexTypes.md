@@ -8,6 +8,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CommentsOnSitePagesDisabled](./ComplexTypes/CommentsOnSitePagesDisabled.md) | ✅ | ❌ | ❌ | ❌
 [CustomFormUrl](./ComplexTypes/CustomFormUrl.md) | ✅ | ❌ | ❌ | ❌
 [DisableGroupify](./ComplexTypes/DisableGroupify.md) | ✅ | ❌ | ❌ | ❌
+[DisableSelfServiceSiteCreation](./ComplexTypes/DisableSelfServiceSiteCreation.md) | ❌ (✅) | ❌ | ❌ | ❌
 [EnableAutoNewsDigest](./ComplexTypes/EnableAutoNewsDigest.md) | ✅ | ❌ | ❌ | ❌
 [GroupInfo](./ComplexTypes/GroupInfo.md) | ✅ | ❌ | ❌ | ❌
 [HubSitePermission](./ComplexTypes/HubSitePermission.md) | ✅ | ❌ | ❌ | ❌

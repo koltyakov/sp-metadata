@@ -29,6 +29,7 @@ ReplaceInvalidChars (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ScanOnly (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SkipListWithAudienceEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 StartMigrationAutomaticallyWhenNoScanIssue (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+Tags (Collection(Edm.String)) | ❌ (✅) | ❌ | ❌ | ❌
 TurnOnDateCreatedFilter (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 TurnOnDateModifiedFilter (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 TurnOnExtensionFilter (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
