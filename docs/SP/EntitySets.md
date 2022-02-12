@@ -48,8 +48,8 @@ BooleanCriterions | ✅ | ✅ | ✅ | ✅
 CalendarExceptions | ✅ | ✅ | ✅ | ❌
 Calendars | ✅ | ✅ | ✅ | ❌
 CalloutInfos | ✅ | ✅ | ✅ | ✅
-Campaignss | ❌ (✅) | ❌ | ❌ | ❌
-CampainAnalyticss | ❌ (✅) | ❌ | ❌ | ❌
+Campaignss | ✅ | ❌ | ❌ | ❌
+CampainAnalyticss | ✅ | ❌ | ❌ | ❌
 Cases | ❌ | ❌ | ❌ | ✅
 ChangeInformations | ❌ | ❌ | ❌ | ✅
 Changes | ✅ | ✅ | ✅ | ✅
@@ -184,7 +184,7 @@ Groups1 | ✅ | ✅ | ✅ | ❌
 Groupsitemanagers | ✅ | ✅ | ✅ | ❌
 HashTagCollections | ✅ | ✅ | ✅ | ✅
 HashtagStoreManagers | ❌ | ✅ | ❌ | ❌
-HomeSitesDetailss | ❌ (✅) | ❌ | ❌ | ❌
+HomeSitesDetailss | ✅ | ❌ | ❌ | ❌
 HostedAppAddResponses | ✅ | ❌ | ❌ | ❌
 HostedApps | ✅ | ❌ | ❌ | ❌
 HostedAppsManagers | ✅ | ❌ | ❌ | ❌

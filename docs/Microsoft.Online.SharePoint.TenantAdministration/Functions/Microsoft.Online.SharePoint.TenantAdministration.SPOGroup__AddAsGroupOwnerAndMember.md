@@ -10,6 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-groupId (Edm.Guid) | ❌ (✅) | ❌ | ❌ | ❌
-userId (Edm.Guid) | ❌ (✅) | ❌ | ❌ | ❌
-userPrincipalName (Edm.String) | ❌ (✅) | ❌ | ❌ | ❌
+groupId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+userId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+userPrincipalName (Edm.String) | ✅ | ❌ | ❌ | ❌

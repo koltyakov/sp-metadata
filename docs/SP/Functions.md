@@ -78,7 +78,7 @@ CreateCopyJobs (SP.Site) | ✅ | ✅ | ❌ | ❌
 CreateDefaultAssociatedGroups (SP.Web) | ✅ | ✅ | ❌ | ❌
 CreateDocumentAndGetEditLink (SP.List) | ✅ | ✅ | ✅ | ❌
 CreateDocumentFromCAAETemplate (SP.List) | ✅ | ❌ | ❌ | ❌
-CreateDocumentFromCAAETemplateV2 (SP.List) | ❌ (✅) | ❌ | ❌ | ❌
+CreateDocumentFromCAAETemplateV2 (SP.List) | ✅ | ❌ | ❌ | ❌
 CreateDocumentWithDefaultName (SP.List) | ✅ | ✅ | ❌ | ❌
 CreateFieldAsXml (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
 CreateGroupBasedEnvironment (SP.Web) | ✅ | ❌ | ❌ | ❌
@@ -91,7 +91,7 @@ CreateRule (SP.List) | ✅ | ❌ | ❌ | ❌
 CreateSPAsyncReadJob (SP.Site) | ✅ | ❌ | ❌ | ❌
 CreateSPAsyncReadJobWithMultiUrl (SP.Site) | ✅ | ❌ | ❌ | ❌
 CreateSmartTemplateContentTypeAndAddToList (SP.List) | ✅ | ❌ | ❌ | ❌
-CreateSmartTemplateContentTypeAndAddToListV2 (SP.List) | ❌ (✅) | ❌ | ❌ | ❌
+CreateSmartTemplateContentTypeAndAddToListV2 (SP.List) | ✅ | ❌ | ❌ | ❌
 DashboardContent (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 DefaultDocumentLibrary (SP.Web) | ✅ | ✅ | ✅ | ❌
 Delete (SP.HubSite) | ✅ | ✅ | ❌ | ❌
@@ -519,11 +519,11 @@ SP_AppPrincipalIdentityProvider_External | ✅ | ✅ | ✅ | ✅
 [SP_AppPrincipalName_CreateFromNameIdentifier](./Functions/SP_AppPrincipalName_CreateFromNameIdentifier.md) | ✅ | ✅ | ✅ | ✅
 <span title="SP_AppSiteContextUtility_GetAppSiteContextCollection">SP_AppSiteContextUtility_GetAppSiteContextCollecti...</span> (SP AppSiteContextUtility GetAppSiteContextCollection) | ✅ | ✅ | ❌ | ❌
 [SP_AppTileProperties_GetAppProperties](./Functions/SP_AppTileProperties_GetAppProperties.md) | ✅ | ✅ | ❌ | ❌
-[SP_Campaigns_CreateCampaign](./Functions/SP_Campaigns_CreateCampaign.md) | ❌ (✅) | ❌ | ❌ | ❌
-[SP_Campaigns_GetCampaign](./Functions/SP_Campaigns_GetCampaign.md) | ❌ (✅) | ❌ | ❌ | ❌
-SP_Campaigns_GetCampaignsSummary | ❌ (✅) | ❌ | ❌ | ❌
-[SP_Campaigns_UpdateCampaign](./Functions/SP_Campaigns_UpdateCampaign.md) | ❌ (✅) | ❌ | ❌ | ❌
-[SP_CampainAnalytics_GetReport](./Functions/SP_CampainAnalytics_GetReport.md) | ❌ (✅) | ❌ | ❌ | ❌
+[SP_Campaigns_CreateCampaign](./Functions/SP_Campaigns_CreateCampaign.md) | ✅ | ❌ | ❌ | ❌
+[SP_Campaigns_GetCampaign](./Functions/SP_Campaigns_GetCampaign.md) | ✅ | ❌ | ❌ | ❌
+SP_Campaigns_GetCampaignsSummary | ✅ | ❌ | ❌ | ❌
+[SP_Campaigns_UpdateCampaign](./Functions/SP_Campaigns_UpdateCampaign.md) | ✅ | ❌ | ❌ | ❌
+[SP_CampainAnalytics_GetReport](./Functions/SP_CampainAnalytics_GetReport.md) | ✅ | ❌ | ❌ | ❌
 SP_CurrencyList_GetList | ✅ | ✅ | ❌ | ❌
 SP_EmployeeEngagement | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteListsSubstrate_AddList](./Functions/SP_FavoriteListsSubstrate_AddList.md) | ✅ | ❌ | ❌ | ❌
@@ -601,7 +601,7 @@ SP_SPHSite | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_AddSPHomeNavNode](./Functions/SP_SPHSite_AddSPHomeNavNode.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_BuildCompanyPortalContext](./Functions/SP_SPHSite_BuildCompanyPortalContext.md) | ✅ | ❌ | ❌ | ❌
 SP_SPHSite_GetSPHSiteXGeo | ✅ | ❌ | ❌ | ❌
-[SP_SPHSite_GetXgeoHomeSiteDetail](./Functions/SP_SPHSite_GetXgeoHomeSiteDetail.md) | ❌ (✅) | ❌ | ❌ | ❌
+[SP_SPHSite_GetXgeoHomeSiteDetail](./Functions/SP_SPHSite_GetXgeoHomeSiteDetail.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsCommSite](./Functions/SP_SPHSite_IsCommSite.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsModernSiteWithHorizontalNav](./Functions/SP_SPHSite_IsModernSiteWithHorizontalNav.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsValidHomeSite](./Functions/SP_SPHSite_IsValidHomeSite.md) | ✅ | ❌ | ❌ | ❌

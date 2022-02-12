@@ -36,7 +36,7 @@ SourceListRelativePath (Edm.String) | ✅ | ❌ | ❌ | ❌
 SourceUri (Edm.String) | ✅ | ❌ | ❌ | ❌
 SourceUserName (Edm.String) | ✅ | ❌ | ❌ | ❌
 StartMigrationAutomaticallyWhenNoScanIssue (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-Tags (Collection(Edm.String)) | ❌ (✅) | ❌ | ❌ | ❌
+Tags (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 TargetListName (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetListRelativePath (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

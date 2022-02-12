@@ -6,5 +6,5 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-ErrorCode (Edm.String) | ❌ (✅) | ❌ | ❌ | ❌
-TaskId (Edm.Guid) | ❌ (✅) | ❌ | ❌ | ❌
+ErrorCode (Edm.String) | ✅ | ❌ | ❌ | ❌
+TaskId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

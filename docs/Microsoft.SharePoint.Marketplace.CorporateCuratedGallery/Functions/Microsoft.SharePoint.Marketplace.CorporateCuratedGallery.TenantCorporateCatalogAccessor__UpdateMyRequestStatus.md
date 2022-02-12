@@ -10,5 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-RequestId (Edm.Guid) | ❌ (✅) | ❌ | ❌ | ❌
-Status (Edm.Int32) | ❌ (✅) | ❌ | ❌ | ❌
+RequestId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+Status (Edm.Int32) | ✅ | ❌ | ❌ | ❌
