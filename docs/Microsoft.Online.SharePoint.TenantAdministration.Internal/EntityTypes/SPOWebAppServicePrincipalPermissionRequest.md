@@ -8,6 +8,7 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 Id (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 IsDomainIsolated (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+MultiTenantAppId (Edm.String) | ✅ | ❌ | ❌ | ❌
 PackageApproverName (Edm.String) | ✅ | ❌ | ❌ | ❌
 PackageName (Edm.String) | ✅ | ❌ | ❌ | ❌
 PackageVersion (Edm.String) | ✅ | ❌ | ❌ | ❌

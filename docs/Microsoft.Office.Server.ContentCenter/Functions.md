@@ -41,6 +41,7 @@ Rename (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | �
 RenameExtractor (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
 SetupContractsSolution (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)) | ✅ | ❌ | ❌ | ❌
 SetupPrimedLibrary (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)) | ✅ | ❌ | ❌ | ❌
+UnbindModelFromContentType (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Office.Server.ContentCenter.SPMachineLearningSample) | ✅ | ❌ | ❌ | ❌

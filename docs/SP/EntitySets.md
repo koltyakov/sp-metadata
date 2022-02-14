@@ -546,6 +546,7 @@ TenantCdnApis | ✅ | ❌ | ❌ | ❌
 TenantCorporateCatalogAccessors | ✅ | ✅ | ❌ | ❌
 TenantCrawlVersionsInfoProviders | ✅ | ❌ | ❌ | ❌
 TenantInformations | ✅ | ❌ | ❌ | ❌
+TenantRecycleBinInfoProviders | ✅ | ❌ | ❌ | ❌
 TenantRenameJobEntityDatas | ✅ | ❌ | ❌ | ❌
 TenantSettingss | ✅ | ✅ | ✅ | ✅
 Tenants | ✅ | ❌ | ❌ | ❌

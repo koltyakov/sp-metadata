@@ -1,4 +1,4 @@
-# Function Import: SP_CampainAnalytics_GetReport
+# Function Import: SP_Campaigns_UpdateCommunication
 
 > Namespace: SP
 
@@ -9,4 +9,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-request (Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsReportRequest) | ✅ | ❌ | ❌ | ❌
+campaignCommunication (Microsoft.SharePoint.Campaigns.CampaignCommunicationEntity) | ✅ | ❌ | ❌ | ❌

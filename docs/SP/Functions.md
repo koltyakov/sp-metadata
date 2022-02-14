@@ -520,9 +520,13 @@ SP_AppPrincipalIdentityProvider_External | ✅ | ✅ | ✅ | ✅
 <span title="SP_AppSiteContextUtility_GetAppSiteContextCollection">SP_AppSiteContextUtility_GetAppSiteContextCollecti...</span> (SP AppSiteContextUtility GetAppSiteContextCollection) | ✅ | ✅ | ❌ | ❌
 [SP_AppTileProperties_GetAppProperties](./Functions/SP_AppTileProperties_GetAppProperties.md) | ✅ | ✅ | ❌ | ❌
 [SP_Campaigns_CreateCampaign](./Functions/SP_Campaigns_CreateCampaign.md) | ✅ | ❌ | ❌ | ❌
+[SP_Campaigns_CreateCommunication](./Functions/SP_Campaigns_CreateCommunication.md) | ✅ | ❌ | ❌ | ❌
 [SP_Campaigns_GetCampaign](./Functions/SP_Campaigns_GetCampaign.md) | ✅ | ❌ | ❌ | ❌
 SP_Campaigns_GetCampaignsSummary | ✅ | ❌ | ❌ | ❌
+[SP_Campaigns_GetCommunication](./Functions/SP_Campaigns_GetCommunication.md) | ✅ | ❌ | ❌ | ❌
+[SP_Campaigns_GetCommunications](./Functions/SP_Campaigns_GetCommunications.md) | ✅ | ❌ | ❌ | ❌
 [SP_Campaigns_UpdateCampaign](./Functions/SP_Campaigns_UpdateCampaign.md) | ✅ | ❌ | ❌ | ❌
+[SP_Campaigns_UpdateCommunication](./Functions/SP_Campaigns_UpdateCommunication.md) | ✅ | ❌ | ❌ | ❌
 [SP_CampainAnalytics_GetReport](./Functions/SP_CampainAnalytics_GetReport.md) | ✅ | ❌ | ❌ | ❌
 SP_CurrencyList_GetList | ✅ | ✅ | ❌ | ❌
 SP_EmployeeEngagement | ✅ | ❌ | ❌ | ❌

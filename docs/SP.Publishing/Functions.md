@@ -196,6 +196,16 @@ SavePageAsTemplate (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplate (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplate (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplate (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+SavePageAsTemplateInDestinationWeb (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
+SavePageAsTemplateInDestinationWeb (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
+SavePageAsTemplateInDestinationWeb (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
+SavePageAsTemplateInDestinationWeb (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
+SavePageAsTemplateInDestinationWeb (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+SavePageAsTemplateOnMySite (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
+SavePageAsTemplateOnMySite (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
+SavePageAsTemplateOnMySite (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
+SavePageAsTemplateOnMySite (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
+SavePageAsTemplateOnMySite (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 SchedulePublish (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 SchedulePublish (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 SchedulePublish (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
