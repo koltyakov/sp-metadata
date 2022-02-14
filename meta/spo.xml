@@ -2320,13 +2320,13 @@
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
         <NavigationProperty Name="AppConfiguration" Relationship="SP.SP_EmployeeEngagement_AppConfiguration_SP_AppConfiguration_AppConfigurationPartner" ToRole="AppConfiguration" FromRole="AppConfigurationPartner" />
       </EntityType>
-      <EntityType Name="CampainAnalytics" Abstract="true">
+      <EntityType Name="Campaigns" Abstract="true">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
-      <EntityType Name="Campaigns" Abstract="true">
+      <EntityType Name="CampainAnalytics" Abstract="true">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
@@ -4041,6 +4041,7 @@
         <EntitySet Name="SPTenantIBPolicyComplianceReportEntityDatas" EntityType="Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReportEntityData" />
         <EntitySet Name="DocumentCrawlLogs" EntityType="Microsoft.SharePoint.Client.Search.Administration.DocumentCrawlLog" />
         <EntitySet Name="TenantCrawlVersionsInfoProviders" EntityType="Microsoft.SharePoint.Client.Search.Administration.TenantCrawlVersionsInfoProvider" />
+        <EntitySet Name="TenantRecycleBinInfoProviders" EntityType="Microsoft.SharePoint.Client.Search.Administration.TenantRecycleBinInfoProvider" />
         <EntitySet Name="SignalStores" EntityType="Microsoft.SharePoint.Client.Search.Analytics.SignalStore" />
         <EntitySet Name="QueryPersonalizationDatas" EntityType="Microsoft.SharePoint.Client.Search.Query.QueryPersonalizationData" />
         <EntitySet Name="RankingLabelings" EntityType="Microsoft.SharePoint.Client.Search.Query.RankingLabeling" />
@@ -5236,6 +5237,10 @@
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
           <Parameter Name="primedLibraryName" Type="Edm.String" />
           <Parameter Name="packageName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="UnbindModelFromContentType" IsBindable="true">
+          <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
+          <Parameter Name="contentTypeId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningPublicationsEntityData" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsEntityData" IsComposable="true" EntitySet="SPMachineLearningPublicationsEntityDatas" />
         <FunctionImport Name="Delete" IsBindable="true">
@@ -7786,6 +7791,13 @@
         <FunctionImport Name="SavePageAsTemplate" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
         </FunctionImport>
+        <FunctionImport Name="SavePageAsTemplateInDestinationWeb" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+          <Parameter Name="destinationWebUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SavePageAsTemplateOnMySite" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+        </FunctionImport>
         <FunctionImport Name="SchedulePublish" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
           <Parameter Name="sitePage" Type="SP.Publishing.SitePageFieldsData" />
@@ -7977,6 +7989,13 @@
         <FunctionImport Name="SavePageAsTemplate" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
         </FunctionImport>
+        <FunctionImport Name="SavePageAsTemplateInDestinationWeb" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.RepostPage" />
+          <Parameter Name="destinationWebUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SavePageAsTemplateOnMySite" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.RepostPage" />
+        </FunctionImport>
         <FunctionImport Name="SchedulePublish" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
           <Parameter Name="sitePage" Type="SP.Publishing.SitePageFieldsData" />
@@ -8135,6 +8154,13 @@
         <FunctionImport Name="SavePageAsTemplate" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
         </FunctionImport>
+        <FunctionImport Name="SavePageAsTemplateInDestinationWeb" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
+          <Parameter Name="destinationWebUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SavePageAsTemplateOnMySite" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
+        </FunctionImport>
         <FunctionImport Name="SchedulePublish" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
           <Parameter Name="sitePage" Type="SP.Publishing.SitePageFieldsData" />
@@ -8263,6 +8289,13 @@
           <Parameter Name="pageStream" Type="Edm.Stream" />
         </FunctionImport>
         <FunctionImport Name="SavePageAsTemplate" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.SitePage" />
+        </FunctionImport>
+        <FunctionImport Name="SavePageAsTemplateInDestinationWeb" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.SitePage" />
+          <Parameter Name="destinationWebUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SavePageAsTemplateOnMySite" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
         </FunctionImport>
         <FunctionImport Name="SchedulePublish" ReturnType="Edm.String" IsBindable="true">
@@ -8418,6 +8451,13 @@
           <Parameter Name="pageStream" Type="Edm.Stream" />
         </FunctionImport>
         <FunctionImport Name="SavePageAsTemplate" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
+        </FunctionImport>
+        <FunctionImport Name="SavePageAsTemplateInDestinationWeb" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
+          <Parameter Name="destinationWebUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SavePageAsTemplateOnMySite" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
         </FunctionImport>
         <FunctionImport Name="SchedulePublish" ReturnType="Edm.String" IsBindable="true">
@@ -8789,6 +8829,15 @@
         </FunctionImport>
         <FunctionImport Name="IsCrawlVersionsEnabledForTenant" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.TenantCrawlVersionsInfoProvider" />
+        </FunctionImport>
+        <FunctionImport Name="DisableRecycleBinDiscoverabilityForTenant" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.TenantRecycleBinInfoProvider" />
+        </FunctionImport>
+        <FunctionImport Name="EnableRecycleBinDiscoverabilityForTenant" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.TenantRecycleBinInfoProvider" />
+        </FunctionImport>
+        <FunctionImport Name="IsRecycleBinDiscoverabilityEnabledForTenant" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.TenantRecycleBinInfoProvider" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Client_Search_Analytics_SignalStore" ReturnType="Microsoft.SharePoint.Client.Search.Analytics.SignalStore" IsComposable="true" EntitySet="SignalStores" />
         <FunctionImport Name="signals" IsBindable="true">
@@ -10087,18 +10136,30 @@
           <Parameter Name="this" Type="Microsoft.SharePoint.ClientSideComponent.HostedAppsManager" />
           <Parameter Name="id" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="SP_CampainAnalytics_GetReport" ReturnType="Microsoft.SharePoint.CampainAnalytics.ReportResponse">
-          <Parameter Name="request" Type="Microsoft.SharePoint.CampainAnalytics.ReportRequest" />
-        </FunctionImport>
         <FunctionImport Name="SP_Campaigns_CreateCampaign" ReturnType="Microsoft.SharePoint.Campaigns.CampaignEntity">
           <Parameter Name="campaign" Type="Microsoft.SharePoint.Campaigns.CampaignEntity" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Campaigns_CreateCommunication" ReturnType="Microsoft.SharePoint.Campaigns.CampaignCommunicationEntity">
+          <Parameter Name="communication" Type="Microsoft.SharePoint.Campaigns.CampaignCommunicationEntity" />
         </FunctionImport>
         <FunctionImport Name="SP_Campaigns_GetCampaign" ReturnType="Microsoft.SharePoint.Campaigns.CampaignEntity" IsSideEffecting="false">
           <Parameter Name="campaignId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_Campaigns_GetCampaignsSummary" ReturnType="Collection(Microsoft.SharePoint.Campaigns.CampaignSummary)" IsSideEffecting="false" />
+        <FunctionImport Name="SP_Campaigns_GetCommunication" ReturnType="Microsoft.SharePoint.Campaigns.CampaignCommunicationEntity" IsSideEffecting="false">
+          <Parameter Name="communicationId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Campaigns_GetCommunications" ReturnType="Collection(Microsoft.SharePoint.Campaigns.CampaignCommunicationEntity)" IsSideEffecting="false">
+          <Parameter Name="campaignId" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="SP_Campaigns_UpdateCampaign" ReturnType="Microsoft.SharePoint.Campaigns.CampaignEntity">
           <Parameter Name="campaign" Type="Microsoft.SharePoint.Campaigns.CampaignEntity" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Campaigns_UpdateCommunication" ReturnType="Microsoft.SharePoint.Campaigns.CampaignCommunicationEntity">
+          <Parameter Name="campaignCommunication" Type="Microsoft.SharePoint.Campaigns.CampaignCommunicationEntity" />
+        </FunctionImport>
+        <FunctionImport Name="SP_CampainAnalytics_GetReport" ReturnType="Microsoft.SharePoint.CampaignAnalytics.ReportResponse">
+          <Parameter Name="request" Type="Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsReportRequest" />
         </FunctionImport>
         <FunctionImport Name="IndexStore" IsBindable="true">
           <Parameter Name="this" Type="SP.BusinessData.Infrastructure.ExternalSubscriptionStore" />
@@ -17406,18 +17467,6 @@
       <Annotations Target="Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.SharePoint.CampainAnalytics.Element">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.CampainAnalytics.ReportRequest">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.CampainAnalytics.ReportResponse">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.CampainAnalytics.Row">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Campaigns.CampaignCommunicationEntity">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17425,6 +17474,18 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Campaigns.CampaignSummary">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.CampaignAnalytics.ReportResponse">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsReportTableElement">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsReportTableRow">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsReportRequest">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Administration.CustomFontsResource">
@@ -20250,6 +20311,9 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest/IsDomainIsolated">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest/MultiTenantAppId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest/PackageApproverName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20368,6 +20432,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetupPrimedLibrary(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/UnbindModelFromContentType(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningPublicationsEntityData()">
@@ -20553,6 +20620,12 @@
       <Annotations Target="SP.ApiData/SavePageAsTemplate(SP.Publishing.FeedVideoPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SavePageAsTemplateInDestinationWeb(SP.Publishing.FeedVideoPage, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SavePageAsTemplateOnMySite(SP.Publishing.FeedVideoPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SchedulePublish(SP.Publishing.FeedVideoPage, SP.Publishing.SitePageFieldsData)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20649,6 +20722,12 @@
       <Annotations Target="SP.ApiData/SavePageAsTemplate(SP.Publishing.RepostPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SavePageAsTemplateInDestinationWeb(SP.Publishing.RepostPage, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SavePageAsTemplateOnMySite(SP.Publishing.RepostPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SchedulePublish(SP.Publishing.RepostPage, SP.Publishing.SitePageFieldsData)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20722,6 +20801,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SavePageAsTemplate(SP.Publishing.SitePage3D)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SavePageAsTemplateInDestinationWeb(SP.Publishing.SitePage3D, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SavePageAsTemplateOnMySite(SP.Publishing.SitePage3D)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SchedulePublish(SP.Publishing.SitePage3D, SP.Publishing.SitePageFieldsData)">
@@ -20824,6 +20909,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SavePageAsTemplate(SP.Publishing.SitePage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SavePageAsTemplateInDestinationWeb(SP.Publishing.SitePage, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SavePageAsTemplateOnMySite(SP.Publishing.SitePage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SchedulePublish(SP.Publishing.SitePage, SP.Publishing.SitePageFieldsData)">
@@ -20932,6 +21023,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SavePageAsTemplate(SP.Publishing.TopicSitePage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SavePageAsTemplateInDestinationWeb(SP.Publishing.TopicSitePage, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SavePageAsTemplateOnMySite(SP.Publishing.TopicSitePage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SchedulePublish(SP.Publishing.TopicSitePage, SP.Publishing.SitePageFieldsData)">
@@ -21606,10 +21703,10 @@
       <Annotations Target="SP.ApiData/AddEx(Microsoft.SharePoint.ClientSideComponent.HostedAppsManager, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_CampainAnalytics_GetReport(Microsoft.SharePoint.CampainAnalytics.ReportRequest)">
+      <Annotations Target="SP.ApiData/SP_Campaigns_CreateCampaign(Microsoft.SharePoint.Campaigns.CampaignEntity)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_Campaigns_CreateCampaign(Microsoft.SharePoint.Campaigns.CampaignEntity)">
+      <Annotations Target="SP.ApiData/SP_Campaigns_CreateCommunication(Microsoft.SharePoint.Campaigns.CampaignCommunicationEntity)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Campaigns_GetCampaign(Edm.String)">
@@ -21618,7 +21715,19 @@
       <Annotations Target="SP.ApiData/SP_Campaigns_GetCampaignsSummary()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_Campaigns_GetCommunication(Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_Campaigns_GetCommunications(Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_Campaigns_UpdateCampaign(Microsoft.SharePoint.Campaigns.CampaignEntity)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_Campaigns_UpdateCommunication(Microsoft.SharePoint.Campaigns.CampaignCommunicationEntity)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_CampainAnalytics_GetReport(Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsReportRequest)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetAppDatabaseConnectionString(SP.AppInstance)">
@@ -28765,21 +28874,6 @@
         <End Type="SP.Web" Role="HostedAppsPartner" Multiplicity="0..1" />
       </Association>
     </Schema>
-    <Schema Namespace="Microsoft.SharePoint.CampainAnalytics" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-      <ComplexType Name="Element">
-        <Property Name="name" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="ReportRequest" />
-      <ComplexType Name="ReportResponse">
-        <Property Name="dimensions" Type="Collection(Microsoft.SharePoint.CampainAnalytics.Element)" />
-        <Property Name="metrics" Type="Collection(Microsoft.SharePoint.CampainAnalytics.Element)" />
-        <Property Name="rows" Type="Collection(Microsoft.SharePoint.CampainAnalytics.Row)" />
-      </ComplexType>
-      <ComplexType Name="Row">
-        <Property Name="dimensionReport" Type="Edm.String" />
-        <Property Name="metricReport" Type="Edm.String" />
-      </ComplexType>
-    </Schema>
     <Schema Namespace="Microsoft.SharePoint.Campaigns" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="CampaignCommunicationEntity">
         <Property Name="campaignId" Type="Edm.String" />
@@ -28802,6 +28896,24 @@
         <Property Name="campaignId" Type="Edm.String" />
         <Property Name="status" Type="Edm.String" />
         <Property Name="title" Type="Edm.String" />
+      </ComplexType>
+    </Schema>
+    <Schema Namespace="Microsoft.SharePoint.CampaignAnalytics" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="ReportResponse">
+        <Property Name="dimensions" Type="Collection(Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsReportTableElement)" />
+        <Property Name="metrics" Type="Collection(Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsReportTableElement)" />
+        <Property Name="rows" Type="Collection(Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsReportTableRow)" />
+      </ComplexType>
+      <ComplexType Name="VinciAnalyticsReportTableElement">
+        <Property Name="name" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="VinciAnalyticsReportTableRow">
+        <Property Name="dimensionReport" Type="Edm.String" />
+        <Property Name="metricReport" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="VinciAnalyticsReportRequest">
+        <Property Name="dimensions" Type="Collection(Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsReportTableElement)" />
+        <Property Name="metrics" Type="Collection(Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsReportTableElement)" />
       </ComplexType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.AuthPolicy.Events" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -31767,6 +31879,12 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
+      <EntityType Name="TenantRecycleBinInfoProvider">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.Marketplace" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="SPMarketplaceSettings">
@@ -32372,6 +32490,7 @@
         </Key>
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
         <Property Name="IsDomainIsolated" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="MultiTenantAppId" Type="Edm.String" />
         <Property Name="PackageApproverName" Type="Edm.String" />
         <Property Name="PackageName" Type="Edm.String" />
         <Property Name="PackageVersion" Type="Edm.String" />
