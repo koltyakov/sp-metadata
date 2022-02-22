@@ -8,10 +8,12 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 campaignId (Edm.String) | ✅ | ❌ | ❌ | ❌
 channels (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
-contributorIds (Collection(Edm.Int32)) | ✅ | ❌ | ❌ | ❌
+contributors (Collection(Microsoft.SharePoint.Campaigns.CampaignUserInfo)) | ✅ | ❌ | ❌ | ❌
 description (Edm.String) | ✅ | ❌ | ❌ | ❌
 endDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
-ownerId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+objectives (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+owner (Microsoft.SharePoint.Campaigns.CampaignUserInfo) | ✅ | ❌ | ❌ | ❌
 startDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 status (Edm.String) | ✅ | ❌ | ❌ | ❌
+tags (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 title (Edm.String) | ✅ | ❌ | ❌ | ❌

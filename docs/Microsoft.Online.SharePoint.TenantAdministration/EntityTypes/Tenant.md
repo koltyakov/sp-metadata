@@ -141,6 +141,8 @@ ProvisionSharedWithEveryoneFolder (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PublicCdnAllowedFileTypes (Edm.String) | ✅ | ❌ | ❌ | ❌
 PublicCdnEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PublicCdnOrigins (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+ReduceTempTokenLifetimeEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ReduceTempTokenLifetimeValue (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 RequireAcceptingAccountMatchInvitedAccount (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RequireAnonymousLinksExpireInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ResourceQuota (Edm.Double) | ✅ | ❌ | ❌ | ❌

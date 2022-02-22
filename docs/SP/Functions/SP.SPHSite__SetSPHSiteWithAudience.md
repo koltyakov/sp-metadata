@@ -1,7 +1,8 @@
-# Function Import: SP_Campaigns_UpdateCommunication
+# Function Import: SetSPHSiteWithAudience
 
 > Namespace: SP
 
+- Entity type: SP.SPHSite
 - Is composable: false
 - Is bindable: false
 
@@ -9,4 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-communication (Microsoft.SharePoint.Campaigns.CampaignCommunicationEntity) | ✅ | ❌ | ❌ | ❌
+audiences (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+siteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

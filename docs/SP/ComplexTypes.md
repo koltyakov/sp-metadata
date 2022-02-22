@@ -67,6 +67,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [FolderDeleteParameters](./ComplexTypes/FolderDeleteParameters.md) | ✅ | ❌ | ❌ | ❌
 [GroupCreationInformation](./ComplexTypes/GroupCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [Hashtag](./ComplexTypes/Hashtag.md) | ✅ | ✅ | ❌ | ❌
+[HomeSitesDetails](./ComplexTypes/HomeSitesDetails.md) | ✅ | ❌ | ❌ | ❌
 [HubSiteCreationInformation](./ComplexTypes/HubSiteCreationInformation.md) | ✅ | ✅ | ❌ | ❌
 [IngestionTaskKey](./ComplexTypes/IngestionTaskKey.md) | ✅ | ✅ | ✅ | ❌
 [KeyValue](./ComplexTypes/KeyValue.md) | ✅ | ✅ | ✅ | ✅

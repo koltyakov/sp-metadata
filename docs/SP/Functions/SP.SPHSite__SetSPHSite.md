@@ -1,7 +1,8 @@
-# Function Import: SP_SPHSite_SetSPHSite
+# Function Import: SetSPHSite
 
 > Namespace: SP
 
+- Entity type: SP.SPHSite
 - Is composable: false
 - Is bindable: false
 

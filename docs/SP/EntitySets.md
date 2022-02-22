@@ -184,7 +184,6 @@ Groups1 | ✅ | ✅ | ✅ | ❌
 Groupsitemanagers | ✅ | ✅ | ✅ | ❌
 HashTagCollections | ✅ | ✅ | ✅ | ✅
 HashtagStoreManagers | ❌ | ✅ | ❌ | ❌
-HomeSitesDetailss | ✅ | ❌ | ❌ | ❌
 HostedAppAddResponses | ✅ | ❌ | ❌ | ❌
 HostedApps | ✅ | ❌ | ❌ | ❌
 HostedAppsManagers | ✅ | ❌ | ❌ | ❌

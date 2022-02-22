@@ -609,7 +609,6 @@ SP_SPHSite_GetSPHSiteXGeo | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsCommSite](./Functions/SP_SPHSite_IsCommSite.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsModernSiteWithHorizontalNav](./Functions/SP_SPHSite_IsModernSiteWithHorizontalNav.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsValidHomeSite](./Functions/SP_SPHSite_IsValidHomeSite.md) | ✅ | ❌ | ❌ | ❌
-[SP_SPHSite_SetSPHSite](./Functions/SP_SPHSite_SetSPHSite.md) | ✅ | ❌ | ❌ | ❌
 SP_ServerSettings_GetBlockedFileExtensions | ✅ | ✅ | ✅ | ✅
 [SP_ServerSettings_GetGlobalInstalledLanguages](./Functions/SP_ServerSettings_GetGlobalInstalledLanguages.md) | ✅ | ✅ | ✅ | ✅
 SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌
@@ -670,6 +669,8 @@ SetId (SP.TimeZone) | ✅ | ❌ | ❌ | ❌
 SetMediaServiceMetadata (SP.File) | ✅ | ❌ | ❌ | ❌
 SetNotificationRecipients (SP.MultilingualSettings) | ✅ | ❌ | ❌ | ❌
 [SetQuizState](./Functions/SetQuizState.md) | ❌ | ❌ | ❌ | ✅
+SetSPHSite (SP.SPHSite) | ✅ | ❌ | ❌ | ❌
+SetSPHSiteWithAudience (SP.SPHSite) | ✅ | ❌ | ❌ | ❌
 SetShowInDisplayForm (SP.Field) | ✅ | ✅ | ✅ | ✅
 SetShowInDisplayForm (SP.FieldCalculated) | ✅ | ✅ | ✅ | ✅
 SetShowInDisplayForm (SP.FieldChoice) | ✅ | ✅ | ✅ | ✅
