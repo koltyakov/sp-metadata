@@ -14,6 +14,7 @@ MediaLengthInSeconds (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MediaServiceAutoKeyPoints (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceAutoTags (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceDateTaken (Edm.String) | ✅ | ❌ | ❌ | ❌
+MediaServiceDocTags (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceEventHashCode (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceFastMetadata (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceGenerationTime (Edm.String) | ✅ | ❌ | ❌ | ❌

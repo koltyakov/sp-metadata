@@ -390,6 +390,7 @@ LoadAndInstallApp (SP.Web) | ✅ | ✅ | ✅ | ✅
 LoadAndInstallAppInSpecifiedLocale (SP.Web) | ✅ | ✅ | ✅ | ✅
 LoadApp (SP.Web) | ✅ | ✅ | ✅ | ✅
 LocalTimeToUTC (SP.TimeZone) | ✅ | ✅ | ✅ | ✅
+LockSmartTemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 LookupAppPrincipal (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
 MakeHubSite (SP.Site) | ❌ | ✅ | ❌ | ❌
 MapToIcon (SP.Web) | ✅ | ✅ | ✅ | ✅
@@ -445,6 +446,7 @@ RecycleWithETag (SP.File) | ✅ | ✅ | ❌ | ❌
 RecycleWithParameters (SP.File) | ✅ | ❌ | ❌ | ❌
 RecycleWithParameters (SP.Folder) | ✅ | ❌ | ❌ | ❌
 RecycleWithParameters (SP.ListItem) | ✅ | ❌ | ❌ | ❌
+RefreshLockSmartTemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 RegisterHubSite (SP.Site) | ✅ | ✅ | ❌ | ❌
 RegisterPushNotificationSubscriber (SP.Web) | ✅ | ✅ | ✅ | ✅
 Remove (Collection(SP.Feature)) | ✅ | ✅ | ✅ | ✅
@@ -527,6 +529,7 @@ SP_Campaigns_GetCampaignsSummary | ✅ | ❌ | ❌ | ❌
 [SP_Campaigns_GetCommunications](./Functions/SP_Campaigns_GetCommunications.md) | ✅ | ❌ | ❌ | ❌
 [SP_Campaigns_UpdateCampaign](./Functions/SP_Campaigns_UpdateCampaign.md) | ✅ | ❌ | ❌ | ❌
 [SP_Campaigns_UpdateCommunication](./Functions/SP_Campaigns_UpdateCommunication.md) | ✅ | ❌ | ❌ | ❌
+[SP_CampainAnalytics_GetDimensions](./Functions/SP_CampainAnalytics_GetDimensions.md) | ✅ | ❌ | ❌ | ❌
 [SP_CampainAnalytics_GetReport](./Functions/SP_CampainAnalytics_GetReport.md) | ✅ | ❌ | ❌ | ❌
 SP_CurrencyList_GetList | ✅ | ✅ | ❌ | ❌
 SP_EmployeeEngagement | ✅ | ❌ | ❌ | ❌
@@ -744,6 +747,7 @@ UTCToLocalTime (SP.TimeZone) | ✅ | ✅ | ✅ | ✅
 UnPublish (SP.File) | ✅ | ✅ | ✅ | ✅
 UndoCheckOut (SP.File) | ✅ | ✅ | ✅ | ✅
 Uninstall (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
+UnlockSmartTemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 UnpublishMappedView (SP.List) | ✅ | ✅ | ❌ | ❌
 UnregisterHubSite (SP.Site) | ✅ | ✅ | ❌ | ❌
 UnregisterPushNotificationSubscriber (SP.Web) | ✅ | ✅ | ✅ | ✅

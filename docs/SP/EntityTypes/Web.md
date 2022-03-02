@@ -8,6 +8,7 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 AccessRequestListUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 AccessRequestSiteDescription (Edm.String) | ✅ | ❌ | ❌ | ❌
+Acronym (Edm.String) | ✅ | ❌ | ❌ | ❌
 AllowAutomaticASPXPageIndexing (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 AllowCreateDeclarativeWorkflowForCurrentUser (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 AllowDesignerForCurrentUser (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
