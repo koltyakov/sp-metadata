@@ -159,6 +159,10 @@
         <Property Name="TaskId" Type="Edm.String" />
         <Property Name="TenantName" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="LockFileData">
+        <Property Name="lockExpireTimeStamp" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="lockId" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="MultiGeoCopyParameters">
         <Property Name="binaryPayload" Type="Edm.Binary" />
         <Property Name="jobId" Type="Edm.Guid" Nullable="false" />
@@ -682,6 +686,7 @@
         <Property Name="MediaServiceAutoKeyPoints" Type="Edm.String" />
         <Property Name="MediaServiceAutoTags" Type="Edm.String" />
         <Property Name="MediaServiceDateTaken" Type="Edm.String" />
+        <Property Name="MediaServiceDocTags" Type="Edm.String" />
         <Property Name="MediaServiceEventHashCode" Type="Edm.String" />
         <Property Name="MediaServiceFastMetadata" Type="Edm.String" />
         <Property Name="MediaServiceGenerationTime" Type="Edm.String" />
@@ -1854,6 +1859,7 @@
       <EntityType Name="Web" BaseType="SP.SecurableObject">
         <Property Name="AccessRequestListUrl" Type="Edm.String" />
         <Property Name="AccessRequestSiteDescription" Type="Edm.String" />
+        <Property Name="Acronym" Type="Edm.String" />
         <Property Name="AllowAutomaticASPXPageIndexing" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowCreateDeclarativeWorkflowForCurrentUser" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowDesignerForCurrentUser" Type="Edm.Boolean" Nullable="false" />
@@ -10165,6 +10171,9 @@
         <FunctionImport Name="SP_Campaigns_UpdateCommunication" ReturnType="Microsoft.SharePoint.Campaigns.CampaignCommunicationEntity">
           <Parameter Name="communication" Type="Microsoft.SharePoint.Campaigns.CampaignCommunicationEntity" />
         </FunctionImport>
+        <FunctionImport Name="SP_CampainAnalytics_GetDimensions" ReturnType="Microsoft.SharePoint.CampaignAnalytics.DimensionsResponse" IsSideEffecting="false">
+          <Parameter Name="request" Type="Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsDimensionsRequest" />
+        </FunctionImport>
         <FunctionImport Name="SP_CampainAnalytics_GetReport" ReturnType="Microsoft.SharePoint.CampaignAnalytics.ReportResponse">
           <Parameter Name="request" Type="Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsReportRequest" />
         </FunctionImport>
@@ -10784,6 +10793,10 @@
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="sourceUrl" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="LockSmartTemplate" ReturnType="SP.LockFileData" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="Id" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="ParseDocumentTemplate" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="Name" Type="Edm.String" />
@@ -10795,6 +10808,11 @@
         </FunctionImport>
         <FunctionImport Name="Recycle" ReturnType="Edm.Guid" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
+        </FunctionImport>
+        <FunctionImport Name="RefreshLockSmartTemplate" ReturnType="SP.LockFileData" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="Id" Type="Edm.String" />
+          <Parameter Name="LockId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="RenderExtendedListFormData" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -11015,6 +11033,11 @@
         <FunctionImport Name="SyncFlowTemplates" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="category" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="UnlockSmartTemplate" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="Id" Type="Edm.String" />
+          <Parameter Name="LockId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="UnpublishMappedView" ReturnType="SP.View" IsBindable="true" EntitySet="Views">
           <Parameter Name="this" Type="SP.List" />
@@ -17498,13 +17521,16 @@
       <Annotations Target="Microsoft.SharePoint.Campaigns.CampaignCommunicationEntity">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Campaigns.CampaignEntity">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Campaigns.CampaignUserInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Campaigns.CampaignEntity">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Campaigns.CampaignSummary">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.CampaignAnalytics.DimensionsResponse">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.CampaignAnalytics.ReportResponse">
@@ -17514,6 +17540,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsReportTableRow">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsDimensionsRequest">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsReportRequest">
@@ -17820,6 +17849,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.MediaServiceUpdateParameters/MachineLearningSampleMeta">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.MediaServiceUpdateParameters/MediaServiceDocTags">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.MediaServiceUpdateParameters/MediaServiceImageTags">
@@ -18996,6 +19028,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Web/AccessRequestSiteDescription">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Web/Acronym">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Activities.SPActivityEntity">
@@ -21747,6 +21782,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Campaigns_UpdateCommunication(Microsoft.SharePoint.Campaigns.CampaignCommunicationEntity)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_CampainAnalytics_GetDimensions(Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsDimensionsRequest)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_CampainAnalytics_GetReport(Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsReportRequest)">
@@ -28900,9 +28938,24 @@
     <Schema Namespace="Microsoft.SharePoint.Campaigns" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="CampaignCommunicationEntity">
         <Property Name="campaignId" Type="Edm.String" />
+        <Property Name="channels" Type="Collection(Edm.String)" />
         <Property Name="communicationId" Type="Edm.String" />
+        <Property Name="createdBy" Type="Microsoft.SharePoint.Campaigns.CampaignUserInfo" />
+        <Property Name="lastEditedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="page" Type="Edm.String" />
         <Property Name="publishingDateTime" Type="Edm.DateTime" />
         <Property Name="state" Type="Edm.String" />
+        <Property Name="title" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="CampaignUserInfo">
+        <Property Name="email" Type="Edm.String" />
+        <Property Name="id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="isExternal" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="loginName" Type="Edm.String" />
+        <Property Name="name" Type="Edm.String" />
+        <Property Name="principalType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="userId" Type="SP.UserIdInfo" />
+        <Property Name="userPrincipalName" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="CampaignEntity">
         <Property Name="campaignId" Type="Edm.String" />
@@ -28917,16 +28970,6 @@
         <Property Name="tags" Type="Collection(Edm.String)" />
         <Property Name="title" Type="Edm.String" />
       </ComplexType>
-      <ComplexType Name="CampaignUserInfo">
-        <Property Name="email" Type="Edm.String" />
-        <Property Name="id" Type="Edm.Int32" Nullable="false" />
-        <Property Name="isExternal" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="loginName" Type="Edm.String" />
-        <Property Name="name" Type="Edm.String" />
-        <Property Name="principalType" Type="Edm.Int32" Nullable="false" />
-        <Property Name="userId" Type="SP.UserIdInfo" />
-        <Property Name="userPrincipalName" Type="Edm.String" />
-      </ComplexType>
       <ComplexType Name="CampaignSummary">
         <Property Name="campaignId" Type="Edm.String" />
         <Property Name="status" Type="Edm.String" />
@@ -28934,6 +28977,9 @@
       </ComplexType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.CampaignAnalytics" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="DimensionsResponse">
+        <Property Name="application" Type="Collection(Edm.String)" />
+      </ComplexType>
       <ComplexType Name="ReportResponse">
         <Property Name="dimensions" Type="Collection(Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsReportTableElement)" />
         <Property Name="metrics" Type="Collection(Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsReportTableElement)" />
@@ -28946,6 +28992,7 @@
         <Property Name="dimensionReport" Type="Edm.String" />
         <Property Name="metricReport" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="VinciAnalyticsDimensionsRequest" />
       <ComplexType Name="VinciAnalyticsReportRequest">
         <Property Name="dimensions" Type="Collection(Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsReportTableElement)" />
         <Property Name="metrics" Type="Collection(Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsReportTableElement)" />
