@@ -12848,6 +12848,9 @@
           <Parameter Name="this" Type="SP.Folder" />
           <Parameter Name="parameters" Type="SP.FolderDeleteParameters" />
         </FunctionImport>
+        <FunctionImport Name="StartDelete" ReturnType="Edm.Guid" IsBindable="true">
+          <Parameter Name="this" Type="SP.Folder" />
+        </FunctionImport>
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.Folder" />
         </FunctionImport>
@@ -30442,6 +30445,7 @@
         <Property Name="OwnerLoginName" Type="Edm.String" />
         <Property Name="OwnerName" Type="Edm.String" />
         <Property Name="PWAEnabled" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ReadOnlyAccessPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RelatedGroupId" Type="Edm.Guid" Nullable="false" />
         <Property Name="RestrictedToRegion" Type="Edm.Int32" Nullable="false" />
         <Property Name="SandboxedCodeActivationCapability" Type="Edm.Int32" Nullable="false" />
