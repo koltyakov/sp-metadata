@@ -60,6 +60,7 @@ OwnerEmail (Edm.String) | ✅ | ❌ | ❌ | ❌
 OwnerLoginName (Edm.String) | ✅ | ❌ | ❌ | ❌
 OwnerName (Edm.String) | ✅ | ❌ | ❌ | ❌
 PWAEnabled (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+ReadOnlyAccessPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RelatedGroupId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 RestrictedToRegion (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SandboxedCodeActivationCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌

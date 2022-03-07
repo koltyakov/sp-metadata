@@ -732,6 +732,7 @@ SetValueForUICulture (SP.UserResource) | ✅ | ✅ | ✅ | ❌
 SetViewXml (SP.View) | ✅ | ✅ | ❌ | ❌
 SiteReference (SP.KnowledgeHub) | ✅ | ❌ | ❌ | ❌
 SitesReference (SP.OrganizationNews) | ✅ | ❌ | ❌ | ❌
+StartDelete (SP.Folder) | ✅ | ❌ | ❌ | ❌
 StartUpload (SP.File) | ✅ | ✅ | ✅ | ❌
 StartUploadFile (SP.File) | ✅ | ❌ | ❌ | ❌
 SyncFlowCallbackUrl (SP.List) | ✅ | ✅ | ❌ | ❌
