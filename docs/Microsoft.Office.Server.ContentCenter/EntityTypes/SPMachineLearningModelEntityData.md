@@ -6,6 +6,8 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+AIBuilderHybridModelEnvironment (Edm.String) | ✅ | ❌ | ❌ | ❌
+AIBuilderHybridModelType (Edm.String) | ✅ | ❌ | ❌ | ❌
 Accuracy (Edm.Single) | ✅ | ❌ | ❌ | ❌
 AzureCognitivePrebuiltModelName (Edm.String) | ✅ | ❌ | ❌ | ❌
 BaseContentTypeName (Edm.String) | ✅ | ❌ | ❌ | ❌
