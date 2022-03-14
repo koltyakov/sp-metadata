@@ -18262,6 +18262,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/AIBuilderHybridModelType">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/AzureCognitivePrebuiltModelName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18545,6 +18548,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/Accuracy">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/AIBuilderHybridModelEnvironment">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/AIBuilderHybridModelType">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/AzureCognitivePrebuiltModelName">
@@ -22876,9 +22885,10 @@
       </EntityType>
       <EntityType Name="SPMachineLearningModel">
         <Key>
-          <PropertyRef Name="AzureCognitivePrebuiltModelName" />
+          <PropertyRef Name="AIBuilderHybridModelType" />
         </Key>
-        <Property Name="AzureCognitivePrebuiltModelName" Type="Edm.String" Nullable="false" />
+        <Property Name="AIBuilderHybridModelType" Type="Edm.String" Nullable="false" />
+        <Property Name="AzureCognitivePrebuiltModelName" Type="Edm.String" />
         <Property Name="BaseContentTypeName" Type="Edm.String" />
         <Property Name="ConfidenceScore" Type="Edm.String" />
         <Property Name="ContentTypeGroup" Type="Edm.String" />
@@ -22985,6 +22995,8 @@
           <PropertyRef Name="Accuracy" />
         </Key>
         <Property Name="Accuracy" Type="Edm.Single" Nullable="false" />
+        <Property Name="AIBuilderHybridModelEnvironment" Type="Edm.String" />
+        <Property Name="AIBuilderHybridModelType" Type="Edm.String" />
         <Property Name="AzureCognitivePrebuiltModelName" Type="Edm.String" />
         <Property Name="BaseContentTypeName" Type="Edm.String" />
         <Property Name="ColumnId" Type="Edm.String" />
@@ -28975,13 +28987,20 @@
       </ComplexType>
       <ComplexType Name="CampaignSummary">
         <Property Name="campaignId" Type="Edm.String" />
+        <Property Name="endDate" Type="Edm.DateTime" />
+        <Property Name="owner" Type="Microsoft.SharePoint.Campaigns.CampaignUserInfo" />
+        <Property Name="startDate" Type="Edm.DateTime" Nullable="false" />
         <Property Name="status" Type="Edm.String" />
+        <Property Name="tags" Type="Collection(Edm.String)" />
         <Property Name="title" Type="Edm.String" />
       </ComplexType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.CampaignAnalytics" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="DimensionsResponse">
         <Property Name="application" Type="Collection(Edm.String)" />
+        <Property Name="country" Type="Collection(Edm.String)" />
+        <Property Name="device" Type="Collection(Edm.String)" />
+        <Property Name="role" Type="Collection(Edm.String)" />
       </ComplexType>
       <ComplexType Name="ReportResponse">
         <Property Name="dimensions" Type="Collection(Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsReportTableElement)" />
