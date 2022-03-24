@@ -15,6 +15,7 @@ AddressbarLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 AllowCommentsTextOnEmailEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowDownloadingNonWebViewableFiles (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowEditing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+AllowEveryoneExceptExternalUsersClaimInPrivateSite (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowGuestUserShareToUsersNotInSiteCollection (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowLimitedAccessOnUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowOverrideForBlockUserInfoVisibility (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -172,6 +173,7 @@ StreamLaunchConfigLastUpdated (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 StreamLaunchConfigUpdateCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SyncAadB2BManagementPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyncPrivacyProfileProperties (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+SyntexBillingSubscriptionSettings (Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext) | ✅ | ❌ | ❌ | ❌
 UseFindPeopleInPeoplePicker (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UsePersistentCookiesForExplorerView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UserVoiceForFeedbackEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

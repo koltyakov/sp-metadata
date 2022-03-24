@@ -29,6 +29,7 @@ Description (Edm.String) | ✅ | ❌ | ❌ | ❌
 DisableAppViews (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DisableCompanyWideSharingLinks (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DisableFlows (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+ExcludedBlockDownloadGroupIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 ExternalUserExpirationInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 GroupId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 GroupOwnerLoginName (Edm.String) | ✅ | ❌ | ❌ | ❌

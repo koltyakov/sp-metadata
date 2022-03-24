@@ -12,6 +12,8 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [AppProperties](./ComplexTypes/AppProperties.md) | ✅ | ✅ | ❌ | ❌
 [AppSiteContext](./ComplexTypes/AppSiteContext.md) | ✅ | ✅ | ❌ | ❌
 [AppViewCreationInfo](./ComplexTypes/AppViewCreationInfo.md) | ✅ | ✅ | ❌ | ❌
+[ApprovalRequest](./ComplexTypes/ApprovalRequest.md) | ✅ | ❌ | ❌ | ❌
+[ApprovalsProperties](./ComplexTypes/ApprovalsProperties.md) | ✅ | ❌ | ❌ | ❌
 [AsyncReadJobInfo](./ComplexTypes/AsyncReadJobInfo.md) | ✅ | ❌ | ❌ | ❌
 [AsyncReadOptions](./ComplexTypes/AsyncReadOptions.md) | ✅ | ❌ | ❌ | ❌
 [AttachmentCreationInformation](./ComplexTypes/AttachmentCreationInformation.md) | ✅ | ✅ | ✅ | ✅

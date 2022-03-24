@@ -257,11 +257,13 @@ GetByName (Collection(SP.Group)) | ✅ | ✅ | ✅ | ✅
 GetByName (Collection(SP.ListTemplate)) | ✅ | ✅ | ✅ | ✅
 GetByName (Collection(SP.RoleDefinition)) | ✅ | ✅ | ✅ | ✅
 GetByName (Collection(SP.WebTemplate)) | ✅ | ✅ | ✅ | ✅
+GetByObjectId (Collection(SP.User)) | ✅ | ❌ | ❌ | ❌
 GetByPageType (Collection(SP.Form)) | ✅ | ✅ | ✅ | ✅
 GetByPath (Collection(SP.CheckedOutFile)) | ✅ | ✅ | ❌ | ❌
 GetByPath (Collection(SP.Folder)) | ✅ | ✅ | ❌ | ❌
 GetByPathOrAddStub (Collection(SP.File)) | ✅ | ✅ | ❌ | ❌
 GetByPrincipalId (Collection(SP.RoleAssignment)) | ✅ | ✅ | ✅ | ✅
+GetByPuid (Collection(SP.User)) | ✅ | ❌ | ❌ | ❌
 GetByStoreId (Collection(SP.PushNotificationSubscriber)) | ✅ | ✅ | ✅ | ✅
 GetByStringId (Collection(SP.ListItem)) | ✅ | ✅ | ✅ | ✅
 GetByTitle (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
@@ -359,6 +361,7 @@ GetSPAppContextAsStream (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetSharedWithUsers (SP.ObjectSharingInformation) | ✅ | ✅ | ✅ | ✅
 GetSharingLinkData (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetSiteUrlByHubSiteId (Collection(SP.HubSite)) | ✅ | ❌ | ❌ | ❌
+GetSiteUserIncludingDeletedByPuid (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetSpecialFolderUrl (SP.List) | ✅ | ✅ | ✅ | ❌
 GetStorageEntity (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetSubwebsFilteredForCurrentUser (SP.Web) | ✅ | ✅ | ✅ | ✅
@@ -521,6 +524,15 @@ SP_AppPrincipalIdentityProvider_External | ✅ | ✅ | ✅ | ✅
 [SP_AppPrincipalName_CreateFromNameIdentifier](./Functions/SP_AppPrincipalName_CreateFromNameIdentifier.md) | ✅ | ✅ | ✅ | ✅
 <span title="SP_AppSiteContextUtility_GetAppSiteContextCollection">SP_AppSiteContextUtility_GetAppSiteContextCollecti...</span> (SP AppSiteContextUtility GetAppSiteContextCollection) | ✅ | ✅ | ❌ | ❌
 [SP_AppTileProperties_GetAppProperties](./Functions/SP_AppTileProperties_GetAppProperties.md) | ✅ | ✅ | ❌ | ❌
+[SP_Approvals_ApproveItemRequest](./Functions/SP_Approvals_ApproveItemRequest.md) | ✅ | ❌ | ❌ | ❌
+[SP_Approvals_CancelItemRequest](./Functions/SP_Approvals_CancelItemRequest.md) | ✅ | ❌ | ❌ | ❌
+[SP_Approvals_CreateItemRequest](./Functions/SP_Approvals_CreateItemRequest.md) | ✅ | ❌ | ❌ | ❌
+[SP_Approvals_Disable](./Functions/SP_Approvals_Disable.md) | ✅ | ❌ | ❌ | ❌
+[SP_Approvals_Enable](./Functions/SP_Approvals_Enable.md) | ✅ | ❌ | ❌ | ❌
+[SP_Approvals_GetItemRequest](./Functions/SP_Approvals_GetItemRequest.md) | ✅ | ❌ | ❌ | ❌
+[SP_Approvals_GetProperties](./Functions/SP_Approvals_GetProperties.md) | ✅ | ❌ | ❌ | ❌
+[SP_Approvals_RejectItemRequest](./Functions/SP_Approvals_RejectItemRequest.md) | ✅ | ❌ | ❌ | ❌
+[SP_Approvals_SetProperties](./Functions/SP_Approvals_SetProperties.md) | ✅ | ❌ | ❌ | ❌
 [SP_Campaigns_CreateCampaign](./Functions/SP_Campaigns_CreateCampaign.md) | ✅ | ❌ | ❌ | ❌
 [SP_Campaigns_CreateCommunication](./Functions/SP_Campaigns_CreateCommunication.md) | ✅ | ❌ | ❌ | ❌
 [SP_Campaigns_GetCampaign](./Functions/SP_Campaigns_GetCampaign.md) | ✅ | ❌ | ❌ | ❌
