@@ -98,6 +98,20 @@
       <ComplexType Name="FieldUserValue" BaseType="SP.FieldLookupValue">
         <Property Name="Email" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="ApprovalRequest">
+        <Property Name="Id" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Title" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ApprovalsProperties">
+        <Property Name="ApproversAwaitAll" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ApproversAwaitAllFixed" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ApproversFixed" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ApproverSourceType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ApproverSourceValue" Type="Edm.String" />
+        <Property Name="IsConfigured" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsProvisioned" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="ContentAssemblyFileInfo">
         <Property Name="FileUrl" Type="Edm.String" />
         <Property Name="ServerRedirectedEmbedUrl" Type="Edm.String" />
@@ -2913,6 +2927,12 @@
         <Property Name="TenantInstanceId" Type="Edm.Guid" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
       </EntityType>
+      <EntityType Name="Approvals" Abstract="true">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="ListBloomFilter">
         <Key>
           <PropertyRef Name="BloomFilterSize" />
@@ -4199,6 +4219,7 @@
         <EntitySet Name="AppContextSites" EntityType="SP.AppContextSite" />
         <EntitySet Name="AppInstances" EntityType="SP.AppInstance" />
         <EntitySet Name="AppInstanceErrorDetailss" EntityType="SP.AppInstanceErrorDetails" />
+        <EntitySet Name="Approvalss" EntityType="SP.Approvals" />
         <EntitySet Name="AppSiteContextUtilitys" EntityType="SP.AppSiteContextUtility" />
         <EntitySet Name="AppTiles" EntityType="SP.AppTile" />
         <EntitySet Name="AppTilePropertiess" EntityType="SP.AppTileProperties" />
@@ -4262,6 +4283,7 @@
         <EntitySet Name="Groups1" EntityType="SP.Group" />
         <EntitySet Name="InformationRightsManagementFileSettingss" EntityType="SP.InformationRightsManagementFileSettings" />
         <EntitySet Name="InformationRightsManagementSettingss" EntityType="SP.InformationRightsManagementSettings" />
+        <EntitySet Name="ApprovalsManagers" EntityType="SP.Internal.ApprovalsManager" />
         <EntitySet Name="FlowPermissionss" EntityType="SP.Internal.FlowPermissions" />
         <EntitySet Name="FormsCustomizations" EntityType="SP.Internal.FormsCustomization" />
         <EntitySet Name="LanguageCollections" EntityType="SP.LanguageCollection" />
@@ -8087,6 +8109,7 @@
           <Parameter Name="message" Type="Edm.String" />
           <Parameter Name="recipientEmails" Type="Collection(Edm.String)" />
           <Parameter Name="pageContent" Type="Edm.String" />
+          <Parameter Name="subject" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="ShareSiteByEmail" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.RichSharing" />
@@ -11554,6 +11577,10 @@
         <FunctionImport Name="SP_Web_GetSharingLinkKind" ReturnType="Edm.Int32" IsSideEffecting="false">
           <Parameter Name="fileUrl" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="GetSiteUserIncludingDeletedByPuid" ReturnType="SP.User" IsComposable="true" IsBindable="true" EntitySet="Users1">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="puid" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="GetSPAppContextAsStream" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
         </FunctionImport>
@@ -11729,6 +11756,7 @@
           <Parameter Name="fieldId" Type="Edm.String" />
           <Parameter Name="overwrite" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="SP_Internal_ApprovalsManager_OnRequestUpdated" IsSideEffecting="false" />
         <FunctionImport Name="SP_ListHomeItemCollection_GetListHomeItems" ReturnType="Edm.Stream" IsSideEffecting="false">
           <Parameter Name="sortBy" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
@@ -12919,6 +12947,51 @@
           <Parameter Name="this" Type="SP.LanguageCollection" />
           <Parameter Name="id" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="SP_Approvals_ApproveItemRequest">
+          <Parameter Name="listId" Type="Edm.String" />
+          <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="etag" Type="Edm.String" />
+          <Parameter Name="approvalId" Type="Edm.String" />
+          <Parameter Name="comments" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Approvals_CancelItemRequest">
+          <Parameter Name="listId" Type="Edm.String" />
+          <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="etag" Type="Edm.String" />
+          <Parameter Name="approvalId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Approvals_CreateItemRequest">
+          <Parameter Name="listId" Type="Edm.String" />
+          <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="etag" Type="Edm.String" />
+          <Parameter Name="approvers" Type="Edm.String" />
+          <Parameter Name="title" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Approvals_Disable">
+          <Parameter Name="listId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Approvals_Enable">
+          <Parameter Name="listId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Approvals_GetItemRequest" ReturnType="SP.ApprovalRequest" IsSideEffecting="false">
+          <Parameter Name="listId" Type="Edm.String" />
+          <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="etag" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Approvals_GetProperties" ReturnType="SP.ApprovalsProperties" IsSideEffecting="false">
+          <Parameter Name="listId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Approvals_RejectItemRequest">
+          <Parameter Name="listId" Type="Edm.String" />
+          <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="etag" Type="Edm.String" />
+          <Parameter Name="approvalId" Type="Edm.String" />
+          <Parameter Name="comments" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_Approvals_SetProperties">
+          <Parameter Name="listId" Type="Edm.String" />
+          <Parameter Name="properties" Type="SP.ApprovalsProperties" />
+        </FunctionImport>
         <FunctionImport Name="GetByStringId" ReturnType="SP.ListItem" IsComposable="true" IsBindable="true" EntitySet="ListItems">
           <Parameter Name="this" Type="Collection(SP.ListItem)" />
           <Parameter Name="sId" Type="Edm.String" />
@@ -13484,6 +13557,14 @@
         <FunctionImport Name="GetByLoginName" ReturnType="SP.User" IsComposable="true" IsBindable="true" EntitySet="Users1">
           <Parameter Name="this" Type="Collection(SP.User)" />
           <Parameter Name="loginName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetByObjectId" ReturnType="SP.User" IsComposable="true" IsBindable="true" EntitySet="Users1">
+          <Parameter Name="this" Type="Collection(SP.User)" />
+          <Parameter Name="objectId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetByPuid" ReturnType="SP.User" IsComposable="true" IsBindable="true" EntitySet="Users1">
+          <Parameter Name="this" Type="Collection(SP.User)" />
+          <Parameter Name="puid" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="RemoveById" IsBindable="true">
           <Parameter Name="this" Type="Collection(SP.User)" />
@@ -18226,6 +18307,21 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SiteUserGroupsData">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext/AzureResourceId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext/AzureSubscriptionState">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext/Location">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext/Updated">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.AppServices.AppCollection">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18551,6 +18647,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/AIBuilderHybridModelEnvironment">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/AIBuilderHybridModelHostName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/AIBuilderHybridModelType">
@@ -19852,6 +19951,9 @@
       <Annotations Target="Microsoft.SharePoint.AddToOneDrive.placesInformation">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Internal.ApprovalsManager">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ListHomeItem2">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20018,6 +20120,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.HubSite/Title">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Approvals">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.RemoteWeb">
@@ -20309,6 +20414,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/Sites">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/SyntexBillingSubscriptionSettings">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/WhoCanShareAllowListInTenantByPrincipalIdentity">
@@ -20803,7 +20911,7 @@
       <Annotations Target="SP.ApiData/SP_Publishing_RichSharing()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SharePageByEmail(SP.Publishing.RichSharing, Edm.String, Edm.String, Collection(Edm.String), Edm.String)">
+      <Annotations Target="SP.ApiData/SharePageByEmail(SP.Publishing.RichSharing, Edm.String, Edm.String, Collection(Edm.String), Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/ShareSiteByEmail(SP.Publishing.RichSharing, Edm.String, Edm.String, Edm.String, Edm.String, Collection(Edm.String))">
@@ -22084,6 +22192,9 @@
       <Annotations Target="SP.ApiData/UploadImage(SP.Web, Edm.String, Edm.String, Edm.Stream, Edm.String, Edm.Int32, Edm.String, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_Internal_ApprovalsManager_OnRequestUpdated()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_ListHomeItemCollection_GetListHomeItems(Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22283,6 +22394,33 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Update(SP.InformationRightsManagementFileSettings)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_Approvals_ApproveItemRequest(Edm.String, Edm.Int32, Edm.String, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_Approvals_CancelItemRequest(Edm.String, Edm.Int32, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_Approvals_CreateItemRequest(Edm.String, Edm.Int32, Edm.String, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_Approvals_Disable(Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_Approvals_Enable(Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_Approvals_GetItemRequest(Edm.String, Edm.Int32, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_Approvals_GetProperties(Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_Approvals_RejectItemRequest(Edm.String, Edm.Int32, Edm.String, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_Approvals_SetProperties(Edm.String, SP.ApprovalsProperties)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_SharingUtility_GetUserDirectoryInfoByEmail(Edm.String)">
@@ -22996,6 +23134,7 @@
         </Key>
         <Property Name="Accuracy" Type="Edm.Single" Nullable="false" />
         <Property Name="AIBuilderHybridModelEnvironment" Type="Edm.String" />
+        <Property Name="AIBuilderHybridModelHostName" Type="Edm.String" />
         <Property Name="AIBuilderHybridModelType" Type="Edm.String" />
         <Property Name="AzureCognitivePrebuiltModelName" Type="Edm.String" />
         <Property Name="BaseContentTypeName" Type="Edm.String" />
@@ -28826,6 +28965,12 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
+      <EntityType Name="ApprovalsManager" Abstract="true">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.Internal" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="TrackedItemUpdatesRequest">
@@ -28998,9 +29143,6 @@
     <Schema Namespace="Microsoft.SharePoint.CampaignAnalytics" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="DimensionsResponse">
         <Property Name="application" Type="Collection(Edm.String)" />
-        <Property Name="country" Type="Collection(Edm.String)" />
-        <Property Name="device" Type="Collection(Edm.String)" />
-        <Property Name="role" Type="Collection(Edm.String)" />
       </ComplexType>
       <ComplexType Name="ReportResponse">
         <Property Name="dimensions" Type="Collection(Microsoft.SharePoint.CampaignAnalytics.VinciAnalyticsReportTableElement)" />
@@ -30338,6 +30480,12 @@
         <Property Name="Id" Type="Edm.String" />
         <Property Name="Name" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="SyntexBillingContext">
+        <Property Name="AzureResourceId" Type="Edm.String" />
+        <Property Name="AzureSubscriptionState" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Location" Type="Edm.String" />
+        <Property Name="Updated" Type="Edm.DateTime" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="TenantDefaultTimeZoneId">
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.Int32" Nullable="false" />
@@ -30433,6 +30581,7 @@
         <Property Name="DisableAppViews" Type="Edm.Int32" Nullable="false" />
         <Property Name="DisableCompanyWideSharingLinks" Type="Edm.Int32" Nullable="false" />
         <Property Name="DisableFlows" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ExcludedBlockDownloadGroupIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="ExternalUserExpirationInDays" Type="Edm.Int32" Nullable="false" />
         <Property Name="GroupId" Type="Edm.Guid" Nullable="false" />
         <Property Name="GroupOwnerLoginName" Type="Edm.String" />
@@ -30579,6 +30728,7 @@
         <Property Name="AllowDownloadingNonWebViewableFiles" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowedDomainListForSyncClient" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="AllowEditing" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AllowEveryoneExceptExternalUsersClaimInPrivateSite" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowGuestUserShareToUsersNotInSiteCollection" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowLimitedAccessOnUnmanagedDevices" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowOverrideForBlockUserInfoVisibility" Type="Edm.Boolean" Nullable="false" />
@@ -30735,6 +30885,7 @@
         <Property Name="StreamLaunchConfigUpdateCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="SyncAadB2BManagementPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyncPrivacyProfileProperties" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SyntexBillingSubscriptionSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext" />
         <Property Name="UseFindPeopleInPeoplePicker" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UsePersistentCookiesForExplorerView" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UserVoiceForFeedbackEnabled" Type="Edm.Boolean" Nullable="false" />
@@ -32413,6 +32564,7 @@
         <Property Name="AllowDownloadingNonWebViewableFiles" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowedDomainListForSyncClient" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="AllowEditing" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AllowEveryoneExceptExternalUsersClaimInPrivateSite" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowGuestUserShareToUsersNotInSiteCollection" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowLimitedAccessOnUnmanagedDevices" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowOverrideForBlockUserInfoVisibility" Type="Edm.Boolean" Nullable="false" />
@@ -32532,6 +32684,7 @@
         <Property Name="StreamLaunchConfigUpdateCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="SyncAadB2BManagementPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyncPrivacyProfileProperties" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SyntexBillingSubscriptionSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext" />
         <Property Name="UseFindPeopleInPeoplePicker" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UsePersistentCookiesForExplorerView" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UserVoiceForFeedbackEnabled" Type="Edm.Boolean" Nullable="false" />
