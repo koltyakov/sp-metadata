@@ -1913,6 +1913,7 @@
         <Property Name="HideTitleInHeader" Type="Edm.Boolean" Nullable="false" />
         <Property Name="HorizontalQuickLaunch" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="IsEduClass" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsHomepageModernized" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsMultilingual" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsProvisioningComplete" Type="Edm.Boolean" Nullable="false" />
@@ -5217,6 +5218,9 @@
         <FunctionImport Name="ImportMeta" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsBindable="true" EntitySet="Models">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
         </FunctionImport>
+        <FunctionImport Name="InvokeConnectorQuery" ReturnType="Edm.Stream" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
+        </FunctionImport>
         <FunctionImport Name="Rename" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsBindable="true" EntitySet="Models">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
           <Parameter Name="renameTo" Type="Edm.String" />
@@ -5262,6 +5266,7 @@
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
           <Parameter Name="primedLibraryName" Type="Edm.String" />
           <Parameter Name="packageName" Type="Edm.String" />
+          <Parameter Name="isTileViewEnabled" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="UnbindModelFromContentType" IsBindable="true">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
@@ -6364,6 +6369,9 @@
           <Parameter Name="this" Type="SP.UserProfiles.PersonalCache" />
           <Parameter Name="cacheItems" Type="Collection(SP.UserProfiles.PersonalCacheItem)" />
           <Parameter Name="mySiteUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="Dispose" IsBindable="true">
+          <Parameter Name="this" Type="SP.UserProfiles.PersonalCache" />
         </FunctionImport>
         <FunctionImport Name="LoadUserProfile" IsBindable="true">
           <Parameter Name="this" Type="SP.UserProfiles.PersonalCache" />
@@ -17404,6 +17412,9 @@
       <Annotations Target="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignTask/SiteDesignID">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignTask/SiteDesignStore">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignTask/SiteID">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19195,6 +19206,9 @@
       <Annotations Target="SP.Web/HostedApps">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Web/IsEduClass">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Web/LogoAlignment">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20572,6 +20586,9 @@
       <Annotations Target="SP.ApiData/ImportMeta(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/InvokeConnectorQuery(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Rename(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20602,7 +20619,7 @@
       <Annotations Target="SP.ApiData/SetupContractsSolution(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SetupPrimedLibrary(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String, Edm.String)">
+      <Annotations Target="SP.ApiData/SetupPrimedLibrary(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String, Edm.String, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/UnbindModelFromContentType(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String)">
@@ -20687,6 +20704,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/DeleteCacheItemsAsync2(SP.UserProfiles.PersonalCache, Collection(SP.UserProfiles.PersonalCacheItem), Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Dispose(SP.UserProfiles.PersonalCache)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/LoadUserProfile(SP.UserProfiles.PersonalCache, Edm.String)">
@@ -28554,6 +28574,7 @@
         <Property Name="ID" Type="Edm.Guid" Nullable="false" />
         <Property Name="LogonName" Type="Edm.String" />
         <Property Name="SiteDesignID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="SiteDesignStore" Type="Edm.Int32" Nullable="false" />
         <Property Name="SiteID" Type="Edm.Guid" Nullable="false" />
         <Property Name="WebID" Type="Edm.Guid" Nullable="false" />
       </ComplexType>
