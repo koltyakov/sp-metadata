@@ -49,6 +49,7 @@ HeaderLayout (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 HideTitleInHeader (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HorizontalQuickLaunch (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 Id (Edm.Guid) | ✅ | ✅ | ✅ | ✅
+IsEduClass (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsHomepageModernized (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMultilingual (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 IsProvisioningComplete (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

@@ -12,6 +12,7 @@ CreatePersonalSiteEnqueueBulk (SP.UserProfiles.ProfileLoader) | ✅ | ✅ | ✅ 
 CreatePersonalSiteFromWorkItem (SP.UserProfiles.UserProfile) | ✅ | ✅ | ✅ | ❌
 DeleteCacheItemsAsync (SP.UserProfiles.PersonalCache) | ✅ | ✅ | ❌ | ❌
 DeleteCacheItemsAsync2 (SP.UserProfiles.PersonalCache) | ✅ | ❌ | ❌ | ❌
+Dispose (SP.UserProfiles.PersonalCache) | ✅ | ❌ | ❌ | ❌
 FindAndUpdateFollowedGroup (SP.UserProfiles.FollowedContent) | ✅ | ✅ | ✅ | ❌
 FindAndUpdateFollowedItem (SP.UserProfiles.FollowedContent) | ✅ | ✅ | ✅ | ✅
 Follow (SP.UserProfiles.FollowedContent) | ❌ | ❌ | ❌ | ✅
