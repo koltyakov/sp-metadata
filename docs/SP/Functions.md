@@ -618,7 +618,6 @@ SP_RoleDefinitionBindingCollection | ✅ | ✅ | ✅ | ✅
 SP_SPHSite | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_AddOrgNewsSite](./Functions/SP_SPHSite_AddOrgNewsSite.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_AddSPHomeNavNode](./Functions/SP_SPHSite_AddSPHomeNavNode.md) | ✅ | ❌ | ❌ | ❌
-[SP_SPHSite_BuildCompanyPortalContext](./Functions/SP_SPHSite_BuildCompanyPortalContext.md) | ✅ | ❌ | ❌ | ❌
 SP_SPHSite_GetSPHSiteXGeo | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_GetXgeoHomeSiteDetail](./Functions/SP_SPHSite_GetXgeoHomeSiteDetail.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsCommSite](./Functions/SP_SPHSite_IsCommSite.md) | ✅ | ❌ | ❌ | ❌

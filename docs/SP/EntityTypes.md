@@ -43,7 +43,6 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ChangeWeb](./EntityTypes/ChangeWeb.md) | ✅ | ✅ | ✅ | ✅
 [CheckedOutFile](./EntityTypes/CheckedOutFile.md) | ✅ | ✅ | ❌ | ❌
 [ClientWebPart](./EntityTypes/ClientWebPart.md) | ✅ | ✅ | ❌ | ❌
-[CompanyPortalContext](./EntityTypes/CompanyPortalContext.md) | ✅ | ❌ | ❌ | ❌
 [CompatibilityRange](./EntityTypes/CompatibilityRange.md) | ✅ | ✅ | ✅ | ✅
 [ConnectorResult](./EntityTypes/ConnectorResult.md) | ✅ | ✅ | ❌ | ❌
 [ContentType](./EntityTypes/ContentType.md) | ✅ | ✅ | ✅ | ✅

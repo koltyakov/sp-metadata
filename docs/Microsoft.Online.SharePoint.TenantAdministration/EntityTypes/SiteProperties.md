@@ -62,6 +62,7 @@ OwnerLoginName (Edm.String) | ✅ | ❌ | ❌ | ❌
 OwnerName (Edm.String) | ✅ | ❌ | ❌ | ❌
 PWAEnabled (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ReadOnlyAccessPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ReadOnlyForUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RelatedGroupId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 RestrictedToRegion (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SandboxedCodeActivationCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌

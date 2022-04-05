@@ -16,6 +16,7 @@ ListColor (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 ListIcon (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 PreviewImageAltText (Edm.String) | ✅ | ✅ | ❌ | ❌
 PreviewImageUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
+RequiresClassConnected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RequiresGroupConnected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RequiresTeamsConnected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RequiresYammerConnected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

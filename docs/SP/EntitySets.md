@@ -64,7 +64,6 @@ CollaborationMailboxs | ✅ | ✅ | ✅ | ✅
 CommentsAPIs | ✅ | ✅ | ❌ | ❌
 CommunicationSites | ✅ | ✅ | ❌ | ❌
 CommunityModerations | ✅ | ✅ | ✅ | ✅
-CompanyPortalContexts | ✅ | ❌ | ❌ | ❌
 CompatibilityRanges | ✅ | ✅ | ✅ | ✅
 ComplianceRetentionWorkItemSubmitters | ✅ | ❌ | ❌ | ❌
 ComponentContextInfos | ✅ | ✅ | ❌ | ❌

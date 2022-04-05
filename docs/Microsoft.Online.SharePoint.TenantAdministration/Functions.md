@@ -104,6 +104,5 @@ UpdateGroupProperties (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup
 UpdateGroupPropertiesBySiteId (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ✅ | ❌ | ❌ | ❌
 UpdateGroupSiteProperties (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 UpdateOffice365ProvidedSharepointSiteActivityData (Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService) | ✅ | ❌ | ❌ | ❌
-UpdateRecentAdminAction (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 UpdateTenantAdminListItem (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 UpdateTenantAdminListView (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌

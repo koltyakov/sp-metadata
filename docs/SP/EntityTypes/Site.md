@@ -70,6 +70,7 @@ UpgradeScheduledDate (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 Upgrading (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 Url (Edm.String) | ✅ | ✅ | ✅ | ✅
 Usage (SP.UsageInfo) | ✅ | ✅ | ✅ | ✅
+WriteLocked (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 
 ### Navigation Properties
 
