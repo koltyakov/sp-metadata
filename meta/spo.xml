@@ -1224,6 +1224,7 @@
         <Property Name="Upgrading" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Url" Type="Edm.String" />
         <Property Name="Usage" Type="SP.UsageInfo" />
+        <Property Name="WriteLocked" Type="Edm.Boolean" Nullable="false" />
         <NavigationProperty Name="Audit" Relationship="SP.SP_Site_Audit_SP_Audit_AuditPartner" ToRole="Audit" FromRole="AuditPartner" />
         <NavigationProperty Name="CustomScriptSafeDomains" Relationship="SP.SP_Site_CustomScriptSafeDomains_SP_ScriptSafeDomain_CustomScriptSafeDomainsPartner" ToRole="CustomScriptSafeDomains" FromRole="CustomScriptSafeDomainsPartner" />
         <NavigationProperty Name="EventReceivers" Relationship="SP.SP_Site_EventReceivers_SP_EventReceiverDefinition_EventReceiversPartner" ToRole="EventReceivers" FromRole="EventReceiversPartner" />
@@ -3121,34 +3122,6 @@
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
-      </EntityType>
-      <EntityType Name="CompanyPortalContext">
-        <Key>
-          <PropertyRef Name="FooterEmphasis" />
-        </Key>
-        <Property Name="FooterEmphasis" Type="Edm.Int32" Nullable="false" />
-        <Property Name="FooterLayout" Type="Edm.Int32" Nullable="false" />
-        <Property Name="FooterNavigation" Type="Edm.String" />
-        <Property Name="HeaderEmphasis" Type="Edm.Int32" Nullable="false" />
-        <Property Name="HeaderLayout" Type="Edm.Int32" Nullable="false" />
-        <Property Name="HubSiteData" Type="Edm.String" />
-        <Property Name="HubSiteId" Type="Edm.String" />
-        <Property Name="IsAudienceTargeted" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsFooterEnabled" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsHubSite" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsMegaMenuEnabled" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="Language" Type="Edm.Int64" Nullable="false" />
-        <Property Name="NavigationInfo" Type="Edm.String" />
-        <Property Name="SiteAcronym" Type="Edm.String" />
-        <Property Name="SiteId" Type="Edm.String" />
-        <Property Name="siteUrl" Type="Edm.String" />
-        <Property Name="ThemedCssFolderUrl" Type="Edm.String" />
-        <Property Name="ThemeInfo" Type="Edm.String" />
-        <Property Name="WebAbsoluteUrl" Type="Edm.String" />
-        <Property Name="WebLogoBackgroundColor" Type="Edm.String" />
-        <Property Name="WebLogoUrl" Type="Edm.String" />
-        <Property Name="WebServerRelativeUrl" Type="Edm.String" />
-        <Property Name="WebTitle" Type="Edm.String" />
       </EntityType>
       <EntityType Name="AppPrincipalCredential">
         <Key>
@@ -9796,10 +9769,6 @@
         <FunctionImport Name="SP_SPHSite_AddSPHomeNavNode" ReturnType="Edm.Boolean">
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
-        <EntitySet Name="CompanyPortalContexts" EntityType="SP.CompanyPortalContext" />
-        <FunctionImport Name="SP_SPHSite_BuildCompanyPortalContext" ReturnType="SP.CompanyPortalContext" EntitySet="CompanyPortalContexts">
-          <Parameter Name="companyPortalUrl" Type="Edm.String" />
-        </FunctionImport>
         <FunctionImport Name="Details" ReturnType="SP.SPHSiteReference" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.SPHSite" />
         </FunctionImport>
@@ -14757,11 +14726,6 @@
           <Parameter Name="updateType" Type="Edm.String" />
           <Parameter Name="parameters" Type="Microsoft.Online.SharePoint.TenantAdministration.UpdateGroupSitePropertiesParameters" />
         </FunctionImport>
-        <FunctionImport Name="UpdateRecentAdminAction" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
-          <Parameter Name="listItemId" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="tenantAdminRecentAction" Type="Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminRecentAction" />
-        </FunctionImport>
         <FunctionImport Name="UpdateTenantAdminListItem" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="listItemId" Type="Edm.Int32" Nullable="false" />
@@ -16930,6 +16894,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.ColumnDef">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.ColumnDef/CustomFormatter">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.ColumnDef/Id">
@@ -21627,81 +21594,6 @@
       <Annotations Target="SP.ApiData/SP_SPHSite_AddSPHomeNavNode(Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.CompanyPortalContext">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/FooterEmphasis">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/FooterLayout">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/FooterNavigation">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/HeaderEmphasis">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/HeaderLayout">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/HubSiteData">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/HubSiteId">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/IsAudienceTargeted">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/IsFooterEnabled">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/IsHubSite">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/IsMegaMenuEnabled">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/Language">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/NavigationInfo">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/SiteAcronym">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/SiteId">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/siteUrl">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/ThemedCssFolderUrl">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/ThemeInfo">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/WebAbsoluteUrl">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/WebLogoBackgroundColor">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/WebLogoUrl">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/WebServerRelativeUrl">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.CompanyPortalContext/WebTitle">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SP_SPHSite_BuildCompanyPortalContext(Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.ApiData/Details(SP.SPHSite)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22983,6 +22875,7 @@
     </Schema>
     <Schema Namespace="Microsoft.Office.Server.ContentCenter" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="ColumnDef">
+        <Property Name="CustomFormatter" Type="Edm.String" />
         <Property Name="Id" Type="Edm.String" />
         <Property Name="Name" Type="Edm.String" />
         <Property Name="Type" Type="Edm.String" />
@@ -28232,12 +28125,11 @@
       </EntityType>
       <EntityType Name="SharePointHomeServiceContext">
         <Key>
-          <PropertyRef Name="CompanyPortalContext" />
+          <PropertyRef Name="Payload" />
         </Key>
-        <Property Name="CompanyPortalContext" Type="Edm.String" Nullable="false" />
         <Property Name="HomePageCache" Type="Microsoft.SharePoint.Portal.Home.SharePointHomeDataCacheCollection" />
         <Property Name="HomePageContext" Type="Microsoft.SharePoint.Portal.Home.SharePointHomePageContext" />
-        <Property Name="Payload" Type="Edm.String" />
+        <Property Name="Payload" Type="Edm.String" Nullable="false" />
         <Property Name="Urls" Type="Collection(Edm.String)" />
         <NavigationProperty Name="DWEngineToken" Relationship="SP.OAuth.Microsoft_SharePoint_Portal_SharePointHomeServiceContext_DWEngineToken_SP_OAuth_TokenResponse_DWEngineTokenPartner" ToRole="DWEngineToken" FromRole="DWEngineTokenPartner" />
         <NavigationProperty Name="Token" Relationship="SP.OAuth.Microsoft_SharePoint_Portal_SharePointHomeServiceContext_Token_SP_OAuth_TokenResponse_TokenPartner" ToRole="Token" FromRole="TokenPartner" />
@@ -28517,6 +28409,7 @@
         <Property Name="ListIcon" Type="Edm.Int64" Nullable="false" />
         <Property Name="PreviewImageAltText" Type="Edm.String" />
         <Property Name="PreviewImageUrl" Type="Edm.String" />
+        <Property Name="RequiresClassConnected" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RequiresGroupConnected" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RequiresTeamsConnected" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RequiresYammerConnected" Type="Edm.Boolean" Nullable="false" />
@@ -29307,19 +29200,13 @@
         <Property Name="adminActionSource" Type="Edm.Int32" Nullable="false" />
         <Property Name="adminActionStatus" Type="Edm.Int32" Nullable="false" />
         <Property Name="adminActionType" Type="Edm.Int32" Nullable="false" />
-        <Property Name="clientOperationId" Type="Edm.String" />
         <Property Name="correlationId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="errorCode" Type="Edm.Int32" Nullable="false" />
-        <Property Name="errorMessage" Type="Edm.String" />
+        <Property Name="createdTime" Type="Edm.DateTime" />
         <Property Name="key" Type="Edm.String" />
-        <Property Name="lastUpdatedTime" Type="Edm.DateTime" />
         <Property Name="metadata" Type="Edm.String" />
         <Property Name="name" Type="Edm.String" />
-        <Property Name="requestedTime" Type="Edm.DateTime" />
-        <Property Name="startTime" Type="Edm.DateTime" />
         <Property Name="url" Type="Edm.String" />
         <Property Name="userEmail" Type="Edm.String" />
-        <Property Name="userId" Type="Edm.Int32" Nullable="false" />
         <Property Name="userName" Type="Edm.String" />
       </ComplexType>
     </Schema>
@@ -30635,6 +30522,7 @@
         <Property Name="OwnerName" Type="Edm.String" />
         <Property Name="PWAEnabled" Type="Edm.Int32" Nullable="false" />
         <Property Name="ReadOnlyAccessPolicy" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ReadOnlyForUnmanagedDevices" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RelatedGroupId" Type="Edm.Guid" Nullable="false" />
         <Property Name="RestrictedToRegion" Type="Edm.Int32" Nullable="false" />
         <Property Name="SandboxedCodeActivationCapability" Type="Edm.Int32" Nullable="false" />
