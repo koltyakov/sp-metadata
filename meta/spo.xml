@@ -695,6 +695,7 @@
         <Property Name="AIPLabelExtractionStatus" Type="Edm.Int32" Nullable="false" />
         <Property Name="ClassificationResult" Type="SP.ClassificationResult" />
         <Property Name="ContentVersion" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ETag" Type="Edm.String" />
         <Property Name="MachineLearningSampleMeta" Type="SP.MachineLearningSampleMeta" />
         <Property Name="MediaLengthInSeconds" Type="Edm.Int32" Nullable="false" />
         <Property Name="MediaServiceAutoKeyPoints" Type="Edm.String" />
@@ -943,6 +944,7 @@
       <ComplexType Name="SensitivityLabelInfo">
         <Property Name="DisplayName" Type="Edm.String" />
         <Property Name="Id" Type="Edm.String" />
+        <Property Name="MembersCanShare" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="UpgradeInfo">
         <Property Name="ErrorFile" Type="Edm.String" />
@@ -10069,6 +10071,8 @@
           <Parameter Name="ListItemUniqueId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="AffectedResourceUrl" Type="Edm.String" />
           <Parameter Name="ItemType" Type="Edm.String" />
+          <Parameter Name="AuditCreationTime" Type="Edm.String" />
+          <Parameter Name="IsOffline" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_Internal_FlowPermissions_GetFlowPermissionLevelOnList" ReturnType="SP.ConnectorResult" IsComposable="true" EntitySet="ConnectorResults">
           <Parameter Name="listName" Type="Edm.String" />
@@ -10114,6 +10118,7 @@
         </FunctionImport>
         <FunctionImport Name="DashboardContent" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.EmployeeEngagement" />
+          <Parameter Name="overrideLanguageCode" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="VivaConnections" ReturnType="SP.VivaConnectionsUrlConfiguration" IsBindable="true">
           <Parameter Name="this" Type="SP.EmployeeEngagement" />
@@ -14360,6 +14365,11 @@
         <FunctionImport Name="CreateSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteCreationProperties" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCreationProperties" />
+        </FunctionImport>
+        <FunctionImport Name="ExportAdminListToCSV" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="viewXml" Type="Edm.String" />
+          <Parameter Name="listName" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="ExportToCSV" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
