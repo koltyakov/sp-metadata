@@ -9,6 +9,7 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 AIPLabelExtractionStatus (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ClassificationResult (SP.ClassificationResult) | ✅ | ❌ | ❌ | ❌
 ContentVersion (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+ETag (Edm.String) | ✅ | ❌ | ❌ | ❌
 MachineLearningSampleMeta (SP.MachineLearningSampleMeta) | ✅ | ❌ | ❌ | ❌
 MediaLengthInSeconds (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MediaServiceAutoKeyPoints (Edm.String) | ✅ | ❌ | ❌ | ❌
