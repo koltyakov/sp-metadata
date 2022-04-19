@@ -67,6 +67,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [FileDeleteParameters](./ComplexTypes/FileDeleteParameters.md) | ✅ | ❌ | ❌ | ❌
 [FolderCollectionAddParameters](./ComplexTypes/FolderCollectionAddParameters.md) | ✅ | ✅ | ❌ | ❌
 [FolderDeleteParameters](./ComplexTypes/FolderDeleteParameters.md) | ✅ | ❌ | ❌ | ❌
+[GetListsParameters](./ComplexTypes/GetListsParameters.md) | ✅ | ❌ | ❌ | ❌
 [GroupCreationInformation](./ComplexTypes/GroupCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [Hashtag](./ComplexTypes/Hashtag.md) | ✅ | ✅ | ❌ | ❌
 [HomeSitesDetails](./ComplexTypes/HomeSitesDetails.md) | ✅ | ❌ | ❌ | ❌
@@ -75,6 +76,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [KeyValue](./ComplexTypes/KeyValue.md) | ✅ | ✅ | ✅ | ✅
 [KnowledgeHubSiteReference](./ComplexTypes/KnowledgeHubSiteReference.md) | ✅ | ❌ | ❌ | ❌
 [Language](./ComplexTypes/Language.md) | ✅ | ✅ | ✅ | ✅
+[ListCollectionPosition](./ComplexTypes/ListCollectionPosition.md) | ✅ | ❌ | ❌ | ❌
 [ListCreationInformation](./ComplexTypes/ListCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [ListDataSource](./ComplexTypes/ListDataSource.md) | ✅ | ✅ | ✅ | ✅
 [ListDataValidationExceptionValue](./ComplexTypes/ListDataValidationExceptionValue.md) | ✅ | ✅ | ✅ | ✅

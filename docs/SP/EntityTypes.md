@@ -138,6 +138,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SecurableObject](./EntityTypes/SecurableObject.md) | ✅ | ✅ | ✅ | ✅
 [ServerSettings](./EntityTypes/ServerSettings.md) | ✅ | ✅ | ✅ | ✅
 [SharePointSharingSettings](./EntityTypes/SharePointSharingSettings.md) | ✅ | ✅ | ✅ | ❌
+[SharedWithMeItemCollection](./EntityTypes/SharedWithMeItemCollection.md) | ✅ | ❌ | ❌ | ❌
 [SharingPermissionInformation](./EntityTypes/SharingPermissionInformation.md) | ✅ | ✅ | ✅ | ❌
 [SharingResult](./EntityTypes/SharingResult.md) | ✅ | ✅ | ✅ | ❌
 [SharingUtility](./EntityTypes/SharingUtility.md) | ✅ | ✅ | ❌ | ❌

@@ -104,6 +104,7 @@ IsAppBarTemporarilyDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsCollabMeetingNotesFluidEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsFluidEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsHubSitesMultiGeoFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+IsLoopEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMnAFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMultiGeo (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsUnmanagedSyncClientForTenantRestricted (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -159,6 +160,7 @@ ShowAllUsersClaim (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ShowEveryoneClaim (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ShowEveryoneExceptExternalUsersClaim (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ShowNGSCDialogForSyncOnODB (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ShowOpenInDesktopOptionForSyncedFiles (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ShowPeoplePickerSuggestionsForGuestUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SignInAccelerationDomain (Edm.String) | ✅ | ❌ | ❌ | ❌
 SocialBarOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

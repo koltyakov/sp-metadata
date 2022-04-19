@@ -419,6 +419,7 @@ SPMigrationJobStatuss | ✅ | ✅ | ✅ | ❌
 SPO3rdPartyAADPermissionGrants | ✅ | ❌ | ❌ | ❌
 SPOGroups | ✅ | ❌ | ❌ | ❌
 SPOIdentityHelpers | ✅ | ❌ | ❌ | ❌
+SPOMalwareFiles | ✅ | ❌ | ❌ | ❌
 SPOPortalLaunchValidators | ✅ | ❌ | ❌ | ❌
 SPOTenantCdnPolicys | ✅ | ❌ | ❌ | ❌
 SPOTenantWebTemplateCollections | ✅ | ❌ | ❌ | ❌
@@ -453,6 +454,7 @@ SharePointHomeServiceManagers | ✅ | ✅ | ❌ | ❌
 SharePointSharingSettingss | ✅ | ✅ | ✅ | ❌
 SharedDocumentInfos | ✅ | ✅ | ❌ | ❌
 SharedWithMeDocuments | ✅ | ✅ | ✅ | ❌
+SharedWithMeItemCollections | ✅ | ❌ | ❌ | ❌
 SharedWithMeItemss | ✅ | ❌ | ❌ | ❌
 SharingInformations | ✅ | ✅ | ❌ | ❌
 SharingPermissionInformations | ✅ | ✅ | ✅ | ❌

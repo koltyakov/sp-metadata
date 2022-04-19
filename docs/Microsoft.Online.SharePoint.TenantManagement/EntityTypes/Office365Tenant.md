@@ -125,6 +125,7 @@ ShowAllUsersClaim (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ShowEveryoneClaim (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ShowEveryoneExceptExternalUsersClaim (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ShowNGSCDialogForSyncOnODB (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ShowOpenInDesktopOptionForSyncedFiles (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ShowPeoplePickerSuggestionsForGuestUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SignInAccelerationDomain (Edm.String) | ✅ | ❌ | ❌ | ❌
 SocialBarOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
