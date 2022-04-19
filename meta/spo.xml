@@ -160,6 +160,7 @@
         <Property Name="ContentAssemblyFormAnswers" Type="Collection(SP.ContentAssemblyFormAnswer)" />
         <Property Name="FileName" Type="Edm.String" />
         <Property Name="FolderUrl" Type="Edm.String" />
+        <Property Name="Format" Type="Edm.Int32" Nullable="false" />
         <Property Name="IsTempFile" Type="Edm.Boolean" Nullable="false" />
         <Property Name="TempFileUrl" Type="Edm.String" />
       </ComplexType>
@@ -583,6 +584,13 @@
         <Property Name="BypassSharedLock" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DeleteIfEmpty" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ETagMatch" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="GetListsParameters">
+        <Property Name="ListCollectionPosition" Type="SP.ListCollectionPosition" />
+        <Property Name="RowLimit" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="ListCollectionPosition">
+        <Property Name="PagingInfo" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="GroupCreationInformation">
         <Property Name="Description" Type="Edm.String" />
@@ -2634,6 +2642,12 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
+      <EntityType Name="SharedWithMeItemCollection" Abstract="true">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="SharingResult">
         <Key>
           <PropertyRef Name="Name" />
@@ -3893,6 +3907,10 @@
         <End Type="SP.PickerSettings" Role="pickerSettings" Multiplicity="0..1" />
         <End Type="SP.Sharing.SharingInformation" Role="pickerSettingsPartner" Multiplicity="0..1" />
       </Association>
+      <Association Name="Microsoft_Online_SharePoint_TenantAdministration_SPOMalwareFile_File_SP_File_FilePartner">
+        <End Type="SP.File" Role="File" Multiplicity="0..1" />
+        <End Type="Microsoft.Online.SharePoint.TenantAdministration.SPOMalwareFile" Role="FilePartner" Multiplicity="0..1" />
+      </Association>
       <Association Name="SP_AppPrincipalIdentityProvider_External_SP_AppPrincipalIdentityProvider_ExternalPartner">
         <End Type="SP.AppPrincipalIdentityProvider" Role="External" Multiplicity="0..1" />
         <End Type="SP.AppPrincipalIdentityProvider" Role="ExternalPartner" Multiplicity="0..1" />
@@ -4010,6 +4028,7 @@
         <EntitySet Name="SiteCollectionManagementServices" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
         <EntitySet Name="SitePropertiess" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SiteProperties" />
         <EntitySet Name="SPOGroups" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SPOGroup" />
+        <EntitySet Name="SPOMalwareFiles" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SPOMalwareFile" />
         <EntitySet Name="SPOPortalLaunchValidators" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SPOPortalLaunchValidator" />
         <EntitySet Name="SPOTenantCdnPolicys" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SPOTenantCdnPolicy" />
         <EntitySet Name="SPOTenantWebTemplateCollections" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection" />
@@ -4344,6 +4363,7 @@
         <EntitySet Name="ScriptSafeDomains" EntityType="SP.ScriptSafeDomain" />
         <EntitySet Name="SecurableObjects" EntityType="SP.SecurableObject" />
         <EntitySet Name="ServerSettingss" EntityType="SP.ServerSettings" />
+        <EntitySet Name="SharedWithMeItemCollections" EntityType="SP.SharedWithMeItemCollection" />
         <EntitySet Name="SharePointSharingSettingss" EntityType="SP.SharePointSharingSettings" />
         <EntitySet Name="DocumentSharingManagers" EntityType="SP.Sharing.DocumentSharingManager" />
         <EntitySet Name="PersonalWebs" EntityType="SP.Sharing.PersonalWeb" />
@@ -9204,6 +9224,7 @@
           <Parameter Name="includeRecent" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="includeTeams" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="includePinned" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="existingJoinedTeamsData" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Portal_CommunityModeration_ApproveReportedItems">
           <Parameter Name="listID" Type="Edm.String" />
@@ -11507,6 +11528,10 @@
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="DecodedUrl" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="GetLists" ReturnType="Collection(SP.List)" IsComposable="true" IsBindable="true" EntitySet="Lists">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="getListsParams" Type="SP.GetListsParameters" />
+        </FunctionImport>
         <FunctionImport Name="GetListUsingPath" ReturnType="SP.List" IsComposable="true" IsBindable="true" EntitySet="Lists">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="DecodedUrl" Type="Edm.String" />
@@ -11844,6 +11869,7 @@
           <Parameter Name="compatibilityLevel" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_ServerSettings_IsSharePointOnline" ReturnType="Edm.Boolean" />
+        <FunctionImport Name="SP_SharedWithMeItemCollection_GetSubstrateSharedWithMeItems" ReturnType="Edm.String" IsSideEffecting="false" />
         <FunctionImport Name="SP_SmartCache_Update">
           <Parameter Name="smartCacheJson" Type="Edm.String" />
         </FunctionImport>
@@ -14328,6 +14354,9 @@
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="displayName" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="GetMalwareFileStream" ReturnType="Edm.Stream" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SPOMalwareFile" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_TenantAdministration_TenantAdminEndpoints" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminEndpoints" IsComposable="true" EntitySet="TenantAdminEndpointss" />
         <FunctionImport Name="Microsoft_Online_SharePoint_TenantAdministration_TenantAdminSettingsService" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService" IsComposable="true" EntitySet="TenantAdminSettingsServices" />
         <FunctionImport Name="GetTenantSharingStatus" ReturnType="Edm.Int32" IsSideEffecting="false" IsBindable="true">
@@ -14652,6 +14681,11 @@
         <FunctionImport Name="RenderIBSegmentListFilterData" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="parameters" Type="SP.RenderListFilterDataParameters" />
+        </FunctionImport>
+        <FunctionImport Name="RenderPolicyExecutionsHistory" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="parameters" Type="SP.RenderListDataParameters" />
+          <Parameter Name="overrideParameters" Type="SP.RenderListDataOverrideParameters" />
         </FunctionImport>
         <FunctionImport Name="RenderRecentAdminActions" ReturnType="Edm.Stream" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -15578,6 +15612,10 @@
         <AssociationSet Name="Microsoft_Online_SharePoint_TenantAdministration_Internal_SPOWebAppServicePrincipal_PermissionRequests_Microsoft_Online_SharePoint_TenantAdministration_Internal_SPOWebAppServicePrincipalPermissionRequest_PermissionRequestsPartnerSet" Association="Microsoft.Online.SharePoint.TenantAdministration.Internal.Microsoft_Online_SharePoint_TenantAdministration_Internal_SPOWebAppServicePrincipal_PermissionRequests_Microsoft_Online_SharePoint_TenantAdministration_Internal_SPOWebAppServicePrincipalPermissionRequest_PermissionRequestsPartner">
           <End Role="PermissionRequestsPartner" EntitySet="SPOWebAppServicePrincipals" />
           <End Role="PermissionRequests" EntitySet="SPOWebAppServicePrincipalPermissionRequests" />
+        </AssociationSet>
+        <AssociationSet Name="Microsoft_Online_SharePoint_TenantAdministration_SPOMalwareFile_File_SP_File_FilePartnerSet" Association="SP.Microsoft_Online_SharePoint_TenantAdministration_SPOMalwareFile_File_SP_File_FilePartner">
+          <End Role="FilePartner" EntitySet="SPOMalwareFiles" />
+          <End Role="File" EntitySet="Files12" />
         </AssociationSet>
         <AssociationSet Name="Microsoft_Online_SharePoint_TenantAdministration_Tenant_Sites_Microsoft_Online_SharePoint_TenantAdministration_SiteProperties_SitesPartnerSet" Association="Microsoft.Online.SharePoint.TenantAdministration.Microsoft_Online_SharePoint_TenantAdministration_Tenant_Sites_Microsoft_Online_SharePoint_TenantAdministration_SiteProperties_SitesPartner">
           <End Role="SitesPartner" EntitySet="Tenants" />
@@ -21352,7 +21390,7 @@
       <Annotations Target="SP.ApiData/PinToTeam(Microsoft.SharePoint.Portal.GroupSiteManager, Microsoft.SharePoint.Portal.PinToTeamParams)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/RecentAndJoinedTeams(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.Boolean, Edm.Boolean, Edm.Boolean)">
+      <Annotations Target="SP.ApiData/RecentAndJoinedTeams(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.Boolean, Edm.Boolean, Edm.Boolean, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Portal_SPHubSitesUtility()">
@@ -22169,6 +22207,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_RecentListProxy_GetRecentListsProxy(Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_SharedWithMeItemCollection_GetSubstrateSharedWithMeItems()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_SmartCache_Update(Edm.String)">
@@ -29205,6 +29246,22 @@
         <Property Name="columnName" Type="Edm.String" />
         <Property Name="columnValue" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="TenantAdminPolicyAutomationExecutionHistory">
+        <Property Name="CorrelationId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="EndTime" Type="Edm.DateTime" />
+        <Property Name="ExecutionDetails" Type="Edm.String" />
+        <Property Name="ExpectedStartTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="FailureReason" Type="Edm.String" />
+        <Property Name="ImpactedDataFileURL" Type="Edm.String" />
+        <Property Name="ParentExecutionId" Type="Edm.Guid" />
+        <Property Name="PolicyId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="PolicyVersion" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RetryCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="StartTime" Type="Edm.DateTime" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="false" />
+        <Property Name="WorkItemId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="WorkItemType" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="TenantAdminRecentAction">
         <Property Name="adminActionId" Type="Edm.String" />
         <Property Name="adminActionSource" Type="Edm.Int32" Nullable="false" />
@@ -30569,6 +30626,16 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
+      <EntityType Name="SPOMalwareFile">
+        <Key>
+          <PropertyRef Name="MalwareInfo" />
+        </Key>
+        <Property Name="FilePath" Type="SP.ResourcePath" />
+        <Property Name="MalwareInfo" Type="Edm.String" Nullable="false" />
+        <Property Name="MalwareStatus" Type="Edm.Byte" Nullable="false" />
+        <Property Name="SiteURL" Type="Edm.String" />
+        <NavigationProperty Name="File" Relationship="SP.Microsoft_Online_SharePoint_TenantAdministration_SPOMalwareFile_File_SP_File_FilePartner" ToRole="File" FromRole="FilePartner" />
+      </EntityType>
       <EntityType Name="SPOPortalLaunchValidator">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
@@ -30735,6 +30802,7 @@
         <Property Name="IsCollabMeetingNotesFluidEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsFluidEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsHubSitesMultiGeoFlightEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsLoopEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsMnAFlightEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsMultiGeo" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsUnmanagedSyncClientForTenantRestricted" Type="Edm.Boolean" Nullable="false" />
@@ -30790,6 +30858,7 @@
         <Property Name="ShowEveryoneClaim" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ShowEveryoneExceptExternalUsersClaim" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ShowNGSCDialogForSyncOnODB" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ShowOpenInDesktopOptionForSyncedFiles" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ShowPeoplePickerSuggestionsForGuestUsers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SignInAccelerationDomain" Type="Edm.String" />
         <Property Name="SocialBarOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
@@ -32592,6 +32661,7 @@
         <Property Name="ShowEveryoneClaim" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ShowEveryoneExceptExternalUsersClaim" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ShowNGSCDialogForSyncOnODB" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ShowOpenInDesktopOptionForSyncedFiles" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ShowPeoplePickerSuggestionsForGuestUsers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SignInAccelerationDomain" Type="Edm.String" />
         <Property Name="SocialBarOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
