@@ -1,8 +1,8 @@
-# Function Import: SetSPHSiteWithAudience
+# Function Import: AddHomeSite
 
-> Namespace: SP
+> Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
-- Entity type: SP.SPHSite
+- Entity type: Microsoft.Online.SharePoint.TenantAdministration.Tenant
 - Is composable: false
 - Is bindable: false
 
@@ -11,4 +11,4 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 audiences (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
-siteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+homeSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

@@ -27,6 +27,7 @@ GetTenantCdnEnabled (Microsoft.Online.SharePoint.TenantManagement.Office365Tenan
 GetTenantCdnOrigins (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 GetTenantCdnPolicies (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 GetTenantTheme (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
+IncrementCustomFontsMinorVersion (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 IsSharingDisabledForNonOwnersOfSite (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_TenantManagement_GroupCreationParams">Microsoft_Online_SharePoint_TenantManagement_Group...</span> (Microsoft Online SharePoint TenantManagement GroupCreationParams) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_TenantManagement_Office365Tenant">Microsoft_Online_SharePoint_TenantManagement_Offic...</span> (Microsoft Online SharePoint TenantManagement Office365Tenant) | ✅ | ❌ | ❌ | ❌
@@ -34,6 +35,7 @@ QueueImportProfileProperties (Microsoft.Online.SharePoint.TenantManagement.Offic
 RemoveExternalUsers (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveFromOrgAssets (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveFromOrgAssetsAndCdn (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
+RemovePreviousCustomFontUpload (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 RemovePublicCdnOrigin (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveSdnProvider (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveTenantCdnOrigin (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌

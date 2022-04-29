@@ -15,6 +15,7 @@ FileSystemObjectType (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 FileType (Edm.String) | ✅ | ✅ | ❌ | ❌
 Hashtag (Edm.String) | ✅ | ✅ | ❌ | ❌
 Hidden (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
+IsRecycleBinOperation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ItemId (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 ListId (Edm.Guid) | ✅ | ✅ | ✅ | ✅
 ListTemplate (Edm.Int32) | ✅ | ✅ | ❌ | ❌

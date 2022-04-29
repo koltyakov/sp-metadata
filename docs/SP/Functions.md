@@ -686,7 +686,6 @@ SetMediaServiceMetadata (SP.File) | ✅ | ❌ | ❌ | ❌
 SetNotificationRecipients (SP.MultilingualSettings) | ✅ | ❌ | ❌ | ❌
 [SetQuizState](./Functions/SetQuizState.md) | ❌ | ❌ | ❌ | ✅
 SetSPHSite (SP.SPHSite) | ✅ | ❌ | ❌ | ❌
-SetSPHSiteWithAudience (SP.SPHSite) | ✅ | ❌ | ❌ | ❌
 SetShowInDisplayForm (SP.Field) | ✅ | ✅ | ✅ | ✅
 SetShowInDisplayForm (SP.FieldCalculated) | ✅ | ✅ | ✅ | ✅
 SetShowInDisplayForm (SP.FieldChoice) | ✅ | ✅ | ✅ | ✅

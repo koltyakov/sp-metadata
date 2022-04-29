@@ -47,6 +47,7 @@ BaseCalendarExceptions | ✅ | ✅ | ✅ | ❌
 BaseCustomPropertys | ✅ | ❌ | ❌ | ❌
 BaseSessions | ✅ | ✅ | ✅ | ✅
 BooleanCriterions | ✅ | ✅ | ✅ | ✅
+CDSMetadatas | ✅ | ❌ | ❌ | ❌
 CalendarExceptions | ✅ | ✅ | ✅ | ❌
 Calendars | ✅ | ✅ | ✅ | ❌
 CalloutInfos | ✅ | ✅ | ✅ | ✅

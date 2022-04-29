@@ -6,6 +6,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+TemplateTypeId (Edm.String) | ✅ | ❌ | ❌ | ❌
 color (Edm.String) | ✅ | ❌ | ❌ | ❌
 createdByName (Edm.String) | ✅ | ❌ | ❌ | ❌
 createdByUpn (Edm.String) | ✅ | ❌ | ❌ | ❌
