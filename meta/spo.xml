@@ -9868,6 +9868,10 @@
         <FunctionImport Name="GlobalNavEnabled" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" />
         </FunctionImport>
+        <FunctionImport Name="HomeSiteNavigation" ReturnType="SP.MenuState" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" />
+          <Parameter Name="source" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="MenuNodeKey" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" />
           <Parameter Name="currentUrl" Type="Edm.String" />
@@ -10342,6 +10346,9 @@
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_AddToOneDrive_MountService_GetRemoteItemInfo" ReturnType="Edm.String">
           <Parameter Name="request" Type="Microsoft.SharePoint.AddToOneDrive.GetRemoteItemInfoRequest" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_AddToOneDrive_MountService_GetSourceItemMetadataForODCMountPoint" ReturnType="Edm.String">
+          <Parameter Name="request" Type="Microsoft.SharePoint.AddToOneDrive.GetSourceItemMetadataForODCMountPointRequest" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_AddToOneDrive_MountService_NotifyChangeToMountPoints">
           <Parameter Name="request" Type="Microsoft.SharePoint.AddToOneDrive.NotifyChangeToMountPointsRequest" />
@@ -11386,7 +11393,6 @@
         <FunctionImport Name="GetAllClientSideComponents" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="languages" Type="Collection(Edm.String)" />
-          <Parameter Name="supportsMultiVersion" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetAppBdcCatalog" ReturnType="SP.BusinessData.AppBdcCatalog" IsBindable="true" EntitySet="AppBdcCatalogs">
           <Parameter Name="this" Type="SP.Web" />
@@ -14389,7 +14395,7 @@
         </FunctionImport>
         <FunctionImport Name="AddRecentAdminAction" ReturnType="SP.ListItem" IsBindable="true" EntitySet="ListItems">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
-          <Parameter Name="tenantAdminRecentAction" Type="Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminRecentAction" />
+          <Parameter Name="payload" Type="Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminRecentActionPayload" />
         </FunctionImport>
         <FunctionImport Name="AddTenantAdminListItem" ReturnType="SP.ListItem" IsBindable="true" EntitySet="ListItems">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -14533,6 +14539,10 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteUrl" Type="Edm.String" />
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="RemoveHomeSite" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="homeSiteUrl" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="RemoveSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -21734,6 +21744,9 @@
       <Annotations Target="SP.ApiData/GetPublishingNavigationProviderType(Microsoft.SharePoint.Navigation.REST.NavigationServiceRest, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/HomeSiteNavigation(Microsoft.SharePoint.Navigation.REST.NavigationServiceRest, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/AddMicroserviceWorkItem(SP.MicroService.MicroServiceManager, Edm.Binary, Edm.Int32, SP.MicroService.MicroServiceWorkItemProperties)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21926,6 +21939,9 @@
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_AddToOneDrive_MountService_GetRemoteItemInfo(Microsoft.SharePoint.AddToOneDrive.GetRemoteItemInfoRequest)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_AddToOneDrive_MountService_GetSourceItemMetadataForODCMountPoint(Microsoft.SharePoint.AddToOneDrive.GetSourceItemMetadataForODCMountPointRequest)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_AddToOneDrive_MountService_NotifyChangeToMountPoints(Microsoft.SharePoint.AddToOneDrive.NotifyChangeToMountPointsRequest)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22088,7 +22104,7 @@
       <Annotations Target="SP.ApiData/GetAdaptiveCardExtensions(SP.Web, Edm.Boolean, Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/GetAllClientSideComponents(SP.Web, Collection(Edm.String), Edm.Boolean)">
+      <Annotations Target="SP.ApiData/GetAllClientSideComponents(SP.Web, Collection(Edm.String))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetClientSideComponents(SP.Web, Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentIdentifier), Edm.Guid)">
@@ -29326,6 +29342,20 @@
         <Property Name="WorkItemId" Type="Edm.Guid" Nullable="false" />
         <Property Name="WorkItemType" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="TenantAdminRecentActionPayload">
+        <Property Name="adminActionId" Type="Edm.String" />
+        <Property Name="adminActionSource" Type="Edm.String" />
+        <Property Name="adminActionStatus" Type="Edm.String" />
+        <Property Name="adminActionType" Type="Edm.String" />
+        <Property Name="correlationId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="createdTime" Type="Edm.DateTime" />
+        <Property Name="key" Type="Edm.String" />
+        <Property Name="metadata" Type="Edm.String" />
+        <Property Name="name" Type="Edm.String" />
+        <Property Name="url" Type="Edm.String" />
+        <Property Name="userEmail" Type="Edm.String" />
+        <Property Name="userName" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="TenantAdminRecentAction">
         <Property Name="adminActionId" Type="Edm.String" />
         <Property Name="adminActionSource" Type="Edm.Int32" Nullable="false" />
@@ -29373,6 +29403,15 @@
         <Property Name="UserEmail" Type="Edm.String" />
         <Property Name="UserLoginName" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="GetSourceItemMetadataForODCMountPointRequest">
+        <Property Name="IsCreateMountPointFlow" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="MountedRemoteItemUniqueIds" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="RemoteItemListId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="RemoteItemSiteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="RemoteItemUniqueIds" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="RemoteItemWebId" Type="Edm.Guid" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="GetSourceItemMetadataForODCMountPointResponse" />
       <ComplexType Name="NotifyChangeToMountPointsRequest">
         <Property Name="MountPointUniqueIds" Type="Collection(Edm.Guid)" Nullable="false" />
       </ComplexType>
