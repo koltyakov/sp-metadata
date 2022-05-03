@@ -1,4 +1,4 @@
-# Function Import: AddRecentAdminAction
+# Function Import: RemoveHomeSite
 
 > Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
@@ -10,4 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-payload (Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminRecentActionPayload) | ✅ | ❌ | ❌ | ❌
+homeSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
