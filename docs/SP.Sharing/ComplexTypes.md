@@ -17,6 +17,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [Principal](./ComplexTypes/Principal.md) | ✅ | ✅ | ❌ | ❌
 [PrincipalInfo](./ComplexTypes/PrincipalInfo.md) | ✅ | ✅ | ❌ | ❌
 [Recipient](./ComplexTypes/Recipient.md) | ✅ | ✅ | ❌ | ❌
+[SensitivityLabelInformation](./ComplexTypes/SensitivityLabelInformation.md) | ✅ | ❌ | ❌ | ❌
 [ShareLinkRequest](./ComplexTypes/ShareLinkRequest.md) | ✅ | ✅ | ❌ | ❌
 [ShareLinkResponse](./ComplexTypes/ShareLinkResponse.md) | ✅ | ✅ | ❌ | ❌
 [ShareLinkSettings](./ComplexTypes/ShareLinkSettings.md) | ✅ | ✅ | ❌ | ❌

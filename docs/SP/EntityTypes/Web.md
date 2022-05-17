@@ -30,6 +30,7 @@ CustomSiteActionsDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DefaultNewPageTemplateId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 DepartmentData (Edm.String) | ❌ | ✅ | ❌ | ❌
 Description (Edm.String) | ✅ | ✅ | ✅ | ✅
+DescriptionForExistingLanguage (Edm.String) | ✅ | ❌ | ❌ | ❌
 DescriptionTranslations (Collection(SP.SPResourceEntry)) | ✅ | ❌ | ❌ | ❌
 DesignPackageId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 DesignerDownloadUrlForCurrentUser (Edm.String) | ✅ | ✅ | ✅ | ✅
@@ -50,6 +51,8 @@ HideTitleInHeader (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HorizontalQuickLaunch (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 Id (Edm.Guid) | ✅ | ✅ | ✅ | ✅
 IsEduClass (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+IsEduClassProvisionChecked (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+IsEduClassProvisionPending (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsHomepageModernized (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMultilingual (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 IsProvisioningComplete (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -91,6 +94,7 @@ ThemeData (Edm.String) | ✅ | ✅ | ✅ | ❌
 ThemedCssFolderUrl (Edm.String) | ✅ | ✅ | ❌ | ✅
 ThirdPartyMdmEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 Title (Edm.String) | ✅ | ✅ | ✅ | ✅
+TitleForExistingLanguage (Edm.String) | ✅ | ❌ | ❌ | ❌
 TitleTranslations (Collection(SP.SPResourceEntry)) | ✅ | ❌ | ❌ | ❌
 TreeViewEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 UIVersion (Edm.Int32) | ✅ | ✅ | ✅ | ✅

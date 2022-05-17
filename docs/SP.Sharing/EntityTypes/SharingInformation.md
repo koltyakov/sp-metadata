@@ -33,6 +33,7 @@ itemUniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 microserviceShareUiUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 outlookEndpointHostUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 permissionsInformation (SP.Sharing.PermissionCollection) | ✅ | ✅ | ❌ | ❌
+sensitivityLabelInformation (SP.Sharing.SensitivityLabelInformation) | ✅ | ❌ | ❌ | ❌
 shareUiUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 sharedObjectType (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 sharingAbilities (SP.Sharing.SharingAbilities) | ✅ | ✅ | ❌ | ❌

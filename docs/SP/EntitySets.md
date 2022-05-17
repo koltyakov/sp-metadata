@@ -186,6 +186,7 @@ Groups1 | ✅ | ✅ | ✅ | ❌
 Groupsitemanagers | ✅ | ✅ | ✅ | ❌
 HashTagCollections | ✅ | ✅ | ✅ | ✅
 HashtagStoreManagers | ❌ | ✅ | ❌ | ❌
+HomeSiteNavigationSettingss | ✅ | ❌ | ❌ | ❌
 HostedAppAddResponses | ✅ | ❌ | ❌ | ❌
 HostedApps | ✅ | ❌ | ❌ | ❌
 HostedAppsManagers | ✅ | ❌ | ❌ | ❌
@@ -471,6 +472,7 @@ SiteDesignPrincipals | ✅ | ✅ | ❌ | ❌
 SiteDesignRuns | ✅ | ❌ | ❌ | ❌
 SiteHealthSummarys | ✅ | ✅ | ✅ | ✅
 SiteIconManagers | ✅ | ❌ | ❌ | ❌
+SiteMeTAInfoProviders | ✅ | ❌ | ❌ | ❌
 SiteMoveJobEntityDatas | ✅ | ❌ | ❌ | ❌
 SitePageMetadatas | ✅ | ✅ | ❌ | ❌
 SitePageServices | ✅ | ✅ | ❌ | ❌

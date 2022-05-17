@@ -6,6 +6,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+ActionTrigger (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ID (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 InvokedBy (Edm.String) | ✅ | ❌ | ❌ | ❌
 SiteDesignID (Edm.Guid) | ✅ | ❌ | ❌ | ❌

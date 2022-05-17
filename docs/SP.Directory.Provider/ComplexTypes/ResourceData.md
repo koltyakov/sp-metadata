@@ -11,3 +11,4 @@ ErrorMessage (Edm.String) | ✅ | ✅ | ✅ | ❌
 ResourceAction (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 State (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 Value (Edm.Binary) | ✅ | ✅ | ✅ | ❌
+ValueJsonString (Edm.String) | ✅ | ❌ | ❌ | ❌

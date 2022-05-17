@@ -11,3 +11,4 @@ TargetObjectId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 TargetObjectSubtype (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 TargetObjectType (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 Value (Edm.Binary) | ✅ | ✅ | ✅ | ❌
+ValueJsonString (Edm.String) | ✅ | ❌ | ❌ | ❌

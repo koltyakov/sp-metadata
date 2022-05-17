@@ -70,6 +70,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [GetListsParameters](./ComplexTypes/GetListsParameters.md) | ✅ | ❌ | ❌ | ❌
 [GroupCreationInformation](./ComplexTypes/GroupCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [Hashtag](./ComplexTypes/Hashtag.md) | ✅ | ✅ | ❌ | ❌
+[HomeSiteNavConfiguration](./ComplexTypes/HomeSiteNavConfiguration.md) | ✅ | ❌ | ❌ | ❌
 [HomeSitesDetails](./ComplexTypes/HomeSitesDetails.md) | ✅ | ❌ | ❌ | ❌
 [HubSiteCreationInformation](./ComplexTypes/HubSiteCreationInformation.md) | ✅ | ✅ | ❌ | ❌
 [IngestionTaskKey](./ComplexTypes/IngestionTaskKey.md) | ✅ | ✅ | ✅ | ❌

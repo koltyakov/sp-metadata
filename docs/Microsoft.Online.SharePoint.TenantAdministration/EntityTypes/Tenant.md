@@ -37,7 +37,6 @@ BlockSendLabelMismatchEmail (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockUserInfoVisibility (Edm.String) | ✅ | ❌ | ❌ | ❌
 BlockUserInfoVisibilityInOneDrive (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 BlockUserInfoVisibilityInSharePoint (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-ChannelMeetingRecordingPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CommentsOnFilesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CommentsOnListItemsDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -161,6 +160,7 @@ ShowEveryoneClaim (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ShowEveryoneExceptExternalUsersClaim (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ShowNGSCDialogForSyncOnODB (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ShowOpenInDesktopOptionForSyncedFiles (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ShowPeoplePickerGroupSuggestionsForIB (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ShowPeoplePickerSuggestionsForGuestUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SignInAccelerationDomain (Edm.String) | ✅ | ❌ | ❌ | ❌
 SocialBarOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

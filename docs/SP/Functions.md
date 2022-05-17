@@ -620,6 +620,8 @@ SP_SPHSite | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_AddOrgNewsSite](./Functions/SP_SPHSite_AddOrgNewsSite.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_AddSPHomeNavNode](./Functions/SP_SPHSite_AddSPHomeNavNode.md) | ✅ | ❌ | ❌ | ❌
 SP_SPHSite_GetSPHSiteXGeo | ✅ | ❌ | ❌ | ❌
+[SP_SPHSite_GetSiteReferenceXgeo](./Functions/SP_SPHSite_GetSiteReferenceXgeo.md) | ✅ | ❌ | ❌ | ❌
+[SP_SPHSite_GetSiteTitleXgeo](./Functions/SP_SPHSite_GetSiteTitleXgeo.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_GetXgeoHomeSiteDetail](./Functions/SP_SPHSite_GetXgeoHomeSiteDetail.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsCommSite](./Functions/SP_SPHSite_IsCommSite.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsModernSiteWithHorizontalNav](./Functions/SP_SPHSite_IsModernSiteWithHorizontalNav.md) | ✅ | ❌ | ❌ | ❌

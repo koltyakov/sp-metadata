@@ -12,6 +12,7 @@ CustomProperties (Collection(SP.KeyValue)) | ✅ | ✅ | ✅ | ✅
 FriendlyUrlSegment (Edm.String) | ✅ | ✅ | ✅ | ✅
 IsDeleted (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 IsHidden (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+IsTitleForExistingLanguage (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Key (Edm.String) | ✅ | ✅ | ✅ | ✅
 NodeType (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 Nodes (Collection(SP.MenuNode)) | ✅ | ✅ | ✅ | ✅

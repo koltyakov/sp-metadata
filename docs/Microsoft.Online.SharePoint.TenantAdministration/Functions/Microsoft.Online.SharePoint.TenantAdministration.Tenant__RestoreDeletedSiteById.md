@@ -1,4 +1,4 @@
-# Function Import: UpdateHomeSite
+# Function Import: RestoreDeletedSiteById
 
 > Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
@@ -10,6 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-audiences (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
-homeSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
-order (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+siteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
