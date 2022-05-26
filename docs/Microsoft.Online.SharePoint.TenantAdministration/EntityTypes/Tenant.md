@@ -47,6 +47,9 @@ ContentTypeSyncSiteTemplatesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | �
 CoreLoopDefaultSharingLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CoreLoopDefaultSharingLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CoreLoopSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+CoreRequestFilesLinkEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+CoreRequestFilesLinkExpirationInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+CoreSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CustomizedExternalSharingServiceUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 DefaultContentCenterSite (Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker) | ✅ | ❌ | ❌ | ❌
 DefaultLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
@@ -106,6 +109,7 @@ IsHubSitesMultiGeoFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsLoopEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMnAFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMultiGeo (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+IsMultipleHomeSitesFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsUnmanagedSyncClientForTenantRestricted (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsUnmanagedSyncClientRestrictionFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsWBFluidEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -130,6 +134,8 @@ OneDriveForGuestsEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 OneDriveLoopDefaultSharingLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OneDriveLoopDefaultSharingLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OneDriveLoopSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+OneDriveRequestFilesLinkEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+OneDriveRequestFilesLinkExpirationInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OneDriveStorageQuota (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 OptOutOfGrooveBlock (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 OptOutOfGrooveSoftBlock (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

@@ -45,6 +45,9 @@ ContentTypeSyncSiteTemplatesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | �
 CoreLoopDefaultSharingLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CoreLoopDefaultSharingLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CoreLoopSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+CoreRequestFilesLinkEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+CoreRequestFilesLinkExpirationInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+CoreSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CustomizedExternalSharingServiceUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 DefaultContentCenterSite (Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker) | ✅ | ❌ | ❌ | ❌
 DefaultLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
@@ -105,6 +108,8 @@ OneDriveForGuestsEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 OneDriveLoopDefaultSharingLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OneDriveLoopDefaultSharingLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OneDriveLoopSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+OneDriveRequestFilesLinkEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+OneDriveRequestFilesLinkExpirationInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OwnerAnonymousNotification (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PreventExternalUsersFromResharing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ProvisionSharedWithEveryoneFolder (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

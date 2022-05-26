@@ -55,6 +55,7 @@ BreakRoleInheritance (SP.Web) | ✅ | ✅ | ✅ | ✅
 BulkValidateUpdateListItems (SP.List) | ✅ | ✅ | ❌ | ❌
 CancelAllJobs (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
 CancelUpload (SP.File) | ✅ | ✅ | ✅ | ❌
+ChangeContentStorageSchema (SP.File) | ✅ | ❌ | ❌ | ❌
 CheckAccessAndPostViewAuditEvent (SP.File) | ✅ | ❌ | ❌ | ❌
 CheckIn (SP.File) | ✅ | ✅ | ✅ | ✅
 CheckLicense (SP.SPAppLicenseManager) | ✅ | ❌ | ❌ | ❌
@@ -189,6 +190,7 @@ EnableIndex (SP.FieldUser) | ✅ | ❌ | ❌ | ❌
 EnqueueApplySensitivityLabelWork (SP.Site) | ✅ | ❌ | ❌ | ❌
 EnqueueAsyncActionTaskById (SP.List) | ✅ | ❌ | ❌ | ❌
 EnsureClientRenderedSitePagesLibrary (Collection(SP.List)) | ✅ | ✅ | ❌ | ❌
+EnsureEduClassSetup (SP.Web) | ✅ | ❌ | ❌ | ❌
 EnsureEventsList (Collection(SP.List)) | ✅ | ✅ | ❌ | ❌
 EnsureSignoffStatusField (SP.List) | ✅ | ❌ | ❌ | ❌
 EnsureSiteAssetsLibrary (Collection(SP.List)) | ✅ | ✅ | ✅ | ✅

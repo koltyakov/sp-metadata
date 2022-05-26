@@ -113,3 +113,4 @@ UpdateHomeSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ |
 UpdateOffice365ProvidedSharepointSiteActivityData (Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService) | ✅ | ❌ | ❌ | ❌
 UpdateTenantAdminListItem (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 UpdateTenantAdminListView (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+ValidateMultipleHomeSitesParameterExists (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌

@@ -10,8 +10,11 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+azureContainerEncryptionKey (Edm.Binary) | ✅ | ❌ | ❌ | ❌
 azureContainerSASToken (Edm.String) | ✅ | ❌ | ❌ | ❌
 errorCode (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 errorDescription (Edm.String) | ✅ | ❌ | ❌ | ❌
+listId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 priority (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 uniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+webId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
