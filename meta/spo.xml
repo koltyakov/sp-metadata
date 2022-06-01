@@ -103,9 +103,20 @@
         <Property Name="Email" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="ApprovalRequest">
+        <Property Name="AwaitAll" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Details" Type="Edm.String" />
         <Property Name="Id" Type="Edm.String" />
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ApprovalsCreateRequestParameters">
+        <Property Name="approvers" Type="Edm.String" />
+        <Property Name="awaitAll" Type="Edm.Boolean" />
+        <Property Name="details" Type="Edm.String" />
+        <Property Name="etag" Type="Edm.String" />
+        <Property Name="itemId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="listId" Type="Edm.String" />
+        <Property Name="title" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="ApprovalsProperties">
         <Property Name="ApproversAwaitAll" Type="Edm.Boolean" Nullable="false" />
@@ -113,8 +124,8 @@
         <Property Name="ApproversFixed" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ApproverSourceType" Type="Edm.Int32" Nullable="false" />
         <Property Name="ApproverSourceValue" Type="Edm.String" />
-        <Property Name="IsConfigured" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsProvisioned" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ProvisioningError" Type="Edm.String" />
+        <Property Name="ProvisioningStatus" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="ContentAssemblyFileInfo">
         <Property Name="FileUrl" Type="Edm.String" />
@@ -13032,12 +13043,8 @@
           <Parameter Name="etag" Type="Edm.String" />
           <Parameter Name="approvalId" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="SP_Approvals_CreateItemRequest">
-          <Parameter Name="listId" Type="Edm.String" />
-          <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="etag" Type="Edm.String" />
-          <Parameter Name="approvers" Type="Edm.String" />
-          <Parameter Name="title" Type="Edm.String" />
+        <FunctionImport Name="SP_Approvals_CreateItemRequest" ReturnType="Edm.String">
+          <Parameter Name="creationInfo" Type="SP.ApprovalsCreateRequestParameters" />
         </FunctionImport>
         <FunctionImport Name="SP_Approvals_Disable">
           <Parameter Name="listId" Type="Edm.String" />
@@ -14470,9 +14477,17 @@
           <Parameter Name="siteUrl" Type="Edm.String" />
           <Parameter Name="hubSiteId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="CreatePolicyDefinition" ReturnType="SP.ListItem" IsBindable="true" EntitySet="ListItems">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="policyInputParameters" Type="Microsoft.Online.SharePoint.TenantAdministration.CreatePolicyRequest" />
+        </FunctionImport>
         <FunctionImport Name="CreateSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteCreationProperties" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCreationProperties" />
+        </FunctionImport>
+        <FunctionImport Name="DeletePolicyDefinition" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="ExportAdminListToCSV" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -14765,6 +14780,11 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="parameters" Type="SP.RenderListFilterDataParameters" />
         </FunctionImport>
+        <FunctionImport Name="RenderPolicyDefinitionList" ReturnType="Edm.Stream" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="parameters" Type="SP.RenderListDataParameters" />
+          <Parameter Name="overrideParameters" Type="SP.RenderListDataOverrideParameters" />
+        </FunctionImport>
         <FunctionImport Name="RenderPolicyExecutionsHistory" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="parameters" Type="SP.RenderListDataParameters" />
@@ -14774,6 +14794,10 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="parameters" Type="SP.RenderListDataParameters" />
           <Parameter Name="overrideParameters" Type="SP.RenderListDataOverrideParameters" />
+        </FunctionImport>
+        <FunctionImport Name="ReorderHomeSites" ReturnType="Collection(SP.HomeSitesDetails)" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="homeSitesSiteIds" Type="Collection(Edm.Guid)" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="RestoreDeletedSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -14862,6 +14886,11 @@
           <Parameter Name="homeSiteUrl" Type="Edm.String" />
           <Parameter Name="order" Type="Edm.Int32" />
           <Parameter Name="audiences" Type="Collection(Edm.Guid)" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="UpdatePolicyDefinition" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="policyInputParameters" Type="Microsoft.Online.SharePoint.TenantAdministration.CreatePolicyRequest" />
         </FunctionImport>
         <FunctionImport Name="UpdateTenantAdminListItem" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -20591,6 +20620,9 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/AddressbarLinkPermission">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/AllowAnonymousMeetingParticipantsToAccessWhiteboards">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/AnyoneLinkTrackUsers">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22571,7 +22603,7 @@
       <Annotations Target="SP.ApiData/SP_Approvals_CancelItemRequest(Edm.String, Edm.Int32, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_Approvals_CreateItemRequest(Edm.String, Edm.Int32, Edm.String, Edm.String, Edm.String)">
+      <Annotations Target="SP.ApiData/SP_Approvals_CreateItemRequest(SP.ApprovalsCreateRequestParameters)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Approvals_Disable(Edm.String)">
@@ -29489,7 +29521,22 @@
         <Property Name="StartTime" Type="Edm.DateTime" />
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
         <Property Name="WorkItemId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="WorkItemType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PolicyWorkItemType" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="TenantAdminPolicyDefinition">
+        <Property Name="createdBy" Type="Edm.String" />
+        <Property Name="lastUpdatedTime" Type="Edm.DateTime" />
+        <Property Name="policyCreatedTime" Type="Edm.DateTime" />
+        <Property Name="policyCustomName" Type="Edm.String" />
+        <Property Name="PolicyDefinition" Type="Edm.String" />
+        <Property Name="policyFrequencyUnit" Type="Edm.Int32" Nullable="false" />
+        <Property Name="policyFrequencyValue" Type="Edm.Int32" Nullable="false" />
+        <Property Name="policyId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="policyState" Type="Edm.Int32" Nullable="false" />
+        <Property Name="policyTemplate" Type="Edm.Int32" Nullable="false" />
+        <Property Name="policyType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="policyVersion" Type="Edm.Int32" Nullable="false" />
+        <Property Name="updatedBy" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="TenantAdminRecentActionPayload">
         <Property Name="adminActionId" Type="Edm.String" />
@@ -30521,6 +30568,15 @@
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="CreatePolicyRequest">
+        <Property Name="policyCustomName" Type="Edm.String" />
+        <Property Name="policyDefinition" Type="Edm.String" />
+        <Property Name="policyFrequencyUnit" Type="Edm.Int32" Nullable="false" />
+        <Property Name="policyFrequencyValue" Type="Edm.Int32" Nullable="false" />
+        <Property Name="policyId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="policyTemplate" Type="Edm.Int32" Nullable="false" />
+        <Property Name="policyType" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="CustomFormUrl">
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.String" />
@@ -30974,6 +31030,7 @@
         <Property Name="AIBuilderSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
         <Property Name="AIBuilderSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="AIBuilderSiteListFileName" Type="Edm.String" />
+        <Property Name="AllowAnonymousMeetingParticipantsToAccessWhiteboards" Type="Edm.Int32" Nullable="false" />
         <Property Name="AllowCommentsTextOnEmailEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowDownloadingNonWebViewableFiles" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowedDomainListForSyncClient" Type="Collection(Edm.Guid)" Nullable="false" />
@@ -32835,6 +32892,7 @@
         <Property Name="AIBuilderSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
         <Property Name="AIBuilderSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="AIBuilderSiteListFileName" Type="Edm.String" />
+        <Property Name="AllowAnonymousMeetingParticipantsToAccessWhiteboards" Type="Edm.Int32" Nullable="false" />
         <Property Name="AllowCommentsTextOnEmailEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowDownloadingNonWebViewableFiles" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowedDomainListForSyncClient" Type="Collection(Edm.Guid)" Nullable="false" />
