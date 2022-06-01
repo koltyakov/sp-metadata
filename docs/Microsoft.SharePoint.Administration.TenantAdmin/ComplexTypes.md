@@ -6,5 +6,6 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [TenantAdminListItemColumnValue](./ComplexTypes/TenantAdminListItemColumnValue.md) | ✅ | ❌ | ❌ | ❌
 [TenantAdminPolicyAutomationExecutionHistory](./ComplexTypes/TenantAdminPolicyAutomationExecutionHistory.md) | ✅ | ❌ | ❌ | ❌
+[TenantAdminPolicyDefinition](./ComplexTypes/TenantAdminPolicyDefinition.md) | ✅ | ❌ | ❌ | ❌
 [TenantAdminRecentAction](./ComplexTypes/TenantAdminRecentAction.md) | ✅ | ❌ | ❌ | ❌
 [TenantAdminRecentActionPayload](./ComplexTypes/TenantAdminRecentActionPayload.md) | ✅ | ❌ | ❌ | ❌

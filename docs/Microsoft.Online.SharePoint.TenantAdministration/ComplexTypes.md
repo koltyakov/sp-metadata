@@ -6,6 +6,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [AutoQuotaEnabled](./ComplexTypes/AutoQuotaEnabled.md) | ✅ | ❌ | ❌ | ❌
 [CommentsOnSitePagesDisabled](./ComplexTypes/CommentsOnSitePagesDisabled.md) | ✅ | ❌ | ❌ | ❌
+[CreatePolicyRequest](./ComplexTypes/CreatePolicyRequest.md) | ✅ | ❌ | ❌ | ❌
 [CustomFormUrl](./ComplexTypes/CustomFormUrl.md) | ✅ | ❌ | ❌ | ❌
 [DisableGroupify](./ComplexTypes/DisableGroupify.md) | ✅ | ❌ | ❌ | ❌
 [DisableSelfServiceSiteCreation](./ComplexTypes/DisableSelfServiceSiteCreation.md) | ✅ | ❌ | ❌ | ❌

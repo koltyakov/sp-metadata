@@ -11,5 +11,5 @@ ApproverSourceValue (Edm.String) | ✅ | ❌ | ❌ | ❌
 ApproversAwaitAll (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ApproversAwaitAllFixed (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ApproversFixed (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-IsConfigured (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-IsProvisioned (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ProvisioningError (Edm.String) | ✅ | ❌ | ❌ | ❌
+ProvisioningStatus (Edm.Int32) | ✅ | ❌ | ❌ | ❌

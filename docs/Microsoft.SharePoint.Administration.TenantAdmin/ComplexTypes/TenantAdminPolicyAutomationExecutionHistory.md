@@ -15,8 +15,8 @@ ImpactedDataFileURL (Edm.String) | ✅ | ❌ | ❌ | ❌
 ParentExecutionId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 PolicyId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 PolicyVersion (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+PolicyWorkItemType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 RetryCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 StartTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 Status (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 WorkItemId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-WorkItemType (Edm.Int32) | ✅ | ❌ | ❌ | ❌

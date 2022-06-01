@@ -12,6 +12,7 @@ AIBuilderSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministrati
 AIBuilderSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 AIBuilderSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 AddressbarLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+AllowAnonymousMeetingParticipantsToAccessWhiteboards (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 AllowCommentsTextOnEmailEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowDownloadingNonWebViewableFiles (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowEditing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
