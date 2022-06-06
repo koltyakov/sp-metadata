@@ -94,6 +94,7 @@ RestoreDeletedSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | �
 RestoreDeletedSiteById (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RestoreDeletedSitePreferId (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RevokeHubSiteRightsById (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+SendEmail (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 ServiceHealthMessages (Microsoft.Online.SharePoint.TenantAdministration.Office365CommsMessagesServiceProxy) | ✅ | ❌ | ❌ | ❌
 SetDefaultView (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetIBSegmentsOnSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌

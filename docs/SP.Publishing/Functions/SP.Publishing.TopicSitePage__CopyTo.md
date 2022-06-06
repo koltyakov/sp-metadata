@@ -1,8 +1,8 @@
-# Function Import: SavePageAsTemplateInDestinationWeb
+# Function Import: CopyTo
 
 > Namespace: SP.Publishing
 
-- Entity type: SP.Publishing.SitePage
+- Entity type: SP.Publishing.TopicSitePage
 - Is composable: false
 - Is bindable: false
 
@@ -10,4 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-destinationWebUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+copyToParams (SP.Publishing.CopyToParams) | ✅ | ❌ | ❌ | ❌

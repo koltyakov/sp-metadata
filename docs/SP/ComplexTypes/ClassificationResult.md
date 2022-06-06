@@ -15,3 +15,4 @@ RetentionLabelFlags (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 RetentionLabelName (Edm.String) | ✅ | ❌ | ❌ | ❌
 RetryCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SensitivityLabel (Edm.String) | ✅ | ❌ | ❌ | ❌
+TableMetas (Collection(SP.KeyValue)) | ✅ | ❌ | ❌ | ❌

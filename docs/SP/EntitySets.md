@@ -297,6 +297,7 @@ OrgNewsSites | ✅ | ❌ | ❌ | ❌
 OrgRelationGroupManagedPaths | ✅ | ❌ | ❌ | ❌
 OrgRelationNotifications | ✅ | ❌ | ❌ | ❌
 OrgRelationVerifications | ✅ | ❌ | ❌ | ❌
+PageCopyResponses | ✅ | ❌ | ❌ | ❌
 PageDiagnostics | ✅ | ❌ | ❌ | ❌
 PageSizess | ✅ | ✅ | ❌ | ❌
 PeopleManagers | ✅ | ✅ | ✅ | ✅
@@ -364,6 +365,7 @@ Quizs | ❌ | ❌ | ❌ | ✅
 QuotaMigrationApis | ✅ | ❌ | ❌ | ❌
 RankingLabelings | ✅ | ✅ | ✅ | ✅
 RecentDocuments | ✅ | ✅ | ✅ | ❌
+RecentFileCollections | ✅ | ❌ | ❌ | ❌
 RecentListCollections | ✅ | ❌ | ❌ | ❌
 RecentListProxys | ✅ | ❌ | ❌ | ❌
 RecentLists | ✅ | ❌ | ❌ | ❌

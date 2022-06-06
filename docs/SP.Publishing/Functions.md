@@ -34,6 +34,12 @@ Copy (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 Copy (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
 Copy (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 Copy (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+CopyTo (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
+CopyTo (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
+CopyTo (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
+CopyTo (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
+CopyTo (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+CopyToStatus (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
 CopyWithConfiguration (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 CopyWithConfiguration (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 CopyWithConfiguration (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
@@ -196,11 +202,6 @@ SavePageAsTemplate (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplate (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplate (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplate (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
-SavePageAsTemplateInDestinationWeb (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
-SavePageAsTemplateInDestinationWeb (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
-SavePageAsTemplateInDestinationWeb (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
-SavePageAsTemplateInDestinationWeb (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
-SavePageAsTemplateInDestinationWeb (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplateOnMySite (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplateOnMySite (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplateOnMySite (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌

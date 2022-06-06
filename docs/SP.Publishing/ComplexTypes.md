@@ -8,6 +8,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [BoostFieldsData](./ComplexTypes/BoostFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [CommunicationSiteCreationRequest](./ComplexTypes/CommunicationSiteCreationRequest.md) | ✅ | ✅ | ❌ | ❌
 [CommunicationSiteCreationResponse](./ComplexTypes/CommunicationSiteCreationResponse.md) | ✅ | ✅ | ❌ | ❌
+[CopyToParams](./ComplexTypes/CopyToParams.md) | ✅ | ❌ | ❌ | ❌
 [DateTimeCustomProperty](./ComplexTypes/DateTimeCustomProperty.md) | ✅ | ❌ | ❌ | ❌
 [Error](./ComplexTypes/Error.md) | ✅ | ❌ | ❌ | ❌
 [FeedVideoPageFieldsData](./ComplexTypes/FeedVideoPageFieldsData.md) | ✅ | ❌ | ❌ | ❌

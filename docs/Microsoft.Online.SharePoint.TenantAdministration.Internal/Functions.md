@@ -14,3 +14,4 @@ GetByObjectId (Collection(Microsoft.Online.SharePoint.TenantAdministration.Inter
 <span title="Microsoft_Online_SharePoint_TenantAdministration_Internal_SPOWebAppServicePrincipal">Microsoft_Online_SharePoint_TenantAdministration_I...</span> (Microsoft Online SharePoint TenantAdministration Internal SPOWebAppServicePrincipal) | ✅ | ❌ | ❌ | ❌
 Remove (Collection(Microsoft.Online.SharePoint.TenantAdministration.Internal.SPO3rdPartyAADPermissionGrant)) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipal) | ✅ | ❌ | ❌ | ❌
+UpdateSpfxClientSecret (Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipal) | ✅ | ❌ | ❌ | ❌

@@ -26,6 +26,7 @@ TargetLibraryServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetLibraryUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetSiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 TargetSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+TargetTableListId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 TargetWebId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 TargetWebName (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetWebServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

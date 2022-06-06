@@ -1,4 +1,4 @@
-# Function Import: SavePageAsTemplateInDestinationWeb
+# Function Import: CopyTo
 
 > Namespace: SP.Publishing
 
@@ -10,4 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-destinationWebUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+copyToParams (SP.Publishing.CopyToParams) | ✅ | ❌ | ❌ | ❌
