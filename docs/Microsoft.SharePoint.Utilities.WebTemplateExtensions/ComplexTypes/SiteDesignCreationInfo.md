@@ -19,6 +19,7 @@ PreviewImageAltText (Edm.String) | ✅ | ✅ | ❌ | ❌
 PreviewImageUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 RequiresClassConnected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RequiresGroupConnected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+RequiresSyntexLicense (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RequiresTeamsConnected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RequiresYammerConnected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SiteScriptIds (Collection(Edm.Guid)) | ✅ | ✅ | ❌ | ❌

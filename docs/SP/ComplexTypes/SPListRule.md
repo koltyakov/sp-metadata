@@ -14,5 +14,6 @@ IsActive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LastModifiedDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 Outcome (Edm.String) | ✅ | ❌ | ❌ | ❌
 Owner (Edm.String) | ✅ | ❌ | ❌ | ❌
+RuleTemplateId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ❌ | ❌ | ❌
 TriggerType (Edm.Int32) | ✅ | ❌ | ❌ | ❌

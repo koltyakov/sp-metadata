@@ -17,3 +17,4 @@ Publisher (Edm.String) | ✅ | ❌ | ❌ | ❌
 ShortDescription (Edm.String) | ✅ | ❌ | ❌ | ❌
 StoreAssetId (Edm.String) | ✅ | ❌ | ❌ | ❌
 Url (Edm.String) | ✅ | ❌ | ❌ | ❌
+XorHash (Edm.String) | ✅ | ❌ | ❌ | ❌

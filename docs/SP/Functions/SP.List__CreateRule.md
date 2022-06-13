@@ -14,5 +14,6 @@ actionType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 condition (Edm.String) | ✅ | ❌ | ❌ | ❌
 emailField (Edm.String) | ✅ | ❌ | ❌ | ❌
 outcome (Edm.String) | ✅ | ❌ | ❌ | ❌
+ruleTemplateId (Edm.String) | ✅ | ❌ | ❌ | ❌
 title (Edm.String) | ✅ | ❌ | ❌ | ❌
 triggerType (Edm.Int32) | ✅ | ❌ | ❌ | ❌

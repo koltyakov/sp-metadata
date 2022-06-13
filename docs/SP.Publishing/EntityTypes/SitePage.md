@@ -11,6 +11,7 @@ CanvasContent1 (Edm.String) | ✅ | ✅ | ❌ | ❌
 CanvasJson1 (Edm.String) | ✅ | ✅ | ❌ | ❌
 IsLikedByCurrentUser (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsTemplate (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+Language (Edm.String) | ✅ | ❌ | ❌ | ❌
 LayoutWebpartsContent (Edm.String) | ✅ | ✅ | ❌ | ❌
 Name (Edm.String) | ✅ | ❌ | ❌ | ❌
 SitePageFlags (Edm.String) | ✅ | ❌ | ❌ | ❌

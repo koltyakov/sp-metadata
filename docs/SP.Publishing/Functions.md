@@ -98,6 +98,7 @@ GetDocProps (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | ❌ 
 GetFile (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 GetMyVideos (SP.Publishing.VideoChannel) | ✅ | ❌ | ❌ | ❌
 GetPageColumnState (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
+GetPagesByEntityId (Collection(SP.Publishing.TopicSitePage)) | ✅ | ❌ | ❌ | ❌
 GetPermissionGroup (SP.Publishing.VideoChannel) | ✅ | ❌ | ❌ | ❌
 GetPermissionGroup (SP.Publishing.VideoServiceManager) | ✅ | ❌ | ❌ | ❌
 GetPlaybackMetadata (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
