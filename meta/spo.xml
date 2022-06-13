@@ -56,6 +56,7 @@
         <Property Name="Content" Type="Edm.Binary" />
         <Property Name="Overwrite" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Url" Type="Edm.String" />
+        <Property Name="XorHash" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="KnowledgeHubSiteReference">
         <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
@@ -709,6 +710,7 @@
         <Property Name="LastModifiedDate" Type="Edm.DateTime" Nullable="false" />
         <Property Name="Outcome" Type="Edm.String" />
         <Property Name="Owner" Type="Edm.String" />
+        <Property Name="RuleTemplateId" Type="Edm.Guid" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
         <Property Name="TriggerType" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
@@ -8482,6 +8484,10 @@
           <Parameter Name="id" Type="Edm.String" />
           <Parameter Name="culture" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="GetPagesByEntityId" ReturnType="Collection(SP.Publishing.TopicSitePage)" IsComposable="true" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="Collection(SP.Publishing.TopicSitePage)" />
+          <Parameter Name="entityId" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="IsContentTypeAvailable" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Collection(SP.Publishing.TopicSitePage)" />
         </FunctionImport>
@@ -10031,6 +10037,7 @@
           <Parameter Name="Content" Type="Edm.Binary" />
           <Parameter Name="Overwrite" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="Url" Type="Edm.String" />
+          <Parameter Name="XorHash" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="DownloadTeams" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TeamsPackageDownload" />
@@ -10040,6 +10047,7 @@
           <Parameter Name="Content" Type="Edm.Binary" />
           <Parameter Name="Overwrite" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="Url" Type="Edm.String" />
+          <Parameter Name="XorHash" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="AddAndDeployStoreAppById" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
@@ -10053,6 +10061,7 @@
           <Parameter Name="Content" Type="Edm.Binary" />
           <Parameter Name="Overwrite" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="Url" Type="Edm.String" />
+          <Parameter Name="XorHash" Type="Edm.String" />
           <Parameter Name="IconUrl" Type="Edm.String" />
           <Parameter Name="Publisher" Type="Edm.String" />
           <Parameter Name="ShortDescription" Type="Edm.String" />
@@ -10100,6 +10109,7 @@
           <Parameter Name="Content" Type="Edm.Binary" />
           <Parameter Name="Overwrite" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="Url" Type="Edm.String" />
+          <Parameter Name="XorHash" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_FavoriteLists_AddList">
           <Parameter Name="favoriteList" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
@@ -10517,6 +10527,7 @@
           <Parameter Name="triggerType" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="emailField" Type="Edm.String" />
           <Parameter Name="actionType" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="ruleTemplateId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="CreateSmartTemplateContentTypeAndAddToList" ReturnType="SP.ContentType" IsBindable="true" EntitySet="ContentTypes">
           <Parameter Name="this" Type="SP.List" />
@@ -12642,6 +12653,7 @@
           <Parameter Name="Content" Type="Edm.Binary" />
           <Parameter Name="Overwrite" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="Url" Type="Edm.String" />
+          <Parameter Name="XorHash" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="AddStub" ReturnType="SP.File" IsBindable="true" EntitySet="Files12">
           <Parameter Name="this" Type="Collection(SP.File)" />
@@ -19890,6 +19902,9 @@
       <Annotations Target="SP.Publishing.SitePage/IsTemplate">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.SitePage/Language">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.SitePage/LayoutWebpartsContent">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21456,6 +21471,9 @@
       <Annotations Target="SP.ApiData/GetByEntityIdAndCulture(Collection(SP.Publishing.TopicSitePage), Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetPagesByEntityId(Collection(SP.Publishing.TopicSitePage), Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/IsContentTypeAvailable(Collection(SP.Publishing.TopicSitePage))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21996,19 +22014,19 @@
       <Annotations Target="SP.ApiData/Upgrade(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Add(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String)">
+      <Annotations Target="SP.ApiData/Add(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/DownloadTeams(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TeamsPackageDownload)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Add(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String)">
+      <Annotations Target="SP.ApiData/Add(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/AddAndDeployStoreAppById(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.String, Edm.Boolean, Edm.Boolean, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/AddStoreApp(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String)">
+      <Annotations Target="SP.ApiData/AddStoreApp(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/DownloadTeamsSolution(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Int32)">
@@ -22032,7 +22050,7 @@
       <Annotations Target="SP.ApiData/SyncSolutionToTeamsByUniqueId(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Upload(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String)">
+      <Annotations Target="SP.ApiData/Upload(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_FavoriteLists_AddList(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
@@ -22188,7 +22206,7 @@
       <Annotations Target="SP.ApiData/CreateMappedView(SP.List, SP.AppViewCreationInfo, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/CreateRule(SP.List, Edm.String, Edm.String, Edm.String, Edm.Int32, Edm.String, Edm.Int32)">
+      <Annotations Target="SP.ApiData/CreateRule(SP.List, Edm.String, Edm.String, Edm.String, Edm.Int32, Edm.String, Edm.Int32, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/DeleteRule(SP.List, Edm.String)">
@@ -27413,6 +27431,7 @@
         <Property Name="CanvasJson1" Type="Edm.String" />
         <Property Name="IsLikedByCurrentUser" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsTemplate" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Language" Type="Edm.String" />
         <Property Name="LayoutWebpartsContent" Type="Edm.String" />
         <Property Name="Name" Type="Edm.String" />
         <Property Name="SitePageFlags" Type="Edm.String" />
@@ -28784,6 +28803,7 @@
         <Property Name="PreviewImageUrl" Type="Edm.String" />
         <Property Name="RequiresClassConnected" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RequiresGroupConnected" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="RequiresSyntexLicense" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RequiresTeamsConnected" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RequiresYammerConnected" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SiteScriptIds" Type="Collection(Edm.Guid)" Nullable="false" />
