@@ -103,13 +103,6 @@
       <ComplexType Name="FieldUserValue" BaseType="SP.FieldLookupValue">
         <Property Name="Email" Type="Edm.String" />
       </ComplexType>
-      <ComplexType Name="ApprovalRequest">
-        <Property Name="AwaitAll" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="Details" Type="Edm.String" />
-        <Property Name="Id" Type="Edm.String" />
-        <Property Name="Status" Type="Edm.Int32" Nullable="false" />
-        <Property Name="Title" Type="Edm.String" />
-      </ComplexType>
       <ComplexType Name="ApprovalsCreateRequestParameters">
         <Property Name="approvers" Type="Edm.String" />
         <Property Name="awaitAll" Type="Edm.Boolean" />
@@ -2447,6 +2440,18 @@
         <Property Name="Uri" Type="Edm.String" Nullable="false" />
         <Property Name="UrlZone" Type="Edm.Int32" Nullable="false" />
       </EntityType>
+      <EntityType Name="ApprovalRequest">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="AllowCancel" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AllowRespond" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AwaitAll" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Details" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Title" Type="Edm.String" />
+      </EntityType>
       <EntityType Name="ListHomeItem2">
         <Key>
           <PropertyRef Name="color" />
@@ -4260,6 +4265,7 @@
         <EntitySet Name="AppContextSites" EntityType="SP.AppContextSite" />
         <EntitySet Name="AppInstances" EntityType="SP.AppInstance" />
         <EntitySet Name="AppInstanceErrorDetailss" EntityType="SP.AppInstanceErrorDetails" />
+        <EntitySet Name="ApprovalRequests" EntityType="SP.ApprovalRequest" />
         <EntitySet Name="Approvalss" EntityType="SP.Approvals" />
         <EntitySet Name="AppSiteContextUtilitys" EntityType="SP.AppSiteContextUtility" />
         <EntitySet Name="AppTiles" EntityType="SP.AppTile" />
@@ -5831,6 +5837,11 @@
         <FunctionImport Name="GetByUrl" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob" IsComposable="true" IsBindable="true" EntitySet="SiteMoveJobEntityDatas">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob)" />
           <Parameter Name="url" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetMoveJobByUrl" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob" IsComposable="true" IsBindable="true" EntitySet="SiteMoveJobEntityDatas">
+          <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob)" />
+          <Parameter Name="SourceSiteUrl" Type="Edm.String" />
+          <Parameter Name="SubscriptionId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetMoveReport" ReturnType="Collection(Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob)" IsComposable="true" IsBindable="true" EntitySet="SiteMoveJobEntityDatas">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob)" />
@@ -11972,7 +11983,10 @@
           <Parameter Name="compatibilityLevel" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_ServerSettings_IsSharePointOnline" ReturnType="Edm.Boolean" />
-        <FunctionImport Name="SP_SharedWithMeItemCollection_GetSubstrateSharedWithMeItems" ReturnType="Edm.String" IsSideEffecting="false" />
+        <FunctionImport Name="SP_SharedWithMeItemCollection_GetSharedWithMeItems" ReturnType="Edm.String" IsSideEffecting="false">
+          <Parameter Name="top" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="skiptoken" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="SP_SmartCache_Update">
           <Parameter Name="smartCacheJson" Type="Edm.String" />
         </FunctionImport>
@@ -13084,8 +13098,9 @@
         </FunctionImport>
         <FunctionImport Name="SP_Approvals_Enable">
           <Parameter Name="listId" Type="Edm.String" />
+          <Parameter Name="addFieldsToDefaultView" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="SP_Approvals_GetItemRequest" ReturnType="SP.ApprovalRequest" IsSideEffecting="false">
+        <FunctionImport Name="SP_Approvals_GetItemRequest" ReturnType="SP.ApprovalRequest" IsComposable="true" EntitySet="ApprovalRequests">
           <Parameter Name="listId" Type="Edm.String" />
           <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="etag" Type="Edm.String" />
@@ -20229,6 +20244,9 @@
       <Annotations Target="Microsoft.SharePoint.AddToOneDrive.placesInformation">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApprovalRequest">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Internal.ApprovalsManager">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22521,7 +22539,7 @@
       <Annotations Target="SP.ApiData/SP_RecentListProxy_GetRecentListsProxy(Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_SharedWithMeItemCollection_GetSubstrateSharedWithMeItems()">
+      <Annotations Target="SP.ApiData/SP_SharedWithMeItemCollection_GetSharedWithMeItems(Edm.Int32, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_SmartCache_Update(Edm.String)">
@@ -22683,7 +22701,7 @@
       <Annotations Target="SP.ApiData/SP_Approvals_Disable(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_Approvals_Enable(Edm.String)">
+      <Annotations Target="SP.ApiData/SP_Approvals_Enable(Edm.String, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Approvals_GetItemRequest(Edm.String, Edm.Int32, Edm.String)">
