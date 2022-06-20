@@ -23,6 +23,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [AppSiteContextUtility](./EntityTypes/AppSiteContextUtility.md) | ✅ | ✅ | ❌ | ❌
 [AppTile](./EntityTypes/AppTile.md) | ✅ | ✅ | ✅ | ❌
 [AppTileProperties](./EntityTypes/AppTileProperties.md) | ✅ | ✅ | ❌ | ❌
+[ApprovalRequest](./EntityTypes/ApprovalRequest.md) | ✅ | ❌ | ❌ | ❌
 [Approvals](./EntityTypes/Approvals.md) | ✅ | ❌ | ❌ | ❌
 [Attachment](./EntityTypes/Attachment.md) | ✅ | ✅ | ✅ | ✅
 [Audit](./EntityTypes/Audit.md) | ✅ | ✅ | ✅ | ✅

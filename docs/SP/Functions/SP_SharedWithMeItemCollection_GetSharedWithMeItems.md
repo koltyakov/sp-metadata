@@ -1,4 +1,4 @@
-# Function Import: SP_Approvals_Enable
+# Function Import: SP_SharedWithMeItemCollection_GetSharedWithMeItems
 
 > Namespace: SP
 
@@ -9,5 +9,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-addFieldsToDefaultView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-listId (Edm.String) | ✅ | ❌ | ❌ | ❌
+skiptoken (Edm.String) | ✅ | ❌ | ❌ | ❌
+top (Edm.Int32) | ✅ | ❌ | ❌ | ❌

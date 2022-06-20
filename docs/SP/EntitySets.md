@@ -33,6 +33,7 @@ AppPrincipals | ❌ | ❌ | ❌ | ✅
 AppSiteContextUtilitys | ✅ | ✅ | ❌ | ❌
 AppTilePropertiess | ✅ | ✅ | ❌ | ❌
 AppTiles | ✅ | ✅ | ✅ | ❌
+ApprovalRequests | ✅ | ❌ | ❌ | ❌
 ApprovalsManagers | ✅ | ❌ | ❌ | ❌
 Approvalss | ✅ | ❌ | ❌ | ❌
 Apps | ✅ | ✅ | ✅ | ✅

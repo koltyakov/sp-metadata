@@ -632,7 +632,7 @@ SP_SPHSite_GetSPHSiteXGeo | ✅ | ❌ | ❌ | ❌
 SP_ServerSettings_GetBlockedFileExtensions | ✅ | ✅ | ✅ | ✅
 [SP_ServerSettings_GetGlobalInstalledLanguages](./Functions/SP_ServerSettings_GetGlobalInstalledLanguages.md) | ✅ | ✅ | ✅ | ✅
 SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌
-<span title="SP_SharedWithMeItemCollection_GetSubstrateSharedWithMeItems">SP_SharedWithMeItemCollection_GetSubstrateSharedWi...</span> (SP SharedWithMeItemCollection GetSubstrateSharedWithMeItems) | ✅ | ❌ | ❌ | ❌
+[SP_SharedWithMeItemCollection_GetSharedWithMeItems](./Functions/SP_SharedWithMeItemCollection_GetSharedWithMeItems.md) | ✅ | ❌ | ❌ | ❌
 [SP_Site_Exists](./Functions/SP_Site_Exists.md) | ✅ | ✅ | ❌ | ❌
 [SP_Site_GetUrlById](./Functions/SP_Site_GetUrlById.md) | ✅ | ❌ | ❌ | ❌
 [SP_Site_GetUrlByIdForWeb](./Functions/SP_Site_GetUrlByIdForWeb.md) | ✅ | ❌ | ❌ | ❌

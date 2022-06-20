@@ -36,6 +36,7 @@ GetByUpn (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob)) 
 GetByUrl (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob)) | ✅ | ❌ | ❌ | ❌
 GetByValidPdl (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob)) | ✅ | ❌ | ❌ | ❌
 GetChanges (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty)) | ✅ | ❌ | ❌ | ❌
+GetMoveJobByUrl (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob)) | ✅ | ❌ | ❌ | ❌
 GetMoveReport (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJob)) | ✅ | ❌ | ❌ | ❌
 GetMoveReport (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob)) | ✅ | ❌ | ❌ | ❌
 GetMoveReport (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob)) | ✅ | ❌ | ❌ | ❌
