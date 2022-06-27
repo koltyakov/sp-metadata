@@ -1091,6 +1091,11 @@
         <Property Name="FileInfo" Type="SP.ContentAssemblyFileInfo" />
         <Property Name="Placeholders" Type="Collection(SP.PlaceholderV2)" />
       </ComplexType>
+      <ComplexType Name="TemporaryFolderFileInfo">
+        <Property Name="DummyFileUrl" Type="Edm.String" />
+        <Property Name="ServerRedirectedEmbedUrl" Type="Edm.String" />
+        <Property Name="TemporaryFileUrl" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="TranslationNotificationRecipientCollection">
         <Property Name="LanguageCode" Type="Edm.String" />
         <Property Name="Recipients" Type="Collection(SP.TranslationNotificationRecipient)" />
@@ -4141,6 +4146,7 @@
         <EntitySet Name="NavigationServiceRests" EntityType="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" />
         <EntitySet Name="AppDetailss" EntityType="Microsoft.SharePoint.Packaging.AppDetails" />
         <EntitySet Name="AppIconInfos" EntityType="Microsoft.SharePoint.Packaging.AppIconInfo" />
+        <EntitySet Name="PhotosMigrations" EntityType="Microsoft.SharePoint.Photos.PhotosMigration" />
         <EntitySet Name="CollaborationMailboxs" EntityType="Microsoft.SharePoint.Portal.CollaborationMailbox" />
         <EntitySet Name="CommunityModerations" EntityType="Microsoft.SharePoint.Portal.CommunityModeration" />
         <EntitySet Name="MySiteRecommendationss" EntityType="Microsoft.SharePoint.Portal.MySiteRecommendations" />
@@ -9934,6 +9940,10 @@
         <FunctionImport Name="SP_PinnedItems_UpdateItem">
           <Parameter Name="pinnedItem" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Photos_PhotosMigration" ReturnType="Microsoft.SharePoint.Photos.PhotosMigration" IsComposable="true" EntitySet="PhotosMigrations" />
+        <FunctionImport Name="MigratePhotosData" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Photos.PhotosMigration" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_OrgNewsSite_OrgNewsSiteApi" ReturnType="Microsoft.SharePoint.OrgNewsSite.OrgNewsSiteApi" IsComposable="true" EntitySet="OrgNewsSites" />
         <FunctionImport Name="Details" ReturnType="Microsoft.SharePoint.OrgNewsSite.OrgNewsSiteInfo" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.OrgNewsSite.OrgNewsSiteApi" />
@@ -10496,6 +10506,16 @@
           <Parameter Name="checkInComment" Type="Edm.String" />
           <Parameter Name="folderPath" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="CAAECreateFilesInTempFolder" ReturnType="SP.TemporaryFolderFileInfo" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="Name" Type="Edm.String" />
+          <Parameter Name="Content" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="CAAERenameFileInTemporaryFolder" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="Path" Type="Edm.String" />
+          <Parameter Name="UpdatedName" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="ClearBusinessAppMigrationInteractiveData" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
         </FunctionImport>
@@ -10549,6 +10569,8 @@
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="Name" Type="Edm.String" />
           <Parameter Name="Description" Type="Edm.String" />
+          <Parameter Name="TemplatePath" Type="Edm.String" />
+          <Parameter Name="Status" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="DeleteObject" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -13380,6 +13402,9 @@
           <Parameter Name="otherEmail" Type="Edm.String" />
           <Parameter Name="principalName" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="CertifySite" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="SP.Site" />
+        </FunctionImport>
         <FunctionImport Name="CreateCopyJob" ReturnType="SP.CopyMigrationInfo" IsBindable="true">
           <Parameter Name="this" Type="SP.Site" />
           <Parameter Name="exportObjectUris" Type="Collection(Edm.String)" />
@@ -14564,6 +14589,10 @@
         <FunctionImport Name="GetPowerAppsEnvironments" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.PowerAppsEnvironment)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
+        <FunctionImport Name="GetSiteAdministrators" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteAdministratorsInfo)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="GetSiteHealthStatus" ReturnType="SP.Publishing.PortalHealthStatus" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="sourceUrl" Type="Edm.String" />
@@ -14885,6 +14914,10 @@
           <Parameter Name="enabled" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="warnAfter" Type="Edm.Time" Nullable="false" />
           <Parameter Name="signOutAfter" Type="Edm.Time" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SetSiteAdministrators" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="siteAdministratorsFieldsData" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteAdministratorsFieldsData" />
         </FunctionImport>
         <FunctionImport Name="SetSiteSecondaryAdministrators" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -18519,6 +18552,12 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SiteAdministratorsFieldsData">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SiteAdministratorsInfo">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SiteUserGroupInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20814,6 +20853,9 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest/MultiTenantAppId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest/MultiTenantAppReplyUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest/PackageApproverName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -23007,10 +23049,16 @@
       <Annotations Target="SP.ApiData/CheckTenantLicenses(Microsoft.Online.SharePoint.TenantAdministration.Tenant, Collection(Edm.String))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetSiteAdministrators(Microsoft.Online.SharePoint.TenantAdministration.Tenant, Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetSiteSecondaryAdministrators(Microsoft.Online.SharePoint.TenantAdministration.Tenant, Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetSiteThumbnailLogo(Microsoft.Online.SharePoint.TenantAdministration.Tenant, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetSiteAdministrators(Microsoft.Online.SharePoint.TenantAdministration.Tenant, Microsoft.Online.SharePoint.TenantAdministration.SiteAdministratorsFieldsData)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetSiteSecondaryAdministrators(Microsoft.Online.SharePoint.TenantAdministration.Tenant, Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData)">
@@ -30786,6 +30834,16 @@
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="SiteAdministratorsFieldsData">
+        <Property Name="siteAdministrators" Type="Collection(Edm.String)" />
+        <Property Name="siteId" Type="Edm.Guid" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="SiteAdministratorsInfo">
+        <Property Name="email" Type="Edm.String" />
+        <Property Name="loginName" Type="Edm.String" />
+        <Property Name="name" Type="Edm.String" />
+        <Property Name="userPrincipalName" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="SiteCohortsSummary">
         <Property Name="ExternallySharedSitesCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="GroupConnectedSitesCount" Type="Edm.Int32" Nullable="false" />
@@ -32873,6 +32931,14 @@
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
     </Schema>
+    <Schema Namespace="Microsoft.SharePoint.Photos" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="PhotosMigration">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
+    </Schema>
     <Schema Namespace="Microsoft.SharePoint.Packaging" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="AppDetails">
         <Key>
@@ -33211,6 +33277,7 @@
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
         <Property Name="IsDomainIsolated" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MultiTenantAppId" Type="Edm.String" />
+        <Property Name="MultiTenantAppReplyUrl" Type="Edm.String" />
         <Property Name="PackageApproverName" Type="Edm.String" />
         <Property Name="PackageName" Type="Edm.String" />
         <Property Name="PackageVersion" Type="Edm.String" />
