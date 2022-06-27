@@ -53,8 +53,11 @@ BreakRoleInheritance (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 BreakRoleInheritance (SP.SecurableObject) | ✅ | ✅ | ✅ | ✅
 BreakRoleInheritance (SP.Web) | ✅ | ✅ | ✅ | ✅
 BulkValidateUpdateListItems (SP.List) | ✅ | ✅ | ❌ | ❌
+CAAECreateFilesInTempFolder (SP.List) | ✅ | ❌ | ❌ | ❌
+CAAERenameFileInTemporaryFolder (SP.List) | ✅ | ❌ | ❌ | ❌
 CancelAllJobs (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
 CancelUpload (SP.File) | ✅ | ✅ | ✅ | ❌
+CertifySite (SP.Site) | ✅ | ❌ | ❌ | ❌
 ChangeContentStorageSchema (SP.File) | ✅ | ❌ | ❌ | ❌
 CheckAccessAndPostViewAuditEvent (SP.File) | ✅ | ❌ | ❌ | ❌
 CheckIn (SP.File) | ✅ | ✅ | ✅ | ✅

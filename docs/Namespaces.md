@@ -55,6 +55,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.SharePoint.News.DataModel](./Microsoft.SharePoint.News.DataModel) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.OrgNewsSite](./Microsoft.SharePoint.OrgNewsSite) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Packaging](./Microsoft.SharePoint.Packaging) | ✅ | ✅ | ✅ | ❌
+[Microsoft.SharePoint.Photos](./Microsoft.SharePoint.Photos) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Portal](./Microsoft.SharePoint.Portal) | ✅ | ✅ | ✅ | ✅
 [Microsoft.SharePoint.Portal.Home](./Microsoft.SharePoint.Portal.Home) | ✅ | ✅ | ❌ | ❌
 [Microsoft.SharePoint.Portal.Project](./Microsoft.SharePoint.Portal.Project) | ✅ | ✅ | ✅ | ✅

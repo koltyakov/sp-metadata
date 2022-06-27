@@ -309,6 +309,7 @@ PersonPropertiess | ✅ | ✅ | ✅ | ✅
 PersonalCaches | ✅ | ✅ | ❌ | ❌
 PersonalWebs | ✅ | ✅ | ❌ | ❌
 Phases | ✅ | ✅ | ✅ | ❌
+PhotosMigrations | ✅ | ❌ | ❌ | ❌
 PickerEntityInformations | ✅ | ✅ | ❌ | ❌
 PickerSettingss | ✅ | ✅ | ✅ | ❌
 PinnedItemss | ✅ | ❌ | ❌ | ❌
