@@ -17,3 +17,4 @@ outcome (Edm.String) | ✅ | ❌ | ❌ | ❌
 ruleId (Edm.String) | ✅ | ❌ | ❌ | ❌
 status (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 title (Edm.String) | ✅ | ❌ | ❌ | ❌
+triggerType (Edm.Int32) | ✅ | ❌ | ❌ | ❌

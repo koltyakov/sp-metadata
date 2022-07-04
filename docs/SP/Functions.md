@@ -379,6 +379,7 @@ GetUserEffectivePermissions (SP.List) | ✅ | ✅ | ✅ | ✅
 GetUserEffectivePermissions (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 GetUserEffectivePermissions (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetValueForUICulture (SP.UserResource) | ✅ | ✅ | ✅ | ❌
+GetVersions (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 GetView (SP.List) | ✅ | ✅ | ✅ | ✅
 GetViewFromPath (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetViewFromUrl (SP.Web) | ✅ | ✅ | ❌ | ❌

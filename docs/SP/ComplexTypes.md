@@ -67,6 +67,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [FileDeleteParameters](./ComplexTypes/FileDeleteParameters.md) | ✅ | ❌ | ❌ | ❌
 [FolderCollectionAddParameters](./ComplexTypes/FolderCollectionAddParameters.md) | ✅ | ✅ | ❌ | ❌
 [FolderDeleteParameters](./ComplexTypes/FolderDeleteParameters.md) | ✅ | ❌ | ❌ | ❌
+[GetListItemVersionsParameters](./ComplexTypes/GetListItemVersionsParameters.md) | ✅ | ❌ | ❌ | ❌
 [GetListsParameters](./ComplexTypes/GetListsParameters.md) | ✅ | ❌ | ❌ | ❌
 [GroupCreationInformation](./ComplexTypes/GroupCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [Hashtag](./ComplexTypes/Hashtag.md) | ✅ | ✅ | ❌ | ❌
@@ -90,6 +91,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ListItemFormUpdateValue](./ComplexTypes/ListItemFormUpdateValue.md) | ✅ | ✅ | ✅ | ✅
 [ListItemUpdateParameters](./ComplexTypes/ListItemUpdateParameters.md) | ✅ | ❌ | ❌ | ❌
 [ListItemUpdateResults](./ComplexTypes/ListItemUpdateResults.md) | ✅ | ❌ | ❌ | ❌
+[ListItemVersionCollectionPosition](./ComplexTypes/ListItemVersionCollectionPosition.md) | ✅ | ❌ | ❌ | ❌
 [LockFileData](./ComplexTypes/LockFileData.md) | ✅ | ❌ | ❌ | ❌
 [MachineLearningSampleMeta](./ComplexTypes/MachineLearningSampleMeta.md) | ✅ | ❌ | ❌ | ❌
 [MediaServiceUpdateParameters](./ComplexTypes/MediaServiceUpdateParameters.md) | ✅ | ❌ | ❌ | ❌

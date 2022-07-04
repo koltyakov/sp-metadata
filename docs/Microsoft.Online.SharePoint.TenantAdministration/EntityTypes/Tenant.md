@@ -8,6 +8,7 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 AIBuilderDefaultPowerAppsEnvironment (Edm.String) | ✅ | ❌ | ❌ | ❌
 AIBuilderEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+AIBuilderEnabledInContentCenter (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 AIBuilderSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
 AIBuilderSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 AIBuilderSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌

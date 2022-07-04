@@ -10,6 +10,7 @@ Authors (Collection(Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocumen
 CallerStack (Edm.String) | ✅ | ❌ | ❌ | ❌
 ChildCount (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 ClickThroughId (Edm.String) | ✅ | ✅ | ❌ | ❌
+CommentCount (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 ContentTypeId (SP.ContentTypeId) | ✅ | ✅ | ✅ | ❌
 CreatedDateTime (Edm.DateTime) | ✅ | ✅ | ❌ | ❌
 CreatedDateTimeUTC (Edm.DateTime) | ✅ | ✅ | ❌ | ❌
@@ -21,6 +22,8 @@ FileRef (Edm.String) | ✅ | ✅ | ✅ | ❌
 Id (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 IsContainer (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 IsMyDocument (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
+ItemDescription (Edm.String) | ✅ | ❌ | ❌ | ❌
+ItemResourceId (Edm.String) | ✅ | ❌ | ❌ | ❌
 ItemSize (Edm.Double) | ✅ | ✅ | ❌ | ❌
 LinkingUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
 ListId (Edm.String) | ✅ | ✅ | ✅ | ❌
@@ -36,11 +39,14 @@ ParentId (Edm.String) | ✅ | ✅ | ❌ | ❌
 ParentLink (Edm.String) | ✅ | ✅ | ✅ | ❌
 PdfConversionUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 ProgId (Edm.String) | ✅ | ✅ | ✅ | ❌
+RemoteItemPermMask (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 SWMSourceFlag (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 ServerRedirectedEmbedUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
 ServerRedirectedPreviewUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
 ServerRedirectedUrl (Edm.String) | ✅ | ✅ | ✅ | ❌
 SharedDateTimeUTC (Edm.DateTime) | ✅ | ✅ | ❌ | ❌
+SharedToGroupGroupDisplayName (Edm.String) | ✅ | ❌ | ❌ | ❌
+SharedToGroupGroupId (Edm.String) | ✅ | ❌ | ❌ | ❌
 SharedWithInternal (Collection(Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocumentUser)) | ✅ | ✅ | ✅ | ❌
 SiteId (Edm.String) | ✅ | ✅ | ✅ | ❌
 SiteUrl (Edm.String) | ✅ | ✅ | ✅ | ❌

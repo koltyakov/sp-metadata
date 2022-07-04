@@ -12,9 +12,10 @@ adminActionStatus (Edm.String) | ✅ | ❌ | ❌ | ❌
 adminActionType (Edm.String) | ✅ | ❌ | ❌ | ❌
 correlationId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 createdTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
+isPartOfBulkUpdate (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 key (Edm.String) | ✅ | ❌ | ❌ | ❌
-metadata (Edm.String) | ✅ | ❌ | ❌ | ❌
 name (Edm.String) | ✅ | ❌ | ❌ | ❌
+newValue (Edm.String) | ✅ | ❌ | ❌ | ❌
+oldValue (Edm.String) | ✅ | ❌ | ❌ | ❌
 url (Edm.String) | ✅ | ❌ | ❌ | ❌
 userEmail (Edm.String) | ✅ | ❌ | ❌ | ❌
-userName (Edm.String) | ✅ | ❌ | ❌ | ❌

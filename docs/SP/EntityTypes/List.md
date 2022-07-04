@@ -50,6 +50,7 @@ FileSavePostProcessingEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 ForceCheckout (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 HasExternalDataSource (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 Hidden (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+HighPriorityMediaProcessing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Icon (Edm.String) | ✅ | ❌ | ❌ | ❌
 Id (Edm.Guid) | ✅ | ✅ | ✅ | ✅
 ImagePath (SP.ResourcePath) | ✅ | ✅ | ❌ | ❌
@@ -61,6 +62,7 @@ IsApplicationList (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 IsCatalog (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 IsDefaultDocumentLibrary (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsEnterpriseGalleryLibrary (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
+IsPredictionModelApplied (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsPrivate (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 IsSiteAssetsLibrary (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 IsSystemList (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
