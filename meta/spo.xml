@@ -193,6 +193,7 @@
         <Property Name="userId" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="PlaceholderV2">
+        <Property Name="AdditionalFieldsData" Type="Edm.String" />
         <Property Name="DataType" Type="Edm.String" />
         <Property Name="Id" Type="Edm.String" />
         <Property Name="Name" Type="Edm.String" />
@@ -9952,6 +9953,9 @@
           <Parameter Name="pinnedItem" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Photos_PhotosMigration" ReturnType="Microsoft.SharePoint.Photos.PhotosMigration" IsComposable="true" EntitySet="PhotosMigrations" />
+        <FunctionImport Name="MigratePhotosData" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Photos.PhotosMigration" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_OrgNewsSite_OrgNewsSiteApi" ReturnType="Microsoft.SharePoint.OrgNewsSite.OrgNewsSiteApi" IsComposable="true" EntitySet="OrgNewsSites" />
         <FunctionImport Name="Details" ReturnType="Microsoft.SharePoint.OrgNewsSite.OrgNewsSiteInfo" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.OrgNewsSite.OrgNewsSiteApi" />
@@ -11492,6 +11496,7 @@
         </FunctionImport>
         <FunctionImport Name="EnsureEduClassSetup" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="byPassForAutomation" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="EnsureTenantAppCatalog" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
@@ -19709,6 +19714,9 @@
       <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata/SkipDeploymentFeature">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata/StoreAssetId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata/ThumbnailUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22454,7 +22462,7 @@
       <Annotations Target="SP.ApiData/SP_Web_DefaultDocumentLibraryUrl(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/EnsureEduClassSetup(SP.Web)">
+      <Annotations Target="SP.ApiData/EnsureEduClassSetup(SP.Web, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/EnsureTenantAppCatalog(SP.Web, Edm.String)">
@@ -29342,6 +29350,7 @@
         <Property Name="ProductId" Type="Edm.String" />
         <Property Name="ShortDescription" Type="Edm.String" />
         <Property Name="SkipDeploymentFeature" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="StoreAssetId" Type="Edm.String" />
         <Property Name="ThumbnailUrl" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
       </EntityType>
@@ -29459,6 +29468,7 @@
         <Property Name="AddedById" Type="Edm.Int32" Nullable="false" />
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
         <Property Name="Name" Type="Edm.String" />
+        <Property Name="Scenario" Type="Edm.Int64" Nullable="false" />
         <Property Name="TimeCreated" Type="Edm.DateTime" Nullable="false" />
         <Property Name="TimeLastModified" Type="Edm.DateTime" Nullable="false" />
       </ComplexType>
