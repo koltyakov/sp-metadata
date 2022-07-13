@@ -24,5 +24,6 @@ IsValidAppPackage (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ProductId (Edm.String) | ✅ | ❌ | ❌ | ❌
 ShortDescription (Edm.String) | ✅ | ❌ | ❌ | ❌
 SkipDeploymentFeature (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+StoreAssetId (Edm.String) | ✅ | ❌ | ❌ | ❌
 ThumbnailUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ✅ | ❌ | ❌
