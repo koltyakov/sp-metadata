@@ -11,6 +11,7 @@ AddImage (SP.Publishing.SitePageService) | ✅ | ✅ | ❌ | ❌
 AddImageFromExternalUrl (SP.Publishing.SitePageService) | ✅ | ✅ | ❌ | ❌
 AddImageFromUrl (SP.Publishing.PointPublishingPost) | ✅ | ❌ | ❌ | ❌
 AddOrUpdateUser (Collection(SP.Publishing.PointPublishingUser)) | ✅ | ❌ | ❌ | ❌
+BoostNews (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 BoostNews (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 BoostNews (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 BoostNews (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
@@ -19,27 +20,32 @@ BoostNews (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 ByPage (SP.Publishing.PageDiagnosticsController) | ✅ | ❌ | ❌ | ❌
 CanCreatePage (SP.Publishing.SitePageService) | ✅ | ❌ | ❌ | ❌
 CanCreatePromotedPage (SP.Publishing.SitePageService) | ✅ | ✅ | ❌ | ❌
+CheckOut (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 CheckOut (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 CheckOut (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 CheckOut (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
 CheckOut (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 CheckOut (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+CheckoutPage (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 CheckoutPage (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 CheckoutPage (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 CheckoutPage (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
 CheckoutPage (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 CheckoutPage (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+Copy (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 Copy (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 Copy (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 Copy (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
 Copy (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 Copy (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+CopyTo (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 CopyTo (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 CopyTo (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 CopyTo (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
 CopyTo (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 CopyTo (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 CopyToStatus (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
+CopyWithConfiguration (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 CopyWithConfiguration (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 CopyWithConfiguration (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 CopyWithConfiguration (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
@@ -48,6 +54,7 @@ CopyWithConfiguration (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 Create (SP.Publishing.CommunicationSite) | ✅ | ✅ | ❌ | ❌
 Create (SP.Publishing.PointPublishingSiteManager) | ✅ | ❌ | ❌ | ❌
 CreateAppPage (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
+CreateNewsCopy (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 CreateNewsCopy (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 CreateNewsCopy (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 CreateNewsCopy (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
@@ -60,11 +67,13 @@ DeleteObject (SP.Publishing.SpotlightChannel) | ✅ | ❌ | ❌ | ❌
 DeleteObject (SP.Publishing.SpotlightVideo) | ✅ | ❌ | ❌ | ❌
 DeleteObject (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 DeleteUserFromContainerGroup (SP.Publishing.PointPublishingUser) | ✅ | ❌ | ❌ | ❌
+DemoteFromNews (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 DemoteFromNews (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 DemoteFromNews (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 DemoteFromNews (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
 DemoteFromNews (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 DemoteFromNews (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+DiscardPage (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 DiscardPage (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 DiscardPage (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 DiscardPage (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
@@ -109,6 +118,7 @@ GetStreamingKeyAccessToken (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 GetSubtitleFile (Collection(SP.Publishing.SubtitleFile)) | ✅ | ❌ | ❌ | ❌
 GetTopAuthors (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | ❌ | ❌
 GetTranslations (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
+GetVersion (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 GetVersion (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 GetVersion (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 GetVersion (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
@@ -129,11 +139,13 @@ IsSitePage (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
 Newest (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
 PageDiagnostics | ✅ | ❌ | ❌ | ❌
 Popular (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
+PromoteToNews (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 PromoteToNews (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 PromoteToNews (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 PromoteToNews (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
 PromoteToNews (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 PromoteToNews (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+Publish (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 Publish (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 Publish (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 Publish (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
@@ -146,6 +158,7 @@ Related (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
 Remove (Collection(SP.Publishing.SubtitleFile)) | ✅ | ❌ | ❌ | ❌
 SP_Publishing_AddinPlugin | ❌ | ❌ | ❌ | ✅
 [SP_Publishing_AddinSettings](./Functions/SP_Publishing_AddinSettings.md) | ❌ | ❌ | ❌ | ✅
+SP_Publishing_CampaignCommunicationCollection | ✅ | ❌ | ❌ | ❌
 SP_Publishing_CommunicationSite | ✅ | ✅ | ❌ | ❌
 SP_Publishing_EmbedService | ✅ | ✅ | ❌ | ❌
 SP_Publishing_FeedVideoPageCollection | ✅ | ❌ | ❌ | ❌
@@ -183,31 +196,37 @@ SP_Publishing_TopicPageCollection | ✅ | ❌ | ❌ | ❌
 SP_Publishing_VideoServiceDiscoverer | ✅ | ❌ | ❌ | ❌
 SP_Publishing_VideoServiceManager | ✅ | ❌ | ❌ | ❌
 Save (SP.Publishing.PageDiagnosticsController) | ✅ | ❌ | ❌ | ❌
+SaveDraft (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 SaveDraft (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 SaveDraft (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 SaveDraft (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
 SaveDraft (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 SaveDraft (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+SavePage (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 SavePage (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 SavePage (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 SavePage (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
 SavePage (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 SavePage (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+SavePageAsDraft (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 SavePageAsDraft (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 SavePageAsDraft (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 SavePageAsDraft (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
 SavePageAsDraft (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 SavePageAsDraft (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+SavePageAsTemplate (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplate (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplate (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplate (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplate (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplate (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+SavePageAsTemplateOnMySite (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplateOnMySite (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplateOnMySite (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplateOnMySite (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplateOnMySite (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplateOnMySite (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+SchedulePublish (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 SchedulePublish (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 SchedulePublish (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 SchedulePublish (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
@@ -217,6 +236,7 @@ SetMagazineProperties (SP.Publishing.PointPublishingPostServiceManager) | ✅ | 
 SetPeopleInMedia (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 SetVideoOwner (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 SharePageByEmail (SP.Publishing.RichSharing) | ✅ | ✅ | ❌ | ❌
+SharePagePreviewByEmail (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 SharePagePreviewByEmail (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 SharePagePreviewByEmail (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 SharePagePreviewByEmail (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
@@ -228,6 +248,7 @@ Subtitles (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 Templates (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
 ThumbnailStream (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 Thumbnails (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
+Update (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 Update (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 Update (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 Update (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌

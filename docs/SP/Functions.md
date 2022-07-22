@@ -392,6 +392,7 @@ HubSiteData (SP.Web) | ✅ | ✅ | ❌ | ❌
 HubSiteDataAsStream (SP.Web) | ✅ | ❌ | ❌ | ❌
 IncrementSiteClientTag (SP.Web) | ✅ | ✅ | ✅ | ❌
 Install (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
+InstalledAddins (SP.Web) | ✅ | ❌ | ❌ | ❌
 Invalidate (SP.Site) | ✅ | ✅ | ✅ | ✅
 JoinHubSite (SP.Site) | ✅ | ✅ | ❌ | ❌
 KnowledgeHub | ✅ | ❌ | ❌ | ❌
@@ -633,6 +634,7 @@ SP_SPHSite_GetSPHSiteXGeo | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsCommSite](./Functions/SP_SPHSite_IsCommSite.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsModernSiteWithHorizontalNav](./Functions/SP_SPHSite_IsModernSiteWithHorizontalNav.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsValidHomeSite](./Functions/SP_SPHSite_IsValidHomeSite.md) | ✅ | ❌ | ❌ | ❌
+[SP_SPHSite_ValidateHomeSite](./Functions/SP_SPHSite_ValidateHomeSite.md) | ✅ | ❌ | ❌ | ❌
 SP_ServerSettings_GetBlockedFileExtensions | ✅ | ✅ | ✅ | ✅
 [SP_ServerSettings_GetGlobalInstalledLanguages](./Functions/SP_ServerSettings_GetGlobalInstalledLanguages.md) | ✅ | ✅ | ✅ | ✅
 SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌

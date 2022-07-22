@@ -17,6 +17,7 @@ Created (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 CreatedBy (Edm.String) | ✅ | ❌ | ❌ | ❌
 DriveId (Edm.String) | ✅ | ❌ | ❌ | ❌
 Explanations (Edm.String) | ✅ | ❌ | ❌ | ❌
+ExtractorFieldMapping (Edm.String) | ✅ | ❌ | ❌ | ❌
 ID (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 LastTrained (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 ListID (Edm.Guid) | ✅ | ❌ | ❌ | ❌
