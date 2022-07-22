@@ -3830,6 +3830,10 @@
         <End Type="SP.User" Role="Manager" Multiplicity="0..1" />
         <End Type="PS.TimeSheet" Role="ManagerPartner" Multiplicity="0..1" />
       </Association>
+      <Association Name="SP_Publishing_SitePage_Translations_SP_TranslationStatusCollection_TranslationsPartner">
+        <End Type="SP.TranslationStatusCollection" Role="Translations" Multiplicity="0..1" />
+        <End Type="SP.Publishing.SitePage" Role="TranslationsPartner" Multiplicity="0..1" />
+      </Association>
       <Association Name="SP_Publishing_VideoItem_Author_SP_User_AuthorPartner">
         <End Type="SP.User" Role="Author" Multiplicity="0..1" />
         <End Type="SP.Publishing.VideoItem" Role="AuthorPartner" Multiplicity="0..1" />
@@ -3841,10 +3845,6 @@
       <Association Name="SP_Publishing_VideoItem_PeopleInMedia_SP_User_PeopleInMediaPartner">
         <End Type="SP.User" Role="PeopleInMedia" Multiplicity="*" />
         <End Type="SP.Publishing.VideoItem" Role="PeopleInMediaPartner" Multiplicity="0..1" />
-      </Association>
-      <Association Name="SP_Publishing_SitePage_Translations_SP_TranslationStatusCollection_TranslationsPartner">
-        <End Type="SP.TranslationStatusCollection" Role="Translations" Multiplicity="0..1" />
-        <End Type="SP.Publishing.SitePage" Role="TranslationsPartner" Multiplicity="0..1" />
       </Association>
       <Association Name="SP_Publishing_PointPublishingPost_images_SP_File_imagesPartner">
         <End Type="SP.File" Role="images" Multiplicity="*" />
@@ -4387,10 +4387,10 @@
         <EntitySet Name="PinnedItemss" EntityType="SP.PinnedItems" />
         <EntitySet Name="Principals" EntityType="SP.Principal" />
         <EntitySet Name="PropertyValuess" EntityType="SP.PropertyValues" />
+        <EntitySet Name="SitePageMetadatas" EntityType="SP.Publishing.SitePageMetadata" />
         <EntitySet Name="CommunicationSites" EntityType="SP.Publishing.CommunicationSite" />
         <EntitySet Name="EmbedDataV1s" EntityType="SP.Publishing.EmbedDataV1" />
         <EntitySet Name="EmbedServices" EntityType="SP.Publishing.EmbedService" />
-        <EntitySet Name="SitePageMetadatas" EntityType="SP.Publishing.SitePageMetadata" />
         <EntitySet Name="PersonMagazines" EntityType="SP.Publishing.PersonMagazine" />
         <EntitySet Name="PointPublishingDocPropss" EntityType="SP.Publishing.PointPublishingDocProps" />
         <EntitySet Name="PointPublishingMagazinePropss" EntityType="SP.Publishing.PointPublishingMagazineProps" />
@@ -7822,6 +7822,78 @@
           <Parameter Name="objectId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="PS_LookupTables_InvalidNameCharacters" ReturnType="Collection(Edm.String)" IsSideEffecting="false" />
+        <FunctionImport Name="SP_Publishing_CampaignCommunicationCollection" ReturnType="Collection(SP.Publishing.CampaignCommunication)" IsComposable="true" EntitySet="SitePageMetadatas" />
+        <FunctionImport Name="BoostNews" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="SitePageBoost" Type="SP.Publishing.BoostFieldsData" />
+        </FunctionImport>
+        <FunctionImport Name="CheckOut" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+        </FunctionImport>
+        <FunctionImport Name="CheckoutPage" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+        </FunctionImport>
+        <FunctionImport Name="Copy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+        </FunctionImport>
+        <FunctionImport Name="CopyTo" ReturnType="Microsoft.SharePoint.Publishing.PageCopyWithAssets.PageCopyResponse" IsBindable="true" EntitySet="PageCopyResponses">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="copyToParams" Type="SP.Publishing.CopyToParams" />
+        </FunctionImport>
+        <FunctionImport Name="CopyWithConfiguration" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="sitePageFlags" Type="Edm.String" />
+          <Parameter Name="isNews" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="CreateNewsCopy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+        </FunctionImport>
+        <FunctionImport Name="DemoteFromNews" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+        </FunctionImport>
+        <FunctionImport Name="DiscardPage" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+        </FunctionImport>
+        <FunctionImport Name="GetVersion" ReturnType="SP.Publishing.SitePage" IsComposable="true" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="versionId" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="PromoteToNews" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+        </FunctionImport>
+        <FunctionImport Name="Publish" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+        </FunctionImport>
+        <FunctionImport Name="SaveDraft" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="sitePage" Type="SP.Publishing.SitePageFieldsData" />
+        </FunctionImport>
+        <FunctionImport Name="SavePage" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="pageStream" Type="Edm.Stream" />
+        </FunctionImport>
+        <FunctionImport Name="SavePageAsDraft" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="pageStream" Type="Edm.Stream" />
+        </FunctionImport>
+        <FunctionImport Name="SavePageAsTemplate" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+        </FunctionImport>
+        <FunctionImport Name="SavePageAsTemplateOnMySite" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+        </FunctionImport>
+        <FunctionImport Name="SchedulePublish" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="sitePage" Type="SP.Publishing.SitePageFieldsData" />
+        </FunctionImport>
+        <FunctionImport Name="SharePagePreviewByEmail" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="message" Type="Edm.String" />
+          <Parameter Name="recipientEmails" Type="Collection(Edm.String)" />
+        </FunctionImport>
+        <FunctionImport Name="Update" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+        </FunctionImport>
         <FunctionImport Name="SP_Publishing_CommunicationSite" ReturnType="SP.Publishing.CommunicationSite" IsComposable="true" EntitySet="CommunicationSites" />
         <FunctionImport Name="Create" ReturnType="SP.Publishing.CommunicationSiteCreationResponse" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CommunicationSite" />
@@ -9924,6 +9996,10 @@
           <Parameter Name="this" Type="SP.SPHSite" />
           <Parameter Name="siteUrl" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="SP_SPHSite_ValidateHomeSite">
+          <Parameter Name="validationActionType" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="siteUrl" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="SP_OrganizationNews" ReturnType="SP.OrganizationNews" IsComposable="true" EntitySet="OrgNews" />
         <FunctionImport Name="SP_OrganizationNews_GetSiteReference" ReturnType="SP.OrganizationNewsSiteReference">
           <Parameter Name="orgNewsSiteUrl" Type="Edm.String" />
@@ -11778,6 +11854,10 @@
         </FunctionImport>
         <FunctionImport Name="IncrementSiteClientTag" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
+        </FunctionImport>
+        <FunctionImport Name="InstalledAddins" ReturnType="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPAppInstallationInfo)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="WebUrl" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="ListPowerPlatformUserDetails" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
           <Parameter Name="this" Type="SP.Web" />
@@ -14568,7 +14648,7 @@
           <Parameter Name="siteUrl" Type="Edm.String" />
           <Parameter Name="hubSiteId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="CreatePolicyDefinition" ReturnType="SP.ListItem" IsBindable="true" EntitySet="ListItems">
+        <FunctionImport Name="CreatePolicyDefinition" ReturnType="Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminPolicyDefinition" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="policyInputParameters" Type="Microsoft.Online.SharePoint.TenantAdministration.CreatePolicyRequest" />
         </FunctionImport>
@@ -17326,15 +17406,6 @@
       <Annotations Target="SP.Publishing.BoostFieldsData/PreviousItemVersion">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.Publishing.CopyToParams">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Publishing.ProfileDateTime">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Publishing.DateTimeCustomProperty">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.Publishing.SitePageFieldsData/AuthorByline">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -17369,6 +17440,27 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.SitePageFieldsData/TopicHeader">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.CampaignCommunicationFieldsData/CommunicationMetadata">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.CampaignCommunicationFieldsData/EndpointEmail">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.CampaignCommunicationFieldsData/EndpointSharePoint">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.CampaignCommunicationFieldsData/EndpointYammer">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.CopyToParams">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.ProfileDateTime">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.DateTimeCustomProperty">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.PersonCore">
@@ -18712,6 +18804,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/Explanations">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/ExtractorFieldMapping">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/ID">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19861,18 +19956,6 @@
       <Annotations Target="PS.ProjectServer/UserPermissions">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.Publishing.CommunicationSite">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Publishing.EmbedDataV1">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Publishing.EmbedService">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Publishing.VideoItem">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.Publishing.SitePageMetadata">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20030,6 +20113,33 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.SitePage/Translations">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.CampaignCommunication">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.CampaignCommunication/CommunicationMetadata">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.CampaignCommunication/EmailEndpoint">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.CampaignCommunication/SharePointEndpoint">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.CampaignCommunication/YammerEndpoint">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.CommunicationSite">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.EmbedDataV1">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.EmbedService">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.VideoItem">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.RepostPage">
@@ -21163,6 +21273,69 @@
       <Annotations Target="SP.ApiData/WriteCache2(SP.UserProfiles.PersonalCache, Collection(SP.UserProfiles.PersonalCacheItem), Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_Publishing_CampaignCommunicationCollection()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/BoostNews(SP.Publishing.CampaignCommunication, SP.Publishing.BoostFieldsData)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/CheckOut(SP.Publishing.CampaignCommunication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/CheckoutPage(SP.Publishing.CampaignCommunication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Copy(SP.Publishing.CampaignCommunication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/CopyTo(SP.Publishing.CampaignCommunication, SP.Publishing.CopyToParams)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/CopyWithConfiguration(SP.Publishing.CampaignCommunication, Edm.String, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/CreateNewsCopy(SP.Publishing.CampaignCommunication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/DemoteFromNews(SP.Publishing.CampaignCommunication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/DiscardPage(SP.Publishing.CampaignCommunication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetVersion(SP.Publishing.CampaignCommunication, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/PromoteToNews(SP.Publishing.CampaignCommunication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Publish(SP.Publishing.CampaignCommunication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SaveDraft(SP.Publishing.CampaignCommunication, SP.Publishing.SitePageFieldsData)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SavePage(SP.Publishing.CampaignCommunication, Edm.Stream)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SavePageAsDraft(SP.Publishing.CampaignCommunication, Edm.Stream)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SavePageAsTemplate(SP.Publishing.CampaignCommunication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SavePageAsTemplateOnMySite(SP.Publishing.CampaignCommunication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SchedulePublish(SP.Publishing.CampaignCommunication, SP.Publishing.SitePageFieldsData)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SharePagePreviewByEmail(SP.Publishing.CampaignCommunication, Edm.String, Collection(Edm.String))">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Update(SP.Publishing.CampaignCommunication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_Publishing_CommunicationSite()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22087,6 +22260,9 @@
       <Annotations Target="SP.ApiData/SetSPHSite(SP.SPHSite, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_SPHSite_ValidateHomeSite(Edm.Int32, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_PinnedItems_AddItem(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22538,6 +22714,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/HubSiteDataAsStream(SP.Web, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/InstalledAddins(SP.Web, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/ListPowerPlatformUserDetails(SP.Web)">
@@ -23478,6 +23657,7 @@
         <Property Name="CreatedBy" Type="Edm.String" />
         <Property Name="DriveId" Type="Edm.String" />
         <Property Name="Explanations" Type="Edm.String" />
+        <Property Name="ExtractorFieldMapping" Type="Edm.String" />
         <Property Name="ID" Type="Edm.Int32" Nullable="false" />
         <Property Name="LastTrained" Type="Edm.DateTime" />
         <Property Name="ListID" Type="Edm.Guid" Nullable="false" />
@@ -27175,6 +27355,26 @@
         <Property Name="PreviousItemId" Type="Edm.Int32" />
         <Property Name="PreviousItemVersion" Type="Edm.Int32" />
       </ComplexType>
+      <ComplexType Name="SitePageFieldsData">
+        <Property Name="AuthorByline" Type="Collection(Edm.String)" />
+        <Property Name="BannerImageUrl" Type="Edm.String" />
+        <Property Name="CallToAction" Type="Edm.String" />
+        <Property Name="CanvasContent1" Type="Edm.String" />
+        <Property Name="CanvasJson1" Type="Edm.String" />
+        <Property Name="Categories" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="LayoutWebpartsContent" Type="Edm.String" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="PublishStartDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Title" Type="Edm.String" />
+        <Property Name="TopicHeader" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="CampaignCommunicationFieldsData" BaseType="SP.Publishing.SitePageFieldsData">
+        <Property Name="CommunicationMetadata" Type="Edm.String" />
+        <Property Name="EndpointEmail" Type="Edm.String" />
+        <Property Name="EndpointSharePoint" Type="Edm.String" />
+        <Property Name="EndpointYammer" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="CopyToParams">
         <Property Name="AsTemplate" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DestinationType" Type="Edm.Int32" Nullable="false" />
@@ -27189,20 +27389,6 @@
       </ComplexType>
       <ComplexType Name="Error">
         <Property Name="Details" Type="Collection(Edm.String)" />
-      </ComplexType>
-      <ComplexType Name="SitePageFieldsData">
-        <Property Name="AuthorByline" Type="Collection(Edm.String)" />
-        <Property Name="BannerImageUrl" Type="Edm.String" />
-        <Property Name="CallToAction" Type="Edm.String" />
-        <Property Name="CanvasContent1" Type="Edm.String" />
-        <Property Name="CanvasJson1" Type="Edm.String" />
-        <Property Name="Categories" Type="Edm.String" />
-        <Property Name="Description" Type="Edm.String" />
-        <Property Name="LayoutWebpartsContent" Type="Edm.String" />
-        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="PublishStartDate" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="Title" Type="Edm.String" />
-        <Property Name="TopicHeader" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="RepostPageFieldsData" BaseType="SP.Publishing.SitePageFieldsData" />
       <ComplexType Name="FeedVideoPageFieldsData" BaseType="SP.Publishing.RepostPageFieldsData" />
@@ -27463,6 +27649,73 @@
         <Property Name="CentralAssetRepository" Type="Microsoft.SharePoint.Administration.OrgAssets" />
         <Property Name="OrgAssets" Type="Microsoft.SharePoint.Administration.OrgAssets" />
       </ComplexType>
+      <EntityType Name="SitePageMetadata">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="AbsoluteUrl" Type="Edm.String" />
+        <Property Name="AssetFolderId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AuthorByline" Type="Collection(Edm.String)" />
+        <Property Name="BannerImageUrl" Type="Edm.String" />
+        <Property Name="BannerThumbnailUrl" Type="Edm.String" />
+        <Property Name="CallToAction" Type="Edm.String" />
+        <Property Name="Categories" Type="Edm.String" />
+        <Property Name="CommentCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CommentsDisabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ContentTypeId" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="DoesUserHaveEditPermission" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="FileName" Type="Edm.String" />
+        <Property Name="FirstPublished" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="FirstPublishedRelativeTime" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IsPageCheckedOutToCurrentUser" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsWebWelcomePage" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="LikeCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ListId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ModifiedRelativeTime" Type="Edm.String" />
+        <Property Name="PageLayoutType" Type="Edm.String" />
+        <Property Name="Path" Type="SP.ResourcePath" />
+        <Property Name="PromotedState" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PublishStartDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="SocialBarOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Title" Type="Edm.String" />
+        <Property Name="TopicHeader" Type="Edm.String" />
+        <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Url" Type="Edm.String" />
+        <Property Name="Version" Type="Edm.String" />
+        <Property Name="VersionInfo" Type="SP.Publishing.SitePageVersionInfo" />
+        <NavigationProperty Name="CreatedBy" Relationship="SP.Publishing.SP_Publishing_SitePageMetadata_CreatedBy_SP_Publishing_UserInfo_CreatedByPartner" ToRole="CreatedBy" FromRole="CreatedByPartner" />
+        <NavigationProperty Name="LastModifiedBy" Relationship="SP.Publishing.SP_Publishing_SitePageMetadata_LastModifiedBy_SP_Publishing_UserInfo_LastModifiedByPartner" ToRole="LastModifiedBy" FromRole="LastModifiedByPartner" />
+      </EntityType>
+      <EntityType Name="UserInfo">
+        <Key>
+          <PropertyRef Name="Name" />
+        </Key>
+        <Property Name="AccountName" Type="Edm.String" />
+        <Property Name="Acronym" Type="Edm.String" />
+        <Property Name="Color" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="SitePage" BaseType="SP.Publishing.SitePageMetadata">
+        <Property Name="AlternativeUrlMap" Type="Edm.String" />
+        <Property Name="CanvasContent1" Type="Edm.String" />
+        <Property Name="CanvasJson1" Type="Edm.String" />
+        <Property Name="IsLikedByCurrentUser" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsTemplate" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Language" Type="Edm.String" />
+        <Property Name="LayoutWebpartsContent" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="SitePageFlags" Type="Edm.String" />
+        <NavigationProperty Name="Translations" Relationship="SP.SP_Publishing_SitePage_Translations_SP_TranslationStatusCollection_TranslationsPartner" ToRole="Translations" FromRole="TranslationsPartner" />
+      </EntityType>
+      <EntityType Name="CampaignCommunication" BaseType="SP.Publishing.SitePage">
+        <Property Name="CommunicationMetadata" Type="Edm.String" />
+        <Property Name="EmailEndpoint" Type="Edm.String" />
+        <Property Name="SharePointEndpoint" Type="Edm.String" />
+        <Property Name="YammerEndpoint" Type="Edm.String" />
+      </EntityType>
       <EntityType Name="CommunicationSite">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
@@ -27526,67 +27779,6 @@
         <NavigationProperty Name="Author" Relationship="SP.SP_Publishing_VideoItem_Author_SP_User_AuthorPartner" ToRole="Author" FromRole="AuthorPartner" />
         <NavigationProperty Name="Owner" Relationship="SP.SP_Publishing_VideoItem_Owner_SP_User_OwnerPartner" ToRole="Owner" FromRole="OwnerPartner" />
         <NavigationProperty Name="PeopleInMedia" Relationship="SP.SP_Publishing_VideoItem_PeopleInMedia_SP_User_PeopleInMediaPartner" ToRole="PeopleInMedia" FromRole="PeopleInMediaPartner" />
-      </EntityType>
-      <EntityType Name="SitePageMetadata">
-        <Key>
-          <PropertyRef Name="Id" />
-        </Key>
-        <Property Name="AbsoluteUrl" Type="Edm.String" />
-        <Property Name="AssetFolderId" Type="Edm.Int32" Nullable="false" />
-        <Property Name="AuthorByline" Type="Collection(Edm.String)" />
-        <Property Name="BannerImageUrl" Type="Edm.String" />
-        <Property Name="BannerThumbnailUrl" Type="Edm.String" />
-        <Property Name="CallToAction" Type="Edm.String" />
-        <Property Name="Categories" Type="Edm.String" />
-        <Property Name="CommentCount" Type="Edm.Int32" Nullable="false" />
-        <Property Name="CommentsDisabled" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="ContentTypeId" Type="Edm.String" />
-        <Property Name="Description" Type="Edm.String" />
-        <Property Name="DoesUserHaveEditPermission" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="FileName" Type="Edm.String" />
-        <Property Name="FirstPublished" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="FirstPublishedRelativeTime" Type="Edm.String" />
-        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
-        <Property Name="IsPageCheckedOutToCurrentUser" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsWebWelcomePage" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="LikeCount" Type="Edm.Int32" Nullable="false" />
-        <Property Name="ListId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="ModifiedRelativeTime" Type="Edm.String" />
-        <Property Name="PageLayoutType" Type="Edm.String" />
-        <Property Name="Path" Type="SP.ResourcePath" />
-        <Property Name="PromotedState" Type="Edm.Int32" Nullable="false" />
-        <Property Name="PublishStartDate" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="SocialBarOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="Title" Type="Edm.String" />
-        <Property Name="TopicHeader" Type="Edm.String" />
-        <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="Url" Type="Edm.String" />
-        <Property Name="Version" Type="Edm.String" />
-        <Property Name="VersionInfo" Type="SP.Publishing.SitePageVersionInfo" />
-        <NavigationProperty Name="CreatedBy" Relationship="SP.Publishing.SP_Publishing_SitePageMetadata_CreatedBy_SP_Publishing_UserInfo_CreatedByPartner" ToRole="CreatedBy" FromRole="CreatedByPartner" />
-        <NavigationProperty Name="LastModifiedBy" Relationship="SP.Publishing.SP_Publishing_SitePageMetadata_LastModifiedBy_SP_Publishing_UserInfo_LastModifiedByPartner" ToRole="LastModifiedBy" FromRole="LastModifiedByPartner" />
-      </EntityType>
-      <EntityType Name="UserInfo">
-        <Key>
-          <PropertyRef Name="Name" />
-        </Key>
-        <Property Name="AccountName" Type="Edm.String" />
-        <Property Name="Acronym" Type="Edm.String" />
-        <Property Name="Color" Type="Edm.String" />
-        <Property Name="Name" Type="Edm.String" Nullable="false" />
-      </EntityType>
-      <EntityType Name="SitePage" BaseType="SP.Publishing.SitePageMetadata">
-        <Property Name="AlternativeUrlMap" Type="Edm.String" />
-        <Property Name="CanvasContent1" Type="Edm.String" />
-        <Property Name="CanvasJson1" Type="Edm.String" />
-        <Property Name="IsLikedByCurrentUser" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsTemplate" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="Language" Type="Edm.String" />
-        <Property Name="LayoutWebpartsContent" Type="Edm.String" />
-        <Property Name="Name" Type="Edm.String" />
-        <Property Name="SitePageFlags" Type="Edm.String" />
-        <NavigationProperty Name="Translations" Relationship="SP.SP_Publishing_SitePage_Translations_SP_TranslationStatusCollection_TranslationsPartner" ToRole="Translations" FromRole="TranslationsPartner" />
       </EntityType>
       <EntityType Name="RepostPage" BaseType="SP.Publishing.SitePage">
         <Property Name="IsBannerImageUrlExternal" Type="Edm.Boolean" Nullable="false" />
@@ -29296,6 +29488,30 @@
         <Property Name="AssetId" Type="Edm.String" />
         <Property Name="IsUpgradeAvailable" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="SPAppInstallationInfo">
+        <Property Name="AppPrincipalId" Type="Edm.String" />
+        <Property Name="AppSource" Type="Edm.String" />
+        <Property Name="AppWebFullUrl" Type="Edm.String" />
+        <Property Name="AppWebId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="AppWebName" Type="Edm.String" />
+        <Property Name="AssetId" Type="Edm.String" />
+        <Property Name="CreationTimeUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="InstalledBy" Type="Edm.String" />
+        <Property Name="LaunchUrl" Type="Edm.String" />
+        <Property Name="LicensePurchaseTime" Type="Edm.DateTime" />
+        <Property Name="Locale" Type="Edm.String" />
+        <Property Name="ProductId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="PurchaserIdentity" Type="Edm.String" />
+        <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Status" Type="Edm.String" />
+        <Property Name="TenantAppData" Type="Edm.String" />
+        <Property Name="TenantAppDataUpdateTime" Type="Edm.DateTime" />
+        <Property Name="Title" Type="Edm.String" />
+        <Property Name="WebId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="WebName" Type="Edm.String" />
+        <Property Name="WebUrl" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="SPStoreAppCreateByIdInformation">
         <Property Name="CMU" Type="Edm.String" />
         <Property Name="Overwrite" Type="Edm.Boolean" Nullable="false" />
@@ -29330,11 +29546,11 @@
       </EntityType>
       <EntityType Name="CorporateCatalogAppMetadata">
         <Key>
-          <PropertyRef Name="AppCatalogVersion" />
+          <PropertyRef Name="AadAppId" />
         </Key>
-        <Property Name="AadAppId" Type="Edm.String" />
+        <Property Name="AadAppId" Type="Edm.String" Nullable="false" />
         <Property Name="AadPermissions" Type="Edm.String" />
-        <Property Name="AppCatalogVersion" Type="Edm.String" Nullable="false" />
+        <Property Name="AppCatalogVersion" Type="Edm.String" />
         <Property Name="CanUpgrade" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CDNLocation" Type="Edm.String" />
         <Property Name="ContainsTenantWideExtension" Type="Edm.Boolean" Nullable="false" />
