@@ -81,6 +81,7 @@ EnableGuestSignInAcceleration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableMinimumVersionRequirement (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableMipSiteLabel (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnablePromotedFileHandlers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+EnableRestrictedAccessControl (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnabledFlightAllowAADB2BSkipCheckingOTP (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ExcludedFileExtensionsForSyncClient (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 ExternalServicesEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -128,6 +129,14 @@ NotificationsInOneDriveForBusinessEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 NotificationsInSharePointEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 NotifyOwnersWhenInvitationsAccepted (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 NotifyOwnersWhenItemsReshared (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+OCRAdminEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+OCRAdminSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
+OCRAdminSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+OCRAdminSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
+OCRComplianceEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+OCRComplianceSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
+OCRComplianceSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+OCRComplianceSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 ODBAccessRequests (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ODBMembersCanShare (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ODBSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌

@@ -27,6 +27,9 @@ TargetLibraryUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetSiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 TargetSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetTableListId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+TargetTableListRemoved (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+TargetTableListServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+TargetTableListUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetWebId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 TargetWebName (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetWebServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

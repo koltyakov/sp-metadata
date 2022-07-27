@@ -283,6 +283,7 @@ NavigationTermSetViews | ❌ | ❌ | ❌ | ✅
 Navigations | ✅ | ✅ | ✅ | ✅
 NewsCollections | ✅ | ❌ | ❌ | ❌
 NewsUtilitys | ✅ | ✅ | ❌ | ❌
+NonQuotaMigrationApis | ✅ | ❌ | ❌ | ❌
 NonTaskDataReadResults | ✅ | ✅ | ✅ | ✅
 NotificationCallbacks | ✅ | ✅ | ✅ | ✅
 ObjectSharingInformationUsers | ✅ | ✅ | ✅ | ✅

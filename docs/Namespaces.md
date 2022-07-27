@@ -33,6 +33,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.SharePoint.AppManagement](./Microsoft.SharePoint.AppManagement) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.AuthPolicy](./Microsoft.SharePoint.AuthPolicy) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.AuthPolicy.Events](./Microsoft.SharePoint.AuthPolicy.Events) | ✅ | ❌ | ❌ | ❌
+[Microsoft.SharePoint.Authentication](./Microsoft.SharePoint.Authentication) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.CampaignAnalytics](./Microsoft.SharePoint.CampaignAnalytics) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Campaigns](./Microsoft.SharePoint.Campaigns) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Client.Search.Administration](./Microsoft.SharePoint.Client.Search.Administration) | ✅ | ✅ | ✅ | ✅

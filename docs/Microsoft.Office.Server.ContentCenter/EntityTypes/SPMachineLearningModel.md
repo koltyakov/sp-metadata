@@ -24,6 +24,7 @@ ListID (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 ManagementAllowed (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ModelSettings (Edm.String) | ✅ | ❌ | ❌ | ❌
 ModelType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+ModelTypeAsString (Edm.String) | ✅ | ❌ | ❌ | ❌
 Modified (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 ModifiedBy (Edm.String) | ✅ | ❌ | ❌ | ❌
 ObjectId (Edm.String) | ✅ | ❌ | ❌ | ❌

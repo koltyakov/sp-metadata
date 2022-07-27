@@ -396,6 +396,7 @@ InstalledAddins (SP.Web) | ✅ | ❌ | ❌ | ❌
 Invalidate (SP.Site) | ✅ | ✅ | ✅ | ✅
 JoinHubSite (SP.Site) | ✅ | ✅ | ❌ | ❌
 KnowledgeHub | ✅ | ❌ | ❌ | ❌
+ListACSServicePrincipals (SP.Web) | ✅ | ❌ | ❌ | ❌
 ListPowerPlatformUserDetails (SP.Web) | ✅ | ❌ | ❌ | ❌
 LoadAndInstallApp (SP.Web) | ✅ | ✅ | ✅ | ✅
 LoadAndInstallAppInSpecifiedLocale (SP.Web) | ✅ | ✅ | ✅ | ✅

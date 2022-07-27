@@ -66,6 +66,7 @@ ReadOnlyForUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RelatedGroupId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 RequestFilesLinkEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RequestFilesLinkExpirationInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+RestrictedAccessControl (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RestrictedToRegion (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SandboxedCodeActivationCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SensitivityLabel (Edm.Guid) | ✅ | ❌ | ❌ | ❌

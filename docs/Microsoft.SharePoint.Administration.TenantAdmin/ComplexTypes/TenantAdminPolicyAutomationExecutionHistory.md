@@ -13,7 +13,10 @@ ExpectedStartTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 FailureReason (Edm.String) | ✅ | ❌ | ❌ | ❌
 ImpactedDataFileURL (Edm.String) | ✅ | ❌ | ❌ | ❌
 ParentExecutionId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+PolicyFrequency (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 PolicyId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+PolicyName (Edm.String) | ✅ | ❌ | ❌ | ❌
+PolicyTemplate (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 PolicyVersion (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 PolicyWorkItemType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 RetryCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
