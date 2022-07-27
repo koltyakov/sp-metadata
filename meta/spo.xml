@@ -4175,6 +4175,7 @@
         <EntitySet Name="RecentDocuments" EntityType="Microsoft.SharePoint.Portal.WebControls.RecentDocument" />
         <EntitySet Name="PageCopyResponses" EntityType="Microsoft.SharePoint.Publishing.PageCopyWithAssets.PageCopyResponse" />
         <EntitySet Name="BaseCustomPropertys" EntityType="Microsoft.SharePoint.Publishing.RestOnly.BaseCustomProperty" />
+        <EntitySet Name="NonQuotaMigrationApis" EntityType="Microsoft.SharePoint.QuotaManagement.Consumer.NonQuotaMigrationApi" />
         <EntitySet Name="QuotaMigrationApis" EntityType="Microsoft.SharePoint.QuotaManagement.Consumer.QuotaMigrationApi" />
         <EntitySet Name="SmartCacheItems" EntityType="Microsoft.SharePoint.SmartCache.SmartCacheItem" />
         <EntitySet Name="TenantCdnApis" EntityType="Microsoft.SharePoint.TenantCdn.TenantCdnApi" />
@@ -9957,6 +9958,10 @@
           <Parameter Name="urls" Type="Collection(Edm.String)" />
           <Parameter Name="cdnType" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_QuotaManagement_Consumer_NonQuotaMigrationApi" ReturnType="Microsoft.SharePoint.QuotaManagement.Consumer.NonQuotaMigrationApi" IsComposable="true" EntitySet="NonQuotaMigrationApis" />
+        <FunctionImport Name="MigrateNonQuota" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.QuotaManagement.Consumer.NonQuotaMigrationApi" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_QuotaManagement_Consumer_QuotaMigrationApi" ReturnType="Microsoft.SharePoint.QuotaManagement.Consumer.QuotaMigrationApi" IsComposable="true" EntitySet="QuotaMigrationApis" />
         <FunctionImport Name="MigrateQuota" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.QuotaManagement.Consumer.QuotaMigrationApi" />
@@ -11858,6 +11863,9 @@
         <FunctionImport Name="InstalledAddins" ReturnType="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPAppInstallationInfo)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="WebUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="ListACSServicePrincipals" ReturnType="Collection(Microsoft.SharePoint.Authentication.SPACSServicePrincipalInfo)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
         </FunctionImport>
         <FunctionImport Name="ListPowerPlatformUserDetails" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
           <Parameter Name="this" Type="SP.Web" />
@@ -15088,6 +15096,11 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="viewId" Type="Edm.String" />
           <Parameter Name="viewXml" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="ValidateHomeSite" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="validationActionType" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="siteUrl" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="ValidateMultipleHomeSitesParameterExists" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -18825,6 +18838,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/ModelType">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/ModelTypeAsString">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/Modified">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18919,6 +18935,15 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/TargetTableListId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/TargetTableListRemoved">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/TargetTableListServerRelativeUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/TargetTableListUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication/TargetWebId">
@@ -22719,6 +22744,9 @@
       <Annotations Target="SP.ApiData/InstalledAddins(SP.Web, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/ListACSServicePrincipals(SP.Web)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/ListPowerPlatformUserDetails(SP.Web)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -23664,6 +23692,7 @@
         <Property Name="ManagementAllowed" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ModelSettings" Type="Edm.String" />
         <Property Name="ModelType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ModelTypeAsString" Type="Edm.String" />
         <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
         <Property Name="ModifiedBy" Type="Edm.String" />
         <Property Name="ObjectId" Type="Edm.String" />
@@ -23699,6 +23728,9 @@
         <Property Name="TargetSiteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="TargetSiteUrl" Type="Edm.String" />
         <Property Name="TargetTableListId" Type="Edm.Guid" />
+        <Property Name="TargetTableListRemoved" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="TargetTableListServerRelativeUrl" Type="Edm.String" />
+        <Property Name="TargetTableListUrl" Type="Edm.String" />
         <Property Name="TargetWebId" Type="Edm.Guid" Nullable="false" />
         <Property Name="TargetWebName" Type="Edm.String" />
         <Property Name="TargetWebServerRelativeUrl" Type="Edm.String" />
@@ -29865,6 +29897,16 @@
         <Property Name="TenantId" Type="Edm.Guid" Nullable="false" />
       </EntityType>
     </Schema>
+    <Schema Namespace="Microsoft.SharePoint.Authentication" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="SPACSServicePrincipalInfo">
+        <Property Name="ApplicationEndpointAuthorities" Type="Collection(Edm.String)" />
+        <Property Name="ApplicationPrincipalNames" Type="Collection(Edm.String)" />
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="NameIdentifier" Type="Edm.String" />
+        <Property Name="RedirectAddresses" Type="Collection(Edm.String)" />
+        <Property Name="TrustedForDelegation" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
+    </Schema>
     <Schema Namespace="Microsoft.SharePoint.Administration" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="CustomFontsResource">
         <Property Name="byteArray" Type="Edm.Binary" />
@@ -29977,7 +30019,10 @@
         <Property Name="FailureReason" Type="Edm.String" />
         <Property Name="ImpactedDataFileURL" Type="Edm.String" />
         <Property Name="ParentExecutionId" Type="Edm.Guid" />
+        <Property Name="PolicyFrequency" Type="Edm.Int32" Nullable="false" />
         <Property Name="PolicyId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="PolicyName" Type="Edm.String" />
+        <Property Name="PolicyTemplate" Type="Edm.Int32" Nullable="false" />
         <Property Name="PolicyVersion" Type="Edm.Int32" Nullable="false" />
         <Property Name="RetryCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="StartTime" Type="Edm.DateTime" />
@@ -31385,6 +31430,7 @@
         <Property Name="RelatedGroupId" Type="Edm.Guid" Nullable="false" />
         <Property Name="RequestFilesLinkEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RequestFilesLinkExpirationInDays" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RestrictedAccessControl" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RestrictedToRegion" Type="Edm.Int32" Nullable="false" />
         <Property Name="SandboxedCodeActivationCapability" Type="Edm.Int32" Nullable="false" />
         <Property Name="SensitivityLabel" Type="Edm.Guid" Nullable="false" />
@@ -31574,6 +31620,7 @@
         <Property Name="EnableMinimumVersionRequirement" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnableMipSiteLabel" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnablePromotedFileHandlers" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="EnableRestrictedAccessControl" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ExcludedFileExtensionsForSyncClient" Type="Collection(Edm.String)" />
         <Property Name="ExternalServicesEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ExternalUserExpirationRequired" Type="Edm.Boolean" Nullable="false" />
@@ -31620,6 +31667,14 @@
         <Property Name="NotificationsInSharePointEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="NotifyOwnersWhenInvitationsAccepted" Type="Edm.Boolean" Nullable="false" />
         <Property Name="NotifyOwnersWhenItemsReshared" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="OCRAdminEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="OCRAdminSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
+        <Property Name="OCRAdminSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="OCRAdminSiteListFileName" Type="Edm.String" />
+        <Property Name="OCRComplianceEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="OCRComplianceSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
+        <Property Name="OCRComplianceSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="OCRComplianceSiteListFileName" Type="Edm.String" />
         <Property Name="ODBAccessRequests" Type="Edm.Int32" Nullable="false" />
         <Property Name="ODBMembersCanShare" Type="Edm.Int32" Nullable="false" />
         <Property Name="ODBSharingCapability" Type="Edm.Int32" Nullable="false" />
@@ -33237,6 +33292,12 @@
       </EntityType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.QuotaManagement.Consumer" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="NonQuotaMigrationApi">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="QuotaMigrationApi">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
@@ -33448,6 +33509,7 @@
         <Property Name="EnableAzureADB2BIntegration" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnableGuestSignInAcceleration" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnablePromotedFileHandlers" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="EnableRestrictedAccessControl" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ExcludedFileExtensionsForSyncClient" Type="Collection(Edm.String)" />
         <Property Name="ExternalServicesEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ExternalUserExpirationRequired" Type="Edm.Boolean" Nullable="false" />
@@ -33479,6 +33541,14 @@
         <Property Name="NotificationsInSharePointEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="NotifyOwnersWhenInvitationsAccepted" Type="Edm.Boolean" Nullable="false" />
         <Property Name="NotifyOwnersWhenItemsReshared" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="OCRAdminEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="OCRAdminSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
+        <Property Name="OCRAdminSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="OCRAdminSiteListFileName" Type="Edm.String" />
+        <Property Name="OCRComplianceEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="OCRComplianceSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
+        <Property Name="OCRComplianceSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="OCRComplianceSiteListFileName" Type="Edm.String" />
         <Property Name="ODBAccessRequests" Type="Edm.Int32" Nullable="false" />
         <Property Name="ODBMembersCanShare" Type="Edm.Int32" Nullable="false" />
         <Property Name="ODBSharingCapability" Type="Edm.Int32" Nullable="false" />
