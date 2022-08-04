@@ -6,11 +6,11 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-PolicyDefinition (Edm.String) | ✅ | ❌ | ❌ | ❌
 createdBy (Edm.String) | ✅ | ❌ | ❌ | ❌
 lastUpdatedTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 policyCreatedTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 policyCustomName (Edm.String) | ✅ | ❌ | ❌ | ❌
+policyDefinitionDetails (Edm.String) | ✅ | ❌ | ❌ | ❌
 policyFrequencyUnit (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 policyFrequencyValue (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 policyId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

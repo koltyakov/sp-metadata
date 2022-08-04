@@ -136,6 +136,7 @@ IsContentTypeAvailable (Collection(SP.Publishing.FeedVideoPage)) | ✅ | ❌ | �
 IsContentTypeAvailable (Collection(SP.Publishing.RepostPage)) | ✅ | ❌ | ❌ | ❌
 IsContentTypeAvailable (Collection(SP.Publishing.TopicSitePage)) | ✅ | ❌ | ❌ | ❌
 IsSitePage (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
+LoadMailDraft (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 Newest (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
 PageDiagnostics | ✅ | ❌ | ❌ | ❌
 Popular (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌

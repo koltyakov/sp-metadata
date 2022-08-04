@@ -29,6 +29,8 @@ AuthContextResilienceMode (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 BccExternalSharingInvitations (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BccExternalSharingInvitationsList (Edm.String) | ✅ | ❌ | ❌ | ❌
 BlockAccessOnUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+BlockDownloadFileTypeIds (Collection(Edm.Int32)) | ✅ | ❌ | ❌ | ❌
+BlockDownloadFileTypePolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockDownloadLinksFileType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 BlockDownloadOfAllFilesForGuests (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockDownloadOfAllFilesOnUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -72,6 +74,7 @@ EnableAzureADB2BIntegration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableGuestSignInAcceleration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnablePromotedFileHandlers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableRestrictedAccessControl (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ExcludedBlockDownloadGroupIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 ExcludedFileExtensionsForSyncClient (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 ExternalServicesEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ExternalUserExpirationRequired (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

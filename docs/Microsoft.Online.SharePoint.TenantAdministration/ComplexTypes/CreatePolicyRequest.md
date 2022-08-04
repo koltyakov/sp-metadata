@@ -7,7 +7,7 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 policyCustomName (Edm.String) | ✅ | ❌ | ❌ | ❌
-policyDefinition (Edm.String) | ✅ | ❌ | ❌ | ❌
+policyDefinitionDetails (Edm.String) | ✅ | ❌ | ❌ | ❌
 policyFrequencyUnit (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 policyFrequencyValue (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 policyId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

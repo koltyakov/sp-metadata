@@ -24,4 +24,5 @@ ShowSelfServiceSiteCreation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SiteCreationNewUX (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SitePath (Edm.String) | ✅ | ✅ | ❌ | ❌
 SiteSensitivityLabelId (Edm.String) | ✅ | ❌ | ❌ | ❌
+URLForCustomHelpPageSensitivityLabel (Edm.String) | ✅ | ❌ | ❌ | ❌
 UsageGuidelineUrl (Edm.String) | ✅ | ✅ | ❌ | ❌

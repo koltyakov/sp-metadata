@@ -1,4 +1,4 @@
-# Function Import: AddIsolatedServicePrincipalObjectId
+# Function Import: GetIsolatedAppDomainsByAppId
 
 > Namespace: Microsoft.Online.SharePoint.TenantAdministration.Internal
 
@@ -10,4 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-objectId (Edm.String) | ✅ | ❌ | ❌ | ❌
+appIds (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌

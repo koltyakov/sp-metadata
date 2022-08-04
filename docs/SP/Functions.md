@@ -53,7 +53,7 @@ BreakRoleInheritance (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 BreakRoleInheritance (SP.SecurableObject) | ✅ | ✅ | ✅ | ✅
 BreakRoleInheritance (SP.Web) | ✅ | ✅ | ✅ | ✅
 BulkValidateUpdateListItems (SP.List) | ✅ | ✅ | ❌ | ❌
-CAAECreateFilesInTempFolder (SP.List) | ✅ | ❌ | ❌ | ❌
+CAAECreateTempFolder (SP.List) | ✅ | ❌ | ❌ | ❌
 CAAERenameFileInTemporaryFolder (SP.List) | ✅ | ❌ | ❌ | ❌
 CancelAllJobs (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
 CancelUpload (SP.File) | ✅ | ✅ | ✅ | ❌
@@ -94,6 +94,7 @@ CreatePreviewSPSite (SP.Site) | ✅ | ✅ | ✅ | ✅
 CreateRule (SP.List) | ✅ | ❌ | ❌ | ❌
 CreateSPAsyncReadJob (SP.Site) | ✅ | ❌ | ❌ | ❌
 CreateSPAsyncReadJobWithMultiUrl (SP.Site) | ✅ | ❌ | ❌ | ❌
+CreateSitePage (SP.Web) | ✅ | ❌ | ❌ | ❌
 CreateSmartTemplateContentTypeAndAddToList (SP.List) | ✅ | ❌ | ❌ | ❌
 CreateSmartTemplateContentTypeAndAddToListV2 (SP.List) | ✅ | ❌ | ❌ | ❌
 DashboardContent (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌

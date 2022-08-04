@@ -21,12 +21,14 @@ ModifiedBy (Edm.String) | ✅ | ❌ | ❌ | ❌
 ObjectId (Edm.String) | ✅ | ❌ | ❌ | ❌
 PublicationType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 TargetLibraryId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+TargetLibraryName (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetLibraryRemoved (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 TargetLibraryServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetLibraryUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetSiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 TargetSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetTableListId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+TargetTableListName (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetTableListRemoved (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 TargetTableListServerRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetTableListUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

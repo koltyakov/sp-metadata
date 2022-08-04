@@ -14,6 +14,7 @@ expiration (Edm.String) | ✅ | ✅ | ❌ | ❌
 inviteesToRemove (Collection(SP.Sharing.Principal)) | ✅ | ✅ | ❌ | ❌
 limitUseToApplication (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 linkKind (Edm.Int32) | ✅ | ✅ | ❌ | ❌
+nav (Edm.String) | ✅ | ❌ | ❌ | ❌
 nonDefaultLink (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 password (Edm.String) | ✅ | ✅ | ❌ | ❌
 passwordProtected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
