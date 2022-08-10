@@ -6,6 +6,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+CanvasString (Edm.String) | ✅ | ❌ | ❌ | ❌
 CompletedAssets (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 CopyToStatusAPI (Edm.String) | ✅ | ❌ | ❌ | ❌
 ErrorMessage (Edm.String) | ✅ | ❌ | ❌ | ❌

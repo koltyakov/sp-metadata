@@ -54,6 +54,7 @@ Calendars | ✅ | ✅ | ✅ | ❌
 CalloutInfos | ✅ | ✅ | ✅ | ✅
 Campaignss | ✅ | ❌ | ❌ | ❌
 CampainAnalyticss | ✅ | ❌ | ❌ | ❌
+CanCreatePageResponses | ✅ | ❌ | ❌ | ❌
 Cases | ❌ | ❌ | ❌ | ✅
 ChangeInformations | ❌ | ❌ | ❌ | ✅
 Changes | ✅ | ✅ | ✅ | ✅

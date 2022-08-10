@@ -15,5 +15,6 @@ LastModifiedDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 Outcome (Edm.String) | ✅ | ❌ | ❌ | ❌
 Owner (Edm.String) | ✅ | ❌ | ❌ | ❌
 RuleTemplateId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+TargetLibraryUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ❌ | ❌ | ❌
 TriggerType (Edm.Int32) | ✅ | ❌ | ❌ | ❌

@@ -92,6 +92,7 @@ CreateMigrationJob (SP.Site) | ✅ | ✅ | ✅ | ❌
 CreateMigrationJobEncrypted (SP.Site) | ✅ | ✅ | ❌ | ❌
 CreatePreviewSPSite (SP.Site) | ✅ | ✅ | ✅ | ✅
 CreateRule (SP.List) | ✅ | ❌ | ❌ | ❌
+CreateRuleEx (SP.List) | ✅ | ❌ | ❌ | ❌
 CreateSPAsyncReadJob (SP.Site) | ✅ | ❌ | ❌ | ❌
 CreateSPAsyncReadJobWithMultiUrl (SP.Site) | ✅ | ❌ | ❌ | ❌
 CreateSitePage (SP.Web) | ✅ | ❌ | ❌ | ❌
@@ -825,6 +826,7 @@ UpdateFormProcessingModelSettings (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateHashtags (SP.ListItem) | ❌ | ✅ | ❌ | ❌
 UpdateOverwriteVersion (SP.ListItem) | ✅ | ✅ | ❌ | ❌
 UpdateRule (SP.List) | ✅ | ❌ | ❌ | ❌
+UpdateRuleEx (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateVirusInfo (SP.File) | ✅ | ✅ | ❌ | ❌
 Upgrade (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
 Upload (SP.File) | ✅ | ❌ | ❌ | ❌

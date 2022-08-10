@@ -24,6 +24,7 @@ ExportCSVFile (Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionMa
 ExportToCSV (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetAdminListViews (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetById (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
+GetCollaborationInsightsData (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetFilteredSPListItems (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetGroupInfo (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ✅ | ❌ | ❌ | ❌
 GetGroupSiteRelationship (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌

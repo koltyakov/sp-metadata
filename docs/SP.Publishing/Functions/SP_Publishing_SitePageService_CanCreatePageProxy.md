@@ -1,4 +1,4 @@
-# Function Import: SP_Publishing_SitePageService_GetTimeZone
+# Function Import: SP_Publishing_SitePageService_CanCreatePageProxy
 
 > Namespace: SP.Publishing
 
@@ -9,4 +9,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-cityName (Edm.String) | ❌ | ✅ | ❌ | ❌
+siteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

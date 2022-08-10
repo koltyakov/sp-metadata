@@ -186,11 +186,13 @@ SP_Publishing_SitePage3DCollection | ✅ | ❌ | ❌ | ❌
 SP_Publishing_SitePageCollection | ✅ | ✅ | ❌ | ❌
 SP_Publishing_SitePageMetadataCollection | ✅ | ✅ | ❌ | ❌
 SP_Publishing_SitePageService | ✅ | ✅ | ❌ | ❌
+[<span title="SP_Publishing_SitePageService_CanCreatePageForMultipleSites">SP_Publishing_SitePageService_CanCreatePageForMult...</span> (SP Publishing SitePageService CanCreatePageForMultipleSites)](./Functions/SP_Publishing_SitePageService_CanCreatePageForMultipleSites.md) | ✅ | ❌ | ❌ | ❌
+[SP_Publishing_SitePageService_CanCreatePageProxy](./Functions/SP_Publishing_SitePageService_CanCreatePageProxy.md) | ✅ | ❌ | ❌ | ❌
 [SP_Publishing_SitePageService_ComputeFileName](./Functions/SP_Publishing_SitePageService_ComputeFileName.md) | ✅ | ❌ | ❌ | ❌
 SP_Publishing_SitePageService_FilePickerTabOptions | ✅ | ❌ | ❌ | ❌
 [<span title="SP_Publishing_SitePageService_GetAvailableFullPageApplications">SP_Publishing_SitePageService_GetAvailableFullPage...</span> (SP Publishing SitePageService GetAvailableFullPageApplications)](./Functions/SP_Publishing_SitePageService_GetAvailableFullPageApplications.md) | ✅ | ❌ | ❌ | ❌
 [<span title="SP_Publishing_SitePageService_GetCurrentUserMemberships">SP_Publishing_SitePageService_GetCurrentUserMember...</span> (SP Publishing SitePageService GetCurrentUserMemberships)](./Functions/SP_Publishing_SitePageService_GetCurrentUserMemberships.md) | ✅ | ❌ | ❌ | ❌
-[SP_Publishing_SitePageService_GetTimeZone](./Functions/SP_Publishing_SitePageService_GetTimeZone.md) | ✅ | ✅ | ❌ | ❌
+[SP_Publishing_SitePageService_GetTimeZone](./Functions/SP_Publishing_SitePageService_GetTimeZone.md) | ❌ | ✅ | ❌ | ❌
 <span title="SP_Publishing_SitePageService_IsFilePickerExternalImageSearchEnabled">SP_Publishing_SitePageService_IsFilePickerExternal...</span> (SP Publishing SitePageService IsFilePickerExternalImageSearchEnabled) | ✅ | ✅ | ❌ | ❌
 SP_Publishing_SitePageService_OrgAssets | ✅ | ❌ | ❌ | ❌
 SP_Publishing_TopicPageCollection | ✅ | ❌ | ❌ | ❌

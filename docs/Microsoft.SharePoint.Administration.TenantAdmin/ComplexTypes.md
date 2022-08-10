@@ -4,6 +4,11 @@
 
 Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+[CollaborationInsightsCounts](./ComplexTypes/CollaborationInsightsCounts.md) | ✅ | ❌ | ❌ | ❌
+[CollaborationInsightsData](./ComplexTypes/CollaborationInsightsData.md) | ✅ | ❌ | ❌ | ❌
+[CollaborativeUsers](./ComplexTypes/CollaborativeUsers.md) | ✅ | ❌ | ❌ | ❌
+[OneDriveCollaborativeUsers](./ComplexTypes/OneDriveCollaborativeUsers.md) | ✅ | ❌ | ❌ | ❌
+[OneDriveSharePointCollaborativeUsers](./ComplexTypes/OneDriveSharePointCollaborativeUsers.md) | ✅ | ❌ | ❌ | ❌
 [RecentAdminActionReport](./ComplexTypes/RecentAdminActionReport.md) | ✅ | ❌ | ❌ | ❌
 [TenantAdminListItemColumnValue](./ComplexTypes/TenantAdminListItemColumnValue.md) | ✅ | ❌ | ❌ | ❌
 [TenantAdminPolicyAutomationExecutionHistory](./ComplexTypes/TenantAdminPolicyAutomationExecutionHistory.md) | ✅ | ❌ | ❌ | ❌
