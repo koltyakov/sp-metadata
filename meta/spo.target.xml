@@ -4094,6 +4094,7 @@
         <EntitySet Name="Office365CommsMessagesServiceProxys" EntityType="Microsoft.Online.SharePoint.TenantAdministration.Office365CommsMessagesServiceProxy" />
         <EntitySet Name="ResponseMessageCenters" EntityType="Microsoft.Online.SharePoint.TenantAdministration.ResponseMessageCenter" />
         <EntitySet Name="ResponseServiceHealths" EntityType="Microsoft.Online.SharePoint.TenantAdministration.ResponseServiceHealth" />
+        <EntitySet Name="SharePointSiteSharingInsightss" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SharePointSiteSharingInsights" />
         <EntitySet Name="SiteCollectionManagementServices" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
         <EntitySet Name="SitePropertiess" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SiteProperties" />
         <EntitySet Name="SPOGroups" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SPOGroup" />
@@ -7902,7 +7903,10 @@
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
         </FunctionImport>
-        <FunctionImport Name="LoadMailDraft" ReturnType="Edm.String" IsBindable="true">
+        <FunctionImport Name="LoadMailDraft" ReturnType="SP.Publishing.CampaignCommunicationMailDraftData" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+        </FunctionImport>
+        <FunctionImport Name="SaveMailDraft" ReturnType="SP.Publishing.CampaignCommunicationMailDraftData" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
         </FunctionImport>
         <FunctionImport Name="SP_Publishing_CommunicationSite" ReturnType="SP.Publishing.CommunicationSite" IsComposable="true" EntitySet="CommunicationSites" />
@@ -10127,6 +10131,7 @@
         <FunctionImport Name="Deploy" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata" />
           <Parameter Name="skipFeatureDeployment" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="isUpdatingApp" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Install" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata" />
@@ -10179,6 +10184,7 @@
         <FunctionImport Name="AddAndDeployStoreAppById" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
           <Parameter Name="CMU" Type="Edm.String" />
+          <Parameter Name="isUpdatingApp" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="Overwrite" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="SkipFeatureDeployment" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="StoreAssetId" Type="Edm.String" />
@@ -14744,6 +14750,10 @@
         <FunctionImport Name="GetPowerAppsEnvironments" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.PowerAppsEnvironment)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
+        <FunctionImport Name="GetSharePointSiteSharingInsights" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.SharePointSiteSharingInsights)" IsComposable="true" IsBindable="true" EntitySet="SharePointSiteSharingInsightss">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="queryMode" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="GetSiteAdministrators" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteAdministratorsInfo)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
@@ -17514,6 +17524,12 @@
       <Annotations Target="SP.Publishing.CampaignCommunicationFieldsData/EndpointYammer">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.CampaignCommunicationMailDraftData/DraftId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.CampaignCommunicationMailDraftData/GroupUpn">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.CopyToParams">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18547,6 +18563,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Sharing.LinkInfo">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Sharing.LinkParameters">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Sharing.OversharedWebInfo">
@@ -21426,6 +21445,9 @@
       <Annotations Target="SP.ApiData/LoadMailDraft(SP.Publishing.CampaignCommunication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SaveMailDraft(SP.Publishing.CampaignCommunication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_Publishing_CommunicationSite()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22392,7 +22414,7 @@
       <Annotations Target="SP.ApiData/GetServiceUrls(SP.MicroService.MicroServiceManager, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Deploy(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata, Edm.Boolean)">
+      <Annotations Target="SP.ApiData/Deploy(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata, Edm.Boolean, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Install(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata)">
@@ -22419,7 +22441,7 @@
       <Annotations Target="SP.ApiData/Add(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/AddAndDeployStoreAppById(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.String, Edm.Boolean, Edm.Boolean, Edm.String)">
+      <Annotations Target="SP.ApiData/AddAndDeployStoreAppById(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.String, Edm.Boolean, Edm.Boolean, Edm.Boolean, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/AddStoreApp(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String)">
@@ -27480,6 +27502,10 @@
         <Property Name="EndpointSharePoint" Type="Edm.String" />
         <Property Name="EndpointYammer" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="CampaignCommunicationMailDraftData">
+        <Property Name="DraftId" Type="Edm.String" />
+        <Property Name="GroupUpn" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="CopyToParams">
         <Property Name="AsTemplate" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CanvasContentOnly" Type="Edm.Boolean" Nullable="false" />
@@ -29632,6 +29658,7 @@
       </ComplexType>
       <ComplexType Name="SPStoreAppCreateByIdInformation">
         <Property Name="CMU" Type="Edm.String" />
+        <Property Name="isUpdatingApp" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Overwrite" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SkipFeatureDeployment" Type="Edm.Boolean" Nullable="false" />
         <Property Name="StoreAssetId" Type="Edm.String" />
@@ -30349,6 +30376,9 @@
         <Property Name="isInherited" Type="Edm.Boolean" Nullable="false" />
         <Property Name="linkDetails" Type="SP.SharingLinkInfo" />
         <Property Name="linkMembers" Type="Collection(SP.Sharing.Principal)" />
+      </ComplexType>
+      <ComplexType Name="LinkParameters">
+        <Property Name="nav" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="OversharedWebInfo">
         <Property Name="hasUniqueRoleAssignmentsForList" Type="Edm.Boolean" Nullable="false" />
@@ -31501,6 +31531,23 @@
         </Key>
         <Property Name="AdvisoryCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="IncidentCount" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="SharePointSiteSharingInsights">
+        <Key>
+          <PropertyRef Name="IsTeamsConnected" />
+        </Key>
+        <Property Name="IsTeamsConnected" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SharedCountTotal" Type="Edm.Int64" Nullable="false" />
+        <Property Name="SharedExternallyCount" Type="Edm.Int64" Nullable="false" />
+        <Property Name="SharedInternallyCount" Type="Edm.Int64" Nullable="false" />
+        <Property Name="SharedWithAnyoneCount" Type="Edm.Int64" Nullable="false" />
+        <Property Name="SharedWithGroupsCount" Type="Edm.Int64" Nullable="false" />
+        <Property Name="SiteName" Type="Edm.String" />
+        <Property Name="SiteOwners" Type="Edm.String" />
+        <Property Name="SiteSensitivity" Type="Edm.String" />
+        <Property Name="SiteTemplate" Type="Edm.String" />
+        <Property Name="SiteTemplateId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="SiteUrl" Type="Edm.String" />
       </EntityType>
       <EntityType Name="SiteCollectionManagementService">
         <Key>
