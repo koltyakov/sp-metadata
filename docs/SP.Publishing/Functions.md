@@ -205,6 +205,7 @@ SaveDraft (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 SaveDraft (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
 SaveDraft (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 SaveDraft (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+SaveMailDraft (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 SavePage (SP.Publishing.CampaignCommunication) | ✅ | ❌ | ❌ | ❌
 SavePage (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 SavePage (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌

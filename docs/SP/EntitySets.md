@@ -460,6 +460,7 @@ SharePointDirectoryProviders | ✅ | ✅ | ✅ | ❌
 SharePointHomeServiceContexts | ✅ | ✅ | ❌ | ❌
 SharePointHomeServiceManagers | ✅ | ✅ | ❌ | ❌
 SharePointSharingSettingss | ✅ | ✅ | ✅ | ❌
+SharePointSiteSharingInsightss | ✅ | ❌ | ❌ | ❌
 SharedDocumentInfos | ✅ | ✅ | ❌ | ❌
 SharedWithMeDocuments | ✅ | ✅ | ✅ | ❌
 SharedWithMeItemCollections | ✅ | ❌ | ❌ | ❌

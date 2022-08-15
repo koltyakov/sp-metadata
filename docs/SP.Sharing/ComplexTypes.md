@@ -12,6 +12,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [EntityPermission](./ComplexTypes/EntityPermission.md) | ✅ | ✅ | ❌ | ❌
 [LinkInfo](./ComplexTypes/LinkInfo.md) | ✅ | ✅ | ❌ | ❌
 [LinkInvitation](./ComplexTypes/LinkInvitation.md) | ✅ | ✅ | ❌ | ❌
+[LinkParameters](./ComplexTypes/LinkParameters.md) | ✅ | ❌ | ❌ | ❌
 [OversharedWebInfo](./ComplexTypes/OversharedWebInfo.md) | ✅ | ✅ | ❌ | ❌
 [PermissionCollection](./ComplexTypes/PermissionCollection.md) | ✅ | ✅ | ❌ | ❌
 [Principal](./ComplexTypes/Principal.md) | ✅ | ✅ | ❌ | ❌

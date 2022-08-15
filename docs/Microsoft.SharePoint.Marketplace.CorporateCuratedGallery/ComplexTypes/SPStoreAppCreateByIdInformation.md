@@ -10,3 +10,4 @@ CMU (Edm.String) | ✅ | ❌ | ❌ | ❌
 Overwrite (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SkipFeatureDeployment (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 StoreAssetId (Edm.String) | ✅ | ❌ | ❌ | ❌
+isUpdatingApp (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
