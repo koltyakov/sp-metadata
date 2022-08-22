@@ -742,6 +742,7 @@
         <Property Name="MediaServiceMetadata" Type="Edm.String" />
         <Property Name="MediaServiceOCR" Type="Edm.String" />
         <Property Name="MediaServiceTranscript" Type="Edm.String" />
+        <Property Name="MostRecentGenerationTime" Type="Edm.String" />
         <Property Name="SensitivityLabel" Type="Edm.String" />
         <Property Name="SensitivityLabelAssignmentMethod" Type="Edm.Int32" Nullable="false" />
         <Property Name="XTenantLabelInfo" Type="Edm.String" />
@@ -2692,6 +2693,7 @@
         <Property Name="siteId" Type="Edm.String" />
         <Property Name="siteTitle" Type="Edm.String" />
         <Property Name="siteUrl" Type="Edm.String" />
+        <Property Name="templateTypeId" Type="Edm.String" />
         <Property Name="webId" Type="Edm.String" />
         <Property Name="webTemplateConfiguration" Type="Edm.String" />
       </EntityType>
@@ -12090,9 +12092,11 @@
         <FunctionImport Name="SP_RecentFileCollection_GetRecentFiles" ReturnType="Edm.String" IsSideEffecting="false" />
         <FunctionImport Name="SP_RecentListCollection_GetRecentLists" ReturnType="Collection(SP.RecentList)" IsComposable="true" EntitySet="RecentLists">
           <Parameter Name="sortBy" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="templateTypeId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_RecentListCollection_GetRecentListsWithPageContextInfo" ReturnType="Edm.Stream" IsSideEffecting="false">
           <Parameter Name="sortBy" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="templateTypeId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_RecentListCollection_UpdateRecentLists">
           <Parameter Name="recentListsJson" Type="Edm.String" />
@@ -12102,6 +12106,7 @@
         </FunctionImport>
         <FunctionImport Name="SP_RecentListProxy_GetRecentListsProxy" ReturnType="Edm.Stream" IsSideEffecting="false">
           <Parameter Name="sortBy" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="templateTypeId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_RelatedItemManager_AddSingleLink">
           <Parameter Name="SourceListName" Type="Edm.String" />
@@ -19177,13 +19182,13 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/AIBuilderHybridModelInTestEnvironment">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/AIBuilderHybridModelType">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/AzureCognitivePrebuiltModelName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/BaseContentTypeName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/AIBuilderHybridModelType">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData/ColumnId">
@@ -22114,6 +22119,12 @@
       <Annotations Target="SP.ApiData/CanCreateHubJoinedSite(Microsoft.SharePoint.Portal.SPSiteManager, Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Portal.SPSiteCreationRequest/AdditionalSiteFeatureIds">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Portal.SPSiteCreationRequest/AdditionalWebFeatureIds">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Portal.SPSiteCreationRequest/ChannelGroupId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22936,10 +22947,10 @@
       <Annotations Target="SP.ApiData/SP_RecentFileCollection_GetRecentFiles()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_RecentListCollection_GetRecentLists(Edm.Int32)">
+      <Annotations Target="SP.ApiData/SP_RecentListCollection_GetRecentLists(Edm.Int32, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_RecentListCollection_GetRecentListsWithPageContextInfo(Edm.Int32)">
+      <Annotations Target="SP.ApiData/SP_RecentListCollection_GetRecentListsWithPageContextInfo(Edm.Int32, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_RecentListCollection_UpdateRecentLists(Edm.String)">
@@ -22948,7 +22959,7 @@
       <Annotations Target="SP.ApiData/SP_RecentListCollection_UpdateRecentListsRemote(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_RecentListProxy_GetRecentListsProxy(Edm.Int32)">
+      <Annotations Target="SP.ApiData/SP_RecentListProxy_GetRecentListsProxy(Edm.Int32, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_SharedWithMeItemCollection_GetSharedWithMeItems(Edm.Int32, Edm.String, Edm.Boolean)">
@@ -23886,9 +23897,9 @@
         <Property Name="AIBuilderHybridModelEnvironment" Type="Edm.String" />
         <Property Name="AIBuilderHybridModelHostName" Type="Edm.String" />
         <Property Name="AIBuilderHybridModelInTestEnvironment" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="AIBuilderHybridModelType" Type="Edm.String" />
         <Property Name="AzureCognitivePrebuiltModelName" Type="Edm.String" />
         <Property Name="BaseContentTypeName" Type="Edm.String" />
+        <Property Name="AIBuilderHybridModelType" Type="Edm.String" />
         <Property Name="ColumnId" Type="Edm.String" />
         <Property Name="ColumnName" Type="Edm.String" />
         <Property Name="Columns" Type="Collection(Microsoft.Office.Server.ContentCenter.ColumnDef)" />
@@ -28939,6 +28950,8 @@
         <Property Name="SiteUrl" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPSiteCreationRequest">
+        <Property Name="AdditionalSiteFeatureIds" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="AdditionalWebFeatureIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="ChannelGroupId" Type="Edm.Guid" Nullable="false" />
         <Property Name="Classification" Type="Edm.String" />
         <Property Name="Description" Type="Edm.String" />
@@ -30539,10 +30552,11 @@
       </ComplexType>
       <EntityType Name="SharedDocumentInfo">
         <Key>
-          <PropertyRef Name="CallerStack" />
+          <PropertyRef Name="Activity" />
         </Key>
+        <Property Name="Activity" Type="Edm.String" Nullable="false" />
         <Property Name="Author" Type="SP.Sharing.Principal" />
-        <Property Name="CallerStack" Type="Edm.String" Nullable="false" />
+        <Property Name="CallerStack" Type="Edm.String" />
         <Property Name="ContentTypeId" Type="SP.ContentTypeId" />
         <Property Name="DriveAccessToken" Type="Edm.String" />
         <Property Name="DriveAccessTokenV21" Type="Edm.String" />
@@ -31330,8 +31344,6 @@
       </ComplexType>
       <ComplexType Name="RecentAdminActionReportPayload">
         <Property Name="actions" Type="Edm.String" />
-        <Property Name="createdByEmail" Type="Edm.String" />
-        <Property Name="createdByName" Type="Edm.String" />
         <Property Name="name" Type="Edm.String" />
         <Property Name="queryEndDate" Type="Edm.DateTime" Nullable="false" />
         <Property Name="queryStartDate" Type="Edm.DateTime" Nullable="false" />
