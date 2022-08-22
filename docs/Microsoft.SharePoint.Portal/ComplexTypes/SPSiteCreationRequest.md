@@ -6,6 +6,8 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+AdditionalSiteFeatureIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+AdditionalWebFeatureIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 ChannelGroupId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 Classification (Edm.String) | ✅ | ✅ | ❌ | ❌
 Description (Edm.String) | ✅ | ✅ | ❌ | ❌

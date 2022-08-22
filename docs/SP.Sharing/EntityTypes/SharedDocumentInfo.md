@@ -6,6 +6,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+Activity (Edm.String) | ✅ | ❌ | ❌ | ❌
 Author (SP.Sharing.Principal) | ✅ | ✅ | ❌ | ❌
 CallerStack (Edm.String) | ✅ | ✅ | ❌ | ❌
 ContentTypeId (SP.ContentTypeId) | ✅ | ✅ | ❌ | ❌
