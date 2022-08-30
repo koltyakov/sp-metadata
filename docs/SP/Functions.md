@@ -48,6 +48,7 @@ ApplyTheme (SP.Web) | ✅ | ✅ | ✅ | ✅
 ApplyWebTemplate (SP.Web) | ✅ | ✅ | ✅ | ✅
 Approve (SP.File) | ✅ | ✅ | ✅ | ✅
 [AttachAssignmentToQuiz](./Functions/AttachAssignmentToQuiz.md) | ❌ | ❌ | ❌ | ✅
+AttachImage (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 BreakRoleInheritance (SP.List) | ✅ | ✅ | ✅ | ✅
 BreakRoleInheritance (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 BreakRoleInheritance (SP.SecurableObject) | ✅ | ✅ | ✅ | ✅
@@ -455,6 +456,7 @@ Recycle (SP.List) | ✅ | ✅ | ✅ | ✅
 Recycle (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 RecycleByID (Collection(SP.FileVersion)) | ✅ | ✅ | ❌ | ❌
 RecycleByLabel (Collection(SP.FileVersion)) | ✅ | ✅ | ❌ | ❌
+RecycleImage (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 RecycleObject (SP.Attachment) | ✅ | ✅ | ❌ | ❌
 RecycleWithETag (SP.File) | ✅ | ✅ | ❌ | ❌
 RecycleWithParameters (SP.File) | ✅ | ❌ | ❌ | ❌
@@ -610,7 +612,7 @@ SP_OrganizationNews | ✅ | ❌ | ❌ | ❌
 [SP_PinnedItems_UpdateItem](./Functions/SP_PinnedItems_UpdateItem.md) | ✅ | ❌ | ❌ | ❌
 SP_QuickAccessItemCollection_GetQuickAccessItems | ✅ | ❌ | ❌ | ❌
 <span title="SP_QuickAccessItemCollection_GetSubstrateQuickAccessItems">SP_QuickAccessItemCollection_GetSubstrateQuickAcce...</span> (SP QuickAccessItemCollection GetSubstrateQuickAccessItems) | ✅ | ❌ | ❌ | ❌
-SP_RecentFileCollection_GetRecentFiles | ✅ | ❌ | ❌ | ❌
+[SP_RecentFileCollection_GetRecentFiles](./Functions/SP_RecentFileCollection_GetRecentFiles.md) | ✅ | ❌ | ❌ | ❌
 [SP_RecentListCollection_GetRecentLists](./Functions/SP_RecentListCollection_GetRecentLists.md) | ✅ | ❌ | ❌ | ❌
 [<span title="SP_RecentListCollection_GetRecentListsWithPageContextInfo">SP_RecentListCollection_GetRecentListsWithPageCont...</span> (SP RecentListCollection GetRecentListsWithPageContextInfo)](./Functions/SP_RecentListCollection_GetRecentListsWithPageContextInfo.md) | ✅ | ❌ | ❌ | ❌
 [SP_RecentListCollection_UpdateRecentLists](./Functions/SP_RecentListCollection_UpdateRecentLists.md) | ✅ | ❌ | ❌ | ❌

@@ -5,6 +5,7 @@
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 Add (Collection(SP.Workflow.WorkflowAssociation)) | ✅ | ✅ | ✅ | ✅
+AttachImage (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 BreakRoleInheritance (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 DeleteObject (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 DeleteObject (SP.Workflow.WorkflowAssociation) | ✅ | ✅ | ✅ | ✅
@@ -23,6 +24,7 @@ MediaServiceUpdateV2 (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 OverridePolicyTip (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 ParseAndSetFieldValue (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 Recycle (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
+RecycleImage (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 RecycleWithParameters (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 ResetRoleInheritance (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 SetCommentsDisabled (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
