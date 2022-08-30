@@ -9090,6 +9090,13 @@
         <FunctionImport Name="ResetRoleInheritance" IsBindable="true">
           <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
         </FunctionImport>
+        <FunctionImport Name="AttachImage" ReturnType="SP.SPImageItem" IsBindable="true">
+          <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
+          <Parameter Name="imageStream" Type="Edm.Stream" />
+          <Parameter Name="imageName" Type="Edm.String" />
+          <Parameter Name="fieldInternalName" Type="Edm.String" />
+          <Parameter Name="bNewItem" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="DeleteObject" IsBindable="true">
           <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
         </FunctionImport>
@@ -9137,6 +9144,10 @@
         </FunctionImport>
         <FunctionImport Name="Recycle" ReturnType="Edm.Guid" IsBindable="true">
           <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
+        </FunctionImport>
+        <FunctionImport Name="RecycleImage" IsBindable="true">
+          <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
+          <Parameter Name="imageName" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="RecycleWithParameters" ReturnType="Edm.Guid" IsBindable="true">
           <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
@@ -11401,6 +11412,13 @@
         <FunctionImport Name="ResetRoleInheritance" IsBindable="true">
           <Parameter Name="this" Type="SP.ListItem" />
         </FunctionImport>
+        <FunctionImport Name="AttachImage" ReturnType="SP.SPImageItem" IsBindable="true">
+          <Parameter Name="this" Type="SP.ListItem" />
+          <Parameter Name="imageStream" Type="Edm.Stream" />
+          <Parameter Name="imageName" Type="Edm.String" />
+          <Parameter Name="fieldInternalName" Type="Edm.String" />
+          <Parameter Name="bNewItem" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="DeleteObject" IsBindable="true">
           <Parameter Name="this" Type="SP.ListItem" />
         </FunctionImport>
@@ -11448,6 +11466,10 @@
         </FunctionImport>
         <FunctionImport Name="Recycle" ReturnType="Edm.Guid" IsBindable="true">
           <Parameter Name="this" Type="SP.ListItem" />
+        </FunctionImport>
+        <FunctionImport Name="RecycleImage" IsBindable="true">
+          <Parameter Name="this" Type="SP.ListItem" />
+          <Parameter Name="imageName" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="RecycleWithParameters" ReturnType="Edm.Guid" IsBindable="true">
           <Parameter Name="this" Type="SP.ListItem" />
@@ -12089,7 +12111,9 @@
         </FunctionImport>
         <FunctionImport Name="SP_QuickAccessItemCollection_GetQuickAccessItems" ReturnType="Edm.String" IsSideEffecting="false" />
         <FunctionImport Name="SP_QuickAccessItemCollection_GetSubstrateQuickAccessItems" ReturnType="Edm.String" IsSideEffecting="false" />
-        <FunctionImport Name="SP_RecentFileCollection_GetRecentFiles" ReturnType="Edm.String" IsSideEffecting="false" />
+        <FunctionImport Name="SP_RecentFileCollection_GetRecentFiles" ReturnType="Edm.String" IsSideEffecting="false">
+          <Parameter Name="top" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="SP_RecentListCollection_GetRecentLists" ReturnType="Collection(SP.RecentList)" IsComposable="true" EntitySet="RecentLists">
           <Parameter Name="sortBy" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="templateTypeId" Type="Edm.String" />
@@ -21978,10 +22002,16 @@
       <Annotations Target="SP.ApiData/WebState(SP.Publishing.Navigation.StructuralNavigationCacheWrapper)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/AttachImage(SP.Workflow.SPWorkflowTask, Edm.Stream, Edm.String, Edm.String, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/DeleteWithParameters(SP.Workflow.SPWorkflowTask, SP.ListItemDeleteParameters)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetComments(SP.Workflow.SPWorkflowTask)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/RecycleImage(SP.Workflow.SPWorkflowTask, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/RecycleWithParameters(SP.Workflow.SPWorkflowTask, SP.ListItemDeleteParameters)">
@@ -22728,10 +22758,16 @@
       <Annotations Target="SP.ApiData/EnsureEventsList(Collection(SP.List))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/AttachImage(SP.ListItem, Edm.Stream, Edm.String, Edm.String, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/DeleteWithParameters(SP.ListItem, SP.ListItemDeleteParameters)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetComments(SP.ListItem)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/RecycleImage(SP.ListItem, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/RecycleWithParameters(SP.ListItem, SP.ListItemDeleteParameters)">
@@ -22944,7 +22980,7 @@
       <Annotations Target="SP.ApiData/SP_QuickAccessItemCollection_GetSubstrateQuickAccessItems()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_RecentFileCollection_GetRecentFiles()">
+      <Annotations Target="SP.ApiData/SP_RecentFileCollection_GetRecentFiles(Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_RecentListCollection_GetRecentLists(Edm.Int32, Edm.String)">
@@ -30329,6 +30365,7 @@
     </Schema>
     <Schema Namespace="SP.Sharing" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="Principal">
+        <Property Name="directoryObjectId" Type="Edm.String" />
         <Property Name="email" Type="Edm.String" />
         <Property Name="expiration" Type="Edm.String" />
         <Property Name="id" Type="Edm.Int32" Nullable="false" />
