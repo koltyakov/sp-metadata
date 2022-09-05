@@ -704,6 +704,7 @@
         <Property Name="UpdateResults" Type="Collection(SP.ListItemFormUpdateValue)" />
       </ComplexType>
       <ComplexType Name="SPListRule">
+        <Property Name="ActionParams" Type="Edm.String" />
         <Property Name="ActionType" Type="Edm.Int32" Nullable="false" />
         <Property Name="Condition" Type="Edm.String" />
         <Property Name="CreateDate" Type="Edm.DateTime" Nullable="false" />
@@ -713,7 +714,6 @@
         <Property Name="Outcome" Type="Edm.String" />
         <Property Name="Owner" Type="Edm.String" />
         <Property Name="RuleTemplateId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="TargetLibraryUrl" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
         <Property Name="TriggerType" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
@@ -7907,6 +7907,7 @@
         </FunctionImport>
         <FunctionImport Name="LoadMailDraft" ReturnType="SP.Publishing.CampaignCommunicationMailDraftData" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="requestParam" Type="SP.Publishing.CampaignCommunicationLoadMailDraftParam" />
         </FunctionImport>
         <FunctionImport Name="SaveMailDraft" ReturnType="SP.Publishing.CampaignCommunicationMailDraftData" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
@@ -10194,7 +10195,7 @@
           <Parameter Name="Url" Type="Edm.String" />
           <Parameter Name="XorHash" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="AddAndDeployStoreAppById" IsBindable="true">
+        <FunctionImport Name="AddAndDeployStoreAppById" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPAppAddAndDeployResponseInfomation" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
           <Parameter Name="CMU" Type="Edm.String" />
           <Parameter Name="isUpdatingApp" Type="Edm.Boolean" Nullable="false" />
@@ -11557,6 +11558,11 @@
         <FunctionImport Name="AddCrossFarmMessage" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="messagePayloadBase64" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="AddinPermissions" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPAppPermissionInfo" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="serverRelativeUrl" Type="Edm.String" />
+          <Parameter Name="appPrincipalId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="AddPlaceholderUser" ReturnType="Edm.Guid" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
@@ -14745,6 +14751,10 @@
         <FunctionImport Name="DeletePolicyDefinition" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="DeleteRecentAdminActionReport" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="reportId" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="ExportAdminListToCSV" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -20949,9 +20959,6 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminEndpoints/O365MessageCenterEndpoint">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminEndpoints/OneDriveAdminCenterEndpoint">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21471,7 +21478,7 @@
       <Annotations Target="SP.ApiData/Update(SP.Publishing.CampaignCommunication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/LoadMailDraft(SP.Publishing.CampaignCommunication)">
+      <Annotations Target="SP.ApiData/LoadMailDraft(SP.Publishing.CampaignCommunication, SP.Publishing.CampaignCommunicationLoadMailDraftParam)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SaveMailDraft(SP.Publishing.CampaignCommunication)">
@@ -22792,6 +22799,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetComplianceTagWithRecord(SP.ListItem, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/AddinPermissions(SP.Web, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/AddPlaceholderUser(SP.Web, Edm.String, Edm.String)">
@@ -27805,6 +27815,9 @@
       <ComplexType Name="ViewProgressAnalyticsData" BaseType="SP.Publishing.ViewData">
         <Property Name="PercentageViewed" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="CampaignCommunicationLoadMailDraftParam">
+        <Property Name="IsPreview" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="CommunicationSiteCreationResponse">
         <Property Name="SiteStatus" Type="Edm.Int32" Nullable="false" />
         <Property Name="SiteUrl" Type="Edm.String" />
@@ -29681,6 +29694,9 @@
         <Property Name="AssetId" Type="Edm.String" />
         <Property Name="IsUpgradeAvailable" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="SPAppAddAndDeployResponseInfomation">
+        <Property Name="ListItemUniqueId" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="SPAppInstallationInfo">
         <Property Name="AppPrincipalId" Type="Edm.String" />
         <Property Name="AppSource" Type="Edm.String" />
@@ -29704,6 +29720,23 @@
         <Property Name="WebId" Type="Edm.Guid" Nullable="false" />
         <Property Name="WebName" Type="Edm.String" />
         <Property Name="WebUrl" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SPAppPermissionInfo">
+        <Property Name="allowAppOnly" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="siteCollectionScopedPermissions" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPSiteCollectionScopedPermissionInfo)" />
+        <Property Name="tenantScopedPermissions" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPTenantScopedPermissionInfo)" />
+      </ComplexType>
+      <ComplexType Name="SPSiteCollectionScopedPermissionInfo">
+        <Property Name="listId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="right" Type="Edm.String" />
+        <Property Name="siteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="webId" Type="Edm.Guid" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="SPTenantScopedPermissionInfo">
+        <Property Name="feature" Type="Edm.String" />
+        <Property Name="id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="right" Type="Edm.String" />
+        <Property Name="scope" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPStoreAppCreateByIdInformation">
         <Property Name="CMU" Type="Edm.String" />
@@ -30218,25 +30251,6 @@
         <Property Name="columnName" Type="Edm.String" />
         <Property Name="columnValue" Type="Edm.String" />
       </ComplexType>
-      <ComplexType Name="TenantAdminPolicyAutomationExecutionHistory">
-        <Property Name="CorrelationId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="EndTime" Type="Edm.DateTime" />
-        <Property Name="ExecutionDetails" Type="Edm.String" />
-        <Property Name="ExpectedStartTime" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="FailureReason" Type="Edm.String" />
-        <Property Name="ImpactedDataFileURL" Type="Edm.String" />
-        <Property Name="ParentExecutionId" Type="Edm.Guid" />
-        <Property Name="PolicyFrequency" Type="Edm.Int32" Nullable="false" />
-        <Property Name="PolicyId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="PolicyName" Type="Edm.String" />
-        <Property Name="PolicyTemplate" Type="Edm.Int32" Nullable="false" />
-        <Property Name="PolicyVersion" Type="Edm.Int32" Nullable="false" />
-        <Property Name="RetryCount" Type="Edm.Int32" Nullable="false" />
-        <Property Name="StartTime" Type="Edm.DateTime" />
-        <Property Name="Status" Type="Edm.Int32" Nullable="false" />
-        <Property Name="WorkItemId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="PolicyWorkItemType" Type="Edm.Int32" Nullable="false" />
-      </ComplexType>
       <ComplexType Name="TenantAdminPolicyDefinition">
         <Property Name="createdBy" Type="Edm.String" />
         <Property Name="lastUpdatedTime" Type="Edm.DateTime" />
@@ -30251,6 +30265,26 @@
         <Property Name="policyType" Type="Edm.Int32" Nullable="false" />
         <Property Name="policyVersion" Type="Edm.Int32" Nullable="false" />
         <Property Name="updatedBy" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="TenantAdminPolicyExecutionHistory">
+        <Property Name="CorrelationId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="EndTime" Type="Edm.DateTime" />
+        <Property Name="ExecutionDetails" Type="Edm.String" />
+        <Property Name="ExecutionStatus" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ExpectedStartTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="FailureReason" Type="Edm.String" />
+        <Property Name="ImpactedDataFileURL" Type="Edm.String" />
+        <Property Name="ParentExecutionId" Type="Edm.Guid" />
+        <Property Name="PolicyFrequency" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PolicyId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="PolicyName" Type="Edm.String" />
+        <Property Name="PolicyState" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PolicyTemplate" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PolicyVersion" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RetryCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="StartTime" Type="Edm.DateTime" />
+        <Property Name="WorkItemId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="WorkItemType" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="TenantAdminRecentActionPayload">
         <Property Name="adminActionId" Type="Edm.String" />
@@ -31736,14 +31770,14 @@
       </EntityType>
       <EntityType Name="TenantAdminEndpoints">
         <Key>
-          <PropertyRef Name="CdnDefaultEndpoint" />
+          <PropertyRef Name="AADAdminCenterEndpoint" />
         </Key>
-        <Property Name="CdnDefaultEndpoint" Type="Edm.String" Nullable="false" />
+        <Property Name="AADAdminCenterEndpoint" Type="Edm.String" Nullable="false" />
+        <Property Name="CdnDefaultEndpoint" Type="Edm.String" />
         <Property Name="CFRMSGraphEndpoint" Type="Edm.String" />
         <Property Name="MiniMavenEndpoint" Type="Edm.String" />
         <Property Name="O365AdminCenterEndpoint" Type="Edm.String" />
         <Property Name="O365MessageCenterEndpoint" Type="Edm.String" />
-        <Property Name="OneDriveAdminCenterEndpoint" Type="Edm.String" />
       </EntityType>
       <EntityType Name="TenantAdminSettingsService">
         <Key>
