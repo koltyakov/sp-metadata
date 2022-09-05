@@ -19,6 +19,7 @@ ConnectSiteToHubSiteById (Microsoft.Online.SharePoint.TenantAdministration.Tenan
 CreatePolicyDefinition (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 CreateSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 DeletePolicyDefinition (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+DeleteRecentAdminActionReport (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ❌ (✅) | ❌ | ❌ | ❌
 ExportAdminListToCSV (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 ExportCSVFile (Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService) | ✅ | ❌ | ❌ | ❌
 ExportToCSV (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌

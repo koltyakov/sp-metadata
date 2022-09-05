@@ -6,6 +6,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+ActionParams (Edm.String) | ❌ (✅) | ❌ | ❌ | ❌
 ActionType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Condition (Edm.String) | ✅ | ❌ | ❌ | ❌
 CreateDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
@@ -15,6 +16,6 @@ LastModifiedDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 Outcome (Edm.String) | ✅ | ❌ | ❌ | ❌
 Owner (Edm.String) | ✅ | ❌ | ❌ | ❌
 RuleTemplateId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-TargetLibraryUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+TargetLibraryUrl (Edm.String) | ✅ (❌) | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ❌ | ❌ | ❌
 TriggerType (Edm.Int32) | ✅ | ❌ | ❌ | ❌

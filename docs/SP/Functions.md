@@ -43,6 +43,7 @@ AddValidateUpdateItem (SP.List) | ✅ | ✅ | ❌ | ❌
 AddValidateUpdateItemUsingPath (SP.List) | ✅ | ✅ | ❌ | ❌
 AddViewField (SP.ViewFieldCollection) | ✅ | ✅ | ✅ | ✅
 AddWithOverwrite (Collection(SP.Folder)) | ✅ | ✅ | ✅ | ❌
+AddinPermissions (SP.Web) | ❌ (✅) | ❌ | ❌ | ❌
 Append (SP.RequestVariable) | ❌ | ❌ | ❌ | ✅
 ApplyTheme (SP.Web) | ✅ | ✅ | ✅ | ✅
 ApplyWebTemplate (SP.Web) | ✅ | ✅ | ✅ | ✅
