@@ -7,7 +7,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [AcronymInformation](./ComplexTypes/AcronymInformation.md) | ✅ | ✅ | ❌ | ❌
 [BoostFieldsData](./ComplexTypes/BoostFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [CampaignCommunicationFieldsData](./ComplexTypes/CampaignCommunicationFieldsData.md) | ✅ | ❌ | ❌ | ❌
-[CampaignCommunicationLoadMailDraftParam](./ComplexTypes/CampaignCommunicationLoadMailDraftParam.md) | ❌ (✅) | ❌ | ❌ | ❌
+[CampaignCommunicationLoadMailDraftParam](./ComplexTypes/CampaignCommunicationLoadMailDraftParam.md) | ✅ | ❌ | ❌ | ❌
 [CampaignCommunicationMailDraftData](./ComplexTypes/CampaignCommunicationMailDraftData.md) | ✅ | ❌ | ❌ | ❌
 [CommunicationSiteCreationRequest](./ComplexTypes/CommunicationSiteCreationRequest.md) | ✅ | ✅ | ❌ | ❌
 [CommunicationSiteCreationResponse](./ComplexTypes/CommunicationSiteCreationResponse.md) | ✅ | ✅ | ❌ | ❌

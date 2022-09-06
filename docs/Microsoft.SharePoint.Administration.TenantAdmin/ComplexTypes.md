@@ -11,8 +11,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [OneDriveSharePointCollaborativeUsers](./ComplexTypes/OneDriveSharePointCollaborativeUsers.md) | ✅ | ❌ | ❌ | ❌
 [RecentAdminActionReport](./ComplexTypes/RecentAdminActionReport.md) | ✅ | ❌ | ❌ | ❌
 [TenantAdminListItemColumnValue](./ComplexTypes/TenantAdminListItemColumnValue.md) | ✅ | ❌ | ❌ | ❌
-[TenantAdminPolicyAutomationExecutionHistory](./ComplexTypes/TenantAdminPolicyAutomationExecutionHistory.md) | ✅ (❌) | ❌ | ❌ | ❌
 [TenantAdminPolicyDefinition](./ComplexTypes/TenantAdminPolicyDefinition.md) | ✅ | ❌ | ❌ | ❌
-[TenantAdminPolicyExecutionHistory](./ComplexTypes/TenantAdminPolicyExecutionHistory.md) | ❌ (✅) | ❌ | ❌ | ❌
+[TenantAdminPolicyExecutionHistory](./ComplexTypes/TenantAdminPolicyExecutionHistory.md) | ✅ | ❌ | ❌ | ❌
 [TenantAdminRecentAction](./ComplexTypes/TenantAdminRecentAction.md) | ✅ | ❌ | ❌ | ❌
 [TenantAdminRecentActionPayload](./ComplexTypes/TenantAdminRecentActionPayload.md) | ✅ | ❌ | ❌ | ❌
