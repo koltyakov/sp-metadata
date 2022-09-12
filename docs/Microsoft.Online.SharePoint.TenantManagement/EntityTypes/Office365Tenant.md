@@ -22,6 +22,7 @@ AllowGuestUserShareToUsersNotInSiteCollection (Edm.Boolean) | ✅ | ❌ | ❌ | 
 AllowLimitedAccessOnUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowOverrideForBlockUserInfoVisibility (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowSelectSGsInODBList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+AllowSelectSecurityGroupsInSPSitesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 AllowedDomainListForSyncClient (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 AnyoneLinkTrackUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ApplyAppEnforcedRestrictionsToAdHocRecipients (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -57,6 +58,7 @@ DefaultContentCenterSite (Microsoft.Online.SharePoint.TenantAdministration.SiteI
 DefaultLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DefaultODBMode (Edm.String) | ✅ | ❌ | ❌ | ❌
 DefaultSharingLinkType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+DenySelectSecurityGroupsInSPSitesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 DisableAddToOneDrive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableBackToClassic (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableCustomAppAuthentication (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -157,6 +159,7 @@ StreamLaunchConfigUpdateCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SyncAadB2BManagementPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyncPrivacyProfileProperties (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyntexBillingSubscriptionSettings (Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext) | ✅ | ❌ | ❌ | ❌
+TlsTokenBindingPolicyValue (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 UseFindPeopleInPeoplePicker (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UsePersistentCookiesForExplorerView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UserVoiceForFeedbackEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
