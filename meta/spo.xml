@@ -741,6 +741,7 @@
         <Property Name="MediaServiceLocation" Type="Edm.String" />
         <Property Name="MediaServiceMetadata" Type="Edm.String" />
         <Property Name="MediaServiceOCR" Type="Edm.String" />
+        <Property Name="MediaServiceProtectionKey" Type="Edm.String" />
         <Property Name="MediaServiceTranscript" Type="Edm.String" />
         <Property Name="MostRecentGenerationTime" Type="Edm.String" />
         <Property Name="SensitivityLabel" Type="Edm.String" />
@@ -12117,6 +12118,11 @@
         </FunctionImport>
         <FunctionImport Name="SP_QuickAccessItemCollection_GetQuickAccessItems" ReturnType="Edm.String" IsSideEffecting="false" />
         <FunctionImport Name="SP_QuickAccessItemCollection_GetSubstrateQuickAccessItems" ReturnType="Edm.String" IsSideEffecting="false" />
+        <FunctionImport Name="SP_RecentFileCollection_DeltaSync" ReturnType="Edm.String" IsSideEffecting="false">
+          <Parameter Name="top" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="startDateTime" Type="Edm.String" />
+          <Parameter Name="skipToken" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="SP_RecentFileCollection_GetRecentFiles" ReturnType="Edm.String" IsSideEffecting="false">
           <Parameter Name="top" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
@@ -22990,6 +22996,9 @@
       <Annotations Target="SP.ApiData/SP_QuickAccessItemCollection_GetSubstrateQuickAccessItems()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_RecentFileCollection_DeltaSync(Edm.Int32, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_RecentFileCollection_GetRecentFiles(Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -31665,6 +31674,7 @@
         <Property Name="DisableAppViews" Type="Edm.Int32" Nullable="false" />
         <Property Name="DisableCompanyWideSharingLinks" Type="Edm.Int32" Nullable="false" />
         <Property Name="DisableFlows" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ExcludeBlockDownloadPolicySiteOwners" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ExcludedBlockDownloadGroupIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="ExternalUserExpirationInDays" Type="Edm.Int32" Nullable="false" />
         <Property Name="GroupId" Type="Edm.Guid" Nullable="false" />
@@ -31832,6 +31842,7 @@
         <Property Name="AllowGuestUserShareToUsersNotInSiteCollection" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowLimitedAccessOnUnmanagedDevices" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowOverrideForBlockUserInfoVisibility" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AllowSelectSecurityGroupsInSPSitesList" Type="Collection(Edm.String)" />
         <Property Name="AllowSelectSGsInODBListInTenant" Type="Collection(Edm.String)" />
         <Property Name="AnyoneLinkTrackUsers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ApplyAppEnforcedRestrictionsToAdHocRecipients" Type="Edm.Boolean" Nullable="false" />
@@ -31869,6 +31880,7 @@
         <Property Name="DefaultLinkPermission" Type="Edm.Int32" Nullable="false" />
         <Property Name="DefaultODBMode" Type="Edm.String" />
         <Property Name="DefaultSharingLinkType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DenySelectSecurityGroupsInSPSitesList" Type="Collection(Edm.String)" />
         <Property Name="DisableAddToOneDrive" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableBackToClassic" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableCustomAppAuthentication" Type="Edm.Boolean" Nullable="false" />
@@ -32006,6 +32018,7 @@
         <Property Name="SyncAadB2BManagementPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyncPrivacyProfileProperties" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyntexBillingSubscriptionSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext" />
+        <Property Name="TlsTokenBindingPolicyValue" Type="Edm.Int32" Nullable="false" />
         <Property Name="UseFindPeopleInPeoplePicker" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UsePersistentCookiesForExplorerView" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UserVoiceForFeedbackEnabled" Type="Edm.Boolean" Nullable="false" />
@@ -33736,6 +33749,7 @@
         <Property Name="AllowGuestUserShareToUsersNotInSiteCollection" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowLimitedAccessOnUnmanagedDevices" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowOverrideForBlockUserInfoVisibility" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AllowSelectSecurityGroupsInSPSitesList" Type="Collection(Edm.String)" />
         <Property Name="AllowSelectSGsInODBList" Type="Collection(Edm.String)" />
         <Property Name="AnyoneLinkTrackUsers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ApplyAppEnforcedRestrictionsToAdHocRecipients" Type="Edm.Boolean" Nullable="false" />
@@ -33771,6 +33785,7 @@
         <Property Name="DefaultLinkPermission" Type="Edm.Int32" Nullable="false" />
         <Property Name="DefaultODBMode" Type="Edm.String" />
         <Property Name="DefaultSharingLinkType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DenySelectSecurityGroupsInSPSitesList" Type="Collection(Edm.String)" />
         <Property Name="DisableAddToOneDrive" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableBackToClassic" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableCustomAppAuthentication" Type="Edm.Boolean" Nullable="false" />
@@ -33871,6 +33886,7 @@
         <Property Name="SyncAadB2BManagementPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyncPrivacyProfileProperties" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyntexBillingSubscriptionSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext" />
+        <Property Name="TlsTokenBindingPolicyValue" Type="Edm.Int32" Nullable="false" />
         <Property Name="UseFindPeopleInPeoplePicker" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UsePersistentCookiesForExplorerView" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UserVoiceForFeedbackEnabled" Type="Edm.Boolean" Nullable="false" />
