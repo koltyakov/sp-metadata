@@ -742,6 +742,7 @@
         <Property Name="MediaServiceMetadata" Type="Edm.String" />
         <Property Name="MediaServiceOCR" Type="Edm.String" />
         <Property Name="MediaServiceProtectionKey" Type="Edm.String" />
+        <Property Name="MediaServiceSearchProperties" Type="Edm.String" />
         <Property Name="MediaServiceTranscript" Type="Edm.String" />
         <Property Name="MostRecentGenerationTime" Type="Edm.String" />
         <Property Name="SensitivityLabel" Type="Edm.String" />
@@ -5254,10 +5255,6 @@
           <Parameter Name="groupId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" IsComposable="true" EntitySet="Machinelearnings" />
-        <FunctionImport Name="CreateSite" ReturnType="Edm.Guid" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
-          <Parameter Name="siteCreationProperties" Type="Microsoft.Office.Server.ContentCenter.SiteCreationProperties" />
-        </FunctionImport>
         <FunctionImport Name="GetByContentTypeId" ReturnType="Microsoft.Office.Server.ContentCenter.SyntexModelsLandingInfo" IsComposable="true" IsBindable="true" EntitySet="SyntexModelsLandingInfos">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
           <Parameter Name="contentTypeId" Type="Edm.String" />
@@ -7909,6 +7906,10 @@
         <FunctionImport Name="LoadMailDraft" ReturnType="SP.Publishing.CampaignCommunicationMailDraftData" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
           <Parameter Name="requestParam" Type="SP.Publishing.CampaignCommunicationLoadMailDraftParam" />
+        </FunctionImport>
+        <FunctionImport Name="ResetEndpoint" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="requestParam" Type="SP.Publishing.CampaignCommunicationResetEndpointParam" />
         </FunctionImport>
         <FunctionImport Name="SaveMailDraft" ReturnType="SP.Publishing.CampaignCommunicationMailDraftData" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
@@ -11933,8 +11934,9 @@
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="serverRelativeUrl" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="ListACSServicePrincipals" ReturnType="Collection(Microsoft.SharePoint.Authentication.SPACSServicePrincipalInfo)" IsSideEffecting="false" IsBindable="true">
+        <FunctionImport Name="ListACSServicePrincipals" ReturnType="Microsoft.SharePoint.Authentication.SPACSServicePrincipalResponse" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="skipToken" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="ListPowerPlatformUserDetails" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
           <Parameter Name="this" Type="SP.Web" />
@@ -21487,6 +21489,9 @@
       <Annotations Target="SP.ApiData/LoadMailDraft(SP.Publishing.CampaignCommunication, SP.Publishing.CampaignCommunicationLoadMailDraftParam)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/ResetEndpoint(SP.Publishing.CampaignCommunication, SP.Publishing.CampaignCommunicationResetEndpointParam)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SaveMailDraft(SP.Publishing.CampaignCommunication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22903,7 +22908,7 @@
       <Annotations Target="SP.ApiData/InstalledAddins(SP.Web, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/ListACSServicePrincipals(SP.Web)">
+      <Annotations Target="SP.ApiData/ListACSServicePrincipals(SP.Web, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/ListPowerPlatformUserDetails(SP.Web)">
@@ -27827,6 +27832,9 @@
       <ComplexType Name="CampaignCommunicationLoadMailDraftParam">
         <Property Name="IsPreview" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="CampaignCommunicationResetEndpointParam">
+        <Property Name="ResetEndpoint" Type="Collection(Edm.String)" />
+      </ComplexType>
       <ComplexType Name="CommunicationSiteCreationResponse">
         <Property Name="SiteStatus" Type="Edm.Int32" Nullable="false" />
         <Property Name="SiteUrl" Type="Edm.String" />
@@ -30103,12 +30111,17 @@
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.Authentication" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="SPACSServicePrincipalInfo">
-        <Property Name="ApplicationEndpointAuthorities" Type="Collection(Edm.String)" />
-        <Property Name="ApplicationPrincipalNames" Type="Collection(Edm.String)" />
-        <Property Name="DisplayName" Type="Edm.String" />
-        <Property Name="NameIdentifier" Type="Edm.String" />
-        <Property Name="RedirectAddresses" Type="Collection(Edm.String)" />
-        <Property Name="TrustedForDelegation" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="appDomains" Type="Collection(Edm.String)" />
+        <Property Name="appId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="appPrincipalId" Type="Edm.String" />
+        <Property Name="createdDateTime" Type="Edm.String" />
+        <Property Name="redirectUri" Type="Edm.String" />
+        <Property Name="servicePrincipalId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="title" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SPACSServicePrincipalResponse">
+        <Property Name="acsServicePrincipals" Type="Collection(Microsoft.SharePoint.Authentication.SPACSServicePrincipalInfo)" />
+        <Property Name="skipToken" Type="Edm.String" />
       </ComplexType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.Administration" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
