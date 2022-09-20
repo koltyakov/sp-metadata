@@ -27,6 +27,7 @@ MediaServiceLocation (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceMetadata (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceOCR (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceProtectionKey (Edm.String) | ✅ | ❌ | ❌ | ❌
+MediaServiceSearchProperties (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceTranscript (Edm.String) | ✅ | ❌ | ❌ | ❌
 MostRecentGenerationTime (Edm.String) | ✅ | ❌ | ❌ | ❌
 SensitivityLabel (Edm.String) | ✅ | ❌ | ❌ | ❌

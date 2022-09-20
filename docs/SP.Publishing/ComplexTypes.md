@@ -9,6 +9,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CampaignCommunicationFieldsData](./ComplexTypes/CampaignCommunicationFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [CampaignCommunicationLoadMailDraftParam](./ComplexTypes/CampaignCommunicationLoadMailDraftParam.md) | ✅ | ❌ | ❌ | ❌
 [CampaignCommunicationMailDraftData](./ComplexTypes/CampaignCommunicationMailDraftData.md) | ✅ | ❌ | ❌ | ❌
+[CampaignCommunicationResetEndpointParam](./ComplexTypes/CampaignCommunicationResetEndpointParam.md) | ✅ | ❌ | ❌ | ❌
 [CommunicationSiteCreationRequest](./ComplexTypes/CommunicationSiteCreationRequest.md) | ✅ | ✅ | ❌ | ❌
 [CommunicationSiteCreationResponse](./ComplexTypes/CommunicationSiteCreationResponse.md) | ✅ | ✅ | ❌ | ❌
 [CopyToParams](./ComplexTypes/CopyToParams.md) | ✅ | ❌ | ❌ | ❌

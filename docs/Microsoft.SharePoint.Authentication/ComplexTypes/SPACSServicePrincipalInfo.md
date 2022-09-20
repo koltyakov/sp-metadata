@@ -6,9 +6,10 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-ApplicationEndpointAuthorities (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
-ApplicationPrincipalNames (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
-DisplayName (Edm.String) | ✅ | ❌ | ❌ | ❌
-NameIdentifier (Edm.String) | ✅ | ❌ | ❌ | ❌
-RedirectAddresses (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
-TrustedForDelegation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+appDomains (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+appId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+appPrincipalId (Edm.String) | ✅ | ❌ | ❌ | ❌
+createdDateTime (Edm.String) | ✅ | ❌ | ❌ | ❌
+redirectUri (Edm.String) | ✅ | ❌ | ❌ | ❌
+servicePrincipalId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+title (Edm.String) | ✅ | ❌ | ❌ | ❌
