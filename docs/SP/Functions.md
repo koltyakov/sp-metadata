@@ -645,6 +645,7 @@ SP_SPHSite_GetSPHSiteXGeo | ✅ | ❌ | ❌ | ❌
 SP_ServerSettings_GetBlockedFileExtensions | ✅ | ✅ | ✅ | ✅
 [SP_ServerSettings_GetGlobalInstalledLanguages](./Functions/SP_ServerSettings_GetGlobalInstalledLanguages.md) | ✅ | ✅ | ✅ | ✅
 SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌
+[<span title="SP_SharedWithMeItemCollection_GetSharedWithMeExternalItems">SP_SharedWithMeItemCollection_GetSharedWithMeExter...</span> (SP SharedWithMeItemCollection GetSharedWithMeExternalItems)](./Functions/SP_SharedWithMeItemCollection_GetSharedWithMeExternalItems.md) | ✅ | ❌ | ❌ | ❌
 [SP_SharedWithMeItemCollection_GetSharedWithMeItems](./Functions/SP_SharedWithMeItemCollection_GetSharedWithMeItems.md) | ✅ | ❌ | ❌ | ❌
 [SP_Site_Exists](./Functions/SP_Site_Exists.md) | ✅ | ✅ | ❌ | ❌
 [SP_Site_GetUrlById](./Functions/SP_Site_GetUrlById.md) | ✅ | ❌ | ❌ | ❌
@@ -778,6 +779,8 @@ UTCToLocalTime (SP.TimeZone) | ✅ | ✅ | ✅ | ✅
 UnPublish (SP.File) | ✅ | ✅ | ✅ | ✅
 UndoCheckOut (SP.File) | ✅ | ✅ | ✅ | ✅
 Uninstall (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
+UninstallAddinErrors (SP.Web) | ✅ | ❌ | ❌ | ❌
+UninstallAddins (SP.Web) | ✅ | ❌ | ❌ | ❌
 UnlockSmartTemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 UnpublishMappedView (SP.List) | ✅ | ✅ | ❌ | ❌
 UnregisterHubSite (SP.Site) | ✅ | ✅ | ❌ | ❌

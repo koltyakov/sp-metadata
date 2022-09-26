@@ -10,7 +10,9 @@ CanvasString (Edm.String) | ✅ | ❌ | ❌ | ❌
 CompletedAssets (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 CopyToStatusAPI (Edm.String) | ✅ | ❌ | ❌ | ❌
 ErrorMessage (Edm.String) | ✅ | ❌ | ❌ | ❌
+ErrorType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 JobState (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+NewPageUniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 NewPageUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 TotalAssetsToCopy (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 WorkItemId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

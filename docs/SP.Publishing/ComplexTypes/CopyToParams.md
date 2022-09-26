@@ -9,7 +9,7 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 AsTemplate (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CanvasContentOnly (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ComponentJSONString (Edm.String) | ✅ | ❌ | ❌ | ❌
-CreateNewPage (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+CreateIfMissing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DestinationPageUniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 DestinationType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DestinationWebUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

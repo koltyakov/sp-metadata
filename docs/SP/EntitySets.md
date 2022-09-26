@@ -293,6 +293,7 @@ ObjectSharingSettingss | ✅ | ✅ | ✅ | ❌
 Office365CommsMessagesServiceProxys | ✅ | ❌ | ❌ | ❌
 Office365Tenants | ✅ | ❌ | ❌ | ❌
 OnboardingServicesBetas | ✅ | ❌ | ❌ | ❌
+OneDriveSiteSharingInsightss | ✅ | ❌ | ❌ | ❌
 OpenWebParameterss | ✅ | ❌ | ❌ | ❌
 OrderInfos | ✅ | ✅ | ✅ | ✅
 OrgNews | ✅ | ❌ | ❌ | ❌
@@ -574,6 +575,7 @@ TimeZones | ✅ | ✅ | ✅ | ✅
 TokenResponses | ✅ | ❌ | ❌ | ❌
 Tokens | ✅ | ❌ | ❌ | ❌
 Tokens1 | ✅ | ❌ | ❌ | ❌
+TopFilesSharingInsightss | ✅ | ❌ | ❌ | ❌
 TrackedItemServices | ✅ | ❌ | ❌ | ❌
 TranslationJobStatuss | ✅ | ✅ | ✅ | ✅
 TranslationJobs | ✅ | ✅ | ✅ | ✅

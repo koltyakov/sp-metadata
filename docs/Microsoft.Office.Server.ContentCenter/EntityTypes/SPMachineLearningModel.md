@@ -25,6 +25,7 @@ ManagementAllowed (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ModelSettings (Edm.String) | ✅ | ❌ | ❌ | ❌
 ModelType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ModelTypeAsString (Edm.String) | ✅ | ❌ | ❌ | ❌
+ModelTypeInternalName (Edm.String) | ✅ | ❌ | ❌ | ❌
 Modified (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 ModifiedBy (Edm.String) | ✅ | ❌ | ❌ | ❌
 ObjectId (Edm.String) | ✅ | ❌ | ❌ | ❌

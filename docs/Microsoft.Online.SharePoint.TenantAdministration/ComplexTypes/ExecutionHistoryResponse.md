@@ -1,6 +1,6 @@
-# Complex Type: TenantAdminPolicyExecutionHistory
+# Complex Type: ExecutionHistoryResponse
 
-> Namespace: Microsoft.SharePoint.Administration.TenantAdmin
+> Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
 ## Properties
 
@@ -13,6 +13,7 @@ ExecutionStatus (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ExpectedStartTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 FailureReason (Edm.String) | ✅ | ❌ | ❌ | ❌
 ImpactedDataFileURL (Edm.String) | ✅ | ❌ | ❌ | ❌
+ItemId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ParentExecutionId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 PolicyFrequency (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 PolicyId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
