@@ -30,6 +30,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [GlobalAdminCheck](./EntityTypes/GlobalAdminCheck.md) | ✅ | ❌ | ❌ | ❌
 [GroupMoveJob](./EntityTypes/GroupMoveJob.md) | ✅ | ❌ | ❌ | ❌
 [GroupMoveJobEntityData](./EntityTypes/GroupMoveJobEntityData.md) | ✅ | ❌ | ❌ | ❌
+[HasMnALicense](./EntityTypes/HasMnALicense.md) | ✅ | ❌ | ❌ | ❌
 [JobEntityData](./EntityTypes/JobEntityData.md) | ✅ | ❌ | ❌ | ❌
 [MoveJob](./EntityTypes/MoveJob.md) | ✅ | ❌ | ❌ | ❌
 [MoveJobEntityData](./EntityTypes/MoveJobEntityData.md) | ✅ | ❌ | ❌ | ❌
@@ -46,6 +47,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [TaxonomyReplicationParameters](./EntityTypes/TaxonomyReplicationParameters.md) | ✅ | ❌ | ❌ | ❌
 [TenantInformation](./EntityTypes/TenantInformation.md) | ✅ | ❌ | ❌ | ❌
 [UnifiedGroup](./EntityTypes/UnifiedGroup.md) | ✅ | ❌ | ❌ | ❌
+[UserMnAODMoveValidationResult](./EntityTypes/UserMnAODMoveValidationResult.md) | ✅ | ❌ | ❌ | ❌
 [UserMoveJob](./EntityTypes/UserMoveJob.md) | ✅ | ❌ | ❌ | ❌
 [UserMoveJobEntityData](./EntityTypes/UserMoveJobEntityData.md) | ✅ | ❌ | ❌ | ❌
 [UserPersonalSiteId](./EntityTypes/UserPersonalSiteId.md) | ✅ | ❌ | ❌ | ❌

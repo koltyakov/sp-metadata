@@ -186,6 +186,7 @@ GroupServices | ✅ | ✅ | ❌ | ❌
 Groups | ✅ | ✅ | ✅ | ✅
 Groups1 | ✅ | ✅ | ✅ | ❌
 Groupsitemanagers | ✅ | ✅ | ✅ | ❌
+HasMnALicenses | ✅ | ❌ | ❌ | ❌
 HashTagCollections | ✅ | ✅ | ✅ | ✅
 HashtagStoreManagers | ❌ | ✅ | ❌ | ❌
 HomeSiteNavigationSettingss | ✅ | ❌ | ❌ | ❌
@@ -591,6 +592,7 @@ UserActionAPIs | ✅ | ✅ | ❌ | ❌
 UserCustomActions | ✅ | ✅ | ✅ | ✅
 UserExperienceStates | ✅ | ❌ | ❌ | ❌
 UserInfos | ✅ | ✅ | ❌ | ❌
+UserMnAODMoveValidationResults | ✅ | ❌ | ❌ | ❌
 UserMoveJobEntityDatas | ✅ | ❌ | ❌ | ❌
 UserOrderedSessionManagers | ✅ | ✅ | ✅ | ✅
 UserPermissions | ✅ | ✅ | ❌ | ❌
