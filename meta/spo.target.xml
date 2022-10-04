@@ -4066,6 +4066,7 @@
         <EntitySet Name="GeoMoveTenantCompatibilityChecks" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.GeoMoveTenantCompatibilityCheck" />
         <EntitySet Name="GeoTenantInstanceInformationEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.GeoTenantInstanceInformationEntityData" />
         <EntitySet Name="GlobalAdminChecks" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.GlobalAdminCheck" />
+        <EntitySet Name="HasMnALicenses" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.HasMnALicense" />
         <EntitySet Name="JobEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.JobEntityData" />
         <EntitySet Name="MoveJobs" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.MoveJob" />
         <EntitySet Name="MoveJobEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.MoveJobEntityData" />
@@ -4080,6 +4081,7 @@
         <EntitySet Name="TaxonomyReplicationParameterss" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.TaxonomyReplicationParameters" />
         <EntitySet Name="TenantInformations" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.TenantInformation" />
         <EntitySet Name="UnifiedGroups" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.UnifiedGroup" />
+        <EntitySet Name="UserMnAODMoveValidationResults" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.UserMnAODMoveValidationResult" />
         <EntitySet Name="UserPersonalSiteIds" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.UserPersonalSiteId" />
         <EntitySet Name="UserPersonalSiteLocations" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.UserPersonalSiteLocation" />
         <EntitySet Name="XTenantMoveCompatibilityChecks" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.XTenantMoveCompatibilityCheck" />
@@ -5818,6 +5820,9 @@
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJob" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_HasMnALicense" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.HasMnALicense" IsComposable="true" EntitySet="HasMnALicenses">
+          <Parameter Name="mnALicenseType" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoApiVersions" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoApiVersions" IsComposable="true" EntitySet="MultiGeoApiVersionss" />
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" IsComposable="true" EntitySet="MultiGeoServicesBetas" />
         <FunctionImport Name="DBSchemaCompatibilityCheck" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.DBSchemaCompatibilityCheck" IsComposable="true" IsBindable="true" EntitySet="DBSchemaCompatibilityChecks">
@@ -5825,6 +5830,10 @@
         </FunctionImport>
         <FunctionImport Name="GeoMoveCompatibilityChecks" ReturnType="Collection(Microsoft.Online.SharePoint.MultiGeo.Service.GeoMoveTenantCompatibilityCheck)" IsComposable="true" IsBindable="true" EntitySet="GeoMoveTenantCompatibilityChecks">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
+        </FunctionImport>
+        <FunctionImport Name="HasMnALicense" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.HasMnALicense" IsComposable="true" IsBindable="true" EntitySet="HasMnALicenses">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
+          <Parameter Name="mnALicenseType" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="OrgRelationGroupManagedPath" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationGroupManagedPath" IsComposable="true" IsBindable="true" EntitySet="OrgRelationGroupManagedPaths">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
@@ -5837,6 +5846,10 @@
         <FunctionImport Name="OrgRelationVerification" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationVerification" IsComposable="true" IsBindable="true" EntitySet="OrgRelationVerifications">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
           <Parameter Name="encodedVerificationQuery" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="UserMnAODMoveValidationResult" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.UserMnAODMoveValidationResult" IsComposable="true" IsBindable="true" EntitySet="UserMnAODMoveValidationResults">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
+          <Parameter Name="encodedQuery" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="UserPersonalSiteId" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.UserPersonalSiteId" IsComposable="true" IsBindable="true" EntitySet="UserPersonalSiteIds">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
@@ -5908,6 +5921,9 @@
           <Parameter Name="alias" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_UnifiedGroup" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.UnifiedGroup" IsComposable="true" EntitySet="UnifiedGroups" />
+        <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_UserMnAODMoveValidationResult" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.UserMnAODMoveValidationResult" IsComposable="true" EntitySet="UserMnAODMoveValidationResults">
+          <Parameter Name="encodedQuery" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="GetByDirection" ReturnType="Collection(Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob)" IsComposable="true" IsBindable="true" EntitySet="UserMoveJobEntityDatas">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob)" />
           <Parameter Name="direction" Type="Edm.String" />
@@ -24438,6 +24454,12 @@
         <Property Name="StartedDateInUtc" Type="Edm.DateTime" Nullable="false" />
         <Property Name="StateName" Type="Edm.String" />
       </EntityType>
+      <EntityType Name="HasMnALicense">
+        <Key>
+          <PropertyRef Name="HasRequestedMnALicense" />
+        </Key>
+        <Property Name="HasRequestedMnALicense" Type="Edm.Boolean" Nullable="false" />
+      </EntityType>
       <EntityType Name="JobEntityData" Abstract="true">
         <Key>
           <PropertyRef Name="Option" />
@@ -24578,6 +24600,12 @@
         <Property Name="GeoUsedStorageMB" Type="Edm.String" />
         <Property Name="QuotaType" Type="Edm.Int32" Nullable="false" />
         <Property Name="TenantStorageMB" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="UserMnAODMoveValidationResult">
+        <Key>
+          <PropertyRef Name="Result" />
+        </Key>
+        <Property Name="Result" Type="Edm.String" Nullable="false" />
       </EntityType>
       <EntityType Name="UserPersonalSiteId">
         <Key>
