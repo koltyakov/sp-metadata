@@ -1,4 +1,4 @@
-# Function Import: GlobalNav
+# Function Import: CurrentResourcesNav
 
 > Namespace: Microsoft.SharePoint.Navigation.REST
 
@@ -11,4 +11,4 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 includeVivaResources (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-source (Edm.String) | ✅ | ❌ | ❌ | ❌
+source (Edm.Int32) | ✅ | ❌ | ❌ | ❌

@@ -75,6 +75,7 @@ PreviewFeaturesEnabled (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 PrimaryColor (Edm.String) | ✅ | ❌ | ❌ | ❌
 QuickLaunchEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 RecycleBinEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+RelatedHubSiteIds (Edm.String) | ✅ | ❌ | ❌ | ❌
 RequestAccessEmail (Edm.String) | ✅ | ✅ | ✅ | ✅
 ResourcePath (SP.ResourcePath) | ✅ | ✅ | ❌ | ❌
 SaveSiteAsTemplateEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ✅

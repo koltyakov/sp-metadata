@@ -10,11 +10,13 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CollaborationInsightsData](./ComplexTypes/CollaborationInsightsData.md) | ✅ | ❌ | ❌ | ❌
 [CollaborativeUsers](./ComplexTypes/CollaborativeUsers.md) | ✅ | ❌ | ❌ | ❌
 [EventData](./ComplexTypes/EventData.md) | ✅ | ❌ | ❌ | ❌
+[GroupSitesActivityDetail](./ComplexTypes/GroupSitesActivityDetail.md) | ✅ | ❌ | ❌ | ❌
 [ModifiedProperty](./ComplexTypes/ModifiedProperty.md) | ✅ | ❌ | ❌ | ❌
 [OneDriveCollaborativeUsers](./ComplexTypes/OneDriveCollaborativeUsers.md) | ✅ | ❌ | ❌ | ❌
 [OneDriveSharePointCollaborativeUsers](./ComplexTypes/OneDriveSharePointCollaborativeUsers.md) | ✅ | ❌ | ❌ | ❌
 [PageResponse](./ComplexTypes/PageResponse.md) | ✅ | ❌ | ❌ | ❌
 [RecentAdminActionReport](./ComplexTypes/RecentAdminActionReport.md) | ✅ | ❌ | ❌ | ❌
+[TeamsSitesActivityDetail](./ComplexTypes/TeamsSitesActivityDetail.md) | ✅ | ❌ | ❌ | ❌
 [TenantAdminListItemColumnValue](./ComplexTypes/TenantAdminListItemColumnValue.md) | ✅ | ❌ | ❌ | ❌
 [TenantAdminPolicyDefinition](./ComplexTypes/TenantAdminPolicyDefinition.md) | ✅ | ❌ | ❌ | ❌
 [TenantAdminPolicyReport](./ComplexTypes/TenantAdminPolicyReport.md) | ✅ | ❌ | ❌ | ❌

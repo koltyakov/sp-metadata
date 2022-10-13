@@ -13,8 +13,9 @@ ExecutionStatus (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ExpectedStartTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 FailureReason (Edm.String) | ✅ | ❌ | ❌ | ❌
 ImpactedDataFileURL (Edm.String) | ✅ | ❌ | ❌ | ❌
+IsPreviewRun (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ItemId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-ParentExecutionId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+ParentItemId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 PolicyFrequency (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 PolicyId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 PolicyName (Edm.String) | ✅ | ❌ | ❌ | ❌

@@ -11,6 +11,7 @@ lastUpdatedTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 policyCreatedTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 policyCustomName (Edm.String) | ✅ | ❌ | ❌ | ❌
 policyDefinitionDetails (Edm.String) | ✅ | ❌ | ❌ | ❌
+policyDescription (Edm.String) | ✅ | ❌ | ❌ | ❌
 policyFrequencyUnit (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 policyFrequencyValue (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 policyId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
