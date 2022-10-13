@@ -1996,6 +1996,7 @@
         <Property Name="PrimaryColor" Type="Edm.String" />
         <Property Name="QuickLaunchEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RecycleBinEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="RelatedHubSiteIds" Type="Edm.String" />
         <Property Name="RequestAccessEmail" Type="Edm.String" />
         <Property Name="SaveSiteAsTemplateEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SearchBoxInNavBar" Type="Edm.Int32" Nullable="false" />
@@ -10097,6 +10098,11 @@
           <Parameter Name="this" Type="Microsoft.SharePoint.Navigation.REST.HomeSiteNavigationSettings" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Navigation_REST_NavigationServiceRest" ReturnType="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" IsComposable="true" EntitySet="NavigationServiceRests" />
+        <FunctionImport Name="CurrentResourcesNav" ReturnType="SP.MenuState" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" />
+          <Parameter Name="source" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="includeVivaResources" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="GetPublishingNavigationProviderType" ReturnType="Edm.Int32" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" />
           <Parameter Name="mapProviderName" Type="Edm.String" />
@@ -10104,6 +10110,7 @@
         <FunctionImport Name="GlobalNav" ReturnType="SP.MenuState" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" />
           <Parameter Name="source" Type="Edm.String" />
+          <Parameter Name="includeVivaResources" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GlobalNavEnabled" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" />
@@ -15239,6 +15246,7 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="policyInputParameters" Type="Microsoft.Online.SharePoint.TenantAdministration.CreatePolicyRequest" />
+          <Parameter Name="policyOperation" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="UpdateTenantAdminListItem" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -19933,6 +19941,9 @@
       <Annotations Target="SP.RecycleBinItem/LeafNamePath">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Web/RelatedHubSiteIds">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Web/RequestAccessEmail">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22499,6 +22510,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_PinnedItems_UpdateItem(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/CurrentResourcesNav(Microsoft.SharePoint.Navigation.REST.NavigationServiceRest, Edm.Int32, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetPublishingNavigationProviderType(Microsoft.SharePoint.Navigation.REST.NavigationServiceRest, Edm.String)">
@@ -30389,6 +30403,10 @@
         <Property Name="totalFilesSharedInternally" Type="Edm.Int32" Nullable="false" />
         <Property Name="userPrincipalName" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="GroupSitesActivityDetail">
+        <Property Name="GroupId" Type="Edm.String" />
+        <Property Name="LastActivityDate" Type="Edm.DateTime" />
+      </ComplexType>
       <ComplexType Name="PageResponse">
         <Property Name="ContinuationToken" Type="Edm.String" />
         <Property Name="PageNumber" Type="Edm.Int32" Nullable="false" />
@@ -30415,6 +30433,10 @@
         <Property Name="uALCorrelationId" Type="Edm.Guid" Nullable="false" />
         <Property Name="users" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="TeamsSitesActivityDetail">
+        <Property Name="LastActivityDate" Type="Edm.DateTime" />
+        <Property Name="TeamId" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="TenantAdminListItemColumnValue">
         <Property Name="columnName" Type="Edm.String" />
         <Property Name="columnValue" Type="Edm.String" />
@@ -30425,6 +30447,7 @@
         <Property Name="policyCreatedTime" Type="Edm.DateTime" />
         <Property Name="policyCustomName" Type="Edm.String" />
         <Property Name="policyDefinitionDetails" Type="Edm.String" />
+        <Property Name="policyDescription" Type="Edm.String" />
         <Property Name="policyFrequencyUnit" Type="Edm.Int32" Nullable="false" />
         <Property Name="policyFrequencyValue" Type="Edm.Int32" Nullable="false" />
         <Property Name="policyId" Type="Edm.Guid" Nullable="false" />
@@ -31493,6 +31516,7 @@
         <Property Name="isPreviewRun" Type="Edm.Boolean" Nullable="false" />
         <Property Name="policyCustomName" Type="Edm.String" />
         <Property Name="policyDefinitionDetails" Type="Edm.String" />
+        <Property Name="policyDescription" Type="Edm.String" />
         <Property Name="policyFrequencyUnit" Type="Edm.Int32" Nullable="false" />
         <Property Name="policyFrequencyValue" Type="Edm.Int32" Nullable="false" />
         <Property Name="policyId" Type="Edm.Guid" Nullable="false" />
@@ -31523,8 +31547,9 @@
         <Property Name="ExpectedStartTime" Type="Edm.DateTime" Nullable="false" />
         <Property Name="FailureReason" Type="Edm.String" />
         <Property Name="ImpactedDataFileURL" Type="Edm.String" />
+        <Property Name="IsPreviewRun" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ItemId" Type="Edm.Int32" Nullable="false" />
-        <Property Name="ParentExecutionId" Type="Edm.Guid" />
+        <Property Name="ParentItemId" Type="Edm.Int32" Nullable="false" />
         <Property Name="PolicyFrequency" Type="Edm.Int32" Nullable="false" />
         <Property Name="PolicyId" Type="Edm.Guid" Nullable="false" />
         <Property Name="PolicyName" Type="Edm.String" />
