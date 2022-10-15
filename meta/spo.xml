@@ -4323,8 +4323,6 @@
         <EntitySet Name="TypeDescriptors" EntityType="SP.BusinessData.TypeDescriptor" />
         <EntitySet Name="Campaignss" EntityType="SP.Campaigns" />
         <EntitySet Name="CampainAnalyticss" EntityType="SP.CampainAnalytics" />
-        <EntitySet Name="Changes" EntityType="SP.Change" />
-        <EntitySet Name="CheckedOutFiles" EntityType="SP.CheckedOutFile" />
         <EntitySet Name="ClientWebParts" EntityType="SP.ClientWebPart" />
         <EntitySet Name="CompatibilityRanges" EntityType="SP.CompatibilityRange" />
         <EntitySet Name="ComplianceRetentionWorkItemSubmitters" EntityType="SP.ComplianceFoundation.ComplianceRetentionWorkItemSubmitter" />
@@ -4337,6 +4335,8 @@
         <EntitySet Name="CopySourceInfos" EntityType="SP.CopySourceInfo" />
         <EntitySet Name="CreatablesInfos" EntityType="SP.CreatablesInfo" />
         <EntitySet Name="CurrencyLists" EntityType="SP.CurrencyList" />
+        <EntitySet Name="Changes" EntityType="SP.Change" />
+        <EntitySet Name="CheckedOutFiles" EntityType="SP.CheckedOutFile" />
         <EntitySet Name="DirectorySessions" EntityType="SP.Directory.DirectorySession" />
         <EntitySet Name="Groups" EntityType="SP.Directory.Group" />
         <EntitySet Name="Links" EntityType="SP.Directory.Link" />
@@ -16836,10 +16836,6 @@
           <End Role="ReturnParameterCollectionPartner" EntitySet="MethodExecutionResults" />
           <End Role="ReturnParameterCollection" EntitySet="EntityFieldValueDictionarys" />
         </AssociationSet>
-        <AssociationSet Name="SP_CheckedOutFile_CheckedOutBy_SP_User_CheckedOutByPartnerSet" Association="SP.SP_CheckedOutFile_CheckedOutBy_SP_User_CheckedOutByPartner">
-          <End Role="CheckedOutByPartner" EntitySet="CheckedOutFiles" />
-          <End Role="CheckedOutBy" EntitySet="Users1" />
-        </AssociationSet>
         <AssociationSet Name="SP_ContentType_DescriptionResource_SP_UserResource_DescriptionResourcePartnerSet" Association="SP.SP_ContentType_DescriptionResource_SP_UserResource_DescriptionResourcePartner">
           <End Role="DescriptionResourcePartner" EntitySet="ContentTypes" />
           <End Role="DescriptionResource" EntitySet="UserResources" />
@@ -16863,6 +16859,10 @@
         <AssociationSet Name="SP_ContentType_WorkflowAssociations_SP_Workflow_WorkflowAssociation_WorkflowAssociationsPartnerSet" Association="SP.Workflow.SP_ContentType_WorkflowAssociations_SP_Workflow_WorkflowAssociation_WorkflowAssociationsPartner">
           <End Role="WorkflowAssociationsPartner" EntitySet="ContentTypes" />
           <End Role="WorkflowAssociations" EntitySet="WorkflowAssociations" />
+        </AssociationSet>
+        <AssociationSet Name="SP_CheckedOutFile_CheckedOutBy_SP_User_CheckedOutByPartnerSet" Association="SP.SP_CheckedOutFile_CheckedOutBy_SP_User_CheckedOutByPartner">
+          <End Role="CheckedOutByPartner" EntitySet="CheckedOutFiles" />
+          <End Role="CheckedOutBy" EntitySet="Users1" />
         </AssociationSet>
         <AssociationSet Name="SP_Directory_Group_members_SP_Directory_User_membersPartnerSet" Association="SP.Directory.SP_Directory_Group_members_SP_Directory_User_membersPartner">
           <End Role="membersPartner" EntitySet="Groups" />
