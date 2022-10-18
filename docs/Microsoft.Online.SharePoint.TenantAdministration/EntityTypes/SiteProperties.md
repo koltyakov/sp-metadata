@@ -23,6 +23,8 @@ CurrentResourceUsage (Edm.Double) | ✅ | ❌ | ❌ | ❌
 DefaultLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DefaultLinkToExistingAccess (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DefaultLinkToExistingAccessReset (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+DefaultShareLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+DefaultShareLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DefaultSharingLinkType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DenyAddAndCustomizePages (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Description (Edm.String) | ✅ | ❌ | ❌ | ❌
@@ -55,6 +57,7 @@ LoopOverrideSharingCapability (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LoopSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MediaTranscription (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OverrideBlockUserInfoVisibility (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+OverrideSharingCapability (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 OverrideTenantAnonymousLinkExpirationPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 OverrideTenantExternalUserExpirationPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Owner (Edm.String) | ✅ | ❌ | ❌ | ❌

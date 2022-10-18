@@ -477,6 +477,7 @@ SignalStores | ✅ | ✅ | ✅ | ❌
 SiteCollectionAppCatalogAllowedItems | ✅ | ✅ | ❌ | ❌
 SiteCollectionCorporateCatalogAccessors | ✅ | ✅ | ❌ | ❌
 SiteCollectionManagementServices | ✅ | ❌ | ❌ | ❌
+SiteContentProcessingInfoProviders | ✅ | ❌ | ❌ | ❌
 SiteDesignPrincipals | ✅ | ✅ | ❌ | ❌
 SiteDesignRuns | ✅ | ❌ | ❌ | ❌
 SiteHealthSummarys | ✅ | ✅ | ✅ | ✅

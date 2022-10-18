@@ -311,6 +311,7 @@ GetFileByServerRelativePath (SP.RemoteWeb) | ✅ | ✅ | ❌ | ❌
 GetFileByServerRelativePath (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetFileByServerRelativeUrl (SP.RemoteWeb) | ✅ | ✅ | ✅ | ❌
 GetFileByServerRelativeUrl (SP.Web) | ✅ | ✅ | ✅ | ✅
+GetFileByStreamFrameUrl (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetFileByUrl (SP.RemoteWeb) | ✅ | ✅ | ❌ | ❌
 GetFileByUrl (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetFileByWOPIFrameUrl (SP.Web) | ✅ | ✅ | ❌ | ❌

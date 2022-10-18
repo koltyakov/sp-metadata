@@ -1,8 +1,8 @@
-# Function Import: SetSPHSite
+# Function Import: GetFileByStreamFrameUrl
 
 > Namespace: SP
 
-- Entity type: SP.SPHSite
+- Entity type: SP.Web
 - Is composable: false
 - Is bindable: false
 
@@ -10,5 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-siteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
-vivaConnectionsDefaultStart (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+streamFrameUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

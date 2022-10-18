@@ -11,6 +11,7 @@ EnableCrawlVersions (Microsoft.SharePoint.Client.Search.Administration.TenantCra
 EnableCrawlVersionsForTenant (Microsoft.SharePoint.Client.Search.Administration.TenantCrawlVersionsInfoProvider) | ✅ | ❌ | ❌ | ❌
 EnableRecycleBinDiscoverabilityForTenant (Microsoft.SharePoint.Client.Search.Administration.TenantRecycleBinInfoProvider) | ✅ | ❌ | ❌ | ❌
 GetAzureContainerSASToken (Microsoft.SharePoint.Client.Search.Administration.SiteMeTAInfoProvider) | ✅ | ❌ | ❌ | ❌
+GetAzureContainerToken (Microsoft.SharePoint.Client.Search.Administration.SiteContentProcessingInfoProvider) | ✅ | ❌ | ❌ | ❌
 GetCrawledUrls (Microsoft.SharePoint.Client.Search.Administration.DocumentCrawlLog) | ✅ | ✅ | ✅ | ✅
 GetSiteCrawlVersionStatus (Microsoft.SharePoint.Client.Search.Administration.TenantCrawlVersionsInfoProvider) | ✅ | ❌ | ❌ | ❌
 GetUnsuccesfulCrawledUrls (Microsoft.SharePoint.Client.Search.Administration.DocumentCrawlLog) | ✅ | ❌ | ❌ | ❌
@@ -19,4 +20,5 @@ IsCrawlVersionsEnabledForTenant (Microsoft.SharePoint.Client.Search.Administrati
 IsRecycleBinDiscoverabilityEnabledForTenant (Microsoft.SharePoint.Client.Search.Administration.TenantRecycleBinInfoProvider) | ✅ | ❌ | ❌ | ❌
 [<span title="Microsoft_SharePoint_Client_Search_Administration_DocumentCrawlLog">Microsoft_SharePoint_Client_Search_Administration...</span> (Microsoft SharePoint Client Search Administration DocumentCrawlLog)](./Functions/Microsoft_SharePoint_Client_Search_Administration_DocumentCrawlLog.md) | ❌ | ❌ | ❌ | ✅
 [<span title="Microsoft_SharePoint_Client_Search_Administration_SearchObjectOwner">Microsoft_SharePoint_Client_Search_Administration...</span> (Microsoft SharePoint Client Search Administration SearchObjectOwner)](./Functions/Microsoft_SharePoint_Client_Search_Administration_SearchObjectOwner.md) | ❌ | ❌ | ❌ | ✅
+ReportContentProcessingStatus (Microsoft.SharePoint.Client.Search.Administration.SiteContentProcessingInfoProvider) | ✅ | ❌ | ❌ | ❌
 ReportContentProcessingStatus (Microsoft.SharePoint.Client.Search.Administration.SiteMeTAInfoProvider) | ✅ | ❌ | ❌ | ❌

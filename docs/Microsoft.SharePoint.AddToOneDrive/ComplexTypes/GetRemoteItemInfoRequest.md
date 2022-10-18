@@ -10,8 +10,6 @@ IsCreateMountPointFlow (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MountedRemoteItemUniqueIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 RemoteItemListId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 RemoteItemSiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-RemoteItemSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 RemoteItemUniqueIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 RemoteItemWebId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 UserEmail (Edm.String) | ✅ | ❌ | ❌ | ❌
-UserLoginName (Edm.String) | ✅ | ❌ | ❌ | ❌

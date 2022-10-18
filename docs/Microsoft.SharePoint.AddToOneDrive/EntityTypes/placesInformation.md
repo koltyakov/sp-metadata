@@ -9,6 +9,7 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 inCallersDrive (Edm.String) | ✅ | ❌ | ❌ | ❌
 itemSourceListTitle (Edm.String) | ✅ | ❌ | ❌ | ❌
 itemSourcePath (Edm.String) | ✅ | ❌ | ❌ | ❌
+itemSourceSiteOwnerIdentity (Microsoft.SharePoint.AddToOneDrive.PlacesUserEntity) | ✅ | ❌ | ❌ | ❌
 itemSourceSiteTemplateId (Edm.String) | ✅ | ❌ | ❌ | ❌
 itemSourceSiteTitle (Edm.String) | ✅ | ❌ | ❌ | ❌
 placesCount (Edm.String) | ✅ | ❌ | ❌ | ❌
