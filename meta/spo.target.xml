@@ -7856,88 +7856,88 @@
           <Parameter Name="objectId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="PS_LookupTables_InvalidNameCharacters" ReturnType="Collection(Edm.String)" IsSideEffecting="false" />
-        <FunctionImport Name="SP_Publishing_CampaignCommunicationCollection" ReturnType="Collection(SP.Publishing.CampaignCommunication)" IsComposable="true" EntitySet="SitePageMetadatas" />
+        <FunctionImport Name="SP_Publishing_CampaignPublicationCollection" ReturnType="Collection(SP.Publishing.CampaignPublication)" IsComposable="true" EntitySet="SitePageMetadatas" />
         <FunctionImport Name="BoostNews" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="SitePageBoost" Type="SP.Publishing.BoostFieldsData" />
         </FunctionImport>
         <FunctionImport Name="CheckOut" ReturnType="Edm.Boolean" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
         <FunctionImport Name="CheckoutPage" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
         <FunctionImport Name="Copy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
         <FunctionImport Name="CopyTo" ReturnType="Microsoft.SharePoint.Publishing.PageCopyWithAssets.PageCopyResponse" IsBindable="true" EntitySet="PageCopyResponses">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="copyToParams" Type="SP.Publishing.CopyToParams" />
         </FunctionImport>
         <FunctionImport Name="CopyWithConfiguration" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="sitePageFlags" Type="Edm.String" />
           <Parameter Name="isNews" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="CreateNewsCopy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
         <FunctionImport Name="DemoteFromNews" ReturnType="Edm.Boolean" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
         <FunctionImport Name="DiscardPage" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
         <FunctionImport Name="GetVersion" ReturnType="SP.Publishing.SitePage" IsComposable="true" IsBindable="true" EntitySet="SitePageMetadatas">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="versionId" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="PromoteToNews" ReturnType="Edm.Boolean" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
         <FunctionImport Name="Publish" ReturnType="Edm.Boolean" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
         <FunctionImport Name="SaveDraft" ReturnType="Edm.Boolean" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="sitePage" Type="SP.Publishing.SitePageFieldsData" />
         </FunctionImport>
         <FunctionImport Name="SavePage" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="pageStream" Type="Edm.Stream" />
         </FunctionImport>
         <FunctionImport Name="SavePageAsDraft" ReturnType="Edm.Boolean" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="pageStream" Type="Edm.Stream" />
         </FunctionImport>
         <FunctionImport Name="SavePageAsTemplate" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
         <FunctionImport Name="SavePageAsTemplateOnMySite" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
         <FunctionImport Name="SchedulePublish" ReturnType="Edm.String" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="sitePage" Type="SP.Publishing.SitePageFieldsData" />
         </FunctionImport>
         <FunctionImport Name="SharePagePreviewByEmail" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="message" Type="Edm.String" />
           <Parameter Name="recipientEmails" Type="Collection(Edm.String)" />
         </FunctionImport>
         <FunctionImport Name="Update" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
-        <FunctionImport Name="LoadMailDraft" ReturnType="SP.Publishing.CampaignCommunicationMailDraftData" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
-          <Parameter Name="requestParam" Type="SP.Publishing.CampaignCommunicationLoadMailDraftParam" />
+        <FunctionImport Name="LoadMailDraft" ReturnType="SP.Publishing.CampaignPublicationMailDraftData" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+          <Parameter Name="requestParam" Type="SP.Publishing.CampaignPublicationLoadMailDraftParam" />
         </FunctionImport>
         <FunctionImport Name="ResetEndpoint" ReturnType="Edm.Boolean" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
-          <Parameter Name="requestParam" Type="SP.Publishing.CampaignCommunicationResetEndpointParam" />
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+          <Parameter Name="requestParam" Type="SP.Publishing.CampaignPublicationResetEndpointParam" />
         </FunctionImport>
-        <FunctionImport Name="SaveMailDraft" ReturnType="SP.Publishing.CampaignCommunicationMailDraftData" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.CampaignCommunication" />
+        <FunctionImport Name="SaveMailDraft" ReturnType="SP.Publishing.CampaignPublicationMailDraftData" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
         <FunctionImport Name="SP_Publishing_CommunicationSite" ReturnType="SP.Publishing.CommunicationSite" IsComposable="true" EntitySet="CommunicationSites" />
         <FunctionImport Name="Create" ReturnType="SP.Publishing.CommunicationSiteCreationResponse" IsBindable="true">
@@ -11696,6 +11696,10 @@
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="byPassForAutomation" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="EnsureSolutioningEnvironment" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="ensureCdsInstance" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="EnsureTenantAppCatalog" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="callerId" Type="Edm.String" />
@@ -15152,6 +15156,11 @@
           <Parameter Name="parameters" Type="SP.RenderListDataParameters" />
           <Parameter Name="overrideParameters" Type="SP.RenderListDataOverrideParameters" />
         </FunctionImport>
+        <FunctionImport Name="RenderPolicyExecutionsHistory" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="parameters" Type="SP.RenderListDataParameters" />
+          <Parameter Name="overrideParameters" Type="SP.RenderListDataOverrideParameters" />
+        </FunctionImport>
         <FunctionImport Name="RenderPolicyReport" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="parameters" Type="SP.RenderListDataParameters" />
@@ -17638,22 +17647,22 @@
       <Annotations Target="SP.Publishing.SitePageFieldsData/TopicHeader">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.Publishing.CampaignCommunicationFieldsData/CommunicationMetadata">
+      <Annotations Target="SP.Publishing.CampaignPublicationFieldsData/EndpointEmail">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.Publishing.CampaignCommunicationFieldsData/EndpointEmail">
+      <Annotations Target="SP.Publishing.CampaignPublicationFieldsData/EndpointSharePoint">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.Publishing.CampaignCommunicationFieldsData/EndpointSharePoint">
+      <Annotations Target="SP.Publishing.CampaignPublicationFieldsData/EndpointYammer">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.Publishing.CampaignCommunicationFieldsData/EndpointYammer">
+      <Annotations Target="SP.Publishing.CampaignPublicationFieldsData/PublicationMetadata">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.Publishing.CampaignCommunicationMailDraftData/DraftId">
+      <Annotations Target="SP.Publishing.CampaignPublicationMailDraftData/DraftId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.Publishing.CampaignCommunicationMailDraftData/GroupUpn">
+      <Annotations Target="SP.Publishing.CampaignPublicationMailDraftData/GroupUpn">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.CopyToParams">
@@ -20380,19 +20389,19 @@
       <Annotations Target="SP.Publishing.SitePage/Translations">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.Publishing.CampaignCommunication">
+      <Annotations Target="SP.Publishing.CampaignPublication">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.Publishing.CampaignCommunication/CommunicationMetadata">
+      <Annotations Target="SP.Publishing.CampaignPublication/EmailEndpoint">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.Publishing.CampaignCommunication/EmailEndpoint">
+      <Annotations Target="SP.Publishing.CampaignPublication/PublicationMetadata">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.Publishing.CampaignCommunication/SharePointEndpoint">
+      <Annotations Target="SP.Publishing.CampaignPublication/SharePointEndpoint">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.Publishing.CampaignCommunication/YammerEndpoint">
+      <Annotations Target="SP.Publishing.CampaignPublication/YammerEndpoint">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.CanCreatePageResponse">
@@ -21559,76 +21568,76 @@
       <Annotations Target="SP.ApiData/WriteCache2(SP.UserProfiles.PersonalCache, Collection(SP.UserProfiles.PersonalCacheItem), Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_Publishing_CampaignCommunicationCollection()">
+      <Annotations Target="SP.ApiData/SP_Publishing_CampaignPublicationCollection()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/BoostNews(SP.Publishing.CampaignCommunication, SP.Publishing.BoostFieldsData)">
+      <Annotations Target="SP.ApiData/BoostNews(SP.Publishing.CampaignPublication, SP.Publishing.BoostFieldsData)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/CheckOut(SP.Publishing.CampaignCommunication)">
+      <Annotations Target="SP.ApiData/CheckOut(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/CheckoutPage(SP.Publishing.CampaignCommunication)">
+      <Annotations Target="SP.ApiData/CheckoutPage(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Copy(SP.Publishing.CampaignCommunication)">
+      <Annotations Target="SP.ApiData/Copy(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/CopyTo(SP.Publishing.CampaignCommunication, SP.Publishing.CopyToParams)">
+      <Annotations Target="SP.ApiData/CopyTo(SP.Publishing.CampaignPublication, SP.Publishing.CopyToParams)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/CopyWithConfiguration(SP.Publishing.CampaignCommunication, Edm.String, Edm.Boolean)">
+      <Annotations Target="SP.ApiData/CopyWithConfiguration(SP.Publishing.CampaignPublication, Edm.String, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/CreateNewsCopy(SP.Publishing.CampaignCommunication)">
+      <Annotations Target="SP.ApiData/CreateNewsCopy(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/DemoteFromNews(SP.Publishing.CampaignCommunication)">
+      <Annotations Target="SP.ApiData/DemoteFromNews(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/DiscardPage(SP.Publishing.CampaignCommunication)">
+      <Annotations Target="SP.ApiData/DiscardPage(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/GetVersion(SP.Publishing.CampaignCommunication, Edm.Int32)">
+      <Annotations Target="SP.ApiData/GetVersion(SP.Publishing.CampaignPublication, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/PromoteToNews(SP.Publishing.CampaignCommunication)">
+      <Annotations Target="SP.ApiData/PromoteToNews(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Publish(SP.Publishing.CampaignCommunication)">
+      <Annotations Target="SP.ApiData/Publish(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SaveDraft(SP.Publishing.CampaignCommunication, SP.Publishing.SitePageFieldsData)">
+      <Annotations Target="SP.ApiData/SaveDraft(SP.Publishing.CampaignPublication, SP.Publishing.SitePageFieldsData)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SavePage(SP.Publishing.CampaignCommunication, Edm.Stream)">
+      <Annotations Target="SP.ApiData/SavePage(SP.Publishing.CampaignPublication, Edm.Stream)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SavePageAsDraft(SP.Publishing.CampaignCommunication, Edm.Stream)">
+      <Annotations Target="SP.ApiData/SavePageAsDraft(SP.Publishing.CampaignPublication, Edm.Stream)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SavePageAsTemplate(SP.Publishing.CampaignCommunication)">
+      <Annotations Target="SP.ApiData/SavePageAsTemplate(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SavePageAsTemplateOnMySite(SP.Publishing.CampaignCommunication)">
+      <Annotations Target="SP.ApiData/SavePageAsTemplateOnMySite(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SchedulePublish(SP.Publishing.CampaignCommunication, SP.Publishing.SitePageFieldsData)">
+      <Annotations Target="SP.ApiData/SchedulePublish(SP.Publishing.CampaignPublication, SP.Publishing.SitePageFieldsData)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SharePagePreviewByEmail(SP.Publishing.CampaignCommunication, Edm.String, Collection(Edm.String))">
+      <Annotations Target="SP.ApiData/SharePagePreviewByEmail(SP.Publishing.CampaignPublication, Edm.String, Collection(Edm.String))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Update(SP.Publishing.CampaignCommunication)">
+      <Annotations Target="SP.ApiData/Update(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/LoadMailDraft(SP.Publishing.CampaignCommunication, SP.Publishing.CampaignCommunicationLoadMailDraftParam)">
+      <Annotations Target="SP.ApiData/LoadMailDraft(SP.Publishing.CampaignPublication, SP.Publishing.CampaignPublicationLoadMailDraftParam)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/ResetEndpoint(SP.Publishing.CampaignCommunication, SP.Publishing.CampaignCommunicationResetEndpointParam)">
+      <Annotations Target="SP.ApiData/ResetEndpoint(SP.Publishing.CampaignPublication, SP.Publishing.CampaignPublicationResetEndpointParam)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SaveMailDraft(SP.Publishing.CampaignCommunication)">
+      <Annotations Target="SP.ApiData/SaveMailDraft(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Publishing_CommunicationSite()">
@@ -22967,6 +22976,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/EnsureEduClassSetup(SP.Web, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/EnsureSolutioningEnvironment(SP.Web, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/EnsureTenantAppCatalog(SP.Web, Edm.String)">
@@ -27728,13 +27740,13 @@
         <Property Name="Title" Type="Edm.String" />
         <Property Name="TopicHeader" Type="Edm.String" />
       </ComplexType>
-      <ComplexType Name="CampaignCommunicationFieldsData" BaseType="SP.Publishing.SitePageFieldsData">
-        <Property Name="CommunicationMetadata" Type="Edm.String" />
+      <ComplexType Name="CampaignPublicationFieldsData" BaseType="SP.Publishing.SitePageFieldsData">
         <Property Name="EndpointEmail" Type="Edm.String" />
         <Property Name="EndpointSharePoint" Type="Edm.String" />
         <Property Name="EndpointYammer" Type="Edm.String" />
+        <Property Name="PublicationMetadata" Type="Edm.String" />
       </ComplexType>
-      <ComplexType Name="CampaignCommunicationMailDraftData">
+      <ComplexType Name="CampaignPublicationMailDraftData">
         <Property Name="DraftId" Type="Edm.String" />
         <Property Name="GroupUpn" Type="Edm.String" />
       </ComplexType>
@@ -27990,10 +28002,10 @@
       <ComplexType Name="ViewProgressAnalyticsData" BaseType="SP.Publishing.ViewData">
         <Property Name="PercentageViewed" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
-      <ComplexType Name="CampaignCommunicationLoadMailDraftParam">
+      <ComplexType Name="CampaignPublicationLoadMailDraftParam">
         <Property Name="IsPreview" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
-      <ComplexType Name="CampaignCommunicationResetEndpointParam">
+      <ComplexType Name="CampaignPublicationResetEndpointParam">
         <Property Name="ResetEndpoint" Type="Collection(Edm.String)" />
       </ComplexType>
       <ComplexType Name="CommunicationSiteCreationResponse">
@@ -28083,9 +28095,9 @@
         <Property Name="SitePageFlags" Type="Edm.String" />
         <NavigationProperty Name="Translations" Relationship="SP.SP_Publishing_SitePage_Translations_SP_TranslationStatusCollection_TranslationsPartner" ToRole="Translations" FromRole="TranslationsPartner" />
       </EntityType>
-      <EntityType Name="CampaignCommunication" BaseType="SP.Publishing.SitePage">
-        <Property Name="CommunicationMetadata" Type="Edm.String" />
+      <EntityType Name="CampaignPublication" BaseType="SP.Publishing.SitePage">
         <Property Name="EmailEndpoint" Type="Edm.String" />
+        <Property Name="PublicationMetadata" Type="Edm.String" />
         <Property Name="SharePointEndpoint" Type="Edm.String" />
         <Property Name="YammerEndpoint" Type="Edm.String" />
       </EntityType>
