@@ -1,4 +1,4 @@
-# Complex Type: CampaignCommunicationResetEndpointParam
+# Complex Type: CampaignPublicationResetEndpointParam
 
 > Namespace: SP.Publishing
 

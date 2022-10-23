@@ -202,6 +202,7 @@ EnsureEventsList (Collection(SP.List)) | ✅ | ✅ | ❌ | ❌
 EnsureSignoffStatusField (SP.List) | ✅ | ❌ | ❌ | ❌
 EnsureSiteAssetsLibrary (Collection(SP.List)) | ✅ | ✅ | ✅ | ✅
 EnsureSitePagesLibrary (Collection(SP.List)) | ✅ | ✅ | ✅ | ✅
+EnsureSolutioningEnvironment (SP.Web) | ✅ | ❌ | ❌ | ❌
 EnsureTenantAppCatalog (SP.Web) | ✅ | ❌ | ❌ | ❌
 EnsureUser (SP.Web) | ✅ | ✅ | ✅ | ✅
 EnsureUserByObjectId (SP.Web) | ✅ | ❌ | ❌ | ❌

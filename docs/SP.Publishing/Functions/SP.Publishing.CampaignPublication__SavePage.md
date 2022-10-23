@@ -1,8 +1,8 @@
-# Function Import: SaveDraft
+# Function Import: SavePage
 
 > Namespace: SP.Publishing
 
-- Entity type: SP.Publishing.CampaignCommunication
+- Entity type: SP.Publishing.CampaignPublication
 - Is composable: false
 - Is bindable: false
 
@@ -10,4 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-sitePage (SP.Publishing.SitePageFieldsData) | ✅ | ❌ | ❌ | ❌
+pageStream (Edm.Stream) | ✅ | ❌ | ❌ | ❌

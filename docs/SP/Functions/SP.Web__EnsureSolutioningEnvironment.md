@@ -1,8 +1,8 @@
-# Function Import: GetVersion
+# Function Import: EnsureSolutioningEnvironment
 
-> Namespace: SP.Publishing
+> Namespace: SP
 
-- Entity type: SP.Publishing.CampaignCommunication
+- Entity type: SP.Web
 - Is composable: false
 - Is bindable: false
 
@@ -10,4 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-versionId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+ensureCdsInstance (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

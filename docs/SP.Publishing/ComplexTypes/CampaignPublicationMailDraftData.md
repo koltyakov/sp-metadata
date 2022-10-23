@@ -1,4 +1,4 @@
-# Complex Type: CampaignCommunicationMailDraftData
+# Complex Type: CampaignPublicationMailDraftData
 
 > Namespace: SP.Publishing
 

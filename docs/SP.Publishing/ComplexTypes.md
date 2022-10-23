@@ -6,10 +6,10 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [AcronymInformation](./ComplexTypes/AcronymInformation.md) | ✅ | ✅ | ❌ | ❌
 [BoostFieldsData](./ComplexTypes/BoostFieldsData.md) | ✅ | ❌ | ❌ | ❌
-[CampaignCommunicationFieldsData](./ComplexTypes/CampaignCommunicationFieldsData.md) | ✅ | ❌ | ❌ | ❌
-[CampaignCommunicationLoadMailDraftParam](./ComplexTypes/CampaignCommunicationLoadMailDraftParam.md) | ✅ | ❌ | ❌ | ❌
-[CampaignCommunicationMailDraftData](./ComplexTypes/CampaignCommunicationMailDraftData.md) | ✅ | ❌ | ❌ | ❌
-[CampaignCommunicationResetEndpointParam](./ComplexTypes/CampaignCommunicationResetEndpointParam.md) | ✅ | ❌ | ❌ | ❌
+[CampaignPublicationFieldsData](./ComplexTypes/CampaignPublicationFieldsData.md) | ✅ | ❌ | ❌ | ❌
+[CampaignPublicationLoadMailDraftParam](./ComplexTypes/CampaignPublicationLoadMailDraftParam.md) | ✅ | ❌ | ❌ | ❌
+[CampaignPublicationMailDraftData](./ComplexTypes/CampaignPublicationMailDraftData.md) | ✅ | ❌ | ❌ | ❌
+[CampaignPublicationResetEndpointParam](./ComplexTypes/CampaignPublicationResetEndpointParam.md) | ✅ | ❌ | ❌ | ❌
 [CommunicationSiteCreationRequest](./ComplexTypes/CommunicationSiteCreationRequest.md) | ✅ | ✅ | ❌ | ❌
 [CommunicationSiteCreationResponse](./ComplexTypes/CommunicationSiteCreationResponse.md) | ✅ | ✅ | ❌ | ❌
 [CopyToParams](./ComplexTypes/CopyToParams.md) | ✅ | ❌ | ❌ | ❌

@@ -1,8 +1,8 @@
-# Function Import: SchedulePublish
+# Function Import: SaveDraft
 
 > Namespace: SP.Publishing
 
-- Entity type: SP.Publishing.CampaignCommunication
+- Entity type: SP.Publishing.CampaignPublication
 - Is composable: false
 - Is bindable: false
 

@@ -1,8 +1,8 @@
-# Function Import: CopyTo
+# Function Import: LoadMailDraft
 
 > Namespace: SP.Publishing
 
-- Entity type: SP.Publishing.CampaignCommunication
+- Entity type: SP.Publishing.CampaignPublication
 - Is composable: false
 - Is bindable: false
 
@@ -10,4 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-copyToParams (SP.Publishing.CopyToParams) | ✅ | ❌ | ❌ | ❌
+requestParam (SP.Publishing.CampaignPublicationLoadMailDraftParam) | ✅ | ❌ | ❌ | ❌

@@ -1,4 +1,4 @@
-# Complex Type: CampaignCommunicationLoadMailDraftParam
+# Complex Type: CampaignPublicationLoadMailDraftParam
 
 > Namespace: SP.Publishing
 
