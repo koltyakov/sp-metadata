@@ -103,6 +103,10 @@
       <ComplexType Name="FieldUserValue" BaseType="SP.FieldLookupValue">
         <Property Name="Email" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="AccessRequestResponse">
+        <Property Name="requestedObjectId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="result" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="ApprovalsCreateRequestParameters">
         <Property Name="approvers" Type="Edm.String" />
         <Property Name="awaitAll" Type="Edm.Boolean" />
@@ -728,6 +732,7 @@
         <Property Name="ClassificationResult" Type="SP.ClassificationResult" />
         <Property Name="ContentVersion" Type="Edm.Int32" Nullable="false" />
         <Property Name="ETag" Type="Edm.String" />
+        <Property Name="IsMediaServiceRequest" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MachineLearningSampleMeta" Type="SP.MachineLearningSampleMeta" />
         <Property Name="MediaLengthInSeconds" Type="Edm.Int32" Nullable="false" />
         <Property Name="MediaServiceAutoKeyPoints" Type="Edm.String" />
@@ -2474,8 +2479,10 @@
         <Key>
           <PropertyRef Name="Id" />
         </Key>
+        <Property Name="Actions" Type="Edm.String" />
         <Property Name="AllowCancel" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowRespond" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Approvers" Type="Edm.String" />
         <Property Name="AwaitAll" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Details" Type="Edm.String" />
         <Property Name="Id" Type="Edm.String" Nullable="false" />
@@ -7925,6 +7932,9 @@
           <Parameter Name="message" Type="Edm.String" />
           <Parameter Name="recipientEmails" Type="Collection(Edm.String)" />
         </FunctionImport>
+        <FunctionImport Name="StartCoAuth" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+        </FunctionImport>
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
@@ -8029,6 +8039,9 @@
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
           <Parameter Name="message" Type="Edm.String" />
           <Parameter Name="recipientEmails" Type="Collection(Edm.String)" />
+        </FunctionImport>
+        <FunctionImport Name="StartCoAuth" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
         </FunctionImport>
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
@@ -8228,6 +8241,9 @@
           <Parameter Name="message" Type="Edm.String" />
           <Parameter Name="recipientEmails" Type="Collection(Edm.String)" />
         </FunctionImport>
+        <FunctionImport Name="StartCoAuth" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.RepostPage" />
+        </FunctionImport>
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
         </FunctionImport>
@@ -8394,6 +8410,9 @@
           <Parameter Name="message" Type="Edm.String" />
           <Parameter Name="recipientEmails" Type="Collection(Edm.String)" />
         </FunctionImport>
+        <FunctionImport Name="StartCoAuth" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
+        </FunctionImport>
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
         </FunctionImport>
@@ -8534,6 +8553,9 @@
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
           <Parameter Name="message" Type="Edm.String" />
           <Parameter Name="recipientEmails" Type="Collection(Edm.String)" />
+        </FunctionImport>
+        <FunctionImport Name="StartCoAuth" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.SitePage" />
         </FunctionImport>
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
@@ -8703,6 +8725,9 @@
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
           <Parameter Name="message" Type="Edm.String" />
           <Parameter Name="recipientEmails" Type="Collection(Edm.String)" />
+        </FunctionImport>
+        <FunctionImport Name="StartCoAuth" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
         </FunctionImport>
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
@@ -9556,6 +9581,10 @@
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.SPSiteManager" />
           <Parameter Name="workflowServiceAddress" Type="Edm.String" />
           <Parameter Name="workflowHostname" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="VivaBackendSiteUrlFromName" ReturnType="Microsoft.SharePoint.Portal.VivaSiteRequestInfo" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Portal.SPSiteManager" />
+          <Parameter Name="siteName" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Portal_SiteIconManager" ReturnType="Microsoft.SharePoint.Portal.SiteIconManager" IsComposable="true" EntitySet="SiteIconManagers" />
         <FunctionImport Name="GetSiteLogo" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
@@ -11633,6 +11662,10 @@
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="webTemplate" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="AvailableAddins" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPAvailableAddinsResponse" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="serverRelativeUrls" Type="Collection(Edm.String)" />
+        </FunctionImport>
         <FunctionImport Name="ConsentToPowerPlatform" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
           <Parameter Name="this" Type="SP.Web" />
         </FunctionImport>
@@ -11984,10 +12017,6 @@
         </FunctionImport>
         <FunctionImport Name="IncrementSiteClientTag" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
-        </FunctionImport>
-        <FunctionImport Name="InstalledAddins" ReturnType="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPAppInstallationInfo)" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="serverRelativeUrl" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="ListACSServicePrincipals" ReturnType="Microsoft.SharePoint.Authentication.SPACSServicePrincipalResponse" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
@@ -17659,6 +17688,9 @@
       <Annotations Target="SP.Publishing.CampaignPublicationFieldsData/PublicationMetadata">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.CampaignPublicationFieldsData/PublicationStatus">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.CampaignPublicationMailDraftData/DraftId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18245,6 +18277,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.AddToOneDrive.PlacesUserEntity">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.AccessRequestResponse">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.CountByDate">
@@ -20365,6 +20400,9 @@
       <Annotations Target="SP.Publishing.SitePage/CanvasJson1">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.SitePage/CoAuthState">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.SitePage/IsLikedByCurrentUser">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21628,6 +21666,9 @@
       <Annotations Target="SP.ApiData/SharePagePreviewByEmail(SP.Publishing.CampaignPublication, Edm.String, Collection(Edm.String))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/StartCoAuth(SP.Publishing.CampaignPublication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Update(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21725,6 +21766,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SharePagePreviewByEmail(SP.Publishing.FeedVideoPage, Edm.String, Collection(Edm.String))">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/StartCoAuth(SP.Publishing.FeedVideoPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Update(SP.Publishing.FeedVideoPage)">
@@ -21829,6 +21873,9 @@
       <Annotations Target="SP.ApiData/SharePagePreviewByEmail(SP.Publishing.RepostPage, Edm.String, Collection(Edm.String))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/StartCoAuth(SP.Publishing.RepostPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Update(SP.Publishing.RepostPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21908,6 +21955,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SharePagePreviewByEmail(SP.Publishing.SitePage3D, Edm.String, Collection(Edm.String))">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/StartCoAuth(SP.Publishing.SitePage3D)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Update(SP.Publishing.SitePage3D)">
@@ -22019,6 +22069,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SharePagePreviewByEmail(SP.Publishing.SitePage, Edm.String, Collection(Edm.String))">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/StartCoAuth(SP.Publishing.SitePage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Update(SP.Publishing.SitePage)">
@@ -22139,6 +22192,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SharePagePreviewByEmail(SP.Publishing.TopicSitePage, Edm.String, Collection(Edm.String))">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/StartCoAuth(SP.Publishing.TopicSitePage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Update(SP.Publishing.TopicSitePage)">
@@ -22385,6 +22441,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/UpdateWorkflow2013Endpoint(Microsoft.SharePoint.Portal.SPSiteManager, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/VivaBackendSiteUrlFromName(Microsoft.SharePoint.Portal.SPSiteManager, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetSiteLogo(Microsoft.SharePoint.Portal.SiteIconManager, Edm.String, Edm.Int32, Edm.Int32, Edm.String)">
@@ -22966,6 +23025,9 @@
       <Annotations Target="SP.ApiData/AddPlaceholderUser(SP.Web, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/AvailableAddins(SP.Web, Collection(Edm.String))">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/ConsentToPowerPlatform(SP.Web)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -23054,9 +23116,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/HubSiteDataAsStream(SP.Web, Edm.Boolean)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/InstalledAddins(SP.Web, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/ListACSServicePrincipals(SP.Web, Edm.String)">
@@ -27745,10 +27804,14 @@
         <Property Name="EndpointSharePoint" Type="Edm.String" />
         <Property Name="EndpointYammer" Type="Edm.String" />
         <Property Name="PublicationMetadata" Type="Edm.String" />
+        <Property Name="PublicationStatus" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="CampaignPublicationMailDraftData">
         <Property Name="DraftId" Type="Edm.String" />
         <Property Name="GroupUpn" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SitePageCoAuthState">
+        <Property Name="SharedLockId" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="CopyToParams">
         <Property Name="AsTemplate" Type="Edm.Boolean" Nullable="false" />
@@ -28087,6 +28150,7 @@
         <Property Name="AlternativeUrlMap" Type="Edm.String" />
         <Property Name="CanvasContent1" Type="Edm.String" />
         <Property Name="CanvasJson1" Type="Edm.String" />
+        <Property Name="CoAuthState" Type="SP.Publishing.SitePageCoAuthState" />
         <Property Name="IsLikedByCurrentUser" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsTemplate" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Language" Type="Edm.String" />
@@ -29183,6 +29247,10 @@
         <Property Name="quickAccessItemsError" Type="Edm.String" />
         <Property Name="quickAccessItemsErrorCode" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="VivaSiteRequestInfo">
+        <Property Name="IsAlreadyAdded" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SiteUrl" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="SPSiteCreationResponse">
         <Property Name="SiteId" Type="Edm.String" />
         <Property Name="SiteStatus" Type="Edm.Int32" Nullable="false" />
@@ -29884,32 +29952,36 @@
         <Property Name="AssetId" Type="Edm.String" />
         <Property Name="IsUpgradeAvailable" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="SPAddinInstanceInfo">
+        <Property Name="appInstanceId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="appPrincipalId" Type="Edm.String" />
+        <Property Name="appSource" Type="Edm.String" />
+        <Property Name="appWebFullUrl" Type="Edm.String" />
+        <Property Name="appWebId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="appWebName" Type="Edm.String" />
+        <Property Name="assetId" Type="Edm.String" />
+        <Property Name="creationTimeUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="currentSiteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="currentWebId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="currentWebName" Type="Edm.String" />
+        <Property Name="currentWebUrl" Type="Edm.String" />
+        <Property Name="installedBy" Type="Edm.String" />
+        <Property Name="installedSiteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="installedWebId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="installedWebName" Type="Edm.String" />
+        <Property Name="installedWebUrl" Type="Edm.String" />
+        <Property Name="launchUrl" Type="Edm.String" />
+        <Property Name="licensePurchaseTime" Type="Edm.DateTime" />
+        <Property Name="locale" Type="Edm.String" />
+        <Property Name="productId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="purchaserIdentity" Type="Edm.String" />
+        <Property Name="status" Type="Edm.String" />
+        <Property Name="tenantAppData" Type="Edm.String" />
+        <Property Name="tenantAppDataUpdateTime" Type="Edm.DateTime" />
+        <Property Name="title" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="SPAppAddAndDeployResponseInfomation">
         <Property Name="ListItemUniqueId" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="SPAppInstallationInfo">
-        <Property Name="AppPrincipalId" Type="Edm.String" />
-        <Property Name="AppSource" Type="Edm.String" />
-        <Property Name="AppWebFullUrl" Type="Edm.String" />
-        <Property Name="AppWebId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="AppWebName" Type="Edm.String" />
-        <Property Name="AssetId" Type="Edm.String" />
-        <Property Name="CreationTimeUtc" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
-        <Property Name="InstalledBy" Type="Edm.String" />
-        <Property Name="LaunchUrl" Type="Edm.String" />
-        <Property Name="LicensePurchaseTime" Type="Edm.DateTime" />
-        <Property Name="Locale" Type="Edm.String" />
-        <Property Name="ProductId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="PurchaserIdentity" Type="Edm.String" />
-        <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="Status" Type="Edm.String" />
-        <Property Name="TenantAppData" Type="Edm.String" />
-        <Property Name="TenantAppDataUpdateTime" Type="Edm.DateTime" />
-        <Property Name="Title" Type="Edm.String" />
-        <Property Name="WebId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="WebName" Type="Edm.String" />
-        <Property Name="WebUrl" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPAppPermissionInfo">
         <Property Name="allowAppOnly" Type="Edm.Boolean" Nullable="false" />
@@ -29927,6 +29999,14 @@
         <Property Name="id" Type="Edm.Guid" Nullable="false" />
         <Property Name="right" Type="Edm.String" />
         <Property Name="scope" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SPAvailableAddinsResponse">
+        <Property Name="addins" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPAddinInstanceInfo)" />
+        <Property Name="errorsWithServerRelativeUrl" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPErrorWithServerRelativeUrl)" />
+      </ComplexType>
+      <ComplexType Name="SPErrorWithServerRelativeUrl">
+        <Property Name="errorMessage" Type="Edm.String" />
+        <Property Name="serverRelativeUrl" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPFailToTriggerUninstallAddinJobResponse">
         <Property Name="appInstanceId" Type="Edm.Guid" Nullable="false" />
