@@ -1,4 +1,4 @@
-# Function Import: InstalledAddins
+# Function Import: AvailableAddins
 
 > Namespace: SP
 
@@ -10,4 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-serverRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+serverRelativeUrls (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌

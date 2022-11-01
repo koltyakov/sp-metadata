@@ -4,6 +4,7 @@
 
 Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+[AccessRequestResponse](./ComplexTypes/AccessRequestResponse.md) | ✅ | ❌ | ❌ | ❌
 [AlertCreationInformation](./ComplexTypes/AlertCreationInformation.md) | ✅ | ✅ | ❌ | ❌
 [AppLicense](./ComplexTypes/AppLicense.md) | ✅ | ✅ | ✅ | ✅
 [AppLicenseCollection](./ComplexTypes/AppLicenseCollection.md) | ✅ | ✅ | ✅ | ✅

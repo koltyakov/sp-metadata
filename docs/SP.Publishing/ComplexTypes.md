@@ -41,6 +41,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [RuleResult](./ComplexTypes/RuleResult.md) | ✅ | ❌ | ❌ | ❌
 [SharePagePreviewByEmailFieldsData](./ComplexTypes/SharePagePreviewByEmailFieldsData.md) | ✅ | ✅ | ❌ | ❌
 [SitePage3DFieldsData](./ComplexTypes/SitePage3DFieldsData.md) | ✅ | ❌ | ❌ | ❌
+[SitePageCoAuthState](./ComplexTypes/SitePageCoAuthState.md) | ✅ | ❌ | ❌ | ❌
 [SitePageFieldsData](./ComplexTypes/SitePageFieldsData.md) | ✅ | ✅ | ❌ | ❌
 [SitePageVersionInfo](./ComplexTypes/SitePageVersionInfo.md) | ✅ | ✅ | ❌ | ❌
 [SiteSharingEmailContext](./ComplexTypes/SiteSharingEmailContext.md) | ✅ | ✅ | ❌ | ❌

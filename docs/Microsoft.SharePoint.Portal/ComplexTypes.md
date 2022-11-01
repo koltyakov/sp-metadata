@@ -25,3 +25,4 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [RecentAndJoinedTeamsResponse](./ComplexTypes/RecentAndJoinedTeamsResponse.md) | ✅ | ❌ | ❌ | ❌
 [SPSiteCreationRequest](./ComplexTypes/SPSiteCreationRequest.md) | ✅ | ✅ | ❌ | ❌
 [SPSiteCreationResponse](./ComplexTypes/SPSiteCreationResponse.md) | ✅ | ✅ | ❌ | ❌
+[VivaSiteRequestInfo](./ComplexTypes/VivaSiteRequestInfo.md) | ✅ | ❌ | ❌ | ❌

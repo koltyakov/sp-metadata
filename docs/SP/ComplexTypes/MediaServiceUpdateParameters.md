@@ -10,6 +10,7 @@ AIPLabelExtractionStatus (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ClassificationResult (SP.ClassificationResult) | ✅ | ❌ | ❌ | ❌
 ContentVersion (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ETag (Edm.String) | ✅ | ❌ | ❌ | ❌
+IsMediaServiceRequest (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MachineLearningSampleMeta (SP.MachineLearningSampleMeta) | ✅ | ❌ | ❌ | ❌
 MediaLengthInSeconds (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MediaServiceAutoKeyPoints (Edm.String) | ✅ | ❌ | ❌ | ❌

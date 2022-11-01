@@ -50,6 +50,7 @@ ApplyWebTemplate (SP.Web) | ✅ | ✅ | ✅ | ✅
 Approve (SP.File) | ✅ | ✅ | ✅ | ✅
 [AttachAssignmentToQuiz](./Functions/AttachAssignmentToQuiz.md) | ❌ | ❌ | ❌ | ✅
 AttachImage (SP.ListItem) | ✅ | ❌ | ❌ | ❌
+AvailableAddins (SP.Web) | ✅ | ❌ | ❌ | ❌
 BreakRoleInheritance (SP.List) | ✅ | ✅ | ✅ | ✅
 BreakRoleInheritance (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 BreakRoleInheritance (SP.SecurableObject) | ✅ | ✅ | ✅ | ✅
@@ -398,7 +399,6 @@ HubSiteData (SP.Web) | ✅ | ✅ | ❌ | ❌
 HubSiteDataAsStream (SP.Web) | ✅ | ❌ | ❌ | ❌
 IncrementSiteClientTag (SP.Web) | ✅ | ✅ | ✅ | ❌
 Install (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
-InstalledAddins (SP.Web) | ✅ | ❌ | ❌ | ❌
 Invalidate (SP.Site) | ✅ | ✅ | ✅ | ✅
 JoinHubSite (SP.Site) | ✅ | ✅ | ❌ | ❌
 KnowledgeHub | ✅ | ❌ | ❌ | ❌

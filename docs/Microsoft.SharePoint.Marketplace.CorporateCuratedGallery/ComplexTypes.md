@@ -5,9 +5,11 @@
 Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [AppUpgradeAvailability](./ComplexTypes/AppUpgradeAvailability.md) | ✅ | ❌ | ❌ | ❌
+[SPAddinInstanceInfo](./ComplexTypes/SPAddinInstanceInfo.md) | ✅ | ❌ | ❌ | ❌
 [SPAppAddAndDeployResponseInfomation](./ComplexTypes/SPAppAddAndDeployResponseInfomation.md) | ✅ | ❌ | ❌ | ❌
-[SPAppInstallationInfo](./ComplexTypes/SPAppInstallationInfo.md) | ✅ | ❌ | ❌ | ❌
 [SPAppPermissionInfo](./ComplexTypes/SPAppPermissionInfo.md) | ✅ | ❌ | ❌ | ❌
+[SPAvailableAddinsResponse](./ComplexTypes/SPAvailableAddinsResponse.md) | ✅ | ❌ | ❌ | ❌
+[SPErrorWithServerRelativeUrl](./ComplexTypes/SPErrorWithServerRelativeUrl.md) | ✅ | ❌ | ❌ | ❌
 [SPFailToTriggerUninstallAddinJobResponse](./ComplexTypes/SPFailToTriggerUninstallAddinJobResponse.md) | ✅ | ❌ | ❌ | ❌
 [SPSiteCollectionScopedPermissionInfo](./ComplexTypes/SPSiteCollectionScopedPermissionInfo.md) | ✅ | ❌ | ❌ | ❌
 [SPStoreAppCreateByIdInformation](./ComplexTypes/SPStoreAppCreateByIdInformation.md) | ✅ | ❌ | ❌ | ❌

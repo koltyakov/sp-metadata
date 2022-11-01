@@ -77,6 +77,7 @@ Status (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ✅ | ❌ | ❌
 SyncGroupProperties (Microsoft.SharePoint.Portal.GroupService) | ✅ | ✅ | ❌ | ❌
 UnlinkGroup (Microsoft.SharePoint.Portal.SiteLinkingManager) | ✅ | ✅ | ❌ | ❌
 UpdateWorkflow2013Endpoint (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
+VivaBackendSiteUrlFromName (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
 groupsitemanager | ✅ | ✅ | ✅ | ❌
 sitelinkingmanager | ✅ | ✅ | ❌ | ❌
 sphomeservice | ✅ | ✅ | ❌ | ❌

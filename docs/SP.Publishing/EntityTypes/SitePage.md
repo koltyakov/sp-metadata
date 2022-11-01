@@ -9,6 +9,7 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 AlternativeUrlMap (Edm.String) | ✅ | ✅ | ❌ | ❌
 CanvasContent1 (Edm.String) | ✅ | ✅ | ❌ | ❌
 CanvasJson1 (Edm.String) | ✅ | ✅ | ❌ | ❌
+CoAuthState (SP.Publishing.SitePageCoAuthState) | ✅ | ❌ | ❌ | ❌
 IsLikedByCurrentUser (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsTemplate (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Language (Edm.String) | ✅ | ❌ | ❌ | ❌

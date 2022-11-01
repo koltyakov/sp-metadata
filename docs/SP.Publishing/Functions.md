@@ -248,6 +248,12 @@ SharePagePreviewByEmail (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
 SharePagePreviewByEmail (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 SharePagePreviewByEmail (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 ShareSiteByEmail (SP.Publishing.RichSharing) | ✅ | ✅ | ❌ | ❌
+StartCoAuth (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
+StartCoAuth (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
+StartCoAuth (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
+StartCoAuth (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
+StartCoAuth (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
+StartCoAuth (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 Status (SP.Publishing.CommunicationSite) | ✅ | ✅ | ❌ | ❌
 Subtitles (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 Templates (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
