@@ -48,6 +48,7 @@ ExcludeFromOfflineClient (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 ExemptFromBlockDownloadOfNonViewableFiles (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 FileSavePostProcessingEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 ForceCheckout (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+HasCopyMoveRules (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HasExternalDataSource (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 Hidden (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 HighPriorityMediaProcessing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

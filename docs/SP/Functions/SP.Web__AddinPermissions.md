@@ -10,5 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-appPrincipalId (Edm.String) | ✅ | ❌ | ❌ | ❌
-serverRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+addins (Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPAddinPermissionRequest)) | ✅ | ❌ | ❌ | ❌

@@ -10,4 +10,5 @@ DeletedPlaceholderColumnIds (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 NewName (Edm.String) | ✅ | ❌ | ❌ | ❌
 Operation (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Placeholders (Collection(SP.PlaceholderV2)) | ✅ | ❌ | ❌ | ❌
+SetTemplateViewAsDefaultView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Url (Edm.String) | ✅ | ❌ | ❌ | ❌

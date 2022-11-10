@@ -14,6 +14,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CommunicationSiteCreationResponse](./ComplexTypes/CommunicationSiteCreationResponse.md) | ✅ | ✅ | ❌ | ❌
 [CopyToParams](./ComplexTypes/CopyToParams.md) | ✅ | ❌ | ❌ | ❌
 [DateTimeCustomProperty](./ComplexTypes/DateTimeCustomProperty.md) | ✅ | ❌ | ❌ | ❌
+[EmailPublishingStatus](./ComplexTypes/EmailPublishingStatus.md) | ✅ | ❌ | ❌ | ❌
 [Error](./ComplexTypes/Error.md) | ✅ | ❌ | ❌ | ❌
 [FeedVideoPageFieldsData](./ComplexTypes/FeedVideoPageFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [FilePickerOptions](./ComplexTypes/FilePickerOptions.md) | ✅ | ❌ | ❌ | ❌
@@ -36,10 +37,13 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ProfileViewEditPolicies](./ComplexTypes/ProfileViewEditPolicies.md) | ✅ | ❌ | ❌ | ❌
 [PropertyValue](./ComplexTypes/PropertyValue.md) | ✅ | ❌ | ❌ | ❌
 [PublishSiteInformation](./ComplexTypes/PublishSiteInformation.md) | ✅ | ❌ | ❌ | ❌
+[PublishingStatusResponse](./ComplexTypes/PublishingStatusResponse.md) | ✅ | ❌ | ❌ | ❌
 [RepostPageFieldsData](./ComplexTypes/RepostPageFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [RuleErrorDetails](./ComplexTypes/RuleErrorDetails.md) | ✅ | ❌ | ❌ | ❌
 [RuleResult](./ComplexTypes/RuleResult.md) | ✅ | ❌ | ❌ | ❌
 [SharePagePreviewByEmailFieldsData](./ComplexTypes/SharePagePreviewByEmailFieldsData.md) | ✅ | ✅ | ❌ | ❌
+[SharePointPublishingStatus](./ComplexTypes/SharePointPublishingStatus.md) | ✅ | ❌ | ❌ | ❌
+[SharePointPublishingStatusResponse](./ComplexTypes/SharePointPublishingStatusResponse.md) | ✅ | ❌ | ❌ | ❌
 [SitePage3DFieldsData](./ComplexTypes/SitePage3DFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [SitePageCoAuthState](./ComplexTypes/SitePageCoAuthState.md) | ✅ | ❌ | ❌ | ❌
 [SitePageFieldsData](./ComplexTypes/SitePageFieldsData.md) | ✅ | ✅ | ❌ | ❌

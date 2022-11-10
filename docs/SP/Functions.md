@@ -392,7 +392,7 @@ GetViewFromPath (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetViewFromUrl (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetWOPIFrameUrl (SP.File) | ✅ | ✅ | ✅ | ❌
 GetWOPIFrameUrl (SP.ListItem) | ✅ | ✅ | ✅ | ✅
-GetWebDavUrl (SP.List) | ✅ | ✅ | ✅ | ❌
+GetWebDavUrl (SP.List) | ❌ | ✅ | ✅ | ❌
 GetWebPath (SP.Site) | ✅ | ✅ | ❌ | ❌
 GetWebTemplates (SP.Site) | ✅ | ✅ | ✅ | ✅
 HubSiteData (SP.Web) | ✅ | ✅ | ❌ | ❌

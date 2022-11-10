@@ -6,8 +6,11 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [AppUpgradeAvailability](./ComplexTypes/AppUpgradeAvailability.md) | ✅ | ❌ | ❌ | ❌
 [SPAddinInstanceInfo](./ComplexTypes/SPAddinInstanceInfo.md) | ✅ | ❌ | ❌ | ❌
+[SPAddinPermissionFailedInfo](./ComplexTypes/SPAddinPermissionFailedInfo.md) | ✅ | ❌ | ❌ | ❌
+[SPAddinPermissionInfo](./ComplexTypes/SPAddinPermissionInfo.md) | ✅ | ❌ | ❌ | ❌
+[SPAddinPermissionRequest](./ComplexTypes/SPAddinPermissionRequest.md) | ✅ | ❌ | ❌ | ❌
+[SPAddinPermissionResponse](./ComplexTypes/SPAddinPermissionResponse.md) | ✅ | ❌ | ❌ | ❌
 [SPAppAddAndDeployResponseInfomation](./ComplexTypes/SPAppAddAndDeployResponseInfomation.md) | ✅ | ❌ | ❌ | ❌
-[SPAppPermissionInfo](./ComplexTypes/SPAppPermissionInfo.md) | ✅ | ❌ | ❌ | ❌
 [SPAvailableAddinsResponse](./ComplexTypes/SPAvailableAddinsResponse.md) | ✅ | ❌ | ❌ | ❌
 [SPErrorWithServerRelativeUrl](./ComplexTypes/SPErrorWithServerRelativeUrl.md) | ✅ | ❌ | ❌ | ❌
 [SPFailToTriggerUninstallAddinJobResponse](./ComplexTypes/SPFailToTriggerUninstallAddinJobResponse.md) | ✅ | ❌ | ❌ | ❌

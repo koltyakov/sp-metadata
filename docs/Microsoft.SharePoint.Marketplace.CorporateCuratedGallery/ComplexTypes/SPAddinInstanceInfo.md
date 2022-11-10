@@ -6,8 +6,8 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+appIdentifier (Edm.String) | ✅ | ❌ | ❌ | ❌
 appInstanceId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-appPrincipalId (Edm.String) | ✅ | ❌ | ❌ | ❌
 appSource (Edm.String) | ✅ | ❌ | ❌ | ❌
 appWebFullUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 appWebId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

@@ -113,6 +113,7 @@ GetPermissionGroup (SP.Publishing.VideoServiceManager) | ✅ | ❌ | ❌ | ❌
 GetPlaybackMetadata (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 GetPlaybackUrl (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 GetPostsQuery (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | ❌ | ❌
+GetPublishingStatus (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 GetSiteStatus (SP.Publishing.PointPublishingSiteManager) | ✅ | ❌ | ❌ | ❌
 GetStreamingKeyAccessToken (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 GetSubtitleFile (Collection(SP.Publishing.SubtitleFile)) | ✅ | ❌ | ❌ | ❌

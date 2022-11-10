@@ -13,5 +13,6 @@ Approvers (Edm.String) | ✅ | ❌ | ❌ | ❌
 AwaitAll (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Details (Edm.String) | ✅ | ❌ | ❌ | ❌
 Id (Edm.String) | ✅ | ❌ | ❌ | ❌
+Responses (Edm.String) | ✅ | ❌ | ❌ | ❌
 Status (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ❌ | ❌ | ❌
