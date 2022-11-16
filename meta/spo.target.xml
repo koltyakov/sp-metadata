@@ -31122,6 +31122,7 @@
         <Property Name="defaultShareLinkScope" Type="Edm.Int32" Nullable="false" />
         <Property Name="defaultShareLinkToExistingAccess" Type="Edm.Boolean" Nullable="false" />
         <Property Name="directUrl" Type="Edm.String" />
+        <Property Name="displayName" Type="Edm.String" />
         <Property Name="domainRestrictionSettings" Type="SP.Sharing.DomainRestrictionSettings" />
         <Property Name="enforceIBSegmentFiltering" Type="Edm.Boolean" Nullable="false" />
         <Property Name="enforceSPOSearch" Type="Edm.Boolean" Nullable="false" />
@@ -32359,6 +32360,7 @@
         <Property Name="DisablePersonalListCreation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableReportProblemDialog" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableSpacesActivation" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisableVivaConnectionsAnalytics" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisallowInfectedFileDownload" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisplayNamesOfFileViewers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisplayNamesOfFileViewersInSpo" Type="Edm.Boolean" Nullable="false" />
@@ -34294,6 +34296,7 @@
         <Property Name="DisableOutlookPSTVersionTrimming" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisablePersonalListCreation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableSpacesActivation" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisableVivaConnectionsAnalytics" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisplayStartASiteOption" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EmailAttestationEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EmailAttestationReAuthDays" Type="Edm.Int32" Nullable="false" />
