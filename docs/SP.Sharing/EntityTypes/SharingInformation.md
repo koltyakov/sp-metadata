@@ -23,6 +23,7 @@ defaultShareLinkPermission (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 defaultShareLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 defaultShareLinkToExistingAccess (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 directUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
+displayName (Edm.String) | ✅ | ❌ | ❌ | ❌
 domainRestrictionSettings (SP.Sharing.DomainRestrictionSettings) | ✅ | ✅ | ❌ | ❌
 enforceIBSegmentFiltering (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 enforceSPOSearch (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

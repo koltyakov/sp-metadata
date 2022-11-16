@@ -72,6 +72,7 @@ DisableOutlookPSTVersionTrimming (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisablePersonalListCreation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableReportProblemDialog (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableSpacesActivation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+DisableVivaConnectionsAnalytics (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisabledModernListTemplateIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 DisabledWebPartIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 DisallowInfectedFileDownload (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
