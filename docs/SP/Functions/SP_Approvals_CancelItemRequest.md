@@ -10,6 +10,7 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 approvalId (Edm.String) | ✅ | ❌ | ❌ | ❌
-etag (Edm.String) | ✅ | ❌ | ❌ | ❌
-itemId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+itemId (Edm.String) | ✅ | ❌ | ❌ | ❌
 listId (Edm.String) | ✅ | ❌ | ❌ | ❌
+url (Edm.String) | ✅ | ❌ | ❌ | ❌
+version (Edm.String) | ✅ | ❌ | ❌ | ❌

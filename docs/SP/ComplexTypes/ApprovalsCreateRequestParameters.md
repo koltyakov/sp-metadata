@@ -9,7 +9,8 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 approvers (Edm.String) | ✅ | ❌ | ❌ | ❌
 awaitAll (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 details (Edm.String) | ✅ | ❌ | ❌ | ❌
-etag (Edm.String) | ✅ | ❌ | ❌ | ❌
-itemId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+itemId (Edm.String) | ✅ | ❌ | ❌ | ❌
 listId (Edm.String) | ✅ | ❌ | ❌ | ❌
 title (Edm.String) | ✅ | ❌ | ❌ | ❌
+url (Edm.String) | ✅ | ❌ | ❌ | ❌
+version (Edm.String) | ✅ | ❌ | ❌ | ❌

@@ -24,6 +24,7 @@ GetByUniqueId (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearnin
 GetByUniqueIdWithTokenization (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningSample)) | ✅ | ❌ | ❌ | ❌
 GetCDSMetadata (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
 GetExtractorNames (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)) | ✅ | ❌ | ❌ | ❌
+GetMachineLearningFlags (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
 GetModelIdForContentType (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
 GetModels (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
 GetRetentionLabel (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
@@ -40,6 +41,7 @@ InvokeConnectorQuery (Microsoft.Office.Server.ContentCenter.SPMachineLearningMod
 <span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItemEntityData">Microsoft_Office_Server_ContentCenter_SPMachineLea...</span> (Microsoft Office Server ContentCenter SPMachineLearningWorkItemEntityData) | ✅ | ❌ | ❌ | ❌
 Rename (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
 RenameExtractor (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
+SetMachineLearningFlags (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
 SetupContractsSolution (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)) | ✅ | ❌ | ❌ | ❌
 SetupPrimedLibrary (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)) | ✅ | ❌ | ❌ | ❌
 UnbindModelFromContentType (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)) | ✅ | ❌ | ❌ | ❌

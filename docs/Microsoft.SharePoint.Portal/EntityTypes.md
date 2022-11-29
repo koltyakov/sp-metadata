@@ -9,6 +9,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [GroupService](./EntityTypes/GroupService.md) | ✅ | ✅ | ❌ | ❌
 [GroupSiteManager](./EntityTypes/GroupSiteManager.md) | ✅ | ✅ | ✅ | ❌
 [MySiteRecommendations](./EntityTypes/MySiteRecommendations.md) | ✅ | ✅ | ✅ | ✅
+[RatingSettings](./EntityTypes/RatingSettings.md) | ✅ | ❌ | ❌ | ❌
 [SPHubSitesUtility](./EntityTypes/SPHubSitesUtility.md) | ✅ | ✅ | ❌ | ❌
 [SPSiteManager](./EntityTypes/SPSiteManager.md) | ✅ | ✅ | ❌ | ❌
 [SharePointHomeServiceContext](./EntityTypes/SharePointHomeServiceContext.md) | ✅ | ✅ | ❌ | ❌

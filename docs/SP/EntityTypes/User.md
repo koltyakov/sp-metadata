@@ -10,6 +10,7 @@ AadObjectId (SP.UserIdInfo) | ✅ | ❌ | ❌ | ❌
 Email (Edm.String) | ✅ | ✅ | ✅ | ✅
 EmailWithFallback (Edm.String) | ✅ | ❌ | ❌ | ❌
 Expiration (Edm.String) | ✅ | ❌ | ❌ | ❌
+HexCid (Edm.String) | ✅ | ❌ | ❌ | ❌
 IsEmailAuthenticationGuestUser (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 IsShareByEmailGuestUser (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 IsSiteAdmin (Edm.Boolean) | ✅ | ✅ | ✅ | ✅

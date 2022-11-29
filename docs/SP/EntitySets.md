@@ -370,6 +370,7 @@ QuizUtilitiess | ❌ | ❌ | ❌ | ✅
 Quizs | ❌ | ❌ | ❌ | ✅
 QuotaMigrationApis | ✅ | ❌ | ❌ | ❌
 RankingLabelings | ✅ | ✅ | ✅ | ✅
+RatingSettingss | ✅ | ❌ | ❌ | ❌
 RecentDocuments | ✅ | ✅ | ✅ | ❌
 RecentFileCollections | ✅ | ❌ | ❌ | ❌
 RecentListCollections | ✅ | ❌ | ❌ | ❌

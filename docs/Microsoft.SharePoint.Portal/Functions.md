@@ -56,6 +56,8 @@ Microsoft_SharePoint_Portal_GroupService | ✅ | ✅ | ❌ | ❌
 Microsoft_SharePoint_Portal_GroupSiteManager | ✅ | ✅ | ✅ | ❌
 [<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_FollowItem">Microsoft_SharePoint_Portal_MySiteRecommendations...</span> (Microsoft SharePoint Portal MySiteRecommendations FollowItem)](./Functions/Microsoft_SharePoint_Portal_MySiteRecommendations_FollowItem.md) | ✅ | ✅ | ✅ | ✅
 [<span title="Microsoft_SharePoint_Portal_MySiteRecommendations_StopFollowingItem">Microsoft_SharePoint_Portal_MySiteRecommendations...</span> (Microsoft SharePoint Portal MySiteRecommendations StopFollowingItem)](./Functions/Microsoft_SharePoint_Portal_MySiteRecommendations_StopFollowingItem.md) | ✅ | ✅ | ✅ | ✅
+[<span title="Microsoft_SharePoint_Portal_RatingSettings_GetListRating">Microsoft_SharePoint_Portal_RatingSettings_GetList...</span> (Microsoft SharePoint Portal RatingSettings GetListRating)](./Functions/Microsoft_SharePoint_Portal_RatingSettings_GetListRating.md) | ✅ | ❌ | ❌ | ❌
+[<span title="Microsoft_SharePoint_Portal_RatingSettings_SetListRating">Microsoft_SharePoint_Portal_RatingSettings_SetList...</span> (Microsoft SharePoint Portal RatingSettings SetListRating)](./Functions/Microsoft_SharePoint_Portal_RatingSettings_SetListRating.md) | ✅ | ❌ | ❌ | ❌
 Microsoft_SharePoint_Portal_SPHubSitesUtility | ✅ | ✅ | ❌ | ❌
 Microsoft_SharePoint_Portal_SPSiteManager | ✅ | ✅ | ❌ | ❌
 <span title="Microsoft_SharePoint_Portal_SharePointHomeServiceContext">Microsoft_SharePoint_Portal_SharePointHomeServiceC...</span> (Microsoft SharePoint Portal SharePointHomeServiceContext) | ✅ | ✅ | ❌ | ❌
