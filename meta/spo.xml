@@ -111,10 +111,11 @@
         <Property Name="approvers" Type="Edm.String" />
         <Property Name="awaitAll" Type="Edm.Boolean" />
         <Property Name="details" Type="Edm.String" />
-        <Property Name="etag" Type="Edm.String" />
-        <Property Name="itemId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="itemId" Type="Edm.String" />
         <Property Name="listId" Type="Edm.String" />
         <Property Name="title" Type="Edm.String" />
+        <Property Name="url" Type="Edm.String" />
+        <Property Name="version" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="ApprovalsProperties">
         <Property Name="ApproversAwaitAll" Type="Edm.Boolean" Nullable="false" />
@@ -1358,6 +1359,7 @@
         <Property Name="Email" Type="Edm.String" />
         <Property Name="EmailWithFallback" Type="Edm.String" />
         <Property Name="Expiration" Type="Edm.String" />
+        <Property Name="HexCid" Type="Edm.String" />
         <Property Name="IsEmailAuthenticationGuestUser" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsShareByEmailGuestUser" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsSiteAdmin" Type="Edm.Boolean" Nullable="false" />
@@ -4198,6 +4200,7 @@
         <EntitySet Name="CollaborationMailboxs" EntityType="Microsoft.SharePoint.Portal.CollaborationMailbox" />
         <EntitySet Name="CommunityModerations" EntityType="Microsoft.SharePoint.Portal.CommunityModeration" />
         <EntitySet Name="MySiteRecommendationss" EntityType="Microsoft.SharePoint.Portal.MySiteRecommendations" />
+        <EntitySet Name="RatingSettingss" EntityType="Microsoft.SharePoint.Portal.RatingSettings" />
         <EntitySet Name="SharePointHomeServiceContexts" EntityType="Microsoft.SharePoint.Portal.SharePointHomeServiceContext" />
         <EntitySet Name="SuiteNavDatas" EntityType="Microsoft.SharePoint.Portal.SuiteNavData" />
         <EntitySet Name="DocumentsSharedWithGroups" EntityType="Microsoft.SharePoint.Portal.UserProfiles.DocumentsSharedWithGroup" />
@@ -5291,6 +5294,10 @@
           <Parameter Name="environmentName" Type="Edm.String" />
           <Parameter Name="isTestEnvironment" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="GetMachineLearningFlags" ReturnType="Edm.Int32" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
+          <Parameter Name="docLibId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="GetModelIdForContentType" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
           <Parameter Name="contentTypeName" Type="Edm.String" />
@@ -5308,6 +5315,11 @@
         </FunctionImport>
         <FunctionImport Name="GetRetentionLabels" ReturnType="Collection(SP.CompliancePolicy.ComplianceTag)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
+        </FunctionImport>
+        <FunctionImport Name="SetMachineLearningFlags" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
+          <Parameter Name="docLibId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="machineLearningFlags" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="VerifyModelUrls" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
@@ -5459,6 +5471,11 @@
           <Parameter Name="complianceTagValue" Type="Edm.String" />
           <Parameter Name="blockDelete" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="blockEdit" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_CompliancePolicy_SPPolicyStoreProxy_ApplyLabelOnBulkItemsAppOnly" ReturnType="Collection(Edm.Int32)">
+          <Parameter Name="itemIds" Type="Collection(Edm.Int32)" Nullable="false" />
+          <Parameter Name="listUrl" Type="Edm.String" />
+          <Parameter Name="complianceTagValue" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="BulkUpdateDynamicScopeBindings" IsBindable="true">
           <Parameter Name="this" Type="SP.CompliancePolicy.SPPolicyStoreProxy" />
@@ -9522,6 +9539,13 @@
           <Parameter Name="itemID" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="comment" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Portal_RatingSettings_GetListRating" ReturnType="Edm.Int32" IsSideEffecting="false">
+          <Parameter Name="listID" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Portal_RatingSettings_SetListRating">
+          <Parameter Name="listID" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="ratingType" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Portal_SuiteNavData_GetSuiteNavData" ReturnType="Edm.String" IsSideEffecting="false" />
         <FunctionImport Name="Microsoft_SharePoint_Portal_SharePointHomeServiceContextBuilder" ReturnType="Microsoft.SharePoint.Portal.SharePointHomeServiceContextBuilder" IsComposable="true" EntitySet="Sphomeservices" />
         <FunctionImport Name="Context" ReturnType="Microsoft.SharePoint.Portal.SharePointHomeServiceContext" IsComposable="true" IsBindable="true" EntitySet="SharePointHomeServiceContexts">
@@ -13392,15 +13416,17 @@
         </FunctionImport>
         <FunctionImport Name="SP_Approvals_ApproveItemRequest">
           <Parameter Name="listId" Type="Edm.String" />
-          <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="etag" Type="Edm.String" />
+          <Parameter Name="itemId" Type="Edm.String" />
+          <Parameter Name="url" Type="Edm.String" />
+          <Parameter Name="version" Type="Edm.String" />
           <Parameter Name="approvalId" Type="Edm.String" />
           <Parameter Name="comments" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_Approvals_CancelItemRequest">
           <Parameter Name="listId" Type="Edm.String" />
-          <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="etag" Type="Edm.String" />
+          <Parameter Name="itemId" Type="Edm.String" />
+          <Parameter Name="url" Type="Edm.String" />
+          <Parameter Name="version" Type="Edm.String" />
           <Parameter Name="approvalId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_Approvals_CreateItemRequest" ReturnType="Edm.String">
@@ -13415,16 +13441,18 @@
         </FunctionImport>
         <FunctionImport Name="SP_Approvals_GetItemRequest" ReturnType="SP.ApprovalRequest" IsComposable="true" EntitySet="ApprovalRequests">
           <Parameter Name="listId" Type="Edm.String" />
-          <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="etag" Type="Edm.String" />
+          <Parameter Name="itemId" Type="Edm.String" />
+          <Parameter Name="url" Type="Edm.String" />
+          <Parameter Name="version" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_Approvals_GetProperties" ReturnType="SP.ApprovalsProperties" IsSideEffecting="false">
           <Parameter Name="listId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_Approvals_RejectItemRequest">
           <Parameter Name="listId" Type="Edm.String" />
-          <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="etag" Type="Edm.String" />
+          <Parameter Name="itemId" Type="Edm.String" />
+          <Parameter Name="url" Type="Edm.String" />
+          <Parameter Name="version" Type="Edm.String" />
           <Parameter Name="approvalId" Type="Edm.String" />
           <Parameter Name="comments" Type="Edm.String" />
         </FunctionImport>
@@ -14876,6 +14904,11 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="viewXml" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="FetchSplistRecords" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="parameters" Type="SP.RenderListDataParameters" />
+          <Parameter Name="overrideParameters" Type="SP.RenderListDataOverrideParameters" />
+        </FunctionImport>
         <FunctionImport Name="GetAdminListViews" ReturnType="Collection(SP.View)" IsComposable="true" IsBindable="true" EntitySet="Views">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
@@ -14887,6 +14920,9 @@
           <Parameter Name="columnName" Type="Edm.String" />
           <Parameter Name="columnValue" Type="Edm.String" />
           <Parameter Name="listName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetGroupSiteActivityData" ReturnType="Collection(Microsoft.SharePoint.Administration.TenantAdmin.GroupSitesActivityDetail)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
         <FunctionImport Name="GetHomeSites" ReturnType="Collection(SP.HomeSitesDetails)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -20645,6 +20681,9 @@
       <Annotations Target="SP.Publishing.Navigation.StructuralNavigationCacheWrapper">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Portal.RatingSettings">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Portal.SharePointHomeServiceContextBuilder">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21452,6 +21491,9 @@
       <Annotations Target="SP.ApiData/GetCDSMetadata(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Edm.String, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetMachineLearningFlags(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetModelIdForContentType(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21462,6 +21504,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetRetentionLabels(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetMachineLearningFlags(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Edm.Guid, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/VerifyModelUrls(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Collection(Edm.String))">
@@ -22377,6 +22422,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/RecentAndJoinedTeams(Microsoft.SharePoint.Portal.GroupSiteManager, Edm.Boolean, Edm.Boolean, Edm.Boolean, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Portal_RatingSettings_GetListRating(Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Portal_RatingSettings_SetListRating(Edm.Guid, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Portal_SPHubSitesUtility()">
@@ -23417,10 +23468,10 @@
       <Annotations Target="SP.ApiData/Update(SP.InformationRightsManagementFileSettings)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_Approvals_ApproveItemRequest(Edm.String, Edm.Int32, Edm.String, Edm.String, Edm.String)">
+      <Annotations Target="SP.ApiData/SP_Approvals_ApproveItemRequest(Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_Approvals_CancelItemRequest(Edm.String, Edm.Int32, Edm.String, Edm.String)">
+      <Annotations Target="SP.ApiData/SP_Approvals_CancelItemRequest(Edm.String, Edm.String, Edm.String, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Approvals_CreateItemRequest(SP.ApprovalsCreateRequestParameters)">
@@ -23432,13 +23483,13 @@
       <Annotations Target="SP.ApiData/SP_Approvals_Enable(Edm.String, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_Approvals_GetItemRequest(Edm.String, Edm.Int32, Edm.String)">
+      <Annotations Target="SP.ApiData/SP_Approvals_GetItemRequest(Edm.String, Edm.String, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Approvals_GetProperties(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_Approvals_RejectItemRequest(Edm.String, Edm.Int32, Edm.String, Edm.String, Edm.String)">
+      <Annotations Target="SP.ApiData/SP_Approvals_RejectItemRequest(Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Approvals_SetProperties(Edm.String, SP.ApprovalsProperties)">
@@ -29352,6 +29403,12 @@
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
       <EntityType Name="CommunityModeration" Abstract="true">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="RatingSettings" Abstract="true">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
