@@ -232,6 +232,12 @@ SavePageAsTemplateOnMySite (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplateOnMySite (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplateOnMySite (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplateOnMySite (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+SavePageCoAuth (SP.Publishing.CampaignPublication) | ❌ (✅) | ❌ | ❌ | ❌
+SavePageCoAuth (SP.Publishing.FeedVideoPage) | ❌ (✅) | ❌ | ❌ | ❌
+SavePageCoAuth (SP.Publishing.RepostPage) | ❌ (✅) | ❌ | ❌ | ❌
+SavePageCoAuth (SP.Publishing.SitePage) | ❌ (✅) | ❌ | ❌ | ❌
+SavePageCoAuth (SP.Publishing.SitePage3D) | ❌ (✅) | ❌ | ❌ | ❌
+SavePageCoAuth (SP.Publishing.TopicSitePage) | ❌ (✅) | ❌ | ❌ | ❌
 SchedulePublish (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 SchedulePublish (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 SchedulePublish (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌

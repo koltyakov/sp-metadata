@@ -34,6 +34,7 @@ AddSubFolder (SP.Folder) | ✅ | ✅ | ❌ | ❌
 AddSubFolderUsingPath (SP.Folder) | ✅ | ✅ | ❌ | ❌
 AddSupportedUILanguage (SP.Web) | ✅ | ✅ | ✅ | ✅
 AddTemplateFile (Collection(SP.File)) | ✅ | ✅ | ✅ | ✅
+AddThumbnailFieldData (SP.ListItem) | ❌ (✅) | ❌ | ❌ | ❌
 AddToSpotlight (SP.View) | ✅ | ✅ | ❌ | ❌
 AddUserById (Collection(SP.User)) | ✅ | ❌ | ❌ | ❌
 AddUsingPath (Collection(SP.Attachment)) | ✅ | ✅ | ❌ | ❌
@@ -649,6 +650,7 @@ SP_ServerSettings_GetBlockedFileExtensions | ✅ | ✅ | ✅ | ✅
 SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌
 [<span title="SP_SharedWithMeItemCollection_GetSharedWithMeExternalItems">SP_SharedWithMeItemCollection_GetSharedWithMeExter...</span> (SP SharedWithMeItemCollection GetSharedWithMeExternalItems)](./Functions/SP_SharedWithMeItemCollection_GetSharedWithMeExternalItems.md) | ✅ | ❌ | ❌ | ❌
 [SP_SharedWithMeItemCollection_GetSharedWithMeItems](./Functions/SP_SharedWithMeItemCollection_GetSharedWithMeItems.md) | ✅ | ❌ | ❌ | ❌
+[<span title="SP_SharedWithMeItemCollection_RemoveFromSharedWithMe">SP_SharedWithMeItemCollection_RemoveFromSharedWith...</span> (SP SharedWithMeItemCollection RemoveFromSharedWithMe)](./Functions/SP_SharedWithMeItemCollection_RemoveFromSharedWithMe.md) | ❌ (✅) | ❌ | ❌ | ❌
 [SP_Site_Exists](./Functions/SP_Site_Exists.md) | ✅ | ✅ | ❌ | ❌
 [SP_Site_GetUrlById](./Functions/SP_Site_GetUrlById.md) | ✅ | ❌ | ❌ | ❌
 [SP_Site_GetUrlByIdForWeb](./Functions/SP_Site_GetUrlByIdForWeb.md) | ✅ | ❌ | ❌ | ❌
