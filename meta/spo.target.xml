@@ -127,9 +127,9 @@
         <Property Name="ProvisioningStatus" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="ColumnTypeInfo">
+        <Property Name="ColumnTypeAsText" Type="Edm.String" />
         <Property Name="IsTypeCompatible" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PlaceholderId" Type="Edm.String" />
-        <Property Name="TranslatedPlaceholderType" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="ContentAssemblyFileInfo">
         <Property Name="FileUrl" Type="Edm.String" />
@@ -265,7 +265,6 @@
         <Property Name="RequiresPassword" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RestrictedShareMembership" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ShareId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="TrackLinkUsers" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
       <ComplexType Name="SharingLinkInfo">
         <Property Name="AllowsAnonymousAccess" Type="Edm.Boolean" Nullable="false" />
@@ -7950,10 +7949,6 @@
         <FunctionImport Name="SavePageAsTemplateOnMySite" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
-        <FunctionImport Name="SavePageCoAuth" ReturnType="SP.Publishing.SitePageCoAuthState" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
-          <Parameter Name="pageStream" Type="Edm.Stream" />
-        </FunctionImport>
         <FunctionImport Name="SchedulePublish" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="sitePage" Type="SP.Publishing.SitePageFieldsData" />
@@ -8064,10 +8059,6 @@
         </FunctionImport>
         <FunctionImport Name="SavePageAsTemplateOnMySite" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
-        </FunctionImport>
-        <FunctionImport Name="SavePageCoAuth" ReturnType="SP.Publishing.SitePageCoAuthState" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
-          <Parameter Name="pageStream" Type="Edm.Stream" />
         </FunctionImport>
         <FunctionImport Name="SchedulePublish" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
@@ -8270,10 +8261,6 @@
         <FunctionImport Name="SavePageAsTemplateOnMySite" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
         </FunctionImport>
-        <FunctionImport Name="SavePageCoAuth" ReturnType="SP.Publishing.SitePageCoAuthState" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.RepostPage" />
-          <Parameter Name="pageStream" Type="Edm.Stream" />
-        </FunctionImport>
         <FunctionImport Name="SchedulePublish" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
           <Parameter Name="sitePage" Type="SP.Publishing.SitePageFieldsData" />
@@ -8443,10 +8430,6 @@
         <FunctionImport Name="SavePageAsTemplateOnMySite" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
         </FunctionImport>
-        <FunctionImport Name="SavePageCoAuth" ReturnType="SP.Publishing.SitePageCoAuthState" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
-          <Parameter Name="pageStream" Type="Edm.Stream" />
-        </FunctionImport>
         <FunctionImport Name="SchedulePublish" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
           <Parameter Name="sitePage" Type="SP.Publishing.SitePageFieldsData" />
@@ -8590,10 +8573,6 @@
         </FunctionImport>
         <FunctionImport Name="SavePageAsTemplateOnMySite" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
-        </FunctionImport>
-        <FunctionImport Name="SavePageCoAuth" ReturnType="SP.Publishing.SitePageCoAuthState" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.SitePage" />
-          <Parameter Name="pageStream" Type="Edm.Stream" />
         </FunctionImport>
         <FunctionImport Name="SchedulePublish" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
@@ -8766,10 +8745,6 @@
         </FunctionImport>
         <FunctionImport Name="SavePageAsTemplateOnMySite" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
-        </FunctionImport>
-        <FunctionImport Name="SavePageCoAuth" ReturnType="SP.Publishing.SitePageCoAuthState" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
-          <Parameter Name="pageStream" Type="Edm.Stream" />
         </FunctionImport>
         <FunctionImport Name="SchedulePublish" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
@@ -9211,17 +9186,12 @@
         <FunctionImport Name="ResetRoleInheritance" IsBindable="true">
           <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
         </FunctionImport>
-        <FunctionImport Name="AddThumbnailFieldData" IsBindable="true">
-          <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
-          <Parameter Name="imageStream" Type="Edm.Stream" />
-          <Parameter Name="imageName" Type="Edm.String" />
-          <Parameter Name="fieldInternalName" Type="Edm.String" />
-        </FunctionImport>
         <FunctionImport Name="AttachImage" ReturnType="SP.SPImageItem" IsBindable="true">
           <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
           <Parameter Name="imageStream" Type="Edm.Stream" />
           <Parameter Name="imageName" Type="Edm.String" />
           <Parameter Name="fieldInternalName" Type="Edm.String" />
+          <Parameter Name="bNewItem" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="DeleteObject" IsBindable="true">
           <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
@@ -10596,7 +10566,6 @@
         <FunctionImport Name="GetReportById" ReturnType="Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReport" IsComposable="true" IsBindable="true" EntitySet="SPTenantIBPolicyComplianceReportEntityDatas">
           <Parameter Name="this" Type="Collection(Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReport)" />
           <Parameter Name="ReportId" Type="Edm.Guid" Nullable="false" />
-          <Parameter Name="ShowIncompatibleSegmentsPairsAndInvalidSegmentsFilesContents" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="RemoveFinalizedReport" IsBindable="true">
           <Parameter Name="this" Type="Collection(Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReport)" />
@@ -11554,17 +11523,12 @@
         <FunctionImport Name="ResetRoleInheritance" IsBindable="true">
           <Parameter Name="this" Type="SP.ListItem" />
         </FunctionImport>
-        <FunctionImport Name="AddThumbnailFieldData" IsBindable="true">
-          <Parameter Name="this" Type="SP.ListItem" />
-          <Parameter Name="imageStream" Type="Edm.Stream" />
-          <Parameter Name="imageName" Type="Edm.String" />
-          <Parameter Name="fieldInternalName" Type="Edm.String" />
-        </FunctionImport>
         <FunctionImport Name="AttachImage" ReturnType="SP.SPImageItem" IsBindable="true">
           <Parameter Name="this" Type="SP.ListItem" />
           <Parameter Name="imageStream" Type="Edm.Stream" />
           <Parameter Name="imageName" Type="Edm.String" />
           <Parameter Name="fieldInternalName" Type="Edm.String" />
+          <Parameter Name="bNewItem" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="DeleteObject" IsBindable="true">
           <Parameter Name="this" Type="SP.ListItem" />
@@ -12359,9 +12323,6 @@
           <Parameter Name="top" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="skiptoken" Type="Edm.String" />
           <Parameter Name="includeSharingHistory" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="SP_SharedWithMeItemCollection_RemoveFromSharedWithMe" ReturnType="Edm.String">
-          <Parameter Name="spoIds" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_SmartCache_Update">
           <Parameter Name="smartCacheJson" Type="Edm.String" />
@@ -14943,6 +14904,11 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="viewXml" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="FetchSplistRecords" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="parameters" Type="SP.RenderListDataParameters" />
+          <Parameter Name="overrideParameters" Type="SP.RenderListDataOverrideParameters" />
+        </FunctionImport>
         <FunctionImport Name="GetAdminListViews" ReturnType="Collection(SP.View)" IsComposable="true" IsBindable="true" EntitySet="Views">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
@@ -15282,7 +15248,6 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="parameters" Type="SP.RenderListDataParameters" />
           <Parameter Name="overrideParameters" Type="SP.RenderListDataOverrideParameters" />
-          <Parameter Name="isAutoRefresh" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="ReorderHomeSites" ReturnType="Collection(SP.HomeSitesDetails)" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -17737,9 +17702,6 @@
       <Annotations Target="SP.Publishing.SitePageFieldsData/Categories">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.Publishing.SitePageFieldsData/CoAuthState">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.Publishing.SitePageFieldsData/Description">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18413,9 +18375,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.SharingLinkData/ShareId">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.SharingLinkData/TrackLinkUsers">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.SharingLinkInfo/AllowsAnonymousAccess">
@@ -21769,9 +21728,6 @@
       <Annotations Target="SP.ApiData/SavePageAsTemplateOnMySite(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SavePageCoAuth(SP.Publishing.CampaignPublication, Edm.Stream)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.ApiData/SchedulePublish(SP.Publishing.CampaignPublication, SP.Publishing.SitePageFieldsData)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21875,9 +21831,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SavePageAsTemplateOnMySite(SP.Publishing.FeedVideoPage)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SavePageCoAuth(SP.Publishing.FeedVideoPage, Edm.Stream)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SchedulePublish(SP.Publishing.FeedVideoPage, SP.Publishing.SitePageFieldsData)">
@@ -21985,9 +21938,6 @@
       <Annotations Target="SP.ApiData/SavePageAsTemplateOnMySite(SP.Publishing.RepostPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SavePageCoAuth(SP.Publishing.RepostPage, Edm.Stream)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.ApiData/SchedulePublish(SP.Publishing.RepostPage, SP.Publishing.SitePageFieldsData)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22070,9 +22020,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SavePageAsTemplateOnMySite(SP.Publishing.SitePage3D)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SavePageCoAuth(SP.Publishing.SitePage3D, Edm.Stream)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SchedulePublish(SP.Publishing.SitePage3D, SP.Publishing.SitePageFieldsData)">
@@ -22187,9 +22134,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SavePageAsTemplateOnMySite(SP.Publishing.SitePage)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SavePageCoAuth(SP.Publishing.SitePage, Edm.Stream)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SchedulePublish(SP.Publishing.SitePage, SP.Publishing.SitePageFieldsData)">
@@ -22315,9 +22259,6 @@
       <Annotations Target="SP.ApiData/SavePageAsTemplateOnMySite(SP.Publishing.TopicSitePage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SavePageCoAuth(SP.Publishing.TopicSitePage, Edm.Stream)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.ApiData/SchedulePublish(SP.Publishing.TopicSitePage, SP.Publishing.SitePageFieldsData)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22351,10 +22292,7 @@
       <Annotations Target="SP.ApiData/WebState(SP.Publishing.Navigation.StructuralNavigationCacheWrapper)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/AddThumbnailFieldData(SP.Workflow.SPWorkflowTask, Edm.Stream, Edm.String, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/AttachImage(SP.Workflow.SPWorkflowTask, Edm.Stream, Edm.String, Edm.String)">
+      <Annotations Target="SP.ApiData/AttachImage(SP.Workflow.SPWorkflowTask, Edm.Stream, Edm.String, Edm.String, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/DeleteWithParameters(SP.Workflow.SPWorkflowTask, SP.ListItemDeleteParameters)">
@@ -23122,10 +23060,7 @@
       <Annotations Target="SP.ApiData/EnsureEventsList(Collection(SP.List))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/AddThumbnailFieldData(SP.ListItem, Edm.Stream, Edm.String, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/AttachImage(SP.ListItem, Edm.Stream, Edm.String, Edm.String)">
+      <Annotations Target="SP.ApiData/AttachImage(SP.ListItem, Edm.Stream, Edm.String, Edm.String, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/DeleteWithParameters(SP.ListItem, SP.ListItemDeleteParameters)">
@@ -23384,9 +23319,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_SharedWithMeItemCollection_GetSharedWithMeItems(Edm.Int32, Edm.String, Edm.Boolean)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SP_SharedWithMeItemCollection_RemoveFromSharedWithMe(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_SmartCache_Update(Edm.String)">
@@ -27937,17 +27869,12 @@
         <Property Name="CanvasContent1" Type="Edm.String" />
         <Property Name="CanvasJson1" Type="Edm.String" />
         <Property Name="Categories" Type="Edm.String" />
-        <Property Name="CoAuthState" Type="SP.Publishing.SitePageCoAuthState" />
         <Property Name="Description" Type="Edm.String" />
         <Property Name="LayoutWebpartsContent" Type="Edm.String" />
         <Property Name="Modified" Type="Edm.DateTime" Nullable="false" />
         <Property Name="PublishStartDate" Type="Edm.DateTime" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
         <Property Name="TopicHeader" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="SitePageCoAuthState">
-        <Property Name="Action" Type="Edm.Int32" Nullable="false" />
-        <Property Name="SharedLockId" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="CampaignPublicationFieldsData" BaseType="SP.Publishing.SitePageFieldsData">
         <Property Name="EndpointEmail" Type="Edm.String" />
@@ -27960,17 +27887,17 @@
         <Property Name="DraftId" Type="Edm.String" />
         <Property Name="GroupUpn" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="SitePageCoAuthState">
+        <Property Name="SharedLockId" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="CopyToParams">
-        <Property Name="AsNews" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AsTemplate" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CanvasContentOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ComponentJSONString" Type="Edm.String" />
-        <Property Name="CreateCopyForEdit" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CreateIfMissing" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DestinationPageUniqueId" Type="Edm.Guid" Nullable="false" />
         <Property Name="DestinationType" Type="Edm.Int32" Nullable="false" />
         <Property Name="DestinationWebUrl" Type="Edm.String" />
-        <Property Name="SitePageFlags" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="ProfileDateTime">
         <Property Name="DateTimeType" Type="Edm.Int32" Nullable="false" />
@@ -29801,7 +29728,6 @@
         <Property Name="SiteScriptIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="SupportedWebTemplates" Type="Collection(Edm.String)" />
         <Property Name="TargetPlatforms" Type="Collection(Edm.String)" />
-        <Property Name="TemplateAssets" Type="Collection(Edm.String)" />
         <Property Name="TemplateFeatures" Type="Collection(Edm.String)" />
         <Property Name="ThumbnailUrl" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
@@ -30824,7 +30750,7 @@
       </ComplexType>
       <ComplexType Name="TenantAdminPolicyReport">
         <Property Name="policyExecutionTime" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="policyExecutionId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="policyExecutionId" Type="Edm.Guid" Nullable="false" />
         <Property Name="policyId" Type="Edm.Guid" Nullable="false" />
         <Property Name="policyReportDetails" Type="Edm.String" />
         <Property Name="policyVersion" Type="Edm.Int32" Nullable="false" />
@@ -31261,7 +31187,6 @@
         <Property Name="hasUniquePermissions" Type="Edm.Boolean" Nullable="false" />
         <Property Name="isStubFile" Type="Edm.Boolean" Nullable="false" />
         <Property Name="itemUniqueId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="itemUrl" Type="Edm.String" />
         <Property Name="microserviceShareUiUrl" Type="Edm.String" />
         <Property Name="outlookEndpointHostUrl" Type="Edm.String" />
         <Property Name="permissionsInformation" Type="SP.Sharing.PermissionCollection" />
@@ -32251,13 +32176,11 @@
         <Property Name="AllowSelfServiceUpgrade" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AnonymousLinkExpirationInDays" Type="Edm.Int32" Nullable="false" />
         <Property Name="AuthContextStrength" Type="Edm.String" />
-        <Property Name="AuthenticationContextLimitedAccess" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AuthenticationContextName" Type="Edm.String" />
         <Property Name="AverageResourceUsage" Type="Edm.Double" Nullable="false" />
         <Property Name="BlockDownloadLinksFileType" Type="Edm.Int32" Nullable="false" />
         <Property Name="BlockDownloadMicrosoft365GroupIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="BlockDownloadPolicy" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="ClearRestrictedAccessControl" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CommentsOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CompatibilityLevel" Type="Edm.Int32" Nullable="false" />
         <Property Name="ConditionalAccessPolicy" Type="Edm.Int32" Nullable="false" />
@@ -32313,9 +32236,6 @@
         <Property Name="RequestFilesLinkEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RequestFilesLinkExpirationInDays" Type="Edm.Int32" Nullable="false" />
         <Property Name="RestrictedAccessControl" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="RestrictedAccessControlGroups" Type="Collection(Edm.Guid)" Nullable="false" />
-        <Property Name="RestrictedAccessControlGroupsToAdd" Type="Collection(Edm.Guid)" Nullable="false" />
-        <Property Name="RestrictedAccessControlGroupsToRemove" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="RestrictedToRegion" Type="Edm.Int32" Nullable="false" />
         <Property Name="SandboxedCodeActivationCapability" Type="Edm.Int32" Nullable="false" />
         <Property Name="SensitivityLabel" Type="Edm.Guid" Nullable="false" />
@@ -32603,7 +32523,6 @@
         <Property Name="ResourceQuota" Type="Edm.Double" Nullable="false" />
         <Property Name="ResourceQuotaAllocated" Type="Edm.Double" Nullable="false" />
         <Property Name="RestrictedOneDriveLicense" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="RestrictedSharePointLicense" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RootSiteUrl" Type="Edm.String" />
         <Property Name="SearchResolveExactEmailOrUPN" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SharingAllowedDomainList" Type="Edm.String" />
@@ -34310,8 +34229,6 @@
         <Property Name="CompleteTimeInUtc" Type="Edm.DateTime" />
         <Property Name="Content" Type="Collection(Edm.String)" />
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
-        <Property Name="IncompatibleSegmentsPairsContent" Type="Collection(Edm.String)" />
-        <Property Name="InvalidSegmentsContent" Type="Collection(Edm.String)" />
         <Property Name="QueuedTimeInUtc" Type="Edm.DateTime" />
         <Property Name="StartTimeInUtc" Type="Edm.DateTime" />
         <Property Name="State" Type="Edm.String" />
