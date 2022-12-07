@@ -10,6 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-isAutoRefresh (Edm.Boolean) | ❌ (✅) | ❌ | ❌ | ❌
 overrideParameters (SP.RenderListDataOverrideParameters) | ✅ | ❌ | ❌ | ❌
 parameters (SP.RenderListDataParameters) | ✅ | ❌ | ❌ | ❌

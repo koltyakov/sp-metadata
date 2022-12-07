@@ -12,7 +12,6 @@ CallToAction (Edm.String) | ✅ | ❌ | ❌ | ❌
 CanvasContent1 (Edm.String) | ✅ | ✅ | ❌ | ❌
 CanvasJson1 (Edm.String) | ✅ | ✅ | ❌ | ❌
 Categories (Edm.String) | ✅ | ❌ | ❌ | ❌
-CoAuthState (SP.Publishing.SitePageCoAuthState) | ❌ (✅) | ❌ | ❌ | ❌
 Description (Edm.String) | ✅ | ❌ | ❌ | ❌
 LayoutWebpartsContent (Edm.String) | ✅ | ✅ | ❌ | ❌
 Modified (Edm.DateTime) | ✅ | ✅ | ❌ | ❌

@@ -11,13 +11,11 @@ AllowEditing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowSelfServiceUpgrade (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AnonymousLinkExpirationInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 AuthContextStrength (Edm.String) | ✅ | ❌ | ❌ | ❌
-AuthenticationContextLimitedAccess (Edm.Boolean) | ❌ (✅) | ❌ | ❌ | ❌
 AuthenticationContextName (Edm.String) | ✅ | ❌ | ❌ | ❌
 AverageResourceUsage (Edm.Double) | ✅ | ❌ | ❌ | ❌
 BlockDownloadLinksFileType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 BlockDownloadMicrosoft365GroupIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 BlockDownloadPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-ClearRestrictedAccessControl (Edm.Boolean) | ❌ (✅) | ❌ | ❌ | ❌
 CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CompatibilityLevel (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicy (Edm.Int32) | ✅ | ❌ | ❌ | ❌
@@ -73,9 +71,6 @@ RelatedGroupId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 RequestFilesLinkEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RequestFilesLinkExpirationInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 RestrictedAccessControl (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-RestrictedAccessControlGroups (Collection(Edm.Guid)) | ❌ (✅) | ❌ | ❌ | ❌
-RestrictedAccessControlGroupsToAdd (Collection(Edm.Guid)) | ❌ (✅) | ❌ | ❌ | ❌
-RestrictedAccessControlGroupsToRemove (Collection(Edm.Guid)) | ❌ (✅) | ❌ | ❌ | ❌
 RestrictedToRegion (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SandboxedCodeActivationCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SensitivityLabel (Edm.Guid) | ✅ | ❌ | ❌ | ❌

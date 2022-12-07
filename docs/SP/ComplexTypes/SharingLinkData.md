@@ -25,4 +25,3 @@ ObjectUniqueId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 RequiresPassword (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 RestrictedShareMembership (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 ShareId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
-TrackLinkUsers (Edm.Boolean) | ❌ (✅) | ❌ | ❌ | ❌

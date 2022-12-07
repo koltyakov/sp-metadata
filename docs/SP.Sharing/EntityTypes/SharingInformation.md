@@ -31,7 +31,6 @@ fileExtension (Edm.String) | ✅ | ❌ | ❌ | ❌
 hasUniquePermissions (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 isStubFile (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 itemUniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-itemUrl (Edm.String) | ❌ (✅) | ❌ | ❌ | ❌
 microserviceShareUiUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 outlookEndpointHostUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 permissionsInformation (SP.Sharing.PermissionCollection) | ✅ | ✅ | ❌ | ❌
