@@ -25,6 +25,7 @@ RequiresYammerConnected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SiteScriptIds (Collection(Edm.Guid)) | ✅ | ✅ | ❌ | ❌
 SupportedWebTemplates (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 TargetPlatforms (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+TemplateAssets (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 TemplateFeatures (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 ThumbnailUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ✅ | ❌ | ❌

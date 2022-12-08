@@ -5,6 +5,7 @@
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 Add (Collection(SP.Workflow.WorkflowAssociation)) | ✅ | ✅ | ✅ | ✅
+AddThumbnailFieldData (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 AttachImage (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 BreakRoleInheritance (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 DeleteObject (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌

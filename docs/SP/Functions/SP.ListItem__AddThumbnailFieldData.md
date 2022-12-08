@@ -1,4 +1,4 @@
-# Function Import: AttachImage
+# Function Import: AddThumbnailFieldData
 
 > Namespace: SP
 

@@ -1,8 +1,8 @@
-# Function Import: AttachImage
+# Function Import: AddThumbnailFieldData
 
-> Namespace: SP
+> Namespace: SP.Workflow
 
-- Entity type: SP.ListItem
+- Entity type: SP.Workflow.SPWorkflowTask
 - Is composable: false
 - Is bindable: false
 
