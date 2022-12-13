@@ -724,12 +724,17 @@
         <Property Name="CreateDate" Type="Edm.DateTime" Nullable="false" />
         <Property Name="ID" Type="Edm.Guid" Nullable="false" />
         <Property Name="IsActive" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="LastModifiedBy" Type="SP.SPRuleUserInfo" />
         <Property Name="LastModifiedDate" Type="Edm.DateTime" Nullable="false" />
         <Property Name="Outcome" Type="Edm.String" />
         <Property Name="Owner" Type="Edm.String" />
         <Property Name="RuleTemplateId" Type="Edm.Guid" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
         <Property Name="TriggerType" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="SPRuleUserInfo">
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="UserId" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="MachineLearningSampleMeta">
         <Property Name="ExtractedText" Type="Edm.String" />
@@ -2493,6 +2498,7 @@
         <Property Name="Actions" Type="Edm.String" />
         <Property Name="AllowCancel" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AllowRespond" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AllowResubmit" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Approvers" Type="Edm.String" />
         <Property Name="AwaitAll" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Details" Type="Edm.String" />
@@ -2674,6 +2680,12 @@
         <Property Name="PermissionKind" Type="Edm.Int32" Nullable="false" />
         <Property Name="PermissionName" Type="Edm.String" />
         <Property Name="PermissionRoleType" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="PersonalListsProxy" Abstract="true">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
       <EntityType Name="QuickAccessItemCollection" Abstract="true">
         <Key>
@@ -4216,6 +4228,7 @@
         <EntitySet Name="RecentDocuments" EntityType="Microsoft.SharePoint.Portal.WebControls.RecentDocument" />
         <EntitySet Name="PageCopyResponses" EntityType="Microsoft.SharePoint.Publishing.PageCopyWithAssets.PageCopyResponse" />
         <EntitySet Name="BaseCustomPropertys" EntityType="Microsoft.SharePoint.Publishing.RestOnly.BaseCustomProperty" />
+        <EntitySet Name="NonQuotaBackfillApis" EntityType="Microsoft.SharePoint.QuotaManagement.Consumer.NonQuotaBackfillApi" />
         <EntitySet Name="NonQuotaMigrationApis" EntityType="Microsoft.SharePoint.QuotaManagement.Consumer.NonQuotaMigrationApi" />
         <EntitySet Name="QuotaMigrationApis" EntityType="Microsoft.SharePoint.QuotaManagement.Consumer.QuotaMigrationApi" />
         <EntitySet Name="SmartCacheItems" EntityType="Microsoft.SharePoint.SmartCache.SmartCacheItem" />
@@ -4425,6 +4438,7 @@
         <EntitySet Name="ObjectSharingSettingss" EntityType="SP.ObjectSharingSettings" />
         <EntitySet Name="OpenWebParameterss" EntityType="SP.OpenWebParameters" />
         <EntitySet Name="ClickManagers" EntityType="SP.PageInstrumentation.ClickManager" />
+        <EntitySet Name="PersonalListsProxys" EntityType="SP.PersonalListsProxy" />
         <EntitySet Name="PickerSettingss" EntityType="SP.PickerSettings" />
         <EntitySet Name="PinnedItemss" EntityType="SP.PinnedItems" />
         <EntitySet Name="Principals" EntityType="SP.Principal" />
@@ -7969,6 +7983,9 @@
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
+        <FunctionImport Name="GetPrePublishValidationStatus" ReturnType="SP.Publishing.PrePublishValidationsResponse" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+        </FunctionImport>
         <FunctionImport Name="GetPublishingStatus" ReturnType="SP.Publishing.PublishingStatusResponse" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
@@ -10125,6 +10142,11 @@
           <Parameter Name="urls" Type="Collection(Edm.String)" />
           <Parameter Name="cdnType" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_QuotaManagement_Consumer_NonQuotaBackfillApi" ReturnType="Microsoft.SharePoint.QuotaManagement.Consumer.NonQuotaBackfillApi" IsComposable="true" EntitySet="NonQuotaBackfillApis" />
+        <FunctionImport Name="BackfillNonQuota" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.QuotaManagement.Consumer.NonQuotaBackfillApi" />
+          <Parameter Name="backfillUserfacts" Type="Collection(Edm.String)" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_QuotaManagement_Consumer_NonQuotaMigrationApi" ReturnType="Microsoft.SharePoint.QuotaManagement.Consumer.NonQuotaMigrationApi" IsComposable="true" EntitySet="NonQuotaMigrationApis" />
         <FunctionImport Name="MigrateNonQuota" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.QuotaManagement.Consumer.NonQuotaMigrationApi" />
@@ -10377,6 +10399,10 @@
         <FunctionImport Name="IsAppUpgradeAvailable" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.AppUpgradeAvailability" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
           <Parameter Name="id" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SendAppRequestStatusNotificationEmail" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
+          <Parameter Name="RequestGuid" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SolutionContainsTeamsComponent" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
@@ -12277,6 +12303,10 @@
           <Parameter Name="count" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="filterByAudience" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="languageOverride" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_PersonalListsProxy_GetPersonalListsProxy" ReturnType="Edm.Stream" IsSideEffecting="false">
+          <Parameter Name="sortBy" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="templateTypeId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_QuickAccessItemCollection_GetQuickAccessItems" ReturnType="Edm.String" IsSideEffecting="false" />
         <FunctionImport Name="SP_QuickAccessItemCollection_GetSubstrateQuickAccessItems" ReturnType="Edm.String" IsSideEffecting="false" />
@@ -14954,9 +14984,6 @@
           <Parameter Name="columnName" Type="Edm.String" />
           <Parameter Name="columnValue" Type="Edm.String" />
           <Parameter Name="listName" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetGroupSiteActivityData" ReturnType="Collection(Microsoft.SharePoint.Administration.TenantAdmin.GroupSitesActivityDetail)" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
         <FunctionImport Name="GetHomeSites" ReturnType="Collection(SP.HomeSitesDetails)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -17812,6 +17839,15 @@
       <Annotations Target="SP.Publishing.PersonMagazineUserProfileData">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.PrePublishValidationsErrorCodesForEmail">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.PrePublishValidationsErrorCodesForSharePointSite">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.PrePublishValidationsResponse">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.ProfileCoreProperties">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18653,6 +18689,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ListItemCreationInformationUsingPath">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.SPRuleUserInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.MachineLearningSampleMeta">
@@ -21784,6 +21823,9 @@
       <Annotations Target="SP.ApiData/Update(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetPrePublishValidationStatus(SP.Publishing.CampaignPublication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetPublishingStatus(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -23351,6 +23393,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_NewsCollection_MultiSiteNews(Edm.String, Edm.Int32, Edm.Int32, Edm.Boolean, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_PersonalListsProxy_GetPersonalListsProxy(Edm.Int32, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_QuickAccessItemCollection_GetQuickAccessItems()">
@@ -28079,6 +28124,19 @@
         <Property Name="Details" Type="Collection(SP.Publishing.PortalHealthStatusDetails)" />
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="PrePublishValidationsErrorCodesForEmail">
+        <Property Name="EmailAddress" Type="Edm.String" />
+        <Property Name="ErrorCodes" Type="Collection(Edm.Int32)" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="PrePublishValidationsErrorCodesForSharePointSite">
+        <Property Name="ErrorCodes" Type="Collection(Edm.Int32)" Nullable="false" />
+        <Property Name="SiteId" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="PrePublishValidationsResponse">
+        <Property Name="ErrorCodes" Type="Collection(Edm.Int32)" Nullable="false" />
+        <Property Name="PrePublishValidationsErrorCodesForEmails" Type="Collection(SP.Publishing.PrePublishValidationsErrorCodesForEmail)" />
+        <Property Name="PrePublishValidationsErrorCodesForSharePointSites" Type="Collection(SP.Publishing.PrePublishValidationsErrorCodesForSharePointSite)" />
+      </ComplexType>
       <ComplexType Name="ProfileCoreProperties" BaseType="SP.Publishing.PersonIdentity">
         <Property Name="PictureUrl" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
@@ -30769,7 +30827,7 @@
         <Property Name="userPrincipalName" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="GroupSitesActivityDetail">
-        <Property Name="GroupId" Type="Edm.String" />
+        <Property Name="GroupId" Type="Edm.Guid" Nullable="false" />
         <Property Name="LastActivityDate" Type="Edm.DateTime" />
       </ComplexType>
       <ComplexType Name="PageResponse">
@@ -30800,7 +30858,7 @@
       </ComplexType>
       <ComplexType Name="TeamsSitesActivityDetail">
         <Property Name="LastActivityDate" Type="Edm.DateTime" />
-        <Property Name="TeamId" Type="Edm.String" />
+        <Property Name="TeamId" Type="Edm.Guid" Nullable="false" />
       </ComplexType>
       <ComplexType Name="TenantAdminListItemColumnValue">
         <Property Name="columnName" Type="Edm.String" />
@@ -34218,6 +34276,12 @@
       </EntityType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.QuotaManagement.Consumer" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="NonQuotaBackfillApi">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="NonQuotaMigrationApi">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
