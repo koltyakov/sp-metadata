@@ -111,6 +111,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ObjectSharingSettings](./EntityTypes/ObjectSharingSettings.md) | ✅ | ✅ | ✅ | ❌
 [OpenWebParameters](./EntityTypes/OpenWebParameters.md) | ✅ | ❌ | ❌ | ❌
 [OrganizationNews](./EntityTypes/OrganizationNews.md) | ✅ | ❌ | ❌ | ❌
+[PersonalListsProxy](./EntityTypes/PersonalListsProxy.md) | ✅ | ❌ | ❌ | ❌
 [PickerSettings](./EntityTypes/PickerSettings.md) | ✅ | ✅ | ✅ | ❌
 [PinnedItems](./EntityTypes/PinnedItems.md) | ✅ | ❌ | ❌ | ❌
 [Principal](./EntityTypes/Principal.md) | ✅ | ✅ | ✅ | ✅

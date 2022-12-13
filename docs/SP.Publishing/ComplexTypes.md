@@ -28,6 +28,9 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [PersonMagazineUserProfileDirectsData](./ComplexTypes/PersonMagazineUserProfileDirectsData.md) | ✅ | ❌ | ❌ | ❌
 [PortalHealthStatus](./ComplexTypes/PortalHealthStatus.md) | ✅ | ❌ | ❌ | ❌
 [PortalHealthStatusDetails](./ComplexTypes/PortalHealthStatusDetails.md) | ✅ | ❌ | ❌ | ❌
+[PrePublishValidationsErrorCodesForEmail](./ComplexTypes/PrePublishValidationsErrorCodesForEmail.md) | ✅ | ❌ | ❌ | ❌
+[PrePublishValidationsErrorCodesForSharePointSite](./ComplexTypes/PrePublishValidationsErrorCodesForSharePointSite.md) | ✅ | ❌ | ❌ | ❌
+[PrePublishValidationsResponse](./ComplexTypes/PrePublishValidationsResponse.md) | ✅ | ❌ | ❌ | ❌
 [ProfileCoreProperties](./ComplexTypes/ProfileCoreProperties.md) | ✅ | ❌ | ❌ | ❌
 [ProfileData](./ComplexTypes/ProfileData.md) | ✅ | ❌ | ❌ | ❌
 [ProfileDateTime](./ComplexTypes/ProfileDateTime.md) | ✅ | ❌ | ❌ | ❌

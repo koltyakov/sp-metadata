@@ -12,6 +12,7 @@ Condition (Edm.String) | ✅ | ❌ | ❌ | ❌
 CreateDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 ID (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 IsActive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+LastModifiedBy (SP.SPRuleUserInfo) | ✅ | ❌ | ❌ | ❌
 LastModifiedDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 Outcome (Edm.String) | ✅ | ❌ | ❌ | ❌
 Owner (Edm.String) | ✅ | ❌ | ❌ | ❌

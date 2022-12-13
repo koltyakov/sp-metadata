@@ -129,6 +129,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPMoveAndShareFileInfo](./ComplexTypes/SPMoveAndShareFileInfo.md) | ✅ | ❌ | ❌ | ❌
 [SPResourceEntry](./ComplexTypes/SPResourceEntry.md) | ✅ | ❌ | ❌ | ❌
 [SPRuleAction](./ComplexTypes/SPRuleAction.md) | ✅ | ❌ | ❌ | ❌
+[SPRuleUserInfo](./ComplexTypes/SPRuleUserInfo.md) | ✅ | ❌ | ❌ | ❌
 [ScriptSafeDomainEntityData](./ComplexTypes/ScriptSafeDomainEntityData.md) | ✅ | ✅ | ❌ | ❌
 [SensitivityLabelInfo](./ComplexTypes/SensitivityLabelInfo.md) | ✅ | ❌ | ❌ | ❌
 [SharedWithUser](./ComplexTypes/SharedWithUser.md) | ✅ | ✅ | ❌ | ❌

@@ -285,6 +285,7 @@ NavigationTermSetViews | ❌ | ❌ | ❌ | ✅
 Navigations | ✅ | ✅ | ✅ | ✅
 NewsCollections | ✅ | ❌ | ❌ | ❌
 NewsUtilitys | ✅ | ✅ | ❌ | ❌
+NonQuotaBackfillApis | ✅ | ❌ | ❌ | ❌
 NonQuotaMigrationApis | ✅ | ❌ | ❌ | ❌
 NonTaskDataReadResults | ✅ | ✅ | ✅ | ✅
 NotificationCallbacks | ✅ | ✅ | ✅ | ✅
@@ -311,6 +312,7 @@ PersistedPropertiess | ✅ | ✅ | ✅ | ✅
 PersonMagazines | ✅ | ❌ | ❌ | ❌
 PersonPropertiess | ✅ | ✅ | ✅ | ✅
 PersonalCaches | ✅ | ✅ | ❌ | ❌
+PersonalListsProxys | ✅ | ❌ | ❌ | ❌
 PersonalWebs | ✅ | ✅ | ❌ | ❌
 Phases | ✅ | ✅ | ✅ | ❌
 PhotosMigrations | ✅ | ❌ | ❌ | ❌

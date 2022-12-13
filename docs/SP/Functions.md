@@ -609,6 +609,7 @@ SP_MultilingualSettings | ✅ | ❌ | ❌ | ❌
 [<span title="SP_ObjectSharingInformation_GetWebSharingInformation">SP_ObjectSharingInformation_GetWebSharingInformati...</span> (SP ObjectSharingInformation GetWebSharingInformation)](./Functions/SP_ObjectSharingInformation_GetWebSharingInformation.md) | ✅ | ✅ | ✅ | ✅
 SP_OrganizationNews | ✅ | ❌ | ❌ | ❌
 [SP_OrganizationNews_GetSiteReference](./Functions/SP_OrganizationNews_GetSiteReference.md) | ✅ | ❌ | ❌ | ❌
+[SP_PersonalListsProxy_GetPersonalListsProxy](./Functions/SP_PersonalListsProxy_GetPersonalListsProxy.md) | ✅ | ❌ | ❌ | ❌
 [SP_PinnedItems_AddItem](./Functions/SP_PinnedItems_AddItem.md) | ✅ | ❌ | ❌ | ❌
 [SP_PinnedItems_GetItemsBy](./Functions/SP_PinnedItems_GetItemsBy.md) | ✅ | ❌ | ❌ | ❌
 [SP_PinnedItems_RemoveItem](./Functions/SP_PinnedItems_RemoveItem.md) | ✅ | ❌ | ❌ | ❌
