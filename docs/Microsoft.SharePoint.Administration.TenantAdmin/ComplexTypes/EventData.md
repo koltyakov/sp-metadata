@@ -6,10 +6,10 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-Group (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+Group (Edm.String) | ✅ | ❌ | ❌ | ❌
 HubSiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 Identity (Edm.String) | ✅ | ❌ | ❌ | ❌
-IsHubSite (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+IsHubSite (Edm.String) | ✅ | ❌ | ❌ | ❌
 NewSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 PreviousHubSiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 SourceSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

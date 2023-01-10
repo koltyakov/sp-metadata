@@ -345,6 +345,7 @@ GetListItemByResourceId (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetListItemChanges (SP.Folder) | ✅ | ✅ | ✅ | ❌
 GetListItemChangesSinceToken (SP.List) | ✅ | ✅ | ✅ | ✅
 GetListItemUsingPath (SP.Web) | ✅ | ✅ | ❌ | ❌
+GetListOperation (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetListUsingPath (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetLists (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetLookupFieldChoices (SP.List) | ✅ | ❌ | ❌ | ❌
@@ -460,7 +461,6 @@ Recycle (SP.List) | ✅ | ✅ | ✅ | ✅
 Recycle (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 RecycleByID (Collection(SP.FileVersion)) | ✅ | ✅ | ❌ | ❌
 RecycleByLabel (Collection(SP.FileVersion)) | ✅ | ✅ | ❌ | ❌
-RecycleImage (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 RecycleObject (SP.Attachment) | ✅ | ✅ | ❌ | ❌
 RecycleWithETag (SP.File) | ✅ | ✅ | ❌ | ❌
 RecycleWithParameters (SP.File) | ✅ | ❌ | ❌ | ❌
@@ -769,6 +769,7 @@ SetViewXml (SP.View) | ✅ | ✅ | ❌ | ❌
 SiteReference (SP.KnowledgeHub) | ✅ | ❌ | ❌ | ❌
 SitesReference (SP.OrganizationNews) | ✅ | ❌ | ❌ | ❌
 StartDelete (SP.Folder) | ✅ | ❌ | ❌ | ❌
+StartRecycle (SP.List) | ✅ | ❌ | ❌ | ❌
 StartUpload (SP.File) | ✅ | ✅ | ✅ | ❌
 StartUploadFile (SP.File) | ✅ | ❌ | ❌ | ❌
 SyncFlowCallbackUrl (SP.List) | ✅ | ✅ | ❌ | ❌

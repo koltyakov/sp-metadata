@@ -42,6 +42,7 @@ RemoveTenantCdnOrigin (Microsoft.Online.SharePoint.TenantManagement.Office365Ten
 RevokeAllUserSessions (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 RevokeAllUserSessionsByPuid (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 SetBlockDownloadFileTypePolicyData (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
+SetBlockDownloadFileTypePolicyExclusionList (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 SetHideDefaultThemes (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 SetIdleSessionSignOutForUnmanagedDevices (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 SetOrgAssetsLib (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌

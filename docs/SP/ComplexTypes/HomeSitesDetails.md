@@ -11,4 +11,5 @@ MatchingAudiences (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 SiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ❌ | ❌ | ❌
 Url (Edm.String) | ✅ | ❌ | ❌ | ❌
+VivaConnectionsDefaultStart (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 WebId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

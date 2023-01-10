@@ -1,8 +1,8 @@
-# Function Import: RecycleImage
+# Function Import: GetListOperation
 
 > Namespace: SP
 
-- Entity type: SP.ListItem
+- Entity type: SP.Web
 - Is composable: false
 - Is bindable: false
 
@@ -10,4 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-imageName (Edm.String) | ✅ | ❌ | ❌ | ❌
+listId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+operationId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

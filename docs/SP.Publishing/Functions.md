@@ -61,6 +61,7 @@ CreateNewsCopy (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
 CreateNewsCopy (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 CreateNewsCopy (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 CustomThumbnail (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
+Delete (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 DeleteMagazine (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | ❌ | ❌
 DeleteObject (SP.Publishing.PointPublishingPost) | ✅ | ❌ | ❌ | ❌
 DeleteObject (SP.Publishing.SpotlightChannel) | ✅ | ❌ | ❌ | ❌
@@ -154,6 +155,12 @@ Publish (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 Publish (SP.Publishing.SitePage) | ✅ | ✅ | ❌ | ❌
 Publish (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 Publish (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+PublishCoAuth (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
+PublishCoAuth (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
+PublishCoAuth (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
+PublishCoAuth (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
+PublishCoAuth (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
+PublishCoAuth (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 Query (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
 QueryChannels (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
 QueryGroupNames (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | ❌ | ❌

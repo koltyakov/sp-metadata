@@ -48,6 +48,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.SharePoint.Flighting.Runtime](./Microsoft.SharePoint.Flighting.Runtime) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Internal](./Microsoft.SharePoint.Internal) | ✅ | ✅ | ❌ | ❌
 [Microsoft.SharePoint.Internal.ClientSideComponent](./Microsoft.SharePoint.Internal.ClientSideComponent) | ✅ | ✅ | ❌ | ❌
+[Microsoft.SharePoint.LargeOperation](./Microsoft.SharePoint.LargeOperation) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Likes](./Microsoft.SharePoint.Likes) | ✅ | ✅ | ❌ | ❌
 [Microsoft.SharePoint.ListHome](./Microsoft.SharePoint.ListHome) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Marketplace](./Microsoft.SharePoint.Marketplace) | ✅ | ❌ | ❌ | ❌

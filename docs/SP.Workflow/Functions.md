@@ -25,7 +25,6 @@ MediaServiceUpdateV2 (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 OverridePolicyTip (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 ParseAndSetFieldValue (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 Recycle (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
-RecycleImage (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 RecycleWithParameters (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 ResetRoleInheritance (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 SetCommentsDisabled (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌

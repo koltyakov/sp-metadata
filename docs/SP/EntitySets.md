@@ -420,6 +420,7 @@ SPFarms | ✅ | ❌ | ❌ | ❌
 SPFlights | ✅ | ❌ | ❌ | ❌
 SPHSites | ✅ | ❌ | ❌ | ❌
 SPHelpers | ❌ | ❌ | ✅ | ❌
+SPLargeOperations | ✅ | ❌ | ❌ | ❌
 SPMachineLearningEnableds | ✅ | ❌ | ❌ | ❌
 SPMachineLearningModelEntityDatas | ✅ | ❌ | ❌ | ❌
 SPMachineLearningPublicationsEntityDatas | ✅ | ❌ | ❌ | ❌
