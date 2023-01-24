@@ -36,6 +36,7 @@
       </ComplexType>
       <ComplexType Name="HomeSitesDetails">
         <Property Name="Audiences" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="IsInDraftMode" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MatchingAudiences" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
@@ -44,6 +45,7 @@
         <Property Name="WebId" Type="Edm.Guid" Nullable="false" />
       </ComplexType>
       <ComplexType Name="PortalAndOrgNewsSiteReference">
+        <Property Name="IsInDraftMode" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="WebId" Type="Edm.Guid" Nullable="false" />
       </ComplexType>
@@ -90,6 +92,15 @@
         <Property Name="NotHomeSiteUrlWarning" Type="Edm.String" />
         <Property Name="SearchUrl" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="VivaHomeTitleRegion">
+        <Property Name="ImageUrl" Type="Edm.String" />
+        <Property Name="ListId" Type="Edm.Guid" />
+        <Property Name="SiteId" Type="Edm.Guid" />
+        <Property Name="TranslateX" Type="Edm.Double" />
+        <Property Name="TranslateY" Type="Edm.Double" />
+        <Property Name="UniqueId" Type="Edm.Guid" />
+        <Property Name="WebId" Type="Edm.Guid" />
+      </ComplexType>
       <ComplexType Name="UserIdInfo">
         <Property Name="NameId" Type="Edm.String" />
         <Property Name="NameIdIssuer" Type="Edm.String" />
@@ -128,7 +139,6 @@
         <Property Name="ProvisioningStatus" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="ColumnTypeInfo">
-        <Property Name="IsTypeCompatible" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PlaceholderId" Type="Edm.String" />
         <Property Name="TranslatedPlaceholderType" Type="Edm.String" />
       </ComplexType>
@@ -4147,6 +4157,7 @@
         <EntitySet Name="SPOPortalLaunchValidators" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SPOPortalLaunchValidator" />
         <EntitySet Name="SPOTenantCdnPolicys" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SPOTenantCdnPolicy" />
         <EntitySet Name="SPOTenantWebTemplateCollections" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection" />
+        <EntitySet Name="SPOWebAppServicePrincipalPublics" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic" />
         <EntitySet Name="Tenants" EntityType="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         <EntitySet Name="TenantAdminEndpointss" EntityType="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminEndpoints" />
         <EntitySet Name="TenantAdminSettingsServices" EntityType="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService" />
@@ -4188,9 +4199,11 @@
         <EntitySet Name="HostedApps" EntityType="Microsoft.SharePoint.ClientSideComponent.HostedApp" />
         <EntitySet Name="HostedAppAddResponses" EntityType="Microsoft.SharePoint.ClientSideComponent.HostedAppAddResponse" />
         <EntitySet Name="HostedAppsManagers" EntityType="Microsoft.SharePoint.ClientSideComponent.HostedAppsManager" />
+        <EntitySet Name="Spfx3rdPartyCustomPrincipalInfos" EntityType="Microsoft.SharePoint.ClientSideComponent.Spfx3rdPartyCustomPrincipalInfo" />
         <EntitySet Name="StorageEntitys" EntityType="Microsoft.SharePoint.ClientSideComponent.StorageEntity" />
         <EntitySet Name="comments" EntityType="Microsoft.SharePoint.Comments.comment" />
         <EntitySet Name="CommentsAPIs" EntityType="Microsoft.SharePoint.Comments.CommentsAPI" />
+        <EntitySet Name="VivaHomes" EntityType="Microsoft.SharePoint.EmployeeEngagement.VivaHome" />
         <EntitySet Name="SPFlights" EntityType="Microsoft.SharePoint.Flighting.Runtime.SPFlight" />
         <EntitySet Name="ActivityLoggers" EntityType="Microsoft.SharePoint.Internal.ActivityLogger" />
         <EntitySet Name="Tokens" EntityType="Microsoft.SharePoint.Internal.ClientSideComponent.Token" />
@@ -5390,11 +5403,6 @@
         </FunctionImport>
         <FunctionImport Name="Import" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsBindable="true" EntitySet="Models">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
-          <Parameter Name="packageName" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="SetupContractsSolution" ReturnType="SP.List" IsBindable="true" EntitySet="Lists">
-          <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
-          <Parameter Name="newLibraryName" Type="Edm.String" />
           <Parameter Name="packageName" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SetupPrimedLibrary" ReturnType="SP.List" IsBindable="true" EntitySet="Lists">
@@ -10209,6 +10217,7 @@
           <Parameter Name="this" Type="SP.SPHSite" />
           <Parameter Name="siteUrl" Type="Edm.String" />
           <Parameter Name="vivaConnectionsDefaultStart" Type="Edm.Boolean" />
+          <Parameter Name="isInDraftMode" Type="Edm.Boolean" />
         </FunctionImport>
         <FunctionImport Name="SP_SPHSite_ValidateHomeSite">
           <Parameter Name="validationActionType" Type="Edm.Int32" Nullable="false" />
@@ -10566,12 +10575,28 @@
           <Parameter Name="this" Type="SP.EmployeeEngagement" />
           <Parameter Name="overrideLanguageCode" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="DashboardOOBContent" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.EmployeeEngagement" />
+          <Parameter Name="oobContentChoice" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="VivaConnections" ReturnType="SP.VivaConnectionsUrlConfiguration" IsBindable="true">
           <Parameter Name="this" Type="SP.EmployeeEngagement" />
           <Parameter Name="adminConfiguredUrl" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="VivaHome" ReturnType="Microsoft.SharePoint.EmployeeEngagement.VivaHome" IsBindable="true" EntitySet="VivaHomes">
+          <Parameter Name="this" Type="SP.EmployeeEngagement" />
+        </FunctionImport>
         <FunctionImport Name="VivaHomeConfiguration" ReturnType="Collection(SP.KeyValue)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.EmployeeEngagement" />
+        </FunctionImport>
+        <FunctionImport Name="AddImage" ReturnType="SP.File" IsBindable="true" EntitySet="Files12">
+          <Parameter Name="this" Type="Microsoft.SharePoint.EmployeeEngagement.VivaHome" />
+          <Parameter Name="fileName" Type="Edm.String" />
+          <Parameter Name="imageStream" Type="Edm.Stream" />
+        </FunctionImport>
+        <FunctionImport Name="TitleRegion" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.EmployeeEngagement.VivaHome" />
+          <Parameter Name="vivaHomeTitleRegion" Type="SP.VivaHomeTitleRegion" />
         </FunctionImport>
         <FunctionImport Name="Like" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Comments.comment" />
@@ -12088,6 +12113,10 @@
         </FunctionImport>
         <FunctionImport Name="SP_Web_GetSharingLinkKind" ReturnType="Edm.Int32" IsSideEffecting="false">
           <Parameter Name="fileUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetSitePageCopyToStatus" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="workItemId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetSiteUserIncludingDeletedByPuid" ReturnType="SP.User" IsComposable="true" IsBindable="true" EntitySet="Users1">
           <Parameter Name="this" Type="SP.Web" />
@@ -14704,6 +14733,12 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantManagement.Office365Tenant" />
           <Parameter Name="siteUrl" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="LogCustomFontsLargeUpload" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantManagement.Office365Tenant" />
+          <Parameter Name="numCatalogs" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="numFonts" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="totalExpectedFiles" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="QueueImportProfileProperties" ReturnType="Edm.Guid" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantManagement.Office365Tenant" />
           <Parameter Name="idType" Type="Edm.Int32" Nullable="false" />
@@ -14931,6 +14966,23 @@
         <FunctionImport Name="GetMalwareFileStream" ReturnType="Edm.Stream" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SPOMalwareFile" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_TenantAdministration_SPOWebAppServicePrincipalPublic" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic" IsComposable="true" EntitySet="SPOWebAppServicePrincipalPublics" />
+        <FunctionImport Name="AddCustomSpfx3rdPartyAppPrincipal" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic" />
+          <Parameter Name="appId" Type="Edm.String" />
+          <Parameter Name="appUri" Type="Edm.String" />
+          <Parameter Name="clientSecret" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetCustomSpfx3rdPartyAppPrincipal" ReturnType="Microsoft.SharePoint.ClientSideComponent.Spfx3rdPartyCustomPrincipalInfo" IsComposable="true" IsBindable="true" EntitySet="Spfx3rdPartyCustomPrincipalInfos">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic" />
+        </FunctionImport>
+        <FunctionImport Name="RemoveCustomSpfx3rdPartyAppPrincipal" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic" />
+        </FunctionImport>
+        <FunctionImport Name="UpdateCustomSpfx3rdPartyAppPrincipalClientSecret" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic" />
+          <Parameter Name="clientSecret" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_TenantAdministration_TenantAdminEndpoints" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminEndpoints" IsComposable="true" EntitySet="TenantAdminEndpointss" />
         <FunctionImport Name="Microsoft_Online_SharePoint_TenantAdministration_TenantAdminSettingsService" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService" IsComposable="true" EntitySet="TenantAdminSettingsServices" />
         <FunctionImport Name="GetTenantSharingStatus" ReturnType="Edm.Int32" IsSideEffecting="false" IsBindable="true">
@@ -14963,6 +15015,15 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="parameters" Type="SP.ViewCreationInformation" />
         </FunctionImport>
+        <FunctionImport Name="ArchiveSiteById" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="CertifyInactiveSite" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="siteUrl" Type="Edm.String" />
+          <Parameter Name="userEmail" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="CheckTenantIntuneLicense" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
@@ -14982,6 +15043,11 @@
         <FunctionImport Name="CreateSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteCreationProperties" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCreationProperties" />
+        </FunctionImport>
+        <FunctionImport Name="DeleteInactiveSite" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="siteUrl" Type="Edm.String" />
+          <Parameter Name="userEmail" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="DeletePolicyDefinition" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -15307,6 +15373,7 @@
           <Parameter Name="ViewId" Type="Edm.String" />
           <Parameter Name="ViewPath" Type="Edm.String" />
           <Parameter Name="WebPartId" Type="Edm.String" />
+          <Parameter Name="FilterIBSegmentsBasedOnAndCondition" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="RenderIBSegmentListFilterData" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -15417,6 +15484,10 @@
           <Parameter Name="archiveUrl" Type="Edm.String" />
           <Parameter Name="includeSmartGestures" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="force" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="UnarchiveSiteById" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="UnregisterHubSite" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -18289,6 +18360,9 @@
       <Annotations Target="SP.HomeSitesDetails/Audiences">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.HomeSitesDetails/IsInDraftMode">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.HomeSitesDetails/MatchingAudiences">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18380,6 +18454,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.VivaConnectionsUrlConfiguration">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.VivaHomeTitleRegion">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Deployment.ShortcutInformation">
@@ -19169,6 +19246,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext/Location">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext/SyntexConsumptionBillingActivationStatus">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext/SyntexConsumptionBillingEnabledFeatures">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext/Updated">
@@ -20290,6 +20373,9 @@
       <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata/StoreAssetId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata/SupportsTeamsTabs">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata/ThumbnailUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20905,6 +20991,9 @@
       <Annotations Target="SP.EmployeeEngagement">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.EmployeeEngagement.VivaHome">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Comments.comment">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20912,6 +21001,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Comments.CommentsAPI">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.ClientSideComponent.Spfx3rdPartyCustomPrincipalInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.ClientSideComponent.HostedAppAddResponse">
@@ -21284,6 +21376,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SPOPortalLaunchValidator">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminEndpoints">
@@ -21665,9 +21760,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Import(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SetupContractsSolution(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetupPrimedLibrary(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String, Edm.String, Edm.Boolean, Edm.String)">
@@ -22867,7 +22959,7 @@
       <Annotations Target="SP.ApiData/SP_SPHSite_IsValidHomeSite(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SetSPHSite(SP.SPHSite, Edm.String, Edm.Boolean)">
+      <Annotations Target="SP.ApiData/SetSPHSite(SP.SPHSite, Edm.String, Edm.Boolean, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_SPHSite_ValidateHomeSite(Edm.Int32, Edm.String)">
@@ -23029,10 +23121,22 @@
       <Annotations Target="SP.ApiData/Configuration(SP.EmployeeEngagement)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/DashboardOOBContent(SP.EmployeeEngagement, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/VivaConnections(SP.EmployeeEngagement, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/VivaHome(SP.EmployeeEngagement)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/VivaHomeConfiguration(SP.EmployeeEngagement)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/AddImage(Microsoft.SharePoint.EmployeeEngagement.VivaHome, Edm.String, Edm.Stream)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/TitleRegion(Microsoft.SharePoint.EmployeeEngagement.VivaHome, SP.VivaHomeTitleRegion)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Like(Microsoft.SharePoint.Comments.comment)">
@@ -23927,6 +24031,21 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/UpdateGroupPropertiesBySiteId(Microsoft.Online.SharePoint.TenantAdministration.SPOGroup, Edm.Guid, Edm.Guid, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Microsoft_Online_SharePoint_TenantAdministration_SPOWebAppServicePrincipalPublic()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/AddCustomSpfx3rdPartyAppPrincipal(Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic, Edm.String, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetCustomSpfx3rdPartyAppPrincipal(Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/RemoveCustomSpfx3rdPartyAppPrincipal(Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/UpdateCustomSpfx3rdPartyAppPrincipalClientSecret(Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_Online_SharePoint_TenantAdministration_TenantAdminEndpoints()">
@@ -28063,6 +28182,8 @@
         <Property Name="DestinationPageUniqueId" Type="Edm.Guid" Nullable="false" />
         <Property Name="DestinationType" Type="Edm.Int32" Nullable="false" />
         <Property Name="DestinationWebUrl" Type="Edm.String" />
+        <Property Name="ScenarioName" Type="Edm.String" />
+        <Property Name="ScenarioPayload" Type="Edm.String" />
         <Property Name="SitePageFlags" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="ProfileDateTime">
@@ -29731,6 +29852,7 @@
         <Property Name="ClickThroughId" Type="Edm.String" />
         <Property Name="CommentCount" Type="Edm.Int64" Nullable="false" />
         <Property Name="ContentTypeId" Type="SP.ContentTypeId" />
+        <Property Name="CoverPhotoId" Type="Edm.String" />
         <Property Name="CreatedDateTime" Type="Edm.DateTime" Nullable="false" />
         <Property Name="CreatedDateTimeUTC" Type="Edm.DateTime" Nullable="false" />
         <Property Name="DocId" Type="Edm.String" />
@@ -30383,6 +30505,7 @@
         <Property Name="ShortDescription" Type="Edm.String" />
         <Property Name="SkipDeploymentFeature" Type="Edm.Boolean" Nullable="false" />
         <Property Name="StoreAssetId" Type="Edm.String" />
+        <Property Name="SupportsTeamsTabs" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ThumbnailUrl" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
       </EntityType>
@@ -30564,6 +30687,12 @@
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <EntityType Name="HostedAppsManager">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="Spfx3rdPartyCustomPrincipalInfo">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
@@ -32250,6 +32379,8 @@
         <Property Name="AzureResourceId" Type="Edm.String" />
         <Property Name="AzureSubscriptionState" Type="Edm.Int32" Nullable="false" />
         <Property Name="Location" Type="Edm.String" />
+        <Property Name="SyntexConsumptionBillingActivationStatus" Type="Edm.Int32" Nullable="false" />
+        <Property Name="SyntexConsumptionBillingEnabledFeatures" Type="Edm.Int32" Nullable="false" />
         <Property Name="Updated" Type="Edm.DateTime" Nullable="false" />
       </ComplexType>
       <ComplexType Name="TenantDefaultTimeZoneId">
@@ -32480,6 +32611,12 @@
         </Key>
         <Property Name="PolicyType" Type="Edm.Int32" Nullable="false" />
         <Property Name="PolicyValue" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="SPOWebAppServicePrincipalPublic">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
       <EntityType Name="SPOTenantWebTemplateCollection">
         <Key>
@@ -34406,6 +34543,14 @@
         <Property Name="SerializedData" Type="Edm.String" Nullable="false" />
       </EntityType>
       <EntityType Name="Token">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Microsoft.SharePoint.EmployeeEngagement" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="VivaHome">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
