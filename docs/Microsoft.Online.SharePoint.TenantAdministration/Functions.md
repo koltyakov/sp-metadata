@@ -5,6 +5,7 @@
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 AddAsGroupOwnerAndMember (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ✅ | ❌ | ❌ | ❌
+AddCustomSpfx3rdPartyAppPrincipal (Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic) | ✅ | ❌ | ❌ | ❌
 AddGroupMember (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ✅ | ❌ | ❌ | ❌
 AddGroupOwner (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ✅ | ❌ | ❌ | ❌
 AddHomeSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -12,12 +13,15 @@ AddRecentAdminAction (Microsoft.Online.SharePoint.TenantAdministration.Tenant) |
 AddRecentAdminActionReport (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 AddTenantAdminListItem (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 AddTenantAdminListView (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+ArchiveSiteById (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+CertifyInactiveSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 CheckSiteIsArchivedById (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
 CheckTenantIntuneLicense (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 CheckTenantLicenses (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 ConnectSiteToHubSiteById (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 CreatePolicyDefinition (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 CreateSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+DeleteInactiveSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 DeletePolicyDefinition (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 DeleteRecentAdminActionReport (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 ExportAdminListToCSV (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -26,6 +30,7 @@ ExportToCSV (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | �
 GetAdminListViews (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetById (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
 GetCollaborationInsightsData (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+GetCustomSpfx3rdPartyAppPrincipal (Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic) | ✅ | ❌ | ❌ | ❌
 GetFilteredSPListItems (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetGroupInfo (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ✅ | ❌ | ❌ | ❌
 GetGroupSiteRelationship (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
@@ -71,6 +76,7 @@ MessageCenterMessages (Microsoft.Online.SharePoint.TenantAdministration.Office36
 <span title="Microsoft_Online_SharePoint_TenantAdministration_ResponseMessageCenter">Microsoft_Online_SharePoint_TenantAdministration_R...</span> (Microsoft Online SharePoint TenantAdministration ResponseMessageCenter) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_TenantAdministration_ResponseServiceHealth">Microsoft_Online_SharePoint_TenantAdministration_R...</span> (Microsoft Online SharePoint TenantAdministration ResponseServiceHealth) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_TenantAdministration_SPOGroup">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SPOGroup) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Online_SharePoint_TenantAdministration_SPOWebAppServicePrincipalPublic">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SPOWebAppServicePrincipalPublic) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_TenantAdministration_SiteCollectionManagementService">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SiteCollectionManagementService) | ✅ | ❌ | ❌ | ❌
 [<span title="Microsoft_Online_SharePoint_TenantAdministration_SiteProperties">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SiteProperties)](./Functions/Microsoft_Online_SharePoint_TenantAdministration_SiteProperties.md) | ✅ | ❌ | ❌ | ❌
 [<span title="Microsoft_Online_SharePoint_TenantAdministration_SiteProperties_ClearSharingLockDown">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SiteProperties ClearSharingLockDown)](./Functions/Microsoft_Online_SharePoint_TenantAdministration_SiteProperties_ClearSharingLockDown.md) | ✅ | ❌ | ❌ | ❌
@@ -81,6 +87,7 @@ Office365ProvidedSharepointSiteActivityDataReady (Microsoft.Online.SharePoint.Te
 RegisterHubSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RegisterHubSiteWithCreationInformation (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveAsGroupOwnerAndMember (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ✅ | ❌ | ❌ | ❌
+RemoveCustomSpfx3rdPartyAppPrincipal (Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic) | ✅ | ❌ | ❌ | ❌
 RemoveDeletedSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveDeletedSitePreferId (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveGroupMember (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ✅ | ❌ | ❌ | ❌
@@ -119,11 +126,13 @@ SetTrackViewFeatureAlwaysVisible (Microsoft.Online.SharePoint.TenantAdministrati
 SwapSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SwapSiteWithSmartGestureOption (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SwapSiteWithSmartGestureOptionForce (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+UnarchiveSiteById (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 UnregisterHubSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.TenantAdministration.SiteProperties) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService) | ✅ | ❌ | ❌ | ❌
+UpdateCustomSpfx3rdPartyAppPrincipalClientSecret (Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic) | ✅ | ❌ | ❌ | ❌
 UpdateGroupProperties (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ✅ | ❌ | ❌ | ❌
 UpdateGroupPropertiesBySiteId (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ✅ | ❌ | ❌ | ❌
 UpdateGroupSiteProperties (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌

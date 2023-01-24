@@ -29,6 +29,7 @@ GetTenantCdnPolicies (Microsoft.Online.SharePoint.TenantManagement.Office365Tena
 GetTenantTheme (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 IncrementCustomFontsMinorVersion (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 IsSharingDisabledForNonOwnersOfSite (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
+LogCustomFontsLargeUpload (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_TenantManagement_GroupCreationParams">Microsoft_Online_SharePoint_TenantManagement_Group...</span> (Microsoft Online SharePoint TenantManagement GroupCreationParams) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_TenantManagement_Office365Tenant">Microsoft_Online_SharePoint_TenantManagement_Offic...</span> (Microsoft Online SharePoint TenantManagement Office365Tenant) | ✅ | ❌ | ❌ | ❌
 QueueImportProfileProperties (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌

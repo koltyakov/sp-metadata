@@ -163,6 +163,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [VisualizationField](./ComplexTypes/VisualizationField.md) | ✅ | ✅ | ❌ | ❌
 [VisualizationStyleSet](./ComplexTypes/VisualizationStyleSet.md) | ✅ | ✅ | ❌ | ❌
 [VivaConnectionsUrlConfiguration](./ComplexTypes/VivaConnectionsUrlConfiguration.md) | ✅ | ❌ | ❌ | ❌
+[VivaHomeTitleRegion](./ComplexTypes/VivaHomeTitleRegion.md) | ✅ | ❌ | ❌ | ❌
 [WebCreationInformation](./ComplexTypes/WebCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [WebInfoCreationInformation](./ComplexTypes/WebInfoCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [WebRequestInfo](./ComplexTypes/WebRequestInfo.md) | ✅ | ✅ | ✅ | ✅

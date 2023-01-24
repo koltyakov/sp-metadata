@@ -15,4 +15,6 @@ CreateIfMissing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DestinationPageUniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 DestinationType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DestinationWebUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+ScenarioName (Edm.String) | ✅ | ❌ | ❌ | ❌
+ScenarioPayload (Edm.String) | ✅ | ❌ | ❌ | ❌
 SitePageFlags (Edm.String) | ✅ | ❌ | ❌ | ❌

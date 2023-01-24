@@ -25,5 +25,6 @@ ProductId (Edm.String) | ✅ | ❌ | ❌ | ❌
 ShortDescription (Edm.String) | ✅ | ❌ | ❌ | ❌
 SkipDeploymentFeature (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 StoreAssetId (Edm.String) | ✅ | ❌ | ❌ | ❌
+SupportsTeamsTabs (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ThumbnailUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ✅ | ❌ | ❌

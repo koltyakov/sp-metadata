@@ -103,6 +103,7 @@ CreateSitePage (SP.Web) | ✅ | ❌ | ❌ | ❌
 CreateSmartTemplateContentTypeAndAddToList (SP.List) | ✅ | ❌ | ❌ | ❌
 CreateSmartTemplateContentTypeAndAddToListV2 (SP.List) | ✅ | ❌ | ❌ | ❌
 DashboardContent (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
+DashboardOOBContent (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 DefaultDocumentLibrary (SP.Web) | ✅ | ✅ | ✅ | ❌
 Delete (SP.HubSite) | ✅ | ✅ | ❌ | ❌
 DeleteAlert (Collection(SP.Alert)) | ✅ | ✅ | ❌ | ❌
@@ -375,6 +376,7 @@ GetResourceEntries (SP.UserResource) | ✅ | ❌ | ❌ | ❌
 GetSPAppContextAsStream (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetSharedWithUsers (SP.ObjectSharingInformation) | ✅ | ✅ | ✅ | ✅
 GetSharingLinkData (SP.Web) | ✅ | ✅ | ❌ | ❌
+GetSitePageCopyToStatus (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetSiteUrlByHubSiteId (Collection(SP.HubSite)) | ✅ | ❌ | ❌ | ❌
 GetSiteUserIncludingDeletedByPuid (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetSpecialFolderUrl (SP.List) | ✅ | ✅ | ✅ | ❌
@@ -866,6 +868,7 @@ ValidateSetValue (SP.FieldUser) | ❌ | ❌ | ❌ | ✅
 ValidateUpdateFetchListItem (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 ValidateUpdateListItem (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 VivaConnections (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
+VivaHome (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 VivaHomeConfiguration (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 contextinfo | ✅ | ✅ | ✅ | ✅
 files | ✅ | ✅ | ✅ | ❌

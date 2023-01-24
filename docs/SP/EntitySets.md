@@ -440,6 +440,7 @@ SPOTenantWebTemplateCollections | ✅ | ❌ | ❌ | ❌
 SPOUserSessionRevocationResults | ✅ | ❌ | ❌ | ❌
 SPOWebAppServicePrincipalPermissionGrants | ✅ | ❌ | ❌ | ❌
 SPOWebAppServicePrincipalPermissionRequests | ✅ | ❌ | ❌ | ❌
+SPOWebAppServicePrincipalPublics | ✅ | ❌ | ❌ | ❌
 SPOWebAppServicePrincipals | ✅ | ❌ | ❌ | ❌
 SPPolicyStoreProxys | ✅ | ❌ | ❌ | ❌
 SPSitePreservationUtilitys | ✅ | ❌ | ❌ | ❌
@@ -511,6 +512,7 @@ SolutionExporters | ✅ | ❌ | ❌ | ❌
 SortCollections | ✅ | ✅ | ✅ | ✅
 SortableSessionManagers | ✅ | ✅ | ✅ | ✅
 SortableTaskQuerys | ✅ | ✅ | ✅ | ✅
+Spfx3rdPartyCustomPrincipalInfos | ✅ | ❌ | ❌ | ❌
 Sphomeservices | ✅ | ✅ | ❌ | ❌
 SpoOperations | ✅ | ❌ | ❌ | ❌
 SpotlightChannels | ✅ | ❌ | ❌ | ❌
@@ -626,6 +628,7 @@ ViewFieldCollections | ✅ | ✅ | ✅ | ✅
 ViewSelectionInfos | ✅ | ✅ | ✅ | ✅
 Views | ✅ | ✅ | ✅ | ✅
 VisualizationAppSynchronizationResults | ✅ | ✅ | ❌ | ❌
+VivaHomes | ✅ | ❌ | ❌ | ❌
 WacApis | ✅ | ❌ | ❌ | ❌
 WebInformations | ✅ | ✅ | ✅ | ✅
 WebNavigationSettingss | ❌ | ❌ | ❌ | ✅

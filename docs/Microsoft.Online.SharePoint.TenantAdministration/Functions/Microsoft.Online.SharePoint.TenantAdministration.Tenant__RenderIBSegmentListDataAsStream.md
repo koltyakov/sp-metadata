@@ -49,6 +49,7 @@ FilterFields6 (Edm.String) | ✅ | ❌ | ❌ | ❌
 FilterFields7 (Edm.String) | ✅ | ❌ | ❌ | ❌
 FilterFields8 (Edm.String) | ✅ | ❌ | ❌ | ❌
 FilterFields9 (Edm.String) | ✅ | ❌ | ❌ | ❌
+FilterIBSegmentsBasedOnAndCondition (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 FilterLookupId (Edm.String) | ✅ | ❌ | ❌ | ❌
 FilterLookupId1 (Edm.String) | ✅ | ❌ | ❌ | ❌
 FilterLookupId10 (Edm.String) | ✅ | ❌ | ❌ | ❌

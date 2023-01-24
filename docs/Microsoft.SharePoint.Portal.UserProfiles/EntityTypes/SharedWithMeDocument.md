@@ -12,6 +12,7 @@ ChildCount (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 ClickThroughId (Edm.String) | ✅ | ✅ | ❌ | ❌
 CommentCount (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 ContentTypeId (SP.ContentTypeId) | ✅ | ✅ | ✅ | ❌
+CoverPhotoId (Edm.String) | ✅ | ❌ | ❌ | ❌
 CreatedDateTime (Edm.DateTime) | ✅ | ✅ | ❌ | ❌
 CreatedDateTimeUTC (Edm.DateTime) | ✅ | ✅ | ❌ | ❌
 DocId (Edm.String) | ✅ | ✅ | ✅ | ❌
