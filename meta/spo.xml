@@ -30,6 +30,10 @@
         <Property Name="PropertyTypeFullName" Type="Edm.String" />
         <Property Name="ReadOnly" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="Audience">
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Title" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="HomeSiteNavConfiguration">
         <Property Name="IsEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LogoHash" Type="Edm.String" />
@@ -37,6 +41,7 @@
       <ComplexType Name="HomeSitesDetails">
         <Property Name="Audiences" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="IsInDraftMode" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsVivaBackendSite" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MatchingAudiences" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
@@ -54,6 +59,14 @@
         <Property Name="LogoUrl" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
         <Property Name="Url" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="TargetedSiteDetails">
+        <Property Name="Audiences" Type="Collection(SP.Audience)" />
+        <Property Name="IsVivaBackendSite" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Title" Type="Edm.String" />
+        <Property Name="Url" Type="Edm.String" />
+        <Property Name="WebId" Type="Edm.Guid" Nullable="false" />
       </ComplexType>
       <ComplexType Name="FileCreationInformation">
         <Property Name="Content" Type="Edm.Binary" />
@@ -670,6 +683,7 @@
       </ComplexType>
       <ComplexType Name="SPInvitationCreationResult">
         <Property Name="Email" Type="Edm.String" />
+        <Property Name="Error" Type="Edm.String" />
         <Property Name="InvitationLink" Type="Edm.String" />
         <Property Name="Succeeded" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
@@ -4205,6 +4219,8 @@
         <EntitySet Name="CommentsAPIs" EntityType="Microsoft.SharePoint.Comments.CommentsAPI" />
         <EntitySet Name="VivaHomes" EntityType="Microsoft.SharePoint.EmployeeEngagement.VivaHome" />
         <EntitySet Name="SPFlights" EntityType="Microsoft.SharePoint.Flighting.Runtime.SPFlight" />
+        <EntitySet Name="SPTenantIBInsightsReportMetadatas" EntityType="Microsoft.SharePoint.Insights.SPTenantIBInsightsReportMetadata" />
+        <EntitySet Name="SPTenantIBInsightsReportManagers" EntityType="Microsoft.SharePoint.Insights.SPTenantIBInsightsReportManager" />
         <EntitySet Name="ActivityLoggers" EntityType="Microsoft.SharePoint.Internal.ActivityLogger" />
         <EntitySet Name="Tokens" EntityType="Microsoft.SharePoint.Internal.ClientSideComponent.Token" />
         <EntitySet Name="TrackedItemServices" EntityType="Microsoft.SharePoint.Internal.TrackedItemService" />
@@ -10563,6 +10579,22 @@
           <Parameter Name="clientId" Type="Edm.String" />
           <Parameter Name="resource" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Insights_SPTenantIBInsightsReportManager" ReturnType="Microsoft.SharePoint.Insights.SPTenantIBInsightsReportManager" IsComposable="true" EntitySet="SPTenantIBInsightsReportManagers" />
+        <FunctionImport Name="CreateReport" ReturnType="Microsoft.SharePoint.Insights.SPTenantIBInsightsReportMetadata" IsBindable="true" EntitySet="SPTenantIBInsightsReportMetadatas">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Insights.SPTenantIBInsightsReportManager" />
+        </FunctionImport>
+        <FunctionImport Name="GetAllReportsMetadata" ReturnType="Collection(Microsoft.SharePoint.Insights.SPTenantIBInsightsReportMetadata)" IsComposable="true" IsBindable="true" EntitySet="SPTenantIBInsightsReportMetadatas">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Insights.SPTenantIBInsightsReportManager" />
+        </FunctionImport>
+        <FunctionImport Name="GetReport" ReturnType="Microsoft.SharePoint.Insights.SPTenantIBInsightsReport" IsComposable="true" IsBindable="true" EntitySet="SPTenantIBInsightsReportMetadatas">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Insights.SPTenantIBInsightsReportManager" />
+          <Parameter Name="reportId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetReportData" ReturnType="Collection(Edm.String)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Insights.SPTenantIBInsightsReportManager" />
+          <Parameter Name="reportId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="section" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="SP_AppConfiguration" ReturnType="SP.AppConfiguration" IsComposable="true" EntitySet="AppConfigurations" />
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.AppConfiguration" />
@@ -10593,6 +10625,11 @@
           <Parameter Name="this" Type="Microsoft.SharePoint.EmployeeEngagement.VivaHome" />
           <Parameter Name="fileName" Type="Edm.String" />
           <Parameter Name="imageStream" Type="Edm.Stream" />
+        </FunctionImport>
+        <FunctionImport Name="AddImageFromExternalUrl" ReturnType="SP.File" IsBindable="true" EntitySet="Files12">
+          <Parameter Name="this" Type="Microsoft.SharePoint.EmployeeEngagement.VivaHome" />
+          <Parameter Name="fileName" Type="Edm.String" />
+          <Parameter Name="externalUrl" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="TitleRegion" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.EmployeeEngagement.VivaHome" />
@@ -18354,6 +18391,15 @@
       <Annotations Target="Microsoft.SharePoint.QuickActionMessageCard.SPAccessRequestRefreshStatus">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Audience">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Audience/Id">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Audience/Title">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.HomeSitesDetails">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18361,6 +18407,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.HomeSitesDetails/IsInDraftMode">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.HomeSitesDetails/IsVivaBackendSite">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.HomeSitesDetails/MatchingAudiences">
@@ -18379,6 +18428,27 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.HomeSitesDetails/WebId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.TargetedSiteDetails">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.TargetedSiteDetails/Audiences">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.TargetedSiteDetails/IsVivaBackendSite">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.TargetedSiteDetails/SiteId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.TargetedSiteDetails/Title">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.TargetedSiteDetails/Url">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.TargetedSiteDetails/WebId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.News.DataModel.SerializableType">
@@ -18996,37 +19066,28 @@
       <Annotations Target="SP.Sharing.SensitivityLabelInformation">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.Sharing.ShareLinkEntityResultDescription">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Sharing.ShareLinkEntityResultDescription/Result">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Sharing.ShareLinkEntityResultDescription/ResultString">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Sharing.ShareLinkEntityResultSettingPolicyReason">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Sharing.ShareLinkEntityResultSettingPolicyReason/SettingPolicyResult">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Sharing.ShareLinkEntityResultSettingPolicyReason/SettingPolicyResultString">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Sharing.ShareLinkEntityResult">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Sharing.ShareLinkEntityResult/Description">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Sharing.ShareLinkEntityResult/Key">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.Sharing.ShareLinkResponse">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Sharing.ShareLinkPartialSuccessResponse">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Sharing.SharingEntityResult">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Sharing.SharingEntityResultDescription">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Sharing.SharingEntityResultDescription/Result">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Sharing.SharingEntityResultDescription/ResultString">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Sharing.SharingEntityResult/Description">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Sharing.SharingEntityResult/Key">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Sharing.ShareLinkRequest">
@@ -19060,6 +19121,15 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Sharing.SharingAbilities/anyoneLinkAbilities">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Sharing.SharingEntityResultSettingPolicyReason">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Sharing.SharingEntityResultSettingPolicyReason/SettingPolicyResult">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Sharing.SharingEntityResultSettingPolicyReason/SettingPolicyResultString">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Sharing.SharingInformationRequest">
@@ -19281,13 +19351,28 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/IsSyntexPAYGEnabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/MachineLearningCaptureEnabled">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/MachineLearningExperienceEnabled">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/TenantSyntexV1Enabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/TenantSyntexV2Enabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/UserSyntexEnabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/UserSyntexV1Enabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/UserSyntexV2Enabled">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub">
@@ -21004,6 +21089,15 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.ClientSideComponent.Spfx3rdPartyCustomPrincipalInfo">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.ClientSideComponent.Spfx3rdPartyCustomPrincipalInfo/AppId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.ClientSideComponent.Spfx3rdPartyCustomPrincipalInfo/AppUri">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.ClientSideComponent.Spfx3rdPartyCustomPrincipalInfo/ClientSecret">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.ClientSideComponent.HostedAppAddResponse">
@@ -23136,6 +23230,9 @@
       <Annotations Target="SP.ApiData/AddImage(Microsoft.SharePoint.EmployeeEngagement.VivaHome, Edm.String, Edm.Stream)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/AddImageFromExternalUrl(Microsoft.SharePoint.EmployeeEngagement.VivaHome, Edm.String, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/TitleRegion(Microsoft.SharePoint.EmployeeEngagement.VivaHome, SP.VivaHomeTitleRegion)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -24392,11 +24489,16 @@
       </EntityType>
       <EntityType Name="SPMachineLearningEnabled">
         <Key>
-          <PropertyRef Name="MachineLearningCaptureEnabled" />
+          <PropertyRef Name="IsSyntexPAYGEnabled" />
         </Key>
+        <Property Name="IsSyntexPAYGEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MachineLearningExperienceEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="TenantSyntexV1Enabled" Type="Edm.Boolean" />
+        <Property Name="TenantSyntexV2Enabled" Type="Edm.Boolean" />
         <Property Name="UserSyntexEnabled" Type="Edm.Boolean" />
+        <Property Name="UserSyntexV1Enabled" Type="Edm.Boolean" />
+        <Property Name="UserSyntexV2Enabled" Type="Edm.Boolean" />
       </EntityType>
       <EntityType Name="SPMachineLearningHub">
         <Key>
@@ -30694,9 +30796,11 @@
       </EntityType>
       <EntityType Name="Spfx3rdPartyCustomPrincipalInfo">
         <Key>
-          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+          <PropertyRef Name="AppId" />
         </Key>
-        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+        <Property Name="AppId" Type="Edm.String" Nullable="false" />
+        <Property Name="AppUri" Type="Edm.String" />
+        <Property Name="ClientSecret" Type="Edm.String" />
       </EntityType>
       <EntityType Name="HostedAppAddResponse">
         <Key>
@@ -31279,23 +31383,19 @@
         <Property Name="ErrorMessage" Type="Edm.String" />
         <Property Name="Success" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
-      <ComplexType Name="ShareLinkEntityResultDescription">
-        <Property Name="Result" Type="Edm.Int32" Nullable="false" />
-        <Property Name="ResultString" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="ShareLinkEntityResultSettingPolicyReason" BaseType="SP.Sharing.ShareLinkEntityResultDescription">
-        <Property Name="SettingPolicyResult" Type="Edm.Int32" Nullable="false" />
-        <Property Name="SettingPolicyResultString" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="ShareLinkEntityResult">
-        <Property Name="Description" Type="SP.Sharing.ShareLinkEntityResultDescription" />
-        <Property Name="Key" Type="Edm.String" />
-      </ComplexType>
       <ComplexType Name="ShareLinkResponse">
         <Property Name="sharingLinkInfo" Type="SP.SharingLinkInfo" />
       </ComplexType>
       <ComplexType Name="ShareLinkPartialSuccessResponse" BaseType="SP.Sharing.ShareLinkResponse">
-        <Property Name="entityResults" Type="Collection(SP.Sharing.ShareLinkEntityResult)" />
+        <Property Name="entityResults" Type="Collection(SP.Sharing.SharingEntityResult)" />
+      </ComplexType>
+      <ComplexType Name="SharingEntityResult">
+        <Property Name="Description" Type="SP.Sharing.SharingEntityResultDescription" />
+        <Property Name="Key" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SharingEntityResultDescription">
+        <Property Name="Result" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ResultString" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="ShareLinkRequest">
         <Property Name="createLink" Type="Edm.Boolean" Nullable="false" />
@@ -31360,6 +31460,10 @@
         <Property Name="defaultExpirationInDays" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="SharingLinkPasswordAbilityStatus" BaseType="SP.Sharing.SharingAbilityStatus" />
+      <ComplexType Name="SharingEntityResultSettingPolicyReason" BaseType="SP.Sharing.SharingEntityResultDescription">
+        <Property Name="SettingPolicyResult" Type="Edm.Int32" Nullable="false" />
+        <Property Name="SettingPolicyResultString" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="SharingInformationRequest">
         <Property Name="clientSupportedFeatures" Type="Edm.String" />
         <Property Name="maxPrincipalsToReturn" Type="Edm.Int32" Nullable="false" />
@@ -34549,6 +34653,31 @@
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
     </Schema>
+    <Schema Namespace="Microsoft.SharePoint.Insights" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="SPTenantIBInsightsReportManager">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="SPTenantIBInsightsReportMetadata">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="CompleteTimeInUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="QueuedTimeInUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="StartTimeInUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="State" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="SPTenantIBInsightsReport" BaseType="Microsoft.SharePoint.Insights.SPTenantIBInsightsReportMetadata">
+        <Property Name="Explicit" Type="Collection(Edm.String)" />
+        <Property Name="Implicit" Type="Collection(Edm.String)" />
+        <Property Name="ModeDistribution" Type="Collection(Edm.String)" />
+        <Property Name="Open" Type="Collection(Edm.String)" />
+        <Property Name="OwnerModerated" Type="Collection(Edm.String)" />
+      </EntityType>
+    </Schema>
     <Schema Namespace="Microsoft.SharePoint.EmployeeEngagement" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="VivaHome">
         <Key>
@@ -34575,6 +34704,7 @@
       <EntityType Name="SPTenantIBPolicyComplianceReport" BaseType="Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReportEntityData">
         <Property Name="CompleteTimeInUtc" Type="Edm.DateTime" />
         <Property Name="Content" Type="Collection(Edm.String)" />
+        <Property Name="DownloadReportFilePath" Type="Edm.String" />
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
         <Property Name="IncompatibleSegmentsPairsContent" Type="Collection(Edm.String)" />
         <Property Name="InvalidSegmentsContent" Type="Collection(Edm.String)" />
