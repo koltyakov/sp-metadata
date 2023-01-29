@@ -1,4 +1,4 @@
-# Complex Type: HomeSitesDetails
+# Complex Type: TargetedSiteDetails
 
 > Namespace: SP
 
@@ -6,12 +6,9 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-Audiences (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
-IsInDraftMode (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+Audiences (Collection(SP.Audience)) | ✅ | ❌ | ❌ | ❌
 IsVivaBackendSite (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-MatchingAudiences (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 SiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ❌ | ❌ | ❌
 Url (Edm.String) | ✅ | ❌ | ❌ | ❌
-VivaConnectionsDefaultStart (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 WebId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

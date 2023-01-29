@@ -18,6 +18,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [AsyncReadJobInfo](./ComplexTypes/AsyncReadJobInfo.md) | ✅ | ❌ | ❌ | ❌
 [AsyncReadOptions](./ComplexTypes/AsyncReadOptions.md) | ✅ | ❌ | ❌ | ❌
 [AttachmentCreationInformation](./ComplexTypes/AttachmentCreationInformation.md) | ✅ | ✅ | ✅ | ✅
+[Audience](./ComplexTypes/Audience.md) | ✅ | ❌ | ❌ | ❌
 [AutoLabellingWorkInformation](./ComplexTypes/AutoLabellingWorkInformation.md) | ✅ | ❌ | ❌ | ❌
 [BasePermissions](./ComplexTypes/BasePermissions.md) | ✅ | ✅ | ✅ | ✅
 [CamlQuery](./ComplexTypes/CamlQuery.md) | ✅ | ✅ | ✅ | ✅
@@ -140,6 +141,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SimpleDataTable](./ComplexTypes/SimpleDataTable.md) | ✅ | ✅ | ✅ | ✅
 [SmartTemplateContentType](./ComplexTypes/SmartTemplateContentType.md) | ✅ | ❌ | ❌ | ❌
 [SubwebQuery](./ComplexTypes/SubwebQuery.md) | ✅ | ✅ | ✅ | ✅
+[TargetedSiteDetails](./ComplexTypes/TargetedSiteDetails.md) | ✅ | ❌ | ❌ | ❌
 [TemplateMetaData](./ComplexTypes/TemplateMetaData.md) | ✅ | ❌ | ❌ | ❌
 [TemplatizationMetaData](./ComplexTypes/TemplatizationMetaData.md) | ✅ | ❌ | ❌ | ❌
 [TemporaryFolderFileInfo](./ComplexTypes/TemporaryFolderFileInfo.md) | ✅ | ❌ | ❌ | ❌

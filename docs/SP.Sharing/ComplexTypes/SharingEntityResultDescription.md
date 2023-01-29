@@ -1,4 +1,4 @@
-# Complex Type: ShareLinkEntityResultDescription
+# Complex Type: SharingEntityResultDescription
 
 > Namespace: SP.Sharing
 

@@ -7,5 +7,6 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 Email (Edm.String) | ✅ | ✅ | ✅ | ❌
+Error (Edm.String) | ✅ | ❌ | ❌ | ❌
 InvitationLink (Edm.String) | ✅ | ✅ | ✅ | ❌
 Succeeded (Edm.Boolean) | ✅ | ✅ | ✅ | ❌

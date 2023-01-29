@@ -1,4 +1,4 @@
-# Complex Type: ShareLinkEntityResultSettingPolicyReason
+# Complex Type: SharingEntityResultSettingPolicyReason
 
 > Namespace: SP.Sharing
 

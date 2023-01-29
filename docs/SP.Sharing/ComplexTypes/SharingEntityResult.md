@@ -1,4 +1,4 @@
-# Complex Type: ShareLinkEntityResult
+# Complex Type: SharingEntityResult
 
 > Namespace: SP.Sharing
 
@@ -6,5 +6,5 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-Description (SP.Sharing.ShareLinkEntityResultDescription) | ✅ | ❌ | ❌ | ❌
+Description (SP.Sharing.SharingEntityResultDescription) | ✅ | ❌ | ❌ | ❌
 Key (Edm.String) | ✅ | ❌ | ❌ | ❌

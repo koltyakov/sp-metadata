@@ -6,6 +6,11 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+IsSyntexPAYGEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MachineLearningCaptureEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MachineLearningExperienceEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+TenantSyntexV1Enabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+TenantSyntexV2Enabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UserSyntexEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+UserSyntexV1Enabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+UserSyntexV2Enabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

@@ -47,6 +47,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.SharePoint.Deployment](./Microsoft.SharePoint.Deployment) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.EmployeeEngagement](./Microsoft.SharePoint.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Flighting.Runtime](./Microsoft.SharePoint.Flighting.Runtime) | ✅ | ❌ | ❌ | ❌
+[Microsoft.SharePoint.Insights](./Microsoft.SharePoint.Insights) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Internal](./Microsoft.SharePoint.Internal) | ✅ | ✅ | ❌ | ❌
 [Microsoft.SharePoint.Internal.ClientSideComponent](./Microsoft.SharePoint.Internal.ClientSideComponent) | ✅ | ✅ | ❌ | ❌
 [Microsoft.SharePoint.LargeOperation](./Microsoft.SharePoint.LargeOperation) | ✅ | ❌ | ❌ | ❌

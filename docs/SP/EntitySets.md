@@ -446,6 +446,8 @@ SPPolicyStoreProxys | ✅ | ❌ | ❌ | ❌
 SPSitePreservationUtilitys | ✅ | ❌ | ❌ | ❌
 SPSocialSwitchs | ✅ | ✅ | ❌ | ❌
 SPTenantAppInstanceDatas | ✅ | ❌ | ❌ | ❌
+SPTenantIBInsightsReportManagers | ✅ | ❌ | ❌ | ❌
+SPTenantIBInsightsReportMetadatas | ✅ | ❌ | ❌ | ❌
 SPTenantIBPolicyComplianceReportEntityDatas | ✅ | ❌ | ❌ | ❌
 SPWebApplications | ✅ | ❌ | ❌ | ❌
 SPWebServices | ✅ | ❌ | ❌ | ❌
