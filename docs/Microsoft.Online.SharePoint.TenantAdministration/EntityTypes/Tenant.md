@@ -116,6 +116,7 @@ IncludeAtAGlanceInShareEmails (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 InformationBarriersSuspension (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsAppBarTemporarilyDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsCollabMeetingNotesFluidEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+IsEnableAppAuthPopUpEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsFluidEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsHubSitesMultiGeoFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsLoopEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -125,6 +126,7 @@ IsMultipleHomeSitesFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsUnmanagedSyncClientForTenantRestricted (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsUnmanagedSyncClientRestrictionFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsVivaHomeFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+IsVivaHomeGAFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsWBFluidEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LabelMismatchEmailHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌
 LegacyAuthProtocolsEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

@@ -11,6 +11,7 @@ AttributeExpirationTimes (Collection(SP.KeyValue)) | ✅ | ✅ | ❌ | ❌
 ChangeMarker (Edm.String) | ✅ | ✅ | ✅ | ❌
 DirectoryObjectSubType (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 DirectoryObjectType (Edm.Int32) | ✅ | ✅ | ✅ | ❌
+DirectorySessionData (SP.Directory.Provider.DirectorySessionData) | ✅ | ❌ | ❌ | ❌
 Id (Edm.Guid) | ✅ | ✅ | ✅ | ❌
 IsNew (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 LastModifiedTime (Edm.DateTime) | ✅ | ✅ | ✅ | ❌

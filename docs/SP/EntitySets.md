@@ -120,6 +120,7 @@ EduChanges | ❌ | ❌ | ❌ | ✅
 EffectiveInformationRightsManagementSettingss | ✅ | ✅ | ✅ | ❌
 EmbedDataV1s | ✅ | ✅ | ❌ | ❌
 EmbedServices | ✅ | ✅ | ❌ | ❌
+EmployeeExperiences | ✅ | ❌ | ❌ | ❌
 EngagementComments | ✅ | ✅ | ❌ | ❌
 EngagementTimephasedPeriods | ✅ | ✅ | ❌ | ❌
 Engagements | ✅ | ✅ | ❌ | ❌

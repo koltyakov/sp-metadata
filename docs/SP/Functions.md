@@ -102,6 +102,7 @@ CreateSPAsyncReadJobWithMultiUrl (SP.Site) | ✅ | ❌ | ❌ | ❌
 CreateSitePage (SP.Web) | ✅ | ❌ | ❌ | ❌
 CreateSmartTemplateContentTypeAndAddToList (SP.List) | ✅ | ❌ | ❌ | ❌
 CreateSmartTemplateContentTypeAndAddToListV2 (SP.List) | ✅ | ❌ | ❌ | ❌
+Dashboard (SP.EmployeeExperienceController) | ✅ | ❌ | ❌ | ❌
 DashboardContent (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 DashboardOOBContent (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 DefaultDocumentLibrary (SP.Web) | ✅ | ✅ | ✅ | ❌
@@ -180,6 +181,7 @@ DisableIndex (SP.FieldUser) | ✅ | ❌ | ❌ | ❌
 DoesPushNotificationSubscriberExist (SP.Web) | ✅ | ✅ | ✅ | ✅
 DoesUserHavePermissions (SP.Web) | ✅ | ✅ | ✅ | ✅
 EE | ✅ | ❌ | ❌ | ❌
+EmployeeExperience | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.Field) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldCalculated) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldChoice) | ✅ | ❌ | ❌ | ❌
@@ -564,6 +566,7 @@ SP_Campaigns_GetCampaignsSummary | ✅ | ❌ | ❌ | ❌
 [SP_CampainAnalytics_GetReport](./Functions/SP_CampainAnalytics_GetReport.md) | ✅ | ❌ | ❌ | ❌
 SP_CurrencyList_GetList | ✅ | ✅ | ❌ | ❌
 SP_EmployeeEngagement | ✅ | ❌ | ❌ | ❌
+SP_EmployeeExperienceController | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteListsSubstrate_AddList](./Functions/SP_FavoriteListsSubstrate_AddList.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteListsSubstrate_GetListsBy](./Functions/SP_FavoriteListsSubstrate_GetListsBy.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteListsSubstrate_RemoveList](./Functions/SP_FavoriteListsSubstrate_RemoveList.md) | ✅ | ❌ | ❌ | ❌
@@ -687,6 +690,7 @@ SP_Web_GetContextWebThemeData | ✅ | ✅ | ✅ | ❌
 SaveAsNewView (SP.List) | ✅ | ✅ | ✅ | ✅
 SaveAsTemplate (SP.List) | ✅ | ✅ | ❌ | ❌
 SaveBinaryStream (SP.File) | ✅ | ✅ | ✅ | ✅
+SaveDashboard (SP.EmployeeExperienceController) | ✅ | ❌ | ❌ | ❌
 SearchLookupFieldChoices (SP.List) | ✅ | ❌ | ❌ | ❌
 Set (SP.RequestVariable) | ❌ | ❌ | ❌ | ✅
 SetAccessRequestSiteDescriptionAndUpdate (SP.Web) | ✅ | ❌ | ❌ | ❌

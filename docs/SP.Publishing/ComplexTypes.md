@@ -44,6 +44,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [RepostPageFieldsData](./ComplexTypes/RepostPageFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [RuleErrorDetails](./ComplexTypes/RuleErrorDetails.md) | ✅ | ❌ | ❌ | ❌
 [RuleResult](./ComplexTypes/RuleResult.md) | ✅ | ❌ | ❌ | ❌
+[SendTestEmailResponse](./ComplexTypes/SendTestEmailResponse.md) | ✅ | ❌ | ❌ | ❌
 [SharePagePreviewByEmailFieldsData](./ComplexTypes/SharePagePreviewByEmailFieldsData.md) | ✅ | ✅ | ❌ | ❌
 [SharePointPublishingStatus](./ComplexTypes/SharePointPublishingStatus.md) | ✅ | ❌ | ❌ | ❌
 [SharePointPublishingStatusResponse](./ComplexTypes/SharePointPublishingStatusResponse.md) | ✅ | ❌ | ❌ | ❌

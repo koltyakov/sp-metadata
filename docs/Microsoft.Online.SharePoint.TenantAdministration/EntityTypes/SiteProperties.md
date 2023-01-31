@@ -68,6 +68,7 @@ OwnerLoginName (Edm.String) | ✅ | ❌ | ❌ | ❌
 OwnerName (Edm.String) | ✅ | ❌ | ❌ | ❌
 PWAEnabled (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ReadOnlyAccessPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ReadOnlyForBlockDownloadPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ReadOnlyForUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RelatedGroupId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 RequestFilesLinkEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

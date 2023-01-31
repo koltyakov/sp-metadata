@@ -46,6 +46,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.SharePoint.Comments.Client](./Microsoft.SharePoint.Comments.Client) | ✅ | ✅ | ❌ | ❌
 [Microsoft.SharePoint.Deployment](./Microsoft.SharePoint.Deployment) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.EmployeeEngagement](./Microsoft.SharePoint.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
+[Microsoft.SharePoint.EmployeeEngagement.Experience](./Microsoft.SharePoint.EmployeeEngagement.Experience) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Flighting.Runtime](./Microsoft.SharePoint.Flighting.Runtime) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Insights](./Microsoft.SharePoint.Insights) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Internal](./Microsoft.SharePoint.Internal) | ✅ | ✅ | ❌ | ❌
@@ -65,6 +66,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.SharePoint.Portal.Project](./Microsoft.SharePoint.Portal.Project) | ✅ | ✅ | ✅ | ✅
 [Microsoft.SharePoint.Portal.UserProfiles](./Microsoft.SharePoint.Portal.UserProfiles) | ✅ | ✅ | ✅ | ✅
 [Microsoft.SharePoint.Portal.WebControls](./Microsoft.SharePoint.Portal.WebControls) | ✅ | ✅ | ✅ | ❌
+[Microsoft.SharePoint.PortalAndOrgNews](./Microsoft.SharePoint.PortalAndOrgNews) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Publishing.Diagnostics](./Microsoft.SharePoint.Publishing.Diagnostics) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Publishing.PageCopyWithAssets](./Microsoft.SharePoint.Publishing.PageCopyWithAssets) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Publishing.RestOnly](./Microsoft.SharePoint.Publishing.RestOnly) | ✅ | ❌ | ❌ | ❌
