@@ -2451,6 +2451,12 @@
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
         <NavigationProperty Name="AppConfiguration" Relationship="SP.SP_EmployeeEngagement_AppConfiguration_SP_AppConfiguration_AppConfigurationPartner" ToRole="AppConfiguration" FromRole="AppConfigurationPartner" />
       </EntityType>
+      <EntityType Name="EmployeeExperienceController">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="Campaigns" Abstract="true">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
@@ -4053,6 +4059,7 @@
         <EntitySet Name="Apps" EntityType="Microsoft.AppServices.AppCollection" />
         <EntitySet Name="ComponentContextInfos" EntityType="Microsoft.SharePoint.Internal.ClientSideComponent.ComponentContextInfo" />
         <EntitySet Name="EEs" EntityType="SP.EmployeeEngagement" />
+        <EntitySet Name="EmployeeExperiences" EntityType="SP.EmployeeExperienceController" />
         <EntitySet Name="Files" EntityType="MS.FileServices.FileSystemItem" />
         <EntitySet Name="GroupServices" EntityType="Microsoft.SharePoint.Portal.GroupService" />
         <EntitySet Name="Groupsitemanagers" EntityType="Microsoft.SharePoint.Portal.GroupSiteManager" />
@@ -4654,6 +4661,7 @@
         <FunctionImport Name="ComponentContextInfo" ReturnType="Microsoft.SharePoint.Internal.ClientSideComponent.ComponentContextInfo" IsComposable="true" EntitySet="ComponentContextInfos" />
         <FunctionImport Name="contextinfo" ReturnType="SP.ContextWebInformation" IsComposable="true" />
         <FunctionImport Name="EE" ReturnType="SP.EmployeeEngagement" IsComposable="true" EntitySet="EEs" />
+        <FunctionImport Name="EmployeeExperience" ReturnType="SP.EmployeeExperienceController" IsComposable="true" EntitySet="EmployeeExperiences" />
         <FunctionImport Name="files" ReturnType="Collection(MS.FileServices.FileSystemItem)" IsComposable="true" EntitySet="Files" />
         <FunctionImport Name="GroupService" ReturnType="Microsoft.SharePoint.Portal.GroupService" IsComposable="true" EntitySet="GroupServices" />
         <FunctionImport Name="groupsitemanager" ReturnType="Microsoft.SharePoint.Portal.GroupSiteManager" IsComposable="true" EntitySet="Groupsitemanagers" />
@@ -8032,6 +8040,9 @@
         <FunctionImport Name="SaveMailDraft" ReturnType="SP.Publishing.CampaignPublicationMailDraftData" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
+        <FunctionImport Name="SendTestEmail" ReturnType="SP.Publishing.SendTestEmailResponse" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+        </FunctionImport>
         <FunctionImport Name="SP_Publishing_CommunicationSite" ReturnType="SP.Publishing.CommunicationSite" IsComposable="true" EntitySet="CommunicationSites" />
         <FunctionImport Name="Create" ReturnType="SP.Publishing.CommunicationSiteCreationResponse" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CommunicationSite" />
@@ -10634,6 +10645,18 @@
         <FunctionImport Name="TitleRegion" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.EmployeeEngagement.VivaHome" />
           <Parameter Name="vivaHomeTitleRegion" Type="SP.VivaHomeTitleRegion" />
+        </FunctionImport>
+        <FunctionImport Name="SP_EmployeeExperienceController" ReturnType="SP.EmployeeExperienceController" IsComposable="true" EntitySet="EmployeeExperiences" />
+        <FunctionImport Name="Dashboard" ReturnType="Collection(Microsoft.SharePoint.EmployeeEngagement.Experience.DashboardContent)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.EmployeeExperienceController" />
+          <Parameter Name="formFactor" Type="Edm.String" />
+          <Parameter Name="dashboardId" Type="Edm.String" />
+          <Parameter Name="mySiteUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SaveDashboard" IsBindable="true">
+          <Parameter Name="this" Type="SP.EmployeeExperienceController" />
+          <Parameter Name="employeeExperienceDashboardData" Type="Microsoft.SharePoint.EmployeeEngagement.Experience.DashboardContent" />
+          <Parameter Name="mySiteUrl" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Like" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Comments.comment" />
@@ -15501,6 +15524,11 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="sphSiteUrl" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="SetSPHSiteWithConfiguration" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="sphSiteUrl" Type="Edm.String" />
+          <Parameter Name="configuration" Type="Microsoft.SharePoint.PortalAndOrgNews.HomeSiteConfigurationParam" />
+        </FunctionImport>
         <FunctionImport Name="SwapSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="sourceUrl" Type="Edm.String" />
@@ -18013,6 +18041,9 @@
       <Annotations Target="SP.Publishing.SharePointPublishingStatus">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.SendTestEmailResponse">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.SharePagePreviewByEmailFieldsData">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19309,19 +19340,19 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext/ActivationStatus">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext/AzureResourceId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext/AzureSubscriptionState">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext/EnabledFeatures">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext/Location">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext/SyntexConsumptionBillingActivationStatus">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext/SyntexConsumptionBillingEnabledFeatures">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext/Updated">
@@ -21622,6 +21653,9 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/IsVivaHomeFlightEnabled">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/IsVivaHomeGAFlightEnabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/OneDriveDefaultLinkToExistingAccess">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22061,6 +22095,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SaveMailDraft(SP.Publishing.CampaignPublication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SendTestEmail(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Publishing_CommunicationSite()">
@@ -25379,11 +25416,16 @@
         <Property Name="ChangeMarker" Type="Edm.String" />
         <Property Name="DirectoryObjectSubType" Type="Edm.Int32" Nullable="false" />
         <Property Name="DirectoryObjectType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DirectorySessionData" Type="SP.Directory.Provider.DirectorySessionData" />
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
         <Property Name="IsNew" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LastModifiedTime" Type="Edm.DateTime" Nullable="false" />
         <Property Name="TenantContextId" Type="Edm.Guid" Nullable="false" />
         <Property Name="Version" Type="Edm.Int64" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="DirectorySessionData">
+        <Property Name="ClientType" Type="Edm.String" />
+        <Property Name="SessionOptions" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SchemaData">
         <Property Name="AttributeDataSource" Type="Edm.Int32" Nullable="false" />
@@ -28515,6 +28557,10 @@
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="SendTestEmailResponse">
+        <Property Name="ErrorCode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Response" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="SharePagePreviewByEmailFieldsData">
         <Property Name="message" Type="Edm.String" />
         <Property Name="recipientEmails" Type="Collection(Edm.String)" />
@@ -30341,6 +30387,14 @@
         <Property Name="uniqueId" Type="Edm.String" />
       </ComplexType>
     </Schema>
+    <Schema Namespace="Microsoft.SharePoint.PortalAndOrgNews" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="HomeSiteConfigurationParam">
+        <Property Name="isInDraftMode" Type="Edm.Boolean" />
+        <Property Name="IsInDraftModePresent" Type="Edm.Boolean" />
+        <Property Name="IsVivaConnectionsDefaultStartPresent" Type="Edm.Boolean" />
+        <Property Name="vivaConnectionsDefaultStart" Type="Edm.Boolean" />
+      </ComplexType>
+    </Schema>
     <Schema Namespace="Microsoft.SharePoint.OrgNewsSite" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="OrgNewsSiteInfo">
         <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
@@ -30523,6 +30577,7 @@
         <Property Name="failedAddins" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPAddinPermissionFailedInfo)" />
       </ComplexType>
       <ComplexType Name="SPAppAddAndDeployResponseInfomation">
+        <Property Name="IsFirstTimeDeployed" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ListId" Type="Edm.String" />
         <Property Name="ListItemId" Type="Edm.String" />
         <Property Name="ListItemUniqueId" Type="Edm.String" />
@@ -30719,6 +30774,19 @@
         <End Type="Microsoft.SharePoint.Internal.ActivityLogger" Role="ActivityLogger" Multiplicity="0..1" />
         <End Type="SP.Web" Role="ActivityLoggerPartner" Multiplicity="0..1" />
       </Association>
+    </Schema>
+    <Schema Namespace="Microsoft.SharePoint.EmployeeEngagement.Experience" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="DashboardCardDetails">
+        <Property Name="ControlIndex" Type="Edm.Double" Nullable="false" />
+        <Property Name="InstanceId" Type="Edm.String" />
+        <Property Name="State" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="DashboardContent">
+        <Property Name="DashboardCardDetails" Type="Collection(Microsoft.SharePoint.EmployeeEngagement.Experience.DashboardCardDetails)" />
+        <Property Name="DashboardFormFactor" Type="Edm.String" />
+        <Property Name="DashboardId" Type="Edm.String" />
+        <Property Name="LastModifiedDate" Type="Edm.DateTime" Nullable="false" />
+      </ComplexType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.Deployment" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="ShortcutInformation">
@@ -32480,11 +32548,11 @@
         <Property Name="Name" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SyntexBillingContext">
+        <Property Name="ActivationStatus" Type="Edm.Int32" Nullable="false" />
         <Property Name="AzureResourceId" Type="Edm.String" />
         <Property Name="AzureSubscriptionState" Type="Edm.Int32" Nullable="false" />
+        <Property Name="EnabledFeatures" Type="Edm.Int32" Nullable="false" />
         <Property Name="Location" Type="Edm.String" />
-        <Property Name="SyntexConsumptionBillingActivationStatus" Type="Edm.Int32" Nullable="false" />
-        <Property Name="SyntexConsumptionBillingEnabledFeatures" Type="Edm.Int32" Nullable="false" />
         <Property Name="Updated" Type="Edm.DateTime" Nullable="false" />
       </ComplexType>
       <ComplexType Name="TenantDefaultTimeZoneId">
@@ -32650,6 +32718,7 @@
         <Property Name="OwnerName" Type="Edm.String" />
         <Property Name="PWAEnabled" Type="Edm.Int32" Nullable="false" />
         <Property Name="ReadOnlyAccessPolicy" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ReadOnlyForBlockDownloadPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ReadOnlyForUnmanagedDevices" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RelatedGroupId" Type="Edm.Guid" Nullable="false" />
         <Property Name="RequestFilesLinkEnabled" Type="Edm.Boolean" Nullable="false" />
@@ -32887,6 +32956,7 @@
         <Property Name="IPAddressWACTokenLifetime" Type="Edm.Int32" Nullable="false" />
         <Property Name="IsAppBarTemporarilyDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsCollabMeetingNotesFluidEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsEnableAppAuthPopUpEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsFluidEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsHubSitesMultiGeoFlightEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsLoopEnabled" Type="Edm.Boolean" Nullable="false" />
@@ -32896,6 +32966,7 @@
         <Property Name="IsUnmanagedSyncClientForTenantRestricted" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsUnmanagedSyncClientRestrictionFlightEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsVivaHomeFlightEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsVivaHomeGAFlightEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsWBFluidEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LabelMismatchEmailHelpLink" Type="Edm.String" />
         <Property Name="LegacyAuthProtocolsEnabled" Type="Edm.Boolean" Nullable="false" />
