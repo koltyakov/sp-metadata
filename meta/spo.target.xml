@@ -11953,10 +11953,19 @@
           <Parameter Name="emailSubject" Type="Edm.String" />
           <Parameter Name="emailBody" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="GetACSServicePrincipals" ReturnType="Collection(Microsoft.SharePoint.Authentication.SPACSServicePrincipalInfo)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="appIds" Type="Collection(Edm.Guid)" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="GetAdaptiveCardExtensions" ReturnType="Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="includeErrors" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="project" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetAddinUninstallJobDetail" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPUninstallAddinJobDetail" IsBindable="true">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="jobId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="serverRelativeUrl" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="GetAllClientSideComponents" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
@@ -12224,10 +12233,6 @@
         <FunctionImport Name="IncrementSiteClientTag" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
         </FunctionImport>
-        <FunctionImport Name="ListACSServicePrincipals" ReturnType="Microsoft.SharePoint.Authentication.SPACSServicePrincipalResponse" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="skipToken" Type="Edm.String" />
-        </FunctionImport>
         <FunctionImport Name="ListPowerPlatformUserDetails" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
           <Parameter Name="this" Type="SP.Web" />
         </FunctionImport>
@@ -12341,11 +12346,7 @@
         <FunctionImport Name="SyncHubSiteTheme" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
         </FunctionImport>
-        <FunctionImport Name="UninstallAddinErrors" ReturnType="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPUninstallAddinErrorDetails)" IsBindable="true">
-          <Parameter Name="this" Type="SP.Web" />
-          <Parameter Name="uninstallAddins" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPUninstallAddinRequest)" />
-        </FunctionImport>
-        <FunctionImport Name="UninstallAddins" ReturnType="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPFailToTriggerUninstallAddinJobResponse)" IsBindable="true">
+        <FunctionImport Name="UninstallAddins" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPUninstallAddinResponse" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="uninstallAddins" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPUninstallAddinRequest)" />
         </FunctionImport>
@@ -12503,6 +12504,9 @@
           <Parameter Name="includeSharingHistory" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_SharedWithMeItemCollection_RemoveFromSharedWithMe" ReturnType="Edm.String">
+          <Parameter Name="spoIds" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_SharedWithMeItemCollection_RestoreToSharedWithMe" ReturnType="Edm.String">
           <Parameter Name="spoIds" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_SmartCache_Update">
@@ -17954,6 +17958,9 @@
       <Annotations Target="SP.Publishing.CampaignPublicationFieldsData/EndpointSharePoint">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.CampaignPublicationFieldsData/EndpointTeams">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.CampaignPublicationFieldsData/EndpointYammer">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20813,6 +20820,9 @@
       <Annotations Target="SP.Publishing.CampaignPublication/SharePointEndpoint">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.CampaignPublication/TeamsEndpoint">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.CampaignPublication/YammerEndpoint">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -23516,7 +23526,13 @@
       <Annotations Target="SP.ApiData/EnsureTenantAppCatalog(SP.Web, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetACSServicePrincipals(SP.Web, Collection(Edm.Guid))">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetAdaptiveCardExtensions(SP.Web, Edm.Boolean, Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetAddinUninstallJobDetail(SP.Web, Edm.Guid, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetAllClientSideComponents(SP.Web, Collection(Edm.String))">
@@ -23588,9 +23604,6 @@
       <Annotations Target="SP.ApiData/HubSiteDataAsStream(SP.Web, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/ListACSServicePrincipals(SP.Web, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.ApiData/ListPowerPlatformUserDetails(SP.Web)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -23631,9 +23644,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SyncHubSiteTheme(SP.Web)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/UninstallAddinErrors(SP.Web, Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPUninstallAddinRequest))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/UninstallAddins(SP.Web, Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPUninstallAddinRequest))">
@@ -23718,6 +23728,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_SharedWithMeItemCollection_RemoveFromSharedWithMe(Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_SharedWithMeItemCollection_RestoreToSharedWithMe(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_SmartCache_Update(Edm.String)">
@@ -28308,6 +28321,7 @@
       <ComplexType Name="CampaignPublicationFieldsData" BaseType="SP.Publishing.SitePageFieldsData">
         <Property Name="EndpointEmail" Type="Edm.String" />
         <Property Name="EndpointSharePoint" Type="Edm.String" />
+        <Property Name="EndpointTeams" Type="Edm.String" />
         <Property Name="EndpointYammer" Type="Edm.String" />
         <Property Name="PublicationMetadata" Type="Edm.String" />
         <Property Name="PublicationStatus" Type="Edm.Int32" Nullable="false" />
@@ -28711,6 +28725,7 @@
         <Property Name="PublicationMetadata" Type="Edm.String" />
         <Property Name="PublicationStatus" Type="Edm.Int32" />
         <Property Name="SharePointEndpoint" Type="Edm.String" />
+        <Property Name="TeamsEndpoint" Type="Edm.String" />
         <Property Name="YammerEndpoint" Type="Edm.String" />
       </EntityType>
       <EntityType Name="CanCreatePageResponse">
@@ -30622,15 +30637,32 @@
         <Property Name="ItemId" Type="Edm.String" />
         <Property Name="ListId" Type="Edm.String" />
       </ComplexType>
-      <ComplexType Name="SPUninstallAddinErrorDetails">
+      <ComplexType Name="SPTriggeredUninstallAddinJobResponse">
         <Property Name="appInstanceId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="correlationId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="errorMessages" Type="Collection(Edm.String)" />
         <Property Name="serverRelativeUrl" Type="Edm.String" />
+        <Property Name="uninstallJobId" Type="Edm.Guid" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="SPUninstallAddinErrorDetail">
+        <Property Name="correlationId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="detail" Type="Edm.String" />
+        <Property Name="exceptionMessage" Type="Edm.String" />
+        <Property Name="source" Type="Edm.String" />
+        <Property Name="type" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SPUninstallAddinJobDetail">
+        <Property Name="appInstanceId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="errorDetails" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPUninstallAddinErrorDetail)" />
+        <Property Name="jobId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="serverRelativeUrl" Type="Edm.String" />
+        <Property Name="siteId" Type="Edm.Guid" Nullable="false" />
       </ComplexType>
       <ComplexType Name="SPUninstallAddinRequest">
         <Property Name="appInstanceIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="serverRelativeUrl" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SPUninstallAddinResponse">
+        <Property Name="executing" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPTriggeredUninstallAddinJobResponse)" />
+        <Property Name="failed" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPFailToTriggerUninstallAddinJobResponse)" />
       </ComplexType>
       <EntityType Name="SiteCollectionCorporateCatalogAccessor">
         <Key>
@@ -30988,14 +31020,8 @@
         <Property Name="appDomains" Type="Collection(Edm.String)" />
         <Property Name="appId" Type="Edm.Guid" Nullable="false" />
         <Property Name="appIdentifier" Type="Edm.String" />
-        <Property Name="createdDateTime" Type="Edm.String" />
         <Property Name="redirectUri" Type="Edm.String" />
-        <Property Name="servicePrincipalId" Type="Edm.Guid" Nullable="false" />
         <Property Name="title" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="SPACSServicePrincipalResponse">
-        <Property Name="acsServicePrincipals" Type="Collection(Microsoft.SharePoint.Authentication.SPACSServicePrincipalInfo)" />
-        <Property Name="skipToken" Type="Edm.String" />
       </ComplexType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.Administration" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -31112,6 +31138,7 @@
         <Property Name="UserId" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="EventData">
+        <Property Name="ArchiveUrl" Type="Edm.String" />
         <Property Name="Group" Type="Edm.String" />
         <Property Name="HubSiteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="Identity" Type="Edm.String" />
