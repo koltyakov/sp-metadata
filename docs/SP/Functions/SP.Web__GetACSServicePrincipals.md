@@ -1,4 +1,4 @@
-# Function Import: UninstallAddinErrors
+# Function Import: GetACSServicePrincipals
 
 > Namespace: SP
 
@@ -10,4 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-uninstallAddins (Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPUninstallAddinRequest)) | ✅ | ❌ | ❌ | ❌
+appIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌

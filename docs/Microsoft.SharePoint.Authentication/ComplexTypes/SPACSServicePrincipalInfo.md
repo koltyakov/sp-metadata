@@ -9,7 +9,5 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 appDomains (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 appId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 appIdentifier (Edm.String) | ✅ | ❌ | ❌ | ❌
-createdDateTime (Edm.String) | ✅ | ❌ | ❌ | ❌
 redirectUri (Edm.String) | ✅ | ❌ | ❌ | ❌
-servicePrincipalId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 title (Edm.String) | ✅ | ❌ | ❌ | ❌

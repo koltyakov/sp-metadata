@@ -1,4 +1,4 @@
-# Function Import: ListACSServicePrincipals
+# Function Import: GetAddinUninstallJobDetail
 
 > Namespace: SP
 
@@ -10,4 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-skipToken (Edm.String) | ✅ | ❌ | ❌ | ❌
+jobId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+serverRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

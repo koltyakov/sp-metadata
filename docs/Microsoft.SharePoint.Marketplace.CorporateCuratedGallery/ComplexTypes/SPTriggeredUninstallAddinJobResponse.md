@@ -1,4 +1,4 @@
-# Complex Type: SPUninstallAddinErrorDetails
+# Complex Type: SPTriggeredUninstallAddinJobResponse
 
 > Namespace: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery
 
@@ -7,6 +7,5 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 appInstanceId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-correlationId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-errorMessages (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 serverRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+uninstallJobId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

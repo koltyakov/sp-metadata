@@ -217,7 +217,9 @@ Expire (SP.User) | ✅ | ❌ | ❌ | ❌
 ExtendUpgradeReminderDate (SP.Site) | ✅ | ✅ | ✅ | ✅
 FinishUpload (SP.File) | ✅ | ✅ | ✅ | ❌
 FinishUploadWithChecksum (SP.File) | ✅ | ❌ | ❌ | ❌
+GetACSServicePrincipals (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetAdaptiveCardExtensions (SP.Web) | ✅ | ❌ | ❌ | ❌
+GetAddinUninstallJobDetail (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetAllClientSideComponents (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetAllRules (SP.List) | ✅ | ❌ | ❌ | ❌
 GetAppBdcCatalog (SP.Web) | ✅ | ✅ | ✅ | ✅
@@ -408,7 +410,6 @@ Install (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
 Invalidate (SP.Site) | ✅ | ✅ | ✅ | ✅
 JoinHubSite (SP.Site) | ✅ | ✅ | ❌ | ❌
 KnowledgeHub | ✅ | ❌ | ❌ | ❌
-ListACSServicePrincipals (SP.Web) | ✅ | ❌ | ❌ | ❌
 ListPowerPlatformUserDetails (SP.Web) | ✅ | ❌ | ❌ | ❌
 LoadAndInstallApp (SP.Web) | ✅ | ✅ | ✅ | ✅
 LoadAndInstallAppInSpecifiedLocale (SP.Web) | ✅ | ✅ | ✅ | ✅
@@ -657,6 +658,7 @@ SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌
 [<span title="SP_SharedWithMeItemCollection_GetSharedWithMeExternalItems">SP_SharedWithMeItemCollection_GetSharedWithMeExter...</span> (SP SharedWithMeItemCollection GetSharedWithMeExternalItems)](./Functions/SP_SharedWithMeItemCollection_GetSharedWithMeExternalItems.md) | ✅ | ❌ | ❌ | ❌
 [SP_SharedWithMeItemCollection_GetSharedWithMeItems](./Functions/SP_SharedWithMeItemCollection_GetSharedWithMeItems.md) | ✅ | ❌ | ❌ | ❌
 [<span title="SP_SharedWithMeItemCollection_RemoveFromSharedWithMe">SP_SharedWithMeItemCollection_RemoveFromSharedWith...</span> (SP SharedWithMeItemCollection RemoveFromSharedWithMe)](./Functions/SP_SharedWithMeItemCollection_RemoveFromSharedWithMe.md) | ✅ | ❌ | ❌ | ❌
+[<span title="SP_SharedWithMeItemCollection_RestoreToSharedWithMe">SP_SharedWithMeItemCollection_RestoreToSharedWithM...</span> (SP SharedWithMeItemCollection RestoreToSharedWithMe)](./Functions/SP_SharedWithMeItemCollection_RestoreToSharedWithMe.md) | ✅ | ❌ | ❌ | ❌
 [SP_Site_Exists](./Functions/SP_Site_Exists.md) | ✅ | ✅ | ❌ | ❌
 [SP_Site_GetUrlById](./Functions/SP_Site_GetUrlById.md) | ✅ | ❌ | ❌ | ❌
 [SP_Site_GetUrlByIdForWeb](./Functions/SP_Site_GetUrlByIdForWeb.md) | ✅ | ❌ | ❌ | ❌
@@ -791,7 +793,6 @@ UTCToLocalTime (SP.TimeZone) | ✅ | ✅ | ✅ | ✅
 UnPublish (SP.File) | ✅ | ✅ | ✅ | ✅
 UndoCheckOut (SP.File) | ✅ | ✅ | ✅ | ✅
 Uninstall (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
-UninstallAddinErrors (SP.Web) | ✅ | ❌ | ❌ | ❌
 UninstallAddins (SP.Web) | ✅ | ❌ | ❌ | ❌
 UnlockSmartTemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 UnpublishMappedView (SP.List) | ✅ | ✅ | ❌ | ❌

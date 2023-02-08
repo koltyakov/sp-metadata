@@ -10,4 +10,5 @@ EmailEndpoint (Edm.String) | ✅ | ❌ | ❌ | ❌
 PublicationMetadata (Edm.String) | ✅ | ❌ | ❌ | ❌
 PublicationStatus (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SharePointEndpoint (Edm.String) | ✅ | ❌ | ❌ | ❌
+TeamsEndpoint (Edm.String) | ✅ | ❌ | ❌ | ❌
 YammerEndpoint (Edm.String) | ✅ | ❌ | ❌ | ❌

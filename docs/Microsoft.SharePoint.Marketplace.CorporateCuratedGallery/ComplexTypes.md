@@ -19,6 +19,9 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPStoreAppRequestInformation](./ComplexTypes/SPStoreAppRequestInformation.md) | ✅ | ❌ | ❌ | ❌
 [SPStoreAppResponseInformation](./ComplexTypes/SPStoreAppResponseInformation.md) | ✅ | ❌ | ❌ | ❌
 [SPTenantScopedPermissionInfo](./ComplexTypes/SPTenantScopedPermissionInfo.md) | ✅ | ❌ | ❌ | ❌
-[SPUninstallAddinErrorDetails](./ComplexTypes/SPUninstallAddinErrorDetails.md) | ✅ | ❌ | ❌ | ❌
+[SPTriggeredUninstallAddinJobResponse](./ComplexTypes/SPTriggeredUninstallAddinJobResponse.md) | ✅ | ❌ | ❌ | ❌
+[SPUninstallAddinErrorDetail](./ComplexTypes/SPUninstallAddinErrorDetail.md) | ✅ | ❌ | ❌ | ❌
+[SPUninstallAddinJobDetail](./ComplexTypes/SPUninstallAddinJobDetail.md) | ✅ | ❌ | ❌ | ❌
 [SPUninstallAddinRequest](./ComplexTypes/SPUninstallAddinRequest.md) | ✅ | ❌ | ❌ | ❌
+[SPUninstallAddinResponse](./ComplexTypes/SPUninstallAddinResponse.md) | ✅ | ❌ | ❌ | ❌
 [StoreAppCreationInformation](./ComplexTypes/StoreAppCreationInformation.md) | ✅ | ❌ | ❌ | ❌
