@@ -81,6 +81,7 @@
       </ComplexType>
       <ComplexType Name="ConfigurationData">
         <Property Name="BridgeAbsolutePath" Type="SP.ResourcePath" />
+        <Property Name="IsPersonalizationEnabled" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
       <ComplexType Name="ResourcePath">
         <Property Name="DecodedUrl" Type="Edm.String" />
@@ -789,7 +790,6 @@
         <Property Name="MediaServiceProtectionKey" Type="Edm.String" />
         <Property Name="MediaServiceSearchProperties" Type="Edm.String" />
         <Property Name="MediaServiceTranscript" Type="Edm.String" />
-        <Property Name="MostRecentGenerationTime" Type="Edm.String" />
         <Property Name="SensitivityLabel" Type="Edm.String" />
         <Property Name="SensitivityLabelAssignmentMethod" Type="Edm.Int32" Nullable="false" />
         <Property Name="XTenantLabelInfo" Type="Edm.String" />
@@ -5409,6 +5409,10 @@
         <FunctionImport Name="UpdateModelSettings" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
           <Parameter Name="ModelSettings" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="UpdateModelTypeSpecificSettings" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
+          <Parameter Name="Settings" Type="Collection(SP.KeyValue)" />
         </FunctionImport>
         <FunctionImport Name="GetByTitle" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsComposable="true" IsBindable="true" EntitySet="Models">
           <Parameter Name="this" Type="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" />
@@ -10622,6 +10626,10 @@
           <Parameter Name="this" Type="SP.EmployeeEngagement" />
           <Parameter Name="oobContentChoice" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="SetDashboardPersonalization" IsBindable="true">
+          <Parameter Name="this" Type="SP.EmployeeEngagement" />
+          <Parameter Name="isEnabled" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="VivaConnections" ReturnType="SP.VivaConnectionsUrlConfiguration" IsBindable="true">
           <Parameter Name="this" Type="SP.EmployeeEngagement" />
           <Parameter Name="adminConfiguredUrl" Type="Edm.String" />
@@ -12109,6 +12117,10 @@
         <FunctionImport Name="GetList" ReturnType="SP.List" IsComposable="true" IsBindable="true" EntitySet="Lists">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="strUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetListByTitle" ReturnType="SP.List" IsComposable="true" IsBindable="true" EntitySet="Lists">
+          <Parameter Name="this" Type="SP.Web" />
+          <Parameter Name="title" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="GetListItem" ReturnType="SP.ListItem" IsComposable="true" IsBindable="true" EntitySet="ListItems">
           <Parameter Name="this" Type="SP.Web" />
@@ -21885,6 +21897,9 @@
       <Annotations Target="SP.ApiData/UpdateModelSettings(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/UpdateModelTypeSpecificSettings(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel, Collection(SP.KeyValue))">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetByTitle(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel), Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -23263,6 +23278,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/DashboardOOBContent(SP.EmployeeEngagement, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetDashboardPersonalization(SP.EmployeeEngagement, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/VivaConnections(SP.EmployeeEngagement, Edm.String)">
@@ -32893,6 +32911,7 @@
         <Property Name="AllowSelectSGsInODBListInTenant" Type="Collection(Edm.String)" />
         <Property Name="AnyoneLinkTrackUsers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ApplyAppEnforcedRestrictionsToAdHocRecipients" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ArchiveRedirectUrl" Type="Edm.String" />
         <Property Name="AuthContextResilienceMode" Type="Edm.Int32" Nullable="false" />
         <Property Name="BccExternalSharingInvitations" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BccExternalSharingInvitationsList" Type="Edm.String" />
@@ -32935,6 +32954,7 @@
         <Property Name="DisableBackToClassic" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableCustomAppAuthentication" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisabledModernListTemplateIds" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="DisableDocumentLibraryDefaultLabeling" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisabledWebPartIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="DisableListSync" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableOutlookPSTVersionTrimming" Type="Edm.Boolean" Nullable="false" />
