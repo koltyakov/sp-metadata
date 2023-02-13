@@ -345,6 +345,7 @@ GetLimitedWebPartManager (SP.File) | ✅ | ✅ | ✅ | ✅
 GetList (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetListById (SP.RemoteWeb) | ✅ | ✅ | ✅ | ❌
 GetListByServerRelativeUrl (SP.RemoteWeb) | ✅ | ✅ | ✅ | ❌
+GetListByTitle (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetListItem (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetListItemByResourceId (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetListItemChanges (SP.Folder) | ✅ | ✅ | ✅ | ❌
@@ -706,6 +707,7 @@ SetComplianceTagWithMetaInfo (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 SetComplianceTagWithNoHold (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 SetComplianceTagWithRecord (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 SetCorporateCatalog (SP.TenantSettings) | ✅ | ❌ | ❌ | ❌
+SetDashboardPersonalization (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 SetDefaultNewPageTemplateId (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetExemptFromBlockDownloadOfNonViewableFiles (SP.List) | ✅ | ✅ | ❌ | ❌
 SetExpirationDate (SP.File) | ✅ | ❌ | ❌ | ❌

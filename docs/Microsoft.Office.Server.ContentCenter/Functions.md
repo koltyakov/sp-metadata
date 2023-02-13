@@ -48,5 +48,6 @@ Update (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | �
 Update (Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Office.Server.ContentCenter.SPMachineLearningSample) | ✅ | ❌ | ❌ | ❌
 UpdateModelSettings (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
+UpdateModelTypeSpecificSettings (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
 VerifyModelUrls (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
 machinelearning | ✅ | ❌ | ❌ | ❌

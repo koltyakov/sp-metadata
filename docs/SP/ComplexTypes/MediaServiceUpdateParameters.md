@@ -30,7 +30,6 @@ MediaServiceOCR (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceProtectionKey (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceSearchProperties (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceTranscript (Edm.String) | ✅ | ❌ | ❌ | ❌
-MostRecentGenerationTime (Edm.String) | ✅ | ❌ | ❌ | ❌
 SensitivityLabel (Edm.String) | ✅ | ❌ | ❌ | ❌
 SensitivityLabelAssignmentMethod (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 XTenantLabelInfo (Edm.String) | ✅ | ❌ | ❌ | ❌

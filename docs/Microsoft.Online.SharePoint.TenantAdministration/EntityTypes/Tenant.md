@@ -26,6 +26,7 @@ AllowSelectSecurityGroupsInSPSitesList (Collection(Edm.String)) | ✅ | ❌ | �
 AllowedDomainListForSyncClient (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 AnyoneLinkTrackUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ApplyAppEnforcedRestrictionsToAdHocRecipients (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ArchiveRedirectUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 AuthContextResilienceMode (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 BccExternalSharingInvitations (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BccExternalSharingInvitationsList (Edm.String) | ✅ | ❌ | ❌ | ❌
@@ -67,6 +68,7 @@ DenySelectSecurityGroupsInSPSitesList (Collection(Edm.String)) | ✅ | ❌ | ❌
 DisableAddToOneDrive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableBackToClassic (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableCustomAppAuthentication (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+DisableDocumentLibraryDefaultLabeling (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableListSync (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableOutlookPSTVersionTrimming (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisablePersonalListCreation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
