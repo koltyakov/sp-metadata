@@ -21,4 +21,5 @@ sPOCorrelationId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 sites (Edm.String) | ✅ | ❌ | ❌ | ❌
 status (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 uALCorrelationId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+uALNumberOfRecords (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 users (Edm.String) | ✅ | ❌ | ❌ | ❌

@@ -219,6 +219,7 @@ FinishUpload (SP.File) | ✅ | ✅ | ✅ | ❌
 FinishUploadWithChecksum (SP.File) | ✅ | ❌ | ❌ | ❌
 GetACSServicePrincipals (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetAdaptiveCardExtensions (SP.Web) | ✅ | ❌ | ❌ | ❌
+GetAddinPrincipalsHavingPermissionsInSites (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetAddinUninstallJobDetail (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetAllClientSideComponents (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetAllRules (SP.List) | ✅ | ❌ | ❌ | ❌
@@ -308,6 +309,7 @@ GetComments (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 GetConnectedHubs (Collection(SP.HubSite)) | ✅ | ❌ | ❌ | ❌
 GetCopyJobProgress (SP.Site) | ✅ | ✅ | ❌ | ❌
 GetCustomListTemplates (SP.Web) | ✅ | ✅ | ✅ | ✅
+GetDashboardPersonalization (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 GetEntity (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetErrorDetails (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
 GetFileByGuestUrl (SP.Web) | ✅ | ✅ | ✅ | ❌

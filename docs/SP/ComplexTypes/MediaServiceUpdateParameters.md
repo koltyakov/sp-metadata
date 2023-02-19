@@ -27,6 +27,8 @@ MediaServiceKeyPoints (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceLocation (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceMetadata (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceOCR (Edm.String) | ✅ | ❌ | ❌ | ❌
+MediaServiceObjectDetectorVersions (Edm.String) | ✅ | ❌ | ❌ | ❌
+MediaServicePhotoCategory (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceProtectionKey (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceSearchProperties (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceTranscript (Edm.String) | ✅ | ❌ | ❌ | ❌

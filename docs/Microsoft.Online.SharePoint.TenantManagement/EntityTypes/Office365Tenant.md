@@ -47,6 +47,7 @@ CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicy (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicyErrorHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌
 ContentTypeSyncSiteTemplatesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+CoreBlockGuestsAsSiteAdmin (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CoreDefaultLinkToExistingAccess (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CoreDefaultShareLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CoreDefaultShareLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
@@ -75,6 +76,7 @@ DisplayStartASiteOption (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EmailAttestationEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EmailAttestationReAuthDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 EmailAttestationRequired (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+EnableAutoExpirationVersionTrim (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableAutoNewsDigest (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableAzureADB2BIntegration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableGuestSignInAcceleration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -82,11 +84,13 @@ EnablePromotedFileHandlers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableRestrictedAccessControl (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ExcludedBlockDownloadGroupIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 ExcludedFileExtensionsForSyncClient (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+ExpireVersionsAfterDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ExternalServicesEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ExternalUserExpirationRequired (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ExternalUserExpireInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 FileAnonymousLinkType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 FilePickerExternalImageSearchEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+FileVersionPolicyXml (Edm.String) | ✅ | ❌ | ❌ | ❌
 FolderAnonymousLinkType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 GetOrgAssets (Microsoft.SharePoint.Administration.OrgAssets) | ✅ | ❌ | ❌ | ❌
 GuestSharingGroupAllowList (Edm.String) | ✅ | ❌ | ❌ | ❌
@@ -105,6 +109,7 @@ IsUnmanagedSyncClientRestrictionFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | 
 LegacyAuthProtocolsEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LimitedAccessFileType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MachineLearningCaptureEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+MajorVersionLimit (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MediaTranscription (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MobileFriendlyUrlEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MySitesPublicEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -125,6 +130,7 @@ ODBAccessRequests (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ODBMembersCanShare (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ODBSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OfficeClientADALDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+OneDriveBlockGuestsAsSiteAdmin (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OneDriveDefaultLinkToExistingAccess (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 OneDriveDefaultShareLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OneDriveDefaultShareLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌

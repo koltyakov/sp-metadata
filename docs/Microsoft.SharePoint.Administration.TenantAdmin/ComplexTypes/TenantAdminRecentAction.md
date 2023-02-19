@@ -17,5 +17,6 @@ key (Edm.String) | ✅ | ❌ | ❌ | ❌
 name (Edm.String) | ✅ | ❌ | ❌ | ❌
 newValue (Edm.String) | ✅ | ❌ | ❌ | ❌
 oldValue (Edm.String) | ✅ | ❌ | ❌ | ❌
+type (Edm.String) | ✅ | ❌ | ❌ | ❌
 url (Edm.String) | ✅ | ❌ | ❌ | ❌
 userEmail (Edm.String) | ✅ | ❌ | ❌ | ❌

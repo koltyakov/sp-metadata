@@ -17,3 +17,4 @@ Site (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetUserOrGroupName (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetUserOrGroupType (Edm.String) | ✅ | ❌ | ❌ | ❌
 UserId (Edm.String) | ✅ | ❌ | ❌ | ❌
+UserType (Edm.Int32) | ✅ | ❌ | ❌ | ❌

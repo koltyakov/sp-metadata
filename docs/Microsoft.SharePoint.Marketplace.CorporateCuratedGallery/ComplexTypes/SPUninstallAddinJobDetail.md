@@ -11,3 +11,4 @@ errorDetails (Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGaller
 jobId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 serverRelativeUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+taskStartTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌

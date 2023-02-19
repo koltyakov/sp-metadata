@@ -10,10 +10,12 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPAddinPermissionInfo](./ComplexTypes/SPAddinPermissionInfo.md) | ✅ | ❌ | ❌ | ❌
 [SPAddinPermissionRequest](./ComplexTypes/SPAddinPermissionRequest.md) | ✅ | ❌ | ❌ | ❌
 [SPAddinPermissionResponse](./ComplexTypes/SPAddinPermissionResponse.md) | ✅ | ❌ | ❌ | ❌
+[SPAddinPrincipalInfo](./ComplexTypes/SPAddinPrincipalInfo.md) | ✅ | ❌ | ❌ | ❌
 [SPAppAddAndDeployResponseInfomation](./ComplexTypes/SPAppAddAndDeployResponseInfomation.md) | ✅ | ❌ | ❌ | ❌
 [SPAvailableAddinsResponse](./ComplexTypes/SPAvailableAddinsResponse.md) | ✅ | ❌ | ❌ | ❌
 [SPErrorWithServerRelativeUrl](./ComplexTypes/SPErrorWithServerRelativeUrl.md) | ✅ | ❌ | ❌ | ❌
 [SPFailToTriggerUninstallAddinJobResponse](./ComplexTypes/SPFailToTriggerUninstallAddinJobResponse.md) | ✅ | ❌ | ❌ | ❌
+[SPGetAddinPrincipalsResponse](./ComplexTypes/SPGetAddinPrincipalsResponse.md) | ✅ | ❌ | ❌ | ❌
 [SPSiteCollectionScopedPermissionInfo](./ComplexTypes/SPSiteCollectionScopedPermissionInfo.md) | ✅ | ❌ | ❌ | ❌
 [SPStoreAppCreateByIdInformation](./ComplexTypes/SPStoreAppCreateByIdInformation.md) | ✅ | ❌ | ❌ | ❌
 [SPStoreAppRequestInformation](./ComplexTypes/SPStoreAppRequestInformation.md) | ✅ | ❌ | ❌ | ❌
