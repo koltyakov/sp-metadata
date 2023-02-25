@@ -11,6 +11,5 @@ require (
 	github.com/google/uuid v1.1.4 // indirect
 	github.com/koltyakov/gosip v0.0.0-20210104165545-e96b716a3a9f
 	github.com/koltyakov/gosip-sandbox v0.0.0-20201214170635-74812f672a56
-	golang.org/x/net v0.0.0-20201224014010-6772e930b67b // indirect
-	golang.org/x/sys v0.0.0-20210104204734-6f8348627aad // indirect
+	golang.org/x/net v0.7.0 // indirect
 )
