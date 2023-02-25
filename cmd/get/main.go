@@ -10,8 +10,8 @@ import (
 
 	"github.com/go-xmlfmt/xmlfmt"
 	"github.com/koltyakov/gosip"
-	"github.com/koltyakov/gosip-sandbox/samples/dynauth"
 	"github.com/koltyakov/gosip/api"
+	dynauth "github.com/koltyakov/gosip/auth"
 
 	"github.com/koltyakov/sp-metadata/config"
 	"github.com/koltyakov/sp-metadata/pkg/edmx"
@@ -50,7 +50,7 @@ func envFlow(env *config.Environment) error {
 		return fmt.Errorf("no auth strategy provided")
 	}
 
-	authCnfg, err := dynauth.NewAuthCnfg(conf.Strategy, env.Config)
+	authCnfg, err := dynauth.NewAuthCnfg(conf.Strategy, data)
 	if err != nil {
 		return err
 	}
