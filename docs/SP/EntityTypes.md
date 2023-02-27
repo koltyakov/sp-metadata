@@ -167,6 +167,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [UserExperienceState](./EntityTypes/UserExperienceState.md) | ✅ | ❌ | ❌ | ❌
 [UserResource](./EntityTypes/UserResource.md) | ✅ | ✅ | ✅ | ❌
 [UserSolution](./EntityTypes/UserSolution.md) | ✅ | ❌ | ❌ | ❌
+[VersionPolicyManager](./EntityTypes/VersionPolicyManager.md) | ✅ | ❌ | ❌ | ❌
 [View](./EntityTypes/View.md) | ✅ | ✅ | ✅ | ✅
 [ViewFieldCollection](./EntityTypes/ViewFieldCollection.md) | ✅ | ✅ | ✅ | ✅
 [VisualizationAppSynchronizationResult](./EntityTypes/VisualizationAppSynchronizationResult.md) | ✅ | ✅ | ❌ | ❌

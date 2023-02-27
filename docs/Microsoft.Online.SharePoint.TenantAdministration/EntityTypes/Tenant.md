@@ -136,6 +136,7 @@ IsVivaHomeGAFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsWBFluidEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LabelMismatchEmailHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌
 LegacyAuthProtocolsEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+LegacyBrowserAuthProtocolsEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LimitedAccessFileType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MachineLearningCaptureEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MajorVersionLimit (Edm.Int32) | ✅ | ❌ | ❌ | ❌

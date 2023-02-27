@@ -620,6 +620,7 @@ Users | ✅ | ✅ | ✅ | ✅
 Users1 | ✅ | ✅ | ✅ | ❌
 Utilitys | ✅ | ✅ | ✅ | ✅
 VariationsTranslationTimerJobs | ✅ | ✅ | ✅ | ✅
+VersionPolicyManagers | ✅ | ❌ | ❌ | ❌
 VideoChannels | ✅ | ❌ | ❌ | ❌
 VideoItems | ✅ | ❌ | ❌ | ❌
 VideoPermissionGroups | ✅ | ❌ | ❌ | ❌

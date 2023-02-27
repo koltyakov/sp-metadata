@@ -11,6 +11,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [RecipeMetadata](./ComplexTypes/RecipeMetadata.md) | ❌ | ✅ | ❌ | ❌
 [SPSiteScriptStatusAndSchema](./ComplexTypes/SPSiteScriptStatusAndSchema.md) | ✅ | ❌ | ❌ | ❌
 [SiteDesignCreationInfo](./ComplexTypes/SiteDesignCreationInfo.md) | ✅ | ✅ | ❌ | ❌
+[SiteDesignImage](./ComplexTypes/SiteDesignImage.md) | ✅ | ❌ | ❌ | ❌
 [SiteDesignMetadata](./ComplexTypes/SiteDesignMetadata.md) | ✅ | ✅ | ❌ | ❌
 [SiteDesignTask](./ComplexTypes/SiteDesignTask.md) | ✅ | ❌ | ❌ | ❌
 [SiteScriptActionResult](./ComplexTypes/SiteScriptActionResult.md) | ✅ | ✅ | ❌ | ❌

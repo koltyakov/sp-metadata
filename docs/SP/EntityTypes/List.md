@@ -115,5 +115,6 @@ RootFolder | ✅ | ✅ | ✅ | ✅
 Subscriptions | ✅ | ✅ | ❌ | ❌
 TitleResource | ✅ | ✅ | ✅ | ❌
 UserCustomActions | ✅ | ✅ | ✅ | ✅
+VersionPolicies | ✅ | ❌ | ❌ | ❌
 Views | ✅ | ✅ | ✅ | ✅
 WorkflowAssociations | ✅ | ✅ | ✅ | ✅
