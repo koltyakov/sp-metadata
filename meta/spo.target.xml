@@ -2550,6 +2550,18 @@
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
       </EntityType>
+      <EntityType Name="eSignInternal" Abstract="true">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="eSign" Abstract="true">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="ListHomeItem2">
         <Key>
           <PropertyRef Name="color" />
@@ -4153,6 +4165,7 @@
         <EntitySet Name="GlobalAdminChecks" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.GlobalAdminCheck" />
         <EntitySet Name="HasMnALicenses" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.HasMnALicense" />
         <EntitySet Name="JobEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.JobEntityData" />
+        <EntitySet Name="MnAGroupMoveValidationResults" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.MnAGroupMoveValidationResult" />
         <EntitySet Name="MoveJobs" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.MoveJob" />
         <EntitySet Name="MoveJobEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.MoveJobEntityData" />
         <EntitySet Name="MultiGeoApiVersionss" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoApiVersions" />
@@ -4439,6 +4452,8 @@
         <EntitySet Name="DlpPolicyTips" EntityType="SP.DlpPolicyTip" />
         <EntitySet Name="DocumentIds" EntityType="SP.DocumentManagement.DocumentId" />
         <EntitySet Name="EffectiveInformationRightsManagementSettingss" EntityType="SP.EffectiveInformationRightsManagementSettings" />
+        <EntitySet Name="eSigns" EntityType="SP.eSign" />
+        <EntitySet Name="eSignInternals" EntityType="SP.eSignInternal" />
         <EntitySet Name="EventReceiverDefinitions" EntityType="SP.EventReceiverDefinition" />
         <EntitySet Name="FavoriteListss" EntityType="SP.FavoriteLists" />
         <EntitySet Name="FavoriteListsSubstrates" EntityType="SP.FavoriteListsSubstrate" />
@@ -4515,6 +4530,7 @@
         <EntitySet Name="RichSharings" EntityType="SP.Publishing.RichSharing" />
         <EntitySet Name="Searchs" EntityType="SP.Publishing.Search" />
         <EntitySet Name="SharePointHomeServiceManagers" EntityType="SP.Publishing.SharePointHomeServiceManager" />
+        <EntitySet Name="SitePageDependencyMetadatas" EntityType="SP.Publishing.SitePageDependencyMetadata" />
         <EntitySet Name="SitePageServices" EntityType="SP.Publishing.SitePageService" />
         <EntitySet Name="SpotlightChannels" EntityType="SP.Publishing.SpotlightChannel" />
         <EntitySet Name="SpotlightVideos" EntityType="SP.Publishing.SpotlightVideo" />
@@ -5933,6 +5949,9 @@
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_HasMnALicense" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.HasMnALicense" IsComposable="true" EntitySet="HasMnALicenses">
           <Parameter Name="mnALicenseType" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_MnAGroupMoveValidationResult" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.MnAGroupMoveValidationResult" IsComposable="true" EntitySet="MnAGroupMoveValidationResults">
+          <Parameter Name="encodedQuery" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoApiVersions" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoApiVersions" IsComposable="true" EntitySet="MultiGeoApiVersionss" />
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" IsComposable="true" EntitySet="MultiGeoServicesBetas" />
         <FunctionImport Name="DBSchemaCompatibilityCheck" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.DBSchemaCompatibilityCheck" IsComposable="true" IsBindable="true" EntitySet="DBSchemaCompatibilityChecks">
@@ -5944,6 +5963,10 @@
         <FunctionImport Name="HasMnALicense" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.HasMnALicense" IsComposable="true" IsBindable="true" EntitySet="HasMnALicenses">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
           <Parameter Name="mnALicenseType" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="MnAGroupMoveValidationResult" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.MnAGroupMoveValidationResult" IsComposable="true" IsBindable="true" EntitySet="MnAGroupMoveValidationResults">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
+          <Parameter Name="encodedQuery" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="OrgRelationGroupManagedPath" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationGroupManagedPath" IsComposable="true" IsBindable="true" EntitySet="OrgRelationGroupManagedPaths">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
@@ -7994,6 +8017,13 @@
         <FunctionImport Name="DiscardPage" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
+        <FunctionImport Name="GetDependencyMetadata" ReturnType="Collection(SP.Publishing.SitePageDependencyMetadata)" IsComposable="true" IsBindable="true" EntitySet="SitePageDependencyMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+        </FunctionImport>
+        <FunctionImport Name="GetLastestVersionsInDescendingOrder" ReturnType="Collection(SP.Publishing.SitePageVersionInfoCollection)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+          <Parameter Name="numVersions" Type="Edm.Int64" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="GetVersion" ReturnType="SP.Publishing.SitePage" IsComposable="true" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="versionId" Type="Edm.Int32" Nullable="false" />
@@ -8117,6 +8147,13 @@
         </FunctionImport>
         <FunctionImport Name="DiscardPage" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+        </FunctionImport>
+        <FunctionImport Name="GetDependencyMetadata" ReturnType="Collection(SP.Publishing.SitePageDependencyMetadata)" IsComposable="true" IsBindable="true" EntitySet="SitePageDependencyMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+        </FunctionImport>
+        <FunctionImport Name="GetLastestVersionsInDescendingOrder" ReturnType="Collection(SP.Publishing.SitePageVersionInfoCollection)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+          <Parameter Name="numVersions" Type="Edm.Int64" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetVersion" ReturnType="SP.Publishing.SitePage" IsComposable="true" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
@@ -8326,6 +8363,13 @@
         <FunctionImport Name="DiscardPage" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
         </FunctionImport>
+        <FunctionImport Name="GetDependencyMetadata" ReturnType="Collection(SP.Publishing.SitePageDependencyMetadata)" IsComposable="true" IsBindable="true" EntitySet="SitePageDependencyMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.RepostPage" />
+        </FunctionImport>
+        <FunctionImport Name="GetLastestVersionsInDescendingOrder" ReturnType="Collection(SP.Publishing.SitePageVersionInfoCollection)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.RepostPage" />
+          <Parameter Name="numVersions" Type="Edm.Int64" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="GetVersion" ReturnType="SP.Publishing.SitePage" IsComposable="true" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
           <Parameter Name="versionId" Type="Edm.Int32" Nullable="false" />
@@ -8502,6 +8546,13 @@
         <FunctionImport Name="DiscardPage" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
         </FunctionImport>
+        <FunctionImport Name="GetDependencyMetadata" ReturnType="Collection(SP.Publishing.SitePageDependencyMetadata)" IsComposable="true" IsBindable="true" EntitySet="SitePageDependencyMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
+        </FunctionImport>
+        <FunctionImport Name="GetLastestVersionsInDescendingOrder" ReturnType="Collection(SP.Publishing.SitePageVersionInfoCollection)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
+          <Parameter Name="numVersions" Type="Edm.Int64" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="GetVersion" ReturnType="SP.Publishing.SitePage" IsComposable="true" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
           <Parameter Name="versionId" Type="Edm.Int32" Nullable="false" />
@@ -8652,6 +8703,13 @@
         </FunctionImport>
         <FunctionImport Name="DiscardPage" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
+        </FunctionImport>
+        <FunctionImport Name="GetDependencyMetadata" ReturnType="Collection(SP.Publishing.SitePageDependencyMetadata)" IsComposable="true" IsBindable="true" EntitySet="SitePageDependencyMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.SitePage" />
+        </FunctionImport>
+        <FunctionImport Name="GetLastestVersionsInDescendingOrder" ReturnType="Collection(SP.Publishing.SitePageVersionInfoCollection)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.SitePage" />
+          <Parameter Name="numVersions" Type="Edm.Int64" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetVersion" ReturnType="SP.Publishing.SitePage" IsComposable="true" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
@@ -8831,6 +8889,13 @@
         </FunctionImport>
         <FunctionImport Name="DiscardPage" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
+        </FunctionImport>
+        <FunctionImport Name="GetDependencyMetadata" ReturnType="Collection(SP.Publishing.SitePageDependencyMetadata)" IsComposable="true" IsBindable="true" EntitySet="SitePageDependencyMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
+        </FunctionImport>
+        <FunctionImport Name="GetLastestVersionsInDescendingOrder" ReturnType="Collection(SP.Publishing.SitePageVersionInfoCollection)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
+          <Parameter Name="numVersions" Type="Edm.Int64" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetVersion" ReturnType="SP.Publishing.SitePage" IsComposable="true" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
@@ -12414,6 +12479,34 @@
           <Parameter Name="overwrite" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_Internal_ApprovalsManager_OnRequestUpdated" />
+        <FunctionImport Name="SP_eSignInternal_AddAuditTrailEntry" ReturnType="Edm.String">
+          <Parameter Name="documentId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="addAuditTrailEntry" Type="Microsoft.SharePoint.ESign.Models.Requests.AddAuditTrailEntryModel" />
+        </FunctionImport>
+        <FunctionImport Name="SP_eSignInternal_EndAgreement" ReturnType="Edm.String">
+          <Parameter Name="endAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.EndAgreementModel" />
+        </FunctionImport>
+        <FunctionImport Name="SP_eSignInternal_StartAgreement" ReturnType="Edm.String">
+          <Parameter Name="startAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.CreateAgreementModel" />
+        </FunctionImport>
+        <FunctionImport Name="SP_eSign_CancelAgreement" ReturnType="Edm.String">
+          <Parameter Name="documentId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_eSign_DeclineAgreement" ReturnType="Edm.String">
+          <Parameter Name="declineAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.DeclineAgreementModel" />
+        </FunctionImport>
+        <FunctionImport Name="SP_eSign_GetAuditTrail" ReturnType="Edm.String">
+          <Parameter Name="documentId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_eSign_GetSigningFields" ReturnType="Edm.String">
+          <Parameter Name="documentId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_eSign_SignAgreement" ReturnType="Edm.String">
+          <Parameter Name="signAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.SignAgreementModel" />
+        </FunctionImport>
+        <FunctionImport Name="SP_eSign_StartAgreement" ReturnType="Edm.String">
+          <Parameter Name="startAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.CreateAgreementModel" />
+        </FunctionImport>
         <FunctionImport Name="SP_ListHomeItemCollection_GetListHomeItems" ReturnType="Edm.Stream" IsSideEffecting="false">
           <Parameter Name="sortBy" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
@@ -18113,6 +18206,12 @@
       <Annotations Target="SP.Publishing.SitePage3DFieldsData/SpaceContent">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.SitePageVersionInfoCollection/Created">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.SitePageVersionInfoCollection/CreatedBy">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.SitePageVersionInfo/LastVersionCreated">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20987,6 +21086,9 @@
       <Annotations Target="SP.Publishing.SitePage3D/SpaceContent">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.SitePageDependencyMetadata">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.SitePageService">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21249,6 +21351,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Internal.ApprovalsManager">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.eSignInternal">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.eSign">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ListHomeItem2">
@@ -22136,6 +22244,12 @@
       <Annotations Target="SP.ApiData/DiscardPage(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetDependencyMetadata(SP.Publishing.CampaignPublication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetLastestVersionsInDescendingOrder(SP.Publishing.CampaignPublication, Edm.Int64)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetVersion(SP.Publishing.CampaignPublication, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22253,6 +22367,12 @@
       <Annotations Target="SP.ApiData/DiscardPage(SP.Publishing.FeedVideoPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetDependencyMetadata(SP.Publishing.FeedVideoPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetLastestVersionsInDescendingOrder(SP.Publishing.FeedVideoPage, Edm.Int64)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetVersion(SP.Publishing.FeedVideoPage, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22364,6 +22484,12 @@
       <Annotations Target="SP.ApiData/DiscardPage(SP.Publishing.RepostPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetDependencyMetadata(SP.Publishing.RepostPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetLastestVersionsInDescendingOrder(SP.Publishing.RepostPage, Edm.Int64)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetVersion(SP.Publishing.RepostPage, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22452,6 +22578,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/DiscardPage(SP.Publishing.SitePage3D)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetDependencyMetadata(SP.Publishing.SitePage3D)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetLastestVersionsInDescendingOrder(SP.Publishing.SitePage3D, Edm.Int64)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetVersion(SP.Publishing.SitePage3D, Edm.Int32)">
@@ -22572,6 +22704,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/DiscardPage(SP.Publishing.SitePage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetDependencyMetadata(SP.Publishing.SitePage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetLastestVersionsInDescendingOrder(SP.Publishing.SitePage, Edm.Int64)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetVersion(SP.Publishing.SitePage, Edm.Int32)">
@@ -22701,6 +22839,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/DiscardPage(SP.Publishing.TopicSitePage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetDependencyMetadata(SP.Publishing.TopicSitePage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetLastestVersionsInDescendingOrder(SP.Publishing.TopicSitePage, Edm.Int64)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetVersion(SP.Publishing.TopicSitePage, Edm.Int32)">
@@ -23754,6 +23898,33 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Internal_ApprovalsManager_OnRequestUpdated()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_eSignInternal_AddAuditTrailEntry(Edm.Guid, Microsoft.SharePoint.ESign.Models.Requests.AddAuditTrailEntryModel)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_eSignInternal_EndAgreement(Microsoft.SharePoint.ESign.Models.Requests.EndAgreementModel)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_eSignInternal_StartAgreement(Microsoft.SharePoint.ESign.Models.Requests.CreateAgreementModel)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_eSign_CancelAgreement(Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_eSign_DeclineAgreement(Microsoft.SharePoint.ESign.Models.Requests.DeclineAgreementModel)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_eSign_GetAuditTrail(Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_eSign_GetSigningFields(Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_eSign_SignAgreement(Microsoft.SharePoint.ESign.Models.Requests.SignAgreementModel)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_eSign_StartAgreement(Microsoft.SharePoint.ESign.Models.Requests.CreateAgreementModel)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_ListHomeItemCollection_GetListHomeItems(Edm.Int32)">
@@ -25234,6 +25405,12 @@
         </Key>
         <Property Name="Option" Type="Edm.Int32" Nullable="false" />
         <Property Name="Reserve" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="MnAGroupMoveValidationResult">
+        <Key>
+          <PropertyRef Name="Result" />
+        </Key>
+        <Property Name="Result" Type="Edm.String" Nullable="false" />
       </EntityType>
       <EntityType Name="MoveJob" BaseType="Microsoft.Online.SharePoint.MultiGeo.Service.MoveJobEntityData" Abstract="true">
         <Property Name="IsContentMoved" Type="Edm.Boolean" Nullable="false" />
@@ -28682,6 +28859,10 @@
       <ComplexType Name="SitePage3DFieldsData" BaseType="SP.Publishing.SitePageFieldsData">
         <Property Name="SpaceContent" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="SitePageVersionInfoCollection">
+        <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="CreatedBy" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="SitePageVersionInfo">
         <Property Name="LastVersionCreated" Type="Edm.DateTime" Nullable="false" />
         <Property Name="LastVersionCreatedBy" Type="Edm.String" />
@@ -29051,6 +29232,19 @@
       </EntityType>
       <EntityType Name="SitePage3D" BaseType="SP.Publishing.SitePage">
         <Property Name="SpaceContent" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="SitePageDependencyMetadata">
+        <Key>
+          <PropertyRef Name="DependencyItemPath" />
+        </Key>
+        <Property Name="DependencyItemPath" Type="Edm.String" Nullable="false" />
+        <Property Name="IsInPageSiteAssetsFolder" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ListId" Type="Edm.Guid" />
+        <Property Name="RelatedWebParts" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="SiteId" Type="Edm.Guid" />
+        <Property Name="Type" Type="Edm.String" />
+        <Property Name="UniqueId" Type="Edm.Guid" />
+        <Property Name="WebId" Type="Edm.Guid" />
       </EntityType>
       <EntityType Name="SitePageService">
         <Key>
@@ -30921,6 +31115,36 @@
         <End Type="Microsoft.SharePoint.Internal.ActivityLogger" Role="ActivityLogger" Multiplicity="0..1" />
         <End Type="SP.Web" Role="ActivityLoggerPartner" Multiplicity="0..1" />
       </Association>
+    </Schema>
+    <Schema Namespace="Microsoft.SharePoint.ESign.Models.Requests" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="AddAuditTrailEntryModel">
+        <Property Name="action" Type="Edm.String" />
+        <Property Name="location" Type="Edm.String" />
+        <Property Name="name" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="CreateAgreementModel">
+        <Property Name="agreementId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="documents" Type="Edm.String" />
+        <Property Name="expirationDateTime" Type="Edm.DateTime" />
+        <Property Name="formFieldSets" Type="Edm.String" />
+        <Property Name="locale" Type="Edm.String" />
+        <Property Name="message" Type="Edm.String" />
+        <Property Name="name" Type="Edm.String" />
+        <Property Name="recipientSets" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="DeclineAgreementModel">
+        <Property Name="documentId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="reason" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="EndAgreementModel">
+        <Property Name="documentId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="reason" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SignAgreementModel">
+        <Property Name="agreements" Type="Edm.String" />
+        <Property Name="documentId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="signatureFields" Type="Edm.String" />
+      </ComplexType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.EmployeeEngagement.Experience" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="DashboardCardDetails">
@@ -33070,6 +33294,10 @@
         <Property Name="DisplayNamesOfFileViewers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisplayNamesOfFileViewersInSpo" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisplayStartASiteOption" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DocumentUnderstandingEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DocumentUnderstandingSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
+        <Property Name="DocumentUnderstandingSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="DocumentUnderstandingSiteListFileName" Type="Edm.String" />
         <Property Name="EmailAttestationEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EmailAttestationReAuthDays" Type="Edm.Int32" Nullable="false" />
         <Property Name="EmailAttestationRequired" Type="Edm.Boolean" Nullable="false" />
@@ -33167,6 +33395,10 @@
         <Property Name="OrphanedPersonalSitesRetentionPeriod" Type="Edm.Int32" Nullable="false" />
         <Property Name="OwnerAnonymousNotification" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PermissiveBrowserFileHandlingOverride" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="PrebuiltEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="PrebuiltSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
+        <Property Name="PrebuiltSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="PrebuiltSiteListFileName" Type="Edm.String" />
         <Property Name="PreventExternalUsersFromResharing" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ProvisionSharedWithEveryoneFolder" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PublicCdnAllowedFileTypes" Type="Edm.String" />
@@ -34895,10 +35127,10 @@
         <Key>
           <PropertyRef Name="Id" />
         </Key>
-        <Property Name="CompleteTimeInUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="CompleteTimeInUtc" Type="Edm.DateTime" />
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
         <Property Name="QueuedTimeInUtc" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="StartTimeInUtc" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="StartTimeInUtc" Type="Edm.DateTime" />
         <Property Name="State" Type="Edm.String" />
       </EntityType>
       <EntityType Name="SPTenantIBInsightsReport" BaseType="Microsoft.SharePoint.Insights.SPTenantIBInsightsReportMetadata">
@@ -35066,6 +35298,10 @@
         <Property Name="DisableSpacesActivation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableVivaConnectionsAnalytics" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisplayStartASiteOption" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DocumentUnderstandingEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DocumentUnderstandingSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
+        <Property Name="DocumentUnderstandingSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="DocumentUnderstandingSiteListFileName" Type="Edm.String" />
         <Property Name="EmailAttestationEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EmailAttestationReAuthDays" Type="Edm.Int32" Nullable="false" />
         <Property Name="EmailAttestationRequired" Type="Edm.Boolean" Nullable="false" />
@@ -35135,6 +35371,10 @@
         <Property Name="OneDriveRequestFilesLinkEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="OneDriveRequestFilesLinkExpirationInDays" Type="Edm.Int32" Nullable="false" />
         <Property Name="OwnerAnonymousNotification" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="PrebuiltEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="PrebuiltSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
+        <Property Name="PrebuiltSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="PrebuiltSiteListFileName" Type="Edm.String" />
         <Property Name="PreventExternalUsersFromResharing" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ProvisionSharedWithEveryoneFolder" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PublicCdnAllowedFileTypes" Type="Edm.String" />
