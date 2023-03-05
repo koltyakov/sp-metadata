@@ -175,3 +175,5 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [WebInformation](./EntityTypes/WebInformation.md) | ✅ | ✅ | ✅ | ✅
 [WebProxy](./EntityTypes/WebProxy.md) | ✅ | ✅ | ✅ | ✅
 [WebTemplate](./EntityTypes/WebTemplate.md) | ✅ | ✅ | ✅ | ✅
+[eSign](./EntityTypes/eSign.md) | ✅ | ❌ | ❌ | ❌
+[eSignInternal](./EntityTypes/eSignInternal.md) | ✅ | ❌ | ❌ | ❌

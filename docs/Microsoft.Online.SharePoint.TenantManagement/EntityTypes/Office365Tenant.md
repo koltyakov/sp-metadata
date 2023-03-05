@@ -73,6 +73,10 @@ DisableSpacesActivation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableVivaConnectionsAnalytics (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisabledModernListTemplateIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 DisplayStartASiteOption (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+DocumentUnderstandingEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+DocumentUnderstandingSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
+DocumentUnderstandingSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+DocumentUnderstandingSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 EmailAttestationEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EmailAttestationReAuthDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 EmailAttestationRequired (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -142,6 +146,10 @@ OneDriveLoopSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OneDriveRequestFilesLinkEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 OneDriveRequestFilesLinkExpirationInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OwnerAnonymousNotification (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+PrebuiltEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+PrebuiltSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
+PrebuiltSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+PrebuiltSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 PreventExternalUsersFromResharing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ProvisionSharedWithEveryoneFolder (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PublicCdnAllowedFileTypes (Edm.String) | ✅ | ❌ | ❌ | ❌

@@ -52,6 +52,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SitePageCoAuthState](./ComplexTypes/SitePageCoAuthState.md) | ✅ | ❌ | ❌ | ❌
 [SitePageFieldsData](./ComplexTypes/SitePageFieldsData.md) | ✅ | ✅ | ❌ | ❌
 [SitePageVersionInfo](./ComplexTypes/SitePageVersionInfo.md) | ✅ | ✅ | ❌ | ❌
+[SitePageVersionInfoCollection](./ComplexTypes/SitePageVersionInfoCollection.md) | ✅ | ❌ | ❌ | ❌
 [SiteSharingEmailContext](./ComplexTypes/SiteSharingEmailContext.md) | ✅ | ✅ | ❌ | ❌
 [TaxonomicProperties](./ComplexTypes/TaxonomicProperties.md) | ✅ | ❌ | ❌ | ❌
 [TaxonomyMetadata](./ComplexTypes/TaxonomyMetadata.md) | ✅ | ❌ | ❌ | ❌

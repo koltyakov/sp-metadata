@@ -692,6 +692,15 @@ SP_Web_GetContextWebThemeData | ✅ | ✅ | ✅ | ❌
 [SP_Web_GetObjectSharingSettings](./Functions/SP_Web_GetObjectSharingSettings.md) | ✅ | ✅ | ✅ | ❌
 [SP_Web_GetSharingLinkKind](./Functions/SP_Web_GetSharingLinkKind.md) | ✅ | ✅ | ❌ | ❌
 [SP_Web_GetWebUrlFromPageUrl](./Functions/SP_Web_GetWebUrlFromPageUrl.md) | ✅ | ✅ | ✅ | ✅
+[SP_eSignInternal_AddAuditTrailEntry](./Functions/SP_eSignInternal_AddAuditTrailEntry.md) | ✅ | ❌ | ❌ | ❌
+[SP_eSignInternal_EndAgreement](./Functions/SP_eSignInternal_EndAgreement.md) | ✅ | ❌ | ❌ | ❌
+[SP_eSignInternal_StartAgreement](./Functions/SP_eSignInternal_StartAgreement.md) | ✅ | ❌ | ❌ | ❌
+[SP_eSign_CancelAgreement](./Functions/SP_eSign_CancelAgreement.md) | ✅ | ❌ | ❌ | ❌
+[SP_eSign_DeclineAgreement](./Functions/SP_eSign_DeclineAgreement.md) | ✅ | ❌ | ❌ | ❌
+[SP_eSign_GetAuditTrail](./Functions/SP_eSign_GetAuditTrail.md) | ✅ | ❌ | ❌ | ❌
+[SP_eSign_GetSigningFields](./Functions/SP_eSign_GetSigningFields.md) | ✅ | ❌ | ❌ | ❌
+[SP_eSign_SignAgreement](./Functions/SP_eSign_SignAgreement.md) | ✅ | ❌ | ❌ | ❌
+[SP_eSign_StartAgreement](./Functions/SP_eSign_StartAgreement.md) | ✅ | ❌ | ❌ | ❌
 SaveAsNewView (SP.List) | ✅ | ✅ | ✅ | ✅
 SaveAsTemplate (SP.List) | ✅ | ✅ | ❌ | ❌
 SaveBinaryStream (SP.File) | ✅ | ✅ | ✅ | ✅

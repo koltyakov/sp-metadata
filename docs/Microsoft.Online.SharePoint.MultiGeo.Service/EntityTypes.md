@@ -32,6 +32,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [GroupMoveJobEntityData](./EntityTypes/GroupMoveJobEntityData.md) | ✅ | ❌ | ❌ | ❌
 [HasMnALicense](./EntityTypes/HasMnALicense.md) | ✅ | ❌ | ❌ | ❌
 [JobEntityData](./EntityTypes/JobEntityData.md) | ✅ | ❌ | ❌ | ❌
+[MnAGroupMoveValidationResult](./EntityTypes/MnAGroupMoveValidationResult.md) | ✅ | ❌ | ❌ | ❌
 [MoveJob](./EntityTypes/MoveJob.md) | ✅ | ❌ | ❌ | ❌
 [MoveJobEntityData](./EntityTypes/MoveJobEntityData.md) | ✅ | ❌ | ❌ | ❌
 [MultiGeoApiVersions](./EntityTypes/MultiGeoApiVersions.md) | ✅ | ❌ | ❌ | ❌

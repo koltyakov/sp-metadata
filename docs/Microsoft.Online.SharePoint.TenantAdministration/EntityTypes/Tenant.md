@@ -82,6 +82,10 @@ DisallowInfectedFileDownload (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisplayNamesOfFileViewers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisplayNamesOfFileViewersInSpo (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisplayStartASiteOption (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+DocumentUnderstandingEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+DocumentUnderstandingSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
+DocumentUnderstandingSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+DocumentUnderstandingSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 EmailAttestationEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EmailAttestationReAuthDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 EmailAttestationRequired (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -179,6 +183,10 @@ OrgNewsSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 OrphanedPersonalSitesRetentionPeriod (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OwnerAnonymousNotification (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PermissiveBrowserFileHandlingOverride (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+PrebuiltEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+PrebuiltSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
+PrebuiltSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+PrebuiltSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 PreventExternalUsersFromResharing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ProvisionSharedWithEveryoneFolder (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PublicCdnAllowedFileTypes (Edm.String) | ✅ | ❌ | ❌ | ❌

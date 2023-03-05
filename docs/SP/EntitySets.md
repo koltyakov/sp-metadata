@@ -260,6 +260,7 @@ MigrationPerformanceEntityDatas | ✅ | ❌ | ❌ | ❌
 MigrationPropertiess | ✅ | ❌ | ❌ | ❌
 MigrationSPFlights | ✅ | ❌ | ❌ | ❌
 MigrationTaskEntityDatas | ✅ | ❌ | ❌ | ❌
+MnAGroupMoveValidationResults | ✅ | ❌ | ❌ | ❌
 Models | ✅ | ❌ | ❌ | ❌
 ModernizeHomepageResults | ✅ | ❌ | ❌ | ❌
 ModuleLinks | ✅ | ✅ | ✅ | ❌
@@ -492,6 +493,7 @@ SiteHealthSummarys | ✅ | ✅ | ✅ | ✅
 SiteIconManagers | ✅ | ❌ | ❌ | ❌
 SiteMeTAInfoProviders | ✅ | ❌ | ❌ | ❌
 SiteMoveJobEntityDatas | ✅ | ❌ | ❌ | ❌
+SitePageDependencyMetadatas | ✅ | ❌ | ❌ | ❌
 SitePageMetadatas | ✅ | ✅ | ❌ | ❌
 SitePageServices | ✅ | ✅ | ❌ | ❌
 SitePropertiess | ✅ | ❌ | ❌ | ❌
@@ -660,6 +662,8 @@ WorkflowTemplates | ✅ | ✅ | ✅ | ✅
 Workitems | ✅ | ❌ | ❌ | ❌
 XTenantMoveCompatibilityChecks | ✅ | ❌ | ❌ | ❌
 comments | ✅ | ✅ | ❌ | ❌
+eSignInternals | ✅ | ❌ | ❌ | ❌
+eSigns | ✅ | ❌ | ❌ | ❌
 likedByInformations | ✅ | ✅ | ❌ | ❌
 placesInformations | ✅ | ❌ | ❌ | ❌
 userEntitys | ✅ | ✅ | ❌ | ❌
