@@ -48,6 +48,7 @@ BaseCalendarExceptions | ✅ | ✅ | ✅ | ❌
 BaseCustomPropertys | ✅ | ❌ | ❌ | ❌
 BaseSessions | ✅ | ✅ | ✅ | ✅
 BooleanCriterions | ✅ | ✅ | ✅ | ✅
+Brokers | ✅ | ❌ | ❌ | ❌
 CDSMetadatas | ✅ | ❌ | ❌ | ❌
 CalendarExceptions | ✅ | ✅ | ✅ | ❌
 Calendars | ✅ | ✅ | ✅ | ❌
@@ -197,6 +198,7 @@ HostedAppsManagers | ✅ | ❌ | ❌ | ❌
 HubSitePropertiess | ✅ | ❌ | ❌ | ❌
 HubSitesUtilitys | ✅ | ✅ | ❌ | ❌
 Hubsites | ✅ | ✅ | ❌ | ❌
+IRMigrations | ✅ | ❌ | ❌ | ❌
 ImportProfilePropertiesJobInfos | ✅ | ❌ | ❌ | ❌
 InformationRightsManagementFileSettingss | ✅ | ✅ | ✅ | ❌
 InformationRightsManagementSettingss | ✅ | ✅ | ✅ | ✅

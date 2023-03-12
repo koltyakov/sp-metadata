@@ -30,6 +30,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [PortalHealthStatusDetails](./ComplexTypes/PortalHealthStatusDetails.md) | ✅ | ❌ | ❌ | ❌
 [PrePublishValidationsErrorCodesForEmail](./ComplexTypes/PrePublishValidationsErrorCodesForEmail.md) | ✅ | ❌ | ❌ | ❌
 [PrePublishValidationsErrorCodesForSharePointSite](./ComplexTypes/PrePublishValidationsErrorCodesForSharePointSite.md) | ✅ | ❌ | ❌ | ❌
+[PrePublishValidationsErrorCodesForTeams](./ComplexTypes/PrePublishValidationsErrorCodesForTeams.md) | ✅ | ❌ | ❌ | ❌
 [PrePublishValidationsResponse](./ComplexTypes/PrePublishValidationsResponse.md) | ✅ | ❌ | ❌ | ❌
 [ProfileCoreProperties](./ComplexTypes/ProfileCoreProperties.md) | ✅ | ❌ | ❌ | ❌
 [ProfileData](./ComplexTypes/ProfileData.md) | ✅ | ❌ | ❌ | ❌
@@ -56,6 +57,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SiteSharingEmailContext](./ComplexTypes/SiteSharingEmailContext.md) | ✅ | ✅ | ❌ | ❌
 [TaxonomicProperties](./ComplexTypes/TaxonomicProperties.md) | ✅ | ❌ | ❌ | ❌
 [TaxonomyMetadata](./ComplexTypes/TaxonomyMetadata.md) | ✅ | ❌ | ❌ | ❌
+[TeamsPublishingStatus](./ComplexTypes/TeamsPublishingStatus.md) | ✅ | ❌ | ❌ | ❌
 [TextValueWithLanguage](./ComplexTypes/TextValueWithLanguage.md) | ✅ | ✅ | ❌ | ❌
 [TimeFrameStatistics](./ComplexTypes/TimeFrameStatistics.md) | ✅ | ❌ | ❌ | ❌
 [TopicPageFieldsData](./ComplexTypes/TopicPageFieldsData.md) | ✅ | ❌ | ❌ | ❌

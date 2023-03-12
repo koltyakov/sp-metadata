@@ -455,6 +455,7 @@ ParseAndSetFieldValue (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 ParseDateTime (SP.Web) | ✅ | ✅ | ❌ | ❌
 ParseDocumentTemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 ProcessExternalNotification (SP.Web) | ✅ | ✅ | ✅ | ✅
+ProcessStorageMetricsChanges (SP.Site) | ✅ | ❌ | ❌ | ❌
 ProvisionMigrationContainers (SP.Site) | ✅ | ✅ | ❌ | ❌
 ProvisionMigrationQueue (SP.Site) | ✅ | ✅ | ❌ | ❌
 ProvisionTemporaryAzureContainer (SP.Site) | ✅ | ❌ | ❌ | ❌
@@ -558,6 +559,7 @@ SP_AppPrincipalIdentityProvider_External | ✅ | ✅ | ✅ | ✅
 [SP_Approvals_GetProperties](./Functions/SP_Approvals_GetProperties.md) | ✅ | ❌ | ❌ | ❌
 [SP_Approvals_RejectItemRequest](./Functions/SP_Approvals_RejectItemRequest.md) | ✅ | ❌ | ❌ | ❌
 [SP_Approvals_SetProperties](./Functions/SP_Approvals_SetProperties.md) | ✅ | ❌ | ❌ | ❌
+[SP_Broker_AcquireOBOToken](./Functions/SP_Broker_AcquireOBOToken.md) | ✅ | ❌ | ❌ | ❌
 [SP_Campaigns_CreateCampaign](./Functions/SP_Campaigns_CreateCampaign.md) | ✅ | ❌ | ❌ | ❌
 [SP_Campaigns_CreateCommunication](./Functions/SP_Campaigns_CreateCommunication.md) | ✅ | ❌ | ❌ | ❌
 [SP_Campaigns_GetCampaign](./Functions/SP_Campaigns_GetCampaign.md) | ✅ | ❌ | ❌ | ❌
