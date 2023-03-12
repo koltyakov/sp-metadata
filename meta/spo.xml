@@ -2550,6 +2550,12 @@
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
       </EntityType>
+      <EntityType Name="Broker" Abstract="true">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="eSignInternal" Abstract="true">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
@@ -4260,6 +4266,7 @@
         <EntitySet Name="ActivityLoggers" EntityType="Microsoft.SharePoint.Internal.ActivityLogger" />
         <EntitySet Name="Tokens" EntityType="Microsoft.SharePoint.Internal.ClientSideComponent.Token" />
         <EntitySet Name="TrackedItemServices" EntityType="Microsoft.SharePoint.Internal.TrackedItemService" />
+        <EntitySet Name="IRMigrations" EntityType="Microsoft.SharePoint.IR.IRMigration" />
         <EntitySet Name="SPLargeOperations" EntityType="Microsoft.SharePoint.LargeOperation.SPLargeOperation" />
         <EntitySet Name="likedByInformations" EntityType="Microsoft.SharePoint.Likes.likedByInformation" />
         <EntitySet Name="LikesAPIs" EntityType="Microsoft.SharePoint.Likes.LikesAPI" />
@@ -4411,6 +4418,7 @@
         <EntitySet Name="AppTilePropertiess" EntityType="SP.AppTileProperties" />
         <EntitySet Name="Attachments" EntityType="SP.Attachment" />
         <EntitySet Name="Audits" EntityType="SP.Audit" />
+        <EntitySet Name="Brokers" EntityType="SP.Broker" />
         <EntitySet Name="AppBdcCatalogs" EntityType="SP.BusinessData.AppBdcCatalog" />
         <EntitySet Name="Entitys" EntityType="SP.BusinessData.Entity" />
         <EntitySet Name="EntityFields" EntityType="SP.BusinessData.EntityField" />
@@ -8036,6 +8044,7 @@
         </FunctionImport>
         <FunctionImport Name="PublishCoAuth" ReturnType="SP.Publishing.SitePageCoAuthState" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+          <Parameter Name="pageStream" Type="Edm.Stream" />
         </FunctionImport>
         <FunctionImport Name="SaveDraft" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
@@ -8167,6 +8176,7 @@
         </FunctionImport>
         <FunctionImport Name="PublishCoAuth" ReturnType="SP.Publishing.SitePageCoAuthState" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+          <Parameter Name="pageStream" Type="Edm.Stream" />
         </FunctionImport>
         <FunctionImport Name="SaveDraft" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
@@ -8382,6 +8392,7 @@
         </FunctionImport>
         <FunctionImport Name="PublishCoAuth" ReturnType="SP.Publishing.SitePageCoAuthState" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
+          <Parameter Name="pageStream" Type="Edm.Stream" />
         </FunctionImport>
         <FunctionImport Name="SaveDraft" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
@@ -8565,6 +8576,7 @@
         </FunctionImport>
         <FunctionImport Name="PublishCoAuth" ReturnType="SP.Publishing.SitePageCoAuthState" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
+          <Parameter Name="pageStream" Type="Edm.Stream" />
         </FunctionImport>
         <FunctionImport Name="SaveDraft" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
@@ -8723,6 +8735,7 @@
         </FunctionImport>
         <FunctionImport Name="PublishCoAuth" ReturnType="SP.Publishing.SitePageCoAuthState" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
+          <Parameter Name="pageStream" Type="Edm.Stream" />
         </FunctionImport>
         <FunctionImport Name="SaveDraft" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
@@ -8909,6 +8922,7 @@
         </FunctionImport>
         <FunctionImport Name="PublishCoAuth" ReturnType="SP.Publishing.SitePageCoAuthState" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
+          <Parameter Name="pageStream" Type="Edm.Stream" />
         </FunctionImport>
         <FunctionImport Name="SaveDraft" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
@@ -10617,6 +10631,10 @@
         </FunctionImport>
         <FunctionImport Name="SiteReference" ReturnType="SP.KnowledgeHubSiteReference" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.KnowledgeHub" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_IR_IRMigration" ReturnType="Microsoft.SharePoint.IR.IRMigration" IsComposable="true" EntitySet="IRMigrations" />
+        <FunctionImport Name="DeleteAndRecreateIRList" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.IR.IRMigration" />
         </FunctionImport>
         <FunctionImport Name="FeedbackDirect" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Internal.ActivityLogger" />
@@ -12479,6 +12497,10 @@
           <Parameter Name="overwrite" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_Internal_ApprovalsManager_OnRequestUpdated" />
+        <FunctionImport Name="SP_Broker_AcquireOBOToken" ReturnType="Edm.String" IsSideEffecting="false">
+          <Parameter Name="resource" Type="Edm.String" />
+          <Parameter Name="incomingToken" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="SP_eSignInternal_AddAuditTrailEntry" ReturnType="Edm.String">
           <Parameter Name="documentId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="addAuditTrailEntry" Type="Microsoft.SharePoint.ESign.Models.Requests.AddAuditTrailEntryModel" />
@@ -13813,12 +13835,12 @@
           <Parameter Name="overwrite" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="options" Type="SP.MoveCopyOptions" />
         </FunctionImport>
-        <FunctionImport Name="SP_MoveCopyUtil_CopyFolder">
+        <FunctionImport Name="SP_MoveCopyUtil_CopyFolder" ReturnType="Edm.Guid">
           <Parameter Name="srcUrl" Type="Edm.String" />
           <Parameter Name="destUrl" Type="Edm.String" />
           <Parameter Name="options" Type="SP.MoveCopyOptions" />
         </FunctionImport>
-        <FunctionImport Name="SP_MoveCopyUtil_CopyFolderByPath">
+        <FunctionImport Name="SP_MoveCopyUtil_CopyFolderByPath" ReturnType="Edm.Guid">
           <Parameter Name="srcPath" Type="SP.ResourcePath" />
           <Parameter Name="destPath" Type="SP.ResourcePath" />
           <Parameter Name="options" Type="SP.MoveCopyOptions" />
@@ -14217,6 +14239,9 @@
         <FunctionImport Name="OpenWebUsingPath" ReturnType="SP.Web" IsBindable="true" EntitySet="Webs">
           <Parameter Name="this" Type="SP.Site" />
           <Parameter Name="path" Type="SP.ResourcePath" />
+        </FunctionImport>
+        <FunctionImport Name="ProcessStorageMetricsChanges" IsBindable="true">
+          <Parameter Name="this" Type="SP.Site" />
         </FunctionImport>
         <FunctionImport Name="ProvisionMigrationContainers" ReturnType="SP.ProvisionedMigrationContainersInfo" IsBindable="true">
           <Parameter Name="this" Type="SP.Site" />
@@ -14906,6 +14931,15 @@
         <FunctionImport Name="GetImportProfilePropertyJobs" ReturnType="Collection(Microsoft.Online.SharePoint.TenantManagement.ImportProfilePropertiesJobInfo)" IsBindable="true" EntitySet="ImportProfilePropertiesJobInfos">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantManagement.Office365Tenant" />
         </FunctionImport>
+        <FunctionImport Name="GetSPOContainerTypeById" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPContainerTypeProperties" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantManagement.Office365Tenant" />
+          <Parameter Name="ContainerTypeId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="containerTenantType" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetSPOContainerTypes" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.SPContainerTypeProperties)" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantManagement.Office365Tenant" />
+          <Parameter Name="containerTenantType" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="GetTenantCdnEnabled" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantManagement.Office365Tenant" />
           <Parameter Name="cdnType" Type="Edm.Int32" Nullable="false" />
@@ -14935,6 +14969,10 @@
           <Parameter Name="numCatalogs" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="numFonts" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="totalExpectedFiles" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="NewSPOContainerType" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantManagement.Office365Tenant" />
+          <Parameter Name="containerTypeProperties" Type="Microsoft.Online.SharePoint.TenantAdministration.SPContainerTypeProperties" />
         </FunctionImport>
         <FunctionImport Name="QueueImportProfileProperties" ReturnType="Edm.Guid" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantManagement.Office365Tenant" />
@@ -18164,6 +18202,9 @@
       <Annotations Target="SP.Publishing.PrePublishValidationsErrorCodesForSharePointSite">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.PrePublishValidationsErrorCodesForTeams">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.PrePublishValidationsResponse">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18234,6 +18275,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.TaxonomyMetadata">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.TeamsPublishingStatus">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.TextValueWithLanguage">
@@ -20105,6 +20149,9 @@
       <Annotations Target="Microsoft.Online.SharePoint.MultiGeo.Service.MoveJobEntityData/BatchId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobEntityData/EnableSiteToMoveDatastore">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobEntityData/SourceCompanyId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21353,6 +21400,9 @@
       <Annotations Target="SP.Internal.ApprovalsManager">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Broker">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.eSignInternal">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22259,7 +22309,7 @@
       <Annotations Target="SP.ApiData/Publish(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/PublishCoAuth(SP.Publishing.CampaignPublication)">
+      <Annotations Target="SP.ApiData/PublishCoAuth(SP.Publishing.CampaignPublication, Edm.Stream)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SaveDraft(SP.Publishing.CampaignPublication, SP.Publishing.SitePageFieldsData)">
@@ -22382,7 +22432,7 @@
       <Annotations Target="SP.ApiData/Publish(SP.Publishing.FeedVideoPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/PublishCoAuth(SP.Publishing.FeedVideoPage)">
+      <Annotations Target="SP.ApiData/PublishCoAuth(SP.Publishing.FeedVideoPage, Edm.Stream)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SaveDraft(SP.Publishing.FeedVideoPage, SP.Publishing.SitePageFieldsData)">
@@ -22499,7 +22549,7 @@
       <Annotations Target="SP.ApiData/Publish(SP.Publishing.RepostPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/PublishCoAuth(SP.Publishing.RepostPage)">
+      <Annotations Target="SP.ApiData/PublishCoAuth(SP.Publishing.RepostPage, Edm.Stream)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SaveDraft(SP.Publishing.RepostPage, SP.Publishing.SitePageFieldsData)">
@@ -22595,7 +22645,7 @@
       <Annotations Target="SP.ApiData/Publish(SP.Publishing.SitePage3D)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/PublishCoAuth(SP.Publishing.SitePage3D)">
+      <Annotations Target="SP.ApiData/PublishCoAuth(SP.Publishing.SitePage3D, Edm.Stream)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SaveDraft(SP.Publishing.SitePage3D, SP.Publishing.SitePageFieldsData)">
@@ -22721,7 +22771,7 @@
       <Annotations Target="SP.ApiData/Publish(SP.Publishing.SitePage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/PublishCoAuth(SP.Publishing.SitePage)">
+      <Annotations Target="SP.ApiData/PublishCoAuth(SP.Publishing.SitePage, Edm.Stream)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SaveDraft(SP.Publishing.SitePage, SP.Publishing.SitePageFieldsData)">
@@ -22856,7 +22906,7 @@
       <Annotations Target="SP.ApiData/Publish(SP.Publishing.TopicSitePage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/PublishCoAuth(SP.Publishing.TopicSitePage)">
+      <Annotations Target="SP.ApiData/PublishCoAuth(SP.Publishing.TopicSitePage, Edm.Stream)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SaveDraft(SP.Publishing.TopicSitePage, SP.Publishing.SitePageFieldsData)">
@@ -23898,6 +23948,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Internal_ApprovalsManager_OnRequestUpdated()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_Broker_AcquireOBOToken(Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_eSignInternal_AddAuditTrailEntry(Edm.Guid, Microsoft.SharePoint.ESign.Models.Requests.AddAuditTrailEntryModel)">
@@ -25240,6 +25293,7 @@
         <Property Name="StateName" Type="Edm.String" />
       </EntityType>
       <EntityType Name="SiteMoveJobEntityData" BaseType="Microsoft.Online.SharePoint.MultiGeo.Service.MoveJobEntityData">
+        <Property Name="EnableSiteToMoveDatastore" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SourceCompanyId" Type="Edm.Guid" Nullable="false" />
         <Property Name="SourceInstanceId" Type="Edm.Guid" Nullable="false" />
         <Property Name="SourceMySiteHostUrl" Type="Edm.String" />
@@ -28609,6 +28663,7 @@
       </ComplexType>
       <ComplexType Name="CopyToParams">
         <Property Name="AsNews" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AsPrivateAuthoringPage" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AsTemplate" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CanvasContentOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ComponentJSONString" Type="Edm.String" />
@@ -28617,7 +28672,7 @@
         <Property Name="DestinationPageUniqueId" Type="Edm.Guid" Nullable="false" />
         <Property Name="DestinationType" Type="Edm.Int32" Nullable="false" />
         <Property Name="DestinationWebUrl" Type="Edm.String" />
-        <Property Name="ScenarioName" Type="Edm.String" />
+        <Property Name="ScenarioID" Type="Edm.Int32" Nullable="false" />
         <Property Name="ScenarioPayload" Type="Edm.String" />
         <Property Name="SitePageFlags" Type="Edm.String" />
       </ComplexType>
@@ -28736,10 +28791,15 @@
         <Property Name="ErrorCodes" Type="Collection(Edm.Int32)" Nullable="false" />
         <Property Name="SiteId" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="PrePublishValidationsErrorCodesForTeams">
+        <Property Name="AudienceId" Type="Edm.String" />
+        <Property Name="ErrorCodes" Type="Collection(Edm.Int32)" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="PrePublishValidationsResponse">
         <Property Name="ErrorCodes" Type="Collection(Edm.Int32)" Nullable="false" />
         <Property Name="PrePublishValidationsErrorCodesForEmails" Type="Collection(SP.Publishing.PrePublishValidationsErrorCodesForEmail)" />
         <Property Name="PrePublishValidationsErrorCodesForSharePointSites" Type="Collection(SP.Publishing.PrePublishValidationsErrorCodesForSharePointSite)" />
+        <Property Name="PrePublishValidationsErrorCodesForTeams" Type="Collection(SP.Publishing.PrePublishValidationsErrorCodesForTeams)" />
       </ComplexType>
       <ComplexType Name="ProfileCoreProperties" BaseType="SP.Publishing.PersonIdentity">
         <Property Name="PictureUrl" Type="Edm.String" />
@@ -28893,6 +28953,10 @@
         <Property Name="lcid" Type="Edm.Int32" Nullable="false" />
         <Property Name="sspList" Type="Edm.String" />
         <Property Name="termSetList" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="TeamsPublishingStatus">
+        <Property Name="ErrorCode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="TextValueWithLanguage">
         <Property Name="ColorSeed" Type="Edm.String" />
@@ -32908,6 +32972,13 @@
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="SPContainerTypeProperties">
+        <Property Name="AzureSubscriptionId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ContainerTypeId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="OwningAppId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="OwningTenantId" Type="Edm.Guid" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="SPListModernUXOff">
         <Property Name="IsHidden" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
@@ -35100,6 +35171,14 @@
         <Property Name="ProgressPercentage" Type="Edm.Double" Nullable="false" />
         <Property Name="ResourceLocation" Type="Edm.String" />
         <Property Name="Status" Type="Edm.String" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Microsoft.SharePoint.IR" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="IRMigration">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.Internal.ClientSideComponent" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
