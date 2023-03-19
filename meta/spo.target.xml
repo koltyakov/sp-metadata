@@ -202,6 +202,7 @@
         <Property Name="webpartId" Type="Edm.Guid" Nullable="false" />
       </ComplexType>
       <ComplexType Name="DocumentGenerationInfo">
+        <Property Name="ConditionalFieldsToBeDeleted" Type="Collection(Edm.String)" />
         <Property Name="ContentAssemblyFormAnswers" Type="Collection(SP.ContentAssemblyFormAnswer)" />
         <Property Name="FileName" Type="Edm.String" />
         <Property Name="FolderUrl" Type="Edm.String" />
@@ -4441,6 +4442,7 @@
         <EntitySet Name="CheckedOutFiles" EntityType="SP.CheckedOutFile" />
         <EntitySet Name="ClientWebParts" EntityType="SP.ClientWebPart" />
         <EntitySet Name="CompatibilityRanges" EntityType="SP.CompatibilityRange" />
+        <EntitySet Name="ComplianceDlpWorkItemSubmitters" EntityType="SP.ComplianceFoundation.ComplianceDlpWorkItemSubmitter" />
         <EntitySet Name="ComplianceRetentionWorkItemSubmitters" EntityType="SP.ComplianceFoundation.ComplianceRetentionWorkItemSubmitter" />
         <EntitySet Name="PreserveDocumentSubmitters" EntityType="SP.ComplianceFoundation.PreserveDocumentSubmitter" />
         <EntitySet Name="PolicyEvaluationInfos" EntityType="SP.CompliancePolicy.PolicyEvaluationInfo" />
@@ -4525,6 +4527,7 @@
         <EntitySet Name="CommunicationSites" EntityType="SP.Publishing.CommunicationSite" />
         <EntitySet Name="EmbedDataV1s" EntityType="SP.Publishing.EmbedDataV1" />
         <EntitySet Name="EmbedServices" EntityType="SP.Publishing.EmbedService" />
+        <EntitySet Name="HighlightsInfos" EntityType="SP.Publishing.HighlightsInfo" />
         <EntitySet Name="PersonMagazines" EntityType="SP.Publishing.PersonMagazine" />
         <EntitySet Name="PointPublishingDocPropss" EntityType="SP.Publishing.PointPublishingDocProps" />
         <EntitySet Name="PointPublishingMagazinePropss" EntityType="SP.Publishing.PointPublishingMagazineProps" />
@@ -5777,6 +5780,7 @@
           <Parameter Name="durationInDays" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="holdPeriodSource" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="SP_ComplianceFoundation_ComplianceDlpWorkItemSubmitter_AddUnifiedDlpWorkItem" ReturnType="Edm.Boolean" />
         <FunctionImport Name="SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddHighPriorityRetentionWorkItem" ReturnType="Edm.Boolean" />
         <FunctionImport Name="SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddUnifiedRetentionWorkItem" ReturnType="Edm.Boolean" />
         <FunctionImport Name="SP_ComplianceFoundation_PreserveDocumentSubmitter_PreserveCloudAttachmentIntoPHL" ReturnType="SP.ComplianceFoundation.Models.PreservedCloudAttachment">
@@ -8028,7 +8032,10 @@
         <FunctionImport Name="GetDependencyMetadata" ReturnType="Collection(SP.Publishing.SitePageDependencyMetadata)" IsComposable="true" IsBindable="true" EntitySet="SitePageDependencyMetadatas">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
-        <FunctionImport Name="GetLastestVersionsInDescendingOrder" ReturnType="Collection(SP.Publishing.SitePageVersionInfoCollection)" IsSideEffecting="false" IsBindable="true">
+        <FunctionImport Name="GetHighlightsInfo" ReturnType="SP.Publishing.HighlightsInfo" IsComposable="true" IsBindable="true" EntitySet="HighlightsInfos">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+        </FunctionImport>
+        <FunctionImport Name="GetLatestVersionsInDescendingOrder" ReturnType="Collection(SP.Publishing.SitePageVersionInfoCollection)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="numVersions" Type="Edm.Int64" Nullable="false" />
         </FunctionImport>
@@ -8081,6 +8088,9 @@
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
         <FunctionImport Name="Update" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+        </FunctionImport>
+        <FunctionImport Name="DeletePublication" ReturnType="Edm.Guid" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
         <FunctionImport Name="GetPrePublishValidationStatus" ReturnType="SP.Publishing.PrePublishValidationsResponse" IsSideEffecting="false" IsBindable="true">
@@ -8160,7 +8170,10 @@
         <FunctionImport Name="GetDependencyMetadata" ReturnType="Collection(SP.Publishing.SitePageDependencyMetadata)" IsComposable="true" IsBindable="true" EntitySet="SitePageDependencyMetadatas">
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
         </FunctionImport>
-        <FunctionImport Name="GetLastestVersionsInDescendingOrder" ReturnType="Collection(SP.Publishing.SitePageVersionInfoCollection)" IsSideEffecting="false" IsBindable="true">
+        <FunctionImport Name="GetHighlightsInfo" ReturnType="SP.Publishing.HighlightsInfo" IsComposable="true" IsBindable="true" EntitySet="HighlightsInfos">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+        </FunctionImport>
+        <FunctionImport Name="GetLatestVersionsInDescendingOrder" ReturnType="Collection(SP.Publishing.SitePageVersionInfoCollection)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
           <Parameter Name="numVersions" Type="Edm.Int64" Nullable="false" />
         </FunctionImport>
@@ -8376,7 +8389,10 @@
         <FunctionImport Name="GetDependencyMetadata" ReturnType="Collection(SP.Publishing.SitePageDependencyMetadata)" IsComposable="true" IsBindable="true" EntitySet="SitePageDependencyMetadatas">
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
         </FunctionImport>
-        <FunctionImport Name="GetLastestVersionsInDescendingOrder" ReturnType="Collection(SP.Publishing.SitePageVersionInfoCollection)" IsSideEffecting="false" IsBindable="true">
+        <FunctionImport Name="GetHighlightsInfo" ReturnType="SP.Publishing.HighlightsInfo" IsComposable="true" IsBindable="true" EntitySet="HighlightsInfos">
+          <Parameter Name="this" Type="SP.Publishing.RepostPage" />
+        </FunctionImport>
+        <FunctionImport Name="GetLatestVersionsInDescendingOrder" ReturnType="Collection(SP.Publishing.SitePageVersionInfoCollection)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
           <Parameter Name="numVersions" Type="Edm.Int64" Nullable="false" />
         </FunctionImport>
@@ -8560,7 +8576,10 @@
         <FunctionImport Name="GetDependencyMetadata" ReturnType="Collection(SP.Publishing.SitePageDependencyMetadata)" IsComposable="true" IsBindable="true" EntitySet="SitePageDependencyMetadatas">
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
         </FunctionImport>
-        <FunctionImport Name="GetLastestVersionsInDescendingOrder" ReturnType="Collection(SP.Publishing.SitePageVersionInfoCollection)" IsSideEffecting="false" IsBindable="true">
+        <FunctionImport Name="GetHighlightsInfo" ReturnType="SP.Publishing.HighlightsInfo" IsComposable="true" IsBindable="true" EntitySet="HighlightsInfos">
+          <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
+        </FunctionImport>
+        <FunctionImport Name="GetLatestVersionsInDescendingOrder" ReturnType="Collection(SP.Publishing.SitePageVersionInfoCollection)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
           <Parameter Name="numVersions" Type="Edm.Int64" Nullable="false" />
         </FunctionImport>
@@ -8719,7 +8738,10 @@
         <FunctionImport Name="GetDependencyMetadata" ReturnType="Collection(SP.Publishing.SitePageDependencyMetadata)" IsComposable="true" IsBindable="true" EntitySet="SitePageDependencyMetadatas">
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
         </FunctionImport>
-        <FunctionImport Name="GetLastestVersionsInDescendingOrder" ReturnType="Collection(SP.Publishing.SitePageVersionInfoCollection)" IsSideEffecting="false" IsBindable="true">
+        <FunctionImport Name="GetHighlightsInfo" ReturnType="SP.Publishing.HighlightsInfo" IsComposable="true" IsBindable="true" EntitySet="HighlightsInfos">
+          <Parameter Name="this" Type="SP.Publishing.SitePage" />
+        </FunctionImport>
+        <FunctionImport Name="GetLatestVersionsInDescendingOrder" ReturnType="Collection(SP.Publishing.SitePageVersionInfoCollection)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
           <Parameter Name="numVersions" Type="Edm.Int64" Nullable="false" />
         </FunctionImport>
@@ -8906,7 +8928,10 @@
         <FunctionImport Name="GetDependencyMetadata" ReturnType="Collection(SP.Publishing.SitePageDependencyMetadata)" IsComposable="true" IsBindable="true" EntitySet="SitePageDependencyMetadatas">
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
         </FunctionImport>
-        <FunctionImport Name="GetLastestVersionsInDescendingOrder" ReturnType="Collection(SP.Publishing.SitePageVersionInfoCollection)" IsSideEffecting="false" IsBindable="true">
+        <FunctionImport Name="GetHighlightsInfo" ReturnType="SP.Publishing.HighlightsInfo" IsComposable="true" IsBindable="true" EntitySet="HighlightsInfos">
+          <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
+        </FunctionImport>
+        <FunctionImport Name="GetLatestVersionsInDescendingOrder" ReturnType="Collection(SP.Publishing.SitePageVersionInfoCollection)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
           <Parameter Name="numVersions" Type="Edm.Int64" Nullable="false" />
         </FunctionImport>
@@ -9512,6 +9537,15 @@
           <Parameter Name="checkInComment" Type="Edm.String" />
           <Parameter Name="datesInUTC" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="numberInInvariantCulture" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="ValidateUpdateFetchListItemInFolder" ReturnType="SP.ListItemUpdateResults" IsBindable="true">
+          <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
+          <Parameter Name="formValues" Type="Collection(SP.ListItemFormUpdateValue)" />
+          <Parameter Name="bNewDocumentUpdate" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="checkInComment" Type="Edm.String" />
+          <Parameter Name="datesInUTC" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="numberInInvariantCulture" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="rootFolder" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="ValidateUpdateListItem" ReturnType="Collection(SP.ListItemFormUpdateValue)" IsBindable="true">
           <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
@@ -11929,6 +11963,15 @@
           <Parameter Name="datesInUTC" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="numberInInvariantCulture" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="ValidateUpdateFetchListItemInFolder" ReturnType="SP.ListItemUpdateResults" IsBindable="true">
+          <Parameter Name="this" Type="SP.ListItem" />
+          <Parameter Name="formValues" Type="Collection(SP.ListItemFormUpdateValue)" />
+          <Parameter Name="bNewDocumentUpdate" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="checkInComment" Type="Edm.String" />
+          <Parameter Name="datesInUTC" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="numberInInvariantCulture" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="rootFolder" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="ValidateUpdateListItem" ReturnType="Collection(SP.ListItemFormUpdateValue)" IsBindable="true">
           <Parameter Name="this" Type="SP.ListItem" />
           <Parameter Name="formValues" Type="Collection(SP.ListItemFormUpdateValue)" />
@@ -12500,6 +12543,7 @@
         <FunctionImport Name="SP_Broker_AcquireOBOToken" ReturnType="Edm.String" IsSideEffecting="false">
           <Parameter Name="resource" Type="Edm.String" />
           <Parameter Name="incomingToken" Type="Edm.String" />
+          <Parameter Name="tenantId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_eSignInternal_AddAuditTrailEntry" ReturnType="Edm.String">
           <Parameter Name="documentId" Type="Edm.Guid" Nullable="false" />
@@ -18118,6 +18162,9 @@
       <Annotations Target="SP.Publishing.SitePageFieldsData/Description">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.SitePageFieldsData/EmailTranspileContent">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.SitePageFieldsData/HiddenHighlightsMetadata">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18290,6 +18337,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.TopicPageFieldsData/EntityType">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.TopicPageFieldsData/VerifiedTopicAllowedEditors">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Portal.ChannelInfoCollection">
@@ -20119,6 +20169,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SyntexModelsLandingInfo/FormProcessingModelLandingUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ComplianceFoundation.ComplianceDlpWorkItemSubmitter">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ComplianceFoundation.ComplianceRetentionWorkItemSubmitter">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21097,6 +21150,9 @@
       <Annotations Target="SP.Publishing.FeedVideoPage/VideoDuration">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.HighlightsInfo">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.PersonMagazine">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21173,6 +21229,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.TopicSitePage/EntityType">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.TopicSitePage/VerifiedTopicAllowedEditors">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.TopicPageMetadata">
@@ -22207,6 +22266,9 @@
       <Annotations Target="SP.ApiData/GetByIdentifier(Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem), Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_ComplianceFoundation_ComplianceDlpWorkItemSubmitter_AddUnifiedDlpWorkItem()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddHighPriorityRetentionWorkItem()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22297,7 +22359,10 @@
       <Annotations Target="SP.ApiData/GetDependencyMetadata(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/GetLastestVersionsInDescendingOrder(SP.Publishing.CampaignPublication, Edm.Int64)">
+      <Annotations Target="SP.ApiData/GetHighlightsInfo(SP.Publishing.CampaignPublication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetLatestVersionsInDescendingOrder(SP.Publishing.CampaignPublication, Edm.Int64)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetVersion(SP.Publishing.CampaignPublication, Edm.Int32)">
@@ -22340,6 +22405,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Update(SP.Publishing.CampaignPublication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/DeletePublication(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetPrePublishValidationStatus(SP.Publishing.CampaignPublication)">
@@ -22420,7 +22488,10 @@
       <Annotations Target="SP.ApiData/GetDependencyMetadata(SP.Publishing.FeedVideoPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/GetLastestVersionsInDescendingOrder(SP.Publishing.FeedVideoPage, Edm.Int64)">
+      <Annotations Target="SP.ApiData/GetHighlightsInfo(SP.Publishing.FeedVideoPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetLatestVersionsInDescendingOrder(SP.Publishing.FeedVideoPage, Edm.Int64)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetVersion(SP.Publishing.FeedVideoPage, Edm.Int32)">
@@ -22537,7 +22608,10 @@
       <Annotations Target="SP.ApiData/GetDependencyMetadata(SP.Publishing.RepostPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/GetLastestVersionsInDescendingOrder(SP.Publishing.RepostPage, Edm.Int64)">
+      <Annotations Target="SP.ApiData/GetHighlightsInfo(SP.Publishing.RepostPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetLatestVersionsInDescendingOrder(SP.Publishing.RepostPage, Edm.Int64)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetVersion(SP.Publishing.RepostPage, Edm.Int32)">
@@ -22633,7 +22707,10 @@
       <Annotations Target="SP.ApiData/GetDependencyMetadata(SP.Publishing.SitePage3D)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/GetLastestVersionsInDescendingOrder(SP.Publishing.SitePage3D, Edm.Int64)">
+      <Annotations Target="SP.ApiData/GetHighlightsInfo(SP.Publishing.SitePage3D)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetLatestVersionsInDescendingOrder(SP.Publishing.SitePage3D, Edm.Int64)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetVersion(SP.Publishing.SitePage3D, Edm.Int32)">
@@ -22759,7 +22836,10 @@
       <Annotations Target="SP.ApiData/GetDependencyMetadata(SP.Publishing.SitePage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/GetLastestVersionsInDescendingOrder(SP.Publishing.SitePage, Edm.Int64)">
+      <Annotations Target="SP.ApiData/GetHighlightsInfo(SP.Publishing.SitePage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetLatestVersionsInDescendingOrder(SP.Publishing.SitePage, Edm.Int64)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetVersion(SP.Publishing.SitePage, Edm.Int32)">
@@ -22894,7 +22974,10 @@
       <Annotations Target="SP.ApiData/GetDependencyMetadata(SP.Publishing.TopicSitePage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/GetLastestVersionsInDescendingOrder(SP.Publishing.TopicSitePage, Edm.Int64)">
+      <Annotations Target="SP.ApiData/GetHighlightsInfo(SP.Publishing.TopicSitePage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetLatestVersionsInDescendingOrder(SP.Publishing.TopicSitePage, Edm.Int64)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetVersion(SP.Publishing.TopicSitePage, Edm.Int32)">
@@ -23950,7 +24033,7 @@
       <Annotations Target="SP.ApiData/SP_Internal_ApprovalsManager_OnRequestUpdated()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_Broker_AcquireOBOToken(Edm.String, Edm.String)">
+      <Annotations Target="SP.ApiData/SP_Broker_AcquireOBOToken(Edm.String, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_eSignInternal_AddAuditTrailEntry(Edm.Guid, Microsoft.SharePoint.ESign.Models.Requests.AddAuditTrailEntryModel)">
@@ -28637,6 +28720,7 @@
         <Property Name="Categories" Type="Edm.String" />
         <Property Name="CoAuthState" Type="SP.Publishing.SitePageCoAuthState" />
         <Property Name="Description" Type="Edm.String" />
+        <Property Name="EmailTranspileContent" Type="Edm.String" />
         <Property Name="HiddenHighlightsMetadata" Type="Edm.String" />
         <Property Name="HideListEditorMetadata" Type="Edm.String" />
         <Property Name="LayoutWebpartsContent" Type="Edm.String" />
@@ -28955,7 +29039,9 @@
         <Property Name="termSetList" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="TeamsPublishingStatus">
+        <Property Name="AudienceId" Type="Edm.String" />
         <Property Name="ErrorCode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="HttpStatusCode" Type="Edm.Int32" Nullable="false" />
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="TextValueWithLanguage">
@@ -28967,6 +29053,7 @@
         <Property Name="EntityId" Type="Edm.String" />
         <Property Name="EntityRelations" Type="Edm.String" />
         <Property Name="EntityType" Type="Edm.String" />
+        <Property Name="VerifiedTopicAllowedEditors" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="ViewProgressAnalyticsData" BaseType="SP.Publishing.ViewData">
         <Property Name="PercentageViewed" Type="Edm.Int32" Nullable="false" />
@@ -28975,6 +29062,7 @@
         <Property Name="IsPreview" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
       <ComplexType Name="CampaignPublicationResetEndpointParam">
+        <Property Name="EmailTranspileContent" Type="Edm.String" />
         <Property Name="ResetEndpoint" Type="Collection(Edm.String)" />
       </ComplexType>
       <ComplexType Name="CommunicationSiteCreationResponse">
@@ -29157,6 +29245,13 @@
       <EntityType Name="FeedVideoPage" BaseType="SP.Publishing.RepostPage">
         <Property Name="ModernAudienceTargetUserField" Type="Edm.String" />
         <Property Name="VideoDuration" Type="Edm.Int64" Nullable="false" />
+      </EntityType>
+      <EntityType Name="HighlightsInfo">
+        <Key>
+          <PropertyRef Name="HiddenHighlights" />
+        </Key>
+        <Property Name="HiddenHighlights" Type="Edm.String" Nullable="false" />
+        <Property Name="HideListEditor" Type="Edm.String" />
       </EntityType>
       <EntityType Name="PageDiagnosticsController">
         <Key>
@@ -29379,6 +29474,7 @@
         <Property Name="EntityId" Type="Edm.String" />
         <Property Name="EntityRelations" Type="Edm.String" />
         <Property Name="EntityType" Type="Edm.String" />
+        <Property Name="VerifiedTopicAllowedEditors" Type="Edm.String" />
       </EntityType>
       <EntityType Name="TopicPageMetadata" BaseType="SP.Publishing.SitePageMetadata">
         <Property Name="EntityId" Type="Edm.String" />
@@ -30509,6 +30605,7 @@
         <Property Name="notificationUrl" Type="Edm.String" />
         <Property Name="resource" Type="Edm.String" />
         <Property Name="resourceData" Type="Edm.String" />
+        <Property Name="scenarios" Type="Collection(Edm.String)" />
       </ComplexType>
       <EntityType Name="Subscription">
         <Key>
@@ -30520,6 +30617,7 @@
         <Property Name="notificationUrl" Type="Edm.String" />
         <Property Name="resource" Type="Edm.String" />
         <Property Name="resourceData" Type="Edm.String" />
+        <Property Name="scenarios" Type="Collection(Edm.String)" />
       </EntityType>
       <Association Name="SP_List_Subscriptions_Microsoft_SharePoint_Webhooks_Subscription_SubscriptionsPartner">
         <End Type="Microsoft.SharePoint.Webhooks.Subscription" Role="Subscriptions" Multiplicity="*" />
@@ -31251,6 +31349,7 @@
         <Property Name="likeCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="listId" Type="Edm.Guid" Nullable="false" />
         <Property Name="mentions" Type="Collection(Microsoft.SharePoint.Comments.Client.Identity)" />
+        <Property Name="modifiedDate" Type="Edm.DateTime" />
         <Property Name="parentId" Type="Edm.String" />
         <Property Name="relativeCreatedDate" Type="Edm.String" />
         <Property Name="replyCount" Type="Edm.Int32" Nullable="false" />
@@ -31580,33 +31679,37 @@
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
         <Property Name="TotalItemCount" Type="Edm.Int64" Nullable="false" />
       </ComplexType>
-      <ComplexType Name="CollaborationInsightsCounts">
+      <ComplexType Name="CollaborationInsightsData">
+        <Property Name="insightsOverview" Type="Microsoft.SharePoint.Administration.TenantAdmin.CollaborationInsightsOverview" />
+        <Property Name="insightsSummary" Type="Microsoft.SharePoint.Administration.TenantAdmin.CollaborationInsightsSummary" />
+        <Property Name="lastReportDate" Type="Edm.DateTime" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="CollaborationInsightsOverview">
         <Property Name="totalGuests" Type="Edm.Int32" Nullable="false" />
         <Property Name="totalInternalUsers" Type="Edm.Int32" Nullable="false" />
         <Property Name="totalOneDrives" Type="Edm.Int32" Nullable="false" />
         <Property Name="totalSites" Type="Edm.Int32" Nullable="false" />
         <Property Name="totalUsers" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
-      <ComplexType Name="CollaborationInsightsData">
-        <Property Name="collaborativeUsers" Type="Microsoft.SharePoint.Administration.TenantAdmin.CollaborativeUsers" />
-        <Property Name="lastReportDate" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="tenantInsights" Type="Microsoft.SharePoint.Administration.TenantAdmin.CollaborationInsightsCounts" />
+      <ComplexType Name="CollaborationInsightsSummary">
+        <Property Name="collaborativeOneDriveUsers" Type="Collection(Microsoft.SharePoint.Administration.TenantAdmin.CollaborativeOneDriveUser)" />
+        <Property Name="collaborativeUsers" Type="Collection(Microsoft.SharePoint.Administration.TenantAdmin.CollaborativeUser)" />
       </ComplexType>
-      <ComplexType Name="CollaborativeUsers">
-        <Property Name="oneDrive" Type="Collection(Microsoft.SharePoint.Administration.TenantAdmin.OneDriveCollaborativeUsers)" />
-        <Property Name="oneDriveSharePoint" Type="Collection(Microsoft.SharePoint.Administration.TenantAdmin.OneDriveSharePointCollaborativeUsers)" />
-      </ComplexType>
-      <ComplexType Name="OneDriveCollaborativeUsers">
-        <Property Name="displayName" Type="Edm.String" />
-        <Property Name="oneDriveFilesSharedExternally" Type="Edm.Int32" Nullable="false" />
+      <ComplexType Name="CollaborativeOneDriveUser">
+        <Property Name="fileCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="filesSharedExternally" Type="Edm.Int32" Nullable="false" />
+        <Property Name="filesSharedInternally" Type="Edm.Int32" Nullable="false" />
         <Property Name="sensitivityLabel" Type="Edm.Guid" Nullable="false" />
-        <Property Name="totalFileCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="totalFilesShared" Type="Edm.Int32" Nullable="false" />
+        <Property Name="userDisplayName" Type="Edm.String" />
         <Property Name="userPrincipalName" Type="Edm.String" />
       </ComplexType>
-      <ComplexType Name="OneDriveSharePointCollaborativeUsers">
-        <Property Name="displayName" Type="Edm.String" />
+      <ComplexType Name="CollaborativeUser">
+        <Property Name="totalFileInteraction" Type="Edm.Int32" Nullable="false" />
         <Property Name="totalFilesSharedExternally" Type="Edm.Int32" Nullable="false" />
         <Property Name="totalFilesSharedInternally" Type="Edm.Int32" Nullable="false" />
+        <Property Name="totalFilesViewedOrEdited" Type="Edm.Int32" Nullable="false" />
+        <Property Name="userDisplayName" Type="Edm.String" />
         <Property Name="userPrincipalName" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="GroupSitesActivityDetail">
@@ -34453,6 +34556,12 @@
       </EntityType>
     </Schema>
     <Schema Namespace="SP.ComplianceFoundation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="ComplianceDlpWorkItemSubmitter">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="ComplianceRetentionWorkItemSubmitter">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
