@@ -1,8 +1,8 @@
-# Function Import: GetLastestVersionsInDescendingOrder
+# Function Import: GetLatestVersionsInDescendingOrder
 
 > Namespace: SP.Publishing
 
-- Entity type: SP.Publishing.SitePage3D
+- Entity type: SP.Publishing.RepostPage
 - Is composable: false
 - Is bindable: false
 

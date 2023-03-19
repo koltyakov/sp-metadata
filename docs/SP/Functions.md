@@ -886,6 +886,7 @@ ValidateSetValue (SP.FieldText) | ❌ | ❌ | ❌ | ✅
 ValidateSetValue (SP.FieldUrl) | ❌ | ❌ | ❌ | ✅
 ValidateSetValue (SP.FieldUser) | ❌ | ❌ | ❌ | ✅
 ValidateUpdateFetchListItem (SP.ListItem) | ✅ | ❌ | ❌ | ❌
+ValidateUpdateFetchListItemInFolder (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 ValidateUpdateListItem (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 VivaConnections (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 VivaHome (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌

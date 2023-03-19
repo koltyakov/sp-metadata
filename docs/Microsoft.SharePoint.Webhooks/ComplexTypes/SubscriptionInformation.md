@@ -11,3 +11,4 @@ expirationDateTime (Edm.DateTime) | ✅ | ✅ | ❌ | ❌
 notificationUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 resource (Edm.String) | ✅ | ✅ | ❌ | ❌
 resourceData (Edm.String) | ✅ | ✅ | ❌ | ❌
+scenarios (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌

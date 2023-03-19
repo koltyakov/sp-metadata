@@ -1,8 +1,8 @@
-# Function Import: GetLastestVersionsInDescendingOrder
+# Function Import: GetLatestVersionsInDescendingOrder
 
 > Namespace: SP.Publishing
 
-- Entity type: SP.Publishing.RepostPage
+- Entity type: SP.Publishing.FeedVideoPage
 - Is composable: false
 - Is bindable: false
 

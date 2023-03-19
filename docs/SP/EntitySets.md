@@ -69,6 +69,7 @@ CommentsAPIs | ✅ | ✅ | ❌ | ❌
 CommunicationSites | ✅ | ✅ | ❌ | ❌
 CommunityModerations | ✅ | ✅ | ✅ | ✅
 CompatibilityRanges | ✅ | ✅ | ✅ | ✅
+ComplianceDlpWorkItemSubmitters | ✅ | ❌ | ❌ | ❌
 ComplianceRetentionWorkItemSubmitters | ✅ | ❌ | ❌ | ❌
 ComponentContextInfos | ✅ | ✅ | ❌ | ❌
 ConnectionSettingss | ✅ | ❌ | ❌ | ❌
@@ -191,6 +192,7 @@ Groupsitemanagers | ✅ | ✅ | ✅ | ❌
 HasMnALicenses | ✅ | ❌ | ❌ | ❌
 HashTagCollections | ✅ | ✅ | ✅ | ✅
 HashtagStoreManagers | ❌ | ✅ | ❌ | ❌
+HighlightsInfos | ✅ | ❌ | ❌ | ❌
 HomeSiteNavigationSettingss | ✅ | ❌ | ❌ | ❌
 HostedAppAddResponses | ✅ | ❌ | ❌ | ❌
 HostedApps | ✅ | ❌ | ❌ | ❌

@@ -6,14 +6,14 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [AuditData](./ComplexTypes/AuditData.md) | ✅ | ❌ | ❌ | ❌
 [AuditSearchRequestStatus](./ComplexTypes/AuditSearchRequestStatus.md) | ✅ | ❌ | ❌ | ❌
-[CollaborationInsightsCounts](./ComplexTypes/CollaborationInsightsCounts.md) | ✅ | ❌ | ❌ | ❌
 [CollaborationInsightsData](./ComplexTypes/CollaborationInsightsData.md) | ✅ | ❌ | ❌ | ❌
-[CollaborativeUsers](./ComplexTypes/CollaborativeUsers.md) | ✅ | ❌ | ❌ | ❌
+[CollaborationInsightsOverview](./ComplexTypes/CollaborationInsightsOverview.md) | ✅ | ❌ | ❌ | ❌
+[CollaborationInsightsSummary](./ComplexTypes/CollaborationInsightsSummary.md) | ✅ | ❌ | ❌ | ❌
+[CollaborativeOneDriveUser](./ComplexTypes/CollaborativeOneDriveUser.md) | ✅ | ❌ | ❌ | ❌
+[CollaborativeUser](./ComplexTypes/CollaborativeUser.md) | ✅ | ❌ | ❌ | ❌
 [EventData](./ComplexTypes/EventData.md) | ✅ | ❌ | ❌ | ❌
 [GroupSitesActivityDetail](./ComplexTypes/GroupSitesActivityDetail.md) | ✅ | ❌ | ❌ | ❌
 [ModifiedProperty](./ComplexTypes/ModifiedProperty.md) | ✅ | ❌ | ❌ | ❌
-[OneDriveCollaborativeUsers](./ComplexTypes/OneDriveCollaborativeUsers.md) | ✅ | ❌ | ❌ | ❌
-[OneDriveSharePointCollaborativeUsers](./ComplexTypes/OneDriveSharePointCollaborativeUsers.md) | ✅ | ❌ | ❌ | ❌
 [PageResponse](./ComplexTypes/PageResponse.md) | ✅ | ❌ | ❌ | ❌
 [RecentAdminActionReport](./ComplexTypes/RecentAdminActionReport.md) | ✅ | ❌ | ❌ | ❌
 [TeamsSitesActivityDetail](./ComplexTypes/TeamsSitesActivityDetail.md) | ✅ | ❌ | ❌ | ❌

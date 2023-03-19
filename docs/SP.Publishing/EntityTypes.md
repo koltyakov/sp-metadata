@@ -12,6 +12,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [EmbedDataV1](./EntityTypes/EmbedDataV1.md) | ✅ | ✅ | ❌ | ❌
 [EmbedService](./EntityTypes/EmbedService.md) | ✅ | ✅ | ❌ | ❌
 [FeedVideoPage](./EntityTypes/FeedVideoPage.md) | ✅ | ❌ | ❌ | ❌
+[HighlightsInfo](./EntityTypes/HighlightsInfo.md) | ✅ | ❌ | ❌ | ❌
 [PageDiagnosticsController](./EntityTypes/PageDiagnosticsController.md) | ✅ | ❌ | ❌ | ❌
 [PersonMagazine](./EntityTypes/PersonMagazine.md) | ✅ | ❌ | ❌ | ❌
 [PointPublishingDocProps](./EntityTypes/PointPublishingDocProps.md) | ✅ | ❌ | ❌ | ❌

@@ -14,6 +14,7 @@ CanvasJson1 (Edm.String) | ✅ | ✅ | ❌ | ❌
 Categories (Edm.String) | ✅ | ❌ | ❌ | ❌
 CoAuthState (SP.Publishing.SitePageCoAuthState) | ✅ | ❌ | ❌ | ❌
 Description (Edm.String) | ✅ | ❌ | ❌ | ❌
+EmailTranspileContent (Edm.String) | ✅ | ❌ | ❌ | ❌
 HiddenHighlightsMetadata (Edm.String) | ✅ | ❌ | ❌ | ❌
 HideListEditorMetadata (Edm.String) | ✅ | ❌ | ❌ | ❌
 LayoutWebpartsContent (Edm.String) | ✅ | ✅ | ❌ | ❌

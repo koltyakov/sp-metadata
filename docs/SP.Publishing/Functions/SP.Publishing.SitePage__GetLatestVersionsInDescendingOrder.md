@@ -1,4 +1,4 @@
-# Function Import: GetLastestVersionsInDescendingOrder
+# Function Import: GetLatestVersionsInDescendingOrder
 
 > Namespace: SP.Publishing
 

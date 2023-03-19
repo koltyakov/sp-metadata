@@ -1,4 +1,4 @@
-# Complex Type: CollaborationInsightsCounts
+# Complex Type: CollaborationInsightsOverview
 
 > Namespace: Microsoft.SharePoint.Administration.TenantAdmin
 

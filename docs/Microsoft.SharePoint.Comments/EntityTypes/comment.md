@@ -15,6 +15,7 @@ itemId (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 likeCount (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 listId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 mentions (Collection(Microsoft.SharePoint.Comments.Client.Identity)) | ✅ | ✅ | ❌ | ❌
+modifiedDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 parentId (Edm.String) | ✅ | ✅ | ❌ | ❌
 relativeCreatedDate (Edm.String) | ✅ | ❌ | ❌ | ❌
 replyCount (Edm.Int32) | ✅ | ✅ | ❌ | ❌

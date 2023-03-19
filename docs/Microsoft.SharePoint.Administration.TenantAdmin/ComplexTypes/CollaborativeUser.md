@@ -1,4 +1,4 @@
-# Complex Type: OneDriveSharePointCollaborativeUsers
+# Complex Type: CollaborativeUser
 
 > Namespace: Microsoft.SharePoint.Administration.TenantAdmin
 
@@ -6,7 +6,9 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-displayName (Edm.String) | ✅ | ❌ | ❌ | ❌
+totalFileInteraction (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 totalFilesSharedExternally (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 totalFilesSharedInternally (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+totalFilesViewedOrEdited (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+userDisplayName (Edm.String) | ✅ | ❌ | ❌ | ❌
 userPrincipalName (Edm.String) | ✅ | ❌ | ❌ | ❌
