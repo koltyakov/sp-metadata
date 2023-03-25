@@ -15,6 +15,7 @@ AllowSaveDeclarativeWorkflowAsTemplate (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 AllowSavePublishDeclarativeWorkflow (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 AllowSelfServiceUpgrade (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 AllowSelfServiceUpgradeEvaluation (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+AllowedExternalDomains (SP.HTMLFieldSecuritySetting) | ✅ | ❌ | ❌ | ❌
 AuditLogTrimmingRetention (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 CanSyncHubSitePermissions (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CanUpgrade (Edm.Boolean) | ✅ | ✅ | ✅ | ✅

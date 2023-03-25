@@ -10,6 +10,7 @@ Add (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCat
 AddAndDeployStoreAppById (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ❌ | ❌ | ❌
 AddStoreApp (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ❌ | ❌ | ❌
 AppRequests (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ❌ | ❌ | ❌
+CheckUpgradableStoreAppsInAppCatalog (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ❌ | ❌ | ❌
 Deploy (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata) | ✅ | ✅ | ❌ | ❌
 DownloadTeams (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TeamsPackageDownload) | ✅ | ❌ | ❌ | ❌
 DownloadTeamsSolution (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ❌ | ❌ | ❌

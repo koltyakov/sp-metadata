@@ -23,8 +23,6 @@ GetHideDefaultThemes (Microsoft.Online.SharePoint.TenantManagement.Office365Tena
 GetIdleSessionSignOutForUnmanagedDevices (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 GetImportProfilePropertyJob (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 GetImportProfilePropertyJobs (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
-GetSPOContainerTypeById (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
-GetSPOContainerTypes (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 GetTenantCdnEnabled (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 GetTenantCdnOrigins (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 GetTenantCdnPolicies (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
@@ -34,7 +32,6 @@ IsSharingDisabledForNonOwnersOfSite (Microsoft.Online.SharePoint.TenantManagemen
 LogCustomFontsLargeUpload (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_TenantManagement_GroupCreationParams">Microsoft_Online_SharePoint_TenantManagement_Group...</span> (Microsoft Online SharePoint TenantManagement GroupCreationParams) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_TenantManagement_Office365Tenant">Microsoft_Online_SharePoint_TenantManagement_Offic...</span> (Microsoft Online SharePoint TenantManagement Office365Tenant) | ✅ | ❌ | ❌ | ❌
-NewSPOContainerType (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 QueueImportProfileProperties (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveExternalUsers (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveFromOrgAssets (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌

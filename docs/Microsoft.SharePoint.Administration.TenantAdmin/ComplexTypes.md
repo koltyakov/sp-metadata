@@ -8,7 +8,6 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [AuditSearchRequestStatus](./ComplexTypes/AuditSearchRequestStatus.md) | ✅ | ❌ | ❌ | ❌
 [CollaborationInsightsData](./ComplexTypes/CollaborationInsightsData.md) | ✅ | ❌ | ❌ | ❌
 [CollaborationInsightsOverview](./ComplexTypes/CollaborationInsightsOverview.md) | ✅ | ❌ | ❌ | ❌
-[CollaborationInsightsSummary](./ComplexTypes/CollaborationInsightsSummary.md) | ✅ | ❌ | ❌ | ❌
 [CollaborativeOneDriveUser](./ComplexTypes/CollaborativeOneDriveUser.md) | ✅ | ❌ | ❌ | ❌
 [CollaborativeUser](./ComplexTypes/CollaborativeUser.md) | ✅ | ❌ | ❌ | ❌
 [EventData](./ComplexTypes/EventData.md) | ✅ | ❌ | ❌ | ❌

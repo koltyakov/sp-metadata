@@ -30,6 +30,7 @@ ExportToCSV (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | �
 GetAdminListViews (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetById (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
 GetCollaborationInsightsData (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+GetCollaborationInsightsOverview (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetCustomSpfx3rdPartyAppPrincipal (Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic) | ✅ | ❌ | ❌ | ❌
 GetFilteredSPListItems (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetGroupInfo (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ✅ | ❌ | ❌ | ❌

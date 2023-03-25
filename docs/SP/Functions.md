@@ -61,7 +61,6 @@ CAAECreateTempFolder (SP.List) | ✅ | ❌ | ❌ | ❌
 CAAERenameFileInTemporaryFolder (SP.List) | ✅ | ❌ | ❌ | ❌
 CancelAllJobs (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
 CancelUpload (SP.File) | ✅ | ✅ | ✅ | ❌
-CertifySite (SP.Site) | ✅ | ❌ | ❌ | ❌
 ChangeContentStorageSchema (SP.File) | ✅ | ❌ | ❌ | ❌
 CheckAccessAndPostViewAuditEvent (SP.File) | ✅ | ❌ | ❌ | ❌
 CheckIn (SP.File) | ✅ | ✅ | ✅ | ✅
@@ -560,14 +559,6 @@ SP_AppPrincipalIdentityProvider_External | ✅ | ✅ | ✅ | ✅
 [SP_Approvals_RejectItemRequest](./Functions/SP_Approvals_RejectItemRequest.md) | ✅ | ❌ | ❌ | ❌
 [SP_Approvals_SetProperties](./Functions/SP_Approvals_SetProperties.md) | ✅ | ❌ | ❌ | ❌
 [SP_Broker_AcquireOBOToken](./Functions/SP_Broker_AcquireOBOToken.md) | ✅ | ❌ | ❌ | ❌
-[SP_Campaigns_CreateCampaign](./Functions/SP_Campaigns_CreateCampaign.md) | ✅ | ❌ | ❌ | ❌
-[SP_Campaigns_CreateCommunication](./Functions/SP_Campaigns_CreateCommunication.md) | ✅ | ❌ | ❌ | ❌
-[SP_Campaigns_GetCampaign](./Functions/SP_Campaigns_GetCampaign.md) | ✅ | ❌ | ❌ | ❌
-SP_Campaigns_GetCampaignsSummary | ✅ | ❌ | ❌ | ❌
-[SP_Campaigns_GetCommunication](./Functions/SP_Campaigns_GetCommunication.md) | ✅ | ❌ | ❌ | ❌
-[SP_Campaigns_GetCommunications](./Functions/SP_Campaigns_GetCommunications.md) | ✅ | ❌ | ❌ | ❌
-[SP_Campaigns_UpdateCampaign](./Functions/SP_Campaigns_UpdateCampaign.md) | ✅ | ❌ | ❌ | ❌
-[SP_Campaigns_UpdateCommunication](./Functions/SP_Campaigns_UpdateCommunication.md) | ✅ | ❌ | ❌ | ❌
 [SP_CampainAnalytics_GetDimensions](./Functions/SP_CampainAnalytics_GetDimensions.md) | ✅ | ❌ | ❌ | ❌
 [SP_CampainAnalytics_GetReport](./Functions/SP_CampainAnalytics_GetReport.md) | ✅ | ❌ | ❌ | ❌
 SP_CurrencyList_GetList | ✅ | ✅ | ❌ | ❌
@@ -859,6 +850,7 @@ UpdateEx (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 UpdateFormProcessingModelRetentionLabel (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateFormProcessingModelSettings (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateHashtags (SP.ListItem) | ❌ | ✅ | ❌ | ❌
+UpdateInactiveSiteProperties (SP.Site) | ✅ | ❌ | ❌ | ❌
 UpdateOverwriteVersion (SP.ListItem) | ✅ | ✅ | ❌ | ❌
 UpdateRule (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateRuleEx (SP.List) | ✅ | ❌ | ❌ | ❌

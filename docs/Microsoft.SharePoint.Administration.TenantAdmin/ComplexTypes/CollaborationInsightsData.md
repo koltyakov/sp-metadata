@@ -6,6 +6,6 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-insightsOverview (Microsoft.SharePoint.Administration.TenantAdmin.CollaborationInsightsOverview) | ✅ | ❌ | ❌ | ❌
-insightsSummary (Microsoft.SharePoint.Administration.TenantAdmin.CollaborationInsightsSummary) | ✅ | ❌ | ❌ | ❌
+collaborativeOneDriveUsers (Collection(Microsoft.SharePoint.Administration.TenantAdmin.CollaborativeOneDriveUser)) | ✅ | ❌ | ❌ | ❌
+collaborativeUsers (Collection(Microsoft.SharePoint.Administration.TenantAdmin.CollaborativeUser)) | ✅ | ❌ | ❌ | ❌
 lastReportDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌

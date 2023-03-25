@@ -12,3 +12,4 @@ Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 reportId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 section (Edm.String) | ✅ | ❌ | ❌ | ❌
+siteType (Edm.String) | ✅ | ❌ | ❌ | ❌

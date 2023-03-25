@@ -272,6 +272,7 @@ SchedulePublish (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
 SchedulePublish (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 SchedulePublish (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 SendTestEmail (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
+SendTestTeamsMessage (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 SetMagazineProperties (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | ❌ | ❌
 SetPeopleInMedia (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 SetVideoOwner (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌

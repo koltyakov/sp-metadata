@@ -73,6 +73,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [GetListItemVersionsParameters](./ComplexTypes/GetListItemVersionsParameters.md) | ✅ | ❌ | ❌ | ❌
 [GetListsParameters](./ComplexTypes/GetListsParameters.md) | ✅ | ❌ | ❌ | ❌
 [GroupCreationInformation](./ComplexTypes/GroupCreationInformation.md) | ✅ | ✅ | ✅ | ✅
+[HTMLFieldSecuritySetting](./ComplexTypes/HTMLFieldSecuritySetting.md) | ✅ | ❌ | ❌ | ❌
 [Hashtag](./ComplexTypes/Hashtag.md) | ✅ | ✅ | ❌ | ❌
 [HomeSiteNavConfiguration](./ComplexTypes/HomeSiteNavConfiguration.md) | ✅ | ❌ | ❌ | ❌
 [HomeSitesDetails](./ComplexTypes/HomeSitesDetails.md) | ✅ | ❌ | ❌ | ❌

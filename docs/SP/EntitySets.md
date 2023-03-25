@@ -53,7 +53,6 @@ CDSMetadatas | ✅ | ❌ | ❌ | ❌
 CalendarExceptions | ✅ | ✅ | ✅ | ❌
 Calendars | ✅ | ✅ | ✅ | ❌
 CalloutInfos | ✅ | ✅ | ✅ | ✅
-Campaignss | ✅ | ❌ | ❌ | ❌
 CampainAnalyticss | ✅ | ❌ | ❌ | ❌
 CanCreatePageResponses | ✅ | ❌ | ❌ | ❌
 Cases | ❌ | ❌ | ❌ | ✅
