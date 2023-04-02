@@ -27,4 +27,3 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPUninstallAddinRequest](./ComplexTypes/SPUninstallAddinRequest.md) | ✅ | ❌ | ❌ | ❌
 [SPUninstallAddinResponse](./ComplexTypes/SPUninstallAddinResponse.md) | ✅ | ❌ | ❌ | ❌
 [StoreAppCreationInformation](./ComplexTypes/StoreAppCreationInformation.md) | ✅ | ❌ | ❌ | ❌
-[UpgradableStoreApp](./ComplexTypes/UpgradableStoreApp.md) | ✅ | ❌ | ❌ | ❌

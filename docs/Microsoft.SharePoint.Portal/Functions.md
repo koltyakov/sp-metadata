@@ -48,6 +48,7 @@ GroupService | ✅ | ✅ | ❌ | ❌
 HideTeamifyPrompt (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 HubSitesUtility | ✅ | ✅ | ❌ | ❌
 IsTeamifyPromptHidden (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
+LandingSiteUrlFromName (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
 LinkGroup (Microsoft.SharePoint.Portal.SiteLinkingManager) | ✅ | ✅ | ❌ | ❌
 <span title="Microsoft_SharePoint_Portal_CollaborationMailbox_GetCollabMailboxViewInfo">Microsoft_SharePoint_Portal_CollaborationMailbox_G...</span> (Microsoft SharePoint Portal CollaborationMailbox GetCollabMailboxViewInfo) | ✅ | ✅ | ✅ | ✅
 [<span title="Microsoft_SharePoint_Portal_CommunityModeration_ApproveReportedItems">Microsoft_SharePoint_Portal_CommunityModeration_Ap...</span> (Microsoft SharePoint Portal CommunityModeration ApproveReportedItems)](./Functions/Microsoft_SharePoint_Portal_CommunityModeration_ApproveReportedItems.md) | ✅ | ✅ | ✅ | ✅
