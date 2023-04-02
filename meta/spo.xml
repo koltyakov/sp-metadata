@@ -64,6 +64,8 @@
       </ComplexType>
       <ComplexType Name="TargetedSiteDetails">
         <Property Name="Audiences" Type="Collection(SP.Audience)" />
+        <Property Name="IsTargetedForFrontlineWorker" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsTargetedForInformationWorker" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsVivaBackendSite" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
@@ -4245,7 +4247,6 @@
         <EntitySet Name="SPTenantIBPolicyComplianceReportEntityDatas" EntityType="Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReportEntityData" />
         <EntitySet Name="DocumentCrawlLogs" EntityType="Microsoft.SharePoint.Client.Search.Administration.DocumentCrawlLog" />
         <EntitySet Name="SiteContentProcessingInfoProviders" EntityType="Microsoft.SharePoint.Client.Search.Administration.SiteContentProcessingInfoProvider" />
-        <EntitySet Name="SiteMeTAInfoProviders" EntityType="Microsoft.SharePoint.Client.Search.Administration.SiteMeTAInfoProvider" />
         <EntitySet Name="TenantCrawlVersionsInfoProviders" EntityType="Microsoft.SharePoint.Client.Search.Administration.TenantCrawlVersionsInfoProvider" />
         <EntitySet Name="TenantRecycleBinInfoProviders" EntityType="Microsoft.SharePoint.Client.Search.Administration.TenantRecycleBinInfoProvider" />
         <EntitySet Name="SignalStores" EntityType="Microsoft.SharePoint.Client.Search.Analytics.SignalStore" />
@@ -9338,20 +9339,6 @@
           <Parameter Name="errorCode" Type="Edm.Int64" Nullable="false" />
           <Parameter Name="errorDescription" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="GetAzureContainerSASToken" ReturnType="Edm.String" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.SiteMeTAInfoProvider" />
-        </FunctionImport>
-        <FunctionImport Name="ReportContentProcessingStatus" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.SiteMeTAInfoProvider" />
-          <Parameter Name="webId" Type="Edm.Guid" Nullable="false" />
-          <Parameter Name="listId" Type="Edm.Guid" Nullable="false" />
-          <Parameter Name="uniqueId" Type="Edm.Guid" Nullable="false" />
-          <Parameter Name="azureContainerSASToken" Type="Edm.String" />
-          <Parameter Name="azureContainerEncryptionKey" Type="Edm.Binary" />
-          <Parameter Name="priority" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="errorCode" Type="Edm.Int64" Nullable="false" />
-          <Parameter Name="errorDescription" Type="Edm.String" />
-        </FunctionImport>
         <FunctionImport Name="DisableCrawlVersions" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.TenantCrawlVersionsInfoProvider" />
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
@@ -9829,6 +9816,10 @@
         <FunctionImport Name="GetTeamChannelSiteOwner" ReturnType="Microsoft.SharePoint.Portal.GetTeamChannelSiteOwnerResponse" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.SPSiteManager" />
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="LandingSiteUrlFromName" ReturnType="Microsoft.SharePoint.Portal.VivaSiteRequestInfo" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Portal.SPSiteManager" />
+          <Parameter Name="siteName" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="RestoreTeamsChannelSite" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.SPSiteManager" />
@@ -10581,11 +10572,6 @@
         <FunctionImport Name="AppRequests" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPStoreAppResponseInformation" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
           <Parameter Name="AppRequestInfo" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPStoreAppRequestInformation" />
-        </FunctionImport>
-        <FunctionImport Name="CheckUpgradableStoreAppsInAppCatalog" ReturnType="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.UpgradableStoreApp)" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
-          <Parameter Name="bm" Type="Edm.String" />
-          <Parameter Name="cm" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="DownloadTeamsSolution" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TeamsPackageDownload" IsComposable="true" IsBindable="true" EntitySet="TeamsPackageDownloads">
           <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" />
@@ -15425,6 +15411,9 @@
           <Parameter Name="localeId" Type="Edm.Int64" Nullable="false" />
           <Parameter Name="compatibilityLevel" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="GetTargetedSitesDetails" ReturnType="Collection(SP.TargetedSiteDetails)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+        </FunctionImport>
         <FunctionImport Name="GetTenantAllOrCompatibleIBSegments" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.IBSegmentInfo)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="segments" Type="Collection(Edm.Guid)" Nullable="false" />
@@ -18719,6 +18708,12 @@
       <Annotations Target="SP.TargetedSiteDetails/Audiences">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.TargetedSiteDetails/IsTargetedForFrontlineWorker">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.TargetedSiteDetails/IsTargetedForInformationWorker">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.TargetedSiteDetails/IsVivaBackendSite">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19655,19 +19650,7 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/MachineLearningExperienceEnabled">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/TenantSyntexV1Enabled">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/TenantSyntexV2Enabled">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/UserSyntexEnabled">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/UserSyntexV1Enabled">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/UserSyntexV2Enabled">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub">
@@ -23267,6 +23250,9 @@
       <Annotations Target="SP.ApiData/GetTeamChannelSiteOwner(Microsoft.SharePoint.Portal.SPSiteManager, Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/LandingSiteUrlFromName(Microsoft.SharePoint.Portal.SPSiteManager, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/RestoreTeamsChannelSite(Microsoft.SharePoint.Portal.SPSiteManager, Edm.Guid, Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -23553,9 +23539,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/AddStoreApp(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/CheckUpgradableStoreAppsInAppCatalog(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/DownloadTeamsSolution(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Edm.Int32)">
@@ -24939,11 +24922,7 @@
         <Property Name="IsSyntexPAYGEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MachineLearningExperienceEnabled" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="TenantSyntexV1Enabled" Type="Edm.Boolean" />
-        <Property Name="TenantSyntexV2Enabled" Type="Edm.Boolean" />
         <Property Name="UserSyntexEnabled" Type="Edm.Boolean" />
-        <Property Name="UserSyntexV1Enabled" Type="Edm.Boolean" />
-        <Property Name="UserSyntexV2Enabled" Type="Edm.Boolean" />
       </EntityType>
       <EntityType Name="SPMachineLearningHub">
         <Key>
@@ -28722,6 +28701,8 @@
       </ComplexType>
       <ComplexType Name="SitePageCoAuthState">
         <Property Name="Action" Type="Edm.Int32" Nullable="false" />
+        <Property Name="LockAction" Type="Edm.Int32" Nullable="false" />
+        <Property Name="LockDuration" Type="Edm.Int32" Nullable="false" />
         <Property Name="SharedLockId" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="CampaignPublicationFieldsData" BaseType="SP.Publishing.SitePageFieldsData">
@@ -31054,12 +31035,10 @@
         <Property Name="title" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPAppAddAndDeployResponseInfomation">
-        <Property Name="FolderId" Type="Edm.String" />
         <Property Name="IsFirstTimeDeployed" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ListId" Type="Edm.String" />
         <Property Name="ListItemId" Type="Edm.String" />
         <Property Name="ListItemUniqueId" Type="Edm.String" />
-        <Property Name="ListUrl" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPAvailableAddinsResponse">
         <Property Name="addins" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPAddinInstanceInfo)" />
@@ -31132,16 +31111,6 @@
       <ComplexType Name="SPUninstallAddinResponse">
         <Property Name="executing" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPTriggeredUninstallAddinJobResponse)" />
         <Property Name="failed" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPFailToTriggerUninstallAddinJobResponse)" />
-      </ComplexType>
-      <ComplexType Name="UpgradableStoreApp">
-        <Property Name="AppCatalogVersion" Type="Edm.String" />
-        <Property Name="AssetId" Type="Edm.String" />
-        <Property Name="Publisher" Type="Edm.String" />
-        <Property Name="ReleasedDate" Type="Edm.String" />
-        <Property Name="SupportedHosts" Type="Collection(Edm.String)" />
-        <Property Name="ThumbnailUrl" Type="Edm.String" />
-        <Property Name="Title" Type="Edm.String" />
-        <Property Name="Version" Type="Edm.String" />
       </ComplexType>
       <EntityType Name="SiteCollectionCorporateCatalogAccessor">
         <Key>
@@ -34925,12 +34894,6 @@
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
       <EntityType Name="SiteContentProcessingInfoProvider">
-        <Key>
-          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
-        </Key>
-        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
-      </EntityType>
-      <EntityType Name="SiteMeTAInfoProvider">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
