@@ -41,11 +41,10 @@
       <ComplexType Name="HomeSitesDetails">
         <Property Name="Audiences" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="IsInDraftMode" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsTargetedForFrontlineWorker" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsTargetedForInformationWorker" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsVivaBackendSite" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MatchingAudiences" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="TargetedLicenseType" Type="Edm.Int32" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
         <Property Name="Url" Type="Edm.String" />
         <Property Name="VivaConnectionsDefaultStart" Type="Edm.Boolean" Nullable="false" />
@@ -64,10 +63,9 @@
       </ComplexType>
       <ComplexType Name="TargetedSiteDetails">
         <Property Name="Audiences" Type="Collection(SP.Audience)" />
-        <Property Name="IsTargetedForFrontlineWorker" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="IsTargetedForInformationWorker" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsVivaBackendSite" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="TargetedLicenseType" Type="Edm.Int32" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
         <Property Name="Url" Type="Edm.String" />
         <Property Name="WebId" Type="Edm.Guid" Nullable="false" />
@@ -2550,6 +2548,7 @@
         <Property Name="AwaitAll" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Details" Type="Edm.String" />
         <Property Name="Id" Type="Edm.String" Nullable="false" />
+        <Property Name="PartnerMetadata" Type="Edm.String" />
         <Property Name="Responses" Type="Edm.String" />
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
@@ -2567,6 +2566,12 @@
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
       <EntityType Name="eSign" Abstract="true">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="FavoriteItemCollection" Abstract="true">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
@@ -4466,6 +4471,7 @@
         <EntitySet Name="eSigns" EntityType="SP.eSign" />
         <EntitySet Name="eSignInternals" EntityType="SP.eSignInternal" />
         <EntitySet Name="EventReceiverDefinitions" EntityType="SP.EventReceiverDefinition" />
+        <EntitySet Name="FavoriteItemCollections" EntityType="SP.FavoriteItemCollection" />
         <EntitySet Name="FavoriteListss" EntityType="SP.FavoriteLists" />
         <EntitySet Name="FavoriteListsSubstrates" EntityType="SP.FavoriteListsSubstrate" />
         <EntitySet Name="Features" EntityType="SP.Feature" />
@@ -8091,7 +8097,14 @@
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
+        <FunctionImport Name="CreateApprovalRequest" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+          <Parameter Name="creationInfo" Type="SP.Publishing.ApprovalRequestCreationInfo" />
+        </FunctionImport>
         <FunctionImport Name="DeletePublication" ReturnType="Edm.Guid" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+        </FunctionImport>
+        <FunctionImport Name="GetApprovalRequest" ReturnType="SP.ApprovalRequest" IsBindable="true" EntitySet="ApprovalRequests">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
         <FunctionImport Name="GetPrePublishValidationStatus" ReturnType="SP.Publishing.PrePublishValidationsResponse" IsSideEffecting="false" IsBindable="true">
@@ -11697,6 +11710,10 @@
           <Parameter Name="beginsWithSearchString" Type="Edm.String" />
           <Parameter Name="pagingInfo" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="SetContentAssemblyTemplateReadOnly" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="Id" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="SetExemptFromBlockDownloadOfNonViewableFiles" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="value" Type="Edm.Boolean" Nullable="false" />
@@ -11729,6 +11746,10 @@
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="appId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="visualizationTarget" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="UnsetContentAssemblyTemplateReadOnly" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="Id" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -12550,6 +12571,7 @@
         <FunctionImport Name="SP_eSign_StartAgreement" ReturnType="Edm.String">
           <Parameter Name="startAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.CreateAgreementModel" />
         </FunctionImport>
+        <FunctionImport Name="SP_FavoriteItemCollection_GetFavoriteItems" ReturnType="Edm.String" IsSideEffecting="false" />
         <FunctionImport Name="SP_ListHomeItemCollection_GetListHomeItems" ReturnType="Edm.Stream" IsSideEffecting="false">
           <Parameter Name="sortBy" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
@@ -14323,6 +14345,12 @@
           <Parameter Name="privateChannel" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="privateChannelGroupOwner" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="SP_TeamChannelManager_ArchiveTeamChannelById" ReturnType="Edm.Boolean">
+          <Parameter Name="folderId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_TeamChannelManager_ArchiveTeamChannelByPath" ReturnType="Edm.Boolean">
+          <Parameter Name="folderPath" Type="SP.ResourcePath" />
+        </FunctionImport>
         <FunctionImport Name="SP_TeamChannelManager_DemoteTeamChannelById" ReturnType="Edm.Boolean">
           <Parameter Name="folderId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
@@ -14352,6 +14380,12 @@
           <Parameter Name="updatedConversationsObject" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_TeamChannelManager_SyncTeamSiteSettings" ReturnType="SP.TeamSiteData" EntitySet="TeamSiteDatas" />
+        <FunctionImport Name="SP_TeamChannelManager_UnarchiveTeamChannelById" ReturnType="Edm.Boolean">
+          <Parameter Name="folderId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_TeamChannelManager_UnarchiveTeamChannelByPath" ReturnType="Edm.Boolean">
+          <Parameter Name="folderPath" Type="SP.ResourcePath" />
+        </FunctionImport>
         <FunctionImport Name="GetThemeFontByName" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.ThemeInfo" />
           <Parameter Name="name" Type="Edm.String" />
@@ -18675,12 +18709,6 @@
       <Annotations Target="SP.HomeSitesDetails/IsInDraftMode">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.HomeSitesDetails/IsTargetedForFrontlineWorker">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.HomeSitesDetails/IsTargetedForInformationWorker">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.HomeSitesDetails/IsVivaBackendSite">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18688,6 +18716,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.HomeSitesDetails/SiteId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.HomeSitesDetails/TargetedLicenseType">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.HomeSitesDetails/Title">
@@ -18708,16 +18739,13 @@
       <Annotations Target="SP.TargetedSiteDetails/Audiences">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.TargetedSiteDetails/IsTargetedForFrontlineWorker">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.TargetedSiteDetails/IsTargetedForInformationWorker">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.TargetedSiteDetails/IsVivaBackendSite">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.TargetedSiteDetails/SiteId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.TargetedSiteDetails/TargetedLicenseType">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.TargetedSiteDetails/Title">
@@ -22398,7 +22426,13 @@
       <Annotations Target="SP.ApiData/Update(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/CreateApprovalRequest(SP.Publishing.CampaignPublication, SP.Publishing.ApprovalRequestCreationInfo)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/DeletePublication(SP.Publishing.CampaignPublication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetApprovalRequest(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetPrePublishValidationStatus(SP.Publishing.CampaignPublication)">
@@ -24036,6 +24070,9 @@
       <Annotations Target="SP.ApiData/SP_eSign_StartAgreement(Microsoft.SharePoint.ESign.Models.Requests.CreateAgreementModel)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_FavoriteItemCollection_GetFavoriteItems()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_ListHomeItemCollection_GetListHomeItems(Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -24342,6 +24379,12 @@
       <Annotations Target="SP.ApiData/SP_TeamChannelManager_AddTeamChannel(Edm.String, Edm.String, Edm.String, Edm.Boolean, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_TeamChannelManager_ArchiveTeamChannelById(Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_TeamChannelManager_ArchiveTeamChannelByPath(SP.ResourcePath)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_TeamChannelManager_DemoteTeamChannelById(Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -24364,6 +24407,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_TeamChannelManager_SyncTeamSiteSettings()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_TeamChannelManager_UnarchiveTeamChannelById(Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_TeamChannelManager_UnarchiveTeamChannelByPath(SP.ResourcePath)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetId(SP.TimeZone, Edm.Int32)">
@@ -29034,6 +29083,14 @@
       <ComplexType Name="ViewProgressAnalyticsData" BaseType="SP.Publishing.ViewData">
         <Property Name="PercentageViewed" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="ApprovalRequestCreationInfo">
+        <Property Name="ApprovalType" Type="Edm.String" />
+        <Property Name="Approvers" Type="Collection(Edm.String)" />
+        <Property Name="AwaitAll" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ChannelId" Type="Edm.String" />
+        <Property Name="Important" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Message" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="CampaignPublicationLoadMailDraftParam">
         <Property Name="IsPreview" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
@@ -31689,6 +31746,7 @@
         <Property Name="lastReportDate" Type="Edm.DateTime" Nullable="false" />
       </ComplexType>
       <ComplexType Name="CollaborativeOneDriveUser">
+        <Property Name="anonymousLinkCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="fileCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="filesSharedExternally" Type="Edm.Int32" Nullable="false" />
         <Property Name="filesSharedInternally" Type="Edm.Int32" Nullable="false" />
@@ -32802,6 +32860,7 @@
         <Property Name="CreateValuesInEditForm" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsAnchorValid" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsDocTagsEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsEnhancedImageTaggingEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsKeyword" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsPathRendered" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsTermSetValid" Type="Edm.Boolean" Nullable="false" />
