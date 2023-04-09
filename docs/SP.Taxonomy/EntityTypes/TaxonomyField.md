@@ -10,6 +10,7 @@ AnchorId (Edm.Guid) | ✅ | ✅ | ❌ | ✅
 CreateValuesInEditForm (Edm.Boolean) | ✅ | ✅ | ❌ | ✅
 IsAnchorValid (Edm.Boolean) | ✅ | ✅ | ❌ | ✅
 IsDocTagsEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+IsEnhancedImageTaggingEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsKeyword (Edm.Boolean) | ✅ | ✅ | ❌ | ✅
 IsPathRendered (Edm.Boolean) | ✅ | ✅ | ❌ | ✅
 IsTermSetValid (Edm.Boolean) | ✅ | ✅ | ❌ | ✅

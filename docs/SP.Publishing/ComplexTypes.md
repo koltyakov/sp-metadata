@@ -5,6 +5,7 @@
 Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [AcronymInformation](./ComplexTypes/AcronymInformation.md) | ✅ | ✅ | ❌ | ❌
+[ApprovalRequestCreationInfo](./ComplexTypes/ApprovalRequestCreationInfo.md) | ✅ | ❌ | ❌ | ❌
 [BoostFieldsData](./ComplexTypes/BoostFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [CampaignPublicationFieldsData](./ComplexTypes/CampaignPublicationFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [CampaignPublicationLoadMailDraftParam](./ComplexTypes/CampaignPublicationLoadMailDraftParam.md) | ✅ | ❌ | ❌ | ❌

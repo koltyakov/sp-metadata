@@ -55,6 +55,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [EmployeeEngagement](./EntityTypes/EmployeeEngagement.md) | ✅ | ❌ | ❌ | ❌
 [EmployeeExperienceController](./EntityTypes/EmployeeExperienceController.md) | ✅ | ❌ | ❌ | ❌
 [EventReceiverDefinition](./EntityTypes/EventReceiverDefinition.md) | ✅ | ✅ | ✅ | ✅
+[FavoriteItemCollection](./EntityTypes/FavoriteItemCollection.md) | ✅ | ❌ | ❌ | ❌
 [FavoriteLists](./EntityTypes/FavoriteLists.md) | ✅ | ❌ | ❌ | ❌
 [FavoriteListsSubstrate](./EntityTypes/FavoriteListsSubstrate.md) | ✅ | ❌ | ❌ | ❌
 [Feature](./EntityTypes/Feature.md) | ✅ | ✅ | ✅ | ✅

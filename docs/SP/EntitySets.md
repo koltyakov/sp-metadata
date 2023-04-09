@@ -148,6 +148,7 @@ ExchangeUserSyncStates | ✅ | ✅ | ✅ | ✅
 Exports | ❌ | ❌ | ❌ | ✅
 ExternalSubscriptionStores | ✅ | ✅ | ✅ | ✅
 ExternalUsers | ✅ | ❌ | ❌ | ❌
+FavoriteItemCollections | ✅ | ❌ | ❌ | ❌
 FavoriteListsSubstrates | ✅ | ❌ | ❌ | ❌
 FavoriteListss | ✅ | ❌ | ❌ | ❌
 FeatureDefinitions | ✅ | ❌ | ❌ | ❌

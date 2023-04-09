@@ -54,6 +54,7 @@ CopyWithConfiguration (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 Create (SP.Publishing.CommunicationSite) | ✅ | ✅ | ❌ | ❌
 Create (SP.Publishing.PointPublishingSiteManager) | ✅ | ❌ | ❌ | ❌
 CreateAppPage (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
+CreateApprovalRequest (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 CreateNewsCopy (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 CreateNewsCopy (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 CreateNewsCopy (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
@@ -89,6 +90,7 @@ Feed (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
 FeedTargeted (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
 GetAcronymsAndColors (SP.Publishing.SharePointHomeServiceManager) | ✅ | ✅ | ❌ | ❌
 GetAllVideos (SP.Publishing.VideoChannel) | ✅ | ❌ | ❌ | ❌
+GetApprovalRequest (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 GetByEntityId (Collection(SP.Publishing.TopicSitePage)) | ✅ | ❌ | ❌ | ❌
 GetByEntityIdAndCulture (Collection(SP.Publishing.TopicSitePage)) | ✅ | ❌ | ❌ | ❌
 GetById (Collection(SP.Publishing.PointPublishingPost)) | ✅ | ❌ | ❌ | ❌

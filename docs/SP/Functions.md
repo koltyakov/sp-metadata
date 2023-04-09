@@ -564,6 +564,7 @@ SP_AppPrincipalIdentityProvider_External | ✅ | ✅ | ✅ | ✅
 SP_CurrencyList_GetList | ✅ | ✅ | ❌ | ❌
 SP_EmployeeEngagement | ✅ | ❌ | ❌ | ❌
 SP_EmployeeExperienceController | ✅ | ❌ | ❌ | ❌
+SP_FavoriteItemCollection_GetFavoriteItems | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteListsSubstrate_AddList](./Functions/SP_FavoriteListsSubstrate_AddList.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteListsSubstrate_GetListsBy](./Functions/SP_FavoriteListsSubstrate_GetListsBy.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteListsSubstrate_RemoveList](./Functions/SP_FavoriteListsSubstrate_RemoveList.md) | ✅ | ❌ | ❌ | ❌
@@ -660,6 +661,8 @@ SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌
 [SP_Site_GetUrlByIdForWeb](./Functions/SP_Site_GetUrlByIdForWeb.md) | ✅ | ❌ | ❌ | ❌
 [SP_SmartCache_Update](./Functions/SP_SmartCache_Update.md) | ✅ | ❌ | ❌ | ❌
 [SP_TeamChannelManager_AddTeamChannel](./Functions/SP_TeamChannelManager_AddTeamChannel.md) | ✅ | ✅ | ❌ | ❌
+[SP_TeamChannelManager_ArchiveTeamChannelById](./Functions/SP_TeamChannelManager_ArchiveTeamChannelById.md) | ✅ | ❌ | ❌ | ❌
+[SP_TeamChannelManager_ArchiveTeamChannelByPath](./Functions/SP_TeamChannelManager_ArchiveTeamChannelByPath.md) | ✅ | ❌ | ❌ | ❌
 [SP_TeamChannelManager_DemoteTeamChannelById](./Functions/SP_TeamChannelManager_DemoteTeamChannelById.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_DemoteTeamChannelByPath](./Functions/SP_TeamChannelManager_DemoteTeamChannelByPath.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_GetConversations](./Functions/SP_TeamChannelManager_GetConversations.md) | ✅ | ❌ | ❌ | ❌
@@ -668,6 +671,8 @@ SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌
 [SP_TeamChannelManager_PromoteToTeamChannelByPath](./Functions/SP_TeamChannelManager_PromoteToTeamChannelByPath.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_SaveConversations](./Functions/SP_TeamChannelManager_SaveConversations.md) | ✅ | ❌ | ❌ | ❌
 SP_TeamChannelManager_SyncTeamSiteSettings | ✅ | ❌ | ❌ | ❌
+[SP_TeamChannelManager_UnarchiveTeamChannelById](./Functions/SP_TeamChannelManager_UnarchiveTeamChannelById.md) | ✅ | ❌ | ❌ | ❌
+[SP_TeamChannelManager_UnarchiveTeamChannelByPath](./Functions/SP_TeamChannelManager_UnarchiveTeamChannelByPath.md) | ✅ | ❌ | ❌ | ❌
 SP_TenantSettings_Current | ✅ | ✅ | ✅ | ✅
 SP_UserExperienceState | ✅ | ❌ | ❌ | ❌
 [SP_WebProxy_Invoke](./Functions/SP_WebProxy_Invoke.md) | ✅ | ✅ | ✅ | ✅
@@ -710,6 +715,7 @@ SetComplianceTagWithHold (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 SetComplianceTagWithMetaInfo (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 SetComplianceTagWithNoHold (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 SetComplianceTagWithRecord (SP.ListItem) | ✅ | ❌ | ❌ | ❌
+SetContentAssemblyTemplateReadOnly (SP.List) | ✅ | ❌ | ❌ | ❌
 SetCorporateCatalog (SP.TenantSettings) | ✅ | ❌ | ❌ | ❌
 SetDashboardPersonalization (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 SetDefaultNewPageTemplateId (SP.Web) | ✅ | ❌ | ❌ | ❌
@@ -804,6 +810,7 @@ UnlockSmartTemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 UnpublishMappedView (SP.List) | ✅ | ✅ | ❌ | ❌
 UnregisterHubSite (SP.Site) | ✅ | ✅ | ❌ | ❌
 UnregisterPushNotificationSubscriber (SP.Web) | ✅ | ✅ | ✅ | ✅
+UnsetContentAssemblyTemplateReadOnly (SP.List) | ✅ | ❌ | ❌ | ❌
 UnsetIsEduClassProvisionPending (SP.Web) | ✅ | ❌ | ❌ | ❌
 Update (SP.AppConfiguration) | ✅ | ❌ | ❌ | ❌
 Update (SP.Audit) | ✅ | ✅ | ✅ | ✅
