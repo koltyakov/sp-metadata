@@ -53,6 +53,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SharePointPublishingStatusResponse](./ComplexTypes/SharePointPublishingStatusResponse.md) | ✅ | ❌ | ❌ | ❌
 [SitePage3DFieldsData](./ComplexTypes/SitePage3DFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [SitePageCoAuthState](./ComplexTypes/SitePageCoAuthState.md) | ✅ | ❌ | ❌ | ❌
+[SitePageDependencyMetadata](./ComplexTypes/SitePageDependencyMetadata.md) | ✅ | ❌ | ❌ | ❌
 [SitePageFieldsData](./ComplexTypes/SitePageFieldsData.md) | ✅ | ✅ | ❌ | ❌
 [SitePageVersionInfo](./ComplexTypes/SitePageVersionInfo.md) | ✅ | ✅ | ❌ | ❌
 [SitePageVersionInfoCollection](./ComplexTypes/SitePageVersionInfoCollection.md) | ✅ | ❌ | ❌ | ❌
@@ -65,3 +66,4 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [TopicPageFieldsData](./ComplexTypes/TopicPageFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [ViewData](./ComplexTypes/ViewData.md) | ✅ | ❌ | ❌ | ❌
 [ViewProgressAnalyticsData](./ComplexTypes/ViewProgressAnalyticsData.md) | ✅ | ❌ | ❌ | ❌
+[WebPartDetailsWrapper](./ComplexTypes/WebPartDetailsWrapper.md) | ✅ | ❌ | ❌ | ❌

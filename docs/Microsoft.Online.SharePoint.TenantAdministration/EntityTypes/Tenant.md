@@ -86,6 +86,13 @@ DocumentUnderstandingEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DocumentUnderstandingSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
 DocumentUnderstandingSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 DocumentUnderstandingSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
+ESignatureEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ESignatureSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
+ESignatureSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+ESignatureSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
+ESignatureThirdPartyProviderInfoList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+ESignatureThirdPartyProviderList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+ESignatureThirdPartyProviderListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 EmailAttestationEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EmailAttestationReAuthDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 EmailAttestationRequired (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -146,7 +153,9 @@ MachineLearningCaptureEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MajorVersionLimit (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ManagedPathsForSiteCreation (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 MarkNewFilesSensitiveByDefault (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+MassDeleteNotificationDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MediaTranscription (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+MediaTranscriptionAutomaticFeatures (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MobileFriendlyUrlEnabledInTenant (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 NoAccessRedirectUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 NotificationsInOneDriveForBusinessEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

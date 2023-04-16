@@ -496,7 +496,6 @@ SiteDesignRuns | ✅ | ❌ | ❌ | ❌
 SiteHealthSummarys | ✅ | ✅ | ✅ | ✅
 SiteIconManagers | ✅ | ❌ | ❌ | ❌
 SiteMoveJobEntityDatas | ✅ | ❌ | ❌ | ❌
-SitePageDependencyMetadatas | ✅ | ❌ | ❌ | ❌
 SitePageMetadatas | ✅ | ✅ | ❌ | ❌
 SitePageServices | ✅ | ✅ | ❌ | ❌
 SitePropertiess | ✅ | ❌ | ❌ | ❌
