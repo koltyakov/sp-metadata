@@ -1008,6 +1008,7 @@
         <Property Name="RenderOptions" Type="Edm.Int32" Nullable="false" />
         <Property Name="RenderURLFieldInJSON" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ReplaceGroup" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="RequireFolderColoringFields" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ShowStubFile" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ViewXml" Type="Edm.String" />
       </ComplexType>
@@ -1828,6 +1829,7 @@
         <Property Name="ForceCheckout" Type="Edm.Boolean" Nullable="false" />
         <Property Name="HasCopyMoveRules" Type="Edm.Boolean" Nullable="false" />
         <Property Name="HasExternalDataSource" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="HasFolderColoringFields" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Hidden" Type="Edm.Boolean" Nullable="false" />
         <Property Name="HighPriorityMediaProcessing" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Icon" Type="Edm.String" />
@@ -10197,11 +10199,13 @@
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteScript" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptMetadata">
           <Parameter Name="Content" Type="Edm.String" />
+          <Parameter Name="ContentByteArray" Type="Edm.Binary" />
           <Parameter Name="Description" Type="Edm.String" />
           <Parameter Name="Title" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteScriptPackage" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptMetadata">
           <Parameter Name="Content" Type="Edm.String" />
+          <Parameter Name="ContentByteArray" Type="Edm.Binary" />
           <Parameter Name="Description" Type="Edm.String" />
           <Parameter Name="Title" Type="Edm.String" />
         </FunctionImport>
@@ -10292,6 +10296,12 @@
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoteCreateSiteScript" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptMetadata">
           <Parameter Name="info" Type="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptCreationInfo" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoteCreateSiteScriptPackage" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptMetadata">
+          <Parameter Name="info" Type="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptCreationInfo" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoteUpdateSiteScriptPackage" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptMetadata">
+          <Parameter Name="updateInfo" Type="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptMetadata" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoveListDesign">
           <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
@@ -10322,6 +10332,7 @@
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_UpdateSiteScriptContent" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptMetadata">
           <Parameter Name="Content" Type="Edm.String" />
+          <Parameter Name="ContentByteArray" Type="Edm.Binary" />
           <Parameter Name="Description" Type="Edm.String" />
           <Parameter Name="Title" Type="Edm.String" />
           <Parameter Name="Id" Type="Edm.Guid" Nullable="false" />
@@ -10329,6 +10340,7 @@
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_UpdateSiteScriptPackage" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptMetadata">
           <Parameter Name="Content" Type="Edm.String" />
+          <Parameter Name="ContentByteArray" Type="Edm.Binary" />
           <Parameter Name="Description" Type="Edm.String" />
           <Parameter Name="Id" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="IsSiteScriptPackage" Type="Edm.Boolean" Nullable="false" />
@@ -15355,6 +15367,10 @@
         <FunctionImport Name="GetAdminListViews" ReturnType="Collection(SP.View)" IsComposable="true" IsBindable="true" EntitySet="Views">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
+        <FunctionImport Name="GetChatGptResponse" ReturnType="Microsoft.SharePoint.Internal.ChatGptResponse" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="requestOptions" Type="Microsoft.SharePoint.Internal.ChatGptRequestOptions" />
+        </FunctionImport>
         <FunctionImport Name="GetCollaborationInsightsData" ReturnType="Microsoft.SharePoint.Administration.TenantAdmin.CollaborationInsightsData" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
@@ -15366,6 +15382,10 @@
           <Parameter Name="columnName" Type="Edm.String" />
           <Parameter Name="columnValue" Type="Edm.String" />
           <Parameter Name="listName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetGptResponse" ReturnType="Microsoft.SharePoint.Internal.GptResponse" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="requestOptions" Type="Microsoft.SharePoint.Internal.GptRequestOptions" />
         </FunctionImport>
         <FunctionImport Name="GetHomeSites" ReturnType="Collection(SP.HomeSitesDetails)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -15811,6 +15831,9 @@
           <Parameter Name="itemId" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="policyInputParameters" Type="Microsoft.Online.SharePoint.TenantAdministration.CreatePolicyRequest" />
           <Parameter Name="policyOperation" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="UpdateSiteActivityData" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
         <FunctionImport Name="UpdateTargetedSite" ReturnType="SP.TargetedSiteDetails" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -18831,13 +18854,31 @@
       <Annotations Target="SP.Internal.AppRenderInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Internal.BaseGptRequestOptions">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Internal.BaseGptResponse">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Internal.ChatGptRequestOptions">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Internal.MessageEntry">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Internal.ChatGptResponseChoice">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Internal.ChatGptResponse">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Internal.GptResponseUsage">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Internal.GptRequestOptions">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Internal.GptResponseChoice">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Internal.GptResponseUsage">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Internal.GptResponse">
@@ -19279,6 +19320,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.RenderListDataParameters/ReplaceGroup">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.RenderListDataParameters/RequireFolderColoringFields">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.RenderListDataParameters/ShowStubFile">
@@ -20545,6 +20589,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.List/HasCopyMoveRules">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.List/HasFolderColoringFields">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.List/HighPriorityMediaProcessing">
@@ -23355,10 +23402,10 @@
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteDesign(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignCreationInfo)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteScript(Edm.String, Edm.String, Edm.String)">
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteScript(Edm.String, Edm.Binary, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteScriptPackage(Edm.String, Edm.String, Edm.String)">
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_CreateSiteScriptPackage(Edm.String, Edm.Binary, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_DeleteSiteDesign(Edm.Guid)">
@@ -23442,6 +23489,12 @@
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoteCreateSiteScript(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptCreationInfo)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoteCreateSiteScriptPackage(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptCreationInfo)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoteUpdateSiteScriptPackage(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptMetadata)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_RemoveListDesign(Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -23466,10 +23519,10 @@
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_UpdateSiteScript(Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptMetadata)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_UpdateSiteScriptContent(Edm.String, Edm.String, Edm.String, Edm.Guid, Edm.Int32)">
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_UpdateSiteScriptContent(Edm.String, Edm.Binary, Edm.String, Edm.String, Edm.Guid, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_UpdateSiteScriptPackage(Edm.String, Edm.String, Edm.Guid, Edm.Boolean, Edm.String, Edm.Int32)">
+      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_UpdateSiteScriptPackage(Edm.String, Edm.Binary, Edm.String, Edm.Guid, Edm.Boolean, Edm.String, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ValidatePendingWebTemplateExtension()">
@@ -30729,11 +30782,13 @@
       </ComplexType>
       <ComplexType Name="SiteScriptCreationInfo">
         <Property Name="Content" Type="Edm.String" />
+        <Property Name="ContentByteArray" Type="Edm.Binary" />
         <Property Name="Description" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SiteScriptMetadata">
         <Property Name="Content" Type="Edm.String" />
+        <Property Name="ContentByteArray" Type="Edm.Binary" />
         <Property Name="Description" Type="Edm.String" />
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
         <Property Name="IsSiteScriptPackage" Type="Edm.Boolean" Nullable="false" />
@@ -31317,31 +31372,52 @@
       </EntityType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.Internal" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-      <ComplexType Name="GptRequestOptions">
-        <Property Name="BestOf" Type="Edm.Int32" Nullable="false" />
+      <ComplexType Name="BaseGptRequestOptions">
         <Property Name="FrequencyPenalty" Type="Edm.Double" Nullable="false" />
         <Property Name="MaxTokens" Type="Edm.Int32" Nullable="false" />
         <Property Name="PresencePenalty" Type="Edm.Double" Nullable="false" />
-        <Property Name="Prompt" Type="Edm.String" />
         <Property Name="Temperature" Type="Edm.Double" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="BaseGptResponse">
+        <Property Name="Created" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Id" Type="Edm.String" />
+        <Property Name="Model" Type="Edm.String" />
+        <Property Name="ObjectType" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ChatGptRequestOptions" BaseType="Microsoft.SharePoint.Internal.BaseGptRequestOptions">
+        <Property Name="Messages" Type="Collection(Microsoft.SharePoint.Internal.MessageEntry)" />
+        <Property Name="Stop" Type="Edm.Int32" Nullable="false" />
         <Property Name="TopP" Type="Edm.Double" Nullable="false" />
       </ComplexType>
-      <ComplexType Name="GptResponseChoice">
+      <ComplexType Name="MessageEntry">
+        <Property Name="Content" Type="Edm.String" />
+        <Property Name="Role" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ChatGptResponseChoice">
         <Property Name="FinishReason" Type="Edm.String" />
         <Property Name="Index" Type="Edm.Int32" Nullable="false" />
-        <Property Name="Text" Type="Edm.String" />
+        <Property Name="Message" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ChatGptResponse" BaseType="Microsoft.SharePoint.Internal.BaseGptResponse">
+        <Property Name="Choices" Type="Collection(Microsoft.SharePoint.Internal.ChatGptResponseChoice)" />
+        <Property Name="Usage" Type="Microsoft.SharePoint.Internal.GptResponseUsage" />
       </ComplexType>
       <ComplexType Name="GptResponseUsage">
         <Property Name="CompletionTokens" Type="Edm.Int32" Nullable="false" />
         <Property Name="PromptTokens" Type="Edm.Int32" Nullable="false" />
         <Property Name="TotalTokens" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
-      <ComplexType Name="GptResponse">
+      <ComplexType Name="GptRequestOptions" BaseType="Microsoft.SharePoint.Internal.BaseGptRequestOptions">
+        <Property Name="BestOf" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Prompt" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="GptResponseChoice">
+        <Property Name="FinishReason" Type="Edm.String" />
+        <Property Name="Index" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Text" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="GptResponse" BaseType="Microsoft.SharePoint.Internal.BaseGptResponse">
         <Property Name="Choices" Type="Collection(Microsoft.SharePoint.Internal.GptResponseChoice)" />
-        <Property Name="Created" Type="Edm.Int32" Nullable="false" />
-        <Property Name="Id" Type="Edm.String" />
-        <Property Name="Model" Type="Edm.String" />
-        <Property Name="ObjectType" Type="Edm.String" />
         <Property Name="Usage" Type="Microsoft.SharePoint.Internal.GptResponseUsage" />
       </ComplexType>
       <ComplexType Name="TrackedItemUpdatesRequest">
