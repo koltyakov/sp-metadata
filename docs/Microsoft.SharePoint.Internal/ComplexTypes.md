@@ -4,8 +4,14 @@
 
 Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+[BaseGptRequestOptions](./ComplexTypes/BaseGptRequestOptions.md) | ✅ | ❌ | ❌ | ❌
+[BaseGptResponse](./ComplexTypes/BaseGptResponse.md) | ✅ | ❌ | ❌ | ❌
+[ChatGptRequestOptions](./ComplexTypes/ChatGptRequestOptions.md) | ✅ | ❌ | ❌ | ❌
+[ChatGptResponse](./ComplexTypes/ChatGptResponse.md) | ✅ | ❌ | ❌ | ❌
+[ChatGptResponseChoice](./ComplexTypes/ChatGptResponseChoice.md) | ✅ | ❌ | ❌ | ❌
 [GptRequestOptions](./ComplexTypes/GptRequestOptions.md) | ✅ | ❌ | ❌ | ❌
 [GptResponse](./ComplexTypes/GptResponse.md) | ✅ | ❌ | ❌ | ❌
 [GptResponseChoice](./ComplexTypes/GptResponseChoice.md) | ✅ | ❌ | ❌ | ❌
 [GptResponseUsage](./ComplexTypes/GptResponseUsage.md) | ✅ | ❌ | ❌ | ❌
+[MessageEntry](./ComplexTypes/MessageEntry.md) | ✅ | ❌ | ❌ | ❌
 [TrackedItemUpdatesRequest](./ComplexTypes/TrackedItemUpdatesRequest.md) | ✅ | ❌ | ❌ | ❌

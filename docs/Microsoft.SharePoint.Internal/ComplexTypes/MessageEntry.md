@@ -1,4 +1,4 @@
-# Complex Type: GptRequestOptions
+# Complex Type: MessageEntry
 
 > Namespace: Microsoft.SharePoint.Internal
 
@@ -6,5 +6,5 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-BestOf (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-Prompt (Edm.String) | ✅ | ❌ | ❌ | ❌
+Content (Edm.String) | ✅ | ❌ | ❌ | ❌
+Role (Edm.String) | ✅ | ❌ | ❌ | ❌
