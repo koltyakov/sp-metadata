@@ -167,6 +167,7 @@ Files12 | ✅ | ✅ | ✅ | ❌
 Filters | ✅ | ✅ | ✅ | ✅
 FlowPermissionss | ✅ | ✅ | ❌ | ❌
 FlowSynchronizationResults | ✅ | ✅ | ❌ | ❌
+Foldercolorings | ✅ | ❌ | ❌ | ❌
 Folders | ✅ | ✅ | ✅ | ✅
 Folders1 | ✅ | ✅ | ✅ | ❌
 FollowedContents | ✅ | ✅ | ✅ | ✅

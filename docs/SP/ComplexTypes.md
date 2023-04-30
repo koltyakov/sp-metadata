@@ -69,6 +69,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [FileCreationInformation](./ComplexTypes/FileCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [FileDeleteParameters](./ComplexTypes/FileDeleteParameters.md) | ✅ | ❌ | ❌ | ❌
 [FolderCollectionAddParameters](./ComplexTypes/FolderCollectionAddParameters.md) | ✅ | ✅ | ❌ | ❌
+[FolderColoringInformation](./ComplexTypes/FolderColoringInformation.md) | ✅ | ❌ | ❌ | ❌
 [FolderDeleteParameters](./ComplexTypes/FolderDeleteParameters.md) | ✅ | ❌ | ❌ | ❌
 [GetListItemVersionsParameters](./ComplexTypes/GetListItemVersionsParameters.md) | ✅ | ❌ | ❌ | ❌
 [GetListsParameters](./ComplexTypes/GetListsParameters.md) | ✅ | ❌ | ❌ | ❌

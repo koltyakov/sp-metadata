@@ -1,4 +1,4 @@
-# Function Import: ReorderHomeSites
+# Function Import: AddRecentAdminActions
 
 > Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
@@ -10,4 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-homeSitesSiteIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+payload (Collection(Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminRecentActionPayload)) | ✅ | ❌ | ❌ | ❌

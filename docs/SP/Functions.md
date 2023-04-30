@@ -88,6 +88,7 @@ CreateDocumentFromCAAETemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 CreateDocumentFromCAAETemplateV2 (SP.List) | ✅ | ❌ | ❌ | ❌
 CreateDocumentWithDefaultName (SP.List) | ✅ | ✅ | ❌ | ❌
 CreateFieldAsXml (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
+CreateFolder (SP.FolderColoring) | ✅ | ❌ | ❌ | ❌
 CreateGroupBasedEnvironment (SP.Web) | ✅ | ❌ | ❌ | ❌
 CreateMappedView (SP.List) | ✅ | ✅ | ❌ | ❌
 CreateMigrationIngestionJob (SP.Site) | ✅ | ✅ | ✅ | ❌
@@ -490,6 +491,7 @@ RemoveRoleAssignment (Collection(SP.RoleAssignment)) | ✅ | ✅ | ✅ | ✅
 RemoveStorageEntity (SP.Web) | ✅ | ✅ | ❌ | ❌
 RemoveSupportedUILanguage (SP.Web) | ✅ | ✅ | ✅ | ✅
 RemoveViewField (SP.ViewFieldCollection) | ✅ | ✅ | ✅ | ✅
+RenameFolder (SP.FolderColoring) | ✅ | ❌ | ❌ | ❌
 Render (SP.ClientWebPart) | ✅ | ✅ | ❌ | ❌
 RenderAsHtml (SP.View) | ✅ | ✅ | ✅ | ✅
 RenderExtendedListFormData (SP.List) | ✅ | ✅ | ❌ | ❌
@@ -575,6 +577,7 @@ SP_FavoriteItemCollection_GetFavoriteItems | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_ReorderList](./Functions/SP_FavoriteLists_ReorderList.md) | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_UpdateList](./Functions/SP_FavoriteLists_UpdateList.md) | ✅ | ❌ | ❌ | ❌
 [SP_File_GetContentVerFromTag](./Functions/SP_File_GetContentVerFromTag.md) | ✅ | ✅ | ✅ | ✅
+SP_FolderColoring | ✅ | ❌ | ❌ | ❌
 [SP_HashtagStoreManager_CallOLS](./Functions/SP_HashtagStoreManager_CallOLS.md) | ❌ | ✅ | ❌ | ❌
 [SP_HashtagStoreManager_GetBlockedHashtags](./Functions/SP_HashtagStoreManager_GetBlockedHashtags.md) | ❌ | ✅ | ❌ | ❌
 [SP_HashtagStoreManager_GetHashtagsByPrefix](./Functions/SP_HashtagStoreManager_GetHashtagsByPrefix.md) | ❌ | ✅ | ❌ | ❌
@@ -788,6 +791,7 @@ SetValueForUICulture (SP.UserResource) | ✅ | ✅ | ✅ | ❌
 SetViewXml (SP.View) | ✅ | ✅ | ❌ | ❌
 SiteReference (SP.KnowledgeHub) | ✅ | ❌ | ❌ | ❌
 SitesReference (SP.OrganizationNews) | ✅ | ❌ | ❌ | ❌
+StampColor (SP.FolderColoring) | ✅ | ❌ | ❌ | ❌
 StartDelete (SP.Folder) | ✅ | ❌ | ❌ | ❌
 StartRecycle (SP.List) | ✅ | ❌ | ❌ | ❌
 StartUpload (SP.File) | ✅ | ✅ | ✅ | ❌
@@ -892,6 +896,7 @@ VivaHome (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 VivaHomeConfiguration (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 contextinfo | ✅ | ✅ | ✅ | ✅
 files | ✅ | ✅ | ✅ | ❌
+foldercoloring | ✅ | ❌ | ❌ | ❌
 getFileExtendedActivities (SP.List) | ❌ | ✅ | ❌ | ❌
 hubsites | ✅ | ✅ | ❌ | ❌
 lists | ✅ | ✅ | ✅ | ✅
