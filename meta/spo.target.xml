@@ -464,6 +464,7 @@
       <ComplexType Name="ClassificationResult">
         <Property Name="ConfidenceScore" Type="Edm.Double" Nullable="false" />
         <Property Name="ContentTypeId" Type="Edm.String" />
+        <Property Name="Error" Type="Edm.String" />
         <Property Name="Metas" Type="Collection(SP.KeyValue)" />
         <Property Name="ModelId" Type="Edm.String" />
         <Property Name="ModelVersion" Type="Edm.String" />
@@ -634,6 +635,11 @@
       <ComplexType Name="FileDeleteParameters">
         <Property Name="BypassSharedLock" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ETagMatch" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="FolderColoringInformation">
+        <Property Name="ColorHex" Type="Edm.String" />
+        <Property Name="ColorTag" Type="Edm.String" />
+        <Property Name="Emoji" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="FolderCollectionAddParameters">
         <Property Name="EnsureUniqueFileName" Type="Edm.Boolean" Nullable="false" />
@@ -3107,6 +3113,12 @@
         <Property Name="SynchronizationData" Type="Edm.String" Nullable="false" />
         <Property Name="SynchronizationStatus" Type="Edm.Int32" Nullable="false" />
       </EntityType>
+      <EntityType Name="FolderColoring">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="HubSite">
         <Key>
           <PropertyRef Name="Description" />
@@ -4108,6 +4120,7 @@
         <EntitySet Name="EEs" EntityType="SP.EmployeeEngagement" />
         <EntitySet Name="EmployeeExperiences" EntityType="SP.EmployeeExperienceController" />
         <EntitySet Name="Files" EntityType="MS.FileServices.FileSystemItem" />
+        <EntitySet Name="Foldercolorings" EntityType="SP.FolderColoring" />
         <EntitySet Name="GroupServices" EntityType="Microsoft.SharePoint.Portal.GroupService" />
         <EntitySet Name="Groupsitemanagers" EntityType="Microsoft.SharePoint.Portal.GroupSiteManager" />
         <EntitySet Name="Hubsites" EntityType="SP.HubSite" />
@@ -4717,6 +4730,7 @@
         <FunctionImport Name="EE" ReturnType="SP.EmployeeEngagement" IsComposable="true" EntitySet="EEs" />
         <FunctionImport Name="EmployeeExperience" ReturnType="SP.EmployeeExperienceController" IsComposable="true" EntitySet="EmployeeExperiences" />
         <FunctionImport Name="files" ReturnType="Collection(MS.FileServices.FileSystemItem)" IsComposable="true" EntitySet="Files" />
+        <FunctionImport Name="foldercoloring" ReturnType="SP.FolderColoring" IsComposable="true" EntitySet="Foldercolorings" />
         <FunctionImport Name="GroupService" ReturnType="Microsoft.SharePoint.Portal.GroupService" IsComposable="true" EntitySet="GroupServices" />
         <FunctionImport Name="groupsitemanager" ReturnType="Microsoft.SharePoint.Portal.GroupSiteManager" IsComposable="true" EntitySet="Groupsitemanagers" />
         <FunctionImport Name="hubsites" ReturnType="Collection(SP.HubSite)" IsComposable="true" EntitySet="Hubsites" />
@@ -8547,6 +8561,7 @@
           <Parameter Name="recipientEmails" Type="Collection(Edm.String)" />
           <Parameter Name="pageContent" Type="Edm.String" />
           <Parameter Name="subject" Type="Edm.String" />
+          <Parameter Name="ccEmails" Type="Collection(Edm.String)" />
         </FunctionImport>
         <FunctionImport Name="ShareSiteByEmail" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.RichSharing" />
@@ -13702,6 +13717,26 @@
           <Parameter Name="this" Type="Collection(SP.Folder)" />
           <Parameter Name="url" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="SP_FolderColoring" ReturnType="SP.FolderColoring" IsComposable="true" EntitySet="Foldercolorings" />
+        <FunctionImport Name="CreateFolder" ReturnType="SP.Folder" IsBindable="true" EntitySet="Folders1">
+          <Parameter Name="this" Type="SP.FolderColoring" />
+          <Parameter Name="DecodedUrl" Type="Edm.String" />
+          <Parameter Name="EnsureUniqueFileName" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="Overwrite" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="coloringInformation" Type="SP.FolderColoringInformation" />
+        </FunctionImport>
+        <FunctionImport Name="RenameFolder" ReturnType="Edm.Guid" IsBindable="true">
+          <Parameter Name="this" Type="SP.FolderColoring" />
+          <Parameter Name="DecodedUrl" Type="Edm.String" />
+          <Parameter Name="newName" Type="Edm.String" />
+          <Parameter Name="coloringInformation" Type="SP.FolderColoringInformation" />
+          <Parameter Name="options" Type="SP.MoveCopyOptions" />
+        </FunctionImport>
+        <FunctionImport Name="StampColor" IsBindable="true">
+          <Parameter Name="this" Type="SP.FolderColoring" />
+          <Parameter Name="DecodedUrl" Type="Edm.String" />
+          <Parameter Name="coloringInformation" Type="SP.FolderColoringInformation" />
+        </FunctionImport>
         <FunctionImport Name="AddSubFolder" IsBindable="true">
           <Parameter Name="this" Type="SP.Folder" />
           <Parameter Name="leafName" Type="Edm.String" />
@@ -15298,6 +15333,10 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="payload" Type="Microsoft.Online.SharePoint.TenantAdministration.RecentAdminActionReportPayload" />
         </FunctionImport>
+        <FunctionImport Name="AddRecentAdminActions" ReturnType="Collection(SP.ListItem)" IsBindable="true" EntitySet="ListItems">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="payload" Type="Collection(Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminRecentActionPayload)" />
+        </FunctionImport>
         <FunctionImport Name="AddTenantAdminListItem" ReturnType="SP.ListItem" IsBindable="true" EntitySet="ListItems">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="columnValues" Type="Collection(Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminListItemColumnValue)" />
@@ -15717,9 +15756,9 @@
           <Parameter Name="overrideParameters" Type="SP.RenderListDataOverrideParameters" />
           <Parameter Name="isAutoRefresh" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="ReorderHomeSites" ReturnType="Collection(SP.HomeSitesDetails)" IsBindable="true">
+        <FunctionImport Name="ReorderTargetedSites" ReturnType="Collection(SP.TargetedSiteDetails)" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
-          <Parameter Name="homeSitesSiteIds" Type="Collection(Edm.Guid)" Nullable="false" />
+          <Parameter Name="siteIds" Type="Collection(Edm.Guid)" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="RestoreDeletedSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -19130,6 +19169,9 @@
       <Annotations Target="SP.ClassificationResult/ContentTypeId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ClassificationResult/Error">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ClassificationResult/Metas">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21677,6 +21719,9 @@
       <Annotations Target="SP.FlowSynchronizationResult">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.FolderColoring">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.HubSite">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22751,7 +22796,7 @@
       <Annotations Target="SP.ApiData/SP_Publishing_RichSharing()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SharePageByEmail(SP.Publishing.RichSharing, Edm.String, Edm.String, Collection(Edm.String), Edm.String, Edm.String)">
+      <Annotations Target="SP.ApiData/SharePageByEmail(SP.Publishing.RichSharing, Edm.String, Edm.String, Collection(Edm.String), Edm.String, Edm.String, Collection(Edm.String))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/ShareSiteByEmail(SP.Publishing.RichSharing, Edm.String, Edm.String, Edm.String, Edm.String, Collection(Edm.String))">
@@ -24327,6 +24372,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/RecycleByLabel(Collection(SP.FileVersion), Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_FolderColoring()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/AddSubFolderUsingPath(SP.Folder, Edm.String)">
@@ -28820,8 +28868,10 @@
       </ComplexType>
       <ComplexType Name="SitePageCoAuthState">
         <Property Name="Action" Type="Edm.Int32" Nullable="false" />
+        <Property Name="HasReachedMinorVersionsLimit" Type="Edm.Boolean" />
         <Property Name="LockAction" Type="Edm.Int32" Nullable="false" />
         <Property Name="LockDuration" Type="Edm.Int32" Nullable="false" />
+        <Property Name="OverwriteExistingVersion" Type="Edm.Boolean" />
         <Property Name="SharedLockId" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="CampaignPublicationFieldsData" BaseType="SP.Publishing.SitePageFieldsData">
