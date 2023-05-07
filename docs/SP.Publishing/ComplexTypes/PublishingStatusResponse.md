@@ -11,4 +11,5 @@ LastTriedAt (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 PrePublishValidationErrorCode (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 PublishingStatus (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SharePointPublishingStatus (Collection(SP.Publishing.SharePointPublishingStatusResponse)) | ✅ | ❌ | ❌ | ❌
+TeamsPublishingStatus (Collection(SP.Publishing.TeamsPublishingStatusResponse)) | ✅ | ❌ | ❌ | ❌
 YammerPublishingStatus (Collection(SP.KeyValue)) | ✅ | ❌ | ❌ | ❌

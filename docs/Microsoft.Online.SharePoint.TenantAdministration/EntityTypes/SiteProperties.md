@@ -52,6 +52,7 @@ IsTeamsConnected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LastContentModifiedDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 Lcid (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 LimitedAccessFileType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+ListsShowHeaderAndNavigation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LockIssue (Edm.String) | ✅ | ❌ | ❌ | ❌
 LockState (Edm.String) | ✅ | ❌ | ❌ | ❌
 LoopDefaultSharingLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌

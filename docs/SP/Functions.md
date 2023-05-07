@@ -60,6 +60,8 @@ BulkValidateUpdateListItems (SP.List) | ✅ | ✅ | ❌ | ❌
 CAAECreateTempFolder (SP.List) | ✅ | ❌ | ❌ | ❌
 CAAERenameFileInTemporaryFolder (SP.List) | ✅ | ❌ | ❌ | ❌
 CancelAllJobs (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
+CancelDeleteFileVersions (SP.List) | ✅ | ❌ | ❌ | ❌
+CancelDeleteFileVersions (SP.Site) | ✅ | ❌ | ❌ | ❌
 CancelUpload (SP.File) | ✅ | ✅ | ✅ | ❌
 ChangeContentStorageSchema (SP.File) | ✅ | ❌ | ❌ | ❌
 CheckAccessAndPostViewAuditEvent (SP.File) | ✅ | ❌ | ❌ | ❌
@@ -389,6 +391,7 @@ GetSiteUserIncludingDeletedByPuid (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetSpecialFolderUrl (SP.List) | ✅ | ✅ | ✅ | ❌
 GetStorageEntity (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetSubwebsFilteredForCurrentUser (SP.Web) | ✅ | ✅ | ✅ | ✅
+GetTargetedSitesAsEditor (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 GetThemeFontByName (SP.ThemeInfo) | ✅ | ✅ | ✅ | ✅
 GetThemeShadeByName (SP.ThemeInfo) | ✅ | ✅ | ✅ | ✅
 GetUploadStatus (SP.File) | ✅ | ✅ | ❌ | ❌
@@ -647,6 +650,7 @@ SP_SPHSite | ✅ | ❌ | ❌ | ❌
 SP_SPHSite_GetSPHSiteXGeo | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_GetSiteReferenceXgeo](./Functions/SP_SPHSite_GetSiteReferenceXgeo.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_GetSiteTitleXgeo](./Functions/SP_SPHSite_GetSiteTitleXgeo.md) | ✅ | ❌ | ❌ | ❌
+[<span title="SP_SPHSite_GetTargetedSitesDetailsCurrentUserCanEditXGeo">SP_SPHSite_GetTargetedSitesDetailsCurrentUserCanEd...</span> (SP SPHSite GetTargetedSitesDetailsCurrentUserCanEditXGeo)](./Functions/SP_SPHSite_GetTargetedSitesDetailsCurrentUserCanEditXGeo.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_GetXgeoHomeSiteDetail](./Functions/SP_SPHSite_GetXgeoHomeSiteDetail.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsCommSite](./Functions/SP_SPHSite_IsCommSite.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsModernSiteWithHorizontalNav](./Functions/SP_SPHSite_IsModernSiteWithHorizontalNav.md) | ✅ | ❌ | ❌ | ❌
@@ -793,6 +797,8 @@ SiteReference (SP.KnowledgeHub) | ✅ | ❌ | ❌ | ❌
 SitesReference (SP.OrganizationNews) | ✅ | ❌ | ❌ | ❌
 StampColor (SP.FolderColoring) | ✅ | ❌ | ❌ | ❌
 StartDelete (SP.Folder) | ✅ | ❌ | ❌ | ❌
+StartDeleteFileVersions (SP.List) | ✅ | ❌ | ❌ | ❌
+StartDeleteFileVersions (SP.Site) | ✅ | ❌ | ❌ | ❌
 StartRecycle (SP.List) | ✅ | ❌ | ❌ | ❌
 StartUpload (SP.File) | ✅ | ✅ | ✅ | ❌
 StartUploadFile (SP.File) | ✅ | ❌ | ❌ | ❌

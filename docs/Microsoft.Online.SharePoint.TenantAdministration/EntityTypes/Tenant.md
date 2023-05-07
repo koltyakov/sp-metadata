@@ -25,6 +25,7 @@ AllowSelectSGsInODBListInTenant (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 AllowSelectSecurityGroupsInSPSitesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 AllowedDomainListForSyncClient (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 AnyoneLinkTrackUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+AppBypassInformationBarriers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ApplyAppEnforcedRestrictionsToAdHocRecipients (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ArchiveRedirectUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 AuthContextResilienceMode (Edm.Int32) | ✅ | ❌ | ❌ | ❌
@@ -49,6 +50,12 @@ CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CompatibilityRange (Edm.String) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicy (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicyErrorHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌
+ContainerDefaultLinkToExistingAccess (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ContainerDefaultShareLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+ContainerDefaultShareLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+ContainerLoopDefaultShareLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+ContainerLoopDefaultShareLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+ContainerSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ContentTypeSyncSiteTemplatesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 CoreBlockGuestsAsSiteAdmin (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CoreDefaultLinkToExistingAccess (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -140,6 +147,7 @@ IsLoopEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMnAFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMultiGeo (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMultipleHomeSitesFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+IsMultipleVivaConnectionsFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsUnmanagedSyncClientForTenantRestricted (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsUnmanagedSyncClientRestrictionFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsVivaHomeFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -223,6 +231,7 @@ ShowOpenInDesktopOptionForSyncedFiles (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ShowPeoplePickerGroupSuggestionsForIB (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ShowPeoplePickerSuggestionsForGuestUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SignInAccelerationDomain (Edm.String) | ✅ | ❌ | ❌ | ❌
+SiteOwnerManageLegacyServicePrincipalEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SocialBarOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SpecialCharactersStateInFileFolderNames (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 StartASiteFormUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
