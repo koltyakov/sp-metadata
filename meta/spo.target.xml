@@ -31,6 +31,7 @@
         <Property Name="ReadOnly" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
       <ComplexType Name="Audience">
+        <Property Name="Email" Type="Edm.String" />
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
       </ComplexType>
@@ -10404,6 +10405,10 @@
           <Parameter Name="siteUrl" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_SPHSite_GetSPHSiteXGeo" ReturnType="SP.SPHSiteReference" />
+        <FunctionImport Name="SP_SPHSite_GetTargetedSitesDetailsCurrentUserCanEditXGeo" ReturnType="Collection(SP.TargetedSiteDetails)">
+          <Parameter Name="siteIds" Type="Collection(Edm.Guid)" Nullable="false" />
+          <Parameter Name="stopRedirect" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="SP_SPHSite_GetXgeoHomeSiteDetail" ReturnType="SP.HomeSitesDetails">
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="siteUrl" Type="Edm.String" />
@@ -10808,6 +10813,9 @@
         <FunctionImport Name="GetDashboardPersonalization" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.EmployeeEngagement" />
         </FunctionImport>
+        <FunctionImport Name="GetTargetedSitesAsEditor" ReturnType="Collection(SP.TargetedSiteDetails)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.EmployeeEngagement" />
+        </FunctionImport>
         <FunctionImport Name="SetDashboardPersonalization" IsBindable="true">
           <Parameter Name="this" Type="SP.EmployeeEngagement" />
           <Parameter Name="isEnabled" Type="Edm.Boolean" Nullable="false" />
@@ -11082,6 +11090,9 @@
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="Path" Type="Edm.String" />
           <Parameter Name="UpdatedName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="CancelDeleteFileVersions" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
         </FunctionImport>
         <FunctionImport Name="ClearBusinessAppMigrationInteractiveData" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -11747,6 +11758,10 @@
         <FunctionImport Name="SetExemptFromBlockDownloadOfNonViewableFiles" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="value" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="StartDeleteFileVersions" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="deleteOlderThanDays" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="StartRecycle" ReturnType="Edm.Guid" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -14154,6 +14169,9 @@
           <Parameter Name="otherEmail" Type="Edm.String" />
           <Parameter Name="principalName" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="CancelDeleteFileVersions" IsBindable="true">
+          <Parameter Name="this" Type="SP.Site" />
+        </FunctionImport>
         <FunctionImport Name="CreateCopyJob" ReturnType="SP.CopyMigrationInfo" IsBindable="true">
           <Parameter Name="this" Type="SP.Site" />
           <Parameter Name="exportObjectUris" Type="Collection(Edm.String)" />
@@ -14372,6 +14390,10 @@
           <Parameter Name="propertyValue" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="forceDocLibActivation" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="deleteIfDocLibAlreadyExists" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="StartDeleteFileVersions" IsBindable="true">
+          <Parameter Name="this" Type="SP.Site" />
+          <Parameter Name="deleteOlderThanDays" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="UnregisterHubSite" IsBindable="true">
           <Parameter Name="this" Type="SP.Site" />
@@ -15781,6 +15803,7 @@
         <FunctionImport Name="SendEmail" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteUrl" Type="Edm.String" />
+          <Parameter Name="status" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SetDefaultView" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -18362,6 +18385,12 @@
       <Annotations Target="SP.Publishing.SharePointPublishingStatus">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.TeamsPublishingStatusResponse">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.TeamsPublishingStatus">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.SendTestEmailResponse">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -18408,9 +18437,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.TaxonomyMetadata">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Publishing.TeamsPublishingStatus">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.TextValueWithLanguage">
@@ -18768,6 +18794,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Audience">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Audience/Email">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Audience/Id">
@@ -22049,6 +22078,24 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/AnyoneLinkTrackUsers">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/ContainerDefaultLinkToExistingAccess">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/ContainerDefaultShareLinkRole">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/ContainerDefaultShareLinkScope">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/ContainerLoopDefaultShareLinkRole">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/ContainerLoopDefaultShareLinkScope">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/ContainerSharingCapability">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/CoreBlockGuestsAsSiteAdmin">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22083,6 +22130,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/IsMultipleHomeSitesFlightEnabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/IsMultipleVivaConnectionsFlightEnabled">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/IsVivaHomeFlightEnabled">
@@ -23600,6 +23650,9 @@
       <Annotations Target="SP.ApiData/SP_SPHSite_GetSPHSiteXGeo()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_SPHSite_GetTargetedSitesDetailsCurrentUserCanEditXGeo(Collection(Edm.Guid), Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_SPHSite_GetXgeoHomeSiteDetail(Edm.Guid, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -23780,6 +23833,9 @@
       <Annotations Target="SP.ApiData/GetDashboardPersonalization(SP.EmployeeEngagement)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetTargetedSitesAsEditor(SP.EmployeeEngagement)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SetDashboardPersonalization(SP.EmployeeEngagement, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -23855,6 +23911,9 @@
       <Annotations Target="SP.ApiData/BulkValidateUpdateListItems(SP.List, Collection(Edm.Int32), Collection(SP.ListItemFormUpdateValue), Edm.Boolean, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/CancelDeleteFileVersions(SP.List)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/ClearBusinessAppMigrationInteractiveData(SP.List)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -23919,6 +23978,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetExemptFromBlockDownloadOfNonViewableFiles(SP.List, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/StartDeleteFileVersions(SP.List, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SyncFlowCallbackUrl(SP.List, Edm.String)">
@@ -24446,6 +24508,9 @@
       <Annotations Target="SP.ApiData/SP_SharingUtility_ValidateSameUserEmails(Edm.String, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/CancelDeleteFileVersions(SP.Site)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetBringYourOwnKeyRecoveryKeyMode(SP.Site)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -24486,6 +24551,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/RollTenantBringYourOwnKey(SP.Site, Edm.Int32, SP.CustomerKeyVaultInfo)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/StartDeleteFileVersions(SP.Site, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/UnregisterHubSite(SP.Site)">
@@ -29108,6 +29176,7 @@
         <Property Name="PrePublishValidationErrorCode" Type="Edm.Int32" Nullable="false" />
         <Property Name="PublishingStatus" Type="Edm.Int32" Nullable="false" />
         <Property Name="SharePointPublishingStatus" Type="Collection(SP.Publishing.SharePointPublishingStatusResponse)" />
+        <Property Name="TeamsPublishingStatus" Type="Collection(SP.Publishing.TeamsPublishingStatusResponse)" />
         <Property Name="YammerPublishingStatus" Type="Collection(SP.KeyValue)" />
       </ComplexType>
       <ComplexType Name="SharePointPublishingStatusResponse">
@@ -29117,6 +29186,16 @@
       <ComplexType Name="SharePointPublishingStatus">
         <Property Name="DestinationPageURL" Type="Edm.String" />
         <Property Name="ErrorCode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="TeamsPublishingStatusResponse">
+        <Property Name="AudienceId" Type="Edm.String" />
+        <Property Name="Status" Type="SP.Publishing.TeamsPublishingStatus" />
+      </ComplexType>
+      <ComplexType Name="TeamsPublishingStatus">
+        <Property Name="AudienceId" Type="Edm.String" />
+        <Property Name="ErrorCode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="HttpStatusCode" Type="Edm.Int32" Nullable="false" />
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="RuleErrorDetails">
@@ -29198,12 +29277,6 @@
         <Property Name="lcid" Type="Edm.Int32" Nullable="false" />
         <Property Name="sspList" Type="Edm.String" />
         <Property Name="termSetList" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="TeamsPublishingStatus">
-        <Property Name="AudienceId" Type="Edm.String" />
-        <Property Name="ErrorCode" Type="Edm.Int32" Nullable="false" />
-        <Property Name="HttpStatusCode" Type="Edm.Int32" Nullable="false" />
-        <Property Name="Status" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="TextValueWithLanguage">
         <Property Name="ColorSeed" Type="Edm.String" />
@@ -31500,7 +31573,8 @@
         <Property Name="name" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="CreateAgreementModel">
-        <Property Name="agreementId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="agreementId" Type="Edm.Guid" />
+        <Property Name="createdDateTime" Type="Edm.DateTime" />
         <Property Name="documents" Type="Edm.String" />
         <Property Name="expirationDateTime" Type="Edm.DateTime" />
         <Property Name="formFieldSets" Type="Edm.String" />
@@ -33289,6 +33363,12 @@
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="SPContainerTypeProperties">
+        <Property Name="ContainerTypeId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="OwningAppId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="OwningTenantId" Type="Edm.Guid" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="SPListModernUXOff">
         <Property Name="IsHidden" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
@@ -33454,6 +33534,7 @@
         <Property Name="LastContentModifiedDate" Type="Edm.DateTime" Nullable="false" />
         <Property Name="Lcid" Type="Edm.Int64" Nullable="false" />
         <Property Name="LimitedAccessFileType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ListsShowHeaderAndNavigation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LockIssue" Type="Edm.String" />
         <Property Name="LockState" Type="Edm.String" />
         <Property Name="LoopDefaultSharingLinkRole" Type="Edm.Int32" Nullable="false" />
@@ -33618,6 +33699,7 @@
         <Property Name="AllowSelectSecurityGroupsInSPSitesList" Type="Collection(Edm.String)" />
         <Property Name="AllowSelectSGsInODBListInTenant" Type="Collection(Edm.String)" />
         <Property Name="AnyoneLinkTrackUsers" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AppBypassInformationBarriers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ApplyAppEnforcedRestrictionsToAdHocRecipients" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ArchiveRedirectUrl" Type="Edm.String" />
         <Property Name="AuthContextResilienceMode" Type="Edm.Int32" Nullable="false" />
@@ -33642,6 +33724,12 @@
         <Property Name="CompatibilityRange" Type="Edm.String" />
         <Property Name="ConditionalAccessPolicy" Type="Edm.Int32" Nullable="false" />
         <Property Name="ConditionalAccessPolicyErrorHelpLink" Type="Edm.String" />
+        <Property Name="ContainerDefaultLinkToExistingAccess" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ContainerDefaultShareLinkRole" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ContainerDefaultShareLinkScope" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ContainerLoopDefaultShareLinkRole" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ContainerLoopDefaultShareLinkScope" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ContainerSharingCapability" Type="Edm.Int32" Nullable="false" />
         <Property Name="ContentTypeSyncSiteTemplatesList" Type="Collection(Edm.String)" />
         <Property Name="CoreBlockGuestsAsSiteAdmin" Type="Edm.Int32" Nullable="false" />
         <Property Name="CoreDefaultLinkToExistingAccess" Type="Edm.Boolean" Nullable="false" />
@@ -33733,6 +33821,7 @@
         <Property Name="IsMnAFlightEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsMultiGeo" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsMultipleHomeSitesFlightEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsMultipleVivaConnectionsFlightEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsUnmanagedSyncClientForTenantRestricted" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsUnmanagedSyncClientRestrictionFlightEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsVivaHomeFlightEnabled" Type="Edm.Boolean" Nullable="false" />
@@ -33816,6 +33905,7 @@
         <Property Name="ShowPeoplePickerGroupSuggestionsForIB" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ShowPeoplePickerSuggestionsForGuestUsers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SignInAccelerationDomain" Type="Edm.String" />
+        <Property Name="SiteOwnerManageLegacyServicePrincipalEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SocialBarOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SpecialCharactersStateInFileFolderNames" Type="Edm.Int32" Nullable="false" />
         <Property Name="StartASiteFormUrl" Type="Edm.String" />
@@ -35653,6 +35743,7 @@
         <Property Name="AllowSelectSecurityGroupsInSPSitesList" Type="Collection(Edm.String)" />
         <Property Name="AllowSelectSGsInODBList" Type="Collection(Edm.String)" />
         <Property Name="AnyoneLinkTrackUsers" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AppBypassInformationBarriers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ApplyAppEnforcedRestrictionsToAdHocRecipients" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AuthContextResilienceMode" Type="Edm.Int32" Nullable="false" />
         <Property Name="BccExternalSharingInvitations" Type="Edm.Boolean" Nullable="false" />
@@ -35674,6 +35765,12 @@
         <Property Name="CommentsOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ConditionalAccessPolicy" Type="Edm.Int32" Nullable="false" />
         <Property Name="ConditionalAccessPolicyErrorHelpLink" Type="Edm.String" />
+        <Property Name="ContainerDefaultLinkToExistingAccess" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ContainerDefaultShareLinkRole" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ContainerDefaultShareLinkScope" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ContainerLoopDefaultShareLinkRole" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ContainerLoopDefaultShareLinkScope" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ContainerSharingCapability" Type="Edm.Int32" Nullable="false" />
         <Property Name="ContentTypeSyncSiteTemplatesList" Type="Collection(Edm.String)" />
         <Property Name="CoreBlockGuestsAsSiteAdmin" Type="Edm.Int32" Nullable="false" />
         <Property Name="CoreDefaultLinkToExistingAccess" Type="Edm.Boolean" Nullable="false" />
@@ -35809,6 +35906,7 @@
         <Property Name="ShowPeoplePickerGroupSuggestionsForIB" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ShowPeoplePickerSuggestionsForGuestUsers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SignInAccelerationDomain" Type="Edm.String" />
+        <Property Name="SiteOwnerManageLegacyServicePrincipalEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SocialBarOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="StartASiteFormUrl" Type="Edm.String" />
         <Property Name="StopNew2010Workflows" Type="Edm.Boolean" Nullable="false" />
