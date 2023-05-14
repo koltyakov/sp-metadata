@@ -27,6 +27,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ParentSiteUrl](./ComplexTypes/ParentSiteUrl.md) | ✅ | ❌ | ❌ | ❌
 [PolicyOption](./ComplexTypes/PolicyOption.md) | ✅ | ❌ | ❌ | ❌
 [PowerAppsEnvironment](./ComplexTypes/PowerAppsEnvironment.md) | ✅ | ❌ | ❌ | ❌
+[PowerAppsEnvironmentContext](./ComplexTypes/PowerAppsEnvironmentContext.md) | ✅ | ❌ | ❌ | ❌
 [RecentAdminActionReportPayload](./ComplexTypes/RecentAdminActionReportPayload.md) | ✅ | ❌ | ❌ | ❌
 [RequireSecondaryContact](./ComplexTypes/RequireSecondaryContact.md) | ✅ | ❌ | ❌ | ❌
 [SPContainerTypeProperties](./ComplexTypes/SPContainerTypeProperties.md) | ✅ | ❌ | ❌ | ❌
@@ -53,6 +54,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SiteUserGroupsData](./ComplexTypes/SiteUserGroupsData.md) | ✅ | ❌ | ❌ | ❌
 [SmtpServer](./ComplexTypes/SmtpServer.md) | ✅ | ❌ | ❌ | ❌
 [SyntexBillingContext](./ComplexTypes/SyntexBillingContext.md) | ✅ | ❌ | ❌ | ❌
+[SyntexPowerAppsEnvironmentsContext](./ComplexTypes/SyntexPowerAppsEnvironmentsContext.md) | ✅ | ❌ | ❌ | ❌
 [TenantDefaultTimeZoneId](./ComplexTypes/TenantDefaultTimeZoneId.md) | ✅ | ❌ | ❌ | ❌
 [UpdateGroupSitePropertiesParameters](./ComplexTypes/UpdateGroupSitePropertiesParameters.md) | ✅ | ❌ | ❌ | ❌
 [UserInfo](./ComplexTypes/UserInfo.md) | ✅ | ❌ | ❌ | ❌

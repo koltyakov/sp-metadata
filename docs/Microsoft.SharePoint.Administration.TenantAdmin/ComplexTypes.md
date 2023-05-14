@@ -14,7 +14,9 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [GroupSitesActivityDetail](./ComplexTypes/GroupSitesActivityDetail.md) | ✅ | ❌ | ❌ | ❌
 [ModifiedProperty](./ComplexTypes/ModifiedProperty.md) | ✅ | ❌ | ❌ | ❌
 [PageResponse](./ComplexTypes/PageResponse.md) | ✅ | ❌ | ❌ | ❌
+[Parameter](./ComplexTypes/Parameter.md) | ✅ | ❌ | ❌ | ❌
 [RecentAdminActionReport](./ComplexTypes/RecentAdminActionReport.md) | ✅ | ❌ | ❌ | ❌
+[TargetProperty](./ComplexTypes/TargetProperty.md) | ✅ | ❌ | ❌ | ❌
 [TeamsSitesActivityDetail](./ComplexTypes/TeamsSitesActivityDetail.md) | ✅ | ❌ | ❌ | ❌
 [TenantAdminListItemColumnValue](./ComplexTypes/TenantAdminListItemColumnValue.md) | ✅ | ❌ | ❌ | ❌
 [TenantAdminPolicyDefinition](./ComplexTypes/TenantAdminPolicyDefinition.md) | ✅ | ❌ | ❌ | ❌

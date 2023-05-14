@@ -53,4 +53,5 @@ LockedByUser | ✅ | ✅ | ✅ | ✅
 ModifiedBy | ✅ | ✅ | ✅ | ✅
 Properties | ✅ | ✅ | ✅ | ❌
 VersionEvents | ✅ | ✅ | ❌ | ❌
+VersionExpirationReport | ✅ | ❌ | ❌ | ❌
 Versions | ✅ | ✅ | ✅ | ✅

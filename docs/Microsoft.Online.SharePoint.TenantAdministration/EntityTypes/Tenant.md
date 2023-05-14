@@ -245,6 +245,7 @@ StreamLaunchConfigUpdateCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SyncAadB2BManagementPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyncPrivacyProfileProperties (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyntexBillingSubscriptionSettings (Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext) | ✅ | ❌ | ❌ | ❌
+SyntexPowerAppsEnvironmentsContext (Microsoft.Online.SharePoint.TenantAdministration.SyntexPowerAppsEnvironmentsContext) | ✅ | ❌ | ❌ | ❌
 TlsTokenBindingPolicyValue (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 UseFindPeopleInPeoplePicker (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UsePersistentCookiesForExplorerView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
