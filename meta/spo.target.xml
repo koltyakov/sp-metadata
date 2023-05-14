@@ -1688,6 +1688,7 @@
         <NavigationProperty Name="ModifiedBy" Relationship="SP.SP_File_ModifiedBy_SP_User_ModifiedByPartner" ToRole="ModifiedBy" FromRole="ModifiedByPartner" />
         <NavigationProperty Name="Properties" Relationship="SP.SP_File_Properties_SP_PropertyValues_PropertiesPartner" ToRole="Properties" FromRole="PropertiesPartner" />
         <NavigationProperty Name="VersionEvents" Relationship="SP.SP_File_VersionEvents_SP_FileVersionEvent_VersionEventsPartner" ToRole="VersionEvents" FromRole="VersionEventsPartner" />
+        <NavigationProperty Name="VersionExpirationReport" Relationship="SP.SP_File_VersionExpirationReport_SP_FileVersion_VersionExpirationReportPartner" ToRole="VersionExpirationReport" FromRole="VersionExpirationReportPartner" />
         <NavigationProperty Name="Versions" Relationship="SP.SP_File_Versions_SP_FileVersion_VersionsPartner" ToRole="Versions" FromRole="VersionsPartner" />
       </EntityType>
       <EntityType Name="EffectiveInformationRightsManagementSettings">
@@ -3554,6 +3555,10 @@
       <Association Name="SP_File_VersionEvents_SP_FileVersionEvent_VersionEventsPartner">
         <End Type="SP.FileVersionEvent" Role="VersionEvents" Multiplicity="*" />
         <End Type="SP.File" Role="VersionEventsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="SP_File_VersionExpirationReport_SP_FileVersion_VersionExpirationReportPartner">
+        <End Type="SP.FileVersion" Role="VersionExpirationReport" Multiplicity="*" />
+        <End Type="SP.File" Role="VersionExpirationReportPartner" Multiplicity="0..1" />
       </Association>
       <Association Name="SP_File_Versions_SP_FileVersion_VersionsPartner">
         <End Type="SP.FileVersion" Role="Versions" Multiplicity="*" />
@@ -13745,7 +13750,6 @@
           <Parameter Name="DecodedUrl" Type="Edm.String" />
           <Parameter Name="newName" Type="Edm.String" />
           <Parameter Name="coloringInformation" Type="SP.FolderColoringInformation" />
-          <Parameter Name="options" Type="SP.MoveCopyOptions" />
         </FunctionImport>
         <FunctionImport Name="StampColor" IsBindable="true">
           <Parameter Name="this" Type="SP.FolderColoring" />
@@ -15347,15 +15351,15 @@
           <Parameter Name="order" Type="Edm.Int32" />
           <Parameter Name="audiences" Type="Collection(Edm.Guid)" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="AddRecentAdminAction" ReturnType="SP.ListItem" IsBindable="true" EntitySet="ListItems">
+        <FunctionImport Name="AddRecentAdminAction" ReturnType="Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminRecentAction" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="payload" Type="Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminRecentActionPayload" />
         </FunctionImport>
-        <FunctionImport Name="AddRecentAdminActionReport" ReturnType="SP.ListItem" IsBindable="true" EntitySet="ListItems">
+        <FunctionImport Name="AddRecentAdminActionReport" ReturnType="Microsoft.SharePoint.Administration.TenantAdmin.RecentAdminActionReport" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="payload" Type="Microsoft.Online.SharePoint.TenantAdministration.RecentAdminActionReportPayload" />
         </FunctionImport>
-        <FunctionImport Name="AddRecentAdminActions" ReturnType="Collection(SP.ListItem)" IsBindable="true" EntitySet="ListItems">
+        <FunctionImport Name="AddRecentAdminActions" ReturnType="Collection(Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminRecentAction)" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="payload" Type="Collection(Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminRecentActionPayload)" />
         </FunctionImport>
@@ -15537,6 +15541,10 @@
         </FunctionImport>
         <FunctionImport Name="GetTargetedSitesDetails" ReturnType="Collection(SP.TargetedSiteDetails)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+        </FunctionImport>
+        <FunctionImport Name="GetTargetedSitesDetailsByUserId" ReturnType="Collection(SP.TargetedSiteDetails)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="userId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="GetTenantAllOrCompatibleIBSegments" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.IBSegmentInfo)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -17585,6 +17593,10 @@
         <AssociationSet Name="SP_File_VersionEvents_SP_FileVersionEvent_VersionEventsPartnerSet" Association="SP.SP_File_VersionEvents_SP_FileVersionEvent_VersionEventsPartner">
           <End Role="VersionEventsPartner" EntitySet="Files12" />
           <End Role="VersionEvents" EntitySet="FileVersionEvents" />
+        </AssociationSet>
+        <AssociationSet Name="SP_File_VersionExpirationReport_SP_FileVersion_VersionExpirationReportPartnerSet" Association="SP.SP_File_VersionExpirationReport_SP_FileVersion_VersionExpirationReportPartner">
+          <End Role="VersionExpirationReportPartner" EntitySet="Files12" />
+          <End Role="VersionExpirationReport" EntitySet="FileVersions" />
         </AssociationSet>
         <AssociationSet Name="SP_File_Versions_SP_FileVersion_VersionsPartnerSet" Association="SP.SP_File_Versions_SP_FileVersion_VersionsPartner">
           <End Role="VersionsPartner" EntitySet="Files12" />
@@ -19780,6 +19792,39 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext/Updated">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexPowerAppsEnvironmentsContext">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.PowerAppsEnvironmentContext">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.PowerAppsEnvironmentContext/AllocatedAICredits">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.PowerAppsEnvironmentContext/ConsumedAICredits">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.PowerAppsEnvironmentContext/DataverseInstanceUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.PowerAppsEnvironmentContext/DisplayName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.PowerAppsEnvironmentContext/IsTestEnvironment">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.PowerAppsEnvironmentContext/Name">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.PowerAppsEnvironmentContext/UpdatedUTC">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexPowerAppsEnvironmentsContext/Environments">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexPowerAppsEnvironmentsContext/TimerJobSyncDisabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.AppServices.AppCollection">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20609,6 +20654,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.FileVersion/SnapshotDate">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.File/VersionExpirationReport">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.File/VroomDriveID">
@@ -22172,6 +22220,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/SyntexBillingSubscriptionSettings">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/SyntexPowerAppsEnvironmentsContext">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/WhoCanShareAllowListInTenantByPrincipalIdentity">
@@ -31922,10 +31973,16 @@
         <Property Name="EventSource" Type="Edm.String" />
         <Property Name="Id" Type="Edm.String" />
         <Property Name="ModifiedProperties" Type="Collection(Microsoft.SharePoint.Administration.TenantAdmin.ModifiedProperty)" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="NewValue" Type="Edm.String" />
         <Property Name="ObjectId" Type="Edm.String" />
+        <Property Name="OldValue" Type="Edm.String" />
+        <Property Name="Parameters" Type="Collection(Microsoft.SharePoint.Administration.TenantAdmin.Parameter)" />
         <Property Name="Site" Type="Edm.String" />
+        <Property Name="Target" Type="Collection(Microsoft.SharePoint.Administration.TenantAdmin.TargetProperty)" />
         <Property Name="TargetUserOrGroupName" Type="Edm.String" />
         <Property Name="TargetUserOrGroupType" Type="Edm.String" />
+        <Property Name="TeamName" Type="Edm.String" />
         <Property Name="UserId" Type="Edm.String" />
         <Property Name="UserType" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
@@ -31949,6 +32006,8 @@
         <Property Name="NewValue" Type="Edm.String" />
         <Property Name="OldValue" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="Parameter" />
+      <ComplexType Name="TargetProperty" />
       <ComplexType Name="AuditSearchRequestStatus">
         <Property Name="CompletedTimeUtc" Type="Edm.DateTime" Nullable="false" />
         <Property Name="CompletenessPercent" Type="Edm.Single" Nullable="false" />
@@ -33387,6 +33446,19 @@
         <Property Name="Location" Type="Edm.String" />
         <Property Name="Updated" Type="Edm.DateTime" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="SyntexPowerAppsEnvironmentsContext">
+        <Property Name="Environments" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.PowerAppsEnvironmentContext)" />
+        <Property Name="TimerJobSyncDisabled" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="PowerAppsEnvironmentContext">
+        <Property Name="AllocatedAICredits" Type="Edm.Double" Nullable="false" />
+        <Property Name="ConsumedAICredits" Type="Edm.Double" Nullable="false" />
+        <Property Name="DataverseInstanceUrl" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="IsTestEnvironment" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="UpdatedUTC" Type="Edm.DateTime" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="TenantDefaultTimeZoneId">
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.Int32" Nullable="false" />
@@ -33919,6 +33991,7 @@
         <Property Name="SyncAadB2BManagementPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyncPrivacyProfileProperties" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyntexBillingSubscriptionSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext" />
+        <Property Name="SyntexPowerAppsEnvironmentsContext" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexPowerAppsEnvironmentsContext" />
         <Property Name="TlsTokenBindingPolicyValue" Type="Edm.Int32" Nullable="false" />
         <Property Name="UseFindPeopleInPeoplePicker" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UsePersistentCookiesForExplorerView" Type="Edm.Boolean" Nullable="false" />
@@ -35917,6 +35990,7 @@
         <Property Name="SyncAadB2BManagementPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyncPrivacyProfileProperties" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyntexBillingSubscriptionSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext" />
+        <Property Name="SyntexPowerAppsEnvironmentsContext" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexPowerAppsEnvironmentsContext" />
         <Property Name="TlsTokenBindingPolicyValue" Type="Edm.Int32" Nullable="false" />
         <Property Name="UseFindPeopleInPeoplePicker" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UsePersistentCookiesForExplorerView" Type="Edm.Boolean" Nullable="false" />
