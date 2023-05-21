@@ -104,6 +104,7 @@ RemoveHomeSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ |
 RemoveSPHSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveSPListItem (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+RemoveTargetedSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveTenantAdminListView (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RenderAdminListData (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RenderFilteredAdminListData (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌

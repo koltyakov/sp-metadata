@@ -5,12 +5,14 @@
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 Activate (Collection(SP.Publishing.SitePage3D)) | ✅ | ❌ | ❌ | ❌
+Active (SP.Publishing.AnnouncementsController) | ✅ | ❌ | ❌ | ❌
 Add (Collection(SP.Publishing.SubtitleFile)) | ✅ | ❌ | ❌ | ❌
 AddBannerImageFromUrl (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | ❌ | ❌
 AddImage (SP.Publishing.SitePageService) | ✅ | ✅ | ❌ | ❌
 AddImageFromExternalUrl (SP.Publishing.SitePageService) | ✅ | ✅ | ❌ | ❌
 AddImageFromUrl (SP.Publishing.PointPublishingPost) | ✅ | ❌ | ❌ | ❌
 AddOrUpdateUser (Collection(SP.Publishing.PointPublishingUser)) | ✅ | ❌ | ❌ | ❌
+Announcements | ✅ | ❌ | ❌ | ❌
 BoostNews (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 BoostNews (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 BoostNews (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
@@ -190,6 +192,7 @@ Remove (Collection(SP.Publishing.SubtitleFile)) | ✅ | ❌ | ❌ | ❌
 ResetEndpoint (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 SP_Publishing_AddinPlugin | ❌ | ❌ | ❌ | ✅
 [SP_Publishing_AddinSettings](./Functions/SP_Publishing_AddinSettings.md) | ❌ | ❌ | ❌ | ✅
+SP_Publishing_AnnouncementsController | ✅ | ❌ | ❌ | ❌
 SP_Publishing_CampaignPublicationCollection | ✅ | ❌ | ❌ | ❌
 SP_Publishing_CommunicationSite | ✅ | ✅ | ❌ | ❌
 SP_Publishing_EmbedService | ✅ | ✅ | ❌ | ❌

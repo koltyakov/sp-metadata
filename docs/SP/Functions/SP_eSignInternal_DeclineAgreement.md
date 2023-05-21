@@ -1,4 +1,4 @@
-# Function Import: SP_eSign_CancelAgreement
+# Function Import: SP_eSignInternal_DeclineAgreement
 
 > Namespace: SP
 
@@ -9,4 +9,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-documentId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+declineAgreement (Microsoft.SharePoint.ESign.Models.Requests.DeclineAgreementModel) | ✅ | ❌ | ❌ | ❌

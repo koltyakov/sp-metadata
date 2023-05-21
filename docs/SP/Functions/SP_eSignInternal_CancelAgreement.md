@@ -1,4 +1,4 @@
-# Function Import: SP_eSignInternal_EndAgreement
+# Function Import: SP_eSignInternal_CancelAgreement
 
 > Namespace: SP
 
@@ -9,4 +9,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-endAgreement (Microsoft.SharePoint.ESign.Models.Requests.EndAgreementModel) | ✅ | ❌ | ❌ | ❌
+cancelAgreement (Microsoft.SharePoint.ESign.Models.Requests.CancelAgreementModel) | ✅ | ❌ | ❌ | ❌

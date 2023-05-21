@@ -1,4 +1,4 @@
-# Function Import: SP_eSign_DeclineAgreement
+# Function Import: SP_eSignInternal_CompleteAgreement
 
 > Namespace: SP
 
@@ -9,4 +9,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-declineAgreement (Microsoft.SharePoint.ESign.Models.Requests.DeclineAgreementModel) | ✅ | ❌ | ❌ | ❌
+endAgreement (Microsoft.SharePoint.ESign.Models.Requests.EndAgreementModel) | ✅ | ❌ | ❌ | ❌

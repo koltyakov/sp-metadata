@@ -1,4 +1,4 @@
-# Function Import: SP_eSign_SignAgreement
+# Function Import: SP_eSignInternal_SignAgreement
 
 > Namespace: SP
 

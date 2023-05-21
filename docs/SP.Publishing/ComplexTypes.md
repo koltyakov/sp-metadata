@@ -5,8 +5,10 @@
 Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [AcronymInformation](./ComplexTypes/AcronymInformation.md) | ✅ | ✅ | ❌ | ❌
+[AnnouncementsData](./ComplexTypes/AnnouncementsData.md) | ✅ | ❌ | ❌ | ❌
 [ApprovalRequestCreationInfo](./ComplexTypes/ApprovalRequestCreationInfo.md) | ✅ | ❌ | ❌ | ❌
 [BoostFieldsData](./ComplexTypes/BoostFieldsData.md) | ✅ | ❌ | ❌ | ❌
+[CallToAction](./ComplexTypes/CallToAction.md) | ✅ | ❌ | ❌ | ❌
 [CampaignPublicationFieldsData](./ComplexTypes/CampaignPublicationFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [CampaignPublicationLoadMailDraftParam](./ComplexTypes/CampaignPublicationLoadMailDraftParam.md) | ✅ | ❌ | ❌ | ❌
 [CampaignPublicationMailDraftData](./ComplexTypes/CampaignPublicationMailDraftData.md) | ✅ | ❌ | ❌ | ❌
@@ -19,6 +21,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [Error](./ComplexTypes/Error.md) | ✅ | ❌ | ❌ | ❌
 [FeedVideoPageFieldsData](./ComplexTypes/FeedVideoPageFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [FilePickerOptions](./ComplexTypes/FilePickerOptions.md) | ✅ | ❌ | ❌ | ❌
+[Icon](./ComplexTypes/Icon.md) | ✅ | ❌ | ❌ | ❌
 [ItemViewsAnalyticsData](./ComplexTypes/ItemViewsAnalyticsData.md) | ✅ | ❌ | ❌ | ❌
 [PersonCore](./ComplexTypes/PersonCore.md) | ✅ | ❌ | ❌ | ❌
 [PersonCustomProperty](./ComplexTypes/PersonCustomProperty.md) | ✅ | ❌ | ❌ | ❌

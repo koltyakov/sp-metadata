@@ -15,6 +15,7 @@ Alerts | ✅ | ✅ | ❌ | ❌
 AllowedDataLocationEntityDatas | ✅ | ❌ | ❌ | ❌
 AlternateUrls | ✅ | ✅ | ✅ | ✅
 AnalyticsUsageEntrys | ✅ | ✅ | ✅ | ✅
+Announcements | ✅ | ❌ | ❌ | ❌
 ApiMetadatas | ✅ | ✅ | ✅ | ✅
 AppBdcCatalogs | ✅ | ✅ | ✅ | ✅
 AppCatalogs | ✅ | ✅ | ✅ | ✅

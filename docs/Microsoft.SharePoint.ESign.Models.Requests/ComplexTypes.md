@@ -5,6 +5,7 @@
 Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [AddAuditTrailEntryModel](./ComplexTypes/AddAuditTrailEntryModel.md) | ✅ | ❌ | ❌ | ❌
+[CancelAgreementModel](./ComplexTypes/CancelAgreementModel.md) | ✅ | ❌ | ❌ | ❌
 [CreateAgreementModel](./ComplexTypes/CreateAgreementModel.md) | ✅ | ❌ | ❌ | ❌
 [DeclineAgreementModel](./ComplexTypes/DeclineAgreementModel.md) | ✅ | ❌ | ❌ | ❌
 [EndAgreementModel](./ComplexTypes/EndAgreementModel.md) | ✅ | ❌ | ❌ | ❌
