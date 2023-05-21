@@ -4121,6 +4121,7 @@
         <End Type="SP.AppPrincipalIdentityProvider" Role="ExternalPartner" Multiplicity="0..1" />
       </Association>
       <EntityContainer Name="ApiData">
+        <EntitySet Name="Announcements" EntityType="SP.Publishing.AnnouncementsController" />
         <EntitySet Name="Apps" EntityType="Microsoft.AppServices.AppCollection" />
         <EntitySet Name="ComponentContextInfos" EntityType="Microsoft.SharePoint.Internal.ClientSideComponent.ComponentContextInfo" />
         <EntitySet Name="EEs" EntityType="SP.EmployeeEngagement" />
@@ -4672,16 +4673,16 @@
         <EntitySet Name="Utilitys" EntityType="SP.Utilities.Utility" />
         <EntitySet Name="WopiHostUtilitys" EntityType="SP.Utilities.WopiHostUtility" />
         <EntitySet Name="WopiPropertiess" EntityType="SP.Utilities.WopiProperties" />
-        <EntitySet Name="VersionPolicyManagers" EntityType="SP.VersionPolicyManager" />
-        <EntitySet Name="Views" EntityType="SP.View" />
-        <EntitySet Name="ViewFieldCollections" EntityType="SP.ViewFieldCollection" />
-        <EntitySet Name="VisualizationAppSynchronizationResults" EntityType="SP.VisualizationAppSynchronizationResult" />
         <EntitySet Name="WebInformations" EntityType="SP.WebInformation" />
         <EntitySet Name="LimitedWebPartManagers" EntityType="SP.WebParts.LimitedWebPartManager" />
         <EntitySet Name="WebParts" EntityType="SP.WebParts.WebPart" />
         <EntitySet Name="WebPartDefinitions" EntityType="SP.WebParts.WebPartDefinition" />
         <EntitySet Name="WebProxys" EntityType="SP.WebProxy" />
         <EntitySet Name="WebTemplates" EntityType="SP.WebTemplate" />
+        <EntitySet Name="VersionPolicyManagers" EntityType="SP.VersionPolicyManager" />
+        <EntitySet Name="Views" EntityType="SP.View" />
+        <EntitySet Name="ViewFieldCollections" EntityType="SP.ViewFieldCollection" />
+        <EntitySet Name="VisualizationAppSynchronizationResults" EntityType="SP.VisualizationAppSynchronizationResult" />
         <EntitySet Name="SPWorkflows" EntityType="SP.Workflow.SPWorkflow" />
         <EntitySet Name="SPWorkflowManagers" EntityType="SP.Workflow.SPWorkflowManager" />
         <EntitySet Name="WorkflowAssociations" EntityType="SP.Workflow.WorkflowAssociation" />
@@ -4730,6 +4731,7 @@
         <EntitySet Name="UserSettingsManagers" EntityType="SP.WorkManagement.OM.UserSettingsManager" />
         <EntitySet Name="ViewSelectionInfos" EntityType="SP.WorkManagement.OM.ViewSelectionInfo" />
         <EntitySet Name="SPOIdentityHelpers" EntityType="SPO.Identity.SPOIdentityHelper" />
+        <FunctionImport Name="Announcements" ReturnType="SP.Publishing.AnnouncementsController" IsComposable="true" EntitySet="Announcements" />
         <FunctionImport Name="Apps" ReturnType="Microsoft.AppServices.AppCollection" IsComposable="true" EntitySet="Apps" />
         <FunctionImport Name="ComponentContextInfo" ReturnType="Microsoft.SharePoint.Internal.ClientSideComponent.ComponentContextInfo" IsComposable="true" EntitySet="ComponentContextInfos" />
         <FunctionImport Name="contextinfo" ReturnType="SP.ContextWebInformation" IsComposable="true" />
@@ -5813,6 +5815,10 @@
         <FunctionImport Name="SP_ComplianceFoundation_ComplianceDlpWorkItemSubmitter_AddUnifiedDlpWorkItem" ReturnType="Edm.Boolean" />
         <FunctionImport Name="SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddHighPriorityRetentionWorkItem" ReturnType="Edm.Boolean" />
         <FunctionImport Name="SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddUnifiedRetentionWorkItem" ReturnType="Edm.Boolean" />
+        <FunctionImport Name="SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddUnifiedRetentionWorkItemV2" ReturnType="Collection(Edm.Boolean)">
+          <Parameter Name="sitesList" Type="Collection(Edm.Guid)" Nullable="false" />
+          <Parameter Name="workItemPriority" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="SP_ComplianceFoundation_PreserveDocumentSubmitter_PreserveCloudAttachmentIntoPHL" ReturnType="SP.ComplianceFoundation.Models.PreservedCloudAttachment">
           <Parameter Name="webId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="documentUniqueId" Type="Edm.Guid" Nullable="false" />
@@ -8026,6 +8032,10 @@
           <Parameter Name="objectId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="PS_LookupTables_InvalidNameCharacters" ReturnType="Collection(Edm.String)" IsSideEffecting="false" />
+        <FunctionImport Name="SP_Publishing_AnnouncementsController" ReturnType="SP.Publishing.AnnouncementsController" IsComposable="true" EntitySet="Announcements" />
+        <FunctionImport Name="Active" ReturnType="Collection(SP.Publishing.AnnouncementsData)" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.AnnouncementsController" />
+        </FunctionImport>
         <FunctionImport Name="SP_Publishing_CampaignPublicationCollection" ReturnType="Collection(SP.Publishing.CampaignPublication)" IsComposable="true" EntitySet="SitePageMetadatas" />
         <FunctionImport Name="BoostNews" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
@@ -12594,29 +12604,28 @@
           <Parameter Name="tenantId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_eSignInternal_AddAuditTrailEntry" ReturnType="Edm.String">
-          <Parameter Name="documentId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="addAuditTrailEntry" Type="Microsoft.SharePoint.ESign.Models.Requests.AddAuditTrailEntryModel" />
         </FunctionImport>
-        <FunctionImport Name="SP_eSignInternal_EndAgreement" ReturnType="Edm.String">
+        <FunctionImport Name="SP_eSignInternal_CancelAgreement">
+          <Parameter Name="cancelAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.CancelAgreementModel" />
+        </FunctionImport>
+        <FunctionImport Name="SP_eSignInternal_CompleteAgreement" ReturnType="Edm.String">
           <Parameter Name="endAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.EndAgreementModel" />
+        </FunctionImport>
+        <FunctionImport Name="SP_eSignInternal_DeclineAgreement">
+          <Parameter Name="declineAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.DeclineAgreementModel" />
+        </FunctionImport>
+        <FunctionImport Name="SP_eSignInternal_SignAgreement">
+          <Parameter Name="signAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.SignAgreementModel" />
         </FunctionImport>
         <FunctionImport Name="SP_eSignInternal_StartAgreement" ReturnType="Edm.String">
           <Parameter Name="startAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.CreateAgreementModel" />
-        </FunctionImport>
-        <FunctionImport Name="SP_eSign_CancelAgreement" ReturnType="Edm.String">
-          <Parameter Name="documentId" Type="Edm.Guid" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="SP_eSign_DeclineAgreement" ReturnType="Edm.String">
-          <Parameter Name="declineAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.DeclineAgreementModel" />
         </FunctionImport>
         <FunctionImport Name="SP_eSign_GetAuditTrail" ReturnType="Edm.String">
           <Parameter Name="documentId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_eSign_GetSigningFields" ReturnType="Edm.String">
           <Parameter Name="documentId" Type="Edm.Guid" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="SP_eSign_SignAgreement" ReturnType="Edm.String">
-          <Parameter Name="signAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.SignAgreementModel" />
         </FunctionImport>
         <FunctionImport Name="SP_eSign_StartAgreement" ReturnType="Edm.String">
           <Parameter Name="startAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.CreateAgreementModel" />
@@ -15602,6 +15611,10 @@
           <Parameter Name="listItemId" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="listName" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="RemoveTargetedSite" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="RemoveTenantAdminListView" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="viewId" Type="Edm.String" />
@@ -17950,14 +17963,6 @@
           <End Role="PersonalSitePartner" EntitySet="UserProfiles" />
           <End Role="PersonalSite" EntitySet="Sites" />
         </AssociationSet>
-        <AssociationSet Name="SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartnerSet" Association="SP.SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartner">
-          <End Role="ViewFieldsPartner" EntitySet="Views" />
-          <End Role="ViewFields" EntitySet="ViewFieldCollections" />
-        </AssociationSet>
-        <AssociationSet Name="SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartnerSet" Association="SP.SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartner">
-          <End Role="AppMappedViewsPartner" EntitySet="VisualizationAppSynchronizationResults" />
-          <End Role="AppMappedViews" EntitySet="Views" />
-        </AssociationSet>
         <AssociationSet Name="SP_WebParts_LimitedWebPartManager_WebParts_SP_WebParts_WebPartDefinition_WebPartsPartnerSet" Association="SP.WebParts.SP_WebParts_LimitedWebPartManager_WebParts_SP_WebParts_WebPartDefinition_WebPartsPartner">
           <End Role="WebPartsPartner" EntitySet="LimitedWebPartManagers" />
           <End Role="WebParts" EntitySet="WebPartDefinitions" />
@@ -17969,6 +17974,14 @@
         <AssociationSet Name="SP_WebParts_WebPartDefinition_WebPart_SP_WebParts_WebPart_WebPartPartnerSet" Association="SP.WebParts.SP_WebParts_WebPartDefinition_WebPart_SP_WebParts_WebPart_WebPartPartner">
           <End Role="WebPartPartner" EntitySet="WebPartDefinitions" />
           <End Role="WebPart" EntitySet="WebParts" />
+        </AssociationSet>
+        <AssociationSet Name="SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartnerSet" Association="SP.SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartner">
+          <End Role="ViewFieldsPartner" EntitySet="Views" />
+          <End Role="ViewFields" EntitySet="ViewFieldCollections" />
+        </AssociationSet>
+        <AssociationSet Name="SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartnerSet" Association="SP.SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartner">
+          <End Role="AppMappedViewsPartner" EntitySet="VisualizationAppSynchronizationResults" />
+          <End Role="AppMappedViews" EntitySet="Views" />
         </AssociationSet>
         <AssociationSet Name="SP_WorkflowServices_InteropService_Current_SP_WorkflowServices_InteropService_CurrentPartnerSet" Association="SP.WorkflowServices.SP_WorkflowServices_InteropService_Current_SP_WorkflowServices_InteropService_CurrentPartner">
           <End Role="CurrentPartner" EntitySet="InteropServices" />
@@ -18221,6 +18234,42 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.AcronymInformation">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.CallToAction/Text">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.CallToAction/Url">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.AnnouncementsData/CallToAction">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.AnnouncementsData/Dismissable">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.AnnouncementsData/ExpiresOn">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.Icon/Color">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.Icon/Name">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.AnnouncementsData/Icon">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.AnnouncementsData/ID">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.AnnouncementsData/Message">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.AnnouncementsData/PublishStartDate">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.AnnouncementsData/Title">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.BoostFieldsData/BoostOrderType">
@@ -22504,6 +22553,9 @@
       <Annotations Target="SP.ApiData/SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddUnifiedRetentionWorkItem()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddUnifiedRetentionWorkItemV2(Collection(Edm.Guid), Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_ComplianceFoundation_PreserveDocumentSubmitter_PreserveCloudAttachmentIntoPHL(Edm.Guid, Edm.Guid, Edm.String, SP.ComplianceFoundation.Models.ComplianceTagInfo)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -23279,6 +23331,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/WebState(SP.Publishing.Navigation.StructuralNavigationCacheWrapper)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetClientIdFromSPAppRequestContext(Microsoft.SharePoint.TWS.AuthTestService)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/AddThumbnailFieldData(SP.Workflow.SPWorkflowTask, Edm.Stream, Edm.String, Edm.String)">
@@ -24271,28 +24326,28 @@
       <Annotations Target="SP.ApiData/SP_Broker_AcquireOBOToken(Edm.String, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_eSignInternal_AddAuditTrailEntry(Edm.Guid, Microsoft.SharePoint.ESign.Models.Requests.AddAuditTrailEntryModel)">
+      <Annotations Target="SP.ApiData/SP_eSignInternal_AddAuditTrailEntry(Microsoft.SharePoint.ESign.Models.Requests.AddAuditTrailEntryModel)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_eSignInternal_EndAgreement(Microsoft.SharePoint.ESign.Models.Requests.EndAgreementModel)">
+      <Annotations Target="SP.ApiData/SP_eSignInternal_CancelAgreement(Microsoft.SharePoint.ESign.Models.Requests.CancelAgreementModel)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_eSignInternal_CompleteAgreement(Microsoft.SharePoint.ESign.Models.Requests.EndAgreementModel)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_eSignInternal_DeclineAgreement(Microsoft.SharePoint.ESign.Models.Requests.DeclineAgreementModel)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_eSignInternal_SignAgreement(Microsoft.SharePoint.ESign.Models.Requests.SignAgreementModel)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_eSignInternal_StartAgreement(Microsoft.SharePoint.ESign.Models.Requests.CreateAgreementModel)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SP_eSign_CancelAgreement(Edm.Guid)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SP_eSign_DeclineAgreement(Microsoft.SharePoint.ESign.Models.Requests.DeclineAgreementModel)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_eSign_GetAuditTrail(Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_eSign_GetSigningFields(Edm.Guid)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SP_eSign_SignAgreement(Microsoft.SharePoint.ESign.Models.Requests.SignAgreementModel)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_eSign_StartAgreement(Microsoft.SharePoint.ESign.Models.Requests.CreateAgreementModel)">
@@ -28956,6 +29011,24 @@
         <Property Name="Lcid" Type="Edm.Int32" Nullable="false" />
         <Property Name="Text" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="AnnouncementsData">
+        <Property Name="CallToAction" Type="SP.Publishing.CallToAction" />
+        <Property Name="Dismissable" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ExpiresOn" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Icon" Type="SP.Publishing.Icon" />
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Message" Type="Edm.String" />
+        <Property Name="PublishStartDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Title" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="CallToAction">
+        <Property Name="Text" Type="Edm.String" />
+        <Property Name="Url" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="Icon">
+        <Property Name="Color" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="BoostFieldsData">
         <Property Name="BoostOrderType" Type="Edm.Int32" Nullable="false" />
         <Property Name="BoostUntilSeen" Type="Edm.Boolean" />
@@ -29385,6 +29458,12 @@
         <Property Name="CentralAssetRepository" Type="Microsoft.SharePoint.Administration.OrgAssets" />
         <Property Name="OrgAssets" Type="Microsoft.SharePoint.Administration.OrgAssets" />
       </ComplexType>
+      <EntityType Name="AnnouncementsController">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="SitePageMetadata">
         <Key>
           <PropertyRef Name="Id" />
@@ -31620,14 +31699,19 @@
     <Schema Namespace="Microsoft.SharePoint.ESign.Models.Requests" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="AddAuditTrailEntryModel">
         <Property Name="action" Type="Edm.String" />
+        <Property Name="actionDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="documentId" Type="Edm.Guid" Nullable="false" />
         <Property Name="location" Type="Edm.String" />
         <Property Name="name" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="CancelAgreementModel">
+        <Property Name="documentId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="reason" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="CreateAgreementModel">
-        <Property Name="agreementId" Type="Edm.Guid" />
-        <Property Name="createdDateTime" Type="Edm.DateTime" />
+        <Property Name="agreementId" Type="Edm.Guid" Nullable="false" />
         <Property Name="documents" Type="Edm.String" />
-        <Property Name="expirationDateTime" Type="Edm.DateTime" />
+        <Property Name="expirationDateTime" Type="Edm.DateTime" Nullable="false" />
         <Property Name="formFieldSets" Type="Edm.String" />
         <Property Name="locale" Type="Edm.String" />
         <Property Name="message" Type="Edm.String" />
@@ -32030,7 +32114,7 @@
       <ComplexType Name="CollaborationInsightsData">
         <Property Name="collaborativeOneDriveUsers" Type="Collection(Microsoft.SharePoint.Administration.TenantAdmin.CollaborativeOneDriveUser)" />
         <Property Name="collaborativeUsers" Type="Collection(Microsoft.SharePoint.Administration.TenantAdmin.CollaborativeUser)" />
-        <Property Name="lastReportDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="lastReportDate" Type="Edm.DateTime" />
       </ComplexType>
       <ComplexType Name="CollaborativeOneDriveUser">
         <Property Name="anonymousLinkCount" Type="Edm.Int32" Nullable="false" />
@@ -32051,7 +32135,7 @@
         <Property Name="userPrincipalName" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="CollaborationInsightsOverview">
-        <Property Name="lastReportDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="lastReportDate" Type="Edm.DateTime" />
         <Property Name="totalGuests" Type="Edm.Int32" Nullable="false" />
         <Property Name="totalInternalUsers" Type="Edm.Int32" Nullable="false" />
         <Property Name="totalOneDrives" Type="Edm.Int32" Nullable="false" />
@@ -33589,6 +33673,7 @@
         <Property Name="DisableCompanyWideSharingLinks" Type="Edm.Int32" Nullable="false" />
         <Property Name="DisableFlows" Type="Edm.Int32" Nullable="false" />
         <Property Name="ExcludeBlockDownloadPolicySiteOwners" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ExcludeBlockDownloadSharePointGroups" Type="Collection(Edm.String)" />
         <Property Name="ExcludedBlockDownloadGroupIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="ExternalUserExpirationInDays" Type="Edm.Int32" Nullable="false" />
         <Property Name="GroupId" Type="Edm.Guid" Nullable="false" />
