@@ -4152,6 +4152,7 @@
         <EntitySet Name="Spsitemanagers" EntityType="Microsoft.SharePoint.Portal.SPSiteManager" />
         <EntitySet Name="StructuralNavigationCaches" EntityType="SP.Publishing.Navigation.StructuralNavigationCacheWrapper" />
         <EntitySet Name="Thememanagers" EntityType="SP.Utilities.ThemeManager" />
+        <EntitySet Name="Vivasitemanagers" EntityType="Microsoft.SharePoint.Portal.VivaSiteManager" />
         <EntitySet Name="Webs" EntityType="SP.Web" />
         <EntitySet Name="Workitems" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem" />
         <EntitySet Name="ConnectionSettingss" EntityType="Microsoft.BusinessData.Infrastructure.SecureStore.ConnectionSettings" />
@@ -4291,6 +4292,7 @@
         <EntitySet Name="StorageEntitys" EntityType="Microsoft.SharePoint.ClientSideComponent.StorageEntity" />
         <EntitySet Name="comments" EntityType="Microsoft.SharePoint.Comments.comment" />
         <EntitySet Name="CommentsAPIs" EntityType="Microsoft.SharePoint.Comments.CommentsAPI" />
+        <EntitySet Name="MigrationCompleteStateApis" EntityType="Microsoft.SharePoint.Convergence.MigrationCompleteStateApi" />
         <EntitySet Name="VivaHomes" EntityType="Microsoft.SharePoint.EmployeeEngagement.VivaHome" />
         <EntitySet Name="SPFlights" EntityType="Microsoft.SharePoint.Flighting.Runtime.SPFlight" />
         <EntitySet Name="SPTenantIBInsightsReportMetadatas" EntityType="Microsoft.SharePoint.Insights.SPTenantIBInsightsReportMetadata" />
@@ -4763,6 +4765,7 @@
         <FunctionImport Name="spsitemanager" ReturnType="Microsoft.SharePoint.Portal.SPSiteManager" IsComposable="true" EntitySet="Spsitemanagers" />
         <FunctionImport Name="StructuralNavigationCache" ReturnType="SP.Publishing.Navigation.StructuralNavigationCacheWrapper" IsComposable="true" EntitySet="StructuralNavigationCaches" />
         <FunctionImport Name="thememanager" ReturnType="SP.Utilities.ThemeManager" IsComposable="true" EntitySet="Thememanagers" />
+        <FunctionImport Name="vivasitemanager" ReturnType="Microsoft.SharePoint.Portal.VivaSiteManager" IsComposable="true" EntitySet="Vivasitemanagers" />
         <FunctionImport Name="web" ReturnType="SP.Web" IsComposable="true" EntitySet="Webs" />
         <FunctionImport Name="workitems" ReturnType="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem)" IsComposable="true" EntitySet="Workitems" />
         <FunctionImport Name="SP_ApiMetadata_Current" ReturnType="SP.ApiMetadata" IsComposable="true" EntitySet="ApiMetadatas" />
@@ -5813,6 +5816,9 @@
           <Parameter Name="holdPeriodSource" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_ComplianceFoundation_ComplianceDlpWorkItemSubmitter_AddUnifiedDlpWorkItem" ReturnType="Edm.Boolean" />
+        <FunctionImport Name="SP_ComplianceFoundation_ComplianceDlpWorkItemSubmitter_AddUnifiedDlpWorkItemV2" ReturnType="Collection(Edm.Boolean)">
+          <Parameter Name="sitesList" Type="Collection(Edm.Guid)" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddHighPriorityRetentionWorkItem" ReturnType="Edm.Boolean" />
         <FunctionImport Name="SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddUnifiedRetentionWorkItem" ReturnType="Edm.Boolean" />
         <FunctionImport Name="SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddUnifiedRetentionWorkItemV2" ReturnType="Collection(Edm.Boolean)">
@@ -9931,6 +9937,10 @@
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.SiteLinkingManager" />
           <Parameter Name="groupId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Portal_VivaSiteManager" ReturnType="Microsoft.SharePoint.Portal.VivaSiteManager" IsComposable="true" EntitySet="Vivasitemanagers" />
+        <FunctionImport Name="EnsureVivaSite" ReturnType="Microsoft.SharePoint.Portal.SPSiteCreationResponse" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Portal.VivaSiteManager" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Portal_MySiteRecommendations_FetchCacheBlob" ReturnType="Microsoft.SharePoint.Portal.Project.MyRecsCacheBlob">
           <Parameter Name="category" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="personalSiteUri" Type="Edm.String" />
@@ -10404,6 +10414,14 @@
           <Parameter Name="IsMaxQuotaCall" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_SPHSite" ReturnType="SP.SPHSite" IsComposable="true" EntitySet="SPHSites" />
+        <FunctionImport Name="AddHomeSite" ReturnType="SP.HomeSitesDetails" IsBindable="true">
+          <Parameter Name="this" Type="SP.SPHSite" />
+          <Parameter Name="siteUrl" Type="Edm.String" />
+          <Parameter Name="order" Type="Edm.Int32" />
+          <Parameter Name="audiences" Type="Collection(Edm.Guid)" Nullable="false" />
+          <Parameter Name="vivaConnectionsDefaultStart" Type="Edm.Boolean" />
+          <Parameter Name="isInDraftMode" Type="Edm.Boolean" />
+        </FunctionImport>
         <FunctionImport Name="SP_SPHSite_AddOrgNewsSite" ReturnType="Edm.Guid">
           <Parameter Name="siteUrl" Type="Edm.String" />
         </FunctionImport>
@@ -10870,6 +10888,10 @@
           <Parameter Name="this" Type="SP.EmployeeExperienceController" />
           <Parameter Name="employeeExperienceDashboardData" Type="Microsoft.SharePoint.EmployeeEngagement.Experience.DashboardContent" />
           <Parameter Name="mySiteUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Convergence_MigrationCompleteStateApi" ReturnType="Microsoft.SharePoint.Convergence.MigrationCompleteStateApi" IsComposable="true" EntitySet="MigrationCompleteStateApis" />
+        <FunctionImport Name="AddState" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Convergence.MigrationCompleteStateApi" />
         </FunctionImport>
         <FunctionImport Name="Like" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Comments.comment" />
@@ -21563,6 +21585,9 @@
       <Annotations Target="Microsoft.SharePoint.Portal.SiteIconManager">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Portal.VivaSiteManager">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.WebControls.ModuleLink">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22545,6 +22570,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_ComplianceFoundation_ComplianceDlpWorkItemSubmitter_AddUnifiedDlpWorkItem()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_ComplianceFoundation_ComplianceDlpWorkItemSubmitter_AddUnifiedDlpWorkItemV2(Collection(Edm.Guid))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_ComplianceFoundation_ComplianceRetentionWorkItemSubmitter_AddHighPriorityRetentionWorkItem()">
@@ -23576,6 +23604,9 @@
       <Annotations Target="SP.ApiData/SetSiteLogo(Microsoft.SharePoint.Portal.SiteIconManager, Edm.String, Edm.Int32, Edm.Int32, Edm.Double, Edm.Double, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/EnsureVivaSite(Microsoft.SharePoint.Portal.VivaSiteManager)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Portal_UserProfiles_SharedWithMeItems_SharedWithMe()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -23736,6 +23767,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/IsFolderUrlsInTenantCdn(Microsoft.SharePoint.TenantCdn.TenantCdnApi, Collection(Edm.String), Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/AddHomeSite(SP.SPHSite, Edm.String, Edm.Int32, Collection(Edm.Guid), Edm.Boolean, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_SPHSite_AddOrgNewsSite(Edm.String)">
@@ -29319,6 +29353,7 @@
       <ComplexType Name="TeamsPublishingStatus">
         <Property Name="AudienceId" Type="Edm.String" />
         <Property Name="ErrorCode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ErrorMessage" Type="Edm.String" />
         <Property Name="HttpStatusCode" Type="Edm.Int32" Nullable="false" />
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
@@ -30734,6 +30769,12 @@
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
       <EntityType Name="SiteLinkingManager">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="VivaSiteManager">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
@@ -32651,6 +32692,7 @@
         <Property Name="siteIBMode" Type="Edm.String" />
         <Property Name="siteIBSegmentIDs" Type="Collection(Edm.String)" />
         <Property Name="standardRolesModified" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="tenantDisplayName" Type="Edm.String" />
         <Property Name="userIsSharingViaMCS" Type="Edm.String" />
         <Property Name="userPhotoCdnBaseUrl" Type="Edm.String" />
         <Property Name="webTemplateId" Type="Edm.Int32" Nullable="false" />
@@ -35794,6 +35836,14 @@
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.EmployeeEngagement" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="VivaHome">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Microsoft.SharePoint.Convergence" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="MigrationCompleteStateApi">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
