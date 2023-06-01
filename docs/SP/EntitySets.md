@@ -261,6 +261,7 @@ MigrationCenterDeployStatuss | ✅ | ❌ | ❌ | ❌
 MigrationCenterServicess | ✅ | ❌ | ❌ | ❌
 MigrationCenterStorages | ✅ | ❌ | ❌ | ❌
 MigrationCenterTeamss | ✅ | ❌ | ❌ | ❌
+MigrationCompleteStateApis | ✅ | ❌ | ❌ | ❌
 MigrationCredentialEntityDatas | ✅ | ❌ | ❌ | ❌
 MigrationPerformanceEntityDatas | ✅ | ❌ | ❌ | ❌
 MigrationPropertiess | ✅ | ❌ | ❌ | ❌
@@ -639,6 +640,7 @@ ViewSelectionInfos | ✅ | ✅ | ✅ | ✅
 Views | ✅ | ✅ | ✅ | ✅
 VisualizationAppSynchronizationResults | ✅ | ✅ | ❌ | ❌
 VivaHomes | ✅ | ❌ | ❌ | ❌
+Vivasitemanagers | ✅ | ❌ | ❌ | ❌
 WacApis | ✅ | ❌ | ❌ | ❌
 WebInformations | ✅ | ✅ | ✅ | ✅
 WebNavigationSettingss | ❌ | ❌ | ❌ | ✅

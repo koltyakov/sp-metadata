@@ -20,6 +20,7 @@ Delete (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 Delete (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ✅ | ❌ | ❌
 EnsureTeamForGroup (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 EnsureTeamForGroupEx (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
+EnsureVivaSite (Microsoft.SharePoint.Portal.VivaSiteManager) | ✅ | ❌ | ❌ | ❌
 GetAllOrgLabels (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 GetCompatibleSegments (Microsoft.SharePoint.Portal.SPSiteManager) | ✅ | ❌ | ❌ | ❌
 GetCurrentUserJoinedTeams (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
@@ -66,6 +67,7 @@ Microsoft_SharePoint_Portal_SPSiteManager | ✅ | ✅ | ❌ | ❌
 Microsoft_SharePoint_Portal_SiteIconManager | ✅ | ❌ | ❌ | ❌
 Microsoft_SharePoint_Portal_SiteLinkingManager | ✅ | ✅ | ❌ | ❌
 <span title="Microsoft_SharePoint_Portal_SuiteNavData_GetSuiteNavData">Microsoft_SharePoint_Portal_SuiteNavData_GetSuiteN...</span> (Microsoft SharePoint Portal SuiteNavData GetSuiteNavData) | ✅ | ✅ | ✅ | ✅
+Microsoft_SharePoint_Portal_VivaSiteManager | ✅ | ❌ | ❌ | ❌
 Notebook (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ✅ | ✅ | ❌
 PinToTeam (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
 RecentAndJoinedTeams (Microsoft.SharePoint.Portal.GroupSiteManager) | ✅ | ❌ | ❌ | ❌
@@ -85,3 +87,4 @@ groupsitemanager | ✅ | ✅ | ✅ | ❌
 sitelinkingmanager | ✅ | ✅ | ❌ | ❌
 sphomeservice | ✅ | ✅ | ❌ | ❌
 spsitemanager | ✅ | ✅ | ❌ | ❌
+vivasitemanager | ✅ | ❌ | ❌ | ❌

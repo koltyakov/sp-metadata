@@ -17,3 +17,4 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SiteIconManager](./EntityTypes/SiteIconManager.md) | ✅ | ❌ | ❌ | ❌
 [SiteLinkingManager](./EntityTypes/SiteLinkingManager.md) | ✅ | ✅ | ❌ | ❌
 [SuiteNavData](./EntityTypes/SuiteNavData.md) | ✅ | ✅ | ✅ | ✅
+[VivaSiteManager](./EntityTypes/VivaSiteManager.md) | ✅ | ❌ | ❌ | ❌

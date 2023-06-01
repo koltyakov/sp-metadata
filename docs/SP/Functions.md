@@ -23,6 +23,7 @@ AddCrossFarmMessage (SP.Web) | ✅ | ❌ | ❌ | ❌
 AddCustomOrderToView (SP.List) | ✅ | ❌ | ❌ | ❌
 AddDependentLookupField (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
 AddField (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
+AddHomeSite (SP.SPHSite) | ✅ | ❌ | ❌ | ❌
 AddItem (SP.List) | ✅ | ✅ | ✅ | ✅
 AddItemUsingPath (SP.List) | ✅ | ✅ | ❌ | ❌
 AddOrUpdateSiteReference (SP.KnowledgeHub) | ✅ | ❌ | ❌ | ❌

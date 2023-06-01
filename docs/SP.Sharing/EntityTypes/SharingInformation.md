@@ -45,6 +45,7 @@ showExternalSharingWarning (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 siteIBMode (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteIBSegmentIDs (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 standardRolesModified (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+tenantDisplayName (Edm.String) | ✅ | ❌ | ❌ | ❌
 userIsSharingViaMCS (Edm.String) | ✅ | ❌ | ❌ | ❌
 userPhotoCdnBaseUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 webTemplateId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
