@@ -31,6 +31,7 @@ MediaServiceObjectDetectorVersions (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServicePhotoCategory (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceProtectionKey (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceSearchProperties (Edm.String) | ✅ | ❌ | ❌ | ❌
+MediaServiceSystemTags (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceTranscript (Edm.String) | ✅ | ❌ | ❌ | ❌
 SensitivityLabel (Edm.String) | ✅ | ❌ | ❌ | ❌
 SensitivityLabelAssignmentMethod (Edm.Int32) | ✅ | ❌ | ❌ | ❌

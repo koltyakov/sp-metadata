@@ -226,6 +226,7 @@ GetAddinPrincipalsHavingPermissionsInSites (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetAddinUninstallJobDetail (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetAllClientSideComponents (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetAllRules (SP.List) | ✅ | ❌ | ❌ | ❌
+GetAnnouncementsState (SP.EmployeeExperienceController) | ✅ | ❌ | ❌ | ❌
 GetAppBdcCatalog (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetAppBdcCatalogForAppInstance (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetAppDatabaseConnectionString (SP.AppInstance) | ✅ | ✅ | ✅ | ❌
@@ -714,6 +715,7 @@ SaveDashboard (SP.EmployeeExperienceController) | ✅ | ❌ | ❌ | ❌
 SearchLookupFieldChoices (SP.List) | ✅ | ❌ | ❌ | ❌
 Set (SP.RequestVariable) | ❌ | ❌ | ❌ | ✅
 SetAccessRequestSiteDescriptionAndUpdate (SP.Web) | ✅ | ❌ | ❌ | ❌
+SetAnnouncementState (SP.EmployeeExperienceController) | ✅ | ❌ | ❌ | ❌
 SetAppPrincipalConfiguration (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
 SetChromeOptions (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetCommentsDisabled (SP.ListItem) | ✅ | ✅ | ❌ | ❌

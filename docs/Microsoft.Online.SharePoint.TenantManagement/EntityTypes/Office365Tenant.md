@@ -200,6 +200,10 @@ SyncAadB2BManagementPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyncPrivacyProfileProperties (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyntexBillingSubscriptionSettings (Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext) | ✅ | ❌ | ❌ | ❌
 SyntexPowerAppsEnvironmentsContext (Microsoft.Online.SharePoint.TenantAdministration.SyntexPowerAppsEnvironmentsContext) | ✅ | ❌ | ❌ | ❌
+TaxonomyTaggingEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+TaxonomyTaggingSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
+TaxonomyTaggingSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+TaxonomyTaggingSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 TlsTokenBindingPolicyValue (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 UseFindPeopleInPeoplePicker (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UsePersistentCookiesForExplorerView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

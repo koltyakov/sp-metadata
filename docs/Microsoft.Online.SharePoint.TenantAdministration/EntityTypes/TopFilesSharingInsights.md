@@ -6,14 +6,19 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+Anyone (Edm.Int64) | ✅ | ❌ | ❌ | ❌
+EndDate (Edm.String) | ✅ | ❌ | ❌ | ❌
+External (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 FileName (Edm.String) | ✅ | ❌ | ❌ | ❌
-FileSensitivity (Edm.String) | ✅ | ❌ | ❌ | ❌
-IsTeamsConnected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-SharedCountTotal (Edm.Int64) | ✅ | ❌ | ❌ | ❌
-SharedExternallyCount (Edm.Int64) | ✅ | ❌ | ❌ | ❌
-SharedInternallyCount (Edm.Int64) | ✅ | ❌ | ❌ | ❌
-SharedWithGroupsCount (Edm.Int64) | ✅ | ❌ | ❌ | ❌
-SiteOwners (Edm.String) | ✅ | ❌ | ❌ | ❌
-SiteTemplate (Edm.String) | ✅ | ❌ | ❌ | ❌
-SiteTemplateId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+Internal (Edm.Int64) | ✅ | ❌ | ❌ | ❌
+IsMissing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ItemURL (Edm.String) | ✅ | ❌ | ❌ | ❌
+SchemaVersion (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+SecurityGroup (Edm.Int64) | ✅ | ❌ | ❌ | ❌
+SharePointGroup (Edm.Int64) | ✅ | ❌ | ❌ | ❌
+SiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 SiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+StartDate (Edm.String) | ✅ | ❌ | ❌ | ❌
+TenantId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+Total (Edm.Int64) | ✅ | ❌ | ❌ | ❌
+WebId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

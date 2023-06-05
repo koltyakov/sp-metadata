@@ -96,6 +96,7 @@ DDIAdapters | ✅ | ❌ | ❌ | ❌
 DashboardScriptExtensionInfos | ✅ | ✅ | ✅ | ✅
 DataServices | ❌ | ❌ | ❌ | ✅
 DateRangeCriterions | ✅ | ✅ | ✅ | ✅
+DefaultContentCenterSiteInfos | ✅ | ❌ | ❌ | ❌
 DeletedPublishedAssignments | ✅ | ✅ | ✅ | ❌
 DesignPackageMenuContentss | ✅ | ❌ | ❌ | ❌
 DeviceEntityDatas | ✅ | ❌ | ❌ | ❌
@@ -381,6 +382,8 @@ QuizUtilitiess | ❌ | ❌ | ❌ | ✅
 Quizs | ❌ | ❌ | ❌ | ✅
 QuotaMigrationApis | ✅ | ❌ | ❌ | ❌
 RankingLabelings | ✅ | ✅ | ✅ | ✅
+RansomwareAlertObjects | ✅ | ❌ | ❌ | ❌
+RansomwareIncidentObjects | ✅ | ❌ | ❌ | ❌
 RatingSettingss | ✅ | ❌ | ❌ | ❌
 RecentDocuments | ✅ | ✅ | ✅ | ❌
 RecentFileCollections | ✅ | ❌ | ❌ | ❌

@@ -48,9 +48,11 @@ ExcludeFromOfflineClient (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 ExemptFromBlockDownloadOfNonViewableFiles (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 FileSavePostProcessingEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 ForceCheckout (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+HasContentAssemblyTemplates (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HasCopyMoveRules (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HasExternalDataSource (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 HasFolderColoringFields (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+HasListBoundContentAssemblyTemplates (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Hidden (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 HighPriorityMediaProcessing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Icon (Edm.String) | ✅ | ❌ | ❌ | ❌
