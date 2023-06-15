@@ -346,6 +346,7 @@ PortalNavigationCaches | ✅ | ❌ | ❌ | ❌
 PreserveDocumentSubmitters | ✅ | ❌ | ❌ | ❌
 PrimaryCityTimes | ✅ | ✅ | ❌ | ❌
 Principals | ✅ | ✅ | ✅ | ✅
+PrioritySiteRenameJobEntityDatas | ✅ | ❌ | ❌ | ❌
 ProfileImageStores | ✅ | ✅ | ✅ | ✅
 ProfileLoaders | ✅ | ✅ | ✅ | ✅
 ProjectDetailPages | ✅ | ✅ | ✅ | ❌

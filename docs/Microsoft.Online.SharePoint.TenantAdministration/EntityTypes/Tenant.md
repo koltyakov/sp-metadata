@@ -112,6 +112,7 @@ EnableMinimumVersionRequirement (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableMipSiteLabel (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnablePromotedFileHandlers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableRestrictedAccessControl (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+EnableSensitivityLabelForPDF (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnabledFlightAllowAADB2BSkipCheckingOTP (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ExcludedBlockDownloadGroupIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 ExcludedFileExtensionsForSyncClient (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
@@ -209,6 +210,7 @@ ProvisionSharedWithEveryoneFolder (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PublicCdnAllowedFileTypes (Edm.String) | ✅ | ❌ | ❌ | ❌
 PublicCdnEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PublicCdnOrigins (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+RecycleBinRetentionPeriod (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ReduceTempTokenLifetimeEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ReduceTempTokenLifetimeValue (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 RequireAcceptingAccountMatchInvitedAccount (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

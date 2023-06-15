@@ -19,6 +19,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.Online.SharePoint.MigrationCenter.Service](./Microsoft.Online.SharePoint.MigrationCenter.Service) | ✅ | ❌ | ❌ | ❌
 [Microsoft.Online.SharePoint.MultiGeo.Service](./Microsoft.Online.SharePoint.MultiGeo.Service) | ✅ | ❌ | ❌ | ❌
 [Microsoft.Online.SharePoint.Onboarding.RestService](./Microsoft.Online.SharePoint.Onboarding.RestService) | ✅ | ❌ | ❌ | ❌
+[Microsoft.Online.SharePoint.Onboarding.RestService.PrioritySiteRename](./Microsoft.Online.SharePoint.Onboarding.RestService.PrioritySiteRename) | ✅ | ❌ | ❌ | ❌
 [Microsoft.Online.SharePoint.Onboarding.RestService.Service](./Microsoft.Online.SharePoint.Onboarding.RestService.Service) | ✅ | ❌ | ❌ | ❌
 [Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename](./Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename) | ✅ | ❌ | ❌ | ❌
 [Microsoft.Online.SharePoint.SPLogger](./Microsoft.Online.SharePoint.SPLogger) | ✅ | ❌ | ❌ | ❌

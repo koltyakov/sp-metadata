@@ -13,6 +13,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CampaignPublicationLoadMailDraftParam](./ComplexTypes/CampaignPublicationLoadMailDraftParam.md) | ✅ | ❌ | ❌ | ❌
 [CampaignPublicationMailDraftData](./ComplexTypes/CampaignPublicationMailDraftData.md) | ✅ | ❌ | ❌ | ❌
 [CampaignPublicationResetEndpointParam](./ComplexTypes/CampaignPublicationResetEndpointParam.md) | ✅ | ❌ | ❌ | ❌
+[CampaignPublicationSaveMailDraftParam](./ComplexTypes/CampaignPublicationSaveMailDraftParam.md) | ✅ | ❌ | ❌ | ❌
 [CommunicationSiteCreationRequest](./ComplexTypes/CommunicationSiteCreationRequest.md) | ✅ | ✅ | ❌ | ❌
 [CommunicationSiteCreationResponse](./ComplexTypes/CommunicationSiteCreationResponse.md) | ✅ | ✅ | ❌ | ❌
 [CopyToParams](./ComplexTypes/CopyToParams.md) | ✅ | ❌ | ❌ | ❌

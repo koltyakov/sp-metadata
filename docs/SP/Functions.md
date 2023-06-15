@@ -113,6 +113,7 @@ Delete (SP.HubSite) | ✅ | ✅ | ❌ | ❌
 DeleteAlert (Collection(SP.Alert)) | ✅ | ✅ | ❌ | ❌
 DeleteAlertAtIndex (Collection(SP.Alert)) | ✅ | ✅ | ❌ | ❌
 DeleteAll (Collection(SP.FileVersion)) | ✅ | ✅ | ✅ | ✅
+DeleteAll (Collection(SP.ListItemVersion)) | ✅ | ❌ | ❌ | ❌
 DeleteAll (Collection(SP.RecycleBinItem)) | ✅ | ✅ | ✅ | ✅
 DeleteAllSecondStageItems (Collection(SP.RecycleBinItem)) | ✅ | ✅ | ✅ | ❌
 DeleteAppPrincipal (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
@@ -517,6 +518,7 @@ ResetRoleInheritance (SP.Web) | ✅ | ✅ | ✅ | ✅
 Restore (SP.AppInstance) | ✅ | ✅ | ✅ | ❌
 Restore (SP.RecycleBinItem) | ✅ | ✅ | ✅ | ✅
 RestoreAll (Collection(SP.RecycleBinItem)) | ✅ | ✅ | ✅ | ✅
+RestoreByID (Collection(SP.ListItemVersion)) | ✅ | ❌ | ❌ | ❌
 RestoreByIds (Collection(SP.RecycleBinItem)) | ✅ | ❌ | ❌ | ❌
 RestoreByLabel (Collection(SP.FileVersion)) | ✅ | ✅ | ✅ | ✅
 RetryAllJobs (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
