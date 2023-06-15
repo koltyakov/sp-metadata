@@ -53,6 +53,7 @@
       </ComplexType>
       <ComplexType Name="PortalAndOrgNewsSiteReference">
         <Property Name="IsInDraftMode" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsVivaBackend" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="WebId" Type="Edm.Guid" Nullable="false" />
       </ComplexType>
@@ -4229,6 +4230,7 @@
         <EntitySet Name="XTenantMoveCompatibilityChecks" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.XTenantMoveCompatibilityCheck" />
         <EntitySet Name="JobEntityDatas1" EntityType="Microsoft.Online.SharePoint.Onboarding.RestService.JobEntityData" />
         <EntitySet Name="OnboardingServicesBetas" EntityType="Microsoft.Online.SharePoint.Onboarding.RestService.OnboardingServicesBeta" />
+        <EntitySet Name="PrioritySiteRenameJobEntityDatas" EntityType="Microsoft.Online.SharePoint.Onboarding.RestService.PrioritySiteRename.PrioritySiteRenameJobEntityData" />
         <EntitySet Name="SiteRenameJobEntityDatas" EntityType="Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJobEntityData" />
         <EntitySet Name="TenantRenameJobEntityDatas" EntityType="Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJobEntityData" />
         <EntitySet Name="LogExports" EntityType="Microsoft.Online.SharePoint.SPLogger.LogExport" />
@@ -6210,6 +6212,14 @@
           <Parameter Name="state" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_Onboarding_RestService_Service_SiteRenameJob" ReturnType="Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJob" IsComposable="true" EntitySet="SiteRenameJobEntityDatas" />
+        <FunctionImport Name="Cancel" ReturnType="Microsoft.Online.SharePoint.Onboarding.RestService.PrioritySiteRename.PrioritySiteRenameJob" IsBindable="true" EntitySet="PrioritySiteRenameJobEntityDatas">
+          <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.Onboarding.RestService.PrioritySiteRename.PrioritySiteRenameJob)" />
+          <Parameter Name="url" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="Get" ReturnType="Collection(Microsoft.Online.SharePoint.Onboarding.RestService.PrioritySiteRename.PrioritySiteRenameJob)" IsComposable="true" IsBindable="true" EntitySet="PrioritySiteRenameJobEntityDatas">
+          <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.Onboarding.RestService.PrioritySiteRename.PrioritySiteRenameJob)" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_Onboarding_RestService_PrioritySiteRename_PrioritySiteRenameJob" ReturnType="Microsoft.Online.SharePoint.Onboarding.RestService.PrioritySiteRename.PrioritySiteRenameJob" IsComposable="true" EntitySet="PrioritySiteRenameJobEntityDatas" />
         <FunctionImport Name="Sort" IsBindable="true">
           <Parameter Name="this" Type="Collection(SP.WorkflowServices.WorkflowDefinition)" />
         </FunctionImport>
@@ -8170,6 +8180,7 @@
         </FunctionImport>
         <FunctionImport Name="SaveMailDraft" ReturnType="SP.Publishing.CampaignPublicationMailDraftData" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+          <Parameter Name="requestParam" Type="SP.Publishing.CampaignPublicationSaveMailDraftParam" />
         </FunctionImport>
         <FunctionImport Name="SendTestEmail" ReturnType="SP.Publishing.SendTestEmailResponse" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
@@ -10436,6 +10447,7 @@
         </FunctionImport>
         <FunctionImport Name="Details" ReturnType="SP.SPHSiteReference" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.SPHSite" />
+          <Parameter Name="includeVivaSites" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_SPHSite_GetSiteReferenceXgeo" ReturnType="SP.PortalAndOrgNewsSiteReference">
           <Parameter Name="siteUrl" Type="Edm.String" />
@@ -12646,8 +12658,8 @@
         <FunctionImport Name="SP_eSignInternal_CancelAgreement">
           <Parameter Name="cancelAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.CancelAgreementModel" />
         </FunctionImport>
-        <FunctionImport Name="SP_eSignInternal_CompleteAgreement" ReturnType="Edm.String">
-          <Parameter Name="endAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.EndAgreementModel" />
+        <FunctionImport Name="SP_eSignInternal_CompleteAgreement">
+          <Parameter Name="completeAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.CompleteAgreementModel" />
         </FunctionImport>
         <FunctionImport Name="SP_eSignInternal_DeclineAgreement">
           <Parameter Name="declineAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.DeclineAgreementModel" />
@@ -13962,7 +13974,14 @@
           <Parameter Name="this" Type="Collection(SP.ListItem)" />
           <Parameter Name="sId" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="DeleteAll" IsBindable="true">
+          <Parameter Name="this" Type="Collection(SP.ListItemVersion)" />
+        </FunctionImport>
         <FunctionImport Name="GetById" ReturnType="SP.ListItemVersion" IsComposable="true" IsBindable="true" EntitySet="ListItemVersions">
+          <Parameter Name="this" Type="Collection(SP.ListItemVersion)" />
+          <Parameter Name="versionId" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="RestoreByID" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Collection(SP.ListItemVersion)" />
           <Parameter Name="versionId" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
@@ -16855,6 +16874,10 @@
         <AssociationSet Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_UserMoveJobs_Microsoft_Online_SharePoint_MultiGeo_Service_UserMoveJob_UserMoveJobsPartnerSet" Association="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_UserMoveJobs_Microsoft_Online_SharePoint_MultiGeo_Service_UserMoveJob_UserMoveJobsPartner">
           <End Role="UserMoveJobsPartner" EntitySet="MultiGeoServicesBetas" />
           <End Role="UserMoveJobs" EntitySet="UserMoveJobEntityDatas" />
+        </AssociationSet>
+        <AssociationSet Name="Microsoft_Online_SharePoint_Onboarding_RestService_OnboardingServicesBeta_PrioritySiteRenameJobs_Microsoft_Online_SharePoint_Onboarding_RestService_PrioritySiteRename_PrioritySiteRenameJob_PrioritySiteRenameJobsPartnerSet" Association="Microsoft.Online.SharePoint.Onboarding.RestService.PrioritySiteRename.Microsoft_Online_SharePoint_Onboarding_RestService_OnboardingServicesBeta_PrioritySiteRenameJobs_Microsoft_Online_SharePoint_Onboarding_RestService_PrioritySiteRename_PrioritySiteRenameJob_PrioritySiteRenameJobsPartner">
+          <End Role="PrioritySiteRenameJobsPartner" EntitySet="OnboardingServicesBetas" />
+          <End Role="PrioritySiteRenameJobs" EntitySet="PrioritySiteRenameJobEntityDatas" />
         </AssociationSet>
         <AssociationSet Name="Microsoft_Online_SharePoint_Onboarding_RestService_OnboardingServicesBeta_SiteRenameJobs_Microsoft_Online_SharePoint_Onboarding_RestService_Service_SiteRenameJob_SiteRenameJobsPartnerSet" Association="Microsoft.Online.SharePoint.Onboarding.RestService.Service.Microsoft_Online_SharePoint_Onboarding_RestService_OnboardingServicesBeta_SiteRenameJobs_Microsoft_Online_SharePoint_Onboarding_RestService_Service_SiteRenameJob_SiteRenameJobsPartner">
           <End Role="SiteRenameJobsPartner" EntitySet="OnboardingServicesBetas" />
@@ -22808,7 +22831,7 @@
       <Annotations Target="SP.ApiData/ResetEndpoint(SP.Publishing.CampaignPublication, SP.Publishing.CampaignPublicationResetEndpointParam)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SaveMailDraft(SP.Publishing.CampaignPublication)">
+      <Annotations Target="SP.ApiData/SaveMailDraft(SP.Publishing.CampaignPublication, SP.Publishing.CampaignPublicationSaveMailDraftParam)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SendTestEmail(SP.Publishing.CampaignPublication)">
@@ -23849,7 +23872,7 @@
       <Annotations Target="SP.ApiData/SP_SPHSite_AddSPHomeNavNode(Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Details(SP.SPHSite)">
+      <Annotations Target="SP.ApiData/Details(SP.SPHSite, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_SPHSite_GetSiteReferenceXgeo(Edm.String)">
@@ -24437,7 +24460,7 @@
       <Annotations Target="SP.ApiData/SP_eSignInternal_CancelAgreement(Microsoft.SharePoint.ESign.Models.Requests.CancelAgreementModel)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_eSignInternal_CompleteAgreement(Microsoft.SharePoint.ESign.Models.Requests.EndAgreementModel)">
+      <Annotations Target="SP.ApiData/SP_eSignInternal_CompleteAgreement(Microsoft.SharePoint.ESign.Models.Requests.CompleteAgreementModel)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_eSignInternal_DeclineAgreement(Microsoft.SharePoint.ESign.Models.Requests.DeclineAgreementModel)">
@@ -24711,6 +24734,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Approvals_SetProperties(Edm.String, SP.ApprovalsProperties)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/DeleteAll(Collection(SP.ListItemVersion))">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/RestoreByID(Collection(SP.ListItemVersion), Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_SharingUtility_GetUserDirectoryInfoByEmail(Edm.String)">
@@ -29552,6 +29581,9 @@
         <Property Name="ResetEndpoint" Type="Collection(Edm.String)" />
         <Property Name="TeamsTranspileContent" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="CampaignPublicationSaveMailDraftParam">
+        <Property Name="IsOpxContentModified" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="CommunicationSiteCreationResponse">
         <Property Name="SiteStatus" Type="Edm.Int32" Nullable="false" />
         <Property Name="SiteUrl" Type="Edm.String" />
@@ -31834,6 +31866,11 @@
         <Property Name="documentId" Type="Edm.Guid" Nullable="false" />
         <Property Name="reason" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="CompleteAgreementModel">
+        <Property Name="documentId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="originalDocName" Type="Edm.String" />
+        <Property Name="targetFolderUri" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="CreateAgreementModel">
         <Property Name="agreementId" Type="Edm.Guid" Nullable="false" />
         <Property Name="documents" Type="Edm.String" />
@@ -31845,10 +31882,6 @@
         <Property Name="recipientSets" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="DeclineAgreementModel">
-        <Property Name="documentId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="reason" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="EndAgreementModel">
         <Property Name="documentId" Type="Edm.Guid" Nullable="false" />
         <Property Name="reason" Type="Edm.String" />
       </ComplexType>
@@ -33643,10 +33676,13 @@
         <Property Name="Value" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPContainerTypeProperties">
+        <Property Name="AzureSubscriptionId" Type="Edm.Guid" Nullable="false" />
         <Property Name="ContainerTypeId" Type="Edm.Guid" Nullable="false" />
         <Property Name="DisplayName" Type="Edm.String" />
         <Property Name="OwningAppId" Type="Edm.Guid" Nullable="false" />
         <Property Name="OwningTenantId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Region" Type="Edm.String" />
+        <Property Name="ResourceGroup" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPListModernUXOff">
         <Property Name="IsHidden" Type="Edm.Boolean" Nullable="false" />
@@ -34104,6 +34140,7 @@
         <Property Name="EnableMipSiteLabel" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnablePromotedFileHandlers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnableRestrictedAccessControl" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="EnableSensitivityLabelForPDF" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ESignatureEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ESignatureSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
         <Property Name="ESignatureSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
@@ -34207,6 +34244,7 @@
         <Property Name="PublicCdnAllowedFileTypes" Type="Edm.String" />
         <Property Name="PublicCdnEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PublicCdnOrigins" Type="Collection(Edm.String)" />
+        <Property Name="RecycleBinRetentionPeriod" Type="Edm.Int32" Nullable="false" />
         <Property Name="ReduceTempTokenLifetimeEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ReduceTempTokenLifetimeValue" Type="Edm.Int32" Nullable="false" />
         <Property Name="RequireAcceptingAccountMatchInvitedAccount" Type="Edm.Boolean" Nullable="false" />
@@ -35264,9 +35302,24 @@
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+        <NavigationProperty Name="PrioritySiteRenameJobs" Relationship="Microsoft.Online.SharePoint.Onboarding.RestService.PrioritySiteRename.Microsoft_Online_SharePoint_Onboarding_RestService_OnboardingServicesBeta_PrioritySiteRenameJobs_Microsoft_Online_SharePoint_Onboarding_RestService_PrioritySiteRename_PrioritySiteRenameJob_PrioritySiteRenameJobsPartner" ToRole="PrioritySiteRenameJobs" FromRole="PrioritySiteRenameJobsPartner" />
         <NavigationProperty Name="SiteRenameJobs" Relationship="Microsoft.Online.SharePoint.Onboarding.RestService.Service.Microsoft_Online_SharePoint_Onboarding_RestService_OnboardingServicesBeta_SiteRenameJobs_Microsoft_Online_SharePoint_Onboarding_RestService_Service_SiteRenameJob_SiteRenameJobsPartner" ToRole="SiteRenameJobs" FromRole="SiteRenameJobsPartner" />
         <NavigationProperty Name="TenantRenameJobs" Relationship="Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.Microsoft_Online_SharePoint_Onboarding_RestService_OnboardingServicesBeta_TenantRenameJobs_Microsoft_Online_SharePoint_Onboarding_RestService_TenantRename_TenantRenameJob_TenantRenameJobsPartner" ToRole="TenantRenameJobs" FromRole="TenantRenameJobsPartner" />
       </EntityType>
+    </Schema>
+    <Schema Namespace="Microsoft.Online.SharePoint.Onboarding.RestService.PrioritySiteRename" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="PrioritySiteRenameJobEntityData" BaseType="Microsoft.Online.SharePoint.Onboarding.RestService.JobEntityData">
+        <Property Name="SiteUrl" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="PrioritySiteRenameJob" BaseType="Microsoft.Online.SharePoint.Onboarding.RestService.PrioritySiteRename.PrioritySiteRenameJobEntityData">
+        <Property Name="JobId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="PrioritizedSiteCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ResponseMessages" Type="Collection(Edm.String)" />
+      </EntityType>
+      <Association Name="Microsoft_Online_SharePoint_Onboarding_RestService_OnboardingServicesBeta_PrioritySiteRenameJobs_Microsoft_Online_SharePoint_Onboarding_RestService_PrioritySiteRename_PrioritySiteRenameJob_PrioritySiteRenameJobsPartner">
+        <End Type="Microsoft.Online.SharePoint.Onboarding.RestService.PrioritySiteRename.PrioritySiteRenameJob" Role="PrioritySiteRenameJobs" Multiplicity="*" />
+        <End Type="Microsoft.Online.SharePoint.Onboarding.RestService.OnboardingServicesBeta" Role="PrioritySiteRenameJobsPartner" Multiplicity="0..1" />
+      </Association>
     </Schema>
     <Schema Namespace="Microsoft.Online.SharePoint.Onboarding.RestService.Service" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="SiteRenameJobEntityData" BaseType="Microsoft.Online.SharePoint.Onboarding.RestService.JobEntityData">
@@ -36231,6 +36284,7 @@
         <Property Name="PublicCdnAllowedFileTypes" Type="Edm.String" />
         <Property Name="PublicCdnEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="PublicCdnOrigins" Type="Collection(Edm.String)" />
+        <Property Name="RecycleBinRetentionPeriod" Type="Edm.Int32" Nullable="false" />
         <Property Name="ReduceTempTokenLifetimeEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ReduceTempTokenLifetimeValue" Type="Edm.Int32" Nullable="false" />
         <Property Name="RequireAcceptingAccountMatchInvitedAccount" Type="Edm.Boolean" Nullable="false" />
