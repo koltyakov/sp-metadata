@@ -12,6 +12,7 @@ External (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 FileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 Internal (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 IsMissing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ItemName (Edm.String) | ✅ | ❌ | ❌ | ❌
 ItemURL (Edm.String) | ✅ | ❌ | ❌ | ❌
 SchemaVersion (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SecurityGroup (Edm.Int64) | ✅ | ❌ | ❌ | ❌

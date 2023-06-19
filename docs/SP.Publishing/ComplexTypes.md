@@ -50,6 +50,8 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [RepostPageFieldsData](./ComplexTypes/RepostPageFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [RuleErrorDetails](./ComplexTypes/RuleErrorDetails.md) | ✅ | ❌ | ❌ | ❌
 [RuleResult](./ComplexTypes/RuleResult.md) | ✅ | ❌ | ❌ | ❌
+[SchedulePublication](./ComplexTypes/SchedulePublication.md) | ✅ | ❌ | ❌ | ❌
+[SchedulePublicationResponse](./ComplexTypes/SchedulePublicationResponse.md) | ✅ | ❌ | ❌ | ❌
 [SendTestEmailResponse](./ComplexTypes/SendTestEmailResponse.md) | ✅ | ❌ | ❌ | ❌
 [SendTestTeamsMessageResponse](./ComplexTypes/SendTestTeamsMessageResponse.md) | ✅ | ❌ | ❌ | ❌
 [SharePagePreviewByEmailFieldsData](./ComplexTypes/SharePagePreviewByEmailFieldsData.md) | ✅ | ✅ | ❌ | ❌

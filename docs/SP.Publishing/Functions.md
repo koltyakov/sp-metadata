@@ -22,6 +22,7 @@ BoostNews (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 ByPage (SP.Publishing.PageDiagnosticsController) | ✅ | ❌ | ❌ | ❌
 CanCreatePage (SP.Publishing.SitePageService) | ✅ | ❌ | ❌ | ❌
 CanCreatePromotedPage (SP.Publishing.SitePageService) | ✅ | ✅ | ❌ | ❌
+CancelSchedulePublication (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 CheckOut (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 CheckOut (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 CheckOut (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
@@ -270,6 +271,7 @@ SavePageCoAuth (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 SavePageCoAuth (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
 SavePageCoAuth (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 SavePageCoAuth (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+SchedulePublication (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 SchedulePublish (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 SchedulePublish (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 SchedulePublish (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
