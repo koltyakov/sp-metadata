@@ -8154,6 +8154,9 @@
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
+        <FunctionImport Name="CancelSchedulePublication" ReturnType="SP.Publishing.SchedulePublicationResponse" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+        </FunctionImport>
         <FunctionImport Name="CreateApprovalRequest" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="creationInfo" Type="SP.Publishing.ApprovalRequestCreationInfo" />
@@ -8181,6 +8184,10 @@
         <FunctionImport Name="SaveMailDraft" ReturnType="SP.Publishing.CampaignPublicationMailDraftData" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="requestParam" Type="SP.Publishing.CampaignPublicationSaveMailDraftParam" />
+        </FunctionImport>
+        <FunctionImport Name="SchedulePublication" ReturnType="SP.Publishing.SchedulePublicationResponse" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+          <Parameter Name="schedulePublicationInfo" Type="SP.Publishing.SchedulePublication" />
         </FunctionImport>
         <FunctionImport Name="SendTestEmail" ReturnType="SP.Publishing.SendTestEmailResponse" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
@@ -10880,6 +10887,7 @@
         </FunctionImport>
         <FunctionImport Name="VivaHomeConfiguration" ReturnType="Collection(SP.KeyValue)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.EmployeeEngagement" />
+          <Parameter Name="shouldByPassCache" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="AddImage" ReturnType="SP.File" IsBindable="true" EntitySet="Files12">
           <Parameter Name="this" Type="Microsoft.SharePoint.EmployeeEngagement.VivaHome" />
@@ -15441,6 +15449,9 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="BootstrapPolicyAutomationResources" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+        </FunctionImport>
         <FunctionImport Name="CertifyInactiveSite" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteUrl" Type="Edm.String" />
@@ -18542,6 +18553,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.TeamsPublishingStatus">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.SchedulePublicationResponse">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.SendTestEmailResponse">
@@ -22810,6 +22824,9 @@
       <Annotations Target="SP.ApiData/Update(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/CancelSchedulePublication(SP.Publishing.CampaignPublication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/CreateApprovalRequest(SP.Publishing.CampaignPublication, SP.Publishing.ApprovalRequestCreationInfo)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22832,6 +22849,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SaveMailDraft(SP.Publishing.CampaignPublication, SP.Publishing.CampaignPublicationSaveMailDraftParam)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SchedulePublication(SP.Publishing.CampaignPublication, SP.Publishing.SchedulePublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SendTestEmail(SP.Publishing.CampaignPublication)">
@@ -24079,7 +24099,7 @@
       <Annotations Target="SP.ApiData/VivaHome(SP.EmployeeEngagement)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/VivaHomeConfiguration(SP.EmployeeEngagement)">
+      <Annotations Target="SP.ApiData/VivaHomeConfiguration(SP.EmployeeEngagement, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/AddImage(Microsoft.SharePoint.EmployeeEngagement.VivaHome, Edm.String, Edm.Stream)">
@@ -29485,6 +29505,10 @@
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="SchedulePublicationResponse">
+        <Property Name="PrePublishValidationErrorCode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PublishingStatus" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="SendTestEmailResponse">
         <Property Name="ErrorCode" Type="Edm.Int32" Nullable="false" />
         <Property Name="Response" Type="Edm.Boolean" Nullable="false" />
@@ -29583,6 +29607,9 @@
       </ComplexType>
       <ComplexType Name="CampaignPublicationSaveMailDraftParam">
         <Property Name="IsOpxContentModified" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="SchedulePublication">
+        <Property Name="PublishStartDate" Type="Edm.DateTime" Nullable="false" />
       </ComplexType>
       <ComplexType Name="CommunicationSiteCreationResponse">
         <Property Name="SiteStatus" Type="Edm.Int32" Nullable="false" />
@@ -32314,6 +32341,10 @@
         <Property Name="GroupId" Type="Edm.Guid" Nullable="false" />
         <Property Name="LastActivityDate" Type="Edm.DateTime" />
       </ComplexType>
+      <ComplexType Name="ImpactedAsset">
+        <Property Name="assetIdentificationId" Type="Edm.String" />
+        <Property Name="driveId" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="PageResponse">
         <Property Name="ContinuationToken" Type="Edm.String" />
         <Property Name="PageNumber" Type="Edm.Int32" Nullable="false" />
@@ -32321,6 +32352,11 @@
         <Property Name="PageSize" Type="Edm.Int32" Nullable="false" />
         <Property Name="TotalCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="TotalPages" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="RansomwareAlertProperties">
+        <Property Name="firstActivity" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="lastActivity" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="siteSubscriptionId" Type="Edm.Guid" Nullable="false" />
       </ComplexType>
       <ComplexType Name="RecentAdminActionReport">
         <Property Name="actions" Type="Edm.String" />
@@ -32373,6 +32409,20 @@
         <Property Name="policyVersion" Type="Edm.Int32" Nullable="false" />
         <Property Name="reportCreationTime" Type="Edm.DateTime" Nullable="false" />
         <Property Name="reportUpdationTime" Type="Edm.DateTime" />
+      </ComplexType>
+      <ComplexType Name="TenantAdminRansomwareAlert">
+        <Property Name="alertId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="firstActivity" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="impactedAssetLocation" Type="Edm.String" />
+        <Property Name="incidentId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="lastActivity" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="status" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="TenantAdminRansomwareIncident">
+        <Property Name="incidentId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="lastOccurrence" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="severity" Type="Edm.String" />
+        <Property Name="status" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="TenantAdminRecentActionPayload">
         <Property Name="adminActionId" Type="Edm.String" />
@@ -33694,6 +33744,15 @@
         <Property Name="Id" Type="Edm.String" />
         <Property Name="Name" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="SPSyntexApplicationProperties">
+        <Property Name="ApplicationId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ApplicationName" Type="Edm.String" />
+        <Property Name="Applications" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="AppOnlyPermissions" Type="Collection(Edm.String)" />
+        <Property Name="DelegatedPermissions" Type="Collection(Edm.String)" />
+        <Property Name="OwningApplicationId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="OwningApplicationName" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="SyntexBillingContext">
         <Property Name="ActivationStatus" Type="Edm.Int32" Nullable="false" />
         <Property Name="AzureResourceId" Type="Edm.String" />
@@ -34308,6 +34367,7 @@
         <Property Name="FileName" Type="Edm.String" />
         <Property Name="Internal" Type="Edm.Int64" Nullable="false" />
         <Property Name="IsMissing" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ItemName" Type="Edm.String" />
         <Property Name="ItemURL" Type="Edm.String" />
         <Property Name="TenantId" Type="Edm.Guid" Nullable="false" />
         <Property Name="SchemaVersion" Type="Edm.Int32" Nullable="false" />
