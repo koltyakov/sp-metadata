@@ -1,4 +1,4 @@
-# Function Import: DeleteInactiveSite
+# Function Import: GetSPOContainerByContainerSiteUrl
 
 > Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
@@ -10,5 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-siteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
-userEmail (Edm.String) | ✅ | ❌ | ❌ | ❌
+containerSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
