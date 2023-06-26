@@ -1657,6 +1657,7 @@
         <Property Name="ListId" Type="Edm.Guid" Nullable="false" />
         <Property Name="ETag" Type="Edm.String" />
         <Property Name="Exists" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ExistsAllowThrowForPolicyFailures" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ExpirationDate" Type="Edm.DateTime" />
         <Property Name="HasAlternateContentStreams" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IrmEnabled" Type="Edm.Boolean" Nullable="false" />
@@ -1768,6 +1769,7 @@
         </Key>
         <Property Name="ContentTypeOrder" Type="Collection(SP.ContentTypeId)" />
         <Property Name="Exists" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ExistsAllowThrowForPolicyFailures" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsWOPIEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ItemCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="Name" Type="Edm.String" />
@@ -14479,8 +14481,10 @@
           <Parameter Name="this" Type="SP.Site" />
           <Parameter Name="requireUseRemoteAPIs" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="UpdateInactiveSiteProperties" ReturnType="Edm.Boolean" IsBindable="true">
+        <FunctionImport Name="UpdateInactiveSiteProperties" IsBindable="true">
           <Parameter Name="this" Type="SP.Site" />
+          <Parameter Name="operation" Type="Edm.String" />
+          <Parameter Name="executionId" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="ValidateHubSiteJoinApprovalToken" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Site" />
@@ -15452,11 +15456,6 @@
         <FunctionImport Name="BootstrapPolicyAutomationResources" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
-        <FunctionImport Name="CertifyInactiveSite" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
-          <Parameter Name="siteUrl" Type="Edm.String" />
-          <Parameter Name="userEmail" Type="Edm.String" />
-        </FunctionImport>
         <FunctionImport Name="CheckTenantIntuneLicense" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
@@ -15476,11 +15475,6 @@
         <FunctionImport Name="CreateSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteCreationProperties" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCreationProperties" />
-        </FunctionImport>
-        <FunctionImport Name="DeleteInactiveSite" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
-          <Parameter Name="siteUrl" Type="Edm.String" />
-          <Parameter Name="userEmail" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="DeletePolicyDefinition" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -15616,6 +15610,18 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="cultureName" Type="Edm.String" />
           <Parameter Name="compatibilityLevel" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetSPOContainerByContainerId" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPContainerProperties" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="containerId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetSPOContainerByContainerSiteUrl" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPContainerProperties" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="containerSiteUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetSPOContainersByApplicationId" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.SPContainerProperties)" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="owningApplicationId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetSPOSiteCreationSources" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.SPOSiteCreationSource)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -15949,6 +15955,10 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="sphSiteUrl" Type="Edm.String" />
           <Parameter Name="configuration" Type="Microsoft.SharePoint.PortalAndOrgNews.HomeSiteConfigurationParam" />
+        </FunctionImport>
+        <FunctionImport Name="SetSPOContainerProperties" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="spContainerProperties" Type="Microsoft.Online.SharePoint.TenantAdministration.SPContainerProperties" />
         </FunctionImport>
         <FunctionImport Name="SwapSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -31699,11 +31709,11 @@
       </EntityType>
       <EntityType Name="CorporateCatalogAppMetadata">
         <Key>
-          <PropertyRef Name="AadAppId" />
+          <PropertyRef Name="AppCatalogVersion" />
         </Key>
-        <Property Name="AadAppId" Type="Edm.String" Nullable="false" />
+        <Property Name="AadAppId" Type="Edm.String" />
         <Property Name="AadPermissions" Type="Edm.String" />
-        <Property Name="AppCatalogVersion" Type="Edm.String" />
+        <Property Name="AppCatalogVersion" Type="Edm.String" Nullable="false" />
         <Property Name="CanUpgrade" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CDNLocation" Type="Edm.String" />
         <Property Name="ContainsTenantWideExtension" Type="Edm.Boolean" Nullable="false" />
@@ -31901,7 +31911,7 @@
       <ComplexType Name="CreateAgreementModel">
         <Property Name="agreementId" Type="Edm.Guid" Nullable="false" />
         <Property Name="documents" Type="Edm.String" />
-        <Property Name="expirationDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="expirationDateTime" Type="Edm.DateTime" />
         <Property Name="formFieldSets" Type="Edm.String" />
         <Property Name="locale" Type="Edm.String" />
         <Property Name="message" Type="Edm.String" />
@@ -33725,10 +33735,29 @@
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="SPContainerProperties">
+        <Property Name="ContainerId" Type="Edm.String" />
+        <Property Name="ContainerName" Type="Edm.String" />
+        <Property Name="ContainerSiteUrl" Type="Edm.String" />
+        <Property Name="ContainerTypeId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="CreatedBy" Type="Edm.String" />
+        <Property Name="CreatedOn" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Managers" Type="Collection(Edm.String)" />
+        <Property Name="Owners" Type="Collection(Edm.String)" />
+        <Property Name="OwningApplicationId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="OwningApplicationName" Type="Edm.String" />
+        <Property Name="Readers" Type="Collection(Edm.String)" />
+        <Property Name="SensitivityLabel" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" />
+        <Property Name="Url" Type="Edm.String" />
+        <Property Name="Writers" Type="Collection(Edm.String)" />
+      </ComplexType>
       <ComplexType Name="SPContainerTypeProperties">
         <Property Name="AzureSubscriptionId" Type="Edm.Guid" Nullable="false" />
         <Property Name="ContainerTypeId" Type="Edm.Guid" Nullable="false" />
         <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="IsBillingProfileRequired" Type="Edm.Boolean" Nullable="false" />
         <Property Name="OwningAppId" Type="Edm.Guid" Nullable="false" />
         <Property Name="OwningTenantId" Type="Edm.Guid" Nullable="false" />
         <Property Name="Region" Type="Edm.String" />
@@ -34053,10 +34082,10 @@
       </EntityType>
       <EntityType Name="TenantAdminEndpoints">
         <Key>
-          <PropertyRef Name="AADAdminCenterEndpoint" />
+          <PropertyRef Name="CdnDefaultEndpoint" />
         </Key>
-        <Property Name="AADAdminCenterEndpoint" Type="Edm.String" Nullable="false" />
-        <Property Name="CdnDefaultEndpoint" Type="Edm.String" />
+        <Property Name="AADAdminCenterEndpoint" Type="Edm.String" />
+        <Property Name="CdnDefaultEndpoint" Type="Edm.String" Nullable="false" />
         <Property Name="CFRMSGraphEndpoint" Type="Edm.String" />
         <Property Name="MiniMavenEndpoint" Type="Edm.String" />
         <Property Name="O365AdminCenterEndpoint" Type="Edm.String" />
@@ -34368,6 +34397,7 @@
         <Property Name="Internal" Type="Edm.Int64" Nullable="false" />
         <Property Name="IsMissing" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ItemName" Type="Edm.String" />
+        <Property Name="ItemType" Type="Edm.String" />
         <Property Name="ItemURL" Type="Edm.String" />
         <Property Name="TenantId" Type="Edm.Guid" Nullable="false" />
         <Property Name="SchemaVersion" Type="Edm.Int32" Nullable="false" />
