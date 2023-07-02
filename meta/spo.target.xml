@@ -88,6 +88,10 @@
       <ComplexType Name="ConfigurationData">
         <Property Name="BridgeAbsolutePath" Type="SP.ResourcePath" />
         <Property Name="IsPersonalizationEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="NavConfig" Type="SP.HomeSiteNavConfiguration" />
+        <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="VivaExperienceType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="WebId" Type="Edm.Guid" Nullable="false" />
       </ComplexType>
       <ComplexType Name="ResourcePath">
         <Property Name="DecodedUrl" Type="Edm.String" />
@@ -4220,6 +4224,7 @@
         <EntitySet Name="OrgRelationGroupManagedPaths" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationGroupManagedPath" />
         <EntitySet Name="OrgRelationNotifications" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationNotification" />
         <EntitySet Name="OrgRelationVerifications" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationVerification" />
+        <EntitySet Name="RestoreWorkflowCounts" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.RestoreWorkflowCount" />
         <EntitySet Name="StorageQuotas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota" />
         <EntitySet Name="StorageQuotaEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuotaEntityData" />
         <EntitySet Name="SupportedGeoLocationsForTenants" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.SupportedGeoLocationsForTenant" />
@@ -4315,6 +4320,7 @@
         <EntitySet Name="likedByInformations" EntityType="Microsoft.SharePoint.Likes.likedByInformation" />
         <EntitySet Name="LikesAPIs" EntityType="Microsoft.SharePoint.Likes.LikesAPI" />
         <EntitySet Name="userEntitys" EntityType="Microsoft.SharePoint.Likes.userEntity" />
+        <EntitySet Name="CardDesignPackagess" EntityType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackages" />
         <EntitySet Name="CorporateCatalogAppMetadatas" EntityType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata" />
         <EntitySet Name="SiteCollectionAppCatalogAllowedItems" EntityType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem" />
         <EntitySet Name="SiteCollectionCorporateCatalogAccessors" EntityType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor" />
@@ -6044,6 +6050,9 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
           <Parameter Name="encodedVerificationQuery" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="RestoreWorkflowCount" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.RestoreWorkflowCount" IsComposable="true" IsBindable="true" EntitySet="RestoreWorkflowCounts">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
+        </FunctionImport>
         <FunctionImport Name="UserMnAODMoveValidationResult" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.UserMnAODMoveValidationResult" IsComposable="true" IsBindable="true" EntitySet="UserMnAODMoveValidationResults">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
           <Parameter Name="encodedQuery" Type="Edm.String" />
@@ -6069,6 +6078,7 @@
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_OrgRelationVerification" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationVerification" IsComposable="true" EntitySet="OrgRelationVerifications">
           <Parameter Name="encodedVerificationQuery" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_RestoreWorkflowCount" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.RestoreWorkflowCount" IsComposable="true" EntitySet="RestoreWorkflowCounts" />
         <FunctionImport Name="GetByUrl" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob" IsComposable="true" IsBindable="true" EntitySet="SiteMoveJobEntityDatas">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob)" />
           <Parameter Name="url" Type="Edm.String" />
@@ -8179,6 +8189,9 @@
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="requestParam" Type="SP.Publishing.CampaignPublicationLoadMailDraftParam" />
         </FunctionImport>
+        <FunctionImport Name="PublishPublication" ReturnType="SP.Publishing.PublishPublicationResponse" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+        </FunctionImport>
         <FunctionImport Name="ResetEndpoint" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="requestParam" Type="SP.Publishing.CampaignPublicationResetEndpointParam" />
@@ -8197,6 +8210,13 @@
         <FunctionImport Name="SendTestTeamsMessage" ReturnType="SP.Publishing.SendTestTeamsMessageResponse" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="audienceId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="UpdateSharePointPublishingStatus" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+          <Parameter Name="destinationSiteId" Type="Edm.String" />
+          <Parameter Name="destinationUrl" Type="Edm.String" />
+          <Parameter Name="sharePointPublishingStatus" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="sharePointPublishingErrorCode" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_Publishing_CommunicationSite" ReturnType="SP.Publishing.CommunicationSite" IsComposable="true" EntitySet="CommunicationSites" />
         <FunctionImport Name="Create" ReturnType="SP.Publishing.CommunicationSiteCreationResponse" IsBindable="true">
@@ -10624,6 +10644,14 @@
         <FunctionImport Name="Upgrade" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata" />
         </FunctionImport>
+        <FunctionImport Name="Add" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackage" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackages" />
+          <Parameter Name="CardDesigns" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign)" />
+          <Parameter Name="Description" Type="Edm.String" />
+          <Parameter Name="Id" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="ShowInToolbox" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="Title" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="Add" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem" IsBindable="true" EntitySet="SiteCollectionAppCatalogAllowedItems">
           <Parameter Name="this" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem)" />
           <Parameter Name="absolutePath" Type="Edm.String" />
@@ -10746,8 +10774,10 @@
         <FunctionImport Name="SP_FavoriteLists_UpdateList">
           <Parameter Name="favoriteList" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
         </FunctionImport>
-        <FunctionImport Name="SP_FavoriteListsSubstrate_AddList">
+        <FunctionImport Name="SP_FavoriteListsSubstrate_AddList" ReturnType="Edm.String">
           <Parameter Name="list" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
+          <Parameter Name="contentSource" Type="Edm.String" />
+          <Parameter Name="query" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_FavoriteListsSubstrate_GetListsBy" ReturnType="Edm.String" IsSideEffecting="false">
           <Parameter Name="siteId" Type="Edm.String" />
@@ -13781,6 +13811,10 @@
         <FunctionImport Name="OpenBinaryStreamWithOptions" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.FileVersion" />
           <Parameter Name="openOptions" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SetExpirationDate" IsBindable="true">
+          <Parameter Name="this" Type="SP.FileVersion" />
+          <Parameter Name="expirationDate" Type="Edm.DateTime" />
         </FunctionImport>
         <FunctionImport Name="Add" ReturnType="SP.Folder" IsBindable="true" EntitySet="Folders1">
           <Parameter Name="this" Type="Collection(SP.Folder)" />
@@ -16968,6 +17002,10 @@
           <End Role="AvailableAppsPartner" EntitySet="SiteCollectionCorporateCatalogAccessors" />
           <End Role="AvailableApps" EntitySet="CorporateCatalogAppMetadatas" />
         </AssociationSet>
+        <AssociationSet Name="Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_CardDesignPackages_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CardDesignPackages_CardDesignPackagesPartnerSet" Association="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_CardDesignPackages_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CardDesignPackages_CardDesignPackagesPartner">
+          <End Role="CardDesignPackagesPartner" EntitySet="TenantCorporateCatalogAccessors" />
+          <End Role="CardDesignPackages" EntitySet="CardDesignPackagess" />
+        </AssociationSet>
         <AssociationSet Name="Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_AvailableApps_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_AvailableAppsPartnerSet" Association="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_AvailableApps_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_AvailableAppsPartner">
           <End Role="AvailableAppsPartner" EntitySet="TenantCorporateCatalogAccessors" />
           <End Role="AvailableApps" EntitySet="CorporateCatalogAppMetadatas" />
@@ -18565,6 +18603,9 @@
       <Annotations Target="SP.Publishing.TeamsPublishingStatus">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.PublishPublicationResponse">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.SchedulePublicationResponse">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19094,6 +19135,33 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.AppUpgradeAvailability/IsUpgradeAvailable">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign/Id">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign/Properties">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackage">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackage/CardDesigns">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackage/Description">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackage/Id">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackage/ShowInToolbox">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackage/Title">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Internal.AppRenderInfo">
@@ -20038,7 +20106,16 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/MachineLearningExperienceEnabled">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/TenantSyntexEnabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/TenantSyntexV2Enabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/UserSyntexEnabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled/UserSyntexV2Enabled">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub">
@@ -21173,6 +21250,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackages">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor/CardDesignPackages">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor/AvailableApps">
@@ -22414,6 +22497,9 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/SyntexBillingSubscriptionSettings">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/SyntexInternalFeatureFlags">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/SyntexPowerAppsEnvironmentsContext">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22855,6 +22941,9 @@
       <Annotations Target="SP.ApiData/LoadMailDraft(SP.Publishing.CampaignPublication, SP.Publishing.CampaignPublicationLoadMailDraftParam)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/PublishPublication(SP.Publishing.CampaignPublication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/ResetEndpoint(SP.Publishing.CampaignPublication, SP.Publishing.CampaignPublicationResetEndpointParam)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22868,6 +22957,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SendTestTeamsMessage(SP.Publishing.CampaignPublication, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/UpdateSharePointPublishingStatus(SP.Publishing.CampaignPublication, Edm.String, Edm.String, Edm.Int32, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Publishing_CommunicationSite()">
@@ -23992,6 +24084,9 @@
       <Annotations Target="SP.ApiData/Upgrade(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/Add(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackages, Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign), Edm.String, Edm.Guid, Edm.Boolean, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Add(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -24046,7 +24141,7 @@
       <Annotations Target="SP.ApiData/SP_FavoriteLists_UpdateList(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_FavoriteListsSubstrate_AddList(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)">
+      <Annotations Target="SP.ApiData/SP_FavoriteListsSubstrate_AddList(Microsoft.SharePoint.ListHome.FavoriteListHomeItem, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_FavoriteListsSubstrate_GetListsBy(Edm.String, Edm.String, Edm.Int32)">
@@ -25436,7 +25531,10 @@
         <Property Name="IsSyntexPAYGEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MachineLearningExperienceEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="TenantSyntexEnabled" Type="Edm.Boolean" />
+        <Property Name="TenantSyntexV2Enabled" Type="Edm.Boolean" />
         <Property Name="UserSyntexEnabled" Type="Edm.Boolean" />
+        <Property Name="UserSyntexV2Enabled" Type="Edm.Boolean" />
       </EntityType>
       <EntityType Name="SPMachineLearningHub">
         <Key>
@@ -26159,6 +26257,12 @@
         </Key>
         <Property Name="PartnerSiteSubscriptionId" Type="Edm.Guid" Nullable="false" />
         <Property Name="Result" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="RestoreWorkflowCount">
+        <Key>
+          <PropertyRef Name="Count" />
+        </Key>
+        <Property Name="Count" Type="Edm.Int32" Nullable="false" />
       </EntityType>
       <EntityType Name="StorageQuotaEntityData">
         <Key>
@@ -29501,6 +29605,11 @@
         <Property Name="HttpStatusCode" Type="Edm.Int32" Nullable="false" />
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="PublishPublicationResponse">
+        <Property Name="ErrorCode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Message" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="RuleErrorDetails">
         <Property Name="errorHeaders" Type="Collection(Edm.String)" />
         <Property Name="errors" Type="Collection(SP.Publishing.Error)" />
@@ -31636,6 +31745,17 @@
         <Property Name="errorMessage" Type="Edm.String" />
         <Property Name="serverRelativeUrl" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="CardDesign">
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Properties" Type="Collection(SP.KeyValue)" />
+      </ComplexType>
+      <ComplexType Name="CardDesignPackage">
+        <Property Name="CardDesigns" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign)" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ShowInToolbox" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Title" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="SPFailToTriggerUninstallAddinJobResponse">
         <Property Name="appInstanceId" Type="Edm.Guid" Nullable="false" />
         <Property Name="errorMessage" Type="Edm.String" />
@@ -31739,9 +31859,16 @@
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+        <NavigationProperty Name="CardDesignPackages" Relationship="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_CardDesignPackages_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CardDesignPackages_CardDesignPackagesPartner" ToRole="CardDesignPackages" FromRole="CardDesignPackagesPartner" />
         <NavigationProperty Name="AvailableApps" Relationship="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_AvailableApps_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_AvailableAppsPartner" ToRole="AvailableApps" FromRole="AvailableAppsPartner" />
         <NavigationProperty Name="SiteCollectionAppCatalogsSites" Relationship="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_SiteCollectionAppCatalogsSites_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_SiteCollectionAppCatalogAllowedItem_SiteCollectionAppCatalogsSitesPartner" ToRole="SiteCollectionAppCatalogsSites" FromRole="SiteCollectionAppCatalogsSitesPartner" />
         <NavigationProperty Name="StoreApps" Relationship="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_StoreApps_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_StoreAppsPartner" ToRole="StoreApps" FromRole="StoreAppsPartner" />
+      </EntityType>
+      <EntityType Name="CardDesignPackages">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
       <EntityType Name="SiteCollectionAppCatalogAllowedItem">
         <Key>
@@ -31780,6 +31907,10 @@
       <Association Name="Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_SiteCollectionCorporateCatalogAccessor_AvailableApps_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_AvailableAppsPartner">
         <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata" Role="AvailableApps" Multiplicity="*" />
         <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor" Role="AvailableAppsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_CardDesignPackages_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CardDesignPackages_CardDesignPackagesPartner">
+        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackages" Role="CardDesignPackages" Multiplicity="0..1" />
+        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" Role="CardDesignPackagesPartner" Multiplicity="0..1" />
       </Association>
       <Association Name="Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_AvailableApps_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_AvailableAppsPartner">
         <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata" Role="AvailableApps" Multiplicity="*" />
@@ -31834,7 +31965,7 @@
       </ComplexType>
       <ComplexType Name="ChatGptRequestOptions" BaseType="Microsoft.SharePoint.Internal.BaseGptRequestOptions">
         <Property Name="Messages" Type="Collection(Microsoft.SharePoint.Internal.MessageEntry)" />
-        <Property Name="Stop" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Stop" Type="Edm.String" />
         <Property Name="TopP" Type="Edm.Double" Nullable="false" />
       </ComplexType>
       <ComplexType Name="MessageEntry">
@@ -31844,7 +31975,7 @@
       <ComplexType Name="ChatGptResponseChoice">
         <Property Name="FinishReason" Type="Edm.String" />
         <Property Name="Index" Type="Edm.Int32" Nullable="false" />
-        <Property Name="Message" Type="Edm.String" />
+        <Property Name="Message" Type="Microsoft.SharePoint.Internal.MessageEntry" />
       </ComplexType>
       <ComplexType Name="ChatGptResponse" BaseType="Microsoft.SharePoint.Internal.BaseGptResponse">
         <Property Name="Choices" Type="Collection(Microsoft.SharePoint.Internal.ChatGptResponseChoice)" />
@@ -34229,6 +34360,7 @@
         <Property Name="EnablePromotedFileHandlers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnableRestrictedAccessControl" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EnableSensitivityLabelForPDF" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="EnableSiteArchive" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ESignatureEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ESignatureSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
         <Property Name="ESignatureSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
@@ -34369,6 +34501,7 @@
         <Property Name="SyncAadB2BManagementPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyncPrivacyProfileProperties" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyntexBillingSubscriptionSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext" />
+        <Property Name="SyntexInternalFeatureFlags" Type="Collection(SP.KeyValue)" />
         <Property Name="SyntexPowerAppsEnvironmentsContext" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexPowerAppsEnvironmentsContext" />
         <Property Name="TaxonomyTaggingEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="TaxonomyTaggingSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
@@ -35447,6 +35580,7 @@
         <Property Name="TargetMySiteHostUrl" Type="Edm.String" />
         <Property Name="TargetRootSiteUrl" Type="Edm.String" />
         <Property Name="UseV2TenantRename" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="UseV3TenantRename" Type="Edm.Boolean" Nullable="false" />
       </EntityType>
       <EntityType Name="TenantRenameJob" BaseType="Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJobEntityData">
         <Property Name="AttentionRequired" Type="Edm.Int32" Nullable="false" />
@@ -36403,6 +36537,7 @@
         <Property Name="SyncAadB2BManagementPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyncPrivacyProfileProperties" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyntexBillingSubscriptionSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext" />
+        <Property Name="SyntexInternalFeatureFlags" Type="Collection(SP.KeyValue)" />
         <Property Name="SyntexPowerAppsEnvironmentsContext" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexPowerAppsEnvironmentsContext" />
         <Property Name="TaxonomyTaggingEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="TaxonomyTaggingSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
