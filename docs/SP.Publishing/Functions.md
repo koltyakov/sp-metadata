@@ -185,6 +185,7 @@ PublishCoAuth (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 PublishCoAuth (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
 PublishCoAuth (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 PublishCoAuth (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+PublishPublication (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 Query (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
 QueryChannels (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
 QueryGroupNames (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | ❌ | ❌
@@ -315,4 +316,5 @@ Update (SP.Publishing.VideoChannel) | ✅ | ❌ | ❌ | ❌
 Update (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 UpdateAppPage (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
 UpdateFullPageApp (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
+UpdateSharePointPublishingStatus (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 UploadCustomThumbnail (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌

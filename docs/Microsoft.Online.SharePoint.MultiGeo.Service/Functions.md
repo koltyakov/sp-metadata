@@ -71,6 +71,7 @@ HasMnALicense (Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta
 [<span title="Microsoft_Online_SharePoint_MultiGeo_Service_OrgRelationGroupManagedPath">Microsoft_Online_SharePoint_MultiGeo_Service_OrgRe...</span> (Microsoft Online SharePoint MultiGeo Service OrgRelationGroupManagedPath)](./Functions/Microsoft_Online_SharePoint_MultiGeo_Service_OrgRelationGroupManagedPath.md) | ✅ | ❌ | ❌ | ❌
 [<span title="Microsoft_Online_SharePoint_MultiGeo_Service_OrgRelationNotification">Microsoft_Online_SharePoint_MultiGeo_Service_OrgRe...</span> (Microsoft Online SharePoint MultiGeo Service OrgRelationNotification)](./Functions/Microsoft_Online_SharePoint_MultiGeo_Service_OrgRelationNotification.md) | ✅ | ❌ | ❌ | ❌
 [<span title="Microsoft_Online_SharePoint_MultiGeo_Service_OrgRelationVerification">Microsoft_Online_SharePoint_MultiGeo_Service_OrgRe...</span> (Microsoft Online SharePoint MultiGeo Service OrgRelationVerification)](./Functions/Microsoft_Online_SharePoint_MultiGeo_Service_OrgRelationVerification.md) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_RestoreWorkflowCount">Microsoft_Online_SharePoint_MultiGeo_Service_Resto...</span> (Microsoft Online SharePoint MultiGeo Service RestoreWorkflowCount) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_SiteMoveJob">Microsoft_Online_SharePoint_MultiGeo_Service_SiteM...</span> (Microsoft Online SharePoint MultiGeo Service SiteMoveJob) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_SiteMoveJobEntityData">Microsoft_Online_SharePoint_MultiGeo_Service_SiteM...</span> (Microsoft Online SharePoint MultiGeo Service SiteMoveJobEntityData) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_StorageQuota">Microsoft_Online_SharePoint_MultiGeo_Service_Stora...</span> (Microsoft Online SharePoint MultiGeo Service StorageQuota) | ✅ | ❌ | ❌ | ❌
@@ -86,6 +87,7 @@ MnAGroupMoveValidationResult (Microsoft.Online.SharePoint.MultiGeo.Service.Multi
 OrgRelationGroupManagedPath (Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta) | ✅ | ❌ | ❌ | ❌
 OrgRelationNotification (Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta) | ✅ | ❌ | ❌ | ❌
 OrgRelationVerification (Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta) | ✅ | ❌ | ❌ | ❌
+RestoreWorkflowCount (Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJob) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJob) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty) | ✅ | ❌ | ❌ | ❌

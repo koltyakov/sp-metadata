@@ -200,6 +200,7 @@ StreamLaunchConfigUpdateCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SyncAadB2BManagementPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyncPrivacyProfileProperties (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyntexBillingSubscriptionSettings (Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext) | ✅ | ❌ | ❌ | ❌
+SyntexInternalFeatureFlags (Collection(SP.KeyValue)) | ✅ | ❌ | ❌ | ❌
 SyntexPowerAppsEnvironmentsContext (Microsoft.Online.SharePoint.TenantAdministration.SyntexPowerAppsEnvironmentsContext) | ✅ | ❌ | ❌ | ❌
 TaxonomyTaggingEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 TaxonomyTaggingSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌

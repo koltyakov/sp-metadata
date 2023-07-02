@@ -733,6 +733,7 @@ SetDashboardPersonalization (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 SetDefaultNewPageTemplateId (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetExemptFromBlockDownloadOfNonViewableFiles (SP.List) | ✅ | ✅ | ❌ | ❌
 SetExpirationDate (SP.File) | ✅ | ❌ | ❌ | ❌
+SetExpirationDate (SP.FileVersion) | ✅ | ❌ | ❌ | ❌
 SetFileUserValue (SP.File) | ✅ | ❌ | ❌ | ❌
 SetFlag (SP.UserExperienceState) | ✅ | ❌ | ❌ | ❌
 SetGlobalNavSettings (SP.Web) | ✅ | ❌ | ❌ | ❌

@@ -5,6 +5,7 @@
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 Add (Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem)) | ✅ | ✅ | ❌ | ❌
+Add (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackages) | ✅ | ❌ | ❌ | ❌
 Add (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor) | ✅ | ✅ | ❌ | ❌
 Add (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ✅ | ❌ | ❌
 AddAndDeployStoreAppById (Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor) | ✅ | ❌ | ❌ | ❌

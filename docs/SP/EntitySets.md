@@ -56,6 +56,7 @@ Calendars | ✅ | ✅ | ✅ | ❌
 CalloutInfos | ✅ | ✅ | ✅ | ✅
 CampainAnalyticss | ✅ | ❌ | ❌ | ❌
 CanCreatePageResponses | ✅ | ❌ | ❌ | ❌
+CardDesignPackagess | ✅ | ❌ | ❌ | ❌
 Cases | ❌ | ❌ | ❌ | ✅
 ChangeInformations | ❌ | ❌ | ❌ | ✅
 Changes | ✅ | ✅ | ✅ | ✅
@@ -416,6 +417,7 @@ ResourceRefs | ❌ | ❌ | ❌ | ✅
 Resources | ❌ | ❌ | ❌ | ✅
 ResponseMessageCenters | ✅ | ❌ | ❌ | ❌
 ResponseServiceHealths | ✅ | ❌ | ❌ | ❌
+RestoreWorkflowCounts | ✅ | ❌ | ❌ | ❌
 RichSharings | ✅ | ✅ | ❌ | ❌
 RoleAssignments | ✅ | ✅ | ✅ | ✅
 RoleDefinitions | ✅ | ✅ | ✅ | ✅

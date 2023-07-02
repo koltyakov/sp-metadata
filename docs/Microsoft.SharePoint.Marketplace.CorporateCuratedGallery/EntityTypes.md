@@ -4,6 +4,7 @@
 
 Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+[CardDesignPackages](./EntityTypes/CardDesignPackages.md) | ✅ | ❌ | ❌ | ❌
 [CorporateCatalogAppMetadata](./EntityTypes/CorporateCatalogAppMetadata.md) | ✅ | ✅ | ❌ | ❌
 [SPCorporateCuratedGallerySettingsBase](./EntityTypes/SPCorporateCuratedGallerySettingsBase.md) | ✅ | ❌ | ❌ | ❌
 [SPCorporateCuratedGallerySettingsFactory](./EntityTypes/SPCorporateCuratedGallerySettingsFactory.md) | ✅ | ❌ | ❌ | ❌

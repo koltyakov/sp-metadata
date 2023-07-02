@@ -113,6 +113,7 @@ EnableMipSiteLabel (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnablePromotedFileHandlers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableRestrictedAccessControl (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableSensitivityLabelForPDF (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+EnableSiteArchive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnabledFlightAllowAADB2BSkipCheckingOTP (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ExcludedBlockDownloadGroupIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 ExcludedFileExtensionsForSyncClient (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
@@ -247,6 +248,7 @@ StreamLaunchConfigUpdateCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SyncAadB2BManagementPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyncPrivacyProfileProperties (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyntexBillingSubscriptionSettings (Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext) | ✅ | ❌ | ❌ | ❌
+SyntexInternalFeatureFlags (Collection(SP.KeyValue)) | ✅ | ❌ | ❌ | ❌
 SyntexPowerAppsEnvironmentsContext (Microsoft.Online.SharePoint.TenantAdministration.SyntexPowerAppsEnvironmentsContext) | ✅ | ❌ | ❌ | ❌
 TaxonomyTaggingEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 TaxonomyTaggingSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌

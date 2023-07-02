@@ -45,6 +45,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ProfilePropertyViewEditPolicy](./ComplexTypes/ProfilePropertyViewEditPolicy.md) | ✅ | ❌ | ❌ | ❌
 [ProfileViewEditPolicies](./ComplexTypes/ProfileViewEditPolicies.md) | ✅ | ❌ | ❌ | ❌
 [PropertyValue](./ComplexTypes/PropertyValue.md) | ✅ | ❌ | ❌ | ❌
+[PublishPublicationResponse](./ComplexTypes/PublishPublicationResponse.md) | ✅ | ❌ | ❌ | ❌
 [PublishSiteInformation](./ComplexTypes/PublishSiteInformation.md) | ✅ | ❌ | ❌ | ❌
 [PublishingStatusResponse](./ComplexTypes/PublishingStatusResponse.md) | ✅ | ❌ | ❌ | ❌
 [RepostPageFieldsData](./ComplexTypes/RepostPageFieldsData.md) | ✅ | ❌ | ❌ | ❌
