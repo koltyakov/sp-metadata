@@ -323,6 +323,7 @@
         <Property Name="IsCreateOnlyLink" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsDefault" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsEditLink" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsEphemeral" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsFormsLink" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsManageListLink" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsReviewLink" Type="Edm.Boolean" Nullable="false" />
@@ -331,6 +332,7 @@
         <Property Name="LastModifiedBy" Type="SP.Sharing.Principal" />
         <Property Name="LimitUseToApplication" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LinkKind" Type="Edm.Int32" Nullable="false" />
+        <Property Name="MeetingId" Type="Edm.String" />
         <Property Name="PasswordLastModified" Type="Edm.String" />
         <Property Name="PasswordLastModifiedBy" Type="SP.Sharing.Principal" />
         <Property Name="RedeemedUsers" Type="Collection(SP.Sharing.LinkInvitation)" />
@@ -8166,17 +8168,21 @@
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
+        <FunctionImport Name="ApproveApprovalRequest" ReturnType="SP.Publishing.ApprovalRequestResponse" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+          <Parameter Name="comment" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="CancelApprovalRequest" ReturnType="SP.Publishing.ApprovalRequestResponse" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+        </FunctionImport>
         <FunctionImport Name="CancelSchedulePublication" ReturnType="SP.Publishing.SchedulePublicationResponse" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
-        <FunctionImport Name="CreateApprovalRequest" ReturnType="Edm.String" IsBindable="true">
+        <FunctionImport Name="CreateApprovalRequest" ReturnType="SP.Publishing.ApprovalRequestResponse" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="creationInfo" Type="SP.Publishing.ApprovalRequestCreationInfo" />
         </FunctionImport>
         <FunctionImport Name="DeletePublication" ReturnType="Edm.Guid" IsBindable="true">
-          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
-        </FunctionImport>
-        <FunctionImport Name="GetApprovalRequest" ReturnType="SP.ApprovalRequest" IsBindable="true" EntitySet="ApprovalRequests">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
         <FunctionImport Name="GetPrePublishValidationStatus" ReturnType="SP.Publishing.PrePublishValidationsResponse" IsSideEffecting="false" IsBindable="true">
@@ -8192,6 +8198,10 @@
         <FunctionImport Name="PublishPublication" ReturnType="SP.Publishing.PublishPublicationResponse" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
+        <FunctionImport Name="RejectApprovalRequest" ReturnType="SP.Publishing.ApprovalRequestResponse" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+          <Parameter Name="comment" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="ResetEndpoint" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="requestParam" Type="SP.Publishing.CampaignPublicationResetEndpointParam" />
@@ -8202,7 +8212,7 @@
         </FunctionImport>
         <FunctionImport Name="SchedulePublication" ReturnType="SP.Publishing.SchedulePublicationResponse" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
-          <Parameter Name="schedulePublicationInfo" Type="SP.Publishing.SchedulePublication" />
+          <Parameter Name="publishStartDate" Type="Edm.DateTime" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SendTestEmail" ReturnType="SP.Publishing.SendTestEmailResponse" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
@@ -8210,6 +8220,10 @@
         <FunctionImport Name="SendTestTeamsMessage" ReturnType="SP.Publishing.SendTestTeamsMessageResponse" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="audienceId" Type="Edm.String" />
+        </FunctionImport>
+        <EntitySet Name="ApprovalRequestSyncResponses" EntityType="SP.Publishing.ApprovalRequestSyncResponse" />
+        <FunctionImport Name="SyncApprovalRequest" ReturnType="SP.Publishing.ApprovalRequestSyncResponse" IsBindable="true" EntitySet="ApprovalRequestSyncResponses">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
         <FunctionImport Name="UpdateSharePointPublishingStatus" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
@@ -15731,6 +15745,14 @@
           <Parameter Name="listItemId" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="listName" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="RemoveSPOContainerByContainerId" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="containerId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="RemoveSPOContainerByContainerSiteUrl" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="containerSiteUrl" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="RemoveTargetedSite" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
@@ -19368,6 +19390,9 @@
       <Annotations Target="SP.SharingLinkInfo/IsEditLink">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.SharingLinkInfo/IsEphemeral">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.SharingLinkInfo/IsFormsLink">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19387,6 +19412,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.SharingLinkInfo/LimitUseToApplication">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.SharingLinkInfo/MeetingId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.SharingLinkInfo/PasswordLastModified">
@@ -19743,6 +19771,24 @@
       <Annotations Target="SP.Sharing.EntityPermission">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Sharing.EphemeralLinkRequest">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Sharing.ShareLinkSettings">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Sharing.ShareLinkSettings/embeddable">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Sharing.ShareLinkSettings/nav">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Sharing.ShareLinkSettings/scope">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Sharing.ShareLinkSettings/trackLinkUsers">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Sharing.LinkInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19789,21 +19835,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Sharing.ShareLinkRequest">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Sharing.ShareLinkSettings">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Sharing.ShareLinkSettings/embeddable">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Sharing.ShareLinkSettings/nav">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Sharing.ShareLinkSettings/scope">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.Sharing.ShareLinkSettings/trackLinkUsers">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Sharing.SharingAbilities">
@@ -21531,6 +21562,9 @@
       <Annotations Target="SP.Publishing.SitePage/CanvasJson1">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.SitePage/CheckIn">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.SitePage/CoAuthState">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22920,6 +22954,12 @@
       <Annotations Target="SP.ApiData/Update(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/ApproveApprovalRequest(SP.Publishing.CampaignPublication, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/CancelApprovalRequest(SP.Publishing.CampaignPublication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/CancelSchedulePublication(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22927,9 +22967,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/DeletePublication(SP.Publishing.CampaignPublication)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetApprovalRequest(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetPrePublishValidationStatus(SP.Publishing.CampaignPublication)">
@@ -22944,19 +22981,25 @@
       <Annotations Target="SP.ApiData/PublishPublication(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/RejectApprovalRequest(SP.Publishing.CampaignPublication, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/ResetEndpoint(SP.Publishing.CampaignPublication, SP.Publishing.CampaignPublicationResetEndpointParam)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SaveMailDraft(SP.Publishing.CampaignPublication, SP.Publishing.CampaignPublicationSaveMailDraftParam)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SchedulePublication(SP.Publishing.CampaignPublication, SP.Publishing.SchedulePublication)">
+      <Annotations Target="SP.ApiData/SchedulePublication(SP.Publishing.CampaignPublication, Edm.DateTime)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SendTestEmail(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SendTestTeamsMessage(SP.Publishing.CampaignPublication, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SyncApprovalRequest(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/UpdateSharePointPublishingStatus(SP.Publishing.CampaignPublication, Edm.String, Edm.String, Edm.Int32, Edm.Int32)">
@@ -29625,8 +29668,7 @@
         <Property Name="Title" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SchedulePublicationResponse">
-        <Property Name="PrePublishValidationErrorCode" Type="Edm.Int32" Nullable="false" />
-        <Property Name="PublishingStatus" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PublicationStatus" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="SendTestEmailResponse">
         <Property Name="ErrorCode" Type="Edm.Int32" Nullable="false" />
@@ -29708,13 +29750,18 @@
       <ComplexType Name="ViewProgressAnalyticsData" BaseType="SP.Publishing.ViewData">
         <Property Name="PercentageViewed" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="ApprovalRequestResponse">
+        <Property Name="ApprovalStatus" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PublicationStatus" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="ApprovalRequestCreationInfo">
-        <Property Name="ApprovalType" Type="Edm.String" />
         <Property Name="Approvers" Type="Collection(Edm.String)" />
         <Property Name="AwaitAll" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="ChannelId" Type="Edm.String" />
+        <Property Name="DistributionChannel" Type="Collection(Edm.String)" />
         <Property Name="Important" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Message" Type="Edm.String" />
+        <Property Name="PublishOption" Type="Edm.String" />
+        <Property Name="SchedulePublishDate" Type="Edm.DateTime" Nullable="false" />
       </ComplexType>
       <ComplexType Name="CampaignPublicationLoadMailDraftParam">
         <Property Name="IsPreview" Type="Edm.Boolean" Nullable="false" />
@@ -29726,9 +29773,6 @@
       </ComplexType>
       <ComplexType Name="CampaignPublicationSaveMailDraftParam">
         <Property Name="IsOpxContentModified" Type="Edm.Boolean" Nullable="false" />
-      </ComplexType>
-      <ComplexType Name="SchedulePublication">
-        <Property Name="PublishStartDate" Type="Edm.DateTime" Nullable="false" />
       </ComplexType>
       <ComplexType Name="CommunicationSiteCreationResponse">
         <Property Name="SiteStatus" Type="Edm.Int32" Nullable="false" />
@@ -29815,6 +29859,7 @@
         <Property Name="AlternativeUrlMap" Type="Edm.String" />
         <Property Name="CanvasContent1" Type="Edm.String" />
         <Property Name="CanvasJson1" Type="Edm.String" />
+        <Property Name="CheckIn" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CoAuthState" Type="SP.Publishing.SitePageCoAuthState" />
         <Property Name="IsLikedByCurrentUser" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsTemplate" Type="Edm.Boolean" Nullable="false" />
@@ -30192,6 +30237,13 @@
         <Property Name="Choice" Type="Edm.Int32" Nullable="false" />
         <Property Name="IsSelected" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Url" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="ApprovalRequestSyncResponse">
+        <Key>
+          <PropertyRef Name="ApprovalRequest" />
+        </Key>
+        <Property Name="ApprovalRequest" Type="Edm.String" Nullable="false" />
+        <Property Name="PublicationStatus" Type="Edm.Int32" Nullable="false" />
       </EntityType>
       <Association Name="SP_Publishing_SitePageMetadata_CreatedBy_SP_Publishing_UserInfo_CreatedByPartner">
         <End Type="SP.Publishing.UserInfo" Role="CreatedBy" Multiplicity="0..1" />
@@ -32742,6 +32794,31 @@
         <Property Name="resolvedEntity" Type="Edm.String" />
         <Property Name="role" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="EphemeralLinkRequest">
+        <Property Name="meetingId" Type="Edm.String" />
+        <Property Name="peoplePickerInput" Type="Edm.String" />
+        <Property Name="settings" Type="SP.Sharing.ShareLinkSettings" />
+      </ComplexType>
+      <ComplexType Name="ShareLinkSettings">
+        <Property Name="allowAnonymousAccess" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="applicationLink" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="description" Type="Edm.String" />
+        <Property Name="embeddable" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="expiration" Type="Edm.String" />
+        <Property Name="inviteesToRemove" Type="Collection(SP.Sharing.Principal)" />
+        <Property Name="limitUseToApplication" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="linkKind" Type="Edm.Int32" Nullable="false" />
+        <Property Name="nav" Type="Edm.String" />
+        <Property Name="nonDefaultLink" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="password" Type="Edm.String" />
+        <Property Name="passwordProtected" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="restrictShareMembership" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="role" Type="Edm.Int32" Nullable="false" />
+        <Property Name="scope" Type="Edm.Int32" Nullable="false" />
+        <Property Name="shareId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="trackLinkUsers" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="updatePassword" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="LinkInfo">
         <Property Name="isInherited" Type="Edm.Boolean" Nullable="false" />
         <Property Name="linkDetails" Type="SP.SharingLinkInfo" />
@@ -32799,26 +32876,6 @@
         <Property Name="linkKind" Type="Edm.Int32" Nullable="false" />
         <Property Name="peoplePickerInput" Type="Edm.String" />
         <Property Name="settings" Type="SP.Sharing.ShareLinkSettings" />
-      </ComplexType>
-      <ComplexType Name="ShareLinkSettings">
-        <Property Name="allowAnonymousAccess" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="applicationLink" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="description" Type="Edm.String" />
-        <Property Name="embeddable" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="expiration" Type="Edm.String" />
-        <Property Name="inviteesToRemove" Type="Collection(SP.Sharing.Principal)" />
-        <Property Name="limitUseToApplication" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="linkKind" Type="Edm.Int32" Nullable="false" />
-        <Property Name="nav" Type="Edm.String" />
-        <Property Name="nonDefaultLink" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="password" Type="Edm.String" />
-        <Property Name="passwordProtected" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="restrictShareMembership" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="role" Type="Edm.Int32" Nullable="false" />
-        <Property Name="scope" Type="Edm.Int32" Nullable="false" />
-        <Property Name="shareId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="trackLinkUsers" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="updatePassword" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
       <ComplexType Name="SharingAbilities">
         <Property Name="anonymousLinkAbilities" Type="SP.Sharing.SharingLinkAbilities" />
@@ -34285,6 +34342,7 @@
         <Property Name="BccExternalSharingInvitations" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BccExternalSharingInvitationsList" Type="Edm.String" />
         <Property Name="BlockAccessOnUnmanagedDevices" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="BlockAppAccessWithAuthenticationContext" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BlockDownloadFileTypeIds" Type="Collection(Edm.Int32)" Nullable="false" />
         <Property Name="BlockDownloadFileTypePolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BlockDownloadLinksFileType" Type="Edm.Int32" Nullable="false" />
@@ -36368,6 +36426,7 @@
         <Property Name="BccExternalSharingInvitations" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BccExternalSharingInvitationsList" Type="Edm.String" />
         <Property Name="BlockAccessOnUnmanagedDevices" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="BlockAppAccessWithAuthenticationContext" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BlockDownloadFileTypeIds" Type="Collection(Edm.Int32)" Nullable="false" />
         <Property Name="BlockDownloadFileTypePolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="BlockDownloadLinksFileType" Type="Edm.Int32" Nullable="false" />
