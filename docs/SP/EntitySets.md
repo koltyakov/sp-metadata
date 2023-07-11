@@ -34,6 +34,7 @@ AppPrincipals | ❌ | ❌ | ❌ | ✅
 AppSiteContextUtilitys | ✅ | ✅ | ❌ | ❌
 AppTilePropertiess | ✅ | ✅ | ❌ | ❌
 AppTiles | ✅ | ✅ | ✅ | ❌
+ApprovalRequestSyncResponses | ✅ | ❌ | ❌ | ❌
 ApprovalRequests | ✅ | ❌ | ❌ | ❌
 ApprovalsManagers | ✅ | ❌ | ❌ | ❌
 Approvalss | ✅ | ❌ | ❌ | ❌

@@ -32,6 +32,7 @@ AuthContextResilienceMode (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 BccExternalSharingInvitations (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BccExternalSharingInvitationsList (Edm.String) | ✅ | ❌ | ❌ | ❌
 BlockAccessOnUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+BlockAppAccessWithAuthenticationContext (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockDownloadFileTypeIds (Collection(Edm.Int32)) | ✅ | ❌ | ❌ | ❌
 BlockDownloadFileTypePolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockDownloadLinksFileType (Edm.Int32) | ✅ | ❌ | ❌ | ❌

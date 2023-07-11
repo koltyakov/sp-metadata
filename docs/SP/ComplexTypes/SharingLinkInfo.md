@@ -21,6 +21,7 @@ IsAddressBarLink (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsCreateOnlyLink (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsDefault (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsEditLink (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
+IsEphemeral (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsFormsLink (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 IsManageListLink (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsReviewLink (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
@@ -29,6 +30,7 @@ LastModified (Edm.String) | ✅ | ✅ | ❌ | ❌
 LastModifiedBy (SP.Sharing.Principal) | ✅ | ✅ | ❌ | ❌
 LimitUseToApplication (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LinkKind (Edm.Int32) | ✅ | ✅ | ✅ | ❌
+MeetingId (Edm.String) | ✅ | ❌ | ❌ | ❌
 PasswordLastModified (Edm.String) | ✅ | ❌ | ❌ | ❌
 PasswordLastModifiedBy (SP.Sharing.Principal) | ✅ | ❌ | ❌ | ❌
 RedeemedUsers (Collection(SP.Sharing.LinkInvitation)) | ✅ | ❌ | ❌ | ❌

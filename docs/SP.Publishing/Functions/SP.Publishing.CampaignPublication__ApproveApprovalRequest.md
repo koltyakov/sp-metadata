@@ -1,4 +1,4 @@
-# Function Import: SchedulePublication
+# Function Import: ApproveApprovalRequest
 
 > Namespace: SP.Publishing
 
@@ -10,4 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-publishStartDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
+comment (Edm.String) | ✅ | ❌ | ❌ | ❌

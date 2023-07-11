@@ -13,6 +13,7 @@ AddImageFromExternalUrl (SP.Publishing.SitePageService) | ✅ | ✅ | ❌ | ❌
 AddImageFromUrl (SP.Publishing.PointPublishingPost) | ✅ | ❌ | ❌ | ❌
 AddOrUpdateUser (Collection(SP.Publishing.PointPublishingUser)) | ✅ | ❌ | ❌ | ❌
 Announcements | ✅ | ❌ | ❌ | ❌
+ApproveApprovalRequest (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 BoostNews (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 BoostNews (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 BoostNews (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
@@ -22,6 +23,7 @@ BoostNews (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 ByPage (SP.Publishing.PageDiagnosticsController) | ✅ | ❌ | ❌ | ❌
 CanCreatePage (SP.Publishing.SitePageService) | ✅ | ❌ | ❌ | ❌
 CanCreatePromotedPage (SP.Publishing.SitePageService) | ✅ | ✅ | ❌ | ❌
+CancelApprovalRequest (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 CancelSchedulePublication (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 CheckOut (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 CheckOut (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
@@ -93,7 +95,6 @@ Feed (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
 FeedTargeted (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
 GetAcronymsAndColors (SP.Publishing.SharePointHomeServiceManager) | ✅ | ✅ | ❌ | ❌
 GetAllVideos (SP.Publishing.VideoChannel) | ✅ | ❌ | ❌ | ❌
-GetApprovalRequest (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 GetByEntityId (Collection(SP.Publishing.TopicSitePage)) | ✅ | ❌ | ❌ | ❌
 GetByEntityIdAndCulture (Collection(SP.Publishing.TopicSitePage)) | ✅ | ❌ | ❌ | ❌
 GetById (Collection(SP.Publishing.PointPublishingPost)) | ✅ | ❌ | ❌ | ❌
@@ -189,6 +190,7 @@ PublishPublication (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 Query (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
 QueryChannels (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
 QueryGroupNames (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | ❌ | ❌
+RejectApprovalRequest (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 Related (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
 Remove (Collection(SP.Publishing.SubtitleFile)) | ✅ | ❌ | ❌ | ❌
 ResetEndpoint (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
@@ -300,6 +302,7 @@ StartCoAuth (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 StartCoAuth (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 Status (SP.Publishing.CommunicationSite) | ✅ | ✅ | ❌ | ❌
 Subtitles (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
+SyncApprovalRequest (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 Templates (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
 ThumbnailStream (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 Thumbnails (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌

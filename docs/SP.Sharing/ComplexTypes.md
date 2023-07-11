@@ -10,6 +10,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [DomainRestrictionSettings](./ComplexTypes/DomainRestrictionSettings.md) | ✅ | ✅ | ❌ | ❌
 [EmailData](./ComplexTypes/EmailData.md) | ✅ | ✅ | ❌ | ❌
 [EntityPermission](./ComplexTypes/EntityPermission.md) | ✅ | ✅ | ❌ | ❌
+[EphemeralLinkRequest](./ComplexTypes/EphemeralLinkRequest.md) | ✅ | ❌ | ❌ | ❌
 [LinkInfo](./ComplexTypes/LinkInfo.md) | ✅ | ✅ | ❌ | ❌
 [LinkInvitation](./ComplexTypes/LinkInvitation.md) | ✅ | ✅ | ❌ | ❌
 [LinkParameters](./ComplexTypes/LinkParameters.md) | ✅ | ❌ | ❌ | ❌

@@ -6,9 +6,10 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-ApprovalType (Edm.String) | ✅ | ❌ | ❌ | ❌
 Approvers (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 AwaitAll (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-ChannelId (Edm.String) | ✅ | ❌ | ❌ | ❌
+DistributionChannel (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 Important (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Message (Edm.String) | ✅ | ❌ | ❌ | ❌
+PublishOption (Edm.String) | ✅ | ❌ | ❌ | ❌
+SchedulePublishDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
