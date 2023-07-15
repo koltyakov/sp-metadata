@@ -31881,11 +31881,11 @@
       </EntityType>
       <EntityType Name="CorporateCatalogAppMetadata">
         <Key>
-          <PropertyRef Name="AadAppId" />
+          <PropertyRef Name="AppCatalogVersion" />
         </Key>
-        <Property Name="AadAppId" Type="Edm.String" Nullable="false" />
+        <Property Name="AadAppId" Type="Edm.String" />
         <Property Name="AadPermissions" Type="Edm.String" />
-        <Property Name="AppCatalogVersion" Type="Edm.String" />
+        <Property Name="AppCatalogVersion" Type="Edm.String" Nullable="false" />
         <Property Name="CanUpgrade" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CDNLocation" Type="Edm.String" />
         <Property Name="ContainsTenantWideExtension" Type="Edm.Boolean" Nullable="false" />
@@ -34270,10 +34270,10 @@
       </EntityType>
       <EntityType Name="TenantAdminEndpoints">
         <Key>
-          <PropertyRef Name="AADAdminCenterEndpoint" />
+          <PropertyRef Name="CdnDefaultEndpoint" />
         </Key>
-        <Property Name="AADAdminCenterEndpoint" Type="Edm.String" Nullable="false" />
-        <Property Name="CdnDefaultEndpoint" Type="Edm.String" />
+        <Property Name="AADAdminCenterEndpoint" Type="Edm.String" />
+        <Property Name="CdnDefaultEndpoint" Type="Edm.String" Nullable="false" />
         <Property Name="CFRMSGraphEndpoint" Type="Edm.String" />
         <Property Name="MiniMavenEndpoint" Type="Edm.String" />
         <Property Name="O365AdminCenterEndpoint" Type="Edm.String" />
