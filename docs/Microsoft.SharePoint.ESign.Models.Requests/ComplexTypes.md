@@ -9,4 +9,5 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CompleteAgreementModel](./ComplexTypes/CompleteAgreementModel.md) | ✅ | ❌ | ❌ | ❌
 [CreateAgreementModel](./ComplexTypes/CreateAgreementModel.md) | ✅ | ❌ | ❌ | ❌
 [DeclineAgreementModel](./ComplexTypes/DeclineAgreementModel.md) | ✅ | ❌ | ❌ | ❌
+[RemoveAuditTrailEntryModel](./ComplexTypes/RemoveAuditTrailEntryModel.md) | ✅ | ❌ | ❌ | ❌
 [SignAgreementModel](./ComplexTypes/SignAgreementModel.md) | ✅ | ❌ | ❌ | ❌

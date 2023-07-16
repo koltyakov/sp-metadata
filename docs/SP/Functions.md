@@ -705,6 +705,7 @@ SP_Web_GetContextWebThemeData | ✅ | ✅ | ✅ | ❌
 [SP_eSignInternal_CancelAgreement](./Functions/SP_eSignInternal_CancelAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_CompleteAgreement](./Functions/SP_eSignInternal_CompleteAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_DeclineAgreement](./Functions/SP_eSignInternal_DeclineAgreement.md) | ✅ | ❌ | ❌ | ❌
+[SP_eSignInternal_RemoveAuditTrailEntry](./Functions/SP_eSignInternal_RemoveAuditTrailEntry.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_SignAgreement](./Functions/SP_eSignInternal_SignAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_StartAgreement](./Functions/SP_eSignInternal_StartAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSign_GetAuditTrail](./Functions/SP_eSign_GetAuditTrail.md) | ✅ | ❌ | ❌ | ❌
