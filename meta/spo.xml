@@ -1857,6 +1857,7 @@
         <Property Name="ImagePath" Type="SP.ResourcePath" />
         <Property Name="ImageUrl" Type="Edm.String" />
         <Property Name="DefaultSensitivityLabelForLibrary" Type="Edm.String" />
+        <Property Name="SensitivityLabelToEncryptOnDOwnloadForLibrary" Type="Edm.String" />
         <Property Name="IrmEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IrmExpire" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IrmReject" Type="Edm.Boolean" Nullable="false" />
@@ -5436,6 +5437,12 @@
           <Parameter Name="groupId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" IsComposable="true" EntitySet="Machinelearnings" />
+        <FunctionImport Name="CheckAIBuilderAccess" ReturnType="SP.FlowSynchronizationResult" IsComposable="true" IsBindable="true" EntitySet="FlowSynchronizationResults">
+          <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
+          <Parameter Name="environmentName" Type="Edm.String" />
+          <Parameter Name="isTestEnvironment" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="userId" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="GetByContentTypeId" ReturnType="Microsoft.Office.Server.ContentCenter.SyntexModelsLandingInfo" IsComposable="true" IsBindable="true" EntitySet="SyntexModelsLandingInfos">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
           <Parameter Name="contentTypeId" Type="Edm.String" />
@@ -12712,11 +12719,14 @@
         <FunctionImport Name="SP_eSignInternal_CancelAgreement">
           <Parameter Name="cancelAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.CancelAgreementModel" />
         </FunctionImport>
-        <FunctionImport Name="SP_eSignInternal_CompleteAgreement">
+        <FunctionImport Name="SP_eSignInternal_CompleteAgreement" ReturnType="Edm.DateTime">
           <Parameter Name="completeAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.CompleteAgreementModel" />
         </FunctionImport>
         <FunctionImport Name="SP_eSignInternal_DeclineAgreement">
           <Parameter Name="declineAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.DeclineAgreementModel" />
+        </FunctionImport>
+        <FunctionImport Name="SP_eSignInternal_RemoveAuditTrailEntry">
+          <Parameter Name="removeAuditTrailEntry" Type="Microsoft.SharePoint.ESign.Models.Requests.RemoveAuditTrailEntryModel" />
         </FunctionImport>
         <FunctionImport Name="SP_eSignInternal_SignAgreement">
           <Parameter Name="signAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.SignAgreementModel" />
@@ -14529,7 +14539,7 @@
           <Parameter Name="this" Type="SP.Site" />
           <Parameter Name="requireUseRemoteAPIs" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="UpdateInactiveSiteProperties" IsBindable="true">
+        <FunctionImport Name="UpdateInactiveSiteProperties" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.Site" />
           <Parameter Name="operation" Type="Edm.String" />
           <Parameter Name="executionId" Type="Edm.Int32" Nullable="false" />
@@ -22672,6 +22682,9 @@
       <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningHub()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/CheckAIBuilderAccess(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Edm.String, Edm.Boolean, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetByContentTypeId(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -24632,6 +24645,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_eSignInternal_DeclineAgreement(Microsoft.SharePoint.ESign.Models.Requests.DeclineAgreementModel)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_eSignInternal_RemoveAuditTrailEntry(Microsoft.SharePoint.ESign.Models.Requests.RemoveAuditTrailEntryModel)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_eSignInternal_SignAgreement(Microsoft.SharePoint.ESign.Models.Requests.SignAgreementModel)">
@@ -31881,11 +31897,11 @@
       </EntityType>
       <EntityType Name="CorporateCatalogAppMetadata">
         <Key>
-          <PropertyRef Name="AppCatalogVersion" />
+          <PropertyRef Name="AadAppId" />
         </Key>
-        <Property Name="AadAppId" Type="Edm.String" />
+        <Property Name="AadAppId" Type="Edm.String" Nullable="false" />
         <Property Name="AadPermissions" Type="Edm.String" />
-        <Property Name="AppCatalogVersion" Type="Edm.String" Nullable="false" />
+        <Property Name="AppCatalogVersion" Type="Edm.String" />
         <Property Name="CanUpgrade" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CDNLocation" Type="Edm.String" />
         <Property Name="ContainsTenantWideExtension" Type="Edm.Boolean" Nullable="false" />
@@ -32104,6 +32120,10 @@
       <ComplexType Name="DeclineAgreementModel">
         <Property Name="documentId" Type="Edm.Guid" Nullable="false" />
         <Property Name="reason" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="RemoveAuditTrailEntryModel">
+        <Property Name="auditTrailEntryId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="documentId" Type="Edm.Guid" Nullable="false" />
       </ComplexType>
       <ComplexType Name="SignAgreementModel">
         <Property Name="agreements" Type="Edm.String" />
@@ -34270,10 +34290,10 @@
       </EntityType>
       <EntityType Name="TenantAdminEndpoints">
         <Key>
-          <PropertyRef Name="CdnDefaultEndpoint" />
+          <PropertyRef Name="AADAdminCenterEndpoint" />
         </Key>
-        <Property Name="AADAdminCenterEndpoint" Type="Edm.String" />
-        <Property Name="CdnDefaultEndpoint" Type="Edm.String" Nullable="false" />
+        <Property Name="AADAdminCenterEndpoint" Type="Edm.String" Nullable="false" />
+        <Property Name="CdnDefaultEndpoint" Type="Edm.String" />
         <Property Name="CFRMSGraphEndpoint" Type="Edm.String" />
         <Property Name="MiniMavenEndpoint" Type="Edm.String" />
         <Property Name="O365AdminCenterEndpoint" Type="Edm.String" />
