@@ -6,11 +6,15 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+ClientIP (Edm.String) | ✅ | ❌ | ❌ | ❌
 CorrelationId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+CreationTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 EventData (Edm.String) | ✅ | ❌ | ❌ | ❌
 EventDataParsed (Microsoft.SharePoint.Administration.TenantAdmin.EventData) | ✅ | ❌ | ❌ | ❌
 EventSource (Edm.String) | ✅ | ❌ | ❌ | ❌
 Id (Edm.String) | ✅ | ❌ | ❌ | ❌
+ItemType (Edm.String) | ✅ | ❌ | ❌ | ❌
+ListItemUniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 ModifiedProperties (Collection(Microsoft.SharePoint.Administration.TenantAdmin.ModifiedProperty)) | ✅ | ❌ | ❌ | ❌
 Name (Edm.String) | ✅ | ❌ | ❌ | ❌
 NewValue (Edm.String) | ✅ | ❌ | ❌ | ❌

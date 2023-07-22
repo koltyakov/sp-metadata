@@ -6,6 +6,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+ContainerApiUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 ContainerId (Edm.String) | ✅ | ❌ | ❌ | ❌
 ContainerName (Edm.String) | ✅ | ❌ | ❌ | ❌
 ContainerSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
@@ -20,5 +21,4 @@ OwningApplicationName (Edm.String) | ✅ | ❌ | ❌ | ❌
 Readers (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 SensitivityLabel (Edm.String) | ✅ | ❌ | ❌ | ❌
 Status (Edm.String) | ✅ | ❌ | ❌ | ❌
-Url (Edm.String) | ✅ | ❌ | ❌ | ❌
 Writers (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌

@@ -6,5 +6,8 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-assetIdentificationId (Edm.String) | ✅ | ❌ | ❌ | ❌
+actionPerformedBy (Edm.String) | ✅ | ❌ | ❌ | ❌
+assetIdentificationId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+assetUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 driveId (Edm.String) | ✅ | ❌ | ❌ | ❌
+siteOwner (Edm.String) | ✅ | ❌ | ❌ | ❌

@@ -194,6 +194,7 @@ RejectApprovalRequest (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | �
 Related (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
 Remove (Collection(SP.Publishing.SubtitleFile)) | ✅ | ❌ | ❌ | ❌
 ResetEndpoint (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
+SPSiteValidator (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 SP_Publishing_AddinPlugin | ❌ | ❌ | ❌ | ✅
 [SP_Publishing_AddinSettings](./Functions/SP_Publishing_AddinSettings.md) | ❌ | ❌ | ❌ | ✅
 SP_Publishing_AnnouncementsController | ✅ | ❌ | ❌ | ❌

@@ -19,7 +19,6 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [MailFromAddress](./ComplexTypes/MailFromAddress.md) | ✅ | ❌ | ❌ | ❌
 [MessagesFieldsData](./ComplexTypes/MessagesFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [MobileNotificationIsEnabledForSharepoint](./ComplexTypes/MobileNotificationIsEnabledForSharepoint.md) | ✅ | ❌ | ❌ | ❌
-[NewPortalAsDefault](./ComplexTypes/NewPortalAsDefault.md) | ✅ | ❌ | ❌ | ❌
 [NewSiteManagedPath](./ComplexTypes/NewSiteManagedPath.md) | ✅ | ❌ | ❌ | ❌
 [NewSubsiteInModernOffForAll](./ComplexTypes/NewSubsiteInModernOffForAll.md) | ✅ | ❌ | ❌ | ❌
 [NewSubsiteInModernOffForModernTemplates](./ComplexTypes/NewSubsiteInModernOffForModernTemplates.md) | ✅ | ❌ | ❌ | ❌

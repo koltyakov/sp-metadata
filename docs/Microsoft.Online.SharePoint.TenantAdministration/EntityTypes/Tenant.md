@@ -212,6 +212,7 @@ ProvisionSharedWithEveryoneFolder (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PublicCdnAllowedFileTypes (Edm.String) | ✅ | ❌ | ❌ | ❌
 PublicCdnEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PublicCdnOrigins (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+ReactivationCost (Edm.Double) | ✅ | ❌ | ❌ | ❌
 RecycleBinRetentionPeriod (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ReduceTempTokenLifetimeEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ReduceTempTokenLifetimeValue (Edm.Int32) | ✅ | ❌ | ❌ | ❌

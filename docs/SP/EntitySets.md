@@ -476,6 +476,7 @@ SearchObjectOwners | ❌ | ❌ | ❌ | ✅
 SearchServices | ✅ | ✅ | ✅ | ✅
 SearchSettings | ✅ | ✅ | ❌ | ❌
 Searchs | ✅ | ❌ | ❌ | ❌
+SectionDesignIdeasApis | ✅ | ❌ | ❌ | ❌
 SecurableObjectExtensionss | ✅ | ✅ | ❌ | ❌
 SecurableObjects | ✅ | ✅ | ✅ | ✅
 ServerSettingss | ✅ | ✅ | ✅ | ✅

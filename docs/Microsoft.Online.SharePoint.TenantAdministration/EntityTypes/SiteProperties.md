@@ -10,6 +10,7 @@ AllowDownloadingNonWebViewableFiles (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowEditing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowSelfServiceUpgrade (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AnonymousLinkExpirationInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+ArchiveStatus (Edm.String) | ✅ | ❌ | ❌ | ❌
 AuthContextStrength (Edm.String) | ✅ | ❌ | ❌ | ❌
 AuthenticationContextLimitedAccess (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AuthenticationContextName (Edm.String) | ✅ | ❌ | ❌ | ❌
