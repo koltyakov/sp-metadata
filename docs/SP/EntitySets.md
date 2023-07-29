@@ -317,6 +317,7 @@ OrgRelationNotifications | ✅ | ❌ | ❌ | ❌
 OrgRelationVerifications | ✅ | ❌ | ❌ | ❌
 PageCopyResponses | ✅ | ❌ | ❌ | ❌
 PageDiagnostics | ✅ | ❌ | ❌ | ❌
+PageMoveResponses | ✅ | ❌ | ❌ | ❌
 PageSizess | ✅ | ✅ | ❌ | ❌
 PeopleManagers | ✅ | ✅ | ✅ | ✅
 PerfRecommendations | ✅ | ❌ | ❌ | ❌

@@ -15,6 +15,7 @@ AwaitAll (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Details (Edm.String) | ✅ | ❌ | ❌ | ❌
 Id (Edm.String) | ✅ | ❌ | ❌ | ❌
 PartnerMetadata (Edm.String) | ✅ | ❌ | ❌ | ❌
+Priority (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Responses (Edm.String) | ✅ | ❌ | ❌ | ❌
 Status (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ❌ | ❌ | ❌

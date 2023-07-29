@@ -1,4 +1,4 @@
-# Function Import: GetIncidents
+# Function Import: GetRansomwareEvents
 
 > Namespace: Microsoft.Online.SharePoint.TenantAdministration
 

@@ -25,6 +25,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [FilePickerOptions](./ComplexTypes/FilePickerOptions.md) | ✅ | ❌ | ❌ | ❌
 [Icon](./ComplexTypes/Icon.md) | ✅ | ❌ | ❌ | ❌
 [ItemViewsAnalyticsData](./ComplexTypes/ItemViewsAnalyticsData.md) | ✅ | ❌ | ❌ | ❌
+[PageMoveParams](./ComplexTypes/PageMoveParams.md) | ✅ | ❌ | ❌ | ❌
 [PersonCore](./ComplexTypes/PersonCore.md) | ✅ | ❌ | ❌ | ❌
 [PersonCustomProperty](./ComplexTypes/PersonCustomProperty.md) | ✅ | ❌ | ❌ | ❌
 [PersonIdentity](./ComplexTypes/PersonIdentity.md) | ✅ | ❌ | ❌ | ❌

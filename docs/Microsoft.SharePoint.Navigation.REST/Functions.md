@@ -5,6 +5,7 @@
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 CurrentResourcesNav (Microsoft.SharePoint.Navigation.REST.NavigationServiceRest) | ✅ | ❌ | ❌ | ❌
+EnableGlobalNavigation (Microsoft.SharePoint.Navigation.REST.HomeSiteNavigationSettings) | ✅ | ❌ | ❌ | ❌
 GetPublishingNavigationProviderType (Microsoft.SharePoint.Navigation.REST.NavigationServiceRest) | ✅ | ✅ | ❌ | ❌
 GlobalNav (Microsoft.SharePoint.Navigation.REST.NavigationServiceRest) | ✅ | ❌ | ❌ | ❌
 GlobalNavEnabled (Microsoft.SharePoint.Navigation.REST.NavigationServiceRest) | ✅ | ❌ | ❌ | ❌

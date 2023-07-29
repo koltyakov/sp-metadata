@@ -35,6 +35,7 @@ PasswordLastModified (Edm.String) | ✅ | ❌ | ❌ | ❌
 PasswordLastModifiedBy (SP.Sharing.Principal) | ✅ | ❌ | ❌ | ❌
 RedeemedUsers (Collection(SP.Sharing.LinkInvitation)) | ✅ | ❌ | ❌ | ❌
 RequiresPassword (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
+RestrictToExistingRelationships (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RestrictedShareMembership (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 Scope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ShareId (Edm.Guid) | ✅ | ✅ | ❌ | ❌

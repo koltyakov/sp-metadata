@@ -13,6 +13,7 @@ CanvasContentOnly (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ComponentJSONString (Edm.String) | ✅ | ❌ | ❌ | ❌
 CreateCopyForEdit (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CreateIfMissing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+DeleteSourcePage (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DestinationPageUniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 DestinationType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DestinationWebUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

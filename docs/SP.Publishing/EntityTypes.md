@@ -16,6 +16,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [FeedVideoPage](./EntityTypes/FeedVideoPage.md) | ✅ | ❌ | ❌ | ❌
 [HighlightsInfo](./EntityTypes/HighlightsInfo.md) | ✅ | ❌ | ❌ | ❌
 [PageDiagnosticsController](./EntityTypes/PageDiagnosticsController.md) | ✅ | ❌ | ❌ | ❌
+[PageMoveResponse](./EntityTypes/PageMoveResponse.md) | ✅ | ❌ | ❌ | ❌
 [PersonMagazine](./EntityTypes/PersonMagazine.md) | ✅ | ❌ | ❌ | ❌
 [PointPublishingDocProps](./EntityTypes/PointPublishingDocProps.md) | ✅ | ❌ | ❌ | ❌
 [PointPublishingMagazineProps](./EntityTypes/PointPublishingMagazineProps.md) | ✅ | ❌ | ❌ | ❌

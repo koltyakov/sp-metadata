@@ -78,7 +78,6 @@ DisableAddToOneDrive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableBackToClassic (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableCustomAppAuthentication (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableDocumentLibraryDefaultLabeling (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-DisableListSync (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableOutlookPSTVersionTrimming (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisablePersonalListCreation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableReportProblemDialog (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -118,6 +117,7 @@ EnableSiteArchive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnabledFlightAllowAADB2BSkipCheckingOTP (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ExcludedBlockDownloadGroupIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 ExcludedFileExtensionsForSyncClient (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+ExemptNativeUsersFromTenantLevelRestricedAccessControl (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ExpireVersionsAfterDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ExternalServicesEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ExternalUserExpirationRequired (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

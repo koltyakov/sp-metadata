@@ -165,8 +165,15 @@ IsContentTypeAvailable (Collection(SP.Publishing.RepostPage)) | ✅ | ❌ | ❌ 
 IsContentTypeAvailable (Collection(SP.Publishing.TopicSitePage)) | ✅ | ❌ | ❌ | ❌
 IsSitePage (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
 LoadMailDraft (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
+Move (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
+Move (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
+Move (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
+Move (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
+Move (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
+Move (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 Newest (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
 PageDiagnostics | ✅ | ❌ | ❌ | ❌
+PageMoveStatus (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
 Popular (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
 PromoteToNews (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 PromoteToNews (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌

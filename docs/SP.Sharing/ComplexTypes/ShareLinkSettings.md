@@ -19,6 +19,7 @@ nonDefaultLink (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 password (Edm.String) | ✅ | ✅ | ❌ | ❌
 passwordProtected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 restrictShareMembership (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
+restrictToExistingRelationships (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 role (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 scope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 shareId (Edm.Guid) | ✅ | ✅ | ❌ | ❌

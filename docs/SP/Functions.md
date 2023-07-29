@@ -389,6 +389,7 @@ GetSPAppContextAsStream (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetSharedWithUsers (SP.ObjectSharingInformation) | ✅ | ✅ | ✅ | ✅
 GetSharingLinkData (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetSitePageCopyToStatus (SP.Web) | ✅ | ❌ | ❌ | ❌
+GetSitePageMoveStatus (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetSiteUrlByHubSiteId (Collection(SP.HubSite)) | ✅ | ❌ | ❌ | ❌
 GetSiteUserIncludingDeletedByPuid (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetSpecialFolderUrl (SP.List) | ✅ | ✅ | ✅ | ❌
@@ -702,6 +703,7 @@ SP_Web_GetContextWebThemeData | ✅ | ✅ | ✅ | ❌
 [SP_Web_GetSharingLinkKind](./Functions/SP_Web_GetSharingLinkKind.md) | ✅ | ✅ | ❌ | ❌
 [SP_Web_GetWebUrlFromPageUrl](./Functions/SP_Web_GetWebUrlFromPageUrl.md) | ✅ | ✅ | ✅ | ✅
 [SP_eSignInternal_AddAuditTrailEntry](./Functions/SP_eSignInternal_AddAuditTrailEntry.md) | ✅ | ❌ | ❌ | ❌
+[SP_eSignInternal_BillAgreement](./Functions/SP_eSignInternal_BillAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_CancelAgreement](./Functions/SP_eSignInternal_CancelAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_CompleteAgreement](./Functions/SP_eSignInternal_CompleteAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_DeclineAgreement](./Functions/SP_eSignInternal_DeclineAgreement.md) | ✅ | ❌ | ❌ | ❌

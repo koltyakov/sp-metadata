@@ -26,5 +26,6 @@ canManageSubmitOnlyLink (SP.Sharing.SharingAbilityStatus) | ✅ | ❌ | ❌ | �
 linkExpiration (SP.Sharing.SharingLinkExpirationAbilityStatus) | ✅ | ✅ | ❌ | ❌
 passwordProtected (SP.Sharing.SharingLinkPasswordAbilityStatus) | ✅ | ✅ | ❌ | ❌
 submitOnlylinkExpiration (SP.Sharing.SharingLinkExpirationAbilityStatus) | ✅ | ❌ | ❌ | ❌
+supportsRestrictToExistingRelationships (SP.Sharing.SharingAbilityStatus) | ✅ | ❌ | ❌ | ❌
 supportsRestrictedView (SP.Sharing.SharingAbilityStatus) | ✅ | ❌ | ❌ | ❌
 trackLinkUsers (SP.Sharing.SharingAbilityStatus) | ✅ | ❌ | ❌ | ❌

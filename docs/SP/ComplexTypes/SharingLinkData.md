@@ -23,6 +23,7 @@ LinkKind (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 ObjectType (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 ObjectUniqueId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 RequiresPassword (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
+RestrictToExistingRelationships (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RestrictedShareMembership (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 ShareId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 TrackLinkUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
