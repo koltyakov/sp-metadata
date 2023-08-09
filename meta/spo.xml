@@ -263,6 +263,12 @@
         <Property Name="Source" Type="Edm.String" />
         <Property Name="StartPosition" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="RecipientLimitsInfo">
+        <Property Name="AliasOnly" Type="Edm.Int32" Nullable="false" />
+        <Property Name="EmailOnly" Type="Edm.Int32" Nullable="false" />
+        <Property Name="MixedRecipients" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ObjectIdOnly" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="RelatedItem">
         <Property Name="IconUrl" Type="Edm.String" />
         <Property Name="ItemId" Type="Edm.Int32" Nullable="false" />
@@ -1358,6 +1364,7 @@
         <NavigationProperty Name="RootWeb" Relationship="SP.SP_Site_RootWeb_SP_Web_RootWebPartner" ToRole="RootWeb" FromRole="RootWebPartner" />
         <NavigationProperty Name="SecondaryContact" Relationship="SP.SP_Site_SecondaryContact_SP_User_SecondaryContactPartner" ToRole="SecondaryContact" FromRole="SecondaryContactPartner" />
         <NavigationProperty Name="UserCustomActions" Relationship="SP.SP_Site_UserCustomActions_SP_UserCustomAction_UserCustomActionsPartner" ToRole="UserCustomActions" FromRole="UserCustomActionsPartner" />
+        <NavigationProperty Name="VersionPolicyForNewLibrariesTemplate" Relationship="SP.SP_Site_VersionPolicyForNewLibrariesTemplate_SP_SiteVersionPolicyManager_VersionPolicyForNewLibrariesTemplatePartner" ToRole="VersionPolicyForNewLibrariesTemplate" FromRole="VersionPolicyForNewLibrariesTemplatePartner" />
       </EntityType>
       <EntityType Name="Audit">
         <Key>
@@ -2421,6 +2428,13 @@
         <NavigationProperty Name="Fields" Relationship="SP.SP_ListItemVersion_Fields_SP_Field_FieldsPartner" ToRole="Fields" FromRole="FieldsPartner" />
         <NavigationProperty Name="FileVersion" Relationship="SP.SP_ListItemVersion_FileVersion_SP_FileVersion_FileVersionPartner" ToRole="FileVersion" FromRole="FileVersionPartner" />
       </EntityType>
+      <EntityType Name="SiteVersionPolicyManager">
+        <Key>
+          <PropertyRef Name="MajorVersionLimit" />
+        </Key>
+        <Property Name="MajorVersionLimit" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="VersionPolicies" Relationship="SP.SP_SiteVersionPolicyManager_VersionPolicies_SP_VersionPolicyManager_VersionPoliciesPartner" ToRole="VersionPolicies" FromRole="VersionPoliciesPartner" />
+      </EntityType>
       <EntityType Name="TranslationStatusCollection">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
@@ -3416,6 +3430,10 @@
         <End Type="SP.UserCustomAction" Role="UserCustomActions" Multiplicity="*" />
         <End Type="SP.Site" Role="UserCustomActionsPartner" Multiplicity="0..1" />
       </Association>
+      <Association Name="SP_Site_VersionPolicyForNewLibrariesTemplate_SP_SiteVersionPolicyManager_VersionPolicyForNewLibrariesTemplatePartner">
+        <End Type="SP.SiteVersionPolicyManager" Role="VersionPolicyForNewLibrariesTemplate" Multiplicity="0..1" />
+        <End Type="SP.Site" Role="VersionPolicyForNewLibrariesTemplatePartner" Multiplicity="0..1" />
+      </Association>
       <Association Name="SP_Group_Owner_SP_Principal_OwnerPartner">
         <End Type="SP.Principal" Role="Owner" Multiplicity="0..1" />
         <End Type="SP.Group" Role="OwnerPartner" Multiplicity="0..1" />
@@ -3896,6 +3914,10 @@
         <End Type="SP.FileVersion" Role="FileVersion" Multiplicity="0..1" />
         <End Type="SP.ListItemVersion" Role="FileVersionPartner" Multiplicity="0..1" />
       </Association>
+      <Association Name="SP_SiteVersionPolicyManager_VersionPolicies_SP_VersionPolicyManager_VersionPoliciesPartner">
+        <End Type="SP.VersionPolicyManager" Role="VersionPolicies" Multiplicity="0..1" />
+        <End Type="SP.SiteVersionPolicyManager" Role="VersionPoliciesPartner" Multiplicity="0..1" />
+      </Association>
       <Association Name="PS_DraftAssignment_Owner_SP_User_OwnerPartner">
         <End Type="SP.User" Role="Owner" Multiplicity="0..1" />
         <End Type="PS.DraftAssignment" Role="OwnerPartner" Multiplicity="0..1" />
@@ -4140,6 +4162,7 @@
         <EntitySet Name="Announcements" EntityType="SP.Publishing.AnnouncementsController" />
         <EntitySet Name="Apps" EntityType="Microsoft.AppServices.AppCollection" />
         <EntitySet Name="ComponentContextInfos" EntityType="Microsoft.SharePoint.Internal.ClientSideComponent.ComponentContextInfo" />
+        <EntitySet Name="ConsumerPermissions" EntityType="Microsoft.SharePoint.Convergence.ConsumerPermissions" />
         <EntitySet Name="EEs" EntityType="SP.EmployeeEngagement" />
         <EntitySet Name="EmployeeExperiences" EntityType="SP.EmployeeExperienceController" />
         <EntitySet Name="Files" EntityType="MS.FileServices.FileSystemItem" />
@@ -4326,7 +4349,7 @@
         <EntitySet Name="likedByInformations" EntityType="Microsoft.SharePoint.Likes.likedByInformation" />
         <EntitySet Name="LikesAPIs" EntityType="Microsoft.SharePoint.Likes.LikesAPI" />
         <EntitySet Name="userEntitys" EntityType="Microsoft.SharePoint.Likes.userEntity" />
-        <EntitySet Name="CardDesignPackagess" EntityType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackages" />
+        <EntitySet Name="CardDesignss" EntityType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesigns" />
         <EntitySet Name="CorporateCatalogAppMetadatas" EntityType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata" />
         <EntitySet Name="SiteCollectionAppCatalogAllowedItems" EntityType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem" />
         <EntitySet Name="SiteCollectionCorporateCatalogAccessors" EntityType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor" />
@@ -4641,6 +4664,7 @@
         <EntitySet Name="SharingUtilitys" EntityType="SP.SharingUtility" />
         <EntitySet Name="SiteHealthSummarys" EntityType="SP.SiteHealth.SiteHealthSummary" />
         <EntitySet Name="SiteUrls" EntityType="SP.SiteUrl" />
+        <EntitySet Name="SiteVersionPolicyManagers" EntityType="SP.SiteVersionPolicyManager" />
         <EntitySet Name="SmartCaches" EntityType="SP.SmartCache" />
         <EntitySet Name="SocialAnnouncementManagers" EntityType="SP.Social.SocialAnnouncementManager" />
         <EntitySet Name="SocialFeedManagers" EntityType="SP.Social.SocialFeedManager" />
@@ -4760,6 +4784,7 @@
         <FunctionImport Name="Announcements" ReturnType="SP.Publishing.AnnouncementsController" IsComposable="true" EntitySet="Announcements" />
         <FunctionImport Name="Apps" ReturnType="Microsoft.AppServices.AppCollection" IsComposable="true" EntitySet="Apps" />
         <FunctionImport Name="ComponentContextInfo" ReturnType="Microsoft.SharePoint.Internal.ClientSideComponent.ComponentContextInfo" IsComposable="true" EntitySet="ComponentContextInfos" />
+        <FunctionImport Name="ConsumerPermissions" ReturnType="Microsoft.SharePoint.Convergence.ConsumerPermissions" IsComposable="true" EntitySet="ConsumerPermissions" />
         <FunctionImport Name="contextinfo" ReturnType="SP.ContextWebInformation" IsComposable="true" />
         <FunctionImport Name="EE" ReturnType="SP.EmployeeEngagement" IsComposable="true" EntitySet="EEs" />
         <FunctionImport Name="EmployeeExperience" ReturnType="SP.EmployeeExperienceController" IsComposable="true" EntitySet="EmployeeExperiences" />
@@ -10596,14 +10621,14 @@
         <FunctionImport Name="SitesReference" ReturnType="Collection(SP.OrganizationNewsSiteReference)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.OrganizationNews" />
         </FunctionImport>
-        <FunctionImport Name="SP_PinnedItems_AddItem">
+        <FunctionImport Name="SP_PinnedItems_AddItem" ReturnType="Microsoft.SharePoint.ListHome.FavoriteListHomeItem">
           <Parameter Name="pinnedItem" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
         </FunctionImport>
         <FunctionImport Name="SP_PinnedItems_GetItemsBy" ReturnType="Collection(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)" IsSideEffecting="false">
           <Parameter Name="siteId" Type="Edm.String" />
           <Parameter Name="listId" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="SP_PinnedItems_RemoveItem">
+        <FunctionImport Name="SP_PinnedItems_RemoveItem" ReturnType="Microsoft.SharePoint.ListHome.FavoriteListHomeItem">
           <Parameter Name="siteId" Type="Edm.String" />
           <Parameter Name="listId" Type="Edm.String" />
           <Parameter Name="webId" Type="Edm.String" />
@@ -10613,7 +10638,7 @@
           <Parameter Name="itemBefore" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
           <Parameter Name="itemAfter" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
         </FunctionImport>
-        <FunctionImport Name="SP_PinnedItems_UpdateItem">
+        <FunctionImport Name="SP_PinnedItems_UpdateItem" ReturnType="Microsoft.SharePoint.ListHome.FavoriteListHomeItem">
           <Parameter Name="pinnedItem" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Photos_PhotosMigration" ReturnType="Microsoft.SharePoint.Photos.PhotosMigration" IsComposable="true" EntitySet="PhotosMigrations" />
@@ -10724,13 +10749,21 @@
         <FunctionImport Name="Upgrade" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata" />
         </FunctionImport>
-        <FunctionImport Name="Add" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackage" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackages" />
-          <Parameter Name="CardDesigns" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign)" />
-          <Parameter Name="Description" Type="Edm.String" />
-          <Parameter Name="Id" Type="Edm.Guid" Nullable="false" />
-          <Parameter Name="ShowInToolbox" Type="Edm.Boolean" Nullable="false" />
-          <Parameter Name="Title" Type="Edm.String" />
+        <FunctionImport Name="Add" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesigns" />
+          <Parameter Name="description" Type="Edm.String" />
+          <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="serializedProperties" Type="Edm.String" />
+          <Parameter Name="showInToolbox" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="title" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="Update" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesigns" />
+          <Parameter Name="description" Type="Edm.String" />
+          <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="serializedProperties" Type="Edm.String" />
+          <Parameter Name="showInToolbox" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="title" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Add" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem" IsBindable="true" EntitySet="SiteCollectionAppCatalogAllowedItems">
           <Parameter Name="this" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem)" />
@@ -10833,7 +10866,7 @@
           <Parameter Name="Url" Type="Edm.String" />
           <Parameter Name="XorHash" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="SP_FavoriteLists_AddList">
+        <FunctionImport Name="SP_FavoriteLists_AddList" ReturnType="Microsoft.SharePoint.ListHome.FavoriteListHomeItem">
           <Parameter Name="favoriteList" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
         </FunctionImport>
         <FunctionImport Name="SP_FavoriteLists_GetListsBy" ReturnType="Collection(Microsoft.SharePoint.ListHome.FavoriteListHomeItem)" IsSideEffecting="false">
@@ -10841,7 +10874,7 @@
           <Parameter Name="listId" Type="Edm.String" />
           <Parameter Name="page" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="SP_FavoriteLists_RemoveList">
+        <FunctionImport Name="SP_FavoriteLists_RemoveList" ReturnType="Microsoft.SharePoint.ListHome.FavoriteListHomeItem">
           <Parameter Name="siteId" Type="Edm.String" />
           <Parameter Name="listId" Type="Edm.String" />
           <Parameter Name="webId" Type="Edm.String" />
@@ -10851,7 +10884,7 @@
           <Parameter Name="listBefore" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
           <Parameter Name="listAfter" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
         </FunctionImport>
-        <FunctionImport Name="SP_FavoriteLists_UpdateList">
+        <FunctionImport Name="SP_FavoriteLists_UpdateList" ReturnType="Microsoft.SharePoint.ListHome.FavoriteListHomeItem">
           <Parameter Name="favoriteList" Type="Microsoft.SharePoint.ListHome.FavoriteListHomeItem" />
         </FunctionImport>
         <FunctionImport Name="SP_FavoriteListsSubstrate_AddList" ReturnType="Edm.String">
@@ -11035,6 +11068,13 @@
           <Parameter Name="this" Type="SP.EmployeeExperienceController" />
           <Parameter Name="announcementStates" Type="Collection(Microsoft.SharePoint.EmployeeEngagement.Experience.AnnouncementState)" />
           <Parameter Name="mySiteUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Convergence_ConsumerPermissions" ReturnType="Microsoft.SharePoint.Convergence.ConsumerPermissions" IsComposable="true" EntitySet="ConsumerPermissions" />
+        <FunctionImport Name="GrantConsumerSitePermissions" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Convergence.ConsumerPermissions" />
+        </FunctionImport>
+        <FunctionImport Name="RevokeConsumerSitePermissions" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Convergence.ConsumerPermissions" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Convergence_MigrationCompleteStateApi" ReturnType="Microsoft.SharePoint.Convergence.MigrationCompleteStateApi" IsComposable="true" EntitySet="MigrationCompleteStateApis" />
         <FunctionImport Name="AddState" IsBindable="true">
@@ -11697,6 +11737,10 @@
           <Parameter Name="ViewPath" Type="Edm.String" />
           <Parameter Name="WebPartId" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="GetProgressForFileVersionExpirationReport" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="reportFileUrl" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="GetRelatedFields" ReturnType="Collection(SP.RelatedField)" IsComposable="true" IsBindable="true" EntitySet="RelatedFields">
           <Parameter Name="this" Type="SP.List" />
         </FunctionImport>
@@ -11946,6 +11990,10 @@
         <FunctionImport Name="StartDeleteFileVersions" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="deleteOlderThanDays" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="StartFileVersionExpirationReport" IsBindable="true">
+          <Parameter Name="this" Type="SP.List" />
+          <Parameter Name="reportFileUrl" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="StartRecycle" ReturnType="Edm.Guid" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -12865,6 +12913,9 @@
           <Parameter Name="skipToken" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_RecentFileCollection_GetRecentFiles" ReturnType="Edm.String" IsSideEffecting="false">
+          <Parameter Name="top" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SP_RecentFileCollection_GetRecommendations" ReturnType="Edm.String" IsSideEffecting="false">
           <Parameter Name="top" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_RecentListCollection_GetRecentLists" ReturnType="Collection(SP.RecentList)" IsComposable="true" EntitySet="RecentLists">
@@ -14375,6 +14426,9 @@
         <FunctionImport Name="CancelDeleteFileVersions" IsBindable="true">
           <Parameter Name="this" Type="SP.Site" />
         </FunctionImport>
+        <FunctionImport Name="CancelSetVersionPolicyForDocLibs" IsBindable="true">
+          <Parameter Name="this" Type="SP.Site" />
+        </FunctionImport>
         <FunctionImport Name="CreateCopyJob" ReturnType="SP.CopyMigrationInfo" IsBindable="true">
           <Parameter Name="this" Type="SP.Site" />
           <Parameter Name="exportObjectUris" Type="Collection(Edm.String)" />
@@ -14475,6 +14529,10 @@
         </FunctionImport>
         <FunctionImport Name="GetMigrationStatus" ReturnType="Collection(SP.SPMigrationJobStatus)" IsComposable="true" IsBindable="true" EntitySet="SPMigrationJobStatuss">
           <Parameter Name="this" Type="SP.Site" />
+        </FunctionImport>
+        <FunctionImport Name="GetProgressForFileVersionExpirationReport" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="SP.Site" />
+          <Parameter Name="reportFileUrl" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="GetRecycleBinItems" ReturnType="Collection(SP.RecycleBinItem)" IsComposable="true" IsBindable="true" EntitySet="RecycleBinItems">
           <Parameter Name="this" Type="SP.Site" />
@@ -14598,6 +14656,16 @@
           <Parameter Name="this" Type="SP.Site" />
           <Parameter Name="deleteOlderThanDays" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="StartFileVersionExpirationReport" IsBindable="true">
+          <Parameter Name="this" Type="SP.Site" />
+          <Parameter Name="reportFileUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="StartSetVersionPolicyForDocLibs" IsBindable="true">
+          <Parameter Name="this" Type="SP.Site" />
+          <Parameter Name="enableAutoTrim" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="majorVersionLimit" Type="Edm.Int32" />
+          <Parameter Name="expireAfterDays" Type="Edm.Int32" />
+        </FunctionImport>
         <FunctionImport Name="UnregisterHubSite" IsBindable="true">
           <Parameter Name="this" Type="SP.Site" />
         </FunctionImport>
@@ -14614,6 +14682,21 @@
           <Parameter Name="this" Type="SP.Site" />
           <Parameter Name="joiningSiteId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="approvalToken" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="InheritTenantSettings" IsBindable="true">
+          <Parameter Name="this" Type="SP.SiteVersionPolicyManager" />
+        </FunctionImport>
+        <FunctionImport Name="SetAutoExpiration" IsBindable="true">
+          <Parameter Name="this" Type="SP.SiteVersionPolicyManager" />
+        </FunctionImport>
+        <FunctionImport Name="SetExpireAfter" IsBindable="true">
+          <Parameter Name="this" Type="SP.SiteVersionPolicyManager" />
+          <Parameter Name="majorVersionLimit" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="expireAfterDays" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SetNoExpiration" IsBindable="true">
+          <Parameter Name="this" Type="SP.SiteVersionPolicyManager" />
+          <Parameter Name="majorVersionLimit" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_TeamChannelManager_AddTeamChannel" ReturnType="SP.TeamChannel" EntitySet="TeamChannels">
           <Parameter Name="DecodedUrl" Type="Edm.String" />
@@ -14830,6 +14913,9 @@
         </FunctionImport>
         <FunctionImport Name="SP_TenantSettings_Current" ReturnType="SP.TenantSettings" IsComposable="true" EntitySet="TenantSettingss" />
         <FunctionImport Name="ClearCorporateCatalog" IsBindable="true">
+          <Parameter Name="this" Type="SP.TenantSettings" />
+        </FunctionImport>
+        <FunctionImport Name="GetDataAccessGovernanceReportConfig" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="SP.TenantSettings" />
         </FunctionImport>
         <FunctionImport Name="SetCorporateCatalog" IsBindable="true">
@@ -15587,6 +15673,9 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="licenses" Type="Collection(Edm.String)" />
         </FunctionImport>
+        <FunctionImport Name="ClearRestrictedAccessControlSharePoint" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+        </FunctionImport>
         <FunctionImport Name="ConnectSiteToHubSiteById" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteUrl" Type="Edm.String" />
@@ -15646,6 +15735,10 @@
           <Parameter Name="columnName" Type="Edm.String" />
           <Parameter Name="columnValue" Type="Edm.String" />
           <Parameter Name="listName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetGptEmbeddings" ReturnType="Microsoft.SharePoint.Internal.GptEmbeddingsResponse" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="requestOptions" Type="Microsoft.SharePoint.Internal.GptEmbeddingsRequestOptions" />
         </FunctionImport>
         <FunctionImport Name="GetGptResponse" ReturnType="Microsoft.SharePoint.Internal.GptResponse" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -15747,8 +15840,25 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="owningApplicationId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="GetSPOContainerTypeById" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPContainerTypeProperties" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="containerTypeId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="containerTenantType" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetSPOContainerTypes" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.SPContainerTypeProperties)" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="containerTenantType" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="GetSPOSiteCreationSources" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.SPOSiteCreationSource)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+        </FunctionImport>
+        <FunctionImport Name="GetSPOSyntexApplications" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.SPSyntexApplicationProperties)" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+        </FunctionImport>
+        <FunctionImport Name="GetSPOSyntexConsumingApplications" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPSyntexApplicationProperties" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="owningApplicationId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="applicationId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetSPOTenantAllWebTemplates" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection" IsComposable="true" IsBindable="true" EntitySet="SPOTenantWebTemplateCollections">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -15786,6 +15896,10 @@
         </FunctionImport>
         <FunctionImport Name="HasValidEducationLicense" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+        </FunctionImport>
+        <FunctionImport Name="NewSPOContainerType" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPContainerTypeProperties" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="containerTypeProperties" Type="Microsoft.Online.SharePoint.TenantAdministration.SPContainerTypeProperties" />
         </FunctionImport>
         <FunctionImport Name="RegisterHubSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties" IsBindable="true" EntitySet="HubSitePropertiess">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -16091,6 +16205,10 @@
         <FunctionImport Name="SetSPOContainerProperties" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="spContainerProperties" Type="Microsoft.Online.SharePoint.TenantAdministration.SPContainerProperties" />
+        </FunctionImport>
+        <FunctionImport Name="SetSPOContainerType" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPContainerTypeProperties" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="containerTypeProperties" Type="Microsoft.Online.SharePoint.TenantAdministration.SPContainerTypeProperties" />
         </FunctionImport>
         <FunctionImport Name="SwapSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -16712,6 +16830,10 @@
           <End Role="UserCustomActionsPartner" EntitySet="Sites" />
           <End Role="UserCustomActions" EntitySet="UserCustomActions" />
         </AssociationSet>
+        <AssociationSet Name="SP_Site_VersionPolicyForNewLibrariesTemplate_SP_SiteVersionPolicyManager_VersionPolicyForNewLibrariesTemplatePartnerSet" Association="SP.SP_Site_VersionPolicyForNewLibrariesTemplate_SP_SiteVersionPolicyManager_VersionPolicyForNewLibrariesTemplatePartner">
+          <End Role="VersionPolicyForNewLibrariesTemplatePartner" EntitySet="Sites" />
+          <End Role="VersionPolicyForNewLibrariesTemplate" EntitySet="SiteVersionPolicyManagers" />
+        </AssociationSet>
         <AssociationSet Name="SP_Utilities_ThemeManager_ContextThemeManager_SP_Utilities_ThemeManager_ContextThemeManagerPartnerSet" Association="SP.Utilities.SP_Utilities_ThemeManager_ContextThemeManager_SP_Utilities_ThemeManager_ContextThemeManagerPartner">
           <End Role="ContextThemeManagerPartner" EntitySet="Thememanagers" />
           <End Role="ContextThemeManager" EntitySet="Thememanagers" />
@@ -17100,9 +17222,9 @@
           <End Role="AvailableAppsPartner" EntitySet="SiteCollectionCorporateCatalogAccessors" />
           <End Role="AvailableApps" EntitySet="CorporateCatalogAppMetadatas" />
         </AssociationSet>
-        <AssociationSet Name="Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_CardDesignPackages_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CardDesignPackages_CardDesignPackagesPartnerSet" Association="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_CardDesignPackages_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CardDesignPackages_CardDesignPackagesPartner">
-          <End Role="CardDesignPackagesPartner" EntitySet="TenantCorporateCatalogAccessors" />
-          <End Role="CardDesignPackages" EntitySet="CardDesignPackagess" />
+        <AssociationSet Name="Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_CardDesigns_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CardDesigns_CardDesignsPartnerSet" Association="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_CardDesigns_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CardDesigns_CardDesignsPartner">
+          <End Role="CardDesignsPartner" EntitySet="TenantCorporateCatalogAccessors" />
+          <End Role="CardDesigns" EntitySet="CardDesignss" />
         </AssociationSet>
         <AssociationSet Name="Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_AvailableApps_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_AvailableAppsPartnerSet" Association="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_AvailableApps_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_AvailableAppsPartner">
           <End Role="AvailableAppsPartner" EntitySet="TenantCorporateCatalogAccessors" />
@@ -18180,6 +18302,10 @@
           <End Role="UsersWithAccessRequestsPartner" EntitySet="SharingResults" />
           <End Role="UsersWithAccessRequests" EntitySet="Users1" />
         </AssociationSet>
+        <AssociationSet Name="SP_SiteVersionPolicyManager_VersionPolicies_SP_VersionPolicyManager_VersionPoliciesPartnerSet" Association="SP.SP_SiteVersionPolicyManager_VersionPolicies_SP_VersionPolicyManager_VersionPoliciesPartner">
+          <End Role="VersionPoliciesPartner" EntitySet="SiteVersionPolicyManagers" />
+          <End Role="VersionPolicies" EntitySet="VersionPolicyManagers" />
+        </AssociationSet>
         <AssociationSet Name="SP_TenantSettings_Current_SP_TenantSettings_CurrentPartnerSet" Association="SP.SP_TenantSettings_Current_SP_TenantSettings_CurrentPartner">
           <End Role="CurrentPartner" EntitySet="TenantSettingss" />
           <End Role="Current" EntitySet="TenantSettingss" />
@@ -19250,250 +19376,19 @@
       <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign/Id">
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign/description">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignProperties">
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign/id">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardButton">
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign/serializedProperties">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardAction">
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign/showInToolbox">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardActionParameters">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardActionParameters/allowMultipleCapture">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardActionParameters/chooseLocationOnMap">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignLocation">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignLocation/accuracy">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignLocation/latitude">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignLocation/longitude">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignLocation/timestamp">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardActionParameters/locationCoordinates">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardActionParameters/maxSizePerFile">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardActionParameters/mediaType">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardActionParameters/supportedFileFormats">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardActionParameters/supportedFileFormatsString">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardActionParameters/target">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardActionParameters/teamsLink">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardActionParameters/view">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardAction/parameters">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardAction/showLocationToggleKey">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardAction/type">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardButton/action">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardButton/isVisible">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardButton/style">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardButton/title">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignProperties/cardButtonActions">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPlusPlusProperties">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPlusPlusProperties/cardView">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignDataSource">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignDataSource/data">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignDataSource/dataProperty">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignDataSource/displayName">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignDataSource/id">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignDataSource/type">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignDataSource/url">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPlusPlusProperties/dataSources">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPlusPlusProperties/primaryQuickViewId">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignQuickView">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignQuickView/actions">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignQuickView/dataSourceIds">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignQuickView/displayName">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignQuickView/id">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignQuickView/template">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPlusPlusProperties/quickViews">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPlusPlusProperties/version">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignProperties/cardDesignerPlusPlusProperties">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignProperties/cardIconCustomIconName">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignThumbnailImage">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignThumbnailImage/data">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignThumbnailImage/displayName">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignThumbnailImage/id">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignThumbnailImage/template">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignProperties/cardIconCustomImageSettings">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignProperties/cardIconSourceType">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignProperties/cardImageCustomIconName">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignProperties/cardImageCustomImageSettings">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignProperties/cardImageSourceType">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignProperties/cardSelectionAction">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignProperties/currentQuickViewIndex">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignProperties/description">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignProperties/iconProperty">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignProperties/imageUrl">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignProperties/isQuickViewConfigured">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignProperties/isTestModeEnabled">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignProperties/primaryText">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignSerializedQuickView">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignSerializedQuickView/data">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignSerializedQuickView/displayName">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignSerializedQuickView/id">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignSerializedQuickView/template">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignProperties/quickViews">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignProperties/templateType">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignProperties/title">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign/Properties">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackage">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackage/CardDesigns">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackage/Description">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackage/Id">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackage/ShowInToolbox">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackage/Title">
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign/title">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Internal.AppRenderInfo">
@@ -19518,6 +19413,15 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Internal.GptResponseUsage">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Internal.GptEmbeddingsRequestOptions">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Internal.GptEmbeddingsResponseData">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Internal.GptEmbeddingsResponse">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Internal.GptRequestOptions">
@@ -19620,6 +19524,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.CurrencyInformation">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.RecipientLimitsInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.RequestedTranslation">
@@ -20123,6 +20030,9 @@
       <Annotations Target="SP.Sharing.PrincipalInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Sharing.RecipientLimits">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Sharing.Recipient">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20403,6 +20313,18 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexPowerAppsEnvironmentsContext/TimerJobSyncDisabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings/Enabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings/SiteList">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings/SiteListFileName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.AppServices.AppCollection">
@@ -21599,10 +21521,10 @@
       <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackages">
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesigns">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor/CardDesignPackages">
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor/CardDesigns">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor/AvailableApps">
@@ -21711,6 +21633,18 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Site/StatusBarText">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.SiteVersionPolicyManager">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.SiteVersionPolicyManager/MajorVersionLimit">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.SiteVersionPolicyManager/VersionPolicies">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Site/VersionPolicyForNewLibrariesTemplate">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="PS.Project/UserPermissions">
@@ -21882,6 +21816,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.SitePage/CoAuthState">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.SitePage/CreationMode">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.SitePage/IsLikedByCurrentUser">
@@ -22572,6 +22509,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Sharing.SharingInformation/isStubFile">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Sharing.SharingInformation/recipientLimits">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Sharing.SharingInformation/sensitivityLabelInformation">
@@ -24488,7 +24428,10 @@
       <Annotations Target="SP.ApiData/Upgrade(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Add(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackages, Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign), Edm.String, Edm.Guid, Edm.Boolean, Edm.String)">
+      <Annotations Target="SP.ApiData/Add(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesigns, Edm.String, Edm.Guid, Edm.String, Edm.Boolean, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/Update(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesigns, Edm.String, Edm.Guid, Edm.String, Edm.Boolean, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Add(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor, Edm.Binary, Edm.Boolean, Edm.String, Edm.String)">
@@ -24737,6 +24680,9 @@
       <Annotations Target="SP.ApiData/SP_List_GetOneDriveListDataAsStream(SP.RenderListDataParameters, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Collection(SP.KeyValue), Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetProgressForFileVersionExpirationReport(SP.List, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/PublishMappedView(SP.List, Edm.Guid, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -24744,6 +24690,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/StartDeleteFileVersions(SP.List, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/StartFileVersionExpirationReport(SP.List, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SyncFlowCallbackUrl(SP.List, Edm.String)">
@@ -25067,6 +25016,9 @@
       <Annotations Target="SP.ApiData/SP_RecentFileCollection_GetRecentFiles(Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_RecentFileCollection_GetRecommendations(Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_RecentListCollection_GetRecentLists(Edm.Int32, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -25286,6 +25238,9 @@
       <Annotations Target="SP.ApiData/CancelDeleteFileVersions(SP.Site)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/CancelSetVersionPolicyForDocLibs(SP.Site)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetBringYourOwnKeyRecoveryKeyMode(SP.Site)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -25296,6 +25251,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetHubSiteJoinApprovalCorrelationId(SP.Site)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetProgressForFileVersionExpirationReport(SP.Site, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetWebPath(SP.Site, Edm.Guid, Edm.Guid)">
@@ -25331,10 +25289,28 @@
       <Annotations Target="SP.ApiData/StartDeleteFileVersions(SP.Site, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/StartFileVersionExpirationReport(SP.Site, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/StartSetVersionPolicyForDocLibs(SP.Site, Edm.Boolean, Edm.Int32, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/UnregisterHubSite(SP.Site)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/ValidateHubSiteJoinApprovalToken(SP.Site, Edm.Guid, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/InheritTenantSettings(SP.SiteVersionPolicyManager)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetAutoExpiration(SP.SiteVersionPolicyManager)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetExpireAfter(SP.SiteVersionPolicyManager, Edm.Int32, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetNoExpiration(SP.SiteVersionPolicyManager, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_TeamChannelManager_AddTeamChannel(Edm.String, Edm.String, Edm.String, Edm.Boolean, Edm.Int32)">
@@ -29753,6 +29729,7 @@
       <ComplexType Name="SitePageCoAuthState">
         <Property Name="Action" Type="Edm.Int32" Nullable="false" />
         <Property Name="HasReachedMinorVersionsLimit" Type="Edm.Boolean" />
+        <Property Name="IsNewSession" Type="Edm.Boolean" />
         <Property Name="LockAction" Type="Edm.Int32" Nullable="false" />
         <Property Name="LockDuration" Type="Edm.Int32" Nullable="false" />
         <Property Name="OverwriteExistingVersion" Type="Edm.Boolean" />
@@ -30232,6 +30209,7 @@
         <Property Name="CanvasJson1" Type="Edm.String" />
         <Property Name="CheckIn" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CoAuthState" Type="SP.Publishing.SitePageCoAuthState" />
+        <Property Name="CreationMode" Type="Edm.Int32" Nullable="false" />
         <Property Name="IsLikedByCurrentUser" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsTemplate" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Language" Type="Edm.String" />
@@ -32205,99 +32183,11 @@
         <Property Name="serverRelativeUrl" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="CardDesign">
-        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
-        <Property Name="Properties" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignProperties" />
-      </ComplexType>
-      <ComplexType Name="CardDesignProperties">
-        <Property Name="cardButtonActions" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardButton)" />
-        <Property Name="cardDesignerPlusPlusProperties" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPlusPlusProperties" />
-        <Property Name="cardIconCustomIconName" Type="Edm.String" />
-        <Property Name="cardIconCustomImageSettings" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignThumbnailImage" />
-        <Property Name="cardIconSourceType" Type="Edm.Int32" Nullable="false" />
-        <Property Name="cardImageCustomIconName" Type="Edm.String" />
-        <Property Name="cardImageCustomImageSettings" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignThumbnailImage" />
-        <Property Name="cardImageSourceType" Type="Edm.Int32" Nullable="false" />
-        <Property Name="cardSelectionAction" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardAction" />
-        <Property Name="currentQuickViewIndex" Type="Edm.Int32" Nullable="false" />
         <Property Name="description" Type="Edm.String" />
-        <Property Name="iconProperty" Type="Edm.String" />
-        <Property Name="imageUrl" Type="Edm.String" />
-        <Property Name="isQuickViewConfigured" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="isTestModeEnabled" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="primaryText" Type="Edm.String" />
-        <Property Name="quickViews" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignSerializedQuickView)" />
-        <Property Name="templateType" Type="Edm.String" />
-        <Property Name="title" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="CardDesignConfigurableCardButton">
-        <Property Name="action" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardAction" />
-        <Property Name="isVisible" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="style" Type="Edm.String" />
-        <Property Name="title" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="CardDesignConfigurableCardAction">
-        <Property Name="parameters" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignConfigurableCardActionParameters" />
-        <Property Name="showLocationToggleKey" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="type" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="CardDesignConfigurableCardActionParameters">
-        <Property Name="allowMultipleCapture" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="chooseLocationOnMap" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="locationCoordinates" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignLocation" />
-        <Property Name="maxSizePerFile" Type="Edm.Double" Nullable="false" />
-        <Property Name="mediaType" Type="Edm.Int32" Nullable="false" />
-        <Property Name="supportedFileFormats" Type="Collection(Edm.String)" />
-        <Property Name="supportedFileFormatsString" Type="Edm.String" />
-        <Property Name="target" Type="Edm.String" />
-        <Property Name="teamsLink" Type="Edm.String" />
-        <Property Name="view" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="CardDesignLocation">
-        <Property Name="accuracy" Type="Edm.Double" Nullable="false" />
-        <Property Name="latitude" Type="Edm.Double" Nullable="false" />
-        <Property Name="longitude" Type="Edm.Double" Nullable="false" />
-        <Property Name="timestamp" Type="Edm.Double" Nullable="false" />
-      </ComplexType>
-      <ComplexType Name="CardDesignPlusPlusProperties">
-        <Property Name="cardView" Type="Edm.String" />
-        <Property Name="dataSources" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignDataSource)" />
-        <Property Name="primaryQuickViewId" Type="Edm.String" />
-        <Property Name="quickViews" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignQuickView)" />
-        <Property Name="version" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="CardDesignDataSource">
-        <Property Name="data" Type="Edm.String" />
-        <Property Name="dataProperty" Type="Edm.String" />
-        <Property Name="displayName" Type="Edm.String" />
         <Property Name="id" Type="Edm.Guid" Nullable="false" />
-        <Property Name="type" Type="Edm.String" />
-        <Property Name="url" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="CardDesignQuickView">
-        <Property Name="actions" Type="Edm.String" />
-        <Property Name="dataSourceIds" Type="Collection(Edm.String)" />
-        <Property Name="displayName" Type="Edm.String" />
-        <Property Name="id" Type="Edm.Guid" Nullable="false" />
-        <Property Name="template" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="CardDesignThumbnailImage">
-        <Property Name="data" Type="Edm.String" />
-        <Property Name="displayName" Type="Edm.String" />
-        <Property Name="id" Type="Edm.String" />
-        <Property Name="template" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="CardDesignSerializedQuickView">
-        <Property Name="data" Type="Edm.String" />
-        <Property Name="displayName" Type="Edm.String" />
-        <Property Name="id" Type="Edm.String" />
-        <Property Name="template" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="CardDesignPackage">
-        <Property Name="CardDesigns" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign)" />
-        <Property Name="Description" Type="Edm.String" />
-        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
-        <Property Name="ShowInToolbox" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="Title" Type="Edm.String" />
+        <Property Name="serializedProperties" Type="Edm.String" />
+        <Property Name="showInToolbox" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="title" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPFailToTriggerUninstallAddinJobResponse">
         <Property Name="appInstanceId" Type="Edm.Guid" Nullable="false" />
@@ -32402,12 +32292,12 @@
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
-        <NavigationProperty Name="CardDesignPackages" Relationship="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_CardDesignPackages_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CardDesignPackages_CardDesignPackagesPartner" ToRole="CardDesignPackages" FromRole="CardDesignPackagesPartner" />
+        <NavigationProperty Name="CardDesigns" Relationship="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_CardDesigns_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CardDesigns_CardDesignsPartner" ToRole="CardDesigns" FromRole="CardDesignsPartner" />
         <NavigationProperty Name="AvailableApps" Relationship="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_AvailableApps_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_AvailableAppsPartner" ToRole="AvailableApps" FromRole="AvailableAppsPartner" />
         <NavigationProperty Name="SiteCollectionAppCatalogsSites" Relationship="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_SiteCollectionAppCatalogsSites_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_SiteCollectionAppCatalogAllowedItem_SiteCollectionAppCatalogsSitesPartner" ToRole="SiteCollectionAppCatalogsSites" FromRole="SiteCollectionAppCatalogsSitesPartner" />
         <NavigationProperty Name="StoreApps" Relationship="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_StoreApps_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_StoreAppsPartner" ToRole="StoreApps" FromRole="StoreAppsPartner" />
       </EntityType>
-      <EntityType Name="CardDesignPackages">
+      <EntityType Name="CardDesigns">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
@@ -32451,9 +32341,9 @@
         <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata" Role="AvailableApps" Multiplicity="*" />
         <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor" Role="AvailableAppsPartner" Multiplicity="0..1" />
       </Association>
-      <Association Name="Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_CardDesignPackages_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CardDesignPackages_CardDesignPackagesPartner">
-        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignPackages" Role="CardDesignPackages" Multiplicity="0..1" />
-        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" Role="CardDesignPackagesPartner" Multiplicity="0..1" />
+      <Association Name="Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_CardDesigns_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CardDesigns_CardDesignsPartner">
+        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesigns" Role="CardDesigns" Multiplicity="0..1" />
+        <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor" Role="CardDesignsPartner" Multiplicity="0..1" />
       </Association>
       <Association Name="Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_AvailableApps_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_AvailableAppsPartner">
         <End Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata" Role="AvailableApps" Multiplicity="*" />
@@ -32529,6 +32419,18 @@
         <Property Name="PromptTokens" Type="Edm.Int32" Nullable="false" />
         <Property Name="TotalTokens" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="GptEmbeddingsRequestOptions">
+        <Property Name="Input" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="GptEmbeddingsResponseData">
+        <Property Name="Embedding" Type="Collection(Edm.Single)" Nullable="false" />
+        <Property Name="Index" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Object" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="GptEmbeddingsResponse" BaseType="Microsoft.SharePoint.Internal.BaseGptResponse">
+        <Property Name="Data" Type="Collection(Microsoft.SharePoint.Internal.GptEmbeddingsResponseData)" />
+        <Property Name="Usage" Type="Microsoft.SharePoint.Internal.GptResponseUsage" />
+      </ComplexType>
       <ComplexType Name="GptRequestOptions" BaseType="Microsoft.SharePoint.Internal.BaseGptRequestOptions">
         <Property Name="BestOf" Type="Edm.Int32" Nullable="false" />
         <Property Name="Prompt" Type="Edm.String" />
@@ -32570,6 +32472,7 @@
         <Property Name="action" Type="Edm.String" />
         <Property Name="actionDateTime" Type="Edm.DateTime" Nullable="false" />
         <Property Name="documentId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="isEntryVisible" Type="Edm.Boolean" Nullable="false" />
         <Property Name="location" Type="Edm.String" />
         <Property Name="name" Type="Edm.String" />
       </ComplexType>
@@ -33372,6 +33275,12 @@
         <Property Name="principal" Type="SP.Sharing.Principal" />
         <Property Name="role" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="RecipientLimits">
+        <Property Name="checkPermissions" Type="SP.RecipientLimitsInfo" />
+        <Property Name="grantDirectAccess" Type="SP.RecipientLimitsInfo" />
+        <Property Name="shareLink" Type="SP.RecipientLimitsInfo" />
+        <Property Name="shareLinkWithDeferRedeem" Type="SP.RecipientLimitsInfo" />
+      </ComplexType>
       <ComplexType Name="Recipient">
         <Property Name="alias" Type="Edm.String" />
         <Property Name="email" Type="Edm.String" />
@@ -33589,6 +33498,7 @@
         <Property Name="microserviceShareUiUrl" Type="Edm.String" />
         <Property Name="outlookEndpointHostUrl" Type="Edm.String" />
         <Property Name="permissionsInformation" Type="SP.Sharing.PermissionCollection" />
+        <Property Name="recipientLimits" Type="SP.Sharing.RecipientLimits" />
         <Property Name="sensitivityLabelInformation" Type="SP.Sharing.SensitivityLabelInformation" />
         <Property Name="sharedObjectType" Type="Edm.Int32" Nullable="false" />
         <Property Name="shareUiUrl" Type="Edm.String" />
@@ -33598,8 +33508,11 @@
         <Property Name="showExternalSharingWarning" Type="Edm.Boolean" Nullable="false" />
         <Property Name="siteIBMode" Type="Edm.String" />
         <Property Name="siteIBSegmentIDs" Type="Collection(Edm.String)" />
+        <Property Name="siteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="standardRolesModified" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="substrateFileId" Type="Edm.String" />
         <Property Name="tenantDisplayName" Type="Edm.String" />
+        <Property Name="tenantId" Type="Edm.Guid" Nullable="false" />
         <Property Name="userIsSharingViaMCS" Type="Edm.String" />
         <Property Name="userPhotoCdnBaseUrl" Type="Edm.String" />
         <Property Name="webTemplateId" Type="Edm.Int32" Nullable="false" />
@@ -34519,6 +34432,11 @@
         <Property Name="Name" Type="Edm.String" />
         <Property Name="UpdatedUTC" Type="Edm.DateTime" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="SyntexPremiumFeatureSettings">
+        <Property Name="Enabled" Type="Edm.Boolean" />
+        <Property Name="SiteList" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="SiteListFileName" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="TenantDefaultTimeZoneId">
         <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Value" Type="Edm.Int32" Nullable="false" />
@@ -35085,6 +35003,10 @@
         <Property Name="StreamLaunchConfig" Type="Edm.Int32" Nullable="false" />
         <Property Name="StreamLaunchConfigLastUpdated" Type="Edm.DateTime" Nullable="false" />
         <Property Name="StreamLaunchConfigUpdateCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="StreamPremiumExternalVideoSharingSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings" />
+        <Property Name="StreamPremiumHighResolutionPlaybackSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings" />
+        <Property Name="StreamPremiumMediaAnalyticsSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings" />
+        <Property Name="StreamPremiumPlaybackTranscriptTranslationSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings" />
         <Property Name="SyncAadB2BManagementPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyncPrivacyProfileProperties" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyntexBillingSubscriptionSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext" />
@@ -36841,6 +36763,12 @@
       </EntityType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.Convergence" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="ConsumerPermissions">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="MigrationCompleteStateApi">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
@@ -37122,6 +37050,10 @@
         <Property Name="StreamLaunchConfig" Type="Edm.Int32" Nullable="false" />
         <Property Name="StreamLaunchConfigLastUpdated" Type="Edm.DateTime" Nullable="false" />
         <Property Name="StreamLaunchConfigUpdateCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="StreamPremiumExternalVideoSharingSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings" />
+        <Property Name="StreamPremiumHighResolutionPlaybackSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings" />
+        <Property Name="StreamPremiumMediaAnalyticsSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings" />
+        <Property Name="StreamPremiumPlaybackTranscriptTranslationSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings" />
         <Property Name="SyncAadB2BManagementPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyncPrivacyProfileProperties" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyntexBillingSubscriptionSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext" />
