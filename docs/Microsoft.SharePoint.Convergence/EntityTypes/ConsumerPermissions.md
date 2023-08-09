@@ -1,6 +1,6 @@
-# Entity Type: CardDesignPackages
+# Entity Type: ConsumerPermissions
 
-> Namespace: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery
+> Namespace: Microsoft.SharePoint.Convergence
 
 ### Properties
 

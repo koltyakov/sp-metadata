@@ -35,6 +35,7 @@ itemUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 microserviceShareUiUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 outlookEndpointHostUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 permissionsInformation (SP.Sharing.PermissionCollection) | ✅ | ✅ | ❌ | ❌
+recipientLimits (SP.Sharing.RecipientLimits) | ✅ | ❌ | ❌ | ❌
 sensitivityLabelInformation (SP.Sharing.SensitivityLabelInformation) | ✅ | ❌ | ❌ | ❌
 shareUiUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 sharedObjectType (Edm.Int32) | ✅ | ✅ | ❌ | ❌
@@ -44,8 +45,11 @@ sharingStatus (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 showExternalSharingWarning (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 siteIBMode (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteIBSegmentIDs (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+siteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 standardRolesModified (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+substrateFileId (Edm.String) | ✅ | ❌ | ❌ | ❌
 tenantDisplayName (Edm.String) | ✅ | ❌ | ❌ | ❌
+tenantId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 userIsSharingViaMCS (Edm.String) | ✅ | ❌ | ❌ | ❌
 userPhotoCdnBaseUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 webTemplateId (Edm.Int32) | ✅ | ❌ | ❌ | ❌

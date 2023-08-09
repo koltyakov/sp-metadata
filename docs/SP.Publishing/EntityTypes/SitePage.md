@@ -11,6 +11,7 @@ CanvasContent1 (Edm.String) | ✅ | ✅ | ❌ | ❌
 CanvasJson1 (Edm.String) | ✅ | ✅ | ❌ | ❌
 CheckIn (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CoAuthState (SP.Publishing.SitePageCoAuthState) | ✅ | ❌ | ❌ | ❌
+CreationMode (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 IsLikedByCurrentUser (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsTemplate (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Language (Edm.String) | ✅ | ❌ | ❌ | ❌

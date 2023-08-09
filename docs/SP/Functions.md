@@ -63,6 +63,7 @@ CAAERenameFileInTemporaryFolder (SP.List) | ✅ | ❌ | ❌ | ❌
 CancelAllJobs (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
 CancelDeleteFileVersions (SP.List) | ✅ | ❌ | ❌ | ❌
 CancelDeleteFileVersions (SP.Site) | ✅ | ❌ | ❌ | ❌
+CancelSetVersionPolicyForDocLibs (SP.Site) | ✅ | ❌ | ❌ | ❌
 CancelUpload (SP.File) | ✅ | ✅ | ✅ | ❌
 ChangeContentStorageSchema (SP.File) | ✅ | ❌ | ❌ | ❌
 CheckAccessAndPostViewAuditEvent (SP.File) | ✅ | ❌ | ❌ | ❌
@@ -315,6 +316,7 @@ GetConnectedHubs (Collection(SP.HubSite)) | ✅ | ❌ | ❌ | ❌
 GetCopyJobProgress (SP.Site) | ✅ | ✅ | ❌ | ❌
 GetCustomListTemplates (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetDashboardPersonalization (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
+GetDataAccessGovernanceReportConfig (SP.TenantSettings) | ✅ | ❌ | ❌ | ❌
 GetEntity (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetErrorDetails (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
 GetFileByGuestUrl (SP.Web) | ✅ | ✅ | ✅ | ❌
@@ -373,6 +375,8 @@ GetOnePageContextAsStream (SP.Web) | ❌ | ✅ | ❌ | ❌
 GetPreAuthorizedAccessUrl (SP.File) | ✅ | ✅ | ✅ | ❌
 GetPreAuthorizedAccessUrl2 (SP.File) | ✅ | ❌ | ❌ | ❌
 GetPreviousAppVersion (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
+GetProgressForFileVersionExpirationReport (SP.List) | ✅ | ❌ | ❌ | ❌
+GetProgressForFileVersionExpirationReport (SP.Site) | ✅ | ❌ | ❌ | ❌
 GetPushNotificationSubscriber (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetPushNotificationSubscribersByArgs (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetPushNotificationSubscribersByUser (SP.Web) | ✅ | ✅ | ✅ | ✅
@@ -416,6 +420,7 @@ GetWebTemplates (SP.Site) | ✅ | ✅ | ✅ | ✅
 HubSiteData (SP.Web) | ✅ | ✅ | ❌ | ❌
 HubSiteDataAsStream (SP.Web) | ✅ | ❌ | ❌ | ❌
 IncrementSiteClientTag (SP.Web) | ✅ | ✅ | ✅ | ❌
+InheritTenantSettings (SP.SiteVersionPolicyManager) | ✅ | ❌ | ❌ | ❌
 Install (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
 Invalidate (SP.Site) | ✅ | ✅ | ✅ | ✅
 JoinHubSite (SP.Site) | ✅ | ✅ | ❌ | ❌
@@ -633,6 +638,7 @@ SP_QuickAccessItemCollection_GetQuickAccessItems | ✅ | ❌ | ❌ | ❌
 <span title="SP_QuickAccessItemCollection_GetSubstrateQuickAccessItems">SP_QuickAccessItemCollection_GetSubstrateQuickAcce...</span> (SP QuickAccessItemCollection GetSubstrateQuickAccessItems) | ✅ | ❌ | ❌ | ❌
 [SP_RecentFileCollection_DeltaSync](./Functions/SP_RecentFileCollection_DeltaSync.md) | ✅ | ❌ | ❌ | ❌
 [SP_RecentFileCollection_GetRecentFiles](./Functions/SP_RecentFileCollection_GetRecentFiles.md) | ✅ | ❌ | ❌ | ❌
+[SP_RecentFileCollection_GetRecommendations](./Functions/SP_RecentFileCollection_GetRecommendations.md) | ✅ | ❌ | ❌ | ❌
 [SP_RecentListCollection_GetRecentLists](./Functions/SP_RecentListCollection_GetRecentLists.md) | ✅ | ❌ | ❌ | ❌
 [<span title="SP_RecentListCollection_GetRecentListsWithPageContextInfo">SP_RecentListCollection_GetRecentListsWithPageCont...</span> (SP RecentListCollection GetRecentListsWithPageContextInfo)](./Functions/SP_RecentListCollection_GetRecentListsWithPageContextInfo.md) | ✅ | ❌ | ❌ | ❌
 [SP_RecentListCollection_UpdateRecentLists](./Functions/SP_RecentListCollection_UpdateRecentLists.md) | ✅ | ❌ | ❌ | ❌
@@ -722,6 +728,7 @@ Set (SP.RequestVariable) | ❌ | ❌ | ❌ | ✅
 SetAccessRequestSiteDescriptionAndUpdate (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetAnnouncementState (SP.EmployeeExperienceController) | ✅ | ❌ | ❌ | ❌
 SetAppPrincipalConfiguration (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
+SetAutoExpiration (SP.SiteVersionPolicyManager) | ✅ | ❌ | ❌ | ❌
 SetChromeOptions (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetCommentsDisabled (SP.ListItem) | ✅ | ✅ | ❌ | ❌
 SetComplianceTag (SP.ListItem) | ✅ | ❌ | ❌ | ❌
@@ -737,12 +744,14 @@ SetDefaultNewPageTemplateId (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetExemptFromBlockDownloadOfNonViewableFiles (SP.List) | ✅ | ✅ | ❌ | ❌
 SetExpirationDate (SP.File) | ✅ | ❌ | ❌ | ❌
 SetExpirationDate (SP.FileVersion) | ✅ | ❌ | ❌ | ❌
+SetExpireAfter (SP.SiteVersionPolicyManager) | ✅ | ❌ | ❌ | ❌
 SetFileUserValue (SP.File) | ✅ | ❌ | ❌ | ❌
 SetFlag (SP.UserExperienceState) | ✅ | ❌ | ❌ | ❌
 SetGlobalNavSettings (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetId (SP.TimeZone) | ✅ | ❌ | ❌ | ❌
 <span title="SetIsContributorOwnerEnabledPropertyForDefaultDocLib (SP.Site)">SetIsContributorOwnerEnabledPropertyForDefaultDocL...</span> | ✅ | ❌ | ❌ | ❌
 SetMediaServiceMetadata (SP.File) | ✅ | ❌ | ❌ | ❌
+SetNoExpiration (SP.SiteVersionPolicyManager) | ✅ | ❌ | ❌ | ❌
 SetNotificationRecipients (SP.MultilingualSettings) | ✅ | ❌ | ❌ | ❌
 [SetQuizState](./Functions/SetQuizState.md) | ❌ | ❌ | ❌ | ✅
 SetSPHSite (SP.SPHSite) | ✅ | ❌ | ❌ | ❌
@@ -808,7 +817,10 @@ StampColor (SP.FolderColoring) | ✅ | ❌ | ❌ | ❌
 StartDelete (SP.Folder) | ✅ | ❌ | ❌ | ❌
 StartDeleteFileVersions (SP.List) | ✅ | ❌ | ❌ | ❌
 StartDeleteFileVersions (SP.Site) | ✅ | ❌ | ❌ | ❌
+StartFileVersionExpirationReport (SP.List) | ✅ | ❌ | ❌ | ❌
+StartFileVersionExpirationReport (SP.Site) | ✅ | ❌ | ❌ | ❌
 StartRecycle (SP.List) | ✅ | ❌ | ❌ | ❌
+StartSetVersionPolicyForDocLibs (SP.Site) | ✅ | ❌ | ❌ | ❌
 StartUpload (SP.File) | ✅ | ✅ | ✅ | ❌
 StartUploadFile (SP.File) | ✅ | ❌ | ❌ | ❌
 SyncFlowCallbackUrl (SP.List) | ✅ | ✅ | ❌ | ❌

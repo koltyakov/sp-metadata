@@ -150,6 +150,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SharingUtility](./EntityTypes/SharingUtility.md) | ✅ | ✅ | ❌ | ❌
 [Site](./EntityTypes/Site.md) | ✅ | ✅ | ✅ | ✅
 [SiteUrl](./EntityTypes/SiteUrl.md) | ✅ | ✅ | ✅ | ✅
+[SiteVersionPolicyManager](./EntityTypes/SiteVersionPolicyManager.md) | ✅ | ❌ | ❌ | ❌
 [SmartCache](./EntityTypes/SmartCache.md) | ✅ | ❌ | ❌ | ❌
 [SolutionExporter](./EntityTypes/SolutionExporter.md) | ✅ | ❌ | ❌ | ❌
 [StorageMetrics](./EntityTypes/StorageMetrics.md) | ✅ | ✅ | ✅ | ❌

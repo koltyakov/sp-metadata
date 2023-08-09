@@ -247,6 +247,10 @@ StorageQuotaAllocated (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 StreamLaunchConfig (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 StreamLaunchConfigLastUpdated (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 StreamLaunchConfigUpdateCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+StreamPremiumExternalVideoSharingSettings (Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings) | ✅ | ❌ | ❌ | ❌
+StreamPremiumHighResolutionPlaybackSettings (Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings) | ✅ | ❌ | ❌ | ❌
+StreamPremiumMediaAnalyticsSettings (Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings) | ✅ | ❌ | ❌ | ❌
+StreamPremiumPlaybackTranscriptTranslationSettings (Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings) | ✅ | ❌ | ❌ | ❌
 SyncAadB2BManagementPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyncPrivacyProfileProperties (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyntexBillingSubscriptionSettings (Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext) | ✅ | ❌ | ❌ | ❌

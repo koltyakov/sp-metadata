@@ -56,6 +56,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SmtpServer](./ComplexTypes/SmtpServer.md) | ✅ | ❌ | ❌ | ❌
 [SyntexBillingContext](./ComplexTypes/SyntexBillingContext.md) | ✅ | ❌ | ❌ | ❌
 [SyntexPowerAppsEnvironmentsContext](./ComplexTypes/SyntexPowerAppsEnvironmentsContext.md) | ✅ | ❌ | ❌ | ❌
+[SyntexPremiumFeatureSettings](./ComplexTypes/SyntexPremiumFeatureSettings.md) | ✅ | ❌ | ❌ | ❌
 [TenantDefaultTimeZoneId](./ComplexTypes/TenantDefaultTimeZoneId.md) | ✅ | ❌ | ❌ | ❌
 [UpdateGroupSitePropertiesParameters](./ComplexTypes/UpdateGroupSitePropertiesParameters.md) | ✅ | ❌ | ❌ | ❌
 [UserInfo](./ComplexTypes/UserInfo.md) | ✅ | ❌ | ❌ | ❌

@@ -6,17 +6,6 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [AppUpgradeAvailability](./ComplexTypes/AppUpgradeAvailability.md) | ✅ | ❌ | ❌ | ❌
 [CardDesign](./ComplexTypes/CardDesign.md) | ✅ | ❌ | ❌ | ❌
-[CardDesignConfigurableCardAction](./ComplexTypes/CardDesignConfigurableCardAction.md) | ✅ | ❌ | ❌ | ❌
-[CardDesignConfigurableCardActionParameters](./ComplexTypes/CardDesignConfigurableCardActionParameters.md) | ✅ | ❌ | ❌ | ❌
-[CardDesignConfigurableCardButton](./ComplexTypes/CardDesignConfigurableCardButton.md) | ✅ | ❌ | ❌ | ❌
-[CardDesignDataSource](./ComplexTypes/CardDesignDataSource.md) | ✅ | ❌ | ❌ | ❌
-[CardDesignLocation](./ComplexTypes/CardDesignLocation.md) | ✅ | ❌ | ❌ | ❌
-[CardDesignPackage](./ComplexTypes/CardDesignPackage.md) | ✅ | ❌ | ❌ | ❌
-[CardDesignPlusPlusProperties](./ComplexTypes/CardDesignPlusPlusProperties.md) | ✅ | ❌ | ❌ | ❌
-[CardDesignProperties](./ComplexTypes/CardDesignProperties.md) | ✅ | ❌ | ❌ | ❌
-[CardDesignQuickView](./ComplexTypes/CardDesignQuickView.md) | ✅ | ❌ | ❌ | ❌
-[CardDesignSerializedQuickView](./ComplexTypes/CardDesignSerializedQuickView.md) | ✅ | ❌ | ❌ | ❌
-[CardDesignThumbnailImage](./ComplexTypes/CardDesignThumbnailImage.md) | ✅ | ❌ | ❌ | ❌
 [SPAddinInstanceInfo](./ComplexTypes/SPAddinInstanceInfo.md) | ✅ | ❌ | ❌ | ❌
 [SPAddinPermissionFailedInfo](./ComplexTypes/SPAddinPermissionFailedInfo.md) | ✅ | ❌ | ❌ | ❌
 [SPAddinPermissionInfo](./ComplexTypes/SPAddinPermissionInfo.md) | ✅ | ❌ | ❌ | ❌

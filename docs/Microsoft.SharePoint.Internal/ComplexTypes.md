@@ -9,6 +9,9 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ChatGptRequestOptions](./ComplexTypes/ChatGptRequestOptions.md) | ✅ | ❌ | ❌ | ❌
 [ChatGptResponse](./ComplexTypes/ChatGptResponse.md) | ✅ | ❌ | ❌ | ❌
 [ChatGptResponseChoice](./ComplexTypes/ChatGptResponseChoice.md) | ✅ | ❌ | ❌ | ❌
+[GptEmbeddingsRequestOptions](./ComplexTypes/GptEmbeddingsRequestOptions.md) | ✅ | ❌ | ❌ | ❌
+[GptEmbeddingsResponse](./ComplexTypes/GptEmbeddingsResponse.md) | ✅ | ❌ | ❌ | ❌
+[GptEmbeddingsResponseData](./ComplexTypes/GptEmbeddingsResponseData.md) | ✅ | ❌ | ❌ | ❌
 [GptRequestOptions](./ComplexTypes/GptRequestOptions.md) | ✅ | ❌ | ❌ | ❌
 [GptResponse](./ComplexTypes/GptResponse.md) | ✅ | ❌ | ❌ | ❌
 [GptResponseChoice](./ComplexTypes/GptResponseChoice.md) | ✅ | ❌ | ❌ | ❌

@@ -87,3 +87,4 @@ RecycleBin | ✅ | ✅ | ✅ | ✅
 RootWeb | ✅ | ✅ | ✅ | ✅
 SecondaryContact | ✅ | ✅ | ✅ | ✅
 UserCustomActions | ✅ | ✅ | ✅ | ✅
+VersionPolicyForNewLibrariesTemplate | ✅ | ❌ | ❌ | ❌

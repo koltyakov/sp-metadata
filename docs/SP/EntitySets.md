@@ -57,7 +57,7 @@ Calendars | ✅ | ✅ | ✅ | ❌
 CalloutInfos | ✅ | ✅ | ✅ | ✅
 CampainAnalyticss | ✅ | ❌ | ❌ | ❌
 CanCreatePageResponses | ✅ | ❌ | ❌ | ❌
-CardDesignPackagess | ✅ | ❌ | ❌ | ❌
+CardDesignss | ✅ | ❌ | ❌ | ❌
 Cases | ❌ | ❌ | ❌ | ✅
 ChangeInformations | ❌ | ❌ | ❌ | ✅
 Changes | ✅ | ✅ | ✅ | ✅
@@ -76,6 +76,7 @@ ComplianceRetentionWorkItemSubmitters | ✅ | ❌ | ❌ | ❌
 ComponentContextInfos | ✅ | ✅ | ❌ | ❌
 ConnectionSettingss | ✅ | ❌ | ❌ | ❌
 ConnectorResults | ✅ | ✅ | ❌ | ❌
+ConsumerPermissions | ✅ | ❌ | ❌ | ❌
 ContentDbSchemaVersions | ✅ | ❌ | ❌ | ❌
 ContentTypes | ✅ | ✅ | ✅ | ✅
 Conversations | ❌ | ❌ | ✅ | ❌
@@ -515,6 +516,7 @@ SiteRenameJobEntityDatas | ✅ | ❌ | ❌ | ❌
 SiteScriptUtilitys | ✅ | ✅ | ❌ | ❌
 SiteSharingReportHelpers | ✅ | ❌ | ❌ | ❌
 SiteUrls | ✅ | ✅ | ✅ | ✅
+SiteVersionPolicyManagers | ✅ | ❌ | ❌ | ❌
 Sitelinkingmanagers | ✅ | ✅ | ❌ | ❌
 Sites | ✅ | ✅ | ✅ | ✅
 SmartCacheItems | ✅ | ❌ | ❌ | ❌
