@@ -88,6 +88,7 @@
       <ComplexType Name="ConfigurationData">
         <Property Name="BridgeAbsolutePath" Type="SP.ResourcePath" />
         <Property Name="IsPersonalizationEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsVivaHomeOptedOut" Type="Edm.Boolean" Nullable="false" />
         <Property Name="NavConfig" Type="SP.HomeSiteNavConfiguration" />
         <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="VivaExperienceType" Type="Edm.Int32" Nullable="false" />
@@ -4279,8 +4280,6 @@
         <EntitySet Name="SPOWebAppServicePrincipalPermissionRequests" EntityType="Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest" />
         <EntitySet Name="Office365CommsMessagesServiceProxys" EntityType="Microsoft.Online.SharePoint.TenantAdministration.Office365CommsMessagesServiceProxy" />
         <EntitySet Name="OneDriveSiteSharingInsightss" EntityType="Microsoft.Online.SharePoint.TenantAdministration.OneDriveSiteSharingInsights" />
-        <EntitySet Name="RansomwareAlertObjects" EntityType="Microsoft.Online.SharePoint.TenantAdministration.RansomwareAlertObject" />
-        <EntitySet Name="RansomwareIncidentObjects" EntityType="Microsoft.Online.SharePoint.TenantAdministration.RansomwareIncidentObject" />
         <EntitySet Name="ResponseMessageCenters" EntityType="Microsoft.Online.SharePoint.TenantAdministration.ResponseMessageCenter" />
         <EntitySet Name="ResponseServiceHealths" EntityType="Microsoft.Online.SharePoint.TenantAdministration.ResponseServiceHealth" />
         <EntitySet Name="SharePointSiteSharingInsightss" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SharePointSiteSharingInsights" />
@@ -8874,6 +8873,10 @@
           <Parameter Name="this" Type="Collection(SP.Publishing.SitePage)" />
           <Parameter Name="workItemId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="SetScheduling" IsBindable="true">
+          <Parameter Name="this" Type="Collection(SP.Publishing.SitePage)" />
+          <Parameter Name="enabled" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="Templates" ReturnType="Collection(SP.Publishing.SitePageMetadata)" IsComposable="true" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="Collection(SP.Publishing.SitePage)" />
         </FunctionImport>
@@ -9021,6 +9024,9 @@
         <FunctionImport Name="SP_Publishing_SitePageService_ComputeFileName" ReturnType="Edm.String" IsSideEffecting="false">
           <Parameter Name="title" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="EnableAnnouncements" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.SitePageService" />
+        </FunctionImport>
         <FunctionImport Name="EnableCategories" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.SitePageService" />
         </FunctionImport>
@@ -9034,6 +9040,14 @@
         </FunctionImport>
         <FunctionImport Name="SP_Publishing_SitePageService_IsFilePickerExternalImageSearchEnabled" ReturnType="Edm.Boolean" IsSideEffecting="false" />
         <FunctionImport Name="SP_Publishing_SitePageService_OrgAssets" ReturnType="Microsoft.SharePoint.Administration.OrgAssets" IsSideEffecting="false" />
+        <FunctionImport Name="PagesInLib" ReturnType="Collection(SP.Publishing.SitePage)" IsComposable="true" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.SitePageService" />
+          <Parameter Name="id" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="PagesInLibByName" ReturnType="Collection(SP.Publishing.SitePage)" IsComposable="true" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.SitePageService" />
+          <Parameter Name="name" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.SitePageService" />
         </FunctionImport>
@@ -14664,6 +14678,7 @@
           <Parameter Name="this" Type="SP.Site" />
           <Parameter Name="enableAutoTrim" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="majorVersionLimit" Type="Edm.Int32" />
+          <Parameter Name="majorWithMinorVersionsLimit" Type="Edm.Int32" />
           <Parameter Name="expireAfterDays" Type="Edm.Int32" />
         </FunctionImport>
         <FunctionImport Name="UnregisterHubSite" IsBindable="true">
@@ -15446,6 +15461,11 @@
           <Parameter Name="warnAfter" Type="Edm.Time" Nullable="false" />
           <Parameter Name="signOutAfter" Type="Edm.Time" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="SetJitDlpPolicyData" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantManagement.Office365Tenant" />
+          <Parameter Name="markAllFilesAsSensitiveByDefault" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="odbSensitivityRefreshWindowInHours" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="SetOrgAssetsLib" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantManagement.Office365Tenant" />
           <Parameter Name="libUrl" Type="SP.ResourcePath" />
@@ -15462,6 +15482,9 @@
           <Parameter Name="cdnType" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="policy" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="policyValue" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SyncAadB2BManagementPolicy" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantManagement.Office365Tenant" />
         </FunctionImport>
         <FunctionImport Name="UpdateTenantTheme" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantManagement.Office365Tenant" />
@@ -15659,6 +15682,21 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="parameters" Type="SP.ViewCreationInformation" />
         </FunctionImport>
+        <FunctionImport Name="AddToOrgAssetsLibAndCdnV2" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="cdnType" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="libUrl" Type="Edm.String" />
+          <Parameter Name="thumbnailUrl" Type="Edm.String" />
+          <Parameter Name="orgAssetType" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="defaultOriginAdded" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="AddToOrgAssetsLibAndCdnWithType" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="cdnType" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="libUrl" Type="Edm.String" />
+          <Parameter Name="thumbnailUrl" Type="Edm.String" />
+          <Parameter Name="orgAssetType" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="ArchiveSiteById" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
@@ -15759,6 +15797,9 @@
         <FunctionImport Name="GetOneDriveSiteSharingInsights" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.OneDriveSiteSharingInsights)" IsComposable="true" IsBindable="true" EntitySet="OneDriveSiteSharingInsightss">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="queryMode" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetOrgAssets" ReturnType="Microsoft.SharePoint.Administration.OrgAssets" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
         <FunctionImport Name="GetPolicyExecutionsHistory" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.ExecutionHistoryResponse)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -15901,6 +15942,9 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="containerTypeProperties" Type="Microsoft.Online.SharePoint.TenantAdministration.SPContainerTypeProperties" />
         </FunctionImport>
+        <FunctionImport Name="RecentAdminActionReportIsAuditEnabled" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+        </FunctionImport>
         <FunctionImport Name="RegisterHubSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties" IsBindable="true" EntitySet="HubSitePropertiess">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteUrl" Type="Edm.String" />
@@ -15918,6 +15962,11 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteUrl" Type="Edm.String" />
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="RemoveFromOrgAssets" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="libUrl" Type="Edm.String" />
+          <Parameter Name="listId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="RemoveHomeSite" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -16181,6 +16230,12 @@
           <Parameter Name="warnAfter" Type="Edm.Time" Nullable="false" />
           <Parameter Name="signOutAfter" Type="Edm.Time" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="SetOrgAssetsWithType" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="libUrl" Type="Edm.String" />
+          <Parameter Name="thumbnailUrl" Type="Edm.String" />
+          <Parameter Name="orgAssetType" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="SetSiteAdministrators" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteAdministratorsFieldsData" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteAdministratorsFieldsData" />
@@ -16260,12 +16315,12 @@
           <Parameter Name="policyInputParameters" Type="Microsoft.Online.SharePoint.TenantAdministration.CreatePolicyRequest" />
           <Parameter Name="policyOperation" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="UpdateRansomwareAlert" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.RansomwareAlertObject" IsBindable="true" EntitySet="RansomwareAlertObjects">
+        <FunctionImport Name="UpdateRansomwareActivity" ReturnType="Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminRansomwareActivity" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="listItemId" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="columnValues" Type="Collection(Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminListItemColumnValue)" />
         </FunctionImport>
-        <FunctionImport Name="UpdateRansomwareIncident" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.RansomwareIncidentObject" IsBindable="true" EntitySet="RansomwareIncidentObjects">
+        <FunctionImport Name="UpdateRansomwareEvent" ReturnType="Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminRansomwareEvent" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="listItemId" Type="Edm.Int32" Nullable="false" />
           <Parameter Name="columnValues" Type="Collection(Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminListItemColumnValue)" />
@@ -23654,6 +23709,9 @@
       <Annotations Target="SP.ApiData/PageMoveStatus(Collection(SP.Publishing.SitePage), Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SetScheduling(Collection(SP.Publishing.SitePage), Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Templates(Collection(SP.Publishing.SitePage))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -23774,6 +23832,9 @@
       <Annotations Target="SP.ApiData/SP_Publishing_SitePageService_ComputeFileName(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/EnableAnnouncements(SP.Publishing.SitePageService)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/EnableCategories(SP.Publishing.SitePageService)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -23790,6 +23851,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_Publishing_SitePageService_OrgAssets()">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/PagesInLib(SP.Publishing.SitePageService, Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/PagesInLibByName(SP.Publishing.SitePageService, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Update(SP.Publishing.SitePageService)">
@@ -23925,6 +23992,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetComments(SP.Workflow.SPWorkflowTask)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetVersions(SP.Workflow.SPWorkflowTask, SP.GetListItemVersionsParameters)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/RecycleWithParameters(SP.Workflow.SPWorkflowTask, SP.ListItemDeleteParameters)">
@@ -24743,6 +24813,9 @@
       <Annotations Target="SP.ApiData/GetComments(SP.ListItem)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetVersions(SP.ListItem, SP.GetListItemVersionsParameters)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/RecycleWithParameters(SP.ListItem, SP.ListItemDeleteParameters)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -25292,7 +25365,7 @@
       <Annotations Target="SP.ApiData/StartFileVersionExpirationReport(SP.Site, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/StartSetVersionPolicyForDocLibs(SP.Site, Edm.Boolean, Edm.Int32, Edm.Int32)">
+      <Annotations Target="SP.ApiData/StartSetVersionPolicyForDocLibs(SP.Site, Edm.Boolean, Edm.Int32, Edm.Int32, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/UnregisterHubSite(SP.Site)">
@@ -25571,10 +25644,19 @@
       <Annotations Target="SP.ApiData/Update(Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/AddToOrgAssetsLibAndCdnV2(Microsoft.Online.SharePoint.TenantAdministration.Tenant, Edm.Int32, Edm.String, Edm.String, Edm.Int32, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/AddToOrgAssetsLibAndCdnWithType(Microsoft.Online.SharePoint.TenantAdministration.Tenant, Edm.Int32, Edm.String, Edm.String, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/CheckTenantIntuneLicense(Microsoft.Online.SharePoint.TenantAdministration.Tenant)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/CheckTenantLicenses(Microsoft.Online.SharePoint.TenantAdministration.Tenant, Collection(Edm.String))">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetOrgAssets(Microsoft.Online.SharePoint.TenantAdministration.Tenant)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetSiteAdministrators(Microsoft.Online.SharePoint.TenantAdministration.Tenant, Edm.Guid)">
@@ -25584,6 +25666,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetSiteThumbnailLogo(Microsoft.Online.SharePoint.TenantAdministration.Tenant, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/RemoveFromOrgAssets(Microsoft.Online.SharePoint.TenantAdministration.Tenant, Edm.String, Edm.Guid)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetOrgAssetsWithType(Microsoft.Online.SharePoint.TenantAdministration.Tenant, Edm.String, Edm.String, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetSiteAdministrators(Microsoft.Online.SharePoint.TenantAdministration.Tenant, Microsoft.Online.SharePoint.TenantAdministration.SiteAdministratorsFieldsData)">
@@ -32449,6 +32537,7 @@
         <Property Name="TrackedItemsAsJson" Type="Edm.String" />
         <Property Name="UserEmail" Type="Edm.String" />
         <Property Name="UserLogin" Type="Edm.String" />
+        <Property Name="UserPuid" Type="Edm.String" />
       </ComplexType>
       <EntityType Name="ActivityLogger">
         <Key>
@@ -32937,13 +33026,6 @@
         <Property Name="GroupId" Type="Edm.Guid" Nullable="false" />
         <Property Name="LastActivityDate" Type="Edm.DateTime" />
       </ComplexType>
-      <ComplexType Name="ImpactedAsset">
-        <Property Name="actionPerformedBy" Type="Edm.String" />
-        <Property Name="assetIdentificationId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="assetUrl" Type="Edm.String" />
-        <Property Name="driveId" Type="Edm.String" />
-        <Property Name="siteOwner" Type="Edm.String" />
-      </ComplexType>
       <ComplexType Name="PageResponse">
         <Property Name="ContinuationToken" Type="Edm.String" />
         <Property Name="PageNumber" Type="Edm.Int32" Nullable="false" />
@@ -32955,6 +33037,7 @@
       <ComplexType Name="RansomwareProperties">
         <Property Name="activityGeneratedOn" Type="Edm.DateTime" Nullable="false" />
         <Property Name="activityId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="category" Type="Edm.Int32" Nullable="false" />
         <Property Name="detectionSource" Type="Edm.String" />
         <Property Name="firstActivity" Type="Edm.DateTime" Nullable="false" />
         <Property Name="lastActivity" Type="Edm.DateTime" Nullable="false" />
@@ -32980,6 +33063,13 @@
         <Property Name="uALCorrelationId" Type="Edm.Guid" Nullable="false" />
         <Property Name="uALNumberOfRecords" Type="Edm.Int64" Nullable="false" />
         <Property Name="users" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ImpactedAsset">
+        <Property Name="actionPerformedBy" Type="Edm.String" />
+        <Property Name="assetIdentificationId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="assetUrl" Type="Edm.String" />
+        <Property Name="driveId" Type="Edm.String" />
+        <Property Name="siteOwner" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="TeamsSitesActivityDetail">
         <Property Name="LastActivityDate" Type="Edm.DateTime" />
@@ -33034,6 +33124,7 @@
         <Property Name="siteType" Type="Edm.Int32" Nullable="false" />
         <Property Name="status" Type="Edm.Int32" Nullable="false" />
         <Property Name="syncStatus" Type="Edm.Int32" Nullable="false" />
+        <Property Name="tagId" Type="Edm.String" />
         <Property Name="updatedBy" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="TenantAdminRansomwareEvent">
@@ -33047,6 +33138,7 @@
         <Property Name="lastUpdatedTime" Type="Edm.DateTime" />
         <Property Name="severity" Type="Edm.Int32" Nullable="false" />
         <Property Name="status" Type="Edm.Int32" Nullable="false" />
+        <Property Name="tagId" Type="Edm.String" />
         <Property Name="updatedBy" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="TenantAdminRecentActionPayload">
@@ -33512,7 +33604,7 @@
         <Property Name="standardRolesModified" Type="Edm.Boolean" Nullable="false" />
         <Property Name="substrateFileId" Type="Edm.String" />
         <Property Name="tenantDisplayName" Type="Edm.String" />
-        <Property Name="tenantId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="tenantId" Type="Edm.String" />
         <Property Name="userIsSharingViaMCS" Type="Edm.String" />
         <Property Name="userPhotoCdnBaseUrl" Type="Edm.String" />
         <Property Name="webTemplateId" Type="Edm.Int32" Nullable="false" />
@@ -34504,20 +34596,6 @@
         <Property Name="StartDate" Type="Edm.String" />
         <Property Name="Total" Type="Edm.Int64" Nullable="false" />
       </EntityType>
-      <EntityType Name="RansomwareAlertObject">
-        <Key>
-          <PropertyRef Name="alertId" />
-        </Key>
-        <Property Name="alertId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="incidentId" Type="Edm.String" />
-      </EntityType>
-      <EntityType Name="RansomwareIncidentObject">
-        <Key>
-          <PropertyRef Name="incidentId" />
-        </Key>
-        <Property Name="incidentId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="incidentName" Type="Edm.String" />
-      </EntityType>
       <EntityType Name="ResponseMessageCenter">
         <Key>
           <PropertyRef Name="Id" />
@@ -34919,6 +34997,7 @@
         <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MajorVersionLimit" Type="Edm.Int32" Nullable="false" />
         <Property Name="ManagedPathsForSiteCreation" Type="Collection(Edm.String)" />
+        <Property Name="MarkAllFilesAsSensitiveByDefault" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MarkNewFilesSensitiveByDefault" Type="Edm.Int32" Nullable="false" />
         <Property Name="MassDeleteNotificationDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MediaTranscription" Type="Edm.Int32" Nullable="false" />
@@ -34940,6 +35019,7 @@
         <Property Name="OCRModeForComplianceSites" Type="Edm.Int32" Nullable="false" />
         <Property Name="ODBAccessRequests" Type="Edm.Int32" Nullable="false" />
         <Property Name="ODBMembersCanShare" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ODBSensitivityRefreshWindowInHours" Type="Edm.Int32" Nullable="false" />
         <Property Name="ODBSharingCapability" Type="Edm.Int32" Nullable="false" />
         <Property Name="OfficeClientADALDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="OneDriveBlockGuestsAsSiteAdmin" Type="Edm.Int32" Nullable="false" />
@@ -35007,7 +35087,6 @@
         <Property Name="StreamPremiumHighResolutionPlaybackSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings" />
         <Property Name="StreamPremiumMediaAnalyticsSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings" />
         <Property Name="StreamPremiumPlaybackTranscriptTranslationSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings" />
-        <Property Name="SyncAadB2BManagementPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyncPrivacyProfileProperties" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyntexBillingSubscriptionSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext" />
         <Property Name="SyntexInternalFeatureFlags" Type="Collection(SP.KeyValue)" />
@@ -36982,6 +37061,7 @@
         <Property Name="LimitedAccessFileType" Type="Edm.Int32" Nullable="false" />
         <Property Name="MachineLearningCaptureEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MajorVersionLimit" Type="Edm.Int32" Nullable="false" />
+        <Property Name="MarkAllFilesAsSensitiveByDefault" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MassDeleteNotificationDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MediaTranscription" Type="Edm.Int32" Nullable="false" />
         <Property Name="MediaTranscriptionAutomaticFeatures" Type="Edm.Int32" Nullable="false" />
@@ -37002,6 +37082,7 @@
         <Property Name="OCRModeForComplianceSites" Type="Edm.Int32" Nullable="false" />
         <Property Name="ODBAccessRequests" Type="Edm.Int32" Nullable="false" />
         <Property Name="ODBMembersCanShare" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ODBSensitivityRefreshWindowInHours" Type="Edm.Int32" Nullable="false" />
         <Property Name="ODBSharingCapability" Type="Edm.Int32" Nullable="false" />
         <Property Name="OfficeClientADALDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="OneDriveBlockGuestsAsSiteAdmin" Type="Edm.Int32" Nullable="false" />
@@ -37054,7 +37135,6 @@
         <Property Name="StreamPremiumHighResolutionPlaybackSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings" />
         <Property Name="StreamPremiumMediaAnalyticsSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings" />
         <Property Name="StreamPremiumPlaybackTranscriptTranslationSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings" />
-        <Property Name="SyncAadB2BManagementPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyncPrivacyProfileProperties" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SyntexBillingSubscriptionSettings" Type="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext" />
         <Property Name="SyntexInternalFeatureFlags" Type="Collection(SP.KeyValue)" />
