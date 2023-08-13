@@ -1,4 +1,4 @@
-# Function Import: UpdateRansomwareIncident
+# Function Import: RemoveFromOrgAssets
 
 > Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
@@ -10,5 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-columnValues (Collection(Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminListItemColumnValue)) | ✅ | ❌ | ❌ | ❌
-listItemId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+libUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+listId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

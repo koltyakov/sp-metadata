@@ -14,6 +14,8 @@ AddRecentAdminActionReport (Microsoft.Online.SharePoint.TenantAdministration.Ten
 AddRecentAdminActions (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 AddTenantAdminListItem (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 AddTenantAdminListView (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+AddToOrgAssetsLibAndCdnV2 (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+AddToOrgAssetsLibAndCdnWithType (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 ArchiveSiteById (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 BootstrapPolicyAutomationResources (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 CheckSiteIsArchivedById (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
@@ -49,6 +51,7 @@ GetIdleSessionSignOutForUnmanagedDevices (Microsoft.Online.SharePoint.TenantAdmi
 GetLockStateById (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
 GetMalwareFileStream (Microsoft.Online.SharePoint.TenantAdministration.SPOMalwareFile) | ✅ | ❌ | ❌ | ❌
 GetOneDriveSiteSharingInsights (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+GetOrgAssets (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetPolicyExecutionsHistory (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetPowerAppsEnvironments (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetRansomwareActivities (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -104,12 +107,14 @@ MessageCenterMessages (Microsoft.Online.SharePoint.TenantAdministration.Office36
 <span title="Microsoft_Online_SharePoint_TenantAdministration_TenantAdminSettingsService">Microsoft_Online_SharePoint_TenantAdministration_T...</span> (Microsoft Online SharePoint TenantAdministration TenantAdminSettingsService) | ✅ | ❌ | ❌ | ❌
 NewSPOContainerType (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 Office365ProvidedSharepointSiteActivityDataReady (Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService) | ✅ | ❌ | ❌ | ❌
+RecentAdminActionReportIsAuditEnabled (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RegisterHubSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RegisterHubSiteWithCreationInformation (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveAsGroupOwnerAndMember (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ✅ | ❌ | ❌ | ❌
 RemoveCustomSpfx3rdPartyAppPrincipal (Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic) | ✅ | ❌ | ❌ | ❌
 RemoveDeletedSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveDeletedSitePreferId (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+RemoveFromOrgAssets (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveGroupMember (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ✅ | ❌ | ❌ | ❌
 RemoveGroupOwner (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ✅ | ❌ | ❌ | ❌
 RemoveHomeSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -142,6 +147,7 @@ SetDefaultView (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ |
 SetFileVersionPolicy (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetIBSegmentsOnSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetIdleSessionSignOutForUnmanagedDevices (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+SetOrgAssetsWithType (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetSPHSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetSPHSiteWithConfiguration (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetSPOContainerProperties (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -166,8 +172,8 @@ UpdateGroupPropertiesBySiteId (Microsoft.Online.SharePoint.TenantAdministration.
 UpdateGroupSiteProperties (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 UpdateOffice365ProvidedSharepointSiteActivityData (Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService) | ✅ | ❌ | ❌ | ❌
 UpdatePolicyDefinition (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
-UpdateRansomwareAlert (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
-UpdateRansomwareIncident (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+UpdateRansomwareActivity (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+UpdateRansomwareEvent (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 UpdateSiteActivityData (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 UpdateTargetedSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 UpdateTenantAdminListItem (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌

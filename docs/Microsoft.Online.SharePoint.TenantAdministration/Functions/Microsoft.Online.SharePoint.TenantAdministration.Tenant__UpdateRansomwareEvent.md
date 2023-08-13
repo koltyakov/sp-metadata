@@ -1,4 +1,4 @@
-# Function Import: UpdateRansomwareAlert
+# Function Import: UpdateRansomwareEvent
 
 > Namespace: Microsoft.Online.SharePoint.TenantAdministration
 

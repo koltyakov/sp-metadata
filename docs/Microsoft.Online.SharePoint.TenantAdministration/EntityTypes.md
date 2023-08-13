@@ -7,8 +7,6 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [HubSiteProperties](./EntityTypes/HubSiteProperties.md) | ✅ | ❌ | ❌ | ❌
 [Office365CommsMessagesServiceProxy](./EntityTypes/Office365CommsMessagesServiceProxy.md) | ✅ | ❌ | ❌ | ❌
 [OneDriveSiteSharingInsights](./EntityTypes/OneDriveSiteSharingInsights.md) | ✅ | ❌ | ❌ | ❌
-[RansomwareAlertObject](./EntityTypes/RansomwareAlertObject.md) | ✅ | ❌ | ❌ | ❌
-[RansomwareIncidentObject](./EntityTypes/RansomwareIncidentObject.md) | ✅ | ❌ | ❌ | ❌
 [ResponseMessageCenter](./EntityTypes/ResponseMessageCenter.md) | ✅ | ❌ | ❌ | ❌
 [ResponseServiceHealth](./EntityTypes/ResponseServiceHealth.md) | ✅ | ❌ | ❌ | ❌
 [SPOGroup](./EntityTypes/SPOGroup.md) | ✅ | ❌ | ❌ | ❌

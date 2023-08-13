@@ -16,4 +16,5 @@ lastOccurrence (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 lastUpdatedTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 severity (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 status (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+tagId (Edm.String) | ✅ | ❌ | ❌ | ❌
 updatedBy (Edm.String) | ✅ | ❌ | ❌ | ❌

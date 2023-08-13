@@ -163,6 +163,7 @@ LimitedAccessFileType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MachineLearningCaptureEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MajorVersionLimit (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ManagedPathsForSiteCreation (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+MarkAllFilesAsSensitiveByDefault (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MarkNewFilesSensitiveByDefault (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MassDeleteNotificationDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MediaTranscription (Edm.Int32) | ✅ | ❌ | ❌ | ❌
@@ -184,6 +185,7 @@ OCRModeForComplianceODBs (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OCRModeForComplianceSites (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ODBAccessRequests (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ODBMembersCanShare (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+ODBSensitivityRefreshWindowInHours (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ODBSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OfficeClientADALDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 OneDriveBlockGuestsAsSiteAdmin (Edm.Int32) | ✅ | ❌ | ❌ | ❌
@@ -251,7 +253,6 @@ StreamPremiumExternalVideoSharingSettings (Microsoft.Online.SharePoint.TenantAdm
 StreamPremiumHighResolutionPlaybackSettings (Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings) | ✅ | ❌ | ❌ | ❌
 StreamPremiumMediaAnalyticsSettings (Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings) | ✅ | ❌ | ❌ | ❌
 StreamPremiumPlaybackTranscriptTranslationSettings (Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings) | ✅ | ❌ | ❌ | ❌
-SyncAadB2BManagementPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyncPrivacyProfileProperties (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyntexBillingSubscriptionSettings (Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext) | ✅ | ❌ | ❌ | ❌
 SyntexInternalFeatureFlags (Collection(SP.KeyValue)) | ✅ | ❌ | ❌ | ❌

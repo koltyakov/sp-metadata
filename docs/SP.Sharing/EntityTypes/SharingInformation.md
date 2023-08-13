@@ -49,7 +49,7 @@ siteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 standardRolesModified (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 substrateFileId (Edm.String) | ✅ | ❌ | ❌ | ❌
 tenantDisplayName (Edm.String) | ✅ | ❌ | ❌ | ❌
-tenantId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+tenantId (Edm.String) | ✅ | ❌ | ❌ | ❌
 userIsSharingViaMCS (Edm.String) | ✅ | ❌ | ❌ | ❌
 userPhotoCdnBaseUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 webTemplateId (Edm.Int32) | ✅ | ❌ | ❌ | ❌

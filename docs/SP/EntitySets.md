@@ -387,8 +387,6 @@ QuizUtilitiess | ❌ | ❌ | ❌ | ✅
 Quizs | ❌ | ❌ | ❌ | ✅
 QuotaMigrationApis | ✅ | ❌ | ❌ | ❌
 RankingLabelings | ✅ | ✅ | ✅ | ✅
-RansomwareAlertObjects | ✅ | ❌ | ❌ | ❌
-RansomwareIncidentObjects | ✅ | ❌ | ❌ | ❌
 RatingSettingss | ✅ | ❌ | ❌ | ❌
 RecentDocuments | ✅ | ✅ | ✅ | ❌
 RecentFileCollections | ✅ | ❌ | ❌ | ❌

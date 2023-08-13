@@ -89,6 +89,7 @@ DiscardPage (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 DiscardPage (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 EmbedData (SP.Publishing.EmbedService) | ✅ | ✅ | ❌ | ❌
 Enable (SP.Publishing.CommunicationSite) | ✅ | ❌ | ❌ | ❌
+EnableAnnouncements (SP.Publishing.SitePageService) | ✅ | ❌ | ❌ | ❌
 EnableCategories (SP.Publishing.SitePageService) | ✅ | ❌ | ❌ | ❌
 EnsureTitleResource (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
 Feed (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
@@ -174,6 +175,8 @@ Move (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 Newest (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
 PageDiagnostics | ✅ | ❌ | ❌ | ❌
 PageMoveStatus (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
+PagesInLib (SP.Publishing.SitePageService) | ✅ | ❌ | ❌ | ❌
+PagesInLibByName (SP.Publishing.SitePageService) | ✅ | ❌ | ❌ | ❌
 Popular (SP.Publishing.Search) | ✅ | ❌ | ❌ | ❌
 PromoteToNews (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 PromoteToNews (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
@@ -293,6 +296,7 @@ SendTestEmail (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 SendTestTeamsMessage (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 SetMagazineProperties (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | ❌ | ❌
 SetPeopleInMedia (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
+SetScheduling (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
 SetVideoOwner (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 SharePageByEmail (SP.Publishing.RichSharing) | ✅ | ✅ | ❌ | ❌
 SharePagePreviewByEmail (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌

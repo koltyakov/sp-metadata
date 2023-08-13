@@ -10,3 +10,4 @@ TimeStamp (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 TrackedItemsAsJson (Edm.String) | ✅ | ❌ | ❌ | ❌
 UserEmail (Edm.String) | ✅ | ❌ | ❌ | ❌
 UserLogin (Edm.String) | ✅ | ❌ | ❌ | ❌
+UserPuid (Edm.String) | ✅ | ❌ | ❌ | ❌

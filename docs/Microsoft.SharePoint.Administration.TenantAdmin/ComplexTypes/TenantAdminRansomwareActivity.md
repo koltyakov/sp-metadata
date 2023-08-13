@@ -25,4 +25,5 @@ siteOwner (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 status (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 syncStatus (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+tagId (Edm.String) | ✅ | ❌ | ❌ | ❌
 updatedBy (Edm.String) | ✅ | ❌ | ❌ | ❌
