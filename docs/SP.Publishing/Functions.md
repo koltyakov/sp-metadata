@@ -295,6 +295,7 @@ SchedulePublish (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 SendTestEmail (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 SendTestTeamsMessage (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 SetMagazineProperties (SP.Publishing.PointPublishingPostServiceManager) | ✅ | ❌ | ❌ | ❌
+SetMultilingual (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
 SetPeopleInMedia (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 SetScheduling (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
 SetVideoOwner (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌

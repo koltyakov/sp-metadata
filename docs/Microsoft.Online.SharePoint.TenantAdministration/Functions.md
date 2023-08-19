@@ -155,6 +155,7 @@ SetSPOContainerType (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | 
 SetSiteAdministrators (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetSiteSecondaryAdministrators (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetSiteUserGroups (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+SetSyntexPaygFeatureActivation (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetTrackViewFeatureAlwaysVisible (Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService) | ✅ | ❌ | ❌ | ❌
 SwapSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SwapSiteWithSmartGestureOption (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌

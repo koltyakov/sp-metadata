@@ -21,4 +21,5 @@ OwningApplicationName (Edm.String) | ✅ | ❌ | ❌ | ❌
 Readers (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 SensitivityLabel (Edm.String) | ✅ | ❌ | ❌ | ❌
 Status (Edm.String) | ✅ | ❌ | ❌ | ❌
+StorageUsed (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 Writers (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌

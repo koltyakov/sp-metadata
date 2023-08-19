@@ -1,4 +1,4 @@
-# Function Import: GetFilteredSPListItems
+# Function Import: SetSyntexPaygFeatureActivation
 
 > Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
@@ -10,7 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-columnName (Edm.String) | ✅ | ❌ | ❌ | ❌
-columnType (Edm.String) | ✅ | ❌ | ❌ | ❌
-columnValue (Edm.String) | ✅ | ❌ | ❌ | ❌
-listName (Edm.String) | ✅ | ❌ | ❌ | ❌
+activationStatus (Edm.String) | ✅ | ❌ | ❌ | ❌
+featureName (Edm.String) | ✅ | ❌ | ❌ | ❌

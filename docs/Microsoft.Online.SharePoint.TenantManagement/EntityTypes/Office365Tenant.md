@@ -207,6 +207,7 @@ StreamPremiumPlaybackTranscriptTranslationSettings (Microsoft.Online.SharePoint.
 SyncPrivacyProfileProperties (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyntexBillingSubscriptionSettings (Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext) | ✅ | ❌ | ❌ | ❌
 SyntexInternalFeatureFlags (Collection(SP.KeyValue)) | ✅ | ❌ | ❌ | ❌
+SyntexPaygFeatureActivations (Collection(SP.KeyValue)) | ✅ | ❌ | ❌ | ❌
 SyntexPowerAppsEnvironmentsContext (Microsoft.Online.SharePoint.TenantAdministration.SyntexPowerAppsEnvironmentsContext) | ✅ | ❌ | ❌ | ❌
 TaxonomyTaggingEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 TaxonomyTaggingSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
