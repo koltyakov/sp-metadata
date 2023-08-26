@@ -77,6 +77,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [HTMLFieldSecuritySetting](./ComplexTypes/HTMLFieldSecuritySetting.md) | ✅ | ❌ | ❌ | ❌
 [Hashtag](./ComplexTypes/Hashtag.md) | ✅ | ✅ | ❌ | ❌
 [HomeSiteNavConfiguration](./ComplexTypes/HomeSiteNavConfiguration.md) | ✅ | ❌ | ❌ | ❌
+[HomeSiteReference](./ComplexTypes/HomeSiteReference.md) | ✅ | ❌ | ❌ | ❌
 [HomeSitesDetails](./ComplexTypes/HomeSitesDetails.md) | ✅ | ❌ | ❌ | ❌
 [HubSiteCreationInformation](./ComplexTypes/HubSiteCreationInformation.md) | ✅ | ✅ | ❌ | ❌
 [IngestionTaskKey](./ComplexTypes/IngestionTaskKey.md) | ✅ | ✅ | ✅ | ❌
@@ -167,6 +168,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [VisualizationAppInfo](./ComplexTypes/VisualizationAppInfo.md) | ✅ | ✅ | ❌ | ❌
 [VisualizationField](./ComplexTypes/VisualizationField.md) | ✅ | ✅ | ❌ | ❌
 [VisualizationStyleSet](./ComplexTypes/VisualizationStyleSet.md) | ✅ | ✅ | ❌ | ❌
+[VivaConnectionsLicense](./ComplexTypes/VivaConnectionsLicense.md) | ✅ | ❌ | ❌ | ❌
 [VivaConnectionsUrlConfiguration](./ComplexTypes/VivaConnectionsUrlConfiguration.md) | ✅ | ❌ | ❌ | ❌
 [VivaHomeTitleRegion](./ComplexTypes/VivaHomeTitleRegion.md) | ✅ | ❌ | ❌ | ❌
 [WebCreationInformation](./ComplexTypes/WebCreationInformation.md) | ✅ | ✅ | ✅ | ✅
