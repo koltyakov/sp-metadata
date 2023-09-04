@@ -29,6 +29,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [PowerAppsEnvironmentContext](./ComplexTypes/PowerAppsEnvironmentContext.md) | ✅ | ❌ | ❌ | ❌
 [RecentAdminActionReportPayload](./ComplexTypes/RecentAdminActionReportPayload.md) | ✅ | ❌ | ❌ | ❌
 [RequireSecondaryContact](./ComplexTypes/RequireSecondaryContact.md) | ✅ | ❌ | ❌ | ❌
+[SPContainerCollection](./ComplexTypes/SPContainerCollection.md) | ✅ | ❌ | ❌ | ❌
 [SPContainerProperties](./ComplexTypes/SPContainerProperties.md) | ✅ | ❌ | ❌ | ❌
 [SPContainerTypeProperties](./ComplexTypes/SPContainerTypeProperties.md) | ✅ | ❌ | ❌ | ❌
 [SPListModernUXOff](./ComplexTypes/SPListModernUXOff.md) | ✅ | ❌ | ❌ | ❌

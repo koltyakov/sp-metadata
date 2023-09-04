@@ -85,6 +85,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [FlowSynchronizationResult](./EntityTypes/FlowSynchronizationResult.md) | ✅ | ✅ | ❌ | ❌
 [Folder](./EntityTypes/Folder.md) | ✅ | ✅ | ✅ | ✅
 [FolderColoring](./EntityTypes/FolderColoring.md) | ✅ | ❌ | ❌ | ❌
+[FontPackage](./EntityTypes/FontPackage.md) | ✅ | ❌ | ❌ | ❌
 [Form](./EntityTypes/Form.md) | ✅ | ✅ | ✅ | ✅
 [Group](./EntityTypes/Group.md) | ✅ | ✅ | ✅ | ✅
 [HashtagStoreManager](./EntityTypes/HashtagStoreManager.md) | ❌ | ✅ | ❌ | ❌

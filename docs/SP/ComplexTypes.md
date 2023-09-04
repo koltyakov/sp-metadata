@@ -5,6 +5,7 @@
 Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [AccessRequestResponse](./ComplexTypes/AccessRequestResponse.md) | ✅ | ❌ | ❌ | ❌
+[AdditionalAccessStatusResponse](./ComplexTypes/AdditionalAccessStatusResponse.md) | ✅ | ❌ | ❌ | ❌
 [AlertCreationInformation](./ComplexTypes/AlertCreationInformation.md) | ✅ | ✅ | ❌ | ❌
 [AppLicense](./ComplexTypes/AppLicense.md) | ✅ | ✅ | ✅ | ✅
 [AppLicenseCollection](./ComplexTypes/AppLicenseCollection.md) | ✅ | ✅ | ✅ | ✅
@@ -21,6 +22,8 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [Audience](./ComplexTypes/Audience.md) | ✅ | ❌ | ❌ | ❌
 [AutoLabellingWorkInformation](./ComplexTypes/AutoLabellingWorkInformation.md) | ✅ | ❌ | ❌ | ❌
 [BasePermissions](./ComplexTypes/BasePermissions.md) | ✅ | ✅ | ✅ | ✅
+[CAAEFieldElement](./ComplexTypes/CAAEFieldElement.md) | ✅ | ❌ | ❌ | ❌
+[CAAESnippetElement](./ComplexTypes/CAAESnippetElement.md) | ✅ | ❌ | ❌ | ❌
 [CamlQuery](./ComplexTypes/CamlQuery.md) | ✅ | ✅ | ✅ | ✅
 [ChangeLogItemQuery](./ComplexTypes/ChangeLogItemQuery.md) | ✅ | ✅ | ✅ | ✅
 [ChangeQuery](./ComplexTypes/ChangeQuery.md) | ✅ | ✅ | ✅ | ✅
@@ -71,6 +74,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [FolderCollectionAddParameters](./ComplexTypes/FolderCollectionAddParameters.md) | ✅ | ✅ | ❌ | ❌
 [FolderColoringInformation](./ComplexTypes/FolderColoringInformation.md) | ✅ | ❌ | ❌ | ❌
 [FolderDeleteParameters](./ComplexTypes/FolderDeleteParameters.md) | ✅ | ❌ | ❌ | ❌
+[FontPackageCreationParameters](./ComplexTypes/FontPackageCreationParameters.md) | ✅ | ❌ | ❌ | ❌
 [GetListItemVersionsParameters](./ComplexTypes/GetListItemVersionsParameters.md) | ✅ | ❌ | ❌ | ❌
 [GetListsParameters](./ComplexTypes/GetListsParameters.md) | ✅ | ❌ | ❌ | ❌
 [GroupCreationInformation](./ComplexTypes/GroupCreationInformation.md) | ✅ | ✅ | ✅ | ✅
@@ -117,6 +121,8 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ProvisionedMigrationContainersInfo](./ComplexTypes/ProvisionedMigrationContainersInfo.md) | ✅ | ✅ | ❌ | ❌
 [ProvisionedMigrationQueueInfo](./ComplexTypes/ProvisionedMigrationQueueInfo.md) | ✅ | ✅ | ❌ | ❌
 [ProvisionedTemporaryAzureContainerInfo](./ComplexTypes/ProvisionedTemporaryAzureContainerInfo.md) | ✅ | ❌ | ❌ | ❌
+[PublishModernTemplatePayload](./ComplexTypes/PublishModernTemplatePayload.md) | ✅ | ❌ | ❌ | ❌
+[PublishSnippetPayload](./ComplexTypes/PublishSnippetPayload.md) | ✅ | ❌ | ❌ | ❌
 [RecipientLimitsInfo](./ComplexTypes/RecipientLimitsInfo.md) | ✅ | ❌ | ❌ | ❌
 [RecycleBinQueryInformation](./ComplexTypes/RecycleBinQueryInformation.md) | ✅ | ✅ | ❌ | ❌
 [RelatedItem](./ComplexTypes/RelatedItem.md) | ✅ | ✅ | ✅ | ✅
@@ -144,6 +150,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SimpleDataRow](./ComplexTypes/SimpleDataRow.md) | ✅ | ✅ | ✅ | ✅
 [SimpleDataTable](./ComplexTypes/SimpleDataTable.md) | ✅ | ✅ | ✅ | ✅
 [SmartTemplateContentType](./ComplexTypes/SmartTemplateContentType.md) | ✅ | ❌ | ❌ | ❌
+[Snippet](./ComplexTypes/Snippet.md) | ✅ | ❌ | ❌ | ❌
 [SubwebQuery](./ComplexTypes/SubwebQuery.md) | ✅ | ✅ | ✅ | ✅
 [TargetedSiteDetails](./ComplexTypes/TargetedSiteDetails.md) | ✅ | ❌ | ❌ | ❌
 [TemplateMetaData](./ComplexTypes/TemplateMetaData.md) | ✅ | ❌ | ❌ | ❌

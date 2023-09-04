@@ -1,4 +1,4 @@
-# Function Import: GetSPOContainersByApplicationId
+# Function Import: SetJitDlpPolicyData
 
 > Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
@@ -10,6 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-owningApplicationId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-paged (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-pagingToken (Edm.String) | ✅ | ❌ | ❌ | ❌
+markAllFilesAsSensitiveByDefault (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+odbSensitivityRefreshWindowInHours (Edm.Int32) | ✅ | ❌ | ❌ | ❌

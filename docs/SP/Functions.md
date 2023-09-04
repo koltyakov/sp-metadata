@@ -110,6 +110,7 @@ Dashboard (SP.EmployeeExperienceController) | ✅ | ❌ | ❌ | ❌
 DashboardContent (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 DashboardOOBContent (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 DefaultDocumentLibrary (SP.Web) | ✅ | ✅ | ✅ | ❌
+Delete (SP.FontPackage) | ✅ | ❌ | ❌ | ❌
 Delete (SP.HubSite) | ✅ | ✅ | ❌ | ❌
 DeleteAlert (Collection(SP.Alert)) | ✅ | ✅ | ❌ | ❌
 DeleteAlertAtIndex (Collection(SP.Alert)) | ✅ | ✅ | ❌ | ❌
@@ -259,6 +260,7 @@ GetById (Collection(SP.Feature)) | ✅ | ✅ | ✅ | ✅
 GetById (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
 GetById (Collection(SP.FieldLink)) | ✅ | ✅ | ✅ | ✅
 GetById (Collection(SP.FileVersion)) | ✅ | ✅ | ✅ | ✅
+GetById (Collection(SP.FontPackage)) | ✅ | ❌ | ❌ | ❌
 GetById (Collection(SP.Form)) | ✅ | ✅ | ✅ | ✅
 GetById (Collection(SP.Group)) | ✅ | ✅ | ✅ | ✅
 GetById (Collection(SP.HubSite)) | ✅ | ✅ | ❌ | ❌
@@ -473,6 +475,8 @@ ProvisionMigrationQueue (SP.Site) | ✅ | ✅ | ❌ | ❌
 ProvisionTemporaryAzureContainer (SP.Site) | ✅ | ❌ | ❌ | ❌
 Publish (SP.File) | ✅ | ✅ | ✅ | ✅
 PublishMappedView (SP.List) | ✅ | ✅ | ❌ | ❌
+PublishModernTemplate (SP.List) | ✅ | ❌ | ❌ | ❌
+PublishSnippet (SP.List) | ✅ | ❌ | ❌ | ❌
 RecoverTenantForBringYourOwnKey (SP.Site) | ✅ | ✅ | ❌ | ❌
 RecreateMissingDefaultRoleDefinitions (Collection(SP.RoleDefinition)) | ✅ | ✅ | ✅ | ❌
 Recycle (SP.AppInstance) | ✅ | ✅ | ✅ | ❌
@@ -591,6 +595,8 @@ SP_FavoriteItemCollection_GetFavoriteItems | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_UpdateList](./Functions/SP_FavoriteLists_UpdateList.md) | ✅ | ❌ | ❌ | ❌
 [SP_File_GetContentVerFromTag](./Functions/SP_File_GetContentVerFromTag.md) | ✅ | ✅ | ✅ | ✅
 SP_FolderColoring | ✅ | ❌ | ❌ | ❌
+SP_FontPackages | ✅ | ❌ | ❌ | ❌
+SP_FontPackages_Load | ✅ | ❌ | ❌ | ❌
 [SP_HashtagStoreManager_CallOLS](./Functions/SP_HashtagStoreManager_CallOLS.md) | ❌ | ✅ | ❌ | ❌
 [SP_HashtagStoreManager_GetBlockedHashtags](./Functions/SP_HashtagStoreManager_GetBlockedHashtags.md) | ❌ | ✅ | ❌ | ❌
 [SP_HashtagStoreManager_GetHashtagsByPrefix](./Functions/SP_HashtagStoreManager_GetHashtagsByPrefix.md) | ❌ | ✅ | ❌ | ❌
@@ -712,6 +718,7 @@ SP_Web_GetContextWebThemeData | ✅ | ✅ | ✅ | ❌
 [SP_eSignInternal_AddAuditTrailEntry](./Functions/SP_eSignInternal_AddAuditTrailEntry.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_BillAgreement](./Functions/SP_eSignInternal_BillAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_CancelAgreement](./Functions/SP_eSignInternal_CancelAgreement.md) | ✅ | ❌ | ❌ | ❌
+[SP_eSignInternal_CleanupAgreement](./Functions/SP_eSignInternal_CleanupAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_CompleteAgreement](./Functions/SP_eSignInternal_CompleteAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_DeclineAgreement](./Functions/SP_eSignInternal_DeclineAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_SignAgreement](./Functions/SP_eSignInternal_SignAgreement.md) | ✅ | ❌ | ❌ | ❌
@@ -751,6 +758,7 @@ SetFlag (SP.UserExperienceState) | ✅ | ❌ | ❌ | ❌
 SetGlobalNavSettings (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetId (SP.TimeZone) | ✅ | ❌ | ❌ | ❌
 <span title="SetIsContributorOwnerEnabledPropertyForDefaultDocLib (SP.Site)">SetIsContributorOwnerEnabledPropertyForDefaultDocL...</span> | ✅ | ❌ | ❌ | ❌
+SetItemsOrder (SP.List) | ✅ | ❌ | ❌ | ❌
 SetMediaServiceMetadata (SP.File) | ✅ | ❌ | ❌ | ❌
 SetNoExpiration (SP.SiteVersionPolicyManager) | ✅ | ❌ | ❌ | ❌
 SetNotificationRecipients (SP.MultilingualSettings) | ✅ | ❌ | ❌ | ❌
@@ -925,6 +933,7 @@ VivaHomeConfiguration (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 contextinfo | ✅ | ✅ | ✅ | ✅
 files | ✅ | ✅ | ✅ | ❌
 foldercoloring | ✅ | ❌ | ❌ | ❌
+fontpackages | ✅ | ❌ | ❌ | ❌
 getFileExtendedActivities (SP.List) | ❌ | ✅ | ❌ | ❌
 hubsites | ✅ | ✅ | ❌ | ❌
 lists | ✅ | ✅ | ✅ | ✅

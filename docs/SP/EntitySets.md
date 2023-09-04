@@ -177,6 +177,7 @@ Folders | ✅ | ✅ | ✅ | ✅
 Folders1 | ✅ | ✅ | ✅ | ❌
 FollowedContents | ✅ | ✅ | ✅ | ✅
 FollowedItemDatas | ✅ | ✅ | ✅ | ✅
+Fontpackages | ✅ | ❌ | ❌ | ❌
 Forms | ✅ | ✅ | ✅ | ✅
 FormsCustomizations | ✅ | ✅ | ❌ | ❌
 GeoAdministrators | ✅ | ❌ | ❌ | ❌
@@ -649,6 +650,7 @@ ViewSelectionInfos | ✅ | ✅ | ✅ | ✅
 Views | ✅ | ✅ | ✅ | ✅
 VisualizationAppSynchronizationResults | ✅ | ✅ | ❌ | ❌
 VivaHomes | ✅ | ❌ | ❌ | ❌
+VivaResourcess | ✅ | ❌ | ❌ | ❌
 Vivasitemanagers | ✅ | ❌ | ❌ | ❌
 WacApis | ✅ | ❌ | ❌ | ❌
 WebInformations | ✅ | ✅ | ✅ | ✅
