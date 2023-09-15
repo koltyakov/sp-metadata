@@ -16115,6 +16115,11 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="viewId" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="RenderActiveContainers" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="parameters" Type="SP.RenderListDataParameters" />
+          <Parameter Name="overrideParameters" Type="SP.RenderListDataOverrideParameters" />
+        </FunctionImport>
         <FunctionImport Name="RenderAdminListData" ReturnType="Edm.Stream" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="parameters" Type="SP.RenderListDataParameters" />
@@ -16268,6 +16273,12 @@
         <FunctionImport Name="RenderIBSegmentListFilterData" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="parameters" Type="SP.RenderListFilterDataParameters" />
+        </FunctionImport>
+        <FunctionImport Name="RenderOrgAssetListDataAsStream" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="listUrl" Type="Edm.String" />
+          <Parameter Name="parameters" Type="SP.RenderListDataParameters" />
+          <Parameter Name="overrideParameters" Type="SP.RenderListDataOverrideParameters" />
         </FunctionImport>
         <FunctionImport Name="RenderPolicyDefinitionList" ReturnType="Edm.Stream" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -16468,6 +16479,11 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="viewId" Type="Edm.String" />
           <Parameter Name="viewXml" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="UploadOrgAssetBrandFontFile" ReturnType="SP.ListItem" IsBindable="true" EntitySet="ListItems">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="fileName" Type="Edm.String" />
+          <Parameter Name="stream" Type="Edm.Stream" />
         </FunctionImport>
         <FunctionImport Name="ValidateHomeSite" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -19584,6 +19600,24 @@
       <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign/title">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignFeatures">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignFeatures/isContextNotAvailable">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignFeatures/isDisabledByTenantAdmin">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignFeatures/isEnabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignFeatures/isFlightDeactivated">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignFeatures/isNotAHomeSite">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Internal.AppRenderInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21006,6 +21040,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData/ModelUniqueId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData/RemoveSitePromotionEnabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData/TargetLibraryServerRelativeUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21730,6 +21767,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesigns">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesigns/Features">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor/CardDesigns">
@@ -24171,6 +24211,9 @@
       <Annotations Target="SP.ApiData/GetClientIdFromSPAppRequestContext(Microsoft.SharePoint.TWS.AuthTestService)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/VerifySPAppRequestContextIsNull(Microsoft.SharePoint.TWS.AuthTestService)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/AddThumbnailFieldData(SP.Workflow.SPWorkflowTask, Edm.Stream, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -26186,6 +26229,7 @@
       </ComplexType>
       <ComplexType Name="SPMachineLearningPublicationEntityData">
         <Property Name="ModelUniqueId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="RemoveSitePromotionEnabled" Type="Edm.Boolean" />
         <Property Name="TargetLibraryServerRelativeUrl" Type="Edm.String" />
         <Property Name="TargetSiteUrl" Type="Edm.String" />
         <Property Name="TargetTableListServerRelativeUrl" Type="Edm.String" />
@@ -32494,6 +32538,13 @@
         <Property Name="showInToolbox" Type="Edm.Boolean" Nullable="false" />
         <Property Name="title" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="CardDesignFeatures">
+        <Property Name="isContextNotAvailable" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="isDisabledByTenantAdmin" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="isEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="isFlightDeactivated" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="isNotAHomeSite" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="SPFailToTriggerUninstallAddinJobResponse">
         <Property Name="appInstanceId" Type="Edm.Guid" Nullable="false" />
         <Property Name="errorMessage" Type="Edm.String" />
@@ -32607,6 +32658,7 @@
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+        <Property Name="Features" Type="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignFeatures" />
       </EntityType>
       <EntityType Name="SiteCollectionAppCatalogAllowedItem">
         <Key>
@@ -33218,7 +33270,6 @@
         <Property Name="fileCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="filesSharedExternally" Type="Edm.Int32" Nullable="false" />
         <Property Name="filesSharedInternally" Type="Edm.Int32" Nullable="false" />
-        <Property Name="sensitivityLabel" Type="Edm.Guid" Nullable="false" />
         <Property Name="totalFilesShared" Type="Edm.Int32" Nullable="false" />
         <Property Name="userDisplayName" Type="Edm.String" />
         <Property Name="userPrincipalName" Type="Edm.String" />
@@ -33256,7 +33307,9 @@
         <Property Name="activityId" Type="Edm.Guid" Nullable="false" />
         <Property Name="category" Type="Edm.Int32" Nullable="false" />
         <Property Name="detectionSource" Type="Edm.String" />
+        <Property Name="driveId" Type="Edm.String" />
         <Property Name="firstActivity" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="impactedAssetLocation" Type="Edm.String" />
         <Property Name="lastActivity" Type="Edm.DateTime" Nullable="false" />
         <Property Name="siteOwner" Type="Edm.String" />
         <Property Name="siteSubscriptionId" Type="Edm.Guid" Nullable="false" />
@@ -33323,6 +33376,7 @@
         <Property Name="classification" Type="Edm.Int32" Nullable="false" />
         <Property Name="createdTime" Type="Edm.DateTime" Nullable="false" />
         <Property Name="detectionSource" Type="Edm.String" />
+        <Property Name="driveId" Type="Edm.String" />
         <Property Name="eventId" Type="Edm.Guid" Nullable="false" />
         <Property Name="firstActivity" Type="Edm.DateTime" />
         <Property Name="impactedAssetLocation" Type="Edm.String" />
