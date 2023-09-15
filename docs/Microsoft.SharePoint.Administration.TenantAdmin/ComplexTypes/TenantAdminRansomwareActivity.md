@@ -13,6 +13,7 @@ category (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 classification (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 createdTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 detectionSource (Edm.String) | ✅ | ❌ | ❌ | ❌
+driveId (Edm.String) | ✅ | ❌ | ❌ | ❌
 eventId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 firstActivity (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 impactedAssetLocation (Edm.String) | ✅ | ❌ | ❌ | ❌

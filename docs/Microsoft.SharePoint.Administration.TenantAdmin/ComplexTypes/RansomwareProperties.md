@@ -10,7 +10,9 @@ activityGeneratedOn (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 activityId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 category (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 detectionSource (Edm.String) | ✅ | ❌ | ❌ | ❌
+driveId (Edm.String) | ✅ | ❌ | ❌ | ❌
 firstActivity (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
+impactedAssetLocation (Edm.String) | ✅ | ❌ | ❌ | ❌
 lastActivity (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 siteOwner (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteSubscriptionId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

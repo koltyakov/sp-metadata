@@ -10,7 +10,6 @@ anonymousLinkCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 fileCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 filesSharedExternally (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 filesSharedInternally (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-sensitivityLabel (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 totalFilesShared (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 userDisplayName (Edm.String) | ✅ | ❌ | ❌ | ❌
 userPrincipalName (Edm.String) | ✅ | ❌ | ❌ | ❌

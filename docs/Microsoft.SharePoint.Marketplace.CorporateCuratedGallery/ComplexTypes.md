@@ -6,6 +6,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [AppUpgradeAvailability](./ComplexTypes/AppUpgradeAvailability.md) | ✅ | ❌ | ❌ | ❌
 [CardDesign](./ComplexTypes/CardDesign.md) | ✅ | ❌ | ❌ | ❌
+[CardDesignFeatures](./ComplexTypes/CardDesignFeatures.md) | ✅ | ❌ | ❌ | ❌
 [SPAddinInstanceInfo](./ComplexTypes/SPAddinInstanceInfo.md) | ✅ | ❌ | ❌ | ❌
 [SPAddinPermissionFailedInfo](./ComplexTypes/SPAddinPermissionFailedInfo.md) | ✅ | ❌ | ❌ | ❌
 [SPAddinPermissionInfo](./ComplexTypes/SPAddinPermissionInfo.md) | ✅ | ❌ | ❌ | ❌
