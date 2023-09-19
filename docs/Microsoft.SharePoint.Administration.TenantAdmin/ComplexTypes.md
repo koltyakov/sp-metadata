@@ -23,8 +23,10 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [TenantAdminListItemColumnValue](./ComplexTypes/TenantAdminListItemColumnValue.md) | ✅ | ❌ | ❌ | ❌
 [TenantAdminPolicyDefinition](./ComplexTypes/TenantAdminPolicyDefinition.md) | ✅ | ❌ | ❌ | ❌
 [TenantAdminPolicyReport](./ComplexTypes/TenantAdminPolicyReport.md) | ✅ | ❌ | ❌ | ❌
+[TenantAdminRansomwareActivitiesOverview](./ComplexTypes/TenantAdminRansomwareActivitiesOverview.md) | ✅ | ❌ | ❌ | ❌
 [TenantAdminRansomwareActivity](./ComplexTypes/TenantAdminRansomwareActivity.md) | ✅ | ❌ | ❌ | ❌
 [TenantAdminRansomwareEvent](./ComplexTypes/TenantAdminRansomwareEvent.md) | ✅ | ❌ | ❌ | ❌
+[TenantAdminRansomwareEventsOverview](./ComplexTypes/TenantAdminRansomwareEventsOverview.md) | ✅ | ❌ | ❌ | ❌
 [TenantAdminRecentAction](./ComplexTypes/TenantAdminRecentAction.md) | ✅ | ❌ | ❌ | ❌
 [TenantAdminRecentActionPayload](./ComplexTypes/TenantAdminRecentActionPayload.md) | ✅ | ❌ | ❌ | ❌
 [UnifiedAuditRecord](./ComplexTypes/UnifiedAuditRecord.md) | ✅ | ❌ | ❌ | ❌

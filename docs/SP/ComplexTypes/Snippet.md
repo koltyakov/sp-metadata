@@ -7,7 +7,7 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 Id (Edm.String) | ✅ | ❌ | ❌ | ❌
-ListItemId (Edm.String) | ✅ | ❌ | ❌ | ❌
 Name (Edm.String) | ✅ | ❌ | ❌ | ❌
 Placeholders (Collection(SP.PlaceholderV2)) | ✅ | ❌ | ❌ | ❌
-Version (Edm.String) | ✅ | ❌ | ❌ | ❌
+SnippetLibraryMappedId (Edm.String) | ✅ | ❌ | ❌ | ❌
+SnippetLibraryMappedVersion (Edm.String) | ✅ | ❌ | ❌ | ❌

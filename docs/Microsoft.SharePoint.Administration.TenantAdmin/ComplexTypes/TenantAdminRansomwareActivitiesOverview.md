@@ -1,0 +1,14 @@
+# Complex Type: TenantAdminRansomwareActivitiesOverview
+
+> Namespace: Microsoft.SharePoint.Administration.TenantAdmin
+
+## Properties
+
+Property | SPO | SP 2019 | SP 2016 | SP 2013
+----------|:---:|:-------:|:-------:|:-------:
+impactedAssetsCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+oneDriveActivityCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+sharePointActivityCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+totalActivitiesCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+unresolvedActivitiesCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+usersCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌

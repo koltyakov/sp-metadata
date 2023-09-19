@@ -16,6 +16,7 @@ numberOfRecords (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 progressPercentage (Edm.Double) | ✅ | ❌ | ❌ | ❌
 queryEndDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 queryStartDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
+reportType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 requestId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 sPOCorrelationId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 sites (Edm.String) | ✅ | ❌ | ❌ | ❌

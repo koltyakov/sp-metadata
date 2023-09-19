@@ -223,6 +223,7 @@ Expire (SP.User) | ✅ | ❌ | ❌ | ❌
 ExtendUpgradeReminderDate (SP.Site) | ✅ | ✅ | ✅ | ✅
 FinishUpload (SP.File) | ✅ | ✅ | ✅ | ❌
 FinishUploadWithChecksum (SP.File) | ✅ | ❌ | ❌ | ❌
+FullDashboardContent (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 GetACSServicePrincipals (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetAdaptiveCardExtensions (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetAddinPrincipalsHavingPermissionsInSites (SP.Web) | ✅ | ❌ | ❌ | ❌

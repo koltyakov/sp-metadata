@@ -10,5 +10,6 @@ actions (Edm.String) | ✅ | ❌ | ❌ | ❌
 name (Edm.String) | ✅ | ❌ | ❌ | ❌
 queryEndDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 queryStartDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
+reportType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 sites (Edm.String) | ✅ | ❌ | ❌ | ❌
 users (Edm.String) | ✅ | ❌ | ❌ | ❌

@@ -13,4 +13,5 @@ JobState (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 NewPageUniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 NewPageUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 TotalAssetsToMove (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+Warnings (Collection(Microsoft.SharePoint.Publishing.PageCopyWithAssets.PageDeepCopyWarning)) | ✅ | ❌ | ❌ | ❌
 WorkItemId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
