@@ -19,12 +19,16 @@ firstActivity (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 impactedAssetLocation (Edm.String) | ✅ | ❌ | ❌ | ❌
 impactedAssets (Edm.String) | ✅ | ❌ | ❌ | ❌
 impactedAssetsCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+impactedAssetsUserCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 investigationState (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 lastActivity (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 lastUpdatedTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
+siteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 siteOwner (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+siteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 status (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 syncStatus (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 tagId (Edm.String) | ✅ | ❌ | ❌ | ❌
 updatedBy (Edm.String) | ✅ | ❌ | ❌ | ❌
+webId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

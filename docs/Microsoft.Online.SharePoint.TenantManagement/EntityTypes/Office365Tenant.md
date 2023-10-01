@@ -43,6 +43,7 @@ BlockMacSync (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockUserInfoVisibility (Edm.String) | ✅ | ❌ | ❌ | ❌
 BlockUserInfoVisibilityInOneDrive (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 BlockUserInfoVisibilityInSharePoint (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+BusinessConnectivityServiceDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CommentsOnFilesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CommentsOnListItemsDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -70,6 +71,7 @@ DefaultContentCenterSite (Microsoft.Online.SharePoint.TenantAdministration.SiteI
 DefaultLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DefaultODBMode (Edm.String) | ✅ | ❌ | ❌ | ❌
 DefaultSharingLinkType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+DenySelectSGsInODBList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 DenySelectSecurityGroupsInSPSitesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 DisableAddToOneDrive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableBackToClassic (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

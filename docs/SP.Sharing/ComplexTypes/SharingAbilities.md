@@ -8,6 +8,7 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 anonymousLinkAbilities (SP.Sharing.SharingLinkAbilities) | ✅ | ✅ | ❌ | ❌
 anyoneLinkAbilities (SP.Sharing.SharingLinkAbilities) | ✅ | ❌ | ❌ | ❌
+canStopSharing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 directSharingAbilities (SP.Sharing.DirectSharingAbilities) | ✅ | ✅ | ❌ | ❌
 organizationLinkAbilities (SP.Sharing.SharingLinkAbilities) | ✅ | ✅ | ❌ | ❌
 peopleSharingLinkAbilities (SP.Sharing.SharingLinkAbilities) | ✅ | ✅ | ❌ | ❌

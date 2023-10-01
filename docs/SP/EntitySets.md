@@ -462,6 +462,7 @@ SPOWebAppServicePrincipals | ✅ | ❌ | ❌ | ❌
 SPPolicyStoreProxys | ✅ | ❌ | ❌ | ❌
 SPSitePreservationUtilitys | ✅ | ❌ | ❌ | ❌
 SPSocialSwitchs | ✅ | ✅ | ❌ | ❌
+SPStartUtilitiesProxys | ✅ | ❌ | ❌ | ❌
 SPTenantAppInstanceDatas | ✅ | ❌ | ❌ | ❌
 SPTenantIBInsightsReportManagers | ✅ | ❌ | ❌ | ❌
 SPTenantIBInsightsReportMetadatas | ✅ | ❌ | ❌ | ❌
@@ -650,6 +651,7 @@ ViewSelectionInfos | ✅ | ✅ | ✅ | ✅
 Views | ✅ | ✅ | ✅ | ✅
 VisualizationAppSynchronizationResults | ✅ | ✅ | ❌ | ❌
 VivaHomes | ✅ | ❌ | ❌ | ❌
+VivaResourceGetEndpoints | ✅ | ❌ | ❌ | ❌
 VivaResourcess | ✅ | ❌ | ❌ | ❌
 Vivasitemanagers | ✅ | ❌ | ❌ | ❌
 WacApis | ✅ | ❌ | ❌ | ❌

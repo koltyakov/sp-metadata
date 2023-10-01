@@ -46,6 +46,8 @@ BlockSendLabelMismatchEmail (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockUserInfoVisibility (Edm.String) | ✅ | ❌ | ❌ | ❌
 BlockUserInfoVisibilityInOneDrive (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 BlockUserInfoVisibilityInSharePoint (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+BonusStorageQuotaMB (Edm.Int64) | ✅ | ❌ | ❌ | ❌
+BusinessConnectivityServiceDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CommentsOnFilesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CommentsOnListItemsDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -74,6 +76,7 @@ DefaultContentCenterSite (Microsoft.Online.SharePoint.TenantAdministration.SiteI
 DefaultLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DefaultODBMode (Edm.String) | ✅ | ❌ | ❌ | ❌
 DefaultSharingLinkType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+DenySelectSGsInODBListInTenant (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 DenySelectSecurityGroupsInSPSitesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 DisableAddToOneDrive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableBackToClassic (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -152,6 +155,7 @@ IsMnAFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMultiGeo (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMultipleHomeSitesFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMultipleVivaConnectionsFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+IsRansomwareProtectionEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsUnmanagedSyncClientForTenantRestricted (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsUnmanagedSyncClientRestrictionFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsVivaHomeFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

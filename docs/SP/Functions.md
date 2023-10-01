@@ -90,6 +90,7 @@ CreateDefaultAssociatedGroups (SP.Web) | ✅ | ✅ | ❌ | ❌
 CreateDocumentAndGetEditLink (SP.List) | ✅ | ✅ | ✅ | ❌
 CreateDocumentFromCAAETemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 CreateDocumentFromCAAETemplateV2 (SP.List) | ✅ | ❌ | ❌ | ❌
+CreateDocumentFromContentAssemblyTemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 CreateDocumentWithDefaultName (SP.List) | ✅ | ✅ | ❌ | ❌
 CreateFieldAsXml (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
 CreateFolder (SP.FolderColoring) | ✅ | ❌ | ❌ | ❌
@@ -316,6 +317,7 @@ GetClientSideComponentsById (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetClientSideWebParts (SP.Web) | ✅ | ✅ | ✅ | ❌
 GetComments (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 GetConnectedHubs (Collection(SP.HubSite)) | ✅ | ❌ | ❌ | ❌
+GetContentAssemblyTemplateFields (SP.List) | ✅ | ❌ | ❌ | ❌
 GetCopyJobProgress (SP.Site) | ✅ | ✅ | ❌ | ❌
 GetCustomListTemplates (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetDashboardPersonalization (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌

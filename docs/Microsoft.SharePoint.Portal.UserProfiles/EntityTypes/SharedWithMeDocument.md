@@ -36,6 +36,7 @@ Modified (Edm.DateTime) | ✅ | ✅ | ✅ | ❌
 ModifiedDateTimeUTC (Edm.DateTime) | ✅ | ✅ | ❌ | ❌
 OfficeBundleGenerate (Edm.String) | ✅ | ❌ | ❌ | ❌
 OfficeBundleGetFragment (Edm.String) | ✅ | ❌ | ❌ | ❌
+Owner (Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocumentUser) | ✅ | ❌ | ❌ | ❌
 ParentId (Edm.String) | ✅ | ✅ | ❌ | ❌
 ParentLink (Edm.String) | ✅ | ✅ | ✅ | ❌
 PdfConversionUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
