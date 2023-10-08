@@ -24,6 +24,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [BasePermissions](./ComplexTypes/BasePermissions.md) | ✅ | ✅ | ✅ | ✅
 [CAAEFieldElement](./ComplexTypes/CAAEFieldElement.md) | ✅ | ❌ | ❌ | ❌
 [CAAESnippetElement](./ComplexTypes/CAAESnippetElement.md) | ✅ | ❌ | ❌ | ❌
+[CAFieldValue](./ComplexTypes/CAFieldValue.md) | ✅ | ❌ | ❌ | ❌
 [CamlQuery](./ComplexTypes/CamlQuery.md) | ✅ | ✅ | ✅ | ✅
 [ChangeLogItemQuery](./ComplexTypes/ChangeLogItemQuery.md) | ✅ | ✅ | ✅ | ✅
 [ChangeQuery](./ComplexTypes/ChangeQuery.md) | ✅ | ✅ | ✅ | ✅
@@ -68,6 +69,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [FieldRatingScaleQuestionAnswer](./ComplexTypes/FieldRatingScaleQuestionAnswer.md) | ✅ | ✅ | ✅ | ✅
 [FieldUrlValue](./ComplexTypes/FieldUrlValue.md) | ✅ | ✅ | ✅ | ✅
 [FieldUserValue](./ComplexTypes/FieldUserValue.md) | ✅ | ✅ | ✅ | ✅
+[FieldValuesWithUrl](./ComplexTypes/FieldValuesWithUrl.md) | ✅ | ❌ | ❌ | ❌
 [FileCollectionAddParameters](./ComplexTypes/FileCollectionAddParameters.md) | ✅ | ✅ | ❌ | ❌
 [FileCreationInformation](./ComplexTypes/FileCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [FileDeleteParameters](./ComplexTypes/FileDeleteParameters.md) | ✅ | ❌ | ❌ | ❌

@@ -206,6 +206,7 @@ EnableIndex (SP.FieldRatingScale) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldText) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldUrl) | ✅ | ❌ | ❌ | ❌
 EnableIndex (SP.FieldUser) | ✅ | ❌ | ❌ | ❌
+EnableQueryableColumns (SP.List) | ✅ | ❌ | ❌ | ❌
 EnqueueApplySensitivityLabelWork (SP.Site) | ✅ | ❌ | ❌ | ❌
 EnqueueAsyncActionTaskById (SP.List) | ✅ | ❌ | ❌ | ❌
 EnsureClientRenderedSitePagesLibrary (Collection(SP.List)) | ✅ | ✅ | ❌ | ❌
@@ -317,6 +318,7 @@ GetClientSideComponentsById (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetClientSideWebParts (SP.Web) | ✅ | ✅ | ✅ | ❌
 GetComments (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 GetConnectedHubs (Collection(SP.HubSite)) | ✅ | ❌ | ❌ | ❌
+GetContentAssemblyDocumentFieldValues (SP.List) | ✅ | ❌ | ❌ | ❌
 GetContentAssemblyTemplateFields (SP.List) | ✅ | ❌ | ❌ | ❌
 GetCopyJobProgress (SP.Site) | ✅ | ✅ | ❌ | ❌
 GetCustomListTemplates (SP.Web) | ✅ | ✅ | ✅ | ✅
@@ -896,6 +898,7 @@ UpdateAlert (SP.Alert) | ✅ | ✅ | ❌ | ❌
 UpdateCAAETemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateCAAETemplateV2 (SP.List) | ✅ | ❌ | ❌ | ❌
 <span title="UpdateClientObjectModelUseRemoteAPIsPermissionSetting (SP.Site)">UpdateClientObjectModelUseRemoteAPIsPermissionSett...</span> | ✅ | ✅ | ✅ | ✅
+UpdateContentAssemblyDocument (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateEx (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 UpdateFormProcessingModelRetentionLabel (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateFormProcessingModelSettings (SP.List) | ✅ | ❌ | ❌ | ❌

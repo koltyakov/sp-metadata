@@ -11,5 +11,6 @@ IsPersonalizationEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsVivaHomeOptedOut (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 NavConfig (SP.HomeSiteNavConfiguration) | ✅ | ❌ | ❌ | ❌
 SiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+Theme (Edm.String) | ✅ | ❌ | ❌ | ❌
 VivaExperienceType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 WebId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

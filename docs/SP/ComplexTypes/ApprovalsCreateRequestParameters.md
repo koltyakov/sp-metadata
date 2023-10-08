@@ -7,6 +7,7 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 approvers (Edm.String) | ✅ | ❌ | ❌ | ❌
+approversInSteps (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 awaitAll (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 details (Edm.String) | ✅ | ❌ | ❌ | ❌
 itemId (Edm.String) | ✅ | ❌ | ❌ | ❌

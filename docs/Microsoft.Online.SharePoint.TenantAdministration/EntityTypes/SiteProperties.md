@@ -19,6 +19,7 @@ BlockDownloadLinksFileType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 BlockDownloadMicrosoft365GroupIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 BlockDownloadPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockGuestsAsSiteAdmin (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+BonusDiskQuota (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 ClearRestrictedAccessControl (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CompatibilityLevel (Edm.Int32) | ✅ | ❌ | ❌ | ❌

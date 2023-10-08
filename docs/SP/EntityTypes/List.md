@@ -43,6 +43,7 @@ EnableMinorVersions (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 EnableModeration (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 EnableRequestSignOff (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableVersioning (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+EnabledQueryableColumnsDateTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 EntityTypeName (Edm.String) | ✅ | ✅ | ✅ | ✅
 ExcludeFromOfflineClient (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 ExemptFromBlockDownloadOfNonViewableFiles (Edm.Boolean) | ✅ | ✅ | ❌ | ❌

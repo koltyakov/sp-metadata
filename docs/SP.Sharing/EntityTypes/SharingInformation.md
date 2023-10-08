@@ -8,6 +8,7 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 accessRequestSettings (SP.Sharing.AccessRequestSettings) | ✅ | ✅ | ❌ | ❌
 addressBarLinkSettings (SP.Sharing.AddressBarLinkSettings) | ✅ | ❌ | ❌ | ❌
+ageGroup (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 anonymousLinkExpirationRestrictionDays (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 anyoneLinkTrackUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 blockPeoplePickerAndSharing (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
