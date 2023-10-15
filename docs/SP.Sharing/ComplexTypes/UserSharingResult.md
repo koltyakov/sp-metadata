@@ -13,5 +13,6 @@ Email (Edm.String) | ✅ | ✅ | ✅ | ❌
 InvitationLink (Edm.String) | ✅ | ✅ | ✅ | ❌
 IsUserKnown (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 Message (Edm.String) | ✅ | ✅ | ✅ | ✅
+OtherMails (Edm.String) | ✅ | ❌ | ❌ | ❌
 Status (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 User (Edm.String) | ✅ | ✅ | ✅ | ✅

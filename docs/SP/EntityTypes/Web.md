@@ -125,6 +125,7 @@ AvailableContentTypes | ✅ | ✅ | ✅ | ✅
 AvailableFields | ✅ | ✅ | ✅ | ✅
 BingMapsInformation | ❌ | ✅ | ❌ | ❌
 CanModernizeHomepage | ✅ | ❌ | ❌ | ❌
+CardDesigns | ✅ | ❌ | ❌ | ❌
 ClientWebParts | ✅ | ✅ | ❌ | ❌
 ContentTypes | ✅ | ✅ | ✅ | ✅
 CurrentUser | ✅ | ✅ | ✅ | ✅
