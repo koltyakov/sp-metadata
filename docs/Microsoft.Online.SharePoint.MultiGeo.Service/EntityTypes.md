@@ -6,6 +6,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [AllowedDataLocation](./EntityTypes/AllowedDataLocation.md) | ✅ | ❌ | ❌ | ❌
 [AllowedDataLocationEntityData](./EntityTypes/AllowedDataLocationEntityData.md) | ✅ | ❌ | ❌ | ❌
+[CompatibleDB](./EntityTypes/CompatibleDB.md) | ✅ | ❌ | ❌ | ❌
 [ContentDbSchemaVersion](./EntityTypes/ContentDbSchemaVersion.md) | ✅ | ❌ | ❌ | ❌
 [CrossFarmGroupMoveJob](./EntityTypes/CrossFarmGroupMoveJob.md) | ✅ | ❌ | ❌ | ❌
 [CrossFarmSiteMoveJob](./EntityTypes/CrossFarmSiteMoveJob.md) | ✅ | ❌ | ❌ | ❌
@@ -18,6 +19,8 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CrossGeoTenantPropertyEntityData](./EntityTypes/CrossGeoTenantPropertyEntityData.md) | ✅ | ❌ | ❌ | ❌
 [CrossGeoUserPlacementJob](./EntityTypes/CrossGeoUserPlacementJob.md) | ✅ | ❌ | ❌ | ❌
 [CrossGeoUserPlacementJobEntityData](./EntityTypes/CrossGeoUserPlacementJobEntityData.md) | ✅ | ❌ | ❌ | ❌
+[DBLevelWorkItem](./EntityTypes/DBLevelWorkItem.md) | ✅ | ❌ | ❌ | ❌
+[DBLevelWorkItemEntityData](./EntityTypes/DBLevelWorkItemEntityData.md) | ✅ | ❌ | ❌ | ❌
 [DBSchemaCompatibilityCheck](./EntityTypes/DBSchemaCompatibilityCheck.md) | ✅ | ❌ | ❌ | ❌
 [DfDeprecationJob](./EntityTypes/DfDeprecationJob.md) | ✅ | ❌ | ❌ | ❌
 [DfDeprecationSiteEntityData](./EntityTypes/DfDeprecationSiteEntityData.md) | ✅ | ❌ | ❌ | ❌

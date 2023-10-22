@@ -1,4 +1,4 @@
-# Function Import: RemoveLink
+# Function Import: AddLink
 
 > Namespace: Microsoft.SharePoint.EmployeeEngagement
 
@@ -10,4 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-id (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+newLink (Microsoft.SharePoint.EmployeeEngagement.VivaResourceLink) | ✅ | ❌ | ❌ | ❌

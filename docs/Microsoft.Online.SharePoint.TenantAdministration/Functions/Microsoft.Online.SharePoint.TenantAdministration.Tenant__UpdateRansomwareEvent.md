@@ -11,4 +11,5 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 columnValues (Collection(Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminListItemColumnValue)) | ✅ | ❌ | ❌ | ❌
+forceResolveActivity (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 listItemId (Edm.Int32) | ✅ | ❌ | ❌ | ❌

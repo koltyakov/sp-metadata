@@ -10,6 +10,5 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-item (Microsoft.SharePoint.ListHome.FavoriteListHomeItem) | ✅ | ❌ | ❌ | ❌
-itemAfter (Microsoft.SharePoint.ListHome.FavoriteListHomeItem) | ✅ | ❌ | ❌ | ❌
-itemBefore (Microsoft.SharePoint.ListHome.FavoriteListHomeItem) | ✅ | ❌ | ❌ | ❌
+linkId (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+prevLinkId (Edm.Int32) | ✅ | ❌ | ❌ | ❌

@@ -7,6 +7,7 @@ Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 Cancel (Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJob) | ✅ | ❌ | ❌ | ❌
 Cancel (Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob) | ✅ | ❌ | ❌ | ❌
 Cancel (Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob) | ✅ | ❌ | ❌ | ❌
+CompatibleDB (Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta) | ✅ | ❌ | ❌ | ❌
 Create (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator)) | ✅ | ❌ | ❌ | ❌
 DBSchemaCompatibilityCheck (Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta) | ✅ | ❌ | ❌ | ❌
 Delete (Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJob) | ✅ | ❌ | ❌ | ❌
@@ -42,6 +43,7 @@ GetMoveReport (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJ
 GetMoveReport (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob)) | ✅ | ❌ | ❌ | ❌
 HasMnALicense (Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_AllowedDataLocation">Microsoft_Online_SharePoint_MultiGeo_Service_Allow...</span> (Microsoft Online SharePoint MultiGeo Service AllowedDataLocation) | ✅ | ❌ | ❌ | ❌
+[<span title="Microsoft_Online_SharePoint_MultiGeo_Service_CompatibleDB">Microsoft_Online_SharePoint_MultiGeo_Service_Compa...</span> (Microsoft Online SharePoint MultiGeo Service CompatibleDB)](./Functions/Microsoft_Online_SharePoint_MultiGeo_Service_CompatibleDB.md) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmGroupMoveJob">Microsoft_Online_SharePoint_MultiGeo_Service_Cross...</span> (Microsoft Online SharePoint MultiGeo Service CrossFarmGroupMoveJob) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmSiteMoveJob">Microsoft_Online_SharePoint_MultiGeo_Service_Cross...</span> (Microsoft Online SharePoint MultiGeo Service CrossFarmSiteMoveJob) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmSiteMoveJobEntityData">Microsoft_Online_SharePoint_MultiGeo_Service_Cross...</span> (Microsoft Online SharePoint MultiGeo Service CrossFarmSiteMoveJobEntityData) | ✅ | ❌ | ❌ | ❌
@@ -53,6 +55,8 @@ HasMnALicense (Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoTenantPropertyEntityData">Microsoft_Online_SharePoint_MultiGeo_Service_Cross...</span> (Microsoft Online SharePoint MultiGeo Service CrossGeoTenantPropertyEntityData) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoUserPlacementJob">Microsoft_Online_SharePoint_MultiGeo_Service_Cross...</span> (Microsoft Online SharePoint MultiGeo Service CrossGeoUserPlacementJob) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoUserPlacementJobEntityData">Microsoft_Online_SharePoint_MultiGeo_Service_Cross...</span> (Microsoft Online SharePoint MultiGeo Service CrossGeoUserPlacementJobEntityData) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_DBLevelWorkItem">Microsoft_Online_SharePoint_MultiGeo_Service_DBLev...</span> (Microsoft Online SharePoint MultiGeo Service DBLevelWorkItem) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_DBLevelWorkItemEntityData">Microsoft_Online_SharePoint_MultiGeo_Service_DBLev...</span> (Microsoft Online SharePoint MultiGeo Service DBLevelWorkItemEntityData) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_DBSchemaCompatibilityCheck">Microsoft_Online_SharePoint_MultiGeo_Service_DBSch...</span> (Microsoft Online SharePoint MultiGeo Service DBSchemaCompatibilityCheck) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_DfDeprecationJob">Microsoft_Online_SharePoint_MultiGeo_Service_DfDep...</span> (Microsoft Online SharePoint MultiGeo Service DfDeprecationJob) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_DfDeprecationSiteEntityData">Microsoft_Online_SharePoint_MultiGeo_Service_DfDep...</span> (Microsoft Online SharePoint MultiGeo Service DfDeprecationSiteEntityData) | ✅ | ❌ | ❌ | ❌

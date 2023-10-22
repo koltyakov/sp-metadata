@@ -71,6 +71,7 @@ CommentsAPIs | ✅ | ✅ | ❌ | ❌
 CommunicationSites | ✅ | ✅ | ❌ | ❌
 CommunityModerations | ✅ | ✅ | ✅ | ✅
 CompatibilityRanges | ✅ | ✅ | ✅ | ✅
+CompatibleDBs | ✅ | ❌ | ❌ | ❌
 ComplianceDlpWorkItemSubmitters | ✅ | ❌ | ❌ | ❌
 ComplianceRetentionWorkItemSubmitters | ✅ | ❌ | ❌ | ❌
 ComponentContextInfos | ✅ | ✅ | ❌ | ❌
@@ -94,6 +95,8 @@ CurrencyLists | ✅ | ✅ | ❌ | ❌
 CustomAttributeFilters | ✅ | ✅ | ✅ | ✅
 CustomFields | ✅ | ✅ | ✅ | ❌
 CustomPropertyMatchInformations | ❌ | ❌ | ❌ | ✅
+DBLevelWorkItemEntityDatas | ✅ | ❌ | ❌ | ❌
+DBLevelWorkItems | ✅ | ❌ | ❌ | ❌
 DBSchemaCompatibilityChecks | ✅ | ❌ | ❌ | ❌
 DDIAdapters | ✅ | ❌ | ❌ | ❌
 DashboardScriptExtensionInfos | ✅ | ✅ | ✅ | ✅
@@ -509,6 +512,7 @@ SiteDesignRuns | ✅ | ❌ | ❌ | ❌
 SiteHealthSummarys | ✅ | ✅ | ✅ | ✅
 SiteIconManagers | ✅ | ❌ | ❌ | ❌
 SiteMoveJobEntityDatas | ✅ | ❌ | ❌ | ❌
+SitePageAuthoringMetadatas | ✅ | ❌ | ❌ | ❌
 SitePageMetadatas | ✅ | ✅ | ❌ | ❌
 SitePageServices | ✅ | ✅ | ❌ | ❌
 SitePropertiess | ✅ | ❌ | ❌ | ❌

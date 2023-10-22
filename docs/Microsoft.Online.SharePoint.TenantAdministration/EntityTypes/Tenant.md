@@ -23,6 +23,7 @@ AllowLimitedAccessOnUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowOverrideForBlockUserInfoVisibility (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowSelectSGsInODBListInTenant (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 AllowSelectSecurityGroupsInSPSitesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+AllowSensitivityLabelOnRecords (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowedDomainListForSyncClient (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 AmplifyAdminSettings (Edm.String) | ✅ | ❌ | ❌ | ❌
 AnyoneLinkTrackUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

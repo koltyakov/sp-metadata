@@ -442,6 +442,7 @@ LockSmartTemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 LookupAppPrincipal (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
 MakeHubSite (SP.Site) | ❌ | ✅ | ❌ | ❌
 MapToIcon (SP.Web) | ✅ | ✅ | ✅ | ✅
+MarkReplyUrisUpdated (SP.Web) | ✅ | ❌ | ❌ | ❌
 MediaServiceUpdate (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 MediaServiceUpdateV2 (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 [<span title="Microsoft_SharePoint_Yammer_WacApi_AddUserToSiteCollection">Microsoft_SharePoint_Yammer_WacApi_AddUserToSiteCo...</span> (Microsoft SharePoint Yammer WacApi AddUserToSiteCollection)](./Functions/Microsoft_SharePoint_Yammer_WacApi_AddUserToSiteCollection.md) | ✅ | ❌ | ❌ | ❌
@@ -490,6 +491,8 @@ Recycle (SP.File) | ✅ | ✅ | ✅ | ✅
 Recycle (SP.Folder) | ✅ | ✅ | ✅ | ✅
 Recycle (SP.List) | ✅ | ✅ | ✅ | ✅
 Recycle (SP.ListItem) | ✅ | ✅ | ✅ | ✅
+Recycle (SP.ListItemVersion) | ✅ | ❌ | ❌ | ❌
+RecycleAll (Collection(SP.ListItemVersion)) | ✅ | ❌ | ❌ | ❌
 RecycleByID (Collection(SP.FileVersion)) | ✅ | ✅ | ❌ | ❌
 RecycleByLabel (Collection(SP.FileVersion)) | ✅ | ✅ | ❌ | ❌
 RecycleObject (SP.Attachment) | ✅ | ✅ | ❌ | ❌
@@ -670,6 +673,7 @@ SP_RoleDefinitionBindingCollection | ✅ | ✅ | ✅ | ✅
 SP_SPHSite | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_AddOrgNewsSite](./Functions/SP_SPHSite_AddOrgNewsSite.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_AddSPHomeNavNode](./Functions/SP_SPHSite_AddSPHomeNavNode.md) | ✅ | ❌ | ❌ | ❌
+[SP_SPHSite_AssertSiteInSubscription](./Functions/SP_SPHSite_AssertSiteInSubscription.md) | ✅ | ❌ | ❌ | ❌
 SP_SPHSite_GetSPHSiteXGeo | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_GetSiteReferenceXgeo](./Functions/SP_SPHSite_GetSiteReferenceXgeo.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_GetSiteTitleXgeo](./Functions/SP_SPHSite_GetSiteTitleXgeo.md) | ✅ | ❌ | ❌ | ❌
@@ -678,6 +682,7 @@ SP_SPHSite_GetSPHSiteXGeo | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsCommSite](./Functions/SP_SPHSite_IsCommSite.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsModernSiteWithHorizontalNav](./Functions/SP_SPHSite_IsModernSiteWithHorizontalNav.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsValidHomeSite](./Functions/SP_SPHSite_IsValidHomeSite.md) | ✅ | ❌ | ❌ | ❌
+[SP_SPHSite_RemoveDashboardFeature](./Functions/SP_SPHSite_RemoveDashboardFeature.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_ValidateHomeSite](./Functions/SP_SPHSite_ValidateHomeSite.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_ValidateHomeSiteCandidate](./Functions/SP_SPHSite_ValidateHomeSiteCandidate.md) | ✅ | ❌ | ❌ | ❌
 SP_ServerSettings_GetBlockedFileExtensions | ✅ | ✅ | ✅ | ✅
