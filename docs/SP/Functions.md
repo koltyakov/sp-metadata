@@ -47,6 +47,7 @@ AddViewField (SP.ViewFieldCollection) | ✅ | ✅ | ✅ | ✅
 AddWithOverwrite (Collection(SP.Folder)) | ✅ | ✅ | ✅ | ❌
 AddinPermissions (SP.Web) | ✅ | ❌ | ❌ | ❌
 Append (SP.RequestVariable) | ❌ | ❌ | ❌ | ✅
+Apply (SP.FontPackage) | ✅ | ❌ | ❌ | ❌
 ApplyTheme (SP.Web) | ✅ | ✅ | ✅ | ✅
 ApplyWebTemplate (SP.Web) | ✅ | ✅ | ✅ | ✅
 Approve (SP.File) | ✅ | ✅ | ✅ | ✅

@@ -269,6 +269,10 @@ TaxonomyTaggingSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdmini
 TaxonomyTaggingSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 TaxonomyTaggingSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 TlsTokenBindingPolicyValue (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+TranslationEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+TranslationSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
+TranslationSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+TranslationSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 UseFindPeopleInPeoplePicker (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UsePersistentCookiesForExplorerView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UserVoiceForFeedbackEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

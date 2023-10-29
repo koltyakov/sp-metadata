@@ -1,4 +1,4 @@
-# Function Import: RenderActiveContainers
+# Function Import: GetInsightsSummary
 
 > Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
@@ -10,5 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-containerId (Edm.String) | ✅ | ❌ | ❌ | ❌
-viewXml (Edm.String) | ✅ | ❌ | ❌ | ❌
+content (Edm.String) | ✅ | ❌ | ❌ | ❌
+dataFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
+insightsScenario (Edm.Int32) | ✅ | ❌ | ❌ | ❌

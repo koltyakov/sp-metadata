@@ -45,6 +45,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.SharePoint.ClientSideComponent](./Microsoft.SharePoint.ClientSideComponent) | ✅ | ✅ | ✅ | ❌
 [Microsoft.SharePoint.Comments](./Microsoft.SharePoint.Comments) | ✅ | ✅ | ❌ | ❌
 [Microsoft.SharePoint.Comments.Client](./Microsoft.SharePoint.Comments.Client) | ✅ | ✅ | ❌ | ❌
+[Microsoft.SharePoint.Containers](./Microsoft.SharePoint.Containers) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Convergence](./Microsoft.SharePoint.Convergence) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Deployment](./Microsoft.SharePoint.Deployment) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.ESign.Models.Requests](./Microsoft.SharePoint.ESign.Models.Requests) | ✅ | ❌ | ❌ | ❌

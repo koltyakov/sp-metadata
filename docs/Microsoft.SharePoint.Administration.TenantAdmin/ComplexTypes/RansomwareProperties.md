@@ -13,11 +13,13 @@ detectionSource (Edm.String) | ✅ | ❌ | ❌ | ❌
 driveId (Edm.String) | ✅ | ❌ | ❌ | ❌
 firstActivity (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 impactedAssetLocation (Edm.String) | ✅ | ❌ | ❌ | ❌
+impactedDocLibName (Edm.String) | ✅ | ❌ | ❌ | ❌
 impactedSiteType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 lastActivity (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 siteLabelId (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteLabelName (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteOwner (Edm.String) | ✅ | ❌ | ❌ | ❌
+siteOwnerName (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteSubscriptionId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 siteType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 siteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
