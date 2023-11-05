@@ -8248,6 +8248,7 @@
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="sitePageFlags" Type="Edm.String" />
           <Parameter Name="isNews" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="creationMode" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="CreateNewsCopy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
@@ -8303,6 +8304,10 @@
         </FunctionImport>
         <FunctionImport Name="SavePageAsTemplate" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+        </FunctionImport>
+        <FunctionImport Name="SavePageAsTemplate2" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+          <Parameter Name="creationMode" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SavePageAsTemplateOnMySite" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
@@ -8438,6 +8443,7 @@
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
           <Parameter Name="sitePageFlags" Type="Edm.String" />
           <Parameter Name="isNews" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="creationMode" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="CreateNewsCopy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
@@ -8490,6 +8496,10 @@
         </FunctionImport>
         <FunctionImport Name="SavePageAsTemplate" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+        </FunctionImport>
+        <FunctionImport Name="SavePageAsTemplate2" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+          <Parameter Name="creationMode" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SavePageAsTemplateOnMySite" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
@@ -8661,6 +8671,7 @@
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
           <Parameter Name="sitePageFlags" Type="Edm.String" />
           <Parameter Name="isNews" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="creationMode" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="CreateNewsCopy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
@@ -8713,6 +8724,10 @@
         </FunctionImport>
         <FunctionImport Name="SavePageAsTemplate" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
+        </FunctionImport>
+        <FunctionImport Name="SavePageAsTemplate2" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.RepostPage" />
+          <Parameter Name="creationMode" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SavePageAsTemplateOnMySite" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
@@ -8853,6 +8868,7 @@
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
           <Parameter Name="sitePageFlags" Type="Edm.String" />
           <Parameter Name="isNews" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="creationMode" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="CreateNewsCopy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
@@ -8905,6 +8921,10 @@
         </FunctionImport>
         <FunctionImport Name="SavePageAsTemplate" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
+        </FunctionImport>
+        <FunctionImport Name="SavePageAsTemplate2" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
+          <Parameter Name="creationMode" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SavePageAsTemplateOnMySite" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
@@ -9031,6 +9051,7 @@
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
           <Parameter Name="sitePageFlags" Type="Edm.String" />
           <Parameter Name="isNews" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="creationMode" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="CreateNewsCopy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
@@ -9083,6 +9104,10 @@
         </FunctionImport>
         <FunctionImport Name="SavePageAsTemplate" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
+        </FunctionImport>
+        <FunctionImport Name="SavePageAsTemplate2" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.SitePage" />
+          <Parameter Name="creationMode" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SavePageAsTemplateOnMySite" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
@@ -9236,6 +9261,7 @@
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
           <Parameter Name="sitePageFlags" Type="Edm.String" />
           <Parameter Name="isNews" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="creationMode" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="CreateNewsCopy" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
@@ -9288,6 +9314,10 @@
         </FunctionImport>
         <FunctionImport Name="SavePageAsTemplate" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
+        </FunctionImport>
+        <FunctionImport Name="SavePageAsTemplate2" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
+          <Parameter Name="creationMode" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SavePageAsTemplateOnMySite" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
@@ -14755,6 +14785,9 @@
           <Parameter Name="this" Type="SP.Site" />
           <Parameter Name="reportFileUrl" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="GetProgressForSetVersionPolicyForDocLibs" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="SP.Site" />
+        </FunctionImport>
         <FunctionImport Name="GetRecycleBinItems" ReturnType="Collection(SP.RecycleBinItem)" IsComposable="true" IsBindable="true" EntitySet="RecycleBinItems">
           <Parameter Name="this" Type="SP.Site" />
           <Parameter Name="pagingInfo" Type="Edm.String" />
@@ -16216,6 +16249,10 @@
           <Parameter Name="siteUrl" Type="Edm.String" />
           <Parameter Name="creationInformation" Type="SP.HubSiteCreationInformation" />
         </FunctionImport>
+        <FunctionImport Name="RemoveContainer" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="containerId" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="RemoveDeletedSite" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteUrl" Type="Edm.String" />
@@ -16272,6 +16309,10 @@
           <Parameter Name="parameters" Type="SP.RenderListDataParameters" />
           <Parameter Name="overrideParameters" Type="SP.RenderListDataOverrideParameters" />
           <Parameter Name="listName" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="RenderDeletedContainers" ReturnType="Edm.Stream" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="viewXml" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="RenderFilteredAdminListData" ReturnType="Edm.Stream" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -19095,6 +19136,9 @@
       <Annotations Target="SP.Publishing.CampaignPublicationFieldsData/EndpointTeams">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.CampaignPublicationFieldsData/EndpointVivaEngage">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.CampaignPublicationFieldsData/EndpointYammer">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19192,6 +19236,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.TeamsPublishingStatus">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.VivaEngagePublishingStatus">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.PublishPublicationResponse">
@@ -22309,6 +22356,9 @@
       <Annotations Target="SP.Publishing.CampaignPublication/TeamsEndpoint">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.CampaignPublication/VivaEngageEndpoint">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.CampaignPublication/YammerEndpoint">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -23644,7 +23694,7 @@
       <Annotations Target="SP.ApiData/CopyTo(SP.Publishing.CampaignPublication, SP.Publishing.CopyToParams)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/CopyWithConfiguration(SP.Publishing.CampaignPublication, Edm.String, Edm.Boolean)">
+      <Annotations Target="SP.ApiData/CopyWithConfiguration(SP.Publishing.CampaignPublication, Edm.String, Edm.Boolean, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/CreateNewsCopy(SP.Publishing.CampaignPublication)">
@@ -23693,6 +23743,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SavePageAsTemplate(SP.Publishing.CampaignPublication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SavePageAsTemplate2(SP.Publishing.CampaignPublication, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SavePageAsTemplateOnMySite(SP.Publishing.CampaignPublication)">
@@ -23812,7 +23865,7 @@
       <Annotations Target="SP.ApiData/CopyTo(SP.Publishing.FeedVideoPage, SP.Publishing.CopyToParams)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/CopyWithConfiguration(SP.Publishing.FeedVideoPage, Edm.String, Edm.Boolean)">
+      <Annotations Target="SP.ApiData/CopyWithConfiguration(SP.Publishing.FeedVideoPage, Edm.String, Edm.Boolean, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/CreateNewsCopy(SP.Publishing.FeedVideoPage)">
@@ -23858,6 +23911,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SavePageAsTemplate(SP.Publishing.FeedVideoPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SavePageAsTemplate2(SP.Publishing.FeedVideoPage, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SavePageAsTemplateOnMySite(SP.Publishing.FeedVideoPage)">
@@ -23935,7 +23991,7 @@
       <Annotations Target="SP.ApiData/CopyTo(SP.Publishing.RepostPage, SP.Publishing.CopyToParams)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/CopyWithConfiguration(SP.Publishing.RepostPage, Edm.String, Edm.Boolean)">
+      <Annotations Target="SP.ApiData/CopyWithConfiguration(SP.Publishing.RepostPage, Edm.String, Edm.Boolean, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/CreateNewsCopy(SP.Publishing.RepostPage)">
@@ -23981,6 +24037,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SavePageAsTemplate(SP.Publishing.RepostPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SavePageAsTemplate2(SP.Publishing.RepostPage, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SavePageAsTemplateOnMySite(SP.Publishing.RepostPage)">
@@ -24037,7 +24096,7 @@
       <Annotations Target="SP.ApiData/CopyTo(SP.Publishing.SitePage3D, SP.Publishing.CopyToParams)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/CopyWithConfiguration(SP.Publishing.SitePage3D, Edm.String, Edm.Boolean)">
+      <Annotations Target="SP.ApiData/CopyWithConfiguration(SP.Publishing.SitePage3D, Edm.String, Edm.Boolean, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/CreateNewsCopy(SP.Publishing.SitePage3D)">
@@ -24083,6 +24142,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SavePageAsTemplate(SP.Publishing.SitePage3D)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SavePageAsTemplate2(SP.Publishing.SitePage3D, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SavePageAsTemplateOnMySite(SP.Publishing.SitePage3D)">
@@ -24178,7 +24240,7 @@
       <Annotations Target="SP.ApiData/CopyTo(SP.Publishing.SitePage, SP.Publishing.CopyToParams)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/CopyWithConfiguration(SP.Publishing.SitePage, Edm.String, Edm.Boolean)">
+      <Annotations Target="SP.ApiData/CopyWithConfiguration(SP.Publishing.SitePage, Edm.String, Edm.Boolean, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/CreateNewsCopy(SP.Publishing.SitePage)">
@@ -24224,6 +24286,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SavePageAsTemplate(SP.Publishing.SitePage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SavePageAsTemplate2(SP.Publishing.SitePage, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SavePageAsTemplateOnMySite(SP.Publishing.SitePage)">
@@ -24328,7 +24393,7 @@
       <Annotations Target="SP.ApiData/CopyTo(SP.Publishing.TopicSitePage, SP.Publishing.CopyToParams)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/CopyWithConfiguration(SP.Publishing.TopicSitePage, Edm.String, Edm.Boolean)">
+      <Annotations Target="SP.ApiData/CopyWithConfiguration(SP.Publishing.TopicSitePage, Edm.String, Edm.Boolean, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/CreateNewsCopy(SP.Publishing.TopicSitePage)">
@@ -24374,6 +24439,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SavePageAsTemplate(SP.Publishing.TopicSitePage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SavePageAsTemplate2(SP.Publishing.TopicSitePage, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SavePageAsTemplateOnMySite(SP.Publishing.TopicSitePage)">
@@ -25817,6 +25885,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetProgressForFileVersionExpirationReport(SP.Site, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/GetProgressForSetVersionPolicyForDocLibs(SP.Site)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetWebPath(SP.Site, Edm.Guid, Edm.Guid)">
@@ -30357,6 +30428,7 @@
         <Property Name="EndpointEmail" Type="Edm.String" />
         <Property Name="EndpointSharePoint" Type="Edm.String" />
         <Property Name="EndpointTeams" Type="Edm.String" />
+        <Property Name="EndpointVivaEngage" Type="Edm.String" />
         <Property Name="EndpointYammer" Type="Edm.String" />
         <Property Name="PublicationMetadata" Type="Edm.String" />
         <Property Name="PublicationStatus" Type="Edm.Int32" Nullable="false" />
@@ -30592,6 +30664,7 @@
         <Property Name="PublishingStatus" Type="Edm.Int32" Nullable="false" />
         <Property Name="SharePointPublishingStatus" Type="Collection(SP.Publishing.SharePointPublishingStatusResponse)" />
         <Property Name="TeamsPublishingStatus" Type="Collection(SP.Publishing.TeamsPublishingStatusResponse)" />
+        <Property Name="VivaEngagePublishingStatus" Type="SP.Publishing.VivaEngagePublishingStatus" />
         <Property Name="YammerPublishingStatus" Type="Collection(SP.KeyValue)" />
       </ComplexType>
       <ComplexType Name="SharePointPublishingStatusResponse">
@@ -30612,6 +30685,12 @@
         <Property Name="ErrorCode" Type="Edm.Int32" Nullable="false" />
         <Property Name="ErrorMessage" Type="Edm.String" />
         <Property Name="HttpStatusCode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="VivaEngagePublishingStatus">
+        <Property Name="DestinationId" Type="Edm.String" />
+        <Property Name="ErrorCode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ErrorMessage" Type="Edm.String" />
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="PublishPublicationResponse">
@@ -30851,6 +30930,7 @@
         <Property Name="PublicationStatus" Type="Edm.Int32" />
         <Property Name="SharePointEndpoint" Type="Edm.String" />
         <Property Name="TeamsEndpoint" Type="Edm.String" />
+        <Property Name="VivaEngageEndpoint" Type="Edm.String" />
         <Property Name="YammerEndpoint" Type="Edm.String" />
       </EntityType>
       <EntityType Name="CanCreatePageResponse">
@@ -33680,10 +33760,8 @@
         <Property Name="lastActivity" Type="Edm.DateTime" Nullable="false" />
         <Property Name="siteLabelId" Type="Edm.String" />
         <Property Name="siteLabelName" Type="Edm.String" />
-        <Property Name="siteOwner" Type="Edm.String" />
         <Property Name="siteOwnerName" Type="Edm.String" />
         <Property Name="siteSubscriptionId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="siteType" Type="Edm.Int32" Nullable="false" />
         <Property Name="siteUrl" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="RecentAdminActionReport">
