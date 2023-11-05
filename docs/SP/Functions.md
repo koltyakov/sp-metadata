@@ -386,6 +386,7 @@ GetPreviousAppVersion (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
 GetProgressForExpireFileVersionsBySchedule (SP.Site) | ✅ | ❌ | ❌ | ❌
 GetProgressForFileVersionExpirationReport (SP.List) | ✅ | ❌ | ❌ | ❌
 GetProgressForFileVersionExpirationReport (SP.Site) | ✅ | ❌ | ❌ | ❌
+GetProgressForSetVersionPolicyForDocLibs (SP.Site) | ✅ | ❌ | ❌ | ❌
 GetPushNotificationSubscriber (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetPushNotificationSubscribersByArgs (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetPushNotificationSubscribersByUser (SP.Web) | ✅ | ✅ | ✅ | ✅

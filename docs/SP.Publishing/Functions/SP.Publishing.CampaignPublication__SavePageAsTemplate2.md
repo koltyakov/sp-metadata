@@ -1,4 +1,4 @@
-# Function Import: CopyWithConfiguration
+# Function Import: SavePageAsTemplate2
 
 > Namespace: SP.Publishing
 
@@ -11,5 +11,3 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 creationMode (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-isNews (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-sitePageFlags (Edm.String) | ✅ | ❌ | ❌ | ❌

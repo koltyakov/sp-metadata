@@ -12,4 +12,5 @@ PrePublishValidationErrorCode (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 PublishingStatus (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SharePointPublishingStatus (Collection(SP.Publishing.SharePointPublishingStatusResponse)) | ✅ | ❌ | ❌ | ❌
 TeamsPublishingStatus (Collection(SP.Publishing.TeamsPublishingStatusResponse)) | ✅ | ❌ | ❌ | ❌
+VivaEngagePublishingStatus (SP.Publishing.VivaEngagePublishingStatus) | ✅ | ❌ | ❌ | ❌
 YammerPublishingStatus (Collection(SP.KeyValue)) | ✅ | ❌ | ❌ | ❌

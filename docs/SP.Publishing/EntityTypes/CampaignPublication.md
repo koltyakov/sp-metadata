@@ -11,4 +11,5 @@ PublicationMetadata (Edm.String) | ✅ | ❌ | ❌ | ❌
 PublicationStatus (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SharePointEndpoint (Edm.String) | ✅ | ❌ | ❌ | ❌
 TeamsEndpoint (Edm.String) | ✅ | ❌ | ❌ | ❌
+VivaEngageEndpoint (Edm.String) | ✅ | ❌ | ❌ | ❌
 YammerEndpoint (Edm.String) | ✅ | ❌ | ❌ | ❌

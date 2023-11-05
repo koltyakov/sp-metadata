@@ -273,6 +273,12 @@ SavePageAsTemplate (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplate (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplate (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplate (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+SavePageAsTemplate2 (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
+SavePageAsTemplate2 (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
+SavePageAsTemplate2 (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
+SavePageAsTemplate2 (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
+SavePageAsTemplate2 (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
+SavePageAsTemplate2 (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplateOnMySite (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplateOnMySite (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 SavePageAsTemplateOnMySite (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌

@@ -18,8 +18,6 @@ impactedSiteType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 lastActivity (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 siteLabelId (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteLabelName (Edm.String) | ✅ | ❌ | ❌ | ❌
-siteOwner (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteOwnerName (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteSubscriptionId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
-siteType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 siteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

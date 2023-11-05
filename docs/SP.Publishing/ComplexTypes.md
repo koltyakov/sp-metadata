@@ -75,4 +75,5 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [TopicPageFieldsData](./ComplexTypes/TopicPageFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [ViewData](./ComplexTypes/ViewData.md) | ✅ | ❌ | ❌ | ❌
 [ViewProgressAnalyticsData](./ComplexTypes/ViewProgressAnalyticsData.md) | ✅ | ❌ | ❌ | ❌
+[VivaEngagePublishingStatus](./ComplexTypes/VivaEngagePublishingStatus.md) | ✅ | ❌ | ❌ | ❌
 [WebPartDetailsWrapper](./ComplexTypes/WebPartDetailsWrapper.md) | ✅ | ❌ | ❌ | ❌
