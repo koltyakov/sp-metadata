@@ -5,6 +5,7 @@
 Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [AcronymInformation](./ComplexTypes/AcronymInformation.md) | ✅ | ✅ | ❌ | ❌
+[AnnouncementAuthor](./ComplexTypes/AnnouncementAuthor.md) | ✅ | ❌ | ❌ | ❌
 [AnnouncementsData](./ComplexTypes/AnnouncementsData.md) | ✅ | ❌ | ❌ | ❌
 [ApprovalRequestCreationInfo](./ComplexTypes/ApprovalRequestCreationInfo.md) | ✅ | ❌ | ❌ | ❌
 [ApprovalRequestResponse](./ComplexTypes/ApprovalRequestResponse.md) | ✅ | ❌ | ❌ | ❌
@@ -15,6 +16,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CampaignPublicationMailDraftData](./ComplexTypes/CampaignPublicationMailDraftData.md) | ✅ | ❌ | ❌ | ❌
 [CampaignPublicationResetEndpointParam](./ComplexTypes/CampaignPublicationResetEndpointParam.md) | ✅ | ❌ | ❌ | ❌
 [CampaignPublicationSaveMailDraftParam](./ComplexTypes/CampaignPublicationSaveMailDraftParam.md) | ✅ | ❌ | ❌ | ❌
+[ChannelAnnouncement](./ComplexTypes/ChannelAnnouncement.md) | ✅ | ❌ | ❌ | ❌
 [CommunicationSiteCreationRequest](./ComplexTypes/CommunicationSiteCreationRequest.md) | ✅ | ✅ | ❌ | ❌
 [CommunicationSiteCreationResponse](./ComplexTypes/CommunicationSiteCreationResponse.md) | ✅ | ✅ | ❌ | ❌
 [CopyToParams](./ComplexTypes/CopyToParams.md) | ✅ | ❌ | ❌ | ❌

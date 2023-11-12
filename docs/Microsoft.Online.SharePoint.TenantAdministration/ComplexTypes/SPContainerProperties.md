@@ -7,6 +7,7 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 AllowEditing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+AuthenticationContextName (Edm.String) | ✅ | ❌ | ❌ | ❌
 BlockDownloadPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicy (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ContainerApiUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

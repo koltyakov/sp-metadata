@@ -25,6 +25,7 @@ CanCreatePage (SP.Publishing.SitePageService) | ✅ | ❌ | ❌ | ❌
 CanCreatePromotedPage (SP.Publishing.SitePageService) | ✅ | ✅ | ❌ | ❌
 CancelApprovalRequest (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 CancelSchedulePublication (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
+Channel (SP.Publishing.AnnouncementsController) | ✅ | ❌ | ❌ | ❌
 CheckOut (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 CheckOut (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
 CheckOut (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌

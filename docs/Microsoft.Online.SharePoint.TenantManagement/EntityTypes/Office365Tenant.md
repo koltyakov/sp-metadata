@@ -6,12 +6,6 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-AIBuilderDefaultPowerAppsEnvironment (Edm.String) | ✅ | ❌ | ❌ | ❌
-AIBuilderEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-AIBuilderEnabledInContentCenter (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-AIBuilderSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
-AIBuilderSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
-AIBuilderSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 AddressbarLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 AllowAnonymousMeetingParticipantsToAccessWhiteboards (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 AllowCommentsTextOnEmailEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -82,10 +76,6 @@ DisableSpacesActivation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableVivaConnectionsAnalytics (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisabledModernListTemplateIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 DisplayStartASiteOption (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-DocumentUnderstandingEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-DocumentUnderstandingSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
-DocumentUnderstandingSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
-DocumentUnderstandingSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 ESignatureEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ESignatureSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
 ESignatureSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
@@ -142,15 +132,6 @@ NotificationsInOneDriveForBusinessEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 NotificationsInSharePointEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 NotifyOwnersWhenInvitationsAccepted (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 NotifyOwnersWhenItemsReshared (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-OCRAdminSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
-OCRAdminSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
-OCRAdminSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
-OCRComplianceSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
-OCRComplianceSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
-OCRComplianceSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
-OCRModeForAdminSites (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-OCRModeForComplianceODBs (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-OCRModeForComplianceSites (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ODBAccessRequests (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ODBMembersCanShare (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ODBSensitivityRefreshWindowInHours (Edm.Int32) | ✅ | ❌ | ❌ | ❌
@@ -167,10 +148,6 @@ OneDriveLoopSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OneDriveRequestFilesLinkEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 OneDriveRequestFilesLinkExpirationInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OwnerAnonymousNotification (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-PrebuiltEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-PrebuiltSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
-PrebuiltSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
-PrebuiltSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 PreventExternalUsersFromResharing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ProvisionSharedWithEveryoneFolder (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PublicCdnAllowedFileTypes (Edm.String) | ✅ | ❌ | ❌ | ❌
