@@ -1,4 +1,4 @@
-# Function Import: UploadOrgAssetBrandFontFile
+# Function Import: SetSPOContainerTypeConfiguration
 
 > Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
@@ -10,5 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-fileName (Edm.String) | ✅ | ❌ | ❌ | ❌
-stream (Edm.Stream) | ✅ | ❌ | ❌ | ❌
+spContainerTypeConfigurationProperties (Microsoft.Online.SharePoint.TenantAdministration.SPContainerTypeConfigurationProperties) | ✅ | ❌ | ❌ | ❌

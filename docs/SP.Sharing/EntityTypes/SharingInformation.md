@@ -31,6 +31,7 @@ enforceSPOSearch (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 fileExtension (Edm.String) | ✅ | ❌ | ❌ | ❌
 hasUniquePermissions (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 isConsumerFiles (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+isPremium (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 isStubFile (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 itemUniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 itemUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

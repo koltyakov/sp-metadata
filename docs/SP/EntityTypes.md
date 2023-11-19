@@ -27,6 +27,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [Approvals](./EntityTypes/Approvals.md) | ✅ | ❌ | ❌ | ❌
 [Attachment](./EntityTypes/Attachment.md) | ✅ | ✅ | ✅ | ✅
 [Audit](./EntityTypes/Audit.md) | ✅ | ✅ | ✅ | ✅
+[BrandCenter](./EntityTypes/BrandCenter.md) | ✅ | ❌ | ❌ | ❌
 [Broker](./EntityTypes/Broker.md) | ✅ | ❌ | ❌ | ❌
 [CampainAnalytics](./EntityTypes/CampainAnalytics.md) | ✅ | ❌ | ❌ | ❌
 [Change](./EntityTypes/Change.md) | ✅ | ✅ | ✅ | ✅

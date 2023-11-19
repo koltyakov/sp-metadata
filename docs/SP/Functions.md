@@ -54,6 +54,7 @@ Approve (SP.File) | ✅ | ✅ | ✅ | ✅
 [AttachAssignmentToQuiz](./Functions/AttachAssignmentToQuiz.md) | ❌ | ❌ | ❌ | ✅
 AttachImage (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 AvailableAddins (SP.Web) | ✅ | ❌ | ❌ | ❌
+BrandCenter | ✅ | ❌ | ❌ | ❌
 BreakRoleInheritance (SP.List) | ✅ | ✅ | ✅ | ✅
 BreakRoleInheritance (SP.ListItem) | ✅ | ✅ | ✅ | ✅
 BreakRoleInheritance (SP.SecurableObject) | ✅ | ✅ | ✅ | ✅
@@ -74,6 +75,7 @@ CheckOut (SP.File) | ✅ | ✅ | ✅ | ✅
 Clear (Collection(SP.UserCustomAction)) | ✅ | ✅ | ✅ | ✅
 ClearBusinessAppMigrationInteractiveData (SP.List) | ✅ | ❌ | ❌ | ❌
 ClearCorporateCatalog (SP.TenantSettings) | ✅ | ❌ | ❌ | ❌
+Configuration (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
 Configuration (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 ConsentToPowerPlatform (SP.Web) | ✅ | ❌ | ❌ | ❌
 Contains (Collection(SP.Alert)) | ✅ | ✅ | ❌ | ❌
@@ -470,6 +472,7 @@ OpenBinaryStreamWithOptions (SP.FileVersion) | ✅ | ❌ | ❌ | ❌
 OpenWeb (SP.Site) | ✅ | ✅ | ✅ | ✅
 OpenWebById (SP.Site) | ✅ | ✅ | ✅ | ✅
 OpenWebUsingPath (SP.Site) | ✅ | ✅ | ❌ | ❌
+OrgAssets (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
 OrgNews | ✅ | ❌ | ❌ | ❌
 OverridePolicyTip (SP.ListItem) | ✅ | ✅ | ✅ | ❌
 PageContextCore (SP.Web) | ✅ | ❌ | ❌ | ❌
@@ -588,6 +591,7 @@ SP_AppPrincipalIdentityProvider_External | ✅ | ✅ | ✅ | ✅
 [SP_Approvals_GetProperties](./Functions/SP_Approvals_GetProperties.md) | ✅ | ❌ | ❌ | ❌
 [SP_Approvals_RejectItemRequest](./Functions/SP_Approvals_RejectItemRequest.md) | ✅ | ❌ | ❌ | ❌
 [SP_Approvals_SetProperties](./Functions/SP_Approvals_SetProperties.md) | ✅ | ❌ | ❌ | ❌
+SP_BrandCenter | ✅ | ❌ | ❌ | ❌
 [SP_Broker_AcquireOBOToken](./Functions/SP_Broker_AcquireOBOToken.md) | ✅ | ❌ | ❌ | ❌
 [SP_CampainAnalytics_GetDimensions](./Functions/SP_CampainAnalytics_GetDimensions.md) | ✅ | ❌ | ❌ | ❌
 [SP_CampainAnalytics_GetReport](./Functions/SP_CampainAnalytics_GetReport.md) | ✅ | ❌ | ❌ | ❌
@@ -772,6 +776,7 @@ SetGlobalNavSettings (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetId (SP.TimeZone) | ✅ | ❌ | ❌ | ❌
 <span title="SetIsContributorOwnerEnabledPropertyForDefaultDocLib (SP.Site)">SetIsContributorOwnerEnabledPropertyForDefaultDocL...</span> | ✅ | ❌ | ❌ | ❌
 SetItemsOrder (SP.List) | ✅ | ❌ | ❌ | ❌
+SetListCustomOrderFlag (SP.List) | ✅ | ❌ | ❌ | ❌
 SetMediaServiceMetadata (SP.File) | ✅ | ❌ | ❌ | ❌
 SetNoExpiration (SP.SiteVersionPolicyManager) | ✅ | ❌ | ❌ | ❌
 SetNotificationRecipients (SP.MultilingualSettings) | ✅ | ❌ | ❌ | ❌

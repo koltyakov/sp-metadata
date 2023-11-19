@@ -50,6 +50,7 @@ BaseCalendarExceptions | ✅ | ✅ | ✅ | ❌
 BaseCustomPropertys | ✅ | ❌ | ❌ | ❌
 BaseSessions | ✅ | ✅ | ✅ | ✅
 BooleanCriterions | ✅ | ✅ | ✅ | ✅
+BrandCenters | ✅ | ❌ | ❌ | ❌
 Brokers | ✅ | ❌ | ❌ | ❌
 CDSMetadatas | ✅ | ❌ | ❌ | ❌
 CalendarExceptions | ✅ | ✅ | ✅ | ❌
@@ -275,6 +276,7 @@ MigrationPerformanceEntityDatas | ✅ | ❌ | ❌ | ❌
 MigrationPropertiess | ✅ | ❌ | ❌ | ❌
 MigrationSPFlights | ✅ | ❌ | ❌ | ❌
 MigrationTaskEntityDatas | ✅ | ❌ | ❌ | ❌
+MigrationUrlParsers | ✅ | ❌ | ❌ | ❌
 MnAGroupMoveValidationResults | ✅ | ❌ | ❌ | ❌
 Models | ✅ | ❌ | ❌ | ❌
 ModernizeHomepageResults | ✅ | ❌ | ❌ | ❌

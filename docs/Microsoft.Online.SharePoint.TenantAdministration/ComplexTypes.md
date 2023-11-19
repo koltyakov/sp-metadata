@@ -31,6 +31,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [RequireSecondaryContact](./ComplexTypes/RequireSecondaryContact.md) | ✅ | ❌ | ❌ | ❌
 [SPContainerCollection](./ComplexTypes/SPContainerCollection.md) | ✅ | ❌ | ❌ | ❌
 [SPContainerProperties](./ComplexTypes/SPContainerProperties.md) | ✅ | ❌ | ❌ | ❌
+[SPContainerTypeConfigurationProperties](./ComplexTypes/SPContainerTypeConfigurationProperties.md) | ✅ | ❌ | ❌ | ❌
 [SPContainerTypeProperties](./ComplexTypes/SPContainerTypeProperties.md) | ✅ | ❌ | ❌ | ❌
 [SPDeletedContainerProperties](./ComplexTypes/SPDeletedContainerProperties.md) | ✅ | ❌ | ❌ | ❌
 [SPListModernUXOff](./ComplexTypes/SPListModernUXOff.md) | ✅ | ❌ | ❌ | ❌

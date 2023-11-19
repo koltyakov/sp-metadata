@@ -148,6 +148,7 @@ IncludeAtAGlanceInShareEmails (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 InformationBarriersSuspension (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsAppBarTemporarilyDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsCollabMeetingNotesFluidEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+IsDataAccessInCardDesignerEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsEnableAppAuthPopUpEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsFluidEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsHubSitesMultiGeoFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -273,6 +274,7 @@ TranslationEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 TranslationSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
 TranslationSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 TranslationSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
+UnlicensedOneDriveForBusinessTenantMetricsData (Microsoft.SharePoint.Administration.SPOUnlicensedODB.UnlicensedOdbTenantMetrics) | ✅ | ❌ | ❌ | ❌
 UseFindPeopleInPeoplePicker (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UsePersistentCookiesForExplorerView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UserVoiceForFeedbackEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

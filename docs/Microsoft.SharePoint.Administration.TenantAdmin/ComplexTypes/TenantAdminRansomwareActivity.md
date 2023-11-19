@@ -20,10 +20,12 @@ impactedAssetLocation (Edm.String) | ✅ | ❌ | ❌ | ❌
 impactedAssets (Edm.String) | ✅ | ❌ | ❌ | ❌
 impactedAssetsCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 impactedAssetsUserCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+impactedDocLibName (Edm.String) | ✅ | ❌ | ❌ | ❌
 investigationState (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 lastActivity (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 lastUpdatedTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 siteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+siteName (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteOwner (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 siteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

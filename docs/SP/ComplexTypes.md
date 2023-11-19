@@ -22,6 +22,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [Audience](./ComplexTypes/Audience.md) | ✅ | ❌ | ❌ | ❌
 [AutoLabellingWorkInformation](./ComplexTypes/AutoLabellingWorkInformation.md) | ✅ | ❌ | ❌ | ❌
 [BasePermissions](./ComplexTypes/BasePermissions.md) | ✅ | ✅ | ✅ | ✅
+[BrandCenterConfiguration](./ComplexTypes/BrandCenterConfiguration.md) | ✅ | ❌ | ❌ | ❌
 [CAAEFieldElement](./ComplexTypes/CAAEFieldElement.md) | ✅ | ❌ | ❌ | ❌
 [CAAESnippetElement](./ComplexTypes/CAAESnippetElement.md) | ✅ | ❌ | ❌ | ❌
 [CAFieldValue](./ComplexTypes/CAFieldValue.md) | ✅ | ❌ | ❌ | ❌

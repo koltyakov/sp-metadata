@@ -32,11 +32,14 @@ DeletePolicyDefinition (Microsoft.Online.SharePoint.TenantAdministration.Tenant)
 DeleteRecentAdminActionReport (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 DeleteSPOContainerTypeById (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 DisableCollaborationInsightsDataCollection (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+DownloadRansomwareImpactedAssetsReport (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 DownloadSharingInsights (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 EnableCollaborationInsightsDataCollection (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+EnsureBrandCenterSiteFeature (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 ExportAdminListToCSV (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 ExportCSVFile (Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService) | ✅ | ❌ | ❌ | ❌
 ExportToCSV (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+ExportUnlicensedOneDriveForBusinessListToCSV (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetAdminListViews (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetBrandFontPackages (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetById (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
@@ -57,7 +60,6 @@ GetInsightsSummary (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | �
 GetLockStateById (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
 GetMalwareFileStream (Microsoft.Online.SharePoint.TenantAdministration.SPOMalwareFile) | ✅ | ❌ | ❌ | ❌
 GetOneDriveSiteSharingInsights (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
-GetOrgAssetBrandNames (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetOrgAssets (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetPolicyExecutionsHistory (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetPowerAppsEnvironments (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -72,6 +74,7 @@ GetSPOAllWebTemplates (Microsoft.Online.SharePoint.TenantAdministration.Tenant) 
 GetSPOContainerByContainerId (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPOContainerByContainerSiteUrl (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPOContainerTypeById (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+GetSPOContainerTypeConfigurationByContainerTypeId (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPOContainerTypes (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPOContainersByApplicationId (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPODeletedContainers (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -147,7 +150,6 @@ RenderFilteredAdminListData (Microsoft.Online.SharePoint.TenantAdministration.Te
 RenderFilteredAdminListDataByGroupId (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RenderIBSegmentListDataAsStream (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RenderIBSegmentListFilterData (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
-RenderOrgAssetListDataAsStream (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RenderPolicyDefinitionList (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RenderPolicyExecutionsHistory (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RenderPolicyReport (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -173,6 +175,7 @@ SetSPHSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌
 SetSPHSiteWithConfiguration (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetSPOContainerProperties (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetSPOContainerType (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+SetSPOContainerTypeConfiguration (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetSiteAdministrators (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetSiteSecondaryAdministrators (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetSiteUserGroups (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -200,6 +203,5 @@ UpdateSiteActivityData (Microsoft.Online.SharePoint.TenantAdministration.Tenant)
 UpdateTargetedSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 UpdateTenantAdminListItem (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 UpdateTenantAdminListView (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
-UploadOrgAssetBrandFontFile (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 ValidateHomeSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 ValidateMultipleHomeSitesParameterExists (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌

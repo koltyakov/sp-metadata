@@ -95,6 +95,7 @@ SharingLockDownCanBeCleared (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SharingLockDownEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ShowPeoplePickerSuggestionsForGuestUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SiteDefinedSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+SiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 SocialBarOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Status (Edm.String) | ✅ | ❌ | ❌ | ❌
 StorageMaximumLevel (Edm.Int64) | ✅ | ❌ | ❌ | ❌
