@@ -20,6 +20,7 @@ AllowSelectSecurityGroupsInSPSitesList (Collection(Edm.String)) | ✅ | ❌ | �
 AllowedDomainListForSyncClient (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 AnyoneLinkTrackUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AppBypassInformationBarriers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+AppOnlyBypassPeoplePickerPolicies (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ApplyAppEnforcedRestrictionsToAdHocRecipients (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AuthContextResilienceMode (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 BccExternalSharingInvitations (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

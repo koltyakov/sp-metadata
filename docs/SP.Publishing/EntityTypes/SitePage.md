@@ -7,6 +7,7 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 AlternativeUrlMap (Edm.String) | ✅ | ✅ | ❌ | ❌
+AuthoringMetadata (SP.Publishing.SitePageAuthoringMetadata) | ✅ | ❌ | ❌ | ❌
 CanvasContent1 (Edm.String) | ✅ | ✅ | ❌ | ❌
 CanvasJson1 (Edm.String) | ✅ | ✅ | ❌ | ❌
 CheckIn (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -24,5 +25,4 @@ TranspileContent (Edm.String) | ✅ | ❌ | ❌ | ❌
 
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-AuthoringMetadata | ✅ | ❌ | ❌ | ❌
 Translations | ✅ | ❌ | ❌ | ❌

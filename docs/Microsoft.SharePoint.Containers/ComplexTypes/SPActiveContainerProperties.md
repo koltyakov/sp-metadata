@@ -14,6 +14,7 @@ ContainerSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 ContainerTypeId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 CreatedBy (Edm.String) | ✅ | ❌ | ❌ | ❌
 CreatedOn (Edm.String) | ✅ | ❌ | ❌ | ❌
+DeletedOn (Edm.String) | ✅ | ❌ | ❌ | ❌
 Description (Edm.String) | ✅ | ❌ | ❌ | ❌
 Owners (Collection(Microsoft.SharePoint.Containers.SPActiveContainerMemberProperties)) | ✅ | ❌ | ❌ | ❌
 OwningApplicationId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

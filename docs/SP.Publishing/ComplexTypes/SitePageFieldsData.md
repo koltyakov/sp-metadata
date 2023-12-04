@@ -7,6 +7,7 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 AuthorByline (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+AuthoringMetadata (SP.Publishing.SitePageAuthoringMetadata) | ✅ | ❌ | ❌ | ❌
 BannerImageUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
 CallToAction (Edm.String) | ✅ | ❌ | ❌ | ❌
 CanvasContent1 (Edm.String) | ✅ | ✅ | ❌ | ❌

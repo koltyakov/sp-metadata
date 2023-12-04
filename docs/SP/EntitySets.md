@@ -40,6 +40,7 @@ ApprovalsManagers | ✅ | ❌ | ❌ | ❌
 Approvalss | ✅ | ❌ | ❌ | ❌
 Apps | ✅ | ✅ | ✅ | ✅
 Apps1 | ✅ | ❌ | ❌ | ❌
+ArchiveFileSizeMetrics | ✅ | ❌ | ❌ | ❌
 AssignmentCategorys | ❌ | ❌ | ❌ | ✅
 AssignmentGrades | ❌ | ❌ | ❌ | ✅
 Assignments | ✅ | ✅ | ✅ | ❌
@@ -464,6 +465,8 @@ SPOWebAppServicePrincipalPermissionGrants | ✅ | ❌ | ❌ | ❌
 SPOWebAppServicePrincipalPermissionRequests | ✅ | ❌ | ❌ | ❌
 SPOWebAppServicePrincipalPublics | ✅ | ❌ | ❌ | ❌
 SPOWebAppServicePrincipals | ✅ | ❌ | ❌ | ❌
+SPPlaylist_Subscribers | ✅ | ❌ | ❌ | ❌
+SPPlaylists | ✅ | ❌ | ❌ | ❌
 SPPolicyStoreProxys | ✅ | ❌ | ❌ | ❌
 SPSitePreservationUtilitys | ✅ | ❌ | ❌ | ❌
 SPSocialSwitchs | ✅ | ✅ | ❌ | ❌
@@ -514,7 +517,6 @@ SiteDesignRuns | ✅ | ❌ | ❌ | ❌
 SiteHealthSummarys | ✅ | ✅ | ✅ | ✅
 SiteIconManagers | ✅ | ❌ | ❌ | ❌
 SiteMoveJobEntityDatas | ✅ | ❌ | ❌ | ❌
-SitePageAuthoringMetadatas | ✅ | ❌ | ❌ | ❌
 SitePageMetadatas | ✅ | ✅ | ❌ | ❌
 SitePageServices | ✅ | ✅ | ❌ | ❌
 SitePropertiess | ✅ | ❌ | ❌ | ❌

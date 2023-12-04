@@ -34,6 +34,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPContainerTypeConfigurationProperties](./ComplexTypes/SPContainerTypeConfigurationProperties.md) | ✅ | ❌ | ❌ | ❌
 [SPContainerTypeProperties](./ComplexTypes/SPContainerTypeProperties.md) | ✅ | ❌ | ❌ | ❌
 [SPDeletedContainerProperties](./ComplexTypes/SPDeletedContainerProperties.md) | ✅ | ❌ | ❌ | ❌
+[SPDeletedContainerTypeProperties](./ComplexTypes/SPDeletedContainerTypeProperties.md) | ✅ | ❌ | ❌ | ❌
 [SPListModernUXOff](./ComplexTypes/SPListModernUXOff.md) | ✅ | ❌ | ❌ | ❌
 [SPOSiteCreationSource](./ComplexTypes/SPOSiteCreationSource.md) | ✅ | ❌ | ❌ | ❌
 [SPOSitePropertiesEnumerableFilter](./ComplexTypes/SPOSitePropertiesEnumerableFilter.md) | ✅ | ❌ | ❌ | ❌

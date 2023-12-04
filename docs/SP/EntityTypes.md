@@ -142,6 +142,8 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPDataLeakagePreventionStatusInfo](./EntityTypes/SPDataLeakagePreventionStatusInfo.md) | ✅ | ✅ | ✅ | ❌
 [SPHSite](./EntityTypes/SPHSite.md) | ✅ | ❌ | ❌ | ❌
 [SPMigrationJobStatus](./EntityTypes/SPMigrationJobStatus.md) | ✅ | ✅ | ✅ | ❌
+[SPPlaylist](./EntityTypes/SPPlaylist.md) | ✅ | ❌ | ❌ | ❌
+[SPPlaylist_Subscriber](./EntityTypes/SPPlaylist_Subscriber.md) | ✅ | ❌ | ❌ | ❌
 [ScriptSafeDomain](./EntityTypes/ScriptSafeDomain.md) | ✅ | ✅ | ❌ | ❌
 [SecurableObject](./EntityTypes/SecurableObject.md) | ✅ | ✅ | ✅ | ✅
 [ServerSettings](./EntityTypes/ServerSettings.md) | ✅ | ✅ | ✅ | ✅

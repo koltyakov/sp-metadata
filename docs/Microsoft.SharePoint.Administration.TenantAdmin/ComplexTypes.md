@@ -13,6 +13,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [EventData](./ComplexTypes/EventData.md) | ✅ | ❌ | ❌ | ❌
 [GroupSitesActivityDetail](./ComplexTypes/GroupSitesActivityDetail.md) | ✅ | ❌ | ❌ | ❌
 [ImpactedAsset](./ComplexTypes/ImpactedAsset.md) | ✅ | ❌ | ❌ | ❌
+[InactiveSitePolicyResourceStorage](./ComplexTypes/InactiveSitePolicyResourceStorage.md) | ✅ | ❌ | ❌ | ❌
 [ModifiedProperty](./ComplexTypes/ModifiedProperty.md) | ✅ | ❌ | ❌ | ❌
 [PageResponse](./ComplexTypes/PageResponse.md) | ✅ | ❌ | ❌ | ❌
 [Parameter](./ComplexTypes/Parameter.md) | ✅ | ❌ | ❌ | ❌

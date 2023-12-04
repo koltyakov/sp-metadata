@@ -28,6 +28,7 @@ AllowedDomainListForSyncClient (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 AmplifyAdminSettings (Edm.String) | ✅ | ❌ | ❌ | ❌
 AnyoneLinkTrackUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AppBypassInformationBarriers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+AppOnlyBypassPeoplePickerPolicies (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ApplyAppEnforcedRestrictionsToAdHocRecipients (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ArchiveRedirectUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 AuthContextResilienceMode (Edm.Int32) | ✅ | ❌ | ❌ | ❌
@@ -119,6 +120,7 @@ EnablePromotedFileHandlers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableRestrictedAccessControl (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableSensitivityLabelForPDF (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableSiteArchive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+EnableTenantRestrictionsInsights (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnabledFlightAllowAADB2BSkipCheckingOTP (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ExcludedBlockDownloadGroupIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 ExcludedFileExtensionsForSyncClient (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
@@ -290,3 +292,4 @@ Workflows2013State (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Navigation Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 Sites | ✅ | ❌ | ❌ | ❌
+TotalTenantArchiveFileSizeAggregation | ✅ | ❌ | ❌ | ❌

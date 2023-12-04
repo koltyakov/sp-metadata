@@ -13,3 +13,4 @@ MigrationAgentUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 MiniMavenEndpoint (Edm.String) | ✅ | ❌ | ❌ | ❌
 O365AdminCenterEndpoint (Edm.String) | ✅ | ❌ | ❌ | ❌
 O365MessageCenterEndpoint (Edm.String) | ✅ | ❌ | ❌ | ❌
+SPMigrationToolUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

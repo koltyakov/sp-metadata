@@ -212,6 +212,7 @@ EnableIndex (SP.FieldUser) | ✅ | ❌ | ❌ | ❌
 EnableQueryableColumns (SP.List) | ✅ | ❌ | ❌ | ❌
 EnqueueApplySensitivityLabelWork (SP.Site) | ✅ | ❌ | ❌ | ❌
 EnqueueAsyncActionTaskById (SP.List) | ✅ | ❌ | ❌ | ❌
+EnsureBrandFontsLibraryFeature (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
 EnsureClientRenderedSitePagesLibrary (Collection(SP.List)) | ✅ | ✅ | ❌ | ❌
 EnsureEduClassSetup (SP.Web) | ✅ | ❌ | ❌ | ❌
 EnsureEventsList (Collection(SP.List)) | ✅ | ✅ | ❌ | ❌
@@ -691,6 +692,10 @@ SP_SPHSite_GetSPHSiteXGeo | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_RemoveDashboardFeature](./Functions/SP_SPHSite_RemoveDashboardFeature.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_ValidateHomeSite](./Functions/SP_SPHSite_ValidateHomeSite.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_ValidateHomeSiteCandidate](./Functions/SP_SPHSite_ValidateHomeSiteCandidate.md) | ✅ | ❌ | ❌ | ❌
+[SP_SPPlaylist_GetSubscriberInfo](./Functions/SP_SPPlaylist_GetSubscriberInfo.md) | ✅ | ❌ | ❌ | ❌
+[SP_SPPlaylist_Subscribe](./Functions/SP_SPPlaylist_Subscribe.md) | ✅ | ❌ | ❌ | ❌
+SP_SPPlaylist_Subscriber | ✅ | ❌ | ❌ | ❌
+[SP_SPPlaylist_Unsubscribe](./Functions/SP_SPPlaylist_Unsubscribe.md) | ✅ | ❌ | ❌ | ❌
 SP_ServerSettings_GetBlockedFileExtensions | ✅ | ✅ | ✅ | ✅
 [SP_ServerSettings_GetGlobalInstalledLanguages](./Functions/SP_ServerSettings_GetGlobalInstalledLanguages.md) | ✅ | ✅ | ✅ | ✅
 SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌
@@ -712,9 +717,11 @@ SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌
 [SP_TeamChannelManager_PromoteToTeamChannelById](./Functions/SP_TeamChannelManager_PromoteToTeamChannelById.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_PromoteToTeamChannelByPath](./Functions/SP_TeamChannelManager_PromoteToTeamChannelByPath.md) | ✅ | ✅ | ❌ | ❌
 [SP_TeamChannelManager_SaveConversations](./Functions/SP_TeamChannelManager_SaveConversations.md) | ✅ | ❌ | ❌ | ❌
+[<span title="SP_TeamChannelManager_StampLWGIdOnPrivateChannelSite">SP_TeamChannelManager_StampLWGIdOnPrivateChannelSi...</span> (SP TeamChannelManager StampLWGIdOnPrivateChannelSite)](./Functions/SP_TeamChannelManager_StampLWGIdOnPrivateChannelSite.md) | ✅ | ❌ | ❌ | ❌
 SP_TeamChannelManager_SyncTeamSiteSettings | ✅ | ❌ | ❌ | ❌
 [SP_TeamChannelManager_UnarchiveTeamChannelById](./Functions/SP_TeamChannelManager_UnarchiveTeamChannelById.md) | ✅ | ❌ | ❌ | ❌
 [SP_TeamChannelManager_UnarchiveTeamChannelByPath](./Functions/SP_TeamChannelManager_UnarchiveTeamChannelByPath.md) | ✅ | ❌ | ❌ | ❌
+<span title="SP_TeamChannelManager_UnstampLWGIdOnPrivateChannelSite">SP_TeamChannelManager_UnstampLWGIdOnPrivateChannel...</span> (SP TeamChannelManager UnstampLWGIdOnPrivateChannelSite) | ✅ | ❌ | ❌ | ❌
 SP_TenantSettings_Current | ✅ | ✅ | ✅ | ✅
 SP_UserExperienceState | ✅ | ❌ | ❌ | ❌
 [SP_WebProxy_Invoke](./Functions/SP_WebProxy_Invoke.md) | ✅ | ✅ | ✅ | ✅
@@ -894,6 +901,7 @@ Update (SP.FieldUrl) | ✅ | ✅ | ✅ | ✅
 Update (SP.FieldUser) | ✅ | ✅ | ✅ | ✅
 Update (SP.File) | ✅ | ✅ | ✅ | ❌
 Update (SP.Folder) | ✅ | ✅ | ✅ | ✅
+Update (SP.FontPackage) | ✅ | ❌ | ❌ | ❌
 Update (SP.Group) | ✅ | ✅ | ✅ | ✅
 Update (SP.InformationRightsManagementFileSettings) | ✅ | ✅ | ✅ | ❌
 Update (SP.InformationRightsManagementSettings) | ✅ | ✅ | ✅ | ✅

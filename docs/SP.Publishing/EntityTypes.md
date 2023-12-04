@@ -34,7 +34,6 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SharePointHomeServiceManager](./EntityTypes/SharePointHomeServiceManager.md) | ✅ | ✅ | ❌ | ❌
 [SitePage](./EntityTypes/SitePage.md) | ✅ | ✅ | ❌ | ❌
 [SitePage3D](./EntityTypes/SitePage3D.md) | ✅ | ❌ | ❌ | ❌
-[SitePageAuthoringMetadata](./EntityTypes/SitePageAuthoringMetadata.md) | ✅ | ❌ | ❌ | ❌
 [SitePageMetadata](./EntityTypes/SitePageMetadata.md) | ✅ | ✅ | ❌ | ❌
 [SitePageService](./EntityTypes/SitePageService.md) | ✅ | ✅ | ❌ | ❌
 [SpotlightChannel](./EntityTypes/SpotlightChannel.md) | ✅ | ❌ | ❌ | ❌

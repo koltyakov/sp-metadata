@@ -30,6 +30,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.SharePoint.Activities](./Microsoft.SharePoint.Activities) | ✅ | ✅ | ❌ | ❌
 [Microsoft.SharePoint.AddToOneDrive](./Microsoft.SharePoint.AddToOneDrive) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Administration](./Microsoft.SharePoint.Administration) | ✅ | ✅ | ✅ | ✅
+[Microsoft.SharePoint.Administration.Archiving](./Microsoft.SharePoint.Administration.Archiving) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Administration.SPOUnlicensedODB](./Microsoft.SharePoint.Administration.SPOUnlicensedODB) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Administration.TenantAdmin](./Microsoft.SharePoint.Administration.TenantAdmin) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.AppManagement](./Microsoft.SharePoint.AppManagement) | ✅ | ❌ | ❌ | ❌

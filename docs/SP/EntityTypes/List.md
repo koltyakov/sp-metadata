@@ -65,6 +65,7 @@ IrmExpire (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 IrmReject (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 IsApplicationList (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 IsCatalog (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+IsContributorOwnerEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsDefaultDocumentLibrary (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsEnterpriseGalleryLibrary (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 IsPredictionModelApplied (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
