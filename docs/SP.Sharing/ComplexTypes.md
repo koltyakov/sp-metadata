@@ -11,6 +11,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [EmailData](./ComplexTypes/EmailData.md) | ✅ | ✅ | ❌ | ❌
 [EntityPermission](./ComplexTypes/EntityPermission.md) | ✅ | ✅ | ❌ | ❌
 [EphemeralLinkRequest](./ComplexTypes/EphemeralLinkRequest.md) | ✅ | ❌ | ❌ | ❌
+[InheritedFrom](./ComplexTypes/InheritedFrom.md) | ✅ | ❌ | ❌ | ❌
 [LinkInfo](./ComplexTypes/LinkInfo.md) | ✅ | ✅ | ❌ | ❌
 [LinkInvitation](./ComplexTypes/LinkInvitation.md) | ✅ | ✅ | ❌ | ❌
 [LinkParameters](./ComplexTypes/LinkParameters.md) | ✅ | ❌ | ❌ | ❌
@@ -25,6 +26,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ShareLinkRequest](./ComplexTypes/ShareLinkRequest.md) | ✅ | ✅ | ❌ | ❌
 [ShareLinkResponse](./ComplexTypes/ShareLinkResponse.md) | ✅ | ✅ | ❌ | ❌
 [ShareLinkSettings](./ComplexTypes/ShareLinkSettings.md) | ✅ | ✅ | ❌ | ❌
+[SharePointIds](./ComplexTypes/SharePointIds.md) | ✅ | ❌ | ❌ | ❌
 [SharedWithMeViewItemRemovalResult](./ComplexTypes/SharedWithMeViewItemRemovalResult.md) | ✅ | ✅ | ✅ | ❌
 [SharingAbilities](./ComplexTypes/SharingAbilities.md) | ✅ | ✅ | ❌ | ❌
 [SharingAbilityStatus](./ComplexTypes/SharingAbilityStatus.md) | ✅ | ✅ | ❌ | ❌

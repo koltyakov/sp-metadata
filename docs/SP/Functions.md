@@ -865,6 +865,7 @@ SyncFlowInstances (SP.Web) | ✅ | ❌ | ❌ | ❌
 SyncFlowTemplates (SP.List) | ✅ | ✅ | ❌ | ❌
 SyncFlowTemplates (SP.Web) | ✅ | ❌ | ❌ | ❌
 SyncHubSiteTheme (SP.Web) | ✅ | ✅ | ❌ | ❌
+SyncTeamsComponent (SP.Web) | ✅ | ❌ | ❌ | ❌
 SystemUpdate (SP.ListItem) | ✅ | ✅ | ❌ | ❌
 TakeOverCheckOut (SP.CheckedOutFile) | ✅ | ✅ | ❌ | ❌
 UTCToLocalTime (SP.TimeZone) | ✅ | ✅ | ✅ | ✅
