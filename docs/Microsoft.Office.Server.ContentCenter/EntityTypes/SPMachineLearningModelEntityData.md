@@ -22,6 +22,8 @@ ContentTypeId (Edm.String) | ✅ | ❌ | ❌ | ❌
 ContentTypeName (Edm.String) | ✅ | ❌ | ❌ | ❌
 Explanations (Edm.String) | ✅ | ❌ | ❌ | ❌
 LastTrained (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
+ModelName (Edm.String) | ✅ | ❌ | ❌ | ❌
 ModelSettings (Edm.String) | ✅ | ❌ | ❌ | ❌
+ModelType (Edm.String) | ✅ | ❌ | ❌ | ❌
 SampleFileUniqueIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 Schemas (Edm.String) | ✅ | ❌ | ❌ | ❌

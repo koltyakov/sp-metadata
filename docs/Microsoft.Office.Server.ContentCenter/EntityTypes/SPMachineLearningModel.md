@@ -22,6 +22,7 @@ ID (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 LastTrained (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 ListID (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 ManagementAllowed (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ModelDependencies (Microsoft.Office.Server.ContentCenter.SPModelDependencies) | ✅ | ❌ | ❌ | ❌
 ModelSettings (Edm.String) | ✅ | ❌ | ❌ | ❌
 ModelType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ModelTypeAsString (Edm.String) | ✅ | ❌ | ❌ | ❌

@@ -9,11 +9,14 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 Activity (Edm.String) | ✅ | ❌ | ❌ | ❌
 Author (SP.Sharing.Principal) | ✅ | ✅ | ❌ | ❌
 CallerStack (Edm.String) | ✅ | ✅ | ❌ | ❌
+ColorHex (Edm.String) | ✅ | ❌ | ❌ | ❌
+ColorTag (Edm.String) | ✅ | ❌ | ❌ | ❌
 ContentTypeId (SP.ContentTypeId) | ✅ | ✅ | ❌ | ❌
 DriveAccessToken (Edm.String) | ✅ | ❌ | ❌ | ❌
 DriveAccessTokenV21 (Edm.String) | ✅ | ❌ | ❌ | ❌
 DriveUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 Editor (SP.Sharing.Principal) | ✅ | ✅ | ❌ | ❌
+Emoji (Edm.String) | ✅ | ❌ | ❌ | ❌
 Extension (Edm.String) | ✅ | ✅ | ❌ | ❌
 FileLeafRef (Edm.String) | ✅ | ✅ | ❌ | ❌
 FileRef (Edm.String) | ✅ | ✅ | ❌ | ❌

@@ -78,6 +78,7 @@ DefaultContentCenterSite (Microsoft.Online.SharePoint.TenantAdministration.SiteI
 DefaultLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DefaultODBMode (Edm.String) | ✅ | ❌ | ❌ | ❌
 DefaultSharingLinkType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+DelayDenyAddAndCustomizePagesEnforcement (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DenySelectSGsInODBListInTenant (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 DenySelectSecurityGroupsInSPSitesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 DisableAddToOneDrive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

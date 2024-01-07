@@ -10,5 +10,6 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+customizedEmail (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 siteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 status (Edm.Int32) | ✅ | ❌ | ❌ | ❌

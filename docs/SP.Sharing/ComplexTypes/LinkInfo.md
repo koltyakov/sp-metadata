@@ -10,3 +10,4 @@ inheritedFrom (SP.Sharing.InheritedFrom) | ✅ | ❌ | ❌ | ❌
 isInherited (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 linkDetails (SP.SharingLinkInfo) | ✅ | ✅ | ❌ | ❌
 linkMembers (Collection(SP.Sharing.Principal)) | ✅ | ✅ | ❌ | ❌
+totalLinkMembersCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
