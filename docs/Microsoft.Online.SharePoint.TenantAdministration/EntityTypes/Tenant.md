@@ -104,7 +104,7 @@ ESignatureEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ESignatureSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
 ESignatureSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 ESignatureSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
-ESignatureThirdPartyProviderInfoList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+ESignatureThirdPartyProviderInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.EsignatureThirdPartyProvidersInfo)) | ✅ | ❌ | ❌ | ❌
 ESignatureThirdPartyProviderList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 ESignatureThirdPartyProviderListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 EmailAttestationEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

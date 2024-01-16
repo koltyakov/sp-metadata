@@ -95,6 +95,7 @@ EnableCategories (SP.Publishing.SitePageService) | ✅ | ❌ | ❌ | ❌
 EnsureTitleResource (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
 Feed (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
 FeedTargeted (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
+FlwPropertyFilteringMapping (SP.Publishing.AnnouncementsController) | ✅ | ❌ | ❌ | ❌
 GetAcronymsAndColors (SP.Publishing.SharePointHomeServiceManager) | ✅ | ✅ | ❌ | ❌
 GetAllVideos (SP.Publishing.VideoChannel) | ✅ | ❌ | ❌ | ❌
 GetByEntityId (Collection(SP.Publishing.TopicSitePage)) | ✅ | ❌ | ❌ | ❌

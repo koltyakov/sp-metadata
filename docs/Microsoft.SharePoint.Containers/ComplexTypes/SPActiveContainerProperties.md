@@ -18,6 +18,7 @@ DeletedOn (Edm.String) | ✅ | ❌ | ❌ | ❌
 Description (Edm.String) | ✅ | ❌ | ❌ | ❌
 Owners (Collection(Microsoft.SharePoint.Containers.SPActiveContainerMemberProperties)) | ✅ | ❌ | ❌ | ❌
 OwningApplicationId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+PublisherName (Edm.String) | ✅ | ❌ | ❌ | ❌
 Readers (Collection(Microsoft.SharePoint.Containers.SPActiveContainerMemberProperties)) | ✅ | ❌ | ❌ | ❌
 SensitivityLabel (Edm.String) | ✅ | ❌ | ❌ | ❌
 Status (Edm.String) | ✅ | ❌ | ❌ | ❌

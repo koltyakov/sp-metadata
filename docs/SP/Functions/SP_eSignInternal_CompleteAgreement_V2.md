@@ -1,4 +1,4 @@
-# Function Import: SP_SharedWithMeItemCollection_RestoreToSharedWithMe
+# Function Import: SP_eSignInternal_CompleteAgreement_V2
 
 > Namespace: SP
 
@@ -9,5 +9,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-itemIds (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
-spoIds (Edm.String) | ✅ | ❌ | ❌ | ❌
+completeAgreement (Microsoft.SharePoint.ESign.Models.Requests.CompleteAgreementModel) | ✅ | ❌ | ❌ | ❌

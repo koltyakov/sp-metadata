@@ -7,9 +7,9 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 GeoAllocatedStorageMB (Edm.Int64) | ✅ | ❌ | ❌ | ❌
-GeoArchiveUsedStorageMB (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 GeoAvailableStorageMB (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 GeoLocation (Edm.String) | ✅ | ❌ | ❌ | ❌
+GeoUsedArchiveStorageMB (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 GeoUsedStorageMB (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 QuotaType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 TenantStorageMB (Edm.Int64) | ✅ | ❌ | ❌ | ❌

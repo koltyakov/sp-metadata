@@ -44,6 +44,7 @@ InvokeDataverseQuery (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub
 <span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItemEntityData">Microsoft_Office_Server_ContentCenter_SPMachineLea...</span> (Microsoft Office Server ContentCenter SPMachineLearningWorkItemEntityData) | ✅ | ❌ | ❌ | ❌
 Rename (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
 RenameExtractor (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
+SetAsModelAuthor (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
 SetMachineLearningFlags (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
 SetSyntexPoweredColumnPrompts (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌
 SetSyntexPoweredColumns (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub) | ✅ | ❌ | ❌ | ❌

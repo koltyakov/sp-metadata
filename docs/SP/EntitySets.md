@@ -312,6 +312,7 @@ NotificationCallbacks | ✅ | ✅ | ✅ | ✅
 ObjectSharingInformationUsers | ✅ | ✅ | ✅ | ✅
 ObjectSharingInformations | ✅ | ✅ | ✅ | ✅
 ObjectSharingSettingss | ✅ | ✅ | ✅ | ❌
+OdcMetadataCleanedUpApis | ✅ | ❌ | ❌ | ❌
 Office365CommsMessagesServiceProxys | ✅ | ❌ | ❌ | ❌
 Office365Tenants | ✅ | ❌ | ❌ | ❌
 OnboardingServicesBetas | ✅ | ❌ | ❌ | ❌

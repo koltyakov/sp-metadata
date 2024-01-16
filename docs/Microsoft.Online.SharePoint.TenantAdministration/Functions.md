@@ -33,6 +33,7 @@ DeleteRecentAdminActionReport (Microsoft.Online.SharePoint.TenantAdministration.
 DeleteSPOContainerTypeById (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 DisableCollaborationInsightsDataCollection (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 DownloadRansomwareImpactedAssetsReport (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+DownloadSPOContainers (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 DownloadSharingInsights (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 EnableCollaborationInsightsDataCollection (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 EnsureBrandCenterFeature (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -62,7 +63,6 @@ GetLockStateById (Collection(Microsoft.Online.SharePoint.TenantAdministration.Si
 GetMalwareFileStream (Microsoft.Online.SharePoint.TenantAdministration.SPOMalwareFile) | ✅ | ❌ | ❌ | ❌
 GetOneDriveSiteSharingInsights (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetOrgAssets (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
-GetPolicyExecutionsHistory (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetPowerAppsEnvironments (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetRansomwareActivities (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetRansomwareActivitiesOverview (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -123,6 +123,7 @@ MessageCenterMessages (Microsoft.Online.SharePoint.TenantAdministration.Office36
 <span title="Microsoft_Online_SharePoint_TenantAdministration_TenantAdminSettingsService">Microsoft_Online_SharePoint_TenantAdministration_T...</span> (Microsoft Online SharePoint TenantAdministration TenantAdminSettingsService) | ✅ | ❌ | ❌ | ❌
 NewSPOContainerType (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 Office365ProvidedSharepointSiteActivityDataReady (Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService) | ✅ | ❌ | ❌ | ❌
+PurgeContainer (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 PurgeSPODeletedContainerByContainerId (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 PurgeSPODeletedContainerByContainerSiteUrl (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RecentAdminActionReportIsAuditEnabled (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -159,6 +160,7 @@ RenderRecentAdminActionReport (Microsoft.Online.SharePoint.TenantAdministration.
 RenderRecentAdminActions (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 ReorderTargetedSites (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 <span title="ResetTimestampUpdateOffice365ProvidedSharepointSiteActivityData (Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService)">ResetTimestampUpdateOffice365ProvidedSharepointSit...</span> | ✅ | ❌ | ❌ | ❌
+RestoreContainer (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RestoreDeletedSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RestoreDeletedSiteById (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RestoreDeletedSitePreferId (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌

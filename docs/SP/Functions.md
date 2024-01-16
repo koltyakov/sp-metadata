@@ -300,6 +300,7 @@ GetByPuid (Collection(SP.User)) | ✅ | ❌ | ❌ | ❌
 GetByStoreId (Collection(SP.PushNotificationSubscriber)) | ✅ | ✅ | ✅ | ✅
 GetByStringId (Collection(SP.ListItem)) | ✅ | ✅ | ✅ | ✅
 GetByTitle (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
+GetByTitle (Collection(SP.FontPackage)) | ✅ | ❌ | ❌ | ❌
 GetByTitle (Collection(SP.List)) | ✅ | ✅ | ✅ | ✅
 GetByTitle (Collection(SP.View)) | ✅ | ✅ | ✅ | ✅
 GetByType (Collection(SP.RoleDefinition)) | ✅ | ✅ | ✅ | ✅
@@ -744,6 +745,7 @@ SP_Web_GetContextWebThemeData | ✅ | ✅ | ✅ | ❌
 [SP_eSignInternal_CancelAgreement](./Functions/SP_eSignInternal_CancelAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_CleanupAgreement](./Functions/SP_eSignInternal_CleanupAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_CompleteAgreement](./Functions/SP_eSignInternal_CompleteAgreement.md) | ✅ | ❌ | ❌ | ❌
+[SP_eSignInternal_CompleteAgreement_V2](./Functions/SP_eSignInternal_CompleteAgreement_V2.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_DeclineAgreement](./Functions/SP_eSignInternal_DeclineAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_SignAgreement](./Functions/SP_eSignInternal_SignAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_StartAgreement](./Functions/SP_eSignInternal_StartAgreement.md) | ✅ | ❌ | ❌ | ❌
