@@ -11374,7 +11374,7 @@
         <FunctionImport Name="Configuration" ReturnType="SP.BrandCenterConfiguration" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.BrandCenter" />
         </FunctionImport>
-        <FunctionImport Name="EnsureBrandFontsLibraryFeature" IsBindable="true">
+        <FunctionImport Name="EnsureBrandFontsLibraryFeature" ReturnType="Microsoft.SharePoint.Administration.OrgAssets" IsBindable="true">
           <Parameter Name="this" Type="SP.BrandCenter" />
         </FunctionImport>
         <FunctionImport Name="OrgAssets" ReturnType="Microsoft.SharePoint.Administration.OrgAssets" IsSideEffecting="false" IsBindable="true">
@@ -33562,6 +33562,7 @@
         <Property Name="canvasContent" Type="Edm.String" />
         <Property Name="dashboardUrl" Type="Edm.String" />
         <Property Name="extraComponents" Type="Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult)" />
+        <Property Name="personalizationData" Type="Microsoft.SharePoint.EmployeeEngagement.Experience.DashboardContent" />
       </ComplexType>
       <ComplexType Name="VivaResourceLink">
         <Property Name="Audiences" Type="Collection(Edm.String)" />
@@ -33665,6 +33666,17 @@
       </Association>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.EmployeeEngagement.Experience" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="DashboardContent">
+        <Property Name="DashboardCardDetails" Type="Collection(Microsoft.SharePoint.EmployeeEngagement.Experience.DashboardCardDetails)" />
+        <Property Name="DashboardFormFactor" Type="Edm.String" />
+        <Property Name="DashboardId" Type="Edm.String" />
+        <Property Name="LastModifiedDate" Type="Edm.DateTime" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="DashboardCardDetails">
+        <Property Name="ControlIndex" Type="Edm.Double" Nullable="false" />
+        <Property Name="InstanceId" Type="Edm.String" />
+        <Property Name="State" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="AnnouncementAction">
         <Property Name="Type" Type="Edm.String" />
         <Property Name="value" Type="Edm.Boolean" Nullable="false" />
@@ -33673,17 +33685,6 @@
         <Property Name="Action" Type="Microsoft.SharePoint.EmployeeEngagement.Experience.AnnouncementAction" />
         <Property Name="ExpiresOn" Type="Edm.DateTime" Nullable="false" />
         <Property Name="Id" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="DashboardCardDetails">
-        <Property Name="ControlIndex" Type="Edm.Double" Nullable="false" />
-        <Property Name="InstanceId" Type="Edm.String" />
-        <Property Name="State" Type="Edm.String" />
-      </ComplexType>
-      <ComplexType Name="DashboardContent">
-        <Property Name="DashboardCardDetails" Type="Collection(Microsoft.SharePoint.EmployeeEngagement.Experience.DashboardCardDetails)" />
-        <Property Name="DashboardFormFactor" Type="Edm.String" />
-        <Property Name="DashboardId" Type="Edm.String" />
-        <Property Name="LastModifiedDate" Type="Edm.DateTime" Nullable="false" />
       </ComplexType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.Deployment" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -35383,28 +35384,6 @@
         <Property Name="IsEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ProviderName" Type="Edm.String" />
       </ComplexType>
-      <ComplexType Name="ExecutionHistoryResponse">
-        <Property Name="CorrelationId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="EndTime" Type="Edm.DateTime" />
-        <Property Name="ExecutionDetails" Type="Edm.String" />
-        <Property Name="ExecutionStatus" Type="Edm.Int32" Nullable="false" />
-        <Property Name="ExpectedStartTime" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="FailureReason" Type="Edm.String" />
-        <Property Name="ImpactedDataFileURL" Type="Edm.String" />
-        <Property Name="IsPreviewRun" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="ItemId" Type="Edm.Int32" Nullable="false" />
-        <Property Name="ParentItemId" Type="Edm.Int32" Nullable="false" />
-        <Property Name="PolicyFrequency" Type="Edm.Int32" Nullable="false" />
-        <Property Name="PolicyId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="PolicyName" Type="Edm.String" />
-        <Property Name="PolicyState" Type="Edm.Int32" Nullable="false" />
-        <Property Name="PolicyTemplate" Type="Edm.Int32" Nullable="false" />
-        <Property Name="PolicyVersion" Type="Edm.Int32" Nullable="false" />
-        <Property Name="RetryCount" Type="Edm.Int32" Nullable="false" />
-        <Property Name="StartTime" Type="Edm.DateTime" />
-        <Property Name="WorkItemId" Type="Edm.Guid" Nullable="false" />
-        <Property Name="WorkItemType" Type="Edm.Int32" Nullable="false" />
-      </ComplexType>
       <ComplexType Name="GroupInfo">
         <Property Name="GroupStatusInAAD" Type="Edm.Int32" Nullable="false" />
         <Property Name="SiteUrl" Type="Edm.String" />
@@ -35618,6 +35597,9 @@
         <Property Name="ReadOnlyForBlockDownloadPolicy" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ReadOnlyForUnmanagedDevices" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SensitivityLabel" Type="Edm.String" />
+        <Property Name="SharingAllowedDomainList" Type="Edm.String" />
+        <Property Name="SharingBlockedDomainList" Type="Edm.String" />
+        <Property Name="SharingDomainRestrictionMode" Type="Edm.Int32" Nullable="false" />
         <Property Name="Status" Type="Edm.String" />
         <Property Name="StorageUsed" Type="Edm.Int64" Nullable="false" />
         <Property Name="Writers" Type="Collection(Edm.String)" />
