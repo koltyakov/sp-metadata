@@ -12,7 +12,6 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [DisableSelfServiceSiteCreation](./ComplexTypes/DisableSelfServiceSiteCreation.md) | ✅ | ❌ | ❌ | ❌
 [EnableAutoNewsDigest](./ComplexTypes/EnableAutoNewsDigest.md) | ✅ | ❌ | ❌ | ❌
 [EsignatureThirdPartyProvidersInfo](./ComplexTypes/EsignatureThirdPartyProvidersInfo.md) | ✅ | ❌ | ❌ | ❌
-[ExecutionHistoryResponse](./ComplexTypes/ExecutionHistoryResponse.md) | ✅ | ❌ | ❌ | ❌
 [GroupInfo](./ComplexTypes/GroupInfo.md) | ✅ | ❌ | ❌ | ❌
 [HubSitePermission](./ComplexTypes/HubSitePermission.md) | ✅ | ❌ | ❌ | ❌
 [IBSegmentInfo](./ComplexTypes/IBSegmentInfo.md) | ✅ | ❌ | ❌ | ❌

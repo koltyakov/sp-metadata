@@ -28,6 +28,9 @@ ReadOnlyForBlockDownloadPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ReadOnlyForUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Readers (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 SensitivityLabel (Edm.String) | ✅ | ❌ | ❌ | ❌
+SharingAllowedDomainList (Edm.String) | ✅ | ❌ | ❌ | ❌
+SharingBlockedDomainList (Edm.String) | ✅ | ❌ | ❌ | ❌
+SharingDomainRestrictionMode (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Status (Edm.String) | ✅ | ❌ | ❌ | ❌
 StorageUsed (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 Writers (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
