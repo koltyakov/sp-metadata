@@ -1,4 +1,4 @@
-# Function Import: GetInsightsSummary
+# Function Import: ExportCSVFile
 
 > Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
@@ -10,7 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-content (Edm.String) | ✅ | ❌ | ❌ | ❌
-dataFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
-insightsScenario (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-pageIndex (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+timeZoneId (Edm.Int32) | ✅ | ❌ | ❌ | ❌

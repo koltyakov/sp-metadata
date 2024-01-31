@@ -10,4 +10,5 @@ ID (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 IsHidden (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsValid (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 PackageJson (Edm.String) | ✅ | ❌ | ❌ | ❌
+Store (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ❌ | ❌ | ❌

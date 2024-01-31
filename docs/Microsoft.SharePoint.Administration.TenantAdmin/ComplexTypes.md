@@ -14,7 +14,9 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [GroupSitesActivityDetail](./ComplexTypes/GroupSitesActivityDetail.md) | ✅ | ❌ | ❌ | ❌
 [ImpactedAsset](./ComplexTypes/ImpactedAsset.md) | ✅ | ❌ | ❌ | ❌
 [InactiveSitePolicyResourceStorage](./ComplexTypes/InactiveSitePolicyResourceStorage.md) | ✅ | ❌ | ❌ | ❌
+[InsightsSummaryResponse](./ComplexTypes/InsightsSummaryResponse.md) | ✅ | ❌ | ❌ | ❌
 [ModifiedProperty](./ComplexTypes/ModifiedProperty.md) | ✅ | ❌ | ❌ | ❌
+[OwnershipPolicyResourceStorage](./ComplexTypes/OwnershipPolicyResourceStorage.md) | ✅ | ❌ | ❌ | ❌
 [PageResponse](./ComplexTypes/PageResponse.md) | ✅ | ❌ | ❌ | ❌
 [Parameter](./ComplexTypes/Parameter.md) | ✅ | ❌ | ❌ | ❌
 [RansomwareProperties](./ComplexTypes/RansomwareProperties.md) | ✅ | ❌ | ❌ | ❌

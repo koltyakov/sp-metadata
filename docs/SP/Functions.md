@@ -437,6 +437,7 @@ IncrementSiteClientTag (SP.Web) | ✅ | ✅ | ✅ | ❌
 InheritTenantSettings (SP.SiteVersionPolicyManager) | ✅ | ❌ | ❌ | ❌
 Install (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
 Invalidate (SP.Site) | ✅ | ✅ | ✅ | ✅
+IsSyntexAIFeaturesFlightEnabled (SP.List) | ✅ | ❌ | ❌ | ❌
 JoinHubSite (SP.Site) | ✅ | ✅ | ❌ | ❌
 KnowledgeHub | ✅ | ❌ | ❌ | ❌
 ListPowerPlatformUserDetails (SP.Web) | ✅ | ❌ | ❌ | ❌
@@ -612,7 +613,6 @@ SP_FavoriteItemCollection_GetFavoriteItems | ✅ | ❌ | ❌ | ❌
 [SP_FavoriteLists_UpdateList](./Functions/SP_FavoriteLists_UpdateList.md) | ✅ | ❌ | ❌ | ❌
 [SP_File_GetContentVerFromTag](./Functions/SP_File_GetContentVerFromTag.md) | ✅ | ✅ | ✅ | ✅
 SP_FolderColoring | ✅ | ❌ | ❌ | ❌
-SP_FontPackages | ✅ | ❌ | ❌ | ❌
 SP_FontPackages_Load | ✅ | ❌ | ❌ | ❌
 [SP_HashtagStoreManager_CallOLS](./Functions/SP_HashtagStoreManager_CallOLS.md) | ❌ | ✅ | ❌ | ❌
 [SP_HashtagStoreManager_GetBlockedHashtags](./Functions/SP_HashtagStoreManager_GetBlockedHashtags.md) | ❌ | ✅ | ❌ | ❌
@@ -651,6 +651,7 @@ SP_MultilingualSettings | ✅ | ❌ | ❌ | ❌
 [<span title="SP_ObjectSharingInformation_GetWebSharingInformation">SP_ObjectSharingInformation_GetWebSharingInformati...</span> (SP ObjectSharingInformation GetWebSharingInformation)](./Functions/SP_ObjectSharingInformation_GetWebSharingInformation.md) | ✅ | ✅ | ✅ | ✅
 SP_OrganizationNews | ✅ | ❌ | ❌ | ❌
 [SP_OrganizationNews_GetSiteReference](./Functions/SP_OrganizationNews_GetSiteReference.md) | ✅ | ❌ | ❌ | ❌
+SP_OutOfBoxFontPackages_Load | ✅ | ❌ | ❌ | ❌
 [SP_PersonalListsProxy_GetPersonalListsProxy](./Functions/SP_PersonalListsProxy_GetPersonalListsProxy.md) | ✅ | ❌ | ❌ | ❌
 [SP_PinnedItems_AddItem](./Functions/SP_PinnedItems_AddItem.md) | ✅ | ❌ | ❌ | ❌
 [SP_PinnedItems_GetItemsBy](./Functions/SP_PinnedItems_GetItemsBy.md) | ✅ | ❌ | ❌ | ❌
@@ -700,6 +701,7 @@ SP_SPPlaylist_Subscriber | ✅ | ❌ | ❌ | ❌
 SP_ServerSettings_GetBlockedFileExtensions | ✅ | ✅ | ✅ | ✅
 [SP_ServerSettings_GetGlobalInstalledLanguages](./Functions/SP_ServerSettings_GetGlobalInstalledLanguages.md) | ✅ | ✅ | ✅ | ✅
 SP_ServerSettings_IsSharePointOnline | ✅ | ✅ | ✅ | ❌
+SP_SharedWithMeItemCollection_GetCalendarEvents | ✅ | ❌ | ❌ | ❌
 [<span title="SP_SharedWithMeItemCollection_GetSharedWithMeExternalItems">SP_SharedWithMeItemCollection_GetSharedWithMeExter...</span> (SP SharedWithMeItemCollection GetSharedWithMeExternalItems)](./Functions/SP_SharedWithMeItemCollection_GetSharedWithMeExternalItems.md) | ✅ | ❌ | ❌ | ❌
 [SP_SharedWithMeItemCollection_GetSharedWithMeItems](./Functions/SP_SharedWithMeItemCollection_GetSharedWithMeItems.md) | ✅ | ❌ | ❌ | ❌
 [<span title="SP_SharedWithMeItemCollection_RemoveFromSharedWithMe">SP_SharedWithMeItemCollection_RemoveFromSharedWith...</span> (SP SharedWithMeItemCollection RemoveFromSharedWithMe)](./Functions/SP_SharedWithMeItemCollection_RemoveFromSharedWithMe.md) | ✅ | ❌ | ❌ | ❌
@@ -723,6 +725,7 @@ SP_TeamChannelManager_SyncTeamSiteSettings | ✅ | ❌ | ❌ | ❌
 [SP_TeamChannelManager_UnarchiveTeamChannelById](./Functions/SP_TeamChannelManager_UnarchiveTeamChannelById.md) | ✅ | ❌ | ❌ | ❌
 [SP_TeamChannelManager_UnarchiveTeamChannelByPath](./Functions/SP_TeamChannelManager_UnarchiveTeamChannelByPath.md) | ✅ | ❌ | ❌ | ❌
 <span title="SP_TeamChannelManager_UnstampLWGIdOnPrivateChannelSite">SP_TeamChannelManager_UnstampLWGIdOnPrivateChannel...</span> (SP TeamChannelManager UnstampLWGIdOnPrivateChannelSite) | ✅ | ❌ | ❌ | ❌
+SP_TenantFontPackages_Load | ✅ | ❌ | ❌ | ❌
 SP_TenantSettings_Current | ✅ | ✅ | ✅ | ✅
 SP_UserExperienceState | ✅ | ❌ | ❌ | ❌
 [SP_WebProxy_Invoke](./Functions/SP_WebProxy_Invoke.md) | ✅ | ✅ | ✅ | ✅
@@ -745,6 +748,7 @@ SP_Web_GetContextWebThemeData | ✅ | ✅ | ✅ | ❌
 [SP_eSignInternal_CancelAgreement](./Functions/SP_eSignInternal_CancelAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_CleanupAgreement](./Functions/SP_eSignInternal_CleanupAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_CompleteAgreement](./Functions/SP_eSignInternal_CompleteAgreement.md) | ✅ | ❌ | ❌ | ❌
+[SP_eSignInternal_CompleteAgreementV3](./Functions/SP_eSignInternal_CompleteAgreementV3.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_CompleteAgreement_V2](./Functions/SP_eSignInternal_CompleteAgreement_V2.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_DeclineAgreement](./Functions/SP_eSignInternal_DeclineAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_SignAgreement](./Functions/SP_eSignInternal_SignAgreement.md) | ✅ | ❌ | ❌ | ❌
@@ -970,6 +974,7 @@ hubsites | ✅ | ✅ | ❌ | ❌
 lists | ✅ | ✅ | ✅ | ✅
 me | ✅ | ✅ | ✅ | ❌
 models | ✅ | ❌ | ❌ | ❌
+outofboxfontpackages | ✅ | ❌ | ❌ | ❌
 publications | ✅ | ❌ | ❌ | ❌
 site | ✅ | ✅ | ✅ | ✅
 web | ✅ | ✅ | ✅ | ✅
