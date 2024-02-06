@@ -6,6 +6,8 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [AccessRequestResponse](./ComplexTypes/AccessRequestResponse.md) | ✅ | ❌ | ❌ | ❌
 [AdditionalAccessStatusResponse](./ComplexTypes/AdditionalAccessStatusResponse.md) | ✅ | ❌ | ❌ | ❌
+[AgreementMetaData](./ComplexTypes/AgreementMetaData.md) | ✅ | ❌ | ❌ | ❌
+[AgreementSearchParameters](./ComplexTypes/AgreementSearchParameters.md) | ✅ | ❌ | ❌ | ❌
 [AlertCreationInformation](./ComplexTypes/AlertCreationInformation.md) | ✅ | ✅ | ❌ | ❌
 [AppLicense](./ComplexTypes/AppLicense.md) | ✅ | ✅ | ✅ | ✅
 [AppLicenseCollection](./ComplexTypes/AppLicenseCollection.md) | ✅ | ✅ | ✅ | ✅
@@ -135,9 +137,11 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [RenderListFilterDataParameters](./ComplexTypes/RenderListFilterDataParameters.md) | ✅ | ✅ | ✅ | ❌
 [RequestedTranslation](./ComplexTypes/RequestedTranslation.md) | ✅ | ❌ | ❌ | ❌
 [ResourcePath](./ComplexTypes/ResourcePath.md) | ✅ | ✅ | ❌ | ❌
+[ResourceVisualization](./ComplexTypes/ResourceVisualization.md) | ✅ | ❌ | ❌ | ❌
 [RoleDefinitionCreationInformation](./ComplexTypes/RoleDefinitionCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [RulesAssignmentModelResponse](./ComplexTypes/RulesAssignmentModelResponse.md) | ✅ | ❌ | ❌ | ❌
 [RulesDefinition](./ComplexTypes/RulesDefinition.md) | ✅ | ❌ | ❌ | ❌
+[SPAgreementsSite](./ComplexTypes/SPAgreementsSite.md) | ✅ | ❌ | ❌ | ❌
 [SPHSiteReference](./ComplexTypes/SPHSiteReference.md) | ✅ | ❌ | ❌ | ❌
 [SPImageItem](./ComplexTypes/SPImageItem.md) | ✅ | ❌ | ❌ | ❌
 [SPInvitationCreationResult](./ComplexTypes/SPInvitationCreationResult.md) | ✅ | ✅ | ✅ | ❌
@@ -148,12 +152,14 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPRuleUserInfo](./ComplexTypes/SPRuleUserInfo.md) | ✅ | ❌ | ❌ | ❌
 [ScriptSafeDomainEntityData](./ComplexTypes/ScriptSafeDomainEntityData.md) | ✅ | ✅ | ❌ | ❌
 [SensitivityLabelInfo](./ComplexTypes/SensitivityLabelInfo.md) | ✅ | ❌ | ❌ | ❌
+[SharePointIds](./ComplexTypes/SharePointIds.md) | ✅ | ❌ | ❌ | ❌
 [SharedWithUser](./ComplexTypes/SharedWithUser.md) | ✅ | ✅ | ❌ | ❌
 [SharedWithUserCollection](./ComplexTypes/SharedWithUserCollection.md) | ✅ | ✅ | ❌ | ❌
 [SharingLinkData](./ComplexTypes/SharingLinkData.md) | ✅ | ✅ | ❌ | ❌
 [SharingLinkInfo](./ComplexTypes/SharingLinkInfo.md) | ✅ | ✅ | ✅ | ❌
 [SimpleDataRow](./ComplexTypes/SimpleDataRow.md) | ✅ | ✅ | ✅ | ✅
 [SimpleDataTable](./ComplexTypes/SimpleDataTable.md) | ✅ | ✅ | ✅ | ✅
+[SiteTemplate](./ComplexTypes/SiteTemplate.md) | ✅ | ❌ | ❌ | ❌
 [SmartTemplateContentType](./ComplexTypes/SmartTemplateContentType.md) | ✅ | ❌ | ❌ | ❌
 [Snippet](./ComplexTypes/Snippet.md) | ✅ | ❌ | ❌ | ❌
 [SubwebQuery](./ComplexTypes/SubwebQuery.md) | ✅ | ✅ | ✅ | ✅

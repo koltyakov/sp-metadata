@@ -751,6 +751,7 @@ SP_Web_GetContextWebThemeData | ✅ | ✅ | ✅ | ❌
 [SP_eSignInternal_CompleteAgreementV3](./Functions/SP_eSignInternal_CompleteAgreementV3.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_CompleteAgreement_V2](./Functions/SP_eSignInternal_CompleteAgreement_V2.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_DeclineAgreement](./Functions/SP_eSignInternal_DeclineAgreement.md) | ✅ | ❌ | ❌ | ❌
+SP_eSignInternal_GetEsignSettings | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_SignAgreement](./Functions/SP_eSignInternal_SignAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_StartAgreement](./Functions/SP_eSignInternal_StartAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_UpdateAuditTrailEntry](./Functions/SP_eSignInternal_UpdateAuditTrailEntry.md) | ✅ | ❌ | ❌ | ❌

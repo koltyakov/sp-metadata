@@ -10,5 +10,4 @@ totalFileInteraction (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 totalFilesSharedExternally (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 totalFilesSharedInternally (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 totalFilesViewedOrEdited (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-userDisplayName (Edm.String) | ✅ | ❌ | ❌ | ❌
 userPrincipalName (Edm.String) | ✅ | ❌ | ❌ | ❌
