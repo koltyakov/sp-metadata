@@ -10,6 +10,7 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+bccEmails (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 ccEmails (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 message (Edm.String) | ✅ | ✅ | ❌ | ❌
 pageContent (Edm.String) | ✅ | ❌ | ❌ | ❌

@@ -1,8 +1,8 @@
-# Function Import: UpdateOffice365ProvidedSharepointSiteActivityData
+# Function Import: RemoveSPORestrictedSearchAllowedList
 
 > Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
-- Entity type: Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService
+- Entity type: Microsoft.Online.SharePoint.TenantAdministration.Tenant
 - Is composable: false
 - Is bindable: false
 
@@ -10,4 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-oauthToken (Edm.String) | ✅ | ❌ | ❌ | ❌
+siteIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌

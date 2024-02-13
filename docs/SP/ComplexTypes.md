@@ -138,9 +138,12 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [RequestedTranslation](./ComplexTypes/RequestedTranslation.md) | ✅ | ❌ | ❌ | ❌
 [ResourcePath](./ComplexTypes/ResourcePath.md) | ✅ | ✅ | ❌ | ❌
 [ResourceVisualization](./ComplexTypes/ResourceVisualization.md) | ✅ | ❌ | ❌ | ❌
+[ReviewerInfo](./ComplexTypes/ReviewerInfo.md) | ✅ | ❌ | ❌ | ❌
 [RoleDefinitionCreationInformation](./ComplexTypes/RoleDefinitionCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [RulesAssignmentModelResponse](./ComplexTypes/RulesAssignmentModelResponse.md) | ✅ | ❌ | ❌ | ❌
 [RulesDefinition](./ComplexTypes/RulesDefinition.md) | ✅ | ❌ | ❌ | ❌
+[RulesDefinitionGroup](./ComplexTypes/RulesDefinitionGroup.md) | ✅ | ❌ | ❌ | ❌
+[RulesValidationEntryResponse](./ComplexTypes/RulesValidationEntryResponse.md) | ✅ | ❌ | ❌ | ❌
 [SPAgreementsSite](./ComplexTypes/SPAgreementsSite.md) | ✅ | ❌ | ❌ | ❌
 [SPHSiteReference](./ComplexTypes/SPHSiteReference.md) | ✅ | ❌ | ❌ | ❌
 [SPImageItem](./ComplexTypes/SPImageItem.md) | ✅ | ❌ | ❌ | ❌

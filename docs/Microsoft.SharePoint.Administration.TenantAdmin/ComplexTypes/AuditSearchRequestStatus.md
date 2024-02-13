@@ -22,4 +22,5 @@ RequestStorageName (Edm.String) | ✅ | ❌ | ❌ | ❌
 ResultStorageName (Edm.String) | ✅ | ❌ | ❌ | ❌
 SearchUser (Edm.String) | ✅ | ❌ | ❌ | ❌
 Status (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+Throttled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 TotalItemCount (Edm.Int64) | ✅ | ❌ | ❌ | ❌

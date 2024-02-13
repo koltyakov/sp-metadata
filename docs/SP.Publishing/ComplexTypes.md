@@ -63,7 +63,9 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SharePointPublishingStatusResponse](./ComplexTypes/SharePointPublishingStatusResponse.md) | ✅ | ❌ | ❌ | ❌
 [SitePage3DFieldsData](./ComplexTypes/SitePage3DFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [SitePageAuthoringMetadata](./ComplexTypes/SitePageAuthoringMetadata.md) | ✅ | ❌ | ❌ | ❌
+[SitePageBoostProperties](./ComplexTypes/SitePageBoostProperties.md) | ✅ | ❌ | ❌ | ❌
 [SitePageCoAuthState](./ComplexTypes/SitePageCoAuthState.md) | ✅ | ❌ | ❌ | ❌
+[SitePageCollaborator](./ComplexTypes/SitePageCollaborator.md) | ✅ | ❌ | ❌ | ❌
 [SitePageDependencyMetadata](./ComplexTypes/SitePageDependencyMetadata.md) | ✅ | ❌ | ❌ | ❌
 [SitePageFieldsData](./ComplexTypes/SitePageFieldsData.md) | ✅ | ✅ | ❌ | ❌
 [SitePageVersionInfo](./ComplexTypes/SitePageVersionInfo.md) | ✅ | ✅ | ❌ | ❌

@@ -10,6 +10,7 @@ approvers (Edm.String) | ✅ | ❌ | ❌ | ❌
 awaitAll (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 details (Edm.String) | ✅ | ❌ | ❌ | ❌
 itemId (Edm.String) | ✅ | ❌ | ❌ | ❌
+itemUrlType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 listId (Edm.String) | ✅ | ❌ | ❌ | ❌
 title (Edm.String) | ✅ | ❌ | ❌ | ❌
 url (Edm.String) | ✅ | ❌ | ❌ | ❌

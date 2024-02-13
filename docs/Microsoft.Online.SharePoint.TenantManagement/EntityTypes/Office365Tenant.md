@@ -114,6 +114,9 @@ IPAddressAllowList (Edm.String) | ✅ | ❌ | ❌ | ❌
 IPAddressEnforcement (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IPAddressWACTokenLifetime (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ImageTaggingOption (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+ImageTaggingSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
+ImageTaggingSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+ImageTaggingSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 IncludeAtAGlanceInShareEmails (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 InformationBarriersSuspension (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsUnmanagedSyncClientForTenantRestricted (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

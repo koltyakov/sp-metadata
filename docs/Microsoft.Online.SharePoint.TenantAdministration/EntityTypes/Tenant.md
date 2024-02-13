@@ -236,6 +236,7 @@ RestrictedOneDriveLicense (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RestrictedSharePointLicense (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RootSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 SearchResolveExactEmailOrUPN (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+SharePointAddInsDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SharingAllowedDomainList (Edm.String) | ✅ | ❌ | ❌ | ❌
 SharingBlockedDomainList (Edm.String) | ✅ | ❌ | ❌ | ❌
 SharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
