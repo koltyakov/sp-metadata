@@ -197,6 +197,7 @@
         <Property Name="awaitAll" Type="Edm.Boolean" />
         <Property Name="details" Type="Edm.String" />
         <Property Name="itemId" Type="Edm.String" />
+        <Property Name="itemUrlType" Type="Edm.Int32" Nullable="false" />
         <Property Name="listId" Type="Edm.String" />
         <Property Name="title" Type="Edm.String" />
         <Property Name="url" Type="Edm.String" />
@@ -1390,6 +1391,22 @@
         <Property Name="CategoryTermGuid" Type="Edm.Guid" Nullable="false" />
         <Property Name="IsActive" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Rules" Type="Collection(SP.RulesDefinition)" />
+      </ComplexType>
+      <ComplexType Name="RulesDefinitionGroup">
+        <Property Name="RuleDefinitionsList" Type="Collection(SP.RulesDefinition)" />
+        <Property Name="RuleGroup" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="RulesValidationEntryResponse">
+        <Property Name="Action" Type="Edm.Int32" Nullable="false" />
+        <Property Name="BusinessJustification" Type="Edm.String" />
+        <Property Name="LastUpdatedDateTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Reviewer" Type="SP.ReviewerInfo" />
+        <Property Name="Rule" Type="SP.RulesDefinition" />
+      </ComplexType>
+      <ComplexType Name="ReviewerInfo">
+        <Property Name="Email" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="ReviewerId" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <EntityType Name="ApiMetadata">
         <Key>
@@ -8933,6 +8950,7 @@
           <Parameter Name="pageContent" Type="Edm.String" />
           <Parameter Name="subject" Type="Edm.String" />
           <Parameter Name="ccEmails" Type="Collection(Edm.String)" />
+          <Parameter Name="bccEmails" Type="Collection(Edm.String)" />
         </FunctionImport>
         <FunctionImport Name="ShareSiteByEmail" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.RichSharing" />
@@ -15966,10 +15984,6 @@
         <FunctionImport Name="SetTrackViewFeatureAlwaysVisible" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
         </FunctionImport>
-        <FunctionImport Name="UpdateOffice365ProvidedSharepointSiteActivityData" ReturnType="Edm.Boolean" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
-          <Parameter Name="oauthToken" Type="Edm.String" />
-        </FunctionImport>
         <FunctionImport Name="CheckSiteIsArchivedById" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)" />
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
@@ -16107,6 +16121,10 @@
         <FunctionImport Name="AddRecentAdminActions" ReturnType="Collection(Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminRecentAction)" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="payload" Type="Collection(Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminRecentActionPayload)" />
+        </FunctionImport>
+        <FunctionImport Name="AddSPORestrictedSearchAllowedList" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="siteIds" Type="Collection(Edm.Guid)" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="AddTenantAdminListItem" ReturnType="SP.ListItem" IsBindable="true" EntitySet="ListItems">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -16378,6 +16396,12 @@
         <FunctionImport Name="GetSPODeletedContainers" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.SPDeletedContainerProperties)" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
+        <FunctionImport Name="GetSPORestrictedSearchAllowedList" ReturnType="Collection(Edm.String)" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+        </FunctionImport>
+        <FunctionImport Name="GetSPORestrictedSearchMode" ReturnType="Edm.Int32" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+        </FunctionImport>
         <FunctionImport Name="GetSPOSiteCreationSources" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.SPOSiteCreationSource)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
@@ -16505,6 +16529,10 @@
         <FunctionImport Name="RemoveSPOContainerType" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="spDeletedContainerTypeProperties" Type="Microsoft.Online.SharePoint.TenantAdministration.SPDeletedContainerTypeProperties" />
+        </FunctionImport>
+        <FunctionImport Name="RemoveSPORestrictedSearchAllowedList" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="siteIds" Type="Collection(Edm.Guid)" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="RemoveTargetedSite" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -16814,6 +16842,10 @@
         <FunctionImport Name="SetSPOContainerTypeConfiguration" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPContainerTypeConfigurationProperties" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="spContainerTypeConfigurationProperties" Type="Microsoft.Online.SharePoint.TenantAdministration.SPContainerTypeConfigurationProperties" />
+        </FunctionImport>
+        <FunctionImport Name="SetSPORestrictedSearchMode" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="mode" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SetSyntexPaygFeatureActivation" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -19388,6 +19420,9 @@
       <Annotations Target="SP.Publishing.SitePageFieldsData/BannerImageUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.SitePageFieldsData/BoostProperties">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.SitePageFieldsData/CallToAction">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -19401,6 +19436,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.SitePageFieldsData/CoAuthState">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.SitePageFieldsData/Collaborators">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.SitePageFieldsData/Description">
@@ -20295,6 +20333,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Administration.OrgAssets">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Administration.TenantAdmin.CopilotRestrictedSearchSetting">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Administration.TenantAdmin.InsightsSummaryResponse">
@@ -22668,6 +22709,9 @@
       <Annotations Target="SP.Publishing.SitePage/AuthoringMetadata">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.SitePage/BoostProperties">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.SitePage/CanvasContent1">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22678,6 +22722,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.SitePage/CoAuthState">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.SitePage/Collaborators">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.SitePage/CreationMode">
@@ -24453,7 +24500,7 @@
       <Annotations Target="SP.ApiData/SP_Publishing_RichSharing()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SharePageByEmail(SP.Publishing.RichSharing, Edm.String, Edm.String, Collection(Edm.String), Edm.String, Edm.String, Collection(Edm.String))">
+      <Annotations Target="SP.ApiData/SharePageByEmail(SP.Publishing.RichSharing, Edm.String, Edm.String, Collection(Edm.String), Edm.String, Edm.String, Collection(Edm.String), Collection(Edm.String))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/ShareSiteByEmail(SP.Publishing.RichSharing, Edm.String, Edm.String, Edm.String, Edm.String, Collection(Edm.String))">
@@ -26594,9 +26641,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SetTrackViewFeatureAlwaysVisible(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/UpdateOffice365ProvidedSharepointSiteActivityData(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_Online_SharePoint_TenantAdministration_SPOGroup()">
@@ -30873,15 +30917,24 @@
         <Property Name="PreviousItemId" Type="Edm.Int32" />
         <Property Name="PreviousItemVersion" Type="Edm.Int32" />
       </ComplexType>
+      <ComplexType Name="SitePageBoostProperties">
+        <Property Name="BoostOrder" Type="Edm.Double" Nullable="false" />
+        <Property Name="BoostOrderVersion" Type="Edm.Int32" Nullable="false" />
+        <Property Name="BoostUntilExpiryDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="BoostUntilSeen" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="BoostUntilUsersViewedCount" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="SitePageFieldsData">
         <Property Name="AuthorByline" Type="Collection(Edm.String)" />
         <Property Name="AuthoringMetadata" Type="SP.Publishing.SitePageAuthoringMetadata" />
         <Property Name="BannerImageUrl" Type="Edm.String" />
+        <Property Name="BoostProperties" Type="SP.Publishing.SitePageBoostProperties" />
         <Property Name="CallToAction" Type="Edm.String" />
         <Property Name="CanvasContent1" Type="Edm.String" />
         <Property Name="CanvasJson1" Type="Edm.String" />
         <Property Name="Categories" Type="Edm.String" />
         <Property Name="CoAuthState" Type="SP.Publishing.SitePageCoAuthState" />
+        <Property Name="Collaborators" Type="Collection(SP.Publishing.SitePageCollaborator)" />
         <Property Name="Description" Type="Edm.String" />
         <Property Name="EmailTranspileContent" Type="Edm.String" />
         <Property Name="HiddenHighlightsMetadata" Type="Edm.String" />
@@ -30901,6 +30954,11 @@
         <Property Name="LockDuration" Type="Edm.Int32" Nullable="false" />
         <Property Name="OverwriteExistingVersion" Type="Edm.Boolean" />
         <Property Name="SharedLockId" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SitePageCollaborator">
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="LoginName" Type="Edm.String" />
+        <Property Name="UserId" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="CampaignPublicationFieldsData" BaseType="SP.Publishing.SitePageFieldsData">
         <Property Name="EndpointEmail" Type="Edm.String" />
@@ -31393,10 +31451,12 @@
       <EntityType Name="SitePage" BaseType="SP.Publishing.SitePageMetadata">
         <Property Name="AlternativeUrlMap" Type="Edm.String" />
         <Property Name="AuthoringMetadata" Type="SP.Publishing.SitePageAuthoringMetadata" />
+        <Property Name="BoostProperties" Type="SP.Publishing.SitePageBoostProperties" />
         <Property Name="CanvasContent1" Type="Edm.String" />
         <Property Name="CanvasJson1" Type="Edm.String" />
         <Property Name="CheckIn" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CoAuthState" Type="SP.Publishing.SitePageCoAuthState" />
+        <Property Name="Collaborators" Type="Collection(SP.Publishing.SitePageCollaborator)" />
         <Property Name="CreationMode" Type="Edm.Int32" Nullable="false" />
         <Property Name="IsLikedByCurrentUser" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsTemplate" Type="Edm.Boolean" Nullable="false" />
@@ -34201,6 +34261,7 @@
         <Property Name="ResultStorageName" Type="Edm.String" />
         <Property Name="SearchUser" Type="Edm.String" />
         <Property Name="Status" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Throttled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="TotalItemCount" Type="Edm.Int64" Nullable="false" />
       </ComplexType>
       <ComplexType Name="CollaborationInsightsData">
@@ -34230,6 +34291,10 @@
         <Property Name="totalOneDrives" Type="Edm.Int32" Nullable="false" />
         <Property Name="totalSites" Type="Edm.Int32" Nullable="false" />
         <Property Name="totalUsers" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="CopilotRestrictedSearchSetting">
+        <Property Name="AllowedSiteIds" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="Stage" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="GroupSitesActivityDetail">
         <Property Name="GroupId" Type="Edm.Guid" Nullable="false" />
@@ -36418,6 +36483,7 @@
         <Property Name="RestrictedSharePointLicense" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RootSiteUrl" Type="Edm.String" />
         <Property Name="SearchResolveExactEmailOrUPN" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SharePointAddInsDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SharingAllowedDomainList" Type="Edm.String" />
         <Property Name="SharingBlockedDomainList" Type="Edm.String" />
         <Property Name="SharingCapability" Type="Edm.Int32" Nullable="false" />
@@ -38424,6 +38490,9 @@
         <Property Name="HideSyncButtonOnODB" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IBImplicitGroupBased" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ImageTaggingOption" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ImageTaggingSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
+        <Property Name="ImageTaggingSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="ImageTaggingSiteListFileName" Type="Edm.String" />
         <Property Name="IncludeAtAGlanceInShareEmails" Type="Edm.Boolean" Nullable="false" />
         <Property Name="InformationBarriersSuspension" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IPAddressAllowList" Type="Edm.String" />
