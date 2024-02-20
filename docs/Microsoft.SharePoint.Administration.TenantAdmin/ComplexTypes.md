@@ -10,7 +10,6 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CollaborationInsightsOverview](./ComplexTypes/CollaborationInsightsOverview.md) | ✅ | ❌ | ❌ | ❌
 [CollaborativeOneDriveUser](./ComplexTypes/CollaborativeOneDriveUser.md) | ✅ | ❌ | ❌ | ❌
 [CollaborativeUser](./ComplexTypes/CollaborativeUser.md) | ✅ | ❌ | ❌ | ❌
-[CopilotRestrictedSearchSetting](./ComplexTypes/CopilotRestrictedSearchSetting.md) | ✅ | ❌ | ❌ | ❌
 [EventData](./ComplexTypes/EventData.md) | ✅ | ❌ | ❌ | ❌
 [GroupSitesActivityDetail](./ComplexTypes/GroupSitesActivityDetail.md) | ✅ | ❌ | ❌ | ❌
 [ImpactedAsset](./ComplexTypes/ImpactedAsset.md) | ✅ | ❌ | ❌ | ❌

@@ -11,13 +11,16 @@ Category (Edm.String) | ✅ | ❌ | ❌ | ❌
 Country (Edm.String) | ✅ | ❌ | ❌ | ❌
 CreatedBy (Edm.String) | ✅ | ❌ | ❌ | ❌
 CreatedTime (Edm.String) | ✅ | ❌ | ❌ | ❌
+Documents (Collection(SP.AgreementDocument)) | ✅ | ❌ | ❌ | ❌
 EndDate (Edm.String) | ✅ | ❌ | ❌ | ❌
 FirstParty (Edm.String) | ✅ | ❌ | ❌ | ❌
 Language (Edm.String) | ✅ | ❌ | ❌ | ❌
 Name (Edm.String) | ✅ | ❌ | ❌ | ❌
 Owner (Edm.String) | ✅ | ❌ | ❌ | ❌
 SecondParty (Edm.String) | ✅ | ❌ | ❌ | ❌
+SiteId (Edm.String) | ✅ | ❌ | ❌ | ❌
 StartDate (Edm.String) | ✅ | ❌ | ❌ | ❌
 State (Edm.String) | ✅ | ❌ | ❌ | ❌
 TotalValue (Edm.String) | ✅ | ❌ | ❌ | ❌
 Url (Edm.String) | ✅ | ❌ | ❌ | ❌
+WebId (Edm.String) | ✅ | ❌ | ❌ | ❌

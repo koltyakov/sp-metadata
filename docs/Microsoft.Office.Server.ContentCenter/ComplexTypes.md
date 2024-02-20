@@ -5,7 +5,6 @@
 Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [ColumnDef](./ComplexTypes/ColumnDef.md) | ✅ | ❌ | ❌ | ❌
-[PrebuiltModelInfo](./ComplexTypes/PrebuiltModelInfo.md) | ✅ | ❌ | ❌ | ❌
 [SPClassificationPublishConfig](./ComplexTypes/SPClassificationPublishConfig.md) | ✅ | ❌ | ❌ | ❌
 [SPDependentModel](./ComplexTypes/SPDependentModel.md) | ✅ | ❌ | ❌ | ❌
 [SPExtractorPublishConfig](./ComplexTypes/SPExtractorPublishConfig.md) | ✅ | ❌ | ❌ | ❌

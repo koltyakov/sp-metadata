@@ -10,8 +10,8 @@ ApplicationRedirectUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 Classification (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ContainerTypeId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 ContainerTypeName (Edm.String) | ✅ | ❌ | ❌ | ❌
-IsDiscoverablilityDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-IsMoveDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-IsRenameDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-IsSharingRestricted (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+IsDiscoverablilityDisabled (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+IsMoveDisabled (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+IsRenameDisabled (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+IsSharingRestricted (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OwningAppId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

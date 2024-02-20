@@ -15,7 +15,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [AppContextSite](./EntityTypes/AppContextSite.md) | ✅ | ✅ | ✅ | ✅
 [AppInstance](./EntityTypes/AppInstance.md) | ✅ | ✅ | ✅ | ✅
 [AppInstanceErrorDetails](./EntityTypes/AppInstanceErrorDetails.md) | ✅ | ✅ | ✅ | ✅
-[AppPrincipal](./EntityTypes/AppPrincipal.md) | ❌ | ❌ | ❌ | ✅
+[AppPrincipal](./EntityTypes/AppPrincipal.md) | ✅ | ❌ | ❌ | ✅
 [AppPrincipalCredential](./EntityTypes/AppPrincipalCredential.md) | ✅ | ✅ | ✅ | ✅
 [AppPrincipalIdentityProvider](./EntityTypes/AppPrincipalIdentityProvider.md) | ✅ | ✅ | ✅ | ✅
 [AppPrincipalManager](./EntityTypes/AppPrincipalManager.md) | ✅ | ✅ | ✅ | ✅

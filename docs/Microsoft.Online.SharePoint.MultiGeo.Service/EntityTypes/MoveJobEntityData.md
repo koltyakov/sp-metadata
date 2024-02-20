@@ -14,6 +14,7 @@ Direction (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ErrorMessage (Edm.String) | ✅ | ❌ | ❌ | ❌
 FinishedDateInUtc (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 Id (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+IsReadOnlyAlertRaised (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 JobPhase (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Notify (Edm.String) | ✅ | ❌ | ❌ | ❌
 Option (Edm.Int32) | ✅ | ❌ | ❌ | ❌

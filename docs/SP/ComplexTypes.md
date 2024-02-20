@@ -6,6 +6,8 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [AccessRequestResponse](./ComplexTypes/AccessRequestResponse.md) | ✅ | ❌ | ❌ | ❌
 [AdditionalAccessStatusResponse](./ComplexTypes/AdditionalAccessStatusResponse.md) | ✅ | ❌ | ❌ | ❌
+[AgreementDocument](./ComplexTypes/AgreementDocument.md) | ✅ | ❌ | ❌ | ❌
+[AgreementESignStatusUpdatedPayload](./ComplexTypes/AgreementESignStatusUpdatedPayload.md) | ✅ | ❌ | ❌ | ❌
 [AgreementMetaData](./ComplexTypes/AgreementMetaData.md) | ✅ | ❌ | ❌ | ❌
 [AgreementSearchParameters](./ComplexTypes/AgreementSearchParameters.md) | ✅ | ❌ | ❌ | ❌
 [AlertCreationInformation](./ComplexTypes/AlertCreationInformation.md) | ✅ | ✅ | ❌ | ❌
@@ -140,7 +142,6 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ResourceVisualization](./ComplexTypes/ResourceVisualization.md) | ✅ | ❌ | ❌ | ❌
 [ReviewerInfo](./ComplexTypes/ReviewerInfo.md) | ✅ | ❌ | ❌ | ❌
 [RoleDefinitionCreationInformation](./ComplexTypes/RoleDefinitionCreationInformation.md) | ✅ | ✅ | ✅ | ✅
-[RulesAssignmentModelResponse](./ComplexTypes/RulesAssignmentModelResponse.md) | ✅ | ❌ | ❌ | ❌
 [RulesDefinition](./ComplexTypes/RulesDefinition.md) | ✅ | ❌ | ❌ | ❌
 [RulesDefinitionGroup](./ComplexTypes/RulesDefinitionGroup.md) | ✅ | ❌ | ❌ | ❌
 [RulesValidationEntryResponse](./ComplexTypes/RulesValidationEntryResponse.md) | ✅ | ❌ | ❌ | ❌
@@ -178,6 +179,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [TranslationStatus](./ComplexTypes/TranslationStatus.md) | ✅ | ❌ | ❌ | ❌
 [TranslationStatusCreationRequest](./ComplexTypes/TranslationStatusCreationRequest.md) | ✅ | ❌ | ❌ | ❌
 [TranslationStatusSetRequest](./ComplexTypes/TranslationStatusSetRequest.md) | ✅ | ❌ | ❌ | ❌
+[UpdateAgreementStatePayload](./ComplexTypes/UpdateAgreementStatePayload.md) | ✅ | ❌ | ❌ | ❌
 [UpdateTemplateInfo](./ComplexTypes/UpdateTemplateInfo.md) | ✅ | ❌ | ❌ | ❌
 [UpdateTemplateInfoV2](./ComplexTypes/UpdateTemplateInfoV2.md) | ✅ | ❌ | ❌ | ❌
 [UpgradeInfo](./ComplexTypes/UpgradeInfo.md) | ✅ | ✅ | ✅ | ✅

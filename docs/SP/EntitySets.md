@@ -11,6 +11,7 @@ ActivityLoggers | ✅ | ✅ | ❌ | ❌
 AddinPlugins | ❌ | ❌ | ❌ | ✅
 AddinSettingss | ❌ | ❌ | ❌ | ✅
 AgentGroupEntitys | ✅ | ❌ | ❌ | ❌
+AgreementsESignManagers | ✅ | ❌ | ❌ | ❌
 Alerts | ✅ | ✅ | ❌ | ❌
 AllowedDataLocationEntityDatas | ✅ | ❌ | ❌ | ❌
 AlternateUrls | ✅ | ✅ | ✅ | ✅
@@ -30,7 +31,7 @@ AppPrincipalCredentials | ✅ | ✅ | ✅ | ✅
 AppPrincipalIdentityProviders | ✅ | ✅ | ✅ | ✅
 AppPrincipalManagers | ✅ | ✅ | ✅ | ✅
 AppPrincipalNames | ✅ | ✅ | ✅ | ✅
-AppPrincipals | ❌ | ❌ | ❌ | ✅
+AppPrincipals | ✅ | ❌ | ❌ | ✅
 AppSiteContextUtilitys | ✅ | ✅ | ❌ | ❌
 AppTilePropertiess | ✅ | ✅ | ❌ | ❌
 AppTiles | ✅ | ✅ | ✅ | ❌
@@ -659,6 +660,7 @@ ViewFieldCollections | ✅ | ✅ | ✅ | ✅
 ViewSelectionInfos | ✅ | ✅ | ✅ | ✅
 Views | ✅ | ✅ | ✅ | ✅
 VisualizationAppSynchronizationResults | ✅ | ✅ | ❌ | ❌
+VivaConnectionsConfigurations | ✅ | ❌ | ❌ | ❌
 VivaHomes | ✅ | ❌ | ❌ | ❌
 VivaResourceGetEndpoints | ✅ | ❌ | ❌ | ❌
 VivaResourcess | ✅ | ❌ | ❌ | ❌
