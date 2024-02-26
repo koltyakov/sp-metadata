@@ -200,6 +200,7 @@
         <Property Name="TotalValue" Type="Edm.String" />
         <Property Name="Url" Type="Edm.String" />
         <Property Name="WebId" Type="Edm.String" />
+        <Property Name="WebUrl" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="AgreementSearchParameters">
         <Property Name="AgreementNumber" Type="Edm.String" />
@@ -608,6 +609,7 @@
       <ComplexType Name="ClassificationResult">
         <Property Name="ConfidenceScore" Type="Edm.Double" Nullable="false" />
         <Property Name="ContentTypeId" Type="Edm.String" />
+        <Property Name="ContentTypeName" Type="Edm.String" />
         <Property Name="Error" Type="Edm.String" />
         <Property Name="Metas" Type="Collection(SP.KeyValue)" />
         <Property Name="ModelId" Type="Edm.String" />
@@ -2115,7 +2117,6 @@
         <Property Name="ColumnWidth" Type="Edm.String" />
         <Property Name="ContentTypeId" Type="SP.ContentTypeId" />
         <Property Name="CustomFormatter" Type="Edm.String" />
-        <Property Name="CustomOrder" Type="Edm.String" />
         <Property Name="DefaultView" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DefaultViewForContentType" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EditorModified" Type="Edm.Boolean" Nullable="false" />
@@ -4528,6 +4529,8 @@
         <EntitySet Name="placesInformations" EntityType="Microsoft.SharePoint.AddToOneDrive.placesInformation" />
         <EntitySet Name="ArchiveFileSizeMetrics" EntityType="Microsoft.SharePoint.Administration.Archiving.ArchiveFileSizeMetric" />
         <EntitySet Name="FeatureDefinitions" EntityType="Microsoft.SharePoint.Administration.FeatureDefinition" />
+        <EntitySet Name="SiteMoveServices" EntityType="Microsoft.SharePoint.Administration.SiteMove.Service.SiteMoveService" />
+        <EntitySet Name="SiteMoveServiceInfos" EntityType="Microsoft.SharePoint.Administration.SiteMove.Service.SiteMoveServiceInfo" />
         <EntitySet Name="SPAnalyticsUsageServices" EntityType="Microsoft.SharePoint.Administration.SPAnalyticsUsageService" />
         <EntitySet Name="SPAppStateQueryJobDefinitions" EntityType="Microsoft.SharePoint.Administration.SPAppStateQueryJobDefinition" />
         <EntitySet Name="SPFarms" EntityType="Microsoft.SharePoint.Administration.SPFarm" />
@@ -8436,6 +8439,12 @@
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
           <Parameter Name="pageMoveParams" Type="SP.Publishing.PageMoveParams" />
         </FunctionImport>
+        <FunctionImport Name="ProcessSourcePageAfterPageMovePublish" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+        </FunctionImport>
+        <FunctionImport Name="ProcessSourcePageBeforePageMovePublish" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+        </FunctionImport>
         <FunctionImport Name="PromoteToNews" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
@@ -8627,6 +8636,12 @@
         <FunctionImport Name="Move" ReturnType="SP.Publishing.PageMoveResponse" IsBindable="true" EntitySet="PageMoveResponses">
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
           <Parameter Name="pageMoveParams" Type="SP.Publishing.PageMoveParams" />
+        </FunctionImport>
+        <FunctionImport Name="ProcessSourcePageAfterPageMovePublish" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+        </FunctionImport>
+        <FunctionImport Name="ProcessSourcePageBeforePageMovePublish" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
         </FunctionImport>
         <FunctionImport Name="PromoteToNews" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
@@ -8856,6 +8871,12 @@
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
           <Parameter Name="pageMoveParams" Type="SP.Publishing.PageMoveParams" />
         </FunctionImport>
+        <FunctionImport Name="ProcessSourcePageAfterPageMovePublish" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.RepostPage" />
+        </FunctionImport>
+        <FunctionImport Name="ProcessSourcePageBeforePageMovePublish" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.RepostPage" />
+        </FunctionImport>
         <FunctionImport Name="PromoteToNews" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
         </FunctionImport>
@@ -9054,6 +9075,12 @@
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
           <Parameter Name="pageMoveParams" Type="SP.Publishing.PageMoveParams" />
         </FunctionImport>
+        <FunctionImport Name="ProcessSourcePageAfterPageMovePublish" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
+        </FunctionImport>
+        <FunctionImport Name="ProcessSourcePageBeforePageMovePublish" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
+        </FunctionImport>
         <FunctionImport Name="PromoteToNews" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
         </FunctionImport>
@@ -9236,6 +9263,12 @@
         <FunctionImport Name="Move" ReturnType="SP.Publishing.PageMoveResponse" IsBindable="true" EntitySet="PageMoveResponses">
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
           <Parameter Name="pageMoveParams" Type="SP.Publishing.PageMoveParams" />
+        </FunctionImport>
+        <FunctionImport Name="ProcessSourcePageAfterPageMovePublish" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.SitePage" />
+        </FunctionImport>
+        <FunctionImport Name="ProcessSourcePageBeforePageMovePublish" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.SitePage" />
         </FunctionImport>
         <FunctionImport Name="PromoteToNews" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
@@ -9446,6 +9479,12 @@
         <FunctionImport Name="Move" ReturnType="SP.Publishing.PageMoveResponse" IsBindable="true" EntitySet="PageMoveResponses">
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
           <Parameter Name="pageMoveParams" Type="SP.Publishing.PageMoveParams" />
+        </FunctionImport>
+        <FunctionImport Name="ProcessSourcePageAfterPageMovePublish" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
+        </FunctionImport>
+        <FunctionImport Name="ProcessSourcePageBeforePageMovePublish" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
         </FunctionImport>
         <FunctionImport Name="PromoteToNews" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
@@ -10097,6 +10136,10 @@
           <Parameter Name="parentName" Type="Edm.String" />
           <Parameter Name="customSettings" Type="Collection(SP.KeyValue)" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_Administration_SiteMove_Service_SiteMoveService" ReturnType="Microsoft.SharePoint.Administration.SiteMove.Service.SiteMoveService" IsComposable="true" EntitySet="SiteMoveServices" />
+        <FunctionImport Name="GetServiceInfo" ReturnType="Microsoft.SharePoint.Administration.SiteMove.Service.SiteMoveServiceInfo" IsBindable="true" EntitySet="SiteMoveServiceInfos">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Administration.SiteMove.Service.SiteMoveService" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Yammer_WacApi_AddUserToSiteCollection" ReturnType="SP.User" EntitySet="Users1">
           <Parameter Name="spsiteUrl" Type="Edm.String" />
           <Parameter Name="userLogonName" Type="Edm.String" />
@@ -10168,12 +10211,12 @@
         </FunctionImport>
         <FunctionImport Name="EnsureTeamForGroup" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
-          <Parameter Name="altGroupId" Type="Edm.String" />
+          <Parameter Name="siteUrl" Type="Edm.String" />
           <Parameter Name="teamTemplate" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="EnsureTeamForGroupEx" ReturnType="Microsoft.SharePoint.Portal.EnsureTeamForGroupExResponse" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Portal.GroupSiteManager" />
-          <Parameter Name="altGroupId" Type="Edm.String" />
+          <Parameter Name="siteUrl" Type="Edm.String" />
           <Parameter Name="teamTemplate" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="GetAllOrgLabels" ReturnType="Microsoft.SharePoint.Portal.OrgLabelsContextList" IsSideEffecting="false" IsBindable="true">
@@ -11636,14 +11679,6 @@
         </FunctionImport>
         <FunctionImport Name="ResetRoleInheritance" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
-        </FunctionImport>
-        <FunctionImport Name="AddCustomOrderToView" ReturnType="Edm.String" IsBindable="true">
-          <Parameter Name="this" Type="SP.List" />
-          <Parameter Name="viewId" Type="Edm.String" />
-          <Parameter Name="itemIds" Type="Collection(Edm.Int32)" Nullable="false" />
-          <Parameter Name="relativeItemId" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="insertAfter" Type="Edm.Boolean" Nullable="false" />
-          <Parameter Name="skipSaveView" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="AddItem" ReturnType="SP.ListItem" IsBindable="true" EntitySet="ListItems">
           <Parameter Name="this" Type="SP.List" />
@@ -13269,6 +13304,9 @@
         <FunctionImport Name="SP_eSignInternal_CompleteAgreementV3" ReturnType="Edm.String">
           <Parameter Name="completeAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.CompleteAgreementModel" />
         </FunctionImport>
+        <FunctionImport Name="SP_eSignInternal_CompleteAgreementV4" ReturnType="Edm.String">
+          <Parameter Name="completeAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.CompleteAgreementModelV4" />
+        </FunctionImport>
         <FunctionImport Name="SP_eSignInternal_DeclineAgreement">
           <Parameter Name="declineAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.DeclineAgreementModel" />
         </FunctionImport>
@@ -13278,6 +13316,9 @@
         </FunctionImport>
         <FunctionImport Name="SP_eSignInternal_StartAgreement" ReturnType="Edm.String">
           <Parameter Name="startAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.CreateAgreementModel" />
+        </FunctionImport>
+        <FunctionImport Name="SP_eSignInternal_StartAgreementV2" ReturnType="Edm.String">
+          <Parameter Name="startAgreement" Type="Microsoft.SharePoint.ESign.Models.Requests.CreateAgreementModelV2" />
         </FunctionImport>
         <FunctionImport Name="SP_eSignInternal_UpdateAuditTrailEntry">
           <Parameter Name="updateAuditTrailEntry" Type="Microsoft.SharePoint.ESign.Models.Requests.UpdateAuditTrailEntryModel" />
@@ -14496,6 +14537,10 @@
         </FunctionImport>
         <FunctionImport Name="Delete" IsBindable="true">
           <Parameter Name="this" Type="SP.FontPackage" />
+        </FunctionImport>
+        <FunctionImport Name="FontStream" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.FontPackage" />
+          <Parameter Name="fontFamily" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Update" IsBindable="true">
           <Parameter Name="this" Type="SP.FontPackage" />
@@ -20583,6 +20628,9 @@
       <Annotations Target="SP.ClassificationResult/ContentTypeId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ClassificationResult/ContentTypeName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ClassificationResult/Error">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -24217,6 +24265,12 @@
       <Annotations Target="SP.ApiData/Move(SP.Publishing.CampaignPublication, SP.Publishing.PageMoveParams)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/ProcessSourcePageAfterPageMovePublish(SP.Publishing.CampaignPublication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/ProcessSourcePageBeforePageMovePublish(SP.Publishing.CampaignPublication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/PromoteToNews(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -24385,6 +24439,12 @@
       <Annotations Target="SP.ApiData/Move(SP.Publishing.FeedVideoPage, SP.Publishing.PageMoveParams)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/ProcessSourcePageAfterPageMovePublish(SP.Publishing.FeedVideoPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/ProcessSourcePageBeforePageMovePublish(SP.Publishing.FeedVideoPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/PromoteToNews(SP.Publishing.FeedVideoPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -24511,6 +24571,12 @@
       <Annotations Target="SP.ApiData/Move(SP.Publishing.RepostPage, SP.Publishing.PageMoveParams)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/ProcessSourcePageAfterPageMovePublish(SP.Publishing.RepostPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/ProcessSourcePageBeforePageMovePublish(SP.Publishing.RepostPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/PromoteToNews(SP.Publishing.RepostPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -24614,6 +24680,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Move(SP.Publishing.SitePage3D, SP.Publishing.PageMoveParams)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/ProcessSourcePageAfterPageMovePublish(SP.Publishing.SitePage3D)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/ProcessSourcePageBeforePageMovePublish(SP.Publishing.SitePage3D)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/PromoteToNews(SP.Publishing.SitePage3D)">
@@ -24758,6 +24830,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Move(SP.Publishing.SitePage, SP.Publishing.PageMoveParams)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/ProcessSourcePageAfterPageMovePublish(SP.Publishing.SitePage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/ProcessSourcePageBeforePageMovePublish(SP.Publishing.SitePage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/PromoteToNews(SP.Publishing.SitePage)">
@@ -24911,6 +24989,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Move(SP.Publishing.TopicSitePage, SP.Publishing.PageMoveParams)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/ProcessSourcePageAfterPageMovePublish(SP.Publishing.TopicSitePage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/ProcessSourcePageBeforePageMovePublish(SP.Publishing.TopicSitePage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/PromoteToNews(SP.Publishing.TopicSitePage)">
@@ -25714,9 +25798,6 @@
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_AddToOneDrive_MountService_NotifyChangeToMountPoints(Microsoft.SharePoint.AddToOneDrive.NotifyChangeToMountPointsRequest)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/AddCustomOrderToView(SP.List, Edm.String, Collection(Edm.Int32), Edm.Int32, Edm.Boolean, Edm.Boolean)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.ApiData/AddItemUsingPath(SP.List, SP.ListItemCreationInformationUsingPath)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -26086,6 +26167,9 @@
       <Annotations Target="SP.ApiData/SP_eSignInternal_CompleteAgreementV3(Microsoft.SharePoint.ESign.Models.Requests.CompleteAgreementModel)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SP_eSignInternal_CompleteAgreementV4(Microsoft.SharePoint.ESign.Models.Requests.CompleteAgreementModelV4)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SP_eSignInternal_DeclineAgreement(Microsoft.SharePoint.ESign.Models.Requests.DeclineAgreementModel)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -26096,6 +26180,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_eSignInternal_StartAgreement(Microsoft.SharePoint.ESign.Models.Requests.CreateAgreementModel)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_eSignInternal_StartAgreementV2(Microsoft.SharePoint.ESign.Models.Requests.CreateAgreementModelV2)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/SP_eSignInternal_UpdateAuditTrailEntry(Microsoft.SharePoint.ESign.Models.Requests.UpdateAuditTrailEntryModel)">
@@ -33830,9 +33917,23 @@
         <Property Name="documentId" Type="Edm.Guid" Nullable="false" />
         <Property Name="reason" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="CompleteAgreementModelV4">
+        <Property Name="documentId" Type="Edm.Guid" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="CompleteAgreementModel">
         <Property Name="documentId" Type="Edm.Guid" Nullable="false" />
         <Property Name="originalDocName" Type="Edm.String" />
+        <Property Name="targetFolderUri" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="CreateAgreementModelV2">
+        <Property Name="agreementId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="documents" Type="Edm.String" />
+        <Property Name="expirationDateTime" Type="Edm.DateTime" />
+        <Property Name="formFieldSets" Type="Edm.String" />
+        <Property Name="locale" Type="Edm.String" />
+        <Property Name="message" Type="Edm.String" />
+        <Property Name="name" Type="Edm.String" />
+        <Property Name="recipientSets" Type="Edm.String" />
         <Property Name="targetFolderUri" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="CreateAgreementModel">
@@ -35937,6 +36038,7 @@
         <Property Name="LimitedAccessFileType" Type="Edm.Int32" Nullable="false" />
         <Property Name="Managers" Type="Collection(Edm.String)" />
         <Property Name="Owners" Type="Collection(Edm.String)" />
+        <Property Name="OwnersCount" Type="Edm.Int32" Nullable="false" />
         <Property Name="OwningApplicationId" Type="Edm.Guid" Nullable="false" />
         <Property Name="OwningApplicationName" Type="Edm.String" />
         <Property Name="Readers" Type="Collection(Edm.String)" />
@@ -37998,6 +38100,21 @@
         <Property Name="SSOApplicationId" Type="Edm.String" />
         <Property Name="SSOProviderImplId" Type="Edm.String" />
         <Property Name="Target" Type="Edm.String" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Microsoft.SharePoint.Administration.SiteMove.Service" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="SiteMoveServiceInfo">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+        <Property Name="ServiceCapabilities" Type="Collection(Edm.Int32)" Nullable="false" />
+      </EntityType>
+      <EntityType Name="SiteMoveService">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
     </Schema>
     <Schema Namespace="SP.OAuth" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
