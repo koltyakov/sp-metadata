@@ -20,7 +20,6 @@ AddAppPrincipalCredential (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
 AddAvailableContentType (Collection(SP.ContentType)) | ✅ | ✅ | ✅ | ✅
 AddClientActivities (SP.File) | ✅ | ✅ | ❌ | ❌
 AddCrossFarmMessage (SP.Web) | ✅ | ❌ | ❌ | ❌
-AddCustomOrderToView (SP.List) | ✅ | ❌ | ❌ | ❌
 AddDependentLookupField (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
 AddField (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
 AddHomeSite (SP.SPHSite) | ✅ | ❌ | ❌ | ❌
@@ -229,6 +228,7 @@ Expire (SP.User) | ✅ | ❌ | ❌ | ❌
 ExtendUpgradeReminderDate (SP.Site) | ✅ | ✅ | ✅ | ✅
 FinishUpload (SP.File) | ✅ | ✅ | ✅ | ❌
 FinishUploadWithChecksum (SP.File) | ✅ | ❌ | ❌ | ❌
+FontStream (SP.FontPackage) | ✅ | ❌ | ❌ | ❌
 FullDashboardContent (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 GetACSServicePrincipals (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetAdaptiveCardExtensions (SP.Web) | ✅ | ❌ | ❌ | ❌
@@ -749,11 +749,13 @@ SP_Web_GetContextWebThemeData | ✅ | ✅ | ✅ | ❌
 [SP_eSignInternal_CleanupAgreement](./Functions/SP_eSignInternal_CleanupAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_CompleteAgreement](./Functions/SP_eSignInternal_CompleteAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_CompleteAgreementV3](./Functions/SP_eSignInternal_CompleteAgreementV3.md) | ✅ | ❌ | ❌ | ❌
+[SP_eSignInternal_CompleteAgreementV4](./Functions/SP_eSignInternal_CompleteAgreementV4.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_CompleteAgreement_V2](./Functions/SP_eSignInternal_CompleteAgreement_V2.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_DeclineAgreement](./Functions/SP_eSignInternal_DeclineAgreement.md) | ✅ | ❌ | ❌ | ❌
 SP_eSignInternal_GetEsignSettings | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_SignAgreement](./Functions/SP_eSignInternal_SignAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_StartAgreement](./Functions/SP_eSignInternal_StartAgreement.md) | ✅ | ❌ | ❌ | ❌
+[SP_eSignInternal_StartAgreementV2](./Functions/SP_eSignInternal_StartAgreementV2.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_UpdateAuditTrailEntry](./Functions/SP_eSignInternal_UpdateAuditTrailEntry.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSign_GetAuditTrail](./Functions/SP_eSign_GetAuditTrail.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSign_GetSigningFields](./Functions/SP_eSign_GetSigningFields.md) | ✅ | ❌ | ❌ | ❌

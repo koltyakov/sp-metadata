@@ -22,6 +22,7 @@ ExcludeBlockDownloadPolicyContainerOwners (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LimitedAccessFileType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Managers (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 Owners (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+OwnersCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OwningApplicationId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 OwningApplicationName (Edm.String) | ✅ | ❌ | ❌ | ❌
 ReadOnlyForBlockDownloadPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

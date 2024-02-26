@@ -24,3 +24,4 @@ State (Edm.String) | ✅ | ❌ | ❌ | ❌
 TotalValue (Edm.String) | ✅ | ❌ | ❌ | ❌
 Url (Edm.String) | ✅ | ❌ | ❌ | ❌
 WebId (Edm.String) | ✅ | ❌ | ❌ | ❌
+WebUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

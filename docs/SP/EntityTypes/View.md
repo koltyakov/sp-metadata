@@ -14,7 +14,6 @@ CalendarViewStyles (Edm.String) | ✅ | ❌ | ❌ | ❌
 ColumnWidth (Edm.String) | ✅ | ✅ | ❌ | ❌
 ContentTypeId (SP.ContentTypeId) | ✅ | ✅ | ✅ | ✅
 CustomFormatter (Edm.String) | ✅ | ✅ | ❌ | ❌
-CustomOrder (Edm.String) | ✅ | ❌ | ❌ | ❌
 DefaultView (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 DefaultViewForContentType (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 EditorModified (Edm.Boolean) | ✅ | ✅ | ✅ | ✅

@@ -33,6 +33,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.SharePoint.Administration](./Microsoft.SharePoint.Administration) | ✅ | ✅ | ✅ | ✅
 [Microsoft.SharePoint.Administration.Archiving](./Microsoft.SharePoint.Administration.Archiving) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Administration.SPOUnlicensedODB](./Microsoft.SharePoint.Administration.SPOUnlicensedODB) | ✅ | ❌ | ❌ | ❌
+[Microsoft.SharePoint.Administration.SiteMove.Service](./Microsoft.SharePoint.Administration.SiteMove.Service) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Administration.TenantAdmin](./Microsoft.SharePoint.Administration.TenantAdmin) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.AppManagement](./Microsoft.SharePoint.AppManagement) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.AuthPolicy](./Microsoft.SharePoint.AuthPolicy) | ✅ | ❌ | ❌ | ❌
