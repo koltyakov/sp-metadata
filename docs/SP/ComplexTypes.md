@@ -39,6 +39,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ConfigurationData](./ComplexTypes/ConfigurationData.md) | ✅ | ❌ | ❌ | ❌
 [ContentAssemblyFileInfo](./ComplexTypes/ContentAssemblyFileInfo.md) | ✅ | ❌ | ❌ | ❌
 [ContentAssemblyFormAnswer](./ComplexTypes/ContentAssemblyFormAnswer.md) | ✅ | ❌ | ❌ | ❌
+[ContentAssemblyModernTemplateColumnsMappingInfo](./ComplexTypes/ContentAssemblyModernTemplateColumnsMappingInfo.md) | ✅ | ❌ | ❌ | ❌
 [ContentControlInfo](./ComplexTypes/ContentControlInfo.md) | ✅ | ❌ | ❌ | ❌
 [ContentTypeCreationInformation](./ComplexTypes/ContentTypeCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [ContentTypeEntityData](./ComplexTypes/ContentTypeEntityData.md) | ✅ | ❌ | ❌ | ❌
@@ -130,6 +131,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ProvisionedTemporaryAzureContainerInfo](./ComplexTypes/ProvisionedTemporaryAzureContainerInfo.md) | ✅ | ❌ | ❌ | ❌
 [PublishModernTemplatePayload](./ComplexTypes/PublishModernTemplatePayload.md) | ✅ | ❌ | ❌ | ❌
 [PublishSnippetPayload](./ComplexTypes/PublishSnippetPayload.md) | ✅ | ❌ | ❌ | ❌
+[PublishTemplateV2Payload](./ComplexTypes/PublishTemplateV2Payload.md) | ✅ | ❌ | ❌ | ❌
 [RecipientLimitsInfo](./ComplexTypes/RecipientLimitsInfo.md) | ✅ | ❌ | ❌ | ❌
 [RecycleBinQueryInformation](./ComplexTypes/RecycleBinQueryInformation.md) | ✅ | ✅ | ❌ | ❌
 [RelatedItem](./ComplexTypes/RelatedItem.md) | ✅ | ✅ | ✅ | ✅
@@ -179,6 +181,8 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [TranslationStatus](./ComplexTypes/TranslationStatus.md) | ✅ | ❌ | ❌ | ❌
 [TranslationStatusCreationRequest](./ComplexTypes/TranslationStatusCreationRequest.md) | ✅ | ❌ | ❌ | ❌
 [TranslationStatusSetRequest](./ComplexTypes/TranslationStatusSetRequest.md) | ✅ | ❌ | ❌ | ❌
+[UpdateAgreementESignConfigPayload](./ComplexTypes/UpdateAgreementESignConfigPayload.md) | ✅ | ❌ | ❌ | ❌
+[UpdateAgreementMetaDataPayload](./ComplexTypes/UpdateAgreementMetaDataPayload.md) | ✅ | ❌ | ❌ | ❌
 [UpdateAgreementStatePayload](./ComplexTypes/UpdateAgreementStatePayload.md) | ✅ | ❌ | ❌ | ❌
 [UpdateTemplateInfo](./ComplexTypes/UpdateTemplateInfo.md) | ✅ | ❌ | ❌ | ❌
 [UpdateTemplateInfoV2](./ComplexTypes/UpdateTemplateInfoV2.md) | ✅ | ❌ | ❌ | ❌

@@ -32,6 +32,10 @@ AppOnlyBypassPeoplePickerPolicies (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ApplyAppEnforcedRestrictionsToAdHocRecipients (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ArchiveRedirectUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 AuthContextResilienceMode (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+AutofillColumnsEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+AutofillColumnsSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
+AutofillColumnsSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+AutofillColumnsSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 BccExternalSharingInvitations (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BccExternalSharingInvitationsList (Edm.String) | ✅ | ❌ | ❌ | ❌
 BlockAccessOnUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -147,6 +151,9 @@ IPAddressAllowList (Edm.String) | ✅ | ❌ | ❌ | ❌
 IPAddressEnforcement (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IPAddressWACTokenLifetime (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ImageTaggingOption (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+ImageTaggingSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
+ImageTaggingSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+ImageTaggingSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 IncludeAtAGlanceInShareEmails (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 InformationBarriersSuspension (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsAppBarTemporarilyDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

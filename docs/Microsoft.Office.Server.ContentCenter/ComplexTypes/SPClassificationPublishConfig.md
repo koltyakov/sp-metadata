@@ -12,3 +12,5 @@ ColumnType (Edm.String) | ✅ | ❌ | ❌ | ❌
 ContentType (Edm.String) | ✅ | ❌ | ❌ | ❌
 Kind (Edm.String) | ✅ | ❌ | ❌ | ❌
 ModelClassification (Edm.String) | ✅ | ❌ | ❌ | ❌
+RetentionLabel (Microsoft.Office.Server.ContentCenter.SPRetentionLabelConfig) | ✅ | ❌ | ❌ | ❌
+SensitivityLabel (Microsoft.Office.Server.ContentCenter.SPSensitivityLabelConfig) | ✅ | ❌ | ❌ | ❌

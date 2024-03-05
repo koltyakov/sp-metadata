@@ -1,7 +1,8 @@
-# Function Import: SP_Approvals_Disable
+# Function Import: MapFieldsToColumnsForModernTemlate
 
 > Namespace: SP
 
+- Entity type: SP.List
 - Is composable: false
 - Is bindable: false
 
@@ -9,5 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-listId (Edm.String) | ✅ | ❌ | ❌ | ❌
-viewId (Edm.String) | ✅ | ❌ | ❌ | ❌
+payload (SP.PublishModernTemplatePayload) | ✅ | ❌ | ❌ | ❌

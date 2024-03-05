@@ -10,6 +10,7 @@ AllowedRoles (Collection(Edm.Int32)) | ✅ | ✅ | ✅ | ✅
 CurrentRole (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 DisplayName (Edm.String) | ✅ | ✅ | ✅ | ❌
 Email (Edm.String) | ✅ | ✅ | ✅ | ❌
+ExpirationDateTimeOnACE (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 InvitationLink (Edm.String) | ✅ | ✅ | ✅ | ❌
 IsUserKnown (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 Message (Edm.String) | ✅ | ✅ | ✅ | ✅

@@ -448,6 +448,7 @@ LocalTimeToUTC (SP.TimeZone) | ✅ | ✅ | ✅ | ✅
 LockSmartTemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 LookupAppPrincipal (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
 MakeHubSite (SP.Site) | ❌ | ✅ | ❌ | ❌
+MapFieldsToColumnsForModernTemlate (SP.List) | ✅ | ❌ | ❌ | ❌
 MapToIcon (SP.Web) | ✅ | ✅ | ✅ | ✅
 MarkReplyUrisUpdated (SP.Web) | ✅ | ❌ | ❌ | ❌
 MediaServiceUpdate (SP.ListItem) | ✅ | ❌ | ❌ | ❌
@@ -492,6 +493,7 @@ Publish (SP.File) | ✅ | ✅ | ✅ | ✅
 PublishMappedView (SP.List) | ✅ | ✅ | ❌ | ❌
 PublishModernTemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 PublishSnippet (SP.List) | ✅ | ❌ | ❌ | ❌
+PublishTemplateV2 (SP.List) | ✅ | ❌ | ❌ | ❌
 RecoverTenantForBringYourOwnKey (SP.Site) | ✅ | ✅ | ❌ | ❌
 RecreateMissingDefaultRoleDefinitions (Collection(SP.RoleDefinition)) | ✅ | ✅ | ✅ | ❌
 Recycle (SP.AppInstance) | ✅ | ✅ | ✅ | ❌
@@ -750,7 +752,6 @@ SP_Web_GetContextWebThemeData | ✅ | ✅ | ✅ | ❌
 [SP_eSignInternal_CompleteAgreement](./Functions/SP_eSignInternal_CompleteAgreement.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_CompleteAgreementV3](./Functions/SP_eSignInternal_CompleteAgreementV3.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_CompleteAgreementV4](./Functions/SP_eSignInternal_CompleteAgreementV4.md) | ✅ | ❌ | ❌ | ❌
-[SP_eSignInternal_CompleteAgreement_V2](./Functions/SP_eSignInternal_CompleteAgreement_V2.md) | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_DeclineAgreement](./Functions/SP_eSignInternal_DeclineAgreement.md) | ✅ | ❌ | ❌ | ❌
 SP_eSignInternal_GetEsignSettings | ✅ | ❌ | ❌ | ❌
 [SP_eSignInternal_SignAgreement](./Functions/SP_eSignInternal_SignAgreement.md) | ✅ | ❌ | ❌ | ❌

@@ -1,7 +1,8 @@
-# Function Import: SP_eSignInternal_CompleteAgreement_V2
+# Function Import: PublishTemplateV2
 
 > Namespace: SP
 
+- Entity type: SP.List
 - Is composable: false
 - Is bindable: false
 
@@ -9,4 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-completeAgreement (Microsoft.SharePoint.ESign.Models.Requests.CompleteAgreementModel) | ✅ | ❌ | ❌ | ❌
+payload (SP.PublishTemplateV2Payload) | ✅ | ❌ | ❌ | ❌

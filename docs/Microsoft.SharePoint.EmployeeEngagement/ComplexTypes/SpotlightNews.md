@@ -1,4 +1,4 @@
-# Complex Type: SpotlightPinnedNews
+# Complex Type: SpotlightNews
 
 > Namespace: Microsoft.SharePoint.EmployeeEngagement
 
@@ -6,6 +6,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-ImageURL (Edm.String) | ✅ | ❌ | ❌ | ❌
+ImageUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+Order (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ❌ | ❌ | ❌
-URL (Edm.String) | ✅ | ❌ | ❌ | ❌
+Url (Edm.String) | ✅ | ❌ | ❌ | ❌

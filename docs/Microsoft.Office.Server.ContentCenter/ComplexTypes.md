@@ -12,4 +12,6 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPMachineLearningPublicationResult](./ComplexTypes/SPMachineLearningPublicationResult.md) | ✅ | ❌ | ❌ | ❌
 [SPModelDependencies](./ComplexTypes/SPModelDependencies.md) | ✅ | ❌ | ❌ | ❌
 [SPModelPublishConfig](./ComplexTypes/SPModelPublishConfig.md) | ✅ | ❌ | ❌ | ❌
+[SPRetentionLabelConfig](./ComplexTypes/SPRetentionLabelConfig.md) | ✅ | ❌ | ❌ | ❌
+[SPSensitivityLabelConfig](./ComplexTypes/SPSensitivityLabelConfig.md) | ✅ | ❌ | ❌ | ❌
 [SiteCreationProperties](./ComplexTypes/SiteCreationProperties.md) | ✅ | ❌ | ❌ | ❌

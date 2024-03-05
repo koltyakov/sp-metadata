@@ -662,7 +662,7 @@ ViewFieldCollections | ✅ | ✅ | ✅ | ✅
 ViewSelectionInfos | ✅ | ✅ | ✅ | ✅
 Views | ✅ | ✅ | ✅ | ✅
 VisualizationAppSynchronizationResults | ✅ | ✅ | ❌ | ❌
-VivaConnectionsConfigurations | ✅ | ❌ | ❌ | ❌
+VivaConnectionsPages | ✅ | ❌ | ❌ | ❌
 VivaHomes | ✅ | ❌ | ❌ | ❌
 VivaResourceGetEndpoints | ✅ | ❌ | ❌ | ❌
 VivaResourcess | ✅ | ❌ | ❌ | ❌

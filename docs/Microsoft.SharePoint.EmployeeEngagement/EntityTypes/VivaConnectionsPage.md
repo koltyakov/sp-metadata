@@ -1,4 +1,4 @@
-# Entity Type: VivaConnectionsConfiguration
+# Entity Type: VivaConnectionsPage
 
 > Namespace: Microsoft.SharePoint.EmployeeEngagement
 

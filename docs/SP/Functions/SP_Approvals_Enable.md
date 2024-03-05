@@ -10,4 +10,5 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 addFieldsToDefaultView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+extraViewToEnable (Edm.String) | ✅ | ❌ | ❌ | ❌
 listId (Edm.String) | ✅ | ❌ | ❌ | ❌
