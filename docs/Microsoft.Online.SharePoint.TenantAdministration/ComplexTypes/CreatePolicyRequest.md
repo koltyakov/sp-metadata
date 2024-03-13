@@ -13,5 +13,6 @@ policyDescription (Edm.String) | ✅ | ❌ | ❌ | ❌
 policyFrequencyUnit (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 policyFrequencyValue (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 policyId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+policyTags (Edm.String) | ✅ | ❌ | ❌ | ❌
 policyTemplate (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 policyType (Edm.Int32) | ✅ | ❌ | ❌ | ❌

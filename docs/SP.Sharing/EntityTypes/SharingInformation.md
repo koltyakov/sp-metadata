@@ -12,6 +12,7 @@ ageGroup (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 anonymousLinkExpirationRestrictionDays (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 anyoneLinkTrackUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 blockPeoplePickerAndSharing (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
+canAddExistingExternalPrincipal (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 canAddExternalPrincipal (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 canAddInternalPrincipal (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 canRequestAccessForGrantAccess (Edm.Boolean) | ✅ | ✅ | ❌ | ❌

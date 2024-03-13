@@ -694,7 +694,6 @@ SP_SPHSite_GetSPHSiteXGeo | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsModernSiteWithHorizontalNav](./Functions/SP_SPHSite_IsModernSiteWithHorizontalNav.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_IsValidHomeSite](./Functions/SP_SPHSite_IsValidHomeSite.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_RemoveDashboardFeature](./Functions/SP_SPHSite_RemoveDashboardFeature.md) | ✅ | ❌ | ❌ | ❌
-[SP_SPHSite_ValidateHomeSite](./Functions/SP_SPHSite_ValidateHomeSite.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPHSite_ValidateHomeSiteCandidate](./Functions/SP_SPHSite_ValidateHomeSiteCandidate.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPPlaylist_GetSubscriberInfo](./Functions/SP_SPPlaylist_GetSubscriberInfo.md) | ✅ | ❌ | ❌ | ❌
 [SP_SPPlaylist_Subscribe](./Functions/SP_SPPlaylist_Subscribe.md) | ✅ | ❌ | ❌ | ❌
@@ -771,6 +770,7 @@ SetAccessRequestSiteDescriptionAndUpdate (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetAnnouncementState (SP.EmployeeExperienceController) | ✅ | ❌ | ❌ | ❌
 SetAppPrincipalConfiguration (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
 SetAutoExpiration (SP.SiteVersionPolicyManager) | ✅ | ❌ | ❌ | ❌
+SetBlockDownloadPolicyForFiles (SP.Site) | ✅ | ❌ | ❌ | ❌
 SetChromeOptions (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetCommentsDisabled (SP.ListItem) | ✅ | ✅ | ❌ | ❌
 SetComplianceTag (SP.ListItem) | ✅ | ❌ | ❌ | ❌

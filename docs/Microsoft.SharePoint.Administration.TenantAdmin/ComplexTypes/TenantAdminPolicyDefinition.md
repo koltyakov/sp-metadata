@@ -11,11 +11,13 @@ lastUpdatedTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 policyCreatedTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 policyCustomName (Edm.String) | ✅ | ❌ | ❌ | ❌
 policyDefinitionDetails (Edm.String) | ✅ | ❌ | ❌ | ❌
+policyDeleteReason (Edm.String) | ✅ | ❌ | ❌ | ❌
 policyDescription (Edm.String) | ✅ | ❌ | ❌ | ❌
 policyFrequencyUnit (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 policyFrequencyValue (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 policyId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 policyState (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+policyTags (Edm.String) | ✅ | ❌ | ❌ | ❌
 policyTemplate (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 policyType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 policyVersion (Edm.Int32) | ✅ | ❌ | ❌ | ❌

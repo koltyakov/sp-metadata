@@ -11,6 +11,7 @@ Description (Edm.String) | ✅ | ❌ | ❌ | ❌
 Embeddable (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Expiration (Edm.String) | ✅ | ✅ | ❌ | ❌
 HasExternalGuestInvitees (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
+IsAddressBarLink (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsAnonymous (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 IsCreateOnlyLink (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsFormsLink (Edm.Boolean) | ✅ | ✅ | ❌ | ❌

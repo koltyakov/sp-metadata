@@ -6,6 +6,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+absoluteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 appInstanceId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 errorDetails (Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPUninstallAddinErrorDetail)) | ✅ | ❌ | ❌ | ❌
 jobId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

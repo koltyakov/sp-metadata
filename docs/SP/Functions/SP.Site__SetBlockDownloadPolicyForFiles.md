@@ -1,7 +1,8 @@
-# Function Import: SP_SPHSite_ValidateHomeSite
+# Function Import: SetBlockDownloadPolicyForFiles
 
 > Namespace: SP
 
+- Entity type: SP.Site
 - Is composable: false
 - Is bindable: false
 
@@ -9,5 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-siteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
-validationActionType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+blockDownloadPolicyFileTypeId (Edm.String) | ✅ | ❌ | ❌ | ❌

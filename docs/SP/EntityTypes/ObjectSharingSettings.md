@@ -18,6 +18,7 @@ CanCurrentUserRetrieveReadWriteLink (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 CanCurrentUserRetrieveReadonlyLink (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 CanCurrentUserShareExternally (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 CanCurrentUserShareInternally (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
+CanCurrentUserShareToExistingGuests (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CanSendEmail (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 CanSendLink (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 CanShareFolder (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
