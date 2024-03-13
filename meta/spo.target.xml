@@ -168,6 +168,9 @@
         <Property Name="RoleValue" Type="Edm.Int32" Nullable="false" />
         <Property Name="StatusCode" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="AgreementDocumentsInfo">
+        <Property Name="Documents" Type="Collection(SP.AgreementDocument)" />
+      </ComplexType>
       <ComplexType Name="AgreementDocument">
         <Property Name="DocumentType" Type="Edm.String" />
         <Property Name="DocumentUrl" Type="Edm.String" />
@@ -427,6 +430,7 @@
         <Property Name="Embeddable" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Expiration" Type="Edm.String" />
         <Property Name="HasExternalGuestInvitees" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsAddressBarLink" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsAnonymous" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsCreateOnlyLink" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsFormsLink" Type="Edm.Boolean" Nullable="false" />
@@ -2881,6 +2885,7 @@
         <Property Name="CanCurrentUserRetrieveReadWriteLink" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CanCurrentUserShareExternally" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CanCurrentUserShareInternally" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="CanCurrentUserShareToExistingGuests" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CanSendEmail" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CanSendLink" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CanShareFolder" Type="Edm.Boolean" Nullable="false" />
@@ -11001,10 +11006,6 @@
           <Parameter Name="vivaConnectionsDefaultStart" Type="Edm.Boolean" />
           <Parameter Name="isInDraftMode" Type="Edm.Boolean" />
         </FunctionImport>
-        <FunctionImport Name="SP_SPHSite_ValidateHomeSite">
-          <Parameter Name="validationActionType" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="siteUrl" Type="Edm.String" />
-        </FunctionImport>
         <FunctionImport Name="SP_SPHSite_ValidateHomeSiteCandidate" ReturnType="SP.HomeSiteReference">
           <Parameter Name="siteUrl" Type="Edm.String" />
         </FunctionImport>
@@ -11048,9 +11049,6 @@
         <FunctionImport Name="EnableGlobalNavigation" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Navigation.REST.HomeSiteNavigationSettings" />
           <Parameter Name="isEnabled" Type="Edm.Boolean" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="Update" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.SharePoint.Navigation.REST.HomeSiteNavigationSettings" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Navigation_REST_NavigationServiceRest" ReturnType="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" IsComposable="true" EntitySet="NavigationServiceRests" />
         <FunctionImport Name="CurrentResourcesNav" ReturnType="SP.MenuState" IsSideEffecting="false" IsBindable="true">
@@ -12778,6 +12776,7 @@
         <FunctionImport Name="AvailableAddins" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPAvailableAddinsResponse" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="serverRelativeUrls" Type="Collection(Edm.String)" />
+          <Parameter Name="urls" Type="Collection(Edm.String)" />
         </FunctionImport>
         <FunctionImport Name="ConsentToPowerPlatform" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
           <Parameter Name="this" Type="SP.Web" />
@@ -12882,11 +12881,13 @@
         <FunctionImport Name="GetAddinPrincipalsHavingPermissionsInSites" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPGetAddinPrincipalsResponse" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="serverRelativeUrls" Type="Collection(Edm.String)" />
+          <Parameter Name="urls" Type="Collection(Edm.String)" />
         </FunctionImport>
         <FunctionImport Name="GetAddinUninstallJobDetail" ReturnType="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPUninstallAddinJobDetail" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
           <Parameter Name="jobId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="serverRelativeUrl" Type="Edm.String" />
+          <Parameter Name="url" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="GetAllClientSideComponents" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Web" />
@@ -15212,6 +15213,10 @@
           <Parameter Name="versionUpgrade" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="queueOnly" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="sendEmail" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SetBlockDownloadPolicyForFiles" IsBindable="true">
+          <Parameter Name="this" Type="SP.Site" />
+          <Parameter Name="blockDownloadPolicyFileTypeId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SetIsContributorOwnerEnabledPropertyForDefaultDocLib" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Site" />
@@ -20549,6 +20554,9 @@
       <Annotations Target="SP.SharingLinkData/HasExternalGuestInvitees">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.SharingLinkData/IsAddressBarLink">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.SharingLinkData/IsManageListLink">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -25602,9 +25610,6 @@
       <Annotations Target="SP.ApiData/SetSPHSite(SP.SPHSite, Edm.String, Edm.Boolean, Edm.Boolean)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SP_SPHSite_ValidateHomeSite(Edm.Int32, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.ApiData/SP_SPHSite_ValidateHomeSiteCandidate(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -26049,7 +26054,7 @@
       <Annotations Target="SP.ApiData/AddPlaceholderUser(SP.Web, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/AvailableAddins(SP.Web, Collection(Edm.String))">
+      <Annotations Target="SP.ApiData/AvailableAddins(SP.Web, Collection(Edm.String), Collection(Edm.String))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/ConsentToPowerPlatform(SP.Web)">
@@ -26076,10 +26081,10 @@
       <Annotations Target="SP.ApiData/GetAdaptiveCardExtensions(SP.Web, Edm.Boolean, Edm.Guid)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/GetAddinPrincipalsHavingPermissionsInSites(SP.Web, Collection(Edm.String))">
+      <Annotations Target="SP.ApiData/GetAddinPrincipalsHavingPermissionsInSites(SP.Web, Collection(Edm.String), Collection(Edm.String))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/GetAddinUninstallJobDetail(SP.Web, Edm.Guid, Edm.String)">
+      <Annotations Target="SP.ApiData/GetAddinUninstallJobDetail(SP.Web, Edm.Guid, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetAllClientSideComponents(SP.Web, Collection(Edm.String))">
@@ -26621,6 +26626,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/RollTenantBringYourOwnKey(SP.Site, Edm.Int32, SP.CustomerKeyVaultInfo)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SetBlockDownloadPolicyForFiles(SP.Site, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/StartDeleteFileVersions(SP.Site, Edm.Int32)">
@@ -33650,6 +33658,7 @@
         <Property Name="serverRelativeUrl" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPAddinPermissionInfo">
+        <Property Name="absoluteUrl" Type="Edm.String" />
         <Property Name="allowAppOnly" Type="Edm.Boolean" Nullable="false" />
         <Property Name="appIdentifier" Type="Edm.String" />
         <Property Name="serverRelativeUrl" Type="Edm.String" />
@@ -33671,12 +33680,14 @@
       <ComplexType Name="SPAddinPermissionRequest">
         <Property Name="appIdentifiers" Type="Collection(Edm.String)" />
         <Property Name="serverRelativeUrl" Type="Edm.String" />
+        <Property Name="url" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPAddinPermissionResponse">
         <Property Name="addinPermissions" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPAddinPermissionInfo)" />
         <Property Name="failedAddins" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPAddinPermissionFailedInfo)" />
       </ComplexType>
       <ComplexType Name="SPAddinPrincipalInfo">
+        <Property Name="absoluteUrl" Type="Edm.String" />
         <Property Name="appIdentifier" Type="Edm.String" />
         <Property Name="serverRelativeUrl" Type="Edm.String" />
         <Property Name="title" Type="Edm.String" />
@@ -33747,6 +33758,7 @@
         <Property Name="ListId" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPTriggeredUninstallAddinJobResponse">
+        <Property Name="absoluteUrl" Type="Edm.String" />
         <Property Name="appInstanceId" Type="Edm.Guid" Nullable="false" />
         <Property Name="serverRelativeUrl" Type="Edm.String" />
         <Property Name="uninstallJobId" Type="Edm.Guid" Nullable="false" />
@@ -33759,6 +33771,7 @@
         <Property Name="type" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPUninstallAddinJobDetail">
+        <Property Name="absoluteUrl" Type="Edm.String" />
         <Property Name="appInstanceId" Type="Edm.Guid" Nullable="false" />
         <Property Name="errorDetails" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPUninstallAddinErrorDetail)" />
         <Property Name="jobId" Type="Edm.Guid" Nullable="false" />
@@ -33769,6 +33782,7 @@
       <ComplexType Name="SPUninstallAddinRequest">
         <Property Name="appInstanceIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="serverRelativeUrl" Type="Edm.String" />
+        <Property Name="url" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPUninstallAddinResponse">
         <Property Name="executing" Type="Collection(Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPTriggeredUninstallAddinJobResponse)" />
@@ -34668,11 +34682,13 @@
         <Property Name="policyCreatedTime" Type="Edm.DateTime" />
         <Property Name="policyCustomName" Type="Edm.String" />
         <Property Name="policyDefinitionDetails" Type="Edm.String" />
+        <Property Name="policyDeleteReason" Type="Edm.String" />
         <Property Name="policyDescription" Type="Edm.String" />
         <Property Name="policyFrequencyUnit" Type="Edm.Int32" Nullable="false" />
         <Property Name="policyFrequencyValue" Type="Edm.Int32" Nullable="false" />
         <Property Name="policyId" Type="Edm.Guid" Nullable="false" />
         <Property Name="policyState" Type="Edm.Int32" Nullable="false" />
+        <Property Name="policyTags" Type="Edm.String" />
         <Property Name="policyTemplate" Type="Edm.Int32" Nullable="false" />
         <Property Name="policyType" Type="Edm.Int32" Nullable="false" />
         <Property Name="policyVersion" Type="Edm.Int32" Nullable="false" />
@@ -34926,6 +34942,7 @@
       <ComplexType Name="DirectSharingAbilities">
         <Property Name="canAddExternalPrincipal" Type="SP.Sharing.SharingAbilityStatus" />
         <Property Name="canAddInternalPrincipal" Type="SP.Sharing.SharingAbilityStatus" />
+        <Property Name="canAddNewExternalPrincipal" Type="SP.Sharing.SharingAbilityStatus" />
         <Property Name="canRequestGrantAccess" Type="SP.Sharing.SharingAbilityStatus" />
         <Property Name="supportsReviewPermission" Type="SP.Sharing.SharingAbilityStatus" />
       </ComplexType>
@@ -35235,6 +35252,7 @@
         <Property Name="anonymousLinkExpirationRestrictionDays" Type="Edm.Int32" Nullable="false" />
         <Property Name="anyoneLinkTrackUsers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="blockPeoplePickerAndSharing" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="canAddExistingExternalPrincipal" Type="Edm.Boolean" Nullable="false" />
         <Property Name="canAddExternalPrincipal" Type="Edm.Boolean" Nullable="false" />
         <Property Name="canAddInternalPrincipal" Type="Edm.Boolean" Nullable="false" />
         <Property Name="canRequestAccessForGrantAccess" Type="Edm.Boolean" Nullable="false" />
@@ -35902,6 +35920,7 @@
         <Property Name="policyFrequencyUnit" Type="Edm.Int32" Nullable="false" />
         <Property Name="policyFrequencyValue" Type="Edm.Int32" Nullable="false" />
         <Property Name="policyId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="policyTags" Type="Edm.String" />
         <Property Name="policyTemplate" Type="Edm.Int32" Nullable="false" />
         <Property Name="policyType" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
@@ -36353,6 +36372,7 @@
         <Property Name="BlockDownloadLinksFileType" Type="Edm.Int32" Nullable="false" />
         <Property Name="BlockDownloadMicrosoft365GroupIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="BlockDownloadPolicy" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="BlockDownloadPolicyFileTypeId" Type="Edm.String" />
         <Property Name="BlockGuestsAsSiteAdmin" Type="Edm.Int32" Nullable="false" />
         <Property Name="BonusDiskQuota" Type="Edm.Int64" Nullable="false" />
         <Property Name="ClearRestrictedAccessControl" Type="Edm.Boolean" Nullable="false" />
@@ -36627,6 +36647,7 @@
         <Property Name="DisablePersonalListCreation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableReportProblemDialog" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableSpacesActivation" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisableVersionExpirationSetting" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableVivaConnectionsAnalytics" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisallowInfectedFileDownload" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisplayNamesOfFileViewers" Type="Edm.Boolean" Nullable="false" />
@@ -38204,18 +38225,18 @@
       </EntityType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.Administration.SiteMove.Service" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="SiteMoveService">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="SiteMoveServiceInfo">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
         <Property Name="ServiceCapabilities" Type="Collection(Edm.Int32)" Nullable="false" />
-      </EntityType>
-      <EntityType Name="SiteMoveService">
-        <Key>
-          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
-        </Key>
-        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
     </Schema>
     <Schema Namespace="SP.OAuth" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -38761,6 +38782,7 @@
         <Property Name="DisableOutlookPSTVersionTrimming" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisablePersonalListCreation" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableSpacesActivation" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisableVersionExpirationSetting" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisableVivaConnectionsAnalytics" Type="Edm.Boolean" Nullable="false" />
         <Property Name="DisplayStartASiteOption" Type="Edm.Boolean" Nullable="false" />
         <Property Name="EmailAttestationEnabled" Type="Edm.Boolean" Nullable="false" />
