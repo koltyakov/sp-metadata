@@ -58,6 +58,7 @@ Lcid (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 LimitedAccessFileType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ListsShowHeaderAndNavigation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LockIssue (Edm.String) | ✅ | ❌ | ❌ | ❌
+LockReason (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 LockState (Edm.String) | ✅ | ❌ | ❌ | ❌
 LoopDefaultSharingLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 LoopDefaultSharingLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌

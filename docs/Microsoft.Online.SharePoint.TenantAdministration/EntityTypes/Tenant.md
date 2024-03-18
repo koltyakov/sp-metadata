@@ -13,6 +13,7 @@ AIBuilderSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministrati
 AIBuilderSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 AIBuilderSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 AddressbarLinkPermission (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+AllOrganizationSecurityGroupId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 AllowAnonymousMeetingParticipantsToAccessWhiteboards (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 AllowCommentsTextOnEmailEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowDownloadingNonWebViewableFiles (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -60,12 +61,6 @@ CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CompatibilityRange (Edm.String) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicy (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicyErrorHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌
-ContainerDefaultLinkToExistingAccess (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-ContainerDefaultShareLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-ContainerDefaultShareLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-ContainerLoopDefaultShareLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-ContainerLoopDefaultShareLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-ContainerSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ContentTypeSyncSiteTemplatesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 CoreBlockGuestsAsSiteAdmin (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CoreDefaultLinkToExistingAccess (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -119,6 +114,7 @@ EnableAIPIntegration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableAutoExpirationVersionTrim (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableAutoNewsDigest (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableAzureADB2BIntegration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+EnableDiscoverableByOrganizationForVideos (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableGuestSignInAcceleration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableMinimumVersionRequirement (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableMipSiteLabel (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

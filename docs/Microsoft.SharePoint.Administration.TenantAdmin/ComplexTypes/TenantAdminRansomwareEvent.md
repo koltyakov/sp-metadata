@@ -11,6 +11,7 @@ category (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 classification (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 createdTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 eventId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+firstOccurrence (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 investigationState (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 lastOccurrence (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 lastUpdatedTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌

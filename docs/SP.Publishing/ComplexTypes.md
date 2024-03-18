@@ -40,6 +40,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [PrePublishValidationsErrorCodesForEmail](./ComplexTypes/PrePublishValidationsErrorCodesForEmail.md) | ✅ | ❌ | ❌ | ❌
 [PrePublishValidationsErrorCodesForSharePointSite](./ComplexTypes/PrePublishValidationsErrorCodesForSharePointSite.md) | ✅ | ❌ | ❌ | ❌
 [PrePublishValidationsErrorCodesForTeams](./ComplexTypes/PrePublishValidationsErrorCodesForTeams.md) | ✅ | ❌ | ❌ | ❌
+[PrePublishValidationsErrorCodesForVivaEngage](./ComplexTypes/PrePublishValidationsErrorCodesForVivaEngage.md) | ✅ | ❌ | ❌ | ❌
 [PrePublishValidationsResponse](./ComplexTypes/PrePublishValidationsResponse.md) | ✅ | ❌ | ❌ | ❌
 [ProfileCoreProperties](./ComplexTypes/ProfileCoreProperties.md) | ✅ | ❌ | ❌ | ❌
 [ProfileData](./ComplexTypes/ProfileData.md) | ✅ | ❌ | ❌ | ❌

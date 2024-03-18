@@ -387,6 +387,8 @@ GetOnePageContextAsStream (SP.Web) | ❌ | ✅ | ❌ | ❌
 GetPreAuthorizedAccessUrl (SP.File) | ✅ | ✅ | ✅ | ❌
 GetPreAuthorizedAccessUrl2 (SP.File) | ✅ | ❌ | ❌ | ❌
 GetPreviousAppVersion (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
+GetProgressForDeleteFileVersions (SP.List) | ✅ | ❌ | ❌ | ❌
+GetProgressForDeleteFileVersions (SP.Site) | ✅ | ❌ | ❌ | ❌
 GetProgressForExpireFileVersionsBySchedule (SP.Site) | ✅ | ❌ | ❌ | ❌
 GetProgressForFileVersionExpirationReport (SP.List) | ✅ | ❌ | ❌ | ❌
 GetProgressForFileVersionExpirationReport (SP.Site) | ✅ | ❌ | ❌ | ❌
@@ -861,6 +863,8 @@ StampColor (SP.FolderColoring) | ✅ | ❌ | ❌ | ❌
 StartDelete (SP.Folder) | ✅ | ❌ | ❌ | ❌
 StartDeleteFileVersions (SP.List) | ✅ | ❌ | ❌ | ❌
 StartDeleteFileVersions (SP.Site) | ✅ | ❌ | ❌ | ❌
+StartDeleteFileVersionsByMode (SP.List) | ✅ | ❌ | ❌ | ❌
+StartDeleteFileVersionsByMode (SP.Site) | ✅ | ❌ | ❌ | ❌
 StartExpireFileVersionsBySchedule (SP.Site) | ✅ | ❌ | ❌ | ❌
 StartFileVersionExpirationReport (SP.List) | ✅ | ❌ | ❌ | ❌
 StartFileVersionExpirationReport (SP.Site) | ✅ | ❌ | ❌ | ❌

@@ -7,6 +7,7 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 CompatibilityLevel (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+EnableHighValueContent (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Lcid (Edm.Int64) | ✅ | ❌ | ❌ | ❌
 Owner (Edm.String) | ✅ | ❌ | ❌ | ❌
 StorageMaximumLevel (Edm.Int64) | ✅ | ❌ | ❌ | ❌

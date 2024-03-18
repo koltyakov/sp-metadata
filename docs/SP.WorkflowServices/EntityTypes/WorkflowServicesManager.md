@@ -11,6 +11,7 @@ IsConnected (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 IsRegistered (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ScopePath (Edm.String) | ✅ | ✅ | ✅ | ✅
 ServiceHealthStatus (Edm.Int32) | ✅ | ✅ | ✅ | ❌
+Workflow2013Retired (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 
 ### Navigation Properties
 

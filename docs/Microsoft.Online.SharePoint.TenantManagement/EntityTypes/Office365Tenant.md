@@ -44,12 +44,6 @@ CommentsOnListItemsDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicy (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicyErrorHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌
-ContainerDefaultLinkToExistingAccess (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-ContainerDefaultShareLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-ContainerDefaultShareLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-ContainerLoopDefaultShareLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-ContainerLoopDefaultShareLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-ContainerSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ContentTypeSyncSiteTemplatesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 CoreBlockGuestsAsSiteAdmin (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CoreDefaultLinkToExistingAccess (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

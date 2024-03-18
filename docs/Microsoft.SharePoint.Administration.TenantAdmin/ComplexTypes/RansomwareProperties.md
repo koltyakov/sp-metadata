@@ -16,6 +16,8 @@ impactedAssetLocation (Edm.String) | ✅ | ❌ | ❌ | ❌
 impactedDocLibName (Edm.String) | ✅ | ❌ | ❌ | ❌
 impactedSiteType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 lastActivity (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
+ransomwareDetectionReason (Edm.String) | ✅ | ❌ | ❌ | ❌
+ransomwareDetectionScore (Edm.Double) | ✅ | ❌ | ❌ | ❌
 siteLabelId (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteLabelName (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteName (Edm.String) | ✅ | ❌ | ❌ | ❌

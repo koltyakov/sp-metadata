@@ -63,6 +63,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CustomizedFormsPageCollection](./ComplexTypes/CustomizedFormsPageCollection.md) | ✅ | ❌ | ❌ | ❌
 [DashboardItem](./ComplexTypes/DashboardItem.md) | ✅ | ❌ | ❌ | ❌
 [DashboardItemInfo](./ComplexTypes/DashboardItemInfo.md) | ✅ | ❌ | ❌ | ❌
+[DeviationAnalysisRule](./ComplexTypes/DeviationAnalysisRule.md) | ✅ | ❌ | ❌ | ❌
 [DocumentGenerationInfo](./ComplexTypes/DocumentGenerationInfo.md) | ✅ | ❌ | ❌ | ❌
 [DocumentLibraryInformation](./ComplexTypes/DocumentLibraryInformation.md) | ✅ | ✅ | ✅ | ❌
 [EncryptionOption](./ComplexTypes/EncryptionOption.md) | ✅ | ✅ | ❌ | ❌
@@ -80,6 +81,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [FileCollectionAddParameters](./ComplexTypes/FileCollectionAddParameters.md) | ✅ | ✅ | ❌ | ❌
 [FileCreationInformation](./ComplexTypes/FileCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [FileDeleteParameters](./ComplexTypes/FileDeleteParameters.md) | ✅ | ❌ | ❌ | ❌
+[FileVersionBatchDeleteParameters](./ComplexTypes/FileVersionBatchDeleteParameters.md) | ✅ | ❌ | ❌ | ❌
 [FolderCollectionAddParameters](./ComplexTypes/FolderCollectionAddParameters.md) | ✅ | ✅ | ❌ | ❌
 [FolderColoringInformation](./ComplexTypes/FolderColoringInformation.md) | ✅ | ❌ | ❌ | ❌
 [FolderDeleteParameters](./ComplexTypes/FolderDeleteParameters.md) | ✅ | ❌ | ❌ | ❌

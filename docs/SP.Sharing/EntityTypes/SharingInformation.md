@@ -9,6 +9,7 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 accessRequestSettings (SP.Sharing.AccessRequestSettings) | ✅ | ✅ | ❌ | ❌
 addressBarLinkSettings (SP.Sharing.AddressBarLinkSettings) | ✅ | ❌ | ❌ | ❌
 ageGroup (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+allOrganizationSecurityGroupId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 anonymousLinkExpirationRestrictionDays (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 anyoneLinkTrackUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 blockPeoplePickerAndSharing (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
@@ -25,6 +26,7 @@ defaultShareLinkPermission (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 defaultShareLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 defaultShareLinkToExistingAccess (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 directUrl (Edm.String) | ✅ | ✅ | ❌ | ❌
+discoverableByOrganizationEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 displayName (Edm.String) | ✅ | ❌ | ❌ | ❌
 domainRestrictionSettings (SP.Sharing.DomainRestrictionSettings) | ✅ | ✅ | ❌ | ❌
 enforceIBSegmentFiltering (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
