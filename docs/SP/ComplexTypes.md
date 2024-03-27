@@ -52,6 +52,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CountByDate](./ComplexTypes/CountByDate.md) | ✅ | ❌ | ❌ | ❌
 [CreatableItemInfo](./ComplexTypes/CreatableItemInfo.md) | ✅ | ✅ | ✅ | ❌
 [CreatableItemInfoCollection](./ComplexTypes/CreatableItemInfoCollection.md) | ✅ | ✅ | ✅ | ❌
+[CreateAgreementFolderInfo](./ComplexTypes/CreateAgreementFolderInfo.md) | ✅ | ❌ | ❌ | ❌
 [CurrencyInformation](./ComplexTypes/CurrencyInformation.md) | ✅ | ✅ | ❌ | ❌
 [CurrencyInformationCollection](./ComplexTypes/CurrencyInformationCollection.md) | ✅ | ✅ | ❌ | ❌
 [CustomActionElement](./ComplexTypes/CustomActionElement.md) | ✅ | ✅ | ❌ | ❌
@@ -149,6 +150,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [RoleDefinitionCreationInformation](./ComplexTypes/RoleDefinitionCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [RulesDefinition](./ComplexTypes/RulesDefinition.md) | ✅ | ❌ | ❌ | ❌
 [RulesDefinitionGroup](./ComplexTypes/RulesDefinitionGroup.md) | ✅ | ❌ | ❌ | ❌
+[RulesProperties](./ComplexTypes/RulesProperties.md) | ✅ | ❌ | ❌ | ❌
 [RulesValidationEntryResponse](./ComplexTypes/RulesValidationEntryResponse.md) | ✅ | ❌ | ❌ | ❌
 [SPAgreementsSite](./ComplexTypes/SPAgreementsSite.md) | ✅ | ❌ | ❌ | ❌
 [SPHSiteReference](./ComplexTypes/SPHSiteReference.md) | ✅ | ❌ | ❌ | ❌
@@ -189,6 +191,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [UpdateAgreementStatePayload](./ComplexTypes/UpdateAgreementStatePayload.md) | ✅ | ❌ | ❌ | ❌
 [UpdateTemplateInfo](./ComplexTypes/UpdateTemplateInfo.md) | ✅ | ❌ | ❌ | ❌
 [UpdateTemplateInfoV2](./ComplexTypes/UpdateTemplateInfoV2.md) | ✅ | ❌ | ❌ | ❌
+[UpdateUploadedAgreementMetadataPayload](./ComplexTypes/UpdateUploadedAgreementMetadataPayload.md) | ✅ | ❌ | ❌ | ❌
 [UpgradeInfo](./ComplexTypes/UpgradeInfo.md) | ✅ | ✅ | ✅ | ✅
 [UsageInfo](./ComplexTypes/UsageInfo.md) | ✅ | ✅ | ✅ | ✅
 [UserCreationInformation](./ComplexTypes/UserCreationInformation.md) | ✅ | ✅ | ✅ | ✅

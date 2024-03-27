@@ -9,6 +9,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [AnnouncementsData](./ComplexTypes/AnnouncementsData.md) | ✅ | ❌ | ❌ | ❌
 [ApprovalRequestCreationInfo](./ComplexTypes/ApprovalRequestCreationInfo.md) | ✅ | ❌ | ❌ | ❌
 [ApprovalRequestResponse](./ComplexTypes/ApprovalRequestResponse.md) | ✅ | ❌ | ❌ | ❌
+[AuthoringSchemaFeatureVersion](./ComplexTypes/AuthoringSchemaFeatureVersion.md) | ✅ | ❌ | ❌ | ❌
 [BoostFieldsData](./ComplexTypes/BoostFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [CallToAction](./ComplexTypes/CallToAction.md) | ✅ | ❌ | ❌ | ❌
 [CampaignPublicationFieldsData](./ComplexTypes/CampaignPublicationFieldsData.md) | ✅ | ❌ | ❌ | ❌
@@ -72,6 +73,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SitePageVersionInfo](./ComplexTypes/SitePageVersionInfo.md) | ✅ | ✅ | ❌ | ❌
 [SitePageVersionInfoCollection](./ComplexTypes/SitePageVersionInfoCollection.md) | ✅ | ❌ | ❌ | ❌
 [SiteSharingEmailContext](./ComplexTypes/SiteSharingEmailContext.md) | ✅ | ✅ | ❌ | ❌
+[StartCoAuthMetaData](./ComplexTypes/StartCoAuthMetaData.md) | ✅ | ❌ | ❌ | ❌
 [TaxonomicProperties](./ComplexTypes/TaxonomicProperties.md) | ✅ | ❌ | ❌ | ❌
 [TaxonomyMetadata](./ComplexTypes/TaxonomyMetadata.md) | ✅ | ❌ | ❌ | ❌
 [TeamsPublishingStatus](./ComplexTypes/TeamsPublishingStatus.md) | ✅ | ❌ | ❌ | ❌

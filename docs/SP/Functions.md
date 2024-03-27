@@ -109,6 +109,7 @@ CreateSPAsyncReadJobWithMultiUrl (SP.Site) | ✅ | ❌ | ❌ | ❌
 CreateSitePage (SP.Web) | ✅ | ❌ | ❌ | ❌
 CreateSmartTemplateContentTypeAndAddToList (SP.List) | ✅ | ❌ | ❌ | ❌
 CreateSmartTemplateContentTypeAndAddToListV2 (SP.List) | ✅ | ❌ | ❌ | ❌
+CurrentBrandingConfiguration (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
 Dashboard (SP.EmployeeExperienceController) | ✅ | ❌ | ❌ | ❌
 DashboardContent (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 DashboardOOBContent (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
@@ -247,6 +248,7 @@ GetAppPrincipalCredentials (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
 GetAsyncActionConfig (SP.List) | ✅ | ❌ | ❌ | ❌
 GetAsyncActionTaskIds (SP.List) | ✅ | ❌ | ❌ | ❌
 GetAvailableWebTemplates (SP.Web) | ✅ | ✅ | ✅ | ✅
+GetBlockDownloadPolicyForFilesData (SP.Site) | ✅ | ❌ | ❌ | ❌
 GetBloomFilter (SP.List) | ✅ | ✅ | ❌ | ❌
 GetBloomFilterWithCustomFields (SP.List) | ✅ | ✅ | ❌ | ❌
 GetBringYourOwnKeyRecoveryKeyMode (SP.Site) | ✅ | ❌ | ❌ | ❌

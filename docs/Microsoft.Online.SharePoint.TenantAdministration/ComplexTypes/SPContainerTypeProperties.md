@@ -6,6 +6,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+ApplicationRedirectUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 AzureSubscriptionId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 ContainerTypeId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 CreationDate (Edm.String) | ✅ | ❌ | ❌ | ❌

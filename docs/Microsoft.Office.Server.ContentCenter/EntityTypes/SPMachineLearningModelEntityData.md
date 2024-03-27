@@ -28,3 +28,4 @@ ModelSettings (Edm.String) | ✅ | ❌ | ❌ | ❌
 ModelType (Edm.String) | ✅ | ❌ | ❌ | ❌
 SampleFileUniqueIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 Schemas (Edm.String) | ✅ | ❌ | ❌ | ❌
+TableLinkColumns (Collection(Microsoft.Office.Server.ContentCenter.ColumnDef)) | ✅ | ❌ | ❌ | ❌

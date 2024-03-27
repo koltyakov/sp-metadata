@@ -14,6 +14,7 @@ IsActive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsManual (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ModifiedByUser (SP.ReviewerInfo) | ✅ | ❌ | ❌ | ❌
 ModifiedDateTime (Edm.String) | ✅ | ❌ | ❌ | ❌
+Properties (Collection(SP.RulesProperties)) | ✅ | ❌ | ❌ | ❌
 Risk (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 RuleGroup (Edm.String) | ✅ | ❌ | ❌ | ❌
 RuleId (Edm.Int32) | ✅ | ❌ | ❌ | ❌

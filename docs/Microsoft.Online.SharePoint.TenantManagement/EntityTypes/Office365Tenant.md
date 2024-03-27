@@ -187,10 +187,6 @@ SyntexMediaAnalyticsSettings (Microsoft.Online.SharePoint.TenantAdministration.S
 SyntexPaygFeatureActivations (Collection(SP.KeyValue)) | ✅ | ❌ | ❌ | ❌
 SyntexPlaybackTranscriptTranslationSettings (Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings) | ✅ | ❌ | ❌ | ❌
 SyntexPowerAppsEnvironmentsContext (Microsoft.Online.SharePoint.TenantAdministration.SyntexPowerAppsEnvironmentsContext) | ✅ | ❌ | ❌ | ❌
-TaxonomyTaggingEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-TaxonomyTaggingSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
-TaxonomyTaggingSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
-TaxonomyTaggingSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 TlsTokenBindingPolicyValue (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 UseFindPeopleInPeoplePicker (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UsePersistentCookiesForExplorerView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
