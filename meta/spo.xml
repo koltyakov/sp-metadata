@@ -367,6 +367,7 @@
         <Property Name="StartPosition" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="PublishModernTemplatePayload">
+        <Property Name="DisableSearchAndApprovals" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Placeholders" Type="Collection(SP.PlaceholderV2)" />
         <Property Name="Snippets" Type="Collection(SP.Snippet)" />
         <Property Name="Url" Type="Edm.String" />
@@ -411,6 +412,23 @@
         <Property Name="Acronym" Type="Edm.String" />
         <Property Name="Color" Type="Edm.String" />
         <Property Name="PreviewImageUrl" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ReviewConfigurationPayload">
+        <Property Name="CategoryId" Type="Edm.String" />
+        <Property Name="Reviewers" Type="Collection(Edm.String)" />
+        <Property Name="ReviewType" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ReviewConfigurationResponse">
+        <Property Name="Action" Type="Edm.String" />
+        <Property Name="ContractCategory" Type="Edm.String" />
+        <Property Name="ContractCategoryId" Type="Edm.String" />
+        <Property Name="Reviewers" Type="Collection(Edm.String)" />
+        <Property Name="ReviewType" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ReviewDeletionConfigurationResponse">
+        <Property Name="Action" Type="Edm.String" />
+        <Property Name="ContractCategoryId" Type="Edm.String" />
+        <Property Name="Message" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="ScriptSafeDomainEntityData">
         <Property Name="DomainName" Type="Edm.String" />
@@ -1454,6 +1472,22 @@
         <Property Name="IsExternal" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
         <Property Name="Url" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ApprovalConfigurationResponse">
+        <Property Name="ApprovalConfigurationID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Approvers" Type="Collection(SP.ConfiguredUserInfo)" />
+        <Property Name="CategoryID" Type="Edm.String" />
+        <Property Name="CategoryLabel" Type="Edm.String" />
+        <Property Name="Country" Type="Edm.String" />
+        <Property Name="ESigners" Type="Collection(SP.ConfiguredUserInfo)" />
+        <Property Name="Language" Type="Edm.String" />
+        <Property Name="Source" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ConfiguredUserInfo">
+        <Property Name="Email" Type="Edm.String" />
+        <Property Name="LoginName" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="UserId" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="DeviationAnalysisRule">
         <Property Name="Definition" Type="Edm.String" />
@@ -4460,6 +4494,7 @@
         <EntitySet Name="Mes" EntityType="SP.RequestUserContext" />
         <EntitySet Name="Microservicemanagers" EntityType="SP.MicroService.MicroServiceManager" />
         <EntitySet Name="Models" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
+        <EntitySet Name="MultiGeoProxys" EntityType="Microsoft.SharePoint.MultiGeo.SPMultiGeoProxy" />
         <EntitySet Name="OrgNews" EntityType="SP.OrganizationNews" />
         <EntitySet Name="OrgNewsSites" EntityType="Microsoft.SharePoint.OrgNewsSite.OrgNewsSiteApi" />
         <EntitySet Name="PageDiagnostics" EntityType="SP.Publishing.PageDiagnosticsController" />
@@ -4523,6 +4558,7 @@
         <EntitySet Name="DBLevelWorkItems" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.DBLevelWorkItem" />
         <EntitySet Name="DBLevelWorkItemEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.DBLevelWorkItemEntityData" />
         <EntitySet Name="DBSchemaCompatibilityChecks" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.DBSchemaCompatibilityCheck" />
+        <EntitySet Name="DeleteTargetSiteEntitys" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.DeleteTargetSiteEntity" />
         <EntitySet Name="DfDeprecationSiteEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationSiteEntityData" />
         <EntitySet Name="GeoAdministrators" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator" />
         <EntitySet Name="GeoExperiences" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.GeoExperience" />
@@ -4541,12 +4577,14 @@
         <EntitySet Name="OrgRelationNotifications" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationNotification" />
         <EntitySet Name="OrgRelationVerifications" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationVerification" />
         <EntitySet Name="RestoreWorkflowCounts" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.RestoreWorkflowCount" />
+        <EntitySet Name="SiteAtTargetEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.SiteAtTargetEntityData" />
         <EntitySet Name="StorageQuotas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota" />
         <EntitySet Name="StorageQuotaEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuotaEntityData" />
         <EntitySet Name="SupportedGeoLocationsForTenants" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.SupportedGeoLocationsForTenant" />
         <EntitySet Name="TaxonomyReplicationParameterss" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.TaxonomyReplicationParameters" />
         <EntitySet Name="TenantInformations" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.TenantInformation" />
         <EntitySet Name="UnifiedGroups" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.UnifiedGroup" />
+        <EntitySet Name="UpdateGLSRegistrationEntitys" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.UpdateGLSRegistrationEntity" />
         <EntitySet Name="UserMnAODMoveValidationResults" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.UserMnAODMoveValidationResult" />
         <EntitySet Name="UserPersonalSiteIds" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.UserPersonalSiteId" />
         <EntitySet Name="UserPersonalSiteLocations" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.UserPersonalSiteLocation" />
@@ -5098,6 +5136,7 @@
         <FunctionImport Name="me" ReturnType="SP.RequestUserContext" IsComposable="true" EntitySet="Mes" />
         <FunctionImport Name="microservicemanager" ReturnType="SP.MicroService.MicroServiceManager" IsComposable="true" EntitySet="Microservicemanagers" />
         <FunctionImport Name="models" ReturnType="Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)" IsComposable="true" EntitySet="Models" />
+        <FunctionImport Name="MultiGeoProxy" ReturnType="Microsoft.SharePoint.MultiGeo.SPMultiGeoProxy" IsComposable="true" EntitySet="MultiGeoProxys" />
         <FunctionImport Name="OrgNews" ReturnType="SP.OrganizationNews" IsComposable="true" EntitySet="OrgNews" />
         <FunctionImport Name="OrgNewsSite" ReturnType="Microsoft.SharePoint.OrgNewsSite.OrgNewsSiteApi" IsComposable="true" EntitySet="OrgNewsSites" />
         <FunctionImport Name="outofboxfontpackages" ReturnType="Collection(SP.FontPackage)" IsComposable="true" EntitySet="Fontpackages" />
@@ -6313,6 +6352,7 @@
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_DBLevelWorkItemEntityData" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.DBLevelWorkItemEntityData" IsComposable="true" EntitySet="DBLevelWorkItemEntityDatas" />
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_DBLevelWorkItem" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.DBLevelWorkItem" IsComposable="true" EntitySet="DBLevelWorkItems" />
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_DBSchemaCompatibilityCheck" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.DBSchemaCompatibilityCheck" IsComposable="true" EntitySet="DBSchemaCompatibilityChecks" />
+        <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_DeleteTargetSiteEntity" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.DeleteTargetSiteEntity" IsComposable="true" EntitySet="DeleteTargetSiteEntitys" />
         <FunctionImport Name="GetBySiteUrl" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJob" IsComposable="true" IsBindable="true" EntitySet="DfDeprecationSiteEntityDatas">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJob)" />
           <Parameter Name="sourceSiteUrl" Type="Edm.String" />
@@ -6454,6 +6494,7 @@
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_RestoreWorkflowCount" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.RestoreWorkflowCount" IsComposable="true" EntitySet="RestoreWorkflowCounts">
           <Parameter Name="isCrossTenant" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_SiteAtTargetEntityData" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.SiteAtTargetEntityData" IsComposable="true" EntitySet="SiteAtTargetEntityDatas" />
         <FunctionImport Name="GetByUrl" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob" IsComposable="true" IsBindable="true" EntitySet="SiteMoveJobEntityDatas">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob)" />
           <Parameter Name="url" Type="Edm.String" />
@@ -6505,6 +6546,7 @@
           <Parameter Name="alias" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_UnifiedGroup" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.UnifiedGroup" IsComposable="true" EntitySet="UnifiedGroups" />
+        <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_UpdateGLSRegistrationEntity" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.UpdateGLSRegistrationEntity" IsComposable="true" EntitySet="UpdateGLSRegistrationEntitys" />
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_UserMnAODMoveValidationResult" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.UserMnAODMoveValidationResult" IsComposable="true" EntitySet="UserMnAODMoveValidationResults">
           <Parameter Name="encodedQuery" Type="Edm.String" />
         </FunctionImport>
@@ -11133,6 +11175,11 @@
         <FunctionImport Name="SetGlobalNavEnabled" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" />
           <Parameter Name="isEnabled" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_SharePoint_MultiGeo_SPMultiGeoProxy" ReturnType="Microsoft.SharePoint.MultiGeo.SPMultiGeoProxy" IsComposable="true" EntitySet="MultiGeoProxys" />
+        <FunctionImport Name="RemoteThumbnail" ReturnType="Edm.Stream" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.MultiGeo.SPMultiGeoProxy" />
+          <Parameter Name="url" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_MicroService_MicroServiceManager" ReturnType="SP.MicroService.MicroServiceManager" IsComposable="true" EntitySet="Microservicemanagers" />
         <FunctionImport Name="AddMicroserviceWorkItem" ReturnType="Edm.Guid" IsBindable="true">
@@ -16755,6 +16802,13 @@
           <Parameter Name="overrideParameters" Type="SP.RenderListDataOverrideParameters" />
           <Parameter Name="listName" Type="Edm.String" />
         </FunctionImport>
+        <FunctionImport Name="RenderContainersAdminListData" ReturnType="Edm.Stream" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="orderByColumnsList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SPContainerSortOrder)" />
+          <Parameter Name="pageSize" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="pagingToken" Type="Edm.String" />
+          <Parameter Name="containerStatus" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="RenderDeletedContainers" ReturnType="Edm.Stream" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="viewXml" Type="Edm.String" />
@@ -17011,6 +17065,11 @@
           <Parameter Name="libUrl" Type="Edm.String" />
           <Parameter Name="thumbnailUrl" Type="Edm.String" />
           <Parameter Name="orgAssetType" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="SetSensitivityLabelContainer" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+          <Parameter Name="containerId" Type="Edm.String" />
+          <Parameter Name="sensitivityLabel" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SetSiteAdministrators" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -17988,6 +18047,10 @@
           <End Role="DBLevelWorkItemsPartner" EntitySet="MultiGeoServicesBetas" />
           <End Role="DBLevelWorkItems" EntitySet="DBLevelWorkItemEntityDatas" />
         </AssociationSet>
+        <AssociationSet Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_DeleteTargetSite_Microsoft_Online_SharePoint_MultiGeo_Service_SiteAtTargetEntityData_DeleteTargetSitePartnerSet" Association="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_DeleteTargetSite_Microsoft_Online_SharePoint_MultiGeo_Service_SiteAtTargetEntityData_DeleteTargetSitePartner">
+          <End Role="DeleteTargetSitePartner" EntitySet="MultiGeoServicesBetas" />
+          <End Role="DeleteTargetSite" EntitySet="SiteAtTargetEntityDatas" />
+        </AssociationSet>
         <AssociationSet Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_DfDeprecationJobs_Microsoft_Online_SharePoint_MultiGeo_Service_DfDeprecationJob_DfDeprecationJobsPartnerSet" Association="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_DfDeprecationJobs_Microsoft_Online_SharePoint_MultiGeo_Service_DfDeprecationJob_DfDeprecationJobsPartner">
           <End Role="DfDeprecationJobsPartner" EntitySet="MultiGeoServicesBetas" />
           <End Role="DfDeprecationJobs" EntitySet="DfDeprecationSiteEntityDatas" />
@@ -18039,6 +18102,10 @@
         <AssociationSet Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_UnifiedGroups_Microsoft_Online_SharePoint_MultiGeo_Service_UnifiedGroup_UnifiedGroupsPartnerSet" Association="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_UnifiedGroups_Microsoft_Online_SharePoint_MultiGeo_Service_UnifiedGroup_UnifiedGroupsPartner">
           <End Role="UnifiedGroupsPartner" EntitySet="MultiGeoServicesBetas" />
           <End Role="UnifiedGroups" EntitySet="UnifiedGroups" />
+        </AssociationSet>
+        <AssociationSet Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_UpdateGLSRegistration_Microsoft_Online_SharePoint_MultiGeo_Service_SiteAtTargetEntityData_UpdateGLSRegistrationPartnerSet" Association="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_UpdateGLSRegistration_Microsoft_Online_SharePoint_MultiGeo_Service_SiteAtTargetEntityData_UpdateGLSRegistrationPartner">
+          <End Role="UpdateGLSRegistrationPartner" EntitySet="MultiGeoServicesBetas" />
+          <End Role="UpdateGLSRegistration" EntitySet="SiteAtTargetEntityDatas" />
         </AssociationSet>
         <AssociationSet Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_UserMoveJobs_Microsoft_Online_SharePoint_MultiGeo_Service_UserMoveJob_UserMoveJobsPartnerSet" Association="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_UserMoveJobs_Microsoft_Online_SharePoint_MultiGeo_Service_UserMoveJob_UserMoveJobsPartner">
           <End Role="UserMoveJobsPartner" EntitySet="MultiGeoServicesBetas" />
@@ -23317,6 +23384,9 @@
       <Annotations Target="Microsoft.SharePoint.SectionDesignIdeas.SectionDesignIdeasApi">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.MultiGeo.SPMultiGeoProxy">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.MicroService.MicroServiceManager">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -25702,6 +25772,9 @@
       <Annotations Target="SP.ApiData/HomeSiteNavigation(Microsoft.SharePoint.Navigation.REST.NavigationServiceRest, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/RemoteThumbnail(Microsoft.SharePoint.MultiGeo.SPMultiGeoProxy, Edm.String)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/AddMicroserviceWorkItem(SP.MicroService.MicroServiceManager, Edm.Binary, Edm.Int32, SP.MicroService.MicroServiceWorkItemProperties)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -27813,6 +27886,7 @@
           <PropertyRef Name="NormalizedDatabaseId" />
         </Key>
         <Property Name="NormalizedDatabaseId" Type="Edm.String" Nullable="false" />
+        <Property Name="RestoreCount" Type="Edm.Int32" Nullable="false" />
       </EntityType>
       <EntityType Name="ContentDbSchemaVersion">
         <Key>
@@ -27956,6 +28030,20 @@
         </Key>
         <Property Name="CompatibilityResult" Type="Edm.String" Nullable="false" />
       </EntityType>
+      <EntityType Name="SiteAtTargetEntityData">
+        <Key>
+          <PropertyRef Name="NormalizedContentDBIdAtSource" />
+        </Key>
+        <Property Name="NormalizedContentDBIdAtSource" Type="Edm.String" Nullable="false" />
+        <Property Name="NormalizedContentDBIdAtTarget" Type="Edm.String" />
+        <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+      <EntityType Name="DeleteTargetSiteEntity">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="DfDeprecationSiteEntityData">
         <Key>
           <PropertyRef Name="sourceSiteUrl" />
@@ -28076,6 +28164,7 @@
         <NavigationProperty Name="CrossGeoTenantProperties" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_CrossGeoTenantProperties_Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoTenantProperty_CrossGeoTenantPropertiesPartner" ToRole="CrossGeoTenantProperties" FromRole="CrossGeoTenantPropertiesPartner" />
         <NavigationProperty Name="CrossGeoUserPlacementJobs" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_CrossGeoUserPlacementJobs_Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoUserPlacementJob_CrossGeoUserPlacementJobsPartner" ToRole="CrossGeoUserPlacementJobs" FromRole="CrossGeoUserPlacementJobsPartner" />
         <NavigationProperty Name="DBLevelWorkItems" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_DBLevelWorkItems_Microsoft_Online_SharePoint_MultiGeo_Service_DBLevelWorkItemEntityData_DBLevelWorkItemsPartner" ToRole="DBLevelWorkItems" FromRole="DBLevelWorkItemsPartner" />
+        <NavigationProperty Name="DeleteTargetSite" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_DeleteTargetSite_Microsoft_Online_SharePoint_MultiGeo_Service_SiteAtTargetEntityData_DeleteTargetSitePartner" ToRole="DeleteTargetSite" FromRole="DeleteTargetSitePartner" />
         <NavigationProperty Name="DfDeprecationJobs" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_DfDeprecationJobs_Microsoft_Online_SharePoint_MultiGeo_Service_DfDeprecationJob_DfDeprecationJobsPartner" ToRole="DfDeprecationJobs" FromRole="DfDeprecationJobsPartner" />
         <NavigationProperty Name="GeoAdministrators" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_GeoAdministrators_Microsoft_Online_SharePoint_MultiGeo_Service_GeoAdministrator_GeoAdministratorsPartner" ToRole="GeoAdministrators" FromRole="GeoAdministratorsPartner" />
         <NavigationProperty Name="GeoExperience" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_GeoExperience_Microsoft_Online_SharePoint_MultiGeo_Service_GeoExperience_GeoExperiencePartner" ToRole="GeoExperience" FromRole="GeoExperiencePartner" />
@@ -28089,6 +28178,7 @@
         <NavigationProperty Name="TaxonomyReplicationParameters" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_TaxonomyReplicationParameters_Microsoft_Online_SharePoint_MultiGeo_Service_TaxonomyReplicationParameters_TaxonomyReplicationParametersPartner" ToRole="TaxonomyReplicationParameters" FromRole="TaxonomyReplicationParametersPartner" />
         <NavigationProperty Name="TenantInformationCollection" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_TenantInformationCollection_Microsoft_Online_SharePoint_MultiGeo_Service_TenantInformation_TenantInformationCollectionPartner" ToRole="TenantInformationCollection" FromRole="TenantInformationCollectionPartner" />
         <NavigationProperty Name="UnifiedGroups" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_UnifiedGroups_Microsoft_Online_SharePoint_MultiGeo_Service_UnifiedGroup_UnifiedGroupsPartner" ToRole="UnifiedGroups" FromRole="UnifiedGroupsPartner" />
+        <NavigationProperty Name="UpdateGLSRegistration" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_UpdateGLSRegistration_Microsoft_Online_SharePoint_MultiGeo_Service_SiteAtTargetEntityData_UpdateGLSRegistrationPartner" ToRole="UpdateGLSRegistration" FromRole="UpdateGLSRegistrationPartner" />
         <NavigationProperty Name="UserMoveJobs" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_UserMoveJobs_Microsoft_Online_SharePoint_MultiGeo_Service_UserMoveJob_UserMoveJobsPartner" ToRole="UserMoveJobs" FromRole="UserMoveJobsPartner" />
       </EntityType>
       <EntityType Name="SiteMoveJob" BaseType="Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobEntityData">
@@ -28190,6 +28280,12 @@
         <Property Name="QuotaType" Type="Edm.Int32" Nullable="false" />
         <Property Name="TenantStorageMB" Type="Edm.String" />
       </EntityType>
+      <EntityType Name="UpdateGLSRegistrationEntity">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
       <EntityType Name="UserMnAODMoveValidationResult">
         <Key>
           <PropertyRef Name="Result" />
@@ -28261,6 +28357,10 @@
         <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.DBLevelWorkItemEntityData" Role="DBLevelWorkItems" Multiplicity="*" />
         <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" Role="DBLevelWorkItemsPartner" Multiplicity="0..1" />
       </Association>
+      <Association Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_DeleteTargetSite_Microsoft_Online_SharePoint_MultiGeo_Service_SiteAtTargetEntityData_DeleteTargetSitePartner">
+        <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.SiteAtTargetEntityData" Role="DeleteTargetSite" Multiplicity="*" />
+        <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" Role="DeleteTargetSitePartner" Multiplicity="0..1" />
+      </Association>
       <Association Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_DfDeprecationJobs_Microsoft_Online_SharePoint_MultiGeo_Service_DfDeprecationJob_DfDeprecationJobsPartner">
         <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJob" Role="DfDeprecationJobs" Multiplicity="*" />
         <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" Role="DfDeprecationJobsPartner" Multiplicity="0..1" />
@@ -28312,6 +28412,10 @@
       <Association Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_UnifiedGroups_Microsoft_Online_SharePoint_MultiGeo_Service_UnifiedGroup_UnifiedGroupsPartner">
         <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.UnifiedGroup" Role="UnifiedGroups" Multiplicity="*" />
         <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" Role="UnifiedGroupsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_UpdateGLSRegistration_Microsoft_Online_SharePoint_MultiGeo_Service_SiteAtTargetEntityData_UpdateGLSRegistrationPartner">
+        <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.SiteAtTargetEntityData" Role="UpdateGLSRegistration" Multiplicity="*" />
+        <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" Role="UpdateGLSRegistrationPartner" Multiplicity="0..1" />
       </Association>
       <Association Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_UserMoveJobs_Microsoft_Online_SharePoint_MultiGeo_Service_UserMoveJob_UserMoveJobsPartner">
         <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob" Role="UserMoveJobs" Multiplicity="*" />
@@ -28465,9 +28569,11 @@
       <ComplexType Name="PersonalCacheItem">
         <Property Name="AltTitle" Type="Edm.String" />
         <Property Name="CacheKey" Type="Edm.String" />
+        <Property Name="CacheName" Type="Edm.String" />
         <Property Name="CacheValue" Type="Edm.String" />
         <Property Name="CacheValueHash" Type="Edm.String" />
         <Property Name="CacheVersion" Type="Edm.String" />
+        <Property Name="ContainerUrl" Type="Edm.String" />
         <Property Name="ListItemId" Type="Edm.Int32" Nullable="false" />
         <Property Name="ListItemUniqueId" Type="Edm.String" />
         <Property Name="ModifiedTimeUtc" Type="Edm.DateTime" Nullable="false" />
@@ -36294,6 +36400,10 @@
         <Property Name="StorageUsed" Type="Edm.Int64" Nullable="false" />
         <Property Name="Writers" Type="Collection(Edm.String)" />
       </ComplexType>
+      <ComplexType Name="SPContainerSortOrder">
+        <Property Name="Ascending" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SortingField" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="SPContainerTypeConfigurationProperties">
         <Property Name="ApplicationRedirectUrl" Type="Edm.String" />
         <Property Name="Classification" Type="Edm.Int32" Nullable="false" />
@@ -38659,6 +38769,14 @@
         <End Type="Microsoft.SharePoint.Navigation.REST.HomeSiteNavigationSettings" Role="HomeSiteSettings" Multiplicity="0..1" />
         <End Type="Microsoft.SharePoint.Navigation.REST.NavigationServiceRest" Role="HomeSiteSettingsPartner" Multiplicity="0..1" />
       </Association>
+    </Schema>
+    <Schema Namespace="Microsoft.SharePoint.MultiGeo" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="SPMultiGeoProxy">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.LargeOperation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="SPLargeOperation">
