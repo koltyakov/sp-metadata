@@ -106,6 +106,7 @@ DashboardScriptExtensionInfos | ✅ | ✅ | ✅ | ✅
 DataServices | ❌ | ❌ | ❌ | ✅
 DateRangeCriterions | ✅ | ✅ | ✅ | ✅
 DefaultContentCenterSiteInfos | ✅ | ❌ | ❌ | ❌
+DeleteTargetSiteEntitys | ✅ | ❌ | ❌ | ❌
 DeletedPublishedAssignments | ✅ | ✅ | ✅ | ❌
 DesignPackageMenuContentss | ✅ | ❌ | ❌ | ❌
 DeviceEntityDatas | ✅ | ❌ | ❌ | ❌
@@ -291,6 +292,7 @@ MoveCopyUtils | ✅ | ✅ | ✅ | ❌
 MoveJobEntityDatas | ✅ | ❌ | ❌ | ❌
 MoveJobs | ✅ | ❌ | ❌ | ❌
 MultiGeoApiVersionss | ✅ | ❌ | ❌ | ❌
+MultiGeoProxys | ✅ | ❌ | ❌ | ❌
 MultiGeoServicesBetas | ✅ | ❌ | ❌ | ❌
 MultilingualSettingss | ✅ | ❌ | ❌ | ❌
 MyGroupsResults | ✅ | ✅ | ✅ | ❌
@@ -510,6 +512,7 @@ SharingUtilitys | ✅ | ✅ | ❌ | ❌
 ShortcutLinks | ✅ | ✅ | ❌ | ❌
 ShortcutTargetInfos | ✅ | ✅ | ❌ | ❌
 SignalStores | ✅ | ✅ | ✅ | ❌
+SiteAtTargetEntityDatas | ✅ | ❌ | ❌ | ❌
 SiteCollectionAppCatalogAllowedItems | ✅ | ✅ | ❌ | ❌
 SiteCollectionCorporateCatalogAccessors | ✅ | ✅ | ❌ | ❌
 SiteCollectionManagementServices | ✅ | ❌ | ❌ | ❌
@@ -625,6 +628,7 @@ TranslationStatusCollections | ✅ | ❌ | ❌ | ❌
 TypeDescriptors | ✅ | ✅ | ✅ | ✅
 TypeInformations | ✅ | ✅ | ✅ | ✅
 UnifiedGroups | ✅ | ❌ | ❌ | ❌
+UpdateGLSRegistrationEntitys | ✅ | ❌ | ❌ | ❌
 UploadStatuss | ✅ | ✅ | ❌ | ❌
 UrlParseResults | ✅ | ❌ | ❌ | ❌
 UsageAnalyticss | ❌ | ❌ | ❌ | ✅

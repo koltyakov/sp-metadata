@@ -22,6 +22,7 @@ CrossGeoTenantCompatibility | ✅ | ❌ | ❌ | ❌
 CrossGeoTenantProperties | ✅ | ❌ | ❌ | ❌
 CrossGeoUserPlacementJobs | ✅ | ❌ | ❌ | ❌
 DBLevelWorkItems | ✅ | ❌ | ❌ | ❌
+DeleteTargetSite | ✅ | ❌ | ❌ | ❌
 DfDeprecationJobs | ✅ | ❌ | ❌ | ❌
 GeoAdministrators | ✅ | ❌ | ❌ | ❌
 GeoExperience | ✅ | ❌ | ❌ | ❌
@@ -34,5 +35,6 @@ SupportedGeoLocationsForTenant | ✅ | ❌ | ❌ | ❌
 TaxonomyReplicationParameters | ✅ | ❌ | ❌ | ❌
 TenantInformationCollection | ✅ | ❌ | ❌ | ❌
 UnifiedGroups | ✅ | ❌ | ❌ | ❌
+UpdateGLSRegistration | ✅ | ❌ | ❌ | ❌
 UserMoveJobs | ✅ | ❌ | ❌ | ❌
 supportedgeolocationsmapdata | ✅ | ❌ | ❌ | ❌

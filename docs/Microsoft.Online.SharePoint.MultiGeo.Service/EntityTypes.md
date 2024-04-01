@@ -22,6 +22,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [DBLevelWorkItem](./EntityTypes/DBLevelWorkItem.md) | ✅ | ❌ | ❌ | ❌
 [DBLevelWorkItemEntityData](./EntityTypes/DBLevelWorkItemEntityData.md) | ✅ | ❌ | ❌ | ❌
 [DBSchemaCompatibilityCheck](./EntityTypes/DBSchemaCompatibilityCheck.md) | ✅ | ❌ | ❌ | ❌
+[DeleteTargetSiteEntity](./EntityTypes/DeleteTargetSiteEntity.md) | ✅ | ❌ | ❌ | ❌
 [DfDeprecationJob](./EntityTypes/DfDeprecationJob.md) | ✅ | ❌ | ❌ | ❌
 [DfDeprecationSiteEntityData](./EntityTypes/DfDeprecationSiteEntityData.md) | ✅ | ❌ | ❌ | ❌
 [GeoAdministrator](./EntityTypes/GeoAdministrator.md) | ✅ | ❌ | ❌ | ❌
@@ -44,6 +45,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [OrgRelationNotification](./EntityTypes/OrgRelationNotification.md) | ✅ | ❌ | ❌ | ❌
 [OrgRelationVerification](./EntityTypes/OrgRelationVerification.md) | ✅ | ❌ | ❌ | ❌
 [RestoreWorkflowCount](./EntityTypes/RestoreWorkflowCount.md) | ✅ | ❌ | ❌ | ❌
+[SiteAtTargetEntityData](./EntityTypes/SiteAtTargetEntityData.md) | ✅ | ❌ | ❌ | ❌
 [SiteMoveJob](./EntityTypes/SiteMoveJob.md) | ✅ | ❌ | ❌ | ❌
 [SiteMoveJobEntityData](./EntityTypes/SiteMoveJobEntityData.md) | ✅ | ❌ | ❌ | ❌
 [StorageQuota](./EntityTypes/StorageQuota.md) | ✅ | ❌ | ❌ | ❌
@@ -52,6 +54,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [TaxonomyReplicationParameters](./EntityTypes/TaxonomyReplicationParameters.md) | ✅ | ❌ | ❌ | ❌
 [TenantInformation](./EntityTypes/TenantInformation.md) | ✅ | ❌ | ❌ | ❌
 [UnifiedGroup](./EntityTypes/UnifiedGroup.md) | ✅ | ❌ | ❌ | ❌
+[UpdateGLSRegistrationEntity](./EntityTypes/UpdateGLSRegistrationEntity.md) | ✅ | ❌ | ❌ | ❌
 [UserMnAODMoveValidationResult](./EntityTypes/UserMnAODMoveValidationResult.md) | ✅ | ❌ | ❌ | ❌
 [UserMoveJob](./EntityTypes/UserMoveJob.md) | ✅ | ❌ | ❌ | ❌
 [UserMoveJobEntityData](./EntityTypes/UserMoveJobEntityData.md) | ✅ | ❌ | ❌ | ❌

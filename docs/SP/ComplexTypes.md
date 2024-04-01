@@ -19,6 +19,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [AppProperties](./ComplexTypes/AppProperties.md) | ✅ | ✅ | ❌ | ❌
 [AppSiteContext](./ComplexTypes/AppSiteContext.md) | ✅ | ✅ | ❌ | ❌
 [AppViewCreationInfo](./ComplexTypes/AppViewCreationInfo.md) | ✅ | ✅ | ❌ | ❌
+[ApprovalConfigurationResponse](./ComplexTypes/ApprovalConfigurationResponse.md) | ✅ | ❌ | ❌ | ❌
 [ApprovalsCreateRequestParameters](./ComplexTypes/ApprovalsCreateRequestParameters.md) | ✅ | ❌ | ❌ | ❌
 [ApprovalsProperties](./ComplexTypes/ApprovalsProperties.md) | ✅ | ❌ | ❌ | ❌
 [AsyncReadJobInfo](./ComplexTypes/AsyncReadJobInfo.md) | ✅ | ❌ | ❌ | ❌
@@ -38,6 +39,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ClassificationResult](./ComplexTypes/ClassificationResult.md) | ✅ | ❌ | ❌ | ❌
 [ColumnTypeInfo](./ComplexTypes/ColumnTypeInfo.md) | ✅ | ❌ | ❌ | ❌
 [ConfigurationData](./ComplexTypes/ConfigurationData.md) | ✅ | ❌ | ❌ | ❌
+[ConfiguredUserInfo](./ComplexTypes/ConfiguredUserInfo.md) | ✅ | ❌ | ❌ | ❌
 [ContentAssemblyFileInfo](./ComplexTypes/ContentAssemblyFileInfo.md) | ✅ | ❌ | ❌ | ❌
 [ContentAssemblyFormAnswer](./ComplexTypes/ContentAssemblyFormAnswer.md) | ✅ | ❌ | ❌ | ❌
 [ContentAssemblyModernTemplateColumnsMappingInfo](./ComplexTypes/ContentAssemblyModernTemplateColumnsMappingInfo.md) | ✅ | ❌ | ❌ | ❌
@@ -146,6 +148,9 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [RequestedTranslation](./ComplexTypes/RequestedTranslation.md) | ✅ | ❌ | ❌ | ❌
 [ResourcePath](./ComplexTypes/ResourcePath.md) | ✅ | ✅ | ❌ | ❌
 [ResourceVisualization](./ComplexTypes/ResourceVisualization.md) | ✅ | ❌ | ❌ | ❌
+[ReviewConfigurationPayload](./ComplexTypes/ReviewConfigurationPayload.md) | ✅ | ❌ | ❌ | ❌
+[ReviewConfigurationResponse](./ComplexTypes/ReviewConfigurationResponse.md) | ✅ | ❌ | ❌ | ❌
+[ReviewDeletionConfigurationResponse](./ComplexTypes/ReviewDeletionConfigurationResponse.md) | ✅ | ❌ | ❌ | ❌
 [ReviewerInfo](./ComplexTypes/ReviewerInfo.md) | ✅ | ❌ | ❌ | ❌
 [RoleDefinitionCreationInformation](./ComplexTypes/RoleDefinitionCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [RulesDefinition](./ComplexTypes/RulesDefinition.md) | ✅ | ❌ | ❌ | ❌
