@@ -7,9 +7,11 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 AIPLabelExtractionStatus (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+ChiSquareDistribution (Edm.String) | ✅ | ❌ | ❌ | ❌
 ClassificationResult (SP.ClassificationResult) | ✅ | ❌ | ❌ | ❌
 ContentVersion (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ETag (Edm.String) | ✅ | ❌ | ❌ | ❌
+Entropy (Edm.String) | ✅ | ❌ | ❌ | ❌
 IsMediaServiceRequest (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MachineLearningSampleMeta (SP.MachineLearningSampleMeta) | ✅ | ❌ | ❌ | ❌
 MediaLengthInSeconds (Edm.Int32) | ✅ | ❌ | ❌ | ❌
@@ -33,6 +35,9 @@ MediaServiceProtectionKey (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceSearchProperties (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceSystemTags (Edm.String) | ✅ | ❌ | ❌ | ❌
 MediaServiceTranscript (Edm.String) | ✅ | ❌ | ❌ | ❌
+MonteCarloApproximation (Edm.String) | ✅ | ❌ | ❌ | ❌
 SensitivityLabel (Edm.String) | ✅ | ❌ | ❌ | ❌
 SensitivityLabelAssignmentMethod (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+VirusInfo (Edm.String) | ✅ | ❌ | ❌ | ❌
+VirusStatus (Edm.String) | ✅ | ❌ | ❌ | ❌
 XTenantLabelInfo (Edm.String) | ✅ | ❌ | ❌ | ❌

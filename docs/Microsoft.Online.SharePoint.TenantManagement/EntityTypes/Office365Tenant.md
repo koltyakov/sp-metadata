@@ -68,7 +68,6 @@ DisableCustomAppAuthentication (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableOutlookPSTVersionTrimming (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisablePersonalListCreation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableSpacesActivation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-DisableVersionExpirationSetting (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableVivaConnectionsAnalytics (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisabledModernListTemplateIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 DisplayStartASiteOption (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -88,6 +87,7 @@ EnableAzureADB2BIntegration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableGuestSignInAcceleration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnablePromotedFileHandlers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableRestrictedAccessControl (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+EnableVersionExpirationSetting (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ExcludedBlockDownloadGroupIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 ExcludedFileExtensionsForSyncClient (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 ExemptNativeUsersFromTenantLevelRestricedAccessControl (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

@@ -481,6 +481,7 @@ OpenWeb (SP.Site) | ✅ | ✅ | ✅ | ✅
 OpenWebById (SP.Site) | ✅ | ✅ | ✅ | ✅
 OpenWebUsingPath (SP.Site) | ✅ | ✅ | ❌ | ❌
 OrgAssets (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
+OrgAssetsWithCacheFlag (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
 OrgNews | ✅ | ❌ | ❌ | ❌
 OverridePolicyTip (SP.ListItem) | ✅ | ✅ | ✅ | ❌
 PageContextCore (SP.Web) | ✅ | ❌ | ❌ | ❌

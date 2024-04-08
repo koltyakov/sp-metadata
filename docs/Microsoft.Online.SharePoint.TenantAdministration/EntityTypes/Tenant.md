@@ -88,7 +88,6 @@ DisableOutlookPSTVersionTrimming (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisablePersonalListCreation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableReportProblemDialog (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableSpacesActivation (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-DisableVersionExpirationSetting (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisableVivaConnectionsAnalytics (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 DisabledModernListTemplateIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 DisabledWebPartIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
@@ -123,6 +122,7 @@ EnableRestrictedAccessControl (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableSensitivityLabelForPDF (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableSiteArchive (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableTenantRestrictionsInsights (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+EnableVersionExpirationSetting (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnabledFlightAllowAADB2BSkipCheckingOTP (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ExcludedBlockDownloadGroupIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 ExcludedFileExtensionsForSyncClient (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌

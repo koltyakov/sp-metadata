@@ -21,7 +21,6 @@ Language (Edm.String) | ✅ | ❌ | ❌ | ❌
 LayoutWebpartsContent (Edm.String) | ✅ | ✅ | ❌ | ❌
 Name (Edm.String) | ✅ | ❌ | ❌ | ❌
 SitePageFlags (Edm.String) | ✅ | ❌ | ❌ | ❌
-TranspileContent (Edm.String) | ✅ | ❌ | ❌ | ❌
 
 ### Navigation Properties
 

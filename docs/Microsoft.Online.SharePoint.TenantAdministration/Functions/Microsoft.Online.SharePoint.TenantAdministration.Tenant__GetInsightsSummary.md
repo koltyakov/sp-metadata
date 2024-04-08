@@ -10,7 +10,9 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-content (Edm.String) | ✅ | ❌ | ❌ | ❌
 dataFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 insightsScenario (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+maxContentSize (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+maxTokenSize (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 pageIndex (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+timeoutMS (Edm.Int32) | ✅ | ❌ | ❌ | ❌

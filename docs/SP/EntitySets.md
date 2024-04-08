@@ -522,7 +522,6 @@ SiteDesignRuns | ✅ | ❌ | ❌ | ❌
 SiteHealthSummarys | ✅ | ✅ | ✅ | ✅
 SiteIconManagers | ✅ | ❌ | ❌ | ❌
 SiteMoveJobEntityDatas | ✅ | ❌ | ❌ | ❌
-SiteMoveServiceInfos | ✅ | ❌ | ❌ | ❌
 SiteMoveServices | ✅ | ❌ | ❌ | ❌
 SitePageMetadatas | ✅ | ✅ | ❌ | ❌
 SitePageServices | ✅ | ✅ | ❌ | ❌

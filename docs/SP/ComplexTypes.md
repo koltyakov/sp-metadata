@@ -6,11 +6,16 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [AccessRequestResponse](./ComplexTypes/AccessRequestResponse.md) | ✅ | ❌ | ❌ | ❌
 [AdditionalAccessStatusResponse](./ComplexTypes/AdditionalAccessStatusResponse.md) | ✅ | ❌ | ❌ | ❌
+[AgreementDataPair](./ComplexTypes/AgreementDataPair.md) | ✅ | ❌ | ❌ | ❌
 [AgreementDocument](./ComplexTypes/AgreementDocument.md) | ✅ | ❌ | ❌ | ❌
 [AgreementDocumentsInfo](./ComplexTypes/AgreementDocumentsInfo.md) | ✅ | ❌ | ❌ | ❌
 [AgreementESignStatusUpdatedPayload](./ComplexTypes/AgreementESignStatusUpdatedPayload.md) | ✅ | ❌ | ❌ | ❌
+[AgreementLocation](./ComplexTypes/AgreementLocation.md) | ✅ | ❌ | ❌ | ❌
 [AgreementMetaData](./ComplexTypes/AgreementMetaData.md) | ✅ | ❌ | ❌ | ❌
+[AgreementReportBaseData](./ComplexTypes/AgreementReportBaseData.md) | ✅ | ❌ | ❌ | ❌
+[AgreementReportFilter](./ComplexTypes/AgreementReportFilter.md) | ✅ | ❌ | ❌ | ❌
 [AgreementSearchParameters](./ComplexTypes/AgreementSearchParameters.md) | ✅ | ❌ | ❌ | ❌
+[AgreementSummaryData](./ComplexTypes/AgreementSummaryData.md) | ✅ | ❌ | ❌ | ❌
 [AlertCreationInformation](./ComplexTypes/AlertCreationInformation.md) | ✅ | ✅ | ❌ | ❌
 [AppLicense](./ComplexTypes/AppLicense.md) | ✅ | ✅ | ✅ | ✅
 [AppLicenseCollection](./ComplexTypes/AppLicenseCollection.md) | ✅ | ✅ | ✅ | ✅
@@ -179,6 +184,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SmartTemplateContentType](./ComplexTypes/SmartTemplateContentType.md) | ✅ | ❌ | ❌ | ❌
 [Snippet](./ComplexTypes/Snippet.md) | ✅ | ❌ | ❌ | ❌
 [SubwebQuery](./ComplexTypes/SubwebQuery.md) | ✅ | ✅ | ✅ | ✅
+[SystemSiteLockExpirationResult](./ComplexTypes/SystemSiteLockExpirationResult.md) | ✅ | ❌ | ❌ | ❌
 [TargetedSiteDetails](./ComplexTypes/TargetedSiteDetails.md) | ✅ | ❌ | ❌ | ❌
 [TemplateMetaData](./ComplexTypes/TemplateMetaData.md) | ✅ | ❌ | ❌ | ❌
 [TemplatizationMetaData](./ComplexTypes/TemplatizationMetaData.md) | ✅ | ❌ | ❌ | ❌

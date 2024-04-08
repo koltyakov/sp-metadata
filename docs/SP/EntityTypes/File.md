@@ -15,6 +15,7 @@ CustomizedPageStatus (Edm.Int32) | ✅ | ✅ | ✅ | ✅
 ETag (Edm.String) | ✅ | ✅ | ✅ | ✅
 Exists (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 ExistsAllowThrowForPolicyFailures (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ExistsWithException (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ExpirationDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 HasAlternateContentStreams (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IrmEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ❌

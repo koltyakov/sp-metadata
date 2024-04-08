@@ -30,6 +30,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [RecentAdminActionReportPayload](./ComplexTypes/RecentAdminActionReportPayload.md) | ✅ | ❌ | ❌ | ❌
 [RequireSecondaryContact](./ComplexTypes/RequireSecondaryContact.md) | ✅ | ❌ | ❌ | ❌
 [SPContainerCollection](./ComplexTypes/SPContainerCollection.md) | ✅ | ❌ | ❌ | ❌
+[SPContainerFilterOrder](./ComplexTypes/SPContainerFilterOrder.md) | ✅ | ❌ | ❌ | ❌
 [SPContainerProperties](./ComplexTypes/SPContainerProperties.md) | ✅ | ❌ | ❌ | ❌
 [SPContainerSortOrder](./ComplexTypes/SPContainerSortOrder.md) | ✅ | ❌ | ❌ | ❌
 [SPContainerTypeConfigurationProperties](./ComplexTypes/SPContainerTypeConfigurationProperties.md) | ✅ | ❌ | ❌ | ❌
