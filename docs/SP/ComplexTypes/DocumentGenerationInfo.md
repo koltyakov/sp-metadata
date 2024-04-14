@@ -14,3 +14,4 @@ FolderUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 Format (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 IsTempFile (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 TempFileUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+UpdateFolderPermissions (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

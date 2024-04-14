@@ -11,9 +11,10 @@ lastScopedOn (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 lastTransitionedOn (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 lookupSiteId (SP.FieldLookupValue) | ✅ | ❌ | ❌ | ❌
 notificationData (Edm.String) | ✅ | ❌ | ❌ | ❌
+notificationStatus (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 resourceId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+resourceState (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 resourceStateTransitionData (Edm.String) | ✅ | ❌ | ❌ | ❌
-resourceStatus (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 resourceType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 updatedOn (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 userResponses (Edm.String) | ✅ | ❌ | ❌ | ❌

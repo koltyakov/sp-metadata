@@ -10,6 +10,8 @@ AllowDownloadingNonWebViewableFiles (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowEditing (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowSelfServiceUpgrade (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AnonymousLinkExpirationInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+ApplyToExistingDocumentLibraries (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ApplyToNewDocumentLibraries (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ArchiveStatus (Edm.String) | ✅ | ❌ | ❌ | ❌
 AuthContextStrength (Edm.String) | ✅ | ❌ | ❌ | ❌
 AuthenticationContextLimitedAccess (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -37,9 +39,11 @@ Description (Edm.String) | ✅ | ❌ | ❌ | ❌
 DisableAppViews (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DisableCompanyWideSharingLinks (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 DisableFlows (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+EnableAutoExpirationVersionTrim (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ExcludeBlockDownloadPolicySiteOwners (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ExcludeBlockDownloadSharePointGroups (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 ExcludedBlockDownloadGroupIds (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+ExpireVersionsAfterDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ExternalUserExpirationInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 GroupId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 GroupOwnerLoginName (Edm.String) | ✅ | ❌ | ❌ | ❌
@@ -49,6 +53,7 @@ IBMode (Edm.String) | ✅ | ❌ | ❌ | ❌
 IBSegments (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 IBSegmentsToAdd (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 IBSegmentsToRemove (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+InheritVersionPolicyFromTenant (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsGroupOwnerSiteAdmin (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsHubSite (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsTeamsChannelConnected (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -64,6 +69,8 @@ LoopDefaultSharingLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 LoopDefaultSharingLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 LoopOverrideSharingCapability (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LoopSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+MajorVersionLimit (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+MajorWithMinorVersionsLimit (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MediaTranscription (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OverrideBlockUserInfoVisibility (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OverrideSharingCapability (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

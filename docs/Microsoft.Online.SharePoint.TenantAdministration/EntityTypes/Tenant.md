@@ -201,6 +201,7 @@ ODBAccessRequests (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ODBMembersCanShare (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ODBSensitivityRefreshWindowInHours (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ODBSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+ODBTranslationEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 OfficeClientADALDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 OneDriveBlockGuestsAsSiteAdmin (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OneDriveDefaultLinkToExistingAccess (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

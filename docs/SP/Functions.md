@@ -469,6 +469,7 @@ MoveToUsingPath (SP.Folder) | ✅ | ✅ | ❌ | ❌
 MoveViewFieldTo (SP.ViewFieldCollection) | ✅ | ✅ | ✅ | ✅
 MultiGeoCopyJob (SP.Site) | ✅ | ✅ | ❌ | ❌
 NeedsUpgradeByType (SP.Site) | ✅ | ✅ | ✅ | ✅
+NeedsUpgradeByTypeFromSpoShell (SP.Site) | ✅ | ❌ | ❌ | ❌
 OnHubSiteJoinRequestApproved (SP.Site) | ✅ | ❌ | ❌ | ❌
 OnHubSiteJoinRequestCanceled (SP.Site) | ✅ | ❌ | ❌ | ❌
 OnHubSiteJoinRequestStarted (SP.Site) | ✅ | ❌ | ❌ | ❌

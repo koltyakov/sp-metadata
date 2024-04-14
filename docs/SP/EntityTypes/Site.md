@@ -46,6 +46,7 @@ ReadOnly (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 RelatedGroupId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 RequiredDesignerVersion (Edm.String) | ✅ | ✅ | ✅ | ✅
 ResourcePath (SP.ResourcePath) | ✅ | ✅ | ❌ | ❌
+RestrictedAccessControlGroupsEnforcedOnSite (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 SandboxedCodeActivationCapability (Edm.Int32) | ✅ | ✅ | ✅ | ❌
 SearchBoxInNavBar (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SearchBoxPlaceholderText (Edm.String) | ✅ | ❌ | ❌ | ❌

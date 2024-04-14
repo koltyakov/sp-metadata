@@ -1,4 +1,4 @@
-# Function Import: FilterContainersAdminListData
+# Function Import: GetSortedSPOContainersByApplicationId
 
 > Namespace: Microsoft.Online.SharePoint.TenantAdministration
 
@@ -10,7 +10,7 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-containerStatus (Edm.String) | ✅ | ❌ | ❌ | ❌
-filterByColumnsList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SPContainerFilterOrder)) | ✅ | ❌ | ❌ | ❌
-pageSize (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+ascending (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+owningApplicationId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+paged (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 pagingToken (Edm.String) | ✅ | ❌ | ❌ | ❌

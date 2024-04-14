@@ -17,6 +17,7 @@ CreatedOn (Edm.String) | ✅ | ❌ | ❌ | ❌
 DeletedOn (Edm.String) | ✅ | ❌ | ❌ | ❌
 Description (Edm.String) | ✅ | ❌ | ❌ | ❌
 Owners (Collection(Microsoft.SharePoint.Containers.SPActiveContainerMemberProperties)) | ✅ | ❌ | ❌ | ❌
+OwnersCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OwningApplicationId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 PublisherName (Edm.String) | ✅ | ❌ | ❌ | ❌
 Readers (Collection(Microsoft.SharePoint.Containers.SPActiveContainerMemberProperties)) | ✅ | ❌ | ❌ | ❌

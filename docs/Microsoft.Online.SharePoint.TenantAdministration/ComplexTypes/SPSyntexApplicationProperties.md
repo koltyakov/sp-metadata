@@ -11,5 +11,7 @@ ApplicationId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 ApplicationName (Edm.String) | ✅ | ❌ | ❌ | ❌
 Applications (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 DelegatedPermissions (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+OverrideTenantSharingCapability (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 OwningApplicationId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 OwningApplicationName (Edm.String) | ✅ | ❌ | ❌ | ❌
+SharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌

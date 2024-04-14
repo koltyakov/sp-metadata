@@ -29,6 +29,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [PowerAppsEnvironmentContext](./ComplexTypes/PowerAppsEnvironmentContext.md) | ✅ | ❌ | ❌ | ❌
 [RecentAdminActionReportPayload](./ComplexTypes/RecentAdminActionReportPayload.md) | ✅ | ❌ | ❌ | ❌
 [RequireSecondaryContact](./ComplexTypes/RequireSecondaryContact.md) | ✅ | ❌ | ❌ | ❌
+[SPContainerApplicationProperties](./ComplexTypes/SPContainerApplicationProperties.md) | ✅ | ❌ | ❌ | ❌
 [SPContainerCollection](./ComplexTypes/SPContainerCollection.md) | ✅ | ❌ | ❌ | ❌
 [SPContainerFilterOrder](./ComplexTypes/SPContainerFilterOrder.md) | ✅ | ❌ | ❌ | ❌
 [SPContainerProperties](./ComplexTypes/SPContainerProperties.md) | ✅ | ❌ | ❌ | ❌
@@ -38,6 +39,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPDeletedContainerProperties](./ComplexTypes/SPDeletedContainerProperties.md) | ✅ | ❌ | ❌ | ❌
 [SPDeletedContainerTypeProperties](./ComplexTypes/SPDeletedContainerTypeProperties.md) | ✅ | ❌ | ❌ | ❌
 [SPListModernUXOff](./ComplexTypes/SPListModernUXOff.md) | ✅ | ❌ | ❌ | ❌
+[SPOAppBillingProperties](./ComplexTypes/SPOAppBillingProperties.md) | ✅ | ❌ | ❌ | ❌
 [SPOSiteCreationSource](./ComplexTypes/SPOSiteCreationSource.md) | ✅ | ❌ | ❌ | ❌
 [SPOSitePropertiesEnumerableFilter](./ComplexTypes/SPOSitePropertiesEnumerableFilter.md) | ✅ | ❌ | ❌ | ❌
 [SPOTenantWebTemplate](./ComplexTypes/SPOTenantWebTemplate.md) | ✅ | ❌ | ❌ | ❌

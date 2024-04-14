@@ -460,6 +460,7 @@ SPMigrationJobStatuss | ✅ | ✅ | ✅ | ❌
 SPO3rdPartyAADPermissionGrants | ✅ | ❌ | ❌ | ❌
 SPOGroups | ✅ | ❌ | ❌ | ❌
 SPOIdentityHelpers | ✅ | ❌ | ❌ | ❌
+SPOInternalUseOnly.TenantSharingRestrictions | ✅ | ❌ | ❌ | ❌
 SPOMalwareFiles | ✅ | ❌ | ❌ | ❌
 SPOPortalLaunchValidators | ✅ | ❌ | ❌ | ❌
 SPOTenantCdnPolicys | ✅ | ❌ | ❌ | ❌

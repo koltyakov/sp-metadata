@@ -11,6 +11,7 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 containerStatus (Edm.String) | ✅ | ❌ | ❌ | ❌
+filterByColumnsList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SPContainerFilterOrder)) | ✅ | ❌ | ❌ | ❌
 orderByColumnsList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SPContainerSortOrder)) | ✅ | ❌ | ❌ | ❌
 pageSize (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 pagingToken (Edm.String) | ✅ | ❌ | ❌ | ❌

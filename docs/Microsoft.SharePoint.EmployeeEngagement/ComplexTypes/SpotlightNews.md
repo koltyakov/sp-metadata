@@ -6,6 +6,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+AltText (Edm.String) | ✅ | ❌ | ❌ | ❌
 ImageUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 IsBoosted (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Order (Edm.Int32) | ✅ | ❌ | ❌ | ❌
