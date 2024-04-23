@@ -60,6 +60,8 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CreatableItemInfo](./ComplexTypes/CreatableItemInfo.md) | ✅ | ✅ | ✅ | ❌
 [CreatableItemInfoCollection](./ComplexTypes/CreatableItemInfoCollection.md) | ✅ | ✅ | ✅ | ❌
 [CreateAgreementFolderInfo](./ComplexTypes/CreateAgreementFolderInfo.md) | ✅ | ❌ | ❌ | ❌
+[CreateResponseDTO](./ComplexTypes/CreateResponseDTO.md) | ✅ | ❌ | ❌ | ❌
+[CreateReviewRequestDTO](./ComplexTypes/CreateReviewRequestDTO.md) | ✅ | ❌ | ❌ | ❌
 [CurrencyInformation](./ComplexTypes/CurrencyInformation.md) | ✅ | ✅ | ❌ | ❌
 [CurrencyInformationCollection](./ComplexTypes/CurrencyInformationCollection.md) | ✅ | ✅ | ❌ | ❌
 [CustomActionElement](./ComplexTypes/CustomActionElement.md) | ✅ | ✅ | ❌ | ❌
@@ -206,6 +208,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [UpgradeInfo](./ComplexTypes/UpgradeInfo.md) | ✅ | ✅ | ✅ | ✅
 [UsageInfo](./ComplexTypes/UsageInfo.md) | ✅ | ✅ | ✅ | ✅
 [UserCreationInformation](./ComplexTypes/UserCreationInformation.md) | ✅ | ✅ | ✅ | ✅
+[UserDTO](./ComplexTypes/UserDTO.md) | ✅ | ❌ | ❌ | ❌
 [UserIdInfo](./ComplexTypes/UserIdInfo.md) | ✅ | ✅ | ✅ | ✅
 [ViewCreationInformation](./ComplexTypes/ViewCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [Visualization](./ComplexTypes/Visualization.md) | ✅ | ✅ | ❌ | ❌

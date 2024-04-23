@@ -10,4 +10,4 @@ Action (Edm.String) | ✅ | ❌ | ❌ | ❌
 ContractCategory (Edm.String) | ✅ | ❌ | ❌ | ❌
 ContractCategoryId (Edm.String) | ✅ | ❌ | ❌ | ❌
 ReviewType (Edm.String) | ✅ | ❌ | ❌ | ❌
-Reviewers (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+Reviewers (Collection(SP.UserDTO)) | ✅ | ❌ | ❌ | ❌

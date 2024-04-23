@@ -10,3 +10,4 @@ hasInheritedLinks (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 links (Collection(SP.Sharing.LinkInfo)) | ✅ | ✅ | ❌ | ❌
 principals (Collection(SP.Sharing.PrincipalInfo)) | ✅ | ✅ | ❌ | ❌
 siteAdmins (Collection(SP.Sharing.PrincipalInfo)) | ✅ | ✅ | ❌ | ❌
+totalNumberOfPrincipals (Edm.Int32) | ✅ | ❌ | ❌ | ❌

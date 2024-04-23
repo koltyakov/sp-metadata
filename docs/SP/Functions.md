@@ -713,6 +713,7 @@ SP_SharedWithMeItemCollection_GetCalendarEvents | ✅ | ❌ | ❌ | ❌
 [SP_SharedWithMeItemCollection_GetSharedWithMeItems](./Functions/SP_SharedWithMeItemCollection_GetSharedWithMeItems.md) | ✅ | ❌ | ❌ | ❌
 [<span title="SP_SharedWithMeItemCollection_RemoveFromSharedWithMe">SP_SharedWithMeItemCollection_RemoveFromSharedWith...</span> (SP SharedWithMeItemCollection RemoveFromSharedWithMe)](./Functions/SP_SharedWithMeItemCollection_RemoveFromSharedWithMe.md) | ✅ | ❌ | ❌ | ❌
 [<span title="SP_SharedWithMeItemCollection_RestoreToSharedWithMe">SP_SharedWithMeItemCollection_RestoreToSharedWithM...</span> (SP SharedWithMeItemCollection RestoreToSharedWithMe)](./Functions/SP_SharedWithMeItemCollection_RestoreToSharedWithMe.md) | ✅ | ❌ | ❌ | ❌
+SP_SiteFontPackages_Load | ✅ | ❌ | ❌ | ❌
 [SP_Site_Exists](./Functions/SP_Site_Exists.md) | ✅ | ✅ | ❌ | ❌
 [SP_Site_GetUrlById](./Functions/SP_Site_GetUrlById.md) | ✅ | ❌ | ❌ | ❌
 [SP_Site_GetUrlByIdForWeb](./Functions/SP_Site_GetUrlByIdForWeb.md) | ✅ | ❌ | ❌ | ❌
@@ -989,5 +990,6 @@ models | ✅ | ❌ | ❌ | ❌
 outofboxfontpackages | ✅ | ❌ | ❌ | ❌
 publications | ✅ | ❌ | ❌ | ❌
 site | ✅ | ✅ | ✅ | ✅
+sitefontpackages | ✅ | ❌ | ❌ | ❌
 web | ✅ | ✅ | ✅ | ✅
 workitems | ✅ | ❌ | ❌ | ❌

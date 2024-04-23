@@ -113,6 +113,7 @@ EnableAIPIntegration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableAutoExpirationVersionTrim (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableAutoNewsDigest (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableAzureADB2BIntegration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+EnableDirectToCustomerBilling (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableDiscoverableByOrganizationForVideos (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableGuestSignInAcceleration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableMinimumVersionRequirement (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

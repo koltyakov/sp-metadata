@@ -40,6 +40,10 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPDeletedContainerTypeProperties](./ComplexTypes/SPDeletedContainerTypeProperties.md) | ✅ | ❌ | ❌ | ❌
 [SPListModernUXOff](./ComplexTypes/SPListModernUXOff.md) | ✅ | ❌ | ❌ | ❌
 [SPOAppBillingProperties](./ComplexTypes/SPOAppBillingProperties.md) | ✅ | ❌ | ❌ | ❌
+[SPOFileVersionBatchDeleteJobProgress](./ComplexTypes/SPOFileVersionBatchDeleteJobProgress.md) | ✅ | ❌ | ❌ | ❌
+[SPOFileVersionExpirationReportJobProgress](./ComplexTypes/SPOFileVersionExpirationReportJobProgress.md) | ✅ | ❌ | ❌ | ❌
+[SPOFileVersionPolicySettings](./ComplexTypes/SPOFileVersionPolicySettings.md) | ✅ | ❌ | ❌ | ❌
+[SPOListParameters](./ComplexTypes/SPOListParameters.md) | ✅ | ❌ | ❌ | ❌
 [SPOSiteCreationSource](./ComplexTypes/SPOSiteCreationSource.md) | ✅ | ❌ | ❌ | ❌
 [SPOSitePropertiesEnumerableFilter](./ComplexTypes/SPOSitePropertiesEnumerableFilter.md) | ✅ | ❌ | ❌ | ❌
 [SPOTenantWebTemplate](./ComplexTypes/SPOTenantWebTemplate.md) | ✅ | ❌ | ❌ | ❌
