@@ -659,6 +659,7 @@
         <Property Name="Activity" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Add" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Alert" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AppConsentPrincipal" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ChangeTokenEnd" Type="SP.ChangeToken" />
         <Property Name="ChangeTokenStart" Type="SP.ChangeToken" />
         <Property Name="ContentType" Type="Edm.Boolean" Nullable="false" />
@@ -1495,6 +1496,7 @@
         <Property Name="Category" Type="Edm.String" />
         <Property Name="Country" Type="Edm.String" />
         <Property Name="IsDraft" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsExistingAgreement" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Language" Type="Edm.String" />
         <Property Name="State" Type="Edm.String" />
       </ComplexType>
@@ -3273,6 +3275,9 @@
       <EntityType Name="ChangeAlert" BaseType="SP.Change">
         <Property Name="AlertId" Type="Edm.Guid" Nullable="false" />
         <Property Name="WebId" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+      <EntityType Name="ChangeAppConsentPrincipal" BaseType="SP.Change">
+        <Property Name="AppConsentPrincipalId" Type="Edm.Int32" Nullable="false" />
       </EntityType>
       <EntityType Name="ChangeContentType" BaseType="SP.Change">
         <Property Name="ContentTypeId" Type="SP.ContentTypeId" />
@@ -11635,7 +11640,7 @@
         <FunctionImport Name="GetData" ReturnType="Microsoft.SharePoint.EmployeeEngagement.ConnectionsConfigurationAndData" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.EmployeeEngagement.VivaConnectionsPage" />
         </FunctionImport>
-        <FunctionImport Name="SetSpotlightConfiguration" IsBindable="true">
+        <FunctionImport Name="SetSpotlightConfiguration" ReturnType="Microsoft.SharePoint.EmployeeEngagement.ConnectionsConfigurationAndData" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.EmployeeEngagement.VivaConnectionsPage" />
           <Parameter Name="configuration" Type="Microsoft.SharePoint.EmployeeEngagement.SpotlightConfiguration" />
         </FunctionImport>
@@ -17245,11 +17250,10 @@
           <Parameter Name="hubSiteId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="principals" Type="Collection(Edm.String)" />
         </FunctionImport>
-        <FunctionImport Name="SendEmail" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
+        <FunctionImport Name="SendEmail" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="siteUrl" Type="Edm.String" />
-          <Parameter Name="status" Type="Edm.Int32" Nullable="false" />
-          <Parameter Name="customizedEmail" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="activityEventJson" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SetDefaultView" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -20412,6 +20416,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignImage">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Utilities.WebTemplateExtensions.TeamAppInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignMetadata">
@@ -32098,6 +32105,7 @@
       </ComplexType>
       <ComplexType Name="StartCoAuthMetaData">
         <Property Name="AuthoringSchemaFeatureVersions" Type="Collection(SP.Publishing.AuthoringSchemaFeatureVersion)" />
+        <Property Name="IsUserConsentProvidedForModerationStatus" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
       <ComplexType Name="TaxonomicProperties">
         <Property Name="Interest" Type="Collection(SP.Publishing.PropertyValue)" />
@@ -33804,10 +33812,10 @@
         <Property Name="SiteScriptIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="SupportedWebTemplates" Type="Collection(Edm.String)" />
         <Property Name="TargetPlatforms" Type="Collection(Edm.String)" />
-        <Property Name="TeamApps" Type="Collection(Edm.String)" />
         <Property Name="TeamChannels" Type="Collection(Edm.String)" />
         <Property Name="TeamImageAltText" Type="Edm.String" />
         <Property Name="TeamImageUrl" Type="Edm.String" />
+        <Property Name="TeamInstalledApps" Type="Collection(Microsoft.SharePoint.Utilities.WebTemplateExtensions.TeamAppInfo)" />
         <Property Name="TeamTemplate" Type="Edm.String" />
         <Property Name="TemplateAssets" Type="Collection(Edm.String)" />
         <Property Name="TemplateFeatures" Type="Collection(Edm.String)" />
@@ -33818,6 +33826,10 @@
       <ComplexType Name="SiteDesignImage">
         <Property Name="DisplayName" Type="Edm.String" />
         <Property Name="ImageUrl" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="TeamAppInfo">
+        <Property Name="Children" Type="Collection(Edm.String)" />
+        <Property Name="Name" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SiteDesignMetadata" BaseType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignCreationInfo">
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
@@ -35318,6 +35330,8 @@
         <Property Name="investigationState" Type="Edm.Int32" Nullable="false" />
         <Property Name="lastActivity" Type="Edm.DateTime" />
         <Property Name="lastUpdatedTime" Type="Edm.DateTime" />
+        <Property Name="ransomwareDetectionReason" Type="Edm.String" />
+        <Property Name="RansomwareDetectionScore" Type="Edm.Double" Nullable="false" />
         <Property Name="siteId" Type="Edm.Guid" Nullable="false" />
         <Property Name="siteName" Type="Edm.String" />
         <Property Name="siteOwner" Type="Edm.String" />
@@ -37529,6 +37543,7 @@
         <Property Name="TranslationSiteInfoList" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)" />
         <Property Name="TranslationSiteList" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="TranslationSiteListFileName" Type="Edm.String" />
+        <Property Name="UniversalAnnotationDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UnlicensedOneDriveForBusinessTenantMetricsData" Type="Microsoft.SharePoint.Administration.SPOUnlicensedODB.UnlicensedOdbTenantMetrics" />
         <Property Name="UseFindPeopleInPeoplePicker" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UsePersistentCookiesForExplorerView" Type="Edm.Boolean" Nullable="false" />
