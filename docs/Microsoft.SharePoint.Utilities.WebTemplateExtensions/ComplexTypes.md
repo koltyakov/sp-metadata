@@ -21,3 +21,4 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SiteScriptSerializationInfo](./ComplexTypes/SiteScriptSerializationInfo.md) | ✅ | ❌ | ❌ | ❌
 [SiteScriptSerializationResult](./ComplexTypes/SiteScriptSerializationResult.md) | ✅ | ❌ | ❌ | ❌
 [SiteScriptUpdateInfo](./ComplexTypes/SiteScriptUpdateInfo.md) | ✅ | ✅ | ❌ | ❌
+[TeamAppInfo](./ComplexTypes/TeamAppInfo.md) | ✅ | ❌ | ❌ | ❌

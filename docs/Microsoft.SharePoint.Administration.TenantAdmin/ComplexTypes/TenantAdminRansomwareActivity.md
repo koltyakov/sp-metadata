@@ -6,6 +6,7 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+RansomwareDetectionScore (Edm.Double) | ✅ | ❌ | ❌ | ❌
 activityGeneratedOn (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 activityId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 assignedTo (Edm.String) | ✅ | ❌ | ❌ | ❌
@@ -24,6 +25,7 @@ impactedDocLibName (Edm.String) | ✅ | ❌ | ❌ | ❌
 investigationState (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 lastActivity (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 lastUpdatedTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
+ransomwareDetectionReason (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 siteName (Edm.String) | ✅ | ❌ | ❌ | ❌
 siteOwner (Edm.String) | ✅ | ❌ | ❌ | ❌

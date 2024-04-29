@@ -32,6 +32,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CampainAnalytics](./EntityTypes/CampainAnalytics.md) | ✅ | ❌ | ❌ | ❌
 [Change](./EntityTypes/Change.md) | ✅ | ✅ | ✅ | ✅
 [ChangeAlert](./EntityTypes/ChangeAlert.md) | ✅ | ✅ | ✅ | ✅
+[ChangeAppConsentPrincipal](./EntityTypes/ChangeAppConsentPrincipal.md) | ✅ | ❌ | ❌ | ❌
 [ChangeContentType](./EntityTypes/ChangeContentType.md) | ✅ | ✅ | ✅ | ✅
 [ChangeField](./EntityTypes/ChangeField.md) | ✅ | ✅ | ✅ | ✅
 [ChangeFile](./EntityTypes/ChangeFile.md) | ✅ | ✅ | ✅ | ✅

@@ -11,5 +11,6 @@ AgreementUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 Category (Edm.String) | ✅ | ❌ | ❌ | ❌
 Country (Edm.String) | ✅ | ❌ | ❌ | ❌
 IsDraft (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+IsExistingAgreement (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Language (Edm.String) | ✅ | ❌ | ❌ | ❌
 State (Edm.String) | ✅ | ❌ | ❌ | ❌

@@ -9,6 +9,7 @@ Property | SPO | SP 2019 | SP 2016 | SP 2013
 Activity (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 Add (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 Alert (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
+AppConsentPrincipal (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ChangeTokenEnd (SP.ChangeToken) | ✅ | ✅ | ✅ | ✅
 ChangeTokenStart (SP.ChangeToken) | ✅ | ✅ | ✅ | ✅
 ContentType (Edm.Boolean) | ✅ | ✅ | ✅ | ✅

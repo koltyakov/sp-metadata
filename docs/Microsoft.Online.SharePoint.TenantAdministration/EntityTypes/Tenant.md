@@ -284,6 +284,7 @@ TranslationEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 TranslationSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
 TranslationSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 TranslationSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
+UniversalAnnotationDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UnlicensedOneDriveForBusinessTenantMetricsData (Microsoft.SharePoint.Administration.SPOUnlicensedODB.UnlicensedOdbTenantMetrics) | ✅ | ❌ | ❌ | ❌
 UseFindPeopleInPeoplePicker (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UsePersistentCookiesForExplorerView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
