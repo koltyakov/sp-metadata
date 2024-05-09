@@ -15,3 +15,4 @@ locale (Edm.String) | ✅ | ❌ | ❌ | ❌
 message (Edm.String) | ✅ | ❌ | ❌ | ❌
 name (Edm.String) | ✅ | ❌ | ❌ | ❌
 recipientSets (Edm.String) | ✅ | ❌ | ❌ | ❌
+signingMode (Edm.String) | ✅ | ❌ | ❌ | ❌

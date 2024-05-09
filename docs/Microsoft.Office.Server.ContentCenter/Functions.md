@@ -4,6 +4,7 @@
 
 Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+AddModelDependency (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
 BatchDelete (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)) | ✅ | ❌ | ❌ | ❌
 BatchRemove (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)) | ✅ | ❌ | ❌ | ❌
 BatchUnpromote (Collection(Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication)) | ✅ | ❌ | ❌ | ❌
@@ -41,6 +42,7 @@ InvokeDataverseQuery (Microsoft.Office.Server.ContentCenter.SPMachineLearningHub
 <span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningPublicationsEntityData">Microsoft_Office_Server_ContentCenter_SPMachineLea...</span> (Microsoft Office Server ContentCenter SPMachineLearningPublicationsEntityData) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningSampleEntityData">Microsoft_Office_Server_ContentCenter_SPMachineLea...</span> (Microsoft Office Server ContentCenter SPMachineLearningSampleEntityData) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItemEntityData">Microsoft_Office_Server_ContentCenter_SPMachineLea...</span> (Microsoft Office Server ContentCenter SPMachineLearningWorkItemEntityData) | ✅ | ❌ | ❌ | ❌
+RemoveModelDependency (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
 Rename (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
 RenameExtractor (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌
 SetAsModelAuthor (Microsoft.Office.Server.ContentCenter.SPMachineLearningModel) | ✅ | ❌ | ❌ | ❌

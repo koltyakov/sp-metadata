@@ -516,7 +516,6 @@ SignalStores | ✅ | ✅ | ✅ | ❌
 SiteAtTargetEntityDatas | ✅ | ❌ | ❌ | ❌
 SiteCollectionAppCatalogAllowedItems | ✅ | ✅ | ❌ | ❌
 SiteCollectionCorporateCatalogAccessors | ✅ | ✅ | ❌ | ❌
-SiteCollectionManagementServices | ✅ | ❌ | ❌ | ❌
 SiteContentProcessingInfoProviders | ✅ | ❌ | ❌ | ❌
 SiteDesignPrincipals | ✅ | ✅ | ❌ | ❌
 SiteDesignRuns | ✅ | ❌ | ❌ | ❌

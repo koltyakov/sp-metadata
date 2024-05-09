@@ -16,7 +16,6 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPOTenantWebTemplateCollection](./EntityTypes/SPOTenantWebTemplateCollection.md) | ✅ | ❌ | ❌ | ❌
 [SPOWebAppServicePrincipalPublic](./EntityTypes/SPOWebAppServicePrincipalPublic.md) | ✅ | ❌ | ❌ | ❌
 [SharePointSiteSharingInsights](./EntityTypes/SharePointSiteSharingInsights.md) | ✅ | ❌ | ❌ | ❌
-[SiteCollectionManagementService](./EntityTypes/SiteCollectionManagementService.md) | ✅ | ❌ | ❌ | ❌
 [SiteProperties](./EntityTypes/SiteProperties.md) | ✅ | ❌ | ❌ | ❌
 [SpoOperation](./EntityTypes/SpoOperation.md) | ✅ | ❌ | ❌ | ❌
 [Tenant](./EntityTypes/Tenant.md) | ✅ | ❌ | ❌ | ❌

@@ -87,6 +87,7 @@ ReadOnlyForUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RelatedGroupId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 RequestFilesLinkEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RequestFilesLinkExpirationInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+RestrictContentOrgWideSearch (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RestrictedAccessControl (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RestrictedAccessControlGroups (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 RestrictedAccessControlGroupsToAdd (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌

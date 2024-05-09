@@ -6,6 +6,8 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 [AccessRequestResponse](./ComplexTypes/AccessRequestResponse.md) | ✅ | ❌ | ❌ | ❌
 [AdditionalAccessStatusResponse](./ComplexTypes/AdditionalAccessStatusResponse.md) | ✅ | ❌ | ❌ | ❌
+[AgreementAttributeDTO](./ComplexTypes/AgreementAttributeDTO.md) | ✅ | ❌ | ❌ | ❌
+[AgreementAttributeRequestDTO](./ComplexTypes/AgreementAttributeRequestDTO.md) | ✅ | ❌ | ❌ | ❌
 [AgreementDataPair](./ComplexTypes/AgreementDataPair.md) | ✅ | ❌ | ❌ | ❌
 [AgreementDocument](./ComplexTypes/AgreementDocument.md) | ✅ | ❌ | ❌ | ❌
 [AgreementDocumentsInfo](./ComplexTypes/AgreementDocumentsInfo.md) | ✅ | ❌ | ❌ | ❌
@@ -60,7 +62,6 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [CreatableItemInfo](./ComplexTypes/CreatableItemInfo.md) | ✅ | ✅ | ✅ | ❌
 [CreatableItemInfoCollection](./ComplexTypes/CreatableItemInfoCollection.md) | ✅ | ✅ | ✅ | ❌
 [CreateAgreementFolderInfo](./ComplexTypes/CreateAgreementFolderInfo.md) | ✅ | ❌ | ❌ | ❌
-[CreateResponseDTO](./ComplexTypes/CreateResponseDTO.md) | ✅ | ❌ | ❌ | ❌
 [CreateReviewRequestDTO](./ComplexTypes/CreateReviewRequestDTO.md) | ✅ | ❌ | ❌ | ❌
 [CurrencyInformation](./ComplexTypes/CurrencyInformation.md) | ✅ | ✅ | ❌ | ❌
 [CurrencyInformationCollection](./ComplexTypes/CurrencyInformationCollection.md) | ✅ | ✅ | ❌ | ❌
@@ -158,6 +159,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ReviewConfigurationPayload](./ComplexTypes/ReviewConfigurationPayload.md) | ✅ | ❌ | ❌ | ❌
 [ReviewConfigurationResponse](./ComplexTypes/ReviewConfigurationResponse.md) | ✅ | ❌ | ❌ | ❌
 [ReviewDeletionConfigurationResponse](./ComplexTypes/ReviewDeletionConfigurationResponse.md) | ✅ | ❌ | ❌ | ❌
+[ReviewWorkFlowResponseDTO](./ComplexTypes/ReviewWorkFlowResponseDTO.md) | ✅ | ❌ | ❌ | ❌
 [ReviewerInfo](./ComplexTypes/ReviewerInfo.md) | ✅ | ❌ | ❌ | ❌
 [RoleDefinitionCreationInformation](./ComplexTypes/RoleDefinitionCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [RulesDefinition](./ComplexTypes/RulesDefinition.md) | ✅ | ❌ | ❌ | ❌
@@ -202,6 +204,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [UpdateAgreementESignConfigPayload](./ComplexTypes/UpdateAgreementESignConfigPayload.md) | ✅ | ❌ | ❌ | ❌
 [UpdateAgreementMetaDataPayload](./ComplexTypes/UpdateAgreementMetaDataPayload.md) | ✅ | ❌ | ❌ | ❌
 [UpdateAgreementStatePayload](./ComplexTypes/UpdateAgreementStatePayload.md) | ✅ | ❌ | ❌ | ❌
+[UpdateReviewRequestDTO](./ComplexTypes/UpdateReviewRequestDTO.md) | ✅ | ❌ | ❌ | ❌
 [UpdateTemplateInfo](./ComplexTypes/UpdateTemplateInfo.md) | ✅ | ❌ | ❌ | ❌
 [UpdateTemplateInfoV2](./ComplexTypes/UpdateTemplateInfoV2.md) | ✅ | ❌ | ❌ | ❌
 [UpdateUploadedAgreementMetadataPayload](./ComplexTypes/UpdateUploadedAgreementMetadataPayload.md) | ✅ | ❌ | ❌ | ❌

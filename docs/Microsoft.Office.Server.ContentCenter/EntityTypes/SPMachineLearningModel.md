@@ -25,6 +25,7 @@ ManagementAllowed (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ModelDependencies (Microsoft.Office.Server.ContentCenter.SPModelDependencies) | ✅ | ❌ | ❌ | ❌
 ModelName (Edm.String) | ✅ | ❌ | ❌ | ❌
 ModelPublishConfig (Microsoft.Office.Server.ContentCenter.SPModelPublishConfig) | ✅ | ❌ | ❌ | ❌
+ModelRules (Edm.String) | ✅ | ❌ | ❌ | ❌
 ModelSettings (Edm.String) | ✅ | ❌ | ❌ | ❌
 ModelType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ModelTypeAsString (Edm.String) | ✅ | ❌ | ❌ | ❌
