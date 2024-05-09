@@ -169,6 +169,19 @@
         <Property Name="RoleValue" Type="Edm.Int32" Nullable="false" />
         <Property Name="StatusCode" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="AgreementAttributeDTO">
+        <Property Name="CurrentUser" Type="SP.UserDTO" />
+        <Property Name="Reviewer" Type="SP.UserDTO" />
+        <Property Name="ReviewId" Type="Edm.String" />
+        <Property Name="ReviewSubmissionDate" Type="Edm.DateTime" />
+      </ComplexType>
+      <ComplexType Name="UserDTO">
+        <Property Name="Email" Type="Edm.String" />
+        <Property Name="LoginName" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="AgreementAttributeRequestDTO">
+        <Property Name="DocumentUri" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="AgreementDataPair">
         <Property Name="Count" Type="Edm.Int32" Nullable="false" />
         <Property Name="Name" Type="Edm.String" />
@@ -337,16 +350,6 @@
         <Property Name="AgreementFolderServerRelativeUrl" Type="Edm.String" />
         <Property Name="AgreementNumber" Type="Edm.String" />
       </ComplexType>
-      <ComplexType Name="CreateResponseDTO">
-        <Property Name="Requestor" Type="SP.UserDTO" />
-        <Property Name="Reviewer" Type="SP.UserDTO" />
-        <Property Name="ReviewId" Type="Edm.String" />
-        <Property Name="SubmissionDate" Type="Edm.DateTime" />
-      </ComplexType>
-      <ComplexType Name="UserDTO">
-        <Property Name="Email" Type="Edm.String" />
-        <Property Name="LoginName" Type="Edm.String" />
-      </ComplexType>
       <ComplexType Name="CreateReviewRequestDTO">
         <Property Name="DocumentUri" Type="Edm.String" />
         <Property Name="Reviewer" Type="Edm.String" />
@@ -479,6 +482,10 @@
         <Property Name="Action" Type="Edm.String" />
         <Property Name="ContractCategoryId" Type="Edm.String" />
         <Property Name="Message" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ReviewWorkFlowResponseDTO">
+        <Property Name="Action" Type="Edm.String" />
+        <Property Name="Status" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="ScriptSafeDomainEntityData">
         <Property Name="DomainName" Type="Edm.String" />
@@ -1476,6 +1483,10 @@
         <Property Name="AgreementUrl" Type="Edm.String" />
         <Property Name="CurrentState" Type="Edm.Int32" Nullable="false" />
         <Property Name="NextState" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="UpdateReviewRequestDTO">
+        <Property Name="Action" Type="Edm.String" />
+        <Property Name="DocumentUri" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="UpdateTemplateInfoV2">
         <Property Name="DeletedPlaceholderColumnIds" Type="Collection(Edm.String)" />
@@ -4675,7 +4686,6 @@
         <EntitySet Name="ResponseMessageCenters" EntityType="Microsoft.Online.SharePoint.TenantAdministration.ResponseMessageCenter" />
         <EntitySet Name="ResponseServiceHealths" EntityType="Microsoft.Online.SharePoint.TenantAdministration.ResponseServiceHealth" />
         <EntitySet Name="SharePointSiteSharingInsightss" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SharePointSiteSharingInsights" />
-        <EntitySet Name="SiteCollectionManagementServices" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
         <EntitySet Name="SitePropertiess" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SiteProperties" />
         <EntitySet Name="SPOGroups" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SPOGroup" />
         <EntitySet Name="SPOMalwareFiles" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SPOMalwareFile" />
@@ -5933,6 +5943,11 @@
           <Parameter Name="urls" Type="Collection(Edm.String)" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningModelEntityData" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModelEntityData" IsComposable="true" EntitySet="SPMachineLearningModelEntityDatas" />
+        <FunctionImport Name="AddModelDependency" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
+          <Parameter Name="modelId" Type="Edm.String" />
+          <Parameter Name="updateExisting" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="Copy" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsBindable="true" EntitySet="Models">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
           <Parameter Name="copyTo" Type="Edm.String" />
@@ -5945,6 +5960,10 @@
         </FunctionImport>
         <FunctionImport Name="InvokeConnectorQuery" ReturnType="Edm.Stream" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
+        </FunctionImport>
+        <FunctionImport Name="RemoveModelDependency" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
+          <Parameter Name="modelId" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Rename" ReturnType="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" IsBindable="true" EntitySet="Models">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel" />
@@ -11595,6 +11614,7 @@
         </FunctionImport>
         <FunctionImport Name="FullDashboardContent" ReturnType="Microsoft.SharePoint.EmployeeEngagement.DashboardConfiguration" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.EmployeeEngagement" />
+          <Parameter Name="canvasAsJson" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="GetDashboardPersonalization" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.EmployeeEngagement" />
@@ -14498,7 +14518,6 @@
           <Parameter Name="fileOffset" Type="Edm.Int64" Nullable="false" />
           <Parameter Name="checksum" Type="Edm.String" />
           <Parameter Name="stream" Type="Edm.Stream" />
-          <Parameter Name="sandboxId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_File_GetContentVerFromTag" ReturnType="Edm.Int32" IsSideEffecting="false">
           <Parameter Name="contentTag" Type="Edm.String" />
@@ -16314,35 +16333,6 @@
         </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_TenantAdministration_ResponseMessageCenter" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.ResponseMessageCenter" IsComposable="true" EntitySet="ResponseMessageCenters" />
         <FunctionImport Name="Microsoft_Online_SharePoint_TenantAdministration_ResponseServiceHealth" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.ResponseServiceHealth" IsComposable="true" EntitySet="ResponseServiceHealths" />
-        <FunctionImport Name="Microsoft_Online_SharePoint_TenantAdministration_SiteCollectionManagementService" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" IsComposable="true" EntitySet="SiteCollectionManagementServices" />
-        <FunctionImport Name="ExportCSVFile" ReturnType="Edm.String" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
-          <Parameter Name="viewXml" Type="Edm.String" />
-          <Parameter Name="timeZoneId" Type="Edm.Int32" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="GetSiteCohortsSummary" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SiteCohortsSummary" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
-          <Parameter Name="view" Type="Edm.String" />
-        </FunctionImport>
-        <FunctionImport Name="GetSiteCreationSource" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SiteCreationSource" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
-        </FunctionImport>
-        <FunctionImport Name="GetSiteDescription" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
-          <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="GetTrackViewFeatureAlwaysVisible" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
-        </FunctionImport>
-        <FunctionImport Name="Office365ProvidedSharepointSiteActivityDataReady" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
-        </FunctionImport>
-        <FunctionImport Name="ResetTimestampUpdateOffice365ProvidedSharepointSiteActivityData" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
-        </FunctionImport>
-        <FunctionImport Name="SetTrackViewFeatureAlwaysVisible" ReturnType="Edm.Boolean" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService" />
-        </FunctionImport>
         <FunctionImport Name="CheckSiteIsArchivedById" ReturnType="Edm.Boolean" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)" />
           <Parameter Name="siteId" Type="Edm.Guid" Nullable="false" />
@@ -16563,10 +16553,6 @@
         <FunctionImport Name="DeleteRecentAdminActionReport" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="reportId" Type="Edm.Int32" Nullable="false" />
-        </FunctionImport>
-        <FunctionImport Name="DeleteSPOContainerTypeById" IsBindable="true">
-          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
-          <Parameter Name="containerTypeId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="DisableCollaborationInsightsDataCollection" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -21951,6 +21937,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/ModelPublishConfig">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/ModelRules">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningModel/ModelSettings">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -24190,9 +24179,6 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.ResponseServiceHealth/IncidentCount">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SPOGroup">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -24580,6 +24566,9 @@
       <Annotations Target="SP.ApiData/Microsoft_Office_Server_ContentCenter_SPMachineLearningModelEntityData()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/AddModelDependency(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel, Edm.String, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Copy(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -24590,6 +24579,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/InvokeConnectorQuery(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/RemoveModelDependency(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Rename(Microsoft.Office.Server.ContentCenter.SPMachineLearningModel, Edm.String)">
@@ -27331,33 +27323,6 @@
       <Annotations Target="SP.ApiData/Microsoft_Online_SharePoint_TenantAdministration_ResponseServiceHealth()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Microsoft_Online_SharePoint_TenantAdministration_SiteCollectionManagementService()">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/ExportCSVFile(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService, Edm.String, Edm.Int32)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetSiteCohortsSummary(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService, Edm.String)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetSiteCreationSource(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetSiteDescription(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService, Edm.Guid)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/GetTrackViewFeatureAlwaysVisible(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/Office365ProvidedSharepointSiteActivityDataReady(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/ResetTimestampUpdateOffice365ProvidedSharepointSiteActivityData(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="SP.ApiData/SetTrackViewFeatureAlwaysVisible(Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService)">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_Online_SharePoint_TenantAdministration_SPOGroup()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -27865,6 +27830,7 @@
         <Property Name="ManagementAllowed" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ModelName" Type="Edm.String" />
         <Property Name="ModelPublishConfig" Type="Microsoft.Office.Server.ContentCenter.SPModelPublishConfig" />
+        <Property Name="ModelRules" Type="Edm.String" />
         <Property Name="ModelSettings" Type="Edm.String" />
         <Property Name="ModelType" Type="Edm.Int32" Nullable="false" />
         <Property Name="ModelTypeAsString" Type="Edm.String" />
@@ -34609,6 +34575,7 @@
         <Property Name="message" Type="Edm.String" />
         <Property Name="name" Type="Edm.String" />
         <Property Name="recipientSets" Type="Edm.String" />
+        <Property Name="signingMode" Type="Edm.String" />
         <Property Name="targetFolderUri" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="CreateAgreementModel">
@@ -34621,6 +34588,7 @@
         <Property Name="message" Type="Edm.String" />
         <Property Name="name" Type="Edm.String" />
         <Property Name="recipientSets" Type="Edm.String" />
+        <Property Name="signingMode" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="DeclineAgreementModel">
         <Property Name="documentId" Type="Edm.Guid" Nullable="false" />
@@ -34671,6 +34639,8 @@
       </ComplexType>
       <ComplexType Name="DashboardConfiguration">
         <Property Name="canvasContent" Type="Edm.String" />
+        <Property Name="dashboardItemId" Type="Edm.String" />
+        <Property Name="dashboardListId" Type="Edm.String" />
         <Property Name="dashboardUrl" Type="Edm.String" />
         <Property Name="extraComponents" Type="Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult)" />
         <Property Name="personalizationData" Type="Microsoft.SharePoint.EmployeeEngagement.Experience.DashboardContent" />
@@ -35634,6 +35604,7 @@
         <Property Name="principals" Type="Collection(SP.Sharing.Principal)" />
       </ComplexType>
       <ComplexType Name="PermissionCollection">
+        <Property Name="appConsentPrincipals" Type="Collection(SP.Sharing.PrincipalInfo)" />
         <Property Name="hasInheritedLinks" Type="Edm.Boolean" Nullable="false" />
         <Property Name="links" Type="Collection(SP.Sharing.LinkInfo)" />
         <Property Name="principals" Type="Collection(SP.Sharing.PrincipalInfo)" />
@@ -37049,12 +37020,6 @@
         <Property Name="StartDate" Type="Edm.String" />
         <Property Name="Total" Type="Edm.Int64" Nullable="false" />
       </EntityType>
-      <EntityType Name="SiteCollectionManagementService">
-        <Key>
-          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
-        </Key>
-        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
-      </EntityType>
       <EntityType Name="SiteProperties">
         <Key>
           <PropertyRef Name="AllowDownloadingNonWebViewableFiles" />
@@ -37140,6 +37105,7 @@
         <Property Name="RelatedGroupId" Type="Edm.Guid" Nullable="false" />
         <Property Name="RequestFilesLinkEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RequestFilesLinkExpirationInDays" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RestrictContentOrgWideSearch" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RestrictedAccessControl" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RestrictedAccessControlGroups" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="RestrictedAccessControlGroupsToAdd" Type="Collection(Edm.Guid)" Nullable="false" />
