@@ -1013,6 +1013,11 @@
         <Property Name="UpdatedData" Type="Edm.String" />
         <Property Name="UpdateResults" Type="Collection(SP.ListItemFormUpdateValue)" />
       </ComplexType>
+      <ComplexType Name="SPListItemVersionChange">
+        <Property Name="FieldTitle" Type="Edm.String" />
+        <Property Name="NewValue" Type="Edm.String" />
+        <Property Name="PreviousValue" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="SPListRule">
         <Property Name="ActionParams" Type="Edm.String" />
         <Property Name="ActionType" Type="Edm.Int32" Nullable="false" />
@@ -2767,6 +2772,7 @@
         <Key>
           <PropertyRef Name="VersionId" />
         </Key>
+        <Property Name="Changes" Type="Collection(SP.SPListItemVersionChange)" />
         <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
         <Property Name="IsCurrentVersion" Type="Edm.Boolean" Nullable="false" />
         <Property Name="VersionId" Type="Edm.Int32" Nullable="false" />
@@ -4687,6 +4693,7 @@
         <EntitySet Name="ResponseServiceHealths" EntityType="Microsoft.Online.SharePoint.TenantAdministration.ResponseServiceHealth" />
         <EntitySet Name="SharePointSiteSharingInsightss" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SharePointSiteSharingInsights" />
         <EntitySet Name="SitePropertiess" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SiteProperties" />
+        <EntitySet Name="SPDataGovernanceRestApiClientBases" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceRestApiClientBase" />
         <EntitySet Name="SPOGroups" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SPOGroup" />
         <EntitySet Name="SPOMalwareFiles" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SPOMalwareFile" />
         <EntitySet Name="SPOPortalLaunchValidators" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SPOPortalLaunchValidator" />
@@ -16288,6 +16295,7 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantManagement.Office365Tenant" />
           <Parameter Name="markAllFilesAsSensitiveByDefault" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="odbSensitivityRefreshWindowInHours" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="executionMode" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SetOrgAssetsLib" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantManagement.Office365Tenant" />
@@ -16367,6 +16375,44 @@
         <EntitySet Name="SpoOperations" EntityType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" />
         <FunctionImport Name="Update" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SpoOperation" IsBindable="true" EntitySet="SpoOperations">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SiteProperties" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_TenantAdministration_SPDataGovernanceInsightRestApiClient" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightRestApiClient" IsComposable="true" EntitySet="SPDataGovernanceRestApiClientBases">
+          <Parameter Name="authorizationHeader" Type="Edm.String" />
+          <Parameter Name="url" Type="Edm.String" />
+          <Parameter Name="userAgent" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="CreateDataAccessGovernanceReport" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightMetadata" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightRestApiClient" />
+          <Parameter Name="reportEntity" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="workload" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="reportType" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="fileSensitivityLabelName" Type="Edm.String" />
+          <Parameter Name="fileSensitivityLabelGUID" Type="Edm.String" />
+          <Parameter Name="name" Type="Edm.String" />
+          <Parameter Name="template" Type="Collection(Edm.Int32)" Nullable="false" />
+          <Parameter Name="privacy" Type="Edm.String" />
+          <Parameter Name="siteSensitivityLabelGUID" Type="Collection(Edm.Guid)" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="ExportSPODataAccessGovernanceInsight" ReturnType="Edm.String" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightRestApiClient" />
+          <Parameter Name="reportId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetSPODataAccessGovernanceInsight" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightResponse)" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightRestApiClient" />
+          <Parameter Name="reportEntity" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetSPODataAccessGovernanceInsightById" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightResponse" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightRestApiClient" />
+          <Parameter Name="reportId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="RemoveDataAccessGovernanceReport" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightRestApiClient" />
+          <Parameter Name="reportId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_TenantAdministration_SPDataGovernanceRestApiClientBase" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceRestApiClientBase" IsComposable="true" EntitySet="SPDataGovernanceRestApiClientBases">
+          <Parameter Name="authorizationHeader" Type="Edm.String" />
+          <Parameter Name="url" Type="Edm.String" />
+          <Parameter Name="userAgent" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_TenantAdministration_SPOGroup" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPOGroup" IsComposable="true" EntitySet="SPOGroups" />
         <FunctionImport Name="AddAsGroupOwnerAndMember" IsBindable="true">
@@ -16825,6 +16871,9 @@
           <Parameter Name="localeId" Type="Edm.Int64" Nullable="false" />
           <Parameter Name="compatibilityLevel" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="GetSPOWebTemplatesAllowedForArchiving" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection" IsComposable="true" IsBindable="true" EntitySet="SPOTenantWebTemplateCollections">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
+        </FunctionImport>
         <FunctionImport Name="GetTargetedSitesDetails" ReturnType="Collection(SP.TargetedSiteDetails)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
         </FunctionImport>
@@ -17274,6 +17323,7 @@
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
           <Parameter Name="markAllFilesAsSensitiveByDefault" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="odbSensitivityRefreshWindowInHours" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="executionMode" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SetOrgAssetsWithType" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.Tenant" />
@@ -20836,6 +20886,9 @@
       <Annotations Target="Microsoft.SharePoint.Comments.CommentInformation">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Comments.ContentAnchor">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Comments.Client.Identity">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21221,6 +21274,18 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ListItemCreationInformationUsingPath">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.SPListItemVersionChange">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.SPListItemVersionChange/FieldTitle">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.SPListItemVersionChange/NewValue">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.SPListItemVersionChange/PreviousValue">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.SPRuleUserInfo">
@@ -21725,6 +21790,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SiteUserGroupsData">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightMetadata">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightResponse">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SPOFileVersionBatchDeleteJobProgress">
@@ -23114,6 +23185,9 @@
       <Annotations Target="SP.List/VersionPolicies">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ListItemVersion/Changes">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Site/HubSiteSynchronizableVisitorGroup">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -23729,6 +23803,9 @@
       <Annotations Target="Microsoft.SharePoint.Comments.comment">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Comments.comment/contentAnchor">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Comments.comment/relativeCreatedDate">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -24177,6 +24254,12 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.ResponseServiceHealth/IncidentCount">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceRestApiClientBase">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightRestApiClient">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SPOGroup">
@@ -34818,14 +34901,19 @@
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.Comments" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="CommentInformation">
+        <Property Name="contentAnchor" Type="Microsoft.SharePoint.Comments.ContentAnchor" />
         <Property Name="mentions" Type="Collection(Microsoft.SharePoint.Comments.Client.Identity)" />
         <Property Name="text" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ContentAnchor">
+        <Property Name="timelineOffset" Type="Edm.Time" />
       </ComplexType>
       <EntityType Name="comment">
         <Key>
           <PropertyRef Name="id" />
         </Key>
         <Property Name="author" Type="SP.Sharing.Principal" />
+        <Property Name="contentAnchor" Type="Microsoft.SharePoint.Comments.ContentAnchor" />
         <Property Name="createdDate" Type="Edm.DateTime" Nullable="false" />
         <Property Name="id" Type="Edm.String" Nullable="false" />
         <Property Name="isLikedByUser" Type="Edm.Boolean" Nullable="false" />
@@ -35031,6 +35119,30 @@
         <End Type="Microsoft.SharePoint.Administration.SPWebApplication" Role="WebApplications" Multiplicity="*" />
         <End Type="Microsoft.SharePoint.Administration.SPWebService" Role="WebApplicationsPartner" Multiplicity="0..1" />
       </Association>
+    </Schema>
+    <Schema Namespace="Microsoft.SharePoint.AuthPolicy" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="SPJitDlpPolicyData">
+        <Property Name="ExecutionMode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IsPolicyEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ODBSensitivityRefreshWindowInHours" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <EntityType Name="SPTenantIBPolicyComplianceReportEntityData">
+        <Key>
+          <PropertyRef Name="UpdateOneDriveSegments" />
+        </Key>
+        <Property Name="UpdateOneDriveSegments" Type="Edm.Boolean" Nullable="false" />
+      </EntityType>
+      <EntityType Name="SPTenantIBPolicyComplianceReport" BaseType="Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReportEntityData">
+        <Property Name="CompleteTimeInUtc" Type="Edm.DateTime" />
+        <Property Name="Content" Type="Collection(Edm.String)" />
+        <Property Name="DownloadReportFilePath" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="IncompatibleSegmentsPairsContent" Type="Collection(Edm.String)" />
+        <Property Name="InvalidSegmentsContent" Type="Collection(Edm.String)" />
+        <Property Name="QueuedTimeInUtc" Type="Edm.DateTime" />
+        <Property Name="StartTimeInUtc" Type="Edm.DateTime" />
+        <Property Name="State" Type="Edm.String" />
+      </EntityType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.AuthPolicy.Events" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="RoleAssignmentResourcePayload">
@@ -36811,6 +36923,26 @@
         <Property Name="ResourceGroup" Type="Edm.String" />
         <Property Name="SPContainerTypeBillingClassification" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="SPDataGovernanceInsightMetadata">
+        <Property Name="ReportId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Status" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SPDataGovernanceInsightResponse">
+        <Property Name="EEEUType" Type="Edm.String" />
+        <Property Name="Privacy" Type="Collection(Edm.String)" />
+        <Property Name="ReportDateTime" Type="Edm.String" />
+        <Property Name="ReportEntity" Type="Edm.String" />
+        <Property Name="ReportFormat" Type="Edm.String" />
+        <Property Name="ReportId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ReportName" Type="Edm.String" />
+        <Property Name="ReportType" Type="Edm.String" />
+        <Property Name="Sensitivity" Type="Collection(Edm.String)" />
+        <Property Name="SharingLinkType" Type="Edm.String" />
+        <Property Name="SitesFound" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Status" Type="Edm.String" />
+        <Property Name="Templates" Type="Collection(Edm.String)" />
+        <Property Name="Version" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="SPDeletedContainerProperties">
         <Property Name="ContainerId" Type="Edm.String" />
         <Property Name="ContainerName" Type="Edm.String" />
@@ -37140,6 +37272,13 @@
         <Property Name="UserCodeWarningLevel" Type="Edm.Double" Nullable="false" />
         <Property Name="WebsCount" Type="Edm.Int32" Nullable="false" />
       </EntityType>
+      <EntityType Name="SPDataGovernanceRestApiClientBase">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="SPDataGovernanceInsightRestApiClient" BaseType="Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceRestApiClientBase" />
       <EntityType Name="SPOGroup">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
@@ -37483,6 +37622,7 @@
         <Property Name="SiteOwnerManageLegacyServicePrincipalEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SocialBarOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SpecialCharactersStateInFileFolderNames" Type="Edm.Int32" Nullable="false" />
+        <Property Name="SPJitDlpPolicyData" Type="Microsoft.SharePoint.AuthPolicy.SPJitDlpPolicyData" />
         <Property Name="StartASiteFormUrl" Type="Edm.String" />
         <Property Name="StopNew2010Workflows" Type="Edm.Boolean" Nullable="false" />
         <Property Name="StopNew2013Workflows" Type="Edm.Boolean" Nullable="false" />
@@ -39289,25 +39429,6 @@
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
     </Schema>
-    <Schema Namespace="Microsoft.SharePoint.AuthPolicy" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-      <EntityType Name="SPTenantIBPolicyComplianceReportEntityData">
-        <Key>
-          <PropertyRef Name="UpdateOneDriveSegments" />
-        </Key>
-        <Property Name="UpdateOneDriveSegments" Type="Edm.Boolean" Nullable="false" />
-      </EntityType>
-      <EntityType Name="SPTenantIBPolicyComplianceReport" BaseType="Microsoft.SharePoint.AuthPolicy.SPTenantIBPolicyComplianceReportEntityData">
-        <Property Name="CompleteTimeInUtc" Type="Edm.DateTime" />
-        <Property Name="Content" Type="Collection(Edm.String)" />
-        <Property Name="DownloadReportFilePath" Type="Edm.String" />
-        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
-        <Property Name="IncompatibleSegmentsPairsContent" Type="Collection(Edm.String)" />
-        <Property Name="InvalidSegmentsContent" Type="Collection(Edm.String)" />
-        <Property Name="QueuedTimeInUtc" Type="Edm.DateTime" />
-        <Property Name="StartTimeInUtc" Type="Edm.DateTime" />
-        <Property Name="State" Type="Edm.String" />
-      </EntityType>
-    </Schema>
     <Schema Namespace="SP.Analytics" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="AnalyticsUsageEntry">
         <Key>
@@ -39545,6 +39666,7 @@
         <Property Name="SignInAccelerationDomain" Type="Edm.String" />
         <Property Name="SiteOwnerManageLegacyServicePrincipalEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SocialBarOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SPJitDlpPolicyData" Type="Microsoft.SharePoint.AuthPolicy.SPJitDlpPolicyData" />
         <Property Name="StartASiteFormUrl" Type="Edm.String" />
         <Property Name="StopNew2010Workflows" Type="Edm.Boolean" Nullable="false" />
         <Property Name="StopNew2013Workflows" Type="Edm.Boolean" Nullable="false" />
