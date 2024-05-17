@@ -30,6 +30,7 @@ ClearRestrictedAccessControlOneDrive (Microsoft.Online.SharePoint.TenantAdminist
 ClearRestrictedAccessControlSharePoint (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 ConnectSiteToHubSiteById (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 CreateApplicationBillingPolicyValidation (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+CreateDataAccessGovernanceReport (Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightRestApiClient) | ✅ | ❌ | ❌ | ❌
 CreatePolicyDefinition (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 CreateSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 DeletePolicyDefinition (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -42,6 +43,7 @@ EnableCollaborationInsightsDataCollection (Microsoft.Online.SharePoint.TenantAdm
 EnsureBrandCenterFeature (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 ExportAdminListToCSV (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 ExportCSVFile (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+ExportSPODataAccessGovernanceInsight (Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightRestApiClient) | ✅ | ❌ | ❌ | ❌
 ExportToCSV (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 ExportUnlicensedOneDriveForBusinessListToCSV (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetAdminListViews (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -88,6 +90,8 @@ GetSPOContainerTypeById (Microsoft.Online.SharePoint.TenantAdministration.Tenant
 GetSPOContainerTypeConfigurationByContainerTypeId (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPOContainerTypes (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPOContainersByApplicationId (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+GetSPODataAccessGovernanceInsight (Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightRestApiClient) | ✅ | ❌ | ❌ | ❌
+GetSPODataAccessGovernanceInsightById (Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightRestApiClient) | ✅ | ❌ | ❌ | ❌
 GetSPODeletedContainers (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPORestrictedSearchAllowedList (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPORestrictedSearchMode (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -96,6 +100,7 @@ GetSPOSyntexApplications (Microsoft.Online.SharePoint.TenantAdministration.Tenan
 GetSPOSyntexConsumingApplications (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPOTenantAllWebTemplates (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPOTenantWebTemplates (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+GetSPOWebTemplatesAllowedForArchiving (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSharePointSiteSharingInsights (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSiteAdministrators (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSiteCohortsSummary (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -126,6 +131,8 @@ MessageCenterMessages (Microsoft.Online.SharePoint.TenantAdministration.Office36
 <span title="Microsoft_Online_SharePoint_TenantAdministration_Office365CommsMessagesServiceProxy">Microsoft_Online_SharePoint_TenantAdministration_O...</span> (Microsoft Online SharePoint TenantAdministration Office365CommsMessagesServiceProxy) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_TenantAdministration_ResponseMessageCenter">Microsoft_Online_SharePoint_TenantAdministration_R...</span> (Microsoft Online SharePoint TenantAdministration ResponseMessageCenter) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_TenantAdministration_ResponseServiceHealth">Microsoft_Online_SharePoint_TenantAdministration_R...</span> (Microsoft Online SharePoint TenantAdministration ResponseServiceHealth) | ✅ | ❌ | ❌ | ❌
+[<span title="Microsoft_Online_SharePoint_TenantAdministration_SPDataGovernanceInsightRestApiClient">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SPDataGovernanceInsightRestApiClient)](./Functions/Microsoft_Online_SharePoint_TenantAdministration_SPDataGovernanceInsightRestApiClient.md) | ✅ | ❌ | ❌ | ❌
+[<span title="Microsoft_Online_SharePoint_TenantAdministration_SPDataGovernanceRestApiClientBase">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SPDataGovernanceRestApiClientBase)](./Functions/Microsoft_Online_SharePoint_TenantAdministration_SPDataGovernanceRestApiClientBase.md) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_TenantAdministration_SPOGroup">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SPOGroup) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_TenantAdministration_SPOWebAppServicePrincipalPublic">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SPOWebAppServicePrincipalPublic) | ✅ | ❌ | ❌ | ❌
 [<span title="Microsoft_Online_SharePoint_TenantAdministration_SiteProperties">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SiteProperties)](./Functions/Microsoft_Online_SharePoint_TenantAdministration_SiteProperties.md) | ✅ | ❌ | ❌ | ❌
@@ -147,6 +154,7 @@ RegisterHubSiteWithCreationInformation (Microsoft.Online.SharePoint.TenantAdmini
 RemoveAsGroupOwnerAndMember (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ✅ | ❌ | ❌ | ❌
 RemoveContainer (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveCustomSpfx3rdPartyAppPrincipal (Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic) | ✅ | ❌ | ❌ | ❌
+RemoveDataAccessGovernanceReport (Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightRestApiClient) | ✅ | ❌ | ❌ | ❌
 RemoveDeletedSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveDeletedSitePreferId (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 RemoveFileVersionBatchDeleteJob (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌

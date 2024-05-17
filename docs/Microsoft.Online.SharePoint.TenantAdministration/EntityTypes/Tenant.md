@@ -241,6 +241,7 @@ ResourceQuotaAllocated (Edm.Double) | ✅ | ❌ | ❌ | ❌
 RestrictedOneDriveLicense (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RestrictedSharePointLicense (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RootSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
+SPJitDlpPolicyData (Microsoft.SharePoint.AuthPolicy.SPJitDlpPolicyData) | ✅ | ❌ | ❌ | ❌
 SearchResolveExactEmailOrUPN (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SharePointAddInsDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SharingAllowedDomainList (Edm.String) | ✅ | ❌ | ❌ | ❌

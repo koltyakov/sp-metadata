@@ -157,6 +157,7 @@ ReduceTempTokenLifetimeEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ReduceTempTokenLifetimeValue (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 RequireAcceptingAccountMatchInvitedAccount (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RequireAnonymousLinksExpireInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+SPJitDlpPolicyData (Microsoft.SharePoint.AuthPolicy.SPJitDlpPolicyData) | ✅ | ❌ | ❌ | ❌
 SearchResolveExactEmailOrUPN (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SharingAllowedDomainList (Edm.String) | ✅ | ❌ | ❌ | ❌
 SharingBlockedDomainList (Edm.String) | ✅ | ❌ | ❌ | ❌

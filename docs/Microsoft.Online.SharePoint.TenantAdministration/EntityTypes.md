@@ -9,6 +9,8 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [OneDriveSiteSharingInsights](./EntityTypes/OneDriveSiteSharingInsights.md) | ✅ | ❌ | ❌ | ❌
 [ResponseMessageCenter](./EntityTypes/ResponseMessageCenter.md) | ✅ | ❌ | ❌ | ❌
 [ResponseServiceHealth](./EntityTypes/ResponseServiceHealth.md) | ✅ | ❌ | ❌ | ❌
+[SPDataGovernanceInsightRestApiClient](./EntityTypes/SPDataGovernanceInsightRestApiClient.md) | ✅ | ❌ | ❌ | ❌
+[SPDataGovernanceRestApiClientBase](./EntityTypes/SPDataGovernanceRestApiClientBase.md) | ✅ | ❌ | ❌ | ❌
 [SPOGroup](./EntityTypes/SPOGroup.md) | ✅ | ❌ | ❌ | ❌
 [SPOMalwareFile](./EntityTypes/SPOMalwareFile.md) | ✅ | ❌ | ❌ | ❌
 [SPOPortalLaunchValidator](./EntityTypes/SPOPortalLaunchValidator.md) | ✅ | ❌ | ❌ | ❌

@@ -170,6 +170,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPHSiteReference](./ComplexTypes/SPHSiteReference.md) | ✅ | ❌ | ❌ | ❌
 [SPImageItem](./ComplexTypes/SPImageItem.md) | ✅ | ❌ | ❌ | ❌
 [SPInvitationCreationResult](./ComplexTypes/SPInvitationCreationResult.md) | ✅ | ✅ | ✅ | ❌
+[SPListItemVersionChange](./ComplexTypes/SPListItemVersionChange.md) | ✅ | ❌ | ❌ | ❌
 [SPListRule](./ComplexTypes/SPListRule.md) | ✅ | ❌ | ❌ | ❌
 [SPMoveAndShareFileInfo](./ComplexTypes/SPMoveAndShareFileInfo.md) | ✅ | ❌ | ❌ | ❌
 [SPResourceEntry](./ComplexTypes/SPResourceEntry.md) | ✅ | ❌ | ❌ | ❌

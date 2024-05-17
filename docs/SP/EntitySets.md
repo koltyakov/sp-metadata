@@ -442,6 +442,7 @@ SPAuthEvents | ✅ | ❌ | ❌ | ❌
 SPBingMapsInformations | ❌ | ✅ | ❌ | ❌
 SPCorporateCuratedGallerySettingsBases | ✅ | ❌ | ❌ | ❌
 SPCorporateCuratedGallerySettingsFactorys | ✅ | ❌ | ❌ | ❌
+SPDataGovernanceRestApiClientBases | ✅ | ❌ | ❌ | ❌
 SPDataLeakagePreventionStatusInfos | ✅ | ✅ | ✅ | ❌
 SPFarms | ✅ | ❌ | ❌ | ❌
 SPFlights | ✅ | ❌ | ❌ | ❌
