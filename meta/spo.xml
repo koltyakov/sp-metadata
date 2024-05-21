@@ -1047,6 +1047,7 @@
         <Property Name="ContentVersion" Type="Edm.Int32" Nullable="false" />
         <Property Name="Entropy" Type="Edm.String" />
         <Property Name="ETag" Type="Edm.String" />
+        <Property Name="IsLowPriorityRequest" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsMediaServiceRequest" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MachineLearningSampleMeta" Type="SP.MachineLearningSampleMeta" />
         <Property Name="MediaLengthInSeconds" Type="Edm.Int32" Nullable="false" />
@@ -2036,6 +2037,7 @@
         <Property Name="ServerRelativePath" Type="SP.ResourcePath" />
         <Property Name="ServerRelativeUrl" Type="Edm.String" />
         <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="SuppressExpirationNotification" Type="Edm.Boolean" />
         <Property Name="TimeCreated" Type="Edm.DateTime" Nullable="false" />
         <Property Name="TimeLastModified" Type="Edm.DateTime" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
@@ -4609,6 +4611,7 @@
         <EntitySet Name="SPMachineLearningSamples" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample" />
         <EntitySet Name="SPMachineLearningSampleEntityDatas" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningSampleEntityData" />
         <EntitySet Name="SPMachineLearningWorkItemEntityDatas" EntityType="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemEntityData" />
+        <EntitySet Name="SyntexContexts" EntityType="Microsoft.Office.Server.ContentCenter.SyntexContext" />
         <EntitySet Name="SyntexModelsLandingInfos" EntityType="Microsoft.Office.Server.ContentCenter.SyntexModelsLandingInfo" />
         <EntitySet Name="Reputations" EntityType="Microsoft.Office.Server.ReputationModel.Reputation" />
         <EntitySet Name="SearchServices" EntityType="Microsoft.Office.Server.Search.REST.SearchService" />
@@ -11664,6 +11667,10 @@
           <Parameter Name="this" Type="Microsoft.SharePoint.EmployeeEngagement.VivaResources" />
           <Parameter Name="updatedLink" Type="Microsoft.SharePoint.EmployeeEngagement.VivaResourceLink" />
         </FunctionImport>
+        <FunctionImport Name="UpdateLinks" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.EmployeeEngagement.VivaResources" />
+          <Parameter Name="links" Type="Collection(Microsoft.SharePoint.EmployeeEngagement.VivaResourceLink)" />
+        </FunctionImport>
         <FunctionImport Name="GetData" ReturnType="Microsoft.SharePoint.EmployeeEngagement.ConnectionsConfigurationAndData" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.EmployeeEngagement.VivaConnectionsPage" />
         </FunctionImport>
@@ -11768,6 +11775,9 @@
           <Parameter Name="this" Type="SP.BrandCenter" />
         </FunctionImport>
         <FunctionImport Name="CurrentBrandingConfiguration" ReturnType="SP.BrandCenterConfiguration" IsSideEffecting="false" IsBindable="true">
+          <Parameter Name="this" Type="SP.BrandCenter" />
+        </FunctionImport>
+        <FunctionImport Name="EnsureBrandColorsListFeature" ReturnType="Microsoft.SharePoint.Administration.OrgAssets" IsBindable="true">
           <Parameter Name="this" Type="SP.BrandCenter" />
         </FunctionImport>
         <FunctionImport Name="EnsureBrandFontsLibraryFeature" ReturnType="Microsoft.SharePoint.Administration.OrgAssets" IsBindable="true">
@@ -14525,6 +14535,7 @@
           <Parameter Name="fileOffset" Type="Edm.Int64" Nullable="false" />
           <Parameter Name="checksum" Type="Edm.String" />
           <Parameter Name="stream" Type="Edm.Stream" />
+          <Parameter Name="sandboxId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="SP_File_GetContentVerFromTag" ReturnType="Edm.Int32" IsSideEffecting="false">
           <Parameter Name="contentTag" Type="Edm.String" />
@@ -15463,7 +15474,7 @@
         </FunctionImport>
         <FunctionImport Name="SetBlockDownloadPolicyForFiles" IsBindable="true">
           <Parameter Name="this" Type="SP.Site" />
-          <Parameter Name="blockDownloadPolicyFileTypeId" Type="Edm.String" />
+          <Parameter Name="blockDownloadPolicyFileTypeIds" Type="Collection(Edm.String)" />
         </FunctionImport>
         <FunctionImport Name="SetIsContributorOwnerEnabledPropertyForDefaultDocLib" ReturnType="Edm.Boolean" IsBindable="true">
           <Parameter Name="this" Type="SP.Site" />
@@ -18003,6 +18014,10 @@
         <AssociationSet Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Samples_Microsoft_Office_Server_ContentCenter_SPMachineLearningSample_SamplesPartnerSet" Association="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Samples_Microsoft_Office_Server_ContentCenter_SPMachineLearningSample_SamplesPartner">
           <End Role="SamplesPartner" EntitySet="Machinelearnings" />
           <End Role="Samples" EntitySet="SPMachineLearningSamples" />
+        </AssociationSet>
+        <AssociationSet Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_SyntexContext_Microsoft_Office_Server_ContentCenter_SyntexContext_SyntexContextPartnerSet" Association="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_SyntexContext_Microsoft_Office_Server_ContentCenter_SyntexContext_SyntexContextPartner">
+          <End Role="SyntexContextPartner" EntitySet="Machinelearnings" />
+          <End Role="SyntexContext" EntitySet="SyntexContexts" />
         </AssociationSet>
         <AssociationSet Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_WorkItems_Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItem_WorkItemsPartnerSet" Association="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_WorkItems_Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItem_WorkItemsPartner">
           <End Role="WorkItemsPartner" EntitySet="Machinelearnings" />
@@ -20871,13 +20886,16 @@
       <Annotations Target="SP.PivotItem">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.EmployeeEngagement.VCConfiguration">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.EmployeeEngagement.VivaResourceLink">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.VivaConnectionsUrlConfiguration">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.VivaHomeTitleRegion">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.SharePoint.EmployeeEngagement.VivaResourceLink">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Deployment.ShortcutInformation">
@@ -22227,6 +22245,21 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub/Samples">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SyntexContext">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SyntexContext/SyntexAIBuilderEnabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SyntexContext/SyntexDocumentUnderstandingEnabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SyntexContext/SyntexPrebuiltEnabled">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub/SyntexContext">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -22759,6 +22792,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.File/ServerRelativePath">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.File/SuppressExpirationNotification">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.FileVersion/ExpirationDate">
@@ -24371,9 +24407,6 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService/TenantDefaultTimeZoneId">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
-      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.TenantAdminSettingsService/UserVoiceForFeedbackEnabled">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/AddressbarLinkPermission">
@@ -26341,6 +26374,9 @@
       <Annotations Target="SP.ApiData/UpdateLink(Microsoft.SharePoint.EmployeeEngagement.VivaResources, Microsoft.SharePoint.EmployeeEngagement.VivaResourceLink)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/UpdateLinks(Microsoft.SharePoint.EmployeeEngagement.VivaResources, Collection(Microsoft.SharePoint.EmployeeEngagement.VivaResourceLink))">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetData(Microsoft.SharePoint.EmployeeEngagement.VivaConnectionsPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -26387,6 +26423,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/CurrentBrandingConfiguration(SP.BrandCenter)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/EnsureBrandColorsListFeature(SP.BrandCenter)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/EnsureBrandFontsLibraryFeature(SP.BrandCenter)">
@@ -27181,7 +27220,7 @@
       <Annotations Target="SP.ApiData/RollTenantBringYourOwnKey(SP.Site, Edm.Int32, SP.CustomerKeyVaultInfo)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/SetBlockDownloadPolicyForFiles(SP.Site, Edm.String)">
+      <Annotations Target="SP.ApiData/SetBlockDownloadPolicyForFiles(SP.Site, Collection(Edm.String))">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/StartDeleteFileVersions(SP.Site, Edm.Int32)">
@@ -27888,6 +27927,7 @@
         <NavigationProperty Name="Models" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Models_Microsoft_Office_Server_ContentCenter_SPMachineLearningModel_ModelsPartner" ToRole="Models" FromRole="ModelsPartner" />
         <NavigationProperty Name="Publications" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Publications_Microsoft_Office_Server_ContentCenter_SPMachineLearningPublication_PublicationsPartner" ToRole="Publications" FromRole="PublicationsPartner" />
         <NavigationProperty Name="Samples" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Samples_Microsoft_Office_Server_ContentCenter_SPMachineLearningSample_SamplesPartner" ToRole="Samples" FromRole="SamplesPartner" />
+        <NavigationProperty Name="SyntexContext" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_SyntexContext_Microsoft_Office_Server_ContentCenter_SyntexContext_SyntexContextPartner" ToRole="SyntexContext" FromRole="SyntexContextPartner" />
         <NavigationProperty Name="WorkItems" Relationship="Microsoft.Office.Server.ContentCenter.Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_WorkItems_Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItem_WorkItemsPartner" ToRole="WorkItems" FromRole="WorkItemsPartner" />
       </EntityType>
       <EntityType Name="SPMachineLearningModel">
@@ -27991,6 +28031,14 @@
         <Property Name="TokenEndPosition" Type="Collection(Edm.Int32)" Nullable="false" />
         <Property Name="TokenStartPosition" Type="Collection(Edm.Int32)" Nullable="false" />
         <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+      <EntityType Name="SyntexContext">
+        <Key>
+          <PropertyRef Name="SyntexAIBuilderEnabled" />
+        </Key>
+        <Property Name="SyntexAIBuilderEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SyntexDocumentUnderstandingEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SyntexPrebuiltEnabled" Type="Edm.Boolean" Nullable="false" />
       </EntityType>
       <EntityType Name="SPMachineLearningWorkItem">
         <Key>
@@ -28108,6 +28156,10 @@
       <Association Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_Samples_Microsoft_Office_Server_ContentCenter_SPMachineLearningSample_SamplesPartner">
         <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningSample" Role="Samples" Multiplicity="*" />
         <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" Role="SamplesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_SyntexContext_Microsoft_Office_Server_ContentCenter_SyntexContext_SyntexContextPartner">
+        <End Type="Microsoft.Office.Server.ContentCenter.SyntexContext" Role="SyntexContext" Multiplicity="0..1" />
+        <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" Role="SyntexContextPartner" Multiplicity="0..1" />
       </Association>
       <Association Name="Microsoft_Office_Server_ContentCenter_SPMachineLearningHub_WorkItems_Microsoft_Office_Server_ContentCenter_SPMachineLearningWorkItem_WorkItemsPartner">
         <End Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem" Role="WorkItems" Multiplicity="*" />
@@ -34728,6 +34780,10 @@
         <Property Name="extraComponents" Type="Collection(Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult)" />
         <Property Name="personalizationData" Type="Microsoft.SharePoint.EmployeeEngagement.Experience.DashboardContent" />
       </ComplexType>
+      <ComplexType Name="VCConfiguration">
+        <Property Name="CompanyLinks" Type="Collection(Microsoft.SharePoint.EmployeeEngagement.VivaResourceLink)" />
+        <Property Name="SpotlightConfiguration" Type="Microsoft.SharePoint.EmployeeEngagement.SpotlightConfiguration" />
+      </ComplexType>
       <ComplexType Name="VivaResourceLink">
         <Property Name="Audiences" Type="Collection(Edm.String)" />
         <Property Name="Icon" Type="Edm.String" />
@@ -37052,10 +37108,6 @@
         <Property Name="storageMaximumLevel" Type="Edm.Int64" Nullable="false" />
         <Property Name="storageWarningLevel" Type="Edm.Int64" Nullable="false" />
       </ComplexType>
-      <ComplexType Name="UserVoiceForFeedbackEnabled">
-        <Property Name="IsReadOnly" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="Value" Type="Edm.Boolean" Nullable="false" />
-      </ComplexType>
       <ComplexType Name="SPOTenantWebTemplate">
         <Property Name="CompatibilityLevel" Type="Edm.Int32" Nullable="false" />
         <Property Name="Description" Type="Edm.String" />
@@ -37170,7 +37222,7 @@
         <Property Name="BlockDownloadLinksFileType" Type="Edm.Int32" Nullable="false" />
         <Property Name="BlockDownloadMicrosoft365GroupIds" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="BlockDownloadPolicy" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="BlockDownloadPolicyFileTypeId" Type="Edm.String" />
+        <Property Name="BlockDownloadPolicyFileTypeIds" Type="Collection(Edm.String)" />
         <Property Name="BlockGuestsAsSiteAdmin" Type="Edm.Int32" Nullable="false" />
         <Property Name="BonusDiskQuota" Type="Edm.Int64" Nullable="false" />
         <Property Name="ClearRestrictedAccessControl" Type="Edm.Boolean" Nullable="false" />
@@ -37364,7 +37416,6 @@
         <Property Name="SmtpServer" Type="Microsoft.Online.SharePoint.TenantAdministration.SmtpServer" />
         <Property Name="SPListModernUXOff" Type="Microsoft.Online.SharePoint.TenantAdministration.SPListModernUXOff" />
         <Property Name="TenantDefaultTimeZoneId" Type="Microsoft.Online.SharePoint.TenantAdministration.TenantDefaultTimeZoneId" />
-        <Property Name="UserVoiceForFeedbackEnabled" Type="Microsoft.Online.SharePoint.TenantAdministration.UserVoiceForFeedbackEnabled" />
       </EntityType>
       <EntityType Name="Tenant">
         <Key>
@@ -37653,7 +37704,6 @@
         <Property Name="UnlicensedOneDriveForBusinessTenantMetricsData" Type="Microsoft.SharePoint.Administration.SPOUnlicensedODB.UnlicensedOdbTenantMetrics" />
         <Property Name="UseFindPeopleInPeoplePicker" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UsePersistentCookiesForExplorerView" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="UserVoiceForFeedbackEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ViewersCanCommentOnMediaDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ViewInFileExplorerEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="WhoCanShareAllowListInTenant" Type="Edm.String" />
@@ -39685,7 +39735,6 @@
         <Property Name="TlsTokenBindingPolicyValue" Type="Edm.Int32" Nullable="false" />
         <Property Name="UseFindPeopleInPeoplePicker" Type="Edm.Boolean" Nullable="false" />
         <Property Name="UsePersistentCookiesForExplorerView" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="UserVoiceForFeedbackEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ViewersCanCommentOnMediaDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ViewInFileExplorerEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="WhoCanShareAllowList" Type="Edm.String" />
