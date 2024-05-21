@@ -191,7 +191,6 @@ SyntexPowerAppsEnvironmentsContext (Microsoft.Online.SharePoint.TenantAdministra
 TlsTokenBindingPolicyValue (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 UseFindPeopleInPeoplePicker (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UsePersistentCookiesForExplorerView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-UserVoiceForFeedbackEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ViewInFileExplorerEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ViewersCanCommentOnMediaDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 WhoCanShareAllowList (Edm.String) | ✅ | ❌ | ❌ | ❌

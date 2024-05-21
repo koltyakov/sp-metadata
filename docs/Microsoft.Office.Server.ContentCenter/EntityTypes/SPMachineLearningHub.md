@@ -18,4 +18,5 @@ MachineLearningEnabled | ✅ | ❌ | ❌ | ❌
 Models | ✅ | ❌ | ❌ | ❌
 Publications | ✅ | ❌ | ❌ | ❌
 Samples | ✅ | ❌ | ❌ | ❌
+SyntexContext | ✅ | ❌ | ❌ | ❌
 WorkItems | ✅ | ❌ | ❌ | ❌

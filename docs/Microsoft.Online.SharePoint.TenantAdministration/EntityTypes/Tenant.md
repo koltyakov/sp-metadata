@@ -289,7 +289,6 @@ UniversalAnnotationDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UnlicensedOneDriveForBusinessTenantMetricsData (Microsoft.SharePoint.Administration.SPOUnlicensedODB.UnlicensedOdbTenantMetrics) | ✅ | ❌ | ❌ | ❌
 UseFindPeopleInPeoplePicker (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UsePersistentCookiesForExplorerView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-UserVoiceForFeedbackEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ViewInFileExplorerEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ViewersCanCommentOnMediaDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 WhoCanShareAllowListInTenant (Edm.String) | ✅ | ❌ | ❌ | ❌

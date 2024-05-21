@@ -212,6 +212,7 @@ EnableIndex (SP.FieldUser) | ✅ | ❌ | ❌ | ❌
 EnableQueryableColumns (SP.List) | ✅ | ❌ | ❌ | ❌
 EnqueueApplySensitivityLabelWork (SP.Site) | ✅ | ❌ | ❌ | ❌
 EnqueueAsyncActionTaskById (SP.List) | ✅ | ❌ | ❌ | ❌
+EnsureBrandColorsListFeature (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
 EnsureBrandFontsLibraryFeature (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
 EnsureClientRenderedSitePagesLibrary (Collection(SP.List)) | ✅ | ✅ | ❌ | ❌
 EnsureEduClassSetup (SP.Web) | ✅ | ❌ | ❌ | ❌

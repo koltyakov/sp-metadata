@@ -12,6 +12,7 @@ ClassificationResult (SP.ClassificationResult) | ✅ | ❌ | ❌ | ❌
 ContentVersion (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ETag (Edm.String) | ✅ | ❌ | ❌ | ❌
 Entropy (Edm.String) | ✅ | ❌ | ❌ | ❌
+IsLowPriorityRequest (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMediaServiceRequest (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MachineLearningSampleMeta (SP.MachineLearningSampleMeta) | ✅ | ❌ | ❌ | ❌
 MediaLengthInSeconds (Edm.Int32) | ✅ | ❌ | ❌ | ❌

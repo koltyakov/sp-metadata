@@ -74,4 +74,3 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [TenantDefaultTimeZoneId](./ComplexTypes/TenantDefaultTimeZoneId.md) | ✅ | ❌ | ❌ | ❌
 [UpdateGroupSitePropertiesParameters](./ComplexTypes/UpdateGroupSitePropertiesParameters.md) | ✅ | ❌ | ❌ | ❌
 [UserInfo](./ComplexTypes/UserInfo.md) | ✅ | ❌ | ❌ | ❌
-[UserVoiceForFeedbackEnabled](./ComplexTypes/UserVoiceForFeedbackEnabled.md) | ✅ | ❌ | ❌ | ❌

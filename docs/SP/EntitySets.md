@@ -574,6 +574,7 @@ SubtitleFiles | ✅ | ❌ | ❌ | ❌
 SuiteNavDatas | ✅ | ✅ | ✅ | ✅
 SupportedGeoLocationsForTenants | ✅ | ❌ | ❌ | ❌
 SyncTranslators | ✅ | ✅ | ✅ | ✅
+SyntexContexts | ✅ | ❌ | ❌ | ❌
 SyntexModelsLandingInfos | ✅ | ❌ | ❌ | ❌
 TargetApplicationFields | ✅ | ❌ | ❌ | ❌
 TargetApplications | ✅ | ❌ | ❌ | ❌

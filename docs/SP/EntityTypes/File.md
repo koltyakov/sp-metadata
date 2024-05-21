@@ -32,6 +32,7 @@ ServerRedirectedUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 ServerRelativePath (SP.ResourcePath) | ✅ | ✅ | ❌ | ❌
 ServerRelativeUrl (Edm.String) | ✅ | ✅ | ✅ | ✅
 SiteId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
+SuppressExpirationNotification (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 TimeCreated (Edm.DateTime) | ✅ | ✅ | ✅ | ✅
 TimeLastModified (Edm.DateTime) | ✅ | ✅ | ✅ | ✅
 Title (Edm.String) | ✅ | ✅ | ✅ | ✅

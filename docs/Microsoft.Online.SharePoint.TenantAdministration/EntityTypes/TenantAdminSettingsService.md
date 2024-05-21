@@ -32,4 +32,3 @@ SiteCreationNewUX (Microsoft.Online.SharePoint.TenantAdministration.SiteCreation
 SitePagesEnabled (Microsoft.Online.SharePoint.TenantAdministration.SitePagesEnabled) | ✅ | ❌ | ❌ | ❌
 SmtpServer (Microsoft.Online.SharePoint.TenantAdministration.SmtpServer) | ✅ | ❌ | ❌ | ❌
 TenantDefaultTimeZoneId (Microsoft.Online.SharePoint.TenantAdministration.TenantDefaultTimeZoneId) | ✅ | ❌ | ❌ | ❌
-UserVoiceForFeedbackEnabled (Microsoft.Online.SharePoint.TenantAdministration.UserVoiceForFeedbackEnabled) | ✅ | ❌ | ❌ | ❌
