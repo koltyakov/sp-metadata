@@ -17,6 +17,7 @@ AllowLimitedAccessOnUnmanagedDevices (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowOverrideForBlockUserInfoVisibility (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowSelectSGsInODBList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 AllowSelectSecurityGroupsInSPSitesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+AllowSharingOutsideRestrictedAccessControlGroups (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AllowedDomainListForSyncClient (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 AnyoneLinkTrackUsers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AppBypassInformationBarriers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

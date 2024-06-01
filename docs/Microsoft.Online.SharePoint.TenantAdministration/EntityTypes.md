@@ -11,6 +11,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [ResponseServiceHealth](./EntityTypes/ResponseServiceHealth.md) | ✅ | ❌ | ❌ | ❌
 [SPDataGovernanceInsightRestApiClient](./EntityTypes/SPDataGovernanceInsightRestApiClient.md) | ✅ | ❌ | ❌ | ❌
 [SPDataGovernanceRestApiClientBase](./EntityTypes/SPDataGovernanceRestApiClientBase.md) | ✅ | ❌ | ❌ | ❌
+[SPDataGovernanceSARRestApiClient](./EntityTypes/SPDataGovernanceSARRestApiClient.md) | ✅ | ❌ | ❌ | ❌
 [SPOGroup](./EntityTypes/SPOGroup.md) | ✅ | ❌ | ❌ | ❌
 [SPOMalwareFile](./EntityTypes/SPOMalwareFile.md) | ✅ | ❌ | ❌ | ❌
 [SPOPortalLaunchValidator](./EntityTypes/SPOPortalLaunchValidator.md) | ✅ | ❌ | ❌ | ❌

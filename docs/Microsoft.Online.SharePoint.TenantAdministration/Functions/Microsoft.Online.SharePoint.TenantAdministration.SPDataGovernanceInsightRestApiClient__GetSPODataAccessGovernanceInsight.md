@@ -11,3 +11,4 @@
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 reportEntity (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+workLoad (Edm.Int32) | ✅ | ❌ | ❌ | ❌

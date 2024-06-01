@@ -11,6 +11,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [DisableGroupify](./ComplexTypes/DisableGroupify.md) | ✅ | ❌ | ❌ | ❌
 [DisableSelfServiceSiteCreation](./ComplexTypes/DisableSelfServiceSiteCreation.md) | ✅ | ❌ | ❌ | ❌
 [EnableAutoNewsDigest](./ComplexTypes/EnableAutoNewsDigest.md) | ✅ | ❌ | ❌ | ❌
+[ErrorFacet](./ComplexTypes/ErrorFacet.md) | ✅ | ❌ | ❌ | ❌
 [EsignatureThirdPartyProvidersInfo](./ComplexTypes/EsignatureThirdPartyProvidersInfo.md) | ✅ | ❌ | ❌ | ❌
 [GroupInfo](./ComplexTypes/GroupInfo.md) | ✅ | ❌ | ❌ | ❌
 [HubSitePermission](./ComplexTypes/HubSitePermission.md) | ✅ | ❌ | ❌ | ❌
@@ -38,6 +39,8 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPContainerTypeProperties](./ComplexTypes/SPContainerTypeProperties.md) | ✅ | ❌ | ❌ | ❌
 [SPDataGovernanceInsightMetadata](./ComplexTypes/SPDataGovernanceInsightMetadata.md) | ✅ | ❌ | ❌ | ❌
 [SPDataGovernanceInsightResponse](./ComplexTypes/SPDataGovernanceInsightResponse.md) | ✅ | ❌ | ❌ | ❌
+[SPDataGovernanceSARStartSiteReviewResponse](./ComplexTypes/SPDataGovernanceSARStartSiteReviewResponse.md) | ✅ | ❌ | ❌ | ❌
+[SPDataGovernanceSiteReviewsResponse](./ComplexTypes/SPDataGovernanceSiteReviewsResponse.md) | ✅ | ❌ | ❌ | ❌
 [SPDeletedContainerProperties](./ComplexTypes/SPDeletedContainerProperties.md) | ✅ | ❌ | ❌ | ❌
 [SPDeletedContainerTypeProperties](./ComplexTypes/SPDeletedContainerTypeProperties.md) | ✅ | ❌ | ❌ | ❌
 [SPListModernUXOff](./ComplexTypes/SPListModernUXOff.md) | ✅ | ❌ | ❌ | ❌

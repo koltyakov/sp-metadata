@@ -21,6 +21,7 @@ AddTenantAdminListItem (Microsoft.Online.SharePoint.TenantAdministration.Tenant)
 AddTenantAdminListView (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 AddToOrgAssetsLibAndCdnV2 (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 AddToOrgAssetsLibAndCdnWithType (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+AddToOrgAssetsLibWithConfig (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 ArchiveSiteById (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 BootstrapPolicyAutomationResources (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 CheckSiteIsArchivedById (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
@@ -96,6 +97,7 @@ GetSPODeletedContainers (Microsoft.Online.SharePoint.TenantAdministration.Tenant
 GetSPORestrictedSearchAllowedList (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPORestrictedSearchMode (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPOSiteCreationSources (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+GetSPOSiteReview (Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceSARRestApiClient) | ✅ | ❌ | ❌ | ❌
 GetSPOSyntexApplications (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPOSyntexConsumingApplications (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPOTenantAllWebTemplates (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -133,6 +135,7 @@ MessageCenterMessages (Microsoft.Online.SharePoint.TenantAdministration.Office36
 <span title="Microsoft_Online_SharePoint_TenantAdministration_ResponseServiceHealth">Microsoft_Online_SharePoint_TenantAdministration_R...</span> (Microsoft Online SharePoint TenantAdministration ResponseServiceHealth) | ✅ | ❌ | ❌ | ❌
 [<span title="Microsoft_Online_SharePoint_TenantAdministration_SPDataGovernanceInsightRestApiClient">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SPDataGovernanceInsightRestApiClient)](./Functions/Microsoft_Online_SharePoint_TenantAdministration_SPDataGovernanceInsightRestApiClient.md) | ✅ | ❌ | ❌ | ❌
 [<span title="Microsoft_Online_SharePoint_TenantAdministration_SPDataGovernanceRestApiClientBase">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SPDataGovernanceRestApiClientBase)](./Functions/Microsoft_Online_SharePoint_TenantAdministration_SPDataGovernanceRestApiClientBase.md) | ✅ | ❌ | ❌ | ❌
+[<span title="Microsoft_Online_SharePoint_TenantAdministration_SPDataGovernanceSARRestApiClient">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SPDataGovernanceSARRestApiClient)](./Functions/Microsoft_Online_SharePoint_TenantAdministration_SPDataGovernanceSARRestApiClient.md) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_TenantAdministration_SPOGroup">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SPOGroup) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_TenantAdministration_SPOWebAppServicePrincipalPublic">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SPOWebAppServicePrincipalPublic) | ✅ | ❌ | ❌ | ❌
 [<span title="Microsoft_Online_SharePoint_TenantAdministration_SiteProperties">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SiteProperties)](./Functions/Microsoft_Online_SharePoint_TenantAdministration_SiteProperties.md) | ✅ | ❌ | ❌ | ❌
@@ -205,6 +208,7 @@ SetFileVersionPolicyForLibrary (Microsoft.Online.SharePoint.TenantAdministration
 SetIBSegmentsOnSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetIdleSessionSignOutForUnmanagedDevices (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetJitDlpPolicyData (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+SetOrgAssetsWithConfig (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetOrgAssetsWithType (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetSPHSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetSPHSiteWithConfiguration (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -220,6 +224,7 @@ SetSiteSecondaryAdministrators (Microsoft.Online.SharePoint.TenantAdministration
 SetSiteUserGroups (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetSyntexPaygFeatureActivation (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SetTrackViewFeatureAlwaysVisible (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+StartSPOSiteReview (Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceSARRestApiClient) | ✅ | ❌ | ❌ | ❌
 SwapSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SwapSiteWithSmartGestureOption (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 SwapSiteWithSmartGestureOptionForce (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌

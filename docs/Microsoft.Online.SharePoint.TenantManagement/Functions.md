@@ -9,6 +9,7 @@ AddSdnProvider (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | 
 AddTenantCdnOrigin (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 AddTenantTheme (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 AddToOrgAssetsLibAndCdn (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
+AddToOrgAssetsWithConfig (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 CreateTenantCdnDefaultOrigins (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 DeleteImportProfilePropertiesJob (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 DeleteTenantTheme (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
@@ -48,6 +49,7 @@ SetHideDefaultThemes (Microsoft.Online.SharePoint.TenantManagement.Office365Tena
 SetIdleSessionSignOutForUnmanagedDevices (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 SetJitDlpPolicyData (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 SetOrgAssetsLib (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
+SetOrgAssetsLibWithConfig (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 SetTenantCdnEnabled (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 SetTenantCdnPolicy (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
 SyncAadB2BManagementPolicy (Microsoft.Online.SharePoint.TenantManagement.Office365Tenant) | ✅ | ❌ | ❌ | ❌
