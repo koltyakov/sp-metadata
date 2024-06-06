@@ -14,5 +14,6 @@ dataFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 insightsScenario (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 maxContentSize (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 maxTokenSize (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+modelName (Edm.String) | ✅ | ❌ | ❌ | ❌
 pageIndex (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 timeoutMS (Edm.Int32) | ✅ | ❌ | ❌ | ❌

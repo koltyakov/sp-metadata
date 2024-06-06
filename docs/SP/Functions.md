@@ -34,6 +34,7 @@ AddSubFolder (SP.Folder) | ✅ | ✅ | ❌ | ❌
 AddSubFolderUsingPath (SP.Folder) | ✅ | ✅ | ❌ | ❌
 AddSupportedUILanguage (SP.Web) | ✅ | ✅ | ✅ | ✅
 AddTemplateFile (Collection(SP.File)) | ✅ | ✅ | ✅ | ✅
+AddTenantTheme (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
 AddThumbnailFieldData (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 AddToSpotlight (SP.View) | ✅ | ✅ | ❌ | ❌
 AddUserById (Collection(SP.User)) | ✅ | ❌ | ❌ | ❌
@@ -419,6 +420,8 @@ GetSpecialFolderUrl (SP.List) | ✅ | ✅ | ✅ | ❌
 GetStorageEntity (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetSubwebsFilteredForCurrentUser (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetTargetedSitesAsEditor (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
+GetTenantThemeById (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
+GetTenantThemes (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
 GetThemeFontByName (SP.ThemeInfo) | ✅ | ✅ | ✅ | ✅
 GetThemeShadeByName (SP.ThemeInfo) | ✅ | ✅ | ✅ | ✅
 GetUploadStatus (SP.File) | ✅ | ✅ | ❌ | ❌
@@ -950,6 +953,7 @@ UpdateInactiveSiteProperties (SP.Site) | ✅ | ❌ | ❌ | ❌
 UpdateOverwriteVersion (SP.ListItem) | ✅ | ✅ | ❌ | ❌
 UpdateRule (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateRuleEx (SP.List) | ✅ | ❌ | ❌ | ❌
+UpdateTenantTheme (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
 UpdateVirusInfo (SP.File) | ✅ | ✅ | ❌ | ❌
 Upgrade (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
 Upload (SP.File) | ✅ | ❌ | ❌ | ❌
@@ -973,6 +977,7 @@ ValidateSetValue (SP.FieldRatingScale) | ❌ | ❌ | ❌ | ✅
 ValidateSetValue (SP.FieldText) | ❌ | ❌ | ❌ | ✅
 ValidateSetValue (SP.FieldUrl) | ❌ | ❌ | ❌ | ✅
 ValidateSetValue (SP.FieldUser) | ❌ | ❌ | ❌ | ✅
+ValidateTenantThemeName (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
 ValidateUpdateFetchListItem (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 ValidateUpdateFetchListItemInFolder (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 ValidateUpdateListItem (SP.ListItem) | ✅ | ✅ | ✅ | ✅

@@ -52,7 +52,6 @@ GetBillingPolicyIdForApp (Microsoft.Online.SharePoint.TenantAdministration.Tenan
 GetBrandCenterConfiguration (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetBrandFontPackages (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetById (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
-GetChatGptResponse (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetCollaborationInsightsData (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetCollaborationInsightsOverview (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetCustomSpfx3rdPartyAppPrincipal (Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic) | ✅ | ❌ | ❌ | ❌
@@ -62,8 +61,6 @@ GetFileVersionExpirationReportJobProgress (Microsoft.Online.SharePoint.TenantAdm
 <span title="GetFileVersionExpirationReportJobProgressForLibrary (Microsoft.Online.SharePoint.TenantAdministration.Tenant)">GetFileVersionExpirationReportJobProgressForLibrar...</span> | ✅ | ❌ | ❌ | ❌
 GetFileVersionPolicyForLibrary (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetFilteredSPListItems (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
-GetGptEmbeddings (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
-GetGptResponse (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetGroupInfo (Microsoft.Online.SharePoint.TenantAdministration.SPOGroup) | ✅ | ❌ | ❌ | ❌
 GetGroupSiteRelationship (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌
 GetHomeSites (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌

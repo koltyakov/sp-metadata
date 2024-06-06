@@ -195,6 +195,8 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [TemplatizationMetaData](./ComplexTypes/TemplatizationMetaData.md) | ✅ | ❌ | ❌ | ❌
 [TemporaryFolderFileInfo](./ComplexTypes/TemporaryFolderFileInfo.md) | ✅ | ❌ | ❌ | ❌
 [TenantAppInformation](./ComplexTypes/TenantAppInformation.md) | ✅ | ✅ | ✅ | ❌
+[TenantThemes](./ComplexTypes/TenantThemes.md) | ✅ | ❌ | ❌ | ❌
+[ThemeData](./ComplexTypes/ThemeData.md) | ✅ | ❌ | ❌ | ❌
 [TimeZoneInformation](./ComplexTypes/TimeZoneInformation.md) | ✅ | ✅ | ✅ | ✅
 [TranslationNotificationRecipient](./ComplexTypes/TranslationNotificationRecipient.md) | ✅ | ❌ | ❌ | ❌
 [TranslationNotificationRecipientCollection](./ComplexTypes/TranslationNotificationRecipientCollection.md) | ✅ | ❌ | ❌ | ❌
