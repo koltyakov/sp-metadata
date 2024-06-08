@@ -39,6 +39,7 @@ MediaServiceTranscript (Edm.String) | ✅ | ❌ | ❌ | ❌
 MonteCarloApproximation (Edm.String) | ✅ | ❌ | ❌ | ❌
 SensitivityLabel (Edm.String) | ✅ | ❌ | ❌ | ❌
 SensitivityLabelAssignmentMethod (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+SkipSearchReindex (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 VirusInfo (Edm.String) | ✅ | ❌ | ❌ | ❌
 VirusStatus (Edm.String) | ✅ | ❌ | ❌ | ❌
 XTenantLabelInfo (Edm.String) | ✅ | ❌ | ❌ | ❌

@@ -28,6 +28,7 @@ AddItemUsingPath (SP.List) | ✅ | ✅ | ❌ | ❌
 AddOrUpdateSiteReference (SP.KnowledgeHub) | ✅ | ❌ | ❌ | ❌
 AddPlaceholderUser (SP.Web) | ✅ | ❌ | ❌ | ❌
 AddRoleAssignment (Collection(SP.RoleAssignment)) | ✅ | ✅ | ✅ | ✅
+AddSiteTheme (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
 AddStub (Collection(SP.File)) | ✅ | ✅ | ✅ | ❌
 AddStubUsingPath (Collection(SP.File)) | ✅ | ✅ | ❌ | ❌
 AddSubFolder (SP.Folder) | ✅ | ✅ | ❌ | ❌

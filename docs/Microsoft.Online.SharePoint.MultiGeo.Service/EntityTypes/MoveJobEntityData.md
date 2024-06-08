@@ -24,5 +24,6 @@ Reserve (Edm.String) | ✅ | ❌ | ❌ | ❌
 SiteId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 SourceDataLocation (Edm.String) | ✅ | ❌ | ❌ | ❌
 State (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+SubType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 TriggeredBy (Edm.String) | ✅ | ❌ | ❌ | ❌
 Type (Edm.Int32) | ✅ | ❌ | ❌ | ❌

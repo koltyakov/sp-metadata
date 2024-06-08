@@ -11,4 +11,5 @@ FilteringApplicationId (Edm.String) | ✅ | ❌ | ❌ | ❌
 FilteringApplicationName (Edm.String) | ✅ | ❌ | ❌ | ❌
 FilteringContainerTypeId (Edm.String) | ✅ | ❌ | ❌ | ❌
 FilteringField (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+OwnersCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 PublisherName (Edm.String) | ✅ | ❌ | ❌ | ❌

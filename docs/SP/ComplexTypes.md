@@ -13,6 +13,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [AgreementDocumentsInfo](./ComplexTypes/AgreementDocumentsInfo.md) | ✅ | ❌ | ❌ | ❌
 [AgreementESignStatusUpdatedPayload](./ComplexTypes/AgreementESignStatusUpdatedPayload.md) | ✅ | ❌ | ❌ | ❌
 [AgreementLocation](./ComplexTypes/AgreementLocation.md) | ✅ | ❌ | ❌ | ❌
+[AgreementLocationData](./ComplexTypes/AgreementLocationData.md) | ✅ | ❌ | ❌ | ❌
 [AgreementMetaData](./ComplexTypes/AgreementMetaData.md) | ✅ | ❌ | ❌ | ❌
 [AgreementReportBaseData](./ComplexTypes/AgreementReportBaseData.md) | ✅ | ❌ | ❌ | ❌
 [AgreementReportFilter](./ComplexTypes/AgreementReportFilter.md) | ✅ | ❌ | ❌ | ❌
@@ -107,6 +108,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [HomeSitesDetails](./ComplexTypes/HomeSitesDetails.md) | ✅ | ❌ | ❌ | ❌
 [HubSiteCreationInformation](./ComplexTypes/HubSiteCreationInformation.md) | ✅ | ✅ | ❌ | ❌
 [IngestionTaskKey](./ComplexTypes/IngestionTaskKey.md) | ✅ | ✅ | ✅ | ❌
+[ItemOrderUpdateValue](./ComplexTypes/ItemOrderUpdateValue.md) | ✅ | ❌ | ❌ | ❌
 [KeyValue](./ComplexTypes/KeyValue.md) | ✅ | ✅ | ✅ | ✅
 [KnowledgeHubSiteReference](./ComplexTypes/KnowledgeHubSiteReference.md) | ✅ | ❌ | ❌ | ❌
 [Language](./ComplexTypes/Language.md) | ✅ | ✅ | ✅ | ✅
