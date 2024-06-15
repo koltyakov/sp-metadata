@@ -100,6 +100,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [FontPackageCreationParameters](./ComplexTypes/FontPackageCreationParameters.md) | ✅ | ❌ | ❌ | ❌
 [GetListItemVersionsParameters](./ComplexTypes/GetListItemVersionsParameters.md) | ✅ | ❌ | ❌ | ❌
 [GetListsParameters](./ComplexTypes/GetListsParameters.md) | ✅ | ❌ | ❌ | ❌
+[GridInitInfoType](./ComplexTypes/GridInitInfoType.md) | ✅ | ❌ | ❌ | ❌
 [GroupCreationInformation](./ComplexTypes/GroupCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [HTMLFieldSecuritySetting](./ComplexTypes/HTMLFieldSecuritySetting.md) | ✅ | ❌ | ❌ | ❌
 [Hashtag](./ComplexTypes/Hashtag.md) | ✅ | ✅ | ❌ | ❌

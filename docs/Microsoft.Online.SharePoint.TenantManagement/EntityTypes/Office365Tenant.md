@@ -52,7 +52,6 @@ CoreDefaultShareLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CoreDefaultShareLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CoreLoopDefaultSharingLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CoreLoopDefaultSharingLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-CoreLoopSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CoreRequestFilesLinkEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CoreRequestFilesLinkExpirationInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CoreSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
@@ -130,7 +129,6 @@ MobileFriendlyUrlEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 MySitesPublicEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 NotificationsInOneDriveForBusinessEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 NotificationsInSharePointEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-NotifyOwnersWhenInvitationsAccepted (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 NotifyOwnersWhenItemsReshared (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ODBAccessRequests (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ODBMembersCanShare (Edm.Int32) | ✅ | ❌ | ❌ | ❌
@@ -144,7 +142,6 @@ OneDriveDefaultShareLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OneDriveForGuestsEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 OneDriveLoopDefaultSharingLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OneDriveLoopDefaultSharingLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-OneDriveLoopSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OneDriveRequestFilesLinkEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 OneDriveRequestFilesLinkExpirationInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OwnerAnonymousNotification (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -156,8 +153,8 @@ PublicCdnOrigins (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 RecycleBinRetentionPeriod (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ReduceTempTokenLifetimeEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ReduceTempTokenLifetimeValue (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-RequireAcceptingAccountMatchInvitedAccount (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RequireAnonymousLinksExpireInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+RestrictedAccessControlforSitesErrorHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌
 SPJitDlpPolicyData (Microsoft.SharePoint.AuthPolicy.SPJitDlpPolicyData) | ✅ | ❌ | ❌ | ❌
 SearchResolveExactEmailOrUPN (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SharingAllowedDomainList (Edm.String) | ✅ | ❌ | ❌ | ❌

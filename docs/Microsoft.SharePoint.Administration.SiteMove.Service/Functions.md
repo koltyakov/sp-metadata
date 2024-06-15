@@ -9,7 +9,7 @@ ExtendSystemSiteLockExpiration (Microsoft.SharePoint.Administration.SiteMove.Ser
 GetDatabaseProperties (Microsoft.SharePoint.Administration.SiteMove.Service.SiteMoveService) | ✅ | ❌ | ❌ | ❌
 GetServiceInfo (Microsoft.SharePoint.Administration.SiteMove.Service.SiteMoveService) | ✅ | ❌ | ❌ | ❌
 GetSiteMoveState (Microsoft.SharePoint.Administration.SiteMove.Service.SiteMoveService) | ✅ | ❌ | ❌ | ❌
-GetSiteSize (Microsoft.SharePoint.Administration.SiteMove.Service.SiteMoveService) | ✅ | ❌ | ❌ | ❌
+GetSiteProperties (Microsoft.SharePoint.Administration.SiteMove.Service.SiteMoveService) | ✅ | ❌ | ❌ | ❌
 IsDbReadOnly (Microsoft.SharePoint.Administration.SiteMove.Service.SiteMoveService) | ✅ | ❌ | ❌ | ❌
 IsSystemSiteLocked (Microsoft.SharePoint.Administration.SiteMove.Service.SiteMoveService) | ✅ | ❌ | ❌ | ❌
 [<span title="Microsoft_SharePoint_Administration_SiteMove_Service_SiteMoveService">Microsoft_SharePoint_Administration_SiteMove_Servi...</span> (Microsoft SharePoint Administration SiteMove Service SiteMoveService)](./Functions/Microsoft_SharePoint_Administration_SiteMove_Service_SiteMoveService.md) | ✅ | ❌ | ❌ | ❌

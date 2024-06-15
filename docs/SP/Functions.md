@@ -52,6 +52,7 @@ Apply (SP.FontPackage) | ✅ | ❌ | ❌ | ❌
 ApplyTheme (SP.Web) | ✅ | ✅ | ✅ | ✅
 ApplyWebTemplate (SP.Web) | ✅ | ✅ | ✅ | ✅
 Approve (SP.File) | ✅ | ✅ | ✅ | ✅
+Archive (SP.File) | ✅ | ❌ | ❌ | ❌
 [AttachAssignmentToQuiz](./Functions/AttachAssignmentToQuiz.md) | ❌ | ❌ | ❌ | ✅
 AttachImage (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 AvailableAddins (SP.Web) | ✅ | ❌ | ❌ | ❌
@@ -99,6 +100,7 @@ CreateDocumentWithDefaultName (SP.List) | ✅ | ✅ | ❌ | ❌
 CreateFieldAsXml (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
 CreateFolder (SP.FolderColoring) | ✅ | ❌ | ❌ | ❌
 CreateGroupBasedEnvironment (SP.Web) | ✅ | ❌ | ❌ | ❌
+CreateHVCSItemApprovalRequest (SP.List) | ✅ | ❌ | ❌ | ❌
 CreateMappedView (SP.List) | ✅ | ✅ | ❌ | ❌
 CreateMigrationIngestionJob (SP.Site) | ✅ | ✅ | ✅ | ❌
 CreateMigrationJob (SP.Site) | ✅ | ✅ | ✅ | ❌
@@ -894,6 +896,7 @@ SystemUpdate (SP.ListItem) | ✅ | ✅ | ❌ | ❌
 TakeOverCheckOut (SP.CheckedOutFile) | ✅ | ✅ | ❌ | ❌
 UTCToLocalTime (SP.TimeZone) | ✅ | ✅ | ✅ | ✅
 UnPublish (SP.File) | ✅ | ✅ | ✅ | ✅
+Unarchive (SP.File) | ✅ | ❌ | ❌ | ❌
 UndoCheckOut (SP.File) | ✅ | ✅ | ✅ | ✅
 Uninstall (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
 UninstallAddins (SP.Web) | ✅ | ❌ | ❌ | ❌

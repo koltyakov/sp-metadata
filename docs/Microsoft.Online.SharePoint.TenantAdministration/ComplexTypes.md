@@ -37,6 +37,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPContainerSortOrder](./ComplexTypes/SPContainerSortOrder.md) | ✅ | ❌ | ❌ | ❌
 [SPContainerTypeConfigurationProperties](./ComplexTypes/SPContainerTypeConfigurationProperties.md) | ✅ | ❌ | ❌ | ❌
 [SPContainerTypeProperties](./ComplexTypes/SPContainerTypeProperties.md) | ✅ | ❌ | ❌ | ❌
+[SPContentEventsCustomEmailProperty](./ComplexTypes/SPContentEventsCustomEmailProperty.md) | ✅ | ❌ | ❌ | ❌
 [SPDataGovernanceInsightMetadata](./ComplexTypes/SPDataGovernanceInsightMetadata.md) | ✅ | ❌ | ❌ | ❌
 [SPDataGovernanceInsightResponse](./ComplexTypes/SPDataGovernanceInsightResponse.md) | ✅ | ❌ | ❌ | ❌
 [SPDataGovernanceSARStartSiteReviewResponse](./ComplexTypes/SPDataGovernanceSARStartSiteReviewResponse.md) | ✅ | ❌ | ❌ | ❌

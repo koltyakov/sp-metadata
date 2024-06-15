@@ -67,8 +67,6 @@ LockReason (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 LockState (Edm.String) | ✅ | ❌ | ❌ | ❌
 LoopDefaultSharingLinkRole (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 LoopDefaultSharingLinkScope (Edm.Int32) | ✅ | ❌ | ❌ | ❌
-LoopOverrideSharingCapability (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-LoopSharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MajorVersionLimit (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MajorWithMinorVersionsLimit (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 MediaTranscription (Edm.Int32) | ✅ | ❌ | ❌ | ❌

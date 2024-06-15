@@ -117,6 +117,7 @@ EnableAzureADB2BIntegration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableDirectToCustomerBilling (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableDiscoverableByOrganizationForVideos (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableGuestSignInAcceleration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+EnableMediaReactions (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableMinimumVersionRequirement (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnableMipSiteLabel (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 EnablePromotedFileHandlers (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -239,6 +240,7 @@ RequireAcceptingAccountMatchInvitedAccount (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RequireAnonymousLinksExpireInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ResourceQuota (Edm.Double) | ✅ | ❌ | ❌ | ❌
 ResourceQuotaAllocated (Edm.Double) | ✅ | ❌ | ❌ | ❌
+RestrictedAccessControlforSitesErrorHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌
 RestrictedOneDriveLicense (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RestrictedSharePointLicense (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RootSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌

@@ -7,6 +7,7 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 AutoIndexed (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
+AutofillInfo (Edm.String) | ✅ | ❌ | ❌ | ❌
 CanBeDeleted (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 ClientSideComponentId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 ClientSideComponentProperties (Edm.String) | ✅ | ✅ | ❌ | ❌
