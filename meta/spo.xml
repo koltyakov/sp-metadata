@@ -1332,6 +1332,15 @@
         <Property Name="Id" Type="Edm.String" />
         <Property Name="MembersCanShare" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="SiteCopilotConfiguration">
+        <Property Name="settings" Type="SP.SiteCopilotSettings" />
+        <Property Name="type" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="SiteCopilotSettings">
+        <Property Name="filename" Type="Edm.String" />
+        <Property Name="serverRelativeUrl" Type="Edm.String" />
+        <Property Name="webAbsoluteUrl" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="UpgradeInfo">
         <Property Name="ErrorFile" Type="Edm.String" />
         <Property Name="Errors" Type="Edm.Int32" Nullable="false" />
@@ -1718,6 +1727,7 @@
         <Property Name="ShareByLinkEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ShowPeoplePickerSuggestionsForGuestUsers" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ShowUrlStructure" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SiteCopilotConfiguration" Type="SP.SiteCopilotConfiguration" />
         <Property Name="SitePolicyEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SocialBarOnSitePagesDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="StatusBarLink" Type="Edm.String" />
@@ -5971,6 +5981,13 @@
         <FunctionImport Name="InvokeDataverseQuery" ReturnType="SP.FlowSynchronizationResult" IsBindable="true" EntitySet="FlowSynchronizationResults">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
         </FunctionImport>
+        <FunctionImport Name="SetColumnLLMInfo" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
+          <Parameter Name="docLibId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="columnId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="autofillPrompt" Type="Edm.String" />
+          <Parameter Name="isEnabled" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="SetMachineLearningFlags" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Office.Server.ContentCenter.SPMachineLearningHub" />
           <Parameter Name="docLibId" Type="Edm.Guid" Nullable="false" />
@@ -8655,6 +8672,9 @@
         <FunctionImport Name="DiscardPage" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
+        <FunctionImport Name="ExtendSessionCoAuth" ReturnType="SP.Publishing.SitePageCoAuthState" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
+        </FunctionImport>
         <FunctionImport Name="GetDependencyMetadata" ReturnType="Collection(SP.Publishing.SitePageDependencyMetadata)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.CampaignPublication" />
         </FunctionImport>
@@ -8852,6 +8872,9 @@
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
         </FunctionImport>
         <FunctionImport Name="DiscardPage" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
+        </FunctionImport>
+        <FunctionImport Name="ExtendSessionCoAuth" ReturnType="SP.Publishing.SitePageCoAuthState" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.FeedVideoPage" />
         </FunctionImport>
         <FunctionImport Name="GetDependencyMetadata" ReturnType="Collection(SP.Publishing.SitePageDependencyMetadata)" IsSideEffecting="false" IsBindable="true">
@@ -9089,6 +9112,9 @@
         <FunctionImport Name="DiscardPage" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
         </FunctionImport>
+        <FunctionImport Name="ExtendSessionCoAuth" ReturnType="SP.Publishing.SitePageCoAuthState" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.RepostPage" />
+        </FunctionImport>
         <FunctionImport Name="GetDependencyMetadata" ReturnType="Collection(SP.Publishing.SitePageDependencyMetadata)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.RepostPage" />
         </FunctionImport>
@@ -9294,6 +9320,9 @@
         <FunctionImport Name="DiscardPage" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
         </FunctionImport>
+        <FunctionImport Name="ExtendSessionCoAuth" ReturnType="SP.Publishing.SitePageCoAuthState" IsBindable="true">
+          <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
+        </FunctionImport>
         <FunctionImport Name="GetDependencyMetadata" ReturnType="Collection(SP.Publishing.SitePageDependencyMetadata)" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.SitePage3D" />
         </FunctionImport>
@@ -9482,6 +9511,9 @@
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
         </FunctionImport>
         <FunctionImport Name="DiscardPage" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.SitePage" />
+        </FunctionImport>
+        <FunctionImport Name="ExtendSessionCoAuth" ReturnType="SP.Publishing.SitePageCoAuthState" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.SitePage" />
         </FunctionImport>
         <FunctionImport Name="GetDependencyMetadata" ReturnType="Collection(SP.Publishing.SitePageDependencyMetadata)" IsSideEffecting="false" IsBindable="true">
@@ -9699,6 +9731,9 @@
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
         </FunctionImport>
         <FunctionImport Name="DiscardPage" ReturnType="SP.Publishing.SitePage" IsBindable="true" EntitySet="SitePageMetadatas">
+          <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
+        </FunctionImport>
+        <FunctionImport Name="ExtendSessionCoAuth" ReturnType="SP.Publishing.SitePageCoAuthState" IsBindable="true">
           <Parameter Name="this" Type="SP.Publishing.TopicSitePage" />
         </FunctionImport>
         <FunctionImport Name="GetDependencyMetadata" ReturnType="Collection(SP.Publishing.SitePageDependencyMetadata)" IsSideEffecting="false" IsBindable="true">
@@ -10113,6 +10148,13 @@
         </FunctionImport>
         <FunctionImport Name="GetAzureContainerToken" ReturnType="Edm.String" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.SiteContentProcessingInfoProvider" />
+        </FunctionImport>
+        <FunctionImport Name="NotifyContentProcessingStatus" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.SiteContentProcessingInfoProvider" />
+          <Parameter Name="webId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="listId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="uniqueId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="properties" Type="Collection(SP.KeyValue)" />
         </FunctionImport>
         <FunctionImport Name="ReportContentProcessingStatus" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.SharePoint.Client.Search.Administration.SiteContentProcessingInfoProvider" />
@@ -14536,6 +14578,12 @@
           <Parameter Name="this" Type="SP.File" />
           <Parameter Name="activitiesStream" Type="Edm.Stream" />
         </FunctionImport>
+        <FunctionImport Name="AddFileScannerWorkItem" ReturnType="Edm.Boolean" IsBindable="true">
+          <Parameter Name="this" Type="SP.File" />
+          <Parameter Name="dispatchType" Type="Edm.String" />
+          <Parameter Name="jobType" Type="Edm.String" />
+          <Parameter Name="jobSubType" Type="Edm.String" />
+        </FunctionImport>
         <FunctionImport Name="Approve" IsBindable="true">
           <Parameter Name="this" Type="SP.File" />
           <Parameter Name="comment" Type="Edm.String" />
@@ -16585,6 +16633,25 @@
         </FunctionImport>
         <FunctionImport Name="GetMalwareFileStream" ReturnType="Edm.Stream" IsBindable="true">
           <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SPOMalwareFile" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_TenantAdministration_SPORestrictedContentDiscoverabilityClient" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPORestrictedContentDiscoverabilityClient" IsComposable="true" EntitySet="SPDataGovernanceRestApiClientBases">
+          <Parameter Name="authorizationHeader" Type="Edm.String" />
+          <Parameter Name="url" Type="Edm.String" />
+          <Parameter Name="userAgent" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="CreateRestrictedContentDiscoverabilityReport" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPOInsightsReportMetadata" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SPORestrictedContentDiscoverabilityClient" />
+        </FunctionImport>
+        <FunctionImport Name="GetAllRestrictedContentDiscoverabilityReports" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.SPOInsightsReportMetadata)" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SPORestrictedContentDiscoverabilityClient" />
+        </FunctionImport>
+        <FunctionImport Name="GetRestrictContentOrgWideSearchUsageInsightsReportContent" ReturnType="Collection(Microsoft.Online.SharePoint.TenantAdministration.SPORestrictedContentDiscoverabilitySiteDetails)" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SPORestrictedContentDiscoverabilityClient" />
+          <Parameter Name="reportId" Type="Edm.Guid" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetSPODataAccessGovernanceInsightById" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPOInsightsReportMetadata" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.TenantAdministration.SPORestrictedContentDiscoverabilityClient" />
+          <Parameter Name="reportId" Type="Edm.Guid" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_TenantAdministration_SPOWebAppServicePrincipalPublic" ReturnType="Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic" IsComposable="true" EntitySet="SPOWebAppServicePrincipalPublics" />
         <FunctionImport Name="AddCustomSpfx3rdPartyAppPrincipal" IsBindable="true">
@@ -21532,6 +21599,12 @@
       <Annotations Target="SP.SensitivityLabelInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.SiteCopilotConfiguration">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.SiteCopilotSettings">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.VisualizationAppInfo">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -21964,7 +22037,13 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SPOFileVersionPolicySettings">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SPOInsightsReportMetadata">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SPOListParameters">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SPORestrictedContentDiscoverabilitySiteDetails">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext">
@@ -23402,6 +23481,9 @@
       <Annotations Target="SP.Site/ShowPeoplePickerSuggestionsForGuestUsers">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Site/SiteCopilotConfiguration">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Site/SocialBarOnSitePagesDisabled">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -24449,6 +24531,9 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SPOPortalLaunchValidator">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SPORestrictedContentDiscoverabilityClient">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -24815,6 +24900,9 @@
       <Annotations Target="SP.ApiData/InvokeDataverseQuery(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SetColumnLLMInfo(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Edm.Guid, Edm.Guid, Edm.String, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SetMachineLearningFlags(Microsoft.Office.Server.ContentCenter.SPMachineLearningHub, Edm.Guid, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -25034,6 +25122,9 @@
       <Annotations Target="SP.ApiData/DiscardPage(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/ExtendSessionCoAuth(SP.Publishing.CampaignPublication)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetDependencyMetadata(SP.Publishing.CampaignPublication)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -25208,6 +25299,9 @@
       <Annotations Target="SP.ApiData/DiscardPage(SP.Publishing.FeedVideoPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/ExtendSessionCoAuth(SP.Publishing.FeedVideoPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetDependencyMetadata(SP.Publishing.FeedVideoPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -25340,6 +25434,9 @@
       <Annotations Target="SP.ApiData/DiscardPage(SP.Publishing.RepostPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/ExtendSessionCoAuth(SP.Publishing.RepostPage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/GetDependencyMetadata(SP.Publishing.RepostPage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -25449,6 +25546,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/DiscardPage(SP.Publishing.SitePage3D)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/ExtendSessionCoAuth(SP.Publishing.SitePage3D)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetDependencyMetadata(SP.Publishing.SitePage3D)">
@@ -25599,6 +25699,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/DiscardPage(SP.Publishing.SitePage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/ExtendSessionCoAuth(SP.Publishing.SitePage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetDependencyMetadata(SP.Publishing.SitePage)">
@@ -25758,6 +25861,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/DiscardPage(SP.Publishing.TopicSitePage)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/ExtendSessionCoAuth(SP.Publishing.TopicSitePage)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/GetDependencyMetadata(SP.Publishing.TopicSitePage)">
@@ -35267,6 +35373,7 @@
         <Property Name="FileType" Type="Edm.String" />
         <Property Name="LibraryUrl" Type="SP.ResourcePath" />
         <Property Name="ListId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="OrgAssetFlags" Type="Edm.Int32" Nullable="false" />
         <Property Name="OrgAssetType" Type="Edm.Int32" Nullable="false" />
         <Property Name="ThumbnailUrl" Type="SP.ResourcePath" />
         <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
@@ -35581,6 +35688,10 @@
         <Property Name="uALCorrelationId" Type="Edm.Guid" Nullable="false" />
         <Property Name="uALNumberOfRecords" Type="Edm.Int64" Nullable="false" />
         <Property Name="users" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SPContentEventsCustomEmailProperty">
+        <Property Name="Category" Type="Edm.Int32" Nullable="false" />
+        <Property Name="EmailAddresses" Type="Collection(Edm.String)" />
       </ComplexType>
       <ComplexType Name="ImpactedAsset" />
       <ComplexType Name="TeamsSitesActivityDetail">
@@ -35941,6 +36052,7 @@
         <Property Name="isInherited" Type="Edm.Boolean" Nullable="false" />
         <Property Name="linkDetails" Type="SP.SharingLinkInfo" />
         <Property Name="linkMembers" Type="Collection(SP.Sharing.Principal)" />
+        <Property Name="linkStatus" Type="SP.Sharing.SharingAbilityStatus" />
         <Property Name="totalLinkMembersCount" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="LinkParameters">
@@ -37167,10 +37279,6 @@
         <Property Name="ResourceGroup" Type="Edm.String" />
         <Property Name="SPContainerTypeBillingClassification" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
-      <ComplexType Name="SPContentEventsCustomEmailProperty">
-        <Property Name="Category" Type="Edm.Int32" Nullable="false" />
-        <Property Name="EmailAddresses" Type="Collection(Edm.String)" />
-      </ComplexType>
       <ComplexType Name="SPDataGovernanceInsightMetadata">
         <Property Name="ReportId" Type="Edm.Guid" Nullable="false" />
         <Property Name="Status" Type="Edm.String" />
@@ -37284,9 +37392,21 @@
         <Property Name="MinorVersionsEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="VersioningEnabled" Type="Edm.Boolean" Nullable="false" />
       </ComplexType>
+      <ComplexType Name="SPOInsightsReportMetadata">
+        <Property Name="CreatedDateTimeInUtc" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Status" Type="Edm.Int32" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="SPOListParameters">
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
         <Property Name="Title" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="SPORestrictedContentDiscoverabilitySiteDetails">
+        <Property Name="LastModified" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="SiteOwnerEmail" Type="Edm.String" />
+        <Property Name="SiteTitle" Type="Edm.String" />
+        <Property Name="SiteUrl" Type="Edm.String" />
+        <Property Name="TimeCreated" Type="Edm.DateTime" Nullable="false" />
       </ComplexType>
       <ComplexType Name="SPOSiteCreationSource">
         <Property Name="DisplayName" Type="Edm.String" />
@@ -37581,6 +37701,7 @@
         </Key>
         <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
       </EntityType>
+      <EntityType Name="SPORestrictedContentDiscoverabilityClient" BaseType="Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceRestApiClientBase" />
       <EntityType Name="SPOTenantCdnPolicy">
         <Key>
           <PropertyRef Name="PolicyType" />
@@ -37888,6 +38009,7 @@
         <Property Name="RestrictedSharePointLicense" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RootSiteUrl" Type="Edm.String" />
         <Property Name="SearchResolveExactEmailOrUPN" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SelfServiceSiteCreationDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SharePointAddInsDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SharingAllowedDomainList" Type="Edm.String" />
         <Property Name="SharingBlockedDomainList" Type="Edm.String" />
@@ -39931,6 +40053,7 @@
         <Property Name="RequireAnonymousLinksExpireInDays" Type="Edm.Int32" Nullable="false" />
         <Property Name="RestrictedAccessControlforSitesErrorHelpLink" Type="Edm.String" />
         <Property Name="SearchResolveExactEmailOrUPN" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SelfServiceSiteCreationDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SharingAllowedDomainList" Type="Edm.String" />
         <Property Name="SharingBlockedDomainList" Type="Edm.String" />
         <Property Name="SharingCapability" Type="Edm.Int32" Nullable="false" />
