@@ -188,6 +188,8 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SharingLinkInfo](./ComplexTypes/SharingLinkInfo.md) | ✅ | ✅ | ✅ | ❌
 [SimpleDataRow](./ComplexTypes/SimpleDataRow.md) | ✅ | ✅ | ✅ | ✅
 [SimpleDataTable](./ComplexTypes/SimpleDataTable.md) | ✅ | ✅ | ✅ | ✅
+[SiteCopilotConfiguration](./ComplexTypes/SiteCopilotConfiguration.md) | ✅ | ❌ | ❌ | ❌
+[SiteCopilotSettings](./ComplexTypes/SiteCopilotSettings.md) | ✅ | ❌ | ❌ | ❌
 [SiteTemplate](./ComplexTypes/SiteTemplate.md) | ✅ | ❌ | ❌ | ❌
 [SmartTemplateContentType](./ComplexTypes/SmartTemplateContentType.md) | ✅ | ❌ | ❌ | ❌
 [Snippet](./ComplexTypes/Snippet.md) | ✅ | ❌ | ❌ | ❌

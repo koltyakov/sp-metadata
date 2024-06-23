@@ -10,6 +10,7 @@ DisplayName (Edm.String) | ✅ | ❌ | ❌ | ❌
 FileType (Edm.String) | ✅ | ❌ | ❌ | ❌
 LibraryUrl (SP.ResourcePath) | ✅ | ❌ | ❌ | ❌
 ListId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
+OrgAssetFlags (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OrgAssetType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ThumbnailUrl (SP.ResourcePath) | ✅ | ❌ | ❌ | ❌
 UniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌

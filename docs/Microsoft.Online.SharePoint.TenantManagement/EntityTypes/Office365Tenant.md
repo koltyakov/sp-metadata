@@ -157,6 +157,7 @@ RequireAnonymousLinksExpireInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 RestrictedAccessControlforSitesErrorHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌
 SPJitDlpPolicyData (Microsoft.SharePoint.AuthPolicy.SPJitDlpPolicyData) | ✅ | ❌ | ❌ | ❌
 SearchResolveExactEmailOrUPN (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+SelfServiceSiteCreationDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SharingAllowedDomainList (Edm.String) | ✅ | ❌ | ❌ | ❌
 SharingBlockedDomainList (Edm.String) | ✅ | ❌ | ❌ | ❌
 SharingCapability (Edm.Int32) | ✅ | ❌ | ❌ | ❌

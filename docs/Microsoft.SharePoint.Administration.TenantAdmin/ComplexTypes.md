@@ -21,6 +21,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [Parameter](./ComplexTypes/Parameter.md) | ✅ | ❌ | ❌ | ❌
 [RansomwareProperties](./ComplexTypes/RansomwareProperties.md) | ✅ | ❌ | ❌ | ❌
 [RecentAdminActionReport](./ComplexTypes/RecentAdminActionReport.md) | ✅ | ❌ | ❌ | ❌
+[SPContentEventsCustomEmailProperty](./ComplexTypes/SPContentEventsCustomEmailProperty.md) | ✅ | ❌ | ❌ | ❌
 [TargetProperty](./ComplexTypes/TargetProperty.md) | ✅ | ❌ | ❌ | ❌
 [TeamsSitesActivityDetail](./ComplexTypes/TeamsSitesActivityDetail.md) | ✅ | ❌ | ❌ | ❌
 [TenantAdminListItemColumnValue](./ComplexTypes/TenantAdminListItemColumnValue.md) | ✅ | ❌ | ❌ | ❌

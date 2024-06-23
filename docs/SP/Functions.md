@@ -22,6 +22,7 @@ AddClientActivities (SP.File) | ✅ | ✅ | ❌ | ❌
 AddCrossFarmMessage (SP.Web) | ✅ | ❌ | ❌ | ❌
 AddDependentLookupField (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
 AddField (Collection(SP.Field)) | ✅ | ✅ | ✅ | ✅
+AddFileScannerWorkItem (SP.File) | ✅ | ❌ | ❌ | ❌
 AddHomeSite (SP.SPHSite) | ✅ | ❌ | ❌ | ❌
 AddItem (SP.List) | ✅ | ✅ | ✅ | ✅
 AddItemUsingPath (SP.List) | ✅ | ✅ | ❌ | ❌

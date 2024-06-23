@@ -33,6 +33,7 @@ ConnectSiteToHubSiteById (Microsoft.Online.SharePoint.TenantAdministration.Tenan
 CreateApplicationBillingPolicyValidation (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 CreateDataAccessGovernanceReport (Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightRestApiClient) | ✅ | ❌ | ❌ | ❌
 CreatePolicyDefinition (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+CreateRestrictedContentDiscoverabilityReport (Microsoft.Online.SharePoint.TenantAdministration.SPORestrictedContentDiscoverabilityClient) | ✅ | ❌ | ❌ | ❌
 CreateSite (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 DeletePolicyDefinition (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 DeleteRecentAdminActionReport (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -48,6 +49,7 @@ ExportSPODataAccessGovernanceInsight (Microsoft.Online.SharePoint.TenantAdminist
 ExportToCSV (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 ExportUnlicensedOneDriveForBusinessListToCSV (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetAdminListViews (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+GetAllRestrictedContentDiscoverabilityReports (Microsoft.Online.SharePoint.TenantAdministration.SPORestrictedContentDiscoverabilityClient) | ✅ | ❌ | ❌ | ❌
 GetBillingPolicyIdForApp (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetBrandCenterConfiguration (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetBrandFontPackages (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -77,6 +79,7 @@ GetRansomwareActivities (Microsoft.Online.SharePoint.TenantAdministration.Tenant
 GetRansomwareActivitiesOverview (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetRansomwareEvents (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetRansomwareEventsOverview (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+<span title="GetRestrictContentOrgWideSearchUsageInsightsReportContent (Microsoft.Online.SharePoint.TenantAdministration.SPORestrictedContentDiscoverabilityClient)">GetRestrictContentOrgWideSearchUsageInsightsReport...</span> | ✅ | ❌ | ❌ | ❌
 GetSPHSiteUrl (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPListItemCount (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPListRootFolderProperties (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -90,6 +93,7 @@ GetSPOContainerTypes (Microsoft.Online.SharePoint.TenantAdministration.Tenant) |
 GetSPOContainersByApplicationId (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPODataAccessGovernanceInsight (Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightRestApiClient) | ✅ | ❌ | ❌ | ❌
 GetSPODataAccessGovernanceInsightById (Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightRestApiClient) | ✅ | ❌ | ❌ | ❌
+GetSPODataAccessGovernanceInsightById (Microsoft.Online.SharePoint.TenantAdministration.SPORestrictedContentDiscoverabilityClient) | ✅ | ❌ | ❌ | ❌
 GetSPODeletedContainers (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPORestrictedSearchAllowedList (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 GetSPORestrictedSearchMode (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
@@ -134,6 +138,7 @@ MessageCenterMessages (Microsoft.Online.SharePoint.TenantAdministration.Office36
 [<span title="Microsoft_Online_SharePoint_TenantAdministration_SPDataGovernanceRestApiClientBase">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SPDataGovernanceRestApiClientBase)](./Functions/Microsoft_Online_SharePoint_TenantAdministration_SPDataGovernanceRestApiClientBase.md) | ✅ | ❌ | ❌ | ❌
 [<span title="Microsoft_Online_SharePoint_TenantAdministration_SPDataGovernanceSARRestApiClient">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SPDataGovernanceSARRestApiClient)](./Functions/Microsoft_Online_SharePoint_TenantAdministration_SPDataGovernanceSARRestApiClient.md) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_TenantAdministration_SPOGroup">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SPOGroup) | ✅ | ❌ | ❌ | ❌
+[<span title="Microsoft_Online_SharePoint_TenantAdministration_SPORestrictedContentDiscoverabilityClient">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SPORestrictedContentDiscoverabilityClient)](./Functions/Microsoft_Online_SharePoint_TenantAdministration_SPORestrictedContentDiscoverabilityClient.md) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_TenantAdministration_SPOWebAppServicePrincipalPublic">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SPOWebAppServicePrincipalPublic) | ✅ | ❌ | ❌ | ❌
 [<span title="Microsoft_Online_SharePoint_TenantAdministration_SiteProperties">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SiteProperties)](./Functions/Microsoft_Online_SharePoint_TenantAdministration_SiteProperties.md) | ✅ | ❌ | ❌ | ❌
 [<span title="Microsoft_Online_SharePoint_TenantAdministration_SiteProperties_ClearSharingLockDown">Microsoft_Online_SharePoint_TenantAdministration_S...</span> (Microsoft Online SharePoint TenantAdministration SiteProperties ClearSharingLockDown)](./Functions/Microsoft_Online_SharePoint_TenantAdministration_SiteProperties_ClearSharingLockDown.md) | ✅ | ❌ | ❌ | ❌

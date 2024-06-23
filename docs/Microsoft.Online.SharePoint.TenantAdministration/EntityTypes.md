@@ -15,6 +15,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPOGroup](./EntityTypes/SPOGroup.md) | ✅ | ❌ | ❌ | ❌
 [SPOMalwareFile](./EntityTypes/SPOMalwareFile.md) | ✅ | ❌ | ❌ | ❌
 [SPOPortalLaunchValidator](./EntityTypes/SPOPortalLaunchValidator.md) | ✅ | ❌ | ❌ | ❌
+[SPORestrictedContentDiscoverabilityClient](./EntityTypes/SPORestrictedContentDiscoverabilityClient.md) | ✅ | ❌ | ❌ | ❌
 [SPOTenantCdnPolicy](./EntityTypes/SPOTenantCdnPolicy.md) | ✅ | ❌ | ❌ | ❌
 [SPOTenantWebTemplateCollection](./EntityTypes/SPOTenantWebTemplateCollection.md) | ✅ | ❌ | ❌ | ❌
 [SPOWebAppServicePrincipalPublic](./EntityTypes/SPOWebAppServicePrincipalPublic.md) | ✅ | ❌ | ❌ | ❌

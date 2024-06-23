@@ -19,4 +19,5 @@ IsCrawlVersionsEnabledForTenant (Microsoft.SharePoint.Client.Search.Administrati
 IsRecycleBinDiscoverabilityEnabledForTenant (Microsoft.SharePoint.Client.Search.Administration.TenantRecycleBinInfoProvider) | ✅ | ❌ | ❌ | ❌
 [<span title="Microsoft_SharePoint_Client_Search_Administration_DocumentCrawlLog">Microsoft_SharePoint_Client_Search_Administration...</span> (Microsoft SharePoint Client Search Administration DocumentCrawlLog)](./Functions/Microsoft_SharePoint_Client_Search_Administration_DocumentCrawlLog.md) | ❌ | ❌ | ❌ | ✅
 [<span title="Microsoft_SharePoint_Client_Search_Administration_SearchObjectOwner">Microsoft_SharePoint_Client_Search_Administration...</span> (Microsoft SharePoint Client Search Administration SearchObjectOwner)](./Functions/Microsoft_SharePoint_Client_Search_Administration_SearchObjectOwner.md) | ❌ | ❌ | ❌ | ✅
+NotifyContentProcessingStatus (Microsoft.SharePoint.Client.Search.Administration.SiteContentProcessingInfoProvider) | ✅ | ❌ | ❌ | ❌
 ReportContentProcessingStatus (Microsoft.SharePoint.Client.Search.Administration.SiteContentProcessingInfoProvider) | ✅ | ❌ | ❌ | ❌

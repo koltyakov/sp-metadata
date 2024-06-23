@@ -246,6 +246,7 @@ RestrictedSharePointLicense (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RootSiteUrl (Edm.String) | ✅ | ❌ | ❌ | ❌
 SPJitDlpPolicyData (Microsoft.SharePoint.AuthPolicy.SPJitDlpPolicyData) | ✅ | ❌ | ❌ | ❌
 SearchResolveExactEmailOrUPN (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+SelfServiceSiteCreationDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SharePointAddInsDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SharingAllowedDomainList (Edm.String) | ✅ | ❌ | ❌ | ❌
 SharingBlockedDomainList (Edm.String) | ✅ | ❌ | ❌ | ❌

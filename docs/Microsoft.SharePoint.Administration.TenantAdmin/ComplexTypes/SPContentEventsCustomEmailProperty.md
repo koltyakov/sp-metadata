@@ -1,6 +1,6 @@
 # Complex Type: SPContentEventsCustomEmailProperty
 
-> Namespace: Microsoft.Online.SharePoint.TenantAdministration
+> Namespace: Microsoft.SharePoint.Administration.TenantAdmin
 
 ## Properties
 

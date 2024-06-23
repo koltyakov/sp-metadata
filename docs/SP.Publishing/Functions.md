@@ -93,6 +93,12 @@ Enable (SP.Publishing.CommunicationSite) | ✅ | ❌ | ❌ | ❌
 EnableAnnouncements (SP.Publishing.SitePageService) | ✅ | ❌ | ❌ | ❌
 EnableCategories (SP.Publishing.SitePageService) | ✅ | ❌ | ❌ | ❌
 EnsureTitleResource (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
+ExtendSessionCoAuth (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
+ExtendSessionCoAuth (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
+ExtendSessionCoAuth (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
+ExtendSessionCoAuth (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
+ExtendSessionCoAuth (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
+ExtendSessionCoAuth (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 Feed (Collection(SP.Publishing.SitePage)) | ✅ | ✅ | ❌ | ❌
 FeedTargeted (Collection(SP.Publishing.SitePage)) | ✅ | ❌ | ❌ | ❌
 FlwPropertyFilteringMapping (SP.Publishing.AnnouncementsController) | ✅ | ❌ | ❌ | ❌

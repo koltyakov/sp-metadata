@@ -37,7 +37,6 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPContainerSortOrder](./ComplexTypes/SPContainerSortOrder.md) | ✅ | ❌ | ❌ | ❌
 [SPContainerTypeConfigurationProperties](./ComplexTypes/SPContainerTypeConfigurationProperties.md) | ✅ | ❌ | ❌ | ❌
 [SPContainerTypeProperties](./ComplexTypes/SPContainerTypeProperties.md) | ✅ | ❌ | ❌ | ❌
-[SPContentEventsCustomEmailProperty](./ComplexTypes/SPContentEventsCustomEmailProperty.md) | ✅ | ❌ | ❌ | ❌
 [SPDataGovernanceInsightMetadata](./ComplexTypes/SPDataGovernanceInsightMetadata.md) | ✅ | ❌ | ❌ | ❌
 [SPDataGovernanceInsightResponse](./ComplexTypes/SPDataGovernanceInsightResponse.md) | ✅ | ❌ | ❌ | ❌
 [SPDataGovernanceSARStartSiteReviewResponse](./ComplexTypes/SPDataGovernanceSARStartSiteReviewResponse.md) | ✅ | ❌ | ❌ | ❌
@@ -49,7 +48,9 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPOFileVersionBatchDeleteJobProgress](./ComplexTypes/SPOFileVersionBatchDeleteJobProgress.md) | ✅ | ❌ | ❌ | ❌
 [SPOFileVersionExpirationReportJobProgress](./ComplexTypes/SPOFileVersionExpirationReportJobProgress.md) | ✅ | ❌ | ❌ | ❌
 [SPOFileVersionPolicySettings](./ComplexTypes/SPOFileVersionPolicySettings.md) | ✅ | ❌ | ❌ | ❌
+[SPOInsightsReportMetadata](./ComplexTypes/SPOInsightsReportMetadata.md) | ✅ | ❌ | ❌ | ❌
 [SPOListParameters](./ComplexTypes/SPOListParameters.md) | ✅ | ❌ | ❌ | ❌
+[SPORestrictedContentDiscoverabilitySiteDetails](./ComplexTypes/SPORestrictedContentDiscoverabilitySiteDetails.md) | ✅ | ❌ | ❌ | ❌
 [SPOSiteCreationSource](./ComplexTypes/SPOSiteCreationSource.md) | ✅ | ❌ | ❌ | ❌
 [SPOSitePropertiesEnumerableFilter](./ComplexTypes/SPOSitePropertiesEnumerableFilter.md) | ✅ | ❌ | ❌ | ❌
 [SPOTenantWebTemplate](./ComplexTypes/SPOTenantWebTemplate.md) | ✅ | ❌ | ❌ | ❌
