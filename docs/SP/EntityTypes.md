@@ -128,6 +128,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [RecentList](./EntityTypes/RecentList.md) | ✅ | ❌ | ❌ | ❌
 [RecentListCollection](./EntityTypes/RecentListCollection.md) | ✅ | ❌ | ❌ | ❌
 [RecentListProxy](./EntityTypes/RecentListProxy.md) | ✅ | ❌ | ❌ | ❌
+[RecommendationCollection](./EntityTypes/RecommendationCollection.md) | ✅ | ❌ | ❌ | ❌
 [RecycleBinItem](./EntityTypes/RecycleBinItem.md) | ✅ | ✅ | ✅ | ✅
 [RegionalSettings](./EntityTypes/RegionalSettings.md) | ✅ | ✅ | ✅ | ✅
 [RelatedField](./EntityTypes/RelatedField.md) | ✅ | ✅ | ✅ | ✅

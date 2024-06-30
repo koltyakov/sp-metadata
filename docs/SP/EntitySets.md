@@ -405,6 +405,7 @@ RecentListCollections | ✅ | ❌ | ❌ | ❌
 RecentListProxys | ✅ | ❌ | ❌ | ❌
 RecentLists | ✅ | ❌ | ❌ | ❌
 RecipeUtilitys | ❌ | ✅ | ❌ | ❌
+RecommendationCollections | ✅ | ❌ | ❌ | ❌
 RecycleBinItems | ✅ | ✅ | ✅ | ✅
 RefreshHealthInfos | ✅ | ✅ | ✅ | ✅
 RefreshHistorys | ✅ | ✅ | ✅ | ✅

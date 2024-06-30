@@ -167,7 +167,6 @@ IsMnAFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMultiGeo (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMultipleHomeSitesFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsMultipleVivaConnectionsFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-IsRansomwareProtectionEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsUnmanagedSyncClientForTenantRestricted (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsUnmanagedSyncClientRestrictionFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsVivaHomeFlightEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

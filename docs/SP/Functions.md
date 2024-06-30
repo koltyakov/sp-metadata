@@ -418,6 +418,7 @@ GetSharedWithUsers (SP.ObjectSharingInformation) | ✅ | ✅ | ✅ | ✅
 GetSharingLinkData (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetSitePageCopyToStatus (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetSitePageMoveStatus (SP.Web) | ✅ | ❌ | ❌ | ❌
+GetSiteThemes (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
 GetSiteUrlByHubSiteId (Collection(SP.HubSite)) | ✅ | ❌ | ❌ | ❌
 GetSiteUserIncludingDeletedByPuid (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetSpecialFolderUrl (SP.List) | ✅ | ✅ | ✅ | ❌
@@ -461,6 +462,7 @@ LockSmartTemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 LookupAppPrincipal (SP.AppPrincipalManager) | ❌ | ❌ | ❌ | ✅
 MakeHubSite (SP.Site) | ❌ | ✅ | ❌ | ❌
 MapFieldsToColumnsForModernTemlate (SP.List) | ✅ | ❌ | ❌ | ❌
+MapFieldsToColumnsForModernTemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 MapToIcon (SP.Web) | ✅ | ✅ | ✅ | ✅
 MarkReplyUrisUpdated (SP.Web) | ✅ | ❌ | ❌ | ❌
 MediaServiceUpdate (SP.ListItem) | ✅ | ❌ | ❌ | ❌
@@ -684,6 +686,9 @@ SP_QuickAccessItemCollection_GetQuickAccessItems | ✅ | ❌ | ❌ | ❌
 [SP_RecentListCollection_UpdateRecentLists](./Functions/SP_RecentListCollection_UpdateRecentLists.md) | ✅ | ❌ | ❌ | ❌
 [SP_RecentListCollection_UpdateRecentListsRemote](./Functions/SP_RecentListCollection_UpdateRecentListsRemote.md) | ✅ | ❌ | ❌ | ❌
 [SP_RecentListProxy_GetRecentListsProxy](./Functions/SP_RecentListProxy_GetRecentListsProxy.md) | ✅ | ❌ | ❌ | ❌
+[SP_RecommendationCollection_Dismissed](./Functions/SP_RecommendationCollection_Dismissed.md) | ✅ | ❌ | ❌ | ❌
+[SP_RecommendationCollection_Events](./Functions/SP_RecommendationCollection_Events.md) | ✅ | ❌ | ❌ | ❌
+[SP_RecommendationCollection_GetRecommendations](./Functions/SP_RecommendationCollection_GetRecommendations.md) | ✅ | ❌ | ❌ | ❌
 [SP_RelatedItemManager_AddSingleLink](./Functions/SP_RelatedItemManager_AddSingleLink.md) | ✅ | ✅ | ✅ | ✅
 [SP_RelatedItemManager_AddSingleLinkFromUrl](./Functions/SP_RelatedItemManager_AddSingleLinkFromUrl.md) | ✅ | ✅ | ✅ | ✅
 [SP_RelatedItemManager_AddSingleLinkToUrl](./Functions/SP_RelatedItemManager_AddSingleLinkToUrl.md) | ✅ | ✅ | ✅ | ✅

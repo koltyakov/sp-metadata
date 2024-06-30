@@ -191,6 +191,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SiteCopilotConfiguration](./ComplexTypes/SiteCopilotConfiguration.md) | ✅ | ❌ | ❌ | ❌
 [SiteCopilotSettings](./ComplexTypes/SiteCopilotSettings.md) | ✅ | ❌ | ❌ | ❌
 [SiteTemplate](./ComplexTypes/SiteTemplate.md) | ✅ | ❌ | ❌ | ❌
+[SiteThemes](./ComplexTypes/SiteThemes.md) | ✅ | ❌ | ❌ | ❌
 [SmartTemplateContentType](./ComplexTypes/SmartTemplateContentType.md) | ✅ | ❌ | ❌ | ❌
 [Snippet](./ComplexTypes/Snippet.md) | ✅ | ❌ | ❌ | ❌
 [SubwebQuery](./ComplexTypes/SubwebQuery.md) | ✅ | ✅ | ✅ | ✅

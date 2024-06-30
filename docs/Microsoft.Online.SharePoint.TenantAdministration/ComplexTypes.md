@@ -57,6 +57,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPSyntexApplicationProperties](./ComplexTypes/SPSyntexApplicationProperties.md) | ✅ | ❌ | ❌ | ❌
 [SecondaryAdministratorsFieldsData](./ComplexTypes/SecondaryAdministratorsFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [SecondaryAdministratorsInfo](./ComplexTypes/SecondaryAdministratorsInfo.md) | ✅ | ❌ | ❌ | ❌
+[SettingDataProperty](./ComplexTypes/SettingDataProperty.md) | ✅ | ❌ | ❌ | ❌
 [ShowNextGenerationSyncClientOnTeamSite](./ComplexTypes/ShowNextGenerationSyncClientOnTeamSite.md) | ✅ | ❌ | ❌ | ❌
 [ShowSelfServiceSiteCreation](./ComplexTypes/ShowSelfServiceSiteCreation.md) | ✅ | ❌ | ❌ | ❌
 [SiteAdministratorsFieldsData](./ComplexTypes/SiteAdministratorsFieldsData.md) | ✅ | ❌ | ❌ | ❌
