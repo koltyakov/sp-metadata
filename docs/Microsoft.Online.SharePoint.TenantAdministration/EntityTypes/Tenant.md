@@ -239,6 +239,7 @@ RequireAcceptingAccountMatchInvitedAccount (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RequireAnonymousLinksExpireInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ResourceQuota (Edm.Double) | ✅ | ❌ | ❌ | ❌
 ResourceQuotaAllocated (Edm.Double) | ✅ | ❌ | ❌ | ❌
+RestrictedAccessControlForOneDriveErrorHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌
 RestrictedAccessControlforSitesErrorHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌
 RestrictedOneDriveLicense (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 RestrictedSharePointLicense (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

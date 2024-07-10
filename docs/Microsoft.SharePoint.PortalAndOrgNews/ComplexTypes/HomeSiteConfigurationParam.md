@@ -16,5 +16,6 @@ IsVivaBackendSitePresent (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsVivaConnectionsDefaultStartPresent (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Order (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 TargetedLicenseType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+isGoBackToConnectionsButtonDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 isInDraftMode (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 vivaConnectionsDefaultStart (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

@@ -14,5 +14,6 @@ RemoveLink (Microsoft.SharePoint.EmployeeEngagement.VivaResources) | ✅ | ❌ |
 ReorderLink (Microsoft.SharePoint.EmployeeEngagement.VivaResources) | ✅ | ❌ | ❌ | ❌
 SetSpotlightConfiguration (Microsoft.SharePoint.EmployeeEngagement.VivaConnectionsPage) | ✅ | ❌ | ❌ | ❌
 TitleRegion (Microsoft.SharePoint.EmployeeEngagement.VivaHome) | ✅ | ❌ | ❌ | ❌
+UpdateGoToVCButtonFlag (Microsoft.SharePoint.EmployeeEngagement.VivaHome) | ✅ | ❌ | ❌ | ❌
 UpdateLink (Microsoft.SharePoint.EmployeeEngagement.VivaResources) | ✅ | ❌ | ❌ | ❌
 UpdateLinks (Microsoft.SharePoint.EmployeeEngagement.VivaResources) | ✅ | ❌ | ❌ | ❌

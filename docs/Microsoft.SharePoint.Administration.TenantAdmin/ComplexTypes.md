@@ -4,6 +4,7 @@
 
 Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+[AttestationPolicyResourceStorage](./ComplexTypes/AttestationPolicyResourceStorage.md) | ✅ | ❌ | ❌ | ❌
 [AuditData](./ComplexTypes/AuditData.md) | ✅ | ❌ | ❌ | ❌
 [AuditSearchRequestStatus](./ComplexTypes/AuditSearchRequestStatus.md) | ✅ | ❌ | ❌ | ❌
 [CollaborationInsightsData](./ComplexTypes/CollaborationInsightsData.md) | ✅ | ❌ | ❌ | ❌
@@ -19,6 +20,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [OwnershipPolicyResourceStorage](./ComplexTypes/OwnershipPolicyResourceStorage.md) | ✅ | ❌ | ❌ | ❌
 [PageResponse](./ComplexTypes/PageResponse.md) | ✅ | ❌ | ❌ | ❌
 [Parameter](./ComplexTypes/Parameter.md) | ✅ | ❌ | ❌ | ❌
+[PolicyResourceStorage](./ComplexTypes/PolicyResourceStorage.md) | ✅ | ❌ | ❌ | ❌
 [RansomwareProperties](./ComplexTypes/RansomwareProperties.md) | ✅ | ❌ | ❌ | ❌
 [RecentAdminActionReport](./ComplexTypes/RecentAdminActionReport.md) | ✅ | ❌ | ❌ | ❌
 [SPContentEventsCustomEmailProperty](./ComplexTypes/SPContentEventsCustomEmailProperty.md) | ✅ | ❌ | ❌ | ❌

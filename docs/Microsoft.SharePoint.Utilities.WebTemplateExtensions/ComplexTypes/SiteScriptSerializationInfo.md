@@ -12,3 +12,4 @@ IncludeRegionalSettings (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IncludeSiteExternalSharingCapability (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IncludeTheme (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IncludedLists (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
+IncludedPages (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌

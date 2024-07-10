@@ -154,6 +154,7 @@ RecycleBinRetentionPeriod (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ReduceTempTokenLifetimeEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ReduceTempTokenLifetimeValue (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 RequireAnonymousLinksExpireInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+RestrictedAccessControlForOneDriveErrorHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌
 RestrictedAccessControlforSitesErrorHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌
 SPJitDlpPolicyData (Microsoft.SharePoint.AuthPolicy.SPJitDlpPolicyData) | ✅ | ❌ | ❌ | ❌
 SearchResolveExactEmailOrUPN (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

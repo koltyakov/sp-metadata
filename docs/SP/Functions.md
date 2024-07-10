@@ -170,6 +170,7 @@ DeleteObject (SP.View) | ✅ | ✅ | ✅ | ✅
 DeleteObject (SP.Web) | ✅ | ✅ | ✅ | ✅
 [DeleteQuiz](./Functions/DeleteQuiz.md) | ❌ | ❌ | ❌ | ✅
 DeleteRule (SP.List) | ✅ | ❌ | ❌ | ❌
+DeleteSiteTheme (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
 DeleteWithParameters (SP.File) | ✅ | ❌ | ❌ | ❌
 DeleteWithParameters (SP.Folder) | ✅ | ❌ | ❌ | ❌
 DeleteWithParameters (SP.ListItem) | ✅ | ❌ | ❌ | ❌
@@ -963,6 +964,7 @@ UpdateInactiveSiteProperties (SP.Site) | ✅ | ❌ | ❌ | ❌
 UpdateOverwriteVersion (SP.ListItem) | ✅ | ✅ | ❌ | ❌
 UpdateRule (SP.List) | ✅ | ❌ | ❌ | ❌
 UpdateRuleEx (SP.List) | ✅ | ❌ | ❌ | ❌
+UpdateSiteTheme (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
 UpdateTenantTheme (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
 UpdateVirusInfo (SP.File) | ✅ | ✅ | ❌ | ❌
 Upgrade (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
