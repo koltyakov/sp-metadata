@@ -11099,10 +11099,6 @@
           <Parameter Name="script" Type="Edm.String" />
           <Parameter Name="parameters" Type="Edm.String" />
         </FunctionImport>
-        <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ExportPages" ReturnType="Edm.String" IsSideEffecting="false">
-          <Parameter Name="webRelativePagesUrls" Type="Collection(Edm.String)" />
-          <Parameter Name="options" Type="Collection(SP.KeyValue)" />
-        </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetDefaultSiteDesignForWebTemplate" ReturnType="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignMetadata">
           <Parameter Name="webTemplate" Type="Edm.String" />
         </FunctionImport>
@@ -11785,6 +11781,10 @@
           <Parameter Name="this" Type="Microsoft.SharePoint.EmployeeEngagement.VivaHome" />
           <Parameter Name="vivaHomeTitleRegion" Type="SP.VivaHomeTitleRegion" />
         </FunctionImport>
+        <FunctionImport Name="UpdateGoToVCButtonFlag" ReturnType="SP.TargetedSiteDetails" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.EmployeeEngagement.VivaHome" />
+          <Parameter Name="isGoBackToConnectionsButtonDisabled" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_EmployeeEngagement_VivaResourceGetEndpoint" ReturnType="Microsoft.SharePoint.EmployeeEngagement.VivaResourceGetEndpoint" IsComposable="true" EntitySet="VivaResourceGetEndpoints">
           <Parameter Name="links" Type="Collection(Microsoft.SharePoint.EmployeeEngagement.VivaResourceLink)" />
         </FunctionImport>
@@ -11878,6 +11878,10 @@
         <FunctionImport Name="CurrentBrandingConfiguration" ReturnType="SP.BrandCenterConfiguration" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.BrandCenter" />
         </FunctionImport>
+        <FunctionImport Name="DeleteSiteTheme" IsBindable="true">
+          <Parameter Name="this" Type="SP.BrandCenter" />
+          <Parameter Name="themeId" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="EnsureBrandColorsListFeature" ReturnType="Microsoft.SharePoint.Administration.OrgAssets" IsBindable="true">
           <Parameter Name="this" Type="SP.BrandCenter" />
         </FunctionImport>
@@ -11900,6 +11904,10 @@
         <FunctionImport Name="OrgAssetsWithCacheFlag" ReturnType="Microsoft.SharePoint.Administration.OrgAssets" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.BrandCenter" />
           <Parameter Name="shouldUseCache" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="UpdateSiteTheme" ReturnType="SP.ThemeData" IsBindable="true">
+          <Parameter Name="this" Type="SP.BrandCenter" />
+          <Parameter Name="themeData" Type="SP.ThemeData" />
         </FunctionImport>
         <FunctionImport Name="UpdateTenantTheme" ReturnType="SP.ThemeData" IsBindable="true">
           <Parameter Name="this" Type="SP.BrandCenter" />
@@ -20095,6 +20103,9 @@
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPExtractorPublishConfig">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Office.Server.ContentCenter.SPExtractorPublishConfig/ColumnInternalName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Office.Server.ContentCenter.SPExtractorPublishConfig/ColumnName">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -20708,6 +20719,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptSerializationInfo/IncludedLists">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptSerializationInfo/IncludedPages">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptSerializationInfo/IncludeLinksToExportedItems">
@@ -26294,9 +26308,6 @@
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ExecuteTemplateScriptWithParameters(Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_ExportPages(Collection(Edm.String), Collection(SP.KeyValue))">
-        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
-      </Annotations>
       <Annotations Target="SP.ApiData/Microsoft_SharePoint_Utilities_WebTemplateExtensions_SiteScriptUtility_GetDefaultSiteDesignForWebTemplate(Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -26684,6 +26695,9 @@
       <Annotations Target="SP.ApiData/TitleRegion(Microsoft.SharePoint.EmployeeEngagement.VivaHome, SP.VivaHomeTitleRegion)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/UpdateGoToVCButtonFlag(Microsoft.SharePoint.EmployeeEngagement.VivaHome, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/Like(Microsoft.SharePoint.Comments.comment)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -26723,6 +26737,9 @@
       <Annotations Target="SP.ApiData/CurrentBrandingConfiguration(SP.BrandCenter)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/DeleteSiteTheme(SP.BrandCenter, Edm.Int32)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/EnsureBrandColorsListFeature(SP.BrandCenter)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -26742,6 +26759,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/OrgAssetsWithCacheFlag(SP.BrandCenter, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/UpdateSiteTheme(SP.BrandCenter, SP.ThemeData)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/UpdateTenantTheme(SP.BrandCenter, SP.ThemeData)">
@@ -28190,6 +28210,7 @@
         <Property Name="ModelType" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SPExtractorPublishConfig">
+        <Property Name="ColumnInternalName" Type="Edm.String" />
         <Property Name="ColumnName" Type="Edm.String" />
         <Property Name="ColumnType" Type="Edm.String" />
         <Property Name="ExtractorId" Type="Edm.Guid" Nullable="false" />
@@ -34291,6 +34312,7 @@
       <ComplexType Name="SiteScriptSerializationInfo">
         <Property Name="IncludeBranding" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IncludedLists" Type="Collection(Edm.String)" />
+        <Property Name="IncludedPages" Type="Collection(Edm.String)" />
         <Property Name="IncludeLinksToExportedItems" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IncludeRegionalSettings" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IncludeSiteExternalSharingCapability" Type="Edm.Boolean" Nullable="false" />
@@ -34492,6 +34514,7 @@
       <ComplexType Name="HomeSiteConfigurationParam">
         <Property Name="Audiences" Type="Collection(Edm.Guid)" Nullable="false" />
         <Property Name="IsAudiencesPresent" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="isGoBackToConnectionsButtonDisabled" Type="Edm.Boolean" />
         <Property Name="isInDraftMode" Type="Edm.Boolean" />
         <Property Name="IsInDraftModePresent" Type="Edm.Boolean" />
         <Property Name="IsOrderPresent" Type="Edm.Boolean" Nullable="false" />
@@ -35572,6 +35595,21 @@
       </ComplexType>
     </Schema>
     <Schema Namespace="Microsoft.SharePoint.Administration.TenantAdmin" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="PolicyResourceStorage">
+        <Property Name="createdOn" Type="Edm.DateTime" />
+        <Property Name="lastScopedOn" Type="Edm.DateTime" />
+        <Property Name="lookupSiteId" Type="SP.FieldLookupValue" />
+        <Property Name="notificationData" Type="Edm.String" />
+        <Property Name="notificationStatus" Type="Edm.Int32" Nullable="false" />
+        <Property Name="policyActionLog" Type="Edm.String" />
+        <Property Name="resourceId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="resourceState" Type="Edm.Int32" Nullable="false" />
+        <Property Name="resourceStateTransitionData" Type="Edm.String" />
+        <Property Name="resourceType" Type="Edm.Int32" Nullable="false" />
+        <Property Name="updatedOn" Type="Edm.DateTime" />
+        <Property Name="userResponses" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="AttestationPolicyResourceStorage" BaseType="Microsoft.SharePoint.Administration.TenantAdmin.PolicyResourceStorage" />
       <ComplexType Name="AuditData">
         <Property Name="ClientIP" Type="Edm.String" />
         <Property Name="CorrelationId" Type="Edm.Guid" Nullable="false" />
@@ -37223,6 +37261,7 @@
         <Property Name="Url" Type="Edm.String" />
         <Property Name="UserCodeMaximumLevel" Type="Edm.Double" Nullable="false" />
         <Property Name="UserCodeWarningLevel" Type="Edm.Double" Nullable="false" />
+        <Property Name="Workspace" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SiteCreationSource">
         <Property Name="IsSyncThresholdLimitReached" Type="Edm.Boolean" Nullable="false" />
@@ -38077,6 +38116,7 @@
         <Property Name="RequireAnonymousLinksExpireInDays" Type="Edm.Int32" Nullable="false" />
         <Property Name="ResourceQuota" Type="Edm.Double" Nullable="false" />
         <Property Name="ResourceQuotaAllocated" Type="Edm.Double" Nullable="false" />
+        <Property Name="RestrictedAccessControlForOneDriveErrorHelpLink" Type="Edm.String" />
         <Property Name="RestrictedAccessControlforSitesErrorHelpLink" Type="Edm.String" />
         <Property Name="RestrictedOneDriveLicense" Type="Edm.Boolean" Nullable="false" />
         <Property Name="RestrictedSharePointLicense" Type="Edm.Boolean" Nullable="false" />
@@ -40124,6 +40164,7 @@
         <Property Name="ReduceTempTokenLifetimeEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ReduceTempTokenLifetimeValue" Type="Edm.Int32" Nullable="false" />
         <Property Name="RequireAnonymousLinksExpireInDays" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RestrictedAccessControlForOneDriveErrorHelpLink" Type="Edm.String" />
         <Property Name="RestrictedAccessControlforSitesErrorHelpLink" Type="Edm.String" />
         <Property Name="SearchResolveExactEmailOrUPN" Type="Edm.Boolean" Nullable="false" />
         <Property Name="SelfServiceSiteCreationDisabled" Type="Edm.Boolean" Nullable="false" />
