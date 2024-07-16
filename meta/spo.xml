@@ -2638,9 +2638,9 @@
       </EntityType>
       <EntityType Name="MultilingualSettings">
         <Key>
-          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+          <PropertyRef Name="FollowLangPreference" />
         </Key>
-        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+        <Property Name="FollowLangPreference" Type="Edm.Boolean" Nullable="false" />
         <NavigationProperty Name="Recipients" Relationship="SP.SP_MultilingualSettings_Recipients_SP_TranslationNotificationRecipientUsers_RecipientsPartner" ToRole="Recipients" FromRole="RecipientsPartner" />
       </EntityType>
       <EntityType Name="TranslationNotificationRecipientUsers">
@@ -4712,6 +4712,7 @@
         <EntitySet Name="MnAGroupMoveValidationResults" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.MnAGroupMoveValidationResult" />
         <EntitySet Name="MoveJobs" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.MoveJob" />
         <EntitySet Name="MoveJobEntityDatas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.MoveJobEntityData" />
+        <EntitySet Name="MoveSiteROStateEntitys" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.MoveSiteROStateEntity" />
         <EntitySet Name="MultiGeoApiVersionss" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoApiVersions" />
         <EntitySet Name="MultiGeoServicesBetas" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" />
         <EntitySet Name="OrgRelationGroupManagedPaths" EntityType="Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationGroupManagedPath" />
@@ -6585,6 +6586,16 @@
         </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_MnAGroupMoveValidationResult" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.MnAGroupMoveValidationResult" IsComposable="true" EntitySet="MnAGroupMoveValidationResults">
           <Parameter Name="encodedQuery" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_MoveSites" ReturnType="Collection(Microsoft.Online.SharePoint.MultiGeo.Service.MoveSiteROState)" IsComposable="true" EntitySet="MoveSiteROStateEntitys" />
+        <FunctionImport Name="GetBySiteId" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.MoveSiteROState" IsComposable="true" IsBindable="true" EntitySet="MoveSiteROStateEntitys">
+          <Parameter Name="this" Type="Collection(Microsoft.Online.SharePoint.MultiGeo.Service.MoveSiteROState)" />
+          <Parameter Name="siteId" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_MoveSiteROStateEntity" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.MoveSiteROStateEntity" IsComposable="true" EntitySet="MoveSiteROStateEntitys" />
+        <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_MoveSiteROState" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.MoveSiteROState" IsComposable="true" EntitySet="MoveSiteROStateEntitys" />
+        <FunctionImport Name="UpdateSiteROState" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.Online.SharePoint.MultiGeo.Service.MoveSiteROState" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoApiVersions" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoApiVersions" IsComposable="true" EntitySet="MultiGeoApiVersionss" />
         <FunctionImport Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta" ReturnType="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" IsComposable="true" EntitySet="MultiGeoServicesBetas" />
@@ -12595,10 +12606,6 @@
           <Parameter Name="appId" Type="Edm.Guid" Nullable="false" />
           <Parameter Name="visualizationTarget" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="PublishModernTemplate" IsBindable="true">
-          <Parameter Name="this" Type="SP.List" />
-          <Parameter Name="publishModernTemplatePayload" Type="SP.PublishModernTemplatePayload" />
-        </FunctionImport>
         <FunctionImport Name="PublishSnippet" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="publishSnippetPayload" Type="SP.PublishSnippetPayload" />
@@ -13757,6 +13764,10 @@
           <Parameter Name="recommendListsJson" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="SP_MultilingualSettings" ReturnType="SP.MultilingualSettings" IsComposable="true" EntitySet="MultilingualSettingss" />
+        <FunctionImport Name="SetFollowLangPreference" IsBindable="true">
+          <Parameter Name="this" Type="SP.MultilingualSettings" />
+          <Parameter Name="request" Type="Edm.Boolean" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="SetNotificationRecipients" IsBindable="true">
           <Parameter Name="this" Type="SP.MultilingualSettings" />
           <Parameter Name="request" Type="SP.TranslationNotificationRecipientSetRequest" />
@@ -18593,6 +18604,10 @@
           <End Role="GroupMoveJobsPartner" EntitySet="MultiGeoServicesBetas" />
           <End Role="GroupMoveJobs" EntitySet="GroupMoveJobEntityDatas" />
         </AssociationSet>
+        <AssociationSet Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_MoveSites_Microsoft_Online_SharePoint_MultiGeo_Service_MoveSiteROState_MoveSitesPartnerSet" Association="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_MoveSites_Microsoft_Online_SharePoint_MultiGeo_Service_MoveSiteROState_MoveSitesPartner">
+          <End Role="MoveSitesPartner" EntitySet="MultiGeoServicesBetas" />
+          <End Role="MoveSites" EntitySet="MoveSiteROStateEntitys" />
+        </AssociationSet>
         <AssociationSet Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_SiteMoveJobs_Microsoft_Online_SharePoint_MultiGeo_Service_SiteMoveJob_SiteMoveJobsPartnerSet" Association="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_SiteMoveJobs_Microsoft_Online_SharePoint_MultiGeo_Service_SiteMoveJob_SiteMoveJobsPartner">
           <End Role="SiteMoveJobsPartner" EntitySet="MultiGeoServicesBetas" />
           <End Role="SiteMoveJobs" EntitySet="SiteMoveJobEntityDatas" />
@@ -20779,6 +20794,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptActionStatus/ActionTitle">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptActionStatus/ActionVerb">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptActionStatus/LastModified">
@@ -24856,6 +24874,9 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest/IsolatedDomainUrl">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest/IsPreauthorizedPermission">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest/MultiTenantAppId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -27208,6 +27229,9 @@
       <Annotations Target="SP.ApiData/SP_MultilingualSettings()">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/SetFollowLangPreference(SP.MultilingualSettings, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/SetNotificationRecipients(SP.MultilingualSettings, SP.TranslationNotificationRecipientSetRequest)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -28936,6 +28960,14 @@
         <Property Name="StartedDateInUtc" Type="Edm.DateTime" Nullable="false" />
         <Property Name="StateName" Type="Edm.String" />
       </EntityType>
+      <EntityType Name="MoveSiteROStateEntity">
+        <Key>
+          <PropertyRef Name="IsOriginalReadOnly" />
+        </Key>
+        <Property Name="IsOriginalReadOnly" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SiteId" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="MoveSiteROState" BaseType="Microsoft.Online.SharePoint.MultiGeo.Service.MoveSiteROStateEntity" />
       <EntityType Name="MultiGeoApiVersions">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
@@ -28965,6 +28997,7 @@
         <NavigationProperty Name="GeoTenantInstanceInformationCollection" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_GeoTenantInstanceInformationCollection_Microsoft_Online_SharePoint_MultiGeo_Service_GeoTenantInstanceInformation_GeoTenantInstanceInformationCollectionPartner" ToRole="GeoTenantInstanceInformationCollection" FromRole="GeoTenantInstanceInformationCollectionPartner" />
         <NavigationProperty Name="GlobalAdminCheck" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_GlobalAdminCheck_Microsoft_Online_SharePoint_MultiGeo_Service_GlobalAdminCheck_GlobalAdminCheckPartner" ToRole="GlobalAdminCheck" FromRole="GlobalAdminCheckPartner" />
         <NavigationProperty Name="GroupMoveJobs" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_GroupMoveJobs_Microsoft_Online_SharePoint_MultiGeo_Service_GroupMoveJob_GroupMoveJobsPartner" ToRole="GroupMoveJobs" FromRole="GroupMoveJobsPartner" />
+        <NavigationProperty Name="MoveSites" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_MoveSites_Microsoft_Online_SharePoint_MultiGeo_Service_MoveSiteROState_MoveSitesPartner" ToRole="MoveSites" FromRole="MoveSitesPartner" />
         <NavigationProperty Name="SiteMoveJobs" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_SiteMoveJobs_Microsoft_Online_SharePoint_MultiGeo_Service_SiteMoveJob_SiteMoveJobsPartner" ToRole="SiteMoveJobs" FromRole="SiteMoveJobsPartner" />
         <NavigationProperty Name="StorageQuotas" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_StorageQuotas_Microsoft_Online_SharePoint_MultiGeo_Service_StorageQuota_StorageQuotasPartner" ToRole="StorageQuotas" FromRole="StorageQuotasPartner" />
         <NavigationProperty Name="SupportedGeoLocationsForTenant" Relationship="Microsoft.Online.SharePoint.MultiGeo.Service.Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_SupportedGeoLocationsForTenant_Microsoft_Online_SharePoint_MultiGeo_Service_SupportedGeoLocationsForTenant_SupportedGeoLocationsForTenantPartner" ToRole="SupportedGeoLocationsForTenant" FromRole="SupportedGeoLocationsForTenantPartner" />
@@ -29178,6 +29211,10 @@
       <Association Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_GroupMoveJobs_Microsoft_Online_SharePoint_MultiGeo_Service_GroupMoveJob_GroupMoveJobsPartner">
         <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJob" Role="GroupMoveJobs" Multiplicity="*" />
         <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" Role="GroupMoveJobsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_MoveSites_Microsoft_Online_SharePoint_MultiGeo_Service_MoveSiteROState_MoveSitesPartner">
+        <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.MoveSiteROState" Role="MoveSites" Multiplicity="*" />
+        <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta" Role="MoveSitesPartner" Multiplicity="0..1" />
       </Association>
       <Association Name="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta_SiteMoveJobs_Microsoft_Online_SharePoint_MultiGeo_Service_SiteMoveJob_SiteMoveJobsPartner">
         <End Type="Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob" Role="SiteMoveJobs" Multiplicity="*" />
@@ -34338,6 +34375,7 @@
         <Property Name="ActionIndex" Type="Edm.Int32" Nullable="false" />
         <Property Name="ActionKey" Type="Edm.Guid" Nullable="false" />
         <Property Name="ActionTitle" Type="Edm.String" />
+        <Property Name="ActionVerb" Type="Edm.String" />
         <Property Name="LastModified" Type="Edm.Int64" Nullable="false" />
         <Property Name="OrdinalIndex" Type="Edm.Int32" Nullable="false" />
         <Property Name="OutcomeCode" Type="Edm.Int32" Nullable="false" />
@@ -40268,6 +40306,7 @@
         <Property Name="Id" Type="Edm.Guid" Nullable="false" />
         <Property Name="IsDomainIsolated" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsolatedDomainUrl" Type="Edm.String" />
+        <Property Name="IsPreauthorizedPermission" Type="Edm.Boolean" Nullable="false" />
         <Property Name="MultiTenantAppId" Type="Edm.String" />
         <Property Name="MultiTenantAppReplyUrl" Type="Edm.String" />
         <Property Name="PackageApproverName" Type="Edm.String" />
