@@ -29,6 +29,7 @@ GeoExperience | ✅ | ❌ | ❌ | ❌
 GeoTenantInstanceInformationCollection | ✅ | ❌ | ❌ | ❌
 GlobalAdminCheck | ✅ | ❌ | ❌ | ❌
 GroupMoveJobs | ✅ | ❌ | ❌ | ❌
+MoveSites | ✅ | ❌ | ❌ | ❌
 SiteMoveJobs | ✅ | ❌ | ❌ | ❌
 StorageQuotas | ✅ | ❌ | ❌ | ❌
 SupportedGeoLocationsForTenant | ✅ | ❌ | ❌ | ❌

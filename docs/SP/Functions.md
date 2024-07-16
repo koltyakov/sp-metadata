@@ -508,7 +508,6 @@ ProvisionMigrationQueue (SP.Site) | ✅ | ✅ | ❌ | ❌
 ProvisionTemporaryAzureContainer (SP.Site) | ✅ | ❌ | ❌ | ❌
 Publish (SP.File) | ✅ | ✅ | ✅ | ✅
 PublishMappedView (SP.List) | ✅ | ✅ | ❌ | ❌
-PublishModernTemplate (SP.List) | ✅ | ❌ | ❌ | ❌
 PublishSnippet (SP.List) | ✅ | ❌ | ❌ | ❌
 PublishTemplateV2 (SP.List) | ✅ | ❌ | ❌ | ❌
 RecoverTenantForBringYourOwnKey (SP.Site) | ✅ | ✅ | ❌ | ❌
@@ -810,6 +809,7 @@ SetExpirationDate (SP.FileVersion) | ✅ | ❌ | ❌ | ❌
 SetExpireAfter (SP.SiteVersionPolicyManager) | ✅ | ❌ | ❌ | ❌
 SetFileUserValue (SP.File) | ✅ | ❌ | ❌ | ❌
 SetFlag (SP.UserExperienceState) | ✅ | ❌ | ❌ | ❌
+SetFollowLangPreference (SP.MultilingualSettings) | ✅ | ❌ | ❌ | ❌
 SetGlobalNavSettings (SP.Web) | ✅ | ❌ | ❌ | ❌
 SetId (SP.TimeZone) | ✅ | ❌ | ❌ | ❌
 <span title="SetIsContributorOwnerEnabledPropertyForDefaultDocLib (SP.Site)">SetIsContributorOwnerEnabledPropertyForDefaultDocL...</span> | ✅ | ❌ | ❌ | ❌

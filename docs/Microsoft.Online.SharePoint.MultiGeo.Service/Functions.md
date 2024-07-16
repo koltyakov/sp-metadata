@@ -32,6 +32,7 @@ GetByMoveId (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUs
 GetByMoveId (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob)) | ✅ | ❌ | ❌ | ❌
 GetByObjectId (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator)) | ✅ | ❌ | ❌ | ❌
 GetByPropertyNameAndGeoLocation (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty)) | ✅ | ❌ | ❌ | ❌
+GetBySiteId (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.MoveSiteROState)) | ✅ | ❌ | ❌ | ❌
 GetBySiteUrl (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJob)) | ✅ | ❌ | ❌ | ❌
 GetByUpn (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob)) | ✅ | ❌ | ❌ | ❌
 GetByUrl (Collection(Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob)) | ✅ | ❌ | ❌ | ❌
@@ -71,6 +72,9 @@ HasMnALicense (Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_GroupMoveJobEntityData">Microsoft_Online_SharePoint_MultiGeo_Service_Group...</span> (Microsoft Online SharePoint MultiGeo Service GroupMoveJobEntityData) | ✅ | ❌ | ❌ | ❌
 [<span title="Microsoft_Online_SharePoint_MultiGeo_Service_HasMnALicense">Microsoft_Online_SharePoint_MultiGeo_Service_HasMn...</span> (Microsoft Online SharePoint MultiGeo Service HasMnALicense)](./Functions/Microsoft_Online_SharePoint_MultiGeo_Service_HasMnALicense.md) | ✅ | ❌ | ❌ | ❌
 [<span title="Microsoft_Online_SharePoint_MultiGeo_Service_MnAGroupMoveValidationResult">Microsoft_Online_SharePoint_MultiGeo_Service_MnAGr...</span> (Microsoft Online SharePoint MultiGeo Service MnAGroupMoveValidationResult)](./Functions/Microsoft_Online_SharePoint_MultiGeo_Service_MnAGroupMoveValidationResult.md) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_MoveSiteROState">Microsoft_Online_SharePoint_MultiGeo_Service_MoveS...</span> (Microsoft Online SharePoint MultiGeo Service MoveSiteROState) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_MoveSiteROStateEntity">Microsoft_Online_SharePoint_MultiGeo_Service_MoveS...</span> (Microsoft Online SharePoint MultiGeo Service MoveSiteROStateEntity) | ✅ | ❌ | ❌ | ❌
+<span title="Microsoft_Online_SharePoint_MultiGeo_Service_MoveSites">Microsoft_Online_SharePoint_MultiGeo_Service_MoveS...</span> (Microsoft Online SharePoint MultiGeo Service MoveSites) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoApiVersions">Microsoft_Online_SharePoint_MultiGeo_Service_Multi...</span> (Microsoft Online SharePoint MultiGeo Service MultiGeoApiVersions) | ✅ | ❌ | ❌ | ❌
 <span title="Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta">Microsoft_Online_SharePoint_MultiGeo_Service_Multi...</span> (Microsoft Online SharePoint MultiGeo Service MultiGeoServicesBeta) | ✅ | ❌ | ❌ | ❌
 [<span title="Microsoft_Online_SharePoint_MultiGeo_Service_OrgRelationGroupManagedPath">Microsoft_Online_SharePoint_MultiGeo_Service_OrgRe...</span> (Microsoft Online SharePoint MultiGeo Service OrgRelationGroupManagedPath)](./Functions/Microsoft_Online_SharePoint_MultiGeo_Service_OrgRelationGroupManagedPath.md) | ✅ | ❌ | ❌ | ❌
@@ -103,6 +107,7 @@ Update (Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob) | ✅ | ❌ | 
 Update (Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.MultiGeo.Service.TaxonomyReplicationParameters) | ✅ | ❌ | ❌ | ❌
 Update (Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob) | ✅ | ❌ | ❌ | ❌
+UpdateSiteROState (Microsoft.Online.SharePoint.MultiGeo.Service.MoveSiteROState) | ✅ | ❌ | ❌ | ❌
 UpgradeAllInstancesToSPOMode (Microsoft.Online.SharePoint.MultiGeo.Service.GeoExperience) | ✅ | ❌ | ❌ | ❌
 UpgradeToSPOMode (Microsoft.Online.SharePoint.MultiGeo.Service.GeoExperience) | ✅ | ❌ | ❌ | ❌
 UserMnAODMoveValidationResult (Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta) | ✅ | ❌ | ❌ | ❌

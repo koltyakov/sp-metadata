@@ -1,8 +1,8 @@
-# Function Import: PublishModernTemplate
+# Function Import: SetFollowLangPreference
 
 > Namespace: SP
 
-- Entity type: SP.List
+- Entity type: SP.MultilingualSettings
 - Is composable: false
 - Is bindable: false
 
@@ -10,4 +10,4 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-publishModernTemplatePayload (SP.PublishModernTemplatePayload) | ✅ | ❌ | ❌ | ❌
+request (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

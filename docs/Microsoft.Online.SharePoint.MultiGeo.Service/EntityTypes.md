@@ -39,6 +39,8 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [MnAGroupMoveValidationResult](./EntityTypes/MnAGroupMoveValidationResult.md) | ✅ | ❌ | ❌ | ❌
 [MoveJob](./EntityTypes/MoveJob.md) | ✅ | ❌ | ❌ | ❌
 [MoveJobEntityData](./EntityTypes/MoveJobEntityData.md) | ✅ | ❌ | ❌ | ❌
+[MoveSiteROState](./EntityTypes/MoveSiteROState.md) | ✅ | ❌ | ❌ | ❌
+[MoveSiteROStateEntity](./EntityTypes/MoveSiteROStateEntity.md) | ✅ | ❌ | ❌ | ❌
 [MultiGeoApiVersions](./EntityTypes/MultiGeoApiVersions.md) | ✅ | ❌ | ❌ | ❌
 [MultiGeoServicesBeta](./EntityTypes/MultiGeoServicesBeta.md) | ✅ | ❌ | ❌ | ❌
 [OrgRelationGroupManagedPath](./EntityTypes/OrgRelationGroupManagedPath.md) | ✅ | ❌ | ❌ | ❌

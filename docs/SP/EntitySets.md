@@ -291,6 +291,7 @@ MountedFolderInfos | ✅ | ✅ | ✅ | ❌
 MoveCopyUtils | ✅ | ✅ | ✅ | ❌
 MoveJobEntityDatas | ✅ | ❌ | ❌ | ❌
 MoveJobs | ✅ | ❌ | ❌ | ❌
+MoveSiteROStateEntitys | ✅ | ❌ | ❌ | ❌
 MultiGeoApiVersionss | ✅ | ❌ | ❌ | ❌
 MultiGeoProxys | ✅ | ❌ | ❌ | ❌
 MultiGeoServicesBetas | ✅ | ❌ | ❌ | ❌
