@@ -12,3 +12,4 @@ OutcomeText (Edm.String) | ✅ | ✅ | ❌ | ❌
 Target (Edm.String) | ✅ | ❌ | ❌ | ❌
 TargetId (Edm.String) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ✅ | ❌ | ❌
+Verb (Edm.String) | ✅ | ❌ | ❌ | ❌

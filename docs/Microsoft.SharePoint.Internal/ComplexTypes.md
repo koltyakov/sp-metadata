@@ -16,5 +16,6 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [GptResponse](./ComplexTypes/GptResponse.md) | ✅ | ❌ | ❌ | ❌
 [GptResponseChoice](./ComplexTypes/GptResponseChoice.md) | ✅ | ❌ | ❌ | ❌
 [GptResponseUsage](./ComplexTypes/GptResponseUsage.md) | ✅ | ❌ | ❌ | ❌
+[LogActivityRequest](./ComplexTypes/LogActivityRequest.md) | ✅ | ❌ | ❌ | ❌
 [MessageEntry](./ComplexTypes/MessageEntry.md) | ✅ | ❌ | ❌ | ❌
 [TrackedItemUpdatesRequest](./ComplexTypes/TrackedItemUpdatesRequest.md) | ✅ | ❌ | ❌ | ❌

@@ -18,4 +18,3 @@ Title (Edm.String) | ✅ | ❌ | ❌ | ❌
 Url (Edm.String) | ✅ | ❌ | ❌ | ❌
 UserCodeMaximumLevel (Edm.Double) | ✅ | ❌ | ❌ | ❌
 UserCodeWarningLevel (Edm.Double) | ✅ | ❌ | ❌ | ❌
-Workspace (Edm.String) | ✅ | ❌ | ❌ | ❌
