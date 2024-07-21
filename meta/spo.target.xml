@@ -11653,6 +11653,12 @@
           <Parameter Name="AuditCreationTime" Type="Edm.String" />
           <Parameter Name="IsOffline" Type="Edm.Boolean" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="LogActivityBulk" IsBindable="true">
+          <Parameter Name="this" Type="Microsoft.SharePoint.Internal.ActivityLogger" />
+          <Parameter Name="Operation" Type="Edm.String" />
+          <Parameter Name="SiteId" Type="Edm.Guid" Nullable="false" />
+          <Parameter Name="Requests" Type="Collection(Microsoft.SharePoint.Internal.LogActivityRequest)" />
+        </FunctionImport>
         <FunctionImport Name="SP_Internal_FlowPermissions_GetFlowPermissionLevelOnList" ReturnType="SP.ConnectorResult" IsComposable="true" EntitySet="ConnectorResults">
           <Parameter Name="listName" Type="Edm.String" />
         </FunctionImport>
@@ -20299,6 +20305,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.SitePageFieldsData/TopicHeader">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.Publishing.SitePageFieldsData/TranspileContents">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.Publishing.SitePageFieldsData/WebTranspileContent">
@@ -32219,6 +32228,7 @@
         <Property Name="TeamsTranspileContent" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
         <Property Name="TopicHeader" Type="Edm.String" />
+        <Property Name="TranspileContents" Type="Edm.String" />
         <Property Name="WebTranspileContent" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SitePageCoAuthState">
@@ -34332,6 +34342,7 @@
         <Property Name="Target" Type="Edm.String" />
         <Property Name="TargetId" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
+        <Property Name="Verb" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SiteScriptCreationInfo">
         <Property Name="Content" Type="Edm.String" />
@@ -35046,6 +35057,11 @@
         <Property Name="Choices" Type="Collection(Microsoft.SharePoint.Internal.GptResponseChoice)" />
         <Property Name="Usage" Type="Microsoft.SharePoint.Internal.GptResponseUsage" />
       </ComplexType>
+      <ComplexType Name="LogActivityRequest">
+        <Property Name="AuditCreationTime" Type="Edm.String" />
+        <Property Name="ListId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ListItemUniqueId" Type="Edm.Guid" Nullable="false" />
+      </ComplexType>
       <ComplexType Name="TrackedItemUpdatesRequest">
         <Property Name="TimeStamp" Type="Edm.DateTime" Nullable="false" />
         <Property Name="TrackedItemsAsJson" Type="Edm.String" />
@@ -35137,6 +35153,7 @@
         <Property Name="SpotlightNews" Type="Collection(Microsoft.SharePoint.EmployeeEngagement.SpotlightNews)" />
       </ComplexType>
       <ComplexType Name="SpotlightConfiguration">
+        <Property Name="IsHidden" Type="Edm.Boolean" Nullable="false" />
         <Property Name="NewsSource" Type="Edm.Int32" Nullable="false" />
         <Property Name="PinnedNews" Type="Collection(Microsoft.SharePoint.EmployeeEngagement.SpotlightNews)" />
         <Property Name="SelectedSites" Type="Collection(Microsoft.SharePoint.EmployeeEngagement.NewsSite)" />
@@ -35749,7 +35766,7 @@
       <ComplexType Name="InactiveSitePolicyResourceStorage">
         <Property Name="createdOn" Type="Edm.DateTime" />
         <Property Name="lastScopedOn" Type="Edm.DateTime" />
-        <Property Name="lastTransitionedOn" Type="Edm.DateTime" />
+        <Property Name="lastTransitionedOn" Type="Edm.DateTime" Nullable="false" />
         <Property Name="lookupSiteId" Type="SP.FieldLookupValue" />
         <Property Name="notificationData" Type="Edm.String" />
         <Property Name="notificationStatus" Type="Edm.Int32" Nullable="false" />
@@ -37299,7 +37316,6 @@
         <Property Name="Url" Type="Edm.String" />
         <Property Name="UserCodeMaximumLevel" Type="Edm.Double" Nullable="false" />
         <Property Name="UserCodeWarningLevel" Type="Edm.Double" Nullable="false" />
-        <Property Name="Workspace" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SiteCreationSource">
         <Property Name="IsSyncThresholdLimitReached" Type="Edm.Boolean" Nullable="false" />
