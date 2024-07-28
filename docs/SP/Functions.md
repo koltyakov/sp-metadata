@@ -669,6 +669,8 @@ SP_MultilingualSettings | ✅ | ❌ | ❌ | ❌
 [<span title="SP_ObjectSharingInformation_GetWebSharingInformation">SP_ObjectSharingInformation_GetWebSharingInformati...</span> (SP ObjectSharingInformation GetWebSharingInformation)](./Functions/SP_ObjectSharingInformation_GetWebSharingInformation.md) | ✅ | ✅ | ✅ | ✅
 SP_OrganizationNews | ✅ | ❌ | ❌ | ❌
 [SP_OrganizationNews_GetSiteReference](./Functions/SP_OrganizationNews_GetSiteReference.md) | ✅ | ❌ | ❌ | ❌
+<span title="SP_OutOfBoxFontPackageSettings_GetHideOutOfBoxFontPackages">SP_OutOfBoxFontPackageSettings_GetHideOutOfBoxFont...</span> (SP OutOfBoxFontPackageSettings GetHideOutOfBoxFontPackages) | ✅ | ❌ | ❌ | ❌
+[<span title="SP_OutOfBoxFontPackageSettings_SetHideOutOfBoxFontPackages">SP_OutOfBoxFontPackageSettings_SetHideOutOfBoxFont...</span> (SP OutOfBoxFontPackageSettings SetHideOutOfBoxFontPackages)](./Functions/SP_OutOfBoxFontPackageSettings_SetHideOutOfBoxFontPackages.md) | ✅ | ❌ | ❌ | ❌
 SP_OutOfBoxFontPackages_Load | ✅ | ❌ | ❌ | ❌
 [SP_PersonalListsProxy_GetPersonalListsProxy](./Functions/SP_PersonalListsProxy_GetPersonalListsProxy.md) | ✅ | ❌ | ❌ | ❌
 [SP_PinnedItems_AddItem](./Functions/SP_PinnedItems_AddItem.md) | ✅ | ❌ | ❌ | ❌

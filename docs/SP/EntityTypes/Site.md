@@ -59,7 +59,6 @@ ShareByEmailEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ❌
 ShareByLinkEnabled (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
 ShowPeoplePickerSuggestionsForGuestUsers (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 ShowUrlStructure (Edm.Boolean) | ✅ | ✅ | ✅ | ✅
-SiteCopilotConfiguration (SP.SiteCopilotConfiguration) | ✅ | ❌ | ❌ | ❌
 SitePolicyEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SocialBarOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 StatusBarLink (Edm.String) | ✅ | ✅ | ❌ | ❌

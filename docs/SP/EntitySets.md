@@ -328,6 +328,7 @@ OrgNewsSites | ✅ | ❌ | ❌ | ❌
 OrgRelationGroupManagedPaths | ✅ | ❌ | ❌ | ❌
 OrgRelationNotifications | ✅ | ❌ | ❌ | ❌
 OrgRelationVerifications | ✅ | ❌ | ❌ | ❌
+OutOfBoxFontPackageSettingss | ✅ | ❌ | ❌ | ❌
 PageCopyResponses | ✅ | ❌ | ❌ | ❌
 PageDiagnostics | ✅ | ❌ | ❌ | ❌
 PageMoveResponses | ✅ | ❌ | ❌ | ❌

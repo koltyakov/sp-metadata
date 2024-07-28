@@ -13,6 +13,8 @@ AnonymousLinkExpirationInDays (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ApplyToExistingDocumentLibraries (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ApplyToNewDocumentLibraries (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ArchiveStatus (Edm.String) | ✅ | ❌ | ❌ | ❌
+ArchivedBy (Edm.String) | ✅ | ❌ | ❌ | ❌
+ArchivedTime (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 AuthContextStrength (Edm.String) | ✅ | ❌ | ❌ | ❌
 AuthenticationContextLimitedAccess (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 AuthenticationContextName (Edm.String) | ✅ | ❌ | ❌ | ❌

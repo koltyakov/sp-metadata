@@ -81,6 +81,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [TextValueWithLanguage](./ComplexTypes/TextValueWithLanguage.md) | ✅ | ✅ | ❌ | ❌
 [TimeFrameStatistics](./ComplexTypes/TimeFrameStatistics.md) | ✅ | ❌ | ❌ | ❌
 [TopicPageFieldsData](./ComplexTypes/TopicPageFieldsData.md) | ✅ | ❌ | ❌ | ❌
+[TranspileContent](./ComplexTypes/TranspileContent.md) | ✅ | ❌ | ❌ | ❌
 [ViewData](./ComplexTypes/ViewData.md) | ✅ | ❌ | ❌ | ❌
 [ViewProgressAnalyticsData](./ComplexTypes/ViewProgressAnalyticsData.md) | ✅ | ❌ | ❌ | ❌
 [VivaEngagePublishingStatus](./ComplexTypes/VivaEngagePublishingStatus.md) | ✅ | ❌ | ❌ | ❌
