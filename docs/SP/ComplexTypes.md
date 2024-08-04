@@ -8,6 +8,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [AdditionalAccessStatusResponse](./ComplexTypes/AdditionalAccessStatusResponse.md) | ✅ | ❌ | ❌ | ❌
 [AgreementAttributeDTO](./ComplexTypes/AgreementAttributeDTO.md) | ✅ | ❌ | ❌ | ❌
 [AgreementAttributeRequestDTO](./ComplexTypes/AgreementAttributeRequestDTO.md) | ✅ | ❌ | ❌ | ❌
+[AgreementCountryResponse](./ComplexTypes/AgreementCountryResponse.md) | ✅ | ❌ | ❌ | ❌
 [AgreementDataPair](./ComplexTypes/AgreementDataPair.md) | ✅ | ❌ | ❌ | ❌
 [AgreementDocument](./ComplexTypes/AgreementDocument.md) | ✅ | ❌ | ❌ | ❌
 [AgreementDocumentsInfo](./ComplexTypes/AgreementDocumentsInfo.md) | ✅ | ❌ | ❌ | ❌

@@ -26,4 +26,5 @@ PublishStartDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 TeamsTranspileContent (Edm.String) | ✅ | ❌ | ❌ | ❌
 Title (Edm.String) | ✅ | ✅ | ❌ | ❌
 TopicHeader (Edm.String) | ✅ | ❌ | ❌ | ❌
+TranspileContents (Edm.String) | ✅ | ❌ | ❌ | ❌
 WebTranspileContent (Edm.String) | ✅ | ❌ | ❌ | ❌

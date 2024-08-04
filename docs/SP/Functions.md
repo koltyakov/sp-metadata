@@ -428,6 +428,7 @@ GetSubwebsFilteredForCurrentUser (SP.Web) | ✅ | ✅ | ✅ | ✅
 GetTargetedSitesAsEditor (SP.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌
 GetTenantThemeById (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
 GetTenantThemes (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
+GetTenantThemesXgeoUtil (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
 GetThemeFontByName (SP.ThemeInfo) | ✅ | ✅ | ✅ | ✅
 GetThemeShadeByName (SP.ThemeInfo) | ✅ | ✅ | ✅ | ✅
 GetUploadStatus (SP.File) | ✅ | ✅ | ❌ | ❌

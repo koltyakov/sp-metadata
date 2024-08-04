@@ -10,6 +10,8 @@
 
 Parameter | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+RootFolder (Edm.String) | ✅ | ❌ | ❌ | ❌
+View (Edm.String) | ✅ | ❌ | ❌ | ❌
 bNewDocumentUpdate (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 checkInComment (Edm.String) | ✅ | ❌ | ❌ | ❌
 datesInUTC (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
