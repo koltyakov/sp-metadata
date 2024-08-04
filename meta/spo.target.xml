@@ -186,6 +186,10 @@
       <ComplexType Name="AgreementAttributeRequestDTO">
         <Property Name="DocumentUri" Type="Edm.String" />
       </ComplexType>
+      <ComplexType Name="AgreementCountryResponse">
+        <Property Name="CountryKey" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+      </ComplexType>
       <ComplexType Name="AgreementDataPair">
         <Property Name="Count" Type="Edm.Int32" Nullable="false" />
         <Property Name="Name" Type="Edm.String" />
@@ -1600,6 +1604,7 @@
         <Property Name="Email" Type="Edm.String" />
         <Property Name="LoginName" Type="Edm.String" />
         <Property Name="Name" Type="Edm.String" />
+        <Property Name="ProfilePicUrl" Type="Edm.String" />
         <Property Name="UserId" Type="Edm.Int32" Nullable="false" />
       </ComplexType>
       <ComplexType Name="DeviationAnalysisRule">
@@ -10381,6 +10386,8 @@
           <Parameter Name="checkInComment" Type="Edm.String" />
           <Parameter Name="datesInUTC" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="numberInInvariantCulture" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="View" Type="Edm.String" />
+          <Parameter Name="RootFolder" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="ValidateUpdateFetchListItemInFolder" ReturnType="SP.ListItemUpdateResults" IsBindable="true">
           <Parameter Name="this" Type="SP.Workflow.SPWorkflowTask" />
@@ -11914,6 +11921,9 @@
         <FunctionImport Name="GetTenantThemes" ReturnType="SP.TenantThemes" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.BrandCenter" />
         </FunctionImport>
+        <FunctionImport Name="GetTenantThemesXgeoUtil" ReturnType="SP.TenantThemes" IsBindable="true">
+          <Parameter Name="this" Type="SP.BrandCenter" />
+        </FunctionImport>
         <FunctionImport Name="OrgAssets" ReturnType="Microsoft.SharePoint.Administration.OrgAssets" IsSideEffecting="false" IsBindable="true">
           <Parameter Name="this" Type="SP.BrandCenter" />
         </FunctionImport>
@@ -12203,6 +12213,7 @@
         <FunctionImport Name="DeleteRule" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
           <Parameter Name="ruleId" Type="Edm.String" />
+          <Parameter Name="triggerType" Type="Edm.Int32" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="EnableQueryableColumns" IsBindable="true">
           <Parameter Name="this" Type="SP.List" />
@@ -13103,6 +13114,8 @@
           <Parameter Name="checkInComment" Type="Edm.String" />
           <Parameter Name="datesInUTC" Type="Edm.Boolean" Nullable="false" />
           <Parameter Name="numberInInvariantCulture" Type="Edm.Boolean" Nullable="false" />
+          <Parameter Name="View" Type="Edm.String" />
+          <Parameter Name="RootFolder" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="ValidateUpdateFetchListItemInFolder" ReturnType="SP.ListItemUpdateResults" IsBindable="true">
           <Parameter Name="this" Type="SP.ListItem" />
@@ -20314,6 +20327,9 @@
       <Annotations Target="SP.Publishing.SitePageFieldsData/TopicHeader">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.Publishing.SitePageFieldsData/TranspileContents">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.Publishing.SitePageFieldsData/WebTranspileContent">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -26783,6 +26799,9 @@
       <Annotations Target="SP.ApiData/GetTenantThemes(SP.BrandCenter)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.ApiData/GetTenantThemesXgeoUtil(SP.BrandCenter)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="SP.ApiData/OrgAssets(SP.BrandCenter)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -26840,7 +26859,7 @@
       <Annotations Target="SP.ApiData/CreateRuleEx(SP.List, Edm.String, Edm.String, Edm.Int32, SP.SPRuleAction, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
-      <Annotations Target="SP.ApiData/DeleteRule(SP.List, Edm.String)">
+      <Annotations Target="SP.ApiData/DeleteRule(SP.List, Edm.String, Edm.Int32)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/EnableQueryableColumns(SP.List)">
@@ -32232,6 +32251,7 @@
         <Property Name="TeamsTranspileContent" Type="Edm.String" />
         <Property Name="Title" Type="Edm.String" />
         <Property Name="TopicHeader" Type="Edm.String" />
+        <Property Name="TranspileContents" Type="Edm.String" />
         <Property Name="WebTranspileContent" Type="Edm.String" />
       </ComplexType>
       <ComplexType Name="SitePageCoAuthState">
