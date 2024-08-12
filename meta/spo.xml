@@ -1706,6 +1706,7 @@
         <Property Name="SensitivityLabelId" Type="Edm.String" />
         <Property Name="SensitivityLabel" Type="Edm.Guid" Nullable="false" />
         <Property Name="IsHubSite" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsRestrictContentOrgWideSearchPolicyEnforcedOnSite" Type="Edm.Boolean" Nullable="false" />
         <Property Name="IsRestrictedAccessControlPolicyEnforcedOnSite" Type="Edm.Boolean" Nullable="false" />
         <Property Name="LockIssue" Type="Edm.String" />
         <Property Name="MaxItemsPerThrottledOperation" Type="Edm.Int32" Nullable="false" />
@@ -2912,6 +2913,12 @@
         <NavigationProperty Name="VivaResources" Relationship="Microsoft.SharePoint.EmployeeEngagement.SP_EmployeeEngagement_VivaResources_Microsoft_SharePoint_EmployeeEngagement_VivaResources_VivaResourcesPartner" ToRole="VivaResources" FromRole="VivaResourcesPartner" />
       </EntityType>
       <EntityType Name="EmployeeExperienceController">
+        <Key>
+          <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
+        </Key>
+        <Property Name="Id4a81de82eeb94d6080ea5bf63e27023a" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="CopilotFileCollection" Abstract="true">
         <Key>
           <PropertyRef Name="Id4a81de82eeb94d6080ea5bf63e27023a" />
         </Key>
@@ -5001,6 +5008,7 @@
         <EntitySet Name="SPSitePreservationUtilitys" EntityType="SP.CompliancePolicy.SPSitePreservationUtility" />
         <EntitySet Name="ConnectorResults" EntityType="SP.ConnectorResult" />
         <EntitySet Name="ContentTypes" EntityType="SP.ContentType" />
+        <EntitySet Name="CopilotFileCollections" EntityType="SP.CopilotFileCollection" />
         <EntitySet Name="CopySourceInfos" EntityType="SP.CopySourceInfo" />
         <EntitySet Name="CreatablesInfos" EntityType="SP.CreatablesInfo" />
         <EntitySet Name="CurrencyLists" EntityType="SP.CurrencyList" />
@@ -11831,6 +11839,11 @@
           <Parameter Name="this" Type="SP.EmployeeExperienceController" />
           <Parameter Name="announcementStates" Type="Collection(Microsoft.SharePoint.EmployeeEngagement.Experience.AnnouncementState)" />
           <Parameter Name="mySiteUrl" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="SP_CopilotFileCollection_GetWorkingSetFiles" ReturnType="Microsoft.SharePoint.Copilot.CopilotFileCollectionQueryResult" IsSideEffecting="false">
+          <Parameter Name="top" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="orderBy" Type="Edm.String" />
+          <Parameter Name="skipToken" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_SharePoint_Convergence_ConsumerPermissions" ReturnType="Microsoft.SharePoint.Convergence.ConsumerPermissions" IsComposable="true" EntitySet="ConsumerPermissions" />
         <FunctionImport Name="GrantConsumerSitePermissions" IsBindable="true">
@@ -21179,6 +21192,54 @@
       <Annotations Target="Microsoft.SharePoint.Deployment.ShortcutInformation">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Copilot.CopilotFileCollectionQueryResult">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Copilot.CopilotFileMetadata">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Copilot.CopilotFileMetadata/ContainerUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Copilot.CopilotFileMetadata/FileName">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Copilot.CopilotFileMetadata/FileUrl">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Copilot.CopilotFileMetadata/ListId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Copilot.CopilotFileMetadata/ListItemId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Copilot.CopilotFileMetadata/SiteId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Copilot.CopilotFileMetadata/SitePath">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Copilot.CopilotFileMetadata/UniqueId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Copilot.CopilotFileUserRelationship">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Copilot.CopilotFileUserRelationship/LastAccessDateTime">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Copilot.CopilotFileMetadata/UserRelationship">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Copilot.CopilotFileMetadata/WebId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Copilot.CopilotFileCollectionQueryResult/Files">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.SharePoint.Copilot.CopilotFileCollectionQueryResult/SkipToken">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Comments.CommentInformation">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -24150,6 +24211,9 @@
       <Annotations Target="Microsoft.SharePoint.EmployeeEngagement.VivaResourceGetEndpoint">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="SP.CopilotFileCollection">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.SharePoint.Comments.comment">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -24771,6 +24835,9 @@
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/CoreSharingCapability">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/GuestSharingGroupAllowListInTenantByGroupId">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/GuestSharingGroupAllowListInTenantByPrincipalIdentity">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
@@ -24826,6 +24893,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/SyntexPowerAppsEnvironmentsContext">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/WhoCanShareAllowListInTenantByGroupId">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="Microsoft.Online.SharePoint.TenantAdministration.Tenant/WhoCanShareAllowListInTenantByPrincipalIdentity">
@@ -26740,6 +26810,9 @@
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/UpdateGoToVCButtonFlag(Microsoft.SharePoint.EmployeeEngagement.VivaHome, Edm.Boolean)">
+        <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
+      </Annotations>
+      <Annotations Target="SP.ApiData/SP_CopilotFileCollection_GetWorkingSetFiles(Edm.Int32, Edm.String, Edm.String)">
         <ValueAnnotation Term="Com.Microsoft.VisualStudio.CodeGen.IsBeta" Bool="true" />
       </Annotations>
       <Annotations Target="SP.ApiData/Like(Microsoft.SharePoint.Comments.comment)">
@@ -35360,6 +35433,27 @@
         <Property Name="TimeLastModified" Type="Edm.DateTime" Nullable="false" />
       </ComplexType>
     </Schema>
+    <Schema Namespace="Microsoft.SharePoint.Copilot" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="CopilotFileCollectionQueryResult">
+        <Property Name="Files" Type="Collection(Microsoft.SharePoint.Copilot.CopilotFileMetadata)" />
+        <Property Name="SkipToken" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="CopilotFileMetadata">
+        <Property Name="ContainerUrl" Type="Edm.String" />
+        <Property Name="FileName" Type="Edm.String" />
+        <Property Name="FileUrl" Type="Edm.String" />
+        <Property Name="ListId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ListItemId" Type="Edm.String" />
+        <Property Name="SiteId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="SitePath" Type="Edm.String" />
+        <Property Name="UniqueId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="UserRelationship" Type="Microsoft.SharePoint.Copilot.CopilotFileUserRelationship" />
+        <Property Name="WebId" Type="Edm.Guid" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="CopilotFileUserRelationship">
+        <Property Name="LastAccessDateTime" Type="Edm.DateTime" />
+      </ComplexType>
+    </Schema>
     <Schema Namespace="Microsoft.SharePoint.Containers" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="SPActiveContainerCollection">
         <Property Name="ContainerCollection" Type="Collection(Microsoft.SharePoint.Containers.SPActiveContainerProperties)" />
@@ -37283,7 +37377,6 @@
         <Property Name="AvailableInGraph" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AvailableInPowerShell" Type="Edm.Boolean" Nullable="false" />
         <Property Name="AvailableInSharePointAdminCenter" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="Category" Type="Edm.Int32" Nullable="false" />
         <Property Name="Description" Type="Edm.String" />
         <Property Name="SettingName" Type="Edm.String" />
         <Property Name="SettingValue" Type="Edm.String" />
@@ -38097,6 +38190,7 @@
         <Property Name="FileVersionPolicyXml" Type="Edm.String" />
         <Property Name="FolderAnonymousLinkType" Type="Edm.Int32" Nullable="false" />
         <Property Name="GuestSharingGroupAllowListInTenant" Type="Edm.String" />
+        <Property Name="GuestSharingGroupAllowListInTenantByGroupId" Type="Collection(Edm.String)" />
         <Property Name="GuestSharingGroupAllowListInTenantByPrincipalIdentity" Type="Collection(Edm.String)" />
         <Property Name="HasAdminCompletedCUConfiguration" Type="Edm.Boolean" Nullable="false" />
         <Property Name="HasIntelligentContentServicesCapability" Type="Edm.Boolean" Nullable="false" />
@@ -38254,6 +38348,7 @@
         <Property Name="ViewersCanCommentOnMediaDisabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="ViewInFileExplorerEnabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="WhoCanShareAllowListInTenant" Type="Edm.String" />
+        <Property Name="WhoCanShareAllowListInTenantByGroupId" Type="Collection(Edm.String)" />
         <Property Name="WhoCanShareAllowListInTenantByPrincipalIdentity" Type="Collection(Edm.String)" />
         <Property Name="Workflow2010Disabled" Type="Edm.Boolean" Nullable="false" />
         <Property Name="Workflows2013State" Type="Edm.Int32" Nullable="false" />
