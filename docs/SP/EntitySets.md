@@ -84,6 +84,7 @@ ConsumerPermissions | ✅ | ❌ | ❌ | ❌
 ContentDbSchemaVersions | ✅ | ❌ | ❌ | ❌
 ContentTypes | ✅ | ✅ | ✅ | ✅
 Conversations | ❌ | ❌ | ✅ | ❌
+CopilotFileCollections | ✅ | ❌ | ❌ | ❌
 CopySourceInfos | ✅ | ❌ | ❌ | ❌
 CorporateCatalogAppMetadatas | ✅ | ✅ | ❌ | ❌
 CourseGrades | ❌ | ❌ | ❌ | ✅

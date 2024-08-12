@@ -53,6 +53,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.SharePoint.Comments.Client](./Microsoft.SharePoint.Comments.Client) | ✅ | ✅ | ❌ | ❌
 [Microsoft.SharePoint.Containers](./Microsoft.SharePoint.Containers) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Convergence](./Microsoft.SharePoint.Convergence) | ✅ | ❌ | ❌ | ❌
+[Microsoft.SharePoint.Copilot](./Microsoft.SharePoint.Copilot) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Deployment](./Microsoft.SharePoint.Deployment) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.ESign.Models.Requests](./Microsoft.SharePoint.ESign.Models.Requests) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.EmployeeEngagement](./Microsoft.SharePoint.EmployeeEngagement) | ✅ | ❌ | ❌ | ❌

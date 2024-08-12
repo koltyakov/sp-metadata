@@ -617,6 +617,7 @@ SP_BrandCenter | ✅ | ❌ | ❌ | ❌
 [SP_Broker_AcquireOBOToken](./Functions/SP_Broker_AcquireOBOToken.md) | ✅ | ❌ | ❌ | ❌
 [SP_CampainAnalytics_GetDimensions](./Functions/SP_CampainAnalytics_GetDimensions.md) | ✅ | ❌ | ❌ | ❌
 [SP_CampainAnalytics_GetReport](./Functions/SP_CampainAnalytics_GetReport.md) | ✅ | ❌ | ❌ | ❌
+[SP_CopilotFileCollection_GetWorkingSetFiles](./Functions/SP_CopilotFileCollection_GetWorkingSetFiles.md) | ✅ | ❌ | ❌ | ❌
 SP_CurrencyList_GetList | ✅ | ✅ | ❌ | ❌
 SP_EmployeeEngagement | ✅ | ❌ | ❌ | ❌
 SP_EmployeeExperienceController | ✅ | ❌ | ❌ | ❌

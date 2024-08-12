@@ -139,6 +139,7 @@ FilePickerExternalImageSearchEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 FileVersionPolicyXml (Edm.String) | ✅ | ❌ | ❌ | ❌
 FolderAnonymousLinkType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 GuestSharingGroupAllowListInTenant (Edm.String) | ✅ | ❌ | ❌ | ❌
+GuestSharingGroupAllowListInTenantByGroupId (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 GuestSharingGroupAllowListInTenantByPrincipalIdentity (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 HasAdminCompletedCUConfiguration (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 HasIntelligentContentServicesCapability (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
@@ -296,6 +297,7 @@ UsePersistentCookiesForExplorerView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ViewInFileExplorerEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ViewersCanCommentOnMediaDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 WhoCanShareAllowListInTenant (Edm.String) | ✅ | ❌ | ❌ | ❌
+WhoCanShareAllowListInTenantByGroupId (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 WhoCanShareAllowListInTenantByPrincipalIdentity (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 Workflow2010Disabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Workflows2013State (Edm.Int32) | ✅ | ❌ | ❌ | ❌

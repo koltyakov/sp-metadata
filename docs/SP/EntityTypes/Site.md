@@ -36,6 +36,7 @@ GroupId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 HubSiteId (Edm.Guid) | ✅ | ✅ | ❌ | ❌
 Id (Edm.Guid) | ✅ | ✅ | ✅ | ✅
 IsHubSite (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
+IsRestrictContentOrgWideSearchPolicyEnforcedOnSite (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 IsRestrictedAccessControlPolicyEnforcedOnSite (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 LockIssue (Edm.String) | ✅ | ✅ | ✅ | ✅
 MaxItemsPerThrottledOperation (Edm.Int32) | ✅ | ✅ | ✅ | ✅
