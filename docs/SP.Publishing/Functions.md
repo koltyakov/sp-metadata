@@ -299,6 +299,12 @@ SavePageCoAuth (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 SavePageCoAuth (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
 SavePageCoAuth (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 SavePageCoAuth (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+SaveStreams (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
+SaveStreams (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
+SaveStreams (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
+SaveStreams (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
+SaveStreams (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
+SaveStreams (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 SchedulePublication (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 SchedulePublish (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
 SchedulePublish (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌

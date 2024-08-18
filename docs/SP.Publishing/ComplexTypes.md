@@ -63,6 +63,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SharePagePreviewByEmailFieldsData](./ComplexTypes/SharePagePreviewByEmailFieldsData.md) | ✅ | ✅ | ❌ | ❌
 [SharePointPublishingStatus](./ComplexTypes/SharePointPublishingStatus.md) | ✅ | ❌ | ❌ | ❌
 [SharePointPublishingStatusResponse](./ComplexTypes/SharePointPublishingStatusResponse.md) | ✅ | ❌ | ❌ | ❌
+[SitePagStreamData](./ComplexTypes/SitePagStreamData.md) | ✅ | ❌ | ❌ | ❌
 [SitePage3DFieldsData](./ComplexTypes/SitePage3DFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [SitePageAuthoringMetadata](./ComplexTypes/SitePageAuthoringMetadata.md) | ✅ | ❌ | ❌ | ❌
 [SitePageBoostProperties](./ComplexTypes/SitePageBoostProperties.md) | ✅ | ❌ | ❌ | ❌
@@ -70,6 +71,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SitePageCollaborator](./ComplexTypes/SitePageCollaborator.md) | ✅ | ❌ | ❌ | ❌
 [SitePageDependencyMetadata](./ComplexTypes/SitePageDependencyMetadata.md) | ✅ | ❌ | ❌ | ❌
 [SitePageFieldsData](./ComplexTypes/SitePageFieldsData.md) | ✅ | ✅ | ❌ | ❌
+[SitePageStreamContent](./ComplexTypes/SitePageStreamContent.md) | ✅ | ❌ | ❌ | ❌
 [SitePageVersionInfo](./ComplexTypes/SitePageVersionInfo.md) | ✅ | ✅ | ❌ | ❌
 [SitePageVersionInfoCollection](./ComplexTypes/SitePageVersionInfoCollection.md) | ✅ | ❌ | ❌ | ❌
 [SiteSharingEmailContext](./ComplexTypes/SiteSharingEmailContext.md) | ✅ | ✅ | ❌ | ❌
@@ -81,7 +83,6 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [TextValueWithLanguage](./ComplexTypes/TextValueWithLanguage.md) | ✅ | ✅ | ❌ | ❌
 [TimeFrameStatistics](./ComplexTypes/TimeFrameStatistics.md) | ✅ | ❌ | ❌ | ❌
 [TopicPageFieldsData](./ComplexTypes/TopicPageFieldsData.md) | ✅ | ❌ | ❌ | ❌
-[TranspileContent](./ComplexTypes/TranspileContent.md) | ✅ | ❌ | ❌ | ❌
 [ViewData](./ComplexTypes/ViewData.md) | ✅ | ❌ | ❌ | ❌
 [ViewProgressAnalyticsData](./ComplexTypes/ViewProgressAnalyticsData.md) | ✅ | ❌ | ❌ | ❌
 [VivaEngagePublishingStatus](./ComplexTypes/VivaEngagePublishingStatus.md) | ✅ | ❌ | ❌ | ❌

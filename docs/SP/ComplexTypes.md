@@ -28,7 +28,6 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [AppProperties](./ComplexTypes/AppProperties.md) | ✅ | ✅ | ❌ | ❌
 [AppSiteContext](./ComplexTypes/AppSiteContext.md) | ✅ | ✅ | ❌ | ❌
 [AppViewCreationInfo](./ComplexTypes/AppViewCreationInfo.md) | ✅ | ✅ | ❌ | ❌
-[ApprovalConfigurationResponse](./ComplexTypes/ApprovalConfigurationResponse.md) | ✅ | ❌ | ❌ | ❌
 [ApprovalsCreateRequestParameters](./ComplexTypes/ApprovalsCreateRequestParameters.md) | ✅ | ❌ | ❌ | ❌
 [ApprovalsProperties](./ComplexTypes/ApprovalsProperties.md) | ✅ | ❌ | ❌ | ❌
 [AsyncReadJobInfo](./ComplexTypes/AsyncReadJobInfo.md) | ✅ | ❌ | ❌ | ❌
@@ -233,4 +232,5 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [WebInfoCreationInformation](./ComplexTypes/WebInfoCreationInformation.md) | ✅ | ✅ | ✅ | ✅
 [WebRequestInfo](./ComplexTypes/WebRequestInfo.md) | ✅ | ✅ | ✅ | ✅
 [WebResponseInfo](./ComplexTypes/WebResponseInfo.md) | ✅ | ✅ | ✅ | ✅
+[WorkflowConfigurationResponse](./ComplexTypes/WorkflowConfigurationResponse.md) | ✅ | ❌ | ❌ | ❌
 [XmlSchemaFieldCreationInformation](./ComplexTypes/XmlSchemaFieldCreationInformation.md) | ✅ | ✅ | ✅ | ✅

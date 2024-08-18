@@ -15,3 +15,4 @@ filterByColumnsList (Collection(Microsoft.Online.SharePoint.TenantAdministration
 orderByColumnsList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SPContainerSortOrder)) | ✅ | ❌ | ❌ | ❌
 pageSize (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 pagingToken (Edm.String) | ✅ | ❌ | ❌ | ❌
+searchParameters (Microsoft.Online.SharePoint.TenantAdministration.SPContainerSearchParameters) | ✅ | ❌ | ❌ | ❌
