@@ -32,7 +32,7 @@ Namespace | SPO | SP 2019 | SP 2016 | SP 2013
 [Microsoft.SharePoint.AddToOneDrive](./Microsoft.SharePoint.AddToOneDrive) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Administration](./Microsoft.SharePoint.Administration) | ✅ | ✅ | ✅ | ✅
 [Microsoft.SharePoint.Administration.Archiving](./Microsoft.SharePoint.Administration.Archiving) | ✅ | ❌ | ❌ | ❌
-[Microsoft.SharePoint.Administration.SPOUnlicensedODB](./Microsoft.SharePoint.Administration.SPOUnlicensedODB) | ✅ | ❌ | ❌ | ❌
+[Microsoft.SharePoint.Administration.OdbLicenseEnforcement](./Microsoft.SharePoint.Administration.OdbLicenseEnforcement) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Administration.SiteMove.Service](./Microsoft.SharePoint.Administration.SiteMove.Service) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Administration.TenantAdmin](./Microsoft.SharePoint.Administration.TenantAdmin) | ✅ | ❌ | ❌ | ❌
 [Microsoft.SharePoint.Agreements.Models](./Microsoft.SharePoint.Agreements.Models) | ✅ | ❌ | ❌ | ❌

@@ -13,3 +13,4 @@ IsAcceptable (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Notes (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 RuleName (Edm.String) | ✅ | ❌ | ❌ | ❌
 SendForApproval (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+SnippetPath (Edm.String) | ✅ | ❌ | ❌ | ❌

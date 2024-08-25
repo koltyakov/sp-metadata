@@ -291,7 +291,7 @@ TranslationSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministra
 TranslationSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 TranslationSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
 UniversalAnnotationDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
-UnlicensedOneDriveForBusinessTenantMetricsData (Microsoft.SharePoint.Administration.SPOUnlicensedODB.UnlicensedOdbTenantMetrics) | ✅ | ❌ | ❌ | ❌
+UnlicensedOneDriveForBusinessTenantMetricsData (Microsoft.SharePoint.Administration.OdbLicenseEnforcement.UnlicensedOdbTenantMetrics) | ✅ | ❌ | ❌ | ❌
 UseFindPeopleInPeoplePicker (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 UsePersistentCookiesForExplorerView (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ViewInFileExplorerEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

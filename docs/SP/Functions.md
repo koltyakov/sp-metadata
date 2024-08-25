@@ -360,6 +360,7 @@ GetFolderById (SP.Web) | ✅ | ✅ | ✅ | ❌
 GetFolderByServerRelativePath (SP.Web) | ✅ | ✅ | ❌ | ❌
 GetFolderByServerRelativeUrl (SP.RemoteWeb) | ✅ | ✅ | ✅ | ❌
 GetFolderByServerRelativeUrl (SP.Web) | ✅ | ✅ | ✅ | ✅
+GetFontStream (SP.BrandCenter) | ✅ | ❌ | ❌ | ❌
 GetGlobalSchemaXml (SP.ListTemplate) | ✅ | ✅ | ✅ | ❌
 GetGroupBasedEnvironment (SP.Web) | ✅ | ❌ | ❌ | ❌
 GetGroupById (SP.RemoteWeb) | ✅ | ✅ | ✅ | ❌
