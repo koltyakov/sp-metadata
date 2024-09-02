@@ -85,6 +85,7 @@ ContentDbSchemaVersions | ✅ | ❌ | ❌ | ❌
 ContentTypes | ✅ | ✅ | ✅ | ✅
 Conversations | ❌ | ❌ | ✅ | ❌
 CopilotFileCollections | ✅ | ❌ | ❌ | ❌
+CopilotListItemExtensionss | ✅ | ❌ | ❌ | ❌
 CopySourceInfos | ✅ | ❌ | ❌ | ❌
 CorporateCatalogAppMetadatas | ✅ | ✅ | ❌ | ❌
 CourseGrades | ❌ | ❌ | ❌ | ✅
@@ -109,6 +110,7 @@ DateRangeCriterions | ✅ | ✅ | ✅ | ✅
 DefaultContentCenterSiteInfos | ✅ | ❌ | ❌ | ❌
 DeleteTargetSiteEntitys | ✅ | ❌ | ❌ | ❌
 DeletedPublishedAssignments | ✅ | ✅ | ✅ | ❌
+DependencyPropertyMetadatas | ✅ | ❌ | ❌ | ❌
 DesignPackageMenuContentss | ✅ | ❌ | ❌ | ❌
 DeviceEntityDatas | ✅ | ❌ | ❌ | ❌
 DfDeprecationSiteEntityDatas | ✅ | ❌ | ❌ | ❌

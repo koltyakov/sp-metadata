@@ -12,6 +12,7 @@ details (Edm.String) | ✅ | ❌ | ❌ | ❌
 itemId (Edm.String) | ✅ | ❌ | ❌ | ❌
 itemUrlType (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 listId (Edm.String) | ✅ | ❌ | ❌ | ❌
+markDocAsFinal (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 title (Edm.String) | ✅ | ❌ | ❌ | ❌
 url (Edm.String) | ✅ | ❌ | ❌ | ❌
 version (Edm.String) | ✅ | ❌ | ❌ | ❌

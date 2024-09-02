@@ -274,8 +274,6 @@ StreamLaunchConfigLastUpdated (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 StreamLaunchConfigUpdateCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 SyncPrivacyProfileProperties (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 SyntexBillingSubscriptionSettings (Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext) | ✅ | ❌ | ❌ | ❌
-SyntexExternalVideoSharingSettings (Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings) | ✅ | ❌ | ❌ | ❌
-SyntexHighResolutionPlaybackSettings (Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings) | ✅ | ❌ | ❌ | ❌
 SyntexInternalFeatureFlags (Collection(SP.KeyValue)) | ✅ | ❌ | ❌ | ❌
 SyntexMediaAnalyticsSettings (Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings) | ✅ | ❌ | ❌ | ❌
 SyntexPaygFeatureActivations (Collection(SP.KeyValue)) | ✅ | ❌ | ❌ | ❌

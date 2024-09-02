@@ -25,6 +25,7 @@ BlockDownloadPolicy (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 BlockDownloadPolicyFileTypeIds (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 BlockGuestsAsSiteAdmin (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 BonusDiskQuota (Edm.Int64) | ✅ | ❌ | ❌ | ❌
+ClearGroupId (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ClearRestrictedAccessControl (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CompatibilityLevel (Edm.Int32) | ✅ | ❌ | ❌ | ❌

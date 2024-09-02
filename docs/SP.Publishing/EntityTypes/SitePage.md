@@ -20,6 +20,7 @@ IsTemplate (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Language (Edm.String) | ✅ | ❌ | ❌ | ❌
 LayoutWebpartsContent (Edm.String) | ✅ | ✅ | ❌ | ❌
 Name (Edm.String) | ✅ | ❌ | ❌ | ❌
+PublicationMetadata (Edm.String) | ✅ | ❌ | ❌ | ❌
 SitePageFlags (Edm.String) | ✅ | ❌ | ❌ | ❌
 
 ### Navigation Properties

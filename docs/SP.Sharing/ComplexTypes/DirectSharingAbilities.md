@@ -10,6 +10,9 @@ canAddExternalPrincipal (SP.Sharing.SharingAbilityStatus) | ✅ | ✅ | ❌ | �
 canAddInternalPrincipal (SP.Sharing.SharingAbilityStatus) | ✅ | ✅ | ❌ | ❌
 canAddNewExternalPrincipal (SP.Sharing.SharingAbilityStatus) | ✅ | ❌ | ❌ | ❌
 canRequestGrantAccess (SP.Sharing.SharingAbilityStatus) | ✅ | ✅ | ❌ | ❌
+canRequestGrantAccessForExistingExternalPrincipal (SP.Sharing.SharingAbilityStatus) | ✅ | ❌ | ❌ | ❌
+canRequestGrantAccessForInternalPrincipal (SP.Sharing.SharingAbilityStatus) | ✅ | ❌ | ❌ | ❌
+canRequestGrantAccessForNewExternalPrincipal (SP.Sharing.SharingAbilityStatus) | ✅ | ❌ | ❌ | ❌
 supportsEditPermission (SP.Sharing.SharingAbilityStatus) | ✅ | ❌ | ❌ | ❌
 supportsManageListPermission (SP.Sharing.SharingAbilityStatus) | ✅ | ❌ | ❌ | ❌
 supportsReadPermission (SP.Sharing.SharingAbilityStatus) | ✅ | ❌ | ❌ | ❌
