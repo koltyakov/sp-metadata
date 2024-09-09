@@ -6,6 +6,7 @@ Functions Imports | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 Add (Collection(SP.Workflow.WorkflowAssociation)) | ✅ | ✅ | ✅ | ✅
 AddThumbnailFieldData (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
+Archive (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 AttachImage (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 BreakRoleInheritance (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 DeleteObject (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
@@ -35,6 +36,7 @@ SetComplianceTagWithMetaInfo (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | �
 SetComplianceTagWithNoHold (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 SetComplianceTagWithRecord (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 SystemUpdate (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
+Unarchive (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 Update (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌
 Update (SP.Workflow.WorkflowAssociation) | ✅ | ✅ | ✅ | ✅
 UpdateEx (SP.Workflow.SPWorkflowTask) | ✅ | ❌ | ❌ | ❌

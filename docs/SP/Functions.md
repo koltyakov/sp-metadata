@@ -53,7 +53,7 @@ Apply (SP.FontPackage) | ✅ | ❌ | ❌ | ❌
 ApplyTheme (SP.Web) | ✅ | ✅ | ✅ | ✅
 ApplyWebTemplate (SP.Web) | ✅ | ✅ | ✅ | ✅
 Approve (SP.File) | ✅ | ✅ | ✅ | ✅
-Archive (SP.File) | ✅ | ❌ | ❌ | ❌
+Archive (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 [AttachAssignmentToQuiz](./Functions/AttachAssignmentToQuiz.md) | ❌ | ❌ | ❌ | ✅
 AttachImage (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 AvailableAddins (SP.Web) | ✅ | ❌ | ❌ | ❌
@@ -908,7 +908,7 @@ SystemUpdate (SP.ListItem) | ✅ | ✅ | ❌ | ❌
 TakeOverCheckOut (SP.CheckedOutFile) | ✅ | ✅ | ❌ | ❌
 UTCToLocalTime (SP.TimeZone) | ✅ | ✅ | ✅ | ✅
 UnPublish (SP.File) | ✅ | ✅ | ✅ | ✅
-Unarchive (SP.File) | ✅ | ❌ | ❌ | ❌
+Unarchive (SP.ListItem) | ✅ | ❌ | ❌ | ❌
 UndoCheckOut (SP.File) | ✅ | ✅ | ✅ | ✅
 Uninstall (SP.AppInstance) | ✅ | ✅ | ✅ | ✅
 UninstallAddins (SP.Web) | ✅ | ❌ | ❌ | ❌

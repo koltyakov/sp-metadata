@@ -22,6 +22,7 @@ AddTenantAdminListView (Microsoft.Online.SharePoint.TenantAdministration.Tenant)
 AddToOrgAssetsLibAndCdnV2 (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 AddToOrgAssetsLibAndCdnWithType (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 AddToOrgAssetsLibWithConfig (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
+AppHasAdminSitePermission (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 ArchiveSiteById (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 BootstrapPolicyAutomationResources (Microsoft.Online.SharePoint.TenantAdministration.Tenant) | ✅ | ❌ | ❌ | ❌
 CheckSiteIsArchivedById (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteProperties)) | ✅ | ❌ | ❌ | ❌

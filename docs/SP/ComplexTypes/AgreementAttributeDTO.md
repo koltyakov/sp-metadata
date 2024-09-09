@@ -6,7 +6,8 @@
 
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
-CurrentUser (SP.UserDTO) | ✅ | ❌ | ❌ | ❌
+ReviewCompleteDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 ReviewId (Edm.String) | ✅ | ❌ | ❌ | ❌
-ReviewSubmissionDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
+ReviewStartDate (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
 Reviewer (SP.UserDTO) | ✅ | ❌ | ❌ | ❌
+State (Edm.Int32) | ✅ | ❌ | ❌ | ❌

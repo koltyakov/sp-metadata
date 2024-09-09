@@ -333,6 +333,12 @@ StartCoAuth (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
 StartCoAuth (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
 StartCoAuth (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
 StartCoAuth (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
+StartExclusiveAuthoring (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌
+StartExclusiveAuthoring (SP.Publishing.FeedVideoPage) | ✅ | ❌ | ❌ | ❌
+StartExclusiveAuthoring (SP.Publishing.RepostPage) | ✅ | ❌ | ❌ | ❌
+StartExclusiveAuthoring (SP.Publishing.SitePage) | ✅ | ❌ | ❌ | ❌
+StartExclusiveAuthoring (SP.Publishing.SitePage3D) | ✅ | ❌ | ❌ | ❌
+StartExclusiveAuthoring (SP.Publishing.TopicSitePage) | ✅ | ❌ | ❌ | ❌
 Status (SP.Publishing.CommunicationSite) | ✅ | ✅ | ❌ | ❌
 Subtitles (SP.Publishing.VideoItem) | ✅ | ❌ | ❌ | ❌
 SyncApprovalRequest (SP.Publishing.CampaignPublication) | ✅ | ❌ | ❌ | ❌

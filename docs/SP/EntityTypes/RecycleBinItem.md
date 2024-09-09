@@ -21,6 +21,7 @@ LeafName (Edm.String) | ✅ | ✅ | ✅ | ✅
 LeafNamePath (SP.ResourcePath) | ✅ | ✅ | ❌ | ❌
 Size (Edm.Int64) | ✅ | ✅ | ✅ | ✅
 Title (Edm.String) | ✅ | ✅ | ✅ | ✅
+UniqueId (Edm.Guid) | ✅ | ❌ | ❌ | ❌
 
 ### Navigation Properties
 
