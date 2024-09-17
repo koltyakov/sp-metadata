@@ -7,5 +7,6 @@
 Property | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
 EmailTranspileContent (Edm.String) | ✅ | ❌ | ❌ | ❌
+EngageTranspileContent (Edm.String) | ✅ | ❌ | ❌ | ❌
 ResetEndpoint (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 TeamsTranspileContent (Edm.String) | ✅ | ❌ | ❌ | ❌

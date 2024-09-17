@@ -191,12 +191,17 @@ NotificationsInOneDriveForBusinessEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 NotificationsInSharePointEnabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 NotifyOwnersWhenInvitationsAccepted (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 NotifyOwnersWhenItemsReshared (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+OCRAdminODBGroupList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+OCRAdminODBUserList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 OCRAdminSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
 OCRAdminSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 OCRAdminSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
+OCRComplianceODBGroupList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
+OCRComplianceODBUserList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 OCRComplianceSiteInfoList (Collection(Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker)) | ✅ | ❌ | ❌ | ❌
 OCRComplianceSiteList (Collection(Edm.Guid)) | ✅ | ❌ | ❌ | ❌
 OCRComplianceSiteListFileName (Edm.String) | ✅ | ❌ | ❌ | ❌
+OCRModeForAdminODBs (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OCRModeForAdminSites (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OCRModeForComplianceODBs (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 OCRModeForComplianceSites (Edm.Int32) | ✅ | ❌ | ❌ | ❌

@@ -533,6 +533,7 @@ SiteMoveServices | ✅ | ❌ | ❌ | ❌
 SitePageMetadatas | ✅ | ✅ | ❌ | ❌
 SitePageServices | ✅ | ✅ | ❌ | ❌
 SitePropertiess | ✅ | ❌ | ❌ | ❌
+SiteRelocationJobManagementServices | ✅ | ❌ | ❌ | ❌
 SiteRenameJobEntityDatas | ✅ | ❌ | ❌ | ❌
 SiteScriptUtilitys | ✅ | ✅ | ❌ | ❌
 SiteSharingReportHelpers | ✅ | ❌ | ❌ | ❌

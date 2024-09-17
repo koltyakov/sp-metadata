@@ -55,6 +55,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPOSiteCreationSource](./ComplexTypes/SPOSiteCreationSource.md) | ✅ | ❌ | ❌ | ❌
 [SPOSitePropertiesEnumerableFilter](./ComplexTypes/SPOSitePropertiesEnumerableFilter.md) | ✅ | ❌ | ❌ | ❌
 [SPOTenantWebTemplate](./ComplexTypes/SPOTenantWebTemplate.md) | ✅ | ❌ | ❌ | ❌
+[SPSitePageCopyJobProgress](./ComplexTypes/SPSitePageCopyJobProgress.md) | ✅ | ❌ | ❌ | ❌
 [SPSyntexApplicationProperties](./ComplexTypes/SPSyntexApplicationProperties.md) | ✅ | ❌ | ❌ | ❌
 [SecondaryAdministratorsFieldsData](./ComplexTypes/SecondaryAdministratorsFieldsData.md) | ✅ | ❌ | ❌ | ❌
 [SecondaryAdministratorsInfo](./ComplexTypes/SecondaryAdministratorsInfo.md) | ✅ | ❌ | ❌ | ❌
