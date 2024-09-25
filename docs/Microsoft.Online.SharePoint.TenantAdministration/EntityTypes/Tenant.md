@@ -62,6 +62,8 @@ CommentsOnSitePagesDisabled (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 CompatibilityRange (Edm.String) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicy (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 ConditionalAccessPolicyErrorHelpLink (Edm.String) | ✅ | ❌ | ❌ | ❌
+ContentSecurityPolicyConfigSynced (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
+ContentSecurityPolicyEnforcement (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 ContentTypeSyncSiteTemplatesList (Collection(Edm.String)) | ✅ | ❌ | ❌ | ❌
 CoreBlockGuestsAsSiteAdmin (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 CoreDefaultLinkToExistingAccess (Edm.Boolean) | ✅ | ❌ | ❌ | ❌

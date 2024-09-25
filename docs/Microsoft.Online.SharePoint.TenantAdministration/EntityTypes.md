@@ -12,6 +12,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPDataGovernanceInsightRestApiClient](./EntityTypes/SPDataGovernanceInsightRestApiClient.md) | ✅ | ❌ | ❌ | ❌
 [SPDataGovernanceRestApiClientBase](./EntityTypes/SPDataGovernanceRestApiClientBase.md) | ✅ | ❌ | ❌ | ❌
 [SPDataGovernanceSARRestApiClient](./EntityTypes/SPDataGovernanceSARRestApiClient.md) | ✅ | ❌ | ❌ | ❌
+[SPOContentSecurityPolicyConfiguration](./EntityTypes/SPOContentSecurityPolicyConfiguration.md) | ✅ | ❌ | ❌ | ❌
 [SPOGroup](./EntityTypes/SPOGroup.md) | ✅ | ❌ | ❌ | ❌
 [SPOMalwareFile](./EntityTypes/SPOMalwareFile.md) | ✅ | ❌ | ❌ | ❌
 [SPOPortalLaunchValidator](./EntityTypes/SPOPortalLaunchValidator.md) | ✅ | ❌ | ❌ | ❌
@@ -19,6 +20,7 @@ Entity Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPOTenantCdnPolicy](./EntityTypes/SPOTenantCdnPolicy.md) | ✅ | ❌ | ❌ | ❌
 [SPOTenantWebTemplateCollection](./EntityTypes/SPOTenantWebTemplateCollection.md) | ✅ | ❌ | ❌ | ❌
 [SPOWebAppServicePrincipalPublic](./EntityTypes/SPOWebAppServicePrincipalPublic.md) | ✅ | ❌ | ❌ | ❌
+[SPSyntexManagementUtilities](./EntityTypes/SPSyntexManagementUtilities.md) | ✅ | ❌ | ❌ | ❌
 [SharePointSiteSharingInsights](./EntityTypes/SharePointSiteSharingInsights.md) | ✅ | ❌ | ❌ | ❌
 [SiteProperties](./EntityTypes/SiteProperties.md) | ✅ | ❌ | ❌ | ❌
 [SpoOperation](./EntityTypes/SpoOperation.md) | ✅ | ❌ | ❌ | ❌

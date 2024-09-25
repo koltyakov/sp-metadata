@@ -46,6 +46,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPDeletedContainerTypeProperties](./ComplexTypes/SPDeletedContainerTypeProperties.md) | ✅ | ❌ | ❌ | ❌
 [SPListModernUXOff](./ComplexTypes/SPListModernUXOff.md) | ✅ | ❌ | ❌ | ❌
 [SPOAppBillingProperties](./ComplexTypes/SPOAppBillingProperties.md) | ✅ | ❌ | ❌ | ❌
+[SPOContentSecurityPolicyEntry](./ComplexTypes/SPOContentSecurityPolicyEntry.md) | ✅ | ❌ | ❌ | ❌
 [SPOFileVersionBatchDeleteJobProgress](./ComplexTypes/SPOFileVersionBatchDeleteJobProgress.md) | ✅ | ❌ | ❌ | ❌
 [SPOFileVersionExpirationReportJobProgress](./ComplexTypes/SPOFileVersionExpirationReportJobProgress.md) | ✅ | ❌ | ❌ | ❌
 [SPOFileVersionPolicySettings](./ComplexTypes/SPOFileVersionPolicySettings.md) | ✅ | ❌ | ❌ | ❌
@@ -55,6 +56,7 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SPOSiteCreationSource](./ComplexTypes/SPOSiteCreationSource.md) | ✅ | ❌ | ❌ | ❌
 [SPOSitePropertiesEnumerableFilter](./ComplexTypes/SPOSitePropertiesEnumerableFilter.md) | ✅ | ❌ | ❌ | ❌
 [SPOTenantWebTemplate](./ComplexTypes/SPOTenantWebTemplate.md) | ✅ | ❌ | ❌ | ❌
+[SPSitePage](./ComplexTypes/SPSitePage.md) | ✅ | ❌ | ❌ | ❌
 [SPSitePageCopyJobProgress](./ComplexTypes/SPSitePageCopyJobProgress.md) | ✅ | ❌ | ❌ | ❌
 [SPSyntexApplicationProperties](./ComplexTypes/SPSyntexApplicationProperties.md) | ✅ | ❌ | ❌ | ❌
 [SecondaryAdministratorsFieldsData](./ComplexTypes/SecondaryAdministratorsFieldsData.md) | ✅ | ❌ | ❌ | ❌
@@ -77,6 +79,9 @@ Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 [SiteUserGroupsData](./ComplexTypes/SiteUserGroupsData.md) | ✅ | ❌ | ❌ | ❌
 [SmtpServer](./ComplexTypes/SmtpServer.md) | ✅ | ❌ | ❌ | ❌
 [SyntexBillingContext](./ComplexTypes/SyntexBillingContext.md) | ✅ | ❌ | ❌ | ❌
+[SyntexCheckManagementAllowedResponse](./ComplexTypes/SyntexCheckManagementAllowedResponse.md) | ✅ | ❌ | ❌ | ❌
+[SyntexFeatureScopeSettingsValues](./ComplexTypes/SyntexFeatureScopeSettingsValues.md) | ✅ | ❌ | ❌ | ❌
+[SyntexGetModifiedListResponse](./ComplexTypes/SyntexGetModifiedListResponse.md) | ✅ | ❌ | ❌ | ❌
 [SyntexPowerAppsEnvironmentsContext](./ComplexTypes/SyntexPowerAppsEnvironmentsContext.md) | ✅ | ❌ | ❌ | ❌
 [SyntexPremiumFeatureSettings](./ComplexTypes/SyntexPremiumFeatureSettings.md) | ✅ | ❌ | ❌ | ❌
 [TenantDefaultTimeZoneId](./ComplexTypes/TenantDefaultTimeZoneId.md) | ✅ | ❌ | ❌ | ❌

@@ -14,6 +14,8 @@ duplicateSiteSizeBytes (Edm.Double) | ✅ | ❌ | ❌ | ❌
 invalidLicenseCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 invalidLicenseSizeBytes (Edm.Double) | ✅ | ❌ | ❌ | ❌
 lastRefreshOn (Edm.DateTime) | ✅ | ❌ | ❌ | ❌
+restoredByTenantAdminCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
+restoredByTenantAdminSizeBytes (Edm.Double) | ✅ | ❌ | ❌ | ❌
 retentionPeriodCount (Edm.Int32) | ✅ | ❌ | ❌ | ❌
 retentionPeriodSizeBytes (Edm.Double) | ✅ | ❌ | ❌ | ❌
 sizeBytes (Edm.Double) | ✅ | ❌ | ❌ | ❌

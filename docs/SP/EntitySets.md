@@ -465,6 +465,7 @@ SPMachineLearningWorkItemEntityDatas | ✅ | ❌ | ❌ | ❌
 SPMarketplaceSettingss | ✅ | ❌ | ❌ | ❌
 SPMigrationJobStatuss | ✅ | ✅ | ✅ | ❌
 SPO3rdPartyAADPermissionGrants | ✅ | ❌ | ❌ | ❌
+SPOContentSecurityPolicyConfigurations | ✅ | ❌ | ❌ | ❌
 SPOGroups | ✅ | ❌ | ❌ | ❌
 SPOIdentityHelpers | ✅ | ❌ | ❌ | ❌
 SPOInternalUseOnly.TenantSharingRestrictions | ✅ | ❌ | ❌ | ❌
@@ -483,6 +484,7 @@ SPPolicyStoreProxys | ✅ | ❌ | ❌ | ❌
 SPSitePreservationUtilitys | ✅ | ❌ | ❌ | ❌
 SPSocialSwitchs | ✅ | ✅ | ❌ | ❌
 SPStartUtilitiesProxys | ✅ | ❌ | ❌ | ❌
+SPSyntexManagementUtilitiess | ✅ | ❌ | ❌ | ❌
 SPTenantAppInstanceDatas | ✅ | ❌ | ❌ | ❌
 SPTenantIBInsightsReportManagers | ✅ | ❌ | ❌ | ❌
 SPTenantIBInsightsReportMetadatas | ✅ | ❌ | ❌ | ❌

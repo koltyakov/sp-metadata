@@ -21,6 +21,7 @@ DoesUserHaveEditPermission (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 FileName (Edm.String) | ✅ | ✅ | ❌ | ❌
 FirstPublished (Edm.DateTime) | ✅ | ✅ | ❌ | ❌
 FirstPublishedRelativeTime (Edm.String) | ✅ | ✅ | ❌ | ❌
+HasUserRecentlyModified (Edm.Boolean) | ✅ | ❌ | ❌ | ❌
 Id (Edm.Int32) | ✅ | ✅ | ❌ | ❌
 IsPageCheckedOutToCurrentUser (Edm.Boolean) | ✅ | ✅ | ❌ | ❌
 IsWebWelcomePage (Edm.Boolean) | ✅ | ✅ | ❌ | ❌

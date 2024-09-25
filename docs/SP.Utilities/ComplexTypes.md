@@ -4,6 +4,7 @@
 
 Complex Type | SPO | SP 2019 | SP 2016 | SP 2013
 ----------|:---:|:-------:|:-------:|:-------:
+[AutofillColumnInfo](./ComplexTypes/AutofillColumnInfo.md) | ✅ | ❌ | ❌ | ❌
 [EmailProperties](./ComplexTypes/EmailProperties.md) | ✅ | ✅ | ✅ | ✅
 [JsonTheme](./ComplexTypes/JsonTheme.md) | ✅ | ✅ | ❌ | ❌
 [LLMColumnInfo](./ComplexTypes/LLMColumnInfo.md) | ✅ | ❌ | ❌ | ❌
